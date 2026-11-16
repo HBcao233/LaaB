@@ -1,0 +1,139 @@
+:: OC Raymond Intro [nobr]
+
+/* Intro */
+
+<<set $OCRaymondSocial to 0>>
+<<set $OCRaymondSocialRank to 0>>
+
+You walk into the school library, hearing the quiet turning of pages and calmness of those who wish to spend their free time relaxing and reading rather than playing on the playground. You walk down one of the aisles, fingers brushing against the spines of the books as you read the titles, seeing if anything interests you. It is as you turn the corner towards a small reading area with some comfy couches that you spy something… <span style="color:Yellow">unexpected.</span>
+
+        <<set _ad to [
+            {
+                Name: "OC Raymond",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+Curled up on one of the coaches, happily reading away is a boy that definitely stands out amongst the drabness of the library. A classmate of yours, though one you’ve never seen, at least not like this. <span style="color:LightGreen">As he has bright, rainbow hair!</span> You wonder if you’ve passed this kid in the hall before, prior to him dying his hair, as you’re sure you’d recognize this exotic look. Sometimes you forget how accepting Preston is of oddly dyed hair. <span style="color:LightGreen">For a snobby private school, they are all about showing your <span style="Color: LightSteelBlue">“individualism”</span>.</span> <br>
+<br>
+You notice the boy’s bookbag sitting on the ground next to him. The strap has some rainbow duct tape on it, and it is littered with pins and buttons, one of which you recognize as the pride flag. His hair suddenly makes sense, and you are a bit shocked to see someone so openly gay, or at least in support of it. Nothing wrong with it, especially considering your own feelings, but it isn’t uncommon for kids to use anything they can use to pick on their classmates. <br>
+<br>
+The boy is reading what appears to be an old book, thin though with a dusty leather cover that looks old but well taken care of. The title, stitched on with gold letterings on a green background, is <span style="Color: LightSteelBlue">“Sleeping Cutie”</span>. You recognize the name; there is a really old animated movie based off this fairy tale that you’ve seen once or twice. Though you sometimes forget it is based on a book. The boy smiles as he reads it, slowly mouthing the words. Seems he is enjoying the story. <br>
+<br>
+Then the boy sees you, probably due to you standing there staring for a few minutes. <span style="color:Yellow">He tilts his head at you curiously before giving you a smile and wave as you quickly turn away blushing, feeling awkward from getting caught staring.</span> You quickly turn to walk away before things get awkward, but the boy is suddenly right next to you! <br>
+<br>
+<span style="Color: LightSteelBlue">“Hey, how are you?”</span> He says in a friendly and confident way. You jump slightly at his sudden appearance. <span style="Color: LightSteelBlue">“Oh, sorry.”</span> He laughs, <span style="Color: LightSteelBlue">“I don’t think I’ve seen you around before, I’d always recognize a cute face! I’m <span style="color:DarkTurquoise">Raymond</span>, the local rainbow-flavored book nerd.”</span> He chuckles, reaching out and shaking your hand. Though you were caught off-guard, his friendly personality puts you at ease and you introduce yourself. 
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Raymond",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Pleasure to meet you, <span style="color:DarkTurquoise">$Player.Name</span>! You’re new, right? Think I heard about you from the grapevine! Didn’t think I’d see anyone else over here, most kids get bored by the <span style="Color: LightSteelBlue">“Folk Tales & Fairy Tales”</span> section of the library.”</span> You explain that you weren’t intentionally going over here, as you were just browsing and got a little lost. The library is bigger than you expected. <span style="Color: LightSteelBlue">“Isn’t it? It’s great! Preston Elementary’s was good but was missing some classics! I’ve been going through and reading what I can, but there is just so much I don’t think I’ll be able to get through it all before we graduate!”</span> He laughs. <br>
+<br>
+<<if $Player.Traits.includes("Bookworm")>>
+    <span style="color:LightGreen">You agree, being a bit of a bookworm yourself. This place is great and you wonder if you’ll be able to check some books out, as you can hardly decide what to read next!</span> Though it’s hard to find exactly what you’re looking for, with how big it is. <span style="Color: LightSteelBlue">“Oh, they have a computer system you can use to find a book’s location. It can take some time getting the hang of it, but I could show you the ropes later if you want.”</span> <span style="color:LightGreen">He smiles and you both briefly share a minute talking about recent reads and your favorite stories. Seems you two have something in common.</span> <br>
+    <<socialChange "Raymond" 5 1>>
+    <br>
+<</if>>
+<span style="Color: LightSteelBlue">“Hey, I was just about to get to the good part.”</span> He holds up the book he was just reading, <span style="Color: LightSteelBlue">“Care to join me? I can read it to you, if you want, but feel free to pull up your own book. Company is always appreciated and the couch is super comfy!”</span> <span style="color:LightGreen">The boy smiles hopefully, seems he is eager to make a new friend.</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Find a book and read next to him (0:25)<br>">>
+	<<replace "#choice">>
+        You agree, glancing around the fairy tales section until you find something that catches your fancy. Taking a seat next to <span style="color:DarkTurquoise">Raymond</span> – <span style="color:LightGreen">wow this couch really is super comfy</span> – you begin to read alongside him. Somehow, despite not exchanging any more words and only sharing the occasional look, you feel a lot closer to <span style="color:DarkTurquoise">Raymond</span> by the time you’ve finished reading. 
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Raymond",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Wow! This book rocks! How was yours?”</span> He asks enthusiastically. The two of you spend a few minutes chatting about your books and the characters in them before <span style="color:DarkTurquoise">Raymond</span> decides he has to read what you choose next! <span style="color:LightGreen">It is crazy how a shared hobby can bring two people who’ve only just met so close so fast.</span> In fact, you didn’t even get a chance to ask about his rainbow hair before he has to leave. Oh well, maybe next time. <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 10>>
+        <<set $Minutes += 25>>
+        <<socialChange "Raymond" 5 1>>
+        <<set $CompletedQuests.push("Raymond: Introduction")>>
+        <<set $InActiveQuests.delete("Raymond: Introduction")>>
+        <br>
+        [[Continue|School Library]]
+    <</replace>>
+    <</link>>
+	<<link "Ask him to read to you (0:30)<br>">>
+	<<replace "#choice">>
+        Not wanting to read yourself or just wanting the boy to read to you instead, <span style="color:LightGreen">you take a seat next to him on the actually super comfy couch and ask him to continue.</span> He gives you a brief rundown of what already occurred, though you remember most of it from the movie. However, <span style="color:DarkTurquoise">Raymond</span> assures you that the book is actually pretty different. Once you are ready, he begins. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“She moved through the autumn leaves, orange and amber filling her vision as a single thought ran through her head. Her prince. Her sweet and kindhearted love taken by the sleeping curse. The same curse that now threatens to take him from her forever. She rushes forward, knowing that only one thing can save her love. True love’s kiss. So, as she finally reaches the clearing, seeing her sleeping cutie in the glass coffin before her, surrounded by his family of small gnomish lumberjacks, she takes a deep breath. Thinking to herself, that this has to work.”</span> <span style="color:DarkTurquoise">Raymond</span> reads. Man, the story really is different than the movie! 
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Raymond",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“I love this story!”</span> <span style="color:DarkTurquoise">Raymond</span> says as he reaches the ending, a happily ever after. <span style="Color: LightSteelBlue">“To think that love is that strong! It truly is the most powerful thing of all, no matter what shape it comes in.”</span> He smiles, staring at the final passage of the book before slowly closing it. <span style="color:LightGreen">Despite only just meeting him and almost completely talking about books, you feel surprisingly close to <span style="color:DarkTurquoise">Raymond</span>. This must be the power of stories. Able to bring people together. It is crazy how a shared hobby can bring two people who’ve only just met so close so fast.</span> In fact, you didn’t even get a chance to ask about his rainbow hair before he has to leave. Oh well, maybe next time. <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 10>>
+        <<set $Minutes += 30>>
+        <<socialChange "Raymond" 10 1>>
+        <<set $CompletedQuests.push("Raymond: Introduction")>>
+        <<set $InActiveQuests.delete("Raymond: Introduction")>>
+        <br>
+        [[Continue|School Library]]
+    <</replace>>
+    <</link>>
+	<<link "Refuse<br>">>
+	<<replace "#choice">>
+        You apologize. Maybe next time. You had other plans and, as nice as it seems, you don’t want to spend your free period reading randomly in the lunch period. <span style="color:Yellow">You try to say it in a way that doesn’t sound mean, but <span style="color:DarkTurquoise">Raymond</span> frowns at your response.</span> <span style="Color: LightSteelBlue">“Oh, that’s fine. Readings not for everyone, I guess.”</span> He tries to perk up, <span style="Color: LightSteelBlue">“But it was super nice meeting you! Maybe I’ll see you around?”</span> <br>
+        <br>
+        You say your farewell to the boy and continue onward, realizing only after the fact that it may have been good to ask about his hair. Oh well, maybe next time <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 10>>
+        <<set $Minutes += 15>>
+        <<set $CompletedQuests.push("Raymond: Introduction")>>
+        <<set $InActiveQuests.delete("Raymond: Introduction")>>
+        <br>
+        [[Continue|School Library]]
+    <</replace>>
+    <</link>>
+</div>

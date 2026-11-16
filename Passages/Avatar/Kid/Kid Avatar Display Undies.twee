@@ -1,0 +1,15 @@
+:: Kid Avatar Display Undies [nobr]
+
+<<if $ADUndies.Tags.includes("Diaper")>>
+	/* <<if !$ADBottoms.Tags.includes("Body")>> They don't have tags yet */
+		<<if $ADBottoms.Type == "None" or $ADPantsDown == 1>>
+			<img @src="$ADUndies.Avatar" style="position: absolute; left: 0; top: 0">
+		<<else>>
+			<img @src="$ADUndies.AvatarUnder" style="position: absolute; left: 0; top: 0">
+		<</if>>
+	/* <</if>> */
+<<else>>
+	<<if $ADUndies.Avatar != "None">>
+		<img @src="$ADUndies.Avatar" style="position: absolute; left: 0; top: 0">
+	<</if>>
+<</if>>

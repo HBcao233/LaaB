@@ -1,0 +1,34 @@
+:: Avatar Display Top [nobr]
+
+<<if $ADTopAlt == 1 and $ADTop.AvatarAlt and $ADTop.AvatarAlt != "None">>
+
+	<<if $ADTop.AvatarAlt != "None">>
+		<img @src="$ADTop.AvatarAlt" 
+		style="position: absolute; left: 0; top: 0">
+
+		<<if $ADTop.Tags.includes("Sleeves") and $AD.Arms == "Normal">>
+			<img @src="$ADTop.AvatarSleeve" 
+			style="position: absolute; left: 0; top: 0">
+		<</if>>
+	<</if>>
+
+<<else>>
+
+	<<set $TopUnbuttoned to 0>>
+	<<set $ADTopAlt to 0>>
+
+	<<if $ADTop.Avatar != "None">>
+		<<if $ADTop.Tags.includes("Under") and $ADOuter.Type != "None">>
+			<img @src="$ADTop.AvatarUnder" 
+			style="position: absolute; left: 0; top: 0">
+		<<else>>
+			<img @src="$ADTop.Avatar" 
+			style="position: absolute; left: 0; top: 0">
+			<<if $ADTop.Tags.includes("Sleeves") and $AD.Arms == "Normal">>
+				<img @src="$ADTop.AvatarSleeve" 
+				style="position: absolute; left: 0; top: 0">
+			<</if>>
+		<</if>>
+	<</if>>
+
+<</if>>

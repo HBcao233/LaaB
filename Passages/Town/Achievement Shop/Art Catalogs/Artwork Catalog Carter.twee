@@ -1,0 +1,289 @@
+:: Artwork Catalog Carter [nobr]
+
+<span style="color:Azure"><big><strong>--Carter Kent Catalog--</strong></big></span><br>
+
+<<if $CompletedQuests.includes("Carter: Park Clean Up") == -1>>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Carter Kent</span>? Now there’s a favorite. That kid has a habit of getting himself into unlucky and embarrassing situations, which, I suppose, is good for us!”</span> <span style="color:DarkTurquoise">Orange</span> chuckles as he pulls out the binder labeled <span style="color:DarkTurquoise">Carter</span>. <span style="color:LightSteelBlue">“He is such a good boy who tries so hard, makes you just want to cuddle and protect him, especially once you realize… well, no spoilers. Get to know him better, and maybe I’ll show you some exclusive pics.”</span> <span style="color:DarkTurquoise">Orange</span> plops down a list of artwork available in front of you.
+
+<<else>>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Carter Kent</span>? Now there’s a favorite. That kid has a habit of getting himself into unlucky and embarrassing situations, which, I suppose, is good for us!”</span> <span style="color:DarkTurquoise">Orange</span> chuckles as he pulls out the binder labeled <span style="color:DarkTurquoise">Carter</span>. <span style="color:LightSteelBlue">“He is such a good boy who tries so hard, makes you just want to cuddle and protect him, especially once you realize… well, no spoilers. Get to know him better, and maybe I’ll show you some exclusive pics.”</span> <span style="color:DarkTurquoise">Orange</span> plops down a list of artwork available in front of you.
+
+<</if>><br>
+<br>
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+/* Character Art (Everyday) */
+    <<if $AchievementArt.includes("Carter Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Carter Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Carter\\Carter.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Carter Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Carter Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Carter">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("Carter Character Art Undies")>>
+        <strong><span style="color:lightgreen">Carter Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Carter\\Carter Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Carter Character Art (Undies)</strong>
+        | 
+        <<if $CarterSocial >= 100 or $CarterSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Carter Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Carter Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Locker Wedgie (Normal) */
+    <<if $AchievementArt.includes("Locker Wedgie (Normal)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Normal)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Normal).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Normal)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Normal)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Locker Wedgie (Good End) */
+    <<if $AchievementArt.includes("Locker Wedgie (Good End)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Good End)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Good End).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Good End)</strong>
+        | 
+        <<if $CarterSocial >= 100 or $CarterSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Good End)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Carter Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Locker Wedgie (Bad End) */
+    <<if $AchievementArt.includes("Locker Wedgie (Bad End)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Bad End)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Bad End).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Bad End)</strong>
+        | 
+        <<if $CarterSocial >= 100 or $CarterSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Bad End)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Carter Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Carter Childhood Photo (Undies) */
+    <<if $AchievementArt.includes("Carter Childhood Photo (Undies)")>>
+        <strong><span style="color:lightgreen">Carter Childhood Photo (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Carter Childhood Photo (Undies).png" "Hyo!" "https://x.com/HYOJINXSHI">>
+    <<else>>
+        <strong>Carter Childhood Photo (Undies)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Carter Childhood Photo (Undies)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Carter Childhood Photo (Naked) */
+    <<if $AchievementArt.includes("Carter Childhood Photo (Naked)")>>
+        <strong><span style="color:lightgreen">Carter Childhood Photo (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Carter Childhood Photo (Naked).png" "Hyo!" "https://x.com/HYOJINXSHI">>
+    <<else>>
+        <strong>Carter Childhood Photo (Naked)</strong>
+        | 
+        <<if $CompletedQuests.includes("Carter: Park Clean Up") == 1>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Carter Childhood Photo (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Complete "Carter: The Helpful Lad")]</span><br>
+        <</if>>
+    <</if>>
+/* Boyish Encounters Thumbnail */
+    <<if $AchievementArt.includes("Boyish Encounters Thumbnail")>>
+        <strong><span style="color:lightgreen">Boyish Encounters Thumbnail</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Boyish Encounters.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Boyish Encounters Thumbnail</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Boyish Encounters Thumbnail")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Heroic Lad Thumbnail */
+    <<if $AchievementArt.includes("Heroic Lad Thumbnail")>>
+        <strong><span style="color:lightgreen">Heroic Lad Thumbnail</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Heroic Lad.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Heroic Lad Thumbnail</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Heroic Lad Thumbnail")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Heroic Lad Thumbnail (White) */
+    <<if $AchievementArt.includes("Heroic Lad Thumbnail (White)")>>
+        <strong><span style="color:lightgreen">Heroic Lad Thumbnail (White)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Heroic Lad (White).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Heroic Lad Thumbnail (White)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Heroic Lad Thumbnail (White)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Heroic Lad Thumbnail (Naked) */
+    <<if $AchievementArt.includes("Heroic Lad Thumbnail (Naked)")>>
+        <strong><span style="color:lightgreen">Heroic Lad Thumbnail (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Heroic Lad (Naked).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Heroic Lad Thumbnail (Naked)</strong>
+        | 
+        <<if $CarterSocial >= 100 or $CarterSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Heroic Lad Thumbnail (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Carter Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Carter Lost Pants */
+    <<if $AchievementArt.includes("Carter Lost Pants")>>
+        <strong><span style="color:lightgreen">Carter Lost Pants</span></strong>
+        | 
+        <<apsart "Images\\Special\\Carter\\Carter Park No Pants.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Carter Lost Pants</strong>
+        | 
+        <<if $CompletedQuests.includes("Carter: Park Clean Up") == 1>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Carter Lost Pants")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Complete "Carter: The Helpful Lad")]</span><br>
+        <</if>>
+    <</if>>
+
+
+/* Carter Sticker Set */
+    <<if $AchievementArt.includes("Carter Sticker Set")>>
+        <strong><span style="color:lightgreen">Carter Happy Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Happy Carter.png" "Rayray" "https://rayrayart.fanbox.cc">>
+        <strong><span style="color:lightgreen">Chibi Carter Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Chibi Carter.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Carter Pizza Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Carter Pizza.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Carter Sticker Set</strong>
+        | 
+        <<if $CarterSocial >= 100 or $CarterSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Carter Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Carter">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Carter Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+<br>
+[[Back|Artwork Catalog]]

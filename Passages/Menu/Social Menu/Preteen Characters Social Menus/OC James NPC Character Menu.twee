@@ -1,0 +1,339 @@
+:: OC James NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Preteens Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--James--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"OC James NPC Character Menu Biography">>
+</div>
+
+:: OC James NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC James NPC Character Menu Avatar Display">>
+
+James Erwin is one of your classmates at Preston Academy. After nervously introducing himself to you one lunchbreak, he has requested help from you to investigate a strange shop located on the boardwalk, One that seems familiar to you but you cannot recall why. Out of curiosity you have agreed to help the boy, But you can’t shake the feeling that you may be getting into something far beyond the confines of your understanding. <br>
+<br>
+After several failed and embarrassing attempts of trying to enter the mysterious shop, James confesses to you he is looking to speak to someone, a mysterious orange haired boy your age, though you are unsure why, James seems determined to meet him.
+
+:: OC James NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC James NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> James Erwin <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> June 7th <br>
+<strong>Address:</strong> Unknown <br>
+<strong>Family:</strong> 
+<div style="margin-left: 25px;">
+        Unknown
+<strong>Friends:</strong>
+        Unknown
+
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $OCJamesSocialRank == 1>>
+        Close Friends
+    <<elseif $OCJamesSocial > 70>>
+        Friends
+    <<elseif $OCJamesSocial > 30>>
+        Possible Friends
+    <<elseif $OCJamesSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $OCJamesSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Gamer, Friendly, Lustful, Light sleeper, Over-Accommodating
+        </div>
+    <<elseif $OCJamesSocial > 70>>
+        <div style="margin-left: 25px;">
+            Gamer, Friendly, Lustful, Light sleeper
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [Math] > [Science] > [Drama] > [History] > [English] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+<strong>Likes:</strong>
+    <<if $OCJamesSocial > 50 or $OCJamesSocialRank == 1>> 
+        <div style="margin-left: 25px;">
+            Videogames, Dinosaurs, Cowboys, Animals
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $OCJamesSocial > 50 or $OCJamesSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            People who are rude to his friends, Sleeping, Crowds
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $OCJamesSocial > 50 or $OCJamesSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Video Games, Socialising with friends
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $OCJamesSocial > 50 or $OCJamesSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Chocolate, Chicken
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $OCJamesSocial > 50 or $OCJamesSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Orange/Green
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $OCJamesSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Being Unwanted/Seen as a fraud
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Short-shorts, T-Shirts
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $OCJamesSocial > 50 or $OCJamesSocialRank > 1>>
+        <div style="margin-left: 25px;">
+            Brightly Colored Patterned Briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $OCJamesSocial > 80 or $OCJamesSocialRank == 1>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $JamesCut == "Cut">>
+                A cut penis that is average-sized for his age. It is smooth and hairless and very sensitive on the tip.
+            <<else>>
+                A uncut penis that is average-sized for his age. It is smooth and hairless. His tip is bright pink when exposed and very sensitive.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $OCJamesSocial > 80 or $OCJamesSocialRank == 1>>
+        <br>
+        <div style="margin-left: 25px;">
+            A cute butt that is smooth and soft.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+            <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: OC James NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC James NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal OC James">>
+
+:: OC James NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC James NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "OC James",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCOCJamesSocial >= 50 or $OCOCJamesSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCOCJamesSocial >= 100 or $OCOCJamesSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: OC James NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "OC James",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCOCJamesSocial >= 50 or $OCOCJamesSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCOCJamesSocial >= 100 or $OCOCJamesSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

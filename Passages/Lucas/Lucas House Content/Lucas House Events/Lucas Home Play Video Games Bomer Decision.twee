@@ -1,0 +1,132 @@
+:: Lucas Home Play Video Games Bomer Decision [nobr]
+
+    <<set $Minutes += 30>>
+
+You and <span style="color:DarkTurquoise">Lucas</span> plop down on the couch to play one of his favorite games, Space Fight: Warfront 2. Based on the popular Sci-fi movie series, which you’ve learned his mom was in, it is a shooter war game where you can play Twin Troopers or the horde of Federacy Androids in battles that include vehicles, space dogfights, and base capturing. Despite being a bit old, it is still regarded as a classic! <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+For this battle, you and <span style="color:DarkTurquoise">Lucas</span> are placed in a battle above a large forest planet as the Federacy ambush your ship! Their positioning prevents your ship from fleeing and they have you outnumbered 2-to-1! The command comes down from the captain, <span style="color:DarkTurquoise">Lucas</span> will be leading a bomber squadron to crack a hole in one of their dreadnaughts for an escape route. Meanwhile, you will be in the fighter squadron assigned to protect them. You and <span style="color:DarkTurquoise">Lucas</span> turn to each other and nod, ready to show those androids the power of the Republic! <br>
+<br>
+Things start out well, your team’s dogfighting ability outmatches the enemies and you are able to guide them safely. But as you get closer, they begin to throw more and more at you. <span style="color:DarkTurquoise">Lucas</span> does his best to dodge the oncoming swarm as you protect him, but your numbers are dwindling. You are mere meters away from your target, there is no doubt you will make it. <br>
+<br>
+<span style="color:lightcoral">But that’s when you see it, an enemy bomber squad has left their hanger heading straight towards one of your transport ships!</span> Your team was the only one who could intercept it before it reached its destination. <span style="color:yellow">If you didn’t divert to stop it, all those troopers would be lost, but if you did turn away, you’d leave <span style="color:DarkTurquoise">Lucas</span> alone. He’ll definitely hit his target, but then he’d be a sitting duck and would surely perish.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Eyes: "Mad",
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Frown",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:DarkTurquoise">Lucas</span> realizes this too, he turns to you and nods. <span style="color:LightSteelBlue">“I’ll be fine, go!”</span> But looking into his eyes, you could tell he knew. He wouldn’t survive this mission without your escort, but he was willing to sacrifice himself for the sake of those troopers. <br>
+<br>
+<div id=choice>
+/* Divert and save the troopers */
+	<<link "Divert & Save the Troopers!<br>">>
+	<<replace"#choice">>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Eyes: "Mad",
+			Cry: 1,
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Eyes: "Mad",
+			Cry: 1,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+With a tear in your eye, you salute <span style="color:DarkTurquoise">Lucas</span> and turn your squadron away. You don’t look back as you hear <span style="color:DarkTurquoise">Lucas</span> give the command to drop the bombs. <span style="color:lightgreen">They hit their target, you can feel the wave of destruction rattle your ship as the dreadnaught breaks in two.</span> <br>
+<br>
+Your own squadron has just begun the battle with the enemy bombers when you hear it, one of <span style="color:DarkTurquoise">Lucas</span>’ men calls out that they are under attack. One by one they fall, trying their best to flee but the enemy is too numerous. Your own team tries their best to defeat the enemy bombers as quickly as they can to save their allies, but soon only <span style="color:DarkTurquoise">Lucas</span> is left. <br>
+<br>
+You turn your ship just in time to see an enemy torpedo launch directly at him! He tries to dodge, to swerve, to avoid the attack. But he cannot. <span style="color:lightcoral">In a blast of orange and blue, <span style="color:DarkTurquoise">Lucas</span>’ bomber explodes. You cry out to your friend as you see nothing is left but debris.</span> <br>
+<br>
+<span style="color:DarkTurquoise">Lucas</span> falls back onto the couch. <span style="color:LightSteelBlue">“I’m dead.”</span> He says, dramatically. After a brief moment of silence, you both break out laughing. <br>
+<br>
+<span style="color:LightSteelBlue">“My mom says we take these games way too seriously.”</span> He laughs, <span style="color:LightSteelBlue">“But I don’t see it."</span> <br>
+    <<needChange "Fun" 10>>
+    <span style="color:green">+Lucas Fun</span><br>
+    <<set $HangOutNeed.Fun += 10>>
+<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Home Living Room]]
+
+    <</replace>>
+    <</link>>
+
+/* Stick with Lucas */
+	<<link "Stick with Lucas!<br>">>
+	<<replace"#choice">>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Blush: 1,
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Eyes: "Mad",
+			Blush: 1,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+You yell that you are not going to abandon <span style="color:DarkTurquoise">Lucas</span> and order your men to stay their course. <span style="color:DarkTurquoise">Lucas</span> tries to persuade you otherwise. <span style="color:LightSteelBlue">“But- the troopers!”</span> But you don’t give a damn about the troopers, <span style="color:DarkTurquoise">Lucas</span> was your mission and you were going to get him back to his family or die trying. <span style="color:DarkTurquoise">Lucas</span> opens his mouth to say something, but then simply nods. <br>
+<br>
+You approach the target, <span style="color:DarkTurquoise">Lucas</span> gives the orders to ready the bombs. Then they fire, a barrage of blue lights flickering down towards the hull of the dreadnaught, like fireflies converging. <span style="color:lightgreen">As they hit a brilliant light show of orange and blue light up the dark hull. Then a loud burst of force hits your ship as the large ship is split in two in a fiery explosion!</span> <br>
+<br>
+Your team is cheering their success and turning to return to your flagship, when you hear a second rippling noise. You both turn to see your troop transport ship ripped apart by the enemy bombers. <span style="color:lightcoral">Silence fills the room as you both turn away, knowing how many just lost their lives.</span> <br>
+<br>
+You feel guilty, but turning and seeing <span style="color:DarkTurquoise">Lucas</span>, still alive, you know you made the right choice. <span style="color:DarkTurquoise">Lucas</span> turns to see you looking at him, both of you with dramatic expressions of despair and regret, and then you both break out laughing. <br>
+<br>
+<span style="color:LightSteelBlue">“My mom says we take these games way too seriously.”</span> He laughs, <span style="color:LightSteelBlue">“But I don’t see it.”</span> <br>
+    <<needChange "Fun" 10>>
+    <span style="color:green">+Lucas Fun</span><br>
+    <<set $HangOutNeed.Fun += 10>>
+<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Home Living Room]]
+
+    <</replace>>
+    <</link>>
+</div>

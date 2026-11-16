@@ -1,0 +1,92 @@
+:: Beach Hang Out Relax in Sun [nobr]
+
+/* Written by: -AN */
+/* Intro */
+
+<<set $Minutes += 30>>
+
+<span style="Color: LightGreen">The beach is absolutely teeming with activity right now. The way the warm sun beams down, and the crisp ocean air surrounds you, there’s definitely no better time to be at the beach than now.</span> Against the backdrop of the vibrant sights and sounds of the environment, you walk the sands of the beach enjoying the relaxing warmth.<br>
+<br>
+The sky is perfectly clear, allowing the sun to radiate a profound, and pleasant heat that calms you as you walk along the busy sands. The sight of numerous sun bathers basking in the sun’s glow tempts you to join their ranks, and you soon find yourself sitting down to enjoy the sun’s warm rays. <span style="Color: LightGreen">You close your eyes and look upwards, feeling the full force of the sun shining down on you.</span>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Everyday",
+            Eyes: "Closed",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="Color: LightGreen">It feels as though you’re bathing in light, and the heat that caresses your face relaxes your entire body. You quickly go from sitting to lying down, now sandwiched between the warm sand and the sun’s radiance. It feels as though the sand is your bed, and the rays of the sun have become a hot blanket, coddling your entire body. The sounds of the world fade as you remain completely still, eyes closed, and you quickly lose track of time as a tranquil euphoria envelops you..</span><br>
+<br>
+
+/* Sandy Check */
+<<set _random to random(1, 4)>>
+<<if $Player.Traits.includes("Unlucky") && _random != 1>>
+    <<set _sandy to 1>>
+<<elseif !$Player.Traits.includes("Unlucky") && _random == 1>>
+    <<set _sandy to 1>>
+<<else>>
+    <<set _sandy to 0>>
+<</if>>
+
+<<linkreplace "Continue">>
+    <<if _sandy == 0>>
+        You slowly open your eyes as you find yourself gradually roused from your rest. <span style="Color: Yellow">You seem to have fallen asleep while bathing in the sun.</span> <span style="Color: LightGreen">You’re not sure how long you’ve been out, but you’re feeling particularly well-rested after the unplanned nap.</span>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        You stand from the sand, and begin stretching your limbs outwards. <span style="Color: LightGreen">You can’t help but smile, musing to yourself how nice it was to unwind and relax under the sun in such a perfect environment. Feeling nice and recharged, you depart from the scene, eager to take on the world once again.</span>
+        <br>
+        <<needChange "Fun" 10>>
+        <<needChange "Energy" 20>>
+        <<addMoodlet "Stress" 0>>
+        <br>
+        [[Continue|Beach]]
+    <<else>>
+        You slowly open your eyes as you find yourself gradually roused from your rest. <span style="Color: Yellow">You seem to have fallen asleep while bathing in the sun.</span> <span style="Color: LightGreen">You’re not sure how long you’ve been out, but you’re feeling particularly well-rested after the unplanned nap.</span><br>
+        <br>
+        You begin rising to your feet, eager to stretch, <span style="Color: Yellow">but as you stand you begin to feel a strange and uncomfortable grittiness against the skin of your $Player.Butt butt. You pat the back of your $PlayerBottoms.Type and realize sand seeped inside your clothes while you were asleep!</span>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Sad",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <<if $PlayerUndies.Type == "None">>
+            You do your best to shake, and pat off the many grains of sand that cling to you. Not wearing any underwear probably spared you some trouble, as you’re able to shake much of the sand off and have it escape through the bottom of your $PlayerBottoms.Type. Unfortunately, the sand is still incredibly stubborn at times, and it still takes many attempts to remove the most clingy grains.
+        <<elseif $PlayerUndies.Type == "Boxers">>
+            You begin shaking, and patting off the grains of sand you feel beneath your underwear. The looser nature of your $PlayerUndies.Type allows most of the grains to fall through their leg holes, and out the bottom of your $PlayerBottoms.Type. It still takes quite a while to rid yourself of the sandy sensation, as there are many clingy, and stubborn grains that take a frustrating number of attempts to remove.
+        <<elseif ["Diaper", "Pullups"].includes($PlayerUndies.Type)>>
+            You sigh in frustration as you feel grains caught inside your $PlayerUndies.Type. The tighter, and enclosed nature of the padded garment makes patting, and shaking off the grains stuck inside incredibly vexing, especially without removing your $PlayerBottoms.Type. You imagine how silly you must look to observers, shaking your legs, and sometimes pinching out your $PlayerUndies.Type beneath your $PlayerBottoms.Type to allow the sand to escape.
+        <<else>>
+            You frown as you feel grains caught inside your $PlayerUndies.Type. The tighter, enclosed nature of your underwear makes patting, and shaking off the sand caught inside a challenging task. It takes many leg shakes, and occasionally having to pinch out your $PlayerUndies.Type beneath your $PlayerBottoms.Type to remove the sand. You hope you don’t look too silly to observers, shuffling about, sometimes clearly reaching a hand inside your $PlayerUndies.Type to let the sand escape.     
+        <</if>><br>
+        <br>
+        Several irritating minutes later, you manage to remove enough sand to feel considerably more comfortable. Despite the annoyance, <span style="Color: LightGreen">your earlier sunbathing and nap was still enjoyable. You depart from the area still feeling fairly recharged from the experience.</span>
+        <br>
+        <<needChange "Fun" 5>>
+        <<needChange "Energy" 10>>
+        <br>
+        [[Continue|Beach]]
+    <</if>>
+<</linkreplace>>

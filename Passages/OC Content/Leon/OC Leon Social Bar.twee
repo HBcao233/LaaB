@@ -1,0 +1,84 @@
+:: OC Leon Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCLeonSocialRank == -3>>
+	<<set $OCLeonRelationship to "Hated">>
+	<span style="color:DarkRed">Leon Hates you!</span>
+	<br>
+<<elseif $OCLeonSocialRank == -2>>
+	<<set $OCLeonRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Leon are Enemies.</span>
+	<br>
+<<elseif $OCLeonSocialRank == -1>>
+	<<set $OCLeonRelationship to "Very Disliked">>
+	<span style="color:Red">Leon really Dislikes you.</span>
+	<br>
+<<elseif $OCLeonSocialRank == 0 and $OCLeonSocial <= -50>>
+	<<set $OCLeonRelationship to "Disliked">>
+	<span style="color:Red">Leon Dislikes you. </span>
+	<br>
+<<elseif $OCLeonSocialRank == 0 and $OCLeonSocial < 50>>
+	<<set $OCLeonRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Leon are Acquaintances.</span>
+	<br>
+<<elseif $OCLeonSocialRank == 0 and $OCLeonSocial >= 50>>
+	<<set $OCLeonRelationship to "Liked">>
+	<span style="color:LightGreen">Leon Likes you.</span>
+	<br>
+<<elseif $OCLeonSocialRank == 1>>
+	<<set $OCLeonRelationship to "Friends">>
+	<span style="color:Green">You and Leon are Friends.</span>
+	<br>
+<<elseif $OCLeonSocialRank == 2>>
+	<<set $OCLeonRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Leon are Good Friends!</span>
+	<br>
+<<elseif $OCLeonSocialRank == 3>>
+	<<set $OCLeonRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Leon are Close Friends!</span>
+	<br>
+<<elseif $OCLeonSocialRank == 4>>
+	<<set $OCLeonRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Leon are Best Friends!</span>
+	<br>
+<<elseif $OCLeonSocialRank == 5>>
+	<<set $OCLeonRelationship to "Love">>
+	<span style="color:Pink">You and Leon Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCLeonSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCLeonSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCLeonSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCLeonSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCLeonSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCLeonSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCLeonSocial,
+			value: Math.abs($OCLeonSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCLeonSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCLeonSocial > 120>>
+	<<set $OCLeonSocial to 120>>
+<</if>>
+<<if $OCLeonSocial < -120>>
+	<<set $OCLeonSocial to -120>>
+<</if>>

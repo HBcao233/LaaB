@@ -1,0 +1,99 @@
+:: GYM Laps Race Carter [nobr]
+
+You are mindlessly running the laps, though it is more of a jog, when you hear a familiar voice behind you. <span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$CarterNickname</span>!”</span> It was <span style="color:DarkTurquoise">Carter</span>, happily smiling as he runs up next to you. <span style="color:LightSteelBlue">“Running laps is pretty boring, right? Wonder why <span style="color:DarkTurquoise">The Coach</span> is having us do it?”</span> You shrug, not knowing if someone had upset him. <span style="color:LightSteelBlue">“Well do you want to have a little fun? We could race to the next turn and see whose faster!”</span><br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Gym",
+		},
+	},
+]>>
+<<ad _ad>>
+
+It did sound entertaining and <span style="color:DarkTurquoise">Carter</span> seemed hopeful you would agree, though attempting a race in the middle of running laps may tire you out more than it already is.<br>
+<br>
+
+<<set _skillcheckdif to random(20, 50)>>
+
+<div id=Choice>
+	<<link "Agree to race him ">>
+	<<replace"#Choice">>
+		You smile and agree to a short race. <span style="color:DarkTurquoise">Carter</span> happily giggles as he lays out the rules and where it will end. Neither of you can stop running, but match your pace as <span style="color:DarkTurquoise">Carter</span> does a count down and you both take off at top speed, passing by a bunch of jogging boys!<br>
+		<<skillCheck "Athletics" _skillcheckdif>>
+		<br>
+
+
+/* WIN THE RACE */
+<<if _result == 1>>
+
+<<set _randomChance to random(1, 3)>>
+/* NO RANDOM CHANCE */
+<<if _randomChance != 3>>
+The two of you are evenly matched for most of the race <span style="color:Green">when suddenly <span style="color:DarkTurquoise">Carter</span>’s foot slips and he nearly trips and falls!</span> Luckily, he manages to catch himself, but not before you are able to speed ahead and claim victory! You slow down so <span style="color:DarkTurquoise">Carter</span> can catch up as you both laugh.<br>
+<br>
+<span style="color:LightSteelBlue">“You only won cause I almost tripped!”</span> He laughs, <span style="color:LightSteelBlue">“Next time I’ll see victory and the only thing you’ll see is my butt passing you!”</span> You both chat for a while as you continue running the laps, though slower and with less energy.<br>
+
+/* CARTER'S PANTS FALL DOWN*/
+<<else>>
+The two of you are evenly matched for most of the race when suddenly <span style="color:DarkTurquoise">Carter</span> passes you with a burst of speed! But this is short-lived, as you notice his Gym Shorts sagging slightly more than usual as <span style="color:Green">they suddenly slip down to his ankles, causing the small boy to faceplant into the ground!</span> <span style="color:Pink">You stop and admire the view, as the groaning boy’s $CarterUndies.Name are completely exposed.</span> Your voyeurism is cut short, as <span style="color:DarkTurquoise">Coach Kohler</span> calls for you both to get moving before he starts adding laps. You quickly help <span style="color:DarkTurquoise">Carter</span> up and even pull his Gym Shorts back up for him, mainly so you can get a closer look, and the two of you continue running.<br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Cry: 1,
+			Blush: 1,
+			Mouth: "Sad",
+			Outfit: "Gym",
+			PantsDown: true,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“That didn’t count!”</span> The poor boy whines before mumbling under his breath, <span style="color:LightSteelBlue">“You think they’d give me clothes in my size…”</span> Despite being upset for a few minutes, <span style="color:DarkTurquoise">Carter</span> eventually returns to his normal, cheerful self.<br>
+
+<</if>>
+	<<socialChange "Carter" 3>>
+		<<set $GymNeedReduce to "Extra">>
+		<<include"Gym Need Reduce">>
+	<br>
+	<<include"Attend Gym Finish">>
+
+	
+	/* LOSE THE RACE */
+<<elseif _result == 0>>
+	The two of you are evenly matched for most of the race <span style="color:lightcoral">when suddenly <span style="color:DarkTurquoise">Carter</span> blasts ahead of you with a burst of speed.</span> You attempt to catch up, but can’t match the small boy’s incredible agility. <span style="color:Pink">Though, as compensation, you get a nice view as you notice that <span style="color:DarkTurquoise">Carter</span>’s Gym Shorts are a bit big on his small body, sagging down. His Shirt fluttering as he runs gives you a cute view of his $CarterUndies.Name, which is almost enough to make you glad you’ve lost.</span><br>
+<br>
+Once finished, <span style="color:DarkTurquoise">Carter</span> slows down enough for you to catch up and playfully gloats about his victory. You concede defeat, though mentioned you enjoyed the view from behind. <span style="color:DarkTurquoise">Carter</span> doesn’t understand what you are referring to, so you both just laugh it off and continue running the laps.<br>
+	<<socialChange "Carter" 3>>
+		<<set $GymNeedReduce to "Extra">>
+		<<include"Gym Need Reduce">>
+	<br>
+	<<include"Attend Gym Finish">>
+
+<</if>>
+	<</replace>>
+	<</link>>
+
+<<skillDiff "Athletics" _skillcheckdif>><br>
+
+/* REFUSE */
+
+	<<link "Refuse<br>">>
+	<<replace"#Choice">>
+
+You apologize and tell <span style="color:DarkTurquoise">Carter</span> that you’d rather conserve your energy since you still have a long way to go. He seems a bit saddened by this, but understands, and eventually, you two separate and the class continues.<br>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+<br>
+
+	<<include"Attend Gym Finish">>
+
+	
+	<</replace>>
+	<</link>>
+</div>

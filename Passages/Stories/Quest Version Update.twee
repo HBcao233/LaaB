@@ -1,0 +1,542 @@
+:: Quest Version Update [nobr]
+
+/* This is a temp passage meant to take the old Quest Tracking System from Pre-V0.03.05 and update it to the new system. This will only be in place for a few updates to allow people to update their save. */
+
+/* This setting is the new way Punishment Reasons are tracked. Set during Init */
+<<set $PunishmentReason to []>>
+
+/* Quest Trigger/Tracking Set-Up */
+<<set $InActiveQuests to []>>
+<<set $ActiveQuests to []>>
+<<set $CompletedQuests to []>>
+
+<<set $UnavailableQuests.push(
+	/* Noah */
+		"Noah: Booster Shot",
+		"Noah: Missing Toy",
+		"Noah: Stormy Night",
+		"Noah: Accident",
+		"Noah: Swimming Lessons",
+			/* Noah: Swimming Lessons is technically a Skill Questline, but labeled as a Noah Side-Quest for simplicity */
+	/* Lucas */
+		"Lucas: First Visit",
+		"Lucas: Ryker",
+		"Lucas: The Price of Fame",
+		"Lucas: Punishment Game",
+		"Lucas: Boning the Neighbor",
+	/* Ben */
+		"Ben: Track Meet Cute",
+	/* Michael */
+		"Michael: Little Bear",
+		"Michael: Blackmail",
+	/* Carter */
+		"Carter: Park Clean Up",
+		"Carter: Lost Pants",
+		"Carter: Mom (Mall)",
+		"Carter: Mom (Main Street)",
+	/* Jackson */
+		"Jackson: Empty Lot",
+		"Jackson: Sibling Dynamics",
+	/* Thomas */
+		"Thomas: Out Sick",
+	/* Xavier */
+		"Xavier: Big Brother",
+	/* Felix */
+		"Felix: Mateo",
+	/* Gabe */
+		"Gabe: Sneak Out",
+		"Gabe: Bail Out",
+	/* Dad */
+		"Dad: Dragged Shopping",
+
+	/* Ryker */
+		"Ryker: Retaliation",
+
+	/* Supporter Characters */
+	/* Millers */
+		"Millers: Meet the Millers",
+		"Millers: Trouble in Paradise",
+		"Millers: Dog Escape",
+		"Millers: Oliver Meets Twins",
+	/* Nyalls */
+		"Nyalls: Sebastian",
+		"Nyalls: Oliver",
+		"Nyalls: Evelyn",
+		"Nyalls: Cole",
+	/* Isaac */
+		"Isaac: The Little Blueberry",
+		"Isaac: Jacob",
+		"Isaac: The Nightclub",
+	/* Birdy */
+		"Birdy: Introduction",
+		"Birdy: Lea",
+	/* Erin */
+		"Erin: Introduction",
+		"Erin: Closet Bound",
+	/* Leon */
+		"Leon: Introduction",
+	/* Manuel */
+		"Manuel: Introduction",
+		"Manuel: The Pent-Up Boy",
+		"Manuel: Redlight Boy",
+		"Manuel: The Great Unlocking",
+	/* Kollin */
+		"Kollin: Boy in the Woods",
+	/* JQ */
+		"JQ: Introduction",
+	/* Arthur & Richard */
+		"Arthur & Richard: Introduction",
+		"Arthur & Richard: Stargazing",
+	/* Shinju */
+		"Shinju: Monster Boy",
+		"Shinju: Felix at the Lake",
+	/* Aurelio */
+		"Aurelio: Introduction",
+	/* Liam */
+		"Liam: Introduction",
+	/* Ion */
+		"Ion: Mysterious Creature",
+	/* Snowpaw */
+		"Snowpaw: Lenny's Wild West Show",
+	/* Kyren */
+		"Kyren: Introduction",
+	/* Zacky */
+		"Zacky: Introduction",
+	/* Patrick */
+		"Patrick: Introduction",
+		"Patrick: Ivy",
+	/* Mason */
+		"Mason: The Underwear-Loving Squid",
+	/* Rowan */
+		"Rowan: Introduction",
+		"Rowan: Drama Intro",
+	/* Kazu */
+		"Kazu: The Deliquent",
+	/* Nikolai */
+		"Nikolai: Introduction",
+		"Nikolai: School Tour",
+	/* Luca */
+		"Luca: Introduction",
+	/* The Frosts */
+		"The Frosts: The Foreign Family",
+	/* Micah */
+		"Micah: Introduction",
+	/* Levi M */
+		"Levi M: Introduction",
+	/* Mata */
+		"Mata: Introduction",
+	/* Rudy */
+		"Rudy: Introduction",
+		"Rudy: Caged",
+	/* Bobby */
+		"Bobby: Farm Intro",
+	/* Emmet */
+		"Emmet: Introduction",
+		"Emmet: Drama Intro",
+	/* Kalim */
+		"Kalim: Introduction",
+	/* Noah H */
+		"Noah H: Introduction",
+)>>
+
+<<set $QuestLog to []>>
+<<set $QuestLogCompleted to []>>
+
+<<set $DailyEvents to []>>
+
+/* For the new Notification System */
+<<set $Notifications to []>>
+
+
+SET NPC SOCIAL AND SOCIAL RANKS TO BE SET DURING INIT
+
+/* Noah */
+<<if $QuestBoosterShot == 3>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Noah: Booster Shot")>>
+    <<set $UnavailableQuests.delete("Noah: Booster Shot")>>
+<</if>>
+
+<<if $NoahSocialRank == 1>>
+    /* Noah: Stormy Night */
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Noah: Stormy Night")>>
+    <<set $UnavailableQuests.delete("Noah: Stormy Night")>>
+<</if>>
+
+<<if $QuestNoahAccident.State == -1>>
+    /* Noah: Accident */
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Noah: Accident")>>
+    <<set $UnavailableQuests.delete("Noah: Accident")>>
+<</if>>
+
+<<if $QuestLucasRyker.State == -1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Lucas: Ryker")>>
+    <<set $UnavailableQuests.delete("Lucas: Ryker")>>
+<</if>>
+
+<<if $QuestBenTrackMeet == -1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Ben: Track Meet Cute")>>
+    <<set $UnavailableQuests.delete("Ben: Track Meet Cute")>>
+<</if>>
+
+<<if $QuestMichaelLittleBear.State == -1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Michael: Little Bear")>>
+    <<set $UnavailableQuests.delete("Michael: Little Bear")>>
+<</if>>
+
+<<if $CarterParkNoPantsQuest.State == -1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Carter: Lost Pants")>>
+    <<set $UnavailableQuests.delete("Carter: Lost Pants")>>
+<</if>>
+
+<<if $QuestEventCarterMomMall == 1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Carter: Mom (Mall)")>>
+    <<set $UnavailableQuests.delete("Carter: Mom (Mall)")>>
+<</if>>
+
+<<if $QuestEventCarterMomMayor == 1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Carter: Mom (Main Street)")>>
+    <<set $UnavailableQuests.delete("Carter: Mom (Main Street)")>>
+<</if>>
+
+<<if $JacksonSecret1 == 1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Jackson: Empty Lot")>>
+    <<set $UnavailableQuests.delete("Jackson: Empty Lot")>>
+<</if>>
+
+<<if $JacksonQuestMusuem == -1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Jackson: Sibling Dynamics")>>
+    <<set $UnavailableQuests.delete("Jackson: Sibling Dynamics")>>
+<</if>>
+
+<<if $QuestEventXavierBrother == 1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Xavier: Big Brother")>>
+    <<set $UnavailableQuests.delete("Xavier: Big Brother")>>
+<</if>>
+
+<<if $QuestFelixMateo == -1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Felix: Mateo")>>
+    <<set $UnavailableQuests.delete("Felix: Mateo")>>
+<</if>>
+
+<<if $QuestGabeSneakOut.State == -1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Gabe: Sneak Out")>>
+    <<set $UnavailableQuests.delete("Gabe: Sneak Out")>>
+<</if>>
+
+<<if $QuestGabeBailOut == -1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Gabe: Bail Out")>>
+    <<set $UnavailableQuests.delete("Gabe: Bail Out")>>
+<</if>>
+
+<<if $QuestDadShopping == -1>>
+    <<unset $QuestBoosterShot>>
+    <<set $CompletedQuests.push("Dad: Dragged Shopping")>>
+    <<set $UnavailableQuests.delete("Dad: Dragged Shopping")>>
+<</if>>
+
+<<if $OCQuestMeetMillers.State == -1>>
+	<<unset $OCQuestMeetMillers>>
+	<<set $CompletedQuests.push("Millers: Meet the Millers")>>
+	<<set $UnavailableQuests.delete("Millers: Meet the Millers")>>
+<<elseif $OCQuestMeetMillers.State < -1>>
+	<<unset $OCQuestMeetMillers>>
+	<<set $CompletedQuests.push("Millers: Meet the Millers")>>
+	<<set $UnavailableQuests.delete("Millers: Meet the Millers")>>
+	<<set $CompletedQuests.push("Millers: Trouble in Paradise")>>
+	<<set $UnavailableQuests.delete("Millers: Trouble in Paradise")>>
+<</if>>
+
+<<if $OCSebastianIntro == -1>>
+	<<unset $OCSebastianIntro>>
+	<<set $CompletedQuests.push("Nyalls: Sebastian")>>
+	<<set $UnavailableQuests.delete("Nyalls: Sebastian")>>
+<</if>>
+
+<<if $OCOliverMet == -1>>
+	<<unset $OCOliverMet>>
+	<<set $CompletedQuests.push("Nyalls: Oliver")>>
+	<<set $UnavailableQuests.delete("Nyalls: Oliver")>>
+<</if>>
+
+<<if $OCEvelynMet == -1>>
+	<<unset $OCEvelynMet>>
+	<<set $CompletedQuests.push("Nyalls: Evelyn")>>
+	<<set $UnavailableQuests.delete("Nyalls: Evelyn")>>
+<</if>>
+
+<<if $OCColeMet == -1>>
+	<<unset $OCColeMet>>
+	<<set $CompletedQuests.push("Nyalls: Cole")>>
+	<<set $UnavailableQuests.delete("Nyalls: Cole")>>
+<</if>>
+
+<<if $OCIsaacIntro == -1>>
+	<<unset $OCIsaacIntro>>
+	<<set $CompletedQuests.push("Isaac: The Little Blueberry")>>
+	<<set $UnavailableQuests.delete("Isaac: The Little Blueberry")>>
+<</if>>
+
+<<if $OCJacobMet == -1>>
+	<<unset $OCJacobMet>>
+	<<set $CompletedQuests.push("Isaac: Jacob")>>
+	<<set $UnavailableQuests.delete("Isaac: Jacob")>>
+<</if>>
+
+<<if $OCBirdyIntro == -1>>
+	<<unset $OCBirdyIntro>>
+	<<set $CompletedQuests.push("Birdy: Introduction")>>
+	<<set $UnavailableQuests.delete("Birdy: Introduction")>>
+<</if>>
+
+<<if $OCLeaMet == -1>>
+	<<unset $OCLeaMet>>
+	<<set $CompletedQuests.push("Birdy: Lea")>>
+	<<set $UnavailableQuests.delete("Birdy: Lea")>>
+<</if>>
+
+<<if $OCErinMet == 1>>
+	<<unset $OCErinMet>>
+	<<set $CompletedQuests.push("Erin: Introduction")>>
+	<<set $UnavailableQuests.delete("Erin: Introduction")>>
+<</if>>
+
+<<if $OCLeonMet == 1>>
+	<<unset $OCLeonMet>>
+	<<set $CompletedQuests.push("Leon: Introduction")>>
+	<<set $UnavailableQuests.delete("Leon: Introduction")>>
+<</if>>
+
+<<if $OCManuelMet == 1>>
+	<<unset $OCManuelMet>>
+	<<set $CompletedQuests.push("Manuel: Introduction")>>
+	<<set $UnavailableQuests.delete("Manuel: Introduction")>>
+<</if>>
+
+<<if $OCManuelSecret == 1>>
+	<<unset $OCManuelSecret>>
+	<<set $CompletedQuests.push("Manuel: The Pent-Up Boy")>>
+	<<set $UnavailableQuests.delete("Manuel: The Pent-Up Boy")>>
+<</if>>
+
+<<if $OCQuestManuelBrothel.State == -1>>
+	<<unset $OCQuestManuelBrothel>>
+	<<set $CompletedQuests.push("Manuel: Redlight District")>>
+	<<set $UnavailableQuests.delete("Manuel: Redlight District")>>
+<</if>>
+
+<<if $OCKollinMet == 1>>
+	<<unset $OCKollinMet>>
+	<<set $CompletedQuests.push("Kollin: Boy in the Woods")>>
+	<<set $UnavailableQuests.delete("Kollin: Boy in the Woods")>>
+<</if>>
+
+<<if $OCJQMet == 1>>
+	<<unset $OCJQMet>>
+	<<set $CompletedQuests.push("JQ: Introduction")>>
+	<<set $UnavailableQuests.delete("JQ: Introduction")>>
+<</if>>
+
+<<if $OCArthurRichardMet == -1>>
+	<<unset $OCArthurRichardMet>>
+	<<set $CompletedQuests.push("Arthur & Richard: Introduction")>>
+	<<set $UnavailableQuests.delete("Arthur & Richard: Introduction")>>
+<</if>>
+
+<<if $OCShinjuMet == -1>>
+	<<unset $OCShinjuMet>>
+	<<set $CompletedQuests.push("Shinju: Monster Boy")>>
+	<<set $UnavailableQuests.delete("Shinju: Monster Boy")>>
+<</if>>
+
+<<if $OCAurelioMet == -1>>
+	<<unset $OCAurelioMet>>
+	<<set $CompletedQuests.push("Aurelio: Introduction")>>
+	<<set $UnavailableQuests.delete("Aurelio: Introduction")>>
+<</if>>
+
+<<if $OCLiamMet == 1>>
+	<<unset $OCLiamMet>>
+	<<set $CompletedQuests.push("Liam: Introduction")>>
+	<<set $UnavailableQuests.delete("Liam: Introduction")>>
+<</if>>
+
+<<if $OCIonMet == 1>>
+	<<unset $OCIonMet>>
+	<<set $CompletedQuests.push("Ion: Mysterious Creature")>>
+	<<set $UnavailableQuests.delete("Ion: Mysterious Creature")>>
+<</if>>
+
+<<if $OCKyrenMet == -1>>
+	<<unset $OCKyrenMet>>
+	<<set $CompletedQuests.push("Kyren: Introduction")>>
+	<<set $UnavailableQuests.delete("Kyren: Introduction")>>
+<</if>>
+
+<<if $OCZackyMet == -1>>
+	<<unset $OCZackyMet>>
+	<<set $CompletedQuests.push("Zacky: Introduction")>>
+	<<set $UnavailableQuests.delete("Zacky: Introduction")>>
+<</if>>
+
+<<if $OCRowanMet == -1>>
+	<<unset $OCRowanMet>>
+	<<set $CompletedQuests.push("Rowan: Introduction")>>
+	<<set $UnavailableQuests.delete("Rowan: Introduction")>>
+<</if>>
+
+<<if $OCNikolaiMet == -1>>
+	<<unset $OCNikolaiMet>>
+	<<set $CompletedQuests.push("Nikolai: Introduction")>>
+	<<set $UnavailableQuests.delete("Nikolai: Introduction")>>
+<</if>>
+
+<<if $OCLeviMMet == -1>>
+	<<unset $OCLeviMMet>>
+	<<set $CompletedQuests.push("Levi M: Introduction")>>
+	<<set $UnavailableQuests.delete("Levi M: Introduction")>>
+<</if>>
+
+<<if $OCMataMet == -1>>
+	<<unset $OCMataMet>>
+	<<set $CompletedQuests.push("Mata: Introduction")>>
+	<<set $UnavailableQuests.delete("Mata: Introduction")>>
+<</if>>
+
+<<if $QuestRykerRetaliation.State == -1>>
+	<<unset $QuestRykerRetaliation>>
+	<<set $CompletedQuests.push("Ryker: Retaliation")>>
+	<<set $UnavailableQuests.delete("Ryker: Retaliation")>>
+<</if>>
+
+<<if $OCEmmetMet == -1>>
+	<<unset $OCEmmetMet>>
+	<<set $CompletedQuests.push("Emmet: Introduction")>>
+	<<set $UnavailableQuests.delete("Emmet: Introduction")>>
+<</if>>
+
+<<if $OCEmmetMet == -2>>
+	<<unset $OCEmmetMet>>
+	<<set $CompletedQuests.push("Emmet: Introduction")>>
+	<<set $UnavailableQuests.delete("Emmet: Introduction")>>
+	<<set $CompletedQuests.push("Emmet: Drama Intro")>>
+	<<set $UnavailableQuests.delete("Emmet: Drama Intro")>>
+<</if>>
+
+<<if $OCNoahHMet == -1>>
+	<<unset $OCNoahHMet>>
+	<<set $CompletedQuests.push("Noah H: Introduction")>>
+	<<set $UnavailableQuests.delete("Noah H: Introduction")>>
+<</if>>
+
+<<if $OliverMeetsMiller == 1>>
+	<<unset $OliverMeetsMiller>>
+	<<set $CompletedQuests.push("Millers: Oliver Meets Twins")>>
+	<<set $UnavailableQuests.delete("Millers: Oliver Meets Twins")>>
+<</if>>
+
+<<if $ShinjuFelixLake == 1>>
+	<<unset $ShinjuFelixLake>>
+	<<set $CompletedQuests.push("Shinju: Felix at the Lake")>>
+	<<set $UnavailableQuests.delete("Shinju: Felix at the Lake")>>
+<</if>>
+
+<<if $QuestHomeFirst.Lucas == -1>>
+	<<unset $QuestHomeFirst>>
+	<<set $CompletedQuests.push("Lucas: First Visit")>>
+	<<set $UnavailableQuests.delete("Lucas: First Visit")>>
+<</if>>
+
+<<if $QuestLucasHomeComfort == -1>>
+	<<unset $QuestLucasHomeComfort>>
+	<<set $CompletedQuests.push("Lucas: The Price of Fame")>>
+	<<set $UnavailableQuests.delete("Lucas: The Price of Fame")>>
+<</if>>
+
+<<if $QuestLucasPunishmentGame.State == -1 or $LucasSocialRank == 1>>
+	<<unset $QuestLucasPunishmentGame>>
+	<<set $CompletedQuests.push("Lucas: Punishment Game")>>
+	<<set $UnavailableQuests.delete("Lucas: Punishment Game")>>
+<</if>>
+
+<<if $QuestMichaelBlackmail.State == -1>>
+	<<unset $QuestMichaelBlackmail>>
+	<<set $CompletedQuests.push("Michael: Blackmail")>>
+	<<set $UnavailableQuests.delete("Michael: Blackmail")>>
+<</if>>
+
+<<if $CarterIntroQuest.State == -1>>
+	<<unset $CarterIntroQuest>>
+	<<set $CompletedQuests.push("Carter: Park Clean Up")>>
+	<<set $UnavailableQuests.delete("Carter: Park Clean Up")>>
+<</if>>
+
+<<if $ThomasIntroQuest.State == -1>>
+	<<unset $ThomasIntroQuest>>
+	<<set $CompletedQuests.push("Thomas: Out Sick")>>
+	<<set $UnavailableQuests.delete("Thomas: Out Sick")>>
+<</if>>
+
+<<if $OCIsaacNightclub == -1>>
+	<<unset $OCIsaacNightclub>>
+	<<set $CompletedQuests.push("Isaac: The Nightclub")>>
+	<<set $UnavailableQuests.delete("Isaac: The Nightclub")>>
+<</if>>
+
+<<if $QuestEventArthurRichardStargaze == -1>>
+	<<unset $QuestEventArthurRichardStargaze>>
+	<<set $CompletedQuests.push("Arthur & Richard: Stargazing")>>
+	<<set $UnavailableQuests.delete("Arthur & Richard: Stargazing")>>
+<</if>>
+
+<<if $OCQuestSnowpawIntro.State == -1>>
+	<<unset $OCQuestSnowpawIntro>>
+	<<set $CompletedQuests.push("Snowpaw: Lenny's Wild West Show")>>
+	<<set $UnavailableQuests.delete("Snowpaw: Lenny's Wild West Show")>>
+<</if>>
+
+<<if $OCPatrickMet == -1>>
+	<<unset $OCPatrickMet>>
+	<<set $CompletedQuests.push("Patrick: Introduction")>>
+	<<set $UnavailableQuests.delete("Patrick: Introduction")>>
+<</if>>
+
+<<if $OCFrostsMet == -1>>
+	<<unset $OCFrostsMet>>
+	<<set $CompletedQuests.push("The Frosts: The Foreign Family")>>
+	<<set $UnavailableQuests.delete("The Frosts: The Foreign Family")>>
+<</if>>
+
+<<if $OCMicahMet == -1>>
+	<<unset $OCMicahMet>>
+	<<set $CompletedQuests.push("Micah: Introduction")>>
+	<<set $UnavailableQuests.delete("Micah: Introduction")>>
+<</if>>
+
+<<if $OCKalimMet == -1>>
+	<<unset $OCKalimMet>>
+	<<set $CompletedQuests.push("Kalim: Introduction")>>
+	<<set $UnavailableQuests.delete("Kalim: Introduction")>>
+<</if>>
+
+/*
+<<if $XXX == X>>
+	<<unset $XXX>>
+	<<set $CompletedQuests.push("XXX")>>
+	<<set $UnavailableQuests.delete("XXX")>>
+<</if>>
+*/

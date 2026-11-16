@@ -1,0 +1,129 @@
+:: Quest Menu [nobr]
+
+<<set $SelectedTabQuestMenu = $SelectedTabQuestMenu || 0>>
+<<set _tabs = [
+	{
+		title: 'Active Quests',
+		passage: 'Active Quest Menu',
+	},
+	{
+		title: 'Quest Journal',
+		passage: 'Quest Menu Journal',
+	},
+]>>
+
+<<tabs _tabs "$SelectedTabQuestMenu">>
+<<run $("#ui-dialog-body").css("max-height", "82vh")>>
+<<run $("#ui-dialog-body").css("height", "82vh")>>
+
+<<run $(document).one(":dialogclosed", function () {
+	$("#ui-dialog-body").css("max-height", "");
+	$("#ui-dialog-body").css("height", "");
+})>>
+:: Quest Menu Script [script]
+
+window.getSkillBarColor = width => {
+	if (width > 50 && width <= 90) {
+		return '#69b4d3';
+	}
+	if (width > 90) {
+		return '#207497';
+	}
+
+	return '#b8eaff';
+};
+
+:: Active Quest Menu [nobr]
+
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+    <<capture _i>>
+        <span style="display: inline-flex; align-items: center;">
+            <img @src="`Images/Icons/Quests/${$QuestLog[_i].Icon}.png`" style="width: 41px; height: 41px;">
+            <span style="color:Azure"><big><strong>=$QuestLog[_i].Name=</strong></big></span><br>
+        </span>
+        <div style="margin-left: 50px;">
+        <<if $QuestLog[_i].Tags.includes("Deadline")>>
+            <strong>Deadline: </strong><span style="color:lightcoral">$QuestLog[_i].Deadline</span><br>
+        <</if>>
+        <strong>Description: </strong><br>
+        <div style="margin-left: 30px;">
+            $QuestLog[_i].Description<br>
+        </div>
+        <strong>Objectives: </strong><br>
+        <div style="margin-left: 30px;">
+            <<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+                <<capture _o>>
+                    <<if $QuestLog[_i].Objectives[_o].State == $QuestLog[_i].Objectives[_o].Total>>
+                        <span style="color:lightgreen">$QuestLog[_i].Objectives[_o].Name (Completed!)</span><br>
+                    <<else>>
+                        $QuestLog[_i].Objectives[_o].Name ($QuestLog[_i].Objectives[_o].State / $QuestLog[_i].Objectives[_o].Total)<br>
+                    <</if>>
+                <</capture>>
+            <</for>>
+        </div>
+        
+        </div>
+        <hr>
+    <</capture>>
+<</for>>
+
+/* 
+<<include"Quest Chores">>
+
+<<include"Quest Noah's Missing Toy">>
+
+<<include"Quest Booster Shot">>
+
+<<include"Quest Random Jobs">>
+
+<<include"Quest Menu Lucas">>
+
+<<include"Quest Menu Carter">>
+
+<<include"Quest Menu Jackson">>
+
+*/
+
+:: Quest Menu Journal [nobr]
+
+<span style="color:Azure"><big><strong>--Quest Journal--</strong></big></span><br>
+
+<<link "Family">>
+    <<replace "#cate">>
+    <<include "Quest Journal Family">>
+    <</replace>>
+<</link>>
+ | 
+<<link "Core Classmates">>
+    <<replace "#cate">>
+    <<include "Quest Journal Core Classmates">>
+    <</replace>>
+<</link>>
+ | 
+<<link "Child Townies">>
+    <<replace "#cate">>
+    <<include "Quest Journal Child Townies">>
+    <</replace>>
+<</link>>
+ | 
+<<link "Preteen Townies">>
+    <<replace "#cate">>
+    <<include "Quest Journal Preteen Townies">>
+    <</replace>>
+<</link>>
+ | 
+<<link "Teen Townies">>
+    <<replace "#cate">>
+    <<include "Quest Journal Teen Townies">>
+    <</replace>>
+<</link>> /*
+ | 
+<<link "Adult Townies">>
+    <<replace "#cate">>
+    <<include "Quest Journal Adult Townies">>
+    <</replace>>
+<</link>> */
+
+<div id="cate">
+    <<include"Quest Journal Family">>
+</div>

@@ -1,0 +1,83 @@
+:: Thomas Playground Music Talk [nobr]
+
+You plop down on the bench across from <span class="char-name">Thomas</span> and begin to chat and hang out. While he isn’t rude and does engage in your conversations, it is clear that your topic of choice is of little interest to him. So, silence eventually overtakes the area as <span class="char-name">Thomas</span> continues drawing and you entertain yourself by glancing around the playground.<br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+Then, you hear it, a soft humming. You turn and spot that <span class="char-name">Thomas</span> is humming some type of beat, tapping his free finger to the melody. You watch for a while, sure that <span class="char-name">Thomas</span> was unaware he was doing it. To prove this point, upon noticing you were staring at him and realizing that he was audibly humming, <span class="pink-text"><span class="char-name">Thomas</span>’ cheeks turn a familiar shade of bright pink.</span><br>
+<br>
+
+<span class="dialogue-text">“What are you staring at!?”</span> <span class="char-name">Thomas</span> says, his mild embarrassment clear in his voice as he turns away from you. You laugh, telling <span class="char-name">Thomas</span> that it’s fine, you hum to yourself all the time! Everyone does. <span class="char-name">Thomas</span> grumbles, before turning back and continuing drawing, much more aware of his humming at this point. You smile, scooching closer, and ask him what song he was humming. It sounded familiar.<br>
+<br>
+
+<<if $ThomasSocial < 50 && ($ThomasSocialRank || 0) == 0>>
+    <span class="dialogue-text">“It was nothing.”</span> <span class="char-name">Thomas</span> says, <span class="dialogue-text">“Just a random beat.”</span> You try to prod, as you’re sure you’ve heard it somewhere before, but it is clear that <span class="char-name">Thomas</span> doesn’t want to talk about it. <span class="yellow-text">Maybe if you knew him a bit better, he would open up more about his interests.</span><br>
+
+    <<needChange "Fun" 10>>
+    <<socialChange "Thomas" 3>>
+    <br>
+
+    [[Continue|School Courtyard]] 
+<<else>>
+    <span class="dialogue-text">“It’s just a song I like, from the band Bunnica.”</span> <span class="char-name">Thomas</span> shrugs, <span class="dialogue-text">“You’ve probably never heard of them.”</span> <span class="green-text"><span class="char-name">Thomas</span> lit up a little as he spoke and you realized you hit a keen interest of his.</span> You inform him that you have heard of the band before, which is probably why you recognize the beat he was humming. <span class="dialogue-text">“Oh, well if you’ve heard of them, you’d know the song. Called Enter Neverland, it’s one of their most popular. It’s a bit before our time, so most people our age haven’t heard it. But, I don’t know, it’s MORE than the type of music that is popular now, you know?”</span><br>
+    <br>
+
+    <span class="pink-text">You laugh, you rarely hear <span class="char-name">Thomas</span> speak so much at once or so passionately.</span> You ask him what other bands he listens to. <span class="dialogue-text">“A lot of metal, but also love rock as well. There is a pretty kickass modern rock band called The Primals, but I’ve only heard a few of their songs on the radio or in the music store, don’t own any of their CDs.”</span> <span class="char-name">Thomas</span> goes on for a few minutes about different bands he loves, most falling into the metal or rock category. After a while, you find yourself curious and ask him what he enjoys about this particular genre of music.<br>
+    <br>
+
+    <<if $ThomasSocial < 80 && ($ThomasSocialRank || 0) == 0>>
+        <span class="dialogue-text">“I don’t know.”</span> <span class="char-name">Thomas</span> shrugs, <span class="dialogue-text">“Guess I just have good taste.”</span> You laugh, you didn’t know <span class="char-name">Thomas</span> did jokes, though he assures you it isn’t a joke. <span class="yellow-text">Though you sense there may be a deeper meaning behind his musical choice,</span> you decide to accept <span class="char-name">Thomas</span>’ answer then you spend the next few minutes talking music with him.<br>
+
+        <<needChange "Fun" 10>>
+        <<socialChange "Thomas" 3>>
+        <br>
+
+        [[Continue|School Courtyard]]
+    <<else>>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "Thomas",
+                State: {
+                    Outfit: "Uniform",
+                    Eyes: "Tired",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span class="dialogue-text">“I have good tastes?”</span> He smirks. You both laugh at the rare <span class="char-name">Thomas</span> joke. <span class="dialogue-text">“But it was probably because of my mom, she loved this type of music, much to my grandparents’ dismay. She was the definition of a metalhead! Most of the CDs I have now were hers-”</span> <span class="char-name">Thomas</span> stops, realizing what his phrasing was implying. <span class="dialogue-text">“Umm, yeah. So, I probably got it from her. You should give them a listen sometime. I think you’d like them.”</span><br>
+        <br>
+
+        The way <span class="char-name">Thomas</span> turns and changes the subject indicates that he doesn’t wish to discuss certain elements any further. <span class="pink-text">You respect this, asking him more questions about his music to lighten the mood, even showing surprise at <span class="char-name">Thomas</span>’ confession of his desire to learn the guitar. Still, the way he lit up when he spoke about his mother hangs in your head.</span><br>
+
+        <<needChange "Fun" 10>>
+        <<socialChange "Thomas" 3>>
+        <br>
+
+        [[Continue|School Courtyard]]
+    <</if>>
+<</if>>

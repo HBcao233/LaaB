@@ -1,0 +1,107 @@
+:: Lucas Hang Out Park Playground Basic [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+As you and <span style="color:DarkTurquoise">Lucas</span> wander around the park trying to figure out which piece of playground equipment will be next on your list to conquer, you suggest the swings as you recall <span style="color:DarkTurquoise">Lucas</span> enjoying those. <span style="Color: LightSteelBlue">“Hmmm, maybe something else?”</span> <span style="color:DarkTurquoise">Lucas</span> responds, <span style="Color: LightSteelBlue">“I like it, swing all the time at school, but we’re out here on the town! Free from adult supervision, mostly, so we should do something we can’t normally do!”</span> <span style="color:lightgreen">You nod, surprised that <span style="color:DarkTurquoise">Lucas</span> would be so bold and wonder just what he has in mind-</span> <span style="Color: LightSteelBlue">“What about the merry-go-round?”</span> He asks, pointing to it. <br>
+<br>
+To be fair, your school doesn’t really have one, so this is indeed something you can’t normally do at school. <span style="color:lightgreen">You chuckle at his childishness and nod, running over to claim it while it is still empty.</span> <br>
+
+    <<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+            },
+        },
+        {
+        Name: "Lucas",
+        State: {
+            Outfit: $HangOutClothes,
+            Mouth: "Smirk",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:lightgreen">You and <span style="color:DarkTurquoise">Lucas</span> get on either side of it, gripping the handles with one side as you both run to get it going. Then, once you are as fast as you can muster it by running alone, you both jump on. Laughter immediately starts as the world around you becomes a smeared blur as you spin, everything morphing into just their colors.</span> <span style="color:DarkTurquoise">Lucas</span> begins to use his leg to kick off the ground, attempting to make it spinner even faster! <span style="color:lightgreen">You join him and soon it is spinning so fast that you can barely hold on and feel your body being pulled off of it by sheer force!</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Wo- woah!”</span> <span style="color:DarkTurquoise">Lucas</span> calls out, gripping the bars with both hands as he too begins to slowly slide off. <span style="Color: LightSteelBlue">“Ho- hold on!”</span> You grip with all your might, trying to pull yourself closer to the middle as your feet keep slipping closer and closer to the edge! <span style="color:yellow">You’re not sure how much longer you can hold on!</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Hold on for dear life!<br>">>
+    <<replace"#choice">>
+        You hold on for dear life, using all the strength your preteen arms have to keep going. You look up to <span style="color:DarkTurquoise">Lucas</span>, his face strained as he holds on as well. Your head feels like it is spinning even faster than the merry-go-round and you are pretty sure <span style="color:DarkTurquoise">Lucas</span> loses a shoe; which is probably sent flying into some unlucky bystander. <span style="color:lightgreen">You pull yourself further, noticing <span style="color:DarkTurquoise">Lucas</span>’ hands slipping, and reach out to him, yelling for your friend to grab on.</span> <br>
+        
+            <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Blush: 1,
+                    },
+                },
+                {
+                Name: "Lucas",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Frown",
+                    Blush: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        He opens one eye, straining against the momentum. He reaches out, desperately for your hand. Then, suddenly, he loses his footing! <span style="color:lightgreen">Time seems to slow down as <span style="color:DarkTurquoise">Lucas</span>’ grip falters and, right before he is sucked away into the blurred world of stillness, you grab his hand! Arms locked in the center, both being pulled in opposite directions, you hold each other in place until the spinning wheel of death finally comes to a halt.</span> <br>
+        <br>
+        <span style="color:lightgreen"><span style="color:DarkTurquoise">Lucas</span> then pukes into a trashcan. So overall a fun time.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Lucas" 3>>
+        <span style="color:green">+Lucas Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:red">-Lucas Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <br>
+        [[Continue|Lucas Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "Let go and put your life in fate’s hands<br>">>
+    <<replace"#choice">>
+        <span style="color:yellow">But you can’t hold on anymore. The strain on your poor fingers is too much, and you share one last, sad look with your friend <span style="color:DarkTurquoise">Lucas</span> before letting go! You close your eyes, accepting your fate, as the last image of <span style="color:DarkTurquoise">Lucas</span> reaching and calling out for you is burnt into your brain. You feel your body be flung off the spinning wheel of pain as you accept the cold embrace of death.</span> <br>
+        <br>
+        Which feels a lot like sand, as you go flying directly into the nearby sandbox, landing facedown and slightly buried directly between two preschoolers who break out laughing at the sight. You manage to yank yourself out and gasp in for air! Your head is swaying quickly back and forth, your mind still spinning from the merry-go-round. <br>
+        
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+                },
+            },
+            {
+            Name: "Lucas",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Frown",
+                Blush: 2,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$LucasNickname</span>!”</span> You hear <span style="color:DarkTurquoise">Lucas</span> call out, having managed to survive until it stopped spinning. <span style="color:lightgreen">He stumbles over, falling face first into the grass before standing up.</span> <span style="Color: LightSteelBlue">“Are you okay-!”</span> <span style="color:lightgreen"><span style="color:DarkTurquoise">Lucas</span> suddenly pauses, runs to the nearby trashcan, and vomits. This leads to more giggling from the preschoolers who quickly run over to the merry-go-round to attempt to recreate your crazy little endeavor.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<addMoodlet "Pained" 2>>
+        <<socialChange "Lucas" 3>>
+        <span style="color:green">+Lucas Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:red">-Lucas Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <br>
+        [[Continue|Lucas Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

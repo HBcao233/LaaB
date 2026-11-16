@@ -1,0 +1,48 @@
+:: Spank Player Action [nobr]
+
+/* RANDOM SELCTOR */
+<<set _variable to random(1, 2)>>
+
+<<if $SpankingStart == 0>>
+	<<if $SpankPlayerAction == "None">>
+		You anxiously wait for the spanking to begin. 
+	<<elseif $SpankPlayerAction == "Plead">>
+		You plead for him to let you go, but just get a chuckle in response.
+	<</if>>
+<<elseif $SpankingStart == 1>>
+	<<if $SpankPlayerAction == "Plead">>
+		<<if _variable == 1>>
+			You beg to be let go, promising you’ll be good.
+		<<elseif _variable == 2>>
+			You plead for him to not spank you too hard.
+		<</if>>
+		<<set $SpankAnger -= 2>>
+		
+	<<elseif $SpankPlayerAction == "Cry">>
+		<<if _variable == 1>>
+			You cry out from the pain.
+		<<elseif _variable == 2>>
+			Tears roll down your face as you cry.
+		<</if>>
+		<<set $SpankAnger -= 2>>
+		<<set $SpankPain -= 5>>
+	
+	<<elseif $SpankPlayerAction == "Take It">>
+		<<if _variable == 1>>
+			You try to put on a brave face and take it.
+		<<elseif _variable == 2>>
+			You give no reaction, not giving them the satisfaction.
+		<</if>>
+		<<set $SpankAnger += 3>>
+	
+	<<elseif $SpankPlayerAction == "Clench">>
+		<<if _variable == 1>>
+			You clench your butt cheeks and brace for the spankings.
+		<<elseif _variable == 2>>
+			You clench in a desperate attempt to reduce the pain. 
+		<</if>>
+		<<set $SpankPain -= 5>>
+	
+	<</if>>
+
+<</if>>

@@ -1,0 +1,5 @@
+:: Poker PC Hand [nobr]
+
+<<set _isPC = $Poker.players[$Poker.currentTurnIndex].id === 'PC'>>
+
+<<=$Poker.handDisplayImage($Poker.getPCHand(), false, false, _isPC && $Poker.stage === 1 && $Poker.step === 0)>>

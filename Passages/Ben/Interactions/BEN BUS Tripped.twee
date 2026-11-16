@@ -1,0 +1,215 @@
+:: BEN BUS Tripped [nobr]
+
+/* OPENING */
+You are sitting on the bus, mindlessly gazing out the window, when you hear a crash behind you. You turn around and see <span style="color:DarkTurquoise">Ben</span> on the ground, the contents of his backpack scattered. The laughter of two nearby boys key you into what had happened as he starts retrieving his things.<br>
+<br>
+
+<div id="choice">
+	<<link "Help him">>
+		<<replace "#choice">>
+
+			<<set _ad to [
+				{
+					Name: "Ben",
+					State: {
+						Eyes: "Sad",
+						Cry: 1,
+						Blush: 1,
+						Mouth: "Happy",
+						Outfit: "Uniform",
+					},
+				},
+				{
+					Name: "Player",
+					State: {
+						Mouth: "Happy",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			You quickly stand up and begin helping <span style="color:DarkTurquoise">Ben</span>, who stops and stares at you in surprise for a moment. You flash him a smile, which causes him to blush and look away as he quickly picks up his things. You notice his book had slide under one of the seats and attempt to grab it when <span style="color:DarkTurquoise">Ben</span> quickly snatches it away and hides it in his backpack.<br>
+
+			<br>
+			<span style="color:LightSteelBlue"> “Sorry…”</span> <span style="color:DarkTurquoise">Ben</span> says, even more red than before, <span style="color:LightSteelBlue"> “I mean, Tha- thank you.”</span> He quickly runs over to his seat.<br>
+
+			<<socialChange "Ben" 3>>
+			<br>
+
+			/* GET OFF BUS */
+			<<if $BusRide == "Home">>
+				[[Get off bus|Northend]]
+			<<else>>
+				[[Get off bus|Middle School]]
+			<</if>>
+		<</replace>>
+	<</link>>
+	<br>
+	
+	<<link "Ignore him">>
+		<<replace "#choice">>
+			<<set _ad to [
+				{
+					Name: "Ben",
+					State: {
+						Eyes: "Sad",
+						Cry: 1,
+						Blush: 1,
+						Mouth: "Sad",
+						Outfit: "Uniform",
+					}
+				}
+			]>>
+			<<ad _ad>>
+
+			Uninterested in his struggles, you turn away from <span style="color:DarkTurquoise">Ben</span> and go back to gazing mindlessly out the window.<br><br>
+			
+			/* GET OFF BUS */
+			<<if $BusRide == "Home">>
+				[[Get off bus|Northend]]
+			<<else>>
+				[[Get off bus|Middle School]]
+			<</if>>
+		<</replace>>
+	<</link>>
+	<br>
+	<<if $Player.Traits.includes("Bully")>>
+		<<link "[Bully] Kick his papers">>
+			<<replace "#choice">>
+			
+				/* X > 50 Social */
+				<<if $BenSocial > 50 or $BenSocialRank > 0>>
+					
+					<<set _ad to [
+						{
+							Name: "Ben",
+							State: {
+								Outfit: "Uniform",
+								Mouth: "Frown",
+								Cry: 1,
+							},
+						},
+						{
+							Name: "Player",
+							State: {
+								Mouth: "Happy",
+								Eyes: "Tired",
+							},
+						},
+					]>>
+					<<ad _ad>>
+
+					You stand up from your seat landing your foot on top of the pile of papers, <span style="color:DarkTurquoise">Ben</span> stops and stares at you in surprise for a moment. You flash him a smile before kicking the mound of sheets, sending them flying around the floor and under the bus seats. The quiet boy looks at you heartbrokenly as the boys behind him laugh even harder. <span style="color:DarkTurquoise">Ben</span>’s eyes mist up before he just sighs and continues to retrieve his papers from beneath the seats. <br>
+					<br>
+					As the ride goes on you throw a few glances towards <span style="color:DarkTurquoise">Ben</span>, but the boy seems to purposefully ignore you whenever he notices you looking. As you reach your stop you get up to leave the bus, a few sheets of paper are still scattered around the ground, but you make sure to avoid stepping on them. <br>
+					
+					<<socialChange "Ben" -5>>
+					<br>
+					/* GET OFF BUS */
+					<<if $BusRide == "Home">>
+						[[Get off bus|Northend]]
+					<<else>>
+						[[Get off bus|Middle School]]
+					<</if>>
+
+				/* Negative Social and PC likes wedies */
+				<<elseif $BenSocial < 0 && $Player.Kinks.Wedgier == 1>>
+
+					<<set _ad to [
+						{
+							Name: "Ben",
+							State: {
+								Outfit: "Uniform",
+								Mouth: "Frown",
+								Eyes: "Mad",
+							},
+						},
+						{
+							Name: "Player",
+							State: {
+								Mouth: "Smirk",
+								Eyes: "Tired",
+							},
+						},
+					]>>
+					<<ad _ad>>
+
+					You stand up from your seat landing your foot on top of the pile of papers, <span style="color:DarkTurquoise">Ben</span> stops and stares at you in surprise for a moment. You flash him a smile before kicking the mound of sheets, sending them flying around the floor and under the bus seats. The quiet boy looks at you with an irritated face as the boys behind him laugh even harder at him. But he just sighs and goes back to retrieving his stuff back into his pack. <br>
+					<br>
+					You sit back and watch him struggle, but as he crawls under one of the seats to grab his papers a perfect opportunity is presented to you. Distracted by his task, <span style="color:Pink">the nerdy boy leaves his rear end completely exposed, and as he stretches deeper, the waistband of his $BenUndies.Name peeks out from his $BenBottoms.Name.</span> <br>
+					<br>
+					You sneakily get up and position yourself behind <span style="color:DarkTurquoise">Ben</span>, the boy still oblivious to your presence. As he starts to wiggle his way out, you decide that is time to act. You grab the waistband of his $BenUndies.Name and give it a good yank, the sudden touch makes him jump, hitting his head on the underside of the seat he crawled under, but as you continue to pull, his yap turns into a high-pitched scream as you pull enough to lift his legs by his underwear. <br>
+
+					<<set _ad to [
+						{
+							Name: "Ben",
+							State: {
+								Outfit: "Uniform",
+								Mouth: "Frown",
+								Blush: 1,
+								Cry: 1,
+							},
+						},
+						{
+							Name: "Player",
+							State: {
+								Mouth: "Smirk",
+								Eyes: "Mad",
+							},
+						},
+					]>>
+					<<ad _ad>>
+
+					Everyone’s heads turn to you two, as you give him a few extra yanks <span style="color:DarkTurquoise">Ben</span> starts crying begging you to stop. By the time you’re done, everyone is laughing at him, and the bus driver starts yelling for everyone to quiet down and take their seats. <br>
+					<br>
+					As the bus reached your destination the quiet boy is still lying on the ground, with some of his papers still scattered around, but you pay him no mind as you climb off the bus. <br>
+
+					<<socialChange "Ben" -3>>
+					<br>
+					/* GET OFF BUS */
+					<<if $BusRide == "Home">>
+						[[Get off bus|Northend]]
+					<<else>>
+						[[Get off bus|Middle School]]
+					<</if>>
+
+					/* Normal */
+					<<else>>
+
+					<<set _ad to [
+						{
+							Name: "Ben",
+							State: {
+								Mouth: "Frown",
+								Outfit: "Uniform",
+							},
+						},
+						{
+							Name: "Player",
+							State: {
+								Mouth: "Happy",
+								Eyes: "Tired",
+							},
+						},
+					]>>
+					<<ad _ad>>
+
+					You stand up from your seat landing your foot on top of the pile of papers, <span style="color:DarkTurquoise">Ben</span> stops and stares at you in surprise for a moment. You flash him a smile before kicking the mound of sheets, sending them flying around the floor and under the bus seats. The quiet boy looks at you with a pained face as the boys behind him laugh even harder at him. <span style="color:DarkTurquoise">Ben</span> just sighs and continues to retrieve his papers from beneath the seats. <br>
+					<br>
+					As the bus reached your destination <span style="color:DarkTurquoise">Ben</span> is nearly finished with the papers, but as you stand to leave you make sure to stomp on one of the few stay sheets still on the floor, crumpling it up as you go. <br>
+					
+					<<socialChange "Ben" -5>>
+					<br>
+					/* GET OFF BUS */
+					<<if $BusRide == "Home">>
+						[[Get off bus|Northend]]
+					<<else>>
+						[[Get off bus|Middle School]]
+					<</if>>
+				<</if>>
+				<</replace>>
+		<</link>>
+	<</if>>
+	<br>
+	
+</div>

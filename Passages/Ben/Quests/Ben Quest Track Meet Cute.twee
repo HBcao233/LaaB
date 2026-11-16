@@ -1,0 +1,439 @@
+:: Ben Quest Track Meet Cute Intro [nobr]
+
+/* Intro */
+As you enter the living room, you spot the TV on showcasing a trailer for a rather interesting looking movie. Sure, you have no idea what this movie is and had no interest in it prior, but something about the trailer draws you in. Without thinking, you take a seat on the couch, eyes glued to the screen as they are just about to reveal the name of this strange, trending film, when <span style="color:lightcoral">– CLICK – the TV is shut off!</span> You blink twice, quickly rising to your feet about to yell at whoever turned that off that you were watching that – when you see <span style="color:DarkTurquoise">Your Father</span> holding the remote. You decide it is best to hold your tongue. <br>
+
+<<set _ad to [
+    {
+        Name: "Dad",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Almost ready? We’ll be heading out as soon as <span style="color:DarkTurquoise">Noah</span>’s put his stuff away.”</span> He says, placing the remote on the coffee table. Confused, you ask him what he’s talking about. <span style="color:LightSteelBlue">“The track meet, don’t you remember-?”</span> He pauses, thinking for a second before sighing, <span style="color:LightSteelBlue">“Of course you don’t, because I forgot to tell you. Sorry.”</span> <span style="color:DarkTurquoise">Noah</span> then walks into the room, pouting with a red face as he complains that his shoelaces are being dumb. <span style="color:DarkTurquoise">Your Father</span> quickly scoops him up, placing him on the coffee table, and begins to untangle the mess <span style="color:DarkTurquoise">Noah</span> made while trying to tie his shoes. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+    {
+        Name: "Dad",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "Noah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Gabe</span>’s school is doing a little showcase, Preston loves showing off, and your brother is thinking of joining the track team in Spring, so he signed up.”</span> <span style="color:DarkTurquoise">Your Father</span> explains as <span style="color:DarkTurquoise">Noah</span> lies back on the table, looking up at you idly and sticking his tongue out. <span style="color:LightSteelBlue">“Not an official thing, since try-outs aren’t until later in the year, BUT we <span style="color:DarkTurquoise">$Player.LastName</span> boys support each other. So, we’re going. All three of us.”</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Agree<br>">>
+        <<replace "#choice">>
+            You nod, that makes sense. Even if <span style="color:DarkTurquoise">Gabe</span> is the occasional jerk hogging the bathroom or TV, he is your brother after all. It makes sense for you to support him. Or maybe you just know <span style="color:DarkTurquoise">Your Father</span> wouldn’t let you sit this one out no matter how much you complain. <span style="color:LightSteelBlue">“Great!”</span> <span style="color:DarkTurquoise">Your Father</span> says, finally getting <span style="color:DarkTurquoise">Noah</span>’s shoes under control, <span style="color:LightSteelBlue">“Well, you got shoes and are decent, so let’s hop to it!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Your Father</span> picks up <span style="color:DarkTurquoise">Noah</span>, holding him upside down by his ankles as he giggles away hysterically, as the three of you head to the car.</span> <br>
+            <br>
+            <<include "Ben Quest Track Meet Cute Intro 2">>
+        <</replace>>
+    <</link>>
+	<<link "Complain<br>">>
+        <<replace "#choice">>
+            <span style="color:lightcoral">You groan loudly, complaining about having to go to some dumb track thing where you will just be sitting in the sun watching your dumb big brother run. You make a much bigger deal out of it than need be, as kids do, and slump down on the couch in a lump.</span> <span style="color:DarkTurquoise">Your Father</span> chuckles, rolling his eyes as he gets his finger stuck in the mess of shoelaces. <br>
+            <br>
+            <span style="color:LightSteelBlue">“Well, that’s too bad, because like I said, we’re going.”</span> He has to take off <span style="color:DarkTurquoise">Noah</span>’s shoe in order to get his finger unstuck, <span style="color:LightSteelBlue">“Because we are a family and we support each other. Don’t worry, I’m going to force <span style="color:DarkTurquoise">Gabe</span> to come to all your stuff as well. There we go! <span style="color:DarkTurquoise">Noah</span>, you REALLY need to work on tying your shoes. That was… horrendous.”</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“What does ‘Whore-End-Us’ mean?”</span> <span style="color:DarkTurquoise">Noah</span> asks, causing snort from <span style="color:DarkTurquoise">Your Father</span>. <br>
+            <br>
+            <span style="color:LightSteelBlue">“I’ll tell you when you’re older.”</span> He pats <span style="color:DarkTurquoise">Noah</span> on the head, turning to you, <span style="color:LightSteelBlue">“Well, you got shoes and are decent, so let’s hop to it!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Your Father</span> picks up <span style="color:DarkTurquoise">Noah</span>, holding him upside down by his ankles as he giggles away hysterically, as the three of you head to the car.</span> <br>
+            <br>
+            <<include "Ben Quest Track Meet Cute Intro 2">>
+        <</replace>>
+    <</link>>
+    
+    <<requiresTrait "Athletic" "Only if you can participate<br>">>
+        <<replace"#choice">>
+            <span style="color:lightgreen">A track meet sounds fun! Running, jumping, teaching those high schoolers that size doesn’t mean everything.</span> You agree to go, but only if you could participate! <span style="color:DarkTurquoise">Your Father</span> laughs at your demand. <span style="color:LightSteelBlue">“I don’t think they’ll let you join officially, but maybe you can run around with <span style="color:DarkTurquoise">Gabe</span> after the meet is over, if he’s not worn out.”</span> You scoff that they are probably afraid of getting beaten by a middle schooler, half-jokingly, and <span style="color:DarkTurquoise">Your Father</span> chuckles and rolls his eyes. <br>
+            <br>
+            <span style="color:LightSteelBlue">“I’m sure you would, son.”</span> He replies as he realizes <span style="color:DarkTurquoise">Noah</span>’s shoes are on the wrong foot and swap them. Seeing a smirk from <span style="color:DarkTurquoise">Noah</span>, you’re starting to think the boy did it on purpose just to mess with your dad. It takes another few minutes of tying and untying before <span style="color:DarkTurquoise">Noah</span>’s shoes are on tightly and he’s ready to go! <span style="color:DarkTurquoise">Your Father</span> turns to you, looks you up and down, and nods. <span style="color:LightSteelBlue">“Well, you got shoes on and are decent, so let’s hop to it!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Your Father</span> picks up <span style="color:DarkTurquoise">Noah</span>, holding him upside down by his ankles as he giggles away hysterically, as the three of you head to the car.</span> <br>
+            <br>
+            <<include"Ben Quest Track Meet Cute Intro 2">>
+        <</replace>>
+    <</requiresTrait>>
+</div>
+
+:: Ben Quest Track Meet Cute Intro 2 [nobr]
+
+Reaching your family’s blue, four-door five-seater car, <span style="color:pink"><span style="color:DarkTurquoise">Your Father</span> opens the door and places <span style="color:DarkTurquoise">Noah</span> in his booster seat, upside down, and jokingly buckles him in as <span style="color:DarkTurquoise">Noah</span> continues to giggle, his shirt flutters down, revealing his cute belly, before <span style="color:DarkTurquoise">Your Father</span> flips him right way up, buckling the boy in as he catches his breath from laughing so hard.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Dad",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Noah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+            Blush: 2,
+            Cry: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<if $Player.Height == "Short" or $Player.Height == "Shorter">>
+    You walk over to the passenger side down, pulling on the handle only to find it locked. <span style="color:DarkTurquoise">Your Father</span> raises an eyebrow at you and smirks. <span style="color:LightSteelBlue">“Nice try, <span style="color:DarkTurquoise">$DadNickname</span>, but I got your booster seat all ready to go to.”</span> You sigh, questioning why you need one, but <span style="color:DarkTurquoise">Your Father</span> grabs you by the hand and leads you over. <span style="color:LightSteelBlue">“Sorry, but rules are rules. Once you grow a few more inches, you’ll be free to sit without it. Come on.”</span> <span style="color:pink"><span style="color:DarkTurquoise">Your Father</span> lifts you up, much to your embarrassment, and places you in the booster seat next to <span style="color:DarkTurquoise">Noah</span>, who sticks his tongue out at you as he hums away.</span> Once you are all buckled in, <span style="color:DarkTurquoise">Your Father</span> gives you a smile as he shuts your door and takes a seat himself. Once the engine is started, the three of you are on your way to the High School. <br>
+    <br>
+    [[Continue|Ben Quest Track Meet Cute 2]]
+<<elseif $Player.Height == "Average">>
+    You walk over to the passenger side down, pulling on the handle only to find it locked. <span style="color:DarkTurquoise">Your Father</span> raises an eyebrow at you and smirks. <span style="color:LightSteelBlue">“You know the rules, can’t sit in the front until you’re tall enough. You may not need a booster seat anymore, but still too short for shotgun.”</span> He pats you on the head and motions to the backseat, which you take with a sigh. <span style="color:yellow">Maybe one day you’ll be tall enough.</span> Buckling in, you listen to <span style="color:DarkTurquoise">Noah</span> humming beside you as <span style="color:DarkTurquoise">Your Father</span> starts the engine and the three of you are on your way to the High School. <br>
+    <br>
+    [[Continue|Ben Quest Track Meet Cute 2]]
+<<else>>
+    You walk over to the passenger side door, opening it and hoping in. You notice <span style="color:DarkTurquoise">Your Father</span> glancing at you, but he doesn’t say anything. Seems he approves of your spot in shotgun, as long as <span style="color:DarkTurquoise">Gabe</span> isn’t here to claim it. <span style="color:lightgreen">One of the benefits of being so tall.</span> Once all buckled in, you listen to <span style="color:DarkTurquoise">Noah</span> humming away in the back as <span style="color:DarkTurquoise">Your Father</span> starts the engine and the three of you are on your way to the High School. <br>
+    <br>
+    [[Continue|Ben Quest Track Meet Cute 2]]
+<</if>>
+
+:: Ben Quest Track Meet Cute 2 [nobr]
+
+<<set $Minutes += 20>>
+
+The parking lot of the High School is fairly crowded, with hordes of people heading to the outdoor track and filling the stands. <span style="color:DarkTurquoise">Noah</span> gasps as he glances out the window. <span style="color:LightSteelBlue">“Woah! Why are there so many people here, <span style="color:DarkTurquoise">Daddy</span>?”</span> He asks as <span style="color:DarkTurquoise">Your Father</span> struggled to find a parking spot. <br>
+
+<<set _ad to [
+    {
+        Name: "Dad",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+    {
+        Name: "Player",
+    },
+    {
+        Name: "Noah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Sporting events always get people excited, especially with Preston.”</span> He replies, pulling in to a lucky find of a spot, <span style="color:LightSteelBlue">“You’ll see it yourself if you join any, people love this stuff here. Plus, it’s not just the families taking a look. Colleges like the peek at these early showcases to get an idea of who to watch. It’s kind of crazy.”</span> He laughs, turning off the engine. The three of you exit the car and begin to head to the stands that surround the outdoor field. There are probably a few hundred people gathered here and <span style="color:pink">you feel <span style="color:DarkTurquoise">Noah</span> grip your hand tightly, afraid of getting lost in the swarm.</span><br>
+<br>
+Despite the crowd, you are able to find a nice spot near the start of the track, where you see a group of high school students stretching and warming up. 
+
+<<if $Player.Kinks.Teens == 1>>
+    <span style="color:pink">They all are wearing baggy and loose fitting shorts and tanktops. You even spy the boxers of some peeking out as they do jumping jacks and other exercises. You could get used to this.</span> 
+<</if>>
+
+You then spot your elder brother, <span style="color:DarkTurquoise">Gabe</span>, down near the start stretching and talking to a classmate. <span style="color:DarkTurquoise">Noah</span> calls out to him loudly, hopping up and down. The teenage boy spots you all, giving a smile and wave as he blushes a little, slightly embarrassed. <br>
+<br>
+<span style="color:LightSteelBlue">“Hey <span style="color:DarkTurquoise">Daddy</span>”</span> Noah asks, <span style="color:LightSteelBlue">“How come they all start on different spots? Isn’t that unfair?”</span> <span style="color:DarkTurquoise">Your Father</span> then begins to explain the math behind the length of each track around the circle, which you’re sure goes right over <span style="color:DarkTurquoise">Noah</span>’s head, as you glance around the crowds of people searching for anyone you recognize. You think you spot <span style="color:DarkTurquoise">Carter</span> a ways away, though you may just think that due to the brightly colored Ultraman shirt the kid is wearing. There is a group of kids your age hanging out under one of the far bleachers, and you think you spy <span style="color:DarkTurquoise">Michael</span> amongst them, but also can’t be sure. Seems everyone with an older sibling is here. <br>
+<br>
+<span style="color:LightSteelBlue">“Hey! There are some spots over here!”</span> A young, cute voice calls out. You turn and see a boy your little brother’s age on the steps near you, jumping up and down waving both his arms in the air towards a group of people walking over. <span style="color:DarkTurquoise">Your Father</span> spots this as well, having you all move a few seats down so the entire group could fit. <br>
+
+<<set _ad to [
+    {
+        Name: "William",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh thanks, deary. This place is a real madhouse, isn’t it?”</span> The woman at the front of the small group laughs as she takes a seat at the end of the row. She is wearing a colorful sundress and a big floppy hat that shields her face from the sun. As she takes a seat, she pulls a small hand fan out of her large purse and begins to fan herself. <span style="color:LightSteelBlue">“You know, I thought fall was supposed to be cool, but this sun is beating down like a roast on a Sunday afternoon!”</span> The woman chuckles to herself as a much larger man takes a seat next to her. <br>
+<br>
+<span style="color:LightSteelBlue">“Come on, <span style="color:DarkTurquoise">Saundra</span>, this is nothing. We used to hike for hours in heat twice as bad as this on my last deployment.”</span> The man is built like a mountain, towering and muscular. His shirt seems to barely fit over his pulsating arms. He spots you staring and gives you a smile, which causes you to quickly turn away. <br>
+<br>
+<span style="color:LightSteelBlue">“Well, I am more a daisy than a sunflower.”</span> The woman replies, <span style="color:LightSteelBlue">“I prefer my sun shaded with a side of lemonade.”</span> She chuckles in a manner that reminds you of old television shows. <br>
+<br>
+<span style="color:LightSteelBlue">“Bah! A little sun never hurt nobody!”</span> A much older voice chimes in, scooching past the couple, taking the seat next to you and <span style="color:DarkTurquoise">Noah</span>. <span style="color:LightSteelBlue">“Well actually, that’s not true. Lost many good boys to dehydration back in the eastern jungles. But my point still stands!”</span> The elder man is dressed in a nice suit that looks almost as old as he is with a strange medal pinned to the front of it and a sleek black cane in one hand. <br>
+<br>
+<span style="color:LightSteelBlue">“What’s ‘De-hies-drashin’?”</span> <span style="color:DarkTurquoise">Noah</span> asks, mainly to himself. <br>
+<br>
+<span style="color:LightSteelBlue">“Pray you never know, lad.”</span> The old man responds with a finger wave and a smile. <br>
+
+<<set _ad to [
+    {
+        Name: "Noah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Player",
+    },
+    {
+        Name: "William",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Hi, <span style="color:DarkTurquoise">Noah</span>!”</span> The first young voice you heard calls out. You and your brother both peek past the old man and spot the young boy swinging and playing on the railings like it’s a jungle gym. <span style="color:DarkTurquoise">Noah</span> waves back and you both watch as the boy spins and flips around, dangling from the handrailing. <span style="color:pink">As he spins, the back of his jeans slip down enough to give you a pretty good look at the back of his underwear. Briefs, naturally, with what appears to be Arachnid Kid on them. They are very cute.</span> Not wanting to stare, you turn to <span style="color:DarkTurquoise">Noah</span> and ask if he knows that boy. <br>
+<br>
+<span style="color:LightSteelBlue">“Yeah, that’s <span style="color:DarkTurquoise">William</span>.”</span> <span style="color:DarkTurquoise">Noah</span> responds, pausing for a second, <span style="color:LightSteelBlue">“He’s a lot.”</span> The comment causes the old man to snort loudly. <br>
+<br>
+<span style="color:LightSteelBlue">“You should see him at home.”</span> <br>
+<br>
+
+<<linkreplace "Continue">>
+    <span style="color:LightSteelBlue">“Please, <span style="color:DarkTurquoise">William</span>, this is not a playground. Come sit down.”</span> The mother calls out to the boy as he continues spinning. <span style="color:LightSteelBlue">“And where is your brother?”</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“But sitting down is boring~”</span> The boy complains, hanging upside down from the railings and showing off his cute belly, <span style="color:LightSteelBlue">“And I think he went to the bathroom? I dun know.”</span> He idly answers the second question, continuing to play. The mother stands up and begins to glance around the crowd from where they came until she spots her other son coming up the stairs. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Oh, there he is! <span style="color:DarkTurquoise">Benjamin</span>! We are over here!”</span> She calls out and waves to the boy as you follow her eyeline and <span style="color:yellow">suddenly lock eyes with your classmate and friend, <span style="color:DarkTurquoise">Ben</span>!</span> It takes no time for you to piece together that he is the other son, meaning this loud, old-fashioned family are none other than the <span style="color:DarkTurquoise">Fischer</span>’s! <span style="color:DarkTurquoise">Ben</span>’s family! <span style="color:pink">The nerdy boy, having froze mid-step as he makes eye contact with you, begins glowing red as he spots you.</span> <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Benny</span>! Can he not hear me? We are over here!”</span> His mom continues to call. <br>
+    
+    <<set _ad to [
+        {
+            Name: "Ben",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:yellow">Without a word, <span style="color:DarkTurquoise">Ben</span> quickly spins on his heels and takes off back down the stairs at a surprisingly quick pace.</span> His mom continues to call out to him until he is out of sight, and she sits back down with a sigh. <span style="color:LightSteelBlue">“Did he not hear me? Maybe he wanted to get a snack? Oh, I do hope he is back before <span style="color:DarkTurquoise">Clark</span>’s race. Be such a shame to miss it.”</span> She begins to fan herself once more as your attention turns to where <span style="color:DarkTurquoise">Ben</span> ran off to. Knowing <span style="color:DarkTurquoise">Ben</span> as well as you do, you figure he got a tad embarrassed once he saw you. <br>
+    <br>
+
+    You turn to <span style="color:DarkTurquoise">Your Father</span> and tell him you’re going to run to the restroom really quick. <span style="color:LightSteelBlue">“Alright, but be fast. <span style="color:DarkTurquoise">Gabe</span>’s group will be going on in a few minutes.”</span> As you stand up, <span style="color:DarkTurquoise">Your Father</span> and the large man, who you assume is <span style="color:DarkTurquoise">Ben</span>’s dad, begin to talk to one another and point each other’s kids on the field out. A somewhat humorous back and forth commences over which is prouder of their son. <br>
+    <br>
+
+    Heading down the steps and following the path he took, it doesn’t take long for you to spy <span style="color:DarkTurquoise">Ben</span> sitting on a bench near the concession stand with his face in his hands. <span style="color:pink">You smile and sit down next to him, startling the boy as you place a hand on his shoulder.</span> <br>
+    <br>
+
+    <span style="color:LightSteelBlue">“Ah!”</span> He jumps, turning to you with a fright, <span style="color:LightSteelBlue">“Oh, heyyyy… <span style="color:DarkTurquoise">$BenNickname</span>… Fancy, ummm… fancy meeting you here… heh heh…”</span> He laughs nervously, rubbing the back of his head. You smirk and tell him his family seems nice. <span style="color:DarkTurquoise">Ben</span> quickly blushes. <span style="color:LightSteelBlue">“Family? What are you talking about? My family isn’t…”</span> <span style="color:DarkTurquoise">Ben</span> gulps before sighing. <span style="color:LightSteelBlue">“Yeah… sorry. They can be…”</span> He pauses, <span style="color:LightSteelBlue">“A lot.”</span> You laugh, remembering that <span style="color:DarkTurquoise">Noah</span> described the boy, who you supposed is <span style="color:DarkTurquoise">Ben</span>’s little brother, with the same words. <br>
+    
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Ben",
+            State: {
+                Outfit: "Everyday",
+                Blush: 1,
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Sorry. It’s just… embarrassing.”</span> He takes a deep breath, <span style="color:LightSteelBlue">“They’re big and loud and confident… especially when my brother is involved. Then I saw you next to them and I… was hoping you wouldn’t meet them.”</span> You give <span style="color:DarkTurquoise">Ben</span> a smile, understanding being embarrassed by your family, especially when they’re so different from <span style="color:DarkTurquoise">Ben</span>. <span style="color:LightSteelBlue">“But can we not talk about my family?”</span> <span style="color:DarkTurquoise">Ben</span> asks with a nervous smile, <span style="color:LightSteelBlue">“I guess you’ll have to meet them eventually, since we’re friends… I think… but maybe we can do it when I have time to mentally prepare myself?”</span> <br>
+    <br>
+
+    <div id="choice">
+	    <<link "Agree<br>">>
+            <<replace "#choice">>
+                <span style="color:lightgreen">You smile and agree, you’ll leave proper introductions for another time. But you tell <span style="color:DarkTurquoise">Ben</span> his family seems nice, even if they are a little loud. But that doesn’t affect how you see him, which is indeed as a friend.</span> Plus, if you have sleep overs in the future, you’ll have to meet each other’s families. <br>
+                
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                    {
+                        Name: "Ben",
+                        State: {
+                            Outfit: "Everyday",
+                            Blush: 3,
+                            Mouth: "Frown",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+                <span style="color:LightSteelBlue">“A sleep over!?”</span> <span style="color:DarkTurquoise">Ben</span> repeats, sounding slightly panicked, <span style="color:LightSteelBlue">“I- I don’t know about – I mean not that I wouldn’t want to, I would! But – Ye- yeah… But we can talk about that later…”</span> <span style="color:pink"><span style="color:DarkTurquoise">Ben</span> seems very flustered about the idea, which you find cute.</span> <br>
+                <br>
+                [[Continue|Ben Quest Track Meet Cute 3]]
+            <</replace>>
+        <</link>>
+	    <<link "Call his little brother cute<br>">>
+            <<replace "#choice">>
+                <span style="color:pink">With a smile, you tell <span style="color:DarkTurquoise">Ben</span> that little brother of his is pretty cute. Like a little hyperactive version of <span style="color:DarkTurquoise">Ben</span> minus the glasses.</span> <span style="color:DarkTurquoise">Ben</span> sighs at this, burying his face in his hands once again. <span style="color:LightSteelBlue">“Try living with him. I love him and everything, but that kid is going to make my hair turn gray before I graduate college at this rate.”</span> You both laugh as you pat him on the shoulder, telling him you know a thing or two about annoying brothers. The two of you then spend a minute comparing annoying traits of your brothers as <span style="color:DarkTurquoise">Ben</span> calms his nerves. <br>
+                
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                    {
+                        Name: "Ben",
+                        State: {
+                            Outfit: "Everyday",
+                            Blush: 1,
+                            Mouth: "Frown",
+                            Eyes: "Mad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+                /* PC: Smirk, Tired
+                Ben: Everyday, Blush, Frown, Mad */
+                <span style="color:LightSteelBlue">“He doesn’t take anything seriously.”</span> He explains about his little brother <span style="color:DarkTurquoise">William</span>, <span style="color:LightSteelBlue">“And he pulls little pranks all the time, juvenile ones, especially on me. And he only gets in trouble sometimes! Mom says, ‘boys will be boys’, which is both sexist and inaccurate since I didn’t do half the things he does!”</span> <span style="color:DarkTurquoise">Ben</span> says, sounding a bit exacerbated. You can understand the youngest child getting away with crazy stuff though, considering <span style="color:DarkTurquoise">Noah</span> has been known to only get a talking too where you’d get a beating. <br>
+                <br>
+                [[Continue|Ben Quest Track Meet Cute 3]]
+            <</replace>>
+        <</link>>
+	    <<link "Question which one does the spanking<br>">>
+            <<replace "#choice">>
+                <span style="color:pink">With a teasing smirk, you wonder out loud which of his parents does the spanking in the family. His mom or his dad. <span style="color:DarkTurquoise">Ben</span> blushes bright red at this and blurts out a retort.</span> <span style="color:LightSteelBlue">“Why- why would you ask that!?”</span> His response causes you to chuckle, asking him when the last time he got a beating just to see his further reaction. <span style="color:LightSteelBlue">“I- I don’t-! I follow the rules, so I don’t get… that! If anyone is getting spanked, it’s <span style="color:DarkTurquoise">William</span>! I don’t play dumb pranks that warrant it!”</span> <br>
+                
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                    {
+                        Name: "Ben",
+                        State: {
+                            Outfit: "Everyday",
+                            Blush: 3,
+                            Mouth: "Frown",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+                /* PC: Smirk, Tired
+                Ben: Everyday, Blush3, Frown */
+                <span style="color:pink">You laugh at how desperate <span style="color:DarkTurquoise">Ben</span> seems to be to convince you he doesn’t get spanked, which just makes you believe he does more.</span> There is a bit of teasing back and forth between you two. Despite his embarrassment, you do see <span style="color:DarkTurquoise">Ben</span> smiling as he seems to at least find the humor in this line of questioning. <br>
+                <br>
+                
+                <span style="color:LightSteelBlue">“Thanks.”</span> <span style="color:DarkTurquoise">Ben</span> says, after it becomes clear that your humorous topics has broken the tension, <span style="color:LightSteelBlue">“I guess I just get a bit nervous when it comes to my family. But next time, can you choose a less humiliating topic?”</span> You stand up with a smirk, <span style="color:pink">wondering if next time you should just ask <span style="color:DarkTurquoise">Ben</span>’s mom if she has any funny pictures of him on her phone.</span> <span style="color:LightSteelBlue">“Don’t you dare! <span style="color:DarkTurquoise">$BenNickname</span>! I mean it!”</span> <span style="color:DarkTurquoise">Ben</span> calls out as you both run back towards the stands. <br>
+                <br>
+                [[Continue|Ben Quest Track Meet Cute 3]]
+            <</replace>>
+        <</link>>
+    </div>
+<</linkreplace>>
+
+:: Ben Quest Track Meet Cute 3 [nobr]
+
+<<set $Minutes += 60>>
+
+The two of you walk back to the stands together, chatting away until you are in sight of your families, after which <span style="color:DarkTurquoise">Ben</span> hangs back to not make it obvious you know each other. <span style="color:LightSteelBlue">“If they find out we’re friends, they’ll bombard us both with a hundred questions. And that’s not hyperbole either, they are THAT nosey!”</span> You chuckle, thinking he is overreacting, but once <span style="color:DarkTurquoise">Ben</span> does return to his seat, he is instantly hit with what feels like a hundred questions. From his mother asking if he is feeling alright, why he looks so pale, his father asking if he’s drinking enough water, and grandpa questioning if he’ll join any sports like his brother and telling him to just <span style="color:LightSteelBlue">“give it a try.”</span> <br>
+<br>
+
+His little brother, as well, pokes and prods <span style="color:DarkTurquoise">Ben</span>, asking him to play, calling him boring when he refuses, and making <span style="color:DarkTurquoise">Ben</span> think his fly was down. <span style="color:lightgreen">The family seems lively and fun, with no real malice in their words, outside of maybe the little brother, but you can easily understand why the quiet and shy <span style="color:DarkTurquoise">Ben</span> would easily feel overwhelmed.</span> As the race is about to begin, <span style="color:DarkTurquoise">Ben</span> manages to sneak you an apologetic look, which you return with a reassuring smile. <span style="color:DarkTurquoise">Your Father</span> seems to catch this shared look between you two, though he says nothing and just chuckles. <br>
+<br>
+
+Then, the race begins. Both <span style="color:DarkTurquoise">Gabe</span> and <span style="color:DarkTurquoise">Ben</span>’s elder brother <span style="color:DarkTurquoise">Clark</span>, a unit of a kid built almost as large as his father, are in the same race. Both families cheer as the race begins, and it becomes quite interesting as both <span style="color:DarkTurquoise">Gabe</span> and <span style="color:DarkTurquoise">Clark</span> take the lead and begin to battle it out. But <span style="color:DarkTurquoise">Clark</span> is fast, really fast. As he pulls ahead, seemingly with ease, <span style="color:DarkTurquoise">Gabe</span> tries his best to keep pace with the boy but eventually runs out of energy and has to fall back, eventually ending in 4th. <br>
+<br>
+
+<span style="color:DarkTurquoise">Noah</span> sighs that <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Gabe</span> didn’t win”</span>, but <span style="color:DarkTurquoise">Your Father</span> says fourth place is nothing to turn your nose up at. Glancing towards <span style="color:DarkTurquoise">Ben</span> and his family, that all seem happy and joyous at their son’s victory. <span style="color:DarkTurquoise">Ben</span>, despite not cheering as loudly as his family, does also seem fairly pleased with his brother’s victory. <span style="color:pink">Though once his family begins to celebrate a little too loudly, <span style="color:DarkTurquoise">Ben</span> quickly sinks into his seat a tad embarrassed.</span> <br>
+<br>
+
+<span style="color:LightSteelBlue">“They have enthusiasm, that’s for sure.”</span> <span style="color:DarkTurquoise">Your Father</span> chuckles to you and <span style="color:DarkTurquoise">Noah</span> as the crowd begins to disperse, the sports event coming to an end. <span style="color:LightSteelBlue">“That boy a friend of yours, <span style="color:DarkTurquoise">$DadNickname</span>?”</span> You nod, ensuring <span style="color:DarkTurquoise">Ben</span>’s family is out of earshot, and explain who <span style="color:DarkTurquoise">Ben</span> is, and that he asked to delay introductions, since his family is a bit…  <br>
+
+<<set _ad to [
+    {
+        Name: "Dad",
+        State: {
+            Mouth: "Smile",
+            Brows: "Suspicious",
+        },
+    },
+    {
+        Name: "Noah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smirk",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smirk",
+        },
+    },
+]>>
+<<ad _ad>>
+/* Noah: Everyday, Smirk
+PC: Smirk */
+<span style="color:LightSteelBlue">“They’re loud.”</span> <span style="color:DarkTurquoise">Noah</span> says bluntly, <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">William</span>’s in my class too. He’s pretty funny, but he doesn’t listen that well. The other day he got in trouble and spanked during recess because he kept getting out of his chair.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Well, I’ll love to meet him whenever you both feel up to it. He seems like a nice kid.”</span> <span style="color:DarkTurquoise">Your Father</span> says as the three of you begin to walk down the stairs, <span style="color:LightSteelBlue">“Especially since he seemed like the quiet one.”</span> You get the feeling <span style="color:DarkTurquoise">Your Father</span> has some thoughts about the rowdiness of <span style="color:DarkTurquoise">Ben</span>’s family, though wisely choose to keep it to himself. Then again, this is a sporting event, so some rowdiness is expected. <br>
+
+<<set _ad to [
+    {
+        Name: "Ben",
+        State: {
+            Outfit: "Everyday",
+            PantsDown: true,
+            Mouth: "Frown",
+            Blush: 3,
+        },
+    },
+    {
+        Name: "William",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smirk",
+            Eyes: "Mad",
+        },
+    },
+]>>
+<<ad _ad>>
+/* Ben: Everyday, Pants Down, Frown, Blush3
+William: Everyday, Smirk, Mad */
+As you walk down, you make eye contact with <span style="color:DarkTurquoise">Ben</span>. He gives you a shy wave… <span style="color:pink">right as his little brother sneaks up behind him and pulls his $BenBottoms.Type down, revealing his tighty whities to everyone looking. <span style="color:DarkTurquoise">William</span> runs off laughing as <span style="color:DarkTurquoise">Ben</span> hurriedly fixes his clothes and chases after the boy blushing. What an interesting family.</span> <br>
+<<socialChange "Ben" 10>>
+<<set $WilliamSocial to 0>>
+<<set $WilliamSocialRank to 0>>
+<<needChange "Fun" 20>>
+<<set $InActiveQuests.delete("Ben: Track Meet Cute")>>
+<<set $CompletedQuests.push("Ben: Track Meet Cute")>>
+<br>
+[[End|PH Living Room]]

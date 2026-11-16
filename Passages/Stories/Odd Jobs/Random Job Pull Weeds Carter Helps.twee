@@ -1,0 +1,71 @@
+:: Random Job Pull Weeds Carter Helps [nobr]
+
+/* Intro */
+
+You knock on the front door and introduce yourself to the client. She appears to be an expecting mother who already has two toddler children. <span style="color:LightSteelBlue">“Thank you so much for doing this! The HOA’s been on me about cleaning the yard, but my mom is sick and hasn’t been able to watch the kids so I could get it done and-“</span> You stop her, explaining that it’s no problem and you’ll get them all clear from her yard so she can focus on her kids. <span style="color:LightSteelBlue">“Thanks, you’re the best! Just let me know when you’re done or if you need water or anything.”</span> <br>
+<br>
+Taking a quick stroll around the house you find that this won’t be as simple as you expected as there is a practical forest of weeds all along her house! Most of which comes up to your knees! But there is no way you can back out now, so you get to work and after a hard and grueling 10 minutes of working you have… <span style="color:Yellow">barely even begun. Dang it. This was going to be a long job!</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+
+        },
+    },
+    {
+        Name: "Carter",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Wa- watch out!”</span> A familiar cry draws your attention to the sidewalk <span style="color:Yellow">just in time to see someone crash their bike and fly headfirst into the shrubbery.</span> Quickly running over, you discover that the unlucky lad is none other than your friend and classmate <span style="color:DarkTurquoise">Carter</span>. <span style="color:LightSteelBlue">“Owie, that could have gone better- Oh! $CarterNickname! Uhhhh… hey there!”</span> He blushes, chuckling as you help him out of the bush and ask him if he’s alright. <span style="color:LightSteelBlue">“Yup! Right as rain! I just hit a rock and lost control for a second there.”</span> <span style="color:DarkTurquoise">Carter</span> walks over to examine his bike, which like him seems to be mostly unharmed. <br>
+<br>
+<span style="color:LightSteelBlue">“Looks good! Thanks, Mr. Bush, for breaking my fall.”</span> <span style="color:DarkTurquoise">Carter</span> laughs, saluting the bush, <span style="color:LightSteelBlue">“And thank you for helping me up. Hey, whatcha doing?”</span> <span style="color:DarkTurquoise">Carter</span> peeks over, spotting the forest of weeds. You explain that you took up a job to pull weeds, but it is a bit more than you expected. So, you’re pretty sure you’ll be here all day. <br>
+<br>
+<span style="color:LightSteelBlue">“Want some help?”</span> <span style="color:DarkTurquoise">Carter</span> offers with a smile. You try to turn him down, not wanting to cause him trouble, but he insists. <span style="color:LightSteelBlue">“With two of us, we’ll be done in no time! Plus, I’m a bit of an expert when it comes to yard maintenance.”</span> He puffs out his chest, <span style="color:LightSteelBlue">“I help some of my older neighbors all the time. Believe it or not, I’m quite strong when it comes to pulling weeds!”</span> You doubt you can call <span style="color:DarkTurquoise">Carter</span> ‘strong’ in the physical sense, but figure why not and accept his help. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+
+        },
+    },
+    {
+        Name: "Carter",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightGreen">The two of you working together really does make the job quicker.</span> <span style="color:DarkTurquoise">Carter</span>, while not as strong as he claims, is pretty clever. Using a sturdy stick to dig at the roots of the tough weeds to make pulling them out easier. <span style="color:LightGreen">In the end, what you expected to take the whole day is finished up in half an hour!</span> <span style="color:DarkTurquoise">Carter</span> is a bit sweaty and dirty from digging in the dirt but stands proudly with his hands on his sides as the woman thanks you both for your help and pays you the agreed upon payment. As you walk back to <span style="color:DarkTurquoise">Carter</span>’s bike, you try to give him half the cash, but he turns it down. <br>
+<br>
+<span style="color:LightSteelBlue">“I could never take money for helping out a friend!”</span> He shakes his head, pushing the money back into your hands. <span style="color:LightSteelBlue">“Helping my friend is payment enough! But if you really want to make it up to me, you can help me patrol around the park sometime! There are always people in need there!”</span> <span style="color:Pink">Unable to hold back your smile on just how kind-hearted the boy is, you thank <span style="color:DarkTurquoise">Carter</span> with a hug as the two of you part ways. What a good friend!</span> <br>
+
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<<needChange "Hygiene" -5>>
+<<socialChange "Carter" 2>>
+<br>
+/* GENERIC TIME PASS */
+    <<set $Minutes += 30>>
+	<<set $OddJobsCount += 1>>
+/* RETURN CODE */
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+<<elseif $Location.Name == "Wald Street">>
+    [[Continue|Wald Street]]
+<<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+<</if>>
+

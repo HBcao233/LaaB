@@ -1,0 +1,93 @@
+:: OC Miller Help Lemonade Squeeze [nobr]
+
+After an onslaught of customers, things finally begin to slow down as you are able to sit down and relax a moment until you feel something padding your back. Turning around, you see <span style="color:DarkTurquoise">Kayden</span> holding a couple of lemons in his hands.<br>
+<br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Player">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+	<<include"Player Avatar Display Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* SECOND LAYER */
+	<<set $AD.Name to "Kayden">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC KAYDEN Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: absolute; left: 125px; top: 0px">
+	<<include"Kid Avatar Display">>
+</div>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">“Sorry to bother you, but could you help me squeeze some lemons?”</span> He asks timidly. You agree with a smile and follow <span style="color:DarkTurquoise">Kayden</span> over to the table. Placing the lemons down, <span style="color:DarkTurquoise">Kayden</span> stands beside you, eagerly watching as you demonstrate the proper way to cut the lemons and press out every drop of juice with a squeezer.<br>
+<br>
+
+<<linkreplace "Continue">>
+    <<set _random to random(1, 2)>>
+    <<if _random === 1>>
+        The task unfolds seamlessly, and <span style="color:DarkTurquoise">Kayden</span> is quick to catch on. Though he isn’t as strong as you, a fault owed to his small, cute hands, he still follows your lead with impressive focus. <span style="color:lightgreen">The air soon fills with the lemons’ fresh, zesty scent, blending in perfectly with the laughter and music surrounding J&K’s Lemonade Stand.</span><br>
+        <<socialChange "Kayden" 3 1>>
+
+    <<else>>
+        <span style="color:DarkTurquoise">Kayden</span> watches intently as you demonstrate the slicing and squeezing, his brow furrowed in concentration. He’s eager to learn, that’s for sure, and you’re happy to teach him. <span style="color:lightcoral">However, in an unexpected twist of fate, as you are squeezing one particularly stubborn lemon, the juice squirts wildly, a rogue stream catching <span style="color:DarkTurquoise">Kayden</span> square in the eye!</span><br>
+        <br>
+
+        /* AVATAR DISPLAY */
+            <<set $AD.Name to "Player">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Sad">>
+            <<set $AD.Outfit to "Everyday">>
+            <<set $AD.Hard to 0>>
+            <<include"Player Avatar Display Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+        <div style="position: relative">
+            <<include"Avatar Display">>
+        /* SECOND LAYER */
+            <<set $AD.Name to "Kayden">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 1>>
+            <<set $AD.Blush to 1>>
+            <<set $AD.Mouth to "Happy">>
+            <<set $AD.Outfit to "Everyday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC KAYDEN Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+        <div style="position: absolute; left: 125px; top: 0px">
+            <<include"Kid Avatar Display">>
+        </div>
+        /* END LAYER */
+            <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+        </div>
+
+        <span style="color:DarkTurquoise">Kayden</span>’s distress eases after a few moments of careful rinsing, reassurance, and plenty of tears. You can’t help but feel guilty, but <span style="color:DarkTurquoise">Kayden</span> shakes off the incident with a bract smile, though his eye remains slightly red and watery.<br>
+        <<socialChange "Kayden" 1 1>>
+    <</if>>
+
+    <<needChange "Fun" 10>>
+    <br>
+
+    <<include "OC Millers Lemonade Leave Link">>
+<</linkreplace>>

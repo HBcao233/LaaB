@@ -1,0 +1,69 @@
+:: English Question [nobr]
+
+<<set _skillcheckdif to random(20, 70)>>
+
+You spend the first half of the class reading chapters from the book The Outsiders. Afterwards, <span style="color:DarkTurquoise">Mr. Hart</span> tiredly asks if anyone could give their take on the themes and message of the book. 
+	
+<<if $SkillCheckDifficulty < $EnglishSkill + 1>>
+	<span style="color:Green">You believe you have a decent understanding of the material and could explain it well enough.</span> Though you wonder if your conclusion is what <span style="color:DarkTurquoise">Mr. Hart</span> is looking for.
+	
+<<elseif $SkillCheckDifficulty == $EnglishSkill + 1>>
+	<span style="color:Yellow">You understand the material, but are unsure if you can put it into simple words.</span> You could give it a shot, but worry about stumbling over your words and it just sounding like gibberish.
+	
+<<elseif $SkillCheckDifficulty > $EnglishSkill + 1>>
+	<span style="color:Red">You didn’t really understand it at all.</span> But you think you can spin something together that sounds at least partially coherent.
+	
+	<</if>><br>
+
+<<set _ad to [
+	{
+		Name: "Hart",
+		State: {
+			Eyes: "Narrow",
+			Mouth: "Frown",
+		},
+	},
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+]>>
+
+<<ad _ad>>
+<div id=choice>
+<<link "Raise hand">>
+<<replace"#choice">>
+	<<skillCheck "English" _skillcheckdif>>
+		
+		<<if _result == 1>>
+			You raise your hand and are asked to stand up and give your thoughts. <span style="color:Green">You give a short, yet thoughtful explanation of the character’s motivations and how they fit into the theme of the book.</span> Many of the students seem to agree with your points and soon a discussion is formed around it. <span style="color:DarkTurquoise">Mr. Hart</span> seems impressed and gives you a thumbs up<br>
+				<<set $GradeChange to "English">>
+				<<set $GradeChangeType to "Increase">>
+				<<include"Grade Change">>
+			<br>
+		<<set _EventPassFail to "Pass">>
+		<<include"Attend English Finish">>
+
+		<<else>>
+			You raise your hand and are asked to stand up and give your thoughts. <span style="color:Red">As you talk you soon realize that what you’re saying contradicts itself.</span> A student points this out, causing some of the other boys to laugh at you as you sit back down. <span style="color:DarkTurquoise">Mr. Hart</span> asks the other student to explain, who gives a much better interpretation.<br>
+			<br>
+			<<set _EventPassFail to "Fail">>
+			<<include"Attend English Finish">>
+		<</if>>
+
+<</replace>>
+<</link>>
+
+<<skillDiff "English" _skillcheckdif>><br>
+
+<<link "Remain quiet<br>">>
+<<replace"#choice">>
+	You decide against giving your thoughts and remain quiet with the rest of the class. Thankfully, <span style="color:DarkTurquoise">Mr. Hart</span> seems to have fallen asleep at his desk and no one is forced to answer.<br>
+	<br>
+	<<include"Attend English Finish">>
+
+<</replace>>
+<</link>>
+</div>

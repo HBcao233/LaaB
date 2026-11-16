@@ -1,0 +1,169 @@
+:: Millers Babysitting Backyard Ask to Play 2 [nobr]
+
+/* Intro */
+You find <span style="color:DarkTurquoise">Kayden</span> sitting on one of the lounge chairs near the pool, the boy’s small body dwarfed by the adult-sized chair. He is quietly singing to himself while fiddling with the material of the chair. <span style="Color: LightGreen">You ask him if he wants to play a game and he quickly perks up,</span> <span style="Color: LightSteelBlue">“Oh yeah! Let’s play hide-and-seek! You stay here and count to 20 and I’ll hide and you have to find me. Oh, but only back here. No going inside, to make it easier for you.”</span> He smirks as you agree and sit down on the patio to begin counting. You hear the sound of him rushing off as you count loudly, though try to listen to hear where he may be heading. 
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+About 20 seconds later, you call out that, ready or not, you are coming! You open your eyes to find the backyard empty, from what you can see from a glance anyway. Not bad, the kid at least found a place out of sight to hide. Now, considering the size of this yard, it may be hard to find him. But the yard is also pretty open without a lot of places even someone of his small stature could conceal himself. <span style="Color: Yellow">That leaves you with two obvious options. Behind the shed and under the deck.</span> <br>
+<br>
+
+<<set _kaydenLocation to random(1, 2)>>
+<div id="choice">
+    <<link "Check under the deck<br>">>
+    <<replace"#choice">>
+        You tiptoe across the yard, scanning for any sign of <span style="color:DarkTurquoise">Kayden</span> without giving your location away. You figure he won’t have eyes on you, but if he hears you coming he may just make a break for it before you can spot him. The kid is pretty fast and you wouldn’t put it past him to run circles around you without you even knowing. <span style="Color: Yellow">You hear his giggles echo faintly, the sound coming from the deck.</span> <br>
+        <br>
+        Then you spot it, crouching down you see the familiar color of <span style="color:DarkTurquoise">Kayden</span>’s sneakers poking out from just beneath the wooden planks. Got him-! <br>
+        <br>
+        <<if _kaydenLocation == 1>>
+            <span style="Color: LightGreen">You reach out and grab the boy by his ankles!</span> He screams, terror mixed with laughter as you drag him out and lift him into the air by his ankles. <span style="Color: Pink">His shirt flutters up, revealing his adorable little belly and the waistband of his blue briefs, pulled up just enough to give you a good peek.</span> <br>
+            
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                    {
+                        Name: "OC Kayden",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Smile",
+                            Blush: 1,
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            <span style="Color: LightSteelBlue">“How did you find me!?”</span> He says as his giggles stop, pushing his shirt out of his face. You explain to him the error in his plan, his brightly colored shoes weren’t covered at all and gave his hiding spot away. <span style="color:DarkTurquoise">Kayden</span> turns a bit red and puffs out his cheeks, <span style="Color: LightSteelBlue">“No fair!”</span> He crosses his arms, pretending to pout. <span style="Color: LightSteelBlue">“Just you wait! Next time you’ll never find me!”</span> <br>
+            <br>
+            That may be true, but this time you did find him, meaning you should get a reward. And seeing as <span style="color:DarkTurquoise">Kayden</span>’s little sides are completely exposed to you and he is helplessly in your grasp, you know just what your prize should be! <span style="Color: Pink">You begin to tickle <span style="color:DarkTurquoise">Kayden</span> relentlessly, the young boy defenseless to your attack as he is laughing until tears are rolling down his cheeks. A fitting reward indeed.</span> <br>
+            <br>
+            <<needChange "Fun" 10>>
+            <span style="color:green">+Kayden Fun</span><br>
+            <span style="color:green">+Kayden Comfort</span><br>
+            <<socialChange "Kayden" 3 1>>
+            [[Continue|OC Miller House Backyard]]
+
+        <<else>>
+            You reach out to grab his ankles – <span style="Color: Yellow">only to find no sign of the boy, just his empty shoes places strategically under the deck.</span> The little twerp actually got one over on you. You laugh and praise his trick out loud, trying to bait him out with praise, but he shows no sign of appearing. You continue your search. <br>
+            <br>
+            <<if $Player.Kinks.Kids == 1>>
+                As you search, you briefly wonder if you could get <span style="color:DarkTurquoise">Kayden</span> to try that trick with something a bit more substantial than his sneakers. <span style="Color: Pink">You imagine what it would have been like had he used his bottoms as bait, snickering about how clever his trick is as he runs off to his real hiding space with his underwear-clad butt on full display. You blush at the thought.</span> <br>
+                <br>
+            <</if>>
+            Despite checking all over, you can’t seem to find the boy until, after a solid 5 minutes, you walk right past a bush and, not noticing anything out of the ordinary, <span style="Color: LightCoral">are nearly scared out of your skin as the boy leaps out with a victorious yell!</span> You nearly fall over and let out a small yelp, causing the young boy to giggle relentlessly and tease you.
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                    {
+                        Name: "OC Kayden",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Smirk",
+                            Blush: 1,
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            <span style="Color: LightSteelBlue">“I got you, I got you!”</span> <span style="Color: Pink">He giggles as you can’t help but blush and smile.</span> He really did get one over on you. <span style="Color: LightSteelBlue">“You missed me, you missed me. I got you and you missed me!”</span> He says in a sing-song voice as he bounces around, celebrating his small victory. <br>
+            <br>
+            <<needChange "Fun" 10>>
+            <<needChange "Energy" -10>>
+            <span style="color:green">+Kayden Fun</span><br>
+            <<socialChange "Kayden" 3 1>>
+            [[Continue|OC Miller House Backyard]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<link "Check around the pool shed<br>">>
+    <<replace"#choice">>
+        The backyard is quiet, too quiet. Not even a distant giggle or breathing of the lad. He truly is a master of this game, but unlucky for him, you are far beyond that of a master. You near the pool shed, circling it and scanning the bushes and sides carefully. You imagine him just out of sight, circling around with you in a humorous merry-go-round. <br>
+        <br>
+        <span style="Color: Yellow">Then, you spot it, a tuff of black hair poking out from inside one of the bushes. You got him-!</span> <br>
+        <br>
+        <<if _kaydenLocation == 2>>
+            You call out <span style="color:DarkTurquoise">Kayden</span>’s name in a sing-song voice, creeping closer and closer until you pounce on him! <span style="Color: LightSteelBlue">“Nope, you didn’t find me!”</span> He calls out, ducking away just in time and sprinting from the bush. You give chase, calling back that this isn’t exactly how hide-and-seek works, but he doesn’t seem to care as he runs off giggling.
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                    {
+                        Name: "OC Kayden",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Happy",
+                            Blush: 1,
+                            Arms: "Hide",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            But your long legs and determination override his and you inch closer and closer until you reach out and grab him… or, at least, <span style="Color: Yellow">you grab the first thing you can attached to him.</span> <span style="Color: LightSteelBlue">“Aaaaahhhhh~!”</span> <span style="Color: Pink"> <span style="color:DarkTurquoise">Kayden</span> cries out in a high-pitched voice as you grip the back of his underwear and stop him in his tracks, his running giving himself an adorably cute wedgie.</span> <span style="Color: LightSteelBlue">“No fair, no fair!”</span> He laughs, falling to the ground as he tries to pull himself away, <span style="Color: Pink">unintentionally giving you a peek at his cute little butt.</span> <span style="Color: LightSteelBlue">“You can’t grab my underwear! That’s cheating!”</span> You inform him that running away after he has been found is also cheating, so you’re just evening the odds. <br>
+            <br>
+            <span style="Color: Pink">He tries to complain, but considering you have him by the undies, he eventually relents and declares you the victory. Good, though you are a tad disappointed when you eventually have to release his underwear.</span> <br>
+            <br>
+            <<needChange "Fun" 10>>
+            <<needChange "Energy" -10>>
+            <span style="color:green">+Kayden Fun</span><br>
+            <span style="color:green">+Kayden Comfort</span><br>
+            <span style="color:red">-Kayden Energy</span><br> 
+            <<socialChange "Kayden" 3 1>>
+            [[Continue|OC Miller House Backyard]]
+        <<else>>
+            You smile and call out <span style="color:DarkTurquoise">Kayden</span>’s name in a sing-song voice, creeping closer and closer until you pounce… <span style="Color: LightCoral">and land directly in an empty bush.</span> The tuff of hair you saw really just being a particularly fuzzy butterfly that flaps away annoyed as you ruined its perfectly good resting spot. Well, that could have gone better. 
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                    {
+                        Name: "OC Kayden",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Smirk",
+                            Eyes: "Mad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            You are getting out of the bush, pulling leaves from your hair and a thorn from you side, <span style="Color: LightCoral">when you suddenly feel a hard slap on your rear and instantly straighten up.</span> <span style="Color: LightSteelBlue">“Hah! You walked right into me!”</span> He giggles, sticking his tongue out at you before sprinting away before you can get revenge. You blink twice and ask him where he was hiding. <span style="Color: LightSteelBlue">“Not telling!”</span> He laughs, running off. <span style="Color: LightCoral">The little twerp is better at this than you expected.</span> <br>
+            <br>
+            <<needChange "Fun" 10>>
+            <span style="color:green">+Kayden Fun</span><br>
+            <<socialChange "Kayden" 3 1>>
+            [[Continue|OC Miller House Backyard]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

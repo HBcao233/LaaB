@@ -1,0 +1,118 @@
+:: Closet Buy Undies {"position":"2675,1600","size":"100,100"}
+<<nobr>>
+
+--Equiped--<br>
+Undies: 
+<<if $PlayerUndies.Name == "None">>
+	$PlayerUndies.Description
+<<else>>
+    [img[$PlayerUndies.Icon]]
+<</if>><br>
+
+<<if $PlayerUndies.Tags.includes("Sleepwear")>>
+	You can sleep in these!<br>
+<</if>>
+
+<<if $PlayerUndies.Name != "None">>
+	<<link "Remove">>
+    	<<set $ClosetUndies.push($PlayerUndies)>>
+<<set $PlayerUndies to {
+	Name: "None",
+    ID: "None",
+    Type: "None",
+    Color: "None",
+    Slot: "Undies",
+    Temp: 0,
+    Tags: ["Sleepwear"],
+    Durability: 5,
+    Icon: "None",
+    Avatar: "None",
+    Description: "Nothing at all.",
+    
+    }>>
+        <<goto "Closet Buy Undies">>
+    <</link>>
+<</if>>
+<br>
+<br>
+
+--Current Undies--<br>
+<<for _i to 0; _i lt $ClosetUndies.length; _i++>>
+	$ClosetUndies[_i].Name
+    [img[$ClosetUndies[_i].Icon]]
+    
+    <<capture _i>>
+    <<link "Wear">>
+    <<if $PlayerUndies.Name == "None">>
+    	<<set $PlayerUndies to $ClosetUndies[_i]>>
+        <<set $ClosetUndies.deleteAt(_i)>>
+        <<goto "Closet Buy Undies">>
+	<<else>>
+    	<<set $ClosetUndies.push($PlayerUndies)>>
+    	<<set $PlayerUndies to $ClosetUndies[_i]>>
+        <<set $ClosetUndies.deleteAt(_i)>>
+        <<goto "Closet Buy Undies">>
+    <</if>>
+    <</link>><br>
+	<</capture>>
+
+<</for>>
+<br>
+
+--Buyable Undies--<br>
+<<link "White Briefs">>
+	<<set $ClosetUndies.push({
+    Name: "White Briefs",
+    ID: "UnBrWh",
+    Type: "Briefs",
+    Color: "White",
+    Slot: "Undies",
+    Temp: 0,
+    Tags: ["Sleepwear"],
+    Durability: 5,
+    Icon: "Images/Equipment/Briefs/White Briefs.png",
+    Avatar: "Images/Avatar/Clothes/Briefs/White Briefs.png",
+    Description: "A nice pair of White Briefs",
+    })>>
+	<<goto "Closet Buy Undies">>
+<</link>><br>
+
+<<link "Blue Briefs">>
+	<<set $ClosetUndies.push({
+    Name: "Blue Briefs",
+    ID: "UnBrBl",
+    Type: "Briefs",
+    Color: "Blue",
+    Slot: "Undies",
+    Temp: 0,
+    Tags: ["Sleepwear"],
+    Durability: 5,
+    Icon: "Images/Equipment/Briefs/Blue Briefs.png",
+    Avatar: "Images/Avatar/Clothes/Briefs/Blue Briefs.png",
+    Description: "A nice pair of Blue Briefs",
+    })>>
+	<<goto "Closet Buy Undies">>
+<</link>><br>
+
+<<link "Red Briefs">>
+	<<set $ClosetUndies.push({
+    Name: "Red Briefs",
+    ID: "UnBrRe",
+    Type: "Briefs",
+    Color: "Red",
+    Slot: "Undies",
+    Temp: 0,
+    Tags: ["Sleepwear"],
+    Durability: 5,
+    Icon: "Images/Equipment/Briefs/Red Briefs.png",
+    Avatar: "Images/Avatar/Clothes/Briefs/Red Briefs.png",
+    Description: "A nice pair of Red Briefs",
+    })>>
+	<<goto "Closet Buy Undies">>
+<</link>><br>
+
+
+<br>
+[[Back|Test Closet]]
+
+<</nobr>>

@@ -1,0 +1,26 @@
+:: Gabe Avatar Everyday [nobr]
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Gabe">>
+<<set $AD.Arms to "Normal">>
+<<if $NPCHurt == 1>>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 1>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Sad">>
+	<<set $NPCHurt to 0>>
+<<else>>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+<</if>>
+<<set $AD.Outfit to "Everyday">>
+<<set $AD.Hard to 0>>
+	<<include"GABE Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Teen Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\EmptyTeen.png" style="position: static; left: 0; top: 0">
+</div>

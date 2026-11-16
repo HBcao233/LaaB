@@ -1,0 +1,116 @@
+:: Carter Trampoline Wrestle [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+You and <span style="color:DarkTurquoise">Carter</span> are jumping on the trampoline, enjoying the adrenaline-filled fall that comes with every bounce. Then, either by accident or misguided intention, <span style="color:DarkTurquoise">Carter</span> <span style="Color: Yellow">falls forward and collides with you, sending you onto your back with <span style="color:DarkTurquoise">Carter</span> on top of you. You are about to laugh it off and ask him to watch out, when you hear him counting and slapping the base of the trampoline!</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+    {
+        Name: "Carter",
+        State: {
+            Outfit: "Swim",
+            Mouth: "Smirk",
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“One! Two!”</span> <span style="Color: Yellow">He is counting for a pinfall, something you cannot so easily submit to!</span> You toss up your shoulder like they do on TV, sending <span style="color:DarkTurquoise">Carter</span> rolling off of you. <span style="Color: LightSteelBlue">“Haha, almost got you!”</span> <span style="Color: Yellow">You both stand up, crouching down opposite each other as the match set for one fall begins.</span> <br>
+<br>
+You both bounce forward, locking up as your mind creates an imaginary crowd cheering you both on. But who is the babyface and who is the heel? <span style="color:DarkTurquoise">Carter</span> is certainly the type to be loveable and cheered, but his sneak attack does scream villain in this case. Though you don’t have time to talk about the details of this story as <span style="color:DarkTurquoise">Carter</span> manages to throw you off balance and you both tumble down, bouncing around playfully as the springs make it hard to regain your footing. <br>
+<br>
+<span style="Color: LightSteelBlue">“Just wait until I hit you with my special move!”</span> <span style="color:DarkTurquoise">Carter</span> smirks. <br>
+<br>
+
+/* An Easy Skill Check. If failed, results are 50/50, if passed they are 90/10 */
+<<skillCheck "Athletics" 50>>
+<<if _result == 1>>
+    <<set _random to random(1, 50)>>
+<<else>>
+    <<set _random to random(1, 10)>>
+<</if>>
+
+<<linkreplace"Continue">>
+    <<if _random > 5>>
+        <span style="color:DarkTurquoise">Carter</span>’s ‘special move’ turns out to be some over-exaggerated superhero flip that he utterly fails to perform. <span style="Color: LightSteelBlue">“W- woah!”</span> He lands awkwardly, tumbling towards the edge of the trampoline! You try to catch him, but miss as he falls out of the netted barrier! <span style="Color: Yellow">But he doesn’t crash to the ground. The universe would never let <span style="color:DarkTurquoise">Carter</span> off with a simple fall.</span> <span style="Color: Pink">Instead, his trunks catch on one of the springs, hooking around it as <span style="color:DarkTurquoise">Carter</span> stops a few inches from the ground with a rather interesting swimming trunks wedgie.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },
+                },
+                {
+                    Name: "Carter",
+                    State: {
+                        Outfit: "Swim",
+                        Mouth: "Frown",
+                        Blush: 2,
+                        Arms: "Hide",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Ack!”</span> <span style="Color: Pink">He grunts as his bodyweight is help up by his clothing, his trunks squeezing his bits in a painful wedgie.</span> <span style="Color: LightSteelBlue">“Ow! H- help!”</span> He calls out to you, flailing about and utterly stuck. Though instead of helping him, you begin to count up to 10. <span style="Color: LightSteelBlue">“What are you doing!?”</span> He cries out. <span style="Color: LightGreen">You inform him that, if he can’t get back in the ring after a 10-count, you win. <br>
+        <br>
+        You can’t help but laugh as <span style="color:DarkTurquoise">Carter</span>, desperate to not admit defeat, continues to try and free himself. He tries everything short of falling out of his trunks, which he’d be too embarrassed to do for the sake of a game. Still, it is pretty cute to see him eventually admit defeat and slump down.</span> <span style="Color: LightSteelBlue">“Okay! I submit… Can you please unhook me now?”</span> <br>
+        <br>
+        <span style="Color: LightGreen">You oblige, happy with your victory.</span> <br>
+        <span style="color:Red">-Carter Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <span style="color:Green">+Carter Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <<needChange "Fun" 10>>
+        <<socialChange "Carter" 1>>
+        <br>
+        [[Continue|Carter House Backyard Swim]]
+    <<else>>
+        <span style="color:DarkTurquoise">Carter</span>’s ‘special move’ turns out to be some over-exaggerated superhero flip he saw on T.V. You expect him to fail miserably, as so often is the case, but he actually manages to land it! <span style="Color: Yellow">It is more so the surprise of him pulling it off than the attack itself that knocks you off balance, causing you to fall forward as <span style="color:DarkTurquoise">Carter</span> jumps on top of you with his entire body.</span> <br>
+        <br>
+        The kid isn’t that heavy, so pushing him off wouldn’t normally be that hard, but then you notice something odd. <span style="Color: Yellow">The way you fell combined with you being in the center of the trampoline makes it impossible for you to gain any leverage! You can’t push <span style="color:DarkTurquoise">Carter</span> off of you since you can’t get the force to do so!</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Secret Technique! Ultraboy Capture Attack!”</span> <span style="color:DarkTurquoise">Carter</span> proclaims as if he just made the name up, lying on you in such a way that you can hardly move. You are left utterly shocked that <span style="color:DarkTurquoise">Carter</span> had managed to overpower you and win with such little strength, <span style="Color: Yellow">having no choice but to admit defeat as he does the 3-count.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "Carter",
+                    State: {
+                        Outfit: "Swim",
+                        Mouth: "Smirk",
+                        Blush: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+        
+        <span style="Color: LightSteelBlue">“I win! I win!”</span> <span style="color:DarkTurquoise">Carter</span> laughs, rolling off of you and jumping about, <span style="Color: LightSteelBlue">“Sorry about that. My brother showed me that move. He does wrestling and stuff.”</span> He sticks his tongue out and does a cute pose, obviously proud of himself. <span style="Color: LightSteelBlue">“I can show you, if you want. It’s pretty easy to do on the trampoline, since it’s already kinda hard to move around.”</span> <br>
+        <br>
+        <span style="Color: LightGreen">You agree to be taught and spend the next few minutes learning some moves from <span style="color:DarkTurquoise">Carter</span>. For a small, clumsy boy, he actually seems to have a pretty decent amount of knowledge about wrestling.</span> <br>
+        <span style="color:green">+Carter Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 5>>
+        <span style="color:Red">-Carter Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <span style="color:Green">+Carter Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <<needChange "Fun" 10>>
+        <<socialChange "Carter" 1>>
+        <br>
+        [[Continue|Carter House Backyard Swim]]
+    <</if>>
+<</linkreplace>>

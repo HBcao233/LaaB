@@ -1,0 +1,61 @@
+:: OC Kazu Playground Music Chat [nobr]
+
+/* Intro */
+As you are walking around the field near the playground, the sound of laughter catches your ears. You turn towards it to see a group of boys hanging around one of the benches chatting away. Amongst them is <span style="color:DarkTurquoise">Kazu</span>, 
+
+<<if $OCKazuSocial < 40>>
+    <span style="color:Pink">that kid you met that got beaten by <span style="color:DarkTurquoise">Mr. Randolph</span>.</span> <br>
+    <br>
+<<else>>
+    <span style="color:LightGreen">your friend, who is admittedly a bit of a bad boy.</span> <br>
+    <br>
+<</if>>
+
+<<set _ad to [
+	{
+		Name: "OC Kazu",
+		State: {
+            Outfit: "Uniform",
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“I don’t know man, Lincoln Park is so normie.”</span> One of the boys says, leaning back, <span style="Color: LightSteelBlue">“Like, everyone knows that band.”</span><br>
+    <br>
+<span style="Color: LightSteelBlue">“They’re not normie!”</span> <span style="color:DarkTurquoise">Kazu</span> responds, sounding a little insulted, <span style="Color: LightSteelBlue">“They’re just good enough to break through the normie barrier. They’re hardcore! You’re just mad no one else here listens to your cringe internet music!”</span><br>
+    <br>
+<span style="Color: LightSteelBlue">“The Dead Tombstone is not cringe!”</span> The boys go back and forth for a little, getting into a bit of a roughhousing match, that <span style="color:DarkTurquoise">Kazu</span> wins easily, before he sees you and calls you over.<br>
+
+<<set _ad to [
+	{
+		Name: "OC Kazu",
+		State: {
+            Outfit: "Uniform",
+			Mouth: "Smirk",
+            Eyes: "Tired",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<<if $Player.Traits.includes("Virtuoso")>>
+    [Virtuoso] <span style="color:LightGreen">You join in their conversation, your immense musical knowledge, especially of their <span style="Color: LightSteelBlue">“hard core bands”</span> earns you a bit of respect and as the conversation turns to other topics, you see <span style="color:DarkTurquoise">Kazu</span> giving you an approving smile.</span> <br>
+	<<socialChange "Kazu" 5 1>>
+	<<needChange "Fun" 10>>
+    <br>
+    [[Continue|School Courtyard]] 
+<<else>>
+    They ask you your opinion on various bands and artists, <span style="color:Yellow">though you haven’t heard of most of them and admit that your musical knowledge is lacking.</span> The boys all boo and tease you over this. <span style="color:DarkTurquoise">Kazu</span>, though a little disappointed, <span style="color:LightGreen">takes this chance to regale you about his favorite bands and gives you some tracks to listen to.</span> <span style="Color: LightSteelBlue">“Consider this homework, but homework that actually matters.”</span> He explains, <span style="Color: LightSteelBlue">“Because I can’t be seen around anyone who hasn’t at least listened to these albums once! Got it?”</span> <br>
+	<<socialChange "Kazu" 3 1>>
+	<<needChange "Fun" 10>>
+    <br>
+    [[Continue|School Courtyard]] 
+<</if>>

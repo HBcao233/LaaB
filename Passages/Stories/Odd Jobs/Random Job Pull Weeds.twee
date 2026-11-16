@@ -1,0 +1,65 @@
+:: Random Job Pull Weeds [nobr]
+
+/* SETTING THE JOBS PAY AND REMOVING THE JOB */
+<<if $Location.Name == "Northend">>
+    <<set _joblocation to "Northend">>
+<<elseif $Location.Name == "Wald Street">>
+    <<set _joblocation to "Wald">>
+<<elseif $Location.Name == "Dellwood Street">>
+    <<set _joblocation to "Dellwood">>
+<</if>>
+
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+	<<capture _i>>
+        <<if $RandomJobList[_i].Location == _joblocation and $RandomJobList[_i].Type == "Pull Weeds">>
+            <<set _jobpay to $RandomJobList[_i].Pay>>
+            <<set _jobname to $RandomJobList[_i].Name>>
+            <<set $RandomJobList.deleteAt(_i)>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+/* DECIDING IF RANDOM EVENT */
+<<set _random to random(1, 4)>>
+<<if $CarterSocial >= 50 or $CarterSocialRank > 0>>
+    <<set _friendsocial to true>>
+<</if>>
+
+/* RANDOM EVENT */
+<<if _random == 1>>
+    <<include"Random Job Pull Weeds Fall in Mud">>
+/* Friend Event */
+<<elseif _random == 2 && _friendsocial>>
+    <<include"Random Job Pull Weeds Carter Helps">>
+/* NO RANDOM EVENT/GENERIC */
+<<else>>
+    /* TROUBLE BUT DONE */
+Upon knocking at the door and introducing yourself to the client, you are quickly taken to the side of the house where a large horde of weeds has festered. Your feeling of surprise must have been visible on your face, as the client gives you an apologetic look and encouraging pat on the shoulder as they return inside. Despite getting paid well enough for the job, you feel the slightest tinge of disdain towards the client for letting it get this bad. Regardless, you push aside the feelings, stretch out your arms, and get to work on those darn dirty weeds. <br>
+<br>
+It takes some definite elbow grease and strength to rip those suckers out of the ground, but before long the once festering horde of weeds begins to dwindle and you find yourself making very visible progress. Perhaps feeling a bit guilty at letting their yard become such a mess, the client does come out and offer you some lemonade a short while into your work. The cool drink and short break does help restore some of your spent energy and you return to the job with a burst of fervor. <br>
+<br>
+<span style="color:lightgreen">You are actually surprised by how quick you were able to complete the job, as not 30 minutes after you’d started, the side of the house was neat and weed free!</span> Feeling proud of yourself, you quickly toss the pulled weeds into a large garbage bag and toss them in the trashcan out front. Hearing you finish up, the client comes out and thanks you wholeheartedly, paying you the promised cash along with another cool glass of lemonade for your trouble. <br>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<br>
+
+        /* IF HOT */
+        <<if $Temp == "Warm" or $Temp == "Hot" or $Temp == "Scorching">>
+<span style="color:lightcoral">It is as you finish and head back to the sidewalk that the long hours spent in the sun and heat hits you, as you realize you are sweating profusely and are desperately thirsty. <br></span>
+<<needChange "Hygiene" -10>>
+<br>
+        <</if>>
+
+/* GENERIC TIME PASS */
+    <<set $Minutes += 30>>
+    <<set $OddJobsCount += 1>>
+/* RETURN CODE */
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+<<elseif $Location.Name == "Wald Street">>
+    [[Continue|Wald Street]]
+<<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+<</if>>
+
+<</if>>

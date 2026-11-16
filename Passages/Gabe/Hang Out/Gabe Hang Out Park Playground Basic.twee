@@ -1,0 +1,114 @@
+:: Gabe Hang Out Park Playground Basic [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+<span style="Color: LightSteelBlue">“This playground sure beats the one where we used to live.”</span> <span style="color:DarkTurquoise">Gabe</span> says with an impressed look as you two stand before the playground. <span style="Color: LightSteelBlue">“Also, bigger than I remember it, I think? I mean, I was like – what? – 6 or 7 when we moved? You were only a year old I’m pretty sure. How old are you now?”</span> You answer <span style="color:DarkTurquoise">Gabe</span>, allowing him to calculate roughly how old he was when your family moved away from here. <span style="Color: LightSteelBlue">“But yeah, not bad. Though, of course I’m not a little kid anymore. So not really my cup of coffee, but good for you little man.”</span> <span style="color:DarkTurquoise">Gabe</span> ruffles your hair roughly, causing you to chuckle and push him off of you. <br>
+
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                },
+            },
+            {
+            Name: "Gabe",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Smirk",
+                Eyes: "Mad",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$GabeNickname</span>?”</span> He says. You turn to him, <span style="color:yellow">when he suddenly shoves you backwards!</span> <span style="Color: LightSteelBlue">“Race you to the top!”</span> <span style="color:DarkTurquoise">Gabe</span> takes off running, getting an unfair lead, <span style="color:yellow">as you race after him calling him a cheater!</span> <span style="color:DarkTurquoise">Gabe</span>’s longer legs and overall strong physique makes him get an easy lead, but your smaller size has its benefits on the playground meant for kids, as you are able to run up the slide while he has to try and climb a ladder. <br>
+<br>
+
+<div id="choice">
+    <<set _random to random(1, 2)>>
+	<<link "Continue<br>">>
+    <<replace"#choice">>
+        <<if _random == 1>>
+            Then you spot <span style="color:DarkTurquoise">Gabe</span> leap up and grab the ledge of the top of the jungle gym, <span style="color:yellow">illegally climbing up the side rather than using the ladder!</span> You think this is a mistake, after all the ladder must be faster, but your big brother’s insane strength allows him to easily pull himself up! <span style="color:yellow">There is no way you can get up in time!</span> <br>
+            <br>
+            You think fast, trying to come up with some way to beat <span style="color:DarkTurquoise">Gabe</span>. Then, as he is about to pull himself up, a single thought enters your brain. <span style="Color: LightSteelBlue">“What would <span style="color:DarkTurquoise">Gabe</span> do?”</span> So, you act! <span style="color:Pink">Running over, you reach through the bars where your brother’s lower half dangles and do exactly what he would do to you. You pull his $GabeBottoms.Type down!</span> <br>
+            
+            <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                    },
+                },
+                {
+                Name: "Gabe",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Frown",
+                    Blush: 1,
+                    },
+                    Clothes: {
+                        Bottoms: $None,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="Color: LightSteelBlue">“Hey!”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Gabe</span> cries out as his $GabeUndies.Name are exposed. With how open he is in the center of the playground, <span style="color:DarkTurquoise">Gabe</span> chooses to let go of the jungle gym to drop down and fix his bottoms, getting some laughs from nearby kids.</span> <span style="color:lightgreen">Due to this, you reach the top first and laugh out in victory over your big brother.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Dirty trick bro.”</span> <span style="color:DarkTurquoise">Gabe</span> laughs, looking a little impressed, <span style="Color: LightSteelBlue">“Guess you win this one. But you do know I can’t let you get away with that, right?”</span> His glare suddenly makes you very nervous, and you begin to panic as he begins to climb up the jungle gym with a devious grin! <br>
+            <br>
+            Despite the wedgies, wet-willies, and being dangled upside down from the jungle gym that follows, you still think it was worth it to get one over on <span style="color:DarkTurquoise">Gabe</span>. <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 15>>
+            <<socialChange "Gabe" 3>>
+            <span style="color:green">+Gabe Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+            <span style="color:red">-Gabe Energy</span><br>
+            <<set $HangOutNeed.Energy -= 10>>
+            <span style="color:green">+Gabe Comfort</span><br>
+            <<set $HangOutNeed.Comfort += 5>>
+            <br>
+            [[Continue|Gabe Hang Out Park]]
+        <<else>>
+            You think for a second you might win, until <span style="color:DarkTurquoise">Gabe</span> manages to, quite impressively, pull himself up the side of the jungle gym to completely skip part of the ladder! Your brother’s arm strength is insane and in the end, he gets up just before you! You argue that you would have won had he not shoved you, but <span style="color:DarkTurquoise">Gabe</span> just laughs this off. <br>
+            
+            <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    Eyes: "Mad",
+                    },
+                },
+                {
+                Name: "Gabe",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="Color: LightSteelBlue">“That sounds like loser talk. A real winner wins no matter what.”</span> He smirks before suddenly grappling you to the ground! You try to fight him off, rolling around on the metal floor, until <span style="color:DarkTurquoise">Gabe</span> shoves you to the slide! But you don’t go down, instead he holds onto your ankles and dangles you upside down, demanding you call him the winner. <br>
+            <br>
+            You refuse, naturally, as no little brother can admit defeat when their big brother cheats. Well, that is until <span style="color:DarkTurquoise">Gabe</span> moves from grabbing your ankles to grabbing your $PlayerBottoms.Type, threatening to let you slip right out of them unless you relent. One day, when you’re bigger, you’ll get revenge! <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 15>>
+            <<socialChange "Gabe" 3>>
+            <span style="color:green">+Gabe Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+            <span style="color:red">-Gabe Energy</span><br>
+            <<set $HangOutNeed.Energy -= 10>>
+            <span style="color:green">+Gabe Comfort</span><br>
+            <<set $HangOutNeed.Comfort += 5>>
+            <br>
+            [[Continue|Gabe Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

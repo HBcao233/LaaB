@@ -1,0 +1,41 @@
+:: DAD Watch Film [nobr]
+
+You stand there watching the movie from the door for a few moments before <span style="color:DarkTurquoise">Your Father</span> pauses it and turns to you.<br>
+<br>
+<span style="color:LightSteelBlue">“Did you need something <span style="color:DarkTurquoise">$DadNickname</span>?”</span> You ask if you could watch the movie with him and he smiles. <span style="color:LightSteelBlue">“Sure! This one may look a bit old, but it is a classic!”</span> He opens the blanket and you happily run over and lay down next to him. He briefly explains what the movie is about and what had happened prior to you coming in.<br>
+<br>
+
+<<set $RandomEvent to random(1, 2)>>
+
+/* SCARED RANDOM EVENT */
+<<if $RandomEvent == 1>>
+You find the movie really interesting and are enjoying yourself. Since it is not a scary movie, a sudden jump scare catches you off guard. <span style="color:Pink">You let out an embarrassing high-pitched scream and nearly jump out of the bed. <span style="color:DarkTurquoise">Your Father</span> can’t help but laugh at your childish fear.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Dad",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smile",
+			Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue"> “Don’t worry <span style="color:DarkTurquoise">$DadNickname</span>,”</span> He grabs you and lays you on top of him, wrapping his arms around your waist, <span style="color:LightSteelBlue"> “I’ll keep you safe from the big bad monster.”</span> You turn red as <span style="color:DarkTurquoise">Your Father</span> teases you, but also feel safe and warm in his embrace and cuddle back. You enjoy the rest of the movie, though nearly fall asleep near the end.<br>
+
+/* NO RANDOM EVENT */
+<<else>>
+You find the movie really interesting and are enjoying yourself. You do nearly doze off near the end, but manage to barely keep yourself awake until the credits roll. Despite not talking during the movie, you feel closer to <span style="color:DarkTurquoise">Your Father</span> by the end of it.<br>
+
+<</if>>
+		<<set $Minutes += 60>>
+		<<socialChange "Dad" 3>>
+		<br>
+		[[Continue|PH Dad Bedroom]] 

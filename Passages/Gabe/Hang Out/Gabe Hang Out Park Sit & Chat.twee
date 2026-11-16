@@ -1,0 +1,81 @@
+:: Gabe Hang Out Park Sit & Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You and <span style="color:DarkTurquoise">Gabe</span> sit down on the bench along the sidewalk, taking a minute to just take in the breath and sounds of the park. <span style="color:DarkTurquoise">Gabe</span> pulls out his phone and begins to check his messages. Curious, you peek over. <span style="Color: LightSteelBlue">“Spying is rude little bro.”</span> He laughs, turning his phone to hide it from you. You pout, saying he shouldn’t be on his phone when hanging out with you if he doesn’t want you to see it. <span style="Color: LightSteelBlue">“Fair enough.”</span> He laughs, putting his phone away, <span style="Color: LightSteelBlue">“But if I can’t look at my phone you better come up with something for us to talk about.”</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Gabe",
+        State: {
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask him how school is going and he laughs. <span style="Color: LightSteelBlue">“What are you, <span style="color:DarkTurquoise">Dad</span>? School is school. Boring yet required. Preston is a bit more strict than my old school, but not that bad, as long as I don’t get on the teacher’s bad side.”</span> Curious, you ask if his school also is allowed to spank bad students. <span style="Color: LightSteelBlue">“Oh yeah, but it’s a lot worse.”</span> He chuckles, <span style="Color: LightSteelBlue">“They don’t use their hands. My physics teacher pulled his belt out on a kid the other day. Scared the shit out of him.”</span> <span style="color:DarkTurquoise">Gabe</span> laughs, <span style="Color: LightSteelBlue">“Believe it or not, that makes most kids behave.”</span> <br>
+            <<socialChange "Gabe" 1>>
+            <span style="color:green">+Gabe Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Gabe Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Gabe Hang Out Park]]
+        <<else>>
+            <span style="Color: LightSteelBlue">“So, how’s Preston treating you?”</span> <span style="color:DarkTurquoise">Gabe</span> asks. You shrug, telling him about your grades and how you are feeling about things. You’re not sure how much he’d care, but <span style="color:DarkTurquoise">Gabe</span> seems to nod and follow along. <span style="Color: LightSteelBlue">“Well, seems you are getting on well enough. Hope you aren’t embarrassing the family too much though.”</span> He laughs, <span style="Color: LightSteelBlue">“Middle school is a lot different from elementary school. Some kids live to embarrass others. Try not to humiliate yourself too bad this year, hm?”</span> You laugh, thinking of kids like Michael who are exactly as <span style="color:DarkTurquoise">Gabe</span> says. <br>
+            <<socialChange "Gabe" 1>>
+            <span style="color:green">+Gabe Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Gabe Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Gabe Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Gabe</span> what sorts of game he’s been playing lately. <span style="Color: LightSteelBlue">“Online? Mainly some hero shooters and Terrorist Strike, which is another shooter. Play with my friends online, so it’s pretty fun even if we lose.”</span> <span style="color:DarkTurquoise">Gabe</span> smirks, <span style="Color: LightSteelBlue">“Not that I lose that often. But my friends hold me back, you know?”</span> You laugh, unsure if his friends are really the ones holding him back, based on how often you hear him shouting excuses or cursing when you walk by his door. <br>
+            <<socialChange "Gabe" 1>>
+            <span style="color:green">+Gabe Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Gabe Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Gabe Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Gabe</span> what sorts of things he’d been up to lately. <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Dad</span> wants me to find a part-time job, but I don’t know. It feels like it would be easier to make money online. People want to buy all sorts of stuff.”</span> <span style="color:DarkTurquoise">Gabe</span> smirks, <span style="Color: LightSteelBlue">“Maybe even I could sell you for a good time. What do you say, wanna split your ass 70-30? Sure we could get a couple bucks from some weirdo online for a night with your stupid butt.”</span> You laugh at his joke, though wonder if he really would do such a thing. <br>
+            <<socialChange "Gabe" 1>>
+            <span style="color:green">+Gabe Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Gabe Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Gabe Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

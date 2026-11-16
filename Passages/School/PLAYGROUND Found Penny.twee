@@ -1,0 +1,159 @@
+:: PLAYGROUND Found Penny [nobr]
+
+You walk towards the monkey bars, very close to a set of bushes. Suddenly, a silvery glint in the corner of your eye catches your attention, coming from a patch of loose dirt in the middle of the playground. You focus your sight upon the glint’s direction, using your right hand to make shade from the sun, and, after a brief search, you spot the glint half buried. Curious, you walk to the spot and a few feet away you recognize a coin’s edge. Your heart skips a beat as you approach two steps further. <span style="color:lightgreen">Indeed, it’s a $1 coin! What a lucky boy you are!</span><br>
+<br>
+While rubbing your hands together with a smirk, you stop in your tracks. <span style="color:Yellow">You sense someone approaching behind you…</span><br>
+<br>
+
+<<set $Random to random(1, 3)>>
+
+<div id=choice>
+	<<link "Continue">>
+	<<replace"#choice">>
+
+/* NO ONE APPEARS */
+<<if $Random == 1>>
+
+You turn around and, to your surprise, there is no one there; All of your classmates are minding their own business and playing their own games far away. Strange… you could swear someone was coming to snatch away your prize. <span style="color:lightgreen">Before your luck runs out, you hastily pocket the coin, making you $1 richer! Why couldn’t every day be like this from now on?</span><br>
+<span style="color:Green">+$1!</span><br>
+<<set $Money += 1>>
+<br>
+[[Continue|School Courtyard]] 
+
+/* LUCAS */
+<<elseif $Random == 2>>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Well, would you look at that?”</span> <span style="color:DarkTurquoise">Lucas</span> jump scares you with his sudden appearance. <span style="color:LightSteelBlue">“Saw it from the swings. But you found it first, so finders keepers.”</span> He laughs. <span style="color:lightgreen">You sigh in relief, <span style="color:DarkTurquoise">Lucas</span> wasn’t disputing your claim and seemed genuinely happy for you.</span> You hold up your shining prize proudly, causing <span style="color:DarkTurquoise">Lucas</span>’ smile to widen. While not a large amount of money, to a young boy it truly was a neat prize. <br>
+<br>
+<span style="color:DarkTurquoise">Lucas</span> leans in for a closer look. <span style="color:LightSteelBlue">“Quite a lucky find, you don’t see dollar coins that often. Last time I saw one was a few years ago, saw it in the dirt. But my mom got really upset when I came back with it, apparently it was pretty gross and covered in gunk.”</span> <span style="color:DarkTurquoise">Lucas</span> laughs, <span style="color:LightSteelBlue">“She was so worried I was going to get sick from touching it, she scolded me pretty bad. But then she used it to get me an ice cream, so I guess it all worked out.”</span> <br>
+<br>
+You and <span style="color:DarkTurquoise">Lucas</span> share a laugh as you notice sweat dripping from his forehead. Seems all his playing on the swing was quite the workout. You also find yourself feeling slightly tired, and thirsty, from your time playing. <br>
+<br>
+<div id=choice1>
+	<<link "Offer to Share a Soda">>
+	<<replace"#choice1">>
+
+You walk towards him and, with a soft pat on his shoulder, tell him how thirsty you are in ask if he would like to share a soda. <span style="color:Pink">He blushes slightly, then immediately answers.</span> <span style="color:LightSteelBlue">“Sure! Thanks!”</span> He smiles and the two of you walk toward the cafeteria, chatting about your favorite flavors and brands. Interestingly, <span style="color:DarkTurquoise">Lucas</span> didn’t drink much soda. So, you were excited to show him your favorite. <span style="color:lightgreen">While finding a coin half-buried in the dirt was nice, it wasn’t as good as sharing your luck with a friend.</span><br>
+        <<addMoodlet "Stress" 0>>
+		<<socialChange "Lucas" 1>>
+		<br>
+		[[Continue|School Courtyard]]
+
+	<</replace>>
+    <</link>>
+    <span style="color:Green">+Lucas</span><br>
+    
+	<<link "Keep the Coin for Yourself">>
+	<<replace"#choice1">>
+
+You take a deep breath while scratching the back of your head and place the coin inside your pocket. You wave goodbye to <span style="color:DarkTurquoise">Lucas</span>, who says that he’ll try to keep an eye out so he can be the lucky one next time. <span style="color:Lightgreen">You have now found yourself $1 richer, what a lucky day!</span><br>
+        <<addMoodlet "Stress" 0>>
+        <span style="color:Green">+$1</span><br>
+		<<set $Money += 1>>
+		<br>
+		[[Continue|School Courtyard]]
+
+
+	<</replace>>
+    <</link>>
+    <span style="color:Green">+$1</span><br>
+</div>
+
+/* 3. CARTER */
+<<elseif $Random == 3>>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Hello there citizen!”</span> <span style="color:DarkTurquoise">Carter</span> says in his heroic young voice as you turn around, striking a pose with his fists on his hips and his head looking towards the clouds. <span style="color:LightSteelBlue">“I saw some trouble from the playground and rushed over to investigate, seems I wasn’t the only one who sensed it.”</span> You chuckle, enjoying his cartoonish performance. You greet him and pick up the coin, which causes <span style="color:DarkTurquoise">Carter</span>’s eyes to light up.<br>
+<br>
+<span style="color:LightSteelBlue">“It looks like you’ve found a treasure, but since there aren’t any pirates around, since the Knights of Preston banished them, it must be the lost treasure of a concerned citizen! It is our duty, as heroes, to return this to its rightful owner!”</span> You raise your eyebrow as <span style="color:DarkTurquoise">Carter</span>, before you can even ask if he was being serious, grabs your arm and begins to walk you toward the playground. You quickly ask for a time-out, saying that you can’t just go around without even discussing what to do with the coin. <br>
+<br>
+<span style="color:LightSteelBlue">“Oh, you’re right.”</span> <span style="color:DarkTurquoise">Carter</span> stops, putting his hand to his chin, <span style="color:LightSteelBlue">“I mean, what good would it do if we just go around asking and someone tricks us in order to get the coin? It would be a disaster for sure! But, what should we do then? We can’t spend all of lunch trying to find its owners, since we have other duties to attend to. Do you have a battle plan, <span style="color:DarkTurquoise">$CarterNickname</span>?”</span> <br>
+<br>
+You scratch the back of your head and sigh since your original plan was to just keep it for yourself. But <span style="color:DarkTurquoise">Carter</span>’s words have scratched a bit of your guilt. Your heroic classmate hadn’t tried to take advantage of the lost coin, instead placing the needs of others above his own. By his example, you now realized that this coin could be a missing lunch, a denied bus ride, or a poor boy’s lost gift. There’s no time for thinking, you need to take action! <span style="color:DarkTurquoise">Carter</span> looks up at you hopefully. <br>
+<br>
+
+<div id=choice1>
+	<<link "Quest for its Rightful Owner">>
+	<<replace"#choice1">>
+
+<span style="color:lightgreen">Without hesitation, you tell <span style="color:DarkTurquoise">Carter</span> that he is right and you should team up and find the coin’s rightful owner!</span> <span style="color:DarkTurquoise">Carter</span> beams at you and soon the two of your find yourselves questioning everyone you spot on sight about if they were missing change. Aside from some strange looks, most of your classmates were honest and told the truth, or pointed you toward a probable owner. The ones who weren’t honest, you could catch in a lie by asking what exactly they were missing and around where it was found. <br>
+<br>
+Despite your efforts, you were running out of time and couldn’t find the owner. ‘Finders Keepers’ comes to your mind, and you are ready to wrap it up until you see <span style="color:DarkTurquoise">Carter</span>’s face. It was uncommon for you to see him looking so serious, staring off into nowhere. <br>
+<br>
+You ask him if he is alright. <span style="color:DarkTurquoise">Carter</span> makes his best attempt at deflecting your concerns, giving a monologue about nothing being wrong at all. Unfortunately for him, you can spot that he is performing. You take his hand and the two of you sit down on a nearby bench. <br>
+<br>
+Without letting go, you ask him again if something is wrong. <span style="color:DarkTurquoise">Carter</span> sighs as his smile vanishes like mist in sunlight. He looks at you with a tremulous smirk and answers in a soft voice. <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Frown",
+				Eyes: "Sad",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“It’s nothing, just- Well, you looked so fired up to be teaming up with me on this quest. I was so sure we’d find the coin’s rightful owner, but it didn’t happen. Just makes me wonder if I’m actually any good at… this.”</span> You ask the boy what he means and <span style="color:DarkTurquoise">Carter</span> chuckles, being unable to find the words. <span style="color:LightSteelBlue">“You know, like helping people. Being a hero.”</span> It seems something as simple as a missing coin was causing <span style="color:DarkTurquoise">Carter</span> to doubt himself. You wondered if something else was going on, but decide to not bring it up and try to cheer him up instead. <br>
+<br>
+You tell <span style="color:DarkTurquoise">Carter</span> that you couldn’t have partnered with a better guy than him. If not for him causing you to think about others, you probably would have spent it on a soda or candy bar without a second thought. You were only thinking of yourself while <span style="color:DarkTurquoise">Carter</span> helped you realize your selfish attitude. And because of that, he is a great hero. <br>
+<br>
+<span style="color:DarkTurquoise">Carter</span> looks at you speechless, his mouth slightly agape. You smile, patting him on the head while slipping the coin into his pocket. You tell him that this coin can be a little badge for him to remember how he helped you whenever he is feeling down. <span style="color:lightgreen">With one more smile shared between the two of you, you part ways, for the time being, both more cheerful than before.</span> <br>
+        <<addMoodlet "Stress" 0>>
+		<<socialChange "Carter" 1>>
+		<br>
+		[[Continue|School Courtyard]]
+
+
+	<</replace>>
+    <</link>>
+    <span style="color:Green">+Carter</span><br>
+    
+	<<link "Keep the Coin">>
+	<<replace"#choice1">>
+
+You certainly did not have the patience to poll the whole of Preston to find the owner of a single coin. Realizing you needed a plausible way out of this nonsense without hurting <span style="color:DarkTurquoise">Carter</span>’s feelings, you devise a plan: You will keep the coin safe until either of you hear about someone searching for it. Since that was the only way you could be sure it would be the rightful owner.<br>
+<br>
+<span style="color:LightSteelBlue">“But, will that work?”</span> <span style="color:DarkTurquoise">Carter</span> asks with a look of slight concern. <span style="color:LightSteelBlue">“I mean, the sooner we search for the owner the higher the chance we’ll have to succeed, right? And how hard could it really be?”</span> You remind him that if the two of you just go around asking if someone lost a coin, the first person will take the opportunity to claim it as theirs for a literal easy buck. So, for now, it is best to keep it safe and stay alert. <br>
+<br>
+<span style="color:DarkTurquoise">Carter</span> thinks for a moment before smiling and agreeing that your plan would be best. <span style="color:lightgreen">With that, you both decide to part ways until you hear about someone searching for the coin, which you figured would be very unlikely.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <span style="color:Green">+$1</span><br>
+		<<set $Money += 1>>
+		<br>
+		[[Continue|School Courtyard]]
+
+
+	<</replace>>
+    <</link>>
+    <span style="color:Green">+$1</span><br>
+</div>
+    
+<</if>>
+
+	<</replace>>
+    <</link>>
+</div>

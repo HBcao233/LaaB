@@ -1,0 +1,120 @@
+:: BEN History Spider [nobr]
+
+<span style="color:DarkTurquoise">Mr. De León</span> pairs you off in groups in order to practice quiz questions while he works on grading homework. You get paired with <span style="color:DarkTurquoise">Ben</span>, sitting on the floor near the bookcase. You both quiz each other back and forth, though most of the class has just ended up talking amongst themselves. As <span style="color:DarkTurquoise">Ben</span> struggles to read some historical names, you notice a small spider on his shoulder climbing into his shirt. If <span style="color:DarkTurquoise">Ben</span> knew, he’d probably freak out.<br>
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="choice">
+	<<link "Tell him<br> ">>
+		<<replace "#choice">>
+			You inform <span style="color:DarkTurquoise">Ben</span> of the spider you saw. He freezes for a moment, staring at you as if his brain is processing the magnitude of what you’ve just told him. Then, instantly, he jumps to his feet and begins yelling as he waves his shirt about in a desperate attempt to get it off. The other kids laugh, confused at this sudden display.<br>
+
+			<<set _ad to [
+				{
+					Name: "Ben",
+					State: {
+						Eyes: "Sad",
+						Cry: 1,
+						Blush: 2,
+						Mouth: "Sad",
+						Outfit: "Uniform",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			You don’t notice the spider fall out, <span style="color:Pink">but his frantic shirt waving does give you a nice view of his boyish belly.</span> Eventually, you tell him that it fell out in order to stop his overdramatic panic. <span style="color:DarkTurquoise">Ben</span> is hesitant to sit on the floor again, instead opting to pull up a chair. The kid sure is terrified of spiders. You briefly wonder what he would have done if you told him it crawled up his pantleg.<br>
+			<br>
+			<<include"Attend History Finish">>
+		<</replace>>
+	<</link>>
+	
+	<<link "Ignore it<br>">>
+		<<replace "#choice">>
+			You decide that it’s probably best he doesn’t know and ignore it. <span style="color:DarkTurquoise">Ben</span> manages to finish the question and the two of you go back to quizzing each other. A few minutes later, you notice the spider crawling out of the leg of his $BenBottoms.Type.<br>
+			<br>
+			<<include "Attend History Finish">>
+		<</replace>>
+	<</link>>
+
+	<<if $Player.Traits.includes("Coward") or $FearBugs == 1>>
+		<<link "[Coward] Freak out">>
+			<<replace "#choice">>
+				Unfortunately, that is your reaction to it. You freeze for a moment before screaming from the top of your lungs in panic, scaring <span style="color:DarkTurquoise">Ben</span> and turning every head in the classroom your way. You yell out SPIDER! pointing towards <span style="color:DarkTurquoise">Ben</span>’s shoulder, which after a brief moment had the quiet boy suddenly start hollering as well. The whole class starts laughing at you two, as he starts waving his shirt trying to knock the spider off, while your equally scared mind tries to think of a way of helping him. <br>
+				<br>
+				You start by “gently” patting his shoulder, but the spider is no longer there. Having probably crawled to his back you instinctively try pushing <span style="color:DarkTurquoise">Ben</span> completely to the ground trying to smash it, he lets out a pained grunt as you do it, but as the spider crawls from his back to his chest, you start freaking out again. You bolt to your feet trying to think about what to do when you see the book <span style="color:DarkTurquoise">Ben</span> was reading before all this ruckus began and an idea comes to your mind. <br>
+				<br>
+				You grab the book and glare at the spider in <span style="color:DarkTurquoise">Ben</span>’s chest, when he notices you looking at it holding the book he seems to have a moment of serenity in foresight of what is about to happen. <span style="color:LightSteelBlue">“$BenNickname?”</span>. <br>
+
+				<<set _ad to [
+					{
+						Name: "Player",
+						State: {
+							Mouth: "Frown",
+							Eyes: "Sad",
+							Blush: 1,
+						},
+					},
+					{
+						Name: "Ben",
+						State: {
+							Outfit: "Uniform",
+							Mouth: "Frown",
+							Eyes: "Sad",
+							Blush: 1,
+							Cry: 1,
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				You whack at <span style="color:DarkTurquoise">Ben</span>’s chest with the book, he makes a squeaking noise and starts tearing up, while you look at his shirt trying to see if you managed to hit the spider, but it’s not there. You look around frantically until you see it on the floor as it starts climbing up your leg. This sets off all the alarms in your head as you start kicking your legs up desperately, the whole class is uncontrollable at this point as <span style="color:DarkTurquoise">Mr. De León</span> tries to calm everyone down. <br>
+				<br>
+				Eventually you manage to fling the spider off your leg as it skitters away into the bookcase you were originally sitting in front of. As everyone quiets down, <span style="color:DarkTurquoise">Mr. De León</span> has everyone go back to their reading as he comes to check on you and <span style="color:DarkTurquoise">Ben</span>. An embarrassing scare aside, you’re mostly fine, <span style="color:DarkTurquoise">Ben</span> on the other hand might have a few new bruises over being thrown and smacked around, but he says he will be okay. <br>
+
+				<span style="color:Red">-Reputation</span>
+				<<set $SchoolRep -= 5>><br>
+
+				<<include"Attend History Finish">>
+			<</replace>>
+		<</link>>
+	<br>
+	<</if>>
+
+	<<if $Player.Traits.includes("Brave")>>
+		<<link "[Brave] Release the Spider">>
+			<<replace"#choice">>
+
+			Not wanting to scare him, you place your hand on his shoulder on top of the spider, careful not to accidentally squish it. He jumps at the sudden contact and looks at you with a confused expression on his face, but you just respond to it with a smile. You carefully scooch the spider to your palm without <span style="color:DarkTurquoise">Ben</span>’s awareness of its presence so close to him. <br>
+			<br>
+			Once the spider is safely on your hand you get up and walk towards the nearest window, which is slightly open, offering a way out of the classroom for the little arachnid. You place your hand on the window sill and the spider slowly climbs down to it. Once that’s done, you walk back to the bookcase and sit on the floor next to <span style="color:DarkTurquoise">Ben</span> again. He gives you a look of confusion, but you think it might be best for him not to know about what just happened.
+
+			<<set _ad to [
+				{
+					Name: "Player",
+					State: {
+						Mouth: "Happy",
+					},
+				},
+				{
+					Name: "Ben",
+					State: {
+						Outfit: "Uniform",
+					},
+				},
+				]>>
+			<<ad _ad>>
+
+			<<include "Attend History Finish">>
+			<</replace>>
+		<</link>>
+	<</if>>
+</div>

@@ -1,0 +1,40 @@
+:: Park Restrooms [nobr]
+
+<<set $Location to {
+    Name: "Park Restroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Park Restroom",
+}>>
+<span style="color:Azure"><big><strong>--Park Restrooms--</strong></big></span><br>
+You stand in the small boy’s restroom of the park. It has a few stalls and urinals, along with some sinks and mirrors. It is a bit filthy, and a strange smell lingers in the air. Some graffiti also lines the walls on the inside of the stalls. The city is usually good about keeping places like this clean, but guess they’ve been slacking recently.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $ToggleBladder == 1>>
+	[[Use Bathroom (0:02)|Use Bathroom Park]] <span style="color:Green">-Bladder</span><br>
+<</if>>
+	[[Change Clothes|Park Closet]]<br>
+<<if $Wet > 1>>
+	[[Dry off clothes|City Park Dry Off]]<br>
+<</if>>
+
+<<link "Masturbate">>
+	<<set $MasturbationLocation to "Park Bathroom">>
+	<<set $MasturbationPosition to "Standing">>
+	<<set $MasturbationAction to "None">>
+    <<set $MasturbationPublic to 1>>
+    <<include"Character Save Clothes">>
+    <<goto"Player Masturbate">>
+<</link>><br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Park.png">
+	[[Park|Park]]<br>
+<br>

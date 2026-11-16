@@ -1,0 +1,20 @@
+:: Skill Check Difficulty Widget [nobr widget]
+
+/* This widget will display the percentage chance of the PC passing a skill check. It uses the same info as the normal skill check, but just provides different information. 
+*/
+
+<<widget "skillDiff">>
+
+<<set _skill to _args[0]>>
+<<set _difficulty to _args[1]>>
+<<if _args[2] != null>>
+    <<set _other to _args[2]>>
+<<else>>
+    <<set _other to null>>
+<</if>>
+
+<<skillCheck _skill _difficulty _other>>
+
+(_percent%)
+
+<</widget>>

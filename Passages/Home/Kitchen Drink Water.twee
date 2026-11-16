@@ -1,0 +1,140 @@
+:: Kitchen Drink Water [nobr]
+
+<<if $Bedwetter != 1>>
+You reach into the fridge and find the water pitcher inside. <span style="color:DarkTurquoise">Father</span> always insisted on keeping it full, to <span style="color:LightSteelBlue">“encourage you all to drink more water”</span>. Though he always filtered it, seemingly having a low opinion of the local tap water. You wonder if he had a bad experience as a kid. <br>
+<br>
+Placing the pitcher on the countertop, you pour yourself a tall glass of water. Ever since <span style="color:DarkTurquoise">Noah</span> accidentally spilled an entire glass on the couch a few years back, you’ve both been told to keep your drinks in the kitchen. Though, much to your annoyance, <span style="color:DarkTurquoise">Gabe</span> isn’t forced to abide by this rule due to him being <span style="color:LightSteelBlue">“older and more responsible”</span>. <br>
+<br>
+Sure, it’s inconvenient, but it somehow feels meditative to focus solely on your drink. You down the glass in a few smooth gulps and place the glass down, feeling satisfied from the cool, refreshing beverage. <br>
+<<needChange "Bladder" -10>>
+<br>
+[[Continue|PH Kitchen]] 
+
+<<else>>
+	<<set _randomchance to random(1, 3)>>
+	<<if $Time.after(19) and _randomchance == 1>>
+    	<<set _Random to random(1, 2)>>
+        You reach into the fridge and find the water pitcher. As you reach to grab it, you hear the sound of a familiar voice from behind you.
+        
+        <<if _Random == 1>>
+<span style="color:LightSteelBlue">“What do you think you are doing, <span style="color:DarkTurquoise">$GabeNickname</span>?”</span> <span style="color:DarkTurquoise">Gabe</span> towers over the other side of the fridge door and stares down at you. You reflexively squirm and tell him that you are thirsty. Keeping the pitcher in your hand, you say you are just getting a little bit of water. Hoping that, if you sound sure of yourself, he will back off. <br>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Mad",
+			Mouth: "SmirK",
+			Outfit: "Everyday",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Sad",
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Uh-huh. Remind me, <span style="color:DarkTurquoise">$GabeNickname</span>, my memory is a little fuzzy.”</span> He leans down with a raised eyebrow and scratches his chin, <span style="color:LightSteelBlue">“Which of us is the bedwetter in the family? The baby who was told to NOT drink water before bed? Was it you or <span style="color:DarkTurquoise">Noah</span>?”</span> <span style="color:DarkTurquoise">Gabe</span> smirks as he speaks in a slightly demeaning tone. He gives you a look, as if daring you to challenge him, as he moves behind you and puts his hand on your shoulders. <br>
+<br>
+You hang your head down and mutter a curse under your breath. Not wanting to give your brother the benefit of a response, you put the pitcher in the fridge and close it with a slam. You hear <span style="color:DarkTurquoise">Gabe</span> chuckle as you angrily walk away. <span style="color:LightSteelBlue">“And don’t forget to go potty before bedtime little bro!”</span> He says in a teasingly, motherly voice as you round the corner. <br>
+<br>
+[[Continue|PH Kitchen]] 
+
+        <<else>>
+       <span style="color:LightSteelBlue">
+ “<span style="color:DarkTurquoise">$NoahNickname</span>! You know you’re not supposed to… y’know, at night? <span style="color:DarkTurquoise">Daddy</span> says it makes you…”</span> <span style="color:DarkTurquoise">Noah</span> stammers and blushes as he tries to warn you. <span style="color:LightSteelBlue">
+“Wet.”</span> He whispers the last point, shyly pointing towards your crotch and seeming more embarrassed about it than you are. <br>
+
+	<<set _ad to [
+		{
+			Name: "Noah",
+			State: {
+				Blush: 1,
+				Mouth: "Sad",
+				Outfit: "Pajamas",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<div id="continue2">
+	<<link "Agree and put the water away<br>">>
+	<<replace"#continue2">>
+You sigh and tell <span style="color:DarkTurquoise">Noah</span> that he is right. Now is a bad time to take a drink if you want to wake up dry. You put the pitcher back in the fridge and give <span style="color:DarkTurquoise">Noah</span> a thankful pat on the head for reminding you. <br>
+
+	<<set _ad to [
+		{
+			Name: "Noah",
+			State: {
+				Arms: "Sleep",
+				Blush: 1,
+				Mouth: "Happy",
+				Outfit: "Pajamas",
+				BueHands: "Sleep",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightSteelBlue">
+“What would you do without me.”</span> <span style="color:DarkTurquoise">Noah</span> giggles, sticking his tongue out at you. He seemed nervous about pointing it out to you, but happy that you took his advice. <br>
+
+<span style="color:red">-Bladder</span><br>
+<<needChange "Bladder" -10>>
+<br>
+[[Continue|PH Kitchen]] 
+
+	
+    <</replace>>
+	<</link>>
+    
+	<<link "Tell him to mind his own business">>
+	<<replace"#continue2">>
+
+    You tell <span style="color:DarkTurquoise">Noah</span> to mind his own business while you pour yourself a glass. You’re the older brother and you don’t need some little kid telling you what you should or should not do. To emphasize the point, you pound down the whole glass in one go, audibly gulping the water until it is gone. <br>
+<br>
+
+	<<set _ad to [
+		{
+			Name: "Noah",
+			State: {
+				Arms: "Sleep",
+				Cry: 1,
+				Blush: 2,
+				Mouth: "Sad",
+				Outfit: "Pajamas",
+				BueHands: "Sleep",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightSteelBlue">
+“Sorry, I was just trying to help.”</span> <span style="color:DarkTurquoise">Noah</span> says sadly as he walks out of the kitchen, dragging Bue along behind him. <br>
+<br>
+[[Continue|PH Kitchen]] 
+	
+    <</replace>>
+	<</link>>
+<span style="color:red">-Noah</span><br>
+</div>
+        
+        <</if>>
+    
+    <<else>>
+   You reach into the fridge and find the water pitcher inside. <span style="color:DarkTurquoise">Father</span> always insisted on keeping it full, to <span style="color:LightSteelBlue">“encourage you all to drink more water”</span>. Though he always filtered it, seemingly having a low opinion of the local tap water. You wonder if he had a bad experience as a kid. <br>
+<br>
+Placing the pitcher on the countertop, you pour yourself a tall glass of water. Ever since <span style="color:DarkTurquoise">Noah</span> accidentally spilled an entire glass on the couch a few years back, you’ve both been told to keep your drinks in the kitchen. Though, much to your annoyance, <span style="color:DarkTurquoise">Gabe</span> isn’t forced to abide by this rule due to him being <span style="color:LightSteelBlue">“older and more responsible”</span>. <br>
+<br>
+Sure, it’s inconvenient, but it somehow feels meditative to focus solely on your drink. You down the glass in a few smooth gulps and place the glass down, feeling satisfied from the cool, refreshing beverage. <br>
+<<needChange "Bladder" -10>>
+<br>
+[[Continue|PH Kitchen]] 
+    
+    <</if>>
+<</if>>

@@ -1,0 +1,236 @@
+:: Avatar Display [nobr]
+
+/* If the character is not in this list, it will be considered size "average", works only on tweens. DO NOT ADD kids, teens or adults to this list */
+<<set _heightMap = {
+	Player: $Player.Height || 'Average',
+	Carter: 'Shorter',
+	Ben: 'Short',
+	Michael: 'Tall',
+	Xavier: 'Tall',
+	Thomas: 'Tall',
+	'OC Sebastian': 'Tall',
+	'OC Snowpaw': 'Shorter',
+	'OC Rudy': 'Shorter',
+	'OC Kyren': 'Short',
+	'OC Noah': 'Short',
+	'OC Patrick': 'Short',
+	'OC Mason': 'Short',
+	'OC Kazu': 'Tall',
+	'OC Rowan': 'Shorter',
+	'OC Luca': 'Shorter',
+	'OC Simon': 'Short',
+	'OC Albin': 'Tall',
+	'OC Micah': 'Shorter',
+	'OC Tyler': 'Shorter',
+	'OC Erin': 'Shorter',
+	'OC Kade': 'Shorter',
+	'OC Alex': 'Short',
+	'OC George': 'Short',
+	'OC Don': 'Shorter',
+}>>
+<<set _adName = $AD.Name || 'Player'>>
+<<set _heightClass = ($ToggleAvatarSizes == 1 && _heightMap[_adName] ? `avatar-height-${_heightMap[_adName].toLowerCase()}` : 'avatar-height-average')>>
+
+<<set _nightClass = $Time.ToD == "Night" ? "avatar-night" : "">>
+
+<div @class="`${_heightClass} ${_nightClass}`" style="position: relative;">
+
+/* LAYER Back */
+	<<include"Avatar Display Back">>
+
+/* LAYER ARMS_BOUND */
+	<<if $AD.Arms == "Bound">>
+		<<include"Avatar Display Arms Bound">>
+	<</if>>
+
+/* LAYER SLEEVES_BOUND */
+	<<if $AD.Arms == "Bound">>
+    	<<include"Avatar Display Sleeves Bound">>
+	<</if>>
+
+	<<if $AD.Arms == "Bound">>
+    	<<include"Avatar Display Hands Alt">>
+	<</if>>
+
+/* LAYER BODY */
+	<<include"Avatar Display Body">>
+
+/* LAYER BODY SCARS */
+	<<include"Avatar Display Body Scars">>
+    
+/* LAYER ARMS_NORMAL */
+	<<if $AD.Arms == "Normal">>
+		<<include "Avatar Display Arms Normal">>
+	<</if>>
+
+/* LAYER PUBIC HAIR */
+	<<include"Avatar Display Pubic Hair">>
+
+/* LAYER EYES */
+	<<include"Avatar Display Eyes">>
+
+/* LAYER MOUTH */
+	<<include"Avatar Display Mouth">>
+
+/* LAYER BLUSH */
+	<<include"Avatar Display Blush">>
+    
+/* LAYER MOUTH ITEM */
+	<<if $ADMouth.Type != "None">>
+		<<include"Avatar Display Mouth Item">>
+	<</if>>
+    
+/* LAYER FACE */
+	<<if $ADFace.Type != "None">>
+		<<include"Avatar Display Face">>
+	<</if>>
+
+/* LAYER HAIR */
+	<<include"Avatar Display Hair">>
+
+/* LAYER PENIS */
+	<<if $ADBottoms.Type == "None" and $ADUndies.Type == "None" and $AD.Hard != 1>>
+		<<include"Avatar Display Penis">>
+	<</if>>
+	<<if $ADUndies.Type == "None" and $AD.Hard != 1 and $ADPantsDown == 1>>
+		<<include"Avatar Display Penis">>
+	<</if>>
+
+/* LAYER UNDIES */
+	<<if $ADUndies.Type != "None">>
+		<<include"Avatar Display Undies">>
+	<</if>>
+
+/* LAYER UNDER ACCESSORY */
+	<<if $ADBottoms.Type == "None" and $ADUndies.Type == "None" and $AD.Hard != 1>>
+		<<include"Avatar Display Under Accessory">>
+	<</if>>
+	<<if $ADUndies.Type == "None" and $AD.Hard != 1 and $ADPantsDown == 1>>
+		<<include"Avatar Display Under Accessory">>
+	<</if>>
+	<<set $ADUnderAss to $None>>
+
+/* LAYER UNDER TOP */
+	<<if $ADUnder.Type != "None">>
+		<<include"Avatar Display Under Top">>
+	<</if>>
+
+/* LAYER HANDS */
+	<<if $ADHands.Type != "None" and $AD.Arms == "Normal">>
+		<<include"Avatar Display Hands">>
+	<</if>>
+
+/* LAYER TOP TUCKED */
+	<<if $ADTop.Type != "None" and $ADTopTucked == 1>>
+		<<include"Avatar Display Top">>
+	<</if>>
+	
+
+/* LAYER SOCKS */
+	<<if $ADSocks.Type != "None">>
+		<<include"Avatar Display Socks">>
+	<</if>>
+
+/* LAYER SHOES */
+	<<if $ADShoes.Type != "None">>
+		<<include"Avatar Display Shoes">>
+	<</if>>
+
+/* LAYER BOTTOMS */
+	<<if $ADBottoms.Type != "None">>
+		<<include"Avatar Display Bottoms">>
+	<</if>>
+
+/* LAYER WAIST */
+	<<if $ADWaist.Type != "None">>
+		<<include"Avatar Display Waist">>
+	<</if>>
+
+/* LAYER TOP */
+	<<if $ADTop.Type != "None" and $ADTopTucked != 1>>
+		<<include"Avatar Display Top">>
+	<</if>>
+
+/* LAYER Neck */ 
+	<<if $ADNeck.Type != "None">>
+		<<include"Avatar Display Neck">>
+	<</if>>
+
+/* LAYER TOP ACCESSORY */
+    
+/* LAYER PENIS HARD */
+	<<if $ADBottoms.Type == "None" and $ADUndies.Type == "None" and $AD.Hard == 1>>
+		<<include"Avatar Display Penis Hard">>
+	<</if>>
+	<<if $ADUndies.Type == "None" and $AD.Hard == 1 and $ADPantsDown == 1>>
+		<<include"Avatar Display Penis Hard">>
+	<</if>>
+    
+/* LAYER OVER */
+	<<if $ADOver.Type != "None">>
+		<<include"Avatar Display Over">>
+	<</if>>
+    
+/* LAYER OVER ACCESSORY */
+	/* PLACE HOLDER */
+
+/* LAYER OUTER */
+	<<if $ADOuter.Type != "None">>
+		<<include"Avatar Display Outer">>
+	<</if>>
+    
+/* LAYER OUTER SLEEVES NORMAL */
+	<<if $ADOuter.Type != "None" and $AD.Arms == "Normal">>
+		<<include"Avatar Display Outer Sleeves Normal">>
+	<</if>>
+    
+/* LAYER OUTER ACCESSORY */
+	<<if $ADOverAcc.Type != "None">>
+		<<include"Avatar Display Over Accessory">>
+	<</if>>
+    
+    
+/* LAYER ARMS HIDE */
+	<<if $AD.Arms == "Hide">>
+		<<include "Avatar Display Arms Hide">>
+	<</if>>
+    
+/* LAYER SLEEVES HIDE */
+	<<if $AD.Arms == "Hide">>
+		<<include"Avatar Display Outer Sleeves Hide">>
+	<</if>>
+
+/* LAYER HANDS HIDE */
+    <<if $AD.Arms == "Hide">>
+		<<include"Avatar Display Hands Alt">>
+	<</if>>
+    
+/* LAYER HEAD */
+	<<include"Avatar Display Head">>
+
+
+/* END LAYER */
+
+<<set $ADTopTucked to 0>>
+<<set $ADPantsDown to 0>>
+<<set $ADVagina to 0>>
+<<set $ADCage to 0>>
+<<set $PantsDown to 0>>
+
+	<img src="Images\Avatar\Body\Empty.png" 
+style="position: absolute; left: 0; top: 0" usemap="#PlayerMap">
+
+	</div>
+
+/* Resetting */
+
+<<set $AD.BodyHair to {
+    Biceps: "None",
+    Calves: "None",
+    Chest: "None",
+    Forearms: "None",
+    Stomach: "None",
+    Thighs: "None",
+}>>
+
+<<set $AvatarKitsune to 0>>

@@ -1,0 +1,67 @@
+:: BEN Playground Drag to swings [nobr]
+
+<<set $Minutes += 20>>
+
+You walk up to <span style="color:DarkTurquoise">Ben</span> and ask if he would like to play with you on the swings.<br>
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Sorry <span style="color:DarkTurquoise">$BenNickname</span>,”</span> He says looking up from his book, <span style="color:LightSteelBlue">“But I’m really tired so would rather just sit down.”</span> You frown, before grabbing the quiet boy by his arms and pulling him to his feet. <span style="color:LightSteelBlue">“Wait, <span style="color:DarkTurquoise">$BenNickname</span>, what are you-!?”</span> You drag him over to the swings and sit him down, saying that he can sit here and still play with you. He sighs, but agrees and goes back to reading his book while swaying back and forth.<br>
+<br>
+
+<div id="choice">
+	<<link "Push him on the swing<br>">>
+		<<replace "#choice">>
+			Seeing that the boy was only interested in his book, you decide to walk up behind him and give him a hard push. <span style="color:LightSteelBlue">“Woah!”</span> <span style="color:DarkTurquoise">Ben</span> calls out, nearly falling off of the swing, <span style="color:LightSteelBlue">“What are you doing?”</span> You tell him that since he is too tired to swing on his own, you’ll push him instead. He attempts to decline, but you don’t give him the option. Grabbing his book and putting it back in his backpack, you begin to push <span style="color:DarkTurquoise">Ben</span> on the swings.<br>
+
+			<<set _ad to [
+				{
+					Name: "Ben",
+					State: {
+						Mouth: "Happy",
+						Outfit: "Uniform",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			He continues to protest, but eventually you begin to see a smile appear on his face as you push him higher and higher. Soon, he is laughing and swinging his legs in order to gain height. <span style="color:Pink">As reward for your efforts, you are given a cute view of the back of his $BenUndies.Name as his $BenTop.Type is displaced as he swings.</span> Despite his reluctance, <span style="color:DarkTurquoise">Ben</span> seems to really enjoy playing on the swings with you.<br>
+			<<socialChange "Ben" 3>>
+
+			<br>
+			[[Continue|School Courtyard]]
+		<</replace>>
+	<</link>>
+	
+	<<link "Swing next to him<br>">>
+		<<replace "#choice">>
+			You take a seat on the swing next to <span style="color:DarkTurquoise">Ben</span> and begin to kick your legs, gaining height and speed. <span style="color:DarkTurquoise">Ben</span> seems content to just sway slightly as he reads, but as you gain more and more height, you notice that <span style="color:DarkTurquoise">Ben</span> is now watching you with a smile. You slow down and ask him what he is smiling about, causing the shy boy to turn bright red and quickly look away.<br>
+
+			<<set _ad to [
+				{
+					Name: "Ben",
+					State: {
+						Blush: 2,
+						Mouth: "Happy",
+						Outfit: "Uniform",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			<span style="color:LightSteelBlue">“Nothing! I just-!”</span> He seems flustered, <span style="color:LightSteelBlue">“You just looked really happy. It was nice to see.”</span> He gives you a shy smile as you return to swinging happily as <span style="color:DarkTurquoise">Ben</span> watches.<br>
+			<<socialChange "Ben" 3>>
+
+			<br>
+			[[Continue|School Courtyard]]
+		<</replace>>
+	<</link>>
+</div>

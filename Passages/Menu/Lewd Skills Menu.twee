@@ -1,0 +1,38 @@
+:: Lewd Skills Menu [nobr]
+
+<<set _lewdSkillsBars = [
+	{
+		group: 'Lewd Skills',
+		skills: [
+			{
+				name: 'Naturism',
+				learned: $NaturismSkill >= 1,
+				lvl: $NaturismSkill,
+				bar: {
+					text: `${$NaturismXP}%`,
+					value: $NaturismXP,
+					color: getSkillBarColor($NaturismXP),
+					showText: true,
+				},
+			}
+		],
+	},
+]>>
+
+<<for _group range _lewdSkillsBars>>
+	<span style="color:Azure"><strong><big>--<<=_group.group>>--</big></strong></span><br>
+	<<for _skill range _group.skills>>
+		<strong><<=_skill.name>></strong><br>
+		<<if _skill.learned == 1>>
+			<div class="skill-bar-group">
+				<span>LVL.<<=_skill.lvl>></span>
+				<div class="skill-bar-gauge">
+					<<progressbar _skill.bar>>
+				</div>
+			</div>
+		<<else>>
+			You have not learned this skill!<br>
+		<</if>>
+	<</for>>
+	<br>
+<</for>>

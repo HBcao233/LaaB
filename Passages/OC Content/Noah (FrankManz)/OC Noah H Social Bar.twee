@@ -1,0 +1,84 @@
+:: OC Noah H Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCNoahHSocialRank == -3>>
+	<<set $OCNoahHRelationship to "Hated">>
+	<span style="color:DarkRed">Noah H Hates you!</span>
+	<br>
+<<elseif $OCNoahHSocialRank == -2>>
+	<<set $OCNoahHRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Noah H are Enemies.</span>
+	<br>
+<<elseif $OCNoahHSocialRank == -1>>
+	<<set $OCNoahHRelationship to "Very Disliked">>
+	<span style="color:Red">Noah H really Dislikes you.</span>
+	<br>
+<<elseif $OCNoahHSocialRank == 0 and $OCNoahHSocial <= -50>>
+	<<set $OCNoahHRelationship to "Disliked">>
+	<span style="color:Red">Noah H Dislikes you. </span>
+	<br>
+<<elseif $OCNoahHSocialRank == 0 and $OCNoahHSocial < 50>>
+	<<set $OCNoahHRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Noah H are Acquaintances.</span>
+	<br>
+<<elseif $OCNoahHSocialRank == 0 and $OCNoahHSocial >= 50>>
+	<<set $OCNoahHRelationship to "Liked">>
+	<span style="color:LightGreen">Noah H Likes you.</span>
+	<br>
+<<elseif $OCNoahHSocialRank == 1>>
+	<<set $OCNoahHRelationship to "Friends">>
+	<span style="color:Green">You and Noah H are Friends.</span>
+	<br>
+<<elseif $OCNoahHSocialRank == 2>>
+	<<set $OCNoahHRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Noah H are Good Friends!</span>
+	<br>
+<<elseif $OCNoahHSocialRank == 3>>
+	<<set $OCNoahHRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Noah H are Close Friends!</span>
+	<br>
+<<elseif $OCNoahHSocialRank == 4>>
+	<<set $OCNoahHRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Noah H are Best Friends!</span>
+	<br>
+<<elseif $OCNoahHSocialRank == 5>>
+	<<set $OCNoahHRelationship to "Love">>
+	<span style="color:Pink">You and Noah H Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCNoahHSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCNoahHSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCNoahHSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCNoahHSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCNoahHSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCNoahHSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCNoahHSocial,
+			value: Math.abs($OCNoahHSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCNoahHSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCNoahHSocial > 120>>
+	<<set $OCNoahHSocial to 120>>
+<</if>>
+<<if $OCNoahHSocial < -120>>
+	<<set $OCNoahHSocial to -120>>
+<</if>>

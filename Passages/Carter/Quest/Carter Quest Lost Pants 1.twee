@@ -1,0 +1,85 @@
+:: Carter Quest Lost Pants 1 [nobr]
+
+<<set _redultraman to {
+    Name: "Red Ultraman T-Shirt",
+    Type: "T-Shirt",
+    Color: "Red",
+    Slot: "Top",
+    Temp: 5,
+    Tags: ["Casual", "Sleepwear", "Under"],
+    Durability: 10,
+    MaxDurability: 10,
+    Weight: 2,
+    Size: "Preteen",
+    Icon: "Images/Equipment/T-Shirt Designed/Red Ultraman T-Shirt.png",
+    Avatar: "Images/Avatar/Clothes/T-Shirts Designed/Red Ultraman T-Shirt.png",
+    AvatarUnder: "Images/Avatar/Clothes/T-Shirts Designed/Under Red Ultraman T-Shirt.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "None",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBound: "None",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A graphic T-Shirt featuring the popular super hero Ultraman.",
+}>>
+
+You are enjoying a nice peaceful time at the park, swinging, going down the slide, and just enjoying the peaceful nature of it all. <span class="yellow-text">However, soon sounds of commotion hit your ears.</span> Teenagers mumbling about <span class="dialogue-text">“Some dork who got dragged through the thorn bush,”</span> while you hear some older ladies gossiping about the <span class="dialogue-text">“poor, cute little boy who tried to walk a dog twice his size.”</span> That, combined with various other descriptors, makes it pretty likely that they are referring to your heroic, albeit unlucky friend, so you head towards the source of this commotion to investigate.<br>
+<br>
+
+Following the clues, you find a disturbance in the ground that very much appears to be drag marks from a small, unfortunate boy. You follow it to the previously mentioned thornbush and make an interesting discovery. <span class="pink-text">The bush is littered with pieces of $CarterBottoms.Color cloth. Closer inspection confirms these to be the shredded remains of some $CarterBottoms.Type. You roll your eyes and start to piece together what happened as you continue to follow the trail.</span><br>
+<br>
+
+You locate the apologetic dog owner, who describes a helpful boy who offered to take their dog for a run while they rested for a moment, only for the boy to come back covered in thorns and without any trousers. You continue to follow the trail until you come across some rustling in the nearby bushes and peek your head over.<br>
+<br>
+
+<<art "Images\\Special\\Carter\\Carter Park No Pants.png" "Beege" "https://baraag.net/@Beege" 700>>
+
+<span class="dialogue-text">“Dang it, how am I going to- AH!”</span> <span class="char-name">Carter</span> lets out a high-pitched scream upon seeing you, nearly jumping out of his skin. <span class="pink-text">He quickly turns bright red and pulls down the front of his shirt as you discover that he is, indeed, without any pants.</span> <span class="dialogue-text">“Oh, umm… Hey, <span class="char-name">$CarterNickname</span>! How- What are you doing here? Heh heh…”</span> <span class="char-name">Carter</span> tries to play it off as if nothing is wrong, but quickly gives it up as it is pretty obvious he is missing a key piece of clothing.<br>
+<br>
+
+<span class="char-name">Carter</span> explains how his act of heroism had caused him to end up in such a situation. An offer to walk a dog, a stray cat suddenly coming into view, and a 5-minute dragging around the park, as <span class="char-name">Carter</span> was too determined to simply let go of the leash, that led into a thornbush that, as you saw, destroyed his $CarterBottoms.Type. <span class="char-name">Carter</span> quickly returned the dog before finding a place to hide to think about what he was going to do.<br>
+<br>
+
+<span class="dialogue-text">“And now I’m stuck in the middle of the park in my underwear!”</span> <span class="char-name">Carter</span> proclaims sadly as he finishes his story, <span class="dialogue-text">“And now I’m trying to figure out how I’m going to get home without everyone in town seeing me! Dang it!”</span> <span class="char-name">Carter</span> goes to kick a rock but misses and nearly tumbles to the ground before you catch him. <span class="dialogue-text">“Thanks.”</span> He chuckles nervously. <span class="dialogue-text">“Hey, you wouldn’t happen to have any ideas, would you?”</span> <span class="pink-text">He looks to you hopefully, being his only hope to get back home with at least some of his dignity intact.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Carter",
+        State: {
+            Blush: 2,
+            Mouth: "Sad",
+            Eyes: "Sad",
+            Arms: "Hide",
+        },
+        Clothes: {
+            Bottoms: $None,
+            Top: _redultraman,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Eyes: "Tired",
+            Mouth: "Smirk",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<link "Toilet Paper">>
+    <<set $CompletedQuests.push("Carter: Lost Pants (Toilet Paper)")>>
+    <<goto"Carter Quest Lost Pants 2 Toilet Paper">>
+<</link>><br>
+<<link "Plastic Bag">>
+    <<set $CompletedQuests.push("Carter: Lost Pants (Plastic Bag)")>>
+    <<goto"Carter Quest Lost Pants 2 Plastic Bag">>
+<</link>><br>
+<<link "A Branch full of Leaves">>
+    <<set $CompletedQuests.push("Carter: Lost Pants (Leaves)")>>
+    <<goto"Carter Quest Lost Pants 2 Leaves">>
+<</link>><br>

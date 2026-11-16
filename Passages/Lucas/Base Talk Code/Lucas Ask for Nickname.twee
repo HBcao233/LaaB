@@ -1,0 +1,17 @@
+:: Lucas Ask for Nickname [nobr]
+
+/* This is the scene that appears when the PC asks to be called by a nickname. */
+<span style="Color: LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>? What’s up?”</span> <span style="color:DarkTurquoise">Lucas</span> asks with a smile as you walk up to him, his happiness at your presence always adorable. You ask <span style="color:DarkTurquoise">Lucas</span> if he wouldn’t mind calling you by a nickname. Your real name is fine, and all, but since you are friends you’d rather if he called you by something else. <span style="Color: LightSteelBlue">“Oh, of course!”</span> <span style="color:DarkTurquoise">Lucas</span> says with a smile, <span style="Color: LightSteelBlue">“Sure thing, anything you want! Uhh… I mean… Yeah, what would you like me to call you?”</span> <br>
+<br>
+<div id=choice>
+<<textbox "$LucasNickname" $LucasNickname>><br>
+<br>
+	<<link "Continue">>
+	<<replace"#choice">>
+        <<set $Nickname.Lucas to 1>>
+        <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$LucasNickname</span>? I like it! It suits you.”</span> <span style="color:DarkTurquoise">Lucas</span> smiles, happy to be able to call you by a special name. <span style="Color: LightSteelBlue">“So then, <span style="color:DarkTurquoise">$LucasNickname</span>, what have you been up to today?”</span> <br>
+        <br>
+        <<endByLocation>>
+    <</replace>>
+    <</link>>
+</div>

@@ -1,0 +1,116 @@
+:: BlowJob NonCon NPC Avatar [nobr]
+
+<<if $SexPartner == "Gabe">>
+<<set $SexPartner to "Gabe">>
+
+    <<if $NPCAnger < 25>>
+        <<set _eyes to "Mad">>
+        <<set _cry to 0>>
+        <<set _mouth to "Sad">>
+    <<elseif $NPCAnger < 50>>
+        <<set _eyes to "Mad">>
+        <<set _cry to 0>>
+        <<set _mouth to "Normal">>
+    <<elseif $NPCAnger < 75>>
+        <<set _eyes to "Mad">>
+        <<set _cry to 0>>
+        <<set _mouth to "Smirk">>
+    <<else>>
+        <<set _eyes to "Mad">>
+        <<set _cry to 0>>
+        <<set _mouth to "Smirk">>
+    <</if>>
+    
+    <<set _ad to [
+        {
+            Name: "Gabe",
+            State: {
+                Eyes: _eyes,
+                Mouth: _mouth,
+                Blush: _blush,
+                Hard: _hard,
+                Outfit: "Naked",
+            },
+        },
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Eyes: "Sad",
+                Arms: "Bound",
+                Cry: 2,
+                Blush: 3,
+                Mouth: "Sad",
+                Outfit: "Naked",
+                Hard: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<<elseif $SexPartner == "Michael">>
+<<set $SexPartner to "Michael">>
+
+    <<if $NPCAnger < 25>>
+        <<set _eyes to "Mad">>
+        <<set _cry to 0>>
+        <<set _mouth to "Sad">>
+    <<elseif $NPCAnger < 50>>
+        <<set _eyes to "Mad">>
+        <<set _cry to 0>>
+        <<set _mouth to "Normal">>
+    <<elseif $NPCAnger < 75>>
+        <<set _eyes to "Mad">>
+        <<set _cry to 0>>
+        <<set _mouth to "Smirk">>
+    <<else>>
+        <<set _eyes to "Mad">>
+        <<set _cry to 0>>
+        <<set _mouth to "Smirk">>
+    <</if>>
+
+    <<if $NPCArousal < 25>>
+        <<set _blush to 1>>
+        <<set _hard to 0>>
+    <<elseif $NPCArousal < 50>>
+        <<set _blush to 2>>
+        <<set _hard to 0>>
+    <<elseif $NPCArousal < 75>>
+        <<set _blush to 2>>
+        <<set _hard to 1>>
+    <<else>>
+        <<set _eyes to "Closed">>
+        <<set _blush to 3>>
+        <<set _hard to 1>>
+    <</if>>
+
+    <<set _ad to [
+        {
+            Name: "Michael",
+            State: {
+                Eyes: _eyes,
+                Cry: _cry,
+                Mouth: _mouth,
+                Blush: _blush,
+                Hard: _hard,
+                Outfit: "Uniform",
+                PantsDown: true,
+            },            
+            Clothes: {
+                Undies: $None,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Eyes: "Sad",
+                Cry: 1,
+                Blush: 3,
+                Mouth: "Sad",
+                Outfit: "Naked",
+                Hard: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+<</if>>

@@ -1,0 +1,81 @@
+:: Art Image Display Widget [nobr widget]
+
+<<widget "art">>
+    <<set _path to _args[0]>>
+    <<set _author to _args[1] || "">>
+    <<set _links to _args[2] || []>>
+    <<set _linksType to typeof _links === "string" ? "string" : (Array.isArray(_links) ? "array" : null)>>
+    <<set _width to _args[3] || 900>>
+    <<set _preview to _args[4] ?? true>>
+
+    <<if typeof _path !== 'string' || _path.trim() === "">>
+        <<run throw new Error('Art Image Display Widget Error: First parameter (_path) needs to be a string and it\'s required')>>
+    <</if>>
+    <<if _author != null && typeof _author !== 'string'>>
+        <<run throw new Error('Art Image Display Widget Error: Second parameter (_author) needs to be a string')>>
+    <</if>>
+    <<if _links != null && _linksType == null>>
+        <<run throw new Error('Art Image Display Widget Error: Third parameter (_links) needs to be a string or an array of strings')>>
+    <</if>>
+    <<if _linksType === "array" && !_links.every(link => typeof link === "string")>>
+        <<run throw new Error('Art Image Display Widget Error: Third parameter (_links) is an array but all elements must be strings')>>
+    <</if>>
+    <<if isNaN(_width)>>
+        <<run throw new Error('Art Image Display Widget Error: Fourth parameter (_width) needs to be a number')>>
+    <</if>>
+    <<if typeof _preview !== "boolean">>
+        <<run throw new Error('Art Image Display Widget Error: Fifth parameter (_preview) needs to be a boolean (true/false)')>>
+    <</if>>
+
+    <<if _preview>>
+        <img @src="_path.trim()" @style="`width: ${_width}px;`">
+        <br>
+    <</if>>
+
+    <<set _dialog to `<img src="${_path}" class="art-image-full-size" onclick="window.open('${_path.trim().replace(/\\/g, "/")}', '_blank').focus();">`>>
+
+    <<if _author.trim() !== "">>
+        <<if _preview>>
+            Art by: <<=_author.trim()>>
+        <</if>>
+        <<set _dialog to _dialog + `<br>Art by: <strong>${_author.trim()}</strong>`>>
+    <</if>>
+    <<if _linksType === "array">>
+        <<for _link range _links>>
+            <<set _dialog to isValidHttpUrl(_link.trim()) ? _dialog + ` <br> ${_link.trim()}` : ''>>
+        <</for>>
+    <<elseif _linksType === "string">>
+        <<set _dialog to isValidHttpUrl(_links.trim()) ? _dialog + ` <br> ${_links.trim()}` : ''>>
+    <</if>>
+    
+    <<if _preview>>
+        <<set _msg to "[View Full]">>
+    <<else>>
+        <<set _msg to "[View]">>
+    <</if>>
+
+    <<capture _dialog>>
+    <<link _msg>>
+        <<script>>
+            Dialog.setup("Art Image");
+            Dialog.wiki(State.getVar('_dialog'));
+            Dialog.open();
+        <</script>>
+    <</link>>
+    <</capture>>
+    <<if _preview>>
+        <br>
+    <</if>>
+    <br>
+<</widget>>
+
+<<widget "apsart">>
+    <<art _args[0] _args[1] _args[2] null false>>
+<</widget>>
+
+:: Art Image Display Widget Stylesheet [stylesheet]
+
+.art-image-full-size {
+    width: 100%;
+    cursor: pointer;
+}

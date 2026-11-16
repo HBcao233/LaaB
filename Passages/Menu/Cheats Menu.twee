@@ -1,0 +1,64 @@
+:: Cheats Menu [nobr]
+
+<<set $SelectedTabCheatMenu = $SelectedTabCheatMenu || 0>>
+<<set _tabs to [
+	{
+		title: 'Character',
+		passage: 'Cheats Character',
+	},
+	{
+		title: 'Traits',
+		passage: 'Cheats Traits',
+	},
+	{
+		title: 'Needs',
+		passage: 'Cheats Needs',
+	},
+	{
+		title: 'Skills & Money',
+		passage: 'Cheats Skills & Money',
+	},
+	{
+		title: 'Social',
+		passage: 'Cheats Social',
+	},
+	{
+		title: 'Weather & Time',
+		passage: 'Cheats Weather & Time',
+	},
+	{
+		title: 'Quests',
+		passage: 'Cheats Quests',
+	},
+	{
+		title: 'Ability Points',
+		passage: 'Ability Points',
+	},
+	{
+		title: 'Body Sensitivy',
+		passage: 'Body Sensitivity',
+	},
+	{
+		title: 'Moodlets',
+		passage: 'Cheats Moodlets'
+	},
+]>>
+
+<<set $selectedTrait = null>>
+
+<<if $Debug == 1>>
+	<<run _tabs.push(...[
+		{
+			title: 'NPC Tracker',
+			passage: 'Cheats NPC Tracker',
+		},
+	])>>
+<</if>>
+
+<<run _tabs.push({
+	title: 'Vars',
+	passage: 'Cheats Vars',
+})>>
+
+[[Return|previous()]]<br><br>
+<<tabs _tabs '$SelectedTabCheatMenu'>>

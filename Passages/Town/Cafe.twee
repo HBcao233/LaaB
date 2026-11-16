@@ -1,0 +1,37 @@
+:: Cafe [nobr]
+
+<<set $Location to {
+    Name: "Cafe",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Food District",
+}>>
+<span style="color:Azure"><big><strong>--Café Le Chat Blanc--</strong></big></span><br>
+You stand in front of the small French Café. It is a cute establishment that is painted blue and white and serves coffees, teas, pastries, and salads. It has a few seats inside, but a majority of the seating is outside along small circular tables under a blue awning. It is very popular as a place to start your day, meet up and chat, or relax after a long day. Due to how busy it is, they are always looking for more servers and generally hire High School or Middle School kids.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $Money >= 2 and $Caffeine != 1 and $Caffeine != 2>>
+	[[Have a Coffee ($2 0:15)|Cafe Coffee]] <span style="color:Green">+Energy</span><br>
+<<elseif $Caffeine == 1 or $Caffeine == 2>>
+	<span style="color:lightcoral">Have a Coffee (You can't handle anymore Caffeine at the moment.)</span><br>
+<<else>>
+	<span style="color:lightcoral">Have a Coffee ($2 0:15)</span><br>
+<</if>>
+
+<<if $Money >= 5>>
+	[[Order a Meal ($5 0:20)|Cafe Meal]] <span style="color:Green">-Hunger</span><br>
+<<else>>
+	<span style="color:lightcoral">Order a Meal ($5 0:20)</span><br>
+<</if>>
+
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:01)|Food District][$Minutes += 1]]<br>

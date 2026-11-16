@@ -1,0 +1,84 @@
+:: Lucas Poker Bedroom Intro [nobr]
+
+/* Intro */
+You and <span style="color:DarkTurquoise">Lucas</span> are hanging around in his bedroom. He is lying on his bed chatting with you while you glance around the room, without being too intrusive. Growing bored, you sit down on the chair at his desk and begin to spin around when you suddenly spot something out of the corner of your eyes, a deck of cards. You pick it up and begin to shuffle it, asking <span style="color:DarkTurquoise">Lucas</span> if he wants to play. <br>
+<br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+        },
+    {
+        Name: "Lucas",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Hmm?”</span> He sits up and glances over at you. <span style="color:LightSteelBlue">“Oh, sure. What do you want to play? Go Fish? War?”</span> You comment that war technically isn’t a game, since there are no choices and all outcomes are random, causing <span style="color:DarkTurquoise">Lucas</span> to chuckle and roll his eyes as he thinks. <span style="color:LightSteelBlue">“What about poker? I don’t know much about the normal poker they have on TV, but some high schoolers taught me five-card draw last year in acting class.”</span> Intrigued, you ask <span style="color:DarkTurquoise">Lucas</span> about five-card draw. <br>
+<br>
+<span style="color:LightSteelBlue">“It’s like normal poker, but we each have a hand of five cards and can discard and replace as many as we want. Then it’s normal rules but with just our hands. Works well with two players.”</span> He explains as you both sit down on his carpet across from each other. You liked the idea, but poker isn’t really that exciting without betting. <span style="color:LightSteelBlue">“I’m not betting my allowance against you.”</span> <span style="color:DarkTurquoise">Lucas</span> chuckles, <span style="color:LightSteelBlue">“Gambling is a hard no-no for my mom and I’m not looking to get grounded.”</span> <br>
+<br>
+You chuckle but claim that you had another idea in mind, <span style="color:Pink">asking if he’s ever heard of Strip Poker.</span> <span style="color:LightSteelBlue">“Oh, right…”</span> <span style="color:DarkTurquoise">Lucas</span> rolls his eyes, smirking at you. <span style="color:LightSteelBlue">“I should have expected this. Your goal whenever you come to my house is to get my clothes off, pervert.”</span> <span style="color:Pink">You gasp, feigning insult, then remind him that he’s the one who started this with that punishment game.</span> <span style="color:LightSteelBlue">“Fair, fair,“</span> <span style="color:DarkTurquoise">Lucas</span> chuckles, <span style="color:LightSteelBlue">“Alright, strip poker it is. You lose a hand; you take something off. First to be baring it all loses.”</span> <br>
+<br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smirk",
+        },
+        },
+    {
+        Name: "Lucas",
+        State: {
+            Mouth: "Smirk",
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:Pink">You pipe up and add that there should be a final round after you lose your clothes. Then, if you lose while naked, you have to do one thing the other player says, no matter what it is.</span> <span style="color:LightSteelBlue">“Oh, lemme guess.”</span> <span style="color:DarkTurquoise">Lucas</span> says in a mocking voice, <span style="color:LightSteelBlue">“You’re going to make me dance in my birthday suit or suck your dick?”</span> You shrug, saying that those do sound good, <span style="color:Pink">but maybe you could go a bit harder and make him run laps around the street or get a dog leash and take him for a walk. <span style="color:DarkTurquoise">Lucas</span> turns bright red at the thought.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“No- no way!”</span> <span style="color:Pink">While fine with exposing himself in front of you, it is clear that <span style="color:DarkTurquoise">Lucas</span> is still very embarrassed at the thought of other people seeing his wiener.</span> <span style="color:LightSteelBlue">“Okay, how about this as a compromise? You can make the other person do anything you want, no matter how painful or humiliating, and they can’t say no. HOWEVER, it can’t involve being seen by anyone else. So, house and backyard only.”</span> You sigh, calling <span style="color:DarkTurquoise">Lucas</span> a chicken. <span style="color:LightSteelBlue">“Hey, unlike you I don’t want the whole town to see me naked! I’m not some weirdo like you!”</span> <br>
+<br>
+After some back and forth, you and <span style="color:DarkTurquoise">Lucas</span> come to an agreement and shake on it. <span style="color:Pink">The winner can make the loser do anything they want, with the only conditions being it stays within the house or backyard and that the only ones who witness or know about the punishment are you two. While that locks some ideas out, you still ponder the many painful and humiliating things you can make <span style="color:DarkTurquoise">Lucas</span> do if you win, since there are no other limits on that. Then again, he’s probably thinking the same thing.</span> <br>
+<br>
+
+
+
+/* Setting up the _data object */
+<<set _data = {
+    players: [
+        {
+            id: "PC",
+            hand: [],
+            pokerTrait: "basic",
+            state: clone($PokerDefaultState),
+            clothes: Poker.getDefaultClothesFor("PC"),
+        },
+        {
+            id: "Lucas",
+            hand: [],
+            pokerTrait: "basic",
+            state: {
+                ...State.getVar('$PokerDefaultState'),
+                Mouth: "Happy",
+                Eyes: "Normal",
+                Arms: "Normal",
+            },
+            clothes: Poker.getDefaultClothesFor("Lucas"),
+        },
+    ],
+    afterGamePassage: "Lucas Poker After Game",
+    containerPassage: "Lucas Poker Game",
+}>>
+
+<<include "Character Save Clothes">>
+[[Play Poker|Lucas Poker Game][$Poker to new Poker(_data); $PokerLoadPassage to "Poker Game"]]

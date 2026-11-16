@@ -1,0 +1,65 @@
+:: Penis Zoom Display [nobr]
+
+<div style="position: relative">
+
+/* BASE */
+<img @src="`Images/Zooms/Penis/Base/${$AD.SkinColor}.png`" 
+style="position: absolute; left: 0; top: 0">
+
+/* BALLS */
+<img @src="`Images/Zooms/Penis/Balls/${$AD.SkinColor}/${$AD.Balls}.png`" style="position: absolute; left: 0; top: 0">
+
+/* PUBIC HAIR */
+<<if $AD.PubicHair != "None">>
+	<img @src="`Images/Zooms/Penis/Pubic Hair/${$AD.PubicHair}/${$AD.HairColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* SHAFT */
+<<if $AD.Hard != 1>>
+	<img @src="`Images/Zooms/Penis/${$AD.PenisStyle}/${$AD.SkinColor}/${$AD.PenisSize}.png`" style="position: absolute; left: 0; top: 0">
+<<else>>
+
+/* GROWER TRAIT */
+<<if $AD.Name == "Player">>
+<<if $Grower == 1>>
+	<<if $Player.PenisSize == "Tiny">>
+		<<set _GrowerSize to "Small">>
+	<<elseif $Player.PenisSize == "Small">>
+		<<set _GrowerSize to "Average">>
+	<<elseif $Player.PenisSize == "Average">>
+		<<set _GrowerSize to "Large">>
+	<<elseif $Player.PenisSize == "Large">>
+		<<set _GrowerSize to "Gigantic">>
+	<<elseif $Player.PenisSize == "Gigantic">>
+		<<set _GrowerSize to "Gigantic">>
+	<</if>>
+<<else>>
+	<<set _GrowerSize to $Player.PenisSize>>
+<</if>>
+/* Length */
+<<if $Player.PenisStyle == "Uncut">>
+	<<if $Player.PenisLength == 1>>
+		<<set _PhiPenisStyle to "Uncut">>
+	<<else>>
+		<<set _PhiPenisStyle to "Cut">>
+	<</if>>
+<<else>>
+	<<set _PhiPenisStyle to "Cut">>
+<</if>>
+<img @src="`Images/Zooms/Penis/${_PhiPenisStyle}/${$AD.SkinColor}/${_GrowerSize} Hard.png`" style="position: absolute; left: 0; top: 0">
+
+<<else>>
+	<<set _GrowerSize to $AD.PenisSize>>
+<img @src="`Images/Zooms/Penis/${$AD.PenisStyle}/${$AD.SkinColor}/${$AD.PenisSize} Hard.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+<</if>>
+
+
+	<img src="Images\Zooms\Penis\Base\Border.png" 
+style="position: absolute; left: 0; top: 0">
+
+</div>
+
+
+/* Resettting */
+<<set $AvatarKitsune to 0>>

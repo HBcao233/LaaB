@@ -1,0 +1,47 @@
+:: Hallway Random Encounter Michael Random Wedgie [nobr]
+
+/* Written by Sanibel */
+
+/* Intro */
+
+You are walking down the hallway, thinking about your latest science homework. There’s a particular part you don’t quite understand. You really should have ask- <br>
+<br>
+Your thought process was interrupted by the sudden feeling of a hand going down the back of your $PlayerBottoms.Name and grabbing your $PlayerUndies.Name. <span style="color:lightcoral">You feel them pulled up, causing a burning pain in your bum crack.</span> The stretching doesn’t end until you’re suddenly blinded, your $PlayerUndies.Type pulled all the way over your head. <span style="color:Pink">It’s hard not to imagine how ridiculous you look, with your back arched and chin up to try and relieve what pressure you can.</span> <br>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Blush: 1,
+				Arms: "Hide",
+			},
+		},
+		{
+			Name: "Michael",
+			State: {
+                Outfit: "Uniform",
+				Eyes: "Mad",
+				Mouth: "Happy",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightSteelBlue">“The trick to a successful atomic wedgie…”</span> You hear <span style="color:DarkTurquoise">Michael</span>’s voice explain to his regular crew. <span style="color:LightSteelBlue">“Is picking the right runt. $MichaelNickname gets wedgied so often his undies are normally pre-stretched”</span> <br>
+<span style="color:DarkTurquoise">Michael</span>’s friends are dying from laughter. Other boys in the hall join in as you desperately try in vain to unhook your undies. <br>
+<br>
+After a couple more moments <span style="color:DarkTurquoise">Michael</span> takes pity and releases your wedgie. <span style="color:LightSteelBlue">“Thanks for the show, loser!”</span> <span style="color:Pink">You find yourself suddenly very shy seeing the small circle of people that formed to watch you awkwardly hobble in pain, bound by your own undergarments.</span> <br>
+<br>
+The crowd disperses when they notice the show is over. Quickly, you unpick your wedgie and fix your clothing. Hopefully <span style="color:DarkTurquoise">Your Father</span> won’t notice how stretched they are. <br>
+
+<<addMoodlet "Stress" 2>>
+<<addMoodlet "Wedgie" 5>>
+<<socialChange "Michael" -3>>
+<br>
+	<<if $Location.Name == "School South Hallway">>
+		[[Continue|School South Hallway]] 
+	<<elseif $Location.Name == "School East Hallway">>
+		[[Continue|School East Hallway]]
+	<<elseif $Location.Name == "School West Hallway">>
+		[[Continue|School West Hallway]]
+	<</if>>

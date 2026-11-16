@@ -1,0 +1,328 @@
+:: Avatar Display Widget [widget nobr]
+
+/*
+    Use like:
+
+    <<set _ad = [
+        {
+            Name: "Jackson",
+            ShowZoom: false,
+            State: {
+                Mouth: "Happy",
+                Arms: "Bound",
+                Eyes: "Closed",
+                Cry: 2,
+                Blush: 3,
+                Outfit: "Uniform",
+            },
+            Clothes: {
+                Top: $None,
+                Neck: $None,
+                Outer: $None,
+                Over: $None,
+            },
+        },
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Mouth: "Happy",
+                Eyes: "Mad",
+                Blush: 1,
+                Outfit: "Naked",
+            },
+            Style: {
+                'margin-left': '-100px',
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    The widget recieves an array of objects. Each object can have the following properties:
+
+        - Name: (required) Name of the NPC or "Player" or "PC".
+        - ShowZoom: (false by default) true if you want zooms to show for that avatar.
+        - ShowZoomOnlyButt: (needs ShowZoom to be true, extra arg to make ShowZoom display butt only.)
+        - ShowZoomOnlyPenis: (same stuff as the upper variable but displays only penis.)
+        - State: ({
+            Arms: "Normal",
+            Eyes: "Normal",
+            Cry: 0,
+            Blush: 0,
+            Mouth: "Normal",
+            Outfit: _defaultOutfit,
+            Hard: 0,
+            PantsDown: 0,
+            TopTucked: 0,
+        } by default) An object with the state of the avatar. Use exactly the same values as $AD.<property> (for example: Arms: "Hide", Cry: 2).
+        - Clothes: (empty object by default) This object will be used to override clothes (like $ADTop, $ADNeck, $ADOuter, etc). Input any of these without the "$AD" and it should work, even with $None (for example: {Top: $None})
+        - Style: ({'margin-left': '-75px'} by default) Object which you can use to modify CSS styles for the avatar. Pass any CSS property as key and a string as value (including units like px or em). Property "height" is ignored as this is hard-coded depending on the npc's height.
+
+    Extra Info and tricks:
+
+        - "State.Hard" option is ignored for Player's Avatar -> set $Player.Arousal instead.
+
+        - <<set _michaelAd to {
+            Name: "Michael",
+            State: {
+                Eyes: "Mad",
+                Mouth: "Smirk",
+            },
+        }>>
+
+        Then you can use _michaelAd in multiple parts of the passage like this:
+
+        <<set _ad to [
+            {
+                Name: "Ben",
+                State: {
+                    Eyes: "Sad",
+                    Cry: 1,
+                    Blush: 1,
+                    Mouth: "Sad",
+                },
+            },
+            _michaelAd,
+        ]>>
+        <<ad _ad>>
+
+        - You can add BueHands: "Hide", to the State, but it will be ignored unless the name of the avatar is not Noah (can later change it to work for any kid avatar if needed)
+*/
+
+<<widget "ad">>
+    <<set _avatars = _args[0] || []>>
+    <<set _index = 0>>
+    <<set _zoomCount = _avatars.filter(av => av.ShowZoom).length>>
+    <<set _containsAdults = _avatars.some(av => $NpcAdults.includes(av.Name))>>
+    <<set _containsTeens = _avatars.some(av => $NpcTeens.includes(av.Name))>>
+    <<set _containsOnlyKids = _avatars.every(av => $NpcKids.includes(av.Name))>>
+
+    <<if !Array.isArray(_avatars) || !_avatars.every(av => typeof av === 'object' && av != null)>>
+        <<run throw new Error('Avatar Display Widget Error: First parameter needs to be an array of objects')>>
+    <</if>>
+
+    <<set _totalHeight to _containsAdults ? '500' : (_containsTeens ? '400' : (_containsOnlyKids ? '300' : '330'))>>
+
+    <div class="avatar-display-container" @style="`height: ${_totalHeight}px;`">
+        <div class="avatar-display-group">
+            <<for _avatar range _avatars>>
+                <<if _avatar.ShowZoomOnlyButt === true && _avatar.ShowZoomOnlyPenis === true>>
+                    <<run throw new Error('Avatar Display Widget Error: ShowZoomOnlyButt and ShowZoomOnlyPenis can\'t be true at the same time')>>
+                <</if>>
+
+                <<set _name = _avatar.Name || "PC">>
+                <<set _isPC = ["Player", "player", "PC"].includes(_name)>>
+                <<set _isClassMate = !_isPC && $NpcClassmates.includes(_name)>>
+                <<set _isFamily = !_isPC && !_isClassMate && $NpcFamily.includes(_name)>>
+                <<set _age = 'tween'>>
+                <<set _style = _avatar.Style || {'margin-left': _index !== 0 ? '-75px' : '0'}>>
+                <<set _style.height = '300px'>>
+                <<set _clothes = _avatar.Clothes || {}>>
+
+                <<if $NpcKids.includes(_name)>>
+                    <<set _age = 'kid'>>
+                <<elseif $NpcTeens.includes(_name)>>
+                    <<set _age = 'teen'>>
+                    <<set _style.height = '400px'>>
+                <<elseif $NpcAdults.includes(_name)>>
+                    <<set _age = 'adult'>>
+                    <<set _style.height = '500px'>>
+                <</if>>
+
+                <<set _defaultOutfit = _name === 'Noah' ? "Everyday Outside" : "Everyday">>
+                <<set _defaultState = {
+                    Arms: "Normal",
+                    Eyes: "Normal",
+                    Cry: 0,
+                    Blush: 0,
+                    Mouth: "Normal",
+                    Outfit: _defaultOutfit,
+                    Hard: 0,
+                    PantsDown: 0,
+                    TopTucked: 0,
+                    ShortsSag: 0,
+                    Cage: 0,
+                    Brows: "Normal",
+                }>>
+
+                <<set _state = _avatar.State || {}>>
+                <<set _styleString = ''>>
+
+                <<script>>
+                    State.setVar('_state', {
+                        ...State.getVar('_defaultState'),
+                        ...State.getVar('_state'),
+                    });
+
+                    for (const [key, value] of Object.entries(State.getVar('_style'))) {
+                        State.setVar('_styleString', State.getVar('_styleString') + `${key}: ${value};`);
+                    }
+                <</script>>
+
+                <div class="avatar-display" @style="_styleString">
+                    <<set $AD.Name to _name>>
+
+                    /* State Synonyms: add to _stateSynonyms if you want some values to mean the same */
+
+                    <<set _stateSynonyms = {
+                        Mouth: {
+                            Sad: ["Frown", "Cry"],
+                            Happy: ["Smile", "Joy", "Glad"],
+                        },
+                        Eyes: {
+                            Closed: ["Shut", "Sleep"],
+                            Mad: ["Anger", "Furious", "Fury"],
+                            Tired: ["Unimpressed"],
+                        },
+                    }>>
+
+                    <<for _stKey range Object.keys(_stateSynonyms)>> /* Loop each state (i.e. Mouth, Eyes, etc) */
+                        <<if _state.hasOwnProperty(_stKey)>>
+                            <<for _synKey range Object.keys(_stateSynonyms[_stKey])>> /* Loop each synonym */
+                                <<if _stateSynonyms[_stKey][_synKey].contains(_state[_stKey])>>
+                                    <<set _state[_stKey] to _synKey>>
+                                    <<break>>
+                                <</if>>
+                            <</for>>
+                        <</if>>
+                    <</for>>
+
+                    <<set $AD.Arms to _state.Arms>>
+                    <<set $AD.Eyes to _state.Eyes>>
+                    <<set $AD.Cry to _state.Cry>>
+                    <<set $AD.Blush to _state.Blush>>
+                    <<set $AD.Mouth to _state.Mouth>>
+                    <<set $AD.Outfit to _state.Outfit>>
+                    <<set $AD.Hard to _state.Hard>>
+                    <<set $ADTopTucked to _state.TopTucked>>
+                    <<set $ADShortsSag to _state.ShortsSag>>
+                    <<if _age == "adult">>
+                        <<set $AD.Brows to _state.Brows || "Normal">>
+                    <</if>>
+
+                    <<set _NPCName = _isPC ? "Player" : _name.toUpperCase()>>
+
+                    <<set _eqSetPassage to `${_NPCName} Avatar Equipment Set`>>
+                    <<include _eqSetPassage>>
+
+                    /* Status Override */
+                    <<set $ADPantsDown to _state.PantsDown>>
+                    <<set $PantsDown to _state.PantsDown>>
+                    <<set $ADCage to _state.Cage>>
+                    <<set $ADVagina to _isPC ? $Vagina : 0>>
+
+                    <<if _name === "Noah">>
+                        <<set $BueHands to _state.BueHands || "None">>
+                    <</if>>
+
+                    /* Clothes Override */
+                    <<set $ADShoes = _clothes.Shoes || $ADShoes>>
+                    <<set $ADSocks = _clothes.Socks || $ADSocks>>
+                    <<set $ADOuter = _clothes.Outer || $ADOuter>>
+                    <<set $ADUnder = _clothes.Under || $ADUnder>>
+                    <<set $ADTop = _clothes.Top || $ADTop>>
+                    <<set $ADOver = _clothes.Over || $ADOver>>
+                    <<set $ADOverAcc = _clothes.OverAcc|| $ADOverAcc>>
+                    <<set $ADBack = _clothes.Back || $ADBack>>
+                    <<set $ADHands = _clothes.Hands || $ADHands>>
+                    <<set $ADHead = _clothes.Head || $ADHead>>
+                    <<set $ADFace = _clothes.Face || $ADFace>>
+                    <<set $ADMouth = _clothes.Mouth || $ADMouth>>
+                    <<set $ADNeck = _clothes.Neck || $ADNeck>>
+                    <<set $ADBottoms = _clothes.Bottoms || $ADBottoms>>
+                    <<set $ADWaist = _clothes.Waist || $ADWaist>>
+                    <<set $ADUndies = _clothes.Undies || $ADUndies>>
+
+                    <<set _avatarDisplayPassage = _age === 'kid' ? "Kid Avatar Display" : (_age === 'teen' ? "Teen Avatar Display" : "Avatar Display")>> 
+                    /* Note: Added blow as such due to above not letting me add. May be good to ask Isamu */
+                    <<if _age == "adult">>
+                        <<set _avatarDisplayPassage to "Avatar Display Adults">>
+                    <</if>>
+                    <<include _avatarDisplayPassage>>
+                </div>
+                <<set _index to _index + 1>>
+            <</for>>
+        </div>
+        <<if ($ZoomsPlayer == 1 || $ZoomsNPC == 1) && _zoomCount > 0>>
+            <div class="avatar-display-zooms">
+                <<for _avatar range _avatars>>
+                    <<set _name = _avatar.Name || "Player">>
+                    <<set _isPC = ["Player", "player", "PC"].includes(_name)>>
+                    <<set _NPCName = _isPC ? "Player" : _name.toUpperCase()>>
+                    <<set _isZoomEnabled = _isPC ? $ZoomsPlayer == 1 : $ZoomsNPC == 1>>
+                    <<set _showZoom = _isZoomEnabled && !!(_avatar.ShowZoom || false)>>
+
+                    <<if _showZoom>>
+                        <div class="avatar-display-zoom">
+                            <<if _isPC>>
+                                <<include "Player Avatar Display Set">>
+                            <<else>>
+                                <<set _eqSetPassage to `${_NPCName} Avatar Equipment Set`>>
+                                <<include _eqSetPassage>>
+                                <<set $AD.Hard to _avatar.State.Hard>>
+                                <<set $AD.Name to _name>>
+                            <</if>>
+                            
+                            <<if _avatar.ShowZoomOnlyButt === true>>
+                                <div class="avatar-display-zoom-butt">
+                                    <<include "Butt Zoom Display">>
+                                </div>
+                            <<elseif _avatar.ShowZoomOnlyPenis === true>>
+                                <div class="avatar-display-zoom-penis">
+                                    <<include "Penis Zoom Display">>
+                                </div>
+                            <<else>>
+                                <div class="avatar-display-zoom-penis">
+                                    <<include "Penis Zoom Display">>
+                                </div>
+                                <div class="avatar-display-zoom-butt">
+                                    <<include "Butt Zoom Display">>
+                                </div>
+                            <</if>>
+                            
+                        </div>
+                    <</if>>
+                <</for>>
+            </div>
+        <</if>>
+    </div>
+<</widget>>
+
+:: Avatar Display Widget Style [stylesheet]
+
+.avatar-display-container {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.avatar-display-container > div {
+}
+
+.avatar-display-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.avatar-display-zooms {
+    position: relative;
+    width: 135px;
+    margin-top: 25px;
+}
+
+.avatar-display-zooms > div {
+    display: flex;
+    height: 135px;
+    width: 270px;
+}
+
+.avatar-display-zoom > div {
+    display: flex;
+    height: 135px;
+    width: 135px;
+}
+
+.avatar-display {
+    width: 220px;
+    display: inline-block;
+}

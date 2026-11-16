@@ -1,0 +1,16 @@
+:: Memories [nobr]
+
+/* "Just Another Night" */
+<<if $CompletedQuests.includes("Carter: First Visit") && $Memories.includes("Just Another Night")>>
+    [[Just Another Night|Memories Just Another Night]] <span style="Color:Green">[Seen]</span> <br>
+<<elseif $CompletedQuests.includes("Carter: First Visit")>>
+    [[Just Another Night|Memories Just Another Night]] <span style="Color:Yellow">[New]</span> <br>
+<<else>>
+    <span style="Color: Red">LOCKED</span> 
+    <<if $QuestHints == 1>>
+            <span style="color:Gray">(Requires: "Carter: First Visit")</span>
+    <</if>><br>
+<</if>>
+
+<br>
+[[Back|Journal]]

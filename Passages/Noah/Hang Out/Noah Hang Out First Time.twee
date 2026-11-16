@@ -1,0 +1,37 @@
+:: Noah Hang Out First Time [nobr]
+
+You walk up to <span style="color:DarkTurquoise">Noah</span>, who is in the middle of what seems to be an engaging yet honestly utterly confusing conversation with his stuffed bear <span style="color:DarkTurquoise">Bue</span>; <span style="color:Yellow">You hear the mention of taxes, but are 95% sure <span <span style="color:DarkTurquoise">Noah</span> doesn’t even know what that word means.</span> You wait for a break in the one-sided conversation before getting your little brother’s attention. <span style="Color: LightSteelBlue">“Oh, hey <span style="color:DarkTurquoise">$NoahNickname</span>!”</span> He says, waving Bue’s hand towards you, <span style="Color: LightSteelBlue">“Whatcha doing?”</span> You explain that you were thinking of going out for a bit and, if he wanted to and promises to behave, <span style="color:DarkTurquoise">Noah</span> can come with you. <br>
+
+    <<set _ad to [
+        {
+            Name: "Noah",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                Blush: 1,
+                BueHands: "Hands",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Really!?”</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Noah</span> jumps up with excitement, <span style="color:Pink">pure joy on his face at the thought of his big brother wanting to hang out with him.</span></span> <span style="Color: LightSteelBlue">“Yeah, yeah, yeah!”</span> He is bouncing up and down, <span style="Color: LightSteelBlue">“Where’re we going? Oh, we should tell Daddy. Lemme grab my shoes!”</span> <span <span style="color:DarkTurquoise">Noah</span> runs off excitedly. <span style="color:Pink">There is nothing sweeter than a little boy overjoyed to spend time with his big brother.</span> You take a moment to inform <span style="color:DarkTurquoise">Your Father</span> that you’re taking <span <span style="color:DarkTurquoise">Noah</span> out. <br>
+<br>
+<span style="Color: LightSteelBlue">“Be home before dark.”</span> He says, <span style="Color: LightSteelBlue">“You know how he can be if he’s out too late. But have fun! Call the house if anything happens.”</span> You then head towards the front door where <span <span style="color:DarkTurquoise">Noah</span> is waiting, sitting on the couch bouncing up and down. When he sees you, he leaps to his feet. <br>
+<br>
+<span style="Color: LightSteelBlue">“Where we going?”</span> <br>
+<<set $InActiveQuests.delete("Noah: Hang Out Intro")>>
+<<set $CompletedQuests.push("Noah: Hang Out Intro")>>
+<br>
+<span style="color:Yellow">Where to Hang Out?</span><br>
+<<link"The Park (0:10)<br>">>
+    <<set $HangOutClothes to "Everyday">>
+    <<set $Minutes += 10>>
+    <<goto "Noah Hang Out Go To Park">>
+<</link>>

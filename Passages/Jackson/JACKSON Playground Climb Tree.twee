@@ -1,0 +1,96 @@
+:: JACKSON Playground Climb Tree [nobr]
+
+    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+You call out to <span style="color:DarkTurquoise">Jackson</span>, asking if he would like to play with you, he smiles and pulls himself atop the large branch. <span style="color:LightSteelBlue">“Sure!”</span> <span style="color:DarkTurquoise">Jackson</span> responds as he begins to climb higher, <span style="color:LightSteelBlue">“But only if you can get up here!”</span> He disappears amongst the leaves as you decide what to do. The tree seemed sturdy enough to hold your weight and it shouldn’t be too difficult.<br>
+<br>
+<div id=choice>
+	<<link "Climb the tree">>
+	<<replace"#choice">>
+	<<set $Minutes += 20>>
+	
+	You jump from the base of the tree in order to grab a low hanging branch and begin to pull yourself up. Surprisingly, the tree hardly seems to buckle from your weight, and you soon begin to make progress getting up a few branches. But the tree is massive, and you still have a bit to go before you reach <span style="color:DarkTurquoise">Jackson</span>.<br>
+<br>
+	<<skillCheck "Athletics" 70>>
+
+	/* PASS */
+	<<if _result == 1>>
+		<span style="color:Green">You climb for a few more minutes before you realize you’ve reached the top!</span> <span style="color:DarkTurquoise">Jackson</span> sits on the branch, smiling as he helps you up. <span style="color:LightSteelBlue">“I wasn’t sure you were going to make it!”</span> He laughs as you both sit next to each other atop the branch and look out into the courtyard. You could see everything from there, all the students, teachers, the entire school.<br>
+
+    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+				Blush: 1,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“I love climbing things, makes me feel so big and everything else so small. It’s nice.”</span> He begins to joyfully swing his legs back and forth, <span style="color:LightSteelBlue">"It's also quiet. Everything is normally so busy down there."</span> You and <span style="color:DarkTurquoise">Jackson</span> have a pleasant chat on top of the tree before you both decide to head down.<br>
+	<<needChange "Fun" 20>>
+	<<socialChange "Jackson" 3>>
+	<br>
+
+	[[Continue|School Courtyard]] 
+
+	/* FAIL */
+	<<else>>
+		<<set _randomEvent to random(1, 2)>>
+        <<if $PlayerUndies.Type == "None">>
+        	<<set _randomEvent to 1>>
+        <</if>>
+	/* NO WEDGIE */
+	<<if _randomEvent == 1>>
+	<span style="color:Red">Things seem to be going well, when suddenly you lose your grip and fall!</span> You crash hard into the ground, though the grass does cushion your fall slightly. Still, you find your body aching and head spinning, deciding you should sit down for a few minutes to make sure you are alright.<br>
+
+	<<addMoodlet "Stress" 1>>
+	<br>
+	[[Continue|School Courtyard]] 
+	
+	
+	/* BRANCH WEDGIE */
+	<<elseif _randomEvent == 2>>
+	<span style="color:Red">Things seem to be going well, when suddenly you lose your grip and fall!</span> As you brace yourself to hit the ground, one of the branches catches the back of your $PlayerUndies.Type! <span style="color:Pink">You can’t help but let out a painful yelp as your fall is stopped by a painful wedgie and you find yourself hanging from the tree by your underwear!</span> The intense and sudden squeezing of your balls knocks the wind out of you as you dangle there unable to move due to the pain, you briefly wonder if it would have been better to hit the ground!<br>
+<br>
+It takes a few minutes before you are able the muster up the energy to move and a few more to unhook your $PlayerUndies.Type from the branch, allowing you to fall to the ground. You notice a few boys in the distance laughing, no doubt having saw your predicament as you freed yourself, and quickly fix your underwear before running off embarrassed.<br>
+
+	<<addMoodlet "Stress" 1>>
+	<<set $TimesWedgied += 1>>
+	<<addMoodlet "Wedgie" 5>>
+	<br>
+	[[Continue|School Courtyard]] 
+
+	
+	
+	<</if>>
+	
+	<</if>>
+	
+	<</replace>>
+	<</link>>
+	
+	<<skillDiff "Athletics" 70>><br>
+	
+	<<link "Leave<br>">>
+	<<replace"#choice">>
+	
+	You decide it would probably be better if you didn’t attempt to climb the tree and walk off, leaving <span style="color:DarkTurquoise">Jackson</span> to his own devices.<br>
+<br>
+<<needChange "Fun" 20>>
+[[Continue|School Courtyard]] 
+	
+	<</replace>>
+	<</link>>
+</div>

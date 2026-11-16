@@ -1,0 +1,69 @@
+:: Quest Booster Shot 1 [nobr]
+
+<<set _ad to [
+	{
+		Name: "Dad",
+		State: {
+			Mouth: "Frown",
+			Eyes: "Narrow",
+		},
+	},
+	{
+		Name: "Noah",
+		State: {
+			Outfit: "Everyday",
+			Eyes: "Sad",
+			Blush: 1,
+			Mouth: "Sad",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+As you walk into the living room, you see <span style="color:DarkTurquoise">Noah</span> crowding around <span style="color:DarkTurquoise">Your Father</span> seemingly trying to dissuade him of something. Upon seeing you, he quickly runs over.<br>
+<br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$NoahNickname</span>! You’re like super busy, right? Too busy to take me anywhere with all your homework and friends and-“</span> <span style="color:DarkTurquoise">Noah</span> is interrupted by <span style="color:DarkTurquoise">Your Father</span> laughing and yelling out that he is not getting out of it. <span style="color:LightSteelBlue">“I’m not trying to get out of it, but if <span style="color:DarkTurquoise">$NoahNickname</span> is super busy we can do it another day.”</span><br>
+<br>
+<span style="color:DarkTurquoise">Your Father</span> laughs and walks over to you two. <span style="color:LightSteelBlue">“Your school said it has to be done, so no getting out of it no matter how  hard you try.”</span> <span style="color:DarkTurquoise">Noah</span> pouts and tries to convince <span style="color:DarkTurquoise">Your Father</span> by giving him sad puppy dog eyes, but it doesn’t work so he walks off sadly back to his room.  <span style="color:DarkTurquoise">Your Father</span> chuckles and rolls his eyes as you ask him what that was all about. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Noah</span> is behind on some of his shots so I set up an appointment for this afternoon, but you know how he is with needles.”</span> You and <span style="color:DarkTurquoise">Your Father</span> share a laugh remembering some of the antics <span style="color:DarkTurquoise">Noah</span> would pull trying to get out of doctor’s visits.<br>
+<br>
+<span style="color:LightSteelBlue">“But I got an important last-minute work meeting, so I was wondering if you’d be willing to take him? It’s around 4 and shouldn’t be longer than 30 minutes to an hour and you’d be doing me a huge favor.”</span> <span style="color:DarkTurquoise">Your Father</span> gives you his own version of the puppy dog eyes,  prompting a laugh as you agree. <span style="color:LightSteelBlue">“Thanks, <span style="color:DarkTurquoise">$DadNickname</span>, I’ve already filled out his paperwork, so you just have to give it to them. Also-“</span> He leans in and whispers, <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Noah</span> doesn’t know this, but he’s getting 3 shots, not 1. Don’t want him freaking out more than he already is. But just try to be there for him, okay?”</span><br>
+<br>
+You agree as you put your little brother’s paperwork somewhere you won’t forget it and return to what you were doing.<br>
+<span style="color:Gold">Quest Started: “Booster Shot”!<br></span>
+
+<<set $ActiveQuests.push("Noah: Booster Shot")>>
+<<set $InActiveQuests.delete("Noah: Booster Shot")>>
+<<set $QuestLog.push(
+	{
+		Name: "Noah: Booster Shot",
+		State: 1,
+		ID: "Noah_M001",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Noah",
+		Tags: ["Noah", "Character", "Quest", "Hospital"],
+		Description: "<span style=\"color:DarkTurquoise\">Your Father</span> has tasked you with taking <span style=\"color:DarkTurquoise\">Noah</span> to his doctor's appointment. <span style=\"color:DarkTurquoise\">Noah</span> is a bit nervous and scared about getting a shot, but he has also informed you he is actually going to be getting three. You expect this is going to be quite the hassle. You need to take him to the <span style=\"color:Teal\">Clinic</span> around <span style=\"color:Teal\">4PM</span>.",
+		Objectives: [
+			{
+				Name: "Take <span style=\"color:DarkTurquoise\">Noah</span> to the <span style=\"color:Teal\">Clinic</span> around <span style=\"color:Teal\">4PM</span>.",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Noah",
+	Description: "<span style=\"color:DarkTurquoise\">Your Father</span> has tasked you with taking <span style=\"color:DarkTurquoise\">Noah</span> to his doctor's appointment. <span style=\"color:DarkTurquoise\">Noah</span> is a bit nervous and scared about getting a shot, but he has also informed you he is actually going to be getting three. You expect this is going to be quite the hassle. You need to take him to the <span style=\"color:Teal\">Clinic</span> around <span style=\"color:Teal\">4PM</span>.",
+})>>
+
+<br>
+[[Continue|PH Living Room]] 
+

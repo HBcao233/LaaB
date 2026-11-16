@@ -1,0 +1,73 @@
+:: Lucas Home Living Room [nobr]
+
+    <<set $Location to {
+    Name: "Lucas Home Living Room",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Living Room",
+}>>
+<span style="color:Azure"><big><strong>--Living Room--</strong></big></span><br>
+<<if $Time.after(19, 0)>>
+	<<include"Lucas Home Kick Out">>
+<<else>>
+You and <span style="color:DarkTurquoise">Lucas</span> stand in his Living Room. It is decently spacious and decorated with a mixture of flowers, photos, and other knick-knacks. A few signed movie posters fill one wall. In the corner is a nice small white couch that faces a large TV with a gaming console hooked up to it.<br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<strong>Lucas: </strong><<include"NPC Hang Out Modifiers">><br>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<link"Play Video Games (0:30)">>
+	<<set _Random to ["Lucas Home Play Video Games Bomer Decision"]>>
+	<<set _event to _Random.random()>>
+	<<goto _event>>
+<</link>><br>
+<<link "Watch Lucas Play Games (0:30)" "Lucas Home Watch Him Play Video Games">>
+<</link>><br>
+<<link"Watch Television (0:30)">>
+	<<set _Random to ["Lucas Home Watch TV Shy Sentai Dance"]>>
+	<<set _event to _Random.random()>>
+	<<goto _event>>
+<</link>><br>
+/* Quests */
+<<if $ActiveQuests.includes("Lucas: Punishment Game")>>
+	<<if $Time.between(9,0,12,0) and $Time.schoolday() == 0>>
+<span style="color:Gold">[!][[Ask about this 'Hard Game'|Lucas Quest PG Intro]]</span><br>
+	<</if>>
+<</if>>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Go somewhere with Lucas (0:??)|Lucas House Go Somewhere]]<br>
+	[[Say Goodbye to Lucas (0:01)|Lucas Hang Out Leave][$Minutes += 1]]<br>
+<<if $LinkTravel == 1>>
+    [[Hallway (0:01)|Lucas Home Hallway][$Minutes += 1]] <br>
+
+<</if>>
+<div style="position: relative">
+    <img src="Images\NPC Homes\Lucas House\Lucas House Map.png" alt="Lucas House Base" usemap="#LucasHouse">
+	<img src="Images\Player House\Player House Big Room Marker.png" 
+style="position: absolute; left: 170px; top: 62px"  alt="School Map" usemap="#LucasHouse">
+</div>
+<map name="LucasHouse">
+    <area shape="rect" coords="117,63,170,169" alt="Hallway" onclick="$.wiki('<<goto[[Lucas Home Hallway]]>><<set $Minutes += 1>>')" />
+</map>
+
+<</if>>

@@ -1,0 +1,23 @@
+:: Read Beginner's Math Textbook [nobr]
+
+/* Intro */
+<<set $Minutes += 30>>
+
+You search your bookshelf for a book to read and come across a math textbook that <span style="color:DarkTurquoise">Your Father</span> bought you some time ago. The cover is bright yellow, with the words ‘Fun with figures’ written in bold red text. You take the book into your hands and let out an audible sigh, you suppose it would be a good idea to improve your math knowledge. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+The material feels pretty simple to comprehend, going through basic sums and equations. <span style="color:LightCoral">It is as expected, a rather boring read.</span> You go through the book for several more minutes before deciding you have had enough for now. Despite it being a rather monotonous, <span style="color:LightGreen">you do at least feel like you have learned a thing or two from the material.</span> <br>
+
+<<needChange "Fun" -10>>
+<<skillPoints "Math" 5>>
+<br>
+[[Continue|Player Bedroom]]

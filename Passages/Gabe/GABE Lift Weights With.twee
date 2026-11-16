@@ -1,0 +1,91 @@
+:: GABE Lift Weights With [nobr]
+
+You walk in front of <span style="color:DarkTurquoise">Gabe</span> and wave in order to get his attention. He takes out his headphones and looks at you annoyed.<br>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Sad",
+			Outfit: "Everyday"
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“You know you’re not allowed in here without my permission. What do you want?”</span> You quickly explain that you would like to work out with him and he gives you a puzzled look in response. 
+
+			/* CHECKING MUSCLES */
+<<if $PlayerTop.Type != "None">>
+	<span style="color:LightSteelBlue">“Lift up your $PlayerTop.Type.”</span> He responds after thinking for a moment. You do so, a little confused. He leans in close and examines your chest and pokes your belly, chuckling to himself. You stand there blushing until he allows you to lower your $PlayerTop.Type.<br>
+<br>
+<<else>>
+	He leans in close and examines your chest and pokes your belly, chuckling to himself. You stand there blushing until he leans back.<br>
+<br>
+<</if>>
+
+			/* ACCEPTS */
+		/* WEARING PANTS */
+		
+<<if $PlayerBottoms.Type != "None">>
+<span style="color:LightSteelBlue">“Sure, why not. Maybe we can get rid of some of that baby fat.”</span> Before you can celebrate, he smirks and holds up a finger. <span style="color:LightSteelBlue">“But I have one condition.”</span> He points at your $PlayerBottoms.Type. <span style="color:LightSteelBlue">“Those got to go.”</span> You blush, questioning why you have to take off your $PlayerBottoms.Type in order to lift weights.<br>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Happy",
+			Outfit: "Everyday",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“So I can make sure all your muscles are developing correctly!”</span> He smiles, <span style="color:LightSteelBlue">“Plus it’ll be funny. That’s my condition. If you want to use my weights, underwear only.”</span> <span style="color:Pink">You knew your brother wouldn’t let you use his stuff without some humiliating catch.</span><br>
+<br>
+		/* NOT WEARING PANTS */
+<<elseif $PlayerBottoms.Type == "None" and $PlayerUndies.Type != "None">>
+<span style="color:LightSteelBlue">“Sure, why not. Maybe we can get rid of some of that baby fat.”</span> You blush as you notice your brother eyeing your exposed $PlayerUndies.Type. <span style="color:LightSteelBlue">“But you can only wear your underwear. So I can make sure all your muscles are developing correctly, of course.”</span> He smiles. <span style="color:Pink">You knew your brother wouldn’t let you use his stuff without some humiliating catch.</span><br>
+<br>
+
+		/* NUDE */
+<<elseif $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+<span style="color:LightSteelBlue">“Sure, why not. And you’re already in proper workout attire!”</span> <span style="color:DarkTurquoise">Gabe</span> laughs, pointing out your nude form, but then pouts slightly, <span style="color:LightSteelBlue">“Though it isn’t as fun when you choose to be nude. Nowhere near as embarrassing. But at least I can make sure you are moving your muscles correctly, plus all the best gladiators of ancient Rome used to train in the nude.”</span> <span style="color:Pink">While you are unsure if he is speaking true or is just trying to justify your nakedness, you smirk and ask if he works out in the nude.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Maybe I do, not that you’ll get to see it.”</span> He flicks you lightly on the forehead, <span style="color:LightSteelBlue">“I wouldn’t want to intimidate you. Make you go weak in the knees from seeing a real man.”</span> <br>
+<br>
+	[[Continue|GABE Lift Weights Nude]]
+<</if>>
+
+<<if $PlayerBottoms.Type != "None" or $PlayerUndies.Type != "None">>
+
+<div id=choice>
+	
+<<if $PlayerUndies.Type == "None">>
+	<<if $NaturismSkill >= 2>>
+	[[Agree and strip|GABE Lift Weights Nude]]<br>
+	<<else>>
+	<span style="color:Red">There is no way you can work out in front of your brother naked! You’ll need to put on some underwear!</span><br>
+	<</if>>
+<<else>>
+	<<set _Random to random(1, 3)>>
+    <<if _Random == 1>>
+		[[Agree|GABE Lift Weights Undies]]<br>
+	<<else>>
+		[[Agree|GABE Work Out Pull Ups]]<br>
+    <</if>>
+<</if>>
+	<<link "Say you'll think about it<br>">>
+	<<replace"#choice">>
+
+	You shyly say you’ll think about it, causing laughter from your brother as you walk back into the hallway.<br>
+<br>
+[[Continue|PH Hallway]]
+		
+	<</replace>>
+	<</link>>
+
+</div>
+<</if>>

@@ -1,0 +1,55 @@
+:: School Infirmary [nobr]
+
+/* Random Encounter Checks */
+<<if $ToggleOCPatrick == 1 && $ActiveQuests.includes("Patrick: Introduction") && $ToggleDiapers == 1 && $ToggleBladder == 1 && $Time.is(11)>>
+	<<include"OC Patrick Intro">>
+<<else>>
+	/* Checking if Pained */
+	<<set _pained to 0>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Pained">>
+			<<set _pained to 1>>
+			<<break>>
+		<</if>>
+	<</for>>
+
+	/* LOCATION */
+	<<set $Location to {
+		Name: "School Infirmary",
+		Indoors: 1,
+		Safe: 1,
+		Nudity: 0,
+		Public: 0,
+		Environment: "School Infirmary",
+	}>>
+
+	<span style="color:Azure"><big><strong>--School Infirmary--</strong></big></span><br>
+	You stand in the school’s infirmary, a room about the size of a classroom with large, one way windows that looks out onto the courtyard. It has 4 beds, each with curtains around them that can be closed for patient privacy, a large collection of medical cabinets carrying all sorts of medicine and equipment, a large desk for the school’s physician, <span style="color:DarkTurquoise">Dr. Bertrum</span>, along with other assorted pieces of furniture.<br>
+	<br>
+
+					/* NPC SEEN */
+	<<include "NPC Inspect">>
+	<br>
+
+	<span style="color:Azure"><strong>-Actions-</strong></span><br>
+	<<if $FullDiaper == 1>>
+		<<if $PlayerUndies.Type == "Pull Ups">>
+			[[Ask for a new Pull Up|School Infirmary New Pull Up]]<br>
+		<<else>>
+			[[Ask for a new Diaper|School Infirmary New Pull Up]]<br>
+		<</if>>
+	<</if>>
+	<<if $Time.is(7) or $Time.is(11) or $Time.is(15)>>
+		<<if _pained == 1>>
+			[[Ask for medicine (0:15)|School Infirmary Medicine]]<br>
+		<</if>>
+			[[Ask to lie down (0:15)|School Infirmary Lay Down]]<br>
+	<<else>>
+		<span style="color:lightcoral">Dr. Bertrum can only let you rest before and after school or during your lunch hour.</span><br>
+	<</if>>
+
+
+	<span style="color:Azure"><strong>-Travel-</strong></span><br>
+		[[South Hallway (0:01)|School South Hallway][$Minutes += 1]] <br>
+	<br>
+<</if>>

@@ -1,0 +1,15 @@
+:: School Infirmary Medicine [nobr]
+<<set $Minutes += 15>>
+
+<span style="color:DarkTurquoise"> Dr. Bertrum</span> gives you some painkillers.<br>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+        <<if $Player.Moodlets[_i].ID == "Pained">>
+            <<set $Player.Moodlets.deleteAt(_i)>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+[[Continue|School Infirmary]] 

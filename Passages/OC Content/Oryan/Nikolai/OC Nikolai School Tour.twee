@@ -1,0 +1,166 @@
+:: OC Nikolai School Tour [nobr]
+
+/* Intro written by: Oryan */
+
+/* Intro */
+The linoleum floor of the cafeteria gleams, reflecting the pale morning light filtering through the tall windows. It’s still early, the air buzzing with that pre-school-day energy, a mix of sleepy yawns, excited chatter, and the clatter of breakfast trays. You’re hoping to get a moment to grab a bite to eat when you’re interrupted by <span style="color:DarkTurquoise">Headmaster Alistair</span>, the school Principal, who beckons you over with a request. <br>
+<br>
+<span style="color:LightSteelBlue">“Good morning!”</span> <span style="color:DarkTurquoise">Headmaster Alistair</span> beams, his forced cheerfulness doing little to ease your apprehension. <span style="color:LightSteelBlue">“I have a small favor to ask of you,”</span> he says, his voice a touch too loud for the still-relatively-quiet cafeteria. You brace yourself. Favors from the principal rarely benefit you. <span style="color:LightSteelBlue">“We have a new student joining us today,”</span> The Headmaster continues, his gaze shifting towards the entrance of the cafeteria. He motions towards a boy with shocking red hair who is idling awkwardly by the doors. <span style="color:LightSteelBlue">“I was hoping you might be willing to show him around, help him get settled in.”</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+    {
+        Name: "OC Nikolai",
+        State: {
+            Outfit: "Uniform",
+        },
+    },
+    {
+        Name: "Alistair",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+Your eyes follow his gesture towards the boy whom you unmistakably recognize as the boy from the beach. The boy you saw swimming in the ocean, in water <span style="color:Yellow">that was so cold it made your teeth ache just by thinking about it.</span> The boy who looked like he belonged more to the sea than to the land. <br>
+<br>
+<span style="color:DarkTurquoise">Headmaster Alistair</span> clears his throat, pulling you back to the present. <span style="color:LightSteelBlue">“So? What do you say? Would you be willing to take young <span style="color:DarkTurquoise">Nikolai</span> under your wing?”</span> <br>
+<br>
+<div id="choice">
+    <<link "Accept<br>">>
+    <<replace"#choice">>
+        A sliver of curiosity flickers within you and you agree to show him around. You’re still pretty new yourself but maybe showing someone around wouldn’t be so bad. Could even be interesting. You take a deep breath and force a smile as you walk over towards the boy, whose eyes flicker with a bit of recognition as he spots you.
+        /* High Social */
+        <<if $OCNikolaiSocial > 0>>
+            <span style="color:LightGreem">He smiles upon seeing you, happy to see a somewhat familiar face. You return his smile genuinely, shaking his hand as the Headmaster introduces you to each other.</span> <span style="color:LightSteelBlue">“I’ll leave you too it. Thanks again, <span style="color:DarkTurquoise">$Player.Name</span>. <span style="color:DarkTurquoise">Nikolai</span>, if you have any questions after the fact, feel free to swing by the main office.”</span> <br>
+            
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Happy",
+                    },
+                },
+                {
+                    Name: "OC Nikolai",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            There is an awkward silence between you two as <span style="color:DarkTurquoise">Headmaster Alistair</span> leaves until <span style="color:DarkTurquoise">Niki</span> speaks up. <span style="color:LightSteelBlue">“Well, fancy meeting you here! What are the odds we’d run into each other again, hm?”</span> You both chuckle and you ask him how he transferred here, given Preston’s closed system and all that. <span style="color:LightSteelBlue">“Bit of a strange case,”</span> he laughs nervously, <span style="color:LightSteelBlue">“Hard to explain, but the headmaster said you are also a strange case, so I guess you can understand how weird it is.”</span> You nod, Preston is a very strange school. <br>
+            <br>
+        /* Low Social */
+        <<else>>
+            He blushes upon seeing you and quickly looks away, <span style="color:Yellow">no doubt remembering the interaction you had on the beach.</span> You blush as well, realizing how awkward this encounter will be for the both of you. <span style="color:LightSteelBlue">“No need to be so shy. I’m sure <span style="color:DarkTurquoise">$Player.Name</span> here will do wonderfully. Thanks again, <span style="color:DarkTurquoise">$Player.Name</span>. <span style="color:DarkTurquoise">$Player.Name</span>, if you have any questions after the fact, feel free to swing by the main office.”</span> <br>
+            
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                    },
+                },
+                {
+                    Name: "OC Nikolai",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Frown",
+                        Blush: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            There is a long, extremely awkward pause between you two as <span style="color:DarkTurquoise">Headmaster Alistair</span> leaves, your strange introduction at the beach lingering in the air, before <span style="color:DarkTurquoise">$Player.Name</span> speaks. <span style="color:LightSteelBlue">“Maybe we forget about before? I’m <span style="color:DarkTurquoise">Nikolai</span>, but everyone just calls me <span style="color:DarkTurquoise">Niki</span>. You are <span style="color:DarkTurquoise">$Player.Name</span>, yes?”</span> You nod, apologizing for the strangeness of your first meeting, though whether you mean it or are just trying to put on a good face for the Headmaster is only known to you. <span style="color:LightSteelBlue">“So, Preston, huh? Strange place, hard to get in but Headmaster said I am ‘special case’. Guess you understand what that’s like.”</span> You nod, chuckling, Preston is indeed a very strange school. <br>
+            <br>
+        <</if>>
+        You start out by glancing at <span style="color:DarkTurquoise">Niki</span>’s schedule, seeing you have a few classes the same, before taking him to each of his classrooms in order to help him get the hang of it. <span style="color:LightSteelBlue">“This place is very big!”</span> He laughs as you walk from the History classroom to the English one, <span style="color:LightSteelBlue">“I didn’t even realize there was a second floor at first. Strange that first-years never go up there, but it does make things easier.”</span> Once he has gone to each classroom, you ask him to recount where each one is as you continue on, making sure he has a basic understanding. <br>
+        <br>
+        <span style="color:LightSteelBlue">“Math class is by the front and the teacher there can be strict.”</span> <span style="color:DarkTurquoise">Niki</span> repeats what you told him, <span style="color:LightSteelBlue">“In the right hallways we have History, with a nice teacher. English in the left with the sleepy one. Science was…”</span> He thinks for a second, <span style="color:LightSteelBlue">“Next to math, no? With the new, young teacher?”</span> Correct! You praise his memory. <span style="color:LightSteelBlue">“I just hope I remember once the bell rings.”</span> He laughs. <br>
+        <br>
+        Seeing as he already saw the cafeteria, you then take him to the other locations he may need to go. The infirmary, the library, the locker room. Upon seeing the pool, mostly through a small window since it is closed outside of class, <span style="color:DarkTurquoise">Niki</span> marvels at the size. <span style="color:LightSteelBlue">“Wow! You guys really do it fancy down here! I’ve never seen a pool so big! And it doesn’t even get cold, you say?”</span> You nod. The pool is indoors, heated, <span style="color:Pink">and only occasionally sucks the trunks off of your classmates.</span> <span style="color:DarkTurquoise">Niki</span> laughs at this, <span style="color:LightSteelBlue">“That is why you should wear a speedo. Much tighter and less likely to lose. You westerners are so strange with your trunks.”</span> He chuckles as the two of you move to the south hallway, seeing as pre-first period is nearly over. <br>
+        
+        <<set _ad to [
+        {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Nikolai",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Thanks for all your help! I think I understand now.”</span> He says with a smile, <span style="color:LightSteelBlue">“I’ll admit, I was a bit nervous about this place, it’s so big, but you did a great job showing me around!”</span> You blush at his praise; you didn’t do anything special. <span style="color:LightSteelBlue">“Still, I thank you. Maybe I’ll see you around? I am very excited to see what the other swimmers here can do! Oh! I did want to ask the office about when their swimming team starts! I’ll see you in class! Bye!”</span> As <span style="color:DarkTurquoise">Niki</span> runs off, you check the time and figure you may as well start heading to class. Your morning may have been stolen, but at least you were able to help show him around. <br>
+        <<socialChange "Nikolai" 10 1>>
+        <<set $CompletedQuests.push("Nikolai: School Tour")>>
+        <<set $InActiveQuests.delete("Nikolai: School Tour")>>
+        <br>
+        [[Continue|School South Hallway]]
+    <</replace>>
+    <</link>>
+
+    <<link "Refuse<br>">>
+    <<replace"#choice">>
+        You stammer out an attempted response about being busy while still trying to sound polite but firm. <span style="color:LightCoral">The principal’s smile falters, a visible wave of disappointment washing over his face.</span> <span style="color:LightSteelBlue">“Oh, I see,”</span> he says, his voice losing some of its initial enthusiasm. <span style="color:LightSteelBlue">“Well, alright. I understand. But I was hoping…”</span> <br>
+        <br>
+        Before he can finish his sentence, a small, high-pitched voice chirps, <span style="color:LightSteelBlue">“I can do it, <span style="color:DarkTurquoise">Mr. Alistair</span>! I'd love to show the new kid around!”</span> <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                    },
+                },
+                {
+                    Name: "OC Nikolai",
+                    State: {
+                        Outfit: "Uniform",
+                    },
+                },
+                {
+                    Name: "Carter",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Happy",
+                    },
+                },
+                {
+                    Name: "Alistair",
+                    State: {
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        You both turn to see <span style="color:DarkTurquoise">Carter</span> practically bouncing with excitement. His eyes gleaming and his hand raised so high it looks like he's trying to flag down a passing airplane. <br>
+        <br>
+        <span style="color:DarkTurquoise">Principal Alistair</span>'s face brightens. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Carter</span>, that’s wonderful! Are you sure you wouldn’t mind?”</span> <span style="color:DarkTurquoise">Carter</span> shakes his head vigorously. <span style="color:LightSteelBlue">“Absolutely not, <span style="color:DarkTurquoise">Mr. Alistair</span>! I'm always happy to help! Think of me as the welcoming committee!””</span> He puffs out his chest, a miniature Ultraman ready to save the day. <br>
+        <br>
+        <span style="color:LightGreen">With that, you practically sprint away. Eager to claim your breakfast before the school day officially starts.</span> <br>
+        <<set $CompletedQuests.push("Nikolai: School Tour")>>
+        <<set $InActiveQuests.delete("Nikolai: School Tour")>>
+        <br>
+        [[Continue|School Cafeteria]] 
+    <</replace>>
+    <</link>>
+</div>

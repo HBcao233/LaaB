@@ -1,0 +1,15 @@
+:: LUCAS Visit [nobr]
+
+		/* VISIT SET UP */
+		
+		/* SLEEPING */
+<<if $Time.before(7)>>
+	<<set $LucasHouseVisit to "Sleeping">>
+<<elseif $Time.after(19)>>
+	<<set $LucasHouseVisit to "Sleeping">>
+		/* SCHOOL */
+<<elseif $Time.schoolday()>>
+	<<if $Time.after(7) and $Time.before(15)>>
+		<<set $LucasHouseVisit to "School">>
+	<</if>>
+<</if>>

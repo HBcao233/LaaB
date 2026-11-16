@@ -1,0 +1,70 @@
+:: LUCAS Bus Falls Into Older Students [nobr]
+
+/* OPENING */
+You step onto the bus and move to take a seat near the back. You notice some of the older students sitting in the middle of the bus were roughhousing but didn’t think much of it. Suddenly, the bus starts moving before everyone has sat down. You manage to catch yourself, but <span style="color:DarkTurquoise">Lucas</span> wasn’t so lucky and fell right on top of some of the older boys.<br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Frown",
+				Blush: 1,
+				Cry: 1,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:DarkTurquoise">Lucas</span> quickly apologizes, but one of the boys starts to berate him and grabs him by his backpack. They wouldn’t think of hurting him in front of the bus driver, but <span style="color:DarkTurquoise">Lucas</span> looked quite scared.<br>
+<br>
+
+<div id=choice>
+
+<<link "Step in">>
+<<replace"#choice">>
+
+You quickly run up to them and grab <span style="color:DarkTurquoise">Lucas</span>, telling the older kids that it was an accident and they should leave him alone before the bus driver notices and everyone gets in trouble. The older boy scoffs at you but agrees to let it go for now. You quickly take <span style="color:DarkTurquoise">Lucas</span> back to your seat and sit down. Once everything has calmed down. He gives you a big hug as thanks, obviously shaken up from the confrontation.<br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+				Blush: 2,
+				Cry: 1,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+	<<socialChange "Lucas" 3>>
+	<br>
+				/* GET OFF BUS */
+		<<if $BusRide == "Home">>
+			[[Get off bus|Northend]]
+		<<else>>
+			[[Get off bus|Middle School]]
+		<</if>>
+<</replace>>
+<</link>>
+
+<br>
+
+<<link "Ignore it">>
+<<replace"#choice">>
+
+You decide to ignore the conflict and begin to gaze out the window, though still keep a look at what is happening out of the corner of your eye. The boys rough <span style="color:DarkTurquoise">Lucas</span> up a bit, who is apologizing the entire time, before eventually letting him go. <span style="color:DarkTurquoise">Lucas</span> ends up sitting across from you, he looks a little shaken, but not hurt.<br>
+<br>
+
+				/* GET OFF BUS */
+		<<if $BusRide == "Home">>
+			[[Get off bus|Northend]]
+		<<else>>
+			[[Get off bus|Middle School]]
+		<</if>>
+<</replace>>
+<</link>>
+
+</div>

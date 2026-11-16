@@ -1,0 +1,140 @@
+:: OC Cole Swimsuit Missing [nobr]
+
+/* Intro */
+As you are swimming around the pool with the others, enjoying your time playing in the pool, you can’t help but notice a familiar chubby boy with gray hair moving around the edge of the pool looking for something. <span style="color:pink">What stood out to you was, despite being in the water, the boy had a towel around his waist.</span> You recognize the boy as <span style="color:DarkTurquoise">Cole</span>, the occasional student assistant of the school’s nurse. Curious, you swim up to the boy and ask what he’s doing. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Cole",
+        State: {
+            Outfit: "Towel",
+            Mouth: "Happy",
+            Eyes: "Sad",
+            Blush: 2,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Some jokers thought it would be funny to pull off my trunks and toss them in the pool while I was resting.”</span> He laughs nervously, his face slightly red. The kid sure was unlucky for this to happen to him, though you wonder why he didn’t snitch to a lifeguard about what happened. However, then again, snitching never ends well. <br>
+<br>
+<span style="color:pink">You think about offering to help, as he would have trouble searching the center of the pool while keeping the wet towel on, especially around all the other boys. Then again, since he was wearing a towel that floated slightly, you could try to sneak a peek by swimming under him.</span> <br>
+<br>
+
+<div id="choice1">
+/* Wish him luck */
+	<<link "Wish him luck<br>">>
+	<<replace"#choice1">>
+        Not wanting to spoil your own fun, or not wanting to get involved with his problems, you wish the boy luck in his search. <span style="color:LightSteelBlue">“Oh, thank you.”</span> <span style="color:DarkTurquoise">Cole</span> responds, <span style="color:pink">holding the towel with one hand as he scratches his cheek and chuckles nervously.</span> He gives you a look like he was going to ask for help but decides against it. A while later near the end of class, you spot him once more as he still appears to be looking. Rough, but you’re sure he’ll find it eventually. <br>
+        <<needChange "Fun" 5>>
+        <br>
+        <<if $PoolLocation == "Very Deep">>
+            [[Continue|Pool Very Deep]]
+        <<elseif $PoolLocation == "Deep">>
+            [[Continue|Pool Deep]]
+        <<elseif $PoolLocation == "Part Shallow">>
+            [[Continue|Pool Part Shallow]]
+        <<else>>
+            [[Continue|Pool Shallow]]
+        <</if>>
+
+    <</replace>>
+    <</link>>
+    
+/* Try to sneak a peek */
+	<<link "Try to sneak a peek<br>">>
+	<<replace"#choice1">>
+        After a brief encounter where you wish him luck and pretend to swim away, you wait until he turns away from you before diving under the water and swimming towards him in secret. You’ll only be able to hold your breath for a short while, but if you are quick and sneaky, you should be able to sneak a peek at his undercarriage without anyone noticing. <br>
+        <br>
+        Moving directly under the boy, you glance upwards. <span style="color:pink">It was hard to see from underwater, and he was holding the towel so tightly, but you manage spot to a cute sight that you are sure are his balls floating between his legs!</span> <span style="color:lightcoral">However, you had overestimated your ability to hold your breath as you suddenly find yourself desperate for air and quickly surface!</span> <br>
+        <br>
+        You barely make it far enough away from <span style="color:DarkTurquoise">Cole</span> for it to not be suspicious. You break through to the surface and begin to cough and gasp for air, pondering if the small peek at the boy’s balls was worth almost drowning. But at least you got away with it… <span style="color:lightcoral">or did you!?</span> <br>
+        <br>
+        <span style="color:lightcoral">You look up to see <span style="color:DarkTurquoise">Cole</span> quickly swimming towards you! You blush and panic, glancing around quickly for an escape, but you are locked in the corner as <span style="color:DarkTurquoise">Cole</span> comes closer and closer.</span> You lean on the edge of the pool and try to play it off that you were just resting, mentally making the decision to deny whatever lewd allegations he presents, however, are caught off guard as he is smiling? <br>
+        <br>
+        <span style="color:LightSteelBlue">“Oh! You found them!”</span> He says, <span style="color:lightgreen">reaching out and grabbing the trunks that were floating right behind you.</span> You didn’t even notice them. <span style="color:LightSteelBlue">“Thank you.”</span> He quickly puts back on his trunks before turning back to you. <span style="color:LightSteelBlue">“Well, I suppose I know a good way to make us even. I know you’re at the age where you’re interested in people, or more so, what people keep under their clothes.”</span> <span style="color:pink">You blush bright red, so he did see you try to sneak a peek! You try to fumble out some sort of denial, but he stops you, frowning with a slight blush on his cheeks.</span> <span style="color:LightSteelBlue">“Don’t worry, I’m not going to tell everyone you’re a peeping tom, this time, but please don’t do that again.”</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 2,
+                },
+            },
+            {
+                Name: "OC Cole",
+                State: {
+                    Outfit: "Swimwear",
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        With that, <span style="color:DarkTurquoise">Cole</span> swims away. You get the feeling, based on his facial expression, that he would have been more upset at your pervy peeking had you not accidentally located his trunks in the process. You make a mental note to apologize to him later, or at least be more discreet next time. <br>
+        <<socialChange "Cole" -3 1>>
+        <<needChange "Fun" 5>>
+        <br>
+        <<if $PoolLocation == "Very Deep">>
+            [[Continue|Pool Very Deep]]
+        <<elseif $PoolLocation == "Deep">>
+            [[Continue|Pool Deep]]
+        <<elseif $PoolLocation == "Part Shallow">>
+            [[Continue|Pool Part Shallow]]
+        <<else>>
+            [[Continue|Pool Shallow]]
+        <</if>>
+
+    <</replace>>
+    <</link>>
+    
+/* Help him search */
+	<<link "Help him search<br>">>
+	<<replace"#choice1">>
+        You ask if he wants any help and, seemingly surprised, <span style="color:DarkTurquoise">Cole</span> accepts. He describes the swimsuit to you, thanking you for your help. You then decide to split up, searching the center of the pool while he continues to search for the edge. <br>
+        <br>
+        You search for a solid few minutes, not finding a trace of it, and begin to worry something was done with it. Maybe someone stole it or gave it to the lifeguard. You consider asking him <span style="color:lightgreen">when you suddenly spot them!</span> A young boy in a tight swimsuit had just fished them out with his pool noodle and is looking at them curiously as you swim up and ask for them. <br>
+        <br>
+        <span style="color:LightSteelBlue">“What? Why? They’re not yours, you’re wearing yours!”</span> The boy clutches them to his chest, as if you were trying to rob him of his treasure. You explain that they belonged to another boy, <span style="color:DarkTurquoise">Cole</span>, who you point to nearby, as he was still hugging the edge of the pool searching. You ask if you could have them to return them, but the boy looks at you suspiciously before running off. <br>
+        <br>
+        <span style="color:lightgreen">Thankfully, he runs towards <span style="color:DarkTurquoise">Cole</span> and gives them to him, seems he didn’t trust that you would return them.</span> The boy speaks to <span style="color:DarkTurquoise">Cole</span> for a moment, pointing to you a few times, before he runs off yet again. You quickly swim over to <span style="color:DarkTurquoise">Cole</span> as he puts on his trunks, his bits finally covered. <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+            },
+            {
+                Name: "OC Cole",
+                State: {
+                    Outfit: "Swimwear",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Thanks, that boy said you told him they were mine.”</span> He laughs, <span style="color:LightSteelBlue">“Though he also didn’t trust you, said you looked suspicious.”</span> You both share a laugh as you tell <span style="color:DarkTurquoise">Cole</span> it was nothing <span style="color:pink">but are caught off guard as he pats you on the head, stroking your hair.</span> You raise an eyebrow for a moment when <span style="color:DarkTurquoise">Cole</span> suddenly blushes, <span style="color:LightSteelBlue">“Oh! Sorry, it’s a habit. I have young siblings who like it when I do that.”</span> You shrug, saying you understand thanks to your own little brother, and bid <span style="color:DarkTurquoise">Cole</span> farewell, telling him to keep an eye on his trunks next time. <br>
+        <<socialChange "Cole" 3 1>>
+        <<needChange "Fun" 5>>
+        <br>
+        <<if $PoolLocation == "Very Deep">>
+            [[Continue|Pool Very Deep]]
+        <<elseif $PoolLocation == "Deep">>
+            [[Continue|Pool Deep]]
+        <<elseif $PoolLocation == "Part Shallow">>
+            [[Continue|Pool Part Shallow]]
+        <<else>>
+            [[Continue|Pool Shallow]]
+        <</if>>
+
+    <</replace>>
+    <</link>>
+</div>

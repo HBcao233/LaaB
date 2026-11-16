@@ -1,0 +1,33 @@
+:: Carter Hang Out Park Play Superheroes [nobr]
+
+You ask <span style="color:DarkTurquoise">Carter</span> what he wants to play and he quickly perks up with an idea. <span style="color:LightSteelBlue">“We should play superheroes! Urk, I mean-”</span> <span style="color:DarkTurquoise">Carter</span> turns around and mumbles something before facing you once again with a more serious expression, posing in a dramatic fashion. <span style="color:LightSteelBlue">“We should do our duty as heroes of Opal City and go on patrol! You never know when villainy may strike and we must always be on guard. It is our duty, as heroes, to spread the word of Truth, Justice, and the Ultraman way!”</span> <span style="color:DarkTurquoise">Carter</span> switches his pose as he finishes his speech, posing much like the comic book covers of the Ultraman comics.<br>
+
+<<set _ad to [
+    {
+        Name: "Carter",
+        State: {
+            Eyes: "Mad",
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You laugh at the adorable display and agree to join him on some patrols, but you'll need him to show you the ropes. <span style="color:LightSteelBlue">“But of course!”</span> <span style="color:DarkTurquoise">Carter</span> says, attempting to put on a deeper voice, <span style="color:LightSteelBlue">“As my sidekick, I will teach you all that I know so that you too can become a hero as strong and brave as I!”</span> <span style="color:pink">You can't avoid smiling at his cute display and the two of you take off to patrol the park in search of trouble and those in need!</span><br>
+<br>
+
+<<set _Random to ["Litter", "Frisbee", "Clown Help"]>>
+
+<<if $HangOutNeed.Comfort > 60>>
+    <<set _Random.push("Garbage")>>
+<</if>>
+
+<<set _event to `Carter Hang Out Park Play Superheroes ${_Random.random()}`>>
+<<include _event>>

@@ -1,0 +1,140 @@
+:: XAVIER Inspect School Playground [nobr]
+
+	<<include"XAVIER Avatar Everyday">>
+	<span style="color:DarkTurquoise">Xavier</span> is hanging out near to the basketball court with a group of his followers. Instead of playing basketball, <span style="color:DarkTurquoise">Xavier</span> is simply telling them about the time he attended a world series game. Everyone listens to the story intensely, or at least they pretend to.<br>
+	<br>
+	<<if $SchoolRep >= 50>>
+		<<if $XavierSocial > -50 or $XavierSocialRank > 0>>
+			[[Chat With (0:10)|XAVIER Playground Chat With]] <span style="color:Green">+Xavier</span><br>
+		<</if>>
+	<</if>>
+	[[Hang Out (0:20)|XAVIER Playground Hang Out]] <span style="color:Green">+Xavier</span> <br>
+	<<if $XavierSocial > -50 or $XavierSocialRank > 0>>
+		[[Attempt to Impress (0:20)|XAVIER Playground Attempt to Impress]] 
+			<<set $SkillCheckType to "Athletics">>
+			<<set $SkillCheckDifficulty to 3>>
+			<<include"Skill Level Display">>
+		<span style="color:Green">+Xavier</span>
+		<span style="color:Yellow">+Rep?</span><br>
+	<</if>>
+
+	<<if $XavierSocial >= 50 or $XavierSocialRank > 0>>
+		[[Pull away from the group (0:20)|XAVIER Playground Pull Away]] <span style="color:Green">+Xavier</span><br>
+	<</if>>
+
+	<<include"Xavier Base Talk Code">>
+
+:: XAVIER Inspect Cafeteria [nobr]
+
+	<<include"XAVIER Avatar Everyday">>
+	<span style="color:DarkTurquoise">Xavier</span> sits at a packed table. All of the boys around <span style="color:DarkTurquoise">Xavier</span> battle for his attention, but he seems unamused.<br>
+	<br>
+	[[Chat With (0:10)|XAVIER Cafeteria Chat With]] <span style="color:Green">+Xavier</span><br>
+
+	<<include"Xavier Base Talk Code">>
+
+:: XAVIER Inspect School Lunch [nobr]
+
+	<<include"XAVIER Avatar Everyday">>
+	<span style="color:DarkTurquoise">Xavier</span> sits at a packed table eating lunch. All of the boys around <span style="color:DarkTurquoise">Xavier</span> battle for his attention, but he seems unamused.<br>
+	<br>
+	<<if $FriendLunch != 1 and $LunchClass != 2>>
+		[[Eat Lunch With (0:15)|XAVIER Eat Lunch]] <span style="color:Green">+Social</span>
+		/* LUNCH QUALITY WHEN EATING WITH PERSON */
+		<<include "School Lunch Level Chooser">>
+	<</if>>
+
+	<<include"Xavier Base Talk Code">>
+
+:: XAVIER Inspect School Hallway [nobr]
+
+
+	<<include"XAVIER Avatar Everyday">>
+	<span style="color:DarkTurquoise">Xavier</span> walks down the hallway flanked by his group of followers.<br>
+	<br>
+	[[Give him a hug (0:02)|Xavier School Hug]]<br>
+	<<if !$DailyEvents.includes("Xavier School Bully")>>
+		[[Give Xavier a Wedgie (0:02)|Xavier School Hallway Wedgie]]
+		<<if $XavierSocial < 20 && $XavierSocialRank != 1>>
+			<span style="color:Red"> -Social</span><br>
+		<<else>>
+			<span style="color:Green"> +Social</span><br>
+		<</if>>
+	<<else>>
+		<span style="color:Grey">Give Xavier a Wedgie (0:02)</span><br>
+	<</if>>
+
+	<<include"Xavier Base Talk Code">>
+
+:: XAVIER Inspect English [nobr]
+
+	<<include"XAVIER Avatar Everyday">>
+	<span style="color:DarkTurquoise">Xavier</span> leans back in his chair bored, browsing the internet on his cell phone, which is technically against the rules.<br>
+
+:: XAVIER Inspect History [nobr]
+
+	<<include"XAVIER Avatar Everyday">>
+	<span style="color:DarkTurquoise">Xavier</span> is telling a story to a group of boys about how he is technically related to one of the historical figures in a picture.<br>
+
+:: XAVIER Inspect Science [nobr]
+
+	<<include"XAVIER Avatar Everyday">>
+	<span style="color:DarkTurquoise">Xavier</span> sits at his table, surrounded by a group of boys, chatting.<br>
+
+:: XAVIER Inspect Math [nobr]
+
+	<<include"XAVIER Avatar Everyday">>
+	<span style="color:DarkTurquoise">Xavier</span> patiently waits at his seat. <span style="color:DarkTurquoise">Mr. Randolph</span> got annoyed with the crowds that normally form around <span style="color:DarkTurquoise">Xavier</span> and has forbid it.<br>
+
+:: XAVIER Inspect Computer Class [nobr]
+
+	<<include"XAVIER Avatar Everyday">>
+	<span style="color:DarkTurquoise">Xavier</span> is browsing the internet on the computer. While technically not allowed, the teacher doesn’t seem to mind.<br>
+
+:: XAVIER Inspect Gym [nobr]
+
+	<<include"XAVIER Avatar Undies">>
+	<span style="color:DarkTurquoise">Xavier</span> is surrounded by some of his followers as they all change. <span style="color:Pink">You notice that a few of them are eyeing his impressive physique, which is shown off perfectly as he stands there in nothing but his $XavierUndies.Name.</span> Despite everyone being in their underwear, something about being in the locker room makes it less intimate and embarrassing.<br>
+	<<if $SeenXavierUndies < 1>>
+		<<set $SeenXavierUndies += 1>>
+	<</if>>
+
+:: XAVIER Inspect Gym Shower [nobr]
+
+	<<include"XAVIER Avatar Towel">>
+	<span style="color:DarkTurquoise">Xavier</span> stands in front of his locker in nothing but a towel. He is holding up a small handheld mirror and fixing his hair after washing it. You notice his followers around him, occasionally stealing glances at the admittedly attractive boy. <br>
+
+
+:: XAVIER Inspect School Waiting for Bus [nobr]
+
+	<<include"XAVIER Avatar Everyday">>
+	<span style="color:DarkTurquoise">Xavier</span> stands among his crowd waiting for his ride.<br>
+
+	<div id="HangOutSchool">
+		<<if $InActiveQuests.includes("Xavier: Hang Out Intro")>>
+			<<link"Ask if Xavier wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Xavier Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Xavier: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutSchool">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Uniform">>
+					<<set $Minutes += 10>>
+					<<goto "Xavier Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+	</div>

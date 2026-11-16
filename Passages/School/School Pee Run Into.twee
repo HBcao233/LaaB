@@ -1,0 +1,241 @@
+:: School Pee Run Into [nobr]
+
+<<include "Bully Nickname Setup">>
+
+/* Into */
+As you are walking down the hallway <span style="color:Lightcoral">you suddenly feel a tiny tingle in your bladder.</span> Then it grows to a medium tingle. <span style="color:Lightcoral">Then, before you can even react, a pain strikes your groin unlike any you have felt before! <span style="color:red">You had to piss, bad!</span> You feel as though you are about to burst, and squeeze close the gates of your bladder as you quickly turn towards the nearest bathroom.</span> At first a gentle walk, then a hurried waddle, then a mad dash as you feel yourself leaking ever so slightly! <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Sad",
+            Blush: 1,
+            Arms: "Hide",
+        }
+    }
+]>>
+<<ad _ad>>
+
+All you can think about is your desire to go, your need to hold it in just a little longer. You dive past students who give you confused looks as you duck and weave through the crowd, only a corner away from the bathroom before- <span style="color:red">CRASH!</span> <br>
+<br>
+<span style="color:Lightcoral">You collide directly with another student, whose elbow hits you directly in the stomach. That was it, the gates have failed, and the world moves in slow-motion as you fall to the ground, an uncontrollable wet spot growing on your groin as tears well up in your eyes, both from relief and the expected outcome as you crash hard to the ground.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Hey! Watch where you’re-“</span> The kid stops, <span style="color:Lightcoral">his eyes widening as he sees the pool of yellow forming on the ground beneath you. You plead with your eyes, begging him to remain silent, but knowing he won’t.</span> <span style="color:LightSteelBlue">“What the fuck!?”</span> The boy recoils in disgust, hurrying to his feet as he backs away from the gross sight. <span style="color:LightSteelBlue">“Are you fucking pissing yourself!? What the fuck is wrong with you!?”</span> <span style="color:Lightcoral">His cries, expectedly, bring the eyes of everyone in the hallway to your plight. You barely have time to attempt to cover yourself before the laughter starts and echoes throughout the halls.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Gross! What the fuck? Did $BullyNickname pee himself?”</span> One kid mimics the initial boy’s disgust. <br>
+<br>
+<span style="color:LightSteelBlue">“Jesus! He fucking exploded!”</span> Another begins to laugh hysterically. <br>
+<br>
+<span style="color:LightSteelBlue">“Uggh, I can smell it!”</span> Another covers his nose, backing up. <br>
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Sad",
+            Blush: 3,
+            Arms: "Hide",
+            Eyes: "Sad",
+            Cry: 1,
+        }
+    }
+]>>
+<<ad _ad>>
+<span style="color:Lightcoral">You were surrounded by cries of disgust, words of mockery, and jeers of amusement as the crowds all witnessed your accident. Your cheeks are burning as you quickly jump to your feet, nearly slipping on your own urine, as you do your best to cover the large wet spot on your bottoms and fight back the tears.</span> <br>
+<br>
+/* Bully Nickname */
+<<if ["Piss Boy"].includes($BullyNickname)>>
+	<<set _setnickname to 0>>
+<</if>>
+<<if _setnickname == 1>>
+	<span style="color:LightSteelBlue">“Oh god, he fucking smells!”</span> A boy laughs, <span style="color:LightSteelBlue">“Fucking kid really did wet himself! What a fucking loser!”</span> <span style="color:pink">The laughter of the bully causes your face to burn with embarrassment.</span> <span style="color:LightSteelBlue">“Guess we should call you <span style="color:DarkTurquoise">Piss Boy</span> from now on, huh? Fuck, am I going to have a story to tell the boys at lunch!”</span> The laughter and jeers continue. <span style="color:lightcoral">You get the feeling this incident is going to spread and the nickname <span style="color:DarkTurquoise">Piss Boy</span> is going to follow you for a while.</span> <br>
+	<br>
+	<<if $Nickname.Bully == 0>>
+		<span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Piss Boy”</span>, due to having wet yourself in public. Nicknames can be edited in the Journal in your Bedroom.]</span><br>
+		<br>
+	<</if>>
+	<<set $Nickname.Bully to 1>>
+	<<set $BullyNickname to "Piss Boy">>
+<</if>>
+
+<<linkreplace"Continue">>
+	<<set _Random to ["Default"]>>
+    <<if $CarterSocial > 50 or $CarterSocialRank >= 1>>
+        <<set _Random.push("Carter")>>
+    <</if>>
+    <<if $MichaelSocial > 50 or $MichaelSocialRank >= 1>>
+        <<set _Random.push("Michael")>>
+    <</if>>
+
+	<<set _event to _Random.random()>>
+    <<if _event == "Default">>
+        <<include"School Pee Run Into Default">>
+    <<elseif _event == "Carter">>
+        <<include"School Pee Run Into Carter">>
+    <<elseif _event == "Michael">>
+        <<include"School Pee Run Into Michael">>
+    <</if>>
+
+<</linkreplace>>
+
+:: School Pee Run Into Default [nobr]
+
+<span style="color:Lightcoral">But you can’t stop the tears from falling, the embarrassment is too much to handle. Trying to not give them the pleasure of crying in front of them, you sprint towards the bathroom and into a stall as the tears begin to flow. You are sobbing into your hands, knowing that you’ll never be able to live this down. Sure, only some people saw you, but word of your humiliating accident will no doubt spread to the rest of the school. <br>
+<br>
+Frustrated at your own inability to hold it in, you begin to angrily rip off pieces of toilet paper and attempt to dry your $PlayerBottoms.Type, but to no avail as the wet spot and scent linger as the tears continue to fall and you crumble and toss the toilet paper to the ground in frustration, burying your head in your arms as you just want to go home.</span> <br>
+<br>
+You are crying for a solid few minutes before you hear footsteps, someone is entering the bathroom. You silence your cries as much as you can, but the other person no doubt hears the soft sobbing that still escapes your lips. The footsteps stop right outside your stall, and you spot two well-shined shoes peeking out from the bottom of the door. <br>
+<br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.LastName</span>?”</span> A voice says, following two knocks at the stall door. You recognize that voice anywhere, <span style="color:DarkTurquoise">Mr. Randolph</span>, though his voice sounded strange; Softer. <span style="color:LightSteelBlue">“Here.”</span> He places a spare pair of $PlayerBottoms.Type onto the top of the stall. <span style="color:LightSteelBlue">“Nurse said you can keep those, just toss the other pair into the trash.”</span> He begins to leave before pausing, <span style="color:LightSteelBlue">“I gave them a talking-to in the hallway but let me know if anyone gives you a hard time about this.”</span> And with that, he leaves. <br>
+
+<<set _ad to [
+	{
+		Name: "Randolph",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Sad",
+            Blush: 2,
+            Cry: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+You sit there in silence for a few minutes, taking the time to calm down and comprehend what occurred before grabbing the fresh pair of bottoms and putting them on. They were a perfect fit, and you sigh in relief that you don’t have to go to class with wet clothes. <span style="color:pink">As you step out and wash your face, you wonder if you should go thank Mr. Randolph, but realize that you probably couldn’t face him at the moment and instead quietly thank him in your head before returning to the hallway.</span> <br>
+<br>
+<<needChange "Hygiene" -30>>
+<<set $HadAccident to 0>>
+<<include"School Fail Location">>
+
+:: School Pee Run Into Carter [nobr]
+
+Just when you think you are going to burst into tears out of sheer embarrassment, you hear a heroic voice call out. <span style="color:LightSteelBlue">“Leave him alone, you jerks!”</span> <span style="color:lightgreen">You look up to see <span style="color:DarkTurquoise">Carter</span> dashing in, stepping between you and the crowd in order to shield you from view.</span> <span style="color:LightSteelBlue">“You should be ashamed of yourselves, laughing at another student in need. How would you feel if it was you?”</span> <span style="color:DarkTurquoise">Carter</span> chastised the crowd. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Sad",
+			Mouth: "Sad",
+            Blush: 2,
+            Cry: 1,
+            Arms: "Hide",
+		},
+	},
+	{
+		Name: "Carter",
+		State: {
+			Outfit: "Uniform",
+            Mouth: "Sad",
+            Eyes: "Mad",
+		},
+	},
+]>>
+<<ad _ad>>
+
+Despite his words not really making them rethink their teasing, most decide to continue walking upon his appearance, not wanting to get in trouble if a teacher were to follow. As the laughter dies down and the crowd begins to disperse, <span style="color:lightgreen"><span style="color:DarkTurquoise">Carter</span> quickly turns to help you up and lead you to the bathroom.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Don’t worry about them.”</span> <span style="color:DarkTurquoise">Carter</span> attempts to comfort you as he grabs you some paper towels, <span style="color:LightSteelBlue">“They’re just a bunch of dummies who don’t have anything better to do. With how often weird stuff happens around here, I’m sure they’ll all forget it by the time class is over.”</span> <span style="color:pink">He gives you a reassuring smile before looking down at your wet spot.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“These aren’t really working, huh?”</span> He thinks for a moment before smiling again, <span style="color:LightSteelBlue">“I’ll go see if the nurse has some spare clothes for you. Wait here and I’ll be back in a flash!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Carter</span> dashes off as you can’t help but smile at the boy’s kindness. You still felt utterly embarrassed, but his words did help.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Sad",
+			Mouth: "Happy",
+            Blush: 1,
+            Cry: 1,
+		},
+	},
+	{
+		Name: "Carter",
+		State: {
+			Outfit: "Uniform",
+            Mouth: "Happy",
+            Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+The boy returns with another pair of $PlayerBottoms.Type, standing guard as you change into them. <span style="color:pink">Once you are all dry, he puts his arms around your shoulders and leads you out of the bathroom, happily declaring <span style="color:LightSteelBlue">“There! Now it’s like it never happened.”</span> You thank <span style="color:DarkTurquoise">Carter</span> for his aid.</span> <br>
+<br>
+<<needChange "Hygiene" -30>>
+<<set $HadAccident to 0>>
+<<include"School Fail Location">>
+
+
+:: School Pee Run Into Michael [nobr]
+
+<span style="color:lightcoral">It is just when you feel the humiliation about to reach a breaking point</span> <span style="color:yellow">that you hear a loud CRASH followed by a cry of pain.</span> You look up and spot the boy that you ran into on his knees holding his side in pain. <span style="color:lightgreen">Standing over him was <span style="color:DarkTurquoise">Michael</span>, who glanced at the crowd with a glare of annoyance.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Sad",
+			Mouth: "Sad",
+            Blush: 1,
+            Cry: 1,
+            Arms: "Hide",
+		},
+	},
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+            Mouth: "Sad",
+            Eyes: "Mad",
+		},
+	},
+]>>
+<<ad _ad>>
+/* Avatars: PC: Sad Eyes, Sad Mouth, Blush1, Cry1, Hide Hands
+Michael: Mad Eyes, Sad Mouth */
+
+<span style="color:LightSteelBlue">“What the fuck are you all laughing at?”</span> <span style="color:DarkTurquoise">Michael</span> yells out as he lifts the boy up by the back of his collar. <span style="color:LightSteelBlue">“Maybe I should punch you all in the stomach, see if you can keep it in!”</span> The crowd quickly shut up as <span style="color:DarkTurquoise">Michael</span> berated them, some backing up in fear. <span style="color:DarkTurquoise">Michael</span> drags the boy in front of you, tossing him down to his knees and leaning down. <span style="color:LightSteelBlue">“Now, I think you owe my friend here in apology.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Fuck you!”</span> The kid replies, his voice still cracking in pain from the gut punch <span style="color:DarkTurquoise">Michael</span> gave him. <br>
+<br>
+<span style="color:LightSteelBlue">“Wrong answer.”</span> <span style="color:DarkTurquoise">Michael</span> shakes his head. <span style="color:LightSteelBlue">“I guess you need to be taught a lesson!”</span> <span style="color:yellow"><span style="color:DarkTurquoise">Michael</span> delivers a hard kick to the back of the boy, sending him sprawling face-first into your puddle of piss!</span> The crowd gasps as the boy lurches back in disgust but is shoved back into the puddle as <span style="color:DarkTurquoise">Michael</span> steps on the back of his head. <span style="color:yellow">The boy struggles to free himself but can do nothing as <span style="color:DarkTurquoise">Michael</span> rubs his face all over the urine-soaked floor.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Now, unless the rest of you want a taste, clear out!”</span> <span style="color:DarkTurquoise">Michael</span> yells as the crowd scrambles away, not wanting to share in the fate of the poor boy you ran into. <span style="color:DarkTurquoise">Michael</span> holds him there for a second before kicking him away. The poor kid scrambles to his feet, looking like he is about to throw up, as he dashes to the restroom to clean himself up. <span style="color:DarkTurquoise">Michael</span> chuckles to himself before walking up to you. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Mouth: "Happy",
+            Eyes: "Sad",
+            Blush: 1,
+            Cry: 1,
+            Arms: "Hide",
+		},
+	},
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+            Mouth: "Smirk",
+            Eyes: "Mad",
+		},
+	},
+]>>
+<<ad _ad>>
+/* Avatars: PC: Smile, Sad Eyes, Blush1, Cry1, Hide Hands
+Michael: Smirk, Mad Eyes */
+
+<span style="color:LightSteelBlue">“What would you do without me.”</span> He laughs, reaching out a hand to help you up, before pulling back as the smell hits him. <span style="color:LightSteelBlue">“Yeah, sorry. That’s super gross.”</span> <span style="color:DarkTurquoise">Michael</span> pinches his nose and dramatically waves his hand as you stand up, still finding a way to get some light teasing in. <span style="color:LightSteelBlue">“You should head to the nurse; pretty sure he has some spare clothes. And try not to make this a constant thing.”</span> He smirks, <span style="color:LightSteelBlue">“I really don’t want to be known as the piss boy’s best friend.”</span>  He waves as he walks off. <br>
+<br>
+You decide to rush to the nurse’s office before anyone decides to return now that <span style="color:DarkTurquoise">Michael</span> is gone. <span style="color:lightgreen">You also make a mental note to not get on <span style="color:DarkTurquoise">Michael</span>’s bad side anytime soon.</span> <br>
+<br>
+<<needChange "Hygiene" -30>>
+<<set $HadAccident to 0>>
+<<include"School Fail Location">>

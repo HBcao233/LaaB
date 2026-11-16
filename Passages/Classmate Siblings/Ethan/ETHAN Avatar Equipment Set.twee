@@ -1,0 +1,210 @@
+:: ETHAN Avatar Equipment Set [nobr]
+
+<<set $AD.SkinColor to "White">>
+<<set $AD.Freckles to 1>>
+<<set $ADArmFreckles to 1>>
+<<set $ADShoulderFreckles to 1>>
+<<set $AD.HairStyle to "Shaggy">>
+<<set $AD.HairColor to "Ginger">>
+<<set $AD.EyeColor to "Green">>
+<<set $AD.LeftEyeColor to "Green">>
+<<set $AD.RightEyeColor to "Green">>
+<<set $AD.PenisStyle to "Uncut">>
+<<set $AD.PenisSize to "Tiny">>
+
+<<set $ADUndies to {
+	Name: "White Briefs",
+    ID: "UnBrWh",
+    Type: "Briefs",
+    Color: "White",
+    Slot: "Undies",
+    Temp: 0,
+    Tags: ["Sleepwear"],
+    Size: "Kid",
+    Icon: "Images/Icons/Kids Clothes/Briefs/White Briefs.png",
+    Avatar: "Images/Avatar/Kids/Clothes/Briefs/White Briefs.png",
+    AvatarTorn: "Images/Avatar/Kids/ClothesTorn/Briefs/White Briefs.png",
+    AvatarDamaged: "Images/Avatar/Kids/ClothesDamaged/Briefs/White Briefs.png",
+    Description: "A cute pair of Tighty Whities. The perfect undies for any little boy.",
+}>>
+<<set $ADBottoms to {
+	Name: "Gray Shorts",
+    ID: "BoShBk",
+    Type: "Shorts",
+    Color: "Gray",
+    Slot: "Bottoms",
+    Size: "Kid",
+    Icon: "Images/Icons/Kids Clothes/Shorts/Gray Shorts.png",
+    Avatar: "Images/Avatar/Kids/Clothes/Shorts/Gray Shorts.png",
+    SagAvatar: "None",
+    PulledDownAvatar: "Images/Avatar/Kids/Clothes/Pants Down/Gray Pants Down.png",
+    AvatarTorn: "Images/AvatarTorn/Kids/Clothes/Shorts/Gray Shorts.png",
+    AvatarDamaged: "Images/AvatarDamaged/Kids/Clothes/Shorts/Gray Shorts.png",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A pair of cute Gray Shorts.",
+}>>
+<<set $ADTop to {
+	Name: "Gray T-Shirt",
+    ID: "ToTsBl",
+    Type: "T-Shirt",
+    Color: "Gray",
+    Slot: "Top",
+    Size: "Kid",
+    Tags: ["None"],
+    Icon: "Images/Icons/Kids Clothes/T-Shirt/Gray T-Shirt.png",
+    Avatar: "Images/Avatar/Kids/Clothes/T-Shirt/Gray T-Shirt.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "None",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBound: "None",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A cute T-Shirt.",
+}>>
+<<set $ADOuter to {
+	Name: "Black Oversized Hoodie",
+    ID: "OuHoBe",
+    Type: "Oversized Hoodie",
+    Color: "Black",
+    Slot: "Outer",
+    Size: "Kid",
+    Tags: ["Sleeves", "Big"],
+    Icon: "Images/Icons/Kids Clothes/Oversized Hoodie/Black Oversized Hoodie.png",
+    Avatar: "Images/Avatar/Kids/Clothes/Oversized Hoodie/Black Oversized Hoodie.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "Images/Avatar/Kids/Clothes/Oversized Hoodie/Black Oversized Hoodie Arms Default.png",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBase: "Images/Avatar/Kids/Clothes/Oversized Hoodie/Black Oversized Hoodie.png",
+    AvatarSleeveBaseTorn: "None",
+    AvatarSleeveBaseDamaged: "None",
+    AvatarSleeveBound: "Images/Avatar/Kids/Clothes/Oversized Hoodie/Black Oversized Hoodie Sleeves.png",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    AvatarAltBase: "None",
+    AvatarAltBaseTorn: "None",
+    AvatarAltBaseDamaged: "None",
+    Description: "A cute Oversized Hoodie.",
+}>>
+<<set $ADSocks to {
+	Name: "Gray Socks",
+    ID: "SoSoGy",
+    Type: "Socks",
+    Color: "Gray",
+    Slot: "Socks",
+    Size: "Kid",
+    Icon: "Images/Icons/Kids Clothes/Socks/Gray Socks.png",
+    Avatar: "Images/Avatar/Kids/Clothes/Socks/Gray Socks.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "A cute pair of Socks.",
+}>>
+<<set $ADShoes to {
+	Name: "Black Sneakers",
+    ID: "ShSnBk",
+    Type: "Sneakers",
+    Color: "Black",
+    Slot: "Shoes",
+    Size: "Kid",
+    Icon: "Images/Icons/Kids Clothes/Sneakers/Black Sneakers.png",
+    Avatar: "Images/Avatar/Kids/Clothes/Sneakers/Black Sneakers.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "A cute pair of sneakers.",
+}>>
+<<set $ADShortsSag to 0>>
+
+<<if $AD.Outfit == "Pajama">>
+/* PAJAMA TOP */
+<<set $ADTop to {
+	Name: "Blue Pajama Shirt",
+    ID: "TopPjBl",
+    Type: "Pajama Shirt",
+    Color: "Blue",
+    Slot: "Top",
+    Size: "Kid",
+    Tags: ["Sleepwear"],
+    Icon: "Images/Icons/Kids Clothes/Pajamas/Blue Pajamas.png",
+    Avatar: "Images/Avatar/Kids/Clothes/Pajama Top/Blue Pajama Top.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "None",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBound: "None",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A cute Pajama Shirt.",
+}>>
+
+/* PAJAMA BOTTOMS */
+<<set $ADBottoms to {
+	Name: "Blue Pajama Bottoms",
+    ID: "BoPjBlu",
+    Type: "Pajama Bottoms",
+    Color: "Blue",
+    Slot: "Bottoms",
+    Size: "Kid",
+    Tags: ["Sleepwear"],
+    Icon: "Images/Icons/Kids Clothes/Pajamas/Blue Pajamas.png",
+    Avatar: "Images/Avatar/Kids/Clothes/Pajama Bottoms/Blue Pajama Bottoms.png",
+    SagAvatar: "None",
+    PulledDownAvatar: "Images/Avatar/Kids/Clothes/Pants Down/Blue Pants Down.png",
+    AvatarTorn: "Images/AvatarTorn/Kids/Clothes/Pajama Bottoms/Blue Pajama Bottoms.png",
+    AvatarDamaged: "Images/AvatarDamaged/Kids/Clothes/Pajama Bottoms/Blue Pajama Bottoms.png",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A pair of cute Blue Pajama Bottoms.",
+}>>
+
+
+/* OTHER */
+	<<set $ADShoes to $None>>
+	<<set $ADSocks to $None>>
+	<<set $ADOuter to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Naked">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Towel">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+
+<<if $AD.Outfit == "Undies">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>

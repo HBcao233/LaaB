@@ -1,0 +1,15 @@
+:: OC Seb Pickup Photo [nobr]
+
+<<if $OCSebOrderType == "Embarrassing">>
+    <<run $OCSebPlayerPhotos.push($OCSebPhotoEmbarrassing.splice(random(1, $OCSebPhotoEmbarrassing.length) - 1, 1)[0])>>
+<<elseif $OCSebOrderType == "Cute">>
+    <<run $OCSebPlayerPhotos.push($OCSebPhotoCute.splice(random(1, $OCSebPhotoCute.length) - 1, 1)[0])>>
+<<elseif $OCSebOrderType == "Special">>
+    <<run $OCSebPlayerPhotos.push($OCSebPhotoSpecial.splice(random(1, $OCSebPhotoSpecial.length) - 1, 1)[0])>>
+<</if>>
+<<set $OCSebPhotoTime to -1>>
+
+<span style="color:lightgreen">Inside the box, you find an unmarked envelope that contains your ordered photo!</span><br>
+<span style="color:gray">[Photos Ordered from Sebastian can be viewed from the Storage Closet in the School or from your Journal.]</span><br>
+<br>
+[[Continue|OC Sebastian Order Photo]]

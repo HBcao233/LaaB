@@ -1,0 +1,67 @@
+:: Random Job Clean Gutter Lucas Helps [nobr]
+
+/* Intro */
+
+You knock on the listed address and are quickly greeted by your client. They seem to have been expecting someone to answer their job posting, so after exchanging pleasantries, you are quickly led to the side of the house where a ladder is already set up. <span style="color:LightSteelBlue">“Those storms we’ve been having have been causing all sorts of trouble.”</span> The client explains, <span style="color:LightSteelBlue">“Got leaves and gunk and who knows what else stuck up in there. Gotta get it cleared out before it overflows, because I am NOT paying those crazy prices to get it fixed.”</span> <br>
+<br>
+You tell him that you’ll get it completely clear in no time. Satisfied with your confidence, the man heads back inside and leaves you to the work. You take a minute to double-check that the ladder and <span style="color:Yellow">unfortunately find it to be a little bit wobbly.</span> Not enough to be super dangerous, but enough to make you a little nervous. You are trying to consider what you could do to make it more stable when a familiar voice suddenly calls out to you. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+    {
+        Name: "Lucas",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$LucasNickname</span>?”</span> You turn and see <span style="color:DarkTurquoise">Lucas</span>, who is walking down the sidewalk, and wave. Curious, he walks over and asks <span style="color:LightSteelBlue">“What are you doing here? This a friend’s house or something?”</span> You explain that you were hired to clean out these gutters. <span style="color:LightSteelBlue">“Oh, taking some odd jobs are we?”</span> He laughs, <span style="color:LightSteelBlue">“I’ve done some of those, not the most fun but pay pretty well. Half the neighborhood uses kids for labor these days.”</span> You shrug, saying that you’re not going to complain as long as you get paid. <br>
+<br>
+<span style="color:LightSteelBlue">“Well, good luck. I’ll see you around!”</span> <span style="color:DarkTurquoise">Lucas</span> is just about to head off when you suddenly stop him. You explain that the ladder is a bit uneven and admit that you are a bit nervous about climbing it. You offer to split the payment with him if he would help you out for a minute and hold the ladder. <span style="color:LightSteelBlue">“Oh? Sure thing!”</span> <span style="color:DarkTurquoise">Lucas</span> smiles, walking over, <span style="color:LightSteelBlue">“But you don’t have to pay me or anything, you’re doing the gross part. Just consider this me making sure you don’t break your leg, so I still have someone to hang out with on the weekends.”</span> He smirks and you thank him, beginning your climb as he holds the ladder. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Lucas",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+While pulling out gross piles of wet leaves and sludge isn’t exactly the most fun thing in the world, having <span style="color:DarkTurquoise">Lucas</span> to keep you company almost makes it pleasant. The two of you chat as you work and <span style="color:DarkTurquoise">Lucas</span> tells you about how he went to the arcade earlier and got a new high score on their dance game, admitting he’s been practicing it for days. <span style="color:LightGreen">In the end, you are surprised by how quickly time flies!</span> <br>
+<br>
+Once you get your payment from the client, who briefly inspects the work and praises your efforts, you once again ask <span style="color:DarkTurquoise">Lucas</span> if he is sure he doesn’t want some of the cash. <span style="color:LightSteelBlue">“Like I said, I just wanted to look out for yea.”</span> He smiles, putting his arm on your shoulder, <span style="color:LightSteelBlue">“Tell you what, pay me back by coming to the arcade with me next time. I know you got two left feet, but we’ll make a high scorer out of you yet!”</span> And with that you two part ways! <br>
+
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<<needChange "Fun" 5>>
+<<needChange "Energy" -3>>
+<<socialChange "Lucas" 1>>
+<br>
+/* GENERIC TIME PASS */
+    <<set $Minutes += 60>>
+	<<set $OddJobsCount += 1>>
+/* RETURN CODE */
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+<<elseif $Location.Name == "Wald Street">>
+    [[Continue|Wald Street]]
+<<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+<</if>>

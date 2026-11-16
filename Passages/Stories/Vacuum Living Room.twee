@@ -1,0 +1,44 @@
+:: Vacuum Living Room [nobr]
+
+<<set $Minutes += 15>>
+You pull out the vacuum and move some small pieces of furniture out of the way as you begin to vacuum the living room. 
+<<set $RandomEvent to random(1, 2)>>
+
+			/* WEDGIE */
+		<<if $RandomEvent == 2 and $PlayerUndies.Name != "None">>
+			<<if $PlayerUndies.Name != "None">>
+		As you are vacuuming, your foot gets tangled in the cord and you trip and fall into the vacuum, knocking you both over. To make matters worse, you land with your butt facing the sucker of the vacuum, causing it to begin to suck in the waistband of your $PlayerUndies.Type! <span style="color:Red">You yelp in pain as the vacuum gives you a painfully strong wedgie you have to fight to get out of.</span> Once you manage to free yourself, you quickly finish vacuuming, hoping nobody saw that.<br>
+<br>
+
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Wedgiee"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+	<<addMoodlet "Wedgie" 4>>
+		<<else>>
+		It doesn’t take long and you soon find yourself finished and return everything to where it belongs.<br>
+<br>
+		<</if>>
+
+			/* NORMAL */
+		<<else>>
+		It doesn’t take long and you soon find yourself finished and return everything to where it belongs.<br>
+<br>
+		
+		<</if>>
+
+
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+	<<if $QuestLog[_i].Name == "Weekly Chores">>
+		<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+			<<if $QuestLog[_i].Objectives[_o].Name == "Vacuum">>
+				<<set $QuestLog[_i].Objectives[_o].State to 1>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<break>>
+	<</if>>
+<</for>>
+
+<<set $ChoreEasyObj to 1>>
+<<include"Chore Quest Check">>
+[[Continue|PH Living Room]] 

@@ -1,0 +1,108 @@
+:: Dad Hang Out Park Sit & Chat [nobr]
+<<set $Minutes += 10>>
+<span style="Color: LightSteelBlue">“Hold on a second, <span style="color:DarkTurquoise">$DadNickname</span>. Need to sit down for a second.”</span> <span style="color:DarkTurquoise">Your Father</span> says, sitting down on a nearby bench. <span style="Color: LightSteelBlue">“Getting harder and harder to keep up with you kids.”</span> He laughs, catching his breath, <span style="Color: LightSteelBlue">“Used to be able to run <span style="color:DarkTurquoise">Gabe</span> down when he’d try to escape the bathtub, but now just playing with <span style="color:DarkTurquoise">Noah</span> wipes me out.”</span> You take a seat next to him, figuring you could give him a bit of a break. <br>
+
+<<set _ad to [
+    {
+        Name: "Dad",
+        State: {
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            <span style="Color: LightSteelBlue">“So, how is school going?”</span> <span style="color:DarkTurquoise">Your Father</span> asks. You shrug, regaling him with tales of your classes, friends, and general thoughts on the school. He follows along happily. <span style="Color: LightSteelBlue">“Seems the schools changed a lot since I was there. I’ll have to peek around during the next parent-teacher conference. Curious if all the old secrets are still around.”</span> He laughs. You try to pry for more information on said secrets, but he refuses to elaborate. <span style="Color: LightSteelBlue">“I’d hate to cause trouble for Alister. Guess you’ll have to figure those out yourself if they’re still there.”</span> <br>
+            <<socialChange "Dad" 1>>
+            <span style="color:green">+Dad Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Dad Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Dad Hang Out Park]]
+        <<else>>
+            <span style="Color: LightSteelBlue">“So, <span style="color:DarkTurquoise">$DadNickname</span>, have you gotten a detention yet?”</span> He asks. You blush at the question, mumbling out a non-comital response to avoid getting yourself into trouble. <span style="Color: LightSteelBlue">“I’m not prying for reasons to punish you.”</span> He laughs, <span style="Color: LightSteelBlue">“They don’t even call me unless you do something really bad. Preston handles its own discipline. Had to sign permission slips when you enrolled to let them spank you boys.”</span> You frown at this, thanking him for that sarcastically. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Don’t blame me.”</span> He laughs, ruffling your hair, <span style="Color: LightSteelBlue">“Requirement of entry. Preston is strict with controlling stuff like that. Plus, I’m sure it’s nowhere near as bad as when I was a kid. I remember they used to spank kids during class and make them stand outside the door holding buckets of water with their bottoms down.”</span> He laughs, as if it is a pleasant memory, <span style="Color: LightSteelBlue">“At least now they tend to do it in the privacy of detention. Consider yourself lucky!”</span> <br>
+            <<socialChange "Dad" 1>>
+            <span style="color:green">+Dad Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Dad Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Dad Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Dad</span> about what sort of stuff he does in his free time, when he’s not working or taking care of you and your brothers. <span style="Color: LightSteelBlue">“Well, I like to watch movies when I can.”</span> He responds after thinking for a moment, <span style="Color: LightSteelBlue">“So many films out there, new and old, with new ones every day. I love the different stories they tell, so I always have something new to watch. Plus, watching old classics are just as fun!”</span> He says with a smile. <br>
+            <<socialChange "Dad" 1>>
+            <span style="color:green">+Dad Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Dad Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Dad Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Your Father</span> about what sort of stuff he likes to do. <span style="Color: LightSteelBlue">“Like hobbies?”</span> He replies, taking a moment to think, <span style="Color: LightSteelBlue">“Well, I don’t have too much time for those raising you kids and working.”</span> He laughs, <span style="Color: LightSteelBlue">“But I like watching films or taking care of the plants in our backyard. Other than that… hard to say. Maybe I’ll have to try some new stuff.”</span> He laughs. <br>
+            <<socialChange "Dad" 1>>
+            <span style="color:green">+Dad Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Dad Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Dad Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+	<<link "Brothers<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            With a devious smirk, you ask <span style="color:DarkTurquoise">Your Father</span> if he can tell you any embarrassing stories or secrets about your brothers. He raises an eyebrow at this and smiles. <span style="Color: LightSteelBlue">“I could, though that would also mean I could tell them embarrassing secrets and stories about you, to be fair.”</span> You blush at this, instantly thinking of every humiliating or embarrassing thing <span style="color:DarkTurquoise">Your Father</span> knows about you that your brothers don’t. You quickly change the subject. <br>
+            <<socialChange "Dad" 1>>
+            <span style="color:green">+Dad Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Dad Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Dad Hang Out Park]]
+        <<else>>
+            You half-jokingly ask <span style="color:DarkTurquoise">Your Father</span> if he has anything funny about your brothers to tell you. <span style="Color: LightSteelBlue">“Oh? Like gossip?”</span> He laughs, <span style="Color: LightSteelBlue">“Well, I do have this super embarrassing thing I recently learned about <span style="color:DarkTurquoise">Gabe</span>. But you can’t tell him I told you.”</span> Curiosity piqued, you promise to keep it a secret. <span style="Color: LightSteelBlue">“Alright, come closer.”</span> He says. You lean in close, holding your ear to his mouth when… <br>
+            <br>
+            You suddenly feel his tongue lick your ear! You jump from the weird, uncomfortable feeling and jump off the bench as <span style="color:DarkTurquoise">Your Father</span> laughs. <span style="Color: LightSteelBlue">“Haha, sorry. <span style="color:DarkTurquoise">Gabe</span> used to do that to me when he was little.”</span> He laughs as you playfully his hit in response. Guess he isn’t willing to spill the hot goss on your brothers. <br>
+            <<socialChange "Dad" 1>>
+            <span style="color:green">+Dad Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Dad Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Dad Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

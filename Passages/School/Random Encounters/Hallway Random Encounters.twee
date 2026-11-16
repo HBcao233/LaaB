@@ -1,0 +1,38 @@
+:: Hallway Random Encounters [nobr]
+
+<<set _randomencounterevents to ["Hallway Random Encounter Random Wedgie"]>>
+
+<<if $MichaelSocial < 20 or $MichaelSocialRank < 0 && $PlayerUndies.Type != "None">>
+  <<set _randomencounterevents.push("Hallway Random Encounter Michael Random Wedgie")>>
+<</if>>
+<<if $MichaelSocial < 25 or $MichaelSocialRank < 0>>
+  <<set _randomencounterevents.push("Michael Random Hallway Wedgie")>>
+<</if>>
+<<if $Nickname.Bully == 1 && $BullyNickname == "Piss Boy">>
+  <<set _randomencounterevents.push("Hallway Random Encounter Piss Boy")>>
+<</if>>
+<<if $Nickname.Bully == 1 && $BullyNickname == "Diaper Boy">>
+  <<set _randomencounterevents.push("Hallway Random Encounter Nickname Diaper 1", "Hallway Random Encounter Nickname Diaper 2")>>
+<</if>>
+<<if $ToggleOCKyren == 1 && $CompletedQuests.includes("Kyren: Introduction")>>
+  <<set _randomencounterevents.push("OC Kyren Repeatable Hallway Encounter")>>
+<</if>>
+
+<<if $ToggleOCRudy == 1 && $CompletedQuests.includes("Rudy: Introduction")>>
+  <<set _randomencounterevents.push("Rudy Hallway Encounter")>>
+<</if>>
+/* Kazu Events */
+<<if $ToggleOCKazu == 1 && $InActiveQuests.includes("Kazu: Xavier Showdown")>>
+  <<set _randomencounterevents.push("OC Kazu Xavier Showdown")>>
+<</if>>
+
+<<set _event to _randomencounterevents.random()>>
+
+/* Quest-Forced */
+<<if $InActiveQuests.includes("Felix: The Letter") && $Time.between(6, 0, 15, 30)>>
+  <<set _event to "Felix The Letter">>
+<<elseif $ToggleOCKade == 1 && $InActiveQuests.includes("Kade: Introduction") && $Time.between(6, 0, 15, 30)>>
+  <<set _event to "OC Kade Intro">>
+<</if>>
+
+<<include _event>>

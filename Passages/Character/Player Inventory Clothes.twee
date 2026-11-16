@@ -1,0 +1,20 @@
+:: Player Inventory Clothes [nobr]
+
+<<for _i to 0; _i lt $PlayerInventoryClothes.length; _i++>>
+	<<capture _i>>
+		<<link "[img[$PlayerInventoryClothes[_i].Icon]]">>
+				<<set $PlayerInventoryClothesSelected to _i>>
+				<<replace "#ClothesSelect">>
+					<<include "Player Inventory Clothes Details">>
+				<</replace>>
+			<</link>>
+    <</capture>>
+<</for>>
+
+<<if $PlayerInventoryClothes.length === 0>>
+	<span class="greyed-out">(Empty)</span>
+<</if>>
+
+<div id='ClothesSelect'>
+	
+</div>

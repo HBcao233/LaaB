@@ -1,0 +1,30 @@
+:: Wake-up Late for School Accident [nobr]
+
+Your dreams and comfort are suddenly ripped away from you, replaced with a bitterly cold chill that forces you awake. Standing above you was <span style="color:DarkTurquoise">Your Father</span>, smiling as he had just yanked your blanket off of you. <span style="color:pink">The wet spot on your bed indicates that you had an accident in your sleep and <span style="color:DarkTurquoise">Your Father</span> sighs loudly.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Dad",
+            State: {
+                Brows: "Suspicious",
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 2,
+                Eyes: "Sad",
+                Arms: "Hide",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>!”</span> He says, sounding a little annoyed. You apologize, a bit embarrassed. <span style="color:LightSteelBlue">“I know you can’t control it, son, but you need to remember to put on your gear before bed.”</span> You apologize again, promising to remember next time. <br>
+<br>
+<<set $Player.Hygiene to 0>>
+
+<br>
+[[Continue|Player Bedroom][$HadAccident to 0]]<br>

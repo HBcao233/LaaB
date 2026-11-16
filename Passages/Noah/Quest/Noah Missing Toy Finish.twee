@@ -1,0 +1,76 @@
+:: Noah Missing Toy Finish [nobr]
+
+<<if !$CompletedQuests.includes("Noah: Missing Toy")>>
+	<<set $CompletedQuests.push("Noah: Missing Toy")>>
+<</if>>
+<<set $ActiveQuests.delete("Noah: Missing Toy Finish")>>
+<<unset $QuestMissingToyInvestigate>>
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+	<<if $QuestLog[_i].Name == "Noah: Missing Toy">>
+		<<set $QuestLog.deleteAt(_i)>>
+		<<break>>
+	<</if>>
+<</for>>
+<<set $Notifications.push({
+	Name: "Quest Completed!",
+	Icon: "Quests/Noah",
+	Description: "Your little brother is very happy to have his toy back.",
+})>>
+
+<<set _ad to [
+	{
+		Name: "Noah",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Everyday",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You walk up to <span style="color:DarkTurquoise">Noah</span>, holding the toy behind your back, and tell him you have a surprise. <span style="color:LightSteelBlue">“Did you find it? Did you find it!?”</span> <span style="color:DarkTurquoise">Noah</span> jumps to his feet happily, with a big smile on his face. You play dumb, questioning what he is talking about. <span style="color:LightSteelBlue">“Come on <span style="color:DarkTurquoise">$NoahNickname</span>!”</span> Noah tries to see what you are hiding, <span style="color:LightSteelBlue">“Let me see! Let me see!”</span> You relent, showing <span style="color:DarkTurquoise">Noah</span> the toy, which causes him to happily cheer and go to grab it, though you pull it back before he can.<br>
+<br>
+<div id=choice1>
+	<<link "Ask for a Kiss">>
+	<<replace"#choice1">>
+		You tell Noah that you want a reward for your efforts and demand he gives you a kiss. <span style="color:DarkTurquoise">Noah</span> smiles and blushes slightly. <span style="color:LightSteelBlue">“Of course! Anything for my hero!”</span> <span style="color:DarkTurquoise">Noah</span> puts on a girly, princess voice. <span style="color:Pink">You lean down a little as Noah stands on his tippy-toes and gives you a thankful kiss on the lips. He then does a little curtsy, prompting a round of giggles from you both.</span> <br>
+		<br>
+		You return the toy and <span style="color:DarkTurquoise">Noah</span> happily puts it back on his dresser, next to his other Owlman Figures, before giving you a big hug. <span style="color:LightSteelBlue">“Thanks, <span style="color:DarkTurquoise">$NoahNickname</span>, you’re the best big brother ever!”</span> <br>
+		<span style="color:Gold">Quest: Noah’s Missing Toy (Completed!)</span><br>
+		<<socialChange "Noah" 5>>
+		<<set $KissedNoah += 1>>
+		<<addMoodlet "Kissed" 3>>
+		<br>
+		<<if $Location.Name == "Home Backyard">>
+        [[Continue|PH Backyard]] 
+		<<else >>
+		[[Continue|PH Noah Bedroom]] 
+		<</if>>
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Noah</span><br>
+	<<link "Ask for Half His Allowance">>
+	<<replace"#choice1">>
+		You tell <span style="color:DarkTurquoise">Noah</span> that you want a reward for your efforts and demand half of his allowance. <span style="color:DarkTurquoise">Noah</span> frowns as you say that. <span style="color:LightSteelBlue">“But- but I was going to buy the new Owlman Blockz set. Daddy was going to take me tomorrow!”</span> He pouts and complains, but you threaten to put it back where you found it. <br>
+		<br>
+		<span style="color:LightSteelBlue">“Fine.”</span> <span style="color:DarkTurquoise">Noah</span> says sadly, grabbing a ten-dollar bill and handing it to you. <span style="color:LightSteelBlue">“Thank you.”</span> You take the money and hand <span style="color:DarkTurquoise">Noah</span> back his figure. He seems sad to have lost some of his cash, but also happy to have one of his favorite toys back. <br>
+		<span style="color:Gold">Quest: Noah’s Missing Toy (Completed!)</span><br>
+		<<set $Money += 10>>
+		<span style="color:Green">+$10</span><br>
+		<<socialChange "Noah" 3>>
+		<br>
+		<<if $Location.Name == "Home Backyard">>
+        [[Continue|PH Backyard]] 
+		<<else >>
+		[[Continue|PH Noah Bedroom]] 
+		<</if>>
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+$10</span><br>
+</div>

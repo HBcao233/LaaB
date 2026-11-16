@@ -1,0 +1,284 @@
+:: Lucas Hang Out Park [nobr]
+
+/* End Late Check */
+<<if $Time.after(20)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<goto "Lucas Hang Out End Late Low Fun">>
+    <<else>>
+        <<goto "Lucas Hang Out End Late High Fun">>
+    <</if>>
+<<else>>
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Lucas Park Hang Out",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Park",
+}>>
+
+<<if $Time.after(20)>>
+    <<set _location to "Park">>
+    <<include"Lucas Hang Out Late">>
+<<else>>
+    <span style="color:Azure"><big><strong>--Opal City Park--</strong></big></span><br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+        <<ad _ad>>
+
+    <strong><span style="color:DarkTurquoise">Lucas</span>: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+
+    You and <span style="color:DarkTurquoise">Lucas</span> stand in the city park. It is a fairly large patch of greenery in the center of the city that, despite being a popular spot, always has plenty of open space for activities. The park has a lot of sidewalk trails that curve around throughout the entire park. There is also a small lake near one corner along with quite a few open fields that can be used for all sorts of things. Along one corner is also a fenced-in playground that has a lot more attractions than the one at your school. <br>
+    <br>
+    <span style="color:LightSteelBlue">“So, what do you want to do?”</span> <span style="color:DarkTurquoise">Lucas</span> asks, smiling, <span style="color:LightSteelBlue">“The playground looks fun, if that’s not too kiddy for you.”</span> He laughs. <br>
+    <br>
+    <span style="color:Azure"><strong>-Talk-</strong></span><br>
+    <<include"Lucas Base Talk Code">>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+        [[Play on the playground (0:20)|Lucas Hang Out Park Playground]] <span style="color:green">+Fun</span><br>
+        [[Take a walk (0:10)|Lucas Hang Out Park Walk]] <span style="color:green">+Fun</span><br>
+        [[Race Lucas (0:15)|Lucas Hang Out Park Race]] <span style="color:green">+Fun</span><br>
+        [[Sit & Chat (0:10)|Lucas Hang Out Park Sit & Chat]]  <span style="color:green">+Energy</span><br>
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Go to the Arcade (0:05)|Lucas Hang Out Arcade Intro][$Minutes += 5]] <br>
+    [[Go to the Northend Playground (0:15)|Lucas Hang Out Northend Intro][$Minutes += 15]] <br>
+    [[Go to the Mall (0:05)|Lucas Hang Out Mall Intro][$Minutes += 5]] <br>
+    <<if $Time.Day != "Wednesday" and $CompletedQuests.includes("Lucas: First Visit")>>
+        [[Go to Lucas' House (0:15)|Lucas Hang Out His House Intro][$Minutes += 15]]<br>
+    <</if>>
+    [[Leave for today|Park]]<br>
+
+    <</if>>
+
+<</if>>
+
+:: Lucas Hang Out Arcade [nobr]
+
+/* End Late Check */
+<<if $Time.after(20)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<goto "Lucas Hang Out End Late Low Fun">>
+    <<else>>
+        <<goto "Lucas Hang Out End Late High Fun">>
+    <</if>>
+<<else>>
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Lucas Arcade Hang Out",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Arcade",
+}>>
+
+<<if $Time.after(20)>>
+    <<set _location to "Arcade">>
+    <<include"Lucas Hang Out Late">>
+<<else>>
+    <span style="color:Azure"><big><strong>--Arcade--</strong></big></span><br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+        <<ad _ad>>
+
+    <strong><span style="color:DarkTurquoise">Lucas</span>: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+
+    You and <span style="color:DarkTurquoise">Lucas</span> stand in the arcade of the entertainment district. The design of the room is right out of the 90s, with neon lights and a space-themed carpet full of bright colors that shine under the purple glow of the lights. There was music in the background, but it was mostly drowned out by the sounds of the arcade machines, all mixing together into a symphony of noise that somehow screams fun. <br>
+    <br>
+    The machines themselves were a mix of classics and new modern games. Foosball, basketball, claw machines, dance games, shooters, racing; There were so many you didn’t even know where to begin! And despite being full of people, there were still dozens of available games. Being in a popular tourist destination had its benefits, and a large arcade to entertain the children of said tourists was one of them. <br>
+    <br>
+    <span style="color:DarkTurquoise">Lucas</span> took a deep breath, taking in the smell of pizza, sugar, and the slightest hint of B.O. <span style="color:LightSteelBlue">“No place like it. Been coming here since I was a toddler, and it never gets old. So, what did you want to do first?”</span> <br>
+    <br>
+    <span style="color:Azure"><strong>-Talk-</strong></span><br>
+    <<include"Lucas Base Talk Code">>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+        [[Play a Dance Game (0:15)|Lucas Hang Out Arcade Dance]] <span style="color:green">+Fun</span><br>
+        [[Play a Shooter (0:20)|Lucas Hang Out Arcade Shooter]] <span style="color:green">+Fun</span><br>
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Go to the Park (0:05)|Lucas Hang Out Park Intro][$Minutes += 5]] <br>
+    [[Go to the Northend Playground (0:20)|Lucas Hang Out Northend Intro][$Minutes += 20]] <br>
+    [[Go to the Mall (0:10)|Lucas Hang Out Mall Intro][$Minutes += 10]] <br>
+    <<if $Time.Day != "Wednesday" and $CompletedQuests.includes("Lucas: First Visit")>>
+        [[Go to Lucas' House (0:20)|Lucas Hang Out His House Intro][$Minutes += 20]]<br>
+    <</if>>
+    [[Leave for today|Entertainment District]]<br>
+
+    <</if>>
+
+<</if>>
+
+:: Lucas Hang Out Northend [nobr]
+
+/* End Late Check */
+<<if $Time.after(20)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<goto "Lucas Hang Out End Late Low Fun">>
+    <<else>>
+        <<goto "Lucas Hang Out End Late High Fun">>
+    <</if>>
+<<else>>
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Lucas Northend Hang Out",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Arcade",
+}>>
+
+<<if $Time.after(20)>>
+    <<set _location to "Northend">>
+    <<include"Lucas Hang Out Late">>
+<<else>>
+    <span style="color:Azure"><big><strong>--Northend Playground--</strong></big></span><br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+        <<ad _ad>>
+
+    <strong><span style="color:DarkTurquoise">Lucas</span>: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+
+    You and <span style="color:DarkTurquoise">Lucas</span> stand in the small playground down the street from your houses. It is a nice place, with slides, jungle gyms, and all other sorts of playground equipment along with both a soccer field and basketball court. While it is mostly used by younger kids from the neighborhood who are too small to go to the big park by themselves, it does have the upside of being mostly empty most days. <br>
+    <br>
+    As you and <span style="color:DarkTurquoise">Lucas</span> wander around deciding on what to do, he brings up some of his memories of the park, since he’s lived next to it for as long as he can remember. <br>
+    <br>
+    <span style="color:Azure"><strong>-Talk-</strong></span><br>
+    <<include"Lucas Base Talk Code">>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+        [[Play on the playground (0:20)|Lucas Hang Out Northend Playground]] <span style="color:green">+Fun</span><br>
+        [[Play some Soccer (0:20)|Lucas Hang Out Northend Soccer]] <span style="color:green">+Fun</span><br>
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Go to the Park (0:15)|Lucas Hang Out Park Intro][$Minutes += 15]] <br>
+    [[Go to the Arcade (0:20)|Lucas Hang Out Arcade Intro][$Minutes += 20]] <br>
+    [[Go to the Mall (0:20)|Lucas Hang Out Mall Intro][$Minutes += 20]] <br>
+    <<if $Time.Day != "Wednesday" and $CompletedQuests.includes("Lucas: First Visit")>>
+        [[Go to Lucas' House (0:05)|Lucas Hang Out His House Intro][$Minutes += 5]]<br>
+    <</if>>
+    [[Leave for today|Neighborhood Playground]]<br>
+
+    <</if>>
+
+<</if>>
+
+:: Lucas Hang Out Mall [nobr]
+
+/* End Late Check */
+<<if $Time.after(20)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<goto "Lucas Hang Out End Late Low Fun">>
+    <<else>>
+        <<goto "Lucas Hang Out End Late High Fun">>
+    <</if>>
+<<else>>
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Lucas Mall Hang Out",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Arcade",
+}>>
+
+<<if $Time.after(20)>>
+    <<set _location to "Mall">>
+    <<include"Lucas Hang Out Late">>
+<<else>>
+    <span style="color:Azure"><big><strong>--Opal Gate Mall--</strong></big></span><br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+        <<ad _ad>>
+        
+    <strong><span style="color:DarkTurquoise">Lucas</span>: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+
+    You and <span style="color:DarkTurquoise">Lucas</span> stand in the Opal City Mall, near the entrance. In front of you is a large, 4-story mall full to the brim with different shops, stores, and other activities. On the first floor is a large water feature that is surrounded by the food court. Shiny coins can be seen inside the fountain and the sound of water is mixed with chatter and distant music. <br>
+    <br>
+    The mall is four-stories, with escalators and a central elevator to get to the upper levels. The mall was large for a reason, as tourists and people from downtown filled it. Every single one of the dozens and dozens of stores seemed to have customers in them, even the really obscure ones. <br>
+    <br>
+    <span style="color:Azure"><strong>-Talk-</strong></span><br>
+    <<include"Lucas Base Talk Code">>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+        <<if $Money >= 10>>
+            [[Eat something ($10, 0:25)|Lucas Hang Out Mall Eat]] <span style="color:green">+Hunger</span> <span style="color:green">+Fun</span><br>
+        <<else>>
+            <span style="color:red">Eat something ($10, 0:25)</span><br>
+        <</if>>
+        [[Take some Photos (0:10)|Lucas Hang Out Mall Photos]] <span style="color:green">+Fun</span><br>
+        [[Walk around the mall (0:20)|Lucas Hang Out Mall Walk]] <span style="color:green">+Fun</span><br>
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Go to the Park (0:05)|Lucas Hang Out Park Intro][$Minutes += 5]] <br>
+    [[Go to the Arcade (0:10)|Lucas Hang Out Arcade Intro][$Minutes += 10]] <br>
+    [[Go to the Northend Playground (0:20)|Lucas Hang Out Northend Intro][$Minutes += 20]] <br>
+    <<if $Time.Day != "Wednesday" and $CompletedQuests.includes("Lucas: First Visit")>>
+        [[Go to Lucas' House (0:20)|Lucas Hang Out His House Intro][$Minutes += 20]]<br>
+    <</if>>
+    [[Leave for today|Mall]]<br>
+
+    <</if>>
+
+<</if>>

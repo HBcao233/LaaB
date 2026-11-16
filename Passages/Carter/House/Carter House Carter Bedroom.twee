@@ -1,0 +1,96 @@
+:: Carter House Carter Bedroom [nobr]
+
+<<set $Location to {
+    Name: "Carter's Bedroom",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Carter Bedroom",
+}>>
+<span style="color:Azure"><big><strong>--Carter's Bedroom--</strong></big></span><br>
+
+<<if $Time.after(19, 0)>>
+    <<if $HangOutNeed.Fun >= 50>>
+        <<include"Carter House Leaving Late High Fun">>
+    <<else>>
+        <<include"Carter House Leaving Late Low Fun">>
+    <</if>>
+<<else>>
+
+    You stand in <span style="color:DarkTurquoise">Carter</span>’s bedroom. It is littered with heroic posters, collectables, and toys all from Ultraman and his various allies. His bed sits near the door in an odd position, though leaves a large space with beanbags and an open floor on the other side. A TV sits on a shelf and two large bookcases fill the walls on either side of it, full with collectables, comics, and video games. You’d wager <span style="color:DarkTurquoise">Carter</span> spends every dollar he gets on this stuff.<br>
+    <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+
+    <strong>Carter: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<link "Play Together (0:20)">>
+        <<set _Random to ["Carter Bedroom Play Between Legs Pose", "Carter Bedroom Play Dare", "Carter Bedroom Play Evidence", "Carter Bedroom Play Sniff", "Carter Bedroom Play Sword Dual", "Carter Bedroom Play Under Bed", "Carter Bedroom Play Between Legs Pose"]>>
+        <<set _event to _Random.random()>>
+        <<goto _event>>
+    <</link>> <span style="color:Green">+Fun</span><br>
+    <<link "Watch TV (0:30)">>
+        <<set _Random to ["Carter Bedroom Watch TV Ultraman DVD", "Carter Bedroom Watch TV Upsidedown", "Carter Bedroom Watch TV Would Your Rather", "Carter Bedroom Watch TV Pass Out", "Carter Bedroom Watch TV Cuddle"]>>
+        <<set _event to _Random.random()>>
+        <<goto _event>>
+    <</link>> <span style="color:Green">+Fun</span><br>
+    <<link "Admire Collectables (0:10)">>
+        <<set _Random to ["Carter Bedroom Collectables Cool", "Carter Bedroom Collectables Photo"]>>
+        <<set _event to _Random.random()>>
+        <<goto _event>>
+    <</link>> <span style="color:Green">+Fun</span><br>
+    <<if $CarterSocialRank >= 1>>
+        <<link "Do something naughty (?:??)">>
+            <<set _Random to ["Carter Repeatable Lewd Intro"]>>
+            <<set _event to _Random.random()>>
+            <<goto _event>>
+        <</link>> <span style="color:Green">+Fun</span><br>
+    <</if>>
+    <<link "Relax (0:20)">>
+        <<set _Random to ["Carter Bedroom Relax Bed", "Carter Bedroom Relax Cuddle"]>>
+        <<set _event to _Random.random()>>
+        <<goto _event>>
+    <</link>> <span style="color:Green">+Energy</span><br>
+    <<if $Homework == 1>>
+        <<link"Do Homework Together (0:30)">>
+            <<set _Random to ["Carter House Do Homework Basic"]>>
+            <<set _event to _Random.random()>>
+            <<goto _event>>
+        <</link>><br>
+    <</if>>
+    <br>
+
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Hallway (0:01)|Carter House Hallway][$Minutes += 1]] <br>
+
+    <br>
+
+    <br>
+    <div style="position: relative">
+    <img src="Images\NPC Homes\Carter House\Carter House Map.png" alt="Carter House Base" usemap="#CarterHouse">
+        <img src="Images\Player House\Player House Room Marker.png" 
+    style="position: absolute; left: 108px; top: 0px"  alt="Carter House" usemap="#CarterHouse">
+    </div>
+    <map name="CarterHouse">
+        <area shape="rect" coords="54,54,165,103" alt="Hallway" onclick="$.wiki('<<goto[[Carter House Hallway]]>><<set $Minutes += 1>>')" />
+    </map>
+
+<</if>>

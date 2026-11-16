@@ -1,0 +1,51 @@
+:: DRAMA Carter Steal Prop [nobr]
+
+While a large focus in the class is acting, <span style="color:DarkTurquoise">Mr. Julien</span> does spend time teaching everyone the other aspects of theater. Today, he has you each creating different pieces of scenery for the upcoming play. Despite being different from what you normally do in class, everyone is seemingly having a fun time. You notice that <span style="color:DarkTurquoise">Carter</span> has created a rather impressive piece of foliage for the backdrop, despite being made almost entirely of cardboard. <br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+As the class ends, <span style="color:DarkTurquoise">Mr. Julien</span> asks you each to put a sticky note with your name on it on the work you completed, for grading purposes. As everyone is rushing out, you notice that <span style="color:DarkTurquoise">Carter</span>’s has slipped off. You could put it back on for him, or put your own name on his impressive work.<br>
+<br>
+
+<div id="Choice">
+	/* DONT TAKE CREDIT */
+	<<link "Put his name back on his work<br>">>
+		<<replace "#Choice">>
+			Not wanting to steal the poor boy’s work, you reattach the sticky note to his scenery before heading out of the classroom yourself.<br>
+
+			<<set $PlayerDramaFaithChange to "None">>
+			<<set $LucasDramaFaithChange to "None">>
+			<<set $CarterDramaFaithChange to "Increase">>
+
+			<<include"Drama Faith Change">>
+			<br>
+
+			<<include"Attend Drama Finish">>
+		<</replace>>
+	<</link>>
+
+	/* TAKE CREDIT */
+	<<link "Put your name on his work<br>">>
+		<<replace "#Choice">>
+			Waiting until you are sure no one is watching, you quickly move your own sticky note to <span style="color:DarkTurquoise">Carter</span>’s work and toss his fallen one aside. The boy may lose a few grade points, but he should be fine.<br>
+
+			<<set $PlayerDramaFaithChange to "Increase">>
+			<<set $LucasDramaFaithChange to "None">>
+			<<set $CarterDramaFaithChange to "Decrease">>
+
+			<<include"Drama Faith Change">>
+			<br>
+
+			<<include"Attend Drama Finish">>
+		<</replace>>
+	<</link>>
+</div>

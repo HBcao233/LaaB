@@ -1,0 +1,73 @@
+:: Carter Hero's Weakness Part 13 [nobr]
+
+/* Intro */
+<span style="color:Pink"><span style="color:DarkTurquoise">Carter</span> looks down nervously into the pillow at your question, blushing deeply before mumbling.</span> <span style="Color: LightSteelBlue">“It was embarrassing… but I guess it wasn’t like super bad or anything. Kinda… funny? Embarrassing, but funny? Since it’s just us and stuff…”</span> He looks to you nervously and you both share a smile before laughing. <span style="Color: LightSteelBlue">“I don’t know, it’s weird. It’s not like I want to be embarrassed or tied up naked or anything, but I guess – I don’t know – pretending is fun? Like, I pretend to tie myself up and have villains try to get information and stuff out of me by embarrassing me and taking my clothes and stuff.”</span> He shrugs, <span style="Color: LightSteelBlue">“Is that weird?”</span> <br>
+<br>
+
+    <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    Blush: 1,
+                },
+                },
+            {
+                Name: "Carter",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smirk",
+                    Blush: 3,
+                },
+                Clothes: {
+                    Shoes: $None,
+                    Socks: $None,
+                    Bottoms: $None,
+                    Under: $None,
+                    Over: $None,
+                    Outer: $None,
+                },    
+            },
+        ]>>
+    <<ad _ad>>
+
+<div id="choice">
+    <<link "No<br>">>
+    <<replace "#choice">>
+        You think for a moment before shaking your head. It’s not weird, not really. <span style="color:Pink">Everyone has their own things that they find funny or nice, <span style="color:DarkTurquoise">Carter</span>’s just involves getting tied up naked. <span style="color:DarkTurquoise">Carter</span> blushes and buries his face into his pillow as you respond, groaning out <span style="Color: LightSteelBlue">“It sounds so weird when you say it like that!”</span> You laugh and pat the weird boy on the back.</span> <br>
+        <br>
+        <<include"Carter Hero's Weakness Part 13 2">>
+    <</replace>>
+    <</link>>
+    <<link "You like weird<br>">>
+    <<replace "#choice">>
+        <span style="color:Pink">You admit that it is a little weird, but you like weird, so he doesn’t have to worry. In fact, if he ever needs a friend to strip him, tie him up, and tease him endlessly, he just has to give you a call! <span style="color:DarkTurquoise">Carter</span> blushes and buries his face into his pillow as you offer your aid, groaning out <span style="Color: LightSteelBlue">“It sounds so weird when you say it like that!”</span> You laugh and pat the weird boy on the back.</span> <br>
+        <br>
+        <<include"Carter Hero's Weakness Part 13 2">>
+    <</replace>>
+    <</link>>
+</div>
+
+:: Carter Hero's Weakness Part 13 2 [nobr]
+
+/* Intro */
+<span style="color:Pink">As the boy is dying internally from having his naughty secrets revealed, you explain that normally it is proper for friends to return the favor. When <span style="color:DarkTurquoise">Carter</span> gives you a confused look, you motion down to your crotch, implying what you mean. <span style="color:DarkTurquoise">Carter</span> takes a second to understand, before turning even redder.</span> <span style="Color: LightSteelBlue">“You want me to-!? With my hands and mouth and-!? Wha- what!? I can’t do that!”</span> He holds the pillow out between you two as a shield as you pout, saying a true friend and hero would do it and not be selfish. <br>
+<br>
+You then think for a moment before smirking, saying that if <span style="color:DarkTurquoise">Carter</span> won’t do it willingly, <span style="color:Pink">you may have to strip him and tie him up again next time, then force him to do it.</span> <span style="color:DarkTurquoise">Carter</span>’s eyebrows raise at this as he nervously covers his face with the pillow and looks away. <span style="Color: LightSteelBlue">“I… I don’t know if I can do it… willingly…”</span> <span style="color:Pink">His choice of wording implies his meaning. You smile as you see a slight stiffness returning to his tiny crotch, the simple idea of being tied up once more and this time being forced to pleasure you no doubt arousing to the pervy boy.</span> <br>
+<br>
+But that will have to wait until next time, as <span style="color:DarkTurquoise">Carter</span>’s first experience seems to have worn the boy out, as he yawns loudly and rubs his eyes. <span style="color:Pink">You had no idea such an innocent boy as <span style="color:DarkTurquoise">Carter</span> would have such a dirty side, but you’re not against it. Then again, if you’re not into tying <span style="color:DarkTurquoise">Carter</span> up, you’re sure you could come up with other games that involve getting each other off. You have a whole world of naughty ideas to share with him. Then again, if you do enjoy tying up and stripping <span style="color:DarkTurquoise">Carter</span>, it seems he’ll be willing while also being extremely embarrassed about it. The perfect combo.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“I guess I should get dressed. I don’t know when my family will be home.”</span> <span style="color:DarkTurquoise">Carter</span> stands up, picking up his bottoms and sliding them on. <span style="Color: LightSteelBlue">“That was… nice though. Maybe we can do something like that again, when everyone else is gone?”</span> <span style="color:Pink">You nod, promising to do it again with <span style="color:DarkTurquoise">Carter</span> very soon. And this time, you may have him return the favor.</span> <br>
+<span style="Color: Gold">Quest Completed: "Carter: Hero's Weakness"</span><br>
+<<set $ActiveQuests.delete("Carter: Hero's Weakness")>>
+<<set $CompletedQuests.push("Carter: Hero's Weakness")>>
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+    <<if $QuestLog[_i].Name == "Carter: Hero's Weakness">>
+        <<set $QuestLog.deleteAt(_i)>>
+        <<break>>
+    <</if>>
+<</for>>
+<<addMoodlet "Lewd Experience" 48>>
+<<socialChange "Carter" 5>>
+<br>
+[[Continue|Carter House Carter Bedroom]]

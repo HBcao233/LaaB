@@ -1,0 +1,115 @@
+:: Mirror [nobr]
+
+<<if $AvatarBackground == 1>>
+	<<include "Avatar Backgrounds">>
+	<<set $AvatarBackground == 1>>
+<</if>>
+
+<<include"Player Avatar Display Set">>
+	<<set $AD.Eyes to $MirrorEyes>>
+	<<set $AD.Cry to $MirrorCry>>
+	<<set $AD.Mouth to $MirrorMouth>>
+	<<set $AD.Blush to $MirrorBlush>>
+	<<set $AD.Arms to $MirrorArms>>
+<<include"Avatar Display">>
+<<if $PlayerUndies.Type == "None" and $PlayerBottoms.Type == "None">>
+	/* PENIS ZOOM DISPLAY (+160px) */
+	<<if $ZoomsPlayer != 0>>
+		<div style="position: relative; left: 220px; top: 0px">
+			<<include"Penis Zoom Display">>
+			<div style="position: absolute; left: 133px; top: 0px">
+				<<include"Butt Zoom Display">>
+			</div>
+		</div>
+	<</if>>
+<</if>>
+<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+<br>
+<br>
+
+<strong>Eyes:</strong><br>
+[[Normal|Mirror][$MirrorEyes to "Normal"]]
+ - 
+[[Sad|Mirror][$MirrorEyes to "Sad"]]
+ - 
+[[Mad|Mirror][$MirrorEyes to "Mad"]]
+ - 
+[[Tired|Mirror][$MirrorEyes to "Tired"]]
+-
+[[Closed|Mirror][$MirrorEyes to "Closed"]]
+<br>
+
+<strong>Tears:</strong><br>
+[[None|Mirror][$MirrorCry to 0]]
+ - 
+[[Watering|Mirror][$MirrorCry to 1]]
+ - 
+[[Crying|Mirror][$MirrorCry to 2]]
+<br>
+
+<strong>Mouth:</strong><br>
+[[Normal|Mirror][$MirrorMouth to "Normal"]]
+ - 
+[[Sad|Mirror][$MirrorMouth to "Sad"]]
+ - 
+[[Happy|Mirror][$MirrorMouth to "Happy"]]
+ - 
+[[Smirk|Mirror][$MirrorMouth to "Smirk"]]
+<br>
+
+<strong>Blush:</strong><br>
+[[None|Mirror][$MirrorBlush to 0]]
+ - 
+[[Slight Blush|Mirror][$MirrorBlush to 1]]
+ - 
+[[Blush|Mirror][$MirrorBlush to 2]]
+ - 
+[[Hard Blush|Mirror][$MirrorBlush to 3]]
+<br>
+
+
+<strong>Hand Movement:</strong><br>
+[[Normal|Mirror][$MirrorArms to "Normal"]]
+ - 
+[[Hide|Mirror][$MirrorArms to "Hide"]]
+ - 
+[[Bound|Mirror][$MirrorArms to "Bound"]]
+<br>
+
+<strong>Toggle Hair Flip:</strong> <br>
+<<if $PlayerHairFlip == 1>>
+	<<link"[On]">>
+		<<set $PlayerHairFlip to 0>>
+		<<goto"Mirror">>
+	<</link>>
+<<else>>
+	<<link"[Off]">>
+		<<set $PlayerHairFlip to 1>>
+		<<goto"Mirror">>
+	<</link>>
+<</if>><br>
+
+<strong>Avatar Background:</strong> <br>
+<<if $AvatarBackground == 1>>
+	<<link "[On]">>
+		<<set $AvatarBackground to 0>>
+		<<goto "Mirror">>
+	<</link>>
+<<else>>
+	<<link "[Off]">>
+		<<set $AvatarBackground to 1>>
+		<<goto "Mirror">>
+	<</link>>
+<</if>><br>
+
+<br>
+
+	<<if $Location.Name == "Player Bedroom">>
+		[[Back|Player Bedroom]] 
+	<<elseif $Location.Name == "Home Bathroom">>
+		[[Back|PH Bathroom]] 
+	<<elseif $Location.Name == "School Restroom">>
+		[[Back|School Restrooms]]
+	<</if>>
+
+

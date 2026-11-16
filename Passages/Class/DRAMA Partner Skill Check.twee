@@ -1,0 +1,129 @@
+:: DRAMA Partner Skill Check [nobr]
+
+/* OPENING */
+			
+<span style="color:DarkTurquoise">Mr. Julien</span> is going to have you each perform a variety of scenes in pairs. The point of the exercise is to practice playing off your partner and learning timing when it comes to line delivery. 
+
+<<set $RandomPartner to random(1, 2)>>
+
+/* LUCAS */
+<<if $RandomPartner == 1>>			
+	You are paired with <span style="color:DarkTurquoise">Lucas</span>. You realize that you are going to have to pull your weight or else you both will look bad.<br>
+
+	<<set _ad to [
+		{
+			Name: "Julien",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Lucas",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Uniform",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<<set _skillcheckdif to random(20, 70)>>
+
+	<div id="Choice">
+	/* SKILL CHECK */
+	<<link "Continue">>
+		<<replace "#Choice">>
+			<<skillCheck "Acting" _skillcheckdif>>
+			/* PASS */
+			<<if _result == 1>>
+				You and <span style="color:DarkTurquoise">Lucas</span> work well together and play off each other’s delivery well. <span style="color:DarkTurquoise">Mr. Julien</span> seems impressed!<br>
+				<<set $PlayerDramaFaithChange to "Increase">>
+				<<set $LucasDramaFaithChange to "Increase">>
+				<<set $CarterDramaFaithChange to "None">>
+				<<include"Drama Faith Change">>
+				<br>
+				<<include"Attend Drama Finish">>
+				
+			/* FAIL */
+			<<elseif _result == 0>>
+				While <span style="color:DarkTurquoise">Lucas</span>’ performance was spot on, your stuttering and lackluster line delivery cause him to lose his grove and the two of you end up making fools of yourselves on stage.<br>
+				<<set $PlayerDramaFaithChange to "Decrease">>
+				<<set $LucasDramaFaithChange to "Decrease">>
+				<<set $CarterDramaFaithChange to "None">>
+				<<include"Drama Faith Change">>
+				<br>
+				<<include"Attend Drama Finish">>
+			<</if>>
+		<</replace>>
+	<</link>>
+	<<skillDiff "Acting" _skillcheckdif>>
+	<br>
+	</div>
+			
+/* CARTER */
+<<elseif $RandomPartner == 2>>
+	You are paired with <span style="color:DarkTurquoise">Carter</span>. You realize that you are going to have to pull your weight or else you both will look bad. <br>
+
+	<<set _ad to [
+		{
+			Name: "Julien",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Carter",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Uniform",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<<set _skillcheckdif to random(20, 70)>>
+
+	<div id="Choice">
+		/* SKILL CHECK */
+		<<link "Continue">>
+			<<replace "#Choice">>
+				<<skillCheck "Acting" _skillcheckdif>>
+
+				/* PASS */
+				<<if _result == 1>>
+					You manage to match your own energy and delivery to that of <span style="color:DarkTurquoise">Carter</span> and the scene ends up working quite well!<br>
+					<<set $PlayerDramaFaithChange to "Increase">>
+					<<set $LucasDramaFaithChange to "None">>
+					<<set $CarterDramaFaithChange to "Increase">>
+					<<include"Drama Faith Change">>
+					<br>
+					<<include"Attend Drama Finish">>
+
+				/* FAIL */
+				<<elseif _result == 0>>
+					<span style="color:DarkTurquoise">Carter</span>’s over-the-top performance does not mesh well with your flat and lackluster line delivery, causing the entire performance to look more like a sad comedy act rather than a serious scene.<br>
+					<<set $PlayerDramaFaithChange to "Decrease">>
+					<<set $LucasDramaFaithChange to "None">>
+					<<set $CarterDramaFaithChange to "Decrease">>
+					<<include"Drama Faith Change">>
+					<br>
+					<<include"Attend Drama Finish">>
+				<</if>>
+			<</replace>>
+		<</link>>
+		<<skillDiff "Acting" _skillcheckdif>>
+		<br>
+	</div>
+<</if>>

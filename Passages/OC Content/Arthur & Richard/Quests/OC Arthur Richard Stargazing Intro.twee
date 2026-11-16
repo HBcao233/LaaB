@@ -1,0 +1,68 @@
+:: OC Arthur Richard Stargazing Intro [nobr]
+
+/* Intro */
+As you walk into the cafeteria and begin to walk towards the line to get your food, you are suddenly ambushed from both sides by the adorable pair of Arthur and <span style="color:DarkTurquoise">Richard</span>. <span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>! Fancy meeting you here!”</span> Arthur says with a smile. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Arthur",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Smirk",
+            },
+        },
+        {
+            Name: "OC Richard",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Is it though?”</span> <span style="color:DarkTurquoise">Richard</span> replies with a confused look, <span style="color:LightSteelBlue">“This is the lunchroom.”</span> Arthur gives <span style="color:DarkTurquoise">Richard</span> a ‘it’s just an expression’ look while <span style="color:DarkTurquoise">Richard</span> just rolls his eye like they are having some silent conversation. <span style="color:LightSteelBlue">“Anyway, we wanted to ask if you heard about the meteor shower Saturday night. We like to stargaze and stuff and-”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“It’s going to be so cool!”</span> <span style="color:DarkTurquoise">Richard</span> jumps at you with a giant smile, <span style="color:LightSteelBlue">“We have this SUPER cool telescope that we use to see everything up close. You’ve gotta see it!”</span> <br>
+<br>
+Arthur proceeds to push <span style="color:DarkTurquoise">Richard</span> away for cutting him off, <span style="color:Pink">leading to a cute little shove match between the two that you can’t help but chuckle at.</span> Realizing what they are doing, and attracting looks from other students, both boys blush and step away from each other before <span style="color:DarkTurquoise">Richard</span> clears his throat. <span style="color:LightSteelBlue">“But yeah, we were talking about it last night and were wondering if you’d like to come watch the shower with us?”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“It’s around 8 P.M.,”</span> Arthur adds, <span style="color:LightSteelBlue">“So it hopefully shouldn’t be past your bedtime if you got one of those.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“So, what do you say?”</span> Both boys look at you expectedly. While they won’t force it upon you, you get the impression they’d be very sad if you refused, so you tell them you’d love to. <span style="color:LightSteelBlue">“Perfect!”</span> Both boys smile and say in unison, <span style="color:LightSteelBlue">“We have this good spot in the woods near Wald Street. Meet us there around 8 P.M. and we’ll show you the spot!”</span> Both boys walk away full of smiles. <span style="color:LightGreen">They may be a bit of a handful, but they sure are cute together.</span> <br>
+<<set $ActiveQuests.push("Arthur & Richard: Stargazing")>>
+<<set $InActiveQuests.delete("Arthur & Richard: Stargazing")>>
+<<set $QuestLog.push(
+	{
+		Name: "Arthur & Richard: Stargazing",
+		State: 1,
+		ID: "OCAR_S001",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Richard",
+		Tags: ["Arthur & Richard", "Character", "Quest", "Woods"],
+		Description: "<span style=\"color:DarkTurquoise\">Arthur</span> and <span style=\"color:DarkTurquoise\">Richard</span> have invited you on a Stargazing date this weekend. They told you to meet them at the <span style=\"color:Teal\">Woods</span> near <span style=\"color:Teal\">Wald Street</span> on <span style=\"color:Teal\">Saturday</span> around <span style=\"color:Teal\">8PM</span>.",
+		Objectives: [
+			{
+				Name: "Enter the woods around 8PM on Saturday",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Richard",
+	Description: "<span style=\"color:DarkTurquoise\">Arthur</span> and <span style=\"color:DarkTurquoise\">Richard</span> have invited you on a Stargazing date this weekend. They told you to meet them at the <span style=\"color:Teal\">Woods</span> near <span style=\"color:Teal\">Wald Street</span> on <span style=\"color:Teal\">Saturday</span> around <span style=\"color:Teal\">8PM</span>.",
+})>>
+<<socialChange "Richard" 3 1>>
+<<socialChange "Arthur" 3 1>>
+<br>
+[[Continue|School Cafeteria]]

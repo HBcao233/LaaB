@@ -1,0 +1,81 @@
+:: OC Miller House Backyard [nobr]
+
+<<if $OCKaydenBabysit.Active == 1>>
+    <<if $OCKaydenBabysit.State == "PreDin" && $Time.after(18)>>
+        <<goto"Millers Babysitting Dinner">>
+    <<elseif $OCKaydenBabysit.State == "PostDin" && $Time.after(19, 30)>>
+        <<goto"Millers Babysitting Bath Time">>
+    <<elseif $OCKaydenBabysit.State == "Bath" && $Time.after(20)>>
+        <<goto"Millers Babysitting Bath Time Bath Done">>
+    <<elseif $OCKaydenBabysit.State == "Sleep" && $Time.after(21)>>
+        <<goto"Millers Babysitting Ending">>
+    <</if>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Backyard--</strong></big></span><br>
+<<set $Location to {
+	Name: "Miller Backyard",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Backyard",
+}>>
+
+This expansive space is beautifully landscaped, featuring lush green grass and thoughtfully arranged flower beds that provide vibrant splashes of color. Tall trees offer privacy, lining the yard. At the heart of it all is a breathtaking, crystal-clear pool that extends long and wide. A large, impressive treehouse is nestled among the trees on one side of the yard. The remainder of the yard boasts ample open space for running around, playing tag, or kicking a ball. <br>
+<br>
+
+<<if $OCKaydenBabysit.Active == 1 && ["PreDin", "PostDin"].includes($OCKaydenBabysit.State)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<set _mouth to "Frown">>
+        <<set _eyes to "Sad">>
+    <<else>>
+        <<set _mouth to "Happy">>
+        <<set _eyes to "Normal">>
+    <</if>>
+    <<set _ad to [
+        {
+            Name: "OC Kayden",
+            State: {
+                Outfit: "Everyday",
+                Mouth: _mouth,
+                Eyes: _eyes,
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+    <strong>Kayden: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<link"Ask to Play with Kayden (0:20)">>
+        <<set $Minutes += 20>>
+        <<set _events to ["Millers Babysitting Backyard Ask to Play 1", "Millers Babysitting Backyard Ask to Play 2"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>><br>
+<</if>>
+<br>
+
+<<if $LinkTravel == 1>>
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Living Room (0:01)|OC Miller House Living Room][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+/* House Map */
+<div style="position: relative">
+	<img src="Images\NPC Homes\Miller House\Miller House.png" 
+style="position: absolute; left: 0; top: 0"  alt="Miller Map" usemap="#MillerHouse">
+	<img src="Images\NPC Homes\Miller House\Big Room Marker.png" 
+style="position: absolute; left: 108px; top: 0px"  alt="Miller Map" usemap="#MillerHouse">
+</div>
+
+<map name="MillerHouse">
+    <area shape="rect" coords="162,54,215,161" alt="Living Room" onclick="$.wiki('<<goto[[OC Miller House Living Room]]>><<set $Minutes += 1>>')" />
+</map>

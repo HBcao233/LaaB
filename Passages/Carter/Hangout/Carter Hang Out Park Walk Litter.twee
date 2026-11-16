@@ -1,0 +1,164 @@
+:: Carter Hang Out Park Walk Litter [nobr]
+
+You and <span style="color:DarkTurquoise">Carter</span> are walking around the park, chatting about school and various cartoons you both enjoy, when <span style="color:DarkTurquoise">Carter</span> spots something up ahead and springs into action. Up ahead was a pair of teenagers chilling out by the pond. They were tossing trash at the nearby trashcan, but completely missing it, leaving a pile of garbage in the grass next to the trashcan. <span style="color:lightcoral"><span style="color:DarkTurquoise">Carter</span> is already sprinting over there as you try to call him back, warning him against trying to scold the two much larger boys.</span><br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Sad",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Sad",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Stop right there criminal scum!”</span> <span style="color:DarkTurquoise">Carter</span> calls out to the two boys, striking a heroic pose. Both boys turn towards him with a confused expression. <span style="color:LightSteelBlue">“Littering is a crime that hurts this planet we call home! I cannot stand by such laziness! I warn you now, pick up the garbage and change your ways or you will face my heroic wrath!”</span> Both boys turned from <span style="color:DarkTurquoise">Carter</span> to each other with a dumbfounded expression before they broke out laughing.<br>
+<br>
+
+<span style="color:LightSteelBlue">“I'm sorry? Your wrath?”</span> One kid laughed.<br>
+<br>
+
+<span style="color:LightSteelBlue">“And who you calling criminals, brat!”</span> The other added as they both stood up. You notice <span style="color:DarkTurquoise">Carter</span> become a little nervous, but he keeps his stance and tries to give another heroic speech when the second boy shoves him to the ground. <span style="color:LightSteelBlue">“Can it! We pay our taxes, so we can do whatever we want in this park. There ain't no law about it.”</span><br>
+<br>
+
+<span style="color:LightSteelBlue">“Actually, there is a law-”</span> <span style="color:DarkTurquoise">Carter</span> starts to say when the guy grabs the bottom of his $CarterTop.Type and yanks it over <span style="color:DarkTurquoise">Carter</span>'s head, blinding the poor boy. <span style="color:lightcoral">He then pushes <span style="color:DarkTurquoise">Carter</span> back to the ground, who struggles to free himself as the two boys surround him.</span> <span style="color:yellow">You have to do something!</span><br>
+<br>
+
+<div id="choice">
+    <<link "Yell at them">>
+        <<replace "#choice">>
+            Mustering up all your courage, you yell out for the kids to leave <span style="color:DarkTurquoise">Carter</span> alone. They all freeze, taken by surprise, and turn to you with a confused, then amused, expression. <span style="color:LightSteelBlue">“Well, it looks like the hero has a little sidekick! How adorable!”</span> <span style="color:lightcoral">As one of the teenagers walks up to you, you begin to regret your decision.</span><br>
+            <br>
+
+            You and <span style="color:DarkTurquoise">Carter</span> are both shoved around and played with like toys until the boys get bored. <span style="color:pink">They decide to end their fun by tossing you both headfirst into a nearby garbage can, pulling your bottoms down to your ankles, and laughing at your exposed rears poking out of the trashcan as they walk away.</span><br>
+
+			<<set _ad to [
+				{
+					Name: "Carter",
+					State: {
+						Arms: "Bound",
+						Eyes: "Sad",
+						Blush: 2,
+						Mouth: "Sad",
+						Outfit: $HangOutClothes,
+						PantsDown: true,
+					},
+				},
+				{
+					Name: "Player",
+					State: {
+						Arms: "Bound",
+						Eyes: "Sad",
+						Blush: 2,
+						Mouth: "Sad",
+						PantsDown: true,
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+            You are left there for a few minutes until you are able to knock the trashcan over and you both tumble out onto the floor smelling a bit worse for wear. <span style="color:DarkTurquoise">Carter</span> seems to be used to this type of treatment though, as after pulling up his $CarterBottoms.Type, he quickly laughs it off and begins to pick up all the trash.<br>
+            <<needChange "Hygiene" -20>>
+            <<set $HangOutNeed.Fun += 10>>
+            <span style="color:green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Comfort += 5>>
+            <span style="color:green">+Carter Comfort</span><br>
+			<<socialChange "Carter" 3>>
+            <br>
+            [[Continue|Carter Hang Out Park]]
+        <</replace>>
+    <</link>><br>
+    <<requiresAbility "Strength" 8 "Charge">>
+        <<replace "#choice">>
+            With little thought but much determination, you yell out and charge forward at full speed towards the two teenagers. They turn to you in shock, letting out screams of fear and surprise, as you collide with them. <span style="color:lightgreen">The impact sends you falling backward onto your butt and the two teenagers directly into the pond!</span><br>
+            <br>
+
+            One of them begins to roll around in the water, utterly confused about what just happened, as the other quickly sits up, coughing up water, and looks at you angrily. He quickly jumps to his feet and attempts to rush you, but slips and quickly falls back into the water.<br>
+
+			<<set _ad to [
+				{
+					Name: "Carter",
+					State: {
+						Blush: 1,
+						Mouth: "Sad",
+						Outfit: $HangOutClothes,
+					},
+				},
+				{
+					Name: "Player",
+					State: {
+						Blush: 1,
+						Mouth: "Sad",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+            <span style="color:lightgreen">Thinking fast, you grab <span style="color:DarkTurquoise">Carter</span> and run away as fast as you can. Considering the boys were now soaking wet, they couldn't catch up to the two of you and you both decide to hide out behind some bushes until the coast is clear.</span> When <span style="color:DarkTurquoise">Carter</span> inquires about what happened after he was blinded, you assure him that the villains got what they deserved.<br>
+			<<needChange "Fun" 10>>
+			<<addMoodlet "Pained" 2>>
+            <<set $HangOutNeed.Fun += 10>>
+            <span style="color:green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Energy -= 5>>
+            <span style="color:red">-Carter Energy</span><br>
+			<<socialChange "Carter" 3>>
+            <br>
+            [[Continue|Carter Hang Out Park]]
+        <</replace>>
+    <</requiresAbility>>
+    <<requiresAbility "Smarts" 7 "Call for help">>
+        <<replace "#choice">>
+            Realizing the two teenage boys vastly overpowered you and <span style="color:DarkTurquoise">Carter</span>, you think of the best way to get them to back off. Yelling for help at the top of your lungs. Both boys jump upon hearing your scream and turn to you in anger.<br>
+            <br>
+
+            <span style="color:LightSteelBlue">“What the fuck do you think you are doing, you little shit?”</span> One of them yells, beginning to move towards you when suddenly a familiar voice calls out.<br>
+            <br>
+
+            <span style="color:LightSteelBlue">“Hey! What are you two doing?”</span> <span style="color:lightgreen">You turn and see your science teacher, <span style="color:DarkTurquoise">Mr Chang</span>, running towards you in casual clothing.</span><br>
+            <br>
+
+            <span style="color:LightSteelBlue">“Shit, let's get out of here!”</span> The other boy says as he drops <span style="color:DarkTurquoise">Carter</span> and the two of them run.<br>
+
+			<<set _ad to [
+				{
+					Name: "Carter",
+					State: {
+						Blush: 2,
+						Outfit: $HangOutClothes,
+					},
+				},
+				{
+					Name: "Player",
+					State: {
+						Mouth: "Smirk",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+            <span style="color:DarkTurquoise">Mr. Chang</span> runs a bit past you, but doesn't give chase. Instead, he sighs and turns to you. <span style="color:LightSteelBlue">“You boys alright? Is that <span style="color:DarkTurquoise">Kent</span>?”</span> Your teacher walks over to <span style="color:DarkTurquoise">Carter</span> and helps him escape the confines of his shirt, freeing the boy. <span style="color:LightSteelBlue">“That seems to be the worst of it. Good thinking calling for help, trying to fight those kids will just make things worse.”</span> <span style="color:DarkTurquoise">Mr. Chang</span> pats you on the head as <span style="color:DarkTurquoise">Carter</span> thanks him for the assist. <span style="color:LightSteelBlue">“Older kids bullying younger kids is becoming a worse problem everyday here. I need to talk to the headmaster about finding ways to reduce it. Anway, you two stay out of trouble and don't be afraid to ask for help if those punks come back, alright?”</span><br>
+            <br>
+
+            <span style="color:lightcoral">With a smile and wave, <span style="color:DarkTurquoise">Mr. Chang</span> departs. <span style="color:DarkTurquoise">Carter</span> is a bit embarrassed at having to be rescued, but gets over it quickly as he distracts himself by cleaning up the mess those teenagers made.</span><br>
+			<<needChange "Fun" 10>>
+            <<set $HangOutNeed.Fun += 10>>
+            <span style="color:green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Energy -= 5>>
+            <span style="color:red">-Carter Energy</span><br>
+            <<set $HangOutNeed.Energy += 8>>
+            <span style="color:green">+Carter Comfort</span><br>
+			<<socialChange "Carter" 3>>
+            <br>
+
+            [[Continue|Carter Hang Out Park]]
+        <</replace>>
+    <</requiresAbility>>
+</div>

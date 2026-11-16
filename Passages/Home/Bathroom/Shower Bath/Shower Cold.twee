@@ -1,0 +1,61 @@
+:: Shower Cold [nobr]
+
+<<storeClothing "Closet" "Naked" 1>>
+<<set $Minutes += 30>>
+/* Intro */
+/* Checking if player is already considered Nude */
+<<if $PlayerBottoms.Type != "None" or $PlayerTop.Type != "None" or $Player.Undies != "None">>
+    You walk over to the shower and turn on the water, spinning the knob all the way to the cold side. The room seems to immediately grow colder as the water begins to spray down. You feel a chill run down your spine as your body prepares itself to be drenched in the cold water. Quickly, you strip down and toss your clothes into the hamper. <span style="color:yellow">The cool air on your nude body already makes you shiver as you try to hype yourself up to step in.</span> <br>
+    <br>
+<<else>>
+    You walk over to the shower and turn on the water, spinning the knob all the way to the cold side. The room seems to immediately grow colder, your nude body already shivering before you’ve even stepped into the icy spray. <span style="color:yellow">You give it a minute to get to its coldest temperature before you try to hype yourself up to step in.</span> <br>
+    <br>
+<</if>>
+
+/* Default Post-Intro Avatar */
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+/* Hard Check */
+<<if $Player.Arousal < 50>>
+    <span style="color:yellow">You let out a squeak the instant the water hits your skin, the small spray like ice piercing your very soul. Your body contorts and shivers, but you persevere as you step fully inside.</span> Your body is uncontrollably shivering and your penis has shrunk substantially, trying to hide inside you like a turtle to shield itself from the cold. <span style="color:yellow">A voice in the back of your mind makes you wonder why you decided to do this?</span>
+<<else>>
+    <span style="color:Pink">Your penis, already starting to soften from the cool air, twitches and squirms in protest, as if it knows what you are about to do. You let out a squeak the instant the water hits your skin, the small spray like ice piercing your very soul. Your body controls and shivers, but you persevere as you step fully inside. Your erect penis shrinks down quickly, first to it’s normal flaccid self then even smaller as it tries to hide inside you like a turtle to shield itself from the cold.</span> <span style="color:yellow">A voice in the back of your mind makes you wonder why you decided to do this?</span> 
+<</if>>
+/* Loves Cold Check */
+<<if $Player.Traits.includes("Likes Cold")>>
+    <span style="color:lightgreen">Yet, despite your shivering and shrinking member, you find yourself enjoying the chill. You guess you are just built different.</span> 
+<</if>>
+<br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Blush: 3,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+/* PC: Penis Size 1 Smaller */
+For better or for worse, the cold shower eventually comes to an end as you leap out and quickly grab a warm towel to get the icy water off of you. <span style="color:Pink">As you do so, you can’t help but notice your nude form in the mirror, most notably your shriveled member. There is a brief fear that it will never grow back to its normal size, though by the time you have finished drying yourself, it has mostly returned to its normal state.</span> With that, you wrap the towel around your waist and prepare to head back to your bedroom. <br>
+<<addMoodlet "Uncomfortably Cold" 8>>
+<<needChange "Hygiene" 100>>
+<<set $Player.Arousal -= 80>>
+<<addClothing "PC" "Bottoms" "Towel" "White">>
+<<set $Player.Exposed to "Towel">>
+<br>
+[[Continue|PH Bathroom]]

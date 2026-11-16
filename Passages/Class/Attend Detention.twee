@@ -1,0 +1,57 @@
+:: Attend Detention [nobr]
+
+You walk into the school's Main Office and up to the school secretary. Before you can even speak, she interrupts you.<br>
+<br>
+<span style="color:LightSteelBlue">“You are here for detention I'm assuming? One moment, let me see who is on detention duty today.”</span> The secretary begins to look through some papers.
+
+<<if $Detention < 10>>
+	<<set _Random = [
+		"Detention 30 Min Sit",
+		"Detention Mop Gym",
+		"Detention English Writing Story",
+		"Detention History Organize Books",
+	]>>
+	<<if $Player.Kinks.Spankee == 1>>
+		<<set _Random.push("Detention Spank Daydream")>>
+	<</if>>
+<<elseif $Detention >= 10 and $Detention <= 20>>
+	<<set _Random = [
+		"Detention Scrub Floors",
+		"Detention Spank Normal",
+		"Detention English Writing Story",
+	]>>
+	<<if $Player.Kinks.Spankee == 1>>
+		<<set _Random.push("Detention Spank Daydream")>>
+	<</if>>
+<<else>>
+	<<set _Random = [
+		"Detention Spank Normal",
+		"Detention Underwear Laps",
+		"Detention Underwear Vice Principal",
+	]>>
+<</if>>
+
+<<if $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: Introduction") && $ActiveQuests.includes("Manuel: The Pent-Up Boy")>>
+	<<set _Random.push(
+		"OC Manuel Detention Scolding",
+		"OC Manuel Detention Spank",
+	)>>
+<<elseif $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: Introduction") && $CompletedQuests.includes("Manuel: The Pent-Up Boy")>>
+	<<set _Random.push(
+		"OC Manuel Detention Scolding Post Secret",
+		"OC Manuel Detention Spank Post Secret",
+	)>>
+<</if>>
+
+
+<<set _event to _Random.random()>>
+
+/* Forced Quest Events */
+<<if $ActiveQuests.includes("Michael: Blackmail 3")>>
+	<<set _event to "Michael Blackmail 5">>
+<</if>>
+<<if $ActiveQuests.includes("Shinju: Breaking Drama Conventions")>>
+	<<set _event to "OC Shinju and Lucas Drama Conventions Detention">>
+<</if>>
+
+<<include _event>>

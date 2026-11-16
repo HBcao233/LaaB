@@ -1,0 +1,186 @@
+:: Lucas Hang Out Park Playground Nasty Kids [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+You and <span style="color:DarkTurquoise">Lucas</span> are hanging out near the bottom of one of the slides. Mostly just chatting and goofing around, but occasionally one of you will climb up and slide down. <span style="color:LightGreen">It is wholesome in it’s simplicity and you and <span style="color:DarkTurquoise">Lucas</span> share a laugh over a dumb joke</span> <span style="color:Yellow">when a blur flies through the air and impacts with <span style="color:DarkTurquoise">Lucas</span>’ leg.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Frown",
+                Blush: 2,
+                Cry: 1,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Ouch!”</span> <span style="color:DarkTurquoise">Lucas</span> cringes, <span style="color:Yellow">gripping his leg as a small pebble tumbles to the ground next to him.</span> <span style="color:LightSteelBlue">“That hurt. Where did that-?”</span> <span style="color:DarkTurquoise">Lucas</span> pauses as you both turn and see a pair of pair of kids, the same age of you, a few feet away. <br>
+<br>
+<span style="color:LightSteelBlue">“Whoops, sorry!”</span> One of them laugh, <span style="color:LightSteelBlue">“I was actually aiming for your face! Here, I’ll aim better this time!”</span> <span style="color:Yellow">He tosses another small rock, but thankfully <span style="color:DarkTurquoise">Lucas</span> is able to dive behind the slide to dodge it.</span> <span style="color:LightSteelBlue">“Come on, I thought you were tough! Or is that just your mommy?”</span> <span style="color:Yellow">Both boys laugh mockingly as an upset <span style="color:DarkTurquoise">Lucas</span> stares at the ground.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Come on, let’s go somewhere else.”</span> <span style="color:DarkTurquoise">Lucas</span> says, grabbing you by the hand, <span style="color:LightSteelBlue">“They’re just a bunch of bullies. Best thing to do is just ignore them.”</span> <span style="color:Yellow">You agree that may be the best option, but there is also a small part of you that wants to do something stupider but more satisfying.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Agree & leave<br>">>
+    <<replace "#choice">>
+        <span style="color:Yellow">You take a deep breath, letting your anger on <span style="color:DarkTurquoise">Lucas</span>’ behalf subside.</span> You’ll follow his lead on this one and begin to follow him. <span style="color:DarkTurquoise">Lucas</span> mouths words of thanks as you two head off away from the playground. The boys continue shouting. <br>
+        <br>
+        <span style="color:LightSteelBlue">“Fucking coward! I guess what they say about you is right!”</span> The laugh and mock <span style="color:DarkTurquoise">Lucas</span>, continuing to throw rocks in your general direction. <span style="color:Yellow">You notice redness building in <span style="color:DarkTurquoise">Lucas</span>’ eyes, but he manages to hold it together as you two walk well out of sight.</span> You ask him if he’s okay and what that was about. <br>
+
+            <<set _ad to [
+                {
+                    Name: "Lucas",
+                    State: {
+                        Outfit: $HangOutClothes,
+                        Mouth: "Frown",
+                        Blush: 1,
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <<if $CompletedQuests.includes("Lucas: Ryker")>>
+            <span style="color:LightSteelBlue">“They’re…”</span> He pauses, <span style="color:LightSteelBlue">“They’re friends of <span style="color:DarkTurquoise">Ryker</span>, his new friends anyway. Just some punks who look for any excuse to mess with people. They’re been trying to goad me into fighting them, see if <span style="color:DarkTurquoise">Ryker</span>’s telling the truth about… well, yeah. I’d rather not get into it.”</span> <span style="color:DarkTurquoise">Lucas</span> forces a smile, trying not to seem too upset about all this. <span style="color:LightGreen">You smile back, suggesting a new game for the two of you to play to help take his mind of things.</span> <br>
+            <<needChange "Fun" 15>>
+            <<socialChange "Lucas" 3>>
+            <span style="color:green">+Lucas Fun</span><br>
+            <<set $HangOutNeed.Fun += 15>>
+            <span style="color:Red">-Lucas Comfort</span><br>
+            <<set $HangOutNeed.Comfort -= 5>>
+            <br>
+            [[Continue|Lucas Hang Out Park]]
+        <<else>>
+            <span style="color:LightSteelBlue">“Just some punks. They’re from the public school, so they kind of don’t like us Preston kids.”</span> He replies, though you’re not totally sure you believe him, <span style="color:LightSteelBlue">“Sorry about that. Come on, let’s go do something fun. Take our mind of those jerks.”</span> <span style="color:LightGreen">You smile at <span style="color:DarkTurquoise">Lucas</span>, happy to help him take his mind off that.</span> <br>
+            <<needChange "Fun" 15>>
+            <<socialChange "Lucas" 3>>
+            <span style="color:green">+Lucas Fun</span><br>
+            <<set $HangOutNeed.Fun += 15>>
+            <span style="color:Red">-Lucas Comfort</span><br>
+            <<set $HangOutNeed.Comfort -= 5>>
+            <br>
+            [[Continue|Lucas Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<link "Toss a rock back<br>">>
+    <<replace "#choice">>
+        <span style="color:LightCoral">Anger welling up, you pick up the muddiest rock you can find in the dirt below you and shout back at the boys, tossing the rock towards them with all your strength.</span> <span style="color:LightGreen">And unlike the boys, your aim is perfect as you nail one of them in the head! You freeze as the boy shouts out a curse, rubbing his head before they both glare at you angrily.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Lucas",
+                    State: {
+                        Outfit: $HangOutClothes,
+                        Mouth: "Frown",
+                        Blush: 1,
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                        Eyes: "Mad",
+                        Blush: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Haha, nice shot!”</span> <span style="color:LightGreen"> <span style="color:DarkTurquoise">Lucas</span> can’t help but laugh at the sight.</span> But as you both see the anger building in the boys, <span style="color:DarkTurquoise">Lucas</span> quickly turns to you and shouts <span style="color:LightSteelBlue">“Run!”</span> You both take off running, the two bullies following behind. <span style="color:LightGreen">Thankfully, your headstart and the wound one of them have suffered make it pretty easily for you both to lose them as you duck down behind some chess sets until they are gone.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“Whew! I think we’re good.”</span> <span style="color:DarkTurquoise">Lucas</span> says, <span style="color:LightSteelBlue">“I would have rathered we just walked away… but that was pretty funny.”</span> <span style="color:LightGreen">He gives you a shy smile; you can tell he is happy you stood up for him. <span style="color:LightSteelBlue">“Thanks for that.”</span> You give <span style="color:DarkTurquoise">Lucas</span> a hug, telling him you’d do it anytime!</span> <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Lucas" 3>>
+        <<needChange "Energy" -3>>
+        <span style="color:green">+Lucas Fun</span><br>
+        <<set $HangOutNeed.Fun += 15>>
+        <span style="color:green">+Lucas Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 10>>
+        <span style="color:Red">-Lucas Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <br>
+        [[Continue|Lucas Hang Out Park]]
+    <</replace>>
+    <</link>>
+    <<requiresTrait "HotHeaded" "Blow up at them">>
+	<<replace"#choice">>
+        <span style="color:LightCoral">You feel rage building up inside you like a destructive storm. Your inner fire burns with a desire to release as the boys continue to mock and bully your friend with words and stones.</span> <span style="color:DarkTurquoise">Lucas</span> tugs on your arm, whispering <span style="color:LightSteelBlue">“Come on, they’re not worth it.”</span> <span style="color:LightCoral">But your anger cannot be contained.</span> <br>
+        <br>
+        <span style="color:LightCoral">You let out a raging roar, fists flailing about as your face burns red. You rush towards the boys, unleashing all your anger as you tackle the rock thrower to the ground before he can even react. You begin to pummel his face, shouting at him to leave your friend alone as he cries out.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Lucas",
+                    State: {
+                        Outfit: $HangOutClothes,
+                        Mouth: "Frown",
+                        Blush: 1,
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                        Eyes: "Mad",
+                        Blush: 2,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Fuck! This dude’s crazy! Get him off of me!”</span> <span style="color:LightCoral">He yells to his friend, trying his best to defend against your raging onslaught. The other boy grabs you around the waist, trying to yank you off, but this just turns your anger to him as you spin around and tackle him into the dirt instead!</span> <br>
+        <br>
+        <span style="color:Pink">This entire time, <span style="color:DarkTurquoise">Lucas</span> is watching with a bewildered expression, both scared and amazed that you developed such anger on his behalf.</span> Eventually, the boys manage to shove you off of them and take off running. <span style="color:LightGreen">Despite outnumbers and probably outpowering you, the sheer strength and suddenness of your rage caught them completely off guard. You begin to toss rocks in their fleeing direction shouting out until your anger is quelled by a hand grabbing yours.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Lucas",
+                    State: {
+                        Outfit: $HangOutClothes,
+                        Mouth: "Smirk",
+                        Eyes: "Sad",
+                        Blush: 1,
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                        Blush: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“I think you scared them off.”</span> <span style="color:DarkTurquoise">Lucas</span> chuckles nervously. <span style="color:Pink">You turn back to him to see the boy standing with a shy smile and flushed cheeks.</span> <span style="color:LightSteelBlue">“Tha… thanks. It’s been a while since someone stood up for me like that. It’s…”</span> He chuckles nervously, rubbing the back of his head. <span style="color:LightSteelBlue">“Come on, let’s get you some water. Your throat sounds a little scratchy from all that yelling.”</span> <br>
+        <br>
+        <span style="color:Pink"> <span style="color:DarkTurquoise">Lucas</span> seems utterly touched by your rage on his behalf, though also a little worried about how angry you can become.</span> <br>
+        <<needChange "Fun" 15>>
+        <<needChange "Energy" -6>>
+        <<socialChange "Lucas" 3>>
+        <span style="color:green">+Lucas Fun</span><br>
+        <<set $HangOutNeed.Fun += 15>>
+        <span style="color:green">+Lucas Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 15>>
+        <br>
+        [[Continue|Lucas Hang Out Park]]
+    <</replace>>
+    <</requiresTrait>>
+</div>

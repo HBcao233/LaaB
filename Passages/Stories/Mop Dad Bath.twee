@@ -1,0 +1,31 @@
+:: Mop Dad Bath [nobr]
+<<set $RandomEvent to random(1, 10)>>
+
+<<if $RandomEvent < 10>>
+	You grab the mop and bucket and begin to mop the bathroom floor. It’s boring and slightly tiring, but you manage to get it done quickly and without incident.<br>
+	<<set $Minutes += 10>>
+	
+<<elseif $RandomEvent == 10>>
+You grab the mop and bucket and begin to mop the bathroom floor. It’s very boring and you soon find yourself losing focusing, moving on autopilot. Suddenly, as you’re backing up, <span style="color:Red">you trip over the bucket and splash water all over yourself!</span> You curse you clumsiness as you have to spend extra time cleaning up, but find yourself completely soaked!<br>
+<<set $Wet to 2>>
+<<set $Minutes += 15>>
+<</if>>
+
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+	<<if $QuestLog[_i].Name == "Weekly Chores">>
+		<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+			<<if $QuestLog[_i].Objectives[_o].Name == "Mop">>
+				<<set $QuestLog[_i].Objectives[_o].State += 1>>
+				<<set $QuestLog[_i].Objectives[_o].Tags.push("Dad")>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<break>>
+	<</if>>
+<</for>>
+
+<<set $MopDadBath to 1>>
+<<include"Chore Quest Check">>
+<br>
+
+[[Continue|PH Dad Bath]] 

@@ -1,0 +1,50 @@
+:: CC Tutor [nobr]
+
+
+<<if $TutorIntro != 1>>
+	<<include"Tutor Intro">>
+<<else>>
+<<set $Minutes += 60>>
+You walk into the Community Center.  Inside there's a large room full of tables, chairs, some beanbags, and other assorted things. It looks like a pretty nice place to do homework or hang out. It is full of mostly elementary schoolers, but you see some kids your age as well as some high schoolers.<br>
+<br>
+There are two ladies working at the counter. <span style="color:DarkTurquoise">Melanie</span>, the secretary, handles the Center's different workshops and room reservations, while <span style="color:DarkTurquoise">Mrs. McIntyre</span> manages the Tutoring program, as well as the "community-student relationships". You walk towards her and ask if there is anyone who needs tutoring today.<br>
+<br>
+
+	<<set _Random to ["Tutor Kid From School", "Tutor Help Kid Reading", "Tutor Spoiled Brat"]>>
+
+	<<if $EnglishGrade >= 80>>
+		<<set _Random.push("Tutor Classmate Jackson")>>
+	<</if>>
+
+	<<if $MathGrade >= 80>>
+		<<set _Random.push("Tutor Classmate Michael")>>
+	<</if>>
+
+	<<if $HistoryGrade >= 80>>
+		<<set _Random.push("Tutor Classmate Thomas")>>
+	<</if>>
+
+	/* Ben Events */
+	<<if $BenSocial > 50 or $BenSocialRank > 0>>
+		<<set _Random.push("Ben Tutor Formula Song")>>
+	<</if>>
+    
+	/* Isaac Events */
+    <<if $ToggleOCIsaac == 1 && $CompletedQuests.includes("Isaac: The Little Blueberry")>>
+		<<set _Random.push("OC Isaac Tutor Bathroom Help", "OC Isaac Tutor Dropping Crayon", "OC Isaac Tutor Accident")>>
+	<</if>>
+
+	/* Nyall Events */
+	<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Cole")>>
+		<<set _Random.push("OC Cole Shorts Investigation")>>
+	<</if>>
+
+	/* Zacky Events */
+	<<if $ToggleOCZacky == 1 && $InActiveQuests.includes("Zacky: Introduction") && $ToggleDiapers == 1 && $ToggleBladder == 1>>
+		<<set _Random.push("OC Zacky Intro")>>
+	<</if>>
+				
+<<set _event to _Random.random()>>
+<<include _event>>
+
+<</if>>

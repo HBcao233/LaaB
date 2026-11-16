@@ -1,0 +1,41 @@
+:: OC Manuel Intro [nobr]
+
+<<set $OCManuelSocial to 0>>
+<<set $OCManuelSocialRank to 0>>
+
+You are sitting on the bus, trying to distract your mind and stay awake by counting the number of cars the bus passes when boredom takes even that from you as the streets become emptier. Desperate for some sort of mental stimulation, your eyes begin to wander around the bus to the other boys. Some are chatting, some are playing games, and some are working on homework, but it is one strange boy sitting across from you that catches your eye.<br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Manuel">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 2>>
+	<<set $AD.Mouth to "Sad">>
+    <<set $AD.Outfit to "Uniform">>
+	<<set $AD.Hard to 0>>
+		<<include"OC MANUEL Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+You vaguely remember him from a class or two, but have never spoken to him. He looks uncomfortable, fidgeting in his seat. <span style="color:pink">Occasionally, he reachs down and adjusts his crotch, making a pained expression. At first, you think the boy may be hard, but you don't see the telltale signs of a boner in his pants. And you are sure you would have noticed that, judging by the size of the lump on his groin, the kid is packing! No, if he got a boner with a penis seemingly that big, everyone on the bus would take notice.</span><br>
+<br>
+
+Maybe he has to pee? Or maybe his underwear is far too tight? Or maybe- The bus comes to a stop and you blink twice, realizing you must have been staring at him for a few minutes at least. Thankfully, he doesn't seem to have noticed, but as you get off the bus you figure you may never know what exactly was making the boy so uncomfortable.<br>
+<br>
+<<set $CompletedQuests.push("Manuel: Introduction")>>
+<<set $InActiveQuests.delete("Manuel: Introduction")>>
+<<set $ActiveQuests.push("Manuel: The Pent-Up Boy")>>
+<<set $InActiveQuests.delete("Manuel: The Pent-Up Boy")>>
+<<set $OCManuelSceneCount to 0>>
+
+<<if $BusRide == "Home">>
+    [[Get off bus|Northend]]
+<<else>>
+    [[Get off bus|Middle School]]
+<</if>>

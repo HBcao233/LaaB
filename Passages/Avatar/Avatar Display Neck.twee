@@ -1,0 +1,14 @@
+:: Avatar Display Neck [nobr]
+
+<<if $ADNeckAlt == 1>>
+	<<set $ADNeckAlt to 0>>
+	<<if $ADNeck.Avatar != "None">>
+		<img @src="$ADNeck.AvatarAlt" style="position: absolute; left: 0; top: 0">
+	<</if>>
+
+<<elseif $ADNeckAlt != 1>> 
+	<<if $ADNeck.Avatar != "None">>
+		<img @src="$ADNeck.Avatar" style="position: absolute; left: 0; top: 0">
+	<</if>>
+
+<</if>>

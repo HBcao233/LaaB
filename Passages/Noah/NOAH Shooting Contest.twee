@@ -1,0 +1,137 @@
+:: NOAH Shooting Contest [nobr]
+	
+/* Setting Outfit Variables */
+<<set $AD.Outfit to "Everyday Outside">>
+<<include"Noah Outfit Set">>
+
+<<set $Minutes += 30>>
+You walk up to <span style="color:DarkTurquoise">Noah</span> and ask him if he would like to have a little shooting contest. He smiles widely and grabs the ball.<br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">“Yeah!”</span> He jumps up and down excited, <span style="color:LightSteelBlue">"What does the winner get?”</span> You think for a moment then smile. You explain that the winner can make the loser do anything they want. <span style="color:DarkTurquoise">Noah</span> giggles at the prospect and agrees. He places <span style="color:DarkTurquoise">Bue</span> on the stairs to watch as you explain that the first person to score five goals wins.<br>
+<br>
+
+<div id=choice>
+	<<link "Play normally">>
+	<<replace"#choice">>
+		<<skillCheck "Athletics" 40>>
+		
+	/* VICTORY */
+		<<if _result == 1>>
+			<span style="color:Green">While the match starts out looking pretty even, a few early screw ups by your younger brother quickly put you in the lead.</span> He is unable to catch up and you soon manage to score the victory! He whines slightly, but is unable to hide his slight smile, showing he had fun.<br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">”Dang it!”</span> <span style="color:DarkTurquoise">Noah</span> sighs kicking that ball, but smirks as he turns towards you, <span style="color:LightSteelBlue">”What are you going to make me do?”</span> You pause for a moment, thinking of all the things you could make him do. You don’t want to go too far though, as he could still back out and run to <span style="color:DarkTurquoise">Your Father</span> if you try to force him to do something he is uncomfortable with.<br>
+    <<skillPoints "Athletics" 5>>
+<<needChange "Energy" -2>>
+<<needChange "Fun" 20>>
+<br>
+
+	<<include"NOAH Shooting Contest Victory">>
+
+	
+	/* DEFEAT */
+		<<else>>
+		<span style="color:Red">To your surprise, you spend the entire contest neck to neck in points! Your confidence drops and a single mistake on your part soon gives <span style="color:DarkTurquoise">Noah</span> the victory!</span> As he scores his last goal, he over-dramatically falls to his knees and does a cute little celebration dance. <br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Mad">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">”I beat you, I beat you!”</span> He taunts as he shakes his little butt at you, <span style="color:LightSteelBlue">”And now I can make you do WHATEVER I want!”</span> He does a little evil laugh as he thinks for a minute about what he should make you do.<br>
+    <<skillPoints "Athletics" 5>>
+<<needChange "Energy" -2>>
+<<needChange "Fun" 20>>
+<br>
+	<<include"NOAH Shooting Contest Defeat">>
+		
+	<</if>>
+	
+	<</replace>>
+	<</link>>
+	
+	<<skillDiff "Athletics" 40>>
+	<br>
+	<<link "Let Noah win">>
+	<<replace"#choice">>
+	
+<span style="color:Green">While you make it look close, you intentionally miss a few shots in order to give <span style="color:DarkTurquoise">Noah</span> the win, curious at what he’ll make you do.</span> As he scores his last goal, he over-dramatically falls to his knees and does a cute little celebration dance. <br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Mad">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">”I beat you, I beat you!”</span> He taunts as he shakes his little butt at you, <span style="color:LightSteelBlue">”And now I can make you do WHATEVER I want!”</span> He does a little evil laugh as he thinks for a minute about what he should make you do.<br>
+    <<skillPoints "Athletics" 5>>
+<<needChange "Energy" -2>>
+<<needChange "Fun" 20>>
+<br>
+	<<include"NOAH Shooting Contest Defeat">>
+
+	
+	<</replace>>
+	<</link>>
+	
+</div>

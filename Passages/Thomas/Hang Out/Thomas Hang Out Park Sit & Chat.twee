@@ -1,0 +1,108 @@
+:: Thomas Hang Out Park Sit & Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You and Thomas take a seat on a bench near the playground, taking a minute to rest your legs and catch your breath. <span style="Color: LightSteelBlue">“Why’s the sun got to be so bright?”</span> <span style="color:DarkTurquoise">Thomas</span> complains, holding his hand up in front of his eyes. You ask him if he needs to put on sunscreen or something. <span style="Color: LightSteelBlue">“Nah, why would I waste money on that when I have this?”</span> <span style="color:DarkTurquoise">Thomas</span> says with a tiny smirk, referring to his hoodie. You guess that works. <br>
+
+<<set _ad to [
+    {
+        Name: "Thomas",
+        State: {
+            Mouth: "Smirk",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Thomas</span> how school is treating him and he sighs. <span style="Color: LightSteelBlue">“It’s tiring. I have no idea why they give us so much homework. We do enough at school without having to bring it home. But I guess it’ll only get worse from here.”</span> You offer to help him and he quickly refuses. <span style="Color: LightSteelBlue">“That wasn’t me asking for help, just complaining to complain. Thanks though.”</span> <br>
+            <<socialChange "Thomas" 1>>
+            <span style="color:green">+Thomas Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Thomas Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Thomas Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Thomas</span> a question that has been on your mind. Does he ever get detention at school? <span style="Color: LightSteelBlue">“What do you think?”</span> <span style="color:DarkTurquoise">Thomas</span> replies with a raised eyebrow, <span style="Color: LightSteelBlue">“I’m not exactly the picture of a perfect student.”</span> You chuckle nervously, apologizing and stating you were just curious. <span style="Color: LightSteelBlue">“Unlike someone like Michael, it isn’t that often since I tend to avoid trouble. Never been in serious trouble, which is cool. Then again, if a teacher tried to spank me, they’d lose a hand.”</span> <span style="color:DarkTurquoise">Thomas</span> says it so bluntly you can’t be sure if he’s joking or not… until you notice the tiniest smirk on his face. <br>
+            <<socialChange "Thomas" 1>>
+            <span style="color:green">+Thomas Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Thomas Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Thomas Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Thomas: Out Sick")>>
+        <<link "Home life<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+                You ask <span style="color:DarkTurquoise">Thomas</span> how his little brother <span style="color:DarkTurquoise">Ethan</span> is doing. You notice in instant change in his expression when you mention his name, though his face quickly calms since it’s just you. <span style="Color: LightSteelBlue">“He’s fine, though he’s been having some…”</span> <span style="color:DarkTurquoise">Thomas</span> pauses, <span style="Color: LightSteelBlue">“He’s fine.”</span> You ask him if something is wrong and he shakes his head. <span style="Color: LightSteelBlue">“No, it’s not anything like that. He’s just been a bit more… curious recently.”</span> You question what that means, though <span style="color:DarkTurquoise">Thomas</span> refuses to elaborate. <br>
+                <<socialChange "Thomas" 1>>
+                <span style="color:green">+Thomas Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Thomas Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Thomas Hang Out Park]]
+            <<else>>
+                You ask <span style="color:DarkTurquoise">Thomas</span> how things are at home and notice him scowling. <span style="Color: LightSteelBlue">“If anyone else asked, they’d get punched.”</span> He sighs, <span style="Color: LightSteelBlue">“But I guess you mean well. It’s been as it has been. <span style="color:DarkTurquoise">Ethan</span>’s been extra clingy recently, think he’s been having weird dreams. He also needs some new clothes, but I’ve been working on that. Not that he wants to wear them at home though, with how hot it’s been.”</span> You blush as his comment makes you think of <span style="color:DarkTurquoise">Ethan</span> and maybe even <span style="color:DarkTurquoise">Thomas</span> lounging around the house in their underwear, or even nude. Though you quickly turn away when <span style="color:DarkTurquoise">Thomas</span> notices the redness on your cheeks. <br>
+                <<socialChange "Thomas" 1>>
+                <span style="color:green">+Thomas Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Thomas Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Thomas Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Thomas</span> what he’s been doing recently, and he very bluntly replies <span style="Color: LightSteelBlue">“Work.”</span> You nod, that makes sense. There is a brief awkward silence before you ask what sort of work he does. <span style="Color: LightSteelBlue">“Whatever pays.”</span> He replies. <span style="color:DarkTurquoise">Thomas</span> seems to want to leave it at that, until your staring cues him in to wanting more details. <span style="Color: LightSteelBlue">“I don’t know. I have a part time job at a store, but that doesn’t pay for everything we need so I do… odd jobs. You know, mowing lawns and shit.”</span> He shrugs, <span style="Color: LightSteelBlue">“And no, I’m not telling you what store.”</span> <br>
+            <<socialChange "Thomas" 1>>
+            <span style="color:green">+Thomas Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Thomas Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Thomas Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Thomas</span> about how his drawings have been going and he gives you a strange look. <span style="Color: LightSteelBlue">“Fine… why?”</span> You state you are just making conversation. <span style="Color: LightSteelBlue">“Right. Been fine, though I really only do it at school these days, since they force downtime on us. Too busy during the day to deal with that.”</span> <span style="color:DarkTurquoise">Thomas</span> looks off into the distance idly. You feel happy that he’s willing to spend his limited free time with you. <br>
+            <<socialChange "Thomas" 1>>
+            <span style="color:green">+Thomas Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Thomas Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Thomas Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

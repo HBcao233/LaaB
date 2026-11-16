@@ -1,0 +1,108 @@
+:: Ben Hang Out Park Sit & Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+<span style="color:DarkTurquoise">Ben</span> sighs in relief as you sit down on the bench, plopping down next to you. Seems the boy is already starting to feel a little exhausted, causing you to chuckle. <span style="Color: LightSteelBlue">“Sorry, it’s just… hot today.”</span> <span style="color:DarkTurquoise">Ben</span> says with a nervous smile. <span style="Color: LightSteelBlue">“Bu- but I’m having fun! Just need to catch my breath!”</span> To tell <span style="color:DarkTurquoise">Ben</span> it’s fine, smiling as you both relax for a second and try to think of something to talk about. <br>
+
+<<set _ad to [
+    {
+        Name: "Ben",
+        State: {
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask him how school is going. <span style="Color: LightSteelBlue">“School? It’s going good! Actually, I was working on <span style="color:DarkTurquoise">Mr Chang</span>’s homework assignment and realized…”</span> For better or worse, your question brings <span style="color:DarkTurquoise">Ben</span> to a long ramble about what you’ve been learning in science class. It isn’t the most interesting conversation, as he seems to have found the most boring part of science to talk about, but you find it cute how passionate he is about it and feel you’ve learned something. <br>
+            <<socialChange "Ben" 1>>
+            <span style="color:green">+Ben Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Ben Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Ben Hang Out Park]]
+        <<else>>
+            Curious, you ask <span style="color:DarkTurquoise">Ben</span> if he’s ever gotten into trouble at school. <span style="Color: LightSteelBlue">“Trouble? You mean like detention?”</span> He thinks for a long moment before answering, <span style="Color: LightSteelBlue">“I mean, once or twice, I guess? Never really my fault though. Just <span style="color:DarkTurquoise">Michael</span> or someone else being stupid and dragging me down with them.”</span> <span style="color:DarkTurquoise">Ben</span> pouts angrily, his face making you chuckle. <br>
+            <<socialChange "Ben" 1>>
+            <span style="color:green">+Ben Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Ben Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Ben Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Ben: Track Meet Cute")>>
+        <<link "Home life<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+                You ask <span style="color:DarkTurquoise">Ben</span> how things are at home. He blushes at the unexpected question. <span style="Color: LightSteelBlue">“At home!? W- w- why do you ask?”</span> You shrug, saying you’re just trying to make conversation. <span style="Color: LightSteelBlue">“O- oh… It’s fine! You know…”</span> He looks down nervously, letting the awkward silence grow before he adds, <span style="Color: LightSteelBlue">“Sorry, not used to talking about my family. It’s fine, just weird to talk about.”</span> <br>
+                <<socialChange "Ben" 1>>
+                <span style="color:green">+Ben Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Ben Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Ben Hang Out Park]]
+            <<else>>
+                You ask <span style="color:DarkTurquoise">Ben</span> how life has been outside of school and he sighs loudly. <span style="Color: LightSteelBlue">“Fine, I guess…”</span> Curious why he sighed so loudly, you prod for more details, <span style="Color: LightSteelBlue">“It’s just my dad. He’s convinced he can turn me into a copy of my older brother. Been making me run on the weekends and do exercises at home. If it gets any worse my body is going to crumble away!”</span> You pat the boy on the back reassuringly but find the situation humorous. <br>
+                <<socialChange "Ben" 1>>
+                <span style="color:green">+Ben Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Ben Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Ben Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Ben</span> what he’s been up to lately. <span style="Color: LightSteelBlue">“Oh, umm…”</span> He thinks for a moment, <span style="Color: LightSteelBlue">“Oh! I got this really cool model kit from my grandpa, it’s of The UNA Adventure, from the show we watch together. It’s a little complicated and has a ton of tiny parts, but I’m making good progress and it’s going to look great when it’s done!”</span> You and <span style="color:DarkTurquoise">Ben</span> talk about that and other models he’s built as you relax. <br>
+            <<socialChange "Ben" 1>>
+            <span style="color:green">+Ben Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Ben Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Ben Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Ben</span> what he’s been up to lately. <span style="Color: LightSteelBlue">“I’ve been helping my mom cook. I’m not the best at it and my grandpa teases me about it, but I’ve been having fun. It’s really cool to be able to make something, then eat it.”</span> <span style="color:DarkTurquoise">Ben</span> laughs nervously, <span style="Color: LightSteelBlue">“Though I guess it is kind of girly.”</span> <br>
+            <<socialChange "Ben" 1>>
+            <span style="color:green">+Ben Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Ben Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Ben Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

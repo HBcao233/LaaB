@@ -1,0 +1,157 @@
+:: Bedroom Hang Out Jump on Bed2 [nobr]
+
+/* Written by: Miko1438 */
+
+/* Intro */
+
+<<set $Minutes += 30>>
+
+With nothing better to occupy yourself, you’re forced to confront the worst emotion any child should ever have the misfortune of facing: boredom. <span style="color:LightCoral">Woe is you.</span> <br>
+<br>
+In a desperate bid for stimulation, you jump up and <span style="color:LightCoral">throw yourself melodramatically onto your bed.</span> The cushiony surface doesn’t envelop you as you’d expect, but instead pads your fall, causing you to bounce upward ever so slightly. <br>
+
+/*If Shoes are Equipped*/
+<<if $PlayerShoes.Type !="None">>
+
+    As you remove your shoes and kick them to the foot of the bed, you cautiously begin standing in the center of the mattress, testing the waters of your makeshift trampoline with a tentative jump. <span style="color:LightGreen">It’s fun!</span> <br>
+    <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    },
+                Clothes: {
+                    Socks: $None,
+                    Shoes: $None,
+                },
+                },
+            ]>>
+        <<ad _ad>>
+
+/*If Shoes aren’t Equipped*/
+<<else>>
+
+    You cautiously pull your legs up and push yourself into a standing position in the center of the mattress. Then, you test the waters of your makeshift trampoline with a tentative jump. <span style="color:LightGreen">It’s fun!</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    },
+                Clothes: {
+                    Socks: $None,
+                    Shoes: $None,
+                },
+                },
+            ]>>
+        <<ad _ad>>
+
+<</if>>
+
+<<linkreplace "Continue">>
+
+You’re quick to realize <span style="color:LightGreen">the limitless entertainment possibilities of your new Newtonian-level discovery,</span> as you increase the rate of your jumps. <br>
+<br>
+
+/*If Naked*/
+<<if $PlayerUndies.Type == "None" && $PlayerBottoms.Type == "None">>
+
+If not for the amount of fun you were having on your makeshift trampoline, <span style="color:Pink">you’d definitely be humiliated by the sensation of your $Player.PenisSize penis flapping up and down with every jump—a sensation you find surprisingly pleasurable.</span> <br>
+
+<<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                Blush: 2,
+                },
+            Clothes: {
+                Socks: $None,
+                Shoes: $None,
+        },
+            },
+        ]>>
+    <<ad _ad>>
+
+A fleeting memory of an old nursery rhyme <span style="color:DarkTurquoise">your dad</span> used to tell you—something about five monkeys, a bed, and <span style="color:Red">severe blunt force trauma</span><span style="color:red">-soon drains the spirit from your daring pastime.</span> <br>
+
+/*If Clothed*/
+<<else>>
+
+A fleeting memory of an old nursery rhyme <span style="color:DarkTurquoise">your dad</span> used to tell you—something about five monkeys, a bed, and severe blunt force trauma—soon drains the spirit from your daring pastime. <br>
+<</if>>
+<br>
+
+<div id="choice">
+/*Stop Bouncing*/
+    <<link "Stop Bouncing<br>">>
+    <<replace"#choice">>
+
+    <span style="color:LightCoral">Fearing for your skull’s safety,</span> you bring your bouncing to a halt and collapse onto your comfortable pillows. <span style="color:LightGreen">Boredom safely averted!</span> <br>
+
+    <<needChange "Energy" -10>>
+    <<needChange "Fun" 20>>
+    <br>
+    [[Continue|Player Bedroom]]
+<</replace>>
+ <</link>>
+
+/*Keep Going*/
+    <<link "Keep Going<br>">>
+    <<replace"#choice">>
+
+<span style="color:LightCoral">Ignoring your brain’s better judgment,</span> you continue impetuously bouncing on the fragile surface of your bed. The loud squeak from each jump eventually attracts the attention of <span style="color:DarkTurquoise">your dad</Span>, as evidenced by his approaching heavy steps. Before he has the chance to open the door and <span style="color:LightCoral">metaphorically catch you with your pants down,</span> you immediately halt your momentum and lie down on the bed. <br>
+
+<<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                Eyes: "Tired",
+                },
+            Clothes: {
+                Socks: $None,
+                Shoes: $None,
+        },
+            },
+        ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>, I heard a strange set of noises coming from your room. You wouldn’t happen to be...?”</span> he says, his breath catching. From the tone of his voice, <span style="color:Pink">it was clear he expected to literally catch you with your pants down.</span> <br>
+<br>
+Flustered, you lie and say you were just reading, but that Gabe or Noah might be the ones responsible for the weird noise. <br>
+<br>
+<span style="color:LightSteelBlue">“Alright,”</span> he replies, raising his eyebrow skeptically. <span style="color:LightSteelBlue">“Just clean up after you’re done ‘reading’, please. I’d prefer not to see any more stains on those nice new sheets.”</span> <br>
+
+<<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Sad",
+                Blush: 1,
+                Cry: 1,
+                },
+            Clothes: {
+                Socks: $None,
+                Shoes: $None,
+        },
+            },
+        ]>>
+    <<ad _ad>>
+
+<span style="color:Pink">Feeling humiliated for a crime you didn’t even commit;</span> you shush him out of your room. <br>
+
+/*Gain Embarrassed Moodlet*/
+<<needChange "Energy" -10>>
+<<needChange "Fun" 20>>
+<br>
+[[Continue|Player Bedroom]]
+<</replace>>
+ <</link>>
+ </div>
+<</linkreplace>>
+
+

@@ -1,0 +1,38 @@
+:: Carter Hang Out Park Race [nobr]
+
+As you are wandering around the park, you turn to <span style="color:DarkTurquoise">Carter</span> and challenge him to a race. He smirks and agrees, claiming to be the fastest kid in town. You doubt that, but set the terms that the first person to reach the park bathroom wins. <span style="color:LightSteelBlue">“Maybe I'll have time to go pee while I wait for you to catch up, slowpoke!”</span> <span style="color:DarkTurquoise">Carter</span> laughs, sticking his tongue out at you.<br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Smirk",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Tired",
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You both get into position, stretching a little before lining up on the sidewalk as the starting line. You both share one last smirk as you count down, 3… 2… 1… go! And you both take off, full sprint, towards the bathroom! For such a little guy with short legs, <span style="color:DarkTurquoise">Carter</span> was surprisingly fast and really gave you a run for your money! For most of the race, the two of you were neck and neck!<br>
+<br>
+
+<div id="continue">
+    <<link "Continue">>
+        <<replace "#continue">>
+            <<set _Random to [
+                'Full Sprint',
+                'Kite',
+            ]>>
+            <<set _event to `Carter Hang Out Park Race ${_Random.random()}`>>
+            <<include _event>>
+        <</replace>>
+    <</link>>
+</div>

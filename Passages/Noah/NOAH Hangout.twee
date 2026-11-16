@@ -1,0 +1,31 @@
+:: NOAH Hangout [nobr]
+
+<<include"NOAH Hangout Avatar">>
+<<set $HangOutIntro to 1>>
+
+You find <span style="color:DarkTurquoise">Noah</span> and ask if he would like to hang out.<br>
+<br>
+<strong>Weather:</strong> $Weather<br>
+<<if $Weather == "Storm">>
+<span style="color:Lightcoral">
+	<span style="color:DarkTurquoise">Noah</span> is too afraid to go outside during a storm.</span>
+<<elseif $Weather == "Rain">>
+<span style="color:Yellow">
+	<span style="color:DarkTurquoise">Noah</span> is worried about being wet, but is fine going into town if he’s not outside too long.</span>
+<<else>>
+<span style="color:Lightgreen">
+	<span style="color:DarkTurquoise">Noah</span> thinks it’s the perfect weather to go out.</span>
+<</if>><br>
+<br>
+<span style="color:Azure"><big><strong>--Invite Noah Where?--</strong></big></span><br>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+[[Shopping District (0:05)|NOAH Shopping District][$Minutes += 5]]<br>
+/*
+[[To the City Park (0:05)|NOAH City Park][$Minutes += 5]]<br>
+*/
+<br>
+<<set $NPCFun to 0>>
+<<set $NPCEnergy to 100>>
+
+
+<<back>>

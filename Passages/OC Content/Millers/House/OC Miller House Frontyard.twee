@@ -1,0 +1,47 @@
+:: OC Miller House Frontyard [nobr]
+
+<<if $OCKaydenBabysit.Active == 1>>
+    <<if $OCKaydenBabysit.State == "PreDin" && $Time.after(18)>>
+        <<goto"Millers Babysitting Dinner">>
+    <<elseif $OCKaydenBabysit.State == "PostDin" && $Time.after(19, 30)>>
+        <<goto"Millers Babysitting Bath Time">>
+    <<elseif $OCKaydenBabysit.State == "Bath" && $Time.after(20)>>
+        <<goto"Millers Babysitting Bath Time Bath Done">>
+    <<elseif $OCKaydenBabysit.State == "Sleep" && $Time.after(21)>>
+        <<goto"Millers Babysitting Ending">>
+    <</if>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Frontyard--</strong></big></span><br>
+<<set $Location to {
+	Name: "Miller Frontyard",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Frontyard",
+}>>
+
+As you take in the view, you stand on the expansive gray brick driveway bordered by neatly trimmed hedges and perfectly aligned trees that seem to invite you inside. <span style="color:DarkTurquoise">Miller</span>’s house stands out from the others on the street; it lacks elaborate decorations or unusual shapes—it’s simply large rectangles stacked together, featuring numerous large windows. The exterior includes walls with a white stone appearance, others with small panels of caramel-hued wood, and some finished in a light gray rock texture. <br>
+<br>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Garage (0:01)|OC Miller House Garage][$Minutes += 1]] <br>
+	[[Hallway (0:01)|OC Miller House Hallway][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+/* House Map */
+<div style="position: relative">
+	<img src="Images\NPC Homes\Miller House\Miller House.png" 
+style="position: absolute; left: 0; top: 0"  alt="Miller Map" usemap="#MillerHouse">
+	<img src="Images\NPC Homes\Miller House\Big Room Marker.png" 
+style="position: absolute; left: 108px; top: 270px"  alt="Miller Map" usemap="#MillerHouse">
+</div>
+
+<map name="MillerHouse">
+    <area shape="rect" coords="54,220,107,323" alt="Garage" onclick="$.wiki('<<goto[[OC Miller House Garage]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="58,162,319,215" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="162,216,215,269" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+</map>

@@ -1,0 +1,72 @@
+:: Creative Skills Menu [nobr]
+
+<<set _skills to ["Acting", "Cooking", "Art", "Music", "Gardening"]>>
+
+
+<span style="color:Azure"><strong><big>--Creative Skills--</big></strong></span><br>
+
+<<for _i to 0; _i lt _skills.length; _i++>>
+	<<capture _i>>
+		<<set _skillname to _skills[_i]>>
+		<img @src="`Images/Icons/Skill/${_skillname}.png`">
+		<strong>_skills[_i]</strong> (Rank: $Skill[_skillname].Rank)<br>
+		<div style="text-indent: 3em;">
+			SP: $Skill[_skillname].SP | Max: $Skill[_skillname].MaxSP | Total: $Skill[_skillname].TotalSP<br>
+		</div>
+	<</capture>>
+<</for>>
+
+/* Old Code 
+<<set _creativeSkillsBars = [
+	{
+		group: 'Social Skills',
+		skills: [
+			{
+				name: 'Acting',
+				learned: $ActingLearned,
+				lvl: $ActingSkill,
+				bar: {
+					text: `${$ActingXP}%`,
+					value: $ActingXP,
+					color: getSkillBarColor($ActingXP),
+					showText: true,
+				},
+			}
+		],
+	},
+	{
+		group: 'Creative Skills',
+		skills: [
+			{
+				name: 'Cooking',
+				learned: $CookingLearned,
+				lvl: $CookingSkill,
+				bar: {
+					text: `${$CookingXP}%`,
+					value: $CookingXP,
+					color: getSkillBarColor($CookingXP),
+					showText: true,
+				},
+			},
+		],
+	},
+]>>
+
+<<for _group range _creativeSkillsBars>>
+	<span style="color:Azure"><strong><big>--<<=_group.group>>--</big></strong></span><br>
+	<<for _skill range _group.skills>>
+		<strong><<=_skill.name>></strong><br>
+		<<if _skill.learned == 1>>
+			<div class="skill-bar-group">
+				<span>LVL.<<=_skill.lvl>></span>
+				<div class="skill-bar-gauge">
+					<<progressbar _skill.bar>>
+				</div>
+			</div>
+		<<else>>
+			You have not learned this skill!<br>
+		<</if>>
+	<</for>>
+	<br>
+<</for>>
+*/

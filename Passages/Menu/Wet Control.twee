@@ -1,0 +1,32 @@
+:: Wet Control [nobr]
+
+/* CHECKING IF OUTSIDE */
+<<if $Location.Indoors == 0>>
+    <<if $Weather == "Sprinkling">>
+        <<set $Wetness += 1>>
+    <<elseif $Weather == "Raining">>
+        <<set $Wetness += 3>>
+    <<elseif $Weather == "Pouring">>
+        <<set $Wetness += 5>>
+    <<elseif $Weather == "Storm" or $Weather == "Thunderstorm">>
+        <<set $Wetness += 7>>
+    <<elseif $Temp == "Warm">>
+        <<set $Wetness -= 1>>
+    <<elseif $Temp == "Hot">>
+        <<set $Wetness -= 3>>
+    <<elseif $Temp == "Scorching">>
+        <<set $Wetness -= 5>>
+<</if>>
+
+/* INDOORS */
+<<else>>
+    <<set $Wetness -= 1>>
+
+<</if>>
+
+/* CHECKING MAX */
+<<if $Wetness > 50>>
+    <<set $Wetness to 50>>
+<<elseif $Wetness < 0>>
+    <<set $Wetness to 0>>
+<</if>>

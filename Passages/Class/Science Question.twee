@@ -1,0 +1,71 @@
+:: Science Question [nobr]
+
+<<set _skillcheckdif to random(20, 70)>>
+
+You are learning about physics and how to calculate things such as force and momentum when <span style="color:DarkTurquoise">Mr. Chang</span> asks if someone could come up to the whiteboard and give an example of the formulas in practice. <span style="color:LightSteelBlue"> “What about you <span style="color:DarkTurquoise">$Player.Name</span>? Care to give it a shot?” </span>
+	
+<<if _skillcheckdif < 30>>
+	<span style="color:Green">The formula seems simple enough, you are confident you can get it right.</span> Though you are slightly nervous about everyone’s eyes being on you.
+
+<<elseif _skillcheckdif < 50>>
+	<span style="color:Yellow">The formula seems a bit complicated, but you think you can figure it out.</span> You could give it a shot, but are nervous about looking dumb in front of everyone.
+	
+<<else>>
+	<span style="color:Red">The formula is like Greek to you,</span> you feel you’d be better off just staying in your seat. 
+	
+	<</if>><br>
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+			Blush: 1,
+		},
+	},
+	{
+		Name: "Chang",
+		State: {
+			Eyes: "Wide",
+			Mouth: "Smile",
+		},
+	},
+]>>
+<<ad _ad>>
+
+	<div id=choice>
+
+<<link "Attempt to answer">>
+<<replace"#choice">>
+	<<skillCheck "Science" _skillcheckdif>>
+	
+	<<if _result == 1>>
+<span style="color:DarkTurquoise">Mr. Chang</span> gives you an encouraging smile as you walk up to the whiteboard and begin to write out the formula, explaining your process as you go. <span style="color:Green">To your surprise, it goes really well and both you and the other students better understand the formula thanks to your demonstration.</span><br>
+	<<set $GradeChange to "Science">>
+	<<set $GradeChangeType to "Increase">>
+	<<include"Grade Change">>
+<br>
+	<<set _EventPassFail to "Pass">>
+<<include"Attend Science Finish">>
+
+	<<else>>
+<span style="color:DarkTurquoise">Mr. Chang</span> gives you an encouraging smile as you walk up to the whiteboard and begin to write out the formula, explaining your process as you go. <span style="color:Red">You quickly begin to stumble over your words and realize you may not have as much understanding of the formula as you thought.</span> Your face turns red at some of the teasing comments from the other students and eventually return to your seat.<br>
+<br>
+	<<set _EventPassFail to "Fail">>
+<<include"Attend Science Finish">>
+
+	<</if>>
+
+<</replace>>
+<</link>>
+
+<<skillDiff "Science" _skillcheckdif>><br>
+
+<<link "Refuse<br>">>
+<<replace"#choice">>
+You refuse, leaving <span style="color:DarkTurquoise">Mr. Chang</span> disappointed, but another student quickly speaks up and offer to give it a shot. He has a bit of trouble, but is able to display and explain the formula.<br>
+<br>
+<<include"Attend Science Finish">>
+
+<</replace>>
+<</link>>
+</div>

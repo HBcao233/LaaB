@@ -1,0 +1,39 @@
+:: BEN Courtyard Chat [nobr]
+
+/* NOT FRIENDS */
+<<if $BenSocial < 0>>
+	You walk over to <span style="color:DarkTurquoise">Ben</span> and ask if he would like to play. He jumps, previously unaware of your presence, and looks up nervously. <span style="color:LightSteelBlue"> “Oh umm, sorry <span style="color:DarkTurquoise">$BenNickname</span> but I-“</span> He pauses awkwardly, looking around, <span style="color:LightSteelBlue">“I’m reading this for a homework assignment, it’s due after lunch so I really need to finish. Sorry.”</span> He grabs his things and moves to a different reading spot, nervously glancing at you as he does. <span style="color:Red">It seems he doesn’t want to play with you.</span><br>
+	<br>
+	[[Continue|School Courtyard]] 
+
+/* FRIENDS */
+<<else>>
+	<<set $Minutes += 20>>
+	You walk over to <span style="color:DarkTurquoise">Ben</span> and ask if he would like to play. He looks up from his book, <span style="color:LightSteelBlue">“Oh umm, Sorry <span style="color:DarkTurquoise">$BenNickname</span>. I didn’t get a lot of sleep last night, I’d rather just sit down.”</span> He pauses, eyeing the ground. <span style="color:LightSteelBlue">“But, you can stay… If you want to, I mean…”</span> You smile and sit down next to him.<br>
+	<br>
+	<div id="choice">
+		<<link "Chat about his book<br>">>
+			<<replace "#choice">>
+				You lean over to glance at the book he is reading, but he quickly shuts and hides it in his backpack. When you ask about it you can’t help but notice his checks turn red.<br>
+				<br>
+				<span style="color:LightSteelBlue">“It’s just some random book,”</span> He is clearly lying, <span style="color:LightSteelBlue"> “You wouldn’t really like it, it’s not really your thing.”</span> You press the topic, but it is clear he is against sharing it. Instead, he manages to change the subject to other types of books you both enjoy and you have a nice chat.<br>
+				<<socialChange "Ben" 3>>
+				<br>
+
+				[[Continue|School Courtyard]] 
+			<</replace>>
+		<</link>>
+
+		<<link "Chat about shows<br>">>
+			<<replace "#choice">>
+				You ask him about what types of shows he is into, listing some of your own favorites. He seems nervous about the topic, eventually explaining that he doesn’t watch many cartoons.<br>
+				<br>
+				<span style="color:LightSteelBlue">“My grandfather uses the TV most of the time, he watches a lot of older shows, so I tend to just stay in my room.”</span> He pauses, <span style="color:LightSteelBlue"> “But there is one show he watches that I like. It’s old though, you’ve probably never heard of it.”</span> You press him for more information and eventually he relents, <span style="color:LightSteelBlue">“It’s a space show, called Star Force. Some old show about a team of Space Rangers exploring the galaxy. It’s kind of nerdy I know-“</span> You inform him that you have seen the show, or at least one of it’s movies. <span style="color:DarkTurquoise">Your Father</span> is a massive fan of things like that. He is surprised by your knowledge of it and the two of you enjoy you time chatting about it, though it is clear his interest is far greater than yours. <br>
+				<<socialChange "Ben" 3>>
+				<br>
+
+				[[Continue|School Courtyard]] 
+			<</replace>>
+		<</link>>
+	</div>
+<</if>>

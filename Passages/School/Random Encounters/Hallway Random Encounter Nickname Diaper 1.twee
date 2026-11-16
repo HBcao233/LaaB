@@ -1,0 +1,261 @@
+:: Hallway Random Encounter Nickname Diaper 1 [nobr]
+
+/* Written by: Winters */
+
+/* Intro */
+While the hallways of Preston Academy are typically full of the sound of chatter and slamming lockers, the hallway you’re walking down is quieter. The primary source of noise in this hallway comes from a group of boys standing at the end, chatting. One of the boys glances in your direction and says something to his companions. They seem to find something funny, since they all start to laugh. As you get closer towards the end of the hall, the boys spread out on either side of you. They all have a wide grin on their face and are all staring at you. A large boy occupies the center of the group and blocks your path. <br>
+<br>
+<span style="Color: LightSteelBlue">“Are you the <span style="Color: DarkTurquoise">$BullyNickname</span> everyone is talking about?”</span> The large boy asks. The other boys snicker at that. <span style="Color: LightCoral">Your face flushes red at the nickname, but you decide it’s best not to say anything.</span> Instead, you suddenly move forward and try to get past the boy in front of you. <span style="Color: LightCoral">However, the large boy places a firm hand on your chest and pushes you back.</span><br>
+<br>
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Everyday",
+            Blush: 1,
+            Mouth: "Sad"
+        },
+    },
+]>>
+<<ad _ad>>
+/*PC: Everyday, Sad, Blush 1 */
+<span style="Color: LightSteelBlue">“Where are you going?”</span> The large boy asks. <span style="Color: LightSteelBlue">“We wanted to talk to the famous <span style="Color: DarkTurquoise">$BullyNickname</span>.”</span> He then looks around at his companions. <span style="Color: LightSteelBlue">“Isn’t that right?”</span> he asks. The other boys laugh hard at this and move closer to box you in. <br>
+<br>
+
+/* If PC is wearing a Diaper */
+<<if $PlayerUndies.Tags.includes("Diaper")>>
+    During this time you try not to move as much as possible. If you do, they might hear the crinkle of your $PlayerUndies.Name and this will make the situation far worse. <br>
+    <br>
+<</if>>
+
+The large boy looks down at you and gives you a smile. It is full of cruelty. <span style="Color: LightSteelBlue">“Well… what are you waiting for? Show me the goods,”</span> he demands. <br>
+<br>
+<span style="Color: LightSteelBlue">“I bet they have teddy bears or something on them because he’s such a baby,”</span> says another boy. <br>
+<br>
+A bead of sweat starts to fall on the back of your neck. Your heart is pounding, and your mind is working to try to think of a way to get out of this. <br>
+<br>
+
+<div id='choice'>
+    <<if $PlayerUndies.Type != "None">>
+        <<link "Accept<br>">>
+        <<replace"#choice">>
+            <span style="Color: LightCoral">Your face radiates heat as it flushes with embarrassment as you lower your head in shame. This way, you don’t have to look at the bullies, and you don’t want them to see your eyes start to water. There’s no way out of this. It’s best to just get this over with. Your hand moves to your waistband as you unfasten to top of your $PlayerBottoms.Type.</span> <br>
+            <br>
+            /* If PC is wearing a Diaper */
+            <<if $PlayerUndies.Tags.includes("Diaper")>>
+                Closing your eyes to somehow escape this embarrassment, you lower your $PlayerBottoms.Type to reveal your $PlayerUndies.Name. There is a brief pause, before all the boys start to laugh. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“I knew it!”</span> <span style="Color: LightCoral">The large boy shouts. The rest of the boys are doubled over laughing. Some comment between wheezes that they can’t believe that babies are allowed at Preston Academy.</span><br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Cry: 1,
+                            Blush: 2,
+                            PantsDown: 1,
+                            Eyes: "Sad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+                <span style="Color: LightCoral">As you go to pull your $PlayerBottoms.Type, the large boy shoves you aside and you stumble and land hard on your bottom. The fall is painful, but even worse, your diapers make an audible crinkle as you land. The boys laugh even louder at this. At this point a crowd starts to form from all the commotion. The bullies start to chant <span style="Color: LightSteelBlue">“<span style="Color: DarkTurquoise">$BullyNickname</span>”</span>. <br>
+                <br>
+                It’s too much. You just hide your face in your hands and just hope for this to end soon. The laughing and chanting continue for what seems like an eternity. Eventually, the chanting and laughing starts to fade away. You peek out from around your hands to see the bullies walking away. The large bully turns back around in your direction. He shouts, <span style="Color: LightSteelBlue">“See you around <span style="Color: DarkTurquoise">$BullyNickname</span>!”</span> He flashes you with a menacing smile before he, and the rest of his companions, turn a corner and out of sight. <br>
+                <br>
+            /* PC Not wearing a diaper */
+            <<else>>
+                Fortunately, you’re not wearing a diaper today so it may be best that you just show them. Perhaps then they won’t call you <span style="Color: DarkTurquoise">$BullyNickname</span>. Lowering you $PlayerBottoms.Type, you reveal your $PlayerUndies.Name. The boys eagerly look down at your crotch, before disappointment forms on their faces. <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Cry: 1,
+                            Blush: 2,
+                            PantsDown: 1,
+                            Eyes: "Sad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+                /*PC: Bottoms at feet, Sad, Blush 2, Cry 1*/
+                <span style="Color: LightSteelBlue">“What the hell, where's the diaper!?”</span> The large boy exclaims. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“Lame”</span>, says another boy. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“What a letdown”</span>, says another. <br>
+                <br>
+                The large boy glares at you. <span style="Color: LightSteelBlue">“I see what’s going on. You’re trying to act all grown up now that everyone knows you’re a baby.”</span> He leans forward and puts his face very close to yours. His hot breath washes over your face. “But no matter what you do, everyone will know you as <span style="Color: DarkTurquoise">$BullyNickname</span>”, he says, his voice almost a snarl. Flecks of spittle hit your face as he says this. <br>
+                <br>
+                <span style="Color: LightCoral">Suddenly, you feel a pain on your chest as the large boy shoves you hard. With your $PlayerBottoms.Type at your ankles, you stumble and fall backwards, landing painfully on your bottom. Tears start to form at the corner of your eyes from both the pain, and the embarrassment. The boys around are laughing at your predicament, and it’s disheartening to see other boys in the hallway start to chuckle at the sight of you with your pants down.</span> <br>
+                <br>
+                The large bully looks down at you. <span style="Color: LightSteelBlue">“Next time don’t try to hide what you are, <span style="Color: DarkTurquoise">$BullyNickname</span>. I’ll be checking”</span>, he says and gives a quick jerk of the head to the other boys around him. Snickering, the boys fall in line and walk away with their leader. <br>
+                <br>
+            <</if>>
+            <span style="Color: LightCoral">You sit there, alone, with your $PlayerBottoms.Type at your ankles and your $PlayerUndies.Name exposed. Holding back tears, you pull your $PlayerBottoms.Type up. There are still a couple of people in the hallway watching, but you can’t make eye contact with any of them. If only a pit could open up in the floor around you and swallow you up, so you don’t have to deal with this embarrassment. Alas, the floor does not do so. Wiping away a tear, you get up and start heading down the hallway. You do so with your head hanging low.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Outfit: "Everyday",
+                        Cry: 2,
+                        Blush: 2,
+                        Eyes: "Sad",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+            /*PC: Everyday, Sad, Blush 2, Cry 2*/
+            <<addMoodlet "Stress" 2>>
+            <<if $Location.Name == "School South Hallway">>
+                [[Continue|School South Hallway]] 
+            <<elseif $Location.Name == "School East Hallway">>
+                [[Continue|School East Hallway]]
+            <<else>>
+                [[Continue|School West Hallway]]
+            <</if>>
+            /* [Stress (25)] */
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Refuse">>
+	<<replace"#choice">>
+        After considering countless scenarios in such a short time, you realize that refusing is the only thing that you can do. If you show them your $PlayerUndies.Name, it’ll only encourage them even more, and would likely escalate the situation next time. Making eye contact with the large bully, you defiantly shake your head no. The large bully glares at you for a moment, before saying <span style="Color: LightSteelBlue">“Looks like <span style="Color: DarkTurquoise">$BullyNickname</span> is trying to act like a big boy today. But the problem is that’s he’s a weak little baby.”</span> <span style="Color: LightCoral">As he says this, the boys around you grab your arms. You struggle and try to pull away.</span> <br>
+        <br>
+        <<skillCheck "Athletics" 70>>
+        <<if _result == 1>>
+            <span style="Color: LightGreen">The boys have a strong grip on your arms, but you’re determined to get away. You start to twist and pull with all your strength, and with a ferocity that surprises even you. The bullies, likely not expecting such strength and determination from someone who they call <span style="Color: DarkTurquoise">$BullyNickname</span>, let go. The moment they do, you take the opportunity to run as fast as possible. The large bully tries to grab you, but you’re able to dodge out of the way.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Outfit: "Everyday",
+                        Blush: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+            /*PC: Everyday, Sad, Blush 1*/
+            Between the sound of your heavy breathing and feet pelting down the hallway, you hear them shout, <span style="Color: LightSteelBlue">“We’ll get you next time <span style="Color: DarkTurquoise">$BullyNickname</span>!”</span> Perhaps they will, but not today. Today you showed them that you’re strong, and not a baby. <br>
+            <br>
+            <<if $Location.Name == "School South Hallway">>
+                [[Continue|School South Hallway]] 
+            <<elseif $Location.Name == "School East Hallway">>
+                [[Continue|School East Hallway]]
+            <<else>>
+                [[Continue|School West Hallway]]
+            <</if>>
+        <<else>>
+            <span style="Color: LightCoral">You try to pull away, but the boys painfully tighten their grips on your arms. You wince at the pain. The bullies hold your hands out to the side, and you become painfully aware how exposed and helpless you are. The large bully in front of you has a mean grin on his face, as if he was having the same thought as you.</span> <br>
+            <br>
+            <span style="Color: LightCoral"><span style="Color: LightSteelBlue">“<span style="Color: DarkTurquoise">$BullyNickname</span> thought he could get away. Silly <span style="Color: DarkTurquoise">$BullyNickname</span> can’t run very far with such a full diaper”</span>, says the large bully. He then steps up and forcibly pulls down your $PlayerBottoms.Type. You squeal at the sudden pain, which is quickly followed by the shock of cold air as it hits your bare legs. All bullies look down at your $PlayerUndies.Name.</span> <br>
+            <br>
+            /* If PC is wearing a Diaper */
+            <<if $PlayerUndies.Tags.includes("Diaper")>>
+                <span style="Color: LightSteelBlue">“Hahahaha, he is wearing them!”</span> one bully exclaims. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“I bet his parents have to change him, no way this diaper boy can do it himself”</span>, says another bully. One bully places a hand on your crotch, and you feel another touch your backside. <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Cry: 1,
+                            Blush: 2,
+                            PantsDown: 1,
+                            Eyes: "Sad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+                /*PC: Bottoms at feet, Sad, Blush 2, Cry 1*/
+                <span style="Color: LightCoral"><span style="Color: LightSteelBlue">“Looks like he’s dry for now. I bet he’s ready to piss himself”</span>, says the large bully. <span style="Color: ">“See, that wasn’t so bad. Next time, you be a good baby and listen to what the big kids demand of you,” the large bully lectures. He gives a nod to the boys holding their arms, and they then toss you at the ground.</span> <br>
+                <br>
+                <span style="Color: LightCoral">You painfully land on your back, and stars temporarily fill your sight as you hit the back of your head. You’re still somewhat in a daze when you hear the large bully say <span style="Color: LightSteelBlue">“You should crawl on the ground like the baby you are”</span>. The other bullies laugh and start to run off down the hall with their leader. You hear as they depart around the corner, <span style="Color: LightSteelBlue">“See you next time, <span style="Color: DarkTurquoise">$BullyNickname.”</span> You slowly get to your feet.</span> <br>
+                <br>
+            <<elseif $PlayerUndies.Type != "None">>
+                <span style="Color: LightSteelBlue">“Where’s the diaper?”</span> asks one bully. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“What a letdown”</span>, says another. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“Why aren’t you wearing a diaper?”</span> asks another. <br>
+                <br>
+                The large bully unslings his bag and starts to look for something in it. While he’s doing this, he says, <span style="Color: LightSteelBlue">“I bet he’s trying to act all grown up and wear big boy undies. Problem for him, we all know he is a baby”</span>. He then pulls out a plastic bottle of water from his bag. He holds it up in front of you. <span style="Color: LightSteelBlue">“You shouldn’t hide the truth of what you are. You’ll wish that you did wear a diaper.”</span> As he says this, he uncaps the water before reaching down and pulling the front of the waistband of your $PlayerUndies.Name towards him. <span style="Color: LightCoral">He then shoves the bottle down the front of your $PlayerUndies.Name.</span> <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Cry: 1,
+                            Blush: 2,
+                            PantsDown: 1,
+                            Eyes: "Sad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+                /*PC: Bottoms at feet, Sad, Blush 2, Cry 1*/
+                Water starts to gush all around your penis and soak your $PlayerUndies.Name and $PlayerBottoms.Type. A gasp comes from you at the sudden cold. <span style="Color: Pink">You try to hide the pleasure you feel from the sensation after the sudden shock goes away.</span> <br>
+                <br>
+                <span style="Color: LightSteelBlue">“See, if you were wearing a diaper, like we all know that you do, this wouldn’t be an issue.”</span> <span style="Color: LightCoral">The large bully says before he pulls the empty bottle out of your $PlayerUndies.Name and tosses it to the side. He looks at the sight of you, shivering from both the cold and embarrassment. <span style="Color: LightSteelBlue">“You know, if we didn’t already call you <span style="Color: DarkTurquoise">$BullyNickname</span>, I could think of another thing to call you.”</span> He looks pointedly at the wet front of your underwear, where the outline of your $Player.PenisSize penis is very apparent. Your hands quickly move to cover the front of your crotch. All the boys laugh hard at this.</span> <br>
+                <br>
+                <span style="Color: LightSteelBlue">“See you around <span style="Color: DarkTurquoise">$BullyNickname</span>”</span>, they say as they start walking away, leaving you standing there in your wet underwear. <br>
+                <br>
+            <<else>>
+                Your $Player.PenisSize penis bounces slightly at the sudden liberation. It’s suddenly quiet as all the boys stare at your penis. They seem quite shock by this surprise. This doesn’t last long as they all start to snicker and laugh. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“He’s going commando!”</span> exclaims a bully. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“Gross, no one wants to see that pathetic noodle”</span>, says one of the bullies holding you. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“Look at it shrink!”</span> Says another bully. <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Cry: 1,
+                            Blush: 2,
+                            PantsDown: 1,
+                            Eyes: "Sad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+                /*PC: Bottoms at feet, Sad, Blush 2, Cry 1*/
+                <span style="Color: LightSteelBlue">“Oh, he must have already wet himself today. I bet there’s a used diaper in the bathroom trash”</span>, says the big bully. He leans forward. <span style="Color: LightSteelBlue">“But you can’t fool us <span style="Color: DarkTurquoise">$BullyNickname</span>. We’ll catch you next time.”</span> He then starts to walk past you. <span style="Color: LightCoral">A sudden, hard, slap on your bare butt makes you jump from the surprise and pain.</span> This makes all the other bullies laugh even harder as they let you go and walk away with their leader. <br>
+                <br>
+            <</if>>
+                <span style="Color: LightCoral">Your cheeks burn in embarrassment, and you do your best to hide a sniffle. It would be so easy to cry right now, but that would make you seem like an even bigger baby.</span> Instead, you reach down and pull up your $PlayerBottoms.Type. <span style="Color: LightGreen">Next time, you’ll be sure to get away. That might mean you’ll have to get stronger, but you’ll find away. Perhaps you can work out with Gabe or exercise some more.</span> With this new resolve, you start heading back down the hallway and away from where the bullies went. <br>
+  
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Cry: 2,
+                            Blush: 2,
+                            PantsDown: 1,
+                            Eyes: "Sad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+                /* PC: Bottoms at feet, Sad, Blush 2, Cry 2*/
+                <<addMoodlet "Stress" 2>>
+                <<if $Location.Name == "School South Hallway">>
+                    [[Continue|School South Hallway]] 
+                <<elseif $Location.Name == "School East Hallway">>
+                    [[Continue|School East Hallway]]
+                <<else>>
+                    [[Continue|School West Hallway]]
+                <</if>>
+            <</if>>
+    <</replace>>
+    <</link>>
+    <<skillDiff "Athletics" 70>>
+    <br>
+</div>

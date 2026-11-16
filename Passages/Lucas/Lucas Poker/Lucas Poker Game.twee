@@ -1,0 +1,22 @@
+:: Lucas Poker Game [nobr]
+
+<<if $PokerLoadPassage === "Poker Game" || $PokerLoadPassage === "Poker Choose Strip">>
+    <<include $PokerLoadPassage>>
+<<elseif $PokerLoadPassage === "Poker Strip Loser">>
+    <<set _loser = $PokerLoser?.playerId || "None">>
+
+    <<if _loser === "PC" || _loser === "Lucas">> /* Required check so it does nothing when there's no loser */
+        <<set _passsage = `Lucas Poker Stripping ${_loser}`>>
+        <<include _passsage>>
+    <</if>>
+
+    <<include $PokerLoadPassage>>
+<</if>>
+
+<br><br>
+
+<<if $Debug == 1>>
+    Winner: <<=$PokerWinner?.playerId || "No one yet">><br>
+    Loser: <<=$PokerLoser?.playerId || "No one yet">><br>
+    Stripped: <<=$PokerPieceStrippedName || "None yet">><br>
+<</if>>

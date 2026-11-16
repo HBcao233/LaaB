@@ -1,0 +1,32 @@
+:: Carter Hang Out Mall Eat Something [nobr]
+
+<<set $Minutes += 15>>
+<<set $Money -= 4>>
+
+/* Scene */
+Feeling a bit peckish, you drag <span style="color:DarkTurquoise">Carter</span> over to the food court to get something to eat. At first, he is bored at the idea of sitting down and eating until he spots something over by the doughnut stand and runs over. <br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh! My! Gosh!”</span> <span style="color:DarkTurquoise">Carter</span> says with excitement, face pressed against the display glass. <span style="color:LightSteelBlue">“That looks amazing!”</span> On display is a giant doughnut in the shape of the Ultraman logo topped with candy and sugary substances of all kinds creating a monster of a confection. You warn <span style="color:DarkTurquoise">Carter</span> that something like that may be a little too much for his small body, but it’s too late, he’s already ordered it. <br>
+<br>
+
+You get your own food and the two of you head to a nearby table, <span style="color:DarkTurquoise">Carter</span>’s eyes wide with excitement at the doughnut. You can’t tell if he is excited because of all the sugar and candy on it, or because it was in the shape of the Ultraman logo. Regardless, he downs it extremely fast and very quickly regrets it as he spends the next 10 minutes reeling with stomach pains from eating too much too quickly as you finish your food. <br>
+<<needChange "Hunger" 30>>
+<span style="color:green">+Carter Energy</span><br>
+<<set $HangOutNeed.Energy += 15>>
+<<socialChange "Carter" 3>>
+<br>
+[[Continue|Carter Hang Out Mall]]

@@ -1,0 +1,83 @@
+:: Bedroom Play Pretend Gladiator [nobr]
+
+/* Written by BruMa */
+/* Intro */
+
+<<set $Minutes += 30>>
+
+You grab the ruler from your desk and wield it as a mighty sword, imagining yourself as a gladiator in the colosseum. <span style="color:lightgreen">The crowd cheering you on as their champion.</span>
+<<if $PlayerTop.Type != "None">>
+    /*-If Wearing Top-*/
+    You remove your $PlayerTop.Name and strike a flexing pose for the crowd, showcasing your muscles sculpted like a Greek God’s statue.
+
+<<else>>
+    /*-If Not Wearing Tops-*/
+    You strike a flexing pose for the crowd, showcasing your muscles sculpted like a Greek God’s statue. 
+<</if>>
+The crowd cheers you as the gate of the colosseum opens up, your next challenge to be revealed. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+
+        },
+            Clothes: {
+            Top: $None,
+            Outer: $None,
+            Over: $None,
+            Under: $None,
+            Neck: $None,
+        },
+    },
+]>>
+<<ad _ad>>
+
+/*-Normal-*/
+<<if $FearAnimals == 0>>
+
+    <span style="color:yellow">Suddenly, a tiger leaps out of the shadows of the gate and gives a mighty roar, no doubt your fiercest challenge so far. The beast was absolutely huge, but that didn’t scare you, you hold up your sword and prepare for the fight.</span> <br>
+    <br>
+    The tiger pounces at you with sharp claws at the ready, but you dodge out of the way last second, nearly losing your balance as the beast’s large body hits the ground next to you, quaking the floor with its weight. You go for a strike with your sword, but just like you the tiger quickly leaps out of the way of your attack. You’re both face to face with each other now, the beast lets out a low growl before pouncing at you again, bringing you down as it tries to scratch you with its razor-sharp claws, but you hold its paw still as you roll away from the pinning position. <br>
+    <br>
+    Your turn to strike now, you go for a jab with your sword, connecting the first strike on the beast as it winces away before it tries to swipe you again. The fight is a long and arduous challenge, as you shrug off blows and bites, your feral opponent surely has you on the defensive. But as it starts to tire, you see the chance to turn the tables as you can finally take the reins of the fight. <br>
+    <br>
+    As the tired beast grows slower you can at last start the offensive, advancing on the tiger pushing it back to a corner as it no longer can avoid your blows nor truly strike back. <span style="color:lightgreen">Once cornered, the animal tries one last effort as it dashes past you back to the center of the arena, but it cannot escape you, and with one last strike it collapses to the floor. Defeated.</span> <br>
+
+/*-If Afraid of Vicious / Large Animals-*/
+    <<else>>
+    Suddenly, <span style="color:LightCoral">a large monster leaps out of the shadows of the gate</span>, a beast with eyes glowing red and sharp teeth and claws at sight. It gives a terrifying roar, no doubt your greatest challenge so far. You hold your sword up in sweaty palms, unsure if you’re ready for the fight. <br>
+    <br>
+    The beast pounces at you with its claws at the ready, but you dodge out of the way last second, nearly losing your balance as the creature’s huge body hits the ground next to you, quaking the whole arena under its weight. You try and go for a strike with your sword, but your hesitation allows the monster to leap out of the way. You’re both face to face with each other now, <span style="color:Pink">you stare at the beast’s glowing red eyes as it lets out a low growl before pouncing on you again, pinning you down on the floor with its claws</span>, but you refuse to go down like this. You kick at the underside of the monster, pushing it off of you allowing you to quickly get back at your feet. <br>
+    <br>
+    It was your turn to strike now, with newfound courage and determination you charge at it with your sword, connecting your first strike against the beast as it winces back before trying to swipe at you again with its claws. The fight is a long and arduous challenge, the monster’s terrifying strikes are strong, but you shrug them off, refusing to lose like this, but it surely has you on the defensive. But as the fight goes on, the monster starts to tire, it’s evil eyes no longer holding their sinister glow as you are finally given the change to turn the tables and conquer the beast. <br>
+    <br>
+    You take the offensive as your foe grows slower, pushing back at the darkened monster in front of you as you force it into a corner, it was their turn to be afraid now. Once cornered, the beast is no longer menacing in your eyes, and as it tries to flee as a last effort you deliver the final blow, bringing the monster to the ground. Defeated. <br>
+
+    <</if>>
+    <br>
+<<linkreplace"Continue">>
+
+    The crowd goes wild as you stand tall on above the beast, you put your feet on top of it as a true sign of your victory as the cheers of the crowd fill your ears. The champion remains undefeated.
+
+    /*-If Chastity Kink-*/
+    <<if $Player.Kinks.Chastity == 1>>
+        But not yet free. <span style="color:Pink">You put your hand over your private parts imagining the tight squeeze of a lock and cage</span>, the burden you must bear for 100 fights before finally being released from it.<br>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Chastity"]>>
+        <<arousalGain 10 _arousalbs _arousalkink>>
+    <</if>>
+    <br>
+    You bask in the thundering voices of the crowd one last time before finally returning to your quiet room, ruler in hand, and victory in heart. <br>
+
+    <<if $Player.Traits.includes("Childish")>>
+        <<needChange "Fun" 30>>
+    <<elseif $Player.Traits.includes("Mature")>>
+        <<needChange "Fun" 10>>
+    <<else>>
+        <<needChange "Fun" 20>>
+    <</if>>
+    <br>
+    [[Continue|Player Bedroom]]
+<</linkreplace>>

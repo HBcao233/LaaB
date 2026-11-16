@@ -1,0 +1,34 @@
+:: Hospital Pharmacy [nobr]
+
+<<set $Location to {
+    Name: "Hospital Pharmacy",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Downtown",
+}>>
+<span style="color:Azure"><big><strong>--Pharmacy--</strong></big></span><br>
+You stand in the small Pharmacy attached to the hospital. The walls and floors are all pure white, slightly hurting your eyes. While there are a few shelves where people can buy what they need, most items are behind the counter and require the Pharmacist to get them. A young man stands at the counter waiting to see if you need help.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $Money >= 3 and $Pained == 1>>
+	[[Buy Medicine & Take ($3)|Hospital Pharmacy][$Money -= 3;$Pained to 0;$PainedHours to 0]]<br>
+<</if>>
+/*
+<<if $Money >= 3>>
+	[[Buy Medicine & Store in Bathroom ($3)|Hospital Pharmacy][$Money -= 3;$Medicine += 1]] [Have: $Medicine]<br>
+<<else>>
+	<span style="color:lightcoral">Buy Medicine & Store in Bathroom ($3)</span> [Have: $Medicine]<br>
+<</if>>
+*/
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+<img src="Images\World Map\Individual Icons\Hospital.png">
+	[[Hospital (0:10)|Hospital][$Minutes += 10]]<br>

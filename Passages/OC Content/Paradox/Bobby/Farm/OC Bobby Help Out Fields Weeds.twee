@@ -1,0 +1,94 @@
+:: OC Bobby Help Out Fields Weeds [nobr]
+
+/* Intro */
+<<set $Minutes += 25>>
+You spot <span style="color:DarkTurquoise">Bobby</span> standing in the middle of one of the fields with a wheelbarrow and call out to him, waving as you walk over. <span style="color:LightSteelBlue">“Hey there, <span style="color:DarkTurquoise">$Player.Name</span></span>. Good to see you. What brings you to the farm?”</span> He says with a smile as he yanks a large weed out of the ground and tosses it into the wheelbarrow. You explain that you were in the area and just thought you’d come say hi and see how he is doing. <span style="color:LightSteelBlue">“Yeah, I bet you just happen to pass by the farm a lot in your travels.”</span> He teases, bending down to yank another weed, this one much tougher than the last. You ask if <span style="color:DarkTurquoise">Bobby</span> would like some help and he sighs. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Bobby",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Wouldn’t mind it, thanks. These buggers are hard to pull sometimes.”</span> He laughs, pointing to the barrow, <span style="color:LightSteelBlue">“Have an extra pair of gloves so you don’t scratch up your hands. Just run around this area and get any of the ones you can handle. Leave the stiff ones to me!”</span> <span style="color:LightGreen">He flexes with a laugh as you grab some gloves and begin to yank up some weeds.</span> <br>
+<br>
+
+<<set _random to random(1, 3)>>
+
+<<if _random == 1 && $Strength == 6>>
+    <<set _random to 3>>
+<<elseif _random == 2 && $Player.Kinks.Teens != 1>>
+    <<set _random to 3>>
+<</if>>
+
+<<if _random == 1>>
+    <<if $Strength >= 7>>
+        He’s not wrong when he says those suckers are in there pretty deep, as you have to pull with all your might to get some of them out! <span style="color:LightGreen">Still, you are able to do it, and <span style="color:DarkTurquoise">Bobby</span> even looks a little impressed.</span> <span style="color:LightSteelBlue">“Dang, look at you. I showed off my muscles but you’re the real bodybuilder! Great job!”</span> <span style="color:LightGreen">You blush from the praise and keep working, happy to be able to use your strength to help <span style="color:DarkTurquoise">Bobby</span> out.</span> <br>
+        <<socialChange "Bobby" 3 1>>
+        <<skillPoints "Athletics" 3>>
+        <<needChange "Fun" 10>>
+        <<needChange "Energy" -5>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <<else>>
+        He’s not wrong when he says those suckers are in there pretty deep. Most of them you can’t even budge, let alone pull out! <span style="color:Pink">You start to feel a little embarrassed when you use all your strength to tug on a tiny weed, only for it to not even come out a little! <span style="color:DarkTurquoise">Bobby</span> notices this and chuckles, walking over to ‘help’, managing to pull it out with only a simple tug.</span> <span style="color:LightSteelBlue">“You must have loosened it up for me.”</span> He says with a smile, trying to make you feel better, <span style="color:Yellow">though you can’t help but feel even weaker than usual.</span> <br>
+        <<socialChange "Bobby" 3 1>>
+        <<skillPoints "Athletics" 3>>
+        <<needChange "Fun" 10>>
+        <<needChange "Energy" -5>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <</if>>
+<<elseif _random == 2>>
+    He’s not wrong when he says those suckers are in there pretty deep. You spot one large weed poking out of the center of the field and grip it with both hands, tugging with all your might! The weed resists, holding onto the ground with all the strength it has before suddenly – pop! – <span style="color:Yellow">It flies out of the ground, leaving you scrambling backwards as you crash directly into <span style="color:DarkTurquoise">Bobby</span>!</span> <br>
+    <br>
+    It takes a second for you to realize where you landed, <span style="color:Pink">a strange musky smell filling your nose. You open one eye to find, in horror, that you’ve not only landed directly on top of <span style="color:DarkTurquoise">Bobby</span>, but your face is directly in his crotch! You feel a lump on your cheek, quickly realize it is the tip of his bulge, and jump back in panicked embarrassment with a scream.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 2,
+                },
+            },
+            {
+                Name: "OC Bobby",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+    
+    <span style="color:LightSteelBlue">“Haha, nice job pulling that monster weed. But maybe try to keep your footing when you pull.”</span> He laughs, <span style="color:Pink">reaching down and adjusting his bulge,</span> <span style="color:LightSteelBlue">“You nearly headbutt my junk there.”</span> He just laughs it off, but you can’t get the sweaty, musky scent of his groin out of your nose as you go back to work, avoiding eye contact with him until you’ve finished. <br>
+    <<socialChange "Bobby" 3 1>>
+    <<skillPoints "Athletics" 3>>
+    <<needChange "Fun" 10>>
+    <<needChange "Energy" -5>>
+    <<set $Arousal += 20>>
+    <br>
+    [[Continue|OC Bobby Farm Local]]
+<<else>>
+    He’s not wrong when he says those suckers are in there pretty deep. You try your hardest but find yourself drenched with sweat after only a few minutes and it looks like you’ve hardly made a dent. <span style="color:DarkTurquoise">Bobby</span> looks a little tired as well, but nowhere near as much as you do. Soon, you have no choice but to collapse onto the ground to take a second to catch your breath. <span style="color:LightGreen">Despite feeling like you didn’t do that much, <span style="color:DarkTurquoise">Bobby</span> seems very thankful for your help once he calls it a day.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“Weeding is a never-ending job around here.”</span> He laughs, <span style="color:LightSteelBlue">“You helped a bunch, really. I appreciate it!”</span> <span style="color:LightGreen">His words make you smile, glad to have helped, even in a small way.</span> <br>
+    <<socialChange "Bobby" 3 1>>
+    <<skillPoints "Athletics" 3>>
+    <<needChange "Fun" 10>>
+    <<needChange "Energy" -5>>
+    <br>
+    [[Continue|OC Bobby Farm Local]]
+<</if>>

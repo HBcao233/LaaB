@@ -1,0 +1,79 @@
+:: PH Backyard Exposed [nobr]
+
+<<if $Player.Exposed == "Undies" or $Player.Exposed == "Diaper">>
+    <<if $BackyardUndies == 0>>
+<span style="color:Red">You stand in your backyard in just your $PlayerUndies.Name! You shyly cover them with your hands, thankful that no one can see you thanks to the large wooden fence, but still feel extremely embarrassed!</span> 
+    <<elseif $BackyardUndies == 1>>
+<span style="color:pink">You stand in your backyard in just your $PlayerUndies.Name. You feel quite exposed being outside in such a state of undress, but since it would be difficult for anyone to see you thanks to the large wooden fence, you don’t think it is that bad.</span>
+    <<elseif $BackyardUndies == 2>>
+You stand in your backyard on the wooden deck in your underwear. A short set of stairs lead down to a large grassy yard with a single tree and a shed.
+    <</if>>
+
+<<if $Time.ToD == "Morning">>
+	The sun creeps over the hills in the distance, illuminating the yard in a warm orange hue.
+<<elseif $Time.ToD == "Day">>
+	It is sunny and bright out.
+<<elseif $Time.ToD == "Afternoon">>
+	The sky darkens as the end of the day grows near.
+<<elseif $Time.ToD == "Night">>
+	It is pitch black outside, you can only see thanks to the porchlight.
+<</if>><br>
+<br>
+
+<<if $BackyardUndies > 0>>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Practice Soccer (0:20)|Home Practice Soccer Underwear]] <span style="color:Green">+Athletics</span><br>
+	<<if $ChoreEasy == "Laundry" and $ChoreEasyObj == 2>>
+		<<if $Weather != "Rain" and $Weather != "Storm">>
+			[[Hang up clothes (0:15)|Hang Up Clothes]]<br>
+		<<else>>
+			<span style="color:Red">Hang up clothes (You can't dry clothes in the rain!)</span><br>
+		<</if>>
+	<</if>>
+<</if>>
+
+<<elseif $Player.Exposed == "Naked">>
+    /* NUDE DURING THE DAY */
+<<if $Time.before(22) and $Time.after(6)>>
+
+<span style="color:pink">You stand in your backyard, completely naked and defenseless! You cover your privates with your hands, but still feel extremely exposed and vulnerable. Despite the safety of your backyard, the feeling of being outside so exposed is extremely embarrassing!</span> 
+<<if $Time.ToD == "Morning">>
+	The sun creeps over the hills in the distance, illuminating the yard in a warm orange hue.
+<<elseif $Time.ToD == "Day">>
+	It is sunny and bright out.
+<<elseif $Time.ToD == "Afternoon">>
+	The sky darkens as the end of the day grows near.
+<<elseif $Time.ToD == "Night">>
+	It is pitch black outside, you can only see thanks to the porchlight.
+<</if>><br>
+
+    /* NUDE AT NIGHT */
+<<else>>
+
+    <<if $BackyardNudeNight == 0>>
+<span style="color:pink">You stand in your backyard, completely naked and defenseless! You cover your privates with your hands, but still feel extremely exposed and vulnerable. Despite the safety of your backyard, the feeling of being outside so exposed is extremely embarrassing!</span> 
+    <<elseif $BackyardNudeNight == 1>>
+<span style="color:pink">You stand in your backyard, completely naked. Despite your desire to be brave, you still felt a bit vulnerable being naked outside, even if it was in the safety of your backyard. Still, you took a deep breath and pushed down the urge to cover yourself and run back inside.</span>
+    <<elseif $BackyardNudeNight == 2>>
+You stand in your backyard atop the wooden deck, completely naked. A short set of stairs lead down to a large grassy yard with a single tree and a shed.
+    <</if>>
+    
+<<if $Time.ToD == "Morning">>
+	The sun creeps over the hills in the distance, illuminating the yard in a warm orange hue.
+<<elseif $Time.ToD == "Day">>
+	It is sunny and bright out.
+<<elseif $Time.ToD == "Afternoon">>
+	The sky darkens as the end of the day grows near.
+<<elseif $Time.ToD == "Night">>
+	It is pitch black outside, you can only see thanks to the porchlight.
+<</if>><br>
+<br>
+
+<<if $BackyardNudeNight > 0>>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Play outside naked (0:20)|Home Play Naked Backyard]] <span style="color:Green">+Naturism</span><br>
+<</if>>
+
+<</if>>
+
+<</if>>

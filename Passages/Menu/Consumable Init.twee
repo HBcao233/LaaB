@@ -1,0 +1,117 @@
+:: Consumable Init [nobr]
+
+<<set $SevenAndUp = {
+    Name: "7&Up",
+    OnUse: () => {
+        $Player.Energy += 10;
+
+        if ($ToggleBladder) {
+            $Player.Bladder -= 20;
+        }
+    },
+    Tags: ["Drink", "Candy"],
+    Icon: "Images/Icons/Consumables/7&Up.png",
+    Description: "Did you know it was possible to put all the feeling of childhood joy in a single drink? 7&Up will give you so much childlike wonder and joy, you’ll have to check your underwear to be sure you’re not 7 again. (Warning: 7&Up does not actually make you younger nor shrink your penis)",
+}>>
+<<set $BAndBs = {
+    Name: "B&Bs",
+    OnUse: () => $Player.Hunger += 15,
+    Tags: ["Food", "Candy"],
+    Icon: "Images/Icons/Consumables/B&Bs.png",
+    Description: "Do you like balls? Well, buy a bag of B&Bs to enjoy a bag of balls made of chocolate! Our balls come in a variety of colors, but don’t worry, they are all the same size!",
+}>>
+<<set $KidCat = {
+    Name: "Kidkat",
+    OnUse: () => $Player.Hunger += 15,
+    Tags: ["Food", "Candy"],
+    Icon: "Images/Icons/Consumables/Kidkat.png",
+    Description: "Break me off a piece of that Kid-Kat Bar! (Warning: Does not actually contain kids, cats, or bars. You can feed it to a kid, but do not feed it to a cat)",
+}>>
+<<set $Pepso = {
+    Name: "Pepso",
+    OnUse: () => {
+        $Player.Energy += 10;
+
+        if ($ToggleBladder) {
+            $Player.Bladder -= 20;
+        }
+    },
+    Tags: ["Drink", "Candy"],
+    Icon: "Images/Icons/Consumables/Pepso.png",
+    Description: "Put some pep in your step! Pepso is THE cola preferred by people everywhere. Get that classic cola flavor with a slight citrusy tang that everyone loves. (We also don’t put cocaine in our soda, unlike that OTHER brand!) ",
+}>>
+<<set $Smuttles = {
+    Name: "Smuttles",
+    OnUse: () => $Player.Hunger += 15,
+    Tags: ["Food", "Candy"],
+    Icon: "Images/Icons/Consumables/Smuttles.png",
+    Description: "Do you like balls, but hate chocolate? Well buy Smuttles! Our balls of delicious sweet goodness will make you feel so good, you’ll think you are reading smut! Wow, I’m surprised we can get away with putting this on a candy’s packaging!",
+}>>
+<<set $Snackers = {
+    Name: "Snackers",
+    OnUse: () => $Player.Hunger += 15,
+    Tags: ["Food", "Candy"],
+    Icon: "Images/Icons/Consumables/Snackers.png",
+    Description: "You’re not you when you’re snacky! Snackers are a delicious candy bar filled with nougat topped with caramel and peanuts, all encased in a delicious milk chocolate.",
+}>>
+<<set $Sprink = {
+    Name: "Sprink",
+    OnUse: () => {
+        $Player.Energy += 10;
+
+        if ($ToggleBladder) {
+            $Player.Bladder -= 20;
+        }
+    },
+    Tags: ["Drink", "Candy"],
+    Icon: "Images/Icons/Consumables/Sprink.png",
+    Description: "A clear lemon-lime soda that tickles your throat and refreshes your soul. This drink is perfect to give you the energy you need to get through your day.",
+}>>
+<<set $Twinxs = {
+    Name: "Twinxs",
+    OnUse: () => $Player.Hunger += 15,
+    Tags: ["Food", "Candy"],
+    Icon: "Images/Icons/Consumables/Twinxs.png",
+    Description: "A caramel shortbread chocolate bar that you can share with the twink in your life. Made to be shared, but let’s be honest, you’ll eat both of them and still come back for more.",
+}>>
+<<set $MtnLewd = {
+    Name: "Mtn Lewd",
+    OnUse: () => {
+        $Player.Energy += 10;
+
+        if ($ToggleBladder) {
+            $Player.Bladder -= 20;
+        }
+    },
+    Tags: ["Drink", "Candy"],
+    Icon: "Images/Icons/Consumables/Mnt Lewd.png",
+    Description: "Coming in far too many flavors, this citrus soda is marketed to pro gamers, those who want to be pro gamers, and those who think they are pro gamers. Everyone argues about what the flavor actually is.",
+}>>
+<<set $DaddiPepper = {
+    Name: "Daddi Pepper",
+    OnUse: () => {
+        $Player.Energy += 10;
+
+        if ($ToggleBladder) {
+            $Player.Bladder -= 20;
+        }
+    },
+    Tags: ["Drink", "Candy"],
+    Icon: "Images/Icons/Consumables/Daddi Pepper.png",
+    Description: "A step away from your normal cola, this sweet yet peppery drink gives you the feeling of a warm hug from your father. Except it’s cold, sugary, and you can actually have this!",
+}>>
+
+<<set $ConsumableProducts = [
+    { item: new ConsumableItem($SevenAndUp), price: 1 },
+    { item: new ConsumableItem($BAndBs), price: 1 },
+    { item: new ConsumableItem($KidCat), price: 1 },
+    { item: new ConsumableItem($Pepso), price: 1 },
+    { item: new ConsumableItem($Smuttles), price: 1 },
+    { item: new ConsumableItem($Snackers), price: 1 },
+    { item: new ConsumableItem($Sprink), price: 1 },
+    { item: new ConsumableItem($Twinxs), price: 1 },
+    { item: new ConsumableItem($MtnLewd), price: 1 },
+    { item: new ConsumableItem($DaddiPepper), price: 1 },
+]>>
+
+<<set $VendingMachine = new ConsumableVendor($ConsumableProducts)>>

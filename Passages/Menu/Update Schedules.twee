@@ -1,0 +1,40 @@
+:: Update Schedules [nobr]
+
+<<set _tags to []>>
+<<set _excludeTags to ['sick']>>
+
+<<set _tags.push($Time.Day)>>
+
+<<if $ForecastToday.Name == "Chance at Rain" or $ForecastToday.Name == "Scattered Showers" or $ForecastToday.Name == "Rainy" or $ForecastToday.Name == "Heavy Rain">>
+	<<set _tags.push("rainy")>>
+<<elseif $ForecastToday.Name == "Stormy" or $ForecastToday.Name == "Thunderstorm" or $ForecastToday.Name == "Dry Storm" or $ForecastToday.Name == "Extreme Winds">>
+	<<set _tags.push("stormy")>>
+<<else>>
+	<<set _tags.push("sunny")>>
+<</if>>
+
+/* Once per day shuffle the NPC schedules blocks  */
+
+/* ex:
+<<run $Lucas.shuffle_schedules(_tags)>>
+<<run $Ben.shuffle_schedules(_tags)>>
+*/
+
+<<run $NoahSche.shuffle_schedules(_tags, _excludeTags)>>
+<<run $GabeSche.shuffle_schedules(_tags, _excludeTags)>>
+<<run $DadSche.shuffle_schedules(_tags, _excludeTags)>>
+<<run $LucasSche.shuffle_schedules(_tags, _excludeTags)>>
+<<run $BenSche.shuffle_schedules(_tags, _excludeTags)>>
+<<run $MichaelSche.shuffle_schedules(_tags, _excludeTags)>>
+<<run $CarterSche.shuffle_schedules(_tags, _excludeTags)>>
+<<run $JacksonSche.shuffle_schedules(_tags, _excludeTags)>>
+<<run $XavierSche.shuffle_schedules(_tags, _excludeTags)>>
+<<run $ThomasSche.shuffle_schedules(_tags, _excludeTags)>>
+<<run $FelixSche.shuffle_schedules(_tags, _excludeTags)>>
+
+/* SAVING TAGS FOR DEBUG PURPOSES */
+<<set $Time.ToDayScheTags to _tags>>
+
+<<if $ThomasAbsent>>
+	<<run $ThomasSche.apply_route('Homesick')>>
+<</if>>

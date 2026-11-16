@@ -1,0 +1,76 @@
+:: BlowJob NPC Reactions Noah [nobr]
+
+<<if $SexPlayerAction == "None">>
+	
+
+/* BLOW HIM SLOWLY */
+<<elseif $SexPlayerAction == "Blow Him Slowly">>
+	<span style="color:Green">+Arousal</span>
+    	<<set $NPCArousal += 5>>
+    <span style="color:Green">+Comfort</span>
+    	<<set $NPCComfort += 5>>
+	<br>
+
+/* BLOW HIM FURIOUSLY */
+<<elseif $SexPlayerAction == "Blow Him Furiously">>
+	<span style="color:Green">+Arousal</span>
+    	<<set $NPCArousal += 5>>
+    <span style="color:Red">-Comfort</span>
+    	<<set $NPCComfort -= 5>>
+	<br>
+
+
+/* NIBBLE HIS SHAFT */
+<<elseif $SexPlayerAction == "Nibble His Shaft">>
+	<span style="color:Green">+Arousal</span>
+    	<<set $NPCArousal += 5>>
+    <span style="color:Red">-Comfort</span>
+    	<<set $NPCComfort -= 5>>
+	<br>
+
+
+/* TEASE HIS TIP */
+<<elseif $SexPlayerAction == "Tease His Tip">>
+	<span style="color:Green">++Arousal</span>
+    	<<set $NPCArousal += 10>>
+    <span style="color:Green">+Comfort</span>
+    	<<set $NPCComfort += 5>>
+	<br>
+
+
+/* TICKLE HIS TAINT */
+<<elseif $SexPlayerAction == "Tickle His Taint">>
+	<span style="color:Green">++Arousal</span>
+    	<<set $NPCArousal += 10>>
+    <span style="color:Green">++Comfort</span>
+    	<<set $NPCComfort += 10>>
+	<br>
+
+
+/* SQUEEZE HIS BALLS */
+<<elseif $SexPlayerAction == "Squeeze His Balls">>
+	<span style="color:Red">-Arousal</span>
+    	<<set $NPCArousal -= 5>>
+    <span style="color:Red">-Comfort</span>
+    	<<set $NPCComfort -= 5>>
+	<br>
+
+
+/* FINGER HIM GENTLY */
+<<elseif $SexPlayerAction == "Finger Him Gently">>
+	<span style="color:Green">++Arousal</span>
+    	<<set $NPCArousal += 10>>
+    <span style="color:Green">+Comfort</span>
+    	<<set $NPCComfort += 5>>
+	<br>
+
+
+/* FINGER HIM FORCEFULLY */
+<<elseif $SexPlayerAction == "Finger Him Forcefully">>
+	<span style="color:Green">++Arousal</span>
+    	<<set $NPCArousal += 10>>
+    <span style="color:Red">- -Comfort</span>
+    	<<set $NPCComfort -= 10>>
+	<br>
+
+<</if>>

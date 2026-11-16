@@ -1,0 +1,90 @@
+:: Woods Fox Gift [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+You enter the woods, imagining you are exploring a massive great wood in search of adventure and magical treasure. To be fair, you don’t have to imagine hard, as it isn’t long until you enter a part of the woods where the trees seem to piece the sky and create a canopy shroud that completely shades the area. <span style="color:LightGreen">You have to admit, it is a little eerie, but also kind of cool.</span> <br>
+<br>
+It is while you are distracted staring up at the cloaked sky that <span style="color:LightCoral">you hear a rustle in a nearby bush. Your vision instantly locks in the direction of the noise, your heartbeat suddenly doubling.</span> You stare intensely at the spot you believe it came from, waiting for any other sign of life. You are just about to rule it as just the wind, <span style="color:LightCoral">when suddenly an orange blur leaps out at you at incredible speed! You let out a high-pitched, girlish scream that you would feel embarrassed about, if you weren’t so terrified!</span> <br>
+<br>
+<span style="color:LightCoral">You feel something instantly lock onto your leg, wrapping itself around it like a tentacle grasping its prey. You don’t even have a chance to kick it off before, WHOOSH, it slips down your calf to your ankles…</span> <span style="color:Pink">taking your $PlayerBottoms.Type with it!</span> You glance down in fear and discover, not the orange, tentacled monster you were imagining, <span style="color:Yellow">but instead a small, mischievous-looking fox stares back up at you…</span> <span style="color:Pink">well, not directly up at you, but rather…</span> <br>
+
+/* Player wearing underwear */
+<<if $PlayerUndies.Type != "None">>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 2,
+                PantsDown: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    
+    <span style="color:Pink">You glance down and gasp as your $PlayerUndies.Name are exposed to the world! You turn bright red and hunch down, covering your underwear with your hands,</span> before remembering you are alone in the woods and sigh in relief. Bending down to pull up your bottoms, you stop as you spot the small orange fox sitting about a foot in front of you <span style="color:Pink">glancing up at your underwear with what you swear is a smirk on its face.</span> <br>
+    <br>
+    <span style="color:Pink">It is staring directly at your underwear, not at your face for signs of danger or even glancing around for any other dangers. No, it instead staring directly at your $PlayerUndies.Type as if the little bastard had intentionally pantsed you!</span> But that couldn’t be possible, right-? <br>
+    <br>
+    <span style="color:LightCoral">Suddenly, the fox leaps forward, giving you such a fright you lose your balance and tumble backward onto your butt.</span> The fox rushes forward towards you, <span style="color:Pink">placing both of its front paws on your groin, directly on your balls and pauses for just a moment to inspect your underwear-covered bits before dashing off back into the woods.</span> <br>
+    <br>
+    Did… did that just happen? <br>
+    <<addMoodlet "Stress" 0>>
+    <<needChange "Fun" 10>>
+    <br>
+    [[Continue|Wald Street]]
+/* Else */
+<<else>>
+
+        <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Mouth: "Frown",
+                Blush: 3,
+                PantsDown: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    
+    <span style="color:Pink">You glance down and turn bright red as you see your boyish private bits dangling between your legs for the world to see! You gasp and bend down to cover your bits,</span> before remembering you are alone in the woods and sigh in relief. Bending down to pull up your bottoms, you stop as you spot the small orange fox sitting about a foot in front of you <span style="color:Pink">glancing up at your wiener with what you swear is a smirk on its face.</span> <br>
+    <br>
+    <span style="color:Pink">It is staring directly at your penis, not at your face for signs of danger or even glancing around for any other dances. No, it instead stares directly at your $Player.PenisSize Penis as if the little pervert had intentionally pantsed you!</span> But that couldn’t be possible… right? <br>
+    <br>
+    <span style="color:LightCoral">Suddenly, the fox leaps forward, giving you such a fright you lose your balance and rumble backwards onto your butt.</span> The fox rushes towards you, <span style="color:Pink">stopping right between your legs and placing both of its front paws directly on your balls! You let out a squeak and freeze as your most sensitive bits are literally in the paws of this creature.</span> <br>
+    <br>
+    <span style="color:Pink">The creature pauses just long enough to look like it’s inspecting your boyhood before it suddenly leaps off of you and dashes away. As it does so, its tail flicks right across the tip of your penis and sends a shockwave that causes your cheeks to clench up.</span> You then quickly rush to your feet and pull your bottoms up before anymore forest creatures suddenly appear to molest you. <br>
+    <br>
+    As you are fixing them, you respot the orange fox off to the left sitting in front of a small bush. You take a step back in fear, but the fox quickly turns and runs off… <span style="color:Yellow">then you spot a splash of color peeking out from behind one of the bushes.</span> <br>
+    <br>
+    Against your better judgement, you slowly walk over to investigate and are left utterly perplexed as you spot what appears to be pieces of a fox costume? A clip-on tail and some fake fox ears sit in the bush as if they had been placed there deliberately. <br>
+    <br>
+    <div id="choice">
+        <<link "Take them<br>">>
+        <<replace"#choice">>
+            You cautiously bend down and pick up the ironic costume pieces. You glance around the woods, but see no signs of any other life, human or animals. The thought briefly enters your mind that that weird, perverted fox left these here, but that’s impossible… right? Regardless, you take the fox costume pieces and walk away, confused but grateful. <br>
+            <<if $FoxCostumeTaken != 1>>
+                <<addClothing "Closet" "Costume" "Fox Ears" $Player.HairColor>> 
+                <<addClothing "Closet" "Costume" "Fox Tail" $Player.HairColor>>
+                <<set $FoxCostumeTaken to 1>>
+            <</if>>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 10>>
+            <br>
+            [[Continue|Wald Street]]
+        <</replace>>
+        <</link>>
+        <<link "Leave them<br>">>
+        <<replace"#choice">>
+            You slowly and fearfully take a step back away from the weird fox costume pieces, There is no way this is a coincidence, and you don’t want to be a part of whatever weirdness is causing this. Taking one last glance around the woods to make sure you aren’t about to be jumped by foxes again; you take off running back towards Wald Street. <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 10>>
+            <br>
+            [[Continue|Wald Street]]
+        <</replace>>
+        <</link>>
+    </div>
+<</if>>

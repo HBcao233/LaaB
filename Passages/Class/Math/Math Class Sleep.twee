@@ -1,0 +1,81 @@
+:: Math Class Sleep [nobr]
+
+/* Written by: Ron (The Cutest) */
+/* Intro */
+
+You can’t help but groan as maths class begins, and <span style="color:DarkTurquoise">Mr. Randolph</span> gives out a rather dull lecture, you feel exhausted, yet the school day has just begun, and the solace of your bed is still a rather distant prospect. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+After listening to <span style="color:DarkTurquoise">Mr. Randolph</span> drone on in what feels like forever, <span style="color:DarkTurquoise">Mr. Randolph</span> instructs you to go through the aforementioned subject by yourselves for a while, <span style="color:LightCoral">this couldn’t feel any more boring,</span> <span style="color:Yellow">yet now an opportunity presents itself.</span> <br>
+<br>
+You know you shouldn’t nap in school, especially in <span style="color:DarkTurquoise">Mr. Randolph</span>’s class of all places, but you feel so sleepy right now that it feels worth the risk of any punishment Randolph may dish out. <br>
+<br>
+You plop your head upon your desk, positioning your math book in front of you in such a way that to others, it looks like you are simply reading the book very closely. You take one last look up at <span style="color:DarkTurquoise">Mr. Randolph</span>, who seems preoccupied with several other of your classmates, and you take this opportunity to close your eyes allowing yourself to drift of to sleep once more. <br>
+<br>
+<span style="color:Yellow">Just 10 minutes you think to yourself…</span> <br>
+<br>
+
+<<linkreplace "Continue">>
+
+<<set _random to random(1,2)>>
+<<if _random == 1>>
+    /*Success*/
+    You are awakened by the sound of the school bell ringing; you quickly glance up pretending to look attentive to <span style="color:DarkTurquoise">Mr. Randolph</span> as he dismisses you all from class. <span style="color:LightGreen">You smile as you realise, not only have you slept through all of Math class, you have completely gotten away with it too.</span> You collect your things and exit the classroom, <span style="color:LightGreen">feeling somewhat Rejuvenated from your rest.</span> <br>
+
+    <<addMoodlet "Stress" 0>>
+    <<needChange "Energy" 10>> 
+    <br>
+    <<include"Attend Math Finish">>
+
+<<elseif _random == 2>>
+/*Fail*/
+
+    <span style="color:Red">THWACK!</span> <br>
+    
+    <<set _ad to [
+        {
+            Name: "Randolph",
+            State: {
+                Mouth: "Frown",
+                Brows: "Angry",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Eyes: "Sad",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    
+    You awaken with a big fright, as you hear a large book forcefully slammed onto the desk you lay on, you jump out of your desk so quickly you lose your balance and nearly stumble over your chair, thankfully you are caught before you could do so, and quickly sit back down in your chair. You look back up and attempt to let out a thank you, but instead all you can do is gulp nervously, <span style="color:LightCoral">as you are met with the icy glare of <span style="color:DarkTurquoise">Mr. Randolph</span>. You’re in for it now!</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“So glad, you could join us <span style="color:DarkTurquoise">Mr. $Player.LastName</span>”</span> <span style="color:DarkTurquoise">Mr. Randolph</span> says in an all too familiar exasperated tone. <span style="color:LightSteelBlue">“Now… What should we do with you”</span> You feel your cheeks burning in response, knowing you are almost certainly about to be on the other end of a humiliating spanking when suddenly… <br>
+    <br>
+    You are saved by the sound of the bell ringing! <span style="color:DarkTurquoise">Mr. Randolph</span> lets out a sigh and dismisses everyone, Or at least everyone but you…  <br>
+    <br>
+    <span style="color:LightSteelBlue">“Fortunately for you I am far too busy this morning to give you an appropriate punishment right now” </span> He says much to your relief. <span style="color:LightSteelBlue">“BUT!”</span> he shouts, immediately quelling this feeling. <span style="color:LightSteelBlue">“We will be seeing you after school for detention, and <span style="color:DarkTurquoise">Mr. $Player.LastName</span>… if I catch you sleeping in my classroom again, I will have you stripped to your birthday suit and you spanking turning into an assembly as an example to everyone else in school!”</span> <span style="color:LightCoral">He states with a deadpan expression on his face.</span> <br>
+    <br>
+    <span style="color:LightCoral">You simply nod nervously in response, knowing that he was completely serious.</span> He waves you off and you step into the hallway. You may have gotten of lightly for now, <span style="color:LightCoral">but you know catching the ire of <span style="color:DarkTurquoise">Mr. Randolph</span> was never a good thing, you remind yourself to avoid any further trouble today,  knowing he would now be watching you like a hawk.</span> <br>
+
+<<addMoodlet "Stress" 1>>
+<<set $Detention += 10>>
+<<needChange "Energy" 5>> 
+<br>
+<<include"Attend Math Finish">>
+
+<</if>>
+<</linkreplace>>

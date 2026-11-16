@@ -1,0 +1,170 @@
+:: Debug Noah Menu [nobr]
+
+<<link"-Everyday-">>
+    <<set $DebugNoah to "Everyday">>
+    <<goto"Debug Noah Menu">>
+<</link>>
+ | 
+<<link"-Everyday Outside-">>
+    <<set $DebugNoah to "Everyday Outside">>
+    <<goto"Debug Noah Menu">>
+<</link>>
+ | 
+<<link"-Undies-">>
+    <<set $DebugNoah to "Undies">>
+    <<goto"Debug Noah Menu">>
+<</link>>
+<br> 
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+    <<if $DebugNoah == "Undies">>
+	    <<set $AD.Outfit to "Undies">>
+    <<elseif $DebugNoah == "Everyday Outside">>
+        <<set $AD.Outfit to "Everyday Outside">>
+    <<else>>
+	    <<set $AD.Outfit to "Everyday">>
+    <</if>>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+
+<<link"Set Random Warm Everyday">>
+    <<if $NoahClosetWarmTop.length == 0>>
+        <<set $NoahEverydayTop to $KidsOwlmanTShirt>>
+    <<else>>
+        <<set $NoahEverydayTop to $NoahClosetWarmTop.random()>>
+    <</if>>
+    <<if $NoahClosetWarmBottoms.length == 0>>
+        <<set $NoahEverydayBottoms to $KidsBlueShorts>>
+    <<else>>
+        <<set $NoahEverydayBottoms to $NoahClosetWarmBottoms.random()>>
+    <</if>>
+    <<goto"Debug Noah Menu">>
+<</link>><br>
+<<link"Set Random Cold Everyday">>
+    <<if $NoahClosetColdTop.length == 0>>
+        <<set $NoahEverydayTop to $KidsOwlmanTShirt>>
+    <<else>>
+        <<set $NoahEverydayTop to $NoahClosetColdTop.random()>>
+    <</if>>
+    <<if $NoahClosetColdBottoms.length == 0>>
+        <<set $NoahEverydayBottoms to $KidsBlueJeans>>
+    <<else>>
+        <<set $NoahEverydayBottoms to $NoahClosetColdBottoms.random()>>
+    <</if>>
+    <<goto"Debug Noah Menu">>
+<</link>><br>
+<<link"Set Random Temperate Everyday">>
+    /* Could be a better way to do this, but couldn't find code to combine the two easily. */
+    <<set _random to random(1, 2)>>
+    <<if _random == 1>>
+        <<if $NoahClosetWarmTop.length == 0>>
+            <<set $NoahEverydayTop to $KidsOwlmanTShirt>>
+        <<else>>
+            <<set $NoahEverydayTop to $NoahClosetWarmTop.random()>>
+        <</if>>
+    <<else>>
+        <<if $NoahClosetColdTop.length == 0>>
+            <<set $NoahEverydayTop to $KidsOwlmanTShirt>>
+        <<else>>
+            <<set $NoahEverydayTop to $NoahClosetColdTop.random()>>
+        <</if>>
+    <</if>>
+        <<set _random to random(1, 2)>>
+    <<if _random == 1>>
+        <<if $NoahClosetWarmBottoms.length == 0>>
+            <<set $NoahEverydayBottoms to $KidsBlueShorts>>
+        <<else>>
+            <<set $NoahEverydayBottoms to $NoahClosetWarmBottoms.random()>>
+        <</if>>
+    <<else>>
+        <<if $NoahClosetColdBottoms.length == 0>>
+            <<set $NoahEverydayBottoms to $KidsBlueJeans>>
+        <<else>>
+            <<set $NoahEverydayBottoms to $NoahClosetColdBottoms.random()>>
+        <</if>>
+    <</if>>
+    <<goto"Debug Noah Menu">>
+<</link>><br>
+<<link"Set Random Under">>
+    <<if $NoahClosetUndies.length == 0>>
+        <<set $NoahUndies to $KidsOwlmanBriefs>>
+    <<else>>
+        <<set $NoahUndies to $NoahClosetUndies.random()>>
+    <</if>>
+    <<if $NoahClosetSocks.length == 0>>
+        <<set $NoahSocks to $KidsWhiteSocks>>
+    <<else>>
+        <<set $NoahSocks to $NoahClosetSocks.random()>>
+    <</if>>
+    <<goto"Debug Noah Menu">>
+<</link>><br>
+<<link"Set Random Outside">>
+    <<if $NoahClosetShoes.length == 0>>
+        <<set $NoahShoes to $KidsBlueSneakers>>
+    <<else>>
+        <<set $NoahShoes to $NoahClosetShoes.random()>>
+    <</if>>
+    <<if $NoahClosetOuter.length == 0>>
+        <<set $NoahOuter to $KidsBlueHoodie>>
+    <<else>>
+        <<set $NoahOuter to $NoahClosetOuter.random()>>
+    <</if>>
+    <<goto"Debug Noah Menu">>
+<</link>><br>
+<br>
+[[Complete Noah's Questline|Debug Noah Menu][$NoahSocialRank to 1]]<br>
+<br>
+<strong>-Noah's Inactive Closet-</strong><br>
+Undies: 
+<<for _i to 0; _i lt $NoahInClosetUndies.length; _i++>>
+<<capture _i>>
+    [img[$NoahInClosetUndies[_i].Icon]]
+<</capture>>
+<</for>><br>
+Tops: 
+<<for _i to 0; _i lt $NoahInClosetTop.length; _i++>>
+<<capture _i>>
+    [img[$NoahInClosetTop[_i].Icon]]
+<</capture>>
+<</for>><br>
+Bottoms: 
+<<for _i to 0; _i lt $NoahInClosetBottoms.length; _i++>>
+<<capture _i>>
+    [img[$NoahInClosetBottoms[_i].Icon]]
+<</capture>>
+<</for>><br>
+Socks: 
+<<for _i to 0; _i lt $NoahInClosetSocks.length; _i++>>
+<<capture _i>>
+    [img[$NoahInClosetSocks[_i].Icon]]
+<</capture>>
+<</for>><br>
+Shoes: 
+<<for _i to 0; _i lt $NoahInClosetShoes.length; _i++>>
+<<capture _i>>
+    [img[$NoahInClosetShoes[_i].Icon]]
+<</capture>>
+<</for>><br>
+Outer: 
+<<for _i to 0; _i lt $NoahInClosetOuter.length; _i++>>
+<<capture _i>>
+    [img[$NoahInClosetOuter[_i].Icon]]
+<</capture>>
+<</for>><br>
+<<link"Back">>
+    <<unset $DebugNoah>>
+    <<goto"Debug Test Menu">>
+<</link>>

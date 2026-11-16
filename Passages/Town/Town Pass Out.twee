@@ -1,0 +1,17 @@
+:: Town Pass Out [nobr]
+
+The noise of the streets and town begin to slowly fade in and out. You feel your head and limbs grow heavy as you stumble slightly. Without thinking, you sit down for a moment, just to catch your breath... <span style="color:Lightcoral">But are unable to stop yourself from passing out.</span><br>
+<br>
+<<set $Sleeping to 1>>
+<<set $Random to random(1, 1)>>
+<div id=choice>
+	<<link "Continue">>
+	<<replace"#choice">>
+    
+<<if $Random == 1>>
+	<<include"Town Pass Out Robbed">>
+<</if>>
+
+	<</replace>>
+    <</link>>
+</div>

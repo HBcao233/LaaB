@@ -1,0 +1,167 @@
+:: Perk Library [nobr]
+
+/* This is a Library of Perk information that is called when displaying Perks. It is set up this way to save on storing this information in variables. */
+
+<<set _perklink to "Perk Library " + $CurrentSkill>>
+<<include _perklink>>
+
+
+:: Perk Library Athletics [nobr]
+
+/* Gym Class Bonus */
+<<if _perkname == "Gym Class Bonus">>
+    <<set $Perk to {
+        Name: "Gym Class Bonus",
+        Cost: 50,
+        Description: "Grants a +5 Bonus to all Athletics Skill Checks during Gym Class.",
+        Skill: "Athletics",
+        Requirements: "None",
+    }>>
+/* Jogging */
+<<elseif _perkname == "Jogging">>
+    <<set $Perk to {
+        Name: "Jogging",
+        Cost: 10,
+        Description: "Grants the ability to Jog on your street and the beach.",
+        Skill: "Athletics",
+        Requirements: "None",
+    }>>
+/* Jogging II */
+<<elseif _perkname == "Jogging II">>
+    <<set $Perk to {
+        Name: "Jogging II",
+        Cost: 50,
+        Description: "Unlocks the [No Sweat] and [Paced] Jogging Exercise Type.",
+        Skill: "Athletics",
+        Requirements: "'Jogging' Perk",
+    }>>
+<</if>>
+
+:: Perk Library Swimming [nobr]
+
+/* Swim Class Bonus */
+<<if _perkname == "Swim Class Bonus">>
+    <<set $Perk to {
+        Name: "Swim Class Bonus",
+        Cost: 50,
+        Description: "Grants a +5 Bonus to all Swimming Skill Checks during Swim Class.",
+        Skill: "Swimming",
+        Requirements: "None",
+    }>>
+
+/* Endurance Class Bonus */
+<<elseif _perkname == "Swim Endurance Bonus">>
+    <<set $Perk to {
+        Name: "Swim Endurance Bonus",
+        Cost: 100,
+        Description: "Grants a +1 Bonus to your Endurance ability score.",
+        Skill: "Swimming",
+        Requirements: "None",
+    }>>
+/* Noah: Swimming Lessons */
+<<elseif _perkname == "Noah: Swimming Lessons">>
+    <<set $Perk to {
+        Name: "Noah: Swimming Lessons",
+        Cost: 50,
+        Description: "Unlocks the Noah: Swimming Lessons Questline",
+        Skill: "Swimming",
+        Requirements: "Noah Social Rank 1",
+    }>>
+<</if>>
+
+:: Perk Library English [nobr]
+
+/* Library Browse */
+<<if _perkname == "Library Browse">>
+    <<set $Perk to {
+        Name: "Library Browse",
+        Cost: 50,
+        Description: "Allows you to browse for books at the City Library.",
+        Skill: "English",
+        Requirements: "None",
+    }>>
+/* English Class Bonus */
+<<elseif _perkname == "English Class Bonus">>
+    <<set $Perk to {
+        Name: "English Class Bonus",
+        Cost: 50,
+        Description: "Grants a +5 Bonus to English Class Skill Checks.",
+        Skill: "English",
+        Requirements: "None",
+    }>>
+<</if>>
+
+:: Perk Library Math [nobr]
+
+/* Helping Kids with Homework */
+<<if _perkname == "Helping Kids with Homework">>
+    <<set $Perk to {
+        Name: "Helping Kids with Homework",
+        Cost: 50,
+        Description: "Allows you to help Child-Aged kids, like Noah, with their Homework.",
+        Skill: "Math",
+        Requirements: "None",
+    }>>
+/* Tutoring */
+<<elseif _perkname == "Tutoring">>
+    <<set $Perk to {
+        Name: "Tutoring",
+        Cost: 50,
+        Description: "Allows you to tutor kids at the Community Center.",
+        Skill: "Math",
+        Requirements: "'Helping Kids with Homework' Perk",
+    }>>
+/* Math Class Bonus */
+<<elseif _perkname == "Math Class Bonus">>
+    <<set $Perk to {
+        Name: "Math Class Bonus",
+        Cost: 50,
+        Description: "Grants a +5 Bonus to Math Class Skill Checks.",
+        Skill: "Math",
+        Requirements: "None",
+    }>>
+<</if>>
+
+:: Perk Library Science [nobr]
+
+/* Faster Homework */
+<<if _perkname == "Faster Homework">>
+    <<set $Perk to {
+        Name: "Faster Homework",
+        Cost: 50,
+        Description: "Decreases the time is takes to do Homework.",
+        Skill: "Science",
+        Requirements: "None",
+    }>>
+/* Skill Check Difficulty Display */
+<<elseif _perkname == "Skill Check Difficulty Display">>
+    <<set $Perk to {
+        Name: "Skill Check Difficulty Display",
+        Cost: 50,
+        Description: "Displays the percent chance of passing a skill check.",
+        Skill: "Science",
+        Requirements: "None",
+    }>>
+/* Science Class Bonus */
+<<elseif _perkname == "Science Class Bonus">>
+    <<set $Perk to {
+        Name: "Science Class Bonus",
+        Cost: 50,
+        Description: "Grants a +5 Bonus to Science Class Skill Checks.",
+        Skill: "Science",
+        Requirements: "None",
+    }>>
+<</if>>
+
+:: Perk Library History [nobr]
+
+/* History Class Bonus */
+<<if _perkname == "History Class Bonus">>
+    <<set $Perk to {
+        Name: "History Class Bonus",
+        Cost: 50,
+        Description: "Grants a +5 Bonus to History Class Skill Checks.",
+        Skill: "History",
+        Requirements: "None",
+    }>>
+<</if>>

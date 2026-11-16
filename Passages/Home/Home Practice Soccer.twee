@@ -1,0 +1,32 @@
+:: Home Practice Soccer [nobr]
+
+<<set $SkillCheckType to "Athletics">>
+<<set $Minutes += 20>>
+<<set $SkillCheckDifficulty to 0>>
+
+/* SELECTING GENERIC OR RANDOM */
+    <<set _random to random(1,2)>>
+
+/* GENERIC */
+<<if _random == 1>>
+You grab you and your brother’s soccer ball from next to the deck and begin to kick it around. While not as exciting or useful as a real game, <span style="color:lightgreen">kicking it against the fence and trying to stop it as it bounces back towards you is good practice and gets your blood flowing.</span> <br>
+
+
+<<skillPoints "Athletics" 3>>
+<<needChange "Energy" -2>>
+<<needChange "Hygiene" -2>>
+<<needChange "Fun" 20>>
+<br>
+
+[[Continue|PH Backyard]]
+
+<<else>>
+<<set _Random to ["Home Soccer Squirrel", "Home Soccer Trick Shot"]>>
+<<if $GabeSocial > 20 or $GabeSocialRank > 0>>
+    <<set _Random.push("Home Soccer Gabe Joins")>>
+<</if>>
+
+<<set _event to _Random.random()>>
+<<include _event>>
+
+<</if>>

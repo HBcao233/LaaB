@@ -1,0 +1,25 @@
+:: XAVIER Eat Lunch [nobr]
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<if $SchoolRep >= 50>>
+You walk up to the table that <span style="color:DarkTurquoise">Xavier</span> and his friends are sitting at and sit down. They welcome you and you watch as his friends continue to battle for the popular boy’s attention. Despite this, you still have a nice time.<br>
+<<socialChange "Xavier" 1>>
+<<set $SchoolRep += 1>>
+<span style="color:Green">+Reputation</span><br>
+<<include"School Lunch">>
+<<set $FriendLunch to 1>>
+<<else>>
+You walk up to the table that <span style="color:DarkTurquoise">Xavier</span> and his friends are sitting down at and attempt to sit down. <span style="color:Red">Unfortunately, upon seeing you the group of boys spread out to make sure there is no place for you to sit!</span> After a few attempts, you give up and sit down by yourself at the next table over.
+<<include"School Lunch">>
+<<set $FriendLunch to 1>>
+<</if>>

@@ -1,0 +1,232 @@
+:: Skill Journal [nobr]
+
+<<set _pskills to ["Athletics", "Swimming"]>>
+<span style="color:Azure"><strong><big>--Physical Skills--</big></strong></span><br>
+
+<<for _i to 0; _i lt _pskills.length; _i++>>
+	<<capture _i>>
+		<<set _skillname to _pskills[_i]>>
+		<img @src="`Images/Icons/Skill/${_skillname}.png`">
+		<strong>_pskills[_i]</strong> (Rank: $Skill[_skillname].Rank)
+        <<link"[View Skill Perks]">>
+            <<set $CurrentSkill to _pskills[_i]>>
+            <<goto "View Skill Perks">>
+        <</link>>
+        <br>
+		<div style="text-indent: 3em;">
+			SP: $Skill[_skillname].SP | Max: $Skill[_skillname].MaxSP | Total: $Skill[_skillname].TotalSP<br>
+		</div>
+	<</capture>>
+<</for>>
+<br>
+
+<<set _cskills to ["Acting", "Cooking", "Art", "Music", "Gardening"]>>
+<span style="color:Azure"><strong><big>--Creative Skills--</big></strong></span><br>
+
+<<for _o to 0; _o lt _cskills.length; _o++>>
+	<<capture _o>>
+		<<set _skillname to _cskills[_o]>>
+		<img @src="`Images/Icons/Skill/${_skillname}.png`">
+		<strong>_cskills[_o]</strong> (Rank: $Skill[_skillname].Rank)<br>
+		<div style="text-indent: 3em;">
+			SP: $Skill[_skillname].SP | Max: $Skill[_skillname].MaxSP | Total: $Skill[_skillname].TotalSP<br>
+		</div>
+	<</capture>>
+<</for>>
+<br>
+
+<<set _iskills to ["English", "History", "Math", "Science", "Computers", "Charisma", "Video_Games"]>>
+<span style="color:Azure"><strong><big>--Intellect Skills--</big></strong></span><br>
+
+<<for _p to 0; _p lt _iskills.length; _p++>>
+	<<capture _p>>
+		<<set _skillname to _iskills[_p]>>
+		<img @src="`Images/Icons/Skill/${_skillname}.png`">
+		<strong>_iskills[_p]</strong> (Rank: $Skill[_skillname].Rank)
+        <<if !["Computers", "Charisma", "Video_Games"].includes(_skillname)>>
+            <<link"[View Skill Perks]">>
+                <<set $CurrentSkill to _iskills[_p]>>
+                <<goto "View Skill Perks">>
+            <</link>><br>
+        <</if>>
+		<div style="text-indent: 3em;">
+			SP: $Skill[_skillname].SP | Max: $Skill[_skillname].MaxSP | Total: $Skill[_skillname].TotalSP<br>
+		</div>
+	<</capture>>
+<</for>>
+<br>
+
+[[Back|Player Bedroom]]
+
+/* Old Code
+<<link"[Athletics]">>
+    <<set $JournalPage to "Athletics">>
+    <<goto"Skill Journal">>
+<</link>>
+|
+<<link"[Swimming]">>
+    <<set $JournalPage to "Swimming">>
+    <<goto"Skill Journal">>
+<</link>>
+|
+<<link"[English]">>
+    <<set $JournalPage to "English">>
+    <<goto"Skill Journal">>
+<</link>>
+|
+<<link"[Naturism]">>
+    <<set $JournalPage to "Naturism">>
+    <<goto"Skill Journal">>
+<</link>>
+|
+<br>
+<span style="color:Gray">[Warning, this page contains Spoilers.]</span>
+
+<br>
+<<if $JournalPage == "Athletics">>
+    <span style="color:Azure"><strong>--Athletics--</strong></span><br>
+    <strong>-Level 1-</strong><br>
+<<if $AthleticsLearned == 1>>
+    <div style="text-indent: 3em;">
+    -Jogging</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+    <strong>-Level 2-</strong><br>
+<<if $AthleticsSkill >= 2>>
+    <div style="text-indent: 3em;">
+    -<span style="color:Teal">[No Sweat]</span> Exercise Type.</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+    <strong>-Level 3-</strong><br>
+<<if $AthleticsSkill >= 3>>
+    <div style="text-indent: 3em;">
+    -<span style="color:Teal">[Paced]</span> Exercise Type.</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+
+<<elseif $JournalPage == "Swimming">>
+    <span style="color:Azure"><strong>--Swimming--</strong></span><br>
+    <strong>-Level 1-</strong><br>
+<<if $SwimmingLearned == 1>>
+    <div style="text-indent: 3em;">
+    -Swimming</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+    <strong>-Level 2-</strong><br>
+<<if $SwimmingSkill >= 2>>
+    <div style="text-indent: 3em;">
+    -Stamina Upgrade</div>
+    <div style="text-indent: 3em;">
+    -Practice Diving</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+    <strong>-Level 3-</strong><br>
+<<if $SwimmingSkill >= 3>>
+    <div style="text-indent: 3em;">
+    -Stamina Upgrade</div>
+    <div style="text-indent: 3em;">
+    -More Diving Locations</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+
+<<elseif $JournalPage == "English">>
+    <span style="color:Azure"><strong>--English--</strong></span><br>
+    <strong>-Level 1-</strong><br>
+<<if $EnglishLearned == 1>>
+    <div style="text-indent: 3em;">
+    -The Ability to Read</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+    <strong>-Level 2-</strong><br>
+<<if $EnglishSkill >= 2>>
+    <div style="text-indent: 3em;">
+    -Ability to <strong>"Browse"</strong> for and <strong>"Read"</strong> special books in the Public Library.</div>
+    <div style="text-indent: 3em;">
+    -New Book: <strong>"Naturism: The Free Spirit"</strong></div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+
+<<elseif $JournalPage == "Naturism">>
+    <span style="color:Azure"><strong>--Naturism--</strong></span><br>
+    <strong>-Level 1-</strong><br>
+<<if $NaturismSkill >= 1>>
+    <div style="text-indent: 3em;">
+    -Home Night <span style="color:lightblue">[Shy]</span> Attitude</div>
+    <div style="text-indent: 3em;">
+    -Various Nighttime Nude Actions</div>
+    <div style="text-indent: 3em;">
+    -Backyard Underwear Attitude</div>
+    <div style="text-indent: 3em;">
+    -<span style="color:DarkTurquoise">Jackson</span> Event Series</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+    <div style="text-indent: 3em;">
+    -???</div>
+    <div style="text-indent: 3em;">
+    -???</div>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+    <strong>-Level 2-</strong><br>
+<<if $NaturismSkill >= 2>>
+    <div style="text-indent: 3em;">
+    -Home Night <span style="color:lightblue">[Fine]</span> Attitude</div>
+    <div style="text-indent: 3em;">
+    -<span style="color:DarkTurquoise">Jackson</span> Event Series Expansion</div>
+    <div style="text-indent: 3em;">
+    -Backyard Night <span style="color:lightblue">[Shy]</span> Attitude</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+    <div style="text-indent: 3em;">
+    -???</div>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+    <strong>-Level 3-</strong><br>
+<<if $NaturismSkill >= 3>>
+    <div style="text-indent: 3em;">
+    -Home Day <span style="color:lightblue">[Shy]</span> Attitude</div>
+    <div style="text-indent: 3em;">
+    -Backyard Night <span style="color:lightblue">[Fine]</span> Attitude</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+    <strong>-Level 4-</strong><br>
+<<if $NaturismSkill >= 4>>
+    <div style="text-indent: 3em;">
+    -Home Day <span style="color:lightblue">[Fine]</span> Attitude</div>
+<<else>>
+    <div style="text-indent: 3em;">
+    -???</div>
+<</if>>
+
+<</if>>
+
+*/

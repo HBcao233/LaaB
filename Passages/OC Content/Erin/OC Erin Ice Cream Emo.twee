@@ -1,0 +1,391 @@
+:: OC Erin Ice Cream Emo [nobr]
+
+/* Written by: Zexion */
+/* Intro */
+You are out for your jog, the rhythm of your feet hitting the pavement providing a steady beat to the quiet neighborhood. As you round the corner near the edge of the shopping district, you spot a familiar figure slumped against a low stone wall. It’s <span style="color:DarkTurquoise">Erin</span>, his shaggy black hair even more disheveled than usual, and a noticeable smudge of dirt across his cheek. <span style="color:yellow">He looks ruffled, his dark clothes dusty as if he’d recently been on the ground.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+    },
+    {
+        Name: "OC Erin",
+        State: {
+            Outfit: "Everyday",
+            Eyes: "Mad",
+            Mouth: "Sad",
+            Blush: 1,
+            Cry: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+You slow to a stop in front of him, tilting your head in a silent question. <span style="color:DarkTurquoise">Erin</span> looks up, scowling as he tries to pull his "mysterious" persona back together, though the slight tremble in his hands gives him away. <br>
+<br>
+<span style="color:LightSteelBlue">"What are you looking at?"</span> he mutters, leaning back and crossing his arms defensively. <span style="color:LightSteelBlue">"It’s nothing. Just some of <span style="color:DarkTurquoise">Michael</span>'s goons thinking they’re tough because there were three of them. I would’ve had them, but... whatever. It doesn't matter."</span> You gesture toward his pockets, raising an eyebrow. <span style="color:DarkTurquoise">Erin</span>’s scowl deepens, and he looks away, his face tinting pink. <span style="color:LightSteelBlue">"Yeah, they took my wallet. Real original, right?"</span> he huffs, kicking a loose pebble. <span style="color:LightSteelBlue">"Stupid cavemen. I was going to get something to drink, but now I’m just stuck here waiting for my pride to stop stinging."</span> <br>
+<br>
+Just then, the familiar, tinny jingle of an ice cream truck begins to echo down the street. It slows to a crawl just a few yards away, the colorful decals of frozen treats glowing in the afternoon sun. A group of younger kids immediately swarms the window, shouting for popsicles. You look at the truck, then back at <span style="color:DarkTurquoise">Erin</span>, pointing toward the colorful menu. <br>
+<br>
+<span style="color:Yellow"><span style="color:DarkTurquoise">Erin</span>’s stomach lets out a traitorous growl. He looks at the truck with longing before his expression turns stony again.</span> <span style="color:LightSteelBlue">"Forget it. Like I said, I’m broke. I don't need charity."</span>
+You don't say a word, simply walking toward the truck while digging into your pocket. <span style="color:DarkTurquoise">Erin</span> watches you, his "cool" facade wavering between annoyance and hope. You reach the window and see the vendor is low on stock; he only has plain ice cream bars and those character-themed popsicles with the gumball eyes. <br>
+<br>
+
+<div id="choice">
+    <<link "($1) Get ice cream for just yourself<br>">>
+    <<replace "#choice">>
+        You stand at the window for a moment and return holding a single, premium chocolate-dipped almond bar. You unwrapping it slowly, the snap of the chocolate shell loud in the quiet air. <span style="color:lightgreen">You lean against the wall next to <span style="color:DarkTurquoise">Erin</span>, taking a long, satisfied bite.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Erin",
+                State: {
+                    Eyes: "Mad",
+                    Blush: 1,
+                    Cry: 1,
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:DarkTurquoise">Erin</span> stares at you, his eyes wide with disbelief. "Are you serious right now?" he asks, his voice cracking. <span style="color:LightSteelBlue">"You’re really just going to stand there and eat that in front of me? After I just told you I got robbed?"</span> <br>
+        <br>
+        You simply shrug and take another bite, looking out at the park. <span style="color:yellow"><span style="color:DarkTurquoise">Erin</span> huffs, standing up abruptly.</span> <span style="color:LightSteelBlue">"You're a jerk, you know that? I don't know why I even talk to you."</span> He stalks off, his shoulders hunched, leaving you to finish your treat in peace. <br>
+        <<socialChange "Erin" -3 1>>
+        <<needChange "Hunger" 10>>
+        <<set $Money -= 1>>
+        <span style="color:Red">-$1</span><br>
+        <br>
+        <<if $Location.Name == "Northend">>
+            [[Continue|Northend]]
+        <<elseif $Location.Name == "Dellwood Street">>
+            [[Continue|Dellwood Street]]
+        <<else>>
+            [[Continue|Wald Street]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<link "($2) Get ice cream bars for both of you<br>">>
+    <<replace "#choice">>
+        You return with two standard, adult-sized ice cream sandwiches. You hand one to <span style="color:DarkTurquoise">Erin</span> without a word. <span style="color:lightgreen">He looks at the simple silver foil, a look of genuine relief washing over his face.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Erin",
+                State: {
+                    Blush: 1,
+                    Mouth: "Smile",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">"Oh,"</span> he says softly, his defensive posture relaxing just a fraction. <span style="color:LightSteelBlue">"Thanks. I mean... you didn't have to. I would've been fine."</span> <br>
+        <br>
+        <span style="color:lightgreen">He unwraps the sandwich and takes a small bite, looking less like a "tough guy" and more like a tired kid who’s had a really bad day.</span> The two of you sit on the stone wall in comfortable silence, the only sound being the distant jingle of the truck as it moves on to the next block. <br>
+        <br>
+        <span style="color:LightSteelBlue">"It's... it's actually pretty good,"</span> he admits quietly, <span style="color:lightgreen">finally offering you a tiny, genuine smile.</span> <span style="color:LightSteelBlue">"I guess you're not as bad as the rest of them."</span> <br>
+        <<socialChange "Erin" 3 1>>
+        <<needChange "Hunger" 10>>
+        <<set $Money -= 2>>
+        <span style="color:Red">-$2</span><br>
+        <br>
+        <<if $Location.Name == "Northend">>
+            [[Continue|Northend]]
+        <<elseif $Location.Name == "Dellwood Street">>
+            [[Continue|Dellwood Street]]
+        <<else>>
+            [[Continue|Wald Street]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<link "($2) Get cartoon character ice creams for both of you<br>">>
+    <<replace "#choice">>
+        <<set _random to random(1, 5)>>
+        <<if _random == 1>>
+            You return from the truck holding two items. You hand one to <span style="color:DarkTurquoise">Erin</span>, who takes it tentatively. When he looks down, his face turns a shade of red that rivals a beet. It’s an "<span style="color:DarkTurquoise">Ultraman</span>" face bar, complete with lopsided gumball eyes and frozen, misshapen features. <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Erin",
+                    State: {
+                        Blush: 3,
+                        Mouth: "Frown",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightSteelBlue">"A... cartoon character?"</span> <span style="color:DarkTurquoise">Erin</span> whispers, looking at the distorted superhero face. <span style="color:LightSteelBlue">"Are you kidding me? I'm eleven, not five. I have a reputation to maintain, and you want me to eat a face with gumball eyes?"</span> <br>
+            <br>
+            You simply tap your own "<span style="color:DarkTurquoise">Ultraman</span>" bar against his in a silent toast and start eating. <span style="color:DarkTurquoise">Erin</span> looks around nervously, checking to see if any of <span style="color:DarkTurquoise">Michael</span>'s gang is still lurking. Seeing the coast is clear, he let out a long, defeated sigh. <span style="color:pink">He slowly unwraps it, his face bright with humiliation.</span> <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Erin",
+                    State: {
+                        Blush: 2,
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightSteelBlue">"If anyone sees this, I'm telling them you forced me,"</span> he mutters, <span style="color:lightgreen">though he can't help but look a little happier as he bites into the strawberry-flavored ice cream.</span> "And for the record, the gumballs are rock hard. This is totally undignified." <br>
+            <<socialChange "Erin" 3 1>>
+            <<needChange "Hunger" 10>>
+            <<set $Money -= 2>>
+            <span style="color:Red">-$2</span><br>
+            <br>
+            <<if $Location.Name == "Northend">>
+                [[Continue|Northend]]
+            <<elseif $Location.Name == "Dellwood Street">>
+                [[Continue|Dellwood Street]]
+            <<else>>
+                [[Continue|Wald Street]]
+            <</if>>
+        <<elseif _random == 2>>
+            You walk back slowly, hiding the treats behind your back before presenting them. You hand <span style="color:DarkTurquoise">Erin</span> a "Spongy-Cat" bar—a yellow blob with two frozen chocolate eyes. <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Erin",
+                    State: {
+                        Blush: 1,
+                        Mouth: "Frown",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightSteelBlue">"They... they only had these?"</span> <span style="color:DarkTurquoise">Erin</span> asks, his voice cracking slightly. He holds the cartoon cat as if it’s a live grenade. <span style="color:LightSteelBlue">"I’m wearing a spiked wristband and a black hoodie, and you’re handing me a yellow cat on a stick. People are going to think I’ve finally snapped."</span> <br>
+            <br>
+            You nod solemnly, lying through your teeth about how the group of elementary kids ahead of you bought most of the last ice-cream in stock. You start eating yours with exaggerated enthusiasm. <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Erin",
+                    State: {
+                        Blush: 2,
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:pink"><span style="color:DarkTurquoise">Erin</span> groans, his face bright red from humiliation.</span> <span style="color:LightSteelBlue">"This is a new low. Even lower than getting robbed."</span> He tentatively licks the side of the cat's face, his expression softening despite himself. <span style="color:LightSteelBlue">"Don't tell anyone... but it actually tastes like banana. If you breathe a word of this to <span style="color:DarkTurquoise">Michael</span>, I'll shove the stick up your nose."</span> <br>
+            <<socialChange "Erin" 3 1>>
+            <<needChange "Hunger" 10>>
+            <<set $Money -= 2>>
+            <span style="color:Red">-$2</span><br>
+            <br>
+            <<if $Location.Name == "Northend">>
+                [[Continue|Northend]]
+            <<elseif $Location.Name == "Dellwood Street">>
+                [[Continue|Dellwood Street]]
+            <<else>>
+                [[Continue|Wald Street]]
+            <</if>>
+        <<elseif _random == 3>>
+            You return and hand <span style="color:DarkTurquoise">Erin</span> a "Hero-Bot" popsicle. It’s a mess of neon blue and red syrup, already starting to drip onto his hand. <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Erin",
+                    State: {
+                        Blush: 1,
+                        Mouth: "Frown",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:DarkTurquoise">Erin</span> looks at the popsicle and just closes his eyes for a long moment, letting out a heavy, defeated breath. <span style="color:LightSteelBlue">"You really have a talent for finding the most embarrassing thing in any given situation, don't you? First that underwear situation with Michael, now this."</span> <br>
+            <br>
+            You nudge his shoulder with your elbow and point to the ice cream, miming that he should eat it before it melts on his shoes. <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smile",
+                    },
+                },
+                {
+                    Name: "OC Erin",
+                    State: {
+                        Blush: 2,
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightSteelBlue">"Fine, fine!"</span> he hisses, <span style="color:pink">his face glowing with embarrassment as he tries to lick a blue drip off the side of the 'Hero-Bot'.</span> <span style="color:LightSteelBlue">"It's cold, okay? That's the only reason I'm eating it. It has nothing to do with the fact that I haven't had one of these since I was six."</span> He looks at you through his shaggy bangs, a tiny, reluctant spark of amusement in his eyes. <span style="color:LightSteelBlue">"You're a real piece of work, you know that?"</span> <br>
+            <<socialChange "Erin" 3 1>>
+            <<needChange "Hunger" 10>>
+            <<set $Money -= 2>>
+            <span style="color:Red">-$2</span><br>
+            <br>
+            <<if $Location.Name == "Northend">>
+                [[Continue|Northend]]
+            <<elseif $Location.Name == "Dellwood Street">>
+                [[Continue|Dellwood Street]]
+            <<else>>
+                [[Continue|Wald Street]]
+            <</if>>
+        <<elseif _random == 4>>
+            You return from the truck with two "Mega-Hero" face pops. The gumball eyes on <span style="color:DarkTurquoise">Erin</span>’s are particularly large and lopsided, giving the superhero a cross-eyed, ridiculous expression. <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Erin",
+                    State: {
+                        Blush: 1,
+                        Mouth: "Frown",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightSteelBlue">"This is a joke. It has to be,"</span> <span style="color:DarkTurquoise">Erin</span> says, staring at the misshapen blue face. <span style="color:LightSteelBlue">"It's literally smiling at me. Why is it smiling so hard? It’s mocking me."</span> <br>
+            <br>
+            You tell him that the ice cream man said the gumballs are "super-sour power-ups" and watch as he skeptically tries to pry one out with his teeth. <span style="color:pink">He ends up with his cheeks puffed out like a squirrel, struggling to chew the rock-hard gum while trying to look dignified.</span> <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Erin",
+                    State: {
+                        Blush: 2,
+                        Mouth: "Smile",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightSteelBlue">"Mmhpf—"</span> he tries to speak, but the gumballs are too big. His face turns an even deeper shade of crimson as he realizes he can’t even grumble at you properly. He has to sit there, red-faced and bulging-cheeked, licking a blue superhero while you watch with a smirk. <span style="color:LightSteelBlue">"D-don't... look... at me,"</span> he finally manages to choke out. <br>
+            <<socialChange "Erin" 3 1>>
+            <<needChange "Hunger" 10>>
+            <<set $Money -= 2>>
+            <span style="color:Red">-$2</span><br>
+            <br>
+            <<if $Location.Name == "Northend">>
+                [[Continue|Northend]]
+            <<elseif $Location.Name == "Dellwood Street">>
+                [[Continue|Dellwood Street]]
+            <<else>>
+                [[Continue|Wald Street]]
+            <</if>>
+        <<else>>
+            You return from the truck with two "Magic Princess" bars. They are shaped like a pink star with a yellow wand handle, coated in a layer of edible glitter that seems to get everywhere the moment the wrapper is opened. <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Erin",
+                    State: {
+                        Blush: 1,
+                        Mouth: "Frown",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightSteelBlue">"A star?"</span> <span style="color:DarkTurquoise">Erin</span>’s voice is a flat, deadpan whisper of despair. <span style="color:LightSteelBlue">"You bought me a pink, glittery star. I have 'Death's Head' stickers on my laptop, and you want me to eat a magical girl’s snack?"</span> <br>
+            <br>
+            You simply nod, pointing out that the glitter <span style="color:LightSteelBlue">"really brings out the color in his eyes."</span> You take a big, shimmering bite of your own, leaving a trail of sparkles on your lip. <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Erin",
+                    State: {
+                        Blush: 2,
+                        Mouth: "Smile",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:DarkTurquoise">Erin</span> looks like he wants to melt into the stone wall. <span style="color:pink">He takes a bite, and immediately, his lips are coated in pink glitter.</span> <span style="color:LightSteelBlue">"I’m going to be sparkly for a week,"</span> he moans, his face a deep, humiliated crimson. <span style="color:LightSteelBlue">"If <span style="color:DarkTurquoise">Michael</span> sees me, he’s not even going to beat me up. He’s just going to laugh until he has a stroke. Which, actually, might be a win... but still, I hate this."</span> <br>
+            <<socialChange "Erin" 3 1>>
+            <<needChange "Hunger" 10>>
+            <<set $Money -= 2>>
+            <span style="color:Red">-$2</span><br>
+            <br>
+            <<if $Location.Name == "Northend">>
+                [[Continue|Northend]]
+            <<elseif $Location.Name == "Dellwood Street">>
+                [[Continue|Dellwood Street]]
+            <<else>>
+                [[Continue|Wald Street]]
+            <</if>>
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

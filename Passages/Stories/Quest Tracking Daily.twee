@@ -1,0 +1,1503 @@
+:: Quest Tracking Daily [nobr]
+
+/* Quest Tracking/Triggers */
+	/* These are passages that should be in the same file below, simply seperated for ease of use.
+	Each one works like so:
+	First, we check if the Listed Quest is in the UnavailableQuests Array.
+	Then, we check if the Quest Conditions are met.
+	If so, we remove it from UnavailableQuests and add to InActive.
+	Each each will also have a note listing any required Trigger Times. This is to make it easier to set up their triggers and to double-check everything is working.
+	Conditions & Trigger Times should also be listed in the spreadsheer of the Quests. 
+	
+	[Note: Toggle Conditions are checked when the event can pop, not during this phase, since toggles can change mid-gameplay.]
+	*/
+<<include "Quest Tracking Daily Family">>
+<<include "Quest Tracking Daily Classmates">>
+<<include "Quest Tracking Daily Side Characters">>
+<<include "Quest Tracking Daily Supporter Characters">>
+
+/* Checking if Inactive Quests are still Available */
+<<include "Quest Tracking Remove Inactive Quests">>
+
+/* Repeatable Quests Resets */
+/* Chores:
+	-Chores are assigned randomly at the start of the game if it is Monday. */
+<<if $Time.Day == "Monday">>
+	<<if $CompletedQuests.includes("Chores")>>
+		<<set $CompletedQuests.delete("Chores")>>
+	<<else>>
+		<<set $Punishment += 20>>
+		<<set $PunishmentReason.push("Chores")>>
+	<</if>>
+	<<set $ActiveQuests.push("Chores")>>
+	<<set _outdoorChore to [
+		{
+			Name: "Mow Lawn",
+			State: 0,
+			Total: 1,
+		},
+		{
+			Name: "Pull Weeds",
+			State: 0,
+			Total: 1,
+		},
+	]>>
+	<<set _hardChore to [
+		{
+			Name: "Vacuum",
+			State: 0,
+			Total: 1,
+		},
+		{
+			Name: "Do Laundry",
+			State: 0,
+			Total: 1,
+		},
+		{
+			Name: "Take out Trash",
+			State: 0,
+			Total: 1,
+		},
+	]>>
+	<<set _easyChore to [
+		{
+			Name: "Mop",
+			State: 0,
+			Total: 3,
+			Tags: [],
+		},
+	]>>
+	<<for _i to 0; _i lt $QuestLog.length; _i++>>
+		<<if $QuestLog[_i].Name == "Weekly Chores">>
+			<<set $QuestLog.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $QuestLog.push(
+		{
+			Name: "Weekly Chores",
+			State: 0,
+			ID: "Jobs_R001",
+			Category: "Job",
+			Type: "Quest",
+			Icon: "Chore",
+			Tags: ["Father", "Job", "Quest", "Deadline"],
+			Description: "<span style=\"color:DarkTurquoise\">Your Father</span> expects you and your brothers to complete weekly chores in exchange for an allowance. Failure to do your chores will leave you in trouble with <span style=\"color:DarkTurquoise\">Your Father</span>.",
+			Deadline: "Monday",
+			Objectives: [
+				_outdoorChore.random(),
+				_hardChore.random(),
+				_easyChore.random(),
+			],
+		},
+	)>>
+	<<set $Notifications.push({
+		Name: "Quest Acquired!",
+		Icon: "Traits/Neat",
+		Description: "<span style=\"color:DarkTurquoise\">Your Father</span> have given you your chores for the week. He expects them to be done by this upcoming Monday in return for your weekly allowance. Careful, <span style=\"color:DarkTurquoise\">Your Father</span> is known to get upset if chores aren't finished. You can find more information in your <strong>Quest Menu</strong>.",
+	})>>
+<</if>>
+/* Noah: Missing Toy */
+<<if $Time.Day == "Wednesday">>
+	/* Noah's Missing Toy quest is repeatable. As long as the quest is not already active. it has a 25% chance to retrigger every Wednesday. */
+	<<if !$ActiveQuests.includes("Noah: Missing Toy") && random(1, 4) == 1>>
+		<<set $InActiveQuests.push("Noah: Missing Toy")>>
+		<<set $UnavailableQuests.delete("Noah: Missing Toy")>>
+		/* Repeatable Quests aren't always removed from the Completed Quest Array. In this case, it is left there to indicate the quest has been completed at least once. During the Completion Passage for this quest, only add it to the Completed Array if it isn't already there. Otherwise, just remove from Active Quests. */
+	<</if>>
+<</if>>
+
+/* Laser Pointer Event */
+<<if $ToggleNonCon == 1 && random(1, 100) <= 5>>
+	<<if $LaserPointer.Active == 1>>
+
+	<<elseif $LaserPointer.Active == -1>>
+		<<set $ActiveQuests.push("Laser Pointer")>>
+		<<set $LaserPointer to {
+			Active: 0,
+			Exposed: "Clothed",
+			Show: 0,
+			Days: 0,
+			Repeat: 1,
+			Kids: 0,
+			Preteens: 0,
+			Teens: 0,
+		}>>
+	<<else>>
+		<<set $ActiveQuests.push("Laser Pointer")>>
+		<<set $LaserPointer to {
+			Active: 0,
+			Exposed: "Clothed",
+			Show: 0,
+			Days: 0,
+			Repeat: 1,
+			Kids: 0,
+			Preteens: 0,
+			Teens: 0,
+		}>>
+	<</if>>
+	<<if $Debug == 1>>
+		<<set $Notifications.push({
+			Name: "Debug Note!",
+			Icon: "Traits/Evil",
+			Description: "This is a Debug Note. Laser Pointer Bedroom repeatable quest has been activated.",
+		})>>
+	<</if>>
+<</if>>
+<<if $LaserPointer.Days > 0>>
+	<<set $LaserPointer.Days -= 1>>
+	<<if $LaserPointer.Kids > 0>>
+		<<set $LaserPointer.Kids -= 1>>
+	<</if>>
+	<<if $LaserPointer.Preteens > 0>>
+		<<set $LaserPointer.Preteens -= 1>>
+	<</if>>
+	<<if $LaserPointer.Teens > 0>>
+		<<set $LaserPointer.Teens -= 1>>
+	<</if>>
+<<elseif $LaserPointer.Days == 0>>
+	<<set $LaserPointer to {
+		Active: 0,
+		Exposed: "Clothed",
+		Show: 0,
+		Days: 0,
+		Repeat: 1,
+		Kids: 0,
+		Preteens: 0,
+		Teens: 0,
+	}>>
+<</if>>
+
+/* OC Events */
+/* Erin: Closet Tired */
+<<if $ToggleOCErin == 1 && $CompletedQuests.includes("Erin: Introduction") && $Time.schoolday() && random(1, 4) == 1>>
+	<<if $Debug == 1>>
+		<<set $Notifications.push({
+			Name: "Debug Note!",
+			Icon: "Traits/Evil",
+			Description: "This is a Debug Note. Erin's Closet Bound repeatable quest has been activated for the day.",
+		})>>
+	<</if>>
+	<<set $ActiveQuests.push("Erin: Closet Bound")>>
+<<else>>
+	<<set $ActiveQuests.delete("Erin: Closet Bound")>>
+<</if>>
+/* Kyren: Repeatable Opening if not Helped */
+<<if $ToggleOCKyren == 1 && !$CompletedQuests.includes("Kyren: Intro") && $ActiveQuests.includes("Kyren: Intro")>>
+	<<set $ActiveQuests.delete("Kyren: Intro")>>
+	<<set $InActiveQuests.push("Kyren: Intro")>>
+<</if>>
+
+
+:: Quest Tracking Daily Family [nobr]
+
+/* Noah */
+<<if $UnavailableQuests.includes("Noah: Booster Shot")>>
+	/* At least Half Social with Noah
+	Triggers: Weekends before 4PM in the Living Room. */
+	<<if $NoahSocial >= 50>>
+		<<set $UnavailableQuests.delete("Noah: Booster Shot")>>
+		<<set $InActiveQuests.push("Noah: Booster Shot")>>
+	<</if>>
+<</if>>
+
+/* Noah: Missing Toy is a Repeatable Quest and is thus listed there. */
+
+<<if $UnavailableQuests.includes("Noah: Stormy Night")>>
+	/* At least 100 Social with Noah & "Noah: Booster Shot" completed.
+	Triggers: Friday/Saturday between 6PM and 8PM in the Living Room
+		Rank Up Quest */
+	<<if $NoahSocial >= 100 && $CompletedQuests.includes("Noah: Booster Shot")>>
+		<<set $UnavailableQuests.delete("Noah: Stormy Night")>>
+		<<set $InActiveQuests.push("Noah: Stormy Night")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Noah: Accident")>>
+	/* Requires Social Rank 1+ with Noah & For Noah to be a Bedwetter.
+		Note: A Non-Bed Wetter version of this event is planned, once that occurs it will no longer be a condition.
+	Triggers: Schoolday between 3:20PM and 3:40PM in the Living Room. */
+	<<if $NoahSocialRank > 0 && $NoahWetting == 1>>
+		<<set $UnavailableQuests.delete("Noah: Accident")>>
+		<<set $InActiveQuests.push("Noah: Accident")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Noah: Swimming Lessons")>>
+	/* Requires Social Rank 1+ with Noah & for the "Noah: Swimming Lessons" Swimming Perk to be unlocked.
+	Triggers: Schoolday between 3:20PM and 3:40PM in the Living Room. */
+	<<if $NoahSocialRank > 0 && $Skill.Perks.includes("Noah: Swimming Lessons")>>
+		<<set $UnavailableQuests.delete("Noah: Swimming Lessons")>>
+		<<set $InActiveQuests.push("Noah: Swimming Lessons")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Noah: Hang Out Intro")>>
+	/* Requires Social 10+
+	Triggers: Asking to Hang Out After School */
+	<<if $NoahSocial >= 10>>
+		<<set $UnavailableQuests.delete("Noah: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Noah: Hang Out Intro")>>
+	<</if>>
+<</if>>
+
+/* Gabe */
+<<if $UnavailableQuests.includes("Gabe: Sneak Out")>>
+	/* Requires +50 or -50 Social with Gabe.
+	Triggers: When PC goes to sleep in their bed at night on Sunday. */
+	<<if $GabeSocial >= 50 or $GabeSocial <= -50>>
+		<<set $UnavailableQuests.delete("Gabe: Sneak Out")>>
+		<<set $InActiveQuests.push("Gabe: Sneak Out")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Gabe: Bail Out")>>
+	/* Requires -100 Social with Gabe & NonCon to be Toggled On & Noah's Booster Shot Quest Completed.
+	Triggers: Living room between 5PM and 7PM.
+		Bad End Quest */
+	<<if $GabeSocial <= -100 && $CompletedQuests.includes("Noah: Booster Shot") && $ToggleNonCon == 1>>
+		<<set $UnavailableQuests.delete("Gabe: Bail Out")>>
+		<<set $InActiveQuests.push("Gabe: Bail Out")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Gabe: Hang Out Intro")>>
+	/* Requires Social 50+
+	Triggers: Asking to Hang Out At Home */
+	<<if $GabeSocial >= 50>>
+		<<set $UnavailableQuests.delete("Gabe: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Gabe: Hang Out Intro")>>
+	<</if>>
+<</if>>
+
+/* Dad */
+<<if $UnavailableQuests.includes("Dad: Dragged Shopping")>>
+	/* Requires 30+ Social with Dad.
+	Triggers: Non-School Days between 10AM and 5PM */
+	<<if $GabeSocial >= 30>>
+		<<set $UnavailableQuests.delete("Dad: Dragged Shopping")>>
+		<<set $InActiveQuests.push("Dad: Dragged Shopping")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Dad: Hang Out Intro")>>
+	/* Requires Social 20+
+	Triggers: Asking to Hang Out At Home */
+	<<if $DadSocial >= 20>>
+		<<set $UnavailableQuests.delete("Dad: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Dad: Hang Out Intro")>>
+	<</if>>
+<</if>>
+
+:: Quest Tracking Daily Classmates [nobr]
+
+/* Lucas */
+<<if $UnavailableQuests.includes("Lucas: First Visit")>>
+	/* Requires 50+ Social
+	Triggers in the School East Hallway after Gym Class as long as it isn't Wednesday */
+	<<if $LucasSocial >= 50>>
+		<<set $UnavailableQuests.delete("Lucas: First Visit")>>
+		<<set $InActiveQuests.push("Lucas: First Visit")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Lucas: Ryker")>>
+	/* Requires 50+ Social
+	Triggers on the Northend Playground during the Day/Afternoon */
+	<<if $LucasSocial >= 50>>
+		<<set $UnavailableQuests.delete("Lucas: Ryker")>>
+		<<set $InActiveQuests.push("Lucas: Ryker")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Lucas: The Price of Fame")>>
+	/* Requires 80+ Social and "Lucas: Ryker" completed.
+	Can be picked up anytime in Lucas' Bedroom */
+	<<if $LucasSocial > 80 && $CompletedQuests.includes("Lucas: Ryker")>>
+		<<set $UnavailableQuests.delete("Lucas: The Price of Fame")>>
+		<<set $InActiveQuests.push("Lucas: The Price of Fame")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Lucas: Punishment Game")>>
+	/* Requires 100+ Social and "Lucas: Ryker" & "Lucas: Price of Fame" Complete
+	Triggers in Math Class
+	Rank Up Quest */
+	<<if $LucasSocial >= 100 && $CompletedQuests.includes("Lucas: Ryker") && $CompletedQuests.includes("Lucas: The Price of Fame")>>
+		<<set $UnavailableQuests.delete("Lucas: Punishment Game")>>
+		<<set $InActiveQuests.push("Lucas: Punishment Game")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Lucas: Boning the Neighbor")>>
+	/* Requires Social Rank 1+ & Social 50+
+	Triggers: Anytime by doing Homework with Lucas in his Kitchen
+	Unlocked Sex */
+	<<if $LucasSocial >= 50 && $LucasSocialRank > 0>>
+		<<set $UnavailableQuests.delete("Lucas: Boning the Neighbor")>>
+		<<set $InActiveQuests.push("Lucas: Boning the Neighbor")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Lucas: Hang Out Intro")>>
+	/* Requires Social 25+
+	Triggers: Asking to Hang Out After School */
+	<<if $LucasSocial >= 25>>
+		<<set $UnavailableQuests.delete("Lucas: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Lucas: Hang Out Intro")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Lucas: New Member of the Family")>>
+	/* Requires Social Rank 1 + Lucas Social 25+
+	Triggers: Hang Out Lucas Bedroom */
+	<<if $LucasSocial >= 25 && $LucasSocialRank == 1>>
+		<<set $UnavailableQuests.delete("Lucas: New Member of the Family")>>
+		<<set $InActiveQuests.push("Lucas: New Member of the Family")>>
+	<</if>>
+<</if>>
+
+/* Ben */
+<<if $UnavailableQuests.includes("Ben: Track Meet Cute")>>
+	/* Requires Social 40+
+	Triggers: 3PM to 5PM in Player's Living Room */
+	<<if $BenSocial >= 40>>
+		<<set $UnavailableQuests.delete("Ben: Track Meet Cute")>>
+		<<set $InActiveQuests.push("Ben: Track Meet Cute")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Ben: 5-Mile Jog")>>
+	/* Requires: "Ben: Track Meet Cute"
+	Triggers: Saturday | 6AM to 9AM | PC Front Yard */
+	<<if $CompletedQuests.includes("Ben: Track Meet Cute")>>
+		<<set $UnavailableQuests.delete("Ben: 5-Mile Jog")>>
+		<<set $InActiveQuests.push("Ben: 5-Mile Jog")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Ben: Hang Out Intro")>>
+	/* Requires Social 30+
+	Triggers: Asking to Hang Out After School */
+	<<if $BenSocial >= 30>>
+		<<set $UnavailableQuests.delete("Ben: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Ben: Hang Out Intro")>>
+	<</if>>
+<</if>>
+
+
+/* Michael */
+<<if $UnavailableQuests.includes("Michael: Little Bear")>>
+	/* Requires 75+ Social
+	Triggers: Not Schoolday, 8AM to 12PM, Player's Frontyard */
+	<<if $MichaelSocial >= 75>>
+		<<set $UnavailableQuests.delete("Michael: Little Bear")>>
+		<<set $InActiveQuests.push("Michael: Little Bear")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Michael: Blackmail")>>
+	/* Requires: -100 Social, NonCon Toggle On
+	Triggers: Bus Ride to School */
+	<<if $MichaelSocial <= -100 && $ToggleNonCon == 1>>
+		<<set $UnavailableQuests.delete("Michael: Blackmail")>>
+		<<set $InActiveQuests.push("Michael: Blackmail")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Michael: Stupid Stepbrothers")>>
+	/* Requires: "Michael: Little Bear"
+	Triggers: Weekend | 7AM to 11AM | Wald Street */
+	<<if $CompletedQuests.includes("Michael: Little Bear")>>
+		<<set $UnavailableQuests.delete("Michael: Stupid Stepbrothers")>>
+		<<set $InActiveQuests.push("Michael: Stupid Stepbrothers")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Michael: Hang Out Intro")>>
+	/* Requires Social 40+
+	Triggers: Asking to Hang Out After School */
+	<<if $MichaelSocial >= 40>>
+		<<set $UnavailableQuests.delete("Michael: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Michael: Hang Out Intro")>>
+	<</if>>
+<</if>>
+
+
+/* Carter */
+<<if $UnavailableQuests.includes("Carter: Park Clean Up")>>
+	/* Requires: 50+ Social
+	Triggers: Before 8AM, School South Hallway */
+	<<if $CarterSocial >= 50>>
+		<<set $UnavailableQuests.delete("Carter: Park Clean Up")>>
+		<<set $InActiveQuests.push("Carter: Park Clean Up")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Carter: Lost Pants")>>
+	/* Requires: "Carter: Park Clean Up" Completed
+	Triggers: No School, Day, City Park */
+	<<if $CompletedQuests.includes("Carter: Park Clean Up")>>
+		<<set $UnavailableQuests.delete("Carter: Lost Pants")>>
+		<<set $InActiveQuests.push("Carter: Lost Pants")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Carter: Mom (Mall)")>>
+	/* Requires: "Carter: Park Clean Up" Completed
+	Triggers: 6PM to 5AM, Mall */
+	<<if $CompletedQuests.includes("Carter: Park Clean Up")>>
+		<<set $UnavailableQuests.delete("Carter: Mom (Mall)")>>
+		<<set $InActiveQuests.push("Carter: Mom (Mall)")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Carter: Mom (Main Street)")>>
+	/* Requires: "Carter: Park Clean Up" Completed
+	Triggers: 7AM to 6PM | 20% Chance */
+	<<if $CompletedQuests.includes("Carter: Park Clean Up")>>
+		<<set $UnavailableQuests.delete("Carter: Mom (Main Street)")>>
+		<<set $InActiveQuests.push("Carter: Mom (Main Street)")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Carter: Mall Fight")>>
+	/* Requires: "Carter: Mall Fight"
+	Triggers: Weekend | 7AM to 6PM | Mall */
+	<<if $CompletedQuests.includes("Carter: Park Clean Up")>>
+		<<set $UnavailableQuests.delete("Carter: Mall Fight")>>
+		<<set $InActiveQuests.push("Carter: Mall Fight")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Carter: Hang Out Intro")>>
+	/* Requires Social 25+
+	Triggers: Asking to Hang Out After School */
+	<<if $CarterSocial >= 25>>
+		<<set $UnavailableQuests.delete("Carter: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Carter: Hang Out Intro")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Carter: First Visit")>>
+	/* Requires "Carter: Park Clean Up"
+	Triggers: Science Class */
+	<<if $CompletedQuests.includes("Carter: Park Clean Up")>>
+		<<set $UnavailableQuests.delete("Carter: First Visit")>>
+		<<set $InActiveQuests.push("Carter: First Visit")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Carter: Hero's Weakness")>>
+	/* Requires "Carter: First Visit", Carter Social 100+
+	Triggers: Science Class */
+	<<if $CompletedQuests.includes("Carter: First Visit") && $CarterSocial >= 100>>
+		<<set $UnavailableQuests.delete("Carter: Hero's Weakness")>>
+		<<set $InActiveQuests.push("Carter: Hero's Weakness")>>
+
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Carter: Hero Award")>>
+	/* Requires "Carter: Hero's Weakness", Carter Social 100+
+	Triggers: Science Class */
+	<<if $CompletedQuests.includes("Carter: Hero's Weakness") && $CarterSocial >= 100>>
+		<<set $UnavailableQuests.delete("Carter: Hero Award")>>
+		<<set $InActiveQuests.push("Carter: Hero Award")>>
+
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Carter: Connor")>>
+	/* Requires "Carter: Hero Award"
+	Triggers: Science Class */
+	<<if $CompletedQuests.includes("Carter: Hero Award")>>
+		<<set $UnavailableQuests.delete("Carter: Connor")>>
+		<<set $InActiveQuests.push("Carter: Connor")>>
+
+	<</if>>
+<</if>>
+
+/* Jackson */
+<<if $UnavailableQuests.includes("Jackson: Empty Lot")>>
+	/* Requires: 50+ Social
+	Triggers: When Jackson is at the Empty Lot at Night, Interact with him */
+	<<if $JacksonSocial >= 50>>
+		<<set $UnavailableQuests.delete("Jackson: Empty Lot")>>
+		<<set $InActiveQuests.push("Jackson: Empty Lot")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Jackson: Sibling Dynamics")>>
+	/* Requires: 30+ Social
+	Triggers: Main Street, Schoolday (3PM to 6PM), Weekend (8AM to 6PM) */
+	<<if $JacksonSocial >= 30>>
+		<<set $UnavailableQuests.delete("Jackson: Sibling Dynamics")>>
+		<<set $InActiveQuests.push("Jackson: Sibling Dynamics")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Jackson: Parental Drama")>>
+	/* Requires: "Jackson: Sibling Dynamics"
+	Triggers: No School | 10AM to 2PM */
+	<<if $CompletedQuests.includes("Jackson: Sibling Dynamics")>>
+		<<set $UnavailableQuests.delete("Jackson: Parental Drama")>>
+		<<set $InActiveQuests.push("Jackson: Parental Drama")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Jackson: Hang Out Intro")>>
+	/* Requires Social 25+
+	Triggers: Asking to Hang Out After School */
+	<<if $JacksonSocial >= 25>>
+		<<set $UnavailableQuests.delete("Jackson: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Jackson: Hang Out Intro")>>
+	<</if>>
+<</if>>
+
+/* Thomas */
+<<if $UnavailableQuests.includes("Thomas: Out Sick")>>
+	/* Requires: Social 60+
+	Triggers: Begins Wednesday, Picked up Friday East Hallway After School */
+	<<if $ThomasSocial >= 60 && $Time.Day == "Wednesday">>
+		<<set $UnavailableQuests.delete("Thomas: Out Sick")>>
+		<<set $InActiveQuests.push("Thomas: Out Sick")>>
+		<<set $ThomasAbsent to true>>
+	<</if>>
+<<elseif $InActiveQuests.includes("Thomas: Out Sick") && $Time.Day == "Friday">>
+	<<set $InActiveQuests.delete("Thomas: Out Sick")>>
+	<<set $ActiveQuests.push("Thomas: Out Sick")>>
+<</if>>
+<<if $UnavailableQuests.includes("Thomas: Study Session")>>
+	/* Requires: "Thomas: Out Sick"
+	Triggers: School Not Friday (Get) | Friday 2:50PM to 4PM | English Class | City Library */
+	<<if $CompletedQuests.includes("Thomas: Out Sick")>>
+		<<set $UnavailableQuests.delete("Thomas: Study Session")>>
+		<<set $InActiveQuests.push("Thomas: Study Session")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Thomas: Hang Out Intro")>>
+	/* Requires Social 40+
+	Triggers: Asking to Hang Out After School */
+	<<if $ThomasSocial >= 40>>
+		<<set $UnavailableQuests.delete("Thomas: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Thomas: Hang Out Intro")>>
+	<</if>>
+<</if>>
+
+/* Xavier */
+<<if $UnavailableQuests.includes("Xavier: Big Brother")>>
+	/* Requires: Social 30+
+	Triggers: "Play on the Playground" w/ Noah at Northend Playground */
+	<<if $XavierSocial >= 30>>
+		<<set $UnavailableQuests.delete("Xavier: Big Brother")>>
+		<<set $InActiveQuests.push("Xavier: Big Brother")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Xavier: Swimming Chicken")>>
+	/* Requires: Social 40+
+	Triggers: Swimming Class */
+	<<if $XavierSocial >= 40>>
+		<<set $UnavailableQuests.delete("Xavier: Swimming Chicken")>>
+		<<set $InActiveQuests.push("Xavier: Swimming Chicken")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Xavier: Collections")>>
+	/* Requires: Social 50+
+	Triggers: After School | Middle School */
+	<<if $XavierSocial >= 50>>
+		<<set $UnavailableQuests.delete("Xavier: Collections")>>
+		<<set $InActiveQuests.push("Xavier: Collections")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Xavier: Hang Out Intro")>>
+	/* Requires Social 50+
+	Triggers: Asking to Hang Out After School */
+	<<if $XavierSocial >= 50>>
+		<<set $UnavailableQuests.delete("Xavier: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Xavier: Hang Out Intro")>>
+	<</if>>
+<</if>>
+
+/* Felix */
+<<if $UnavailableQuests.includes("Felix: Mateo")>>
+	/* Requires: 30+ Social
+	Triggers: Not Schoolday, 10AM to 3PM, Food District */
+	<<if $FelixSocial >= 30>>
+		<<set $UnavailableQuests.delete("Felix: Mateo")>>
+		<<set $InActiveQuests.push("Felix: Mateo")>>
+	<</if>>
+<</if>>
+/* Felix */
+<<if $UnavailableQuests.includes("Felix: The Letter")>>
+	/* Requires: 50+ Social
+	Triggers: School Hallways (Random Encounter) */
+	<<if $FelixSocial >= 50>>
+		<<set $UnavailableQuests.delete("Felix: The Letter")>>
+		<<set $InActiveQuests.push("Felix: The Letter")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Felix: Hang Out Intro")>>
+	/* Requires Social 25+
+	Triggers: Asking to Hang Out After School */
+	<<if $FelixSocial >= 25>>
+		<<set $UnavailableQuests.delete("Felix: Hang Out Intro")>>
+		<<set $InActiveQuests.push("Felix: Hang Out Intro")>>
+	<</if>>
+<</if>>
+
+:: Quest Tracking Daily Side Characters [nobr]
+
+/* Ryker */
+<<if $UnavailableQuests.includes("Ryker: Retaliation")>>
+	/* Requires: "Lucas: Ryker"
+	Triggers: Day/Afternoon | 10% Chance */
+	<<if $CompletedQuests.includes("Lucas: Ryker")>>
+		<<set $UnavailableQuests.delete("Ryker: Retaliation")>>
+		<<set $InActiveQuests.push("Ryker: Retaliation")>>
+	<</if>>
+<</if>>
+
+:: Quest Tracking Daily Supporter Characters [nobr]
+
+/* Millers */
+<<if $UnavailableQuests.includes("Millers: Meet the Millers")>>
+	/* Requires: After August 29th
+	Triggers: Day/Afternoon, No School, Dressed, PC Living Room */
+	<<if $Time.Month != "August" or $Time.Date > 29>>
+		<<set $UnavailableQuests.delete("Millers: Meet the Millers")>>
+		<<set $InActiveQuests.push("Millers: Meet the Millers")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Millers: Trouble in Paradise")>>
+	/* Requires: "Millers: Meet the Millers"
+	Triggers: Before School, School South Hallway */
+	<<if $CompletedQuests.includes("Millers: Meet the Millers")>>
+		<<set $UnavailableQuests.delete("Millers: Trouble in Paradise")>>
+		<<set $InActiveQuests.push("Millers: Trouble in Paradise")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Millers: Dog Escape")>>
+	/* Requires: Jayden Social 30+
+	Triggers: Anytime at Twin's Lemonade Stand */
+	<<if $OCJaydenSocial >= 30>>
+		<<set $UnavailableQuests.delete("Millers: Dog Escape")>>
+		<<set $InActiveQuests.push("Millers: Dog Escape")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Millers: Oliver Meets Twins")>>
+	/* Requires: "Nyalls: Oliver" and Oliver Social 20+
+	Triggers: Anytime, Twins Lemonade Stand */
+	<<if $CompletedQuests.includes("Nyalls: Oliver") && $OCOliverSocial >= 20>>
+		<<set $UnavailableQuests.delete("Millers: Oliver Meets Twins")>>
+		<<set $InActiveQuests.push("Millers: Oliver Meets Twins")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Millers: Isaiah & Shinju")>>
+	/* Requires: Shinju/Isaiah Social 40+
+	Triggers: School Restrooms, Use Bathroom, Between 7AM and 3PM */
+	<<if $OCShinjuSocial >= 40 && $OCZaySocial >= 40>>
+		<<set $UnavailableQuests.delete("Millers: Isaiah & Shinju")>>
+		<<set $InActiveQuests.push("Millers: Isaiah & Shinju")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Millers: Snakes in the Grass")>>
+	/* Requires: "Millers: Trouble in Paradise", Isaiah Social 50+
+	Triggers: Eat Lunch with Isaiah */
+	<<if $CompletedQuests.includes("Millers: Trouble in Paradise") && $OCZaySocial >= 50>>
+		<<set $UnavailableQuests.delete("Millers: Snakes in the Grass")>>
+		<<set $InActiveQuests.push("Millers: Snakes in the Grass")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Millers: Babysitting Kayden")>>
+	/* Requires: "Millers: Dog Escape", Kayden Social 30+
+	Triggers: Eat Lunch with Isaiah */
+	<<if $CompletedQuests.includes("Millers: Dog Escape") && $OCKaydenSocial >= 30>>
+		<<set $UnavailableQuests.delete("Millers: Babysitting Kayden")>>
+		<<set $InActiveQuests.push("Millers: Babysitting Kayden")>>
+	<</if>>
+<</if>>
+
+/* Nyalls */
+<<if $UnavailableQuests.includes("Nyalls: Sebastian")>>
+	/* Requires: More than 1 Day since Start
+	Triggers: Before School/During Lunch, Play on School Playground */
+	<<if $Time.daysSinceStart() > 1>>
+		<<set $UnavailableQuests.delete("Nyalls: Sebastian")>>
+		<<set $InActiveQuests.push("Nyalls: Sebastian")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Nyalls: Oliver")>>
+	/* Requires: Meet Sebastian
+	Triggers: Thursday | 3PM to 7PM, Northend Playground */
+	<<if $CompletedQuests.includes("Nyalls: Sebastian")>>
+		<<set $UnavailableQuests.delete("Nyalls: Oliver")>>
+		<<set $InActiveQuests.push("Nyalls: Oliver")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Nyalls: Evelyn")>>
+	/* Requires: Meet Sebastian/Oliver
+	Triggers: Friday, 3PM to 7PM, Dressed, Player's Living Room */
+	<<if $CompletedQuests.includes("Nyalls: Sebastian") && $CompletedQuests.includes("Nyalls: Oliver")>>
+		<<set $UnavailableQuests.delete("Nyalls: Evelyn")>>
+		<<set $InActiveQuests.push("Nyalls: Evelyn")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Nyalls: Cole")>>
+	/* Requires: Meet Sebastian/Oliver
+	Triggers: Before School, During Lunch, Play on School Playground */
+	<<if $CompletedQuests.includes("Nyalls: Sebastian") && $CompletedQuests.includes("Nyalls: Oliver")>>
+		<<set $UnavailableQuests.delete("Nyalls: Cole")>>
+		<<set $InActiveQuests.push("Nyalls: Cole")>>
+	<</if>>
+<</if>>
+
+/* Isaac */
+<<if $UnavailableQuests.includes("Isaac: The Little Blueberry")>>
+	/* Requires: Noah Social Rank 1+
+	Triggers: After Gym, East Hallway */
+	<<if $NoahSocialRank >= 1>>
+		<<set $UnavailableQuests.delete("Isaac: The Little Blueberry")>>
+		<<set $InActiveQuests.push("Isaac: The Little Blueberry")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Isaac: Jacob")>>
+	/* Requires: "Isaac: The Little Blueberry", Social 50+
+	Triggers: Not Night, Trailer Park (Random Encounter) */
+	<<if $CompletedQuests.includes("Isaac: The Little Blueberry")>>
+		<<set $UnavailableQuests.delete("Isaac: Jacob")>>
+		<<set $InActiveQuests.push("Isaac: Jacob")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Isaac: The Nightclub")>>
+	/* Requires: "Isaac: The Little Blueberry", Social 40+"
+	Triggers: Anytime, Redlight District (Random Encounter) */
+	<<if $CompletedQuests.includes("Isaac: The Little Blueberry") && $OCIsaacSocial >= 40>>
+		<<set $UnavailableQuests.delete("Isaac: The Nightclub")>>
+		<<set $InActiveQuests.push("Isaac: The Nightclub")>>
+	<</if>>
+<<elseif $ActiveQuests.includes("Isaac: The Nightclub")>>
+		<<set $OCIsaacNightclubDays += 1>>
+<</if>>
+
+/* Birdy */
+<<if $UnavailableQuests.includes("Birdy: Introduction")>>
+	/* Requires: None
+	Triggers: 6AM to 8PM, City Park Playground Play */
+	<<if $Time.daysSinceStart() > 1>>
+		<<set $UnavailableQuests.delete("Birdy: Introduction")>>
+		<<set $InActiveQuests.push("Birdy: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Birdy: Lea")>>
+	/* Requires: "Birdy: Introduction"
+	Triggers: 6AM to 8PM, City Park Playground Play */
+	<<if $CompletedQuests.includes("Birdy: Introduction")>>
+		<<set $UnavailableQuests.delete("Birdy: Lea")>>
+		<<set $InActiveQuests.push("Birdy: Lea")>>
+	<</if>>
+<</if>>
+
+/* Erin */
+<<if $UnavailableQuests.includes("Erin: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Before School, During Lunch, School Playground Play */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Erin: Introduction")>>
+		<<set $InActiveQuests.push("Erin: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Leon */
+<<if $UnavailableQuests.includes("Leon: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Before School, During Lunch, School Playground Play */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Leon: Introduction")>>
+		<<set $InActiveQuests.push("Leon: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Manuel */
+<<if $UnavailableQuests.includes("Manuel: The Pent-Up Boy")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Anytime, School Bus Ride */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Manuel: The Pent-Up Boy")>>
+		<<set $InActiveQuests.push("Manuel: The Pent-Up Boy")>>
+		<<set $UnavailableQuests.delete("Manuel: Introduction")>>
+		<<set $InActiveQuests.push("Manuel: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Manuel: Redlight Boy")>>
+	/* Requires: "Manuel: The Pent-Up Boy", Social 30+
+	Triggers: Afternoon, Redlight District */
+	<<if $CompletedQuests.includes("Manuel: The Pent-Up Boy") && $OCManuelSocial >= 30>>
+		<<set $UnavailableQuests.delete("Manuel: Redlight Boy")>>
+		<<set $InActiveQuests.push("Manuel: Redlight Boy")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Manuel: Envy of the Unfree")>>
+	/* Requires: "Manuel: The Pent-Up Boy", Social 75+
+	Triggers: School Bathroom */
+	<<if $CompletedQuests.includes("Manuel: The Pent-Up Boy") && $OCManuelSocial >= 75>>
+		<<set $UnavailableQuests.delete("Manuel: Envy of the Unfree")>>
+		<<set $InActiveQuests.push("Manuel: Envy of the Unfree")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Manuel: The Great Unlocking")>>
+	/* Requires: XXX
+	Triggers: XXX *
+	<<if XXX>>
+		<<set $UnavailableQuests.delete("XXX")>>
+		<<set $InActiveQuests.push("XXX")>>
+	<</if>> */
+<</if>>
+
+/* Kollin */
+<<if $UnavailableQuests.includes("Kollin: Boy in the Woods")>>
+	/* Requires: None
+	Triggers: Anytime, Explore the Woods */
+	<<if $Time.daysSinceStart() > 1>>
+		<<set $UnavailableQuests.delete("Kollin: Boy in the Woods")>>
+		<<set $InActiveQuests.push("Kollin: Boy in the Woods")>>
+	<</if>>
+<</if>>
+
+/* JQ */
+<<if $UnavailableQuests.includes("JQ: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Play Game @ Arcade */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("JQ: Introduction")>>
+		<<set $InActiveQuests.push("JQ: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Arthur & Richard */
+<<if $UnavailableQuests.includes("Arthur & Richard: Introduction")>>
+	/* Requires: None
+	Triggers: Not Night, 25% Chance, Mall */
+	<<if $Time.daysSinceStart() > 1>>
+		<<set $UnavailableQuests.delete("Arthur & Richard: Introduction")>>
+		<<set $InActiveQuests.push("Arthur & Richard: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Arthur & Richard: Stargazing")>>
+	/* Requires: "Arthur & Richard: Introduction, Both Social 50+"
+	Triggers: Before School, During Lunch, School Cafeteria */
+	<<if $CompletedQuests.includes("Arthur & Richard: Introduction") && $OCArthurSocial >= 50 && $OCRichardSocial >= 50>>
+		<<set $UnavailableQuests.delete("Arthur & Richard: Stargazing")>>
+		<<set $InActiveQuests.push("Arthur & Richard: Stargazing")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Arthur & Richard: Shower Event")>>
+	/* Requires: "Arthur & Richard: Stargazing,
+	Triggers: School Shower (Forced) */
+	<<if $CompletedQuests.includes("Arthur & Richard: Stargazing")>>
+		<<set $UnavailableQuests.delete("Arthur & Richard: Shower Event")>>
+		<<set $InActiveQuests.push("Arthur & Richard: Shower Event")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Arthur & Richard: Hat Quest")>>
+	/* Requires: "Arthur & Richard: Shower Event,
+	Triggers: School South Hallway (Forced) */
+	<<if $CompletedQuests.includes("Arthur & Richard: Shower Event")>>
+		<<set $UnavailableQuests.delete("Arthur & Richard: Hat Quest")>>
+		<<set $InActiveQuests.push("Arthur & Richard: Hat Quest")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Arthur & Richard: Returning the Favor")>>
+	/* Requires: "Arthur & Richard: Hat Quest,
+	Triggers: School Playground */
+	<<if $CompletedQuests.includes("Arthur & Richard: Hat Quest")>>
+		<<set $UnavailableQuests.delete("Arthur & Richard: Returning the Favor")>>
+		<<set $InActiveQuests.push("Arthur & Richard: Returning the Favor")>>
+	<</if>>
+<</if>>
+
+/* Shinju */
+<<if $UnavailableQuests.includes("Shinju: Monster Boy")>>
+	/* Requires: Lucas Social Rank 1+
+	Triggers: Anytime, Lucas Hang Out Park Playground */
+	<<if $LucasSocialRank >= 1>>
+		<<set $UnavailableQuests.delete("Shinju: Monster Boy")>>
+		<<set $InActiveQuests.push("Shinju: Monster Boy")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Shinju: Felix at the Lake")>>
+	/* Requires: "Shinju: Monster Boy"
+	Triggers: Not Night | Explore the Woods */
+	<<if $CompletedQuests.includes("Shinju: Monster Boy")>>
+		<<set $UnavailableQuests.delete("Shinju: Felix at the Lake")>>
+		<<set $InActiveQuests.push("Shinju: Felix at the Lake")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Shinju: Dressing Room Teasing")>>
+	/* Requires: "Shinju: Felix at the Lake"
+	Triggers: Weekend | 8AM to 4PM | Boy Barn (Random Encounter) */
+	<<if $CompletedQuests.includes("Shinju: Felix at the Lake")>>
+		<<set $UnavailableQuests.delete("Shinju: Dressing Room Teasing")>>
+		<<set $InActiveQuests.push("Shinju: Dressing Room Teasing")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Shinju: Breaking Drama Conventions")>>
+	/* Requires: "Shinju: Monster Boy"
+	Triggers: Drama */
+	<<if $CompletedQuests.includes("Shinju: Monster Boy")>>
+		<<set $UnavailableQuests.delete("Shinju: Breaking Drama Conventions")>>
+		<<set $InActiveQuests.push("Shinju: Breaking Drama Conventions")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Shinju: Felix Monster Event")>>
+	/* Requires: "Shinju: Felix at the Lake"
+	Triggers: Hanging with Lucas at the Park */
+	<<if $CompletedQuests.includes("Shinju: Felix at the Lake")>>
+		<<set $UnavailableQuests.delete("Shinju: Felix Monster Event")>>
+		<<set $InActiveQuests.push("Shinju: Felix Monster Event")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Shinju: Manuel Skinny Dipping")>>
+	/* Requires: "Shinju: Felix at the Lake", Manuel Social 40+
+	Triggers: Not Night | Explore the Woods */
+	<<if $CompletedQuests.includes("Shinju: Felix at the Lake") && $OCManuelSocial >= 40>>
+		<<set $UnavailableQuests.delete("Shinju: Manuel Skinny Dipping")>>
+		<<set $InActiveQuests.push("Shinju: Manuel Skinny Dipping")>>
+	<</if>>
+<</if>>
+
+/* Aurelio */
+<<if $UnavailableQuests.includes("Aurelio: Introduction")>>
+	/* Requires: None
+	Triggers: Not Night, City Park Playground Play */
+	<<if $Time.daysSinceStart() > 1>>
+		<<set $UnavailableQuests.delete("Aurelio: Introduction")>>
+		<<set $InActiveQuests.push("Aurelio: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Liam */
+<<if $UnavailableQuests.includes("Liam: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Anytime, Gym Shower */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Liam: Introduction")>>
+		<<set $InActiveQuests.push("Liam: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Ion */
+<<if $UnavailableQuests.includes("Ion: Mysterious Creature")>>
+	/* Requires: Toggle Supernatural
+	Triggers: 9PM to 11PM, Northend (Random Encounter) */
+	<<if $Time.daysSinceStart() > 1>>
+		<<set $UnavailableQuests.delete("Ion: Mysterious Creature")>>
+		<<set $InActiveQuests.push("Ion: Mysterious Creature")>>
+	<</if>>
+<</if>>
+
+/* Snowpaw */
+<<if $UnavailableQuests.includes("Snowpaw: Lenny's Wild West Show")>>
+	/* Requires: Jackson Social 50+
+	Triggers: Anytime, English Class */
+	<<if $JacksonSocial >= 50>>
+		<<set $UnavailableQuests.delete("Snowpaw: Lenny's Wild West Show")>>
+		<<set $InActiveQuests.push("Snowpaw: Lenny's Wild West Show")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Snowpaw: New Rabbit Around Town")>>
+	/* Requires: "Snowpaw: Lenny's Wild West Show", Jackson Social 60+
+	Triggers: Weekend, Morning (Before noon), Community Center */
+	<<if $JacksonSocial >= 60 && $CompletedQuests.includes("Snowpaw: Lenny's Wild West Show")>>
+		<<set $UnavailableQuests.delete("Snowpaw: New Rabbit Around Town")>>
+		<<set $InActiveQuests.push("Snowpaw: New Rabbit Around Town")>>
+	<</if>>
+<</if>>
+
+/* Kyren */
+<<if $UnavailableQuests.includes("Kyren: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: During School, School Hallways (Random Encounter) */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Kyren: Introduction")>>
+		<<set $InActiveQuests.push("Kyren: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Zacky */
+<<if $UnavailableQuests.includes("Zacky: Introduction")>>
+	/* Requires: Diaper/Bladder Toggle
+	Triggers: Tutor @ Community Center */
+	<<if $Time.daysSinceStart() > 1>>
+		<<set $UnavailableQuests.delete("Zacky: Introduction")>>
+		<<set $InActiveQuests.push("Zacky: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Patrick */
+<<if $UnavailableQuests.includes("Patrick: Introduction")>>
+	/* Requires: 7 Days since Game Start, Diaper/Bladder Toggle
+	Triggers: Anytime, History Class */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Patrick: Introduction")>>
+		<<set $InActiveQuests.push("Patrick: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Patrick: Ivy")>>
+	/* Requires: "Patrick: Introduction"
+	Triggers: Not Night, City Park */
+	<<if $CompletedQuests.includes("Patrick: Introduction")>>
+		<<set $UnavailableQuests.delete("Patrick: Ivy")>>
+		<<set $InActiveQuests.push("Patrick: Ivy")>>
+	<</if>>
+<</if>>
+
+/* Mason */
+<<if $UnavailableQuests.includes("Mason: The Underwear-Loving Squid")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Anytime, School Bus Ride */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Mason: The Underwear-Loving Squid")>>
+		<<set $InActiveQuests.push("Mason: The Underwear-Loving Squid")>>
+	<</if>>
+<</if>>
+
+/* Rowan */
+<<if $UnavailableQuests.includes("Rowan: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Anytime, School Eat Lunch */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Rowan: Introduction")>>
+		<<set $InActiveQuests.push("Rowan: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Rowan: Drama Intro")>>
+	/* Requires: "Rowan: Introduction""
+	Triggers: Drama Class */
+	<<if $CompletedQuests.includes("Rowan: Introduction")>>
+		<<set $UnavailableQuests.delete("Rowan: Drama Intro")>>
+		<<set $InActiveQuests.push("Rowan: Drama Intro")>>
+	<</if>>
+<</if>>
+
+/* Kazu */
+<<if $UnavailableQuests.includes("Kazu: The Deliquent")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Math Class */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Kazu: The Deliquent")>>
+		<<set $InActiveQuests.push("Kazu: The Deliquent")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Kazu: Unexpected Friendship")>>
+	/* Requires: Kazu: The Deliquent, Kazu Social 30+, Felix Social 30+
+	Triggers: Middle School After School */
+	<<if $CompletedQuests.includes("Kazu: The Deliquent") && $FelixSocial > 30 && $OCKazuSocial > 30>>
+		<<set $UnavailableQuests.delete("Kazu: Unexpected Friendship")>>
+		<<set $InActiveQuests.push("Kazu: Unexpected Friendship")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Kazu: Ben Strip Tease")>>
+	/* Requires: Kazu: The Deliquent, Kazu Social 30+
+	Triggers: Park Play Random Event */
+	<<if $CompletedQuests.includes("Kazu: The Deliquent") && $OCKazuSocial > 30>>
+		<<set $UnavailableQuests.delete("Kazu: Ben Strip Tease")>>
+		<<set $InActiveQuests.push("Kazu: Ben Strip Tease")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Kazu: The Eye")>>
+	/* Requires: Kazu Social 60+
+	Triggers: Park Play Random Event */
+	<<if $CompletedQuests.includes("Kazu: The Deliquent") && $OCKazuSocial > 60>>
+		<<set $UnavailableQuests.delete("Kazu: The Eye")>>
+		<<set $InActiveQuests.push("Kazu: The Eye")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Kazu: Xavier Showdown")>>
+	/* Requires: Kazu Social 60+
+	Triggers: School Hallway Random Event */
+	<<if $CompletedQuests.includes("Kazu: The Deliquent") && $OCKazuSocial > 60>>
+		<<set $UnavailableQuests.delete("Kazu: Xavier Showdown")>>
+		<<set $InActiveQuests.push("Kazu: Xavier Showdown")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Kazu: The Tattoo")>>
+	/* Requires: Kazu: The Eye && Kazu: Gym Swimming Shirt
+	Triggers: Post Gym Class Hallway */
+	<<if $CompletedQuests.includes("Kazu: The Eye") && $CompletedQuests.includes("Kazu: Gym Swimming Shirt")>>
+		<<set $UnavailableQuests.delete("Kazu: The Tattoo")>>
+		<<set $InActiveQuests.push("Kazu: The Tattoo")>>
+	<</if>>
+<</if>>
+
+
+/* Nikolai */
+<<if $UnavailableQuests.includes("Nikolai: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Mostly Cloud/Overcast, 5AM to 12PM, Beach Hang Out */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Nikolai: Introduction")>>
+		<<set $InActiveQuests.push("Nikolai: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Nikolai: School Tour")>>
+	/* Requires: Nikolai: Introduction
+	Triggers: Before School, School South Hallway */
+	<<if $CompletedQuests.includes("Nikolai: Introduction")>>
+		<<set $UnavailableQuests.delete("Nikolai: School Tour")>>
+		<<set $InActiveQuests.push("Nikolai: School Tour")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Nikolai: Dropped Photo")>>
+	/* Requires: Nikolai Social 30+
+	Triggers: Before School, School South Hallway */
+	<<if $OCNikolaiSocial >= 30>>
+		<<set $UnavailableQuests.delete("Nikolai: Dropped Photo")>>
+		<<set $InActiveQuests.push("Nikolai: Dropped Photo")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Nikolai: Aran")>>
+	/* Requires: Nikolai Social 40+
+	Triggers: Cafeteria, Lunch */
+	<<if $OCNikolaiSocial >= 40>>
+		<<set $UnavailableQuests.delete("Nikolai: Aran")>>
+		<<set $InActiveQuests.push("Nikolai: Aran")>>
+	<</if>>
+<</if>>
+
+/* Luca */
+<<if $UnavailableQuests.includes("Luca: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Tuesday or Thursday, School Gym Changing */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Luca: Introduction")>>
+		<<set $InActiveQuests.push("Luca: Introduction")>>
+	<</if>>
+<</if>>
+
+/* The Frosts */
+<<if $UnavailableQuests.includes("The Frosts: The Foreign Family")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: 10AM to 8PM, Watch Superhero Movie @ Theatre */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("The Frosts: The Foreign Family")>>
+		<<set $InActiveQuests.push("The Frosts: The Foreign Family")>>
+	<</if>>
+<</if>>
+
+/* Micah */
+<<if $UnavailableQuests.includes("Micah: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: 6AM to 8PM, Dellwood/Northend/Wald (Random Encounter) */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Micah: Introduction")>>
+		<<set $InActiveQuests.push("Micah: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Levi M */
+<<if $UnavailableQuests.includes("Levi M: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: 12PM to 5PM, Wald Street (Random Encounter) */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Levi M: Introduction")>>
+		<<set $InActiveQuests.push("Levi M: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Mata */
+<<if $UnavailableQuests.includes("Mata: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: No School, 6AM to 8PM, Northend(Random Encounter) */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Mata: Introduction")>>
+		<<set $InActiveQuests.push("Mata: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Mata: The New Kid At School")>>
+	/* Requires: "Mata: Introduction""
+	Triggers: Math Class Forced */
+	<<if $CompletedQuests.includes("Mata: Introduction")>>
+		<<set $UnavailableQuests.delete("Mata: The New Kid At School")>>
+		<<set $InActiveQuests.push("Mata: The New Kid At School")>>
+	<</if>>
+<</if>>
+
+
+/* Rudy */
+<<if $UnavailableQuests.includes("Rudy: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: 10:50AM to 11:45AM, School Art Classroom (Random Encounter) */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Rudy: Introduction")>>
+		<<set $InActiveQuests.push("Rudy: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Rudy: Caged")>>
+	/* Requires: Rudy Social 50+
+	Triggers: Hang Out in Art Room */
+	<<if $OCRudySocial > 50>>
+		<<set $UnavailableQuests.delete("Rudy: Caged")>>
+		<<set $InActiveQuests.push("Rudy: Caged")>>
+	<</if>>
+<</if>>
+
+/* Bobby */
+<<if $UnavailableQuests.includes("Bobby: Farm Intro")>>
+	/* Requires: 7 Days Since Start
+	Triggers: Weekend | 8AM to 3PM */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Bobby: Farm Intro")>>
+		<<set $InActiveQuests.push("Bobby: Farm Intro")>>
+	<</if>>
+<</if>>
+
+/* Emmet */
+<<if $UnavailableQuests.includes("Emmet: Introduction")>>
+	/* Requires: At least 3 Odd Jobs Completed
+	Triggers: Get Job: No School | Job: Park, 7AM to 5PM */
+	<<if $OddJobsCount >= 3>>
+		<<set $UnavailableQuests.delete("Emmet: Introduction")>>
+		<<set $InActiveQuests.push("Emmet: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Emmet: Drama Intro")>>
+	/* Requires: "Emmet: Introduction""
+	Triggers: Drama Class */
+	<<if $CompletedQuests.includes("Emmet: Introduction")>>
+		<<set $UnavailableQuests.delete("Emmet: Drama Intro")>>
+		<<set $InActiveQuests.push("Emmet: Drama Intro")>>
+	<</if>>
+<</if>>
+
+/* Kalim */
+<<if $UnavailableQuests.includes("Kalim: Introduction")>>
+	/* Requires: Meet Music Teacher (Set to None since required elsewhere.)
+	Triggers: Music Classroom After School (3PM to 5PM) */
+	<<set $UnavailableQuests.delete("Kalim: Introduction")>>
+	<<set $InActiveQuests.push("Kalim: Introduction")>>
+<</if>>
+
+/* Noah H. */
+<<if $UnavailableQuests.includes("Noah H: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Anytime | Gym Class */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Noah H: Introduction")>>
+		<<set $InActiveQuests.push("Noah H: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Noah H: Vibration")>>
+	/* Requires: Noah H Social 35+
+	Triggers: Cafeteria Lunch */
+	<<if $OCNoahHSocial > 35>>
+		<<set $UnavailableQuests.delete("Noah H: Vibration")>>
+		<<set $InActiveQuests.push("Noah H: Vibration")>>
+	<</if>>
+<</if>>
+
+/* Nathan */
+<<if $UnavailableQuests.includes("Nathan: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Not Night | City Park */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Nathan: Introduction")>>
+		<<set $InActiveQuests.push("Nathan: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Chase */
+<<if $UnavailableQuests.includes("Chase: Birthday Party")>>
+	/* Requires: 14 Days since Game Start
+	Triggers: 4PM to 7PM | Player's Living Room */
+	<<if $Time.daysSinceStart() > 14>>
+		<<set _size to ["Tiny", "Average", "Large"]>>
+		<<set $OCChaseSize to _size.random()>>
+		<<set $UnavailableQuests.delete("Chase: Birthday Party")>>
+		<<set $InActiveQuests.push("Chase: Birthday Party")>>
+	<</if>>
+<</if>>
+
+/* Enkys */
+<<if $UnavailableQuests.includes("Enkys: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Before School | School Restrooms */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Enkys: Introduction")>>
+		<<set $InActiveQuests.push("Enkys: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Enkys: Cat Shelter")>>
+	/* Requires: Enkys: Introduction
+	Triggers: Weekend, Main Street, 25% Chance */
+	<<if $CompletedQuests.includes("Enkys: Introduction")>>
+		<<set $UnavailableQuests.delete("Enkys: Cat Shelter")>>
+		<<set $InActiveQuests.push("Enkys: Cat Shelter")>>
+	<</if>>
+<</if>>
+
+/* Tyler */
+<<if $UnavailableQuests.includes("Tyler: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: During School | Play on School Playground */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Tyler: Introduction")>>
+		<<set $InActiveQuests.push("Tyler: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Leo */
+<<if $UnavailableQuests.includes("Leo: Shotatube Show")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: Gabe Asleep | Gabe's Bedroom */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Leo: Shotatube Show")>>
+		<<set $InActiveQuests.push("Leo: Shotatube Show")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Leo: Modeling")>>
+	/* Requires: Leo: Shotatube Show
+	Triggers: Get Job: */
+	<<if $CompletedQuests.includes("Leo: Shotatube Show")>>
+		<<set $UnavailableQuests.delete("Leo: Modeling")>>
+		<<set $InActiveQuests.push("Leo: Modeling")>>
+	<</if>>
+<</if>>
+
+/* Raymond */
+<<if $UnavailableQuests.includes("Raymond: Introduction")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: School Lunch Time | School Library */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Raymond: Introduction")>>
+		<<set $InActiveQuests.push("Raymond: Introduction")>>
+	<</if>>
+<</if>>
+<<if $UnavailableQuests.includes("Raymond: Introduction")>>
+	/* Requires: Raymond Social 30+
+	Triggers: Northend Playground Play */
+	<<if $OCSocialRaymond > 30>>
+		<<set $UnavailableQuests.delete("Raymond: The Kidds")>>
+		<<set $InActiveQuests.push("Raymond: The Kidds")>>
+	<</if>>
+<</if>>
+
+/* Zach */
+<<if $UnavailableQuests.includes("Zach: Brochella Lite")>>
+	/* Requires: 7 Days since Game Start
+	Triggers: South Hallway | After 2PM | 10% Chance */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Zach: Brochella Lite")>>
+		<<set $InActiveQuests.push("Zach: Brochella Lite")>>
+	<</if>>
+<</if>>
+
+/* JST */
+<<if $UnavailableQuests.includes("Jacob: Introduction")>>
+	/* Requires: After First Friday
+	Triggers: Arcade, 7AM to 4PM, Weekend */
+	<<if $Time.daysSinceStart() > 3>>
+		<<set $UnavailableQuests.delete("Jacob: Introduction")>>
+		<<set $InActiveQuests.push("Jacob: Introduction")>>
+	<</if>>
+<</if>>
+
+/* James */
+<<if $UnavailableQuests.includes("James: The Orange Mystery Part 1")>>
+	/* Requires: Achievement Shop Intro
+	Triggers: School Cafeteria/Courtyard */
+	<<if $AchievementShopIntroDone == true>>
+		<<set $UnavailableQuests.delete("James: The Orange Mystery Part 1")>>
+		<<set $InActiveQuests.push("James: The Orange Mystery Part 1")>>
+	<</if>>
+<</if>>
+
+/* Jonny */
+<<if $UnavailableQuests.includes("Jonny: The Fret Champion")>>
+	/* Requires: 1 Week Ingame
+	Triggers: Playing at the Arcade */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Jonny: The Fret Champion")>>
+		<<set $InActiveQuests.push("Jonny: The Fret Champion")>>
+	<</if>>
+<</if>>
+
+/* Kade */
+<<if $UnavailableQuests.includes("Kade: Introduction")>>
+	/* Requires: 1 Week Ingame
+	Triggers: School Hallway Encounter */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Kade: Introduction")>>
+		<<set $InActiveQuests.push("Kade: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Aubin */
+<<if $UnavailableQuests.includes("Aubin: Introduction")>>
+	/* Requires: 1 Week Ingame
+	Triggers: Northend Playground Play */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Aubin: Introduction")>>
+		<<set $InActiveQuests.push("Aubin: Introduction")>>
+	<</if>>
+<</if>>
+
+
+/* Alex */
+<<if $UnavailableQuests.includes("Alex: Introduction")>>
+	/* Requires: 50+ or 50- Social with Michael
+	Triggers: School Playground Play */
+	<<if $MichaelSocial > 50 or $MichaelSocial < -50>>
+		<<set $UnavailableQuests.delete("Alex: Introduction")>>
+		<<set $InActiveQuests.push("Alex: Introduction")>>
+	<</if>>
+<</if>>
+
+
+/* George & Timmy */
+<<if $UnavailableQuests.includes("George & Timmy: Introduction")>>
+	/* Requires: 1 Week Ingame
+	Triggers: Northend Playground Weekend */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("George & Timmy: Introduction")>>
+		<<set $InActiveQuests.push("George & Timmy: Introduction")>>
+	<</if>>
+<</if>>
+
+/* Don */
+<<if $UnavailableQuests.includes("Don: Introduction")>>
+	/* Requires: Michael: Little Bear && 14 days passed
+	Triggers: Northend */
+	<<if $Time.daysSinceStart() > 14 && $CompletedQuests.includes("Michael: Little Bear")>>
+		<<set $UnavailableQuests.delete("Don: Introduction")>>
+		<<set $InActiveQuests.push("Don: Introduction")>>
+	<</if>>
+<</if>>
+
+
+/* SPECIAL SECRET QUESTS (KEEP LAST) */
+<<if $UnavailableQuests.includes("Kitsune: Werewolf") && $Player.Traits.includes("Kitsune")>>
+	/* Requires: 1 Week Ingame
+	Triggers: Explore Woods between 12AM and 4AM */
+	<<if $Time.daysSinceStart() > 7>>
+		<<set $UnavailableQuests.delete("Kitsune: Werewolf")>>
+		<<set $InActiveQuests.push("Kitsune: Werewolf")>>
+	<</if>>
+<</if>>
+
+
+:: Quest Tracking Remove Inactive Quests [nobr]
+
+/* Noah Rank 1 */
+<<if $InActiveQuests.includes("Noah: Stormy Night")>>
+	/* At least 100 Social with Noah & "Noah: Booster Shot" completed.
+	Triggers: Friday/Saturday between 6PM and 8PM in the Living Room
+		Rank Up Quest */
+	<<if $NoahSocial < 90>>
+		<<set $InActiveQuests.delete("Noah: Stormy Night")>>
+		<<set $UnavailableQuests.push("Noah: Stormy Night")>>
+	<</if>>
+<</if>>
+
+/* Lucas Rank 1 */
+<<if $InActiveQuests.includes("Lucas: Punishment Game")>>
+	/* Requires 100+ Social and "Lucas: Ryker" & "Lucas: Price of Fame" Complete
+	Triggers in Math Class
+	Rank Up Quest */
+	<<if $LucasSocial < 90>>
+		<<set $InActiveQuests.delete("Lucas: Punishment Game")>>
+		<<set $UnavailableQuests.push("Lucas: Punishment Game")>>
+	<</if>>
+<</if>>
+
+/* Gabe Bad End Quest */
+<<if $InActiveQuests.includes("Gabe: Bail Out")>>
+	/* Requires -100 Social with Gabe & NonCon to be Toggled On & Noah's Booster Shot Quest Completed.
+	Triggers: Living room between 5PM and 7PM.
+		Bad End Quest */
+	<<if $GabeSocial > -90>>
+		<<set $InActiveQuests.delete("Gabe: Bail Out")>>
+		<<set $UnavailableQuests.push("Gabe: Bail Out")>>
+	<</if>>
+<</if>>
+
+/* Michael Bad End Quest */
+<<if $InActiveQuests.includes("Michael: Blackmail")>>
+	/* Requires: -100 Social, NonCon Toggle On
+	Triggers: Bus Ride to School */
+	<<if $MichaelSocial > -90>>
+		<<set $InActiveQuests.delete("Michael: Blackmail")>>
+		<<set $UnavailableQuests.push("Michael: Blackmail")>>
+	<</if>>
+<</if>>

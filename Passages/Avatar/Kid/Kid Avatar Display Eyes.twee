@@ -1,0 +1,48 @@
+:: Kid Avatar Display Eyes [nobr]
+
+<div style="position: relative">
+	<<if $AD.Eyes != "Closed" && $AD.Eyes != "Right Wink" && $AD.Eyes != "Left Wink">>
+		<<if $AD.Eyes == "Normal">>
+			<<set _eyes to "">>
+		<<else>>
+			<<set _eyes to $AD.Eyes + " Eyes/">>
+		<</if>>
+
+		<img @src="`Images/Avatar/Kids/Eyes/${_eyes}${$AD.EyeColor}.png`"
+			style="position: absolute; left: 0; top: 0">
+	
+	<<elseif $AD.Eyes == "Right Wink">>
+		<<set _eyes to "">>
+		<img @src="`Images/Avatar/Kids/Eyes/${_eyes}${$AD.LeftEyeColor} Left.png`" style="position: absolute; left: 0; top: 0">
+	<<elseif $AD.Eyes == "Left Wink">>
+		<<set _eyes to "">>
+		<img @src="`Images/Avatar/Kids/Eyes/${_eyes}${$AD.RightEyeColor} Right.png`" style="position: absolute; left: 0; top: 0">
+	<</if>>
+
+	/* EYEBROWS */
+
+	<<if ["Normal", "Closed", "Right Wink", "Left Wink"].contains($AD.Eyes)>>
+		<<set _eyebrows to "">>
+	<<else>>
+		<<set _eyebrows to $AD.Eyes + "/">>
+	<</if>>
+
+	<img @src="`Images/Avatar/Kids/Eyebrows/${_eyebrows}${$AD.HairColor}.png`"
+		style="position: absolute; left: 0; top: 0">
+
+	/* CRY */
+	<<switch $AD.Cry>>
+		<<case 1>>
+			<<set _cry to "Sad">>
+		<<case 2>>
+			<<set _cry to "Very Sad">>
+		<<default>>
+			<<set _cry to false>>
+	<</switch>>
+
+	<<if _cry>>
+		<img @src="`Images/Avatar/Kids/Eyes/Tears/${_cry}.png`"
+			style="position: absolute; left: 0; top: 0">
+	<</if>>
+
+</div>

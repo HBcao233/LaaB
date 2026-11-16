@@ -1,0 +1,112 @@
+:: Town Ride Around on Bike [nobr]
+
+/* Dog Event Added to ensure there is always one. */
+<<set _events to ["Town Ride Around on Bike Random Dog Misfortune"]>>
+
+<<if $LucasSocial > 20>>
+    <<set _events.push("Town Ride Around on Bike Playfully Trying to Rundown Lucas")>>
+<</if>>
+<<if $FearDogs != 1>>
+    <<set _events.push("Town Ride Around on Bike Random Dog Misfortune")>>
+<</if>>
+
+<<set _event to _events.random()>>
+
+<<include _event>>
+
+:: Town Ride Around on Bike Playfully Trying to Rundown Lucas [nobr]
+
+/* Written by: Koinu */
+/* Intro */
+<<set $Minutes += 20>>
+The wind tussles your hair as you zoom around the park on your bike. You had just given it a nice tune-up before heading out, so you’re flying by like a bullet. The air is butter and you’re the hot knife. <span style="color:LightGreen">The rush of adrenaline, the smell of the Park, and the sound of your wheels have plastered a big grin on your face, and you even dare to take your hands off the handlebars.</span> You laugh and let out a wild hoot, then correct yourself once you start to wobble. <br>
+<br> 
+Just a ways up the path, you spot a familiar figure – and your grin becomes a lot less innocent. You lean forward and peddle faster, heading right for <span style="color:DarkTurquoise">Lucas</span>, and as he notices you he waves you over. He balances on his toes and cups his mouth to call out, <span style="Color: LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$LucasNickname</span>!”</span> <br>
+<br>
+You stay silent when you get near enough to circle him, and he laughs. <span style="Color: LightSteelBlue">“What are you doing?”</span> He clamps his hands over his hips as he watches you, turning his head with you as you tighten around him. You see <span style="color:DarkTurquoise">Lucas</span>’s eyes open wider as he seems to catch on. <span style="color:Pink">You snicker because he reminds you of a little owl.</span> He holds up his hands defensively, shaking his head. <span style="Color: LightSteelBlue">“Wait, wait, wait, wait!”</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                },
+            },
+            {
+                Name: "Lucas",
+                State: {
+                    Outtit: "Everyday",
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+You take that as a sign to hit the gas, and head straight for him. He barely has time to scream, let alone jump out of the way, but he makes it by the skin of his teeth. You’re both giggling, and you stop to toss your head about and make sounds you’ve heard bulls make in cartoons. You kick up dirt with your foot and snort. <span style="color:DarkTurquoise">Lucas</span>, in turn, immediately falls into character and pretends to shake a cape. <br>
+<br>
+<span style="Color: LightSteelBlue">“Toro, toro!”</span> <br>
+<br>
+You duck your head and speed toward him for another round. He dances away this time, lighter on his feet, and pulls out his invisible cape once again. <br>
+<br>
+<span style="Color: LightSteelBlue">“Olé!”</span> <br>
+<br>
+This goes on for several turns, with some near-misses as well as some impressive dodges from <span style="color:DarkTurquoise">Lucas</span>. You’re both winded by the end of it, clutching your knees, leaning forward, huffing and laughing. He strides over to you and gives you a rough pat on the head as you try to catch your breath. You give him a snort for his troubles. <br>
+<<socialChange "Lucas" 3>>
+<<needChange "Fun" 10>>
+<<needChange "Energy" -3>>
+<<skillPoints "Athletics" 3>>
+<br>
+<<endByLocation>>
+
+:: Town Ride Around on Bike Random Dog Misfortune [nobr]
+
+/* Written by: Winters */
+/* Intro */
+<<set $Minutes += 20>>
+The sun is warm on your back, and the wind is whistling a high-pitched tune as it whips past you. <span style="color:LightGreen">A smile crosses your face as you lean into the handles and pump your legs faster. The pedals seem to strain to keep up with you. The world is just a blur of green suburban lawns and gray pavement. You feel unstoppable.</span> <br>
+<br>
+<span style="color:Yellow">That feeling lasts until a flash of golden fur darts out from behind a parked car.</span> A yell escapes you as what appears to be a dog, a big, clumsy-looking Golden Retriever, bolts across the street right in front of you. <span style="color:LightCoral">Jamming on the brakes, tires screaming in protest, you realize with a jolt that you won’t be able to stop in time. To avoid a collision, you jerk the handlebars to the right, steering yourself off the smooth asphalt and towards the sidewalk.</span> <br>
+<br>
+Your front tyres hit the curb of the sidewalk and you feel a lurch as the bike bucks you off like a wild bull. The bike slides out from under you, and you go sailing through the air. <br>
+<br>
+<span style="color:LightCoral">Squelch.</span> <br>
+<br>
+Luckily, you’re wearing a helmet as you land. <span style="color:LightCoral">Instead of hitting the grass, you land in a deep puddle of stagnant mud. You sit there for a moment, stunned. You can feel the thick, brown sludge soaking into your $PlayerBottoms.Type.</span>
+
+<<if $PlayerTop.Type != "None">>
+    The front of your shirt is also covered with mud. <br>
+    <br>
+<<else>>
+    Your bare chest is covered with mud. <span style="color:LightCoral">It’s guaranteed that you’ll have to take a bath soon.</span> <br>
+    <br>
+<</if>>
+
+You look down at your hands, which are now encased in what appears to be chocolate-colored gloves. <span style="color:LightCoral">An angry grunt escapes you as you examine them. Panic rises in you as you suddenly think about the damage to your bike.</span> As you start to get up, you notice the dog that ran in front of you. He is standing at the edge of the puddle, tilting his head at you. He looks genuinely concerned, his tail giving a slow, hesitant wag. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Closed",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+He then trots into the muck, <span style="color:Pink">oblivious to the mess. He reaches your face and, with the enthusiasm of a long-lost friend, delivers a massive, wet, sloppy lick right across your cheek. He follows up with another, and another.</span> <br>
+<br>
+You try to pull back, but you slip slightly, landing right back in the mud. The absurdity of it hits you. You’re covered in mud, your bike is lying in a ditch, and a random dog is trying to "clean" you with a tongue the size of a slice of ham. <br>
+<br>
+<span style="color:LightGreen">The anger evaporates. Laughter escapes you as the dog continues to lick your face. You return the affection by rubbing the dog behind his muddy ears. After your face is <span style="Color: LightSteelBlue">“cleaned”</span> from the mud, the dog trots off.</span> <br>
+<br>
+Wiping a stray drop of mud from your eyebrow, you get up. Looking down, you see that you are almost completely covered in mud. Luckily, your bike did not seem to have been damaged by the collision. Picking the bike up from the curb, you get back on and start peddling. This time at a slower speed. <br>
+<<needChange "Fun" 10>>
+<<needChange "Energy" -3>>
+<<skillPoints "Athletics" 3>>
+<<needChange "Hygiene" -50>>
+<<addMoodlet "Stress" 0>>
+<br>
+<<endByLocation>>

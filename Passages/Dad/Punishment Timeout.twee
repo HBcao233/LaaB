@@ -1,0 +1,34 @@
+:: Punishment Timeout [nobr]
+
+
+<span style="color:LightSteelBlue">“I’m very disappointed with how you’ve been acting recently, <span style="color:DarkTurquoise">$Player.Name</span>.”</span> <span style="color:DarkTurquoise">Your Father</span> sighs loudly. <span style="color:LightSteelBlue">“You need to get your act together mister, or I’ll be forced to ground you.”</span> <span style="color:DarkTurquoise">Your Father</span> goes on a long rant about what you did wrong, making you apologize over and over again to him until he is satisfied. <span style="color:LightSteelBlue">“Go stand in the corner in the kitchen until I say so. I want you to think about what I said and what you are going to do to make sure this doesn’t happen again, okay?”</span> You nod and are led to what <span style="color:DarkTurquoise">Your Father</span> has labeled as “The Time-Out Corner”.<br>
+
+<<set _ad to [
+	{
+		Name: "Dad",
+		State: {
+			Brows: "Angry",
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+			Blush: 1,
+			Eyes: "Sad",
+			Arms: "Bound",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You feel embarrassed to be punished in such a kiddie way, forced to stand in a corner with your hands and nose against the wall. You couldn’t move or speak without <span style="color:DarkTurquoise">Your Father</span> knowing, you partially think he is psychic with how he always knows, even from the other side of the house. To make matters worse, your elder brother like to take this opportunity to mess with you since you couldn’t do anything to stop him.<br>
+<br>
+You are standing there, dying of boredom, for half an hour before <span style="color:DarkTurquoise">Your Father</span> lets you leave, after asking if you’ve learned your lesson.<br>
+	
+		<<addMoodlet "Stress" 1>>
+		<<set $Minutes += 30>>
+		<<set $Punishment to 0>>
+		<br>
+		[[Continue|PH Kitchen]] 

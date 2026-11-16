@@ -1,0 +1,141 @@
+:: Debug Test Menu [nobr]
+
+<span style="color:Azure"><big><strong>--Debug Test Menu--</strong></big></span><br>
+
+This is an area to test the features of the game using the Debug Menu. It is not recommended to use this menu on a normal save, just in case it breaks something. Please select which menu you want to view.
+<br><br>
+
+<strong>-Scene Testing-</strong> <br>
+
+[[Carter Repeatable Lewd Intro]]<br>
+[[OC Shinju Manuel Skinny Dipping]]<br>
+<br>
+[[Felix Spy Intro First]]<br>
+[[Felix Spy Intro]]<br>
+[[Felix Spy Checking Self Out]]<br>
+[[Felix Spy Ice]]<br>
+[[Felix Spy Juggling Ball]]<br>
+[[Felix Spy Masturbating]]<br>
+[[Felix Spy Phone Without Shirt]]<br>
+[[Felix Spy Sniffing Underwear]]<br>
+[[Felix Spy Speedo]]<br>
+[[Felix Spy Underwear Stretch]]<br>
+<br>
+
+<strong>-Test Menus-</strong><br>
+<<link "Debug NPC Sprite Viewer">>
+    <<set $NPCViewer to {
+        Name: "Lucas",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+    <<goto "Debug NPC Viewer">>
+<</link>><br>
+<br>
+
+/* Testing push */
+
+[[Test Shopping Menu]] <br>
+[[Shopping District Boy Barn]] <br>
+
+<<link "Debug Adult Sprite Viewer">>
+    <<set $DebugCategory to "Body">>
+    <<set $DebugViewer to {
+        BodyType: "Average",
+        SkinColor: "White",
+        Hair: "Fatherly Straight",
+        HairColor: "Black",
+        Eyes: "Normal",
+        Brows: "Normal",
+        EyeColor: "Blue",
+        Arms: "Normal",
+        BodyHair: {
+            Biceps: "None",
+            Forearms: "None",
+            Calves: "None",
+            Chest: "None",
+            Stomach: "None",
+            Thighs: "None",
+        },
+        Abs: 0,
+        PubicHair: "None",
+        HappyTrail: 0,
+        Blush: 0,
+        FacialHair: "None",
+        Freckles: "None",
+        Mouth: "Normal",
+        Nose: "Wide",
+        Scars: {
+            Cheek: 0,
+            Chin: 0,
+            Ear: 0,
+            Eye: 0,
+            Eyebrows: 0,
+            Head: 0,
+            Jaw: 0,
+            Lip: 0,
+            Nose: 0,
+            Temple: 0,
+        },
+        Wrinkles: {
+            CrowsFeet: 0,
+            Forehead: 0,
+            SmileLines: 0,
+        },
+        Balls: "Average",
+        PenisStyle: "Uncut",
+        PenisSize: "Average",
+        Penis: "Slim",
+        Undies: $None,
+        Socks: $None,
+        Shoes: $None,
+        Bottoms: $None,
+        Top: $None,
+        Face: $None,
+        Neck: $None,
+        Outer: $None,
+    }>>
+    <<goto "Debug Adult Sprite Viewer">>
+<</link>>
+<br>
+<<link"Golden">>
+    <<addClothing "Closet" "Undies" "Golden Briefs" "Golden">> 
+<</link>><br>
+
+<<link"Don Clothes Test">>
+    <<addClothing "Closet" "Top" "Don" "Yellow">> 
+    <<addClothing "Closet" "Bottoms" "Don" "Black">> 
+    <<addClothing "Closet" "Shoes" "Don" "Yellow">> 
+    <<addClothing "Closet" "Socks" "Don" "Red">> 
+<</link>><br>
+
+-Keep These Links-<br>
+[[OC Miller House Hallway]]<br>
+[[Wrestling Strike Phase]]<br>
+[[Lucas Sex Quest Pre Sex]]<br>
+[[Exposure Placeholder Woods to House]]<br>
+<<if $ActiveQuests.includes("Laser Pointer")>>
+    [Turn On Bedroom Laser pointer]<br>
+<<else>>
+    <<link"Turn On Bedroom Laser pointer">>
+        <<set $ActiveQuests.push("Laser Pointer")>>
+        <<set $LaserPointer to {
+            Active: 0,
+            Exposed: "Clothed",
+            Show: 0,
+            Days: 0,
+            Repeat: 1,
+        }>>
+        <<goto "Debug Test Menu">>
+    <</link>><br>
+<</if>>
+
+<br>
+<<include "Debug Quest Tracking">>
+
+[[Back|Player Bedroom]]
+

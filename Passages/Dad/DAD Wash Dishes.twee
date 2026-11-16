@@ -1,0 +1,241 @@
+:: DAD Wash Dishes [nobr]
+
+<<set $Minutes += 15>>
+You walk up to <span style="color:DarkTurquoise">Your Father</span> and offer to help him wash the dishes. Surprised but appreciative, he accepts, and has you dry after he washes them. It takes you two a minute to get into a good rhythm, but eventually you are both moving at a steady pace. The two of you talk as you clean, mainly about recent movies <span style="color:DarkTurquoise">Your Father</span> have seen and your various interests. <span style="color:DarkTurquoise">Your Father</span> seems very happy to be spending some quality time with you.<br>
+
+<<set _ad to [
+	{
+		Name: "Dad",
+		State: {
+			Mouth: "Smile",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Smile",
+		},
+	},
+]>>
+<<ad _ad>>
+
+/* 50% CHANCE TO SPILL WATER ON SELF */
+<<set $RandomEvent to random(1, 2)>>
+
+/* DOES NOT SPILL WATER */
+<<if $RandomEvent == 1>>
+Once finished, <span style="color:DarkTurquoise">Your Father</span> gives you a thankful pat on the head.<br>
+	<<socialChange "Dad" 3>>
+	<br>
+	[[Continue|PH Kitchen]] 
+
+/* DOES SPILL */
+<<elseif $RandomEvent == 2>>
+	<<set $RandomEvent2 to random(1, 2)>>
+	<<if $PlayerTop.Type == "None">>
+		<<set $RandomEvent2 to 2>>
+	<</if>>
+	
+/* SPILLS WATER ON SHIRT */
+	<<if $RandomEvent2 == 1>>
+	You attempt to grab the last cup to dry, not realizing it is full of water, and accidentally dump it all over yourself! You fall backwards onto your butt in surprised as your $PlayerTop.Name and face are completely soaked. <span style="color:DarkTurquoise">Your Father</span> can’t help but laugh as he helps you to your feet.<br>
+
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Frown",
+				Blush: 1,
+			},
+			Clothes: {
+				Top: $None,
+				Outer: $None,
+				Neck: $None,
+				Over: $None,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:LightSteelBlue">“You weren’t supposed to do that!”</span> He laughs as he helps you take off your $PlayerTop.Type and hands you a dish towel. You chuckle, slightly embarrassed, as he quickly finishes up. <span style="color:LightSteelBlue">“I’ll hang these up to dry. Thank you for your help <span style="color:DarkTurquoise">$DadNickname</span>.”</span><br>
+	<<socialChange "Dad" 3>>
+	<br>
+<<if $PlayerTop.Type != "None">>
+	<<set $ClosetTop.push($PlayerTop)>>
+<</if>>
+<<if $PlayerOuter.Type != "None">>
+	<<set $ClosetOuter.push($PlayerOuter)>>
+<</if>>
+<<if $PlayerOver.Type != "None">>
+	<<set $ClosetOuter.push($PlayerOver)>>
+<</if>>
+<<if $PlayerNeck.Type != "None">>
+	<<set $ClosetOuter.push($PlayerNeck)>>
+<</if>>
+	<<set $PlayerTop to $None>>
+	<<set $PlayerOuter to $None>>
+	<<set $PlayerOver to $None>>
+	<<set $PlayerNeck to $None>>
+	
+	[[Continue|PH Kitchen]] 
+	
+/* SPILL WATER ON PANTS */
+	<<elseif $RandomEvent2 == 2 and $PlayerBottoms.Type != "None">>
+	You attempt to grab the last cup to dry, not realizing it is full of water, and accidentally dump it all over yourself! You fall backwards onto your butt in surprise as your $PlayerBottoms.Name are completely soaked! <span style="color:DarkTurquoise">Your Father</span> can’t help but laugh as he helps you to your feet.<br>
+
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Frown",
+				Blush: 1,
+			},
+			Clothes: {
+				Bottoms: $None,
+				Waist: $None,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+/* WEARING UNDERWEAR */
+		<<if $PlayerUndies.Type != "None">>
+		<span style="color:LightSteelBlue">“You weren’t supposed to do that!”</span> He laughs as he quickly kneels down and pulls your $PlayerBottoms.Type down! <span style="color:Pink">You can’t help but blush slightly as <span style="color:DarkTurquoise">Your Father</span> has you step out of them, leaving you in your underwear.</span> <span style="color:LightSteelBlue">“Can’t have you running around looking like you had an accident.”</span> He laughs as he places your $PlayerBottoms.Type on the counter. He then realizes that your $PlayerUndies.Type are a bit wet as well and attempts to pat them dry. <span style="color:Pink">You feel a pleasurable sensation as he rubs your groin, causing you to move your hips slightly in response.</span><br>
+<br>
+<span style="color:LightSteelBlue">“I’ll hang these up to dry, go put something else on. Thanks for your help <span style="color:DarkTurquoise">$DadNickname</span>.”</span> He gives you a thankful pat on the head and walks off.<br>
+	<<socialChange "Dad" 3>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliation", "Adults"]>>
+	<<arousalGain 10 _arousalbs _arousalkink>>
+<<if $PlayerBottoms.Type != "None">>
+	<<set $ClosetBottoms.push($PlayerBottoms)>>
+<</if>>
+		<<set $PlayerBottoms to $None>>
+	
+		[[Continue|PH Kitchen]] 
+
+/* NOT WEARING UNDERWEAR */
+		<<elseif $PlayerUndies.Type == "None">>
+		<<if $HomeDayNudity == 0>>
+		<span style="color:LightSteelBlue">“You weren’t supposed to do that!”</span> <span style="color:Red">He laughs as he quickly kneels down and pulls your $PlayerBottoms.Type down! You cry out and quickly cover your $Player.PenisSize Penis with your hands.</span> <span style="color:LightSteelBlue">“Sorry!”</span> <span style="color:DarkTurquoise">Your Father</span> laughs loudly, <span style="color:LightSteelBlue">“I thought you’d be wearing underwear.”</span> You stand there bright red as <span style="color:DarkTurquoise">Your Father</span> has you step out of your $PlayerBottoms.Type and gives you a towel to cover yourself with.<br>
+<br>
+<span style="color:LightSteelBlue">“I’ll hang these up to dry, go put something else on. Thanks for your help <span style="color:DarkTurquoise">$DadNickname</span>.”</span> He gives you a thankful pat on the head and walks off.<br>
+		<<socialChange "Dad" 3>>
+		<<set _arousalbs to []>>
+		<<set _arousalkink to ["Humiliation", "Adults"]>>
+		<<arousalGain 20 _arousalbs _arousalkink>>
+<<if $PlayerBottoms.Type != "None">>
+	<<set $ClosetBottoms.push($PlayerBottoms)>>
+<</if>>
+		<<addClothing "PC" "Bottoms" "Towel" "White">>
+		<<set $PlayerUndies to $None>>
+		<<addMoodlet "Seen Naked" 2>>
+	
+		[[Continue|PH Kitchen]] 
+		
+		<<else>>
+		<span style="color:LightSteelBlue">“You weren’t supposed to do that!”</span> <span style="color:Pink">He laughs as he quickly kneels down and pulls your $PlayerBottoms.Type down! He is surprised by your lack of underwear, being instead greeted by your $Player.PenisSize Penis.</span> He looks up at you with a smirk, <span style="color:LightSteelBlue">“What? You don’t wear underwear anymore?”</span> You laugh and explain that sometimes it is more comfortable to not wear any as <span style="color:DarkTurquoise">Your Father</span> grabs a towel from a nearby basket and wraps it around your waist.<br>
+<br>
+<span style="color:LightSteelBlue">“Yeah well, you may be cute, but that doesn’t mean everyone wants to see you running around with your balls jiggling in the wind. Go put something on, I’ll toss these in the dryer.”</span> He pats you on the head and walks off.<br>
+		<<socialChange "Dad" 3>>
+		<<set _arousalbs to []>>
+		<<set _arousalkink to ["Humiliation", "Adults"]>>
+		<<arousalGain 10 _arousalbs _arousalkink>>
+<<if $PlayerBottoms.Type != "None">>
+	<<set $ClosetBottoms.push($PlayerBottoms)>>
+<</if>>
+<<if $PlayerUndies.Type != "None">>
+	<<set $ClosetUndies.push($PlayerUndies)>>
+<</if>>
+		<<addClothing "PC" "Bottoms" "Towel" "White">>
+		<<set $PlayerUndies to $None>>
+	
+		[[Continue|PH Kitchen]] 
+
+		
+		<</if>>
+		
+		<</if>>
+/* SPILLED WATER ON UNDERWEAR */
+	<<elseif $RandomEvent2 == 2 and $PlayerBottoms.Name == "None">>
+	
+	<<if $HomeDayNudity == 0>>
+	You attempt to grab the last cup to dry, not realizing it is full of water, and accidentally dump it all over yourself! You fall backwards onto your butt in surprise as your $PlayerUndies.Name are completely soaked! <span style="color:DarkTurquoise">Your Father</span> can’t help but laugh as he helps you to your feet.<br>
+<br>
+	<span style="color:LightSteelBlue">“You weren’t supposed to do that! Hold your arms up real quick.”</span> He laughs as he grabs a towel from the table and wraps it around your waist. <span style="color:Pink">As you chuckle in slight embarrassment, <span style="color:DarkTurquoise">Your Father</span> quickly reaches up your towel skirt and pulls down your $PlayerUndies.Type! You blush and quickly grab the towel, which nearly slips off from the sudden movement.</span> <span style="color:DarkTurquoise">Your Father</span> smiles at your embarrassment as he holds up your $PlayerUndies.Type.<br>
+
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Frown",
+				Blush: 1,
+				Arms: "Hide",
+			},
+			Clothes: {
+				Bottoms: $None,
+				Waist: $None,
+				Undies: $None,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:LightSteelBlue">“You know I’ve seen you naked before right? I use to bathe your stinky butt every night!”</span> He begins to tickle your sides slightly, nearly causing you to drop the towel. <span style="color:LightSteelBlue">“I’ll hang this up to dry, go put on another pair. Thanks for your help <span style="color:DarkTurquoise">$DadNickname</span>.”</span> He gives you a thankful pat on the head and walks off.<br>
+	<<socialChange "Dad" 3>>
+		<<set _arousalbs to []>>
+		<<set _arousalkink to ["Humiliation", "Adults"]>>
+		<<arousalGain 10 _arousalbs _arousalkink>>
+<<if $PlayerBottoms.Type != "None">>
+	<<set $ClosetBottoms.push($PlayerBottoms)>>
+<</if>>
+<<if $PlayerUndies.Type != "None">>
+	<<set $ClosetUndies.push($PlayerUndies)>>
+<</if>>
+		<<addClothing "PC" "Bottoms" "Towel" "White">>
+		<<set $PlayerUndies to $None>>
+	
+		[[Continue|PH Kitchen]] 
+		
+		<<else>>
+		<span style="color:LightSteelBlue">“You weren’t supposed to do that! Hold your arms up real quick.”</span> He laughs as he grabs a towel from the table and wraps it around your waist. <span style="color:Pink">You chuckle in slight embarrassment as you watch <span style="color:DarkTurquoise">Your Father</span> reach up your towel skirt and pull down your $PlayerUndies.Type. This causes the towel to slip off, falling to the ground and leaving your $Player.PenisSize Penis and Balls in clear view of <span style="color:DarkTurquoise">Your Father</span>.</span><br>
+<br>
+<span style="color:LightSteelBlue">“Whoops, sorry.”</span> <span style="color:DarkTurquoise">Your Father</span> laughs as he places your underwear on the counter and picks up the towel. <span style="color:Pink">You smirk and ask <span style="color:DarkTurquoise">Your Father</span> if he likes what he sees, shaking your hips slightly and causing your Penis to jiggle in front of him.</span> <span style="color:DarkTurquoise">Your Father</span> laughs at your lewd comment, wrapping the towel around your waist again before tickling your side. <span style="color:LightSteelBlue">“If you are trying to get me to toss $1 bills at you, you’ll have to try harder than that.”</span> You both laugh as he ruffles your hair and walks off.<br>
+		<<socialChange "Dad" 3>>
+		<<set _arousalbs to []>>
+		<<set _arousalkink to ["Humiliation"]>>
+		<<arousalGain 10 _arousalbs _arousalkink>>
+<<if $PlayerBottoms.Type != "None">>
+	<<set $ClosetBottoms.push($PlayerBottoms)>>
+<</if>>
+<<if $PlayerUndies.Type != "None">>
+	<<set $ClosetUndies.push($PlayerUndies)>>
+<</if>>
+		<<addClothing "PC" "Bottoms" "Towel" "White">>
+		<<set $PlayerUndies to $None>>
+	
+		[[Continue|PH Kitchen]] 
+
+		
+		<</if>>
+
+	<</if>>
+<</if>>

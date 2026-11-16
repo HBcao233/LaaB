@@ -1,0 +1,42 @@
+:: THOMAS Playground Chat With [nobr]
+
+<<set _ad to [
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<set $Minutes += 10>>
+
+/* OPENING */
+ You sit at the picnic table, right across from <span style="color:DarkTurquoise">Thomas</span>, and ask if he would like to chat. He doesn’t respond, completely focused on his drawing, so you decide to start.
+<<set $RandomTopic to random(1, 3)>>
+
+/* TOPIC ONE */
+<<if $RandomTopic == 1>>
+You ask about how long he has been into drawing and, after a few moments of prying, he reveals that he’s done it since he was little. Art supplies were cheap, so it was something he could get easily and it helped calm him down.<br>
+
+/* TOPIC TWO */
+<<elseif $RandomTopic == 2>>
+When asking about his home life, he stops and his expression turns sour. He curses his father, calling him lazy as he doesn’t have a job. <span style="color:DarkTurquoise">Thomas</span> says he has to pick up odd jobs in order to provide for him and his brother.<br>
+
+/* TOPIC THREE */
+<<elseif $RandomTopic == 3>>
+You ask <span style="color:DarkTurquoise">Thomas</span> why he draws so much and if he does anything with his drawings. Slightly embarrassed, he says that he gives the cute drawings to his little brother. He doesn’t have a TV or many toys, so the drawings <span style="color:DarkTurquoise">Thomas</span> makes are one of his few sources of entertainment.<br>
+
+<</if>>
+
+/* SOCIAL POINTS GAIN */
+<<if $ThomasDailyChat != 1>>
+    <<socialChange "Thomas" 3>>
+		<<set $ThomasDailyChat to 1>>
+<<else>>
+    <<socialChange "Thomas" 1>>
+		<<set $ThomasDailyChat to 1>>
+<</if>>
+<br>
+[[Continue|School Courtyard]] 

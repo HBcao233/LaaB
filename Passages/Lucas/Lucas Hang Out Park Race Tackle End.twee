@@ -1,0 +1,43 @@
+:: Lucas Hang Out Park Race Tackle End [nobr]
+
+<<set $Minutes += 15>>
+
+You smile, before quickly saying that the last person to the other end of the park is a loser and take off running. <span style="color:DarkTurquoise">Lucas</span> calls out <span style="color:LightSteelBlue">“No fair!”</span> but you just laugh as you continue running. Despite your headstart, <span style="color:DarkTurquoise">Lucas</span> is able to catch up with you, being right on your back. You try to increase your speed, but he is with you the entire time. <br>
+<br>
+The end in sight, you both begin to feel your tanks depleting and start to slow down, breathing heavily. Despite this, it was clear that unless <span style="color:DarkTurquoise">Lucas</span> got some sudden burst of speed he would lose to you and be declared a ‘loser’. This prompts you to begin taunting him as you approach the end. <br>
+<br>
+There is no response. You turn around just in time to see <span style="color:DarkTurquoise">Lucas</span> leaping into the air and tackling you into the grass. You both tumble and roll to the ground atop one another. Regardless of the new bruises on your elbows, you can’t help but giggle along with <span style="color:DarkTurquoise">Lucas</span> as you both come to a stop on your back, lying on the grass next to each other. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: $HangOutClothes,
+			Mouth: "Happy",
+			Eyes: "Closed",
+			Blush: 2,
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Smirk",
+			Eyes: "Tired",
+			Blush: 2,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“There.”</span> <span style="color:DarkTurquoise">Lucas</span> says between deep breaths, <span style="color:LightSteelBlue">“Now neither of us are losers. Or we both are, I don’t know.”</span> You both turn to each other and smile. You state that you can both be losers together, but he’s a bigger loser for cheating and tackling you. <br>
+<br>
+<span style="color:LightSteelBlue">“Says the cheater who ran off before we started!”</span> <span style="color:DarkTurquoise">Lucas</span> retorts, rolling on top of you and lightly punching your chest. You both wrestle in the grass for a minute before your bodies remind you that you are out of energy and both decide to take a rest. <br>
+    <<needChange "Fun" 10>>
+	<<needChange "Energy" -3>>
+    <span style="color:green">+Lucas Fun</span><br>
+    <<set $HangOutNeed.Fun += 15>>
+    <span style="color:red">-Lucas Energy</span><br>
+    <<set $HangOutNeed.Energy -= 15>>
+	<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Hang Out Park]]

@@ -1,0 +1,71 @@
+:: Home Bath Poking out of Water [nobr]
+
+/* Written by: Winters */
+/* Intro */
+
+<<set $Minutes += 45>>
+
+Turning on the water in the bath, you strip off all your clothes. <span style="color:LightGreen">Standing there naked, you make a couple of poses, flexing what muscles you have in the mirror as you wait for the water to fill up the tub.</span> Eventually, the fog in the mirror prevents that bit of fun, and indicates the bath is nearly full.  Gingerly, you place a few toes into the water to test it before deciding it is fine to get in. <br>
+	
+    <<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        }
+    }
+]>>
+<<ad _ad>>
+
+Getting down to the chore of washing, you soap up your hair and body. Soapy bubbles start to form as you wash yourself.  You even take the time to wash the bottom of your feet, which you don’t do as often as you’re told. <br>
+<br>
+With the cleaning out of the way, you immerse yourself in the water. <span style="color:LightGreen">The water is so relaxing as it envelops you like a warm, comforting hug.  You lay there with your eyes closed, savoring the warm sensation.  Sliding down further, you allow the warm water to rise past your mouth and ears. The water dampens the sound of the rest of the house, allowing you to just focus on this sensation.</span> <br>
+<br>
+The movement of the lapping water starts to tickle the tip of your nose.  As you breathe out you feel the ripple of the water. Instinctually, you start to blow bubbles out of your mouth.  You feel, more than hear, the gurgle of water as you do this. <span style="color:LightGreen">As the bubbles form, they start to tickle the tip of your nose, causing you to giggle.</span> <br>
+<br>
+<span style="color:lightcoral">This giggling is cut short, however, as the rush of soapy water enters your mouth and throat. In a sudden motion, you burst out of the water coughing uncontrollably.  Eventually, the coughing lessens, leaving behind a burning sensation in your throat and nose from all the soap.</span> Easing back down into the water, you lower yourself back in and decide it’s best to avoid making excessive bubbles.<br>
+<br>
+
+<<if $Player.Arousal >= 50>>
+    /*-If PC Hard-*/
+
+    As you return to relaxing after that bout of coughing, you notice a new sensation.  Through a break in the soap bubbles you
+
+    /*Tiny/Small*/
+    <<if $Player.PenisSize == "Tiny" or $Player.PenisSize == "Small">>
+
+        spot your $Player.PenisSize penis poking up at full mast under the water.  Alas, the fathoms of the bathwater are too much for your penis to surmount.  Curiously, you flex as your penis twitches towards your body.  <span style="color:Pink">The movement barely causes a ripple in the water but registers a moan from you at the pleasurable sensation of the warm, moving water around your penis. <br>
+        <br>
+        You continue this motion, flexing at different speeds to feel the resulting, pleasurable, sensations.  During this time, your penis twitches uncontrollably under the water.</span> <br>
+
+        /*Average*/
+    <<elseif $Player.PenisSize == "Average">>
+
+        spot your $Player.PenisSize penis poking up at full mast, with just the cute head poking over the top of the water.  The pleasant feeling of the warm water enveloping your penis is interrupted by the shock of cold air on the tip. Cringing slightly at the sensation, you poke the tip of your penis to submerge it back down into the water. <br>
+        <br>
+        <span style="color:Pink">For a moment, the flow of warm water around your penis creates a pleasurable sensation as it sinks back down, and then it stops suddenly as your penis springs back and the head emerges out of the water once again.  You start to experiment with poking it back down at different speeds, feeling the rush of water flow around your penis.  Even the sudden shock of cold air on the head starts to become pleasurable.</span> <br>
+
+    /*Large/Gigantic*/
+    <<else>>
+        spot your $Player.PenisSize penis poking up at full mast out of the water.  It’s surprising you didn’t notice a large portion of your penis is poking out of the water, standing stiff against the cold air.  You giggle as you imagine what it must look like if a monstrous $Player.PenisSize penis rose out of the ocean waters to attack unaware sailing ships.  Sailors would whisper of the mighty sea monster The Cock-en, and the prodigious goo it shot out! <br>
+        <br>
+        Recalling what happened recently when you started giggling in the bath, you stifle it as you grab your penis and try to push it back down into the warm water.  However, it proves difficult as your fully erect penis continues to try and spring back out of the water. <br>
+        <br>
+        <span style="color:Pink">As you struggle to contain this sea monster, the motion of your hand and the flow of water around your penis reveals new pleasures.  Your efforts to stop your penis from poking out of the water changes to experimenting with different speeds and strokes.</span> <br>
+    <</if>>
+    <br>
+<</if>>
+<<linkreplace"Continue">>
+
+    Eventually your fun is interrupted as the warm water starts to get cold, and your hands start showing the wrinkled signs that it is time to finish your bath.  As you get out, your $Player.PenisSize penis starts to shrivel in the cold air.  It seems the fun for it has also ended.  Drying off, you wrap yourself in the towel and end your bath.  <span style="color:lightcoral">Your nose and throat are still burning slightly from the soapy water.</span> <br>
+
+    <<needChange "Hygiene" 100>>
+    <<needChange "Fun" 5>>
+    <<addMoodlet "Stress" 0>>
+	<<addClothing "PC" "Bottoms" "Towel" "White">>
+	<<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Bathroom]]
+<</linkreplace>>

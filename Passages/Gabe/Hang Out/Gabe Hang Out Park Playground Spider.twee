@@ -1,0 +1,190 @@
+:: Gabe Hang Out Park Playground Spider [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+You and <span style="color:DarkTurquoise">Gabe</span> are walking near the sandpit that lines the floor under the jungle gym and swings, goofing around and chatting, when you say something that mildly amuses and annoys him. <span style="color:LightSteelBlue">“Shut up, dweeb, you don’t know what you’re talking about.”</span> He says, lightly shoving you. You stick your tongue out at him, shoving him much harder, though your smaller arms just cause him to stumble a bit. Still, you laugh and point at your brother as he, with a smirk, shoves you MUCH harder and you land flat on your butt in the sand! <br>
+
+    <<set _ad to [
+        {
+            Name: "Gabe",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Mad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Don’t play games you can’t win.”</span> <span style="color:DarkTurquoise">Gabe</span> laughs, reaching down to help you up, <span style="color:LightGreen">but instead of allowing that, you grab his hand and use all of your body weight to yank him into the sand as well!</span> <span style="color:LightSteelBlue">“Woah!”</span> <span style="color:DarkTurquoise">Gabe</span> cries out as he is yanked face-first into the sand, getting a mouthful of the grains. This causes you to laugh once more as a red-faced <span style="color:DarkTurquoise">Gabe</span> sits up and glares at you. <br>
+<br>
+<span style="color:LightGreen">This leads to you and <span style="color:DarkTurquoise">Gabe</span> rolling around and roughhousing in the sand, kicking it into the air and rolling around. It may look a bit violent from the outside, but it’s one of those aggressive yet wholesome moments that only brothers can have.</span> You are nearly wiped out and out of breath <span style="color:Yellow">when a sudden, much high-pitched, cry from <span style="color:DarkTurquoise">Gabe</span> makes your heart skip a beat!</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Gabe",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Fucking hell!”</span> <span style="color:DarkTurquoise">Gabe</span> practically leaps back, eyes wide with genuine fear as he points to the edge of the sandpit right behind you. Confused, you turn around <span style="color:Yellow">to find a giant, hand-sized tarantula standing only a few feet away! It stares as you with its dozens of eyes, causing you freeze for a moment.</span> <br>
+<br>
+
+<<if $Player.Traits.includes("Coward") or $FearBugs == 1>>
+    <div id="choice">
+        <<requiresTrait "Coward" "Freak Out">>
+        <<replace"#choice">>
+            <<include"Gabe Hang Out Park Playground Spider Fear">>
+        <</replace>>
+        <</requiresTrait>>
+        <<if $FearBugs == 1>>
+            <<link "<strong>[Fear]</strong> Freak Out<br>">>
+            <<replace"#choice">>
+                <<include"Gabe Hang Out Park Playground Spider Fear">>
+            <</replace>>
+            <</link>>
+        <</if>>
+    </div>
+<<else>>
+    <div id="choice">
+        <<link "Freak Out<br>">>
+        <<replace"#choice">>
+            <<include"Gabe Hang Out Park Playground Spider Fear">>
+        <</replace>>
+        <</link>>
+        <<link "Tease Gabe<br>">>
+        <<replace"#choice">>
+            <span style="color:Pink">You can’t help but burst out laughing at the absolute terror on your big brother’s face. The way he screamed and scrambled away? Oh my gosh, that was so funny! It’s just a little spider, why is he so afraid?</span> <span style="color:LightSteelBlue">“Dude, do you even see that thing!?”</span> <span style="color:DarkTurquoise">Gabe</span> replies, his face burning red, <span style="color:LightSteelBlue">“It’s like the size of an apple; that thing bites you, and you’re dead!”</span> You look down at the spider, just chilling, before laughing again. <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Gabe",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Frown",
+                            Eyes: "Mad",
+                            Blush: 1,
+                        },
+                    },
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            <span style="color:LightSteelBlue">“W- whatever! Let’s just go do something else before I kick your butt!”</span> <span style="color:DarkTurquoise">Gabe</span>’s pride is wounded by your teasing, <span style="color:LightGreen">though the presence of the spider so close to you seems to make him unwilling to take even a step closer to you. You’ll have to remember that next time <span style="color:DarkTurquoise">Gabe</span> is messing with you.</span> <br>
+            <br>
+            Sadly, the spider eventually gets bored and scurries away into the bushes and you and <span style="color:DarkTurquoise">Gabe</span> head to a different part of the park. <span style="color:LightGreen">The main upside being that <span style="color:DarkTurquoise">Gabe</span> seems too worried about coming across another massive spider that he doesn’t seem interested in getting payback for your earlier teasing.</span> <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 15>>
+            <<socialChange "Gabe" 3>>
+            <span style="color:green">+Gabe Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+            <span style="color:red">-Gabe Energy</span><br>
+            <<set $HangOutNeed.Energy -= 10>>
+            <br>
+            [[Continue|Gabe Hang Out Park]]
+        <</replace>>
+        <</link>>
+        <<requiresTrait "Brave" "Pick it up">>
+        <<replace"#choice">>
+            <span style="color:LightGreen">You look at your brother, terrified of such a little, honestly harmless creature, then down at the spider, who is just chilling on the edge of the sandpit.</span> You smirk, asking <span style="color:DarkTurquoise">Gabe</span> why he’s so afraid as you walk over and kneel down next to the creature. <span style="color:LightSteelBlue">“W-watch it! Not too close, some of those bastards can jump!”</span> You laugh, reaching down before doing something that defies all logic, at least in <span style="color:DarkTurquoise">Gabe</span>’s mind. <span style="color:LightGreen">You put your hand down and let the spider crawl onto your hand!</span> <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Gabe",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Frown",
+                            Blush: 2,
+                        },
+                    },
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Mad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            <span style="color:LightSteelBlue">“What the hell are you doing!?”</span> <span style="color:DarkTurquoise">Gabe</span> <span style="color:Pink">cries out, jumping back further as you hold up your hand, the massive spider now crawling around your forearm curiously.</span> The spider glances up at you, at least you think it does, as you laugh and take a step towards <span style="color:DarkTurquoise">Gabe</span>. <span style="color:LightSteelBlue">“D- do not bring that over here! $GabeNickname! I swear, I will kick your- Ah!”</span> <span style="color:DarkTurquoise">Gabe</span> <span style="color:Pink">scramble back more in fear as you walk towards him, spider crawling from one hand to another as your brother’s screams attract attention, though once witnesses see the admittedly large spider on your arm, they also back up as far away as they can.</span> <br>
+            <br>
+            As fun as teasing and chasing <span style="color:DarkTurquoise">Gabe</span> around with the spider would be, once he gets a large rock to defend himself, you decide to put the spider back in the bushes, not wanting it to get hurt by your big brother. You say goodbye to your eight-legged friend as it scurries away. <span style="color:DarkTurquoise">Gabe</span> <span style="color:Pink">watches you closely as you walk back over to him, seemingly convinced you are hiding the spider somewhere on your person. He only lets you get close once he is 95% sure you no longer have it. <br>
+            <br>
+            Though that 5% doubt in his brain leads him to avoid getting any sort of revenge for your teasing, worried you’d pull the spider out of your pocket and toss it on him. It’s kind of funny to see your cool big brother acting like such a scaredy cat.</span> <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 20>>
+            <span style="color:green">+Gabe Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:red">-Gabe Energy</span><br>
+            <<set $HangOutNeed.Energy -= 15>>
+            <br>
+            [[Continue|Gabe Hang Out Park]]
+        <</replace>>
+        <</requiresTrait>>
+    </div>
+<</if>>
+
+:: Gabe Hang Out Park Playground Spider Fear [nobr]
+
+/* Intro */
+<span style="color:LightCoral">You let out a bone chilling scream and attempt to scramble away, slipping on the fine grains of sand and faceplanting into the ground! Your mouth gets full of the stuff and your eyes water from the rough texture, but you don’t care as you continue to scramble away, hiding behind your brother as the giant spider, unamused, takes a few steps to the side before pausing once more.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Gabe",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+                Cry: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Damn…”</span> <span style="color:DarkTurquoise">Gabe</span> says as you peak out from behind him, <span style="color:LightSteelBlue">“That thing is massive! Almost landed on it…”</span> <span style="color:DarkTurquoise">Gabe</span> shivers, his fear of spiders would be rather humorous if you were not also terrified of the thing. <span style="color:LightSteelBlue">“I didn’t know they had ones that big here…”</span> He pauses, both of you looking at each other, <span style="color:LightSteelBlue">“Maybe we should ask dad to move back?”</span> <br>
+<br>
+You both watch the spider nervously, creeped out beyond belief, as it leaves and scurries away into the nearby bushes. <span style="color:Yellow">You both then agree to stay clear of those bushes, and the sandpit, for the foreseeable future.</span> <br>
+<<addMoodlet "Stress" 0>>
+<<needChange "Fun" 10>>
+<<socialChange "Gabe" 3>>
+<span style="color:green">+Gabe Fun</span><br>
+<<set $HangOutNeed.Fun += 10>>
+<span style="color:red">-Gabe Energy</span><br>
+<<set $HangOutNeed.Energy -= 10>>
+<span style="color:green">+Gabe Comfort</span><br>
+<<set $HangOutNeed.Comfort += 5>>
+<br>
+[[Continue|Gabe Hang Out Park]]

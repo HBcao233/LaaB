@@ -1,0 +1,150 @@
+:: Sleep [autosave nobr]
+
+<<set $Sleeping to 1>>
+
+<<set _SleepingEnergyRecoveryRate to [14,9,9,14]>>
+<<if $ToggleBladder == 1>>
+	<<if $Player.Traits.includes("Small Bladder")>>
+		<<set _BladderDecayRate = [0,3,8,10]>>
+	<<else>>
+		<<set _BladderDecayRate = [0,2,5,7]>>
+	<</if>>
+<<else>>
+	<<set _BladderDecayRate = [0,0,0,0]>>
+<</if>>
+
+/* Durations */
+
+<<set _SleepTimeNatural to (Math.floor((100 - $Player.Energy) / _SleepingEnergyRecoveryRate[$NeedDifficulty]) + 1) * 60>>
+<<if $AlarmClock.Set>>
+	<<set _SleepTimeAlarm to $Time.until($AlarmClock.Hour, $AlarmClock.Minute)>>
+	<<if random(1, 100) <= 95>>
+		<<set $AlarmClock.Malfunction to false>>
+		<<set _SleepTime to _SleepTimeAlarm>>
+		<<set _WakeUpType to "Wake-up Alarm">>
+	<<else>>
+		<<set $AlarmClock.Malfunction to true>>
+		<<if _SleepTimeNatural > _SleepTimeAlarm>>
+			<<set _SleepTime to _SleepTimeNatural>>
+		<<else>>
+			<<set _SleepTime to _SleepTimeAlarm + random(10, 30)>>
+		<</if>>
+		<<set _WakeUpType to "Wake-up Alarm Malfunction">>
+	<</if>>
+<<else>>
+	<<set _SleepTime to _SleepTimeNatural>>
+	<<set _WakeUpType to "Wake-up Natural">>
+<</if>>
+
+<<set _accident to false>>
+<<if _BladderDecayRate[$NeedDifficulty] > 0>>
+	<<set _SleepTimeBladder to (Math.floor($Player.Bladder / _BladderDecayRate[$NeedDifficulty]) + 1) * 60>>
+	<<if _SleepTimeBladder < _SleepTime>>
+		<<if $Bedwetter>>
+			<<set _accident to true>>
+			<<set _WakeUpType to "Wake-up Accident">>
+		<<else>>
+			<<set _WakeUpType to "Wake-up Bladder Full">>
+			<<set _SleepTime to _SleepTimeBladder>>
+		<</if>>
+	<</if>>
+<</if>>
+
+<<set _TimeOnWake to $Time.clone()>>
+<<set _m to _SleepTime>>
+<<for _m > 0>>
+	<<set _m to _TimeOnWake.add_minutes(_m)>>
+<</for>>
+
+<<if _TimeOnWake.schoolday() and _TimeOnWake.Hour >= 7 and (_TimeOnWake.Date != $Time.Date or $Time.Hour < 7)>>
+	<<set _SleepTime to $Time.until(7, 0)>>
+	<<if _accident and _SleepTimeBladder < _SleepTime>>
+		<<set _WakeUpType to "Wake-up Late for School Accident">>
+	<<else>>
+		<<set _WakeUpType to "Wake-up Late for School">>
+	<</if>>
+<</if>>
+
+<<if random(1, 100) > 90>>
+	/* Interupted */
+	/* Temp until we update this a little */
+	<<if $NoahSocialRank != 1>>
+		<<set _WakeUps to {
+			"Wake-up Exposed": 1,
+			"Wake-up Noah Nightmare": 1,
+		}>>
+	<<else>>
+		<<set _WakeUps to {
+			"Wake-up Exposed": 1,
+			"Wake-up Noah Nightmare": 1,
+			"Noah Sleep with PC Post Rank 1": 1,
+		}>>
+	<</if>>
+	<<set _WakeUpType to _WakeUps.random()>>
+<</if>>
+
+<<set _Dreams to {
+	"Dreamless": 4,
+	"Lewd Dream Noah": 1,
+	"Dream Amusement Park": 1,
+	"Nightmare Pirate": 1,
+	"Nightmare Maze Running": 1,
+	"Dream Sexy Vampire": 1,
+	"Dream Calico Unsettling": 1,
+}>>
+
+<<if $ToggleChastity == 1 && $Attractions.Ben == 1 && ($BenSocial <= -50 || $BenSocial >= 50 || $BenSocialRank > 0)>>
+	<<set _Dreams["Ben Dog Dream"] = 1>>
+<</if>>
+
+<<if $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: Redlight Boy") && $ToggleChastity == 1>>
+	<<set _Dreams["OC Manuel Chastity Dream"] = 1>>
+<</if>>
+
+<<if $ToggleOCSebastian == 1 && $OCOliverPenisSeen == 1>>
+	<<set _Dreams["OC Oliver Dominant Dream"] = 1>>
+<</if>>
+
+<<if $ToggleOCKalim == 1 && $OCKalimSocial >= 50 && $Player.Kinks.Teens == 1>>
+	<<set _Dreams["OC Kalim Dreams"] = 1>>
+<</if>>
+
+<<set _checkFelix = $Attractions.Felix == 1 && ($FelixSocial <= -50 || $FelixSocial >= 50 || $FelixSocialRank > 0)>>
+<<set _checkXavier = $Attractions.Xavier == 1 && ($XavierSocial <= -50 || $XavierSocial >= 50 || $XavierSocialRank > 0)>>
+
+<<if _checkFelix || _checkXavier>>
+	<<set _Dreams["Xavier and Felix Dream"] = 1>>
+<</if>>
+
+<<if $Player.Traits.includes("Kitsune") && random(1, 5) == 1>>
+	<<set _Dreams["Fox Woods Dream"] = 1>>
+<<elseif $ToggleSupernat == 1 && random(1, 25) == 1>>
+	<<set _Dreams["Fox Woods Dream"] = 1>>
+<</if>>
+
+You quickly drift off to sleep.<br>
+<br>
+<<set $WakeUpType to _WakeUpType>>
+<<set $SleepTime to _SleepTime>>
+
+/* Quest Checks */
+	/* Gabe Sneak Out */
+<<if $InActiveQuests.includes("Gabe: Sneak Out") and $Time.Day == "Sunday">>
+	<<include "Quest Gabe Sneak Out 1">>
+<<else>>
+
+	/* NO QUESTS */
+<<include _Dreams.random()>>
+
+
+<</if>>
+
+/* Bed Messy */
+<<set $PBedroom.BedMessy to 1>>
+
+:: Sleep Wake Up [nobr]
+
+
+<<link "Continue" $WakeUpType>>
+	<<set $Minutes to $SleepTime>>
+<</link>><br>

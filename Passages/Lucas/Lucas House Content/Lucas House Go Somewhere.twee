@@ -1,0 +1,43 @@
+:: Lucas House Go Somewhere [nobr]
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+You ask <span style="color:DarkTurquoise">Lucas</span> if he would like to go somewhere. <span style="color:LightSteelBlue">“Sure thing! I just need to let my mom know. Where did you want to go?”</span> <br>
+<br>
+			<span style="color:Yellow">Where?</span><br>
+			<<link"The Park (0:10)<br>">>
+				<<set $HangOutClothes to "Everyday">>
+				<<set $Minutes += 10>>
+				<<goto "Lucas Hang Out Park Intro">>
+			<</link>>
+			<<link"The Arcade (0:15)<br>">>
+				<<set $HangOutClothes to "Everyday">>
+				<<set $Minutes += 15>>
+				<<goto "Lucas Hang Out Arcade Intro">>
+			<</link>>
+			<<link"The Northend Playground (0:05)<br>">>
+				<<set $HangOutClothes to "Everyday">>
+				<<set $Minutes += 5>>
+				<<goto "Lucas Hang Out Northend Intro">>
+			<</link>>
+			<<link"The Mall (0:20)<br>">>
+				<<set $HangOutClothes to "Everyday">>
+				<<set $Minutes += 20>>
+				<<goto "Lucas Hang Out Mall Intro">>
+			<</link>>
+			<br>
+

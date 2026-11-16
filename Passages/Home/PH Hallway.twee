@@ -1,0 +1,94 @@
+:: PH Hallway [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Home Hallway",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Hallway",
+}>>
+<<if $Time.between(6, 0, 19, 0)>>
+	<<set _randomevent to random(1, 100)>>
+<<else>>
+	<<set _randomevent to 100>>
+<</if>>
+<<if $Player.Energy <= 5>>
+	<<include"Home Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Home Pee">>
+
+/* Quest Forced Events */
+<<elseif $ToggleOCLeo == 1 && $ActiveQuests.includes("Leo: Shotatube Show 2") && !$Time.schoolday() && $Money >= 25 && $Time.between(7, 0, 14, 0)>>
+	<<include"OC Leo Page Live Weekend Show">>
+
+		/* Random Event Code */
+		
+<<elseif _randomevent == 1 and $PlayerBottoms.Type != "None">>
+	<<set _randomeventpassage to {
+			"Home Hallway Pantsed by Noah": 10,
+			"Home Hallway Pantsing Noah With Dad": 10,
+	}>>
+
+	<<if $PlayerBottoms.Type != "None" && $PlayerUndies.Tags.includes("Diaper") && $GabeSocial < 10>>
+		<<set _randomeventpassage["Home Hallway Gabe Diaper Bullying"] = 10>>
+	<</if>> 
+	<<set _event to _randomeventpassage.random()>>
+	<<include _event>>
+
+<<else>>
+
+<<if $Player.Exposed == "Naked">>
+	<<include "PH Hallway Naked">>
+<<else>>
+<span style="color:Azure"><big><strong>--Hallway--</strong></big></span><br>
+You stand in the hallway. The walls are filled with pictures of you and your brothers, along with childhood photos of your father.<br>
+<br>
+			/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+<br>
+<span style="color:Azure"><strong>--Actions--</strong></span><br>
+[[Wait (0:05)|PH Hallway][$Minutes += 5]]
+<br>
+<br>
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Your Bedroom (0:01)|Player Bedroom][$Minutes += 1]] <br>
+	[[Noah's Bedroom (0:01)|PH Noah Bedroom][$Minutes += 1]] <br>
+	[[Gabe's Bedroom (0:01)|PH Gabe Bedroom][$Minutes += 1]] <br>
+	[[Your Father's Bedroom (0:01)|PH Dad Bedroom][$Minutes += 1]] <br>
+	[[Bathroom (0:01)|PH Bathroom][$Minutes += 1]] <br>
+	[[Living Room (0:01)|PH Living Room][$Minutes += 1]] <br>
+	[[Kitchen (0:01)|PH Kitchen][$Minutes += 1]] <br>
+<</if>>
+
+<br>
+
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Hallway Marker.png" 
+style="position: absolute; left: 58px; top: 112px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="112,166,165,219" alt="Player Bedroom" onclick="$.wiki('<<goto[[Player Bedroom]]>><<set $Minutes += 1>>')" />
+
+<<if $Player.Exposed != "Naked">>
+<area shape="rect" coords="112,58,165,111" alt="Bathroom" onclick="$.wiki('<<goto[[PH Bathroom]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="58,166,111,219" alt="Noah's Room" onclick="$.wiki('<<goto[[PH Noah Bedroom]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="4,112,57,165" alt="Gabe's Room" onclick="$.wiki('<<goto[[PH Gabe Bedroom]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="58,58,111,111" alt="Dad Bedroom" onclick="$.wiki('<<goto[[PH Dad Bedroom]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="166,58,273,111" alt="Living Room" onclick="$.wiki('<<goto[[PH Living Room]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="166,166,273,219" alt="Kitchen" onclick="$.wiki('<<goto[[PH Kitchen]]>><<set $Minutes += 1>>')" />
+<</if>>
+</map>
+
+<</if>>
+
+<</if>>

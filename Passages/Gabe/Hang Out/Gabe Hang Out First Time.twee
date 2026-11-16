@@ -1,0 +1,36 @@
+:: Gabe Hang Out First Time [nobr]
+
+You walk up to your big brother <span style="color:DarkTurquoise">Gabe</span>, who is looking a little bored scrolling through his phone, and ask him if he wants to go do something. He looks up with you with a raised eyebrow. <span style="Color: LightSteelBlue">“Do what? Not really interested in playing with your toys at the moment-”</span> You explain that you were more so taking about going out and doing something. Arcade, playground, whatever. You were going to go anyway and think it could be fun to go together. <span style="Color: LightGreen">You know, brotherly bonding, and all that.</span> <br>
+
+        <<set _ad to [
+        {
+            Name: "Gabe",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Oh?”</span> <span style="color:DarkTurquoise">Gabe</span> looks up at you again with a smirk, <span style="Color: LightSteelBlue">“I had no idea my cute little brother wanted to spend time with me so badly!”</span> He pulls you into a tightup and gives you a noogie that you have to fight to escape from. <span style="Color: LightSteelBlue">“But sure, I don’t got any other plans. I hope you don’t expect me to pay for you with whatever we do though. I’m not your personal wallet. Let me grab me stuff, let dad know we’re heading out.”</span> You do so, telling <span style="color:DarkTurquoise">Your Father</span> that you and <span style="color:DarkTurquoise">Gabe</span> are going out. <br>
+<br>
+<span style="Color: LightSteelBlue">“Oh?”</span> He says, seemingly a little surprised, <span style="Color: LightSteelBlue">“Well then, hope you two have fun. Try not to kill each other.”</span> He chuckles as you head to the door where <span style="color:DarkTurquoise">Gabe</span> is finishing up tying his shoes. <br>
+<br>
+<span style="Color: LightSteelBlue">“Alright brat, where we headed?”</span> <br>
+<br>
+<span style="color:Yellow">Where to Hang Out?</span><br>
+<<set $InActiveQuests.delete("Gabe: Hang Out Intro")>>
+<<set $CompletedQuests.push("Gabe: Hang Out Intro")>>
+<<link"The Park (0:10)<br>">>
+    <<set $HangOutClothes to "Everday">>
+    <<set $Minutes += 10>>
+    <<goto "Gabe Hang Out Go To Park">>
+<</link>>

@@ -1,0 +1,59 @@
+:: THOMAS Playground Ball Hits Papers [nobr]
+
+You are walking over to the jungle gym, passing by the soccer field, when you notice <span style="color:DarkTurquoise">Thomas</span> sitting at one of the tables by himself drawing. Suddenly, a soccer ball comes flying towards him and bounces off the table, scattering all his stuff to the grass. <span style="color:DarkTurquoise">Thomas</span> curses as the boy who kicked the ball yells out an apology and runs past.<br>
+
+<<set _ad to [
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Frown",
+            Eyes: "Mad",
+			Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Thomas</span> gets on his knees and begins to pick up his various pencils and papers, though some begin to fly away in the wind.<br>
+<br>
+
+<div id=choice>
+	<<link "Help him catch his papers">>
+	<<replace"#choice">>
+You rush over and catch the papers before they fly away, collecting them all. As you walk back to <span style="color:DarkTurquoise">Thomas</span>, you briefly look at them. They were all various pictures of animals drawn in a cute cartoon fashion, they looked really good! <span style="color:DarkTurquoise">Thomas</span> quickly rips them out of your hand once he sees you looking at them. You smile and tell him that they look cute.<br>
+
+<<set _ad to [
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Happy",
+			Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“I didn’t need your help!”</span> <span style="color:DarkTurquoise">Thomas</span> puts all his drawings in a folder and hides them, <span style="color:LightSteelBlue">“I mean… thanks.”</span> He gives you a half smile and begins to clean up his things as you continue on your way.<br>
+<<addMoodlet "Stress" 0>>
+<<socialChange "Thomas" 3>>
+<br>
+
+[[Continue|School Courtyard]] 
+
+
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Thomas</span><br>
+	
+	<<link "Ignore him<br>">>
+	<<replace"#choice">>
+You decide it is not your problem and keep walking, watching as <span style="color:DarkTurquoise">Thomas</span> quickly realizes his drawings were being blown away and runs after them. You’re not sure if he managed to get them all, but you don’t really care either.<br>
+<<addMoodlet "Stress" 0>>
+<br>
+[[Continue|School Courtyard]] 
+
+	<</replace>>
+	<</link>>
+</div>

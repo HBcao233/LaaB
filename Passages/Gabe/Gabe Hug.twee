@@ -1,0 +1,72 @@
+:: Gabe Hug [nobr]
+
+<<set $Minutes += 2>>
+
+<<if $GabeSche.Activity == "Hallway">>
+	<<set _outfit to "Everyday">>
+<<elseif $GabeSche.Activity == "Hallway Towel">>
+	<<set _outfit to "Towel">>
+<<else>>
+	<<set _outfit to "Undies">>
+<</if>>
+
+/* Normal */
+<<if $GabeSocial >= 20 or $GabeSocialRank > 0>>
+    
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Eyes: "Tired",
+				Blush: 1,
+				Mouth: "Smirk",
+				Outfit: _outfit,
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Everyday",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:pink">You walk up behind <span style="color:DarkTurquoise">Gabe</span> and hug him, holding him tightly as you bury your face into his back. <span style="color:DarkTurquoise">Gabe</span> stops in surprise and turns around before chuckling.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“What? Does little bro need a recharge?”</span> <span style="color:pink"><span style="color:DarkTurquoise">Gabe</span> suddenly picks you up off the ground and holds you like a baby. <span style="color:LightSteelBlue">“Well let big brother <span style="color:DarkTurquoise">Gabe</span> recharge those batteries for ya!”</span> <span style="color:DarkTurquoise">Gabe</span> ruffles your hair before pulling you into a tight hug as he spins around back and forth. You can’t help but laugh and giggle as your limbs flop around and you begin to become dizzy.</span> <br>
+<br>
+<span style="color:pink">This was something <span style="color:DarkTurquoise">Gabe</span> used to do when you were a little kid. Whenever you were upset or sad he’d pick you up, sometimes against your will, and spin you around until you had no choice but to start laughing. And you could tell, even though he’d never admit it, this playful hug made him happier too.</span> <br>
+<br>
+Eventually, he puts you down and laughs as you stumble around trying to regain your balance. You nearly fall over, but <span style="color:DarkTurquoise">Gabe</span> catches you and keeps you on your feet long enough for your head to stop spinning. <br>
+
+/* Low Social */
+<<else>>
+    
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Blush: 1,
+				Mouth: "Sad",
+				Outfit: _outfit,
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:pink">You stop in front of <span style="color:DarkTurquoise">Gabe</span>, who raises an eyebrow at you in confusion, before stepping forward and giving him a big hug. <span style="color:DarkTurquoise">Gabe</span> is caught off guard, standing there awkwardly as you hug him tightly. Despite the fact that he’s a jerk and a bully sometimes, you couldn’t help but feel safe when holding him like this, like when you were a baby during a nasty storm.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Okay, bud.”</span> <span style="color:DarkTurquoise">Gabe</span> says, patting you on the head, <span style="color:LightSteelBlue">“That’s enough.”</span> He pries you off of him and gives you an awkward smile and pat on the shoulder before walking away. <span style="color:pink">You can’t help but laugh, seems <span style="color:DarkTurquoise">Gabe</span> wasn’t expecting a show of physical affection from you, but he also seems to have liked it.</span> <br>
+
+<</if>>
+<<socialChange "Gabe" 1>>
+    <br>
+    [[Continue|PH Hallway]]

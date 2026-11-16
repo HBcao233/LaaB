@@ -1,0 +1,135 @@
+:: PH Bathroom [nobr]
+
+/* Checking if Minty Fresh */
+<<set _mintyfresh to 0>>
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<if $Player.Moodlets[_i].ID == "Minty Fresh">>
+        <<set _mintyfresh to 1>>
+        <<break>>
+    <</if>>
+<</for>>
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Home Bathroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 1,
+    Public: 0,
+    Environment: "Bathroom",
+}>>
+
+<span style="color:Azure"><big><strong>--Bathroom--</strong></big></span><br>
+<<if $NoahSche.Activity == "Bath">>
+	You hear the sound of splashing and laughing in the bathroom. You believe <span style="color:DarkTurquoise">Noah</span> is in there bathing.<br>
+	<br>
+	[[Walk In|NOAH Inspect Bath]]
+	<br>
+<<elseif $GabeSche.Activity == "Showering">>
+	You hear the sound of running water and assume <span style="color:DarkTurquoise">Gabe</span> is currently in the bathroom showering.<br>
+	<br>
+	[[Walk in|GABE Inspect Showering]]
+	<br>
+<<else>>
+You stand in the bathroom. It has a bath/shower combo, a toilet, and a sink with a mirror above it. Medicine can be stored here.<br>
+<br>
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $ToggleBladder == 1>>
+	[[Use Bathroom (0:02)|Use Bathroom Home]] <span style="color:Green">-Bladder</span><br>
+<</if>>
+
+<strong>Shower</strong><br>
+	<div style="text-indent: 1em;">
+		/* Normal Shower */
+		[[Take a Shower (0:30)|Home Take Shower]] <span style="color:Green">+Hygiene</span>
+	</div>
+	<div style="text-indent: 1em;">
+		/* Quick Shower, Half the time | Half the +Hygiene | No chance of other event */
+		[[Take a Quick Shower (0:15)|Shower Quick]] <span style="color:Green">+Hygiene</span>
+	</div>
+	<div style="text-indent: 1em;">
+		/* Longer, but removes stress. | Can still be walked in on. */
+		[[Take a Relaxing Shower (0:40)|Home Take Shower Relaxing]] <span style="color:Green">+Hygiene, -Stress</span>
+	</div>
+	<div style="text-indent: 1em;">
+		/* Normal, except cold and lowers Arousal / shrinks PP for a few hours. */
+		[[Take a Cold Shower (0:30)|Shower Cold]] <span style="color:Green">+Hygiene, </span>
+		<span style="color:Pink">-Arousal</span>
+	</div>
+
+<strong>Bath</strong><br>
+	<div style="text-indent: 1em;">
+		/* Normal Bath */
+		[[Take a Bath (0:45)|Home Take Bath]] <span style="color:Green">+Hygiene</span>
+	</div>
+	<div style="text-indent: 1em;">
+		/* Longer, but removes stress. | Can still be walked in on. */
+		[[Take a Relaxing Bath (0:55)|Home Take Bath Relaxing]] <span style="color:Green">+Hygiene, -Stress</span>
+	</div>
+<strong>Other</strong><br>
+<<if _mintyfresh == 0>>
+	<<link "Brush Teeth (0:05)">>
+		<<set _bathevent to ["Brush Teeth", "Brush Teeth Strange Joke"]>>
+		<<set _event to _bathevent.random()>>
+		<<goto _event>>
+	<</link>>
+	<span style="color:Green">+Hygiene</span><br>
+<</if>>
+
+<<link"Pose in Mirror (0:10)">>
+	<<set _bathevent to ["Bathroom Pose in Mirror"]>>
+	<<set _event to _bathevent.random()>>
+	<<goto _event>>
+<</link>>
+<span style="color:Green">+Fun</span><br>
+
+[[Mirror|Mirror]]<br>
+
+<<if $Wet > 0>>
+	[[Dry off clothes|House Dry Off]]<br>
+<</if>>
+
+<<if $ActiveQuests.includes("Chores")>>
+	<<for _i to 0; _i lt $QuestLog.length; _i++>>
+		<<if $QuestLog[_i].Name == "Weekly Chores">>
+			<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+				<<if $QuestLog[_i].Objectives[_o].Name == "Mop">>
+					<<if !$QuestLog[_i].Objectives[_o].Tags.includes("Bath")>>
+						[[Mop Bathroom (0:10)|Mop Bathroom]]<br>
+					<</if>>
+				<</if>>
+			<</for>>
+			<<break>>
+		<</if>>
+	<</for>>
+<</if>>
+
+<<if $Medicine >= 1 and $Pained == 1>>
+	[[Take Medicine|PH Bathroom][$Pained to 0; $Medicine -= 1]] [Have: $Medicine]<br>
+<<elseif $Medicine >= 1>>
+	<span style="color:gray">Take Medicine (You aren't in pain or sick.)</span>  [Have: $Medicine]<br>
+<</if>>
+
+<</if>>
+
+<br>
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Hallway (0:01)|PH Hallway][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Room Marker.png" 
+style="position: absolute; left: 112px; top: 58px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+</map>

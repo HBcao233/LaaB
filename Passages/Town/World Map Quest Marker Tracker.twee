@@ -1,0 +1,19 @@
+:: World Map Quest Marker Tracker [nobr]
+
+/* RANDOM JOBS */
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+    <<capture _i>>
+        <<if $RandomJobList[_i].Location == "Northend">>
+<img src="Images\Icons\Markers\Northend.gif" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+        <</if>>
+        <<if $RandomJobList[_i].Location == "Wald">>
+<img src="Images\Icons\Markers\Wald.gif" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+        <</if>>
+        <<if $RandomJobList[_i].Location == "Dellwood">>
+<img src="Images\Icons\Markers\Dellwood.gif" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+        <</if>>
+    <</capture>>
+<</for>>

@@ -1,0 +1,38 @@
+:: Butt Zoom Display [nobr]
+
+<div style="position: relative">
+
+/* BALLS */
+<<if $AD.Balls != "Small">>
+<img @src="`Images/Zooms/Butt/${$AD.SkinColor}/Balls ${$AD.Balls}.png`" 
+style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* BASE */
+<img @src="`Images/Zooms/Butt/${$AD.SkinColor}/${$AD.Butt}.png`" 
+style="position: absolute; left: 0; top: 0">
+
+<<if $AD.Name == "Player">>
+    /* Spank Marks */
+    <<if $ToggleSpankMarks != 0>>
+        <<if $SpankMarks > 120>>
+            <img @src="`Images/Zooms/Butt/Spank Marks/${$AD.SkinColor}/${$AD.Butt} ${$AD.SkinColor} 3.png`" 
+            style="position: absolute; left: 0; top: 0">
+        <<elseif $SpankMarks >= 30>>
+            <img @src="`Images/Zooms/Butt/Spank Marks/${$AD.SkinColor}/${$AD.Butt} ${$AD.SkinColor} 2.png`" 
+            style="position: absolute; left: 0; top: 0">
+        <<elseif $SpankMarks >= 10>>
+            <img @src="`Images/Zooms/Butt/Spank Marks/${$AD.SkinColor}/${$AD.Butt} ${$AD.SkinColor} 1.png`" 
+            style="position: absolute; left: 0; top: 0">
+        <</if>>
+    <</if>>
+<</if>>
+
+/* BORDER */
+<img src="Images\Zooms\Penis\Base\Border.png" 
+style="position: absolute; left: 0; top: 0">
+
+</div>
+
+/* Resettting */
+<<set $AvatarKitsune to 0>>

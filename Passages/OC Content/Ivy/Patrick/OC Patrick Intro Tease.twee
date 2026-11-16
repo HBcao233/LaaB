@@ -1,0 +1,58 @@
+:: OC Patrick Intro Tease [nobr]
+
+/* Intro */
+History class is rather dull despite the teacher’s best efforts to make it engaging. Some parts of history just aren’t that exciting to a classroom full of preteen boys. After a boring lecture, everyone is working on some worksheets <span style="color:Yellow">when the squeaking of a chair catches your attention.</span> You turn to see a smiley boy with neat blonde hair and blue eyes practically bouncing around in his chair humming some tune. Despite the boring class, he seems to be full of energy. <br>
+
+<<set _ad to [
+    {
+        Name: "OC Patrick",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You recognize the boy, you’ve seen him around a few times though have never spoken to him. You think his name is <span style="color:DarkTurquoise">Patrick</span> or something. He’s one of the popular kids, despite his goofball nature and absent-minded attitude. While he seems nice enough, you get the feeling his popularity may stem from something else. <span style="color:DarkTurquoise">Patrick</span> is one of the rich kids, much like <span style="color:DarkTurquoise">Xavier</span>, though he at least looks more approachable than the often-intimidating <span style="color:DarkTurquoise">Xavier</span>. <br>
+<br>
+<span style="Color: LightSteelBlue">“Hey, teach!”</span> The boy raises his hand. <span style="color:DarkTurquoise">Mr. De Leon</span> looks up from his papers and asks what he needs, revealing his name is indeed <span style="color:DarkTurquoise">Patrick</span>. <span style="Color: LightSteelBlue">“Mind if I head to the nurse’s office? For the usual.”</span> The usual? What does that mean. <span style="color:DarkTurquoise">Mr. De Leon</span>’s face scrunches slightly and you notice a few of the boys near <span style="color:DarkTurquoise">Patrick</span> blushing or chuckling. <br>
+<br>
+<span style="Color: LightSteelBlue">“I would rather you wait until class is over, since we only have 15 minutes left,”</span> <span style="color:DarkTurquoise">Mr. De Leon</span> responds. <span style="Color: LightSteelBlue">“Is it an ‘emergency’ or can you wait?”</span> <span style="color:Yellow">You get the feeling they are implying something, some open secret you are not privy to.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Hmmm…”</span> <span style="color:DarkTurquoise">Patrick</span> thinks audibly, <span style="Color: LightSteelBlue">“No, I should be good.”</span> The boy then happily sits back down and continues his work. You consider the entire interaction weird and are about to return to your own work when you hear hushed voices to your left. <br>
+<br>
+<span style="Color: LightSteelBlue">“Fucking- It better not start to smell in here or I’ll give that kid a reason to go the nurse,”</span> one boy says quietly as his friend giggles. <br>
+<br>
+<span style="Color: LightSteelBlue">“Not so loud. That one kid who called him out last year had to switch schools after that job offer his parents forced him into.”</span> His friend replies in an even more hushed tone, <span style="Color: LightSteelBlue">“Unless you want that shit everywhere.”</span> All the boys look at each other before glancing toward <span style="color:DarkTurquoise">Patrick</span>, confirming that’s who they are referring to, before quickly returning to their work in silence. <br>
+<br>
+<span style="color:Yellow">What on earth are they talking about?</span> <br>
+<<set $ActiveQuests.push("Patrick: Introduction")>>
+<<set $InActiveQuests.delete("Patrick: Introduction")>>
+<<set $QuestLog.push(
+	{
+		Name: "Patrick: Introduction",
+		State: 1,
+		ID: "OCPatrick_M001",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Diaper",
+		Tags: ["Patrick", "Character", "Quest", "School"],
+		Description: "You overheard some strange stuff during <span style=\"color:Teal\">History Class</span> about a boy named <span style=\"color:DarkTurquoise\">Patrick</span>. You wonder why he had to go to the <span style=\"color:Teal\">Nurse's Office</span>?",
+		Objectives: [
+			{
+				Name: "Investigate further",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Diaper",
+	Description: "You overheard some strange stuff during <span style=\"color:Teal\">History Class</span> about a boy named <span style=\"color:DarkTurquoise\">Patrick</span>. You wonder why he had to go to the <span style=\"color:Teal\">Nurse's Office</span>?",
+})>>
+<br>
+<<include"Attend History Finish">>

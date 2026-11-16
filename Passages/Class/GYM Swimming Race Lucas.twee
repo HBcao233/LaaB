@@ -1,0 +1,82 @@
+:: GYM Swimming Race Lucas [nobr]
+
+Near the end of class, <span style="color:DarkTurquoise">Coach Kohler</span> gives you all some free time in the pool to do whatever you want. As you were relaxing, <span style="color:DarkTurquoise">Lucas</span> swims up to you and pats you on the shoulder.<br>
+
+<<set _ad to [
+	{
+		Name: "Lucas",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Gym Swim",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Hey!”</span> He says cheerfully, <span style="color:LightSteelBlue">“Wanna have a race?”</span> You agree and you both swim to one end of the pool, agreeing that the first person to touch the other side wins. Another boy agrees to give you a countdown and you both take off swimming!.<br>
+<br>
+
+<<set _skillcheckdif to random(20, 50)>>
+
+<div id=Choice>
+	<<link "Continue ">>
+	<<replace"#Choice">>
+		<<skillCheck "Swimming" _skillcheckdif>>
+	
+	/* WIN THE RACE */
+	<<if _result == 1>>
+	<span style="color:Green">Using what you have learned, you rocket ahead of <span style="color:DarkTurquoise">Lucas</span> and leave him in your dust.</span> You win easily and <span style="color:DarkTurquoise">Lucas</span> is completely out of breath by the time he finishes.<br>
+<br>
+<span style="color:LightSteelBlue">“Wow,”</span> He smiles as he grabs the ledge to give his arms and legs a break, <span style="color:LightSteelBlue">“You’re really good at this!”</span> 
+
+/* POSSIBLE LEWD EVENT */
+	<<set _randomChance to random(1, 2)>>
+	
+/* NO EVENT */
+<<if _randomChance == 1>>
+	You both laugh and enjoy the rest of the class together.<br>
+	
+/* LUCAS TRUNKS SLIP DOWN */
+<<else>>
+	<<set _ad to [
+		{
+			Name: "Lucas",
+			ShowZoom: true,
+			ShowZoomOnlyButt: true,
+			State: {
+				Blush: 1,
+				Mouth: "Happy",
+				Outfit: "Gym Swim",
+			}
+		}
+	]>>
+	<<ad _ad>>
+
+	As <span style="color:DarkTurquoise">Lucas</span> swims off, you notice a happy accident! <span style="color:pink">The back of the boy’s Trunks has slipped down during the race, revealing a large part of the playful boy’s rear. Better yet, he hadn’t seemed to have noticed, giving you an extended look at his cute behind as class continues.</span><br>
+<</if>>
+	<<socialChange "Lucas" 3>>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+	<br>
+	<<include"Attend Gym Finish">>
+
+	
+	/* LOSE THE RACE */
+	<<else>>
+	<span style="color:Red">You try to use some of the strokes you’ve been taught, but mainly end up just making a fool of yourself and get left in <span style="color:DarkTurquoise">Lucas</span>’ dust.</span> You are completely out of breath by the time you reach the end, where <span style="color:DarkTurquoise">Lucas</span> is already waiting.<br>
+<br>
+<span style="color:LightSteelBlue">“Don’t worry, you almost had me!”</span> He smiles and gives you a pat on the back. As he does, you notice him suddenly turn bright red. <span style="color:LightSteelBlue">“Your- your swimsuit!”</span> <span style="color:Pink">You blush as you realize that your $PlayerBottoms.Type have slid down slightly during the race, revealing part of your butt!</span><br>
+	<<socialChange "Lucas" 3>>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+	<br>
+	<<include"Attend Gym Finish">>
+
+	
+	<</if>>
+	
+	<</replace>>
+	<</link>>
+
+<<skillDiff "Swimming" _skillcheckdif>>
+</div>

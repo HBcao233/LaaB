@@ -1,0 +1,68 @@
+:: Carter Hang Out Park Race Kite [nobr]
+
+Suddenly you speed ahead of <span style="color:DarkTurquoise">Carter</span>, passing him easily and quickly. In fact, it seems to be a bit to quick. You slow down and turn around to see <span style="color:DarkTurquoise">Carter</span> has stopped and was now kneeling next to a young boy who is crying. Confused, you quickly run over.<br>
+<br>
+
+<span style="color:LightSteelBlue">“And it gots stuck and if it pull on it more it'll rip and it won't fly no more!”</span> The little kid was bawling his eyes out. Inspecting the scene, you notice the kid has a string in his hand that leads up to the top of the tree where a kite has gotten stuck. <span style="color:pink"><span style="color:DarkTurquoise">Carter</span> ruffles the boy's hair before standing up and striking a pose.</span><br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Tired",
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Don't worry, little one, for <span style="color:DarkTurquoise">Carter</span> is here to save the day! I'll get your kite down no problem so you can continue your fun and games!”</span> <span style="color:DarkTurquoise">Carter</span> says in his heroic voice.
+<span style="color:LightSteelBlue">“Really!?”</span> The boy's frown quickly turned into a big smile, <span style="color:LightSteelBlue">“Thank you, thank you!”</span> He hopped up and down as <span style="color:DarkTurquoise">Carter</span> approached the tree, looking on as if he was watching a true superhero at work.<br>
+<br>
+
+<span style="color:DarkTurquoise">Carter</span> stretches briefly before he begins to climb the tree. While nowhere near as good as Jackson, <span style="color:DarkTurquoise">Carter</span> still had some climbing ability and was able to scale the tree rather quickly. <span style="color:pink">It was kind of cute to watch, actually, as his little body moved with such determination and purpose. As <span style="color:DarkTurquoise">Carter</span> reached the kite, he proudly grabbed it and held it up, prompting the little boy to cheer.</span><br>
+<br>
+
+<span style="color:lightcoral">This, however, proved to be a mistake as grabbing the kite causes <span style="color:DarkTurquoise">Carter</span> to lose his grip and he very quickly falls off the tree.</span> Thankfully, you are directly below him and catch him perfectly in your arms. <span style="color:pink"><span style="color:DarkTurquoise">Carter</span>'s scream is cut off as he lands in your arms, and he slowly opens his eyes to discover you saving him.</span><br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Blush: 3,
+			Mouth: "Sad",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Tired",
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh.”</span> He blushes, chuckling nervously. <span style="color:LightSteelBlue">“Hehe, thanks. That was almost bad.”</span> You put <span style="color:DarkTurquoise">Carter</span> down and he returns the kite to the boy, who thanks you both with a big hug before running off to continue flying his kite.<br>
+<br>
+
+<span style="color:LightSteelBlue">“Thanks for your assistance, sidekick! We really saved the day.”</span> <span style="color:DarkTurquoise">Carter</span> once again strikes a pose. You roll your eyes before reminding him that you both were still, technically, in the middle of a race as you take off running. <span style="color:DarkTurquoise">Carter</span> follows after you in a panic, claiming he wasn't ready.<br>
+<<needChange "Fun" 10>>
+<<needChange "Energy" -7>>
+<<set $HangOutNeed.Fun += 10>>
+<span style="color:green">+Carter Fun</span><br>
+<<set $HangOutNeed.Comfort += 5>>
+<span style="color:green">+Carter Comfort</span><br>
+<<set $HangOutNeed.Energy -= 15>>
+<span style="color:red">-Carter Energy</span><br>
+<<socialChange "Carter" 3>>
+<br>
+[[Continue|Carter Hang Out Park]]

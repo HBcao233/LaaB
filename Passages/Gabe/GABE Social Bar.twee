@@ -1,0 +1,84 @@
+:: GABE Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $GabeSocialRank == -3>>
+	<<set $GabeRelationship to "Hated">>
+	<span style="color:DarkRed">Gabe Hates you!</span>
+	<br>
+<<elseif $GabeSocialRank == -2>>
+	<<set $GabeRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Gabe are Enemies.</span>
+	<br>
+<<elseif $GabeSocialRank == -1>>
+	<<set $GabeRelationship to "Very Disliked">>
+	<span style="color:Red">Gabe really Dislikes you.</span>
+	<br>
+<<elseif $GabeSocialRank == 0 and $GabeSocial <= -50>>
+	<<set $GabeRelationship to "Disliked">>
+	<span style="color:Red">Gabe Dislikes you. </span>
+	<br>
+<<elseif $GabeSocialRank == 0 and $GabeSocial < 50>>
+	<<set $GabeRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Gabe are Acquaintances.</span>
+	<br>
+<<elseif $GabeSocialRank == 0 and $GabeSocial >= 50>>
+	<<set $GabeRelationship to "Liked">>
+	<span style="color:LightGreen">Gabe Likes you.</span>
+	<br>
+<<elseif $GabeSocialRank == 1>>
+	<<set $GabeRelationship to "Friends">>
+	<span style="color:Green">You and Gabe are Friends.</span>
+	<br>
+<<elseif $GabeSocialRank == 2>>
+	<<set $GabeRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Gabe are Good Friends!</span>
+	<br>
+<<elseif $GabeSocialRank == 3>>
+	<<set $GabeRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Gabe are Close Friends!</span>
+	<br>
+<<elseif $GabeSocialRank == 4>>
+	<<set $GabeRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Gabe are Best Friends!</span>
+	<br>
+<<elseif $GabeSocialRank == 5>>
+	<<set $GabeRelationship to "Love">>
+	<span style="color:Pink">You and Gabe Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $GabeSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $GabeSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $GabeSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $GabeSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $GabeSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $GabeSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $GabeSocial,
+			value: Math.abs($GabeSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($GabeSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $GabeSocial > 120>>
+	<<set $GabeSocial to 120>>
+<</if>>
+<<if $GabeSocial < -120>>
+	<<set $GabeSocial to -120>>
+<</if>>

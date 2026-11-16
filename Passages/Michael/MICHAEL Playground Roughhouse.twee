@@ -1,0 +1,113 @@
+:: MICHAEL Playground Roughhouse [nobr]
+
+<<set $Minutes += 20>>
+
+You hang from the top of the jungle gym and kick towards <span style="color:DarkTurquoise">Michael</span>, asking if he would like to play a game.<br>
+<br>
+
+<span style="color:LightSteelBlue">“Oh you’re on!”</span> He laughs, jumping up and grabbing the top of the jungle gym as well. You both hang only a foot away from each other and begin to kick at each other, trying to knock the other one off. The other boys gathered around to watch the fight as the two of you both got in some good hits. It may have hurt a little, but a little rough housing between friends was always a fun time.<br>
+<br>
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<<set $RandomEvent to random(1, 4)>>
+
+/* NO EVENT */
+<<if $RandomEvent < 4>>
+	Eventually, you both begin to tire out. Sensing that neither one of you would concede defeat, you motion to declare it a draw and <span style="color:DarkTurquoise">Michael</span> agrees. The two of you leap to the ground and he praises your skills as you both get some well deserved rest.<br>
+	<<socialChange "Michael" 3>>
+	<<needChange "Fun" 20>>
+	<br>
+	[[Continue|School Courtyard]] 
+
+/* PANTSING */
+<<elseif $RandomEvent == 4>>
+	As you get the advantage over <span style="color:DarkTurquoise">Michael</span>, you notice his frustration turn into a devious smile.<br>
+	<br>
+
+	<span style="color:LightSteelBlue">“Alright <span style="color:DarkTurquoise">$MichaelNickname</span>, you win.”</span> <span style="color:Pink">In one quick motion <span style="color:DarkTurquoise">Michael</span> lets go of the metal bars and grips the sides of your $PlayerBottoms.Type as he falls, pulling them down to your ankles!</span>
+
+	<<set _ad to [
+		{
+			Name: "Michael",
+			State: {
+				Blush: 1,
+				Mouth: "Smirk",
+				Outfit: "Uniform",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Blush: 2,
+				Arms: "Hide",
+				Outfit: "Uniform",
+				PantsDown: true,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	/* WEARING UNDERWEAR */
+	<<if $PlayerUndies.Type != "None">>
+		<span style="color:Pink">You let out an embarrassed scream as your $PlayerUndies.Name are exposed!</span> Laughter erupts from the spectating boys as <span style="color:DarkTurquoise">Michael</span> lands and looks up at his triumph with a smirk.<br>
+		<br>
+
+		You quickly leap down to the ground and pull your $PlayerBottoms.Type back up, still burning bright red, as <span style="color:DarkTurquoise">Michael</span> puts his arms around your shoulder.<br>
+		<br>
+
+		<span style="color:LightSteelBlue">“Sorry <span style="color:DarkTurquoise">$MichaelNickname</span>, but the opportunity was so perfect I had to!”</span> <span style="color:DarkTurquoise">Michael</span> laughs as you playfully punch him in the side, though you still put enough force behind it for him to grimace from the pain, though he calls it a fair retaliation.<br>
+		<<socialChange "Michael" 3>>
+		<<needChange "Fun" 20>>
+		<<addMoodlet "Seen Undies" 2>>
+		<br>
+		[[Continue|School Courtyard]] 
+
+	/* NOT WEARING UNDERWEAR */
+	<<elseif $PlayerUndies.Name == "None">>
+
+		<span style="color:Pink">You let out an embarrassed scream as your $Player.PenisSize Penis and Butt are fully exposed!</span> A brief moment of stunned silence is followed by an eruption of laughter from all the boys watching as you quickly leap down to pull your $PlayerBottoms.Type up and cover yourself.<br>
+		<br>
+
+		/*PENIS SIZE CHECK */
+		<<if $Player.PenisSize == "Tiny">>
+			<span style="color:LightSteelBlue"> “Fuck dude, my baby brother is bigger!” </span> One of the boys laugh.
+
+		<<elseif $Player.PenisSize == "Small">>
+			<span style="color:LightSteelBlue"> “Come on guys, we shouldn’t laugh at the little guy!” </span> One of the boys laugh.
+
+		<<elseif $Player.PenisSize == "Average">>
+			<span style="color:LightSteelBlue"> “Nice one <span style="color:DarkTurquoise">Michael</span>, look at <span style="color:DarkTurquoise">$MichaelNickname</span>’s face!” </span> One of the boys laugh.
+
+		<<elseif $Player.PenisSize == "Large">>
+			<span style="color:LightSteelBlue"> “You were asking to show that thing off by not wearing any underwear <span style="color:DarkTurquoise">$MichaelNickname</span>!”</span> One of the boys laugh.
+
+		<<else>>
+			<span style="color:LightSteelBlue"> “Fuck <span style="color:DarkTurquoise">$MichaelNickname</span>, that’s nothing to be ashamed of!”</span> One of the boys laugh.
+
+		<</if>>
+
+		<span style="color:DarkTurquoise">Michael</span> is pretty much rolling on the ground laughing as you finish covering yourself up. You, only partially playfully, kick him in the side as retaliation, causing his laughter to be mixed with pained yells. <span style="color:LightSteelBlue">“I’m sorry <span style="color:DarkTurquoise">$MichaelNickname</span>! Stop!”</span> Though you couldn’t have been hurting him to badly, as he still couldn’t contain his laughter. <span style="color:LightSteelBlue">“I thought you’d be wearing underwear! Sorry!”</span> You hit him a few more times as he stands up, putting his arm around you as he begs for forgiveness, though is still laughing as you do.<br>
+		<<socialChange "Michael" 2>>
+		<<addMoodlet "Seen Naked" 2>>
+		<br>
+		[[Continue|School Courtyard]] 
+	<</if>>
+<</if>>

@@ -1,0 +1,107 @@
+:: Social Menu [nobr]
+
+/*
+<<link "[Family]">>
+<<replace"#SocialMenu">>
+
+<<include"Family Social Menu">>
+
+<</replace>>
+<</link>>
+-
+<<link "[Classmates]">>
+	<<replace"#SocialMenu">>
+		<<include"Classmates Social Menu">>
+	<</replace>>
+<</link>>
+-
+<<link "[Supporter Characters]">>
+	<<replace"#SocialMenu">>
+		<<include"OC Social Menu">>
+	<</replace>>
+<</link>>
+
+<div id="SocialMenu">
+<<if $SocialMenuRemember == "Family">>
+	<<include"Family Social Menu">>
+<<elseif $SocialMenuRemember == "Classmates">>
+	<<include"Classmates Social Menu">>
+<<elseif $SocialMenuRemember == "OC">>
+	<<include"OC Social Menu">>
+<<else>>
+	<<include"Family Social Menu">>
+<</if>>
+</div>
+*/
+
+
+<div id="SocialMenu">
+	<<include"Core Characters Social">>
+</div>
+
+/* Capping */
+<<if $NoahSocial > 120>>
+	<<set $NoahSocial to 120>>
+<<elseif $NoahSocial < -120>>
+	<<set $NoahSocial to -120>>
+<</if>>
+
+<<if $GabeSocial > 120>>
+	<<set $GabeSocial to 120>>
+<<elseif $GabeSocial < -120>>
+	<<set $GabeSocial to -120>>
+<</if>>
+
+<<if $DadSocial > 120>>
+	<<set $DadSocial to 120>>
+<<elseif $DadSocial < -120>>
+	<<set $DadSocial to -120>>
+<</if>>
+
+<<if $LucasSocial > 120>>
+	<<set $LucasSocial to 120>>
+<<elseif $LucasSocial < -120>>
+	<<set $LucasSocial to -120>>
+<</if>>
+
+<<if $BenSocial > 120>>
+	<<set $BenSocial to 120>>
+<<elseif $BenSocial < -120>>
+	<<set $BenSocial to -120>>
+<</if>>
+
+<<if $MichaelSocial > 120>>
+	<<set $MichaelSocial to 120>>
+<<elseif $MichaelSocial < -120>>
+	<<set $MichaelSocial to -120>>
+<</if>>
+
+<<if $CarterSocial > 120>>
+	<<set $CarterSocial to 120>>
+<<elseif $CarterSocial < -120>>
+	<<set $CarterSocial to -120>>
+<</if>>
+
+<<if $JacksonSocial > 120>>
+	<<set $JacksonSocial to 120>>
+<<elseif $JacksonSocial < -120>>
+	<<set $JacksonSocial to -120>>
+<</if>>
+
+<<if $ThomasSocial > 120>>
+	<<set $ThomasSocial to 120>>
+<<elseif $ThomasSocial < -120>>
+	<<set $ThomasSocial to -120>>
+<</if>>
+
+<<if $XavierSocial > 120>>
+	<<set $XavierSocial to 120>>
+<<elseif $XavierSocial < -120>>
+	<<set $XavierSocial to -120>>
+<</if>>
+
+<<if $FelixSocial > 120>>
+	<<set $FelixSocial to 120>>
+<<elseif $FelixSocial < -120>>
+	<<set $FelixSocial to -120>>
+<</if>>

@@ -1,0 +1,22 @@
+:: Bathe [nobr]
+
+<<storeClothing "Closet" "Naked" 1>>
+<<set $Minutes += 30>>
+
+/* SETTING SELECTION ARRAY TO BASE EVENTS */
+
+<<set _Random to ["Bath Normal", "Bath Cold Water", "Bath Slip and Fall", "Bath No Towel", "Bath Gabe Door Open", "Bath Dad Enter", "Bath Noah Enter", "Bath Gabe Toss Out", "Bath Gabe Scare Picture"]>>
+
+/* ADDING SPECIFIC EVENTS */
+	/* NONE */
+	<<if $GabeSocial <= 0 or $GabeSocialRank < 0>>
+		<<set _Random.push("Bath Gabe Flush")>>
+		<<if $ToggleWatersports == 1>>
+			<<set _Random.push("Bath Gabe Piss on PC")>>
+		<</if>>
+	<</if>>
+
+/* SELECTING RANDOM EVENT FROM ARRAY INVENTORY */
+
+<<set _event to _Random.random()>>
+<<include _event>>

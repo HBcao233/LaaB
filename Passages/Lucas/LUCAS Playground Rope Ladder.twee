@@ -1,0 +1,67 @@
+:: LUCAS Playground Rope Ladder [nobr]
+
+	You stand atop the large jungle gym, looking out on the courtyard as you take a moment to catch your breath. You notice <span style="color:DarkTurquoise">Lucas</span> climbing up a rope ladder, barely able to keep his balance. He sees you watching him and waves, but this causes him to lose his balance and tumble backwards. Fortunately, his feet got tangled in the ropes and prevented him from falling painfully to the ground. Unfortunately, he now dangles upside-down a few feet above the ground. <span style="color:Pink">To make matters worse, his $LucasTop.Type falls down as well, completely obscuring his vision and revealing his boyish chest and nipples along with giving a clear view of the waistband of his Briefs.</span> He struggles in an attempt to free himself, but it’s clear he won’t be able to escape easily without some help.<br>
+<br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Frown",
+			Blush: 1,
+			Arms: "Bound",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+
+<div id=choice>
+	<<link "Help him">>
+	<<replace"#choice">>
+	
+	He’s too high up for you to help from the ground, so you carefully climb onto the rope ladder next to him and attempt to untangle his legs. <span style="color:DarkTurquoise">Lucas</span> at first panics when he feels something touching his legs, but relaxes once he realizes it is you. It takes a while, the rope ladder had completely tangled around his shoes, meaning you had to untie them so Lucas could slip out, but you finally manage to free him and return him to the ground only slightly lightheaded. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+			Blush: 1,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Thanks <span style="color:DarkTurquoise">$LucasNickname</span>!”</span> He says as he gives you a hug. <span style="color:DarkTurquoise">Lucas</span> is thankful, but you spent so much time helping him you feel more stressed than when you began.<br>
+
+	<<addMoodlet "Stress" 1>>
+	<<socialChange "Lucas" 3>>
+        <<needChange "Fun" 20>>
+		<br>
+		[[Continue|School Courtyard]]
+
+	
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Lucas</span><br>
+	
+	<<link "Leave him be">>
+	<<replace"#choice">>
+	
+	You decide it’s not your problem and move to another area of the playground to relax and relieve some stress. None of the other kids in the area seem to help <span style="color:DarkTurquoise">Lucas</span> either, though a few of them do stay to laugh at him. You’re sure <span style="color:DarkTurquoise">Lucas</span> will free himself eventually, but he’ll probably be pretty upset you left him.<br>
+
+	<<addMoodlet "Stress" 0>>
+	<<socialChange "Lucas" -3>>
+        <<needChange "Fun" 20>>
+		<br>
+		[[Continue|School Courtyard]]
+
+	
+	<</replace>>
+	<</link>>
+	<span style="color:Red">-Lucas</span><br>
+	
+</div>

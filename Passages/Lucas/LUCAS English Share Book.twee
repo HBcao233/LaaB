@@ -1,0 +1,66 @@
+:: LUCAS English Share Book [nobr]
+
+	It is near the start of class when <span style="color:DarkTurquoise">Mr. Hart</span> asks everyone to pull out their books so everyone can read together as a class. You pull yours out no problem, but soon here panicked shuffling from the desk next to you. You turn and see <span style="color:DarkTurquoise">Lucas</span> desperately searching through his backpack, unable to find his book. <span style="color:DarkTurquoise">Mr. Hart</span> notices and asks what the problem is.<br>
+
+<<set _ad to [
+	{
+		Name: "Hart",
+		State: {
+			Eyes: "Narrow",
+			Mouth: "Frown",
+		},
+	},
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Blush: 1,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Sorry.”</span> <span style="color:DarkTurquoise">Lucas</span> says softly, <span style="color:LightSteelBlue">“I forgot my book at home.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“That’s fine. <span style="color:DarkTurquoise">$Player.Name</span>, share your book with <span style="color:DarkTurquoise">Lucas</span>. Just don’t forget it tomorrow.”</span> <span style="color:DarkTurquoise">Mr. Hart</span> begins to read aloud, but stops when he sees <span style="color:DarkTurquoise">Lucas</span> just standing next to your desk reading over your shoulder. <span style="color:LightSteelBlue">“Your standing up is too distracting, just share his chair. You both should be able to sit down on it if you squeeze.”</span><br>
+<br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Blush: 1,
+		},
+		Style: {
+			'margin-left': '-150px',
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<<if $LucasSocial > 0>>
+	<span style="color:LightSteelBlue">“Oh, okay.”</span> <span style="color:DarkTurquoise">Lucas</span> replies as he attempts to squeeze in next to you. You manage to make it work, but it is a tight fit. <span style="color:Pink">Your entire bodies are touching, so close that you can actually smell the fruity shampoo <span style="color:DarkTurquoise">Lucas</span> had used the night before.</span> Despite how uncomfortable it looked, he didn’t seem to mind the closeness.<br>
+	<<set $Player.Arousal += 5>>
+<br>
+
+<<else>>
+	<span style="color:DarkTurquoise">Lucas</span> offers to sit on his knees, but <span style="color:DarkTurquoise">Mr. Hart</span> rejects the idea and the two of you are squeezed together. <span style="color:DarkTurquoise">Lucas</span> seems uncomfortable being so close to you, keeping his body entirely skill and his arms crossed to avoid accidentally brushing you with his hands.<br>
+<br>
+
+<</if>>
+
+
+<<include"Attend English Finish">>

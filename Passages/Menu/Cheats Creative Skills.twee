@@ -1,0 +1,55 @@
+:: Cheats Creative Skills [nobr]
+
+<<set $CheatsSkills to "Creative">>
+
+<span style="color:Azure"><big><strong>--Social Skills--</strong></big></span><br>
+
+	/* ACTING */
+<strong>Acting:</strong> 
+<<if $ActingLearned == 1>>
+	[[(-)|Cheats Menu][$ActingSkill -= 1]]
+	$ActingSkill
+	[[(+)|Cheats Menu][$ActingSkill += 1]]
+	<br>
+	<div style="text-indent: 2em;">
+		<strong>XP:</strong> 
+		[[(-)|Cheats Menu][$ActingXP -= 5]]
+		$ActingXP / 100
+		[[(+)|Cheats Menu][$ActingXP += 5]]
+	</div>
+	<<if $ActingSkill <= 0>>
+		<<set $ActingSkill to 1>>
+	<<elseif $ActingSkill > 10>>
+		<<set $ActingSkill to 10>>
+	<</if>>
+	<<if $ActingXP < 0>>
+		<<set $ActingXP to 0>>
+	<</if>>
+<<else>>
+	[[Learn|Cheats Menu][$ActingLearned to 1; $ActingSkill to 1]] <br>
+<</if>>
+
+	/* COOKING */
+<strong>Cooking:</strong> 
+<<if $CookingLearned == 1>>
+	[[(-)|Cheats Menu][$CookingSkill -= 1]]
+	$CookingSkill
+	[[(+)|Cheats Menu][$CookingSkill += 1]]
+	<br>
+	<div style="text-indent: 2em;">
+		<strong>XP:</strong> 
+		[[(-)|Cheats Menu][$CookingXP -= 5]]
+		$CookingXP / 100
+		[[(+)|Cheats Menu][$CookingXP += 5]]
+	</div>
+	<<if $CookingSkill <= 0>>
+		<<set $CookingSkill to 1>>
+	<<elseif $CookingSkill > 10>>
+		<<set $CookingSkill to 10>>
+	<</if>>
+	<<if $CookingXP < 0>>
+		<<set $CookingXP to 0>>
+	<</if>>
+<<else>>
+	[[Learn|Cheats Menu][$CookingLearned to 1; $CookingSkill to 1]] <br>
+<</if>>

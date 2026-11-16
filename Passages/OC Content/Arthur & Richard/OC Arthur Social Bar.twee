@@ -1,0 +1,84 @@
+:: OC Arthur Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCArthurSocialRank == -3>>
+	<<set $OCArthurRelationship to "Hated">>
+	<span style="color:DarkRed">Arthur Hates you!</span>
+	<br>
+<<elseif $OCArthurSocialRank == -2>>
+	<<set $OCArthurRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Arthur are Enemies.</span>
+	<br>
+<<elseif $OCArthurSocialRank == -1>>
+	<<set $OCArthurRelationship to "Very Disliked">>
+	<span style="color:Red">Arthur really Dislikes you.</span>
+	<br>
+<<elseif $OCArthurSocialRank == 0 and $OCArthurSocial <= -50>>
+	<<set $OCArthurRelationship to "Disliked">>
+	<span style="color:Red">Arthur Dislikes you. </span>
+	<br>
+<<elseif $OCArthurSocialRank == 0 and $OCArthurSocial < 50>>
+	<<set $OCArthurRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Arthur are Acquaintances.</span>
+	<br>
+<<elseif $OCArthurSocialRank == 0 and $OCArthurSocial >= 50>>
+	<<set $OCArthurRelationship to "Liked">>
+	<span style="color:LightGreen">Arthur Likes you.</span>
+	<br>
+<<elseif $OCArthurSocialRank == 1>>
+	<<set $OCArthurRelationship to "Friends">>
+	<span style="color:Green">You and Arthur are Friends.</span>
+	<br>
+<<elseif $OCArthurSocialRank == 2>>
+	<<set $OCArthurRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Arthur are Good Friends!</span>
+	<br>
+<<elseif $OCArthurSocialRank == 3>>
+	<<set $OCArthurRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Arthur are Close Friends!</span>
+	<br>
+<<elseif $OCArthurSocialRank == 4>>
+	<<set $OCArthurRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Arthur are Best Friends!</span>
+	<br>
+<<elseif $OCArthurSocialRank == 5>>
+	<<set $OCArthurRelationship to "Love">>
+	<span style="color:Pink">You and Arthur Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCArthurSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCArthurSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCArthurSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCArthurSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCArthurSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCArthurSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCArthurSocial,
+			value: Math.abs($OCArthurSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCArthurSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCArthurSocial > 120>>
+	<<set $OCArthurSocial to 120>>
+<</if>>
+<<if $OCArthurSocial < -120>>
+	<<set $OCArthurSocial to -120>>
+<</if>>

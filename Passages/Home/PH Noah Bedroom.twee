@@ -1,0 +1,78 @@
+:: PH Noah Bedroom [nobr]
+
+/* AVATAR VARIABLE CLEAN UP */
+	<<set $AD.BackID to "None">>
+	<<set $AD.TopUndies to "None">>
+
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Noah Bedroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+
+<span style="color:Azure"><big><strong>--Noah's Bedroom--</strong></big></span><br>
+<<if $Player.Exposed == "Naked">>
+	<<include"PH Noah Bedroom Naked">>
+<<else>>
+	You stand in your brother, <span style="color:DarkTurquoise">Noah</span>’s, room. It is messy akin to most young boys' rooms, with toys and clothes scattered across the floor. His closet sits open where a few of his shirts have fallen from their hangers onto the floor and his desk is littered with crayons, drawings, and other child art supplies.<br>
+<br>
+/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+<br>
+<<if $NoahSche.Location != "Noah Bedroom">>
+    <span style="color:DarkTurquoise">Noah</span> isn't here. 
+	[[Go through Noah's dresser|Noah Dresser]]<br>
+	<br>
+<</if>>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $NoahSocialRank > 0>>
+	<<if $PlayerBottoms.Type != "None" and $PlayerBottoms.Type != "Towel">>
+	<<if $Time.schoolday() and $Time.after(15) and $Time.before(21)>>
+		[[Take Noah clothes shopping (0:20)|Kids Boy Barn][$Minutes += 20]]<br>
+	<<elseif !$Time.schoolday() and $Time.after(8) and $Time.before(21)>>
+		[[Take Noah clothes shopping (0:20)|Kids Boy Barn][$Minutes += 20]]<br>
+	<</if>>
+	<</if>>
+	[[Customize Noah's Current Clothing|Noah Custom Clothing]]<br>
+	[[Customize Noah's Closet|Noah Custom Closet]]<br>
+<</if>>
+
+/*
+<<if $NoahSocialRank > 0>>
+	<<if $Time.schoolday() and $Time.after(16) and $Time.before(21)>>
+		[[Invite Noah to Hangout|NOAH Hangout]]<br>
+	<<elseif !$Time.schoolday() and $Time.after(8) and $Time.before(21)>>
+		[[Invite Noah to Hangout|NOAH Hangout]]<br>
+	<</if>>
+	[[Customize Noah's Wardrobe|NOAH Custom Wardrobe]]<br>
+<</if>>
+*/
+<br>
+
+
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Hallway (0:01)|PH Hallway][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Room Marker.png" 
+style="position: absolute; left: 58px; top: 166px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+</map>
+<</if>>

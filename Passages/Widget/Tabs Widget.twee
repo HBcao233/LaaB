@@ -1,0 +1,121 @@
+:: Tabs Widget [widget]
+
+<<nobr>>
+    
+<<widget "tabs">>
+    <<liveblock>>
+        <<set _tabs to _args[0]>>
+        <<set _selectedTabVarName to _args[1] || ''>>
+        <<set _selectedTab to State.getVar(_selectedTabVarName)>>
+        <<script>>
+            const _tabs = State.getVar('_tabs');
+            const _selectedTabVarName = State.getVar('_selectedTabVarName');
+            const _selectedTab = State.getVar(_selectedTabVarName);
+            
+            if (!Array.isArray(_tabs) || _tabs.some(i => typeof i !== 'object' || !i.hasOwnProperty('title') || !i.hasOwnProperty('passage'))) {
+                throw new Error('First argument passed to Tabs widget (_tabs) has to be an array of objects, each having a title and a passage as properties');
+            }
+            
+            if (_selectedTabVarName === '') {
+                throw new Error('Second argument passed to Tabs widget (_selectedTabVarName) cannot be empty');
+            }
+
+            if (isNaN(_selectedTab)) {
+                throw new Error('Second argument passed to Tabs widget (_selectedTabVarName) has to have a numeric value');
+            }
+        <</script>>
+        <<if _tabs.length > 0>>
+            <div class="tabs">
+                <<for _i to 0; _i lt _tabs.length; _i++>>
+                    <<capture _i>>
+                        <div class="tab">
+                            <<=`<input class="tabs-tab-clickable-title" type="radio" name="tabs_${_selectedTabVarName}" id="tab-${_i}-${_selectedTabVarName}" ${_selectedTab === _i ? 'checked' : ''} onchange="$.wiki('<<set ${_selectedTabVarName} to ${_i}>><<update>>')"/>`>>
+                            <label @for="`tab-${_i}-${_selectedTabVarName}`" @title="_tabs[_i].title"><<=_tabs[_i].title>></label>
+                        </div>
+                    <</capture>>
+                <</for>>
+                <div class="tabs-content" @style="`top: ${Math.ceil(_tabs.length / 4) * 31}px`">
+                    <<include _tabs[_selectedTab].passage>>
+                </div>
+            </div>
+        <</if>>
+    <</liveblock>>
+<</widget>>
+
+<</nobr>>
+
+:: Tabs Widget CSS [stylesheet]
+
+.tabs {
+  display: block;
+  width: 830px;
+  position: relative;
+}
+
+.tabs .tab {
+  float: left;
+  display: block;
+  border: 1px solid #797979;
+}
+
+.tabs .tab > input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.tabs .tab > label {
+  display: inline-block;
+  padding: 6px 20px;
+  height: 20px;
+  width: 165px;
+  font-size: 12px;
+  margin-bottom: -10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  color: #FFF;
+  background: teal;
+  user-select: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.tabs-content {
+  display: block;
+  z-index: 1;
+  overflow: auto;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  background: #303030;
+  color: #DFDFDF;
+}
+
+.tabs>.tab>[id^="tab"]:checked + label {
+  top: 0;
+  background: #303030;
+  color: #F5F5F5;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.social-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+.social-icon .social-face {
+    position: absolute;
+    left: 0;
+    top: 0;
+}

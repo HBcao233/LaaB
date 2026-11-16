@@ -1,0 +1,70 @@
+:: Avendale [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Avendale",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Avendale--</strong></big></span><br>
+You stand at the gate to Avendale, a rich planned community of old, large estates. While not mansions, even from this distance the size of the buildings impressed you. With large driveways, pristine gardens, and even some fountains! It was no wonder that it was gated and could only be accessed by those who live there or those with guest passes. <br>
+<br>
+As you walk towards the gate, an older security guard pokes his head out of the gatehouse. <span style="color:LightSteelBlue">“Sorry kid, this is a private community. I can’t let you in unless you live here or have a Guest Pass.”</span> <span style="color:lightcoral">The guard sends you back the way you came.</span><br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $ActiveQuests.includes("Millers: Babysitting Kayden") && $Time.Day == "Friday" && $Time.between(15, 30, 16, 30)>>
+	[[Babysit Kayden (5:00)|Millers Babysitting Intro First Time]]<br>
+<<elseif $CompletedQuests.includes("Millers: Babysitting Kayden") && $Time.Day == "Friday" && $Time.between(15, 30, 16, 30)>>
+	[[Babysit Kayden (5:00)|Millers Babysitting Intros Repeatable]]<br>
+<</if>>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Two Story Neighborhood.png">
+	[[Dellwood Street (0:10)|Dellwood Street][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Two Story Neighborhood.png">
+	[[Dellwood Street (0:05)|Dellwood Street][$Minutes += $TravelTime]]<br>
+	<</if>>
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 78px; top: 7px" alt="Town Map">
+
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="152,7,205,60" alt="2Story Neighborhood" onclick="$.wiki('<<goto[[Dellwood Street]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

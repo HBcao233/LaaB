@@ -1,0 +1,139 @@
+:: OC Bobby Intro 3 [nobr]
+
+/* Intro */
+
+    <<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            },
+        },
+        {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                },
+            },
+        ]>>
+    <<ad _ad>>
+
+You plop down on the couch, <span style="color:Yellow">too exhausted to be nervous and awkward,</span> and fully devour the juice and snacks <span style="color:DarkTurquoise">Bobby</span> gives you. <span style="color:LightSteelBlue">“You did pretty good out there. Though I guess I’ll need to remember to leave some water out for you. Guess not everyone is used to working all day like me.”</span> He laughs, <span style="color:LightSteelBlue">“But really, good job! You catch on pretty fast. I gotta feed the animals real quick, but after that I’ll drive you back to town. Feel free to take a shower if you want, since you’re pretty swetty.”</span> He ruffles your hair as he walks back out. You take another drink before sniffing yourself, you do smell. <span style="color:Yellow">A shower may not be the worst idea.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Shower<br>">>
+    <<replace"#choice">>
+        Deciding to take him up on his offer, you walk over to the bathroom and open the door. The bathroom is average size with the same rustic feel as the rest of the house. The bathtub looks a bit old-timey, and you aren’t even sure if it can work as a shower until you spot a detachable shower head hanging above it. It takes some fiddling, but you are eventually able to turn it on and begin to strip down to hop in. <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                ShowZoom: true,
+                ShowZoomOnlyButt: true,
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Frown",
+                    Blush: 2,
+                    Arms: "Hide",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:Pink">As you pull your $PlayerBottoms.Type down, you blush slightly and look towards the bathroom door. It is shut tight, but there is no lock. You get a little embarrassed at the thought of being walked in on but figure the shower curtain would keep your body hidden.</span> Plus, <span style="color:DarkTurquoise">Bobby</span> seems to be the only person here at the moment and he would know you are in here. So able to calm your nerves, you finish stripping down, place your clothes in a neat pile near the sink, and hop into the shower. <br>
+        <br>
+        The water is just about perfect. Perfect temperature, perfect water pressure, the only thing missing is your normal shampoo and bodywash, but you guess <span style="color:DarkTurquoise">Bobby</span>’s are pretty nice. Still, with how nice the shower is it of little surprise when your quick rinse turns into a longer, relaxing soak. However, the shower is nearly ruined as you step out onto the bathmat and realize you didn’t even check to see if there were towels! Thankfully, you spot one neatly folded next to the sink. You sigh in relief and grab it, quickly beginning to dry yourself. <br>
+        <br>
+        <<linkreplace"Continue">>
+            It is only as you are finishing up that something stands out in your brain. <span style="color:Yellow">That towel was next to the sink… in the exact spot you had put your clothes.</span> <span style="color:LightCoral">With a fright, you quickly turn back to the sink to find your pile of clothes missing, replaced with this soft white towel!</span> <span style="color:Pink">You suddenly become all too aware that you are naked in someone else’s house with your clothes missing, only a towel to cover yourself. You quickly wrap the towel around your waist and search the bathroom frantically, hoping they had just fallen, or you put them somewhere else by mistake. But there is no sign of them. Your clothes are gone! <br>
+            <br>
+            Realizing you have no other choice, you tighten the towel around you and step out of the bathroom into the hallway, the house suddenly feeling a lot bigger now that you are naked. Shivering from the cold air conditioning blowing on your skin, you cautiously move from room to room until you end up in the living room, spotting <span style="color:DarkTurquoise">Bobby</span> sitting on the couch reading something. Upon seeing you he blushes slightly before laughing.</span> <br>
+            
+             <<storeClothing "Store" "Naked" 1>>
+            <<addClothing "PC" "Bottoms" "Towel" "White">>
+
+            <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 2,
+                    Arms: "Hide",
+                    },
+                },
+                {
+                    Name: "OC Bobby",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Smirk",
+                        },
+                    },
+                ]>>
+            <<ad _ad>>
+            /* PC: Towel */
+
+            <<storeClothing "Restore" "Naked">>
+
+            <span style="color:LightSteelBlue">“Oh, haha. Sorry. Thought you’d be in there longer.”</span> He puts the book down and walks over to you. <span style="color:Pink">You take a step back, feeling more than a little vulnerable.</span> <span style="color:LightSteelBlue">“I figured your clothes may be sweaty, so I tossed them in a quick wash as a thank you. Figured they’d be done before you finished. My bad, should have said something.”</span> You feel a bit relieved at his explanation, though still a little embarrassed. <span style="color:LightSteelBlue">“They should be just about done. Take a seat, I’ll go check.”</span> <br>
+            <br>
+            <span style="color:DarkTurquoise">Bobby</span> walks off to check on the laundry as you take a seat at the couch, <span style="color:Pink">becoming aware just how short the towel is around your waist as you see the reflection of your balls poking out from the powered off T.V. screen.</span> You decide to remain standing.
+            /* Player No Undies */
+            <<if $PlayerUndies.Type == "None">>
+                It is an awkward few minutes of standing there until <span style="color:DarkTurquoise">Bobby</span> returns with your clothes. <span style="color:Pink">You realize that he is probably well aware of your lack of underwear now. You blush as you take the clothes from him.</span> <br>
+                <br>
+            /* Player Wearing Diaper */
+            <<elseif $PlayerUndies.Tags.includes("Diaper")>>
+                It is an awkward few minutes of standing there until <span style="color:DarkTurquoise">Bobby</span> returns with your clothes. <span style="color:Pink">You nearly die of embarrassment upon seeing your $PlayerUndies.Name placed neatly on top. <span style="color:DarkTurquoise">Bobby</span> doesn’t say anything, but it is very clear he knows about them now.</span> <br>
+                <br>
+            /* Player Normal Undies */
+            <<else>>
+                It is an awkward few minutes of standing there until <span style="color:DarkTurquoise">Bobby</span> returns with your clothes, <span style="color:Pink">your $PlayerUndies.Name embarrassingly folded right on top. You blush as you take the clothes from him.</span> <br>
+                <br>
+            <</if>>
+            <span style="color:LightSteelBlue">“I’ll give you some privacy. I’ll be out in the truck. Once you’re dressed and ready, we’ll head back.”</span> <span style="color:DarkTurquoise">Bobby</span> heads out and leaves you to get dressed in the living room. It is a little awkward taking the towel off and standing there, albeit briefly, in someone else’s living room naked. But you are able to quickly get your clothes back on and leave the towel folded up on the coffee table, unsure where exactly to put it. Once finished, you head out and hop in the truck. <span style="color:LightSteelBlue">“Alright, let’s roll!”</span> <span style="color:DarkTurquoise">Bobby</span> says with a smile. <br>
+            <br>
+            <<include"OC Bobby Intro 3 End">>
+        <</linkreplace>>
+    <</replace>>
+    <</link>>
+
+    <<link "Don't shower<br>">>
+    <<replace"#choice">>
+        You decide against showering, for one reason or another. You don’t smell THAT bad so you should be fine until you get home. You decide to just sit back and relax until <span style="color:DarkTurquoise">Bobby</span> returns, which he does a few minutes later. <span style="color:LightSteelBlue">“Alright, all done. You ready to head back?”</span> You nod and the two of you walk out to his truck and jump inside. As you close the door, you hear <span style="color:DarkTurquoise">Bobby</span> sniff the air. <span style="color:LightSteelBlue">“Well, I see someone decided not to shower. Or should I say, smell.”</span> He chuckles, <span style="color:LightSteelBlue">“Just messing with you, don’t mind a little musk myself.”</span> <br>
+        <br>
+        <<include"OC Bobby Intro 3 End">>
+    <</replace>>
+    <</link>>
+</div>
+
+:: OC Bobby Intro 3 End [nobr]
+
+<<set $Minutes += 60>>
+
+As you start driving back towards the community center, staring out the window and watching the farms and fields pass by, <span style="color:DarkTurquoise">Bobby</span> asks you how you enjoyed it. You give him an honest answer, and he chuckles. <span style="color:LightSteelBlue">“It’s hard work, but the most fulfilling work always is. Hope it left a good impression on you though, would love to keep you around to help out. Speaking of-”</span> <span style="color:DarkTurquoise">Bobby</span> reaches into his pocket and <span style="color:LightGreen">pulls out two $20 bills!</span> You take them and smile, not expecting so much for only the bit of work you did. <span style="color:LightSteelBlue">“Consider it a first-time bonus.”</span> He laughs, <span style="color:LightSteelBlue">“The normal pay for stuff will be listed on the job postings, but I wanted to give you a little bonus this time for coming all the way out here to try it out. Hope this shows you that we treat our people right.”</span> <br>
+
+        <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    },
+                },
+                {
+                    Name: "OC Bobby",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Happy",
+                        },
+                    },
+                ]>>
+         <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Keep an eye on the board, we plan to post stuff there regularly.”</span> <span style="color:DarkTurquoise">Bobby</span> explains as you drive into town, <span style="color:LightSteelBlue">“Also, even if we don’t have anything posted, feel free to come by if you ever want to. You could hang out with the animals or help out if you want some pocket change. Like I said, we always need the help. Don’t feel pressured to though, but I know I’d love the company.”</span> Soon, you arrive at the community center and <span style="color:DarkTurquoise">Bobby</span> parks just outside, letting you out. <span style="color:LightSteelBlue">“Well, I’ll see you around! Don’t be a stranger now! Oh, and don’t spend all that cash on candy, it’ll make you sick!”</span> He laughs as you wave goodbye. He seems like a very nice guy. <br>
+<<socialChange "Bobby" 10 1>>
+<<set $Money += 40>>
+<span style="color:Green">+$40</span><br>
+<br>
+[[Continue|High School]]

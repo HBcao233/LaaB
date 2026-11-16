@@ -1,0 +1,113 @@
+:: Stormy Night Watch Rain [nobr]
+
+				/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<if $NPCComfort < 25>>
+	<<set $AD.Arms to "Hide">>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 1>>
+	<<set $AD.Blush to 2>>
+	<<set $AD.Mouth to "Sad">>
+<<elseif $NPCComfort < 50>>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 1>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Sad">>
+<<elseif $NPCComfort < 75>>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Normal">>
+<<else>>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+<</if>>
+<<set $AD.Outfit to "Everyday">>
+<<set $AD.Hard to 0>>
+	<<set $NoahNoShoes to 1>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+You ask <span style="color:DarkTurquoise">Noah</span> if he would like to sit on the deck and watch the rain. <span style="color:Pink">He quickly shrinks back and hides behind one of the pillows on the couch.</span> <span style="color:LightSteelBlue">“Nuh-uh. What if the thunder tries to get us?”</span> <span style="color:Pink">You smile and tell Noah that you will protect him and grab his hand. He seems very reluctant but follows you anyway though he stops in the doorway and won't go further.</span><br>
+<br>
+
+<<set $Random to random(1, 2)>>
+<<set $Minutes += 20>>
+
+<<if $Random == 1>>
+
+You sit down on the deck and begin to watch the rain and the distant flashes of lightning. It may be a little scary, but it was a genuinely pretty sight. Despite this, <span style="color:DarkTurquoise">Noah</span> seems content with simply watching from the door. <span style="color:Pink">In fact, he wasn't looking at the rain but more so looking at you. You chuckle at the thought of your little brother watching over you to make sure the <span style="color:LightSteelBlue">“thunder doesn't try to get you.”</span></span> <br>
+<br>
+Suddenly, a loud thunder strike hits just down the street, illuminating the backyard and causing you to jump from the noise. You hear crying and quick footsteps behind you as <span style="color:DarkTurquoise">Noah</span> runs away. <span style="color:Pink">You head back inside to see that he has dove underneath the couch to hide, with only his cute little butt poking out.</span> <br>
+
+				/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Sad">>
+<<set $AD.Cry to 2>>
+<<set $AD.Blush to 3>>
+<<set $AD.Mouth to "Sad">>
+<<set $AD.Outfit to "Everyday">>
+<<set $AD.Hard to 0>>
+	<<set $NoahNoShoes to 1>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+<span style="color:Pink">You poke him on the bum, causing him to quickly crawl out and look at you with tear-filled eyes. <span style="color:LightSteelBlue">“I thought the thunder got you!”</span> He dives into your arms and begins to cry into your chest.</span> <br>
+
+<span style="color:Red">-Noah Comfort</span><br>
+<<set $NPCComfort -= 10>>
+<br>
+[[Continue|Quest Stormy Night 2]] 
+
+
+<<elseif $Random == 2>>
+
+<span style="color:Pink">As you are watching the rain, you suddenly begin to see <span style="color:DarkTurquoise">Noah</span> inching over in the corner of your eye. He moves very slowly and keeps looking everywhere as if monster was about to jump out at him. Once he is close enough, you quickly reach out and grab his wrist, pulling him over to the bench. He lets out a high-pitched scream and looks up at you blushing once he is safely next to you.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Don't do that!”</span> <span style="color:Pink">He cries, punching you in the arm. You apologize as he continues to hit you before moving to sit on your lap. He wraps his arms around you and the two of you continue watching the rain. A few distant lightning strikes cause him to tremble, but he seems calmer in your arms.</span> <br>
+
+				/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Normal">>
+<<set $AD.Cry to 1>>
+<<set $AD.Blush to 1>>
+<<set $AD.Mouth to "Normal">>
+<<set $AD.Outfit to "Everyday">>
+<<set $AD.Hard to 0>>
+	<<set $NoahNoShoes to 1>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+<span style="color:Pink">Eventually, you notice that <span style="color:DarkTurquoise">Noah</span> is shivering from the cold and pick him up to go back inside. Once on the couch, <span style="color:DarkTurquoise">Noah</span> wraps himself up in a blanket and walks over to you. <span style="color:LightSteelBlue">“It did look pretty cool...“</span> He whispers.</span><br>
+
+<span style="color:Green">+Noah Comfort</span><br>
+<<set $NPCComfort += 10>>
+<br>
+[[Continue|Quest Stormy Night 2]] 
+
+<</if>>

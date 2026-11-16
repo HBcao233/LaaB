@@ -1,0 +1,56 @@
+:: MATH Surprise Question [nobr]
+
+/* OPENING */
+The class watches half asleep as <span style="color:DarkTurquoise">Mr. Randolph</span>’s lecture seems to go on forever. Suddenly, there is a loud thud from the back of the class as one of the boys, barely able to stay awake through the boring lesson, passes out for a brief moment and slams his head onto the desk. The impact blasts him back to consciousness as he lets out a yell of pain, causing a ripple effect as each student snaps back into reality. Some of the boys ask if he’s alright, while others laugh at the red spot on his forehead. During all of this, <span style="color:DarkTurquoise">Mr. Randolph</span> still stands facing the chalkboard in silence.<br>
+<br>
+<span style="color:LightSteelBlue">“Oh I’m sorry!”</span> <span style="color:DarkTurquoise">Mr. Randolph</span> yells out suddenly, causing everyone to shut up in fear. <span style="color:LightSteelBlue">“I didn’t know my lesson was so boring that it was causing you all to fall asleep. If you all are not going to pay attention I guess I can spend the class assigning more homework.”</span> The class quickly attempts to defend themselves, stating that they were paying attention and the boy just wasn’t feeling well, but <span style="color:DarkTurquoise">Mr. Randolph</span>’s annoyed expression makes it clear he’s not buying it. <br>
+
+<<set _ad to [
+	{
+		Name: "Randolph",
+		State: {
+			Mouth: "Frown",
+			Brows: "Angry",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Well, if you were all paying attention, I’m sure you won’t mind proving it. Let’s select someone at random: ”</span> <span style="color:DarkTurquoise">Mr. Randolph</span> walks over to his computer and pulls up the class roster. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>, first name I saw. Could you come up here please?”</span> You nervously walk up to the chalkboard as the classes fearfully watches <span style="color:DarkTurquoise">Mr. Randolph</span> write an equation on the board. <span style="color:LightSteelBlue">“I was just explaining this topic before I was interrupted. If you were paying attention, it should be no problem. If you can’t, well then I guess I’ll have no choice but to assign double homework for everyone!”</span> <span style="color:Yellow">You find yourself sweating as the fate of the class is suddenly in your hands!</span><br>
+<br>
+
+<div id=result>
+
+<<link "Continue">>
+<<replace"#result">>
+	<<skillCheck "Math" 70>>
+
+	<<if _result == 1>>
+		<span style="color:Green">Thankfully, you were paying attention, even if only barely enough to understand the problem and quickly solve it.</span> The class watches in anticipation as <span style="color:DarkTurquoise">Mr. Randolph</span> examines your answer and frowns. <span style="color:LightSteelBlue">“Well, clearly, at least ONE of you was paying attention."</span> He sighs loudly, <span style="color:LightSteelBlue">“But I am a man of my word, so no extra homework.”</span> The class cheers, but quickly silence themselves as <span style="color:DarkTurquoise">Mr. Randolph</span> glares at the class and continues the lesson. Many of the students give you smiles or thumbs up as you return to your seat.<br>
+<<set $SchoolRep += 10>>
+<span style="color:Green">+Reputation</span>
+	<<set _EventPassFail to "Pass">>
+<br>
+	<<else>>
+		<span style="color:Red">Despite your best efforts, you find the question too tough for you and have no choice but to make an educated guess.</span> <span style="color:DarkTurquoise">Mr. Randolph</span>’s smiles briefly gives you hope, but it is quickly squashed as he laughs to himself. <span style="color:LightSteelBlue">“Not even close! Maybe if you all actually paid attention in class you could actually make something of yourselves. I’ll be giving out double homework tonight, with a punishment for any that don’t turn it in.</span> The class groans loudly, but have no choice but to accept it. Many of the students scowl and shake their head at you as you return to your seat, despite it not being entirely your fault. <br>
+<<set $SchoolRep -= 10>>
+<span style="color:Red">-Reputation</span>
+	<<set _EventPassFail to "Fail">>
+<br>
+	<</if>>
+<br>
+<<include"Attend Math Finish">>
+
+<</replace>>
+<</link>>
+
+<<skillDiff "Math" 70>>
+
+</div>

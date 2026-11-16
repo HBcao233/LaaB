@@ -1,0 +1,64 @@
+:: Bedroom Hang Out Spin and Fall [nobr]
+
+/* Written by: Oryan */
+/* Intro */
+<<set _random to random(1, 2)>>
+
+You are sitting in your desk chair with your head against the desk. Feeling so bored and can’t think of anything to do. As you let your boredom take over you start to swivel your chair back and forth when an idea occurs to you. Pushing away from the desk, you use your feet to push you round and round in circles. Feeling giddy while also causing a fluttery sensation in your stomach, you can’t help but laugh. <br>
+<br>
+Eventually you plant your foot on the floor bringing the chair to a stop before climbing to your feet with a goofy grin on your face as you are unable to keep your balance. <br>
+
+/*[if the PC has the unlucky trait]*/
+ <<if $Player.Traits.includes("Unlucky") && _random == 2>>
+    <br>
+    As you stumble around you feel yourself about to fall and take careful aim for your bed. <span style="color:LightCoral">Only for you to fall short and find yourself landing in your laundry basket full of still dirty clothes.</span> You settle for a few seconds before your view clears enough to reveal that <span style="color:LightCoral">you are now face first in your own dirty underwear.</span> After taking a second to acknowledge your situation you struggle around in disgust only for the basket to fall over with you still inside. After several moments of you struggling around you manage to crawl out <span style="color:Pink">and you swear that you can taste your own old sweat from the underwear.</span> <br>
+
+    <<needChange "Fun" 20>>
+    <<needChange "Hygiene" -10>>
+    <br>
+    [[Continue|Player Bedroom]]
+
+/*-Hygiene*/
+
+/*-end for Wedgie/Humiliated Lovers- only if wearing underwear*/
+<<elseif $PlayerUndies.Type != "None" && $Player.Kinks.Wedgiee == 1>>
+/*PC: Undies:none, Happy, Blush1*/
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Mouth: "Happy",
+            Blush: 1,
+            PantsDown: true,
+        },
+        Clothes: {
+            Undies: $None,
+        },
+    },
+]>>
+<<ad _ad>>
+
+As you stumble around you start to fall to the ground <span style="color:Pink">only for you to feel your underwear getting caught by the arm of the chair and yanking them down as you land on the floor with your ankle resting on the seat of the chair exposing your bits to the world,</span> but in this moment you are too dizzy to care as you just lay there until you have regained enough of your equilibrium to sit up and fix your $PlayerUndies.Type with a grin on your face, finding the humor of your predicament. <br>
+
+    <<needChange "Fun" 20>>
+    <<set _arousalbs to ["Butt"]>>
+    <<set _arousalkink to ["Wedgiee"]>>
+    <<arousalGain 10 _arousalbs _arousalkink>>
+    <br>
+    [[Continue|Player Bedroom]]
+/*+Arousal]*/
+
+<<else>>
+/*-normal ending-*/
+<span style="color:LightGreen">As you stumble around you fall face first onto your bed</span> still giggling from your own giddiness where you remain until you can regain your footing. <br>
+
+    <<needChange "Fun" 20>>
+    <br>
+    [[Continue|Player Bedroom]]
+<</if>>
+
+
+
+
+   

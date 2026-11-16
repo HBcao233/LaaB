@@ -1,0 +1,113 @@
+:: GABE Avatar Equipment Set [nobr]
+
+<<set $AD.SkinColor to $Gabe.SkinColor>>
+<<set $AD.Freckles to $Gabe.Freckles>>
+<<set $ADArmFreckles to 0>>
+<<set $ADShoulderFreckles to 0>>
+<<set $AD.HairStyle to "Handsome">>
+<<set $AD.HairColor to "Black">>
+<<set $AD.EyeColor to $Gabe.EyeColor>>
+<<set $AD.LeftEyeColor to $Gabe.EyeColor>>
+<<set $AD.RightEyeColor to $Gabe.EyeColor>>
+<<set $AD.PenisStyle to $Gabe.PenisStyle>>
+<<set $AD.PenisSize to "Large">>
+<<set $AD.Balls to "Average">>
+
+<<set $ADUndies to $GabeUndies>>
+<<set $ADBottoms to $GabeBottoms>>
+<<set $ADTop to $GabeTop>>
+<<set $ADOuter to $GabeOuter>>
+<<set $ADSocks to $GabeSocks>>
+<<set $ADShoes to $GabeShoes>>
+<<set $ADUnder to $None>>
+<<set $ADShortsSag to 0>>
+
+<<if $ADMuscleToggle == 1>>
+	<<set $AD.Build to "Muscular">>
+<<else>>
+	<<set $AD.Build to "Normal">>
+<</if>>
+
+<<if $AD.Outfit == "Pajama">>
+/* NOT WEARING PJs */
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+	<<set $ADShoes to $None>>
+	<<set $ADSocks to $None>>
+	<<set $ADOuter to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Naked">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+
+<<if $AD.Outfit == "Towel">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to {
+        Name: "White Towel",
+        ID: "None",
+        Type: "Towel",
+        Color: "White",
+        Slot: "Bottoms",
+        Size: "Teen",
+        Icon: "None",
+        Avatar: "Images/Avatar/Teen/Clothes/Towel/Towel.png",
+        SagAvatar: "None",
+        PulledDownAvatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarAlt: "None",
+        AvatarAltTorn: "None",
+        AvatarAltDamaged: "None",
+        Description: "None",
+    }>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+
+<<if $AD.Outfit == "Undies">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>
+
+<<if $GabeNoShoes == 1>>
+	<<set $ADShoes to $None>>
+<</if>>
+<<if $GabeNoShirt == 1>>
+	<<set $ADTop to $None>>
+    <<set $GabeNoShirt to 0>>
+<</if>>
+
+    /* X-Ray Mode Test */
+    <<if $Xray == 1>>
+        <<set $ADHead to $None>>
+        <<set $ADFace to $None>>
+        <<set $ADMouth to $None>>
+        <<set $ADNeck to $None>>
+        <<set $ADUnder to $None>>
+        <<set $ADOver to $None>>
+        <<set $ADBack to $None>>
+        <<set $ADHands to $None>>
+        <<set $ADWaist to $None>>
+        <<set $ADTop to $None>>
+        <<set $ADBottoms to $None>>
+        <<set $ADNeck to $None>>
+        <<set $ADOuter to $None>>
+        <<set $ADSocks to $None>>
+        <<set $ADShoes to $None>>
+    <</if>>

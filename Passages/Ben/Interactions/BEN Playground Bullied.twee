@@ -1,0 +1,200 @@
+:: BEN Playground Bullied [nobr]
+
+<<include "Bully Nickname Setup">>
+
+You are hanging around on the jungle gym, having a good time, when you suddenly hear someone cry out in the distance. You look over and see <span style="color:DarkTurquoise">Ben</span> pushed up against a tree by two older boys. One of them steals <span style="color:DarkTurquoise">Ben</span>’s backpack and begins rummaging through it, tossing the contents into the dirt. The small boy pleads for them to leave him alone, but they just laugh and continue shoving him against the tree.<br>
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Eyes: "Sad",
+			Cry: 1,
+			Blush: 1,
+			Mouth: "Sad",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="choice">
+	<<link "Help Ben ">>
+		<<replace "#choice">>
+			You jump off the jungle gym and rush over to <span style="color:DarkTurquoise">Ben</span>. You quickly put yourself between <span style="color:DarkTurquoise">Ben</span> and the boy holding him against the tree, forcing him to let <span style="color:DarkTurquoise">Ben</span> go.<br>
+			<br>
+			<span style="color:LightSteelBlue">“What’s this?”</span> The older boy laughs, <span style="color:LightSteelBlue"> “Did <span style="color:DarkTurquoise">Ben</span> finally make himself a friend?”</span> You puff out your chest, trying to look intimidating, and tell them to leave him alone.<br>
+			<br>
+
+			<div id="choice2">
+				<<link "Continue">>
+					<<replace "#choice2">>
+						<<set $Random to random(1, 2)>>
+						<<if $Random == 1>>
+							/* Diaper */
+							<<if $PlayerUndies.Tags.includes("Diaper")>>
+								<span style="color:lightcoral">You are so focused on the boy in front of you that you don’t notice the other boy as he quickly runs up behind you, grabs the side of your $PlayerBottoms.Type, and yanks them down!</span> <span style="color:pink">You instantly feel your face heat up and your heartbeat accelerate as your $PlayerUndies.Name is exposed! Before you can react, the first boy pushes you backwards and sends you tumbling over the second boy onto the ground! They use this opportunity to pull your $PlayerBottoms.Type completely off your legs, tossing them to the side as they laugh at the sight of you on the ground, your underwear exposed!</span> <br>
+								<br>
+								<span style="color:LightSteelBlue">“Holy shit, is that a diaper!? I guess this superhero is really a super loser!”</span> <span style="color:lightcoral">The bullies all break out laughing as one kicks you in the stomach so hard you think you pee a little, which you guess isn’t that bad considering what you’re wearing.</span>
+								
+								/* Bully Nickname */
+								<<if ["Diaper Boy"].includes($BullyNickname)>>
+									<<set _setnickname to 0>>
+								<</if>>
+								<<if _setnickname == 1>>
+									<span style="color:LightSteelBlue">“Awww, is the little <span style="color:DarkTurquoise">Diaper Boy</span> going to cry?”</span> The boy laughs, <span style="color:LightSteelBlue">“He probably fucking wet himself too. Don’t worry, <span style="color:DarkTurquoise">Diaper Boy</span>, I’m sure if you ask really nicely, someone will change you. What a fucking loser.”</span> <span style="color:lightcoral">The laughter and jeers continue as you feel your social status plummeting. Having been seen like this, you get the feeling you’ll be known throughout the school as <span style="color:DarkTurquoise">Diaper Boy</span>.</span><br>
+									<br>
+									<<if $Nickname.Bully == 0>>
+										<span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Diaper Boy”</span>, due to being seen to wear diapers or other padded protection. Nicknames can be edited in the Journal in your Bedroom.]</span><br>
+										<br>
+									<</if>>
+									<<set $Nickname.Bully to 1>>
+									<<set $BullyNickname to "Diaper Boy">>
+								<</if>>
+								
+								<span style="color:LightSteelBlue">“Come on, guys, let’s leave these two babies to themselves. Fuck, can’t believe the dude is in a diaper!”</span> The laugh and tease as they walk off, not seeing the worth in bullying you further considering what they’ve already seen. <br>
+								<br>
+								<span style="color:pink">Sitting up, you look at a blushing <span style="color:DarkTurquoise">Ben</span> who is staring directly at you, or more accurately, your $PlayerUndies.Type! You turn red yourself and quickly cover them with your hands, glancing around for your bottoms and quickly pulling them towards you.</span> <span style="color:LightSteelBlue">“I… I…”</span> <span style="color:DarkTurquoise">Ben</span> tries to say, his face heating up more, <span style="color:LightSteelBlue">“I’m sorry!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Ben</span> then takes off running, unable to contain his embarrassment despite the fact that you were the one just seen in the padded underwear. Still red-faced, you pull up your bottoms and run off yourself.</span> <br>
+								<br>
+								<<socialChange "Ben" 3>>
+								<<set _arousalbp to []>>
+								<<set _arousalkink to ["Humiliated"]>>
+								<<arousalGain 10 _arousalbp _arousalkink>>
+								<<addMoodlet "Seen Undies" 3>>
+
+								<br>
+								[[Continue|School Courtyard]]
+							<<elseif $PlayerUndies.Name != "None">>
+								<span style="color:lightcoral">You are so focused on the boy in front of you that you don’t notice the other boy as he quickly runs up behind you, grabs the side of your $PlayerBottoms.Type, and yanks them down, exposing your $PlayerUndies.Type!</span> As you look down at the sudden intrusion, the first boy pushes you backwards and sends you tumbling over the second boy onto the ground. They then use this opportunity to pull your $PlayerBottoms.Type completely off your legs, tossing them to the side as they laugh at you on the ground in your underwear.<br>
+								<br>
+								<span style="color:LightSteelBlue">“This is what happens to fucking heroes!”</span> The bully says as he kicks you hard in the stomach for good measure, <span style="color:LightSteelBlue">“Remember that next time!”</span> Thankfully, they decide you’ve had enough and leave you there. <span style="color:DarkTurquoise">Ben</span> quickly runs over and grabs your $PlayerBottoms.Type and hands them back to you, turning away as you cover yourself.<br>
+
+								<<set _ad to [
+									{
+										Name: "Ben",
+										State: {
+											Eyes: "Sad",
+											Cry: 2,
+											Blush: 3,
+											Mouth: "Sad",
+											Outfit: "Uniform",
+										},
+									},
+									{
+										Name: "Player",
+										State: {
+											Eyes: "Sad",
+											Cry: 2,
+											Blush: 3,
+											Mouth: "Sad",
+										},
+									},
+								]>>
+								<<ad _ad>>
+
+								<span style="color:LightSteelBlue">“I’m sorry.”</span> <span style="color:DarkTurquoise">Ben</span> hides his face but you can hear the tears in his voice, <span style="color:LightSteelBlue">“It’s my fault. They go after anyone who tries to help, just leave me alone.”</span> You attempt to comfort him, but he just quickly grabs his things and runs off.<br>
+
+								<<socialChange "Ben" 3>>
+								<<set _arousalbp to []>>
+								<<set _arousalkink to ["Humiliated"]>>
+								<<arousalGain 10 _arousalbp _arousalkink>>
+								<<addMoodlet "Seen Undies" 3>>
+
+								<br>
+								[[Continue|School Courtyard]]
+							<<else>>
+								<span style="color:lightcoral">You are so focused on the boy in front of you that you don’t notice the other boy as he quickly runs up behind you and pushes you forward, causing you to tumble into the first boy, whose knee raises up and hits you hard in the crotch!</span> You instantly fall to the ground in pain as shockwaves are sent throughout your body.<br>
+								<br>
+								<span style="color:LightSteelBlue">“This is what happens to fucking heroes!”</span> The bully says as he gives you another kick in the stomach for good measure. <span style="color:LightSteelBlue">“Next time remember that!”</span> Thankfully, they decide you’ve had enough and leave you there. <span style="color:DarkTurquoise">Ben</span> looks down at your pained expression and turns away.<br>
+
+								<<set _ad to [
+									{
+										Name: "Ben",
+										State: {
+											Eyes: "Sad",
+											Cry: 2,
+											Blush: 2,
+											Mouth: "Sad",
+											Outfit: "Uniform",
+										},
+									},
+								]>>
+								<<ad _ad>>
+
+								<span style="color:LightSteelBlue">“I’m sorry.”</span> <span style="color:DarkTurquoise">Ben</span> hides his face but you can hear the tears in his voice, <span style="color:LightSteelBlue">“It’s my fault. They go after anyone who tries to help, just leave me alone.”</span> He quickly grabs his things and runs off as you manage to stand up.<br>
+								<<socialChange "Ben" 3>>
+								<<addMoodlet "Pained" 10>>
+
+								<br>
+								[[Continue|School Courtyard]]
+							<</if>>
+						<<elseif $Random == 2>>
+							<span style="color:LightSteelBlue">“Pfft.”</span> The bully chuckles to himself, <span style="color:LightSteelBlue">“You guys aren’t worth the trouble. Let’s go.”</span> The two older boys walk off laughing amongst themselves. Once you are sure they are gone, you turn around and help <span style="color:DarkTurquoise">Ben</span> up, asking if he is alright.<br>
+
+							<<set _ad to [
+								{
+									Name: "Ben",
+									State: {
+										Eyes: "Sad",
+										Cry: 1,
+										Blush: 1,
+										Mouth: "Happy",
+										Outfit: "Uniform",
+									},
+								},
+							]>>
+							<<ad _ad>>
+
+							<span style="color:LightSteelBlue">“Ye- yeah…”</span> He says softly, <span style="color:LightSteelBlue">“Thank you.”</span> He gives you a shy smile and the two of you recover his things. Just before you are about to head off, he gives you a quick hug then runs off. You feel good about what you’ve done.<br>
+							<<socialChange "Ben" 3>>
+
+							<br>
+							[[Continue|School Courtyard]]
+						<</if>>
+					<</replace>>
+				<</link>>
+			</div>
+		<</replace>>
+	<</link>>
+	<span style="color:Green">+Ben</span><br>
+	<<link "Watch<br>">>
+		<<replace "#choice">>
+			You decide to watch and see what the older kids are going to do to the poor boy. Once the contents of his backpack are thoroughly kicked into the dirt, the larger boy tosses the bag aside and tells his friend to hold <span style="color:DarkTurquoise">Ben</span>’s hands above his head. <span style="color:Pink">The bully smiles, slowly gripping the side of <span style="color:DarkTurquoise">Ben</span>’s $BenBottoms.Type and tugging them down ever so slightly, slowly revealing the poor boy’s Briefs.</span><br>
+
+			<<set _ad to [
+				{
+					Name: "Ben",
+					State: {
+						Arms: "Bound",
+						Eyes: "Sad",
+						Cry: 2,
+						Blush: 3,
+						Mouth: "Sad",
+						Outfit: "Uniform",
+						PantsDown: 1,
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			<span style="color:DarkTurquoise">Ben</span> pleads and struggles to free himself, <span style="color:Pink">but can do nothing as his $BenBottoms.Type are yanked down to his ankles, fully exposing his $BenUndies.Name.</span> Both of the bullies laugh as <span style="color:DarkTurquoise">Ben</span> begins to cry and beg to be let go. The boy holding his arm instead decides to begin swinging the bottomless boy around in a circle, treating him like a toy, before tossing him into the dirt as well as they both laugh hysterically. <span style="color:DarkTurquoise">Ben</span> quickly pulls his $BenBottoms.Type up and begins to pick up his things, still crying, as the older boys walk off.<br>
+			<<set _arousalbp to []>>
+			<<set _arousalkink to ["Humiliation"]>>
+			<<arousalGain 5 _arousalbp _arousalkink>>
+			<<addMoodlet "Stress" 0>>
+
+			<br>
+			[[Continue|School Courtyard]]
+		<</replace>>
+	<</link>>
+	<<link "Ignore it<br>">>
+		<<replace "#choice">>
+			You decide you’d rather not get involved in <span style="color:DarkTurquoise">Ben</span>’s problems, ignoring him and going back to playing. After a few minutes you look back and see <span style="color:DarkTurquoise">Ben</span> picking up his things with tears rolling down his face.<br>
+			<span style="color:Green">-Stress</span><br>
+			<<addMoodlet "Stress" 0>>
+
+			<br>
+			[[Continue|School Courtyard]]
+		<</replace>>
+	<</link>>
+</div>

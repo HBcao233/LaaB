@@ -1,0 +1,180 @@
+:: OC Miller Lemonade Stand [nobr]
+
+<<if $Time.between(7,0,9,0)>>
+    /* SET UP */
+As you stroll down the sun-soaked street, sweat dripping down your cheek, a burst of color catches your eye; A vibrant lemonade stand nestled under the welcoming shade of a towering oak tree. Approaching closer, you see a poster proudly proclaiming <span style="color:teal">‘J&K’s Lemonade’</span> adorned with playful drawings of lemons and suns, inviting you to take a sip. <br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Kayden">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC KAYDEN Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* SECOND LAYER */
+	<<set $AD.Name to "Jayden">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC JAYDEN Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: absolute; left: 125px; top: 0px">
+	<<include"Kid Avatar Display">>
+</div>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+You spot the twins, <span style="color:DarkTurquoise">Jayden</span> and <span style="color:DarkTurquoise">Kayden</span>, <span style="color:pink">wearing matching aprons in cheerful yellows and greens while having infectious smiles that mirror their enthusiasm for sharing their homemade lemonade with the neighborhood.</span> You walk up to the boys, greeting them and asking what they are doing. <br>
+<br>
+<span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>! We’re selling lemonade so we can buy the new Cosmic Ranger action figures!”</span> <span style="color:DarkTurquoise">Jayden</span> answered happily as he squeezed some lemons into a plastic pitcher. You asked them if they came up with this plan all by themselves. <br>
+<br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Zaza</span> gave us the idea!”</span> <span style="color:DarkTurquoise">Kayden</span> responds happily, <span style="color:LightSteelBlue">“He said we should sell lemonade to make money and he helped us set up the tables. He went to the store to get us some ice, but he should be back any minute now.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Yeah! As soon as he gets here, we can get started!”</span> As he wiped some sweat off his forehead, <span style="color:DarkTurquoise">Jayden</span> said, <span style="color:LightSteelBlue">“So if you want a lemonade, stop by later.”</span> You smile at the boys, saying that you will have to come by to try some of their delicious-looking lemonade. They wave goodbye and return to their setup. <br>
+<br>
+/* LEAVING CODE */
+<<if $MillerLemonLocation == "Northend">>
+    [[Come back later|Northend]]
+<<elseif $MillerLemonLocation == "Dellwood">>
+    [[Come back later|Dellwood Street]]
+<<elseif $MillerLemonLocation == "Wald">>
+    [[Come back later|Wald Street]]
+<<elseif $MillerLemonLocation == "Park">>
+    [[Come back later|Park]]
+<</if>>
+
+<<else>>
+As you stroll down the sun-soaked street, sweat dripping down your cheek, a burst of color catches your eye; A vibrant lemonade stand nestled under the welcoming shade of a towering oak tree. Approaching closer, you see a poster proudly proclaiming <span style="color:teal">‘J&K’s Lemonade’</span> adorned with playful drawings of lemons and suns, inviting you to take a sip.<br>
+<br>
+
+<<art "Images\\Special\\Buyable\\OC\\Millers\\Twins Lemonade.png" "Rayray" "https://rayrayart.fanbox.cc" 850>>
+
+You spot the twins, <span style="color:DarkTurquoise">Jayden</span> and <span style="color:DarkTurquoise">Kayden</span>, wearing matching aprons in cheerful yellows and greens while having infectious smiles that mirror their enthusiasm for sharing their homemade lemonade with the neighborhood. You walk up to the boys, greeting them. <br>
+<br>
+<span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>! Welcome to our lemonade stand!”</span> <span style="color:DarkTurquoise">Kayden</span> announces. <br>
+<br>
+<span style="color:LightSteelBlue">“You sure look thirsty!”</span> <span style="color:DarkTurquoise">Jayden</span> jumped up, <span style="color:LightSteelBlue">“Do you wanna cup?”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“We can make it sweet.”</span> <span style="color:DarkTurquoise">Kayden</span> smiled. <br>
+<br>
+<span style="color:LightSteelBlue">“Or we can make it sour!”</span> <span style="color:DarkTurquoise">Jayden</span> smirked. <br>
+<br>
+Both boys looked at you expectedly, both holding their own cup towards you. <br>
+<br>
+<<include"OC Miller Lemonade Stand Choices">>
+
+<</if>>
+
+:: OC Miller Lemonade Stand Choices [nobr]
+
+<div id="choice1">
+
+/* Did you want any help? */
+	[[Ask if they want some help (0:30)|OC Miller Lemonade Stand Offer to Help]]<br>
+<<if $Money > 0>>
+/* Sweet */
+	<<link "Sweet ($1)<br>">>
+	<<replace"#choice1">>
+<span style="color:LightSteelBlue">"Great! One dollar, please!”</span> <span style="color:DarkTurquoise">Kayden</span> said with a big smile, handing you the cup. <span style="color:lightgreen">You take a sip and are greeted by the delicious lemonade that hits the spot perfectly in this warm weather. Not sweet enough to be overwhelming, It’s a friendly companion to the lemon’s bright acidity, enhancing its natural tang without overshadowing it.</span> <br>
+<br>
+You praise the boys for their good work, patting him on the head and proclaiming that everyone will be lining up for miles to get a taste of this. <br>
+<br>
+<span style="color:LightSteelBlue">“Make sure to tell your friends!”</span> <span style="color:DarkTurquoise">Kayden</span> said joyously. <br>
+<<addMoodlet "Refreshing" 7>>
+<br>
+<<set $Money -= 1>>
+/* LEAVING CODE */
+<<if $MillerLemonLocation == "Northend">>
+    [[Come back later|Northend]]
+<<elseif $MillerLemonLocation == "Dellwood">>
+    [[Come back later|Dellwood Street]]
+<<elseif $MillerLemonLocation == "Wald">>
+    [[Come back later|Wald Street]]
+<<elseif $MillerLemonLocation == "Park">>
+    [[Come back later|Park]]
+<</if>>
+    <</replace>>
+    <</link>>
+<<else>>
+<span style="color:red">Sweet ($1)<br></span>
+<</if>>
+/* Sour */
+<<if $Money > 0>>
+	<<link "Sour ($1)<br>">>
+	<<replace"#choice1">>
+<span style="color:LightSteelBlue">"Cool! That’ll be one dollar!”</span> <span style="color:DarkTurquoise">Jayden</span> said with a smile, handing you a cup. <span style="color:lightgreen">As you take your first sip, your taste buds are greeted by an immediate zing, a tanginess that puckers your lips. The sourness takes center stage, with freshly squeezed lemons’ sharp, refreshing taste.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Haha! Isn’t it great?”</span> <span style="color:DarkTurquoise">Jayden</span> laughs, enjoying your face’s reaction to the sour flavor. <span style="color:LightSteelBlue">“Nothing better than some sour juice to get you going!”</span> Your body gets used to the sourness, and you are able to finish the remaining lemonade and thank the boys, praising them for their good work and promising to come back sometime. <br>
+<br>
+<span style="color:LightSteelBlue">“You better tell all your friends!”</span> <span style="color:DarkTurquoise">Jayden</span> proclaimed, proudly putting his hands on his hips. <br>
+<<addMoodlet "Refreshing" 7>>
+<br>
+<<set $Money -= 1>>
+/* LEAVING CODE */
+<<if $MillerLemonLocation == "Northend">>
+    [[Come back later|Northend]]
+<<elseif $MillerLemonLocation == "Dellwood">>
+    [[Come back later|Dellwood Street]]
+<<elseif $MillerLemonLocation == "Wald">>
+    [[Come back later|Wald Street]]
+<<elseif $MillerLemonLocation == "Park">>
+    [[Come back later|Park]]
+<</if>>
+    <</replace>>
+    <</link>>
+<<else>>
+<span style="color:red">Sweet ($1)<br></span>
+<</if>>
+/* Anything else? */
+	<<link "Got anything else?<br>">>
+	<<replace"#choice1">>
+You ask if the boys have anything else for sale. <span style="color:DarkTurquoise">Kayden</span> looks at you confused as <span style="color:DarkTurquoise">Jayden</span> frowns and points at the sign. <br>
+<br>
+<span style="color:LightSteelBlue">“It’s a lemonade stand.”</span> <br>
+<br>
+You laugh, telling them that it isn’t a lemonade stand if they don’t have pink lemonade, or limeade, or- <br>
+<br>
+<span style="color:LightSteelBlue">“Limeade?”</span> <span style="color:DarkTurquoise">Jayden</span> looks at you confused, <span style="color:LightSteelBlue">“That’s different.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Yeah!”</span> <span style="color:DarkTurquoise">Kayden</span> added, <span style="color:LightSteelBlue">“And pink lemons aren’t real!”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“But didn’t <span style="color:DarkTurquoise">Zaza</span> get us some pink lemonade at that carnival that one time?”</span> <br>
+<br>
+The boys quickly become confused about whether or not pink lemons are real and how they’ll get them to make proper lemonade. You smile as you watch them before informing them that you were just messing with them. <br>
+<br>
+<<include"OC Miller Lemonade Stand Choices">>
+    <</replace>>
+    <</link>>
+/* No Thanks */
+	<<link "No Thanks<br>">>
+	<<replace"#choice1">>
+You tell the boys no thanks, but maybe later. They look a little disappointed but perk back up quickly. <br>
+<br>
+<span style="color:LightSteelBlue">“Oh, okay. But come back whenever you want some lemonade! We’ll be here!”</span> <br>
+<br>
+/* LEAVING CODE */
+<<if $MillerLemonLocation == "Northend">>
+    [[Come back later|Northend]]
+<<elseif $MillerLemonLocation == "Dellwood">>
+    [[Come back later|Dellwood Street]]
+<<elseif $MillerLemonLocation == "Wald">>
+    [[Come back later|Wald Street]]
+<<elseif $MillerLemonLocation == "Park">>
+    [[Come back later|Park]]
+<</if>>
+    <</replace>>
+    <</link>>
+</div>

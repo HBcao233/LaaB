@@ -1,0 +1,206 @@
+:: Avatar Display Adults [nobr]
+
+<div @class="`${_heightClass} ${_nightClass}`" style="position: relative;">
+
+/* LAYER ARMS_BOUND */
+<<if $AD.Arms == "Bound">>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Body/Arms Hide/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* LAYER SLEEVES_BOUND */
+
+/* LAYER BODY */
+<img @src="`Images/Avatar/Adults/${$AD.BodyType}/Body/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<img @src="`Images/Avatar/Adults/${$AD.BodyType}/Body/Head/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<<if $AD.BodyType == "Average" && $AD.Abs == 1>>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Body/Abs Overlay/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+
+<<if $AD.Nose != "None">>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Nose/${$AD.Nose}/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+<<if $AD.Freckles != "None" && $AD.Freckles != 0>>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Freckles/${$AD.Freckles}/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+<<set _scarslocations to ["Cheek", "Chin", "Ear", "Eye", "Eyebrows", "Head", "Jaw", "Lip", "Nose", "Temple"]>>
+<<for _i to 0; _i lt _scarslocations.length; _i++>>
+    <<capture _i>>
+        <<if $AD.Scars[_scarslocations[_i]] == 1>>
+            <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Scars/${_scarslocations[_i]}/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<set _wrinklelocations to ["CrowsFeet", "Forehead", "SmileLines"]>>
+<<for _i to 0; _i lt _wrinklelocations.length; _i++>>
+    <<capture _i>>
+        <<if $AD.Wrinkles[_wrinklelocations[_i]] == 1>>
+            <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Wrinkles/${_wrinklelocations[_i]}/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+        <</if>>
+    <</capture>>
+<</for>>
+
+
+
+/* LAYER ARMS_NORMAL */
+<<if $AD.Arms != "Bound" && $AD.Arms != "Hide">>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Body/Arms/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* Layer Body Hair */
+<<set _bodyhairlocations to ["Biceps", "Calves", "Chest", "Forearms", "Stomach", "Thighs"]>>
+<<for _i to 0; _i lt _bodyhairlocations.length; _i++>>
+    <<capture _i>>
+        <<if $AD.BodyHair[_bodyhairlocations[_i]] != "None">>
+            <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Body Hair/${$AD.BodyHair[_bodyhairlocations[_i]]}/${_bodyhairlocations[_i]}/${$AD.HairColor}.png`" style="position: absolute; left: 0; top: 0">
+        <</if>>
+    <</capture>>
+<</for>>
+
+/* Layer Pubic Hair */
+<<if $AD.PubicHair != "None" && $AD.HappyTrail == 1 && $AD.PubicHair != "Wispy">>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Body Hair/Pubic Hair/${$AD.PubicHair} Happy Trail/${$AD.HairColor}.png`" style="position: absolute; left: 0; top: 0">
+<<elseif $AD.PubicHair == "Wispy">>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Body Hair/Pubic Hair/${$AD.PubicHair}/${$AD.HairColor}.png`" style="position: absolute; left: 0; top: 0">
+<<elseif $AD.PubicHair != "None" && $AD.HappyTrail != 1>>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Body Hair/Pubic Hair/${$AD.PubicHair}/${$AD.HairColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* LAYER EYES */
+<img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Eyes/Lids/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<<if $AD.Eyes != "Closed">>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Eyes/${$AD.Eyes}/${$AD.EyeColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* Layer Eyebrows */
+<img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Eyebrows/${$AD.Brows}/${$AD.HairColor}.png`" style="position: absolute; left: 0; top: 0">
+
+
+/* LAYER MOUTH */
+<<switch $AD.Mouth>>
+<<case "Happy">>
+	<<set _mouth to "Smile">>
+<<case "Normal">>
+	<<set _mouth to "Normal">>
+<<case "Sad">>
+	<<set _mouth to "Frown">>
+<<case "Smirk">>
+	<<set _mouth to "Smirk">>
+<<default>>
+	/* shouldn't happen, but who knows! */
+	<<set _mouth to false>>
+<</switch>>
+<img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Mouth/${_mouth}/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+
+/* LAYER BLUSH */
+<<if $AD.Blush == 1>>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Blush/Aroused/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0; opacity: 0.8">
+<<elseif $AD.Blush == 2>>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Blush/Hard/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0; opacity: 0.8">
+<<elseif $AD.Blush == 3>>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Blush/Painfully Hard/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0; opacity: 0.8">
+<</if>>
+
+/* LAYER HAIR */
+<img @src="`Images/Avatar/Adults/${$AD.BodyType}/Hair/${$AD.Hair}/${$AD.HairColor}.png`" style="position: absolute; left: 0; top: 0">
+<<if $AD.FacialHair != "None">>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Face/Facial Hair/${$AD.FacialHair}/${$AD.HairColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* LAYER PENIS */
+<<if $ADUndies.Type == "None" && $ADBottoms.Type == "None">>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Genitals/Balls/${$AD.SkinColor}/${$AD.Balls}.png`" style="position: absolute; left: 0; top: 0">
+    <<if $AD.Hard != 1>>
+        <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Genitals/Penis/Flaccid ${$AD.PenisStyle} ${$AD.Penis}/${$AD.SkinColor}/${$AD.PenisSize}.png`" style="position: absolute; left: 0; top: 0">
+    <</if>>
+<</if>>
+
+/* LAYER UNDIES */
+<<if $ADUndies.Type != "None">>
+    <img @src="`${$ADUndies.Avatar}`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* Layer Face */
+<<if $ADFace.Type != "None">>
+    <img @src="`${$ADFace.Avatar}`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* LAYER UNDER ACCESSORY */
+
+/* LAYER UNDER TOP */
+
+/* LAYER HANDS */
+
+/* LAYER TOP TUCKED */
+<<if $ADTop.Type != "None" && $ADTopTuck == 1>>
+    <img @src="`${$ADTop.Avatar}`" style="position: absolute; left: 0; top: 0">
+    <<if $ADTop.Tags.includes("Sleeves")>>
+            <img @src="`${$ADTop.AvatarSleeves}`" style="position: absolute; left: 0; top: 0">
+    <</if>>
+<</if>>
+
+/* LAYER SOCKS */
+<<if $ADSocks.Type != "None">>
+    <img @src="`${$ADSocks.Avatar}`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* LAYER SHOES */
+<<if $ADShoes.Type != "None">>
+    <img @src="`${$ADShoes.Avatar}`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* LAYER BOTTOMS */
+<<if $ADBottoms.Type != "None">>
+    <img @src="`${$ADBottoms.Avatar}`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* LAYER WAIST */
+
+/* LAYER TOP */
+<<if $ADTop.Type != "None" && $ADTopTuck != 1>>
+    <img @src="`${$ADTop.Avatar}`" style="position: absolute; left: 0; top: 0">
+    <<if $ADTop.Tags.includes("Sleeves")>>
+            <img @src="`${$ADTop.AvatarSleeves}`" style="position: absolute; left: 0; top: 0">
+    <</if>>
+<</if>>
+
+/* LAYER Neck */ 
+
+/* LAYER PENIS HARD */
+<<if $ADUndies.Type == "None" && $ADBottoms.Type == "None">>
+    <<if $AD.Hard == 1>>
+        <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Genitals/Penis/Erect ${$AD.Penis}/${$AD.SkinColor}/${$AD.PenisSize}.png`" style="position: absolute; left: 0; top: 0">
+    <</if>>
+<</if>>
+
+/* LAYER OVER */
+
+/* LAYER OUTER */
+<<if $ADOuter.Type != "None">>
+    <img @src="`${$ADOuter.Avatar}`" style="position: absolute; left: 0; top: 0">
+    <<if $ADOuter.Tags.includes("Sleeves")>>
+            <img @src="`${$ADOuter.AvatarSleeves}`" style="position: absolute; left: 0; top: 0">
+    <</if>>
+<</if>>
+
+/* LAYER OUTER SLEEVES NORMAL */
+
+/* LAYER ARMS HIDE */
+<<if $AD.Arms == "Hide">>
+    <img @src="`Images/Avatar/Adults/${$AD.BodyType}/Body/Arms Hide/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* LAYER SLEEVES HIDE */
+
+/* LAYER HANDS HIDE */
+
+/* LAYER HEAD */
+
+<<set $ADTopTuck to 0>>
+
+<img src="Images\Avatar\Adults\Empty.png" style="position: ab; left: 0; top: 0">
+
+</div>

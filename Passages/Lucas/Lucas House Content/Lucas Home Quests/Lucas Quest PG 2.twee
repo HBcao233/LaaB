@@ -1,0 +1,167 @@
+:: Lucas Quest PG 2 [nobr]
+
+<<set $Minutes += 10>>
+/* Losing Tops */
+	<<set $PlayerTop to $None>>
+	<<set $PlayerUnder to $None>>
+	<<set $PlayerOver to $None>>
+	<<set $PlayerOuter to $None>>
+	<<set $PlayerNeck to $None>>
+
+Your bad luck is followed by another short series of wins. The game was certainly getting harder, though <span style="color:DarkTurquoise">Lucas</span>’ skill combined with your own increasing ability allowed you both to remain ahead of the curve. <span style="color:lightcoral">That was, until, <span style="color:DarkTurquoise">Lucas</span> was eliminated early on which left you fighting at a disadvantage! Despite trying your best, you were unable to overcome the onslaught of enemies and soon fell yourself.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Blush: 2,
+			},
+			Clothes: {
+				Shoes: $None,
+				Socks: $None,
+				Top: $None,
+				Under: $None,
+				Over: $None,
+				Outer: $None,
+				Neck: $None,
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Blush: 2,
+    		},	
+			Clothes: {
+				Shoes: $None,
+				Socks: $None,
+				Top: $None,
+				Under: $None,
+				Over: $None,
+				Outer: $None,
+				Neck: $None,
+		 	},	
+    	},
+	]>>
+ <<ad _ad>>
+
+Sighing in disappointment, you both followed the punishment instructions on the screen: <span style="color:LightSteelBlue">“Remove all shirts, jackets, and other tops.”</span> Sitting next to <span style="color:DarkTurquoise">Lucas</span> without a shirt wasn’t too strange, you were both boys after all, <span style="color:pink">but you did notice the air in the room seemingly become hotter. It became all too clear that the next punishment was likely to leave you both in your underwear, something that would increase the awkwardness to another level.</span> <br>
+<br>
+Maybe it was your nerves that caused you both to perform horridly in the next round. <span style="color:lightcoral">You both had barely started before you were eliminated in embarrassing fashion.</span> <span style="color:pink">You both shifted nervously as the wheel began to spin and, to no one’s surprise, the wheel said</span><span style="color:LightSteelBlue"> “Remove all clothing but your underwear.”</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Frown",
+			Blush: 3,
+			},
+			Clothes: {
+				Shoes: $None,
+				Socks: $None,
+				Top: $None,
+				Under: $None,
+				Over: $None,
+				Outer: $None,
+				Neck: $None,
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Frown",
+			Blush: 3,
+    		},	
+			Clothes: {
+				Shoes: $None,
+				Socks: $None,
+				Top: $None,
+				Under: $None,
+				Over: $None,
+				Outer: $None,
+				Neck: $None,
+		 	},	
+    	},
+	]>>
+ <<ad _ad>>
+
+<div id=choice>
+/* Continue */
+	<<link "Continue<br>">>
+	<<replace"#choice">>
+
+/* No undies */
+<<if $PlayerUndies.Type == "None">>
+It was only at that point that you came to an interesting realization. <span style="color:pink">You were not wearing any underwear.</span> Blushing deeper as <span style="color:DarkTurquoise">Lucas</span> stands up and holds his hands on his own $LucasBottoms.Type nervously, you poke him on the side. <br>
+<br>
+<span style="color:LightSteelBlue">“What’s wrong? You don’t want to do it?”</span> He sounded almost hopeful. <span style="color:pink">You inform him that you were not wearing any underwear, a confession that made his face turn as red as yours.</span> <span style="color:LightSteelBlue">“Oh! Umm…”</span> He thinks for a moment. <span style="color:LightSteelBlue">“Some of the punishments expect you to be in your underwear, at least I’ve seen a couple that do. I mean, if you don’t mind, you could wear some of mine, I guess?”</span> His offer caused you to give him a strange, unexpected look, which in turn caused <span style="color:DarkTurquoise">Lucas</span> to panic. <span style="color:LightSteelBlue">“No, you’re right! That would be weird. Maybe we could-“</span> But you stop him and say that it’s not a big deal, if he doesn’t mind sharing a pair with you. <br>
+<br>
+<span style="color:LightSteelBlue">“Oh, su- sure.”</span> <span style="color:DarkTurquoise">Lucas</span> says, he seems to have regreted the suggestion as soon as he said it. <span style="color:pink">But, now he was stuck with his offer to have you wear a pair of his underwear. You weren’t sure who this was more embarrassing for.</span> <br>
+<br>
+<span style="color:DarkTurquoise">Lucas</span> leads you into his bedroom and opens his top drawer. <span style="color:pink">He had you step back, as to not peek into his collection of undies, and pulls out a pair of Blue Briefs. He quickly inspected them, making sure they were perfectly clean, before handing them over.</span> “Here you go.” He was avoiding eye contact, <span style="color:LightSteelBlue">“I’ll let you put them on in here. I’ll be waiting in the living room.”</span> <br>
+<br>
+Quickly changing, you look at yourself in <span style="color:DarkTurquoise">Lucas</span>’ mirror. <span style="color:pink">There you were, standing in <span style="color:DarkTurquoise">Lucas</span>’ bedroom wearing nothing but a pair of his Briefs. Man, your friendship was weird. But you couldn’t help but smile, this entire situation was kind of funny and the fact that it was <span style="color:DarkTurquoise">Lucas</span>’ idea made it all the more humorous.</span> <br>
+<br>
+<span style="color:pink">A bit nervous to be walking around someone else’s house in just a pair of Briefs, you exit his room carrying your bottoms and walk down the hallway into the living room. <span style="color:DarkTurquoise">Lucas</span> turns to you as you walk in, his face still the endless red. He was sitting on the couch in his $LucasUndies.Name, using his hands to cover them the best he could. But considering he was now seeing you in a pair of his underwear, the situation was probably more embarrassing for him.</span> <br>
+	<<set $PlayerBottoms to $None>>
+	<<addClothing "PC" "Undies" "Briefs" "Blue">>
+
+/* Diaper or Pull Ups */
+<<elseif $PlayerUndies.Tags.includes("Diaper")>>
+It was only as you stood up and placed your hands into your $PlayerBottoms.Type that you made an embarrassing discovery. <span style="color:pink">You were still wearing a pair of $PlayerUndies.Type! Your entire face turned red as you internally began to panic at the thought of having to sit in front of <span style="color:DarkTurquoise">Lucas</span> in nothing but these!</span> What a way for <span style="color:DarkTurquoise">Lucas</span> to find out. <br>
+<br>
+<span style="color:pink">Thinking fast, you turned to <span style="color:DarkTurquoise">Lucas</span> and lied, telling him that you had forgotten to put any underwear on this morning. You figured this was better than ripping your bottoms down and revealing your $PlayerUndies.Type to <span style="color:DarkTurquoise">Lucas</span>. This was embarrassing enough without that secret coming out.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Oh! Umm…”</span> He thinks for a moment. <span style="color:LightSteelBlue">“Some of the punishments expect you to be in your underwear, at least I’ve seen a couple that do. I mean, if you don’t mind, you could wear some of mine?”</span> His offer caused you to give him a strange, unexpected look, which in turn caused <span style="color:DarkTurquoise">Lucas</span> to panic. <span style="color:LightSteelBlue">“No, you’re right! That would be weird. Maybe we could-“</span> <span style="color:pink">But you stop him and say that it’s not a big deal, if he doesn’t mind sharing a pair with you.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Oh, su- sure.”</span> <span style="color:pink"><span style="color:DarkTurquoise">Lucas</span> says, he seems to have regretted the suggestion as soon as he said it. But, now he was stuck with his offer to have you wear a pair of his underwear. You weren’t sure who this was more embarrassing for.</span> <br>
+<br>
+<span style="color:DarkTurquoise">Lucas</span> leads you into his bedroom and opens his top drawer. <span style="color:pink">He had you step back, as to not peek into his collection of undies, and pulls out a pair of Blue Briefs. He quickly inspected them, making sure they were perfectly clean, before handing them over.</span> <span style="color:LightSteelBlue">“Here you go.”</span> He was avoiding eye contact, <span style="color:LightSteelBlue">“I’ll let you put them on in here. I’ll be waiting in the living room.”</span> <br>
+<br>
+Quickly changing, you look at yourself in <span style="color:DarkTurquoise">Lucas</span>’ mirror. <span style="color:pink">There you were, standing in <span style="color:DarkTurquoise">Lucas</span>’ bedroom wearing nothing but a pair of his Briefs. Man, your friendship was weird. But you couldn’t help but smile, this entire situation was kind of funny and the fact that it was <span style="color:DarkTurquoise">Lucas</span>’ idea made it all the more humorous.</span> <br>
+<br>
+<span style="color:pink">A bit nervous to be walking around someone else’s house in just a pair of Briefs, you exit his room carrying your bottoms and walk down the hallway into the living room. <span style="color:DarkTurquoise">Lucas</span> turns to you as you walk in, his face still the endless red. He was sitting on the couch in his $LucasUndies.Name, using his hands to cover them the best he could. But considering he was now seeing you in a pair of his underwear, the situation was probably more embarrassing for him.</span> <br>
+	<<set $PlayerBottoms to $None>>
+	<<addClothing "PC" "Undies" "Briefs" "Blue">>
+
+/* Normal */
+<<else>>
+<span style="color:pink">You both stand up and place your hands on the sides of your $PlayerBottoms.Type. <span style="color:LightSteelBlue">“We pull them down at the same time.”</span> <span style="color:DarkTurquoise">Lucas</span> says, <span style="color:LightSteelBlue">“On the count of three.”</span> You nod and begin counting down. You felt extremely nervous. Sure you had seen each other in your underwear in the locker room before, but now you were about to strip in the middle of his living room, which only added to your nerves. On three, you both ripped your bottoms down and were standing there in just your underwear.</span> <br>
+	<<set $PlayerBottoms to $None>>
+
+<</if>>
+
+/* CONTINUED */
+<<set $PlayerWaist to $None>>
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Undies",
+			Mouth: "Frown",
+			Blush: 3,
+			Arms: "Hide",
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Smirk",
+			Blush: 3,
+		 	},	
+    	},
+	]>>
+ <<ad _ad>>
+
+<span style="color:pink">Both your eyes instantly glanced downwards; <span style="color:DarkTurquoise">Lucas</span> seeing your $PlayerUndies.Name as you eyed up his own $LucasUndies.Name. They fit his body well, giving you a good idea of what lay beneath. You could feel your heart beating in your chest as you looked up and met <span style="color:DarkTurquoise">Lucas</span>’ eyes.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I guess it’s not too embarrassing.”</span> He laughed nervously, <span style="color:LightSteelBlue">“But we really need to focus on the game. Or else it WILL get super embarrassing.”</span> <span style="color:pink">You both smirked, thinking about the ensured future punishment that would relieve you of your last stitch of clothing and strip away what little dignity you had left at this point. You couldn’t imagine being able to focus on the game once you and <span style="color:DarkTurquoise">Lucas</span> were sitting next to each other, butt naked.</span> <br>
+<br>
+<span style="color:pink">But for now, you both sit down on the couch in your underwear.</span> <span style="color:DarkTurquoise">Lucas</span> slapped his face a few times, telling himself to focus up. You couldn’t help but smile at how silly he looked. You both then picked up your controllers and got ready for the next round. <br>
+<br>
+[[Continue|Lucas Quest PG 3]]
+
+    <</replace>>
+    <</link>>
+</div>

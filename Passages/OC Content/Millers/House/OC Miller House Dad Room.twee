@@ -1,0 +1,47 @@
+:: OC Miller House Dad Room [nobr]
+
+<<if $OCKaydenBabysit.Active == 1>>
+    <<if $OCKaydenBabysit.State == "PreDin" && $Time.after(18)>>
+        <<goto"Millers Babysitting Dinner">>
+    <<elseif $OCKaydenBabysit.State == "PostDin" && $Time.after(19, 30)>>
+        <<goto"Millers Babysitting Bath Time">>
+    <<elseif $OCKaydenBabysit.State == "Bath" && $Time.after(20)>>
+        <<goto"Millers Babysitting Bath Time Bath Done">>
+    <<elseif $OCKaydenBabysit.State == "Sleep" && $Time.after(21)>>
+        <<goto"Millers Babysitting Ending">>
+    <</if>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Hakeem's Bedroom--</strong></big></span><br>
+<<set $Location to {
+	Name: "Hakeem's Bedroom",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+
+<span style="color:DarkTurquoise">Hakeem</span>'s bedroom is spacious, with deep shades of charcoal and midnight blue on the walls, contrasting warm accents in soft golds and rich browns, and modern, low-hanging pendant lights casting a soft glow. A massive king-sized bed dominates the center of the room, and there is a wall-to-wall bookshelf and almost entirely glass on the opposite wall with floor-to-ceiling windows that look out onto a private balcony. <br>
+<br>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Hakeem's Bathroom (0:01)|OC Miller House Dad Bath][$Minutes += 1]] <br>
+	[[Hallway (0:01)|OC Miller House Hallway][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+/* House Map */
+<div style="position: relative">
+	<img src="Images\NPC Homes\Miller House\Miller House.png" 
+style="position: absolute; left: 0; top: 0"  alt="Miller Map" usemap="#MillerHouse">
+	<img src="Images\NPC Homes\Miller House\Tall Room Marker.png" 
+style="position: absolute; left: 54px; top: 54px"  alt="Miller Map" usemap="#MillerHouse">
+</div>
+
+<map name="MillerHouse">
+    <area shape="rect" coords="0,108,53,161" alt="Dad Bath" onclick="$.wiki('<<goto[[OC Miller House Dad Bath]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="58,162,319,215" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="162,216,215,269" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+</map>

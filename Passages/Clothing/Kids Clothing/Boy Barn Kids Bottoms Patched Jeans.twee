@@ -1,0 +1,102 @@
+:: Boy Barn Kids Bottoms Patched Jeans [nobr]
+
+<span style="color:Azure"><strong>-Patched Jeans ($7)-</strong></span><br>
+
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+	<<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADOver to $None>>
+    <<set $ADUnder to $None>>
+    <<set $ADTop to $None>>
+    <<set $ADShoes to $None>>
+    <<if $ShopColor == "Blue">>
+    	<<set $ADBottoms to $KidsBluePatchedJeans>>
+	<<elseif $ShopColor == "Bear">>
+    	<<set $ADBottoms to $KidsBearPatchedJeans>>
+	<<elseif $ShopColor == "Heart">>
+    	<<set $ADBottoms to $KidsHeartPatchedJeans>>
+	<<elseif $ShopColor == "Owlman">>
+    	<<set $ADBottoms to $KidsOwlmanPatchedJeans>>
+	<<elseif $ShopColor == "Starburst">>
+    	<<set $ADBottoms to $KidsStarburstPatchedJeans>>
+	<<elseif $ShopColor == "Ultraman">>
+    	<<set $ADBottoms to $KidsUltramanPatchedJeans>>
+    <</if>>
+    
+<<include"Kid Avatar Display">>
+<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+<br>
+<<set _random to random(1, 6)>>
+<<if _random == 1>>
+    <span style="color:LightSteelBlue">“Trying these on in front of you is kinda embarrassing.”</span>
+<<elseif _random == 2>>
+    <span style="color:LightSteelBlue">“Why are you smiling at me like that?”</span>
+<<elseif _random == 3>>
+    <span style="color:LightSteelBlue">“These are kinda cool. And they fit nice.”</span>
+<<elseif _random == 4>>
+    <span style="color:LightSteelBlue">“So? How do I look?”</span>
+<<elseif _random == 7>>
+    <span style="color:LightSteelBlue">“Keep the door shut! I don’t want anyone to see me!”</span>
+<<elseif _random == 6>>
+    <span style="color:LightSteelBlue">“Do you think I look good in these?”</span>
+<</if>><br>
+<br>
+
+<strong>Patched Jeans:</strong><br>
+	<<link [img["Images/Icons/Kids Clothes/Patched Jeans/Blue Patched Jeans.png"]]>>
+    	<<set $ShopColor to "Blue">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Kids Clothes/Patched Jeans/Blue Bear Patched Jeans.png"]]>>
+    	<<set $ShopColor to "Bear">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Kids Clothes/Patched Jeans/Blue Heart Patched Jeans.png"]]>>
+    	<<set $ShopColor to "Heart">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Kids Clothes/Patched Jeans/Blue Owlman Patched Jeans.png"]]>>
+    	<<set $ShopColor to "Owlman">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Kids Clothes/Patched Jeans/Blue Starburst Patched Jeans.png"]]>>
+    	<<set $ShopColor to "Starburst">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Kids Clothes/Patched Jeans/Blue Ultraman Patched Jeans.png"]]>>
+    	<<set $ShopColor to "Ultraman">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+    <br>
+
+
+	/* PURCHASE */
+<<if $Money >= 7>>
+	<<link "Purchase ($7)">>
+    <<if $ShopColor == "Blue">>
+    	<<set $NoahInClosetBottoms.push($KidsBluePatchedJeans)>>
+	<<elseif $ShopColor == "Bear">>
+    	<<set $NoahInClosetBottoms.push($KidsBearPatchedJeans)>>
+	<<elseif $ShopColor == "Heart">>
+    	<<set $NoahInClosetBottoms.push($KidsHeartPatchedJeans)>>
+	<<elseif $ShopColor == "Owlman">>
+    	<<set $NoahInClosetBottoms.push($KidsOwlmanPatchedJeans)>>
+	<<elseif $ShopColor == "Starburst">>
+    	<<set $NoahInClosetBottoms.push($KidsStarburstPatchedJeans)>>
+	<<elseif $ShopColor == "Ultraman">>
+    	<<set $NoahInClosetBottoms.push($KidsUltramanPatchedJeans)>>
+    <</if>>
+        <<set $Money -= 7>>
+        <<goto "Kids Boy Barn">>
+    <</link>>
+<<else>>
+	<span style="color:Lightcoral">Purchase ($7)</span>
+<</if>>

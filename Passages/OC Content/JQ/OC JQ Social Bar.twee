@@ -1,0 +1,84 @@
+:: OC JQ Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCJQSocialRank == -3>>
+	<<set $OCJQRelationship to "Hated">>
+	<span style="color:DarkRed">JQ Hates you!</span>
+	<br>
+<<elseif $OCJQSocialRank == -2>>
+	<<set $OCJQRelationship to "Enemies">>
+	<span style="color:DarkRed">You and JQ are Enemies.</span>
+	<br>
+<<elseif $OCJQSocialRank == -1>>
+	<<set $OCJQRelationship to "Very Disliked">>
+	<span style="color:Red">JQ really Dislikes you.</span>
+	<br>
+<<elseif $OCJQSocialRank == 0 and $OCJQSocial <= -50>>
+	<<set $OCJQRelationship to "Disliked">>
+	<span style="color:Red">JQ Dislikes you. </span>
+	<br>
+<<elseif $OCJQSocialRank == 0 and $OCJQSocial < 50>>
+	<<set $OCJQRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and JQ are Acquaintances.</span>
+	<br>
+<<elseif $OCJQSocialRank == 0 and $OCJQSocial >= 50>>
+	<<set $OCJQRelationship to "Liked">>
+	<span style="color:LightGreen">JQ Likes you.</span>
+	<br>
+<<elseif $OCJQSocialRank == 1>>
+	<<set $OCJQRelationship to "Friends">>
+	<span style="color:Green">You and JQ are Friends.</span>
+	<br>
+<<elseif $OCJQSocialRank == 2>>
+	<<set $OCJQRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and JQ are Good Friends!</span>
+	<br>
+<<elseif $OCJQSocialRank == 3>>
+	<<set $OCJQRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and JQ are Close Friends!</span>
+	<br>
+<<elseif $OCJQSocialRank == 4>>
+	<<set $OCJQRelationship to "Best Friends">>
+	<span style="color:Cyan">You and JQ are Best Friends!</span>
+	<br>
+<<elseif $OCJQSocialRank == 5>>
+	<<set $OCJQRelationship to "Love">>
+	<span style="color:Pink">You and JQ Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCJQSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCJQSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCJQSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCJQSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCJQSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCJQSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCJQSocial,
+			value: Math.abs($OCJQSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCJQSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCJQSocial > 120>>
+	<<set $OCJQSocial to 120>>
+<</if>>
+<<if $OCJQSocial < -120>>
+	<<set $OCJQSocial to -120>>
+<</if>>

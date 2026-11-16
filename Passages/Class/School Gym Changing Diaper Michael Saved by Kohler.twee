@@ -1,0 +1,36 @@
+:: School Gym Changing Diaper Michael Saved by Kohler [nobr]
+
+/* OPENING */
+Your face is met by the curtain as you’re being pushed out of the stall. Not wanting to roll over and submit to <span style="color:DarkTurquoise">Michael</span>’s sinister attempt to bully you, you try flailing and wrapping the curtains between the two of you. It succeeds in getting you both tangled up for the moment. <span style="color:DarkTurquoise">Michael</span> curses and growls as he struggles to keep his hold on you while trying to doff the drape covering him. <br>
+<br>
+<span style="color:lightgreen">It succeeds and you manage to slip back inside and quickly put on your gym clothes.</span> You turn around, expecting to see <span style="color:DarkTurquoise">Michael</span> again, and sure enough you do. However, the shower curtain had torn from its fasteners and wrapped around the struggling figure of <span style="color:DarkTurquoise">Michael</span> on the floor. <span style="color:lightgreen">You watch with delight as he flails around. Soon after, <span style="color:DarkTurquoise">Coach Kohler</span> rushes over and stands above the heap on the floor.</span> <br>
+<br>
+
+<<set _ad to [
+	{
+		Name: "Kohler",
+		State: {
+			Mouth: "Frown",
+			Brows: "Angry",
+		},
+	},
+	{
+		Name: "Michael",
+		State: {
+			Eyes: "Mad",
+			Cry: 1,
+			Blush: 2,
+			Mouth: "Sad",
+			Outfit: "Undies",
+		},
+	},
+]>>
+<<ad _ad>>
+
+Unceremoniously, Coach pulls <span style="color:DarkTurquoise">Michael</span> out by the arm and drags him across the floor. <span style="color:LightSteelBlue">“You got time to play Peeping Tom, you’ve got time to join me after school for some detention!”</span> Is all you hear The Coach say as they walk out of earshot. <span style="color:lightgreen">Smiling wide and relieved, you prepare to go to class. Hoping beyond reasonable doubt that the curtain crashing didn’t attract any attention to your undergarments. Your $PlayerUndies.Type secret is safe for now.</span> <br>
+	<<socialChange "Michael" -3>>
+	<<addMoodlet "Seen Undies" 5>>
+	<<addMoodlet "Stress" 1>>
+<br>
+	<<include"Gym Get Dressed">>
+	[[Continue|School Locker Room]] 

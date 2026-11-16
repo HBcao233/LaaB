@@ -1,0 +1,161 @@
+:: LUCAS Equipment Display [nobr]
+
+/* EVERYDAY */
+
+<<if $LucasEquipment == "Everyday">>
+	<<if $Weather == "Rain" or $Temp == "Cool" or $Temp == "Cold">>
+	He is currently wearing a $LucasOuter over his $LucasTop, $LucasBottoms, and $LucasShoes with $LucasSocks.<br>
+	
+	<<else>>
+	He is currently wearing a $LucasTop, $LucasBottoms, and $LucasShoes with $LucasSocks.<br>
+
+	<</if>>
+/* EQUIPMENT ICON DISPLAY */
+
+	<<if $LucasOuter == "Blue Hoodie">>
+<span title="Blue Hoodie">
+		<img src="Images\Equipment\Hoodie\Blue Hoodie.png" alt="Blue Hoodie">
+		</span>
+<</if>>
+
+<<if $LucasTop == "Blue T-Shirt">>
+	<span title="Blue T-Shirt">
+		<img src="Images\Equipment\T-Shirt\Blue T-Shirt.png" alt="Blue T-Shirt">
+		</span>
+<<elseif $LucasTop == "White T-Shirt">>
+	<span title="White T-Shirt">
+		<img src="Images\Equipment\T-Shirt\White T-Shirt.png" alt="White T-Shirt">
+		</span>
+<<elseif $LucasTop == "Green T-Shirt">>
+	<span title="Green T-Shirt">
+		<img src="Images\Equipment\T-Shirt\Green T-Shirt.png" alt="Green T-Shirt">
+		</span>
+<</if>>
+	
+<<if $LucasBottoms == "Blue Shorts">>
+	<span title="Blue Shorts">
+		<img src="Images\Equipment\Shorts\Blue Shorts.png" alt="Blue Shorts">
+		</span>
+<<elseif $LucasBottoms == "Black Shorts">>
+	<span title="Black Shorts">
+		<img src="Images\Equipment\Shorts\Black Shorts.png" alt="Black Shorts">
+		</span>
+<<elseif $LucasBottoms == "Blue Jeans">>
+	<span title="Blue Jeans">
+		<img src="Images\Equipment\Jeans\Blue Jeans.png" alt="Blue Jeans">
+		</span>
+<<elseif $LucasBottoms == "Green Jeans">>
+	<span title="Green T-Shirt">
+		<img src="Images\Equipment\Jeans\Green Jeans.png" alt="Green Jeans">
+		</span>
+<</if>>
+
+<<if $LucasSocks == "White Socks">>
+	<span title="White Socks">
+		<img src="Images\Equipment\Socks\White Socks.png" alt="White Socks">
+		</span>
+<</if>>
+
+<<if $LucasShoes == "Blue Tennis Shoes">>
+	<span title="Blue Tennis Shoes">
+		<img src="Images\Equipment\Tennis Shoes\Blue Tennis Shoes.png" alt="Blue Tennis Shoes">
+		</span>
+<</if>>
+
+							/* PJs */
+				
+<<elseif $LucasEquipment == "PJs">>
+He is currently wearing only a pair of $LucasPJBottoms, revealing his boyish chest.<br>
+<<set $SeenLucasPJs to 1>>
+<span title="Green Pajama Pants">
+		<img src="Images\Equipment\Pajama Pants\Green Pajamas.png" alt="Green Pajama Pants">
+		</span>
+
+
+							/* UNDIES */
+				
+<<elseif $LucasEquipment == "Undies">>
+
+<<if $LucasUndies == "Blue Briefs">>
+	<span title="Blue Briefs">
+		<img src="Images\Equipment\Briefs\Blue Briefs.png" alt="Blue Briefs">
+		</span>
+<<elseif $LucasUndies == "Green Briefs">>
+	<span title="Green Briefs">
+		<img src="Images\Equipment\Briefs\Green Briefs.png" alt="Green Briefs">
+		</span>
+<<elseif $LucasUndies == "Red Briefs">>
+	<span title="Red Briefs">
+		<img src="Images\Equipment\Briefs\Red Briefs.png" alt="Red Briefs">
+		</span>
+<</if>>
+
+
+<</if>>
+
+/*
+<<if $LucasOuter == "Blue Hoodie">>
+<span title="Blue Hoodie">
+		<img src="Images\Equipment\Hoodie\Blue Hoodie.png" alt="Blue Hoodie">
+		</span>
+<</if>>
+
+<<if $LucasTop == "Blue T-Shirt">>
+	<span title="Blue T-Shirt">
+		<img src="Images\Equipment\T-Shirt\Blue T-Shirt.png" alt="Blue T-Shirt">
+		</span>
+<<elseif $LucasTop == "White T-Shirt">>
+	<span title="White T-Shirt">
+		<img src="Images\Equipment\T-Shirt\White T-Shirt.png" alt="White T-Shirt">
+		</span>
+<<elseif $LucasTop == "Green T-Shirt">>
+	<span title="Green T-Shirt">
+		<img src="Images\Equipment\T-Shirt\Green T-Shirt.png" alt="Green T-Shirt">
+		</span>
+<</if>>
+
+<<if $LucasBottoms == "Blue Shorts">>
+	<span title="Blue Shorts">
+		<img src="Images\Equipment\Shorts\Blue Shorts.png" alt="Blue Shorts">
+		</span>
+<<elseif $LucasBottoms == "Black Shorts">>
+	<span title="Black Shorts">
+		<img src="Images\Equipment\Shorts\Black Shorts.png" alt="Black Shorts">
+		</span>
+<<elseif $LucasBottoms == "Blue Jeans">>
+	<span title="Blue Jeans">
+		<img src="Images\Equipment\Jeans\Blue Jeans.png" alt="Blue Jeans">
+		</span>
+<<elseif $LucasBottoms == "Green Jeans">>
+	<span title="Green T-Shirt">
+		<img src="Images\Equipment\Jeans\Green Jeans.png" alt="Green Jeans">
+		</span>
+<</if>>
+
+<<if $LucasUndies == "Blue Briefs">>
+	<span title="Blue Briefs">
+		<img src="Images\Equipment\Briefs\Blue Briefs.png" alt="Blue Briefs">
+		</span>
+<<elseif $LucasUndies == "Green Briefs">>
+	<span title="Green Briefs">
+		<img src="Images\Equipment\Briefs\Green Briefs.png" alt="Green Briefs">
+		</span>
+<<elseif $LucasUndies == "Red Briefs">>
+	<span title="Red Briefs">
+		<img src="Images\Equipment\Briefs\Red Briefs.png" alt="Red Briefs">
+		</span>
+<</if>>
+
+<<if $LucasSocks == "White Socks">>
+	<span title="White Socks">
+		<img src="Images\Equipment\Socks\White Socks.png" alt="White Socks">
+		</span>
+<</if>>
+
+<<if $LucasShoes == "Blue Tennis Shoes">>
+	<span title="Blue Tennis Shoes">
+		<img src="Images\Equipment\Tennis Shoes\Blue Tennis Shoes.png" alt="Blue Tennis Shoes">
+		</span>
+<</if>>
+
+*/

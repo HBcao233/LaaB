@@ -1,0 +1,84 @@
+:: OC Rowan Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCRowanSocialRank == -3>>
+	<<set $OCRowanRelationship to "Hated">>
+	<span style="color:DarkRed">Rowan Hates you!</span>
+	<br>
+<<elseif $OCRowanSocialRank == -2>>
+	<<set $OCRowanRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Rowan are Enemies.</span>
+	<br>
+<<elseif $OCRowanSocialRank == -1>>
+	<<set $OCRowanRelationship to "Very Disliked">>
+	<span style="color:Red">Rowan really Dislikes you.</span>
+	<br>
+<<elseif $OCRowanSocialRank == 0 and $OCRowanSocial <= -50>>
+	<<set $OCRowanRelationship to "Disliked">>
+	<span style="color:Red">Rowan Dislikes you. </span>
+	<br>
+<<elseif $OCRowanSocialRank == 0 and $OCRowanSocial < 50>>
+	<<set $OCRowanRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Rowan are Acquaintances.</span>
+	<br>
+<<elseif $OCRowanSocialRank == 0 and $OCRowanSocial >= 50>>
+	<<set $OCRowanRelationship to "Liked">>
+	<span style="color:LightGreen">Rowan Likes you.</span>
+	<br>
+<<elseif $OCRowanSocialRank == 1>>
+	<<set $OCRowanRelationship to "Friends">>
+	<span style="color:Green">You and Rowan are Friends.</span>
+	<br>
+<<elseif $OCRowanSocialRank == 2>>
+	<<set $OCRowanRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Rowan are Good Friends!</span>
+	<br>
+<<elseif $OCRowanSocialRank == 3>>
+	<<set $OCRowanRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Rowan are Close Friends!</span>
+	<br>
+<<elseif $OCRowanSocialRank == 4>>
+	<<set $OCRowanRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Rowan are Best Friends!</span>
+	<br>
+<<elseif $OCRowanSocialRank == 5>>
+	<<set $OCRowanRelationship to "Love">>
+	<span style="color:Pink">You and Rowan Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCRowanSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCRowanSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCRowanSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCRowanSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCRowanSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCRowanSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCRowanSocial,
+			value: Math.abs($OCRowanSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCRowanSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCRowanSocial > 120>>
+	<<set $OCRowanSocial to 120>>
+<</if>>
+<<if $OCRowanSocial < -120>>
+	<<set $OCRowanSocial to -120>>
+<</if>>

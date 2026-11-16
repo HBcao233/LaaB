@@ -1,0 +1,107 @@
+:: CC Main [nobr]
+
+<span style="color:Azure"><big><strong>--Character Creation--</strong></big></span><br>
+
+/* OPTIONS UP TOP TO SELECT NEW TABS */
+<<if $CCMenu == "Physical">>
+    <span style="color:lightgreen">[Physical]</span>
+<<else>>
+    <<link"[Physical]">>
+        <<set $CCMenu to "Physical">>
+        <<goto"CC Main">>
+    <</link>>
+<</if>>
+ - 
+<<if $CCMenu == "Privates">>
+    <span style="color:lightgreen">[Privates]</span>
+<<else>>
+    <<link"[Privates]">>
+        <<set $CCMenu to "Privates">>
+        <<goto"CC Main">>
+    <</link>>
+<</if>>
+ - 
+<<if $CCMenu == "Abilities">>
+    <span style="color:lightgreen">[Abilities & Traits]</span>
+<<else>>
+    <<link"[Abilities & Traits]">>
+        <<set $CCMenu to "Abilities">>
+        <<goto"CC Main">>
+    <</link>>
+<</if>>
+ - 
+<<if $CCMenu == "Details">>
+    <span style="color:lightgreen">[Details]</span>
+<<else>>
+    <<link"[Details]">>
+        <<set $CCMenu to "Details">>
+        <<goto"CC Main">>
+    <</link>>
+<</if>>
+ - 
+<<if $CCMenu == "Kinks">>
+    <span style="color:lightgreen">[Kinks]</span>
+<<else>>
+    <<link "[Kinks]">>
+        <<set $CCMenu to "Kinks">>
+        <<goto "CC Main">>
+    <</link>>
+<</if>>
+ - 
+<<if $CCMenu == "Clothing">>
+    <span style="color:lightgreen">[Starter Clothing]</span>
+<<else>>
+    <<link"[Starter Clothing]">>
+        <<set $CCMenu to "Clothing">>
+        <<goto"CC Main">>
+    <</link>>
+<</if>>
+<br>
+<<if $CCMenu == "Settings">>
+    <span style="color:lightgreen">[Settings]</span>
+<<else>>
+    <<link"[Settings]">>
+        <<set $CCMenu to "Settings">>
+        <<goto"CC Main">>
+    <</link>>
+<</if>>
+ - 
+<strong>
+<<link"[Finish]">>
+    <<goto "CC Finalize">>
+<</link>>
+</strong>
+/*  - 
+<strong>
+<<link "[Randomize All]">>
+    <<run setup.CC.randomize()>>
+    <<goto"CC Main">>
+<</link>>
+</strong>*/
+<br>
+
+
+/* THE DIFFERENT TABS WILL BE DISPLAYED HERE */
+<div id='CC' style="margin-top: 15px;">
+
+<<if $CCMenu == "Physical">>
+    <<include"CC Physical">>
+<<elseif $CCMenu == "Privates">>
+    <<include"CC Privates">>
+<<elseif $CCMenu == "Abilities">>
+    <<include"CC Abilities & Traits">>
+<<elseif $CCMenu == "Details">>
+    <<include"CC Details">>
+<<elseif $CCMenu == "Kinks">>
+    <<include "CC Kinks">>
+<<elseif $CCMenu == "Clothing">>
+    <<include"CC Clothing">>
+<<elseif $CCMenu == "Settings">>
+    <<include"CC Settings">>
+<<else>>
+    <<include"CC Physical">>
+<</if>>
+
+</div>
+
+<br>

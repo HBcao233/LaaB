@@ -1,0 +1,133 @@
+:: School South Hallway [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School South Hallway",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Hallway",
+}>>
+
+/* Random Encounter Check */
+/* Set to 1% atm due to large amount of times in hallways. */
+<<set _randomencounter to random(1, 100)>>
+
+<<if $Player.Energy <= 5>>
+	<<include "School Pass Out">>
+<<elseif $HadAccident>>
+	<<include "School Pee">>
+<<else>>
+	
+<span style="color:Azure"><big><strong>--South Hallway--</strong></big></span><br>
+
+/* EXPOSED */
+<<if $Player.Exposed == "Naked" or $Player.Exposed == "Undies" or $Player.Exposed == "Diaper">>
+	<<include "School South Hallway Exposed">>
+/* QUEST CHECKS */
+<<elseif $InActiveQuests.includes("Carter: Park Clean Up") and $Time.before(8)>>
+	<<include "Carter Quest Intro Invite Event">>
+<<elseif $ToggleOCMiller == 1 and $InActiveQuests.includes("Millers: Trouble in Paradise")>>
+	<<include "OC Millers Trouble in Paradise 1">>
+<<elseif $ToggleOCKyren == 1 && $InActiveQuests.includes("Kyren: Introduction") && _randomencounter < 11>>
+	<<include "OC Kyren Intro">>
+<<elseif $ToggleOCZach == 1 && $InActiveQuests.includes("Zach: Brochella Lite") && $Time.after(15, 0)>>
+	<<include"OC Zach Brochella Intro">>
+<<elseif $ToggleOCNikolai == 1 && $InActiveQuests.includes("Nikolai: Dropped Photo") && random(1, 4) == 1>>
+	<<include"OC Nikolai Dropped Photo">>
+<<elseif $ToggleOCArthurRichard == 1 && $InActiveQuests.includes("Arthur & Richard: Hat Quest")>>
+	<<include"OC Arthur Richard Hat Quest Intro">>
+<<elseif $ToggleNonCon == 1 && $LaserPointer.Active == 1 && $LaserPointer.Preteens == 0>>
+	<<goto"BLP Con Preteens">>
+/* Random Encounter Check */
+<<elseif _randomencounter == 1>>
+	<<include "Hallway Random Encounters">>
+<<else>>
+/* ELSE */
+
+
+You stand in the South Hallway of your school. Rows of lockers fill the walls between the classes, painted the school colors of Purple and Gold. Near the Main Office is a large trophy case, showcasing the large number of awards the school has won over the years. Next to that is a large bulletin board where they post news and information.<br>
+<br>
+
+/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Wait (0:05)|School South Hallway][$Minutes += 5]]<br>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<<if $LinkTravel == 1>>
+	[[West Hallway (0:01)|School West Hallway][$Minutes += 1]] <br>
+	[[East Hallway (0:01)|School East Hallway][$Minutes += 1]] <br>
+	[[Math Classroom (0:01)|School Math Classroom][$Minutes += 1]] <br>
+	[[Science Classroom (0:01)|School Science Classroom][$Minutes += 1]] <br>
+	[[Auditorium (0:01)|School Auditorium][$Minutes += 1]] <br>
+	[[Computer Room (0:01)|School Computer Room][$Minutes += 1]] <br>
+	[[Main Office (0:01)|School Main Office][$Minutes += 1]] <br>
+	[[Restrooms (0:01)|School Restrooms][$Minutes += 1]] <br>
+	[[Library (0:01)|School Library][$Minutes += 1]]<br>
+	[[School Infirmary (0:01)|School Infirmary][$Minutes += 1]]<br>
+	[[Storage Closet (0:01)|School Storage Closet][$Minutes += 1]]<br>
+<</if>>	
+
+<<if $Time.before(7) or $Time.after(15)>>
+	<<if $Detention > 0>>
+		[[Outside School (0:01)|Leaving With Detention]]<br>
+	<<else>>
+		[[Outside School (0:01)|Middle School][$Minutes += 1]] <br>
+	<</if>>
+<<else>>
+	<span style="color:lightcoral">The front gate is locked during school hours.</span><br>
+<</if>>
+<br>
+
+
+<div style="position: relative">
+	<img src="Images\School Map\School Map.png" style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<img src="Images\School Map\School Map South Marker.png" style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<img src="Images\School Map\Exit Icon.png" style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<<include"NPC Tracking School">>
+</div>
+
+<map name="School">
+<area shape="rect" coords="58,58,165,111" alt="West Hallway" onclick="$.wiki('<<goto[[School West Hallway]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="58,58,111,327" alt="West Hallway" onclick="$.wiki('<<goto[[School West Hallway]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="328,58,436,111" alt="East Hallway" onclick="$.wiki('<<goto[[School East Hallway]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="382,58,435,327" alt="East Hallway" onclick="$.wiki('<<goto[[School East Hallway]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="58,382,111,435" alt="Restrooms" onclick="$.wiki('<<goto[[School Restrooms]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="112,382,165,435" alt="Science Classroom" onclick="$.wiki('<<goto[[School Science Classroom]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="166,382,219,435" alt="Math Classroom" onclick="$.wiki('<<goto[[School Math Classroom]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="4,328,57,381" alt="Auditorium" onclick="$.wiki('<<goto[[School Auditorium]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="220,274,273,327" alt="Main Office" onclick="$.wiki('<<goto[[School Main Office]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="274,381,327,435" alt="Computer Room" onclick="$.wiki('<<goto[[School Computer Room]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="382,382,435,435" alt="Storage Closet" onclick="$.wiki('<<goto[[School Storage Closet]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="166,274,219,327" alt="School Infirmary" onclick="$.wiki('<<goto[[School Infirmary]]>><<set $Minutes += 1>>')" />
+/*
+<area shape="rect" coords="328,382,381,435" alt="Home Ec" onclick="$.wiki('<<goto[[Home Ec Classroom]]>><<set $Minutes += 1>>')" />
+*/
+<area shape="rect" coords="436,328,489,381" alt="School Library" onclick="$.wiki('<<goto[[School Library]]>><<set $Minutes += 1>>')" />
+
+<<if $Time.before(7) or $Time.after(15)>>
+	<<if $Detention > 0>>
+		<area shape="rect" coords="236,410,257,431" alt="Exit" onclick="$.wiki('<<goto[[Leaving With Detention]]>>')" />
+	<<else>>
+		<area shape="rect" coords="236,410,257,431" alt="Exit" onclick="$.wiki('<<goto[[Middle School]]>><<set $Minutes += 1>>')" />
+	<</if>>
+<</if>>
+
+</map>
+
+<</if>>
+<</if>>

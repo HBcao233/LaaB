@@ -1,0 +1,36 @@
+:: BlowJob NonCon NPC Reactions Michael [nobr]
+
+<<if $SexPlayerAction == "None">>
+	
+/* Resist */
+<<elseif $SexPlayerAction == "Resist">>
+	<span style="color:Green">+Arousal</span>
+	<<set $NPCArousal += 3>>
+	<span style="color:Red">+Anger</span>
+	<<set $NPCAnger -= 5>>
+	<br>
+	
+/* Fight */
+<<elseif $SexPlayerAction == "Fight">>
+	<span style="color:Green">+Arousal</span>
+	<<set $NPCArousal += 3>>
+	<span style="color:Red">+Anger</span>
+	<<set $NPCAnger -= 10>>
+	<br>
+	
+/* Cry */
+<<elseif $SexPlayerAction == "Cry">>
+	<span style="color:Green">+Arousal</span>
+	<<set $NPCArousal += 5>>
+	<span style="color:Green">-Anger</span>
+	<<set $NPCAnger += 5>>
+	<br>
+	
+/* Submit */
+<<elseif $SexPlayerAction == "Submit">>
+	<span style="color:Green">+Arousal</span>
+	<<set $NPCArousal += 10>>
+	<span style="color:Green">-Anger</span>
+	<<set $NPCAnger += 5>>
+	<br>
+<</if>>

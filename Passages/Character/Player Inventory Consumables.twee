@@ -1,0 +1,59 @@
+:: Player Inventory Consumables [nobr]
+
+<<set _items = $PlayerInventoryConsumables.getAllItems()>>
+<<for _i range _items>>
+    <<set _item = _i.item>>
+    <<set _amount = _i.amount>>
+    <<capture _item _amount>>
+        <div class="consumable-item-icon">
+            <<link "[img[_item.getIcon()]]">>
+                <<replace"#item-details">>
+                    <span style="color:Azure"><strong><big>--<<=_item.getName()>>--</big></strong></span><br>
+                    [img[_item.getIcon()]]<br>
+                    <strong>Amount:</strong> <<=_amount>><br>
+                    <strong>Description:</strong> <<=_item.getDescription()>><br>
+                    <<if _item.canBeConsumed()>>
+                        <<link "Consume">>
+                            <<run $PlayerInventoryConsumables.useItem(_item.getName())>>
+                            <<run Dialog.close()>>
+                            <<set _passage to passage()>>
+                            <<goto _passage>>
+                        <</link>>
+                    <<else>>
+                        <span class="greyed-out">Cannot consume anymore for now!</span>
+                    <</if>>
+                <</replace>>
+            <</link>>
+            <span class="consumable-item-amount">x<<=_amount>></span>
+        </div>
+    <</capture>>
+<</for>>
+
+<<if _items.length === 0>>
+    <span class="greyed-out">(Empty)</span>
+<</if>>
+
+<br><br>
+<div id="item-details">
+    
+</div>
+
+:: Player Inventory Consumables Style [stylesheet]
+
+#item-details {
+    height: 250px;
+}
+
+.consumable-item-icon {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+}
+
+.consumable-item-amount {
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    font-weight: bold;
+    font-size: 12px;
+}

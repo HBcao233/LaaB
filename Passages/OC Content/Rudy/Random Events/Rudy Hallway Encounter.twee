@@ -1,0 +1,148 @@
+:: Rudy Hallway Encounter [nobr]
+
+/* Intro */
+
+While walking down the hallway you hear a familiar voice call out, <span style="color:LightSteelBlue">“Pardon me, coming through!”</span> Looking over, you spot a far too short boy carrying a far too tall stack of what appears to be art supplies. At first, you can’t tell who it is carrying the supplies, but as they get closer you recognize the blue hair of <span style="color:DarkTurquoise">Rudy</span>, the artistic boy with the stuffed bear that you met. <br>
+
+<<set _ad to [
+    {
+    Name: "OC Rudy",
+    State: {
+        Outfit: "Uniform",
+        Mouth: "Happy",
+        }
+    },
+]>>
+<<ad _ad>>
+
+The boy was shimming past the crowds of the hallway, most likely heading towards the art classroom. He seems to be struggling a bit, carrying a bit too much for him. <span style="color:Yellow">While he isn’t in danger of dropping them, as long as no one messes with him, it would probably be far easier with help.</span> <br>
+<br>
+<<if $Sense >= 7>>
+    /*-Follow extra is Sense 7+-*/
+    <span style="color:LightGreen">You can’t help but notice that the way he is carrying the supplies is very unoptimized. In fact, the supplies could probably be easily carried by a single person if he simply switched the position of a few things.</span> <br>
+    <br>
+<</if>>
+
+<div id="choice">
+    /*Offer to help*/
+    <<link "Offer to help<br>">>
+    <<replace"#choice">>
+
+    Not wanting to startle the boy, which would defeat the purpose of helping him, you call out to him as he walks by, waving happily as he peeks out to see who it is. <span style="color:LightSteelBlue">“Oh, <span style="color:DarkTurquoise">$Player.Name</span>. He- hey. Sorry, I can’t stop to talk right now, need to get these back to the classroom.”</span> You tell <span style="color:DarkTurquoise">Rudy</span> that it looks like a pretty massive haul. <span style="color:LightSteelBlue">“Yeah, but I got it… probably…”</span> He sounds a little unsure. <br>
+    <br>
+    You chuckle, asking the boy if he’d like some help. At first, he refuses, not wanting to trouble you, but when you insist and take some of the stuff off the top, he lets out a sigh of relief as the weight is taken off his hands. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Rudy",
+            State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+            }
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Tha- thanks.”</span> He gives you a smile, <span style="color:LightSteelBlue">“I guess it was a little heavy. Follow me, we just need to drop these off at the classroom.”</span> You follow his lead, chatting along with him as you head to the art classroom and drop off the supplies. <span style="color:LightGreen">The teacher is very grateful to both of you for helping and <span style="color:DarkTurquoise">Rudy</span> thanks you again as you both leave the classroom.</span> <br>
+
+    <<socialChange "Rudy" 3 1>>
+    [[Continue|School West Hallway]]
+    <</replace>>
+    <</link>>
+
+<div id="choice">
+    /*Pants him*/
+    <<link "Pants him<br>">>
+    <<replace"#choice">>
+
+    With a devious smirk and an evil idea, you creep behind the unexpecting <span style="color:DarkTurquoise">Rudy</span>. Slowly tiptoeing, masking your steps with the noise of the hallway as you inch closer and closer behind him. A few nearby boys spot you, realizing what you are about to do, and smirk as they prepare for the show. Then, standing right behind the poor unexpecting boy, you reach out and grab the back of his shorts. <br>
+    <br>
+    <span style="color:Pink">Yank! In one quick motion his shorts are around his ankles as you expose his adorably dorky bright blue briefs to everyone in the hallway! Those who didn’t notice you before turn their attention as the laughter draws the entire hallway’s eyes onto <span style="color:DarkTurquoise">Rudy</span> who is frozen in both shock and embarrassment as he realizes that he has been pantsed!</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Mad",
+            },
+        },
+        {
+            Name: "OC Rudy",
+            State: {
+            Outfit: "Uniform",
+            Mouth: "Frown",
+            Blush: 3,
+            PantsDown: true,
+            }
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:Pink"> <span style="color:DarkTurquoise">Rudy</span>, seemingly instinctively, tries to bend down to fix his bottoms, momentarily forgetting that he is carrying a heavy heap. As one collection of brushes fall, <span style="color:DarkTurquoise">Rudy</span> panics and stumbles to the ground, causing the entire collection of art supplies to scatter on the ground as he lands face first on the floor, his underwear-clad butt in the air as the entire hallway breaks out into an even bigger laugh.</span> <br>
+    <br>
+    Though a few look on him in pity, rushing over to help pick up the spilling art supplies as the tearful <span style="color:DarkTurquoise">Rudy</span> desperately tries to fix his bottoms, looking up at you with his pitiful eyes that just make your smile grow wider. The few that came to his aid quickly help him up and hurries him off towards the Art Classroom as you and the rest of the hallway continue laughing. <span style="color:LightGreen">What a dork.</span> <br>
+
+        /*+Arousal*/
+        <<needChange "Fun" 5>>
+        <<socialChange "Rudy" -5 1>>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<elseif $Location.Name == "School West Hallway">>
+            [[Continue|School West Hallway]]
+        <</if>>
+        <</replace>>
+        <</link>>
+
+<<if $Sense >= 7>>
+     /*Help him carry them better*/
+     <<link "Help him carry them better<br>">>
+    <<replace"#choice">>
+
+    Walking up behind <span style="color:DarkTurquoise">Rudy</span>, you poke him on the shoulder. <span style="color:Pink">The boy jumps up in surprise, letting out an adorable squeak as he nearly stumbles to the ground, though you manage to catch him.</span> You chuckle, apologizing for scaring him as you help him stabilize. Once he sees you aren’t trying to make him fall, he relaxes a little. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Oh, that’s okay. Sorry, just wasn’t expecting you to poke me.”</span> He says, adjusting his hands as he holds the awkward weight, <span style="color:LightSteelBlue">“I can’t stop and chat though, I need to get these to the Art Classroom before the next period starts. That is if I don’t drop it all first.”</span> He says that last part under his breath. <br>
+    <br>
+    You chuckle once more and ask him if he’d like some advice. At first, he refuses, but once you point out how weird he is carrying the supplies he asks what you mean. You help him adjust so the flattest objects, like the canvas, are on the bottom and then stack the rest on top in a way where they are less likely to fall. <span style="color:LightGreen">Once it’s all said and done, <span style="color:DarkTurquoise">Rudy</span> seems much more comfortable holding them.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Rudy",
+            State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+            Blush: 1,
+            }
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Wow, thanks!”</span> <span style="color:DarkTurquoise">Rudy</span> says with a smile, clearly realizing how easier it is to hold them like this, <span style="color:LightSteelBlue">“I didn’t even think to try that. You’re pretty smart.”</span> You try to act humble, but fail. Though with the next period close approaching, <span style="color:DarkTurquoise">Rudy</span> heads off to finish dropping them off so he can get to class, and you figure you should do the same. <span style="color:LightGreen">But <span style="color:DarkTurquoise">Rudy</span> thanks you once more, seemingly very impressed by your help.</span> <br>
+
+        <<socialChange "Rudy" 5 1>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<elseif $Location.Name == "School West Hallway">>
+            [[Continue|School West Hallway]]
+    <</if>>
+    <</replace>>
+    <</link>>
+    <</if>>
+</div>

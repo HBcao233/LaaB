@@ -1,0 +1,70 @@
+:: English Class Nap [nobr]
+
+/* Written by: huh I was sleeping, Dicey by the way */
+/* Intro */
+
+You’re starting to feel really tired as <span style="color:DarkTurquoise">Mr. Hart</span> reads to the class, each word dragging on and on. He must be tired too because he yawns, looks around, and says, <span style="color:LightSteelBlue">“Alright, class, today we’re doing silent reading while I rest for a bit. Try not to be too loud.”</span> <br>
+<br>
+You watch as <span style="color:DarkTurquoise">Mr. Hart</span> walks over to his desk, lays his head down on his arms, his brown hair spilling out, and starts to nap. You decide to rest your head on your desk too, too tired to care about anything else, hoping to catch a quick nap. <br>
+
+<<set _ad to [
+	{
+		Name: "Hart",
+		State: {
+			Eyes: "Narrow",
+			Mouth: "Frown",
+		},
+	},
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<linkreplace "Continue">>
+
+    <<set _random to random(1,2)>>
+        /*Success*/
+        <<if _random == 1>>
+        <span style="color:LightGreen">As you drift off, it feels like you’re lying on a soft cloud, the peaceful, relaxing environment surrounding you. <br>
+        <br>
+        When you wake up, you feel refreshed.</span> The dark wooden desks, the rows of bookcases, the carpeted floor, and the faint smell of coffee filling the room. You think to yourself that this is the perfect place for a nap, and the thought makes you smile. <br>
+        <br>
+        Looking around, you notice some other students must’ve had the same idea. You stretch your arms, and just as you do, the bell rings. <span style="color:LightGreen">You’d totally do this again.</span> <br>
+        <<needChange "Energy" 10>> 
+        <br>
+        <<include"Attend English Finish">>
+
+        /*Fail*/
+        <<elseif _random == 2>>
+
+            <<if $PlayerUndies.Type != "None">>
+            <span style="color:LightCoral">As you’re napping, you suddenly hear quiet snickering. You glance around, but you can’t tell where it’s coming from. Without warning, you feel a slight tug at the waistband of your underwear, waking you up. Suddenly, a sharp yank pulls it up, and for a brief second, it feels like your whole body is lifted by the underwear you’re wearing. The stretch is so tight that it sends a burning, uncomfortable pressure straight to your skin, forcing you to squirm. <br>
+            <br>
+            A loud yelp escapes your mouth,</span> and your face turns bright red as you see <span style="color:DarkTurquoise">Mr. Hart</span>, who’d been dozing at his desk, suddenly jolt awake. He looks around, blinking a few times like he’s trying to shake off sleep before his eyes land on you. <span style="color:LightSteelBlue">“Is something wrong, <span style="color:DarkTurquoise">Mr. $Player.LastName</span>?”</span> he asks
+            Your classmates quickly brush it off like it’s no big deal, and <span style="color:DarkTurquoise">Mr. Hart</span> stands up, shaking his head like he’s already had enough. He lets out a big sigh. <span style="color:LightSteelBlue">“Alright, class, back to reading. Since some of you clearly can’t focus,”</span> he says, then goes right back to reading the book. <br>
+            <<needChange "Energy" 5>> 
+            <<addMoodlet "Wedgie" 6>>
+            <<set _arousalbs to []>>
+            <<set _arousalkink to ["Wedgiee"]>>
+            <<arousalGain 10 _arousalbs _arousalkink>>
+
+        <<include"Attend English Finish">>
+
+            <<elseif $PlayerUndies.Type == "None">>
+            /*NO UNDERWEAR*/
+            <span style="color:LightCoral">As you’re napping, you suddenly hear quiet snickering. You glance around, but can’t figure out where it’s coming from. Then, without warning, you feel a pinch on your lower back. You wake up, startled, realizing someone’s trying to give you a wedgie—you’re not even wearing underwear. A sudden yank pulls you up from your lower back, and it stings, forcing you to squirm in discomfort. <br>
+            <br>
+            A loud yelp escapes your mouth,</span> and your face turns bright red as you see <span style="color:DarkTurquoise">Mr. Hart</span>, who’d been dozing at his desk, suddenly jolt awake. He looks around, blinking a few times like he’s trying to shake off sleep before his eyes land on you. <span style="color:LightSteelBlue">“Is something wrong, <span style="color:DarkTurquoise">Mr. $Player.LastName</span>?”</span> he asks
+            Your classmates quickly brush it off like it’s no big deal, and <span style="color:DarkTurquoise">Mr. Hart</span> stands up, shaking his head like he’s already had enough. He lets out a big sigh. <span style="color:LightSteelBlue">“Alright, class, back to reading. Since some of you clearly can’t focus,”</span> he says, then goes right back to reading the book. <br>
+            <<needChange "Energy" 5>> 
+            <<addMoodlet "Pained" 5>>
+
+            <<include"Attend English Finish">>
+        <</if>>
+        <</if>>
+
+<</linkreplace>>

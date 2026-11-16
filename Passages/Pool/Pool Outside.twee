@@ -1,0 +1,56 @@
+:: Pool Outside [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Pool",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Pool",
+}>>
+<<include"Pool Guest State">>
+
+<span style="color:Azure"><big><strong>--City Pool--</strong></big></span><br>
+
+/* DESCRIPTION */
+The pool is fairly large, shaped like a big L. The area closest to the Locker Rooms is a shallow area, capable of being walked into via some underwater steps. The further down towards the other side you went, the deeper it got. The other end of the pool has some diving boards and its deepest point was about 15ft deep! Near the corner of the pool was a large water slide.<br>
+<br>
+Off to the side was some smaller ‘kiddie pools’, some sprinklers and fountains that shot water upwards and was popular amongst the kids, and some hot tubs that provided a relaxing place for the adults. Despite no food being allowed in the pool, they do have a sectioned off area with some benches and chairs for parties, having a separate entrance for food to come in and a large sign warning of bringing food into the pool area.<br>
+<br>
+
+/* STATE DESCRIPTION */
+<<if $PoolState == "Senior Swim">>
+The only people currently swimming at the moment is a group of seniors. They seem to be doing some water exercise in the deep end of the pool, with a much younger woman leading them. A few look towards you, but most pay you no mind and concentrate on their exercise.<br>
+
+<<elseif $PoolState == "After School">>
+  The pool is packed full with kids of all ages, relaxing and restressing after a long day of school. Most of the younger kids hang out near the shallow end, while the older teenagers can be seen at the deep end. The middle school kids around your own age tend to mingle with both groups.<br>
+
+<<elseif $PoolState == "Families">>
+The pool is patched with families. Kids enjoying the shallow pool and water slide, with the older kids jumping and diving into the deep end. Adults play with the kids, lounge near the poor, or sit in the hot tubs chatting and relaxing. Overall, a very vibrant atmosphere.<br>
+
+<<elseif $PoolState == "Teenagers">>
+The pool is mostly occupied by teenagers, who take this down-time of the pool as their own hangout spot. A few raise their eyebrows at your appearance, but don’t pay you any mind as long as you stay away from them. Outside of them, the pool is mostly empty.<br>
+
+<<elseif $PoolState == "Swim Class">>
+While most of the pool is empty, the part where the shallow meets the deep end is full of younger kids and some lifeguards in the middle of a swimming class. Some seem nervous, though most look like they are enjoying themselves. Their ‘swimming’ is little more than doggy paddling, but it is cute to watch.<br>
+
+<<else>>
+The pool sits pretty much empty. The lifeguard on duty gives you a slight wave, before returning to his phone. You can’t blame him, though you’d feel safer if it were paying attention. Though considering you are the only person he could watch, it would feel a little weird to have him staring at you.<br>
+
+<</if>><br>
+
+/* SWIM STAMINA */
+<<include"Swim Stamina">>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Enter the Shallow End (0:01)|Pool Shallow][$Minutes += 1]]<br>
+[[Climb into the Deep End (0:01)|Pool Deep][$Minutes += 1]]<br>
+<<if $SwimStamina > 0>>
+[[Jump off the Spring Board (0:05)|Pool Spring Board]] <span style="color:red">-Stamina</span><br>
+[[Climb up the Tall Diving Board (0:10)|Pool Diving Board]] <span style="color:red">-Stamina</span><br>
+<</if>>
+[[Go down the Water Slide (0:05)|Pool Water Slide]] <span style="color:lightgreen">+Fun</span><br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+[[Leave the Pool|Pool Locker Room]]

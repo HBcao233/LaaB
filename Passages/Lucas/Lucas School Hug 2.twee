@@ -1,0 +1,44 @@
+:: Lucas School Hug 2 [nobr]
+
+You spot <span style="color:DarkTurquoise">Lucas</span> walking down the hallway and quicken your step in order to silently catch up with him. He is completely unaware of your presence, walking to his next class, <span style="color:pink">when you suddenly pounce at him from behind, wrapping your arms around his waist in a giant hug.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+            Blush: 1,
+            Mouth: "Happy",
+            Outfit: "Uniform",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<set _Random to random(1, 2)>>
+<<if _Random == 1>>
+    You hug him tightly, linking your hands together around his stomach as you lift him up into the air! <span style="color:pink">The boy is caught off guard, letting out a panicked squeal as you lift him. You do one full rotation with him in the air before plopping him back down to his feet.</span> <br>
+    <br>
+    <span style="color:DarkTurquoise">Lucas</span>, now red-faced, turns to you and lightly punches you in the shoulder. <span style="color:LightSteelBlue">“You nearly gave me a heart attack! Some warning would be nice.”</span> You shrug, sticking your tongue out at the boy, and <span style="color:pink">tell him he shouldn’t be so huggable if he doesn’t want to be hugged.</span> <br>
+	<<socialChange "Lucas" 1>>
+    <br>
+    <<if $Location.Name == "School South Hallway">>
+        [[Continue|School South Hallway]] 
+    <<elseif $Location.Name == "School East Hallway">>
+        [[Continue|School East Hallway]]
+	<<else>>
+        [[Continue|School West Hallway]]
+    <</if>>
+<<else>>
+    As you squeeze him tightly from behind and greet him, <span style="color:DarkTurquoise">Lucas</span> turns to you blushing. A few other students in the hallway give you both strange looks, but you don’t care. <span style="color:DarkTurquoise">Lucas</span> sighs and gives you two pats on the back, <span style="color:pink">but you demand a proper hug and continue to tighten your grip on <span style="color:DarkTurquoise">Lucas</span> until he gives you a proper one. Not wanting to suffocate, he relents.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“You know, I’d normally be worried about this being embarrassing and ruining my social status. But I guess I don’t really have a social status.”</span> He shrugs as you both chuckle. <span style="color:pink">Realizing he really didn’t have anything to lose, <span style="color:DarkTurquoise">Lucas</span> gives you a massive hug in response, picking you up off the ground and carrying you around for a moment before placing you back on your feet.</span> You both then playfully tease each other before going your separate ways. <br>
+	<<socialChange "Lucas" 1>>
+    <br>
+    <<if $Location.Name == "School South Hallway">>
+        [[Continue|School South Hallway]] 
+    <<elseif $Location.Name == "School East Hallway">>
+        [[Continue|School East Hallway]]
+	<<else>>
+        [[Continue|School West Hallway]]
+    <</if>>
+<</if>>

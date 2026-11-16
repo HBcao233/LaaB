@@ -1,0 +1,163 @@
+:: KID ORANGE Avatar Equipment Set [nobr]
+
+<<set $AD.SkinColor to "White">>
+<<set $AD.Freckles to 1>>
+<<set $ADArmFreckles to 0>>
+<<set $ADShoulderFreckles to 0>>
+<<set $AD.HairStyle to "Boyish">>
+<<set $AD.HairColor to "Ginger">>
+<<set $AD.EyeColor to "Blue">>
+<<set $AD.LeftEyeColor to "Blue">>
+<<set $AD.RightEyeColor to "Blue">>
+<<set $AD.PenisStyle to "Uncut">>
+<<set $AD.PenisSize to "Average">>
+<<set $AD.Balls to "Medium">>
+<<set $AD.Butt to "Average">>
+
+	<<set $ADChestScar to 0>>
+	<<set $ADFaceScar to 0>>
+	<<set $ADLeftArmScar to 0>>
+	<<set $ADRightLegScar to 0>>
+    <<set $ADEyeScar to 0>>
+    <<set $ADShoulderFreckles to 0>>
+    <<set $ADArmFreckles to 0>>
+
+<<set $ADUndies to $KidsOrangeBriefs>>
+<<set $ADBottoms to $KidsBlueJeans>>
+<<set $ADTop to $KidsOrangeAnimalShirt>>
+<<set $ADOuter to {
+	Name: "Orange Hoodie",
+    ID: "OuHoOr",
+    Type: "Hoodie",
+    Color: "Orange",
+    Slot: "Outer",
+    Size: "Kid",
+    Tags: ["Sleeves"],
+    Icon: "Images/Icons/Kids Clothes/Hoodie/Orange Hoodie.png",
+    Avatar: "Images/Avatar/Kids/Clothes/Orange Oni/Zip Up Hoodie/Orange Zip Up Hoodie Unzipped.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "Images/Avatar/Kids/Clothes/Orange Oni/Zip Up Hoodie/Orange Zip Up Hoodie Arms Default.png",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBase: "Images/Avatar/Kids/Clothes/Orange Oni/Zip Up Hoodie/Orange Zip Up Hoodie Arms Default.png",
+    AvatarSleeveBaseTorn: "None",
+    AvatarSleeveBaseDamaged: "None",
+    AvatarSleeveBound: "Images/Avatar/Kids/Clothes/Orange Oni/Zip Up Hoodie/Orange Zip Up Hoodie  Arms Hide Bind.png",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    AvatarAltBase: "None",
+    AvatarAltBaseTorn: "None",
+    AvatarAltBaseDamaged: "None",
+    Description: "A cute Hoodie.",
+}>>
+<<set $ADSocks to $KidsWhiteSocks>>
+<<set $ADShoes to $KidsOrangeSneakers>>
+<<set $ADShortsSag to 0>>
+
+<<if $ADMuscleToggle == 1>>
+	<<set $AD.Build to "Normal">>
+<<else>>
+	<<set $AD.Build to "Normal">>
+<</if>>
+
+<<if $ADPubicHairToggle == 1>>
+	<<set $AD.PubicHair to "None">>
+<<else>>
+	<<set $AD.PubicHair to "None">>
+<</if>>
+
+/* DEFAULT SETTING */
+	<<set $ADHead to {
+	Name: "Peruvian Beanie",
+    ID: "Peru",
+    Type: "Peruvian Beanie",
+    Color: "Blue",
+    Slot: "Head",
+    Temp: 0,
+    Tags: ["None"],
+    Durability: 10,
+    MaxDurability: 10,
+    Weight: 2,
+    Size: "Kids",
+    Icon: "Images/Equipment/Baseball Cap/Beige Baseball Cap.png",
+    Avatar: "Images/Avatar/Kids/Clothes/Orange Oni/Peruvian Beanie.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "A classic cap popular even with boys who don't like baseball.",
+}>>
+    <<set $ADFace to $None>>
+    <<set $ADMouth to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADUnder to $None>>
+    <<set $ADOver to $None>>
+    <<set $ADBack to $None>>
+    <<set $ADHands to $None>>
+    <<set $ADWaist to $None>>
+
+<<if $SchoolUniforms == 1 and $AD.Outfit == "Uniform">>
+	<<set $ADTop to $SchoolDressShirt>>
+    <<set $ADBottoms to $BlackDressShorts>>
+    <<set $ADNeck to $SchoolTie>>
+    <<set $ADOuter to $PrestonJacket>>
+	<<set $ADSocks to $PrestonKneeSocks>>
+    <<set $ADShoes to $BlackDressShoes>>
+<</if>>
+
+<<if $AD.Outfit == "Pajamas">>
+	<<set $ADTop to $GreenPajamaShirt>>
+	<<set $ADBottoms to $GreenPajamaPants>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Naked">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Undies">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Towel">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $WhiteTowel>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym">>
+	<<set $ADTop to $PurpleGymShirt>>
+    <<set $ADBottoms to $PurpleGymShorts>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym Swim">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $PurpleTrunks>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>

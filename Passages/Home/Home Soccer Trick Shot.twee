@@ -1,0 +1,95 @@
+:: Home Soccer Trick Shot [nobr]
+
+/* Written by Senpai */
+/* Intro */
+
+You grab the old, trusty soccer ball from beside the deck and give it a nice hard kick into the yard. The ball bounces off of the tree, rebounds off the fence, and comes to rest against your feet. That... was pretty cool, actually. You spend a few minutes bouncing the ball off of the tree to get it to hit different targets on the rebound, such as the shed, the fence, the deck, and so on. <span style="color:LightGreen">It's pretty fun, and you think your aim is getting better with each shot!</span> <br>
+<br>
+
+Then you get an idea. <span style="color:Yellow">How many objects can you get it to bounce off of in one kick?</span> <br>
+<br>
+
+<div id="choice">
+/*-Go for a high power trick shot!-*/
+    <<link "Go for a high power trick shot!">>
+    <<replace"#choice">>
+
+    <<skillCheck "Athletics" 70>>
+    /*-Poor Athletics-*/
+    <<if _result == 0 && $Time.ToD != "Night">>
+        You stand in the middle of the yard and trace a path with your mind of what you think the ball's trajectory might be. Once you find a good a path, you smirk to yourself. This should work perfectly... You hold the ball in front of yourself and drop kick it as hard as you can into the tree's trunk. <br>
+        <br>
+        <span style="color:LightGreen">Your aim was true!</span> <span style="color:LightCoral">...until it wasn't.</span> The ball bounced against the tree trunk at an awkward angle, the door of the shed, and into the side fence. For a split second, you're proud of the shot, until you realize- <br>
+        <br>
+        <span style="color:Red">THWACK!</span> <span style="color:LightCoral">Your life is filled with pain as the ball bounces off of your face, knocking you on your butt with a loud oof! You spend a few seconds grabbing your face as it burns, and you can hear the ball bounce off of the deck somewhere. You get up off the ground and check your hands, and are relieved that you're not bleeding, but darn that still stings.</span> You go and put the ball away as your face is burning, thankful that nobody saw you do that. <br>
+
+        <<addMoodlet "Pained" 5>>
+        <<needChange "Energy" -2>>
+        <<needChange "Hygiene" -2>>
+        <<needChange "Fun" 10>>
+        <<skillPoints "Athletics" 3>>
+        <br>
+        [[Continue|PH Backyard]] 
+
+    <<elseif _result == 1 && $Strength < 7 && $Time.ToD != "Night">>
+    /*-Moderate Athletics-*/
+        You stand in the middle of the yard and trace a path with your mind of what you think the ball's trajectory might be. Once you find a good a path, you smirk to yourself. This should work perfectly... You hold the ball in front of yourself and drop kick it as hard as you can into the tree's trunk. <br>
+        <br>
+        <span style="color:LightGreen">Your aim was true!</span> The ball bounces off of the tree, rebounds off the door frame of the shed, sails through the air, strikes the fence, bounces onto the deck, rolls along the deck before bouncing against the back door of your house, then rolls off the deck and back onto the grass. The ball then rolls into the other fence and bounces back, coming to rest several feet in front of you. <span style="color:LightGreen">You're pretty proud of yourself for that kind of a shot.</span> <br>
+
+        <<needChange "Energy" -2>>
+        <<needChange "Hygiene" -2>>
+        <<needChange "Fun" 20>>
+        <<skillPoints "Athletics" 2>>
+        <br>
+        [[Continue|PH Backyard]] 
+
+    /*-High Athletics-*/
+        <<elseif $Strength >= 7 && $Time.ToD != "Night">>
+
+        You stand in the middle of the yard and trace a path with your mind of what you think the ball's trajectory might be. Once you find a good a path, you smirk to yourself. This should work perfectly... You hold the ball in front of yourself and drop kick it as hard as you can into the tree's trunk. <br>
+        <br>
+        What happens next was amazing! You bean the ball dead on and it bounces hard against the tree with a loud thwack. The ball sails above your head and bounces against the ceiling of the shed! From there it flies into Lucas's yard and bounces off of the wall of his house, then it ricochets against your house, his house again, and finally against the fence gate leading to your front yard. The ball bounces along the grass back into the back yard and bounces against the fence and rolls towards you. Finally, it bounces up off your foot and you catch it in one hand. Hell yeah! You hear the sound of an audience cheering in your head and feel like a badass, though when you look around, you're a bit disappointed that nobody saw it. <br>
+
+        <<needChange "Energy" -2>>
+        <<needChange "Hygiene" -2>>
+        <<needChange "Fun" 20>>
+        <<skillPoints "Athletics" 1>>
+        <br>
+        [[Continue|PH Backyard]] 
+
+    /*-At Night-*/
+    <<elseif $Time.ToD == "Night">>
+
+        You stand in the middle of the yard and trace a path with your mind of what you think the ball's trajectory might be. Once you find a good a path, you smirk to yourself. This should work perfectly... You hold the ball in front of yourself and drop kick it as hard as you can into the tree's trunk. <br>
+        <br>
+        Turns out that maybe you shouldn't have tried to do this while it's dark outside. The ball bounced against the tree trunk at an awkward angle, the door of the shed, and into the side fence. For a split second, you're proud of the shot, until you realize- <br>
+        <br>
+        <span style="color:Red">THWACK!</span> <span style="color:LightCoral">Your life is filled with pain as the ball bounces off of your face, knocking you on your butt with a loud oof! You spend a few seconds grabbing your face as it burns, and you can hear the ball bounce off of the deck somewhere. You get up off the ground and check your hands, and are relieved that you're not bleeding, but darn that still stings.</span> It's too dark to find where the ball went, so you just head back inside, thankful that nobody saw that happen. <br>
+
+        <<addMoodlet "Pained" 5>>
+        <<needChange "Energy" -2>>
+        <<needChange "Hygiene" -2>>
+        <<needChange "Fun" 10>>
+        <<skillPoints "Athletics" 1>>
+        <br>
+    [[Continue|PH Backyard]] 
+<</if>>
+<</replace>>
+<</link>>
+    <<skillDiff "Athletics" 70>><br>
+/*-Kick the ball carefully-*/
+    <<link "Kick the ball carefully<br>">>
+    <<replace"#choice">>
+    You suddenly remember <span style="color:DarkTurquoise">Your Father</span>'s very fragile potted plants on the deck and decide that maybe you shouldn't be kicking the ball as hard as you can. You keep the ball close to the ground as you kick it against the base of the tree and the bottom of the fence like a large game of billiards. <span style="color:LightGreen">It still gets your blood flowing and is good training for your coordination.</span> <br>
+
+    <<needChange "Energy" -2>>
+    <<needChange "Hygiene" -2>>
+    <<needChange "Fun" 10>>
+        <<skillPoints "Athletics" 2>>
+        <br>
+    [[Continue|PH Backyard]] 
+
+<</replace>>
+<</link>>
+</div>

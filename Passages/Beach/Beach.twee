@@ -1,0 +1,101 @@
+:: Beach [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Beach",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Beach",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Beach--</strong></big></span><br>
+You stand on the beach of Opal City. This was a popular destination for the tourists that would frequent the city, though it still wasn’t extremely crowded. It had some changing rooms and showers nearby as well, so you could change into your swimwear. While larger and more open than the city’s pool, it was also more dangerous and unpredictable. <br>
+<br>
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Hang Out (0:30)|Beach Hang Out]]<br>
+<<if $Skill.Perks.includes("Jogging")>>
+	[[Go Jogging (0:30)|Beach Jogging]]
+	<<if $Skill.Perks.includes("Jogging") && !$Skill.Perks.includes("Jogging II")>>
+		<<listbox "$ExerciseType">>
+			<<option "Normal" "Normal">>
+		<</listbox>>
+	<<elseif $Skill.Perks.includes("Jogging II")>>
+		<<listbox "$ExerciseType">>
+			<<option "Normal" "Normal">>
+			<<option "No Sweat" "No Sweat" `$ExerciseType is "No Sweat" ? "selected" : ""`>>
+			<<option "Paced" "Paced" `$ExerciseType is "Paced" ? "selected" : ""`>>
+		<</listbox>>
+	<</if>>
+    <br>
+<</if>>
+<<if $Money > 0>>
+[[($1) Get Something to Eat (0:15)|Beach Food]]
+<<listbox "$FoodType">>
+	<<option "Pizza" "Pizza">>
+	<<option "Hot Dog" "Hot Dog">>
+<</listbox>><br>
+<</if>>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:10)|Food District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Boardwalk.png">
+	[[Boardwalk (0:10)|Boardwalk][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Redlight District.png">
+	[[Redlight District (0:10)|Redlight District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Trailer Park.png">
+	[[Trailer Park (0:10)|Trailer Park][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:05)|Food District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Boardwalk.png">
+	[[Boardwalk (0:05)|Boardwalk][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Redlight District.png">
+	[[Redlight District (0:05)|Redlight District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Trailer Park.png">
+	[[Trailer Park (0:05)|Trailer Park][$Minutes += $TravelTime]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 4px; top: 229px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="152,81,205,134" alt="Food District" onclick="$.wiki('<<goto[[Food District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="152,155,205,208" alt="Redlight District" onclick="$.wiki('<<goto[[Redlight District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="4,155,57,208" alt="Boardwalk" onclick="$.wiki('<<goto[[Boardwalk]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="152,229,205,282" alt="Trailer Park" onclick="$.wiki('<<goto[[Trailer Park]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

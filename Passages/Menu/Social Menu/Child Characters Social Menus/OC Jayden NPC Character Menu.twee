@@ -1,0 +1,346 @@
+:: OC Jayden NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Child Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Jayden Miller--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"OC Jayden NPC Character Menu Biography">>
+</div>
+
+:: OC Jayden NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Jayden NPC Character Menu Avatar Display">>
+
+<<if $OCJaydenSocial > 50>>
+
+<<elseif $OCJaydenSocial > -10>>
+
+<<else>>
+
+    <br>
+<</if>>
+
+:: OC Jayden NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Jayden NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Jayden Miller <br>
+<strong>Grade:</strong> 2nd <br>
+<strong>Birthday:</strong> June 20th <br>
+<strong>Address:</strong> 
+    <<if $OCJaydenSocial >= 50>>
+        Avendale <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> Hakeem (Father), Isaiah (Big brother), Kayden (Big, Twin Brother) <br>
+<strong>Friends:</strong>
+    <<if $OCJaydenSocial >= 80>>
+        $Player.Name, Noah, William, Oliver, Evelyn, 
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $OCJaydenSocialRank == 1>>
+        Close Friends
+    <<elseif $OCJaydenSocial > 80>>
+        Friends
+    <<elseif $OCJaydenSocial > 30>>
+        Possible Friends
+    <<elseif $OCJaydenSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $OCJaydenSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Athletic, Charismatic, Competitive, Daredevil, Rebellious /* No Spoilers :P */
+        </div>
+    <<elseif $OCJaydenSocial > 70>>
+        <div style="margin-left: 25px;">
+            Athletic, Charismatic, Competitive, Daredevil, Rebellious
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        N/A
+    </div>
+<strong>Likes:</strong>
+    <<if $OCJaydenSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Having a Twin, Wrestling, Isaiah, 
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $OCJaydenSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Rules, Cheaters, People who try to bully Kayden, His Mother
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $OCJaydenSocial >= 50>>
+        <div style="margin-left: 25px;">
+             Playing soccer, Playing Video Games
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $OCJaydenSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Chicken Nuggets, Soda, Tater Tots
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $OCJaydenSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Red, Black
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $OCJaydenSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Red T-Shirts, Black Pants
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $OCJaydenSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Red Briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $OCJaydenSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $OCJaydenCut == "Cut">>
+                A cut penis. Average for his age.
+            <<else>>
+                An uncut penis. Average for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $OCJaydenSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A cute and well-toned butt.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: OC Jayden NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Jayden NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal OC Millers">>
+
+:: OC Jayden NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Jayden NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "OC Jayden",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCJaydenSocial >= 50 or $OCJaydenSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCJaydenSocial >= 100 or $OCJaydenSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: OC Jayden NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "OC Jayden",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCJaydenSocial >= 50 or $OCJaydenSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCJaydenSocial >= 100 or $OCJaydenSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

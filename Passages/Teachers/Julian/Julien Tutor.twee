@@ -1,0 +1,92 @@
+:: Julien Tutor [nobr]
+
+/* Intro */
+<<set $Minutes += 15>>
+You find <span style="color:DarkTurquoise">Mr. Julien</span> on stage going over some lines. He seems to be playing every part in one of the plays your class is practicing, trying different ranges of emotion and levels of acting. You can’t tell if it is hilarious or extra. As he notices you, he claps his hands together and jumps down off the stage. <span style="Color: LightSteelBlue">“Ah! <span style="color:DarkTurquoise">$Player.Name</span>! What did you think of that last read? Too much? Or maybe not enough?”</span> You either give your honest opinion or try to be nice, but regardless, he doesn’t seem satisfied with your answer and sighs as he looks over the script once more. <span style="Color: LightSteelBlue">“Did you need something? I don’t mind an audience but doubt that’s why you came.”</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "Julien",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You state that you wanted to get some extra acting practice in, really hone your skill and go over your lines. <span style="Color: LightGreen"> <span style="color:DarkTurquoise">Mr. Julien</span>’s head turns like a flash of lightning, a big smile on his face.</span> <span style="Color: LightSteelBlue">“Oh, a boy after my own soul! Of course! I am always available to further the arts! Come now, let us do a little run through of the climax. That should get the blood pumping, then we can get some vocal exercises going and-”</span> <br>
+<br>
+He runs you though it all. <span style="Color: LightGreen">It is exciting and fun, but also very tiring and you nearly collapse onto the stands as he tells you to take five.</span> <span style="Color: LightSteelBlue">“Brilliant! Practice makes perfect, you know? Feel free to come back anytime for more mentoring!”</span> He smiles and begins to walk backstage. <span style="Color: LightGreen">You figure he is in a good mood, and this may be a good chance to get to learn more about him.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Ask about his family<br>">>
+    <<replace"#choice">>
+        <<if $JulienSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Mr. Julien</span> about his family. If he married or-? <span style="Color: LightSteelBlue">“Oh, my boy. Believe it or not, many times over in my young age.”</span> He laughs, <span style="Color: LightSteelBlue">“But this is not a topic for the stage, but for drinks after a performance! But you are too young for both.”</span> <span style="Color: Yellow">He pats you on the head as he continues walking away.</span> <br>
+            <<socialChange "Julien" 3>>
+            <<skillPoints "Acting" 5>>
+            <br>
+            [[Continue|School Auditorium]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Mr. Julien</span> about his family. Is he married or-? <span style="Color: LightSteelBlue">“Oh, my boy. Believe it or not, many times over in my young age!”</span> He laughs, though you question the ‘young age’ part and he gasps. <span style="Color: LightSteelBlue">“What cheek! I’ll have you know I am still barely into my 20s, young man! I just have a refined look!”</span> You doubt that but laugh it off. <span style="Color: LightSteelBlue">“I do live alone currently, though prefer it to the noise I grew up around, or grew tired of in marriage.”</span> <span style="Color: LightGreen">He says that last part quietly, though gives you a wink as he walks off. You chuckle and grab your things.</span> <br>
+            <<socialChange "Julien" 3>>
+            <<skillPoints "Acting" 5>>
+            <br>
+            [[Continue|School Auditorium]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his career<br>">>
+    <<replace"#choice">>
+        <<if $JulienSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Mr. Julien</span> why he decided to become a teacher and he laughs. <span style="Color: LightSteelBlue">“Passions change my boy. I do love the arts, but when you’ve been as successful as I have, sometimes you wish to use your talents for the next generation.”</span> <span style="Color: Yellow">While that isn’t the exact answer you were looking for, you take it since <span style="color:DarkTurquoise">Mr. Julien</span> is gone before you can ask follow-up questions.</span> <br>
+            <<socialChange "Julien" 3>>
+            <<skillPoints "Acting" 5>>
+            <br>
+            [[Continue|School Auditorium]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Mr. Julien</span> why he decided to become a teacher and he laughs. <span style="Color: LightSteelBlue">“My passion for the arts remains, though my desire to reenter the world of stage and acting has long passed. I had a long career that went back to before I was even able to talk. Without words I was able to captivate an audience! But, as all things do, it slowly became too routine for me. But teaching the next generation of stars, now THAT is something that is always exciting! Plus, much easier for me to get my beauty sleep!”</span> He laughs as he walks to the backstage area. <span style="Color: LightGreen">You guess that makes sense.</span> <br>
+            <<socialChange "Julien" 3>>
+            <<skillPoints "Acting" 5>>
+            <br>
+            [[Continue|School Auditorium]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his hobbies<br>">>
+    <<replace"#choice">>
+        <<if $JulienSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Mr. Julien</span> what he likes to do for fun, outside of teaching and acting, and he actually stops to think about it for a moment. <span style="Color: LightSteelBlue">“I have birds.”</span> He responds after a long while, seemingly finding the question hard, <span style="Color: LightSteelBlue">“Speaking of, I should really run on home to check on them. Me neighbors cat really worried them last night.”</span> <span style="Color: Yellow">While not exactly what you were looking for, you figure it did answer your question.</span> <br>
+            <<socialChange "Julien" 3>>
+            <<skillPoints "Acting" 5>>
+            <br>
+            [[Continue|School Auditorium]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Mr. Julien</span> what he likes to do for fun, outside of teaching and acting, and he actually stops to think about it for a moment. <span style="Color: LightSteelBlue">“Hard to answer when you take away my two greatest passions! I do still love to perform, though on a smaller local stage, and teaching is my calling. Yet you ask for my life without those? Well, without those what is life!? One lives by their passion, so to ask me what I am without them is to be nothing at all!”</span> You are very confused by his response, as he gives a monologue about passion and life. You get the feeling his free time is spent the same as his time at school. <span style="Color: LightGreen">Well, at least he enjoys his job.</span> <br>
+            <<socialChange "Julien" 3>>
+            <<skillPoints "Acting" 5>>
+            <br>
+            [[Continue|School Auditorium]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Nothing<br>">>
+    <<replace"#choice">>
+        You decide to let him go, having had enough of his bubbly personality from the lessons. <span style="Color: LightGreen">Still, you learned a lot from him and feel you’ve gotten to know him a bit better from your one-on-one session.</span> <br>
+        <<socialChange "Julien" 3>>
+        <<skillPoints "Acting" 5>>
+        <br>
+        [[Continue|School Auditorium]]
+    <</replace>>
+    <</link>>
+</div>

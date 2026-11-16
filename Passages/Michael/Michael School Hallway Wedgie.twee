@@ -1,0 +1,598 @@
+:: Michael School Hallway Wedgie [nobr]
+
+<<set $Minutes += 2>>
+<<set $DailyEvents.push("Michael School Bully")>>
+
+<<include "Bully Nickname Setup">>
+
+/* High Social */
+<<if $MichaelSocial > 60 or $MichaelSocialRank > 0>>
+    <span style="color:DarkTurquoise">Michael</span>, the local bully and thug of Preston is known for bullying and embarrassing anyone weaker or smaller than him, including his friends. Indeed, <span style="color:Pink">even being a friend to <span style="color:DarkTurquoise">Michael</span> doesn’t save you from the teasing and embarrassment he likes to give out,</span> though it does make such things less public. Despite this, <span style="color:LightGreen">you think you’d still consider <span style="color:DarkTurquoise">Michael</span> a good friend, just one with an overly playful personality that often leads to him playing little pranks or messing with you.</span> Well, as you see <span style="color:DarkTurquoise">Michael</span> distracted talking to one of his little friends, who more so qualifies as a little henchman since <span style="color:DarkTurquoise">Michael</span> only keeps him around to do stuff like his homework, you decide to give your playful friend a taste of his own medicine. <br>
+    
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "Michael",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    Creeping up behind him, you go over your plan in your head. <span style="color:Pink">It is simple, you are going to sneak up behind him and give him a playful wedgie.</span> Nothing too bad or embarrassing, just something to give <span style="color:DarkTurquoise">Michael</span> some of what he is always dishing out. <span style="color:Pink">Besides, as he lifts his arms to stretch and his $MichaelUndies.Name briefly pokes out, you know they are just BEGGING to be yanked.</span> <span style="color:Yellow">So, getting close enough to strike, you reach out to grip his underwear!</span> <br>
+    <br>
+    <div id="choice">
+        <<link "Continue">>
+        <<replace"#choice">>
+            <<skillCheck "Athletics" 80>>
+            /* Pass */
+            <<if _result == 1>>
+                <span style="color:LightGreen">Finding the soft fabric, you waste no time in yanking them up as high as you can and giving <span style="color:DarkTurquoise">Michael</span> the surprise of his life!</span> <span style="color:Pink">Instantly, he yelps out as his bits are squeezed, and he is brough to his tippy-toes by the tugging. Laughing, you continue to pull them higher as <span style="color:DarkTurquoise">Michael</span> groans before spinning his head around and spotting that you are his assaulter.</span> His expression turns from anger to amusement, seemingly impressed that you would attack him such, but you soon see a light turn on behind his eyes. <span style="color:Yellow">His thoughts move to revenge!</span> <br>
+                
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                    {
+                        Name: "Michael",
+                        State: {
+                            Outfit: "Uniform",
+                            Mouth: "Smirk",
+                            Eyes: "Mad",
+                            Blush: 1,
+                            Arms: "Hide",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+                /* High Dex */
+                <<if $Dexterity < 6>>
+                    <strong>[Dex]</strong> <span style="color:Pink">You think fast, hooking <span style="color:DarkTurquoise">Michael</span>’s underwear on his locker before shoving him away, causing him to lose his balance and slip to the ground, being held up only by his underwear as his tanned butt is exposed. You laugh and stick your tongue out at him as you run off, leaving him dangling there as the small goon tries to help him.</span> <br>
+                    <br>
+                    <span style="color:LightSteelBlue">“Oh, just you wait until I get out of there!”</span> He calls out with a smirk, <span style="color:LightSteelBlue">“I’m going to hang you by the flag pole!”</span> He continues to shout out threats as you disappear. Anyone listening would think he is very upset and you are a dead man, but based on the smirk you saw you’re pretty sure he isn’t that mad. <span style="color:LightGreen">Probably more so impressed that you managed to get one over on him. Though it would be safest to avoid him for the next hour or so.</span> <br>
+                    <<socialChange "Michael" 3>>
+                    <<needChange "Fun" 6>>
+                    <<addMoodlet "Gave Wedgie" 4>>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<else>>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                /* Low Dex */
+                <<else>>
+                    <strong>[Low Dex]</strong>You stick your tongue out at <span style="color:DarkTurquoise">Michael</span>, releasing his underwear, before taking off running. <span style="color:LightCoral">Sadly, you immediately slip and fall face-first into the ground.</span> <span style="color:DarkTurquoise">Michael</span>, who had started to give chase, breaks out laughing as you are splayed out on the ground with a bruised nose. <span style="color:LightSteelBlue">“Damn dude, you alright?”</span> He asks, helping you up. Once you tell him you are, <span style="color:LightCoral">he swiftly smacks you in the stomach.</span> Not super hard, but hard enough to make you gasp out and hunch over. <span style="color:LightSteelBlue">“Good. If anyone’s going to break you, it’s going to be me.”</span> He laughs as you chuckle through the groans. <span style="color:Pink">A fair trade-off to what you did.</span> <br>
+                    <br>
+                    <span style="color:LightSteelBlue">“You’re pretty sneaky though, didn’t even hear you coming.”</span> He puts his arm around your shoulder, <span style="color:LightSteelBlue">“But next time, work on that exit strategy. If I didn’t like you, you’d be head-first in that trashcan butt naked with a water bottle shoved up your ass for trying something like that.”</span> <span style="color:Pink">You blush at his rather specific visual. Thank goodness he sees you as a friend.</span> <br>
+                    <<socialChange "Michael" 3>>
+                    <<needChange "Fun" 6>>
+                    <<addMoodlet "Gave Wedgie" 4>>
+                    <<addMoodlet "Pained" 3>>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<else>>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                <</if>>
+            /* Fail */
+            <<else>>
+                <span style="color:LightCoral">But before you reach him, <span style="color:DarkTurquoise">Michael</span>’s gone…</span> <br>
+                <br>
+                You glance up just in time to see the blur of <span style="color:DarkTurquoise">Michael</span>’s form move and spin around you, feeling his arm coil around your neck. <span style="color:LightCoral">In the briefest of moments, you suddenly find yourself trapped in a headlock! You gasp out, trying to pull away, but <span style="color:DarkTurquoise">Michael</span> is too fast and you are left completely stuck and at his mercy! Damn, sometimes you forget how quick <span style="color:DarkTurquoise">Michael</span> is.</span> <br>
+                
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Frown",
+                            Blush: 1,
+                            Arms: "Bound",
+                        },
+                    },
+                    {
+                        Name: "Michael",
+                        State: {
+                            Outfit: "Uniform",
+                            Mouth: "Smirk",
+                            Eyes: "Mad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+
+                <span style="color:LightSteelBlue">“Well now, what were you trying to do there, huh?”</span> <span style="color:DarkTurquoise">Michael</span> laughs, holding you tight enough to lock you in place without actually hurting you. <span style="color:LightSteelBlue">“Thought you could be funny, did ya? Well, you gotta be a lot faster than that to get the jump on me.”</span> You struggle and flail about, saying that you have no idea what he’s talking about. You were just bending down to pick something up off the ground, that’s all! <span style="color:LightSteelBlue">“Oh, I’m sure. You would never try to grab your friend’s underwear while his back is turned. Nah, I’m sure you weren’t doing anything nefarious.”</span> <br>
+                <br>
+                <span style="color:DarkTurquoise">Michael</span> lifts up your top, <span style="color:Pink">placing his free hand on your belly. You blush and feel a shock shoot up your spine as his warm hand slowly moves lower.</span> <span style="color:LightSteelBlue">“Just like how I’m sure that my good friend <span style="color:DarkTurquoise">$MichaelNickname</span> won’t mind me doing the same. Now, let’s see what we’re working with here.”</span> <br>
+                <br>
+                /* PC Wearing Diaper */
+                <<if $PlayerUndies.Tags.includes("Diaper")>>
+                    <span style="color:Pink">You turn bright red as <span style="color:DarkTurquoise">Michael</span> slides his hand into the front of your bottoms and grips the soft, crinkly fabric of your $PlayerUndies.Name. It takes him a second to realize what it is, but once he does, he smiles widely.</span> <span style="color:LightSteelBlue">“Well! What’s this? This is some strange underwear you’re wearing there, <span style="color:DarkTurquoise">$MichaelNickname</span>. If I didn’t know any better, I’d say you’re wearing something that only babies wear.”</span> <span style="color:Pink">You feel your face burning as he continues to feel up the front of your padded undergarments as the small goon realizes what he’s talking about and blushes.</span> <br>
+                    <br>
+                    <span style="color:LightSteelBlue">“But there is no way you’d be wearing that, because if you were, you wouldn’t dare doing anything that may make me consider showing everyone just what you’re hiding under there.”</span> <span style="color:DarkTurquoise">Michael</span> smirks, <span style="color:Pink">pulling your $PlayerUndies.Type out slightly.</span> <span style="color:LightSteelBlue">“Then again, it would be pretty funny for everyone to see their classmate running down the hall in nothing but a diaper. I know I would love to see that.”</span> <br>
+                    <br>
+                /* PC Wearing Underwear */
+                <<elseif $PlayerUndies.Type != "None">>
+                    <span style="color:Pink">You turn bright red as <span style="color:DarkTurquoise">Michael</span> slides his hand into the front of your bottoms and grips a good portion of your underwear, tugging it up out of your $PlayerBottoms.Type and giving you an uncomfortable front wedgie.</span> <span style="color:LightSteelBlue">“$PlayerUndies.Name, huh? What adorable! They suit you.”</span> <span style="color:DarkTurquoise">Michael</span> laughs as his goon chuckles at your exposed underwear. <span style="color:LightSteelBlue">“It’s a good thing you weren’t trying anything, because if you were, I may have to show off these cute little undies to everyone in school.”</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Michael</span> threatens with an evil smirk.</span> <br>
+                    <br>
+                /* PC Not Wearing Underwear */
+                <<else>>
+                    <span style="color:Pink">You turn bright red as <span style="color:DarkTurquoise">Michael</span> slides his hand into the front of your bottoms and instantly discovers your lack of underwear. He seems surprised at first, then quickly smiles as you feel his hand grip your privates tightly! You yelp out in surprise!</span> <span style="color:LightSteelBlue">“Well now, <span style="color:DarkTurquoise">$MichaelNickname</span>, I didn’t know you were such a little perv! No underwear at school? That is quite the naughty little habit you have there. What would our classmates think?”</span> <br>
+                    <br>
+                    <span style="color:DarkTurquoise">Michael</span> laughs as you feel your face burning from him gripping your penis. <span style="color:LightSteelBlue">“You know, it’s a good thing you weren’t going to try anything funny. Because if you were, I’d have to get revenge by taking those $PlayerBottoms.Type of yours and tossing you into the cafeteria or something.”</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Michael</span> threatens with an evil smirk.</span> <br>
+                <</if>>
+
+                    <<set _ad to [
+                        {
+                            Name: "Player",
+                            State: {
+                                Mouth: "Frown",
+                                Blush: 2,
+                                Arms: "Bound",
+                            },
+                        },
+                        {
+                            Name: "Michael",
+                            State: {
+                                Outfit: "Uniform",
+                                Mouth: "Smirk",
+                                Eyes: "Tired",
+
+                            },
+                        },
+                    ]>>
+                    <<ad _ad>>
+
+                    <span style="color:LightSteelBlue">“I’m just messing with you.”</span> <span style="color:DarkTurquoise">Michael</span> says after a short, intense silence. He releases you, pulling his hand out of your bottoms <span style="color:Pink">and tapping you on the crotch a little too hard.</span> <span style="color:LightSteelBlue">“That was a nice try though, but maybe stick to people your own level, hm? Like our little friend here, he’s an easy one.”</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Michael</span> makes his point by leaping over to his small goon and giving him a large wedgie by yanking his white briefs up to just below his shoulders, lifting the boy off the ground.</span> <br>
+                    <br>
+                    The boy groans before giving a pained laugh, knowing better than to complain about anything <span style="color:DarkTurquoise">Michael</span> does. You laugh, partially in relief, and tell him you’ll keep that in mind. It’s a good thing <span style="color:DarkTurquoise">Michael</span> likes you, because that almost sounded like more than a threat. <span style="color:Pink">Then again, you would have loved to see the look on <span style="color:DarkTurquoise">Michael</span>’s face if you actually got him.</span> <br>
+                    <<socialChange "Michael" 3>>
+                    <<needChange "Fun" 3>>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<else>>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+            <</if>>
+        <</replace>>
+        <</link>>
+        <<skillDiff "Athletics" 80>>
+    </div>
+
+/* Mid Social */
+<<elseif $MichaelSocial > 30>>
+    <span style="color:DarkTurquoise">Michael</span> is the token bully and thug of Preston. Known for bullying anyone smaller or weaker than him. Whether with humiliation, pain, or, most often, both. <span style="color:LightGreen">Thankfully for you, you’ve managed to get on his good side.</span> Because of this, you can often walk the halls without fear of him choosing you for his target. Still, even with your mild friendship, he still has a habit of teasing and embarrassing his friends. It’s just a part of who he is, so you still find yourself on edge when he is around. But in this instance, <span style="color:DarkTurquoise">Michael</span> is so busy chatting with one of his smaller goons, a kid just as afraid of <span style="color:DarkTurquoise">Michael</span> as everyone else, but lucky enough to be spared most of the time due to doing <span style="color:DarkTurquoise">Michael</span>’s homework and stuff for him. But him being so distracted is the perfect chance for you to give him a friendly taste of his own medicine. <br>
+    
+        <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                         Mouth: "Smirk",
+                         Eyes: "Tired",
+                    },
+                },
+                {
+                     Name: "Michael",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+    
+    <span style="color:Pink">Sneaking quietly up to <span style="color:DarkTurquoise">Michael</span>, your plan is to give him a surprise wedgie. Just a little tug on his underwear to get back at him for all the times he’s embarrassed others.</span> This is a risky move, as <span style="color:DarkTurquoise">Michael</span> is no push-over, but you hope your friendship will spare you from anything too bad in retaliation. <span style="color:Yellow">So, with this thought giving your courage, you move closer until you are only a foot away from his backside, the color of his $MichaelUndies.Name peeking out just enough. The time to strike is now!</span> <br>
+    <br>
+    <div id="choice">
+        <<link "Continue">>
+        <<replace"#choice">>
+            <<skillCheck "Athletics" 80>>
+            /* Pass */
+            <<if _result == 1>>
+                <span style="color:LightGreen"> <span style="color:DarkTurquoise">Michael</span> is completely unaware of your attack, as you grip his underwear between your fingers and yank them upwards with all your strength!</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Michael</span> lets out a noise of surprise and discomfort as he loses his balance and nearly tumbles head-first into his locker. The small goon gasps as if you’ve just done something unthinkable as you laugh and tease <span style="color:DarkTurquoise">Michael</span> about his underwear.</span> <span style="color:Yellow"> <span style="color:DarkTurquoise">Michael</span> then turns around and glares at you with an evil smile and look of rage in his eyes. Uh-oh.</span> <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                    {
+                        Name: "Michael",
+                        State: {
+                            Outfit: "Uniform",
+                            Mouth: "Frown",
+                            Eyes: "Mad",
+                            Blush: 1,
+                            Arms: "Hide",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+                /* High Dex */
+                <<if $Dexterity < 6>>
+                    <strong>[Dex]</strong> <span style="color:Pink">Thinking fast, you hook <span style="color:DarkTurquoise">Michael</span>’s underwear onto his locker and release him, causing the boy to slip and fall, now dangling by his $MichaelUndies.Name with his tanned butt exposed.</span> You then take off running, realizing you’ve just poked a bear. The small goon quickly tries to free <span style="color:DarkTurquoise">Michael</span> as the rage-filled boy calls out to you. <br>
+                    <br>
+                    <span style="color:LightSteelBlue">“You better run! Just wait until I get my hands on you!”</span> He sure is mad. <span style="color:LightGreen">You think it is best to keep your distance for a while until he cools down, if you want to avoid any painful revenge.</span> <br>
+                    <<socialChange "Michael" -1>>
+                    <<needChange "Fun" 6>>
+                    <<addMoodlet "Gave Wedgie" 4>>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<else>>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                /* Low Dex */
+                <<else>>
+                    <strong>[Low Dex]</strong>You quickly release <span style="color:DarkTurquoise">Michael</span>’s underwear and attempt to run away, <span style="color:LightCoral">but are stopped in your tracks as a hand manages to grip your $PlayerTop.Type and yank you backwards. You fall onto your back, hitting your head as your vision blurs for a moment.</span> Once you finally come too, you see an angry-looking <span style="color:DarkTurquoise">Michael</span> standing over you. You gulp and quickly try to explain that you were just messing around with him, nothing all too serious. <span style="color:Yellow">No reason for him to be mad at a little joke, right?</span> <br>
+                    
+                    <<set _ad to [
+                        {
+                            Name: "Player",
+                            State: {
+                                Mouth: "Frown",
+                                Blush: 1,
+                                Arms: "Bound",
+                            },
+                        },
+                        {
+                            Name: "Michael",
+                            State: {
+                                Outfit: "Uniform",
+                                Mouth: "Smirk",
+                                Eyes: "Mad",
+                                Blush: 1,
+                            },
+                        },
+                    ]>>
+                    <<ad _ad>>
+
+                    <span style="color:LightSteelBlue">“Yeah, just a little joke.”</span> <span style="color:DarkTurquoise">Michael</span> says, though his tone causes your fear to grow, <span style="color:LightSteelBlue">“I love jokes. Here, let me show you one!”</span> <span style="color:DarkTurquoise">Michael</span> <span style="color:LightCoral">picks you up and forcefully shoves you into the open locker of his goon, slamming the door shut and locking you inside. The cramped, dark space leaves you completely unable to move as you hear him stomping off. Seems you pissed him off, but at least this isn’t as bad as it could have been. He must like you a little to not murder you for doing something like that.</span> <br>
+                    <br>
+                    You’re stuck in there for a few minutes until <span style="color:DarkTurquoise">Michael</span>’s small goon finally lets you out since he needs to grab his books before class. <br>
+                    <<socialChange "Michael" -1>>
+                    <<needChange "Fun" 6>>
+                    <<addMoodlet "Gave Wedgie" 4>>
+                    <<set $Minutes += 5>>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<else>>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                <</if>>
+            /* Fail */
+            <<else>>
+                <span style="color:LightCoral">Grab! <br>
+                <br>
+                A hand locks itself around your wrist just an inch away from <span style="color:DarkTurquoise">Michael</span>. You look up and see the bully glaring down at you with a devious smirk. You’ve been caught!</span> <span style="color:LightSteelBlue">“Well, what do we have here? <span style="color:DarkTurquoise">$MichaelNickname</span> thinks he’s pretty funny, huh? Trying to sneak up on me like that.”</span> You gulp, saying you were just messing around with him. You weren’t going to actually do anything that bad, just give him a little surprise is all. You quickly apologize for even thinking of doing such a thing. <span style="color:LightSteelBlue">“Oh come now, I love surprises! For example, let’s see what sort of fun surprises you’ll find… in the trashcan!”</span> <br>
+                
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Frown",
+                            Blush: 1,
+                            Arms: "Bound",
+                        },
+                    },
+                    {
+                        Name: "Michael",
+                        State: {
+                            Outfit: "Uniform",
+                            Mouth: "Smirk",
+                            Eyes: "Mad",
+                            Blush: 1,
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+                <span style="color:LightCoral"> <span style="color:DarkTurquoise">Michael</span> lifts you up and tosses you headfirst into the nearby trashcan, instantly filling your nose with the foul smells of garbage and old food. You are pushed so deep inside the trashcan, that only your feet and ankles poke out, leaving you utterly stuck in the disgusting bucket!</span> From the outside, you hear the muffled laughter of <span style="color:DarkTurquoise">Michael</span>. <br>
+                <br>
+                <span style="color:LightSteelBlue">“So, how’d you like my surprise? Pretty cool, huh?”</span> He laughs, patting you on the leg, <span style="color:LightSteelBlue">“Next time you want to try to pull something like that, try to be a bit sneakier, eh? It’s no fun when it’s this easy!”</span> <span style="color:DarkTurquoise">Michael</span> then walks away, leaving you trapped and unable to escape until you manage to tip the entire trashcan over and roll out. <br>
+                <br>
+                That didn’t go as planned. But hey, at least it didn’t end as badly as it could have. He must actually like you if this is all he pulled. <span style="color:LightCoral">Still, you’re for sure going to need an extra-long shower after that…</span> <br>
+                <<socialChange "Michael" -3>>
+                <<needChange "Hygiene" -8>>
+                <br>
+                <<if $Location.Name == "School South Hallway">>
+                    [[Continue|School South Hallway]] 
+                <<elseif $Location.Name == "School East Hallway">>
+                    [[Continue|School East Hallway]]
+                <<else>>
+                    [[Continue|School West Hallway]]
+                <</if>>
+            <</if>>
+        <</replace>>
+        <</link>>
+        <<skillDiff "Athletics" 80>>
+    </div>
+/* Low Social */
+<<else>>
+    <span style="color:DarkTurquoise">Michael</span>. The local bully and thug of Preston. He gets his kicks out of bullying other kids who are too weak or small to fight back. <span style="color:Yellow">You don’t have the best relationship with him and have probably ended up the victim of many of his ‘jokes’.</span> Even if you haven’t, it’s only a matter of time. Seeing him standing there near his locker, chatting to one of his shorter goons, an idea pops into your head. Why not give <span style="color:DarkTurquoise">Michael</span> a taste of his own medicine. <span style="color:Pink">After all, even from here you can see the peeking out of his $MichaelUndies.Name as he stretches his arms into the air. From here, it looks like those undies could use a good wedgie.</span> With a smirk, you put your plan into motion. <br>
+    
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },
+                },
+                {
+                    Name: "Michael",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Smirk",
+                    },
+                },
+             ]>>
+        <<ad _ad>>
+
+    Now, <span style="color:DarkTurquoise">Michael</span> is no push over. There is a reason he is the big dog of his little gang. You need to be careful, quick, and even a little lucky if you want to get the jump on him. So, staying out of <span style="color:DarkTurquoise">Michael</span>’s line of sight, along with the sight of his little goon, you begin to sneak over. With every inch you get closer, you feel your heart beating faster and faster until his underwear is just within reach! <span style="color:Yellow">So, taking the chance, you strike-!</span> <br>
+    <br>
+    <div id="choice">
+        <<link "Continue">>
+        <<replace"#choice">>
+            <<skillCheck "Athletics" 80>>
+            /* Pass */
+            <<if _result == 1>>
+                <span style="color:LightGreen"> <span style="color:DarkTurquoise">Michael</span> is caught completely off guard as you grip his underwear and yank with all your might!</span> <span style="color:LightSteelBlue">“Aaahhhh!”</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Michael</span> cries out in surprise as his $MichaelUndies.Name is pulled as high as it can go! He nearly loses his balance and tumbles into his locker.</span> <span style="color:DarkTurquoise">Michael</span>’s goon spots you and, in surprise, calls out your name! <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$BullyNickname</span>? Why you little-”</span> <span style="color:DarkTurquoise">Michael</span> growls in anger as the pain and surprises wears off. <span style="color:Yellow">Time to go!</span> <br>
+                
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Tired",
+                        },
+                    },
+                    {
+                        Name: "Michael",
+                        State: {
+                            Outfit: "Uniform",
+                            Mouth: "Frown",
+                            Eyes: "Mad",
+                            Blush: 1,
+                            Arms: "Hide",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+                <<if $Dexterity > 6>>
+                    <span style="color:Pink">With the dexterity of a ninja, you hook <span style="color:DarkTurquoise">Michael</span>’s $MichaelUndies.Type onto the front of his locker and begin to run away. <span style="color:DarkTurquoise">Michael</span>, not noticing what you’ve done, attempts to chase after you, only to get yanked back by his underwear and lose his balance, leaving him dangling there! You turn back and laugh as <span style="color:DarkTurquoise">Michael</span>’s tanned butt is exposed to the hallway as his little goon tries to free him.</span> <span style="color:DarkTurquoise">Michael</span> scowls in your direction as you flee, shouting. <span style="color:LightSteelBlue">“This isn’t over, <span style="color:DarkTurquoise">$BullyNickname</span>!”</span> <br>
+                    <br>
+                    <span style="color:LightGreen">You’ve sure pissed him off, but it’s totally worth it to see the look on his face!</span> <br>
+                    <<socialChange "Michael" -5>>
+                    <<needChange "Fun" 6>>
+                    <<addMoodlet "Gave Wedgie" 4>>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<else>>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                /* Low Dex */
+                <<else>>
+                    You quickly release <span style="color:DarkTurquoise">Michael</span> and begin to run away, nearly slipping and sliding headfirst into the wall as you do. <span style="color:LightCoral"> <span style="color:DarkTurquoise">Michael</span>, recovering quickly, gives chase.</span> You are running down the hallway for dear life, ducking and weaving between hordes of kids when you notice <span style="color:DarkTurquoise">Michael</span> stop and give up. Hah! Looks like you win this round-! <br>
+                    <br>
+                    <span style="color:LightCoral">Wham! You are suddenly grabbed by the arm and come to a painful stop!</span> <br>
+                    <br>
+                    <span style="color:LightSteelBlue">“Just what do you think you are doing, young man!?”</span> A teacher shouts, holding your arm tightly, <span style="color:LightSteelBlue">“No running in the halls! I hope you enjoy detention!”</span> The teacher scolds you as <span style="color:DarkTurquoise">Michael</span> watches from the distance chuckling. <span style="color:LightCoral">Dang it. Well, detention probably won’t be as bad as whatever <span style="color:DarkTurquoise">Michael</span> would have done to you if he caught you.</span> <br>
+                    <<socialChange "Michael" -5>>
+                    <<needChange "Fun" 6>>
+                    <<addMoodlet "Gave Wedgie" 4>>
+                    <<set $Detention += 5>>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<else>>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                <</if>>
+            /* Fail */
+            <<else>>
+                <span style="color:LightCoral">You are only an inch away when your hand is swiftly grabbed and your wrist pulled into the air. You’ve been caught!</span> <span style="color:LightSteelBlue">“Well, well, well.”</span> <span style="color:DarkTurquoise">Michael</span> laughs, holding you in an iron grip, <span style="color:LightSteelBlue">“What do we have here? Someone who thinks they are funny, eh? You really thought you could sneak up on me?”</span> <span style="color:DarkTurquoise">Michael</span> glares at you deviously as his little goon laughs. <span style="color:LightCoral">You try to pull yourself free, but are completely stuck!</span> <br>
+                <br>
+                <span style="color:LightCoral"> <span style="color:DarkTurquoise">Michael</span> spins you around, holding you in a backwards full nelson with your rear completely vulnerable to attack from his little goon!</span> This is part of his plan, as <span style="color:DarkTurquoise">Michael</span> barks <span style="color:LightSteelBlue">“Why don’t we show <span style="color:DarkTurquoise">$BullyNickname</span> here what we do to funny guys.”</span> His little goon laughs in approval, <span style="color:Pink">and you feel his hands grip the sides of your $PlayerBottoms.Type and yank them down!</span> <br>
+                
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        ShowZoom: $PlayerUndies.Type == "None",
+                        State: {
+                            Mouth: "Frown",
+                            Blush: 2,
+                            Arms: "Bound",
+                            PantsDown: true,
+                        },
+                    },
+                    {
+                        Name: "Michael",
+                        State: {
+                            Outfit: "Uniform",
+                            Mouth: "Smirk",
+                            Eyes: "Mad",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+                /* Diapers */
+                <<if $PlayerUndies.Tags.includes("Diaper")>>
+                    <span style="color:LightSteelBlue">“Check it out! We’ve got a baby over here!”</span> <span style="color:Pink">The small goon laughs as your $PlayerUndies.Name is exposed!</span> You feel your face turn bright red as laughter erupts from those around you. <span style="color:LightSteelBlue">“What’s wrong, baby, are you going to cry?”</span> <span style="color:Pink">He smacks your rear as hard as he can, which is mostly softened by your padded undergarments, which is at least a little upside.</span> <br>
+                    <br>
+                    <<if ["Diaper Boy"].includes($BullyNickname)>>
+                        <<set _setnickname to 0>>
+                    <</if>>
+                    /* Setting Diaper Boy Nickname */
+                    <<if _setnickname == 1>>
+                        <span style="color:LightSteelBlue">“I didn’t know we had a Diaper Boy in this school!”</span> <span style="color:DarkTurquoise">Michael</span> laughs, gripping the back of your $PlayerUndies.Type and pulling on them. <span style="color:LightSteelBlue">“They suit you, really shows off your spot in the pecking order. I think I’ll call you Diaper Boy from now on! I think everyone else likes the idea as well!”</span> <br>
+                        <br>
+                        <<if $Nickname.Bully == 0>>
+                            <span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise"><span style="color:LightSteelBlue">“Diaper Boy”</span></span>, due to being seen to wear diapers or other padded protection. Nicknames can be edited in the Journal in your Bedroom.]</span><br>
+                            <br>
+                        <</if>>
+                        <<set $Nickname.Bully to 1>>
+                        <<set $BullyNickname to "Diaper Boy">>
+                    <</if>>
+                    <span style="color:LightSteelBlue">“Grab the water bottle from my locker!”</span> <span style="color:DarkTurquoise">Michael</span> orders. The little goon does so, not needing instructions for the next step as he opens up the bottle, <span style="color:LightCoral">pulls on the back of your $PlayerUndies.Type, and begins to pull the icy water directly into them! You cry out as the freezing water hits your butt and soaks your underwear, making it saggy and dark.</span> Meanwhile, laughter is filling the hallways. <br>
+                    <br>
+                    <span style="color:Pink">Once the bottle is empty and your $PlayerUndies.Type is near to bursting, <span style="color:DarkTurquoise">Michael</span> shoves you harshly to the ground, laughing as your soaked underwear makes a splat sound as you land.</span> <span style="color:LightSteelBlue">“Next time you want to try something funny, remember what happened here.”</span> <span style="color:DarkTurquoise">Michael</span> laughs, <span style="color:LightSteelBlue">“Because I know we will ALWAYS remember this sight!”</span> You quickly get up and fix your clothes as best you can before running off, utterly defeated. <br>
+                    <<socialChange "Michael" -5>>
+                    <<addMoodlet "Seen Undies" 24>>
+                    <<addMoodlet "Full Diaper" 1>>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<else>>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                /* PC Wearing Underwear */
+                <<elseif $PlayerUndies.Type != "None">>
+                    <span style="color:LightSteelBlue">“Check it out! $PlayerUndies.Name!”</span> <span style="color:Pink">The goon laughs as your underwear is exposed!</span> <span style="color:LightCoral">You turn bright red and try to wiggle yourself free as laughter echoes throughout the hallway.</span> <span style="color:LightSteelBlue">“Now to give him a taste of his own medicine!”</span> <span style="color:LightCoral">The goon grips the back of your underwear and yanks it up with all his might!</span> While not as strong as <span style="color:DarkTurquoise">Michael</span>, he still has surprising strength, and you groan out as your bits are squeezed uncomfortably. <span style="color:Pink">Your lack of bottoms leaves your rear completely exposed as he wedgies you, leading to increased laughter in the hallways.</span> <br>
+                    <br>
+                    <span style="color:LightCoral">You are left at the mercy of these two for what feels like forever before they eventually release you and shove you harshly to the ground, your bare butt checks smacking against the cold ground.</span> <span style="color:LightSteelBlue">“Next time you want to try something funny, remember what happened here.”</span> <span style="color:DarkTurquoise">Michael</span> laughs, <span style="color:LightSteelBlue">“Because I know we will ALWAYS remember this sight!”</span> You quickly get up and fix your clothes as best you can before running off, <span style="color:LightCoral">utterly defeated.</span> <br>
+                    <<socialChange "Michael" -5>>
+                    <<addMoodlet "Seen Undies" 24>>
+                    <<addMoodlet "Wedgie" 8>>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<else>>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                /* PC Not Wearing Underwear */
+                <<else>>
+                    <span style="color:LightSteelBlue">“Check it out! A full moon!”</span> <span style="color:LightCoral">The small goon laughs as your lack of underwear is revealed, exposing your $Player.Butt Butt and $Player.PenisSize Penis to them both and everyone else in the hallway. Laughter immediately erupts as <span style="color:DarkTurquoise">Michael</span>, seeing this as the perfect moment to torment you, spins you around and shows off your boyhood to everyone nearby!</span> He even shakes you about, <span style="color:Pink">causing your member to jiggle and bounce around as if it is dancing. Your face is burning with humiliation.</span> <br>
+                    <br>
+                    <<if ["Little Dick", "Horse Cock"].includes($BullyNickname)>>
+                        <<set _setnickname to 0>>
+                    <</if>>
+                    /* Setting Little Dick Nickname */
+                    <<if ["Tiny", "Small"].includes($Player.PenisSize) && _setnickname == 1>>
+                        <span style="color:LightSteelBlue">“The thing is fucking tiny!”</span> One kid laughs. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“Aww, how cute. Go on, cry about it!”</span> Another mocks you. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“Well, if it isn’t little $MichaelNickname’s little dick.”</span> <span style="color:DarkTurquoise">Michael</span> laughs as you are left helpless and exposed. <span style="color:LightSteelBlue">“Actually, that’s a good name for you! What do you say, Little Dick? That way everyone will know what a pathetic little cock you have!”</span> <span style="color:LightCoral">The name quickly catches on as everyone begins to laugh and tease you for your lack of size.</span> <br>
+                        <br>
+                        <<if $Nickname.Bully == 0>>
+                            <span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise"><span style="color:LightSteelBlue">“Little Dick”</span></span>, due to being seen naked with a smaller than average Penis. Nicknames can be edited in the Journal in your Bedroom.]</span><br>
+                            <br>
+                        <</if>>
+                        <<set $Nickname.Bully to 1>>
+                        <<set $BullyNickname to "Little Dick">>
+                    /* Setting Horse Cock Nickname */
+                    <<elseif ["Horse Cock"].includes($Player.PenisSize) && _setnickname == 1>>
+                        <span style="color:LightSteelBlue">“Holy shit! It’s like a snake!”</span> One kid laughs. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“Fucking hell, you think any blood gets to his brain?”</span> Another mocks you. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“Well, well, well!”</span> <span style="color:DarkTurquoise">Michael</span> laughs as you are left helpless and exposed, <span style="color:LightSteelBlue">“Look who’s well-endowed! Freakishly so. What’s it like having an extra arm, freak? Does everyone in your family have Horse Cocks?”</span> <span style="color:DarkTurquoise">Michael</span> laughs as everyone begins to join in and call you <span style="color:LightSteelBlue">“Horse Cock”</span>. <span style="color:LightCoral">You realize the name will probably stick.</span> <br>
+                        <br>
+                        <<if $Nickname.Bully == 0>>
+                            <span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise"><span style="color:LightSteelBlue">“Horse Cock”</span></span>, due to being seen naked with a much larger than average Penis. Nicknames can be edited in the Journal in your Bedroom.]</span><br>
+                            <br>
+                        <</if>>
+                        <<set $Nickname.Bully to 1>>
+                        <<set $BullyNickname to "Horse Cock">>
+                    /* Tiny Penis (No Nickname Set) */
+                    <<elseif $Player.PenisSize == "Tiny">>
+                        <span style="color:LightSteelBlue">“What? Is he a girl? I don’t see anything!”</span> One kid laughs. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“Oh, it’s there alright.”</span> Another mocks, <span style="color:LightSteelBlue">“But it isn’t much to look at!”</span> <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“I guess we all can’t be born lucky.”</span> <span style="color:DarkTurquoise">Michael</span> laughs, <span style="color:LightSteelBlue">“No, some are born with a reminder of how pathetic they are stick between their legs. What a fucking loser!”</span> <span style="color:LightCoral">You feel completely helpless and exposed as the laughter continues.</span> <br>
+                        <br>
+                    /* Small Penis (No Nickname Set) */
+                    <<elseif $Player.PenisSize == "Small">>
+                        <span style="color:LightSteelBlue">“Aww, what a cute little thing.”</span> One kid laughs. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“I wouldn’t call it cute.”</span> Another mocks, <span style="color:LightSteelBlue">“More like pathetic!”</span> <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“What’s wrong, <span style="color:DarkTurquoise">$BullyNickname</span>?”</span> <span style="color:DarkTurquoise">Michael</span> laughs, <span style="color:LightSteelBlue">“Sad that everyone is seeing your pathetic little cock? Well, maybe you should have thought about that before you forgot your place. Next time, be a good little boy and behave.”</span> <span style="color:Pink">You feel completely helpless and exposed as the laughter continues.</span> <br>
+                        <br>
+                    /* Average Penis */
+                    <<elseif $Player.PenisSize == "Average">>
+                        <span style="color:LightSteelBlue">“Hah! What a loser!”</span> One kid laughs. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“I see London, I see France, <span style="color:DarkTurquoise">$BullyNickname</span>’s not wearing any underpants!”</span> Another mocks in a sing-song voice. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“Well now, don’t you just feel right at home like that?”</span> <span style="color:DarkTurquoise">Michael</span> laughs, <span style="color:LightSteelBlue">“Exposed and helpless like the little bitch you are. Next time you want to try something funny, remember your place.”</span> <span style="color:LightCoral">You feel completely helpless and exposed as the laughter continues.</span> <br>
+                        <br>
+                    /* Large Penis */
+                    <<elseif $Player.PenisSize == "Large">>
+                        <span style="color:LightSteelBlue">“Hah! Check out <span style="color:DarkTurquoise">$BullyNickname</span>’s noodle!”</span> One kid laughs. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“It looks so weird wiggling around like that!”</span> Another mocks. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“Tell me, <span style="color:DarkTurquoise">$BullyNickname</span>, is this how you thought this would go?”</span> <span style="color:DarkTurquoise">Michael</span> laughs, <span style="color:LightSteelBlue">“Because this is exactly how I knew it would go, because little bitches like you are always put in their place.”</span> <span style="color:LightCoral">You feel completely helpless and exposed as the laughter continues.</span> <br>
+                        <br>
+                    /* Gigantic Penis (No Nickname Set) */
+                    <<elseif $Player.PenisSize == "Gigantic">>
+                        <span style="color:LightSteelBlue">“Holy shit! It’s like a python!”</span> One kid laughs. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“God damn! How does that thing even fit in his gym shorts!?”</span> Another mocks. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“See, <span style="color:DarkTurquoise">$BullyNickname</span>! You’re living proof that size doesn’t matter.”</span> <span style="color:DarkTurquoise">Michael</span> laughs, <span style="color:LightSteelBlue">“Even with a big cock, a little bitch will always be a little bitch. So, remember that next time you want to try something funny.”</span> <span style="color:LightCoral">You feel completely helpless and exposed as the laughter continues.</span> <br>
+                        <br>
+                    <</if>>
+                    <span style="color:LightCoral">Finally released, you are shoved to the ground and given a hard kick by <span style="color:DarkTurquoise">Michael</span>, a final reminder to remember your place.</span> You quickly fix your clothing and get to your feet, running past all the still giggling boys as you try to stop yourself from crying. <span style="color:LightCoral">That didn’t go well at all!</span> <br>
+                    <<socialChange "Michael" -5>>
+                    <<addMoodlet "Seen Naked" 24>>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<else>>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                <</if>>
+            <</if>>
+        <</replace>>
+        <</link>>
+        
+        <<skillDiff "Athletics" 80>>
+    </div>
+<</if>>

@@ -1,0 +1,94 @@
+:: OC Manuel School Library Hang Out [nobr]
+
+/* Intro */
+As you are wandering the school library, you spot your classmate, <span style="color:DarkTurquoise">Manuel</span>, on one of the computers. Strangely, the computer he sat at was the one all the way in the far corner, despite many closer, more convenient ones being available. To add to the strangeness, he has also turned the computer slightly, making it difficult for anyone to see what he was doing. <span style="color:yellow">This made it pretty obvious that he was up to no good, or at least something he shouldn’t be doing.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "OC Manuel",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<span style="color:yellow">You could go up and ask him, but odds are he wouldn’t reveal the truth. So, you could sneak up instead.</span> <br>
+<br>
+
+<div id="choice1">
+/* Talk to him */
+	<<link "Chat with him<br>">>
+	<<replace"#choice1">>
+        You walk up to <span style="color:DarkTurquoise">Manuel</span> and ask him how it’s going. He immediately jumps, scrambles for the mouse, and clicking away. <span style="color:LightSteelBlue">“No- nothing!”</span> He shouts as he hastily closes his browser. You raise an eyebrow at him, asking why he is so jumpy. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>? Oh, I thought you were someone else… I was just, umm….”</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "OC Manuel",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:DarkTurquoise">Manuel</span> pauses for a second, trying to think of an excuse, but eventually just laughs nervously. You have a few ideas about what he could have been looking up but decide to respect his privacy and instead ask to sit down with him. He nods and the two of you chat for a while before <span style="color:DarkTurquoise">Manuel</span> offers to show you some flash games he found online. <br>
+        <br>
+        <span style="color:lightgreen">You both play a cheaply made, but extremely fun RPG where you go on an adventure throughout a world of battle. Overall, it’s very fun and you find yourself feeling closer to <span style="color:DarkTurquoise">Manuel</span>.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 10>>
+        <<socialChange "Manuel" 3 1>>
+        <br>
+        [[Continue|School Library]]
+
+    <</replace>>
+    <</link>>
+/* Spy */
+	<<link "Spy<br>">>
+	<<replace"#choice1">>
+        You smirk, imagining what he could possibly be looking up that he didn’t want anyone else to see. It would be hard, as he had turned the computer quite far, but if you were careful, you think you could sneak up on him and see what he is looking at before he has a chance to close it. So, you begin to quietly tiptoe over. <br>
+        
+        <<set _ad to [
+            {
+                Name: "OC Manuel",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 2,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        After a few close calls of him suddenly turning around or thinking he hears a noise, only saved by you quickly diving behind a bookcase or cart, you manage to get just close enough to have a view of the screen. <span style="color:lightgreen">Peeking out from behind a table, you squint your eyes and try to read what he is searching for.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“How to pick a lock”</span> and <span style="color:LightSteelBlue">“How to create a key mold”</span>. <span style="color:pink">It doesn’t take long to figure out why the boy would want that, as you blush slightly and smirk, trying hard not to laugh. Seems <span style="color:DarkTurquoise">Manuel</span> is still having trouble with his ‘little cage problem’ that his mother forced him into. He must be pretty desperate.</span> <br>
+        <br>
+        <span style="color:DarkTurquoise">Manuel</span> sighs loudly, placing his face on the desk as he grumbles to himself. <span style="color:LightSteelBlue">“Dang it, what am I going to do? I’m going crazy. I need…”</span> <span style="color:DarkTurquoise">Manuel</span> pauses, glancing around to ensure no one is near him or watching, thankfully your hiding place is secure, before he opens up a new tab and searches up “Anal Stimulation”. <span style="color:pink">You blush again, was he really that desperate?</span> <br>
+        <br>
+        <span style="color:lightcoral">Unfortunately for the boy, as soon as he hits enter the screen goes red with <span style="color:LightSteelBlue">“Banned Words Detected”</span> blinking on it.</span> Seems he triggered the school’s safety search feature. <span style="color:DarkTurquoise">Manuel</span> quickly panics, trying to close the browser before eventually shutting the computer off. <span style="color:pink">He then doesn’t waste any time collecting his things and running out of the library, probably terrified that his search result was sent to the librarian.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 10>>
+        <br>
+        [[Continue|School Library]]
+
+    <</replace>>
+    <</link>>
+</div>

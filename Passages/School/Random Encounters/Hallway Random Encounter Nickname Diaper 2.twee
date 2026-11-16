@@ -1,0 +1,77 @@
+:: Hallway Random Encounter Nickname Diaper 2 [nobr]
+
+/* Written by: Winters */
+
+The hallways of Preston Academy are busy, with boys bustling about going to their lockers or class.  Navigating your way down the hallway, you’re slowed down as you steer around boys that are in your way. <span style="Color: Yellow">As you go to move past a boy, you feel a hand reach under your shirt and into the back of your $PlayerBottoms.Type.  His fingers work their way into the waistband of your $PlayerUndies.Name and pull them back, exposing your butt.</span> It’s so sudden and unexpected that you’re momentarily frozen as this is happening. <span style="Color: LightCoral">A rush of air contacts your exposed butt, and a moment later the cool air is replaced with a cascade of ice cold liquid as it goes into the back of your $PlayerUndies.Name.</span> <br>
+<br>
+The sudden shock causes you to jump, which is enough to break the grip of the boy holding the back of your $PlayerBottoms.Type. The waistband snaps back into place, containing the cold water and ice cubes. <br>
+<br>
+<<if $PlayerUndies.Tags.includes("Diaper")>>
+    <span style="Color: LightCoral">The cold water is very uncomfortable against your bare skin, but the ice cubes are starting to get painful.</span> One ice cube has managed to get between your butt cheeks and is currently residing in a rather sensitive area. You awkwardly spread your legs and waddle to try and dislodge it. <br>
+    <br>
+    Laughter fills the hallway, and you become acutely aware that you’ve been doing this awkward dance in front of a group of boys.  It seems that the water tossed into your $PlayerBottoms.Type and the resulting dance is highly amusing.  <br>
+    <br>
+    One boy looks at you with a knowing grin. <span style="Color: LightSteelBlue">“Where did the water go?”</span> he asks. <span style="Color: LightCoral">It is then that you’re acutely aware of how full your diaper feels. The swelling of the diaper must be noticeable to everyone else, even with your $PlayerBottoms.Type covering them.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Cry: 1,
+                Blush: 2,
+                Eyes: "Sad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    /* PC: Everyday, Sad, Blush 2, Cry 1*/
+    <span style="Color: LightSteelBlue">“Looks like <span style="Color: DarkTurquoise">$BullyNickname</span> <span style="Color: LightCoral">had an accident. Good thing he’s wearing a diaper today”</span>, says one of the boys between laughter.</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“What a freak”</span>, <span style="Color: LightCoral">exclaims one boy.</span> <span style="Color: LightSteelBlue">“I bet <span style="Color: DarkTurquoise">$BullyNickname</span> gets off pissing himself in front of a crowd.”</span> <br>
+    <br>
+    <span style="Color: LightCoral">Warmth floods your face as it turns a shade of bright red. This humiliation is worse than the cold wet diaper you’re currently in.</span> <br>
+    <br>
+<<else>>
+    With little to contain the water, your $PlayerBottoms.Type quickly soak through. Several droplets of water start to come out of the bottom of your $PlayerBottoms.Type. <span style="Color: LightCoral">Looking down, you notice that there is a pool of water at your feet.</span> You quickly step out of the pool of water, but it is too late. Laughter erupts from the boys, and several boys shout that you wet yourself. Unless they saw the boy pour water down your $PlayerBottoms.Type, the logical conclusion would be that you peed yourself. If you did piss yourself, at least your crotch and butt would be warm instead of freezing cold. <span style="Color: LightCoral">The only warmth you feel comes from your cheeks flush with embarrassment as the other boys laugh at you.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Cry: 1,
+                Blush: 2,
+                Eyes: "Sad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    /* PC: Everyday, Sad, Blush 2, Cry 1*/
+    <span style="Color: LightSteelBlue">“Well, that’s a shame <span style="Color: DarkTurquoise">$BullyNickname</span> didn’t stay true to his name and wear his diaper today”</span>, <span style="Color: LightCoral">says one of the boys.</span> <br>
+    <br>
+<</if>>
+
+<span style="Color: LightCoral">You glare at the boys, before you turn your back to them and start running away. The chant of <span style="Color: LightSteelBlue">“<span style="Color: DarkTurquoise">$BullyNickname</span>”</span> follow you. You look down and avoid contact with any other boy. If only you could vanish and not have to deal with this cruelty. The cold pressed against your skin is still quite uncomfortable. Tears start to form at the corner of your eyes, but luckily no one is around to see them.</span> Not that it would matter, they all think you’re a baby that wears diapers. Sighing, you go off to find a place to dry off. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Everyday",
+            Cry: 2,
+            Blush: 2,
+            Eyes: "Sad",
+        },
+    },
+]>>
+<<ad _ad>>
+/* PC: Everyday, Sad, Blush 2, Cry 2*/
+<<addMoodlet "Stress" 2>>
+<<if $Location.Name == "School South Hallway">>
+    [[Continue|School South Hallway]] 
+<<elseif $Location.Name == "School East Hallway">>
+    [[Continue|School East Hallway]]
+<<else>>
+    [[Continue|School West Hallway]]
+<</if>>

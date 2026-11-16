@@ -1,0 +1,64 @@
+:: Lucas Home Hallway [nobr]
+
+    <<set $Location to {
+    Name: "Lucas Home Hallway",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+<span style="color:Azure"><big><strong>--Hallway--</strong></big></span><br>
+<<if $Time.after(19, 0)>>
+	<<include"Lucas Home Kick Out">>
+<<else>>
+You and <span style="color:DarkTurquoise">Lucas</span> walk through the Hallway of his house. The hallway is filled with photos of <span style="color:DarkTurquoise">Lucas</span> and his mother from different points of their lives. A majority of the photos only picture them, no other family members. The frames look clean and recently dusted. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+<<ad _ad>>
+
+<strong>Lucas: </strong><<include"NPC Hang Out Modifiers">><br>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<link"Look at Photos (0:10)">>
+	<<set _Random to ["Lucas Home Hallway Photos"]>>
+	<<set _event to _Random.random()>>
+	<<goto _event>>
+<</link>><br>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Lucas' Bedroom (0:01)|Lucas Home Bedroom][$Minutes += 1]] <br>
+    [[Living Room (0:01)|Lucas Home Living Room][$Minutes += 1]] <br>
+    [[Dining Room (0:01)|Lucas Home Dining Room][$Minutes += 1]] <br>
+    [[Bathroom (0:01)|Lucas Home Bathroom][$Minutes += 1]] <br>
+
+<</if>>
+<div style="position: relative">
+    <img src="Images\NPC Homes\Lucas House\Lucas House Map.png" alt="Lucas House Base" usemap="#LucasHouse">
+	<img src="Images\NPC Homes\Lucas House\Lucas Hallway Marker.png" 
+style="position: absolute; left: 0px; top: 0px"  alt="School Map" usemap="#LucasHouse">
+</div>
+<map name="LucasHouse">
+    <area shape="rect" coords="170,62,277,115" alt="Hallway" onclick="$.wiki('<<goto[[Lucas Home Living Room]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="170,115,223,168" alt="Hallway" onclick="$.wiki('<<goto[[Lucas Home Bedroom]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="116,169,169,225" alt="Hallway" onclick="$.wiki('<<goto[[Lucas Home Bathroom]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="8,116,116,169" alt="Hallway" onclick="$.wiki('<<goto[[Lucas Home Dining Room]]>><<set $Minutes += 1>>')" />
+</map>
+
+<</if>>

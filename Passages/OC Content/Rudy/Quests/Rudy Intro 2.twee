@@ -1,0 +1,163 @@
+:: Rudy Intro 2 [nobr]
+
+/*After his intro, you can locate this scene by finding Rudy in the Library during Lunch Time.*/
+
+<<set $Minutes += 5>>
+
+Spotting <span style="color:DarkTurquoise">Rudy</span> sitting once more in the corner, this time in the school library near a bookcase. As you walk up to him, <span style="color:DarkTurquoise">Rudy</span> spots you and quickly covers his notepad once again, blushing. You hold both hands up in a sign of peace, which seems to calm the boy a little. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Mouth: "Happy",
+		},
+	},
+	{
+		Name: "OC Rudy",
+		State: {
+		Outfit: "Uniform",
+        Mouth: "Frown",
+        Blush: 1,
+		}
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Wha- what do you want?”</span> He asks nervously. Judging by how tightly he is holding his notebook, you wager that he thinks you are going to try to snatch it or something. In reply, you pull the piece of paper out of your bag and hold it out to him, saying that he dropped it. <span style="color:Pink">The image of <span style="color:DarkTurquoise">Ben</span> on the top, <span style="color:DarkTurquoise">Rudy</span> turns even redder and quickly snatches it away.</span> He quickly shoves it into his bag before attempting to mumble out an excuse. <span style="color:LightSteelBlue">“That’s not mine- I mean, I didn’t draw that-”</span> Though the excuse is pretty bad considering he just snatched it away from you. <br>
+<br>
+You laugh, telling the boy that he doesn’t have to be embarrassed and that it is actually a pretty good drawing. <span style="color:Pink">Your compliment doesn’t seem to calm the boy’s nerves, as he continues to glow red.</span> He is trying to avoid your eyes, before quickly standing up and beginning to pack his things up, making another excuse for having to leave. The boy seems very nervous about his art. As he is bending over to quickly pack up his things, you spot his notebook on the ground face down, <span style="color:Yellow">it wouldn’t be too hard to try to grab it to see what he was drawing, though he’d probably be a little upset.</span> <br>
+<br>
+
+<div id="choice">
+	/*Accept that he doesn’t want to show you*/
+	<<link "Accept that he doesn’t want to show you<br>">>
+	<<replace"#choice">>
+
+	You figure <span style="color:DarkTurquoise">Rudy</span> would show you if he was comfortable enough to. You may be curious, but trying to force it will only drive him away. So instead, as <span style="color:DarkTurquoise">Rudy</span> gets up, you remind him not to forget his notebook. <span style="color:DarkTurquoise">Rudy</span> glances down at it in surprise, seemingly almost leaving it, and quickly picks it up. <br>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+				Eyes: "Tired",
+			},
+		},
+		{
+			Name: "OC Rudy",
+			State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+			Blush: 1,
+			}
+		},
+	]>>
+		<<ad _ad>>
+
+	<span style="color:LightSteelBlue">“Tha- thank you.”</span> He replies, putting it away in his bag. <span style="color:LightSteelBlue">“Sorry, I just.. don’t like sharing my art.”</span> You tell <span style="color:DarkTurquoise">Rudy</span> that it’s fine, but if you could draw as well as he can you’d be showing it off every chance you got! <span style="color:Pink">That artwork of <span style="color:DarkTurquoise">Ben</span> you saw is super good and really captures his personality.</span> <span style="color:LightSteelBlue">“Thanks…”</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Rudy</span> replies, blushing once more.</span> <span style="color:LightSteelBlue">“Like I said before, I’ve just been practicing anatomy. It’s… easier to do it with classmates since I see them all the time, you know?”</span> <br>
+	<br>
+	You smile and nod, telling <span style="color:DarkTurquoise">Rudy</span> that you hope he’ll show you more someday. Then, with a smirk, you lean forward and ask if he’s ever drawn you. <span style="color:Pink">At this comment, <span style="color:DarkTurquoise">Rudy</span> becomes flustered once more and mumbles out various responses that you can’t help but laugh at.</span> You tell him that you are just teasing, but give him your permission to draw you anytime he wants. <br>
+	<br>
+	<span style="color:LightSteelBlue">“Ri- right…”</span> He replies softly, a small smile on his face. <span style="color:LightSteelBlue">“I should probably get going, but… I’m glad you liked my drawing.”</span> He then quickly runs off, taking his bag and stuffed bear with him as he vanishes into the school. <span style="color:Pink">What a cute boy.</span> <br>
+
+	<span style="color:Gold">Quest Completed: “Rudy: The Forgotten Drawing”</span> <br>
+	<<socialChange "Rudy" 15 1>>
+	<<set $ActiveQuests.delete("Rudy: Introduction")>>
+	<<set $CompletedQuests.push("Rudy: Introduction")>>
+	<br>
+	[[Continue|School Library]]
+<</replace>>
+<</link>>
+
+/*Try to snatch the notebook*/
+	<<link "Try to snatch the notebook<br>">>
+	<<replace"#choice">>
+	Thinking fast, you reach down and try to snatch away the notebook. <span style="color:LightCoral">As if he sensed your malicious intent, <span style="color:DarkTurquoise">Rudy</span> turns and reaches down to grab the notebook right as you do. Both grabbing it at the exact same time, suddenly you find yourself locked in a tug of war with <span style="color:DarkTurquoise">Rudy</span> over his sketchbook!</span> <br>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Frown",
+			},
+		},
+		{
+			Name: "OC Rudy",
+			State: {
+			Outfit: "Uniform",
+			Mouth: "Frown",
+			Eyes: "Sad",
+			Blush: 1,
+			Cry: 1,
+			}
+		},
+	]>>
+		<<ad _ad>>
+
+	<span style="color:LightSteelBlue">“What are you doing!?”</span> <span style="color:DarkTurquoise">Rudy</span> cries out, trying to pry the book away from you, <span style="color:LightSteelBlue">“Let go!”</span> Despite your initial desire to snatch it away while he wasn’t looking, you find yourself in too deep to let go now that he’s noticed and attempt to rip it out of his hands, <span style="color:LightCoral">but find the boy surprisingly strong.</span> <span style="color:LightSteelBlue">“Stop!”</span> He cries out once more. <br>
+	<br>
+	At this point your actions had drawn the attention of others in the library. The librarian was attempting to shush you as other students gave you both strange looks. Realizing you weren’t going to overpower the boy, you instead spot a slip of paper sticking out of the book and reach for that instead. <br>
+	<br>
+	<span style="color:DarkTurquoise">Rudy</span>, not expecting you to suddenly let go of the book itself, falls backward <span style="color:LightCoral">as a loud RIPPING sound echoes throughout the library as you tear a page from the book.</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Rudy</span>’s head impacts against the wall as he cries out and grips the back of his head, tears beginning to form. He glances up at you, now holding a torn piece of a drawing in your hand, before he takes off running, sobbing quietly as he does so.</span> <br>
+	<br>
+	<span style="color:LightCoral">A few of the other boys give you nasty looks for, seemingly, assaulting another boy.</span> As the librarian rushes over and begins to yell at you about getting a detention for that, you take off running yourself, finally managing to escape them in the restrooms. <br>
+	<br>
+	You may have gotten a detention and made <span style="color:DarkTurquoise">Rudy</span> hate you, <span style="color:LightGreen">but at least you have whatever drawing he was trying to keep so hidden.</span> Opening the crumbled up torn drawing in your hand, you are not surprised to find it is another drawing of a boy. <span style="color:Pink">You can’t make out the boy exactly, due to it being torn, but swear it reminds you of <span style="color:DarkTurquoise">Felix</span>. But what’s more important is that this doesn’t appear to be as innocent as the first one. Whoever this boy is, he isn’t wearing a shirt and, though not in the part you torn off, you have a suspicion they aren’t wearing anything!</span> <br>
+	<br>
+	<span style="color:Pink">It seems <span style="color:DarkTurquoise">Rudy</span>’s drawings aren’t as simple and innocent as he would want you to believe. Though without the full drawing, you can’t be sure, and you are pretty confident that he won’t want to show you else anything after that!</span> <br>
+
+	<span style="color:Gold">Quest Completed: “Rudy: The Forgotten Drawing”</span> <br>
+	<<socialChange "Rudy" -50 1>>
+	<<set $Detention += 10>>
+	<<set $ActiveQuests.delete("Rudy: Introduction")>>
+	<<set $CompletedQuests.push("Rudy: Introduction")>>
+	<br>
+	[[Continue|School Restrooms]]
+<</replace>>
+<</link>>
+
+<<if $Player.Traits.includes("Bully")>>
+	<<link "<strong>[Bully]</strong> Give him a Wedgie<br>">>
+	<<replace"#choice">>
+	/*[Bully] Give him a Wedgie*/
+	While the notebook is the first thing to catch your eye, <span style="color:Pink">the second thing is a flash of color that peeks out of the back of <span style="color:DarkTurquoise">Rudy</span>’s bottoms as he bends over. A flash of adorable blue. Unable to contain your bully instincts, you give an evil grin and, before <span style="color:DarkTurquoise">Rudy</span> even realizes what position he put himself in, grip the back of his briefs and yank them upwards with all of your might!<span> <br>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Smirk",
+				Eyes: "Mad",
+			},
+		},
+		{
+			Name: "OC Rudy",
+			State: {
+			Outfit: "Uniform",
+			Mouth: "Frown",
+			Eyes: "Sad",
+			Blush: 1,
+			Cry: 1,
+			Arms: "Hide",
+			}
+		},
+	]>>
+		<<ad _ad>>
+
+	<span style="color:LightSteelBlue">“Aaaah!!”</span> <span style="color:DarkTurquoise">Rudy</span> <span style="color:Pink">cries out as you tug, losing his balance and tumbling forward, leaving him dangling by his undies in your hands as you lift him off the ground!</span> <span style="color:LightSteelBlue">“St- stop! What are you- Aaah!”</span> He cringes as you chuckle in glee before dropping him to the ground, allowing his waistband to snap back against him as he falls to his knees. <br>
+	<br>
+	You chuckle at the boy, telling him that he can consider that payment for you returning his drawing. As <span style="color:DarkTurquoise">Rudy</span> turns back to you sobbing, you sigh and tell him not to be such a baby. You then chuckle as the tearful boy quickly finishes gathering his things and runs off before you can do anything else to him, <span style="color:Pink">his underwear still poking out of the back of his bottoms as he does so. <br>
+	<br>
+	What a cute lad. You hope you get to see much more of him going forward.</span> <br>
+
+	<span style="color:Gold">Quest Completed: “Rudy: The Forgotten Drawing”</span> <br>
+	<<socialChange "Rudy" -20 1>> 
+	<<set $ActiveQuests.delete("Rudy: Introduction")>>
+	<<set $CompletedQuests.push("Rudy: Introduction")>>
+	<br>
+	[[Continue|School Library]]
+<</replace>>
+<</link>>
+<</if>>
+</div>

@@ -1,0 +1,36 @@
+:: School Storage Closet [nobr]
+
+
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Storage Closet",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "School Storage Closet",
+}>>
+
+/* Erin Check */
+<<if $ActiveQuests.includes("Erin: Closet Bound") && $Time.between(15,0,16,0)>>
+    <<include"OC Erin Found Tied Intro">>
+<<else>>
+    <span style="color:Azure"><big><strong>--Storage Closet--</strong></big></span><br>
+    You sneak into the storage closet at the end of the hall. You try to remain quiet, as you know students aren’t allowed in here. The room is mainly full of what you’d expect, cleaning supplies and tools for maintenance around the school. More surprising are the boxes stuffed behind the shelves full of frightening things such as shackles, handcuffs, and whips. You hope that these are just props from the school plays.<br>
+    <br>
+                    /* NPC SEEN */
+    <<include "NPC Inspect">>
+    <br>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<if $ToggleOCSebastian == 1 and $CompletedQuests.includes("Nyalls: Sebastian")>>
+    [[Sebastian's Photo Service|OC Sebastian Order Photo]]<br>
+    <</if>>
+
+    <br>
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+        [[South Hallway (0:01)|School South Hallway][$Minutes += 1]] <br>
+    <br>
+
+<</if>>

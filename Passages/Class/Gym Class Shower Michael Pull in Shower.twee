@@ -1,0 +1,51 @@
+:: Gym Class Shower Michael Pull in Shower [nobr]
+
+Having finished showering early, you exit and begin to walk back to the locker room. <span style="color:lightcoral">Despite being hyper-aware of your surroundings, due to your near state of undress, you are taken completely by surprise when, without warning, someone grabs you from behind and pulls you into one of the stalls!</span> <br>
+<br>
+<span style="color:lightcoral">You are held in a headlock, unable to even see your attacker, and let out an embarrassed squeal as your towel is ripped off of you and tossed out of the stall, leaving your naked body completely exposed to the assailant! You try to break free, but find yourself completely overpowered and at their mercy!</span> <br>
+<br>
+<span style="color:LightSteelBlue">“God, you are so cute when you’re embarrassed.”</span> A familiar voice laughs as you are tossed forward, slipping to the shower floor. <span style="color:pink">You quickly turn around to see <span style="color:DarkTurquoise">Michael</span> standing over you with a big grin on his face.</span> <br>
+<br>
+
+<<set _links to ["https://baraag.net/@BubblegumBupkis", "https://subscribestar.adult/bubblegumbupkis"]>>
+<<art "Images\\Special\\Buyable\\Michael Shower (Towel).png" "BubblegumBupkis" _links 850>>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		ShowZoom: true,
+		State: {
+			Blush: 2,
+			Outfit: "Naked",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<<if $Player.PenisSize == "Tiny" or $Player.PenisSize == "Small" or $Player.PenisSize == "Average">>
+    <span style="color:LightSteelBlue">“And tell me, how is little <span style="color:DarkTurquoise">$MichaelNickname</span> doing?”</span> <span style="color:pink"><span style="color:DarkTurquoise">Michael</span> laughs, poking your exposed groin with his big toe.</span>
+<<else>>
+    <span style="color:LightSteelBlue">“Careful, wouldn’t want someone to step on that thing.”</span> <span style="color:pink"><span style="color:DarkTurquoise">Michael</span> laughs, poking your exposed groin with his big toe.</span>
+<</if>>
+<span style="color:pink">You blush, quickly covering yourself with your hands and berating <span style="color:DarkTurquoise">Michael</span> for attacking you. You then call him a pervert and demand he grab your towel.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Calm down.”</span> <span style="color:pink"><span style="color:DarkTurquoise">Michael</span> laughs, offering a hand to help you up. You accept, though keep yourself covered with your other hand. <span style="color:LightSteelBlue">“I’m just messing with you, <span style="color:DarkTurquoise">$MichaelNickname</span>. Besides, you should be thanking me for teaching you to be more aware of your surroundings.”</span> He smirks, looking you up and down, which just causes your blush to deepen.</span> <br>
+<br>
+<span style="color:pink"><span style="color:DarkTurquoise">Michael</span> laughs at your obvious embarrassment, but walks out and grabs your towel, tossing it back at you. <span style="color:LightSteelBlue">“You’re lucky I like you, else I may have tossed you out there butt naked.”</span> He sticks his tongue out at you. <span style="color:LightSteelBlue">“But then I’d have to share those cute little cheeks of yours!”</span> <span style="color:DarkTurquoise">Michael</span> says in a teasing voice before walking away.</span> <br>
+<<socialChange "Michael" 3>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 10 _arousalbs _arousalkink>>
+    <br>
+	/* GETTING DRESSED */
+	<<set $ClothSave to "Restore">>
+    <<if $GymClassType == "Gym">>
+		<<storeClothing "Restore" "Undies">>
+	<<else>>
+		<<storeClothing "Restore" "Naked">>
+    <</if>>
+	<<if $SaveUndies != null>>
+		<<set $PlayerUndies to $SaveUndies>>
+	<</if>>
+		
+		[[Continue|School Locker Room]] 

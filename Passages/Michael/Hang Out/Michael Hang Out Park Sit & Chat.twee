@@ -1,0 +1,108 @@
+:: Michael Hang Out Park Sit & Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You and <span style="color:DarkTurquoise">Michael</span> plop down on the bench, taking a load off and catching your breath. <span style="color:DarkTurquoise">Michael</span> stretches his legs out, yawning. You ask him if he’s feeling sleepy and he scoffs. <span style="Color: LightSteelBlue">“Please, not everyone has an early bedtime like you.”</span> He smirks, elbowing you playfully, <span style="Color: LightSteelBlue">“That’s just my body’s way of telling you you’re boring me.”</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Michael",
+        State: {
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask him about how school has been going and he snorts. <span style="Color: LightSteelBlue">“Really? School? You want to talk about school?”</span> He asks with a raised eyebrow. <span style="Color: LightSteelBlue">“God, you are lame. It’s been dumb, same as always. Dumb teachers, dumb lessons, super dumb homework.”</span> <span style="color:DarkTurquoise">Michael</span> replies bluntly, as you should have expected. <br>
+            <<socialChange "Michael" 1>>
+            <span style="color:green">+Michael Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Michael Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Michael Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Michael</span> why he seems to get detention all the time and he rolls his eyes. <span style="Color: LightSteelBlue">“Because teachers are fucking dumb? I try to have a little bit of fun and they blow their lid, it’s lame.”</span> You point out that following the rules isn’t that hard. <span style="Color: LightSteelBlue">“Yeah, maybe for a lame-o like you, but some of us like to have fun! Not that you’d know what that is!”</span> He laughs. <br>
+            <<socialChange "Michael" 1>>
+            <span style="color:green">+Michael Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Michael Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Michael Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Michael: Little Bear")>>
+        <<link "Home life<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+                You ask how things are at home and <span style="color:DarkTurquoise">Michael</span> shrugs. <span style="Color: LightSteelBlue">“Normal. Brothers are super annoying and dumb, dad is even more dumb. You know how that goes.”</span> You laugh, saying you tend to get along with your family. <span style="Color: LightSteelBlue">“Well lucky you, but some of us have to deal with real problems.”</span> <span style="color:DarkTurquoise">Michael</span> laughs, shoving you, <span style="Color: LightSteelBlue">“Dad’s just lazy, it’s my brothers who are the real problem. They’re dumb and encourage each other’s dumbness. It’s annoying.”</span> <br>
+                <<socialChange "Michael" 1>>
+                <span style="color:green">+Michael Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Michael Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Michael Hang Out Park]]
+            <<else>>
+                You ask about how his grandmother is and <span style="color:DarkTurquoise">Michael</span> looks at you with a raised eyebrow. <span style="Color: LightSteelBlue">“It’s weird that you know her.”</span> He replies bluntly, <span style="Color: LightSteelBlue">“And weirder that you’re asking about her. But she’s fine. Doing what she does.”</span> You ask what exactly she does and <span style="color:DarkTurquoise">Michael</span> shrugs. <span style="Color: LightSteelBlue">“I don’t know. Cooking or something probably. Whatever grandmother’s do!”</span> <br>
+                <<socialChange "Michael" 1>>
+                <span style="color:green">+Michael Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Michael Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Michael Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Michael</span> what he’s been doing recently and he shrugs. <span style="Color: LightSteelBlue">“The usual. Sports, hanging at the arcade, giving wedgies to little nerds like you.”</span> He says with a smirk, <span style="Color: LightSteelBlue">“That last one’s my favorite. I consider it my main hobby.”</span> You roll your eyes at his answer. <br>
+            <<socialChange "Michael" 1>>
+            <span style="color:green">+Michael Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Michael Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Michael Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Michael</span> what he’s been into recently. <span style="Color: LightSteelBlue">“Watched wrestling the other day, that was pretty dope. The Heartbreaker did this crazy ass move, can’t even describe it. But it was like a massive flip and then he grabbed the other guy by the throat and-”</span>  <span style="color:DarkTurquoise">Michael</span> does on to recount this match with you. It did sound pretty cool… until <span style="color:DarkTurquoise">Michael</span> asked to ‘practice’ some of the moves on you. <br>
+            <<socialChange "Michael" 1>>
+            <span style="color:green">+Michael Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Michael Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Michael Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

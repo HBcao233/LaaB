@@ -1,0 +1,175 @@
+:: Artwork Catalog Nyalls [nobr]
+
+<span style="color:Azure"><big><strong>--Nyalls Catalog--</strong></big></span><br>
+<br>
+
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+<strong>-Sebastian-</strong><br>
+/*Sebastian Character Art (Everyday) */
+    <<if $AchievementArt.includes("Sebastian Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Sebastian Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Sebastian\\Sebastian.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Sebastian Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Sebastian Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Nyalls">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/*Sebastian Character Art (Undies) */
+    <<if $AchievementArt.includes("Sebastian Character Art Undies")>>
+        <strong><span style="color:lightgreen">Sebastian Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Sebastian\\Sebastian Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Sebastian Character Art (Undies)</strong>
+        | 
+        <<if $OCSebastianSocial >= 100 or $OCSebastianSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Sebastian Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Nyalls">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Sebastian Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+    <strong>-Evelyn-</strong><br>
+    /*Evelyn Character Art (Everyday) */
+    <<if $AchievementArt.includes("Evelyn Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Evelyn Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Evelyn\\Evelyn.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Evelyn Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Evelyn Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Nyalls">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/*Evelyn Character Art (Undies) */
+    <<if $AchievementArt.includes("Evelyn Character Art Undies")>>
+        <strong><span style="color:lightgreen">Evelyn Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Evelyn\\Evelyn Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Evelyn Character Art (Undies)</strong>
+        | 
+        <<if $OCEvelynSocial >= 100 or $OCEvelynSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Evelyn Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Nyalls">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Evelyn Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+<strong>-Cole-</strong><br>
+/*Cole Character Art (Everyday) */
+    <<if $AchievementArt.includes("Cole Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Cole Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Cole\\Cole.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Cole Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Cole Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Nyalls">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/*Cole Character Art (Undies) */
+    <<if $AchievementArt.includes("Cole Character Art Undies")>>
+        <strong><span style="color:lightgreen">Cole Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Cole\\Cole Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Cole Character Art (Undies)</strong>
+        | 
+        <<if $OCColeSocial >= 100 or $OCColeSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Cole Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Nyalls">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Cole Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+        <strong>-Nyalls-</strong><br>
+     /* Nyalls Sticker Set */
+        <<if $AchievementArt.includes("Nyalls Sticker Set")>>  
+        <strong><span style="color:lightgreen">Chibi Sebastian Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Chibi Sebastian.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Sebastian (Undies) Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Chibi Sebastian Undies.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Evelyn Sticker</span></strong> 
+        |  
+       <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Chibi Evelyn.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Oliver Sticker</span></strong> 
+        |  
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Chibi Oliver.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Oliver (Undies) Sticker</span></strong> 
+        |  
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Chibi Oliver.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Cole Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Chibi Cole.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Cole (Undies) Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Chibi Cole Undies.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Cole (Towel) Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Nyalls\\Chibi Cole Towel.png" "Beege" "https://baraag.net/@Beege">>
+        <<else>>
+            <strong>Nyalls Sticker Set</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Nyalls Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Nyalls">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+<br>
+[[Back|Artwork Catalog]]

@@ -1,0 +1,397 @@
+:: Strip Character Widget [widget nobr]
+
+/* This widget sets all the player's equipment slots to "None" in the proper way.
+It is called like so:
+    <<stripCharacter "Undies/Naked">>
+    
+    Undies: Stripes the character down to their underwear.
+    Naked: Strips the character naked
+
+Note: This deletes their current clothing. If you want to store their clothing in the closet or in the save spot, use the Store Clothing Widget.
+
+If more slots are added, add here.
+
+The reason we do this rather then just setting to "None" is to prevent errors when checking Equipment Status when stuff isn't equip. That is also why to see if they are not wearing anything, we check $Name.Type == "None".
+
+This Widget should mostly be used inside the Store Clothing Widget.
+     */
+
+     
+<<widget "stripCharacter">>
+        <<set _stripundies to _args[0]>>
+
+    /* HEAD */
+    <<set $PlayerHead to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Head",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* FACE */
+    <<set $PlayerFace to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Face",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* Mouth */
+    <<set $PlayerMouth to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Mouth",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* NECK */
+    <<set $PlayerNeck to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Neck",
+        Temp: 0,
+        Tags: [],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* UNDER TOP */
+    <<set $PlayerUnder to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Under",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarSleeve: "None",
+        AvatarSleeveTorn: "None",
+        AvatarSleeveDamaged: "None",
+        AvatarSleeveBound: "None",
+        AvatarSleveBoundTorn: "None",
+        AvatarSleveBoundDamaged: "None",
+        AvatarAlt: "None",
+        AvatarAltTorn: "None",
+        AvatarAltDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* TOP */
+    <<set $PlayerTop to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Top",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarSleeve: "None",
+        AvatarSleeveTorn: "None",
+        AvatarSleeveDamaged: "None",
+        AvatarSleeveBound: "None",
+        AvatarSleeveBoundTorn: "None",
+        AvatarSleeveBoundDamaged: "None",
+        AvatarAlt: "None",
+        AvatarAltTorn: "None",
+        AvatarAltDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* OVER */
+    <<set $PlayerOver to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Over",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarSleeve: "None",
+        AvatarSleeveTorn: "None",
+        AvatarSleeveDamaged: "None",
+        AvatarSleeveBound: "None",
+        AvatarSleeveBoundTorn: "None",
+        AvatarSleeveBoundDamaged: "None",
+        AvatarAlt: "None",
+        AvatarAltTorn: "None",
+        AvatarAltDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* OUTER */
+    <<set $PlayerOuter to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Neck",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarSleeve: "None",
+        AvatarSleeveTorn: "None",
+        AvatarSleeveDamaged: "None",
+        AvatarSleeveBase: "None",
+        AvatarSleeveBaseTorn: "None",
+        AvatarSleeveBaseDamaged: "None",
+        AvatarSleeveBound: "None",
+        AvatarSleeveBoundTorn: "None",
+        AvatarSleeveBoundDamaged: "None",
+        AvatarAlt: "None",
+        AvatarAltTorn: "None",
+        AvatarAltDamaged: "None",
+        AvatarAltBase: "None",
+        AvatarAltBaseTorn: "None",
+        AvatarAltBaseDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* BACK */
+    <<set $PlayerBack to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Back",
+        Temp: 0,
+        Tags: [],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarFront: "None",
+        AvatarFrontTorn: "None",
+        AvatarFrontDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* HANDS */
+    <<set $PlayerHands to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Hands",
+        Temp: 0,
+        Tags: [],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarAlt: "None",
+        AvatarAltTorn: "None",
+        AvatarAltDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* BOTTOMS */
+    <<set $PlayerBottoms to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Bottoms",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        SagAvatar: "None",
+        PulledDownAvatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarAlt: "None",
+        AvatarAltTorn: "None",
+        AvatarAltDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* WAIST */
+    <<set $PlayerWaist to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Waist",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarAlt: "None",
+        AvatarAltTorn: "None",
+        AvatarAltDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    <<if _stripundies == "Naked">>
+        /* UNDIES */
+        <<set $PlayerUndies to {
+            Name: "None",
+            ID: "None",
+            Type: "None",
+            Color: "None",
+            Slot: "Undies",
+            Temp: 0,
+            Tags: ["Sleepwear"],
+            Durability: 0,
+            MaxDurability: 0,
+            Weight: 0,
+            Size: "Preteen",
+            Icon: "None",
+            IconLayer2: "None",
+            IconLayer3: "None",
+            IconLayer4: "None",
+            IconLayer5: "None",
+            Avatar: "None",
+            AvatarLayer2: "None",
+            AvatarLayer3: "None",
+            AvatarLayer4: "None",
+            AvatarLayer5: "None",
+            AvatarTorn: "None",
+            AvatarTornLayer2: "None",
+            AvatarTornLayer3: "None",
+            AvatarTornLayer4: "None",
+            AvatarTornLayer5: "None",
+            AvatarDamaged: "None",
+            AvatarDamagedLayer2: "None",
+            AvatarDamagedLayer3: "None",
+            AvatarDamagedLayer4: "None",
+            AvatarDamagedLayer5: "None",
+            Description: "Nothing at all.",
+        }>>
+    <</if>>
+
+    /* SOCKS */
+    <<set $PlayerSocks to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Socks",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+    /* SHOES */
+    <<set $PlayerShoes to {
+        Name: "None",
+        ID: "None",
+        Type: "None",
+        Color: "None",
+        Slot: "Shoes",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 0,
+        MaxDurability: 0,
+        Weight: 0,
+        Size: "Preteen",
+        Icon: "None",
+        Avatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        Description: "Nothing at all.",
+    }>>
+
+<</widget>>

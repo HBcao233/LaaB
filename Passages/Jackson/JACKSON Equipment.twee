@@ -1,0 +1,108 @@
+:: JACKSON Equipment [nobr]
+
+/* UNDERWEAR SELECTION */
+<<set $JacksonRandomUndies to random(1, 4)>>
+<<if $JacksonRandomUndies == 1>>
+	<<addClothing "Temp" "Undies" "Boxerbriefs" "Blue">>
+	<<set $JacksonUndies to _clothingtemp>>
+<<elseif $JacksonRandomUndies == 2>>
+	<<addClothing "Temp" "Undies" "Boxerbriefs" "Orange">>
+	<<set $JacksonUndies to _clothingtemp>>
+<<elseif $JacksonRandomUndies == 3>>
+	<<addClothing "Temp" "Undies" "Boxerbriefs" "White">>
+	<<set $JacksonUndies to _clothingtemp>>
+<<elseif $JacksonRandomUndies == 4>>
+	<<addClothing "Temp" "Undies" "Classmates" "Jackson">>
+	<<set $JacksonUndies to _clothingtemp>>
+<</if>>
+
+/* SHOES/SOCKS SELECTION */
+<<addClothing "Temp" "Shoes" "Classmates" "Jackson">>
+<<set $JacksonShoes to _clothingtemp>>
+<<addClothing "Temp" "Socks" "Classmates" "Jackson">>
+<<set $JacksonSocks to _clothingtemp>>
+
+/* PAJAMA SELECTION */
+<<set $JacksonPJBottoms to "Orange Pajama Bottoms">>
+<<set $JacksonPJBottoms to "Pajama Bottoms">>
+		
+/* EVERYDAY SELECTION */
+<<if $NPCClothingSet == "Rain">>
+	<<set $JacksonRandomTop to random(1, 2)>>
+	<<set $JacksonRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Hoodie" "Orange">>
+	<<set $JacksonOuter to _clothingtemp>>
+	<<if $JacksonRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Classmates" "Jackson">>
+		<<set $JacksonTop to _clothingtemp>>
+	<<elseif $JacksonRandomTop == 2>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Orange">>
+		<<set $JacksonTop to _clothingtemp>>
+	<</if>>
+	<<if $JacksonRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Jackson">>
+		<<set $JacksonBottoms to _clothingtemp>>
+	<<elseif $JacksonRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Jackson">>
+		<<set $JacksonBottoms to _clothingtemp>>
+	<</if>>
+<<elseif $NPCClothingSet == "Temperate">>
+	<<set $JacksonRandomTop to random(1, 2)>>
+	<<set $JacksonRandomBottoms to random(1, 2)>>
+	<<set $JacksonOuter to $None>>
+	<<if $JacksonRandomTop == 1>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Orange">>
+		<<set $JacksonTop to _clothingtemp>>
+	<<elseif $JacksonRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Classmates" "Jackson">>
+		<<set $JacksonTop to _clothingtemp>>
+	<</if>>
+	<<if $JacksonRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Jackson">>
+		<<set $JacksonBottoms to _clothingtemp>>
+	<<elseif $JacksonRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Jackson">>
+		<<set $JacksonBottoms to _clothingtemp>>
+	<</if>>
+
+<<elseif $NPCClothingSet == "Warm">>
+	<<set $JacksonRandomTop to random(1, 2)>>
+	<<set $JacksonRandomBottoms to random(1, 2)>>
+	<<set $JacksonOuter to $None>>
+	<<if $JacksonRandomTop == 1>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Orange">>
+		<<set $JacksonTop to _clothingtemp>>
+	<<elseif $JacksonRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Classmates" "Jackson">>
+		<<set $JacksonTop to _clothingtemp>>
+	<</if>>
+	<<if $JacksonRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Jackson">>
+		<<set $JacksonBottoms to _clothingtemp>>
+	<<elseif $JacksonRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Jackson">>
+		<<set $JacksonBottoms to _clothingtemp>>
+	<</if>>
+<<else>>
+	<<set $JacksonRandomTop to random(1, 2)>>
+	<<set $JacksonRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Hoodie" "Orange">>
+	<<set $JacksonOuter to _clothingtemp>>
+	<<if $JacksonRandomTop == 1>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Purple">>
+		<<set $JacksonTop to _clothingtemp>>
+	<<elseif $JacksonRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Classmates" "Jackson">>
+		<<set $JacksonTop to _clothingtemp>>
+	<</if>>
+	<<if $JacksonRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Jackson">>
+		<<set $JacksonBottoms to _clothingtemp>>
+	<<elseif $JacksonRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Jackson">>
+		<<set $JacksonBottoms to _clothingtemp>>
+	<</if>>
+
+<</if>>
+
+<<set $JacksonPantsSag to random(0, 1)>>

@@ -1,0 +1,85 @@
+:: PH Frontyard [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Home Frontyard",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Front Yard",
+}>>
+
+<span style="color:Azure"><big><strong>--Front Yard--</strong></big></span><br>
+<<if $Player.Exposed == "Undies" or $Player.Exposed == "Naked" or $Player.Exposed == "Diaper">>
+	<<include"PH Frontyard Exposed">>
+<<elseif $MetLucas != 1>>
+	<<include"LUCAS Introduction">>
+
+/* Quest Chests */
+	/* Michael Little Beat */
+	<<elseif $InActiveQuests.includes("Michael: Little Bear") && !$Time.schoolday() && $Time.between(8, 0, 12, 0)>>
+		<<include"Michael Little Bear 1">>
+	/* Ben: 5-Mile Jog */
+	<<elseif $InActiveQuests.includes("Ben: 5-Mile Jog") && $Time.Day == "Saturday" && $Time.between(6, 0, 9, 0)>>
+		<<include"Ben 5-Mile Jog">>
+
+/* Rare Event Checks */
+	<<elseif !$Time.schoolday() && $Player.Traits.includes("Kitsune") && $Time.between(6, 0, 17, 0) && random(1, 100) == 1>>
+		<<include"Gabe Kitsune Forced Walk">>
+<<else>>
+
+You stand in the front yard of your house. It is a grassy, open yard with a stone path leading to the front door. You can easily be seen from the street or neighboring houses. 
+
+<<if $Time.ToD == "Morning">>
+	The sun creeps over the hills in the distance, illuminating the yard in a warm orange hue.
+<<elseif $Time.ToD == "Day">>
+	It is sunny and bright out.
+<<elseif $Time.ToD == "Afternoon">>
+	The sky darkens as the end of the day grows near.
+<<elseif $Time.ToD == "Night">>
+	It is pitch black outside, you can only see thanks to the porchlight.
+<</if>><br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $ActiveQuests.includes("Chores")>>
+	<<for _i to 0; _i lt $QuestLog.length; _i++>>
+		<<if $QuestLog[_i].Name == "Weekly Chores">>
+			<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+				<<if $QuestLog[_i].Objectives[_o].Name == "Mow Lawn" && $QuestLog[_i].Objectives[_o].State != $QuestLog[_i].Objectives[_o].Total>>
+					[[Mow Lawn (1:00)|Mow Front Lawn]]  <span style="color:Red">-Energy</span><br>
+					<<break>>
+				<</if>>
+			<</for>>
+			<<break>>
+		<</if>>
+	<</for>>
+<</if>>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<<if $LinkTravel == 1>>
+	[[Living Room (0:01)|PH Living Room][$Minutes += 1]] <br>
+<</if>>
+<img src="Images\World Map\Individual Icons\Player Neighborhood.png">
+	[[Northend (0:01)|Northend][$Minutes += 1]]<br>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+<img src="Images\Player House\Exit Icon.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Big Room Marker.png" 
+style="position: absolute; left: 166px; top: 4px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+	<map name="PlayerHouse">
+	<area shape="rect" coords="166,58,273,111" alt="Living Room" onclick="$.wiki('<<goto[[PH Living Room]]>><<set $Minutes += 1>>')" />
+	<area shape="rect" coords="244,12,265,33" alt="Exit" onclick="$.wiki('<<goto[[Northend]]>><<set $Minutes += 1>>')" />
+</map>
+<</if>>

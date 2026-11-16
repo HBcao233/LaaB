@@ -1,0 +1,57 @@
+:: Stormy Night Play [nobr]
+
+<<set $Minutes += 20>>
+
+				/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<if $NPCComfort < 25>>
+	<<set $AD.Arms to "Hide">>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 1>>
+	<<set $AD.Blush to 2>>
+	<<set $AD.Mouth to "Sad">>
+<<elseif $NPCComfort < 50>>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 1>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Sad">>
+<<elseif $NPCComfort < 75>>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Normal">>
+<<else>>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+<</if>>
+<<set $AD.Outfit to "Everyday">>
+<<set $AD.Hard to 0>>
+	<<set $NoahNoShoes to 1>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+/* OPENING */
+
+You ask <span style="color:DarkTurquoise">Noah</span> if he wants to go play in his room. <span style="color:LightSteelBlue">”Are you coming too?”</span> <span style="color:Pink">He asks, grabbing onto your hand to make sure you don’t leave him.</span> You smile and say that you were implying the two of you play together. He gives you a small smile and nods as the two of you go into his room.<br>
+<br>
+
+<<set $Random to random(1, 2)>>
+
+<<if $Random == 1>>
+	<<include"Stormy Night Play Missing Bue">>
+
+<<elseif $Random == 2>>
+	<<include"Stormy Night Play Airplane">>
+
+<</if>>

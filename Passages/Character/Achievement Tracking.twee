@@ -1,0 +1,18 @@
+:: Achievement Tracking [nobr]
+
+/* This file is just to grant achievements when the player unlocks them. No changes required when adding new Achievments (read comments in Achievements Init.twee on how to add new achievements) */
+<<for _ach range $AchievementList>>
+    <<set _achievement = $Achievements.getAchievementByName(_ach.Name)>>
+    <<if _achievement != null && !_achievement.isGranted() && _ach.Condition()>>
+        <<run _achievement.grant()>>
+        <div style="color: gold;">
+            You have earned the Achievement: <strong><<=_achievement.getName()>></strong><br>
+            <<=_achievement.getDescription()>><br>
+            --
+        </div>
+    <</if>>
+<</for>>
+
+<<if $CheatsMenu != 1 && !$AchievementShopOpen && $Achievements.getAchievementScore() >= 3>>
+    <<set $AchievementShopOpen to true>>
+<</if>>

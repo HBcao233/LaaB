@@ -1,0 +1,129 @@
+:: PH Gabe Bedroom Naked [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Gabe Bedroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+
+/* SETTING STATE */
+<<if $Time.before(22) and $Time.after(6)>>
+	<<if $HomeDayNudity == 0>>
+		<<set $StreakState to "Day_Embarrassed">>
+	<<elseif $HomeDayNudity == 1>>
+		<<set $StreakState to "Day_Shy">>
+		<<set $Location.Nudity to 1>>
+	<<elseif $HomeDayNudity == 2>>
+		<<set $StreakState to "Day_Fine">>
+		<<set $Location.Nudity to 1>>
+	<</if>>
+<<else>>
+	<<if $HomeNightNudity == 0>>
+		<<set $StreakState to "Night_Embarrassed">>
+	<<elseif $HomeNightNudity == 1>>
+		<<set $StreakState to "Night_Shy">>
+		<<set $Location.Nudity to 1>>
+	<<elseif $HomeNightNudity == 2>>
+		<<set $StreakState to "Night_Fine">>
+		<<set $Location.Nudity to 1>>
+	<</if>>
+<</if>>
+
+/* BASE TEXT BASED ON STATUS */
+<<if $StreakState == "Day_Embarrassed">>
+<span style="color:pink">You stand in your elder brother, <span style="color:DarkTurquoise">Gabe</span>’s, bedroom completely naked! You don’t know what compelled you to walk into his room when you are already so exposed and vulnerable, but deep down, you know it was a mistake. </span>
+<<elseif $StreakState == "Day_Shy">>
+<span style="color:pink">You stand in your elder brother, <span style="color:DarkTurquoise">Gabe</span>’s, bedroom completely naked! Despite trying to be confident, you can’t help but cross your legs as you stand in the room so vulnerable. Your brother would often strip you down then tie you up or spank you. Coming in here with the first step already done felt like you were presenting your defenseless body on a platter for his punishments. </span>
+<<elseif $StreakState == "Day_Fine">>
+You stand in your elder brother, <span style="color:DarkTurquoise">Gabe</span>’s, bedroom completely naked. It is neat outside of a large pile of dirty clothes in one corner of the room. Posters of various bands and sport teams fill the walls. He also has padded mats and various weights in one corner of the room and a computer in the other. 
+<<elseif $StreakState == "Night_Embarrassed">>
+<span style="color:pink">You stand in your elder brother, <span style="color:DarkTurquoise">Gabe</span>’s, bedroom completely naked! You don’t know what compelled you to walk into his room when you are already so exposed and vulnerable, but deep down, you know it was a mistake. </span>
+<<elseif $StreakState == "Night_Shy">>
+<span style="color:pink">You stand in your elder brother, <span style="color:DarkTurquoise">Gabe</span>’s, bedroom completely naked! Despite trying to be confident, you can’t help but cross your legs as you stand in the room so vulnerable. Your brother would often strip you down then tie you up or spank you. Coming in here with the first step already done felt like you were presenting your defenseless body on a platter for his punishments. </span>
+<<elseif $StreakState == "Night_Fine">>
+You stand in your elder brother, <span style="color:DarkTurquoise">Gabe</span>’s, bedroom completely naked. It is neat outside of a large pile of dirty clothes in one corner of the room. Posters of various bands and sport teams fill the walls. He also has padded mats and various weights in one corner of the room and a computer in the other. 
+<</if>><br>
+<br>
+
+/* NPC INTERACTIONS */
+	/* FINE */
+	<<if $StreakState == "Day_Fine" or $StreakState == "Night_Fine">>
+		<<if $GabeSche.Location == "Gabe Bedroom" and $GabeSche.Activity != "Sleeping">>
+							/* NPC SEEN */
+			<<include "NPC Inspect">>
+			<br>
+		<</if>>
+	<</if>>
+/* GABE */
+<<if $GabeSche.Location == "Gabe Bedroom" and $GabeSche.Activity != "Sleeping">>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+<span style="color:Pink">The only way you could describe <span style="color:DarkTurquoise">Gabe</span>’s reaction was stunned as he sees you walk into his room, butt naked and looking extremely embarrassed as you attempt to cover your bits with your hands. A moment later, he burst out laughing as he stands up. <span style="color:LightSteelBlue">“Well isn’t this a little surprise, walk into the wrong room bro? I guess the little pervert just loves exposing himself in front of his big brother. If you wanted to be humiliated, all you had to do was ask.”</span> As <span style="color:DarkTurquoise">Gabe</span> continues to laugh, you curse whatever force made you come in here so exposed and attempt to escape, but <span style="color:DarkTurquoise">Gabe</span> quickly holds the door shut with his hand and looms over you with an evil smirk on his face.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“You can’t just leave after walking in like that!”</span> <span style="color:DarkTurquoise">Gabe</span> bends down to your level as you feel your heart beat faster, <span style="color:LightSteelBlue">“You know, I could tell Dad you tried to sneak into my room without permission, I’m sure he’d let me punish you however I wanted, but, since I am such a nice big brother, I’ll cut you some slack. Move your hands and do a little dance for me and I’ll let you leave with only one set of red cheeks.”</span> <br>
+<br>
+<span style="color:Pink">You gulp as you realize you were in a lose/lose situation. Either you exposed and humiliated yourself in front of your brother, or you resisted, which would no doubt lead to him forcefully exposing you and any number of painful and degrading punishments. You had no other choice, as you moved your hands and exposed yourself before wiggling your hips in an embarrassing fashion that caused your $Player.PenisSize Penis and Balls to bounce around, much to your brother’s amusement. <span style="color:LightSteelBlue">“Damn, if only Dad would let me whore you out at the strip club, sure you’d make so much money he wouldn’t have to work another day in his life!”</span> As <span style="color:DarkTurquoise">Gabe</span> is laughing at you, he releases the door and allows you to exit back into the hallway, still completely naked with even redder cheeks.</span> <br>
+<br>
+	/* SHY */
+		<<elseif $StreakState == "Day_Shy" or $StreakState == "Night_Shy">>
+<span style="color:Pink">The only way you could describe [[Gabe|GABE Inspect Computer Games]]’s reaction was stunned as he sees you walk into his room, butt naked and looking extremely embarrassed as you tried to stay strong and fight the urge to cover yourself. As you attempt to remember why you came in here, <span style="color:DarkTurquoise">Gabe</span> smirks and leans forward, not hiding that he is glancing all around your body. <span style="color:LightSteelBlue">“You know, normally I’d get mad when you come into my room without permission, but I got to say, it is a nice view.”</span> Your blush deeper at his compliment and take a step backwards, prompting <span style="color:DarkTurquoise">Gabe</span> to laugh and return to what he was doing while watching you out of the corner of his eye.</span> <br>
+<br>
+	<</if>>
+
+/* SLEEPING */
+<<elseif $GabeSche.Activity == "Sleeping">>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+<span style="color:Pink">Despite [[Gabe|GABE Inspect Sleeping]] being asleep, you still found yourself covering your exposed penis with your hands as your heart beat quickly in your chest as if he was going to wake up at any moment. Though, if he did wake up and found you sneaking into his room at night, being caught naked would be the least of your problems.</span> <br>
+<br>
+
+	/* SHY */
+		<<elseif $StreakState == "Day_Shy" or $StreakState == "Night_Shy">>
+<span style="color:Pink">Despite [[Gabe|GABE Inspect Sleeping]] being sound asleep, you could still feel your heart beating in your chest, as if he would wake up any moment. Still, this was good practice at getting used to being nude around other people, though if Gabe woke up and discovered you, who knows what he would do.</span> <br>
+<br>
+
+	/* FINE */
+		<<elseif $StreakState == "Day_Fine" or $StreakState == "Night_Fine">>
+Despite [[Gabe|GABE Inspect Sleeping]] being sound asleep, you could still feel your heart beating in your chest, as if he would wake up any moment. <span style="color:Pink">It wasn’t the fact that you were butt naked that was making you nervous, but rather the thought of what Gabe would do if he found you sneaking into his room.</span> <br>
+<br>
+
+	<</if>>
+/* ALONE */
+<<else>>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+			Thankfully, there is currently no one here to see you in such an exposed state.
+	/* SHY */
+		<<elseif $StreakState == "Day_Shy" or $StreakState == "Night_Shy">>
+			For better or worse, no one is currently here.
+	/* FINE */
+		<<elseif $StreakState == "Day_Fine" or $StreakState == "Night_Fine">>
+			You are currently alone in the room.
+	<</if>><br>
+	<br>
+	<span style="color:Azure"><strong>-Actions-</strong></span><br>
+		[[Go through Gabe's dresser|Gabe Dresser]]<br>
+<</if>><br>
+<br>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Hallway (0:01)|PH Hallway][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Room Marker.png" 
+style="position: absolute; left: 4px; top: 112px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+</map>

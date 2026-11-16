@@ -1,0 +1,141 @@
+:: Beach Hang Out Build Sandcastle [nobr]
+
+/* Written by: AN */
+/* Intro */
+
+<<set $Minutes += 30>>
+
+You walk closely along the shore enjoying the cool breeze, and the sound of the waves. It’s a busy time right now, with plenty people out in different parts of the water, you can even see some surfers riding some humongous waves in the distance.
+
+As you continue walking, <span style="Color: Yellow">you suddenly notice an odd-looking mound of moist sand on the ground.</span> You examine the mound, touching and grabbing a small handful of the wet grains. After a few moments, <span style="Color: LightGreen">you realize that the consistency of this sand is remarkably pliable — perfect for making a sandcastle!</span>
+
+While it seems like a great opportunity to make one, <span style="Color: Yellow">you remember that you don’t have any sort of tools with you right now — anything you make would have to be entirely by hand, and the tide is also coming in quite close.</span> You’d have to work as fast as possible before the waves inevitably wash your creation away.<br>
+<br>
+<div id="choice">
+    <<link "Keep walking">>
+        <<replace "#choice">>
+            Content with just walking, you decide against building a sandcastle — it would be washed away by the tide anyway. Before continuing on, you grab a handful of the wet sand and begin squeezing, and rolling it between your hands. Even if you’re not building anything with it, it feels nice to just playfully fidget with it as you enjoy the sights and sounds of the environment.
+
+            After a few more minutes walking along the shore, you decide to carry on. You wipe your hands of any remaining sand and depart from the area.
+            <br>
+            <<needChange "Fun" 5>>
+            <br>
+            [[Continue|Beach]]
+        <</replace>>
+    <</link>><br>
+    <<link "Build a sandcastle">>
+        <<replace "#choice">>
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Outfit: "Everyday",
+                        Eyes: "Mad",
+                        Mouth: "Smirk",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            You crouch to your knees and momentarily begin visualizing what you plan on building. You’ll probably have to keep the shape and structure fairly rudimentary due to your lack of tools, but you’re optimistic you can still create something to be proud of by the end. After a few minutes of planning, you excitedly grab clumps of sand and begin forming the foundation of your sandcastle..
+            <<if [1, 2, 3].includes($Dexterity)>>
+                Minutes into patting and squeezing bits of sand together, <span style="Color: LightCoral">you start feeling like this was a bad idea. No matter how much you try shape the sand, it never seems to stay in the shape you need.</span> At first you were trying to build some basic walls by patting some sand together, but they always come out as misshapen mounds. You give up on the walls and instead begin making the main castle structure.<br>
+                <br>
+                Unfortunately, you continue to have issues molding the sand in the required ways. You originally set out to create a basic tower-like castle that should have been easy even without any tools, but instead you have an asymmetrical spire-like formation that could easily be mistaken for a pile of sand somebody dug up. You do your best to add some small details to the resulting structure to make it more presentable.<br>
+                <br>
+                <<if $Player.Traits.includes("Unlucky")>>
+                    As you attempt to use your finger nails to scratch in some details on your structure, you hear the waves behind you hissing loudly. <span style="Color: LightCoral">You’re about to turn around when suddenly you feel cool water crashing over you!</span>
+                <<elseif $PlayerBottoms.Tags.includes("Swimwear")>>
+                    <span style="Color: LightCoral">You shiver as you’re drenched nearly head-to-toe in cool, salty water.</span> <span style="Color: LightGreen">It’s a good thing you’re only wearing swimwear, otherwise your clothes would be soaking wet right now.</span> Even more luckily, your body also blocked most of the wave from crashing over your sandcastle, preventing your hard work from being washed away. You quickly resume working on your sandcastle eager to finish before another wave crashes down on you.
+                <<elseif !$PlayerBottoms.Tags.includes("Swimwear")>>
+                    <span style="Color: LightCoral">You shiver as you’re drenched nearly head-to-toe in cool, salty water. You groan in frustration as your clothes are left soaking wet, clinging uncomfortable close to your skin.</span> The only upside is that your body blocked most of the large wave from washing away your sandcastle. You quickly resume your work, eager to finish before another waves comes down on you.
+                <</if>>
+                After a few more minutes, you finish your detailing on the main structure and step back to look at the finished project. You can’t help but sigh in disappointment at the vaguely-cylindrical tower you’ve created. You did your best to add some brick-looking lines, and hollowed out a few windows, but there’s no denying this sandcastle won’t be winning any awards. The tide begins creeping dangerously close, acting as the final insult to the situation.
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Outfit: "Everyday",
+                            Eyes: "Sad",
+                            Mouth: "Smirk",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+                You watch as the tide slowly begins to overtake your tower, seeping into its foundation and gradually washing it away until nothing more than a messy mound of sand remains. Despite the disappointing outcome, <span style="Color: LightGreen">you do feel like you were able to enjoy the experience putting in a genuine effort to build something. You walk away from the scene, hoping that maybe next time will be a little better.</span>
+                <br>
+                <<needChange "Fun" 10>>
+                <br>
+                [[Continue|Beach]]
+            <<elseif [4, 5, 6].includes($Dexterity)>>
+                Minutes into your build, you’ve already got some pretty reasonably-shaped walls formed. They’re not perfect since you lack any tools, but you’re working quickly enough that you’re able to scratch in some details on the sides to make them look brick-like. Satisfied with the perimeter, you begin working on the main castle structure in the center, you opt for a basic cylindrical shape due to the ease.<br>
+                <br>
+                With both hands you’re able to mold, and pat globs of sand into the right shape. It’s not entirely symmetrical, but the structure retains a clear enough shape that you can definitely see a respectable castle tower formed after a few minutes. You carve in, and hollow out bits of sand to furnish the tower’s appearance.<br>
+                <br>
+                <span style="Color: LightGreen">After a few more minutes, you’re satisfied and step back to look at the finished product. You’ve got a fairly tall tower with multiple windows, and it’s surrounded by 4 decent sandy walls. It may not be perfect, but you’re certain anybody would be able to look at this and know it’s a sandcastle.</span><br>
+                <br>
+                <span style="Color: Yellow">The tide begins to close in and you watch as the waves slowly assault the walls. The walls withstand the initial waves and keep the central structure intact, but over time they gradually weaken until water finally penetrates deep enough to touch the tower.</span>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Outfit: "Everyday",
+                            Eyes: "Sad",
+                            Mouth: "Happy",
+                        },
+                    },
+                ]>>
+
+                <<ad _ad>>
+
+                You sigh, slightly disappointed to see your creation being washed away like this, but happy enough that you were able to construct something solid enough to last this long. <span style="Color: LightGreen">Satisfied with experience, you begin walking away, hopeful of building an even better castle next time.</span>
+                <br>
+                <<needChange "Fun" 15>>
+                <<addMoodlet "Stress" 0>>
+                <br>
+                [[Continue|Beach]]
+            <<elseif [7,8,9,10].includes($Dexterity)>>
+                Within minutes you’re quickly digging out a generous trench for a moat around the perimeter of your sandcastle. After the moat is completed, you use some of the excess sand you’ve dug up to meticulously shape out 4 symmetrical walls using both hands. <span style="Color: LightGreen">You feel like you’re in the zone right now, the way the sand just seems perfectly malleable in your hands, and you’re able to shape it exactly to your mental blueprint. You’re going at such a quick pace that you have more than enough time to score, and shape intricate details into the walls using just your fingernails.</span><br>
+                <br>
+                Satisfied with the walls, you begin working on the central structure that’ll be the castle’s keep. Despite knowing it’ll be a little harder to shape evenly, you settle on a tall square-shaped tower. <span style="Color: LightGreen">Just like the walls before, the pliable sand is easily patted down and trimmed into exactly the shape you need with your deft fingers.</span> Not only are you able to effortlessly sculpt the sand to you needs, but you have time to burn, allowing you to meticulously detail the keep as it’s built. After minutes of careful hand sculpting, you feel satisfied with the castle and step back to behold it in its entirety..
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Happy",
+                        },
+                    },
+                ]>>
+
+                <<ad _ad>>
+
+                <span style="Color: LightGreen">Before you lies a sizable castle keep, surrounded by 4 tall walls, and a moat. But this is no ordinary sandcastle, up close you can see the phenomenal details you added to nearly every component. The walls have been carved in a way to resemble brickwork, and the tops of the walls even have crenellations, giving them an almost realistic appearance. The keep is equally detailed, with multiple windows, and doorways etched into its sides. You briefly imagine tiny soldiers dotted atop the walls, ready to defend the entire castle from an attack.</span><br>
+                <br>
+                <span style="Color: Yellow">You suddenly hear hissing behind you and realize the tide is encroaching close to your sandcastle. You step aside to avoid getting wet and watch as a wave crashes down on the beach, sending a large amount of water towards your sandcastle..</span> <span style="Color: LightGreen">but instead of penetrating the walls, water begins to pool inside the moat you dug out, not only protecting the entire structure from water, but adding to its spectacle as a sandy fortress.</span>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Smirk",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+                <span style="Color: LightGreen">You smile to yourself, feeling that everything has turned out perfectly.</span> While it’s inevitable that the sandcastle will eventually be wiped out by the tide, for now your masterpiece stands tall. You take several more minutes enjoying the sight of it before deciding to continue on. You hope to be able create something just as good next time an opportunity like this arises.
+                <br>
+                <<needChange "Fun" 25>>
+                <<addMoodlet "Stress" 0>>
+                <br>
+                [[Continue|Beach]]
+            <</if>>
+        <</replace>>
+    <</link>>
+</div>

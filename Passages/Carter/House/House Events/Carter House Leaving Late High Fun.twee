@@ -1,0 +1,59 @@
+:: Carter House Leaving Late High Fun [nobr]
+
+/* Intro */
+<<if _swimstate == 1>>
+    <<unapplyEventOutfit>>
+<</if>>
+As you and <span style="color:DarkTurquoise">Carter</span> are hanging out, his father suddenly walks in and taps the wall twice to get your attention. <span style="Color: LightSteelBlue">“Sorry to kill the fun, but dinner will be ready soon, <span style="color:DarkTurquoise">Carter</span>. I think your friend should start heading home.”</span> Both of your heads snap to him and <span style="color:DarkTurquoise">Carter</span> instantly begins to plead his case. <br>
+<br>
+<span style="Color: LightSteelBlue">“Wha-!? But can’t he stay just a little longer!?”</span> The boy begs, <span style="Color: LightSteelBlue">“Like stay for dinner or I can eat later or-”</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“No can do.”</span> His father replies, <span style="Color: LightSteelBlue">“You gotta get your chores down before bed as well, so no time to spare. Plus, I’m sure his father wants him home soon, since it’s getting dark.”</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“B…”</span> <span style="color:DarkTurquoise">Carter</span> sighs, <span style="Color: LightSteelBlue">“Alright, alright. I guess that’s fair.”</span> He then turns to you and smiles, <span style="Color: LightSteelBlue">“It was super fun though! Thanks for coming over!”</span> <span style="Color: LightGreen">He gives you a hug and the two of you quickly clean up</span> and <span style="color:DarkTurquoise">Carter</span> is walking you to the door when <span style="color:DarkTurquoise">Callum</span>, <span style="color:DarkTurquoise">Carter</span>’s older brother, walks over. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Hey, want me to give you a ride back to your place?”</span> He offers, <span style="Color: LightSteelBlue">“You’re close, so it’s no bother.”</span> He holds up his keys, the teen offering to drive you back to your house if you desire. <br>
+<br>
+
+<div id="choice">
+	<<link "Walk home<br>">>
+    <<replace "#choice">>
+        You thank him, but say you’ll walk home. <span style="Color: LightSteelBlue">“No problem, just make sure you get back safe, alright?”</span> He pats you on the head almost tenderly, much like he does to <span style="color:DarkTurquoise">Carter</span>. You can’t help but smile at this and thank him again as <span style="color:DarkTurquoise">Carter</span> walks you out to the street. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Thanks again for hanging out, <span style="color:DarkTurquoise">$CarterNickname</span>. I’ll see you at school! Bye!”</span> He waves you goodbye before heading back inside. Overall, the day was pretty fun. <br>
+        <br>
+        [[Continue|Carter House Frontyard]]
+    <</replace>>
+    <</link>>
+	<<link "Be driven<br>">>
+    <<replace "#choice">>
+        <<set $Minutes += 5>>
+        You thank him and take him up on his offer, finding it easier and quicker than walking home. <span style="Color: LightSteelBlue">“Oh, can I come?”</span> <span style="color:DarkTurquoise">Carter</span> jumps up, seeing this as an excuse to hang out more even if it is a 5-minute car drive. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“No can do.”</span> His father says, grabbing the back of his shirt, <span style="Color: LightSteelBlue">“It is your turn to help in the kitchen. So, say goodbye and come on.”</span> <span style="color:DarkTurquoise">Carter</span> pouts a little, but does as he’s told, at least given permission to walk you out to the car and wave as you drive off. <span style="Color: LightSteelBlue">“Thanks again for hanging out, <span style="color:DarkTurquoise">$CarterNickname</span>. I’ll see you at school! Bye!”</span> <br>
+        <br>
+        Though the drive is short, you and <span style="color:DarkTurquoise">Callum</span> talk a bit during the ride. He asks you about what you and <span style="color:DarkTurquoise">Carter</span> did today, how school is going, and is overall very friendly. He gives off big brother energy, more so than Gabe since he doesn’t even tease you once! Though, you’ve seen him tease <span style="color:DarkTurquoise">Carter</span> before so guess that may be reserved for his actual brother. <br>
+        <br>
+        You thank him again as you arrive and walk up to your front door, happy to be home. <br>
+        <br>
+        [[Continue|PH Frontyard]]
+    <</replace>>
+    <</link>>
+</div>

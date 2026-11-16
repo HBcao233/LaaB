@@ -1,0 +1,43 @@
+:: XAVIER Playground Chat With [nobr]
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<set $Minutes += 10>>
+
+/* OPENING */
+Once <span style="color:DarkTurquoise">Xavier</span> finished telling his story and his crowd of followers begin to argue amongst themselves about certain elements of it, you notice that the popular boy is not being crowded for once and begin to chat with him. 
+<<set $RandomTopic to random(1, 3)>>
+
+/* TOPIC ONE */
+<<if $RandomTopic == 1>>
+<span style="color:DarkTurquoise">Xavier</span> talks about how his grandfather founded a tech company after graduating from Preston and his father took over a few years after <span style="color:DarkTurquoise">Xavier</span> was born. The company was very successful, explaining his family’s wealth, and <span style="color:DarkTurquoise">Xavier</span> was expected to join the company once he graduated as well.<br>
+
+/* TOPIC TWO */
+<<elseif $RandomTopic == 2>>
+He asks if you have done much traveling, but inform him that you haven't done much since before your younger brother was born. <span style="color:DarkTurquoise">Xavier</span> explained that he traveled a lot due to his family’s business having offices all over the world. He wasn’t a fan of the long trips, but it still was fun to see the world. Though he was old enough to stay home by himself now if he wasn’t feeling the trip.<br>
+
+/* TOPIC THREE */
+<<elseif $RandomTopic == 3>>
+You bring up <span style="color:DarkTurquoise">Xavier</span>’s large collection of friends, but he corrects you, calling them followers. Despite always seeming to enjoy being crowded around by them, it seems to be a touchy subject. He mentions that most of them only follow him because they think his money or popularity will rub off on them. He doesn’t mind it, but he also doesn’t want to call them friends.<br>
+
+<</if>>
+
+/* SOCIAL POINTS GAIN */
+<<if $XavierDailyChat != 1>>
+    <<socialChange "Xavier" 3>>
+		<<set $XavierDailyChat to 1>>
+<<else>>
+    <<socialChange "Xavier" 1>>
+		<<set $XavierDailyChat to 1>>
+<</if>>
+<br>
+[[Continue|School Courtyard]] 

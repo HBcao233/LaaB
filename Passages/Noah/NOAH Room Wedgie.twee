@@ -1,0 +1,83 @@
+:: NOAH Room Wedgie [nobr]
+	
+	/* Setting Outfit Variables */
+	<<if $NoahSche.Location == "Playing in Room">>
+		<<set $AD.Outfit to "Everyday">>
+	<<elseif $NoahSche.Location == "Playing in Room PJ">>
+		<<set $AD.Outfit to "Pajamas">>
+	<</if>>
+	<<include"Noah Outfit Set">>
+
+<<set $NoahRoomWedgie to 1>>
+
+<<if $WedgieType == "Playful">>
+	Silently giggling to yourself, you sneak up behind <span style="color:DarkTurquoise">Noah</span> while he is playing, eyeing the exposed waistband of his $NoahUndies.Type. Waiting for the perfect moment, you quickly reach down, grab them, and yank upward in one quick motion. You don’t yank hard enough to hurt him, but enough to dangle him helplessly off the ground.<br>
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Hide">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+<<if $NoahSche.Location == "Playing in Room">>
+	<<set $AD.Outfit to "Everyday">>
+<<elseif $NoahSche.Location == "Playing in Room PJ">>
+	<<set $AD.Outfit to "Pajamas">>
+<</if>>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+	<span style="color:LightSteelBlue">”Hey!”</span> <span style="color:DarkTurquoise">Noah</span> giggles as he tries to wiggle himself free. <span style="color:LightSteelBlue">”Hahaha! Put me down, you Butt!”</span> <span style="color:Pink">You both giggle as you begin to bounce him up and down by his $NoahUndies.Name, nearly causing him to slip out of them onto the floor.</span> After a few moments, you put him back on the ground and he jumps on top of you. <span style="color:LightSteelBlue">”I’m gonna get you next time!”</span> He laughs as he playfully punches you.<br>
+	<<socialChange "Noah" 3>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Wedgier", "Humiliated"]>>
+	<<arousalGain 10 _arousalbs _arousalkink>>
+	<<addMoodlet "Gave Wedgie" 4>>
+	<br>
+	[[Continue|PH Noah Bedroom]] 
+
+<<elseif $WedgieType == "Painful">>
+
+		Silently giggling to yourself, you sneak up behind <span style="color:DarkTurquoise">Noah</span> while he is playing, eyeing the exposed waistband of his $NoahUndies.Type. You wait until he is distracted, then quickly grab and yank him painfully into the air as high as you can by his $NoahUndies.Type! <span style="color:DarkTurquoise">Noah</span> lets out a pained scream as his privates are painfully squeezed.<br>
+		/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Hide">>
+<<set $AD.Eyes to "Sad">>
+<<set $AD.Cry to 2>>
+<<set $AD.Blush to 2>>
+<<set $AD.Mouth to "Sad">>
+<<if $NoahSche.Location == "Playing in Room">>
+	<<set $AD.Outfit to "Everyday">>
+<<elseif $NoahSche.Location == "Playing in Room PJ">>
+	<<set $AD.Outfit to "Pajamas">>
+<</if>>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+	<span style="color:LightSteelBlue">”Stop! You’re hurting me!”</span> He cries. But you just laugh as you begin to maliciously bounce him up and down, sending painful shock waves into his balls with each one. You only stop once he begins to cry, dropping him onto the ground. You tell him not to be such a baby as he crawls into the corner and sobs.<br>
+	<<socialChange "Noah" -3>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Wedgier", "Humiliated"]>>
+	<<arousalGain 10 _arousalbs _arousalkink>>
+	<<addMoodlet "Gave Wedgie" 4>>
+	<br>
+	<<set $NoahMad to 1>>
+	[[Leave|PH Hallway]]
+
+<</if>>
+
+<<addMoodlet "Gave Wedgie" 4>>

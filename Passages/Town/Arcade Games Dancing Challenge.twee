@@ -1,0 +1,59 @@
+:: Arcade Games Dancing Challenge [nobr]
+
+<<set $Minutes += 20>>
+<<set $Money -= 1>>
+
+/* Intro */
+Making your way through the arcade, the sounds of various games call out to you to play them. The metallic clack of pinball flippers, the soft click of triggers being pulled accompanied by explosions from one of the rail shooters, and the whirring and clack from foosball. Over this din, you hear some catchy techno music. As you get closer, you see the source of the music comes from a game called “Dance, Dance, Uprising.” The game cabinet has a large central monitor flanked by large speakers. At the base is a dance platform with arrows pointing outwards. An inverted U-shaped bar is connected to the arrow pad, likely something for the player to hold onto. <br>
+<br>
+Walking up to the game, you add a few tokens to the game. <span style="color:yellow">Immediately the music changes as a new screen emerges, and a voice instructs you to pick a song. Scrolling through the song catalog by pressing on the down arrow on the dance pad, you quickly get lost amongst the song names. The list is extensive, and most are songs you’ve never heard of.</span> Eventually, you just pick a random song that has an easy difficulty. A countdown starts on screen with large red numbers. When the music starts, arrows in different directions scroll up from the bottom. At the right moment, you hit the corresponding arrow on the dance pad, and you’re rewarded with a satisfying flash and a counter indicating your point streak. <br>
+<br>
+<span style="color:lightgreen">As the music picks up, you find yourself getting into it. At first, you’re just bobbing your head to the beat as you step on the correct arrows, but you then start to move your hips and arms to the music. It feels a little goofy to be dancing and hopping around to the music, but you’re having fun with the dance.</span> <br>
+<br>
+The tempo gets faster, and the speed and frequency of the arrows increases. You stop using your arms to dance to the music so you can grab on to the hold bar as your feet flurries across the dance pad. <br>
+<br>
+/* [Skill Check currently set to random until a Video Game skill is added.] */
+<<skillCheck "Athletics" 60>>
+
+/* Pass */
+<<if _result == 1>>
+    Even with the increased intensity of the music, you’re still able to keep up with the arrows. <span style="color:lightgreen">The song is quite enjoyable throughout, and your shoulders and butt sway to the music as you hit all the correct arrows. At the end of the song, you let go of the hold bar and leap up in the air. You punctuate the landing on the last two arrows to complete the song by holding up your arms in triumphs. On screen, an electronic buzzing replaces the music as your score is quickly tallied. Your score flashes and a voice from the game exclaims a “New High Score!”</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smile",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You grin broadly at this notification, and you can’t resist starting to dance in celebration. You get into the dance, gyrating your whole body and arms. Behind you, you hear a couple of kids chuckle, likely from your dancing. <span style="color:lightgreen">You don’t care however, and you feel good about yourself. Instead, you continue to dance like nobody’s watching.</span> <br>
+    <<skillPoints "Athletics" 3>>
+    <<needChange "Fun" 20>>
+    <<needChange "Energy" -4>>
+    <br>
+    [[Continue|Arcade]]
+/* Fail */
+<<else>>
+    Even on an easier level, the increased intensity of the music and arrows scrolling up on the screen become too much for you. You start to miss or hit the wrong arrow more than you get the right ones. By the time you reach the end of the song, you’re almost completely out of sync. The song mercifully ends, and an electronic buzzing replaces the music as your score is added up. <span style="color:lightcoral">Sadly, this takes hardly any time as your pitiful score is displayed on screen, along with a flashing message stating “Failure!”</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    Watching the flashing message, you can’t help but sigh. While the dancing was fun, it seems that you’re terrible at it. You wonder to yourself if taking dance lessons would help, but then you realize that you’re just hitting arrows at the right time with this game. Real dancing is likely quite different. Stepping off the dance pad, you look around for something else to do. Perhaps something that you’ll be better at. <br>
+    <<skillPoints "Athletics" 3>>
+    <<needChange "Fun" 20>>
+    <<needChange "Energy" -4>>
+    <br>
+    [[Continue|Arcade]]
+
+<</if>>

@@ -1,0 +1,69 @@
+:: Watch Movie [nobr]
+
+/* VARIABLE CHANGES */
+<<set $Minutes += 90>>
+<<set $Money -= 9>>
+/* Encounter Chance */
+<<set _random_encounter to random(1, 4)>>
+
+	/* ANIMATED */
+<<if $MovieGenre == "Animated">>
+	<<if _random_encounter == 1 && $CompletedQuests.includes("Thomas: Out Sick")>>
+		<<include"Thomas Movie Theatre Ethan">>
+	<<else>>
+		You decide to watch the Animated Movie <strong>A Toy’s Tale</strong>. It is quite a popular movie about a world where, when their owners are away, toys can come to life. Two toys, a space smuggler named Willy and a Plush Cat named Bill, are the best of friends and are owned by a young boy named Charlie. Charlie loves his toys and is none the wiser about them being able to come to life, but when he gets lost on a school field trip during a storm, Willy and Bill don’t hesitate to go on a dangerous adventure to find him and bring him home!<br>
+		<br>
+		Overall, it is a great movie and the animation is stellar. A little sappy towards the end, but still a fun watch. It helps that Charlie is pretty cute and playful, he reminds you a lot of <span style="color:DarkTurquoise">Noah</span>. You also briefly wonder how life would be if toys could come to life, though in reality, you think it would be a bit more creepy than in the movie.<br>
+		<br>
+		<<addMoodlet "Great Movie" 20>>
+		<<needChange "Fun" 10>>
+		[[Continue|Entertainment District]] 
+	<</if>>
+
+	/* COMEDY */
+<<elseif $MovieGenre == "Comedy">>
+	You decide to watch the Comedy Movie <strong>Train</strong>. It is an 80s movie about a train that starts going out of control after the conductor passes out from food poisoning, leading to a troubled ex-conductor being forced to stop the train. Despite being a disaster movie, it is hilarious! The jokes, the deadpan humor, everything works so well together and, despite its age, you and the rest of the audience spend the entire movie laughing.<br>
+	<br>
+	The star of the movie is a side character named Larry Nielsen, who is a king when it comes to delivering deadpan jokes. By the end, you are basically crying from laughing so hard. This is definitely a movie you’ll have to show your friends, at least so they’ll get all the references you’ll be making!<br>
+	<br>
+	<<addMoodlet "Great Movie" 20>>
+	<<needChange "Fun" 10>>
+	[[Continue|Entertainment District]] 
+
+
+	/* HORROR */
+<<elseif $MovieGenre == "Horror">>
+	<<if _random_encounter == 1 && $FelixSocial > 50>>
+		<<include"Felix Movies Encounter">>
+	<<else>>
+		You watch a movie called <strong>Saturday the 6th</strong>. It is the late 70s at a boy’s camp on a lake. Supposedly, the camp is haunted after an incident 10 years ago where a young boy named Mason was stripped naked and tied to a tree by some bullies as a prank. After humiliating and playing with the boy for a few hours, the bullies left him. Unfortunately, the counselors were too busy having sex and making out to notice the poor boy was missing, and he died from the cold. Now, he is coming back with a vengeance to kill all the counselors and anyone else who lacks responsibility. The movie has an eerie tone and the jumpscares are constantly causing you to jump and let out high-pitched screams. A few older teenagers laugh at your obvious fear, but you hardly notice since you're so laser-focused on the movie.<br>
+		<br>
+		You are surprised by the amount of nudity in the film since the ticket clerk didn’t bother to ask your age. <span style="color:Pink">You are even more surprised that they showed the full nudity of the boy tied to the tree in the opening scene, including close-ups of the boy’s prepubescent penis and shots of the bullies fondling and touching him.</span> The scene made you feel strange, but by now you were more focused on looking over your shoulder as you walked back onto the street. <span style="color:lightcoral">Monsters like Mason weren’t real… right?</span><br>
+		<br>
+		<<addMoodlet "Great Movie" 20>>
+		<<needChange "Fun" 10>>
+		[[Continue|Entertainment District]] 
+	<</if>>
+
+
+	/* SUPERHERO */
+<<elseif $MovieGenre == "Superhero">>
+	<<if _random_encounter == 1 && $CarterSocial > 50>>
+		<<include"Carter Movies Encounter">>
+	<<else>>
+		You decide to watch an older superhero movie they are showing, <strong>Owlman & Sparrow</strong>. It is a dark, gritty reboot of the Owlman & Sparrow comic book and cartoon series. The duo goes up against one of their oldest foes, Captain Climate, a lava-themed villain who wishes to melt the polar ice caps in order to save her husband from a deadly illness. Overall, the movie is a bit of a mess; The plot makes no sense, Captain Climate is horribly miscast, and they put nipples on the heroes' suits for some reason. You still enjoy the utter campiness of the movie and it is so bad, it is actually kind of good.<br>
+		<br>
+		You understand why <span style="color:DarkTurquoise">Your Father</span> has never shown <span style="color:DarkTurquoise">Noah</span> this movie and instead opts for the more recent animated ones. If <span style="color:DarkTurquoise">Noah</span> saw this train wreck, he wouldn’t shut up about it for months!<br>
+		<br>
+		<<addMoodlet "Great Movie" 20>>
+		<<needChange "Fun" 10>>
+
+		/* Temp method of triggering this for now */
+		<<if $ToggleOCFrosts == 1 && $OCFrostsMet != -1 && $Time.between(10, 0, 20, 0)>>
+			<<include"OC Simon Albin Intro">>
+		<<else>>
+			[[Continue|Entertainment District]] 
+		<</if>>
+	<</if>>
+
+<</if>>

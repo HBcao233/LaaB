@@ -1,0 +1,17 @@
+:: Felix Ask for Nickname [nobr]
+
+/* This is the scene that appears when the PC asks to be called by a nickname. */
+<span style="Color: LightSteelBlue">“Bonjour, <span style="color:DarkTurquoise">$Player.Name</span>.”</span> <span style="color:DarkTurquoise">Felix</span> says with a smirk, putting extra accent around his words before laughing. <span style="Color: LightSteelBlue">“Did you know girls here really like French? I got surrounded at the market the other day, was really awkward.”</span> He laughs. You ask <span style="color:DarkTurquoise">Felix</span> if he wouldn’t mind calling you by a nickname. Your real name is fine, and all, but since you are friends you’d rather if he called you by something else. <span style="Color: LightSteelBlue">“Oh? I’ve heard about this. You call it a ‘nickname’, right? But tell me, who is nick?”</span> He can’t keep himself from laughing at his own bad joke, <span style="Color: LightSteelBlue">“But sure thing. Whatever makes you feel comfortable. What would you like me to call you?”</span> <br>
+<br>
+<div id=choice>
+<<textbox "$FelixNickname" $FelixNickname>><br>
+<br>
+	<<link "Continue">>
+	<<replace"#choice">>
+        <<set $Nickname.Felix to 1>>
+        <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$FelixNickname</span>. Got it! You can call me <span style="color:DarkTurquoise">Felix</span>. Not a nickname, but it’s better than that kid in history class who still calls me ‘french kid’.”</span> He chuckles again, seemingly feeling extra goofy at the moment. <br>
+        <br>
+        <<endByLocation>>
+    <</replace>>
+    <</link>>
+</div>

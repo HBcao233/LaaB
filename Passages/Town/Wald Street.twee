@@ -1,0 +1,177 @@
+:: Wald Street [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Wald Street",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+
+<<set _random to random(1, 10)>>
+<<set _randomevent to random(1, 25)>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+/* Kollin Preview */
+<<elseif $ToggleOCKollin == 1 && $InActiveQuests.includes("Kollin: Boy in the Woods") && !$CompletedQuests.includes("Kollin: Preview") && $Time.between(15,0,19,0) && _random == 10>>
+	<<include"OC Kollin Stranger">>
+
+/* Random Event Code */
+<<elseif _randomevent == 1>>
+	<<set _randomeventpassage to {
+			"Street Random Encounter Icecream Truck": 10,
+			"Street Random Encounters Stray Cat": 10,
+			"Street Random Encounter Car Speeding By": 10,
+	}>>
+	<<if $ToggleOCRowan == 1 && $CompletedQuests.includes("Rowan: Introduction")>>
+		<<set _randomeventpassage["OC Rowan Skateboarding Around Town"] = 10>>
+	<</if>>
+	<<if $ToggleOCMicah == 1 && $InActiveQuests.includes("Micah: Introduction") && $Time.between(6, 0, 20, 0)>>
+		<<set _randomeventpassage["OC Micah Intro"] = 50>>
+	<</if>>
+	<<if $ToggleOCLeviM == 1 && $InActiveQuests.includes("Levi M: Introduction") && $Time.between(12, 0, 17, 0)>>
+		<<set _randomeventpassage["OC Levi Mathers Intro"] = 50>>
+	<</if>>
+	<<if $ToggleOCErin == 1 && $CompletedQuests.includes("Erin: Introduction") && $Time.between(6, 0, 20, 0) && $Money >= 2>>
+		<<set _randomeventpassage["OC Erin Ice Cream Emo"] = 10>>
+	<</if>>
+	<<set _event to _randomeventpassage.random()>>
+	<<include _event>>
+
+
+<<elseif $InActiveQuests.includes("Michael: Stupid Stepbrothers") && !$Time.schoolday() && $Time.between(7, 0, 11, 0)>>
+	<<include"Michael Stupid Stepbrothers">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Wald Street--</strong></big></span><br>
+You stand on the sidewalk near Wald Street. Much like where you live, it is full of middle-class houses, along with some larger ones that border the woods to the north. Many of the homes seem older, though are kept in pristine condition. Large wooden fences separate the homes, giving their front yard some privacy as many have set up small gardens or sitting areas out front. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<<if $MillerLemonLocation == "Wald" and $Time.between(7,0,15,0)>>
+	You notice [[Jayden & Kayden|OC Miller Lemonade Stand]] at a lemonade stand.
+<</if>>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+<<if $ActiveQuests.includes("Carter: First Visit")>>
+	[[Look for Carter's House|Carter House Intro Part 1]]<br>
+<<elseif$ActiveQuests.includes("Carter: Hero Award")>>
+		<span style="color:Gold">[!]</span>[[Carter's House (?:??)|Carter Hero Award Intro Part 3 House]]<br>
+<<elseif $CompletedQuests.includes("Carter: First Visit")>>
+	[[Carter's House (0:01)|Carter House Frontyard][$Minutes += 1]]<br>
+<</if>>
+
+<<link"Explore the woods (0:20)">>
+    <<set _Random to ["Woods Relax Basic", "Woods Sly Fox", "Woods Fox Gift", "Woods Abandoned Campsite"]>>
+	<<if $ToggleOCKollin == 1 && $InActiveQuests.includes("Kollin: Boy in the Woods")>>
+		<<set _Random.push("OC Kollin Intro 1")>>
+	<</if>>
+	/* Shinju Scenes */
+	<<if $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Monster Boy") && $InActiveQuests.includes("Shinju: Felix at the Lake")>>
+		<<set _Random.push("OC Shinju and Felix at Lake")>>
+	<<elseif $ToggleOCShinju == 1 && $ToggleOCManuel == 1 && $InActiveQuests.includes("Shinju: Manuel Skinny Dipping")>>
+		<<set _Random.push("OC Shinju Manuel Skinny Dipping")>>
+	<</if>>
+	/* Isaac Scenes */
+	<<if $ToggleOCIsaac == 1 && $OCIsaacSocial > 25 && $JacksonSocial > 0>>
+		<<set _Random.push("OC Isaac and Jackson Nude Hike")>>
+	<</if>>
+	/* Lea Scenes */
+	<<if $ToggleOCBirdy == 1 && $CompletedQuests.includes("Birdy: Lea")>>
+		<<set _Random.push("OC Lea Forest Walk")>>
+	<</if>>
+	/* Micah Scenes */
+	<<if $ToggleOCMicah == 1 && $CompletedQuests.includes("Micah: Introduction")>>
+		<<set _Random.push("OC Micah Nature Hike 1")>>
+		<<set _Random.push("OC Micah Nature Hike 2")>>
+	<</if>>
+	/* Kitsune Traits */
+	<<if $Player.Traits.includes("Kitsune")>>
+		<<set _Random.push("Woods Foxes Play With")>>
+		<<if $CompletedQuests.includes("Kitsune: Werewolf") && $Time.between(0, 0, 4, 30) && $ToggleNonCon == 1>>
+			<<set _Random.push("Werewolf Attack in Woods")>>
+		<</if>>
+	<</if>>
+    <<set _event to _Random.random()>>
+	/* Quest-Forced Events */
+	<<if $InActiveQuests.includes("Kitsune: Werewolf") && $Time.between(0, 0, 4, 30) && $ToggleNonCon == 1>>
+		<<set _event to "Werewolf First Encounter">>
+	<</if>>
+    <<goto _event>>
+<</link>><br>
+<<if $ActiveQuests.includes("Arthur & Richard: Stargazing") && $Time.Day == "Saturday" && $Time.between(20, 0, 21, 0)>>
+	[[Join Richard & Arthur (1:00)|OC Arthur Richard Stargazing]]<br>
+<<elseif $CompletedQuests.includes("Arthur & Richard: Stargazing") && $Time.Day == "Saturday" && $Time.between(20, 0, 21, 0)>>
+	[[Join Richard & Arthur (1:00)|OC Arthur Richard Stargazing Repeatable]]<br>
+<</if>>
+<<if $CompletedQuests.includes("Carter: Lost Pants")>>
+	[[Spy on Carter's backyard (0:10)|Carter Backyard Spy]]<br>
+<</if>>
+
+/* RANDOM JOBS */
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+	<<capture _i>>
+		<<if $RandomJobList[_i].Location == "Wald">>
+			<<if $RandomJobList[_i].Type == "Mow Lawn">>
+				[[Job: Mow Lawn (1:00)|Random Job Mow Lawn]]<br>
+			<<elseif $RandomJobList[_i].Type == "Fix Fence">>
+				[[Job: Fix Fence (2:00)|Random Job Fix Fence]]<br>
+			<<elseif $RandomJobList[_i].Type == "Pull Weeds">>
+				[[Job: Pull Weeds (0:30)|Random Job Pull Weeds]]<br>
+			<<elseif $RandomJobList[_i].Type == "Clean Gutters">>
+				[[Job: Clean Gutters (1:00)|Random Job Clean Gutters]]<br>
+			<</if>>
+		<</if>>
+	<</capture>>
+<</for>>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Player Neighborhood.png">
+	[[Northend (0:10)|Player Neighborhood][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Community Center.png">
+	[[Community Center (0:10)|Community Center][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Player Neighborhood.png">
+	[[Northend (0:05)|Player Neighborhood][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Community Center.png">
+	[[Community Center (0:05)|Community Center][$Minutes += $TravelTime]]<br>
+	<</if>>
+<</if>>
+<br> 
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 374px; top: 7px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="300,7,353,60" alt="Player Neighborhood" onclick="$.wiki('<<goto[[Player Neighborhood]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="448,81,501,134" alt="Community Center" onclick="$.wiki('<<goto[[Community Center]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

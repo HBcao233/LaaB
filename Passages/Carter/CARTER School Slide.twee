@@ -1,0 +1,155 @@
+:: CARTER School Slide [nobr]
+
+<<set $Minutes += 20>>
+
+You meet <span style="color:DarkTurquoise">Carter</span> as he comes down the slide and ask if you can play with him.<br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Yeah!”</span> <span style="color:DarkTurquoise">Carter</span> says, a little bit too excited, <span style="color:LightSteelBlue"> “I’m trying to see how fast I can go down the slide. Come on!”</span> He grabs your hand and the two of you quickly run back to the top of the slide. It is a decently long slide, sitting atop the 8-foot-tall jungle gym, that shoots down into the sand. There was enough room for you to get a running start if you wanted to dive headfirst, you could also swing in using the railing from the top of the slide.<br>
+<br>
+
+<span style="color:LightSteelBlue"> “I’ll wait at the bottom,”</span> <span style="color:DarkTurquoise">Carter</span> says as he sits down at the slide, <span style="color:LightSteelBlue"> “to see how fast you go. Good luck but be careful!”</span> He gives you one last smile before he heads down.<br>
+<br>
+
+<div id="choice">
+	/* SLIDE NORMALLY */
+	<<link "Slide normally<br>">>
+		<<replace "#choice">>
+		
+			Not caring about speed, you sit down normally at the top of the slide and slide down. Despite this, you still gain more speed than you were expecting and nearly trip and fall as you come flying out of the bottom.<br>
+			<br>
+
+			<span style="color:LightSteelBlue">“Not bad!”</span> <span style="color:DarkTurquoise">Carter</span> smiles, <span style="color:LightSteelBlue">“But watch this!”</span> <span style="color:DarkTurquoise">Carter</span> gleefully runs back up and dives headfirst down the slide, coming out with his arms outstretched like a superhero. His speed and form are impressive, until he lands face first into the sand. You help him up and the two of you continue going down the slide for a while.<br>
+			<<socialChange "Carter" 3>>
+			<<needChange "Fun" 20>>
+			<br>
+
+			[[Continue|School Courtyard]]
+		<</replace>>
+	<</link>>
+
+/* SWING DOWN */
+	<<link "Swing down with railing<br>">>
+		<<replace "#choice">>
+			You grip the top railing above the slide, taking a step back, before you jump up and use the momentum to send you flying down the slide. You come down so fast that you are unable to keep your balance as you land and tumble forward into the sand. <span style="color:DarkTurquoise">Carter</span> quickly runs over and help you up, patting the sand off your clothes.<br>
+			<br>
+
+			<span style="color:LightSteelBlue">“That was awesome!”</span> <span style="color:DarkTurquoise">Carter</span> yells out in excitement, <span style="color:LightSteelBlue">“You were like a blur, I’ve never been that fast before! You have to show me how you did it!”</span> You spend some time teaching <span style="color:DarkTurquoise">Carter</span> your trick, which does lead to some bruising, but otherwise is a good time.<br>
+			<<socialChange "Carter" 3>>
+			<<needChange "Fun" 20>>
+			<br>
+			
+			[[Continue|School Courtyard]] 
+		<</replace>>
+	<</link>>
+
+	/* HEADFIRST */
+	<<link "Dive headfirst<br>">>
+		<<replace "#choice">>
+
+			<<set $Random to random(1, 2)>>
+			<<if $Random != 1>>
+				You step back to the edge of the jungle gym and take a deep breath, before sprinting forward and diving headfirst into the slide! The speed is insane, but as you are about to reach the bottom, a painful realization enters your mind. You don’t have a landing strategy. You dive face first into the sand, getting sand in your eyes, mouth, and nose. You even feel sand under your clothes, in every nook and cranny. As <span style="color:DarkTurquoise">Carter</span> helps you up, you begin coughing and spitting out sand. He attempts to help by patting sand off your clothes, but can’t hide his laughter.<br>
+				<br>
+
+				<span style="color:LightSteelBlue">“That could have gone better!”</span> <span style="color:DarkTurquoise">Carter</span> laughs, <span style="color:LightSteelBlue">“The first time I went down like that, I got so much sand in my briefs I could feel it for like a week!”</span> You both laugh as <span style="color:DarkTurquoise">Carter</span> wipes your eyes with his shirt, allowing you to see again. He then offers to show you how to land without blinding yourself and the two of you enjoy the rest of your time together.<br>
+				<<socialChange "Carter" 3>>
+				<<needChange "Fun" 20>>
+				<br>
+
+				[[Continue|School Courtyard]] 
+
+			/* LOOSE PANTS */	
+			<<else>>
+				/* UNDERWEAR*/
+				<<if $PlayerUndies.Name != "None">>
+					You step back to the edge of the jungle gym and take a deep breath, before sprinting forward and diving headfirst into the slide! It is only after your feet leave the ground that you realize you’ve jumped slightly too early. Your stomach crashes into the bottom edge of the slide, but that’s not the worst of it. <span style="color:Red">You feel the waist of your $PlayerBottoms.Type get caught on the edge of the slide just enough to yank them down to your ankles, exposing your $PlayerUndies.Name as you are unable to stop yourself as you slide down!</span><br>
+					<br>
+
+					You come down fast, flying out of the slide and landing face first in the sand. <span style="color:DarkTurquoise">Carter</span> lets out an excited yell <span style="color:Pink">that quickly turns into a muffled scream of realization as he looks upon your exposed $PlayerUndies.Type. He attempts to hide his laughter as he runs over and helps you up.</span><br>
+
+					<<set _ad to [
+						{
+							Name: "Carter",
+							State: {
+								Blush: 2,
+								Mouth: "Happy",
+								Outfit: "Uniform",
+							},
+						},
+						{
+							Name: "Player",
+							State: {
+								Blush: 2,
+								Mouth: "Sad",
+								Outfit: "Uniform",
+								PantsDown: true,
+							},
+						},
+					]>>
+					<<ad _ad>>
+
+					<span style="color:LightSteelBlue"> “You were so fast your pants came off!”</span> <span style="color:DarkTurquoise">Carter</span> laughs as you pull your $PlayerBottoms.Type back up blushing, <span style="color:LightSteelBlue"> “Don’t worry, I don’t think anyone else saw that. It was super funny though!”</span> Realizing it could have been a lot worse, you laugh it off and the two of you continue playing for a while longer.<br>
+					<<socialChange "Carter" 3>>
+					<<addMoodlet "Seen Undies" 3>>
+					<<set _arousalbs to []>>
+					<<set _arousalkink to ["Humiliated"]>>
+					<<arousalGain 15 _arousalbs _arousalkink>>
+					<<addMoodlet "Pained" 5>>
+					<br>
+					[[Continue|School Courtyard]] 
+				/* NO UNDERWEAR */
+				<<else>>
+					You step back to the edge of the jungle gym and take a deep breath, before sprinting forward and diving headfirst into the slide! It is only after your feet leave the ground that you realize you’ve jumped slightly too early. Your stomach crashes into the bottom edge of the slide, but that’s not the worst of it. <span style="color:Red">You feel the waist of your $PlayerBottoms.Type get caught on the edge of the slide just enough to yank them down to your ankles as you are unable to stop yourself as you slide down! You choose the wrong day to not wear any underwear, as not only are your Butt and $Player.PenisSize Penis exposed, but your crotch is rubbed painfully against the plastic slide as you go down!</span><br>
+					<br>
+
+					For better or for worse, the painful rubbing slows you down to a crawl as you reach the bottom of the slide, your face falls into the sand while <span style="color:Pink">your Butt still sits on the slide, exposed and raised for anybody around to see.</span> <span style="color:DarkTurquoise">Carter</span> lets out a surprised scream as he sees your exposed state.<br>
+
+					<<set _ad to [
+						{
+							Name: "Carter",
+							State: {
+								Blush: 2,
+								Mouth: "Sad",
+								Outfit: "Uniform",
+							},
+						},
+						{
+							Name: "Player",
+							State: {
+								Blush: 2,
+								Mouth: "Sad",
+								PantsDown: true,
+							},
+						},
+					]>>
+					<<ad _ad>>
+
+					<span style="color:LightSteelBlue"> “<span style="color:DarkTurquoise">$CarterNickname</span>! Your butt, I can-“</span> <span style="color:DarkTurquoise">Carter</span> turns bright red as he turns away from you, attempting to block your exposed rear from any onlookers. <span style="color:LightSteelBlue"> “Pull them back up before someone sees!”</span> You have to basically crawl off the remainder of the slide, <span style="color:Pink">which would have revealed your $Player.PenisSize Penis to everyone around you if <span style="color:DarkTurquoise">Carter</span> hadn’t quickly shielded you</span>, in order fix your clothing. Once he realizes you’ve covered yourself <span style="color:DarkTurquoise">Carter</span> turns around.<br>
+					<br>
+
+					<span style="color:LightSteelBlue"> “I don’t think anyone else saw anything,”</span> <span style="color:DarkTurquoise">Carter</span> pauses, turning bright red again, <span style="color:LightSteelBlue"> “Not that I saw anything! I mean, I did see your butt when you came down, but only for like a second! And I didn’t see anything else, promise!”</span> <span style="color:DarkTurquoise">Carter</span> seems more embarrassed than you about this whole endeavor. You are grateful for his quick thinking, however, as without it a lot more people could have seen you.<br>
+					<<socialChange "Carter" 3>>
+					<<set _arousalbs to []>>
+					<<set _arousalkink to ["Humiliated"]>>
+					<<arousalGain 30 _arousalbs _arousalkink>>
+					<<addMoodlet "Pained" 5>>
+					<<addMoodlet "Seen Naked" 3>>
+					<br>
+
+					[[Continue|School Courtyard]] 
+				<</if>>
+			<</if>>
+		<</replace>>
+	<</link>>
+</div>

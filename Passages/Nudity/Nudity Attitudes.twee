@@ -1,0 +1,124 @@
+:: Nudity Attitudes [nobr]
+
+<span style="color:Azure"><strong>--Nudity Attitudes--</strong></span>
+<<button "?">>
+<<script>>
+Dialog.setup("Exhibition Help", "Exhibition Help");
+Dialog.wiki(Story.get("Exhibition Help").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<br>
+
+
+
+<strong>--Home--</strong><br>
+<strong>-Day Time-</strong><br>
+<div style="text-indent: 2.5em;">
+	<<if $HomeDayNudity == 0>>
+		<strong><span style="color:lightgreen">[Embarrassed]</span></strong>
+	<<else>>
+		[[Embarrassed|Attitudes Menu][$HomeDayNudity to 0]]
+	<</if>>
+	|
+	<<if $NaturismSkill >= 3>>
+		<<if $HomeDayNudity == 1>>
+			<strong><span style="color:lightgreen">[Shy]</span></strong>
+		<<else>>
+			[[Shy|Attitudes Menu][$HomeDayNudity to 1]]
+		<</if>>
+	<<else>>
+		<span style="color:red">Shy</span>
+	<</if>>
+	|
+	<<if $NaturismSkill >= 4>>
+		<<if $HomeDayNudity == 2>>
+			<strong><span style="color:lightgreen">[Fine]</span></strong>
+		<<else>>
+			[[Fine|Attitudes Menu][$HomeDayNudity to 2]]
+		<</if>>
+	<<else>>
+		<span style="color:red">Fine</span>
+	<</if>>
+</div>
+<strong>-Night Time-</strong><br>
+<div style="text-indent: 2.5em;">
+	<<if $HomeNightNudity == 0>>
+		<strong><span style="color:lightgreen">[Embarrassed]</span></strong>
+	<<else>>
+		[[Embarrassed|Attitudes Menu][$HomeNightNudity to 0]]
+	<</if>>
+	|
+	<<if $NaturismSkill >= 1>>
+		<<if $HomeNightNudity == 1>>
+			<strong><span style="color:lightgreen">[Shy]</span></strong>
+		<<else>>
+			[[Shy|Attitudes Menu][$HomeNightNudity to 1]]
+		<</if>>
+	<<else>>
+		<span style="color:red">Shy</span>
+	<</if>>
+	|
+	<<if $NaturismSkill >= 2>>
+		<<if $HomeNightNudity == 2>>
+			<strong><span style="color:lightgreen">[Fine]</span></strong>
+		<<else>>
+			[[Fine|Attitudes Menu][$HomeNightNudity to 2]]
+		<</if>>
+	<<else>>
+		<span style="color:red">Fine</span>
+	<</if>>
+</div>
+<strong>-Backyard Underwear-</strong><br>
+<div style="text-indent: 2.5em;">
+	<<if $BackyardUndies == 0>>
+		<strong><span style="color:lightgreen">[Embarrassed]</span></strong>
+	<<else>>
+		[[Embarrassed|Attitudes Menu][$BackyardUndies to 0]]
+	<</if>>
+	|
+		<<if $BackyardUndies == 1>>
+			<strong><span style="color:lightgreen">[Shy]</span></strong>
+		<<else>>
+			[[Shy|Attitudes Menu][$BackyardUndies to 1]]
+		<</if>>
+	|
+	<<if $NaturismSkill >= 1>>
+		<<if $BackyardUndies == 2>>
+			<strong><span style="color:lightgreen">[Fine]</span></strong>
+		<<else>>
+			[[Fine|Attitudes Menu][$BackyardUndies to 2]]
+		<</if>>
+	<<else>>
+		<span style="color:red">Fine</span>
+	<</if>>
+</div>
+
+<strong>-Backyard Nude [Night]-</strong><br>
+<div style="text-indent: 2.5em;">
+	<<if $BackyardNudeNight == 0>>
+		<strong><span style="color:lightgreen">[Embarrassed]</span></strong>
+	<<else>>
+		[[Embarrassed|Attitudes Menu][$BackyardNudeNight to 0]]
+	<</if>>
+	|
+	<<if $NaturismSkill >= 2>>
+		<<if $BackyardNudeNight == 1>>
+			<strong><span style="color:lightgreen">[Shy]</span></strong>
+		<<else>>
+			[[Shy|Attitudes Menu][$BackyardNudeNight to 1]]
+		<</if>>
+	<<else>>
+		<span style="color:red">Shy</span>
+	<</if>>
+	|
+	<<if $NaturismSkill >= 3>>
+		<<if $BackyardNudeNight == 2>>
+			<strong><span style="color:lightgreen">[Fine]</span></strong>
+		<<else>>
+			[[Fine|Attitudes Menu][$BackyardNudeNight to 2]]
+		<</if>>
+	<<else>>
+		<span style="color:red">Fine</span>
+	<</if>>
+</div>

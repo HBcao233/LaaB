@@ -1,0 +1,78 @@
+:: Millers Babysitting Living Room Read With [nobr]
+
+/* Intro */
+You spot <span style="color:DarkTurquoise">Kayden</span> lying on his stomach atop the couch, glaring down at a brightly colored tablet reading a children’s book. You question why he doesn’t read an actual book, but he just shrugs and claims this is easier. Regardless, he seems to be enjoying himself and at the very least he is reading. So, you sit down next to him, occasionally leaning over as he goes to check out the colorful pages. <span style="Color: Yellow">Once he finishes that book, he selects another one, this one looking much more action packed and adventurous.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Kayden",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<div id="choice">
+    <<link "Ask to join<br>">>
+    <<replace"#choice">>
+        You move closer to <span style="color:DarkTurquoise">Kayden</span> and ask him what he’s reading, not recognizing the story. He glances up at you only briefly, though his lips curl into a small smile. <span style="Color: LightSteelBlue">“It’s a story about space exploders! They’re trying to find a new planet to live on, it’s so cool!”</span> <span style="Color: LightGreen">His voice is full of excitement and awe as he stares at the colorful drawing of a swirling nebula.</span> <span style="Color: LightSteelBlue">“Want me to read it to you? Daddy says I’m really good at that!”</span> <br> 
+        <br>
+        You laugh and nod, saying you’d love to hear the story. <span style="color:DarkTurquoise">Kayden</span> <span style="Color: LightGreen">seems very excited at this, rolling onto his butt and holding the tablet forward like a book. He then begins to read in a very clear and mature-sounding way, except whenever he gets to a word that he struggles to pronounce, in which case you lean over and whisper it in his ear so he can continue. It is a cute, wholesome moment and you give the appropriate reactions to every stage of the story, being the perfect audience for the little guy.</span> <br>
+        <<socialChange "Kayden" 3 1>>
+        <<needChange "Fun" 5>>
+        <span style="color:green">+Kayden Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:green">+Kayden Energy</span><br>
+        <<set $HangOutNeed.Energy += 5>>
+        <br>
+        [[Continue|OC Miller House Living Room]] 
+
+    <</replace>>
+    <</link>>
+
+    <<link "Grab and cuddle him<br>">>
+    <<replace"#choice">>
+        <span style="Color: LightGreen">You reach down and wrap your arms around <span style="color:DarkTurquoise">Kayden</span>, pulling him towards you. <span style="Color: LightSteelBlue">“Uh, <span style="color:DarkTurquoise">$Player.Name</span>? What are you doing?”</span> <span style="color:DarkTurquoise">Kayden</span> asks with a slight chuckle, since his legs had been facing you, you pulled him closer upside down, leaving his legs by your chest and his head now on your lap.</span> It is a bit of an awkward position, though not one you mind. You tell him you wanted to cuddle while he reads, not even mentioning the strange position. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Okay.”</span> He replies with a smirk, his voice soft and content. <span style="Color: LightGreen">He repositions himself in the strange hold you have over him, his chin on your crotch as he uses your knees to prop up his tablet. The best part is that his own crotch is just about face-level with you, and as you rest your chin between his legs, the boy giggles and squirms, but seems satisfied.</span> <span style="Color: Pink">You can feel his nuts just below your chin and are careful not to bruise them, though occasionally move around just to tease the boy. Though you stop once he starts to do the same, worried you’d get a boner that would poke the boy’s face.</span> <br>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Kids"]>>
+        <<arousalGain 10 _arousalbs _arousalkink>>
+        <<socialChange "Kayden" 3 1>>
+        <<needChange "Fun" 5>>
+        <span style="color:green">+Kayden Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:green">+Kayden Energy</span><br>
+        <<set $HangOutNeed.Energy += 5>>
+        <span style="color:green">+Kayden Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 10>>
+        <br>
+        [[Continue|OC Miller House Living Room]] 
+
+    <</replace>>
+    <</link>>
+
+    <<link "Rest<br>">>
+    <<replace"#choice">>
+        You decide to take this moment to rest and relax, letting the minutes pass by quickly with the soft glow of the tablet lighting up <span style="color:DarkTurquoise">Kayden</span>’s face. The only sound being the clicking on the clock and the occasional tapping and chuckle from <span style="color:DarkTurquoise">Kayden</span>. He even shifts himself slightly closer to you, resting his feet and knees on your lap and giving you a smile. <span style="Color: LightGreen">It is overall a wholesome, relaxing time.</span> <br>
+        <<socialChange "Kayden" 1 1>>
+        <<needChange "Fun" 2>>
+        <<needChange "Energy" 3>>
+        <span style="color:green">+Kayden Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:green">+Kayden Energy</span><br>
+        <<set $HangOutNeed.Energy += 10>>
+        <br>
+        [[Continue|OC Miller House Living Room]] 
+
+    <</replace>>
+    <</link>>
+</div>

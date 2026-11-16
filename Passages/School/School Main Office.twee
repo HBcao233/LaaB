@@ -1,0 +1,45 @@
+:: School Main Office [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Main Office",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Main Office",
+}>>
+
+<span style="color:Azure"><big><strong>--Main Office--</strong></big></span><br>
+		/* EXPOSED */
+	<<if $Player.Exposed == "Naked" or $Player.Exposed == "Undies" or $Player.Exposed == "Diaper">>
+		<<include"School Main Office Exposed">>
+	<<else>>
+		
+		/* NORMAL */
+
+
+You stand in the Main Office of the school. A secretary and the Vice Principal sit at the front desk and deal with most of the problems that come by while the Headmaster’s Office is in the back in a separate room. The room is full of school posters and numerous newspaper cutouts speaking of the school’s achievements.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+<<if $Time.between(6, 45, 7, 40) or $Time.between(11, 0, 11, 40) or $Time.between(15, 0, 16, 0)>>
+    [[Ask to chat with Headmaster Alistair (0:15)|Alistair Chat]] <span style="color:green">+Alistair</span><br>
+<</if>>
+
+/* DETENTION */
+<<if $Detention > 0 and $Time.after(14)>>
+	[[Attend Detention|Attend Detention]]<br>
+<</if>>
+
+<br>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[South Hallway (0:01)|School South Hallway][$Minutes += 1]] <br>
+<br>
+
+<</if>>

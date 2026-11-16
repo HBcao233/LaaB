@@ -1,0 +1,422 @@
+:: OC Shinju NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Preteens Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Shinju Yurei--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"OC Shinju NPC Character Menu Biography">>
+</div>
+
+:: OC Shinju NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Shinju NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Shinju NPC Character Menu Avatar Display">>
+
+<<if $OCShinjuSocial > 50>>
+
+<<elseif $OCShinjuSocial > -10>>
+
+<<else>>
+
+    <br>
+<</if>>
+
+:: OC Shinju NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Shinju NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Shinju NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Shinju Yurei <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> October 24th <br>
+<strong>Address:</strong> 
+    <<if $OCShinjuSocial >= 50>>
+        Dellwood <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong>  Family Butler, Two unknown parents in Japan  <br>
+<strong>Friends:</strong>
+    <<if $OCShinjuSocial >= 80>>
+        $Player.Name, Manuel and Felix
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $OCShinjuSocialRank == 1>>
+        Close Friends
+    <<elseif $OCShinjuSocial > 80>>
+        Friends
+    <<elseif $OCShinjuSocial > 30>>
+        Possible Friends
+    <<elseif $OCShinjuSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $OCShinjuSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Nerd, Evil, Genius, Artistic, Athletic /* No Spoilers :P */
+        </div>
+    <<elseif $OCShinjuSocial > 70>>
+        <div style="margin-left: 25px;">
+            Nerd, Evil, Genius, Artistic, Athletic
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [History] > [Math] > [Drama] > [Science] > [English] > [Gym]
+    </div>
+<strong>Likes:</strong>
+    <<if $OCShinjuSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Monsters, Jokes, pranks and silly moments, Having real friends 
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $OCShinjuSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Overly strict rules, Xavier, Those who ruin his fun
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $OCShinjuSocial >= 50>>
+        <div style="margin-left: 25px;">
+             Making monster suits/armor, Monster card game, Terrorizing civilians and Hero wannabes
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $OCShinjuSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Tofu,Spicy Food, Sweet Tasting Things, American Fast food, The Life Force Of The Young
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $OCShinjuSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Red
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $OCShinjuSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Pink clothing, Oversized Hoodies with nothing underneath, Nothing at all
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $OCShinjuSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Various Pink undies or nothing
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $OCShinjuSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $OCShinjuCut == "Cut">>
+                A cut penis. Gigantic for his age.
+            <<else>>
+                An uncut penis. Gigantic for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $OCShinjuSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A big and well-toned butt.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: OC Shinju NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+
+ <<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Shinju NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+ | 
+<<include"OC Shinju NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal OC Shinju">>
+
+
+:: Shinju NPC Character Menu Art [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Artwork]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Shinju NPC Character Menu Avatar Display">>
+
+<<include"Journal Artwork Shinju">>
+
+:: OC Shinju NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Shinju NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Shinju NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "OC Shinju",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Hoodie", "Uniform", "Gym", "Gym Swim", "Terrorscale", "Psycoranger", "Tiger"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCShinjuSocial >= 50 or $OCShinjuSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Psycoranger", "Tiger", "Undies")>>
+<</if>>
+<<if $CompletedQuests.includes("Shinju: Felix Monster Event")>>
+    <<set _npcviewerOutfit.push("Goldrax")>>
+<</if>>
+<<if $OCShinjuSocial >= 100 or $OCShinjuSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: OC Shinju NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "OC Shinju",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Hoodie", "Uniform", "Gym", "Gym Swim", "Terrorscale"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCShinjuSocial >= 50 or $OCShinjuSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Psycoranger", "Tiger", "Undies")>>
+<</if>>
+<<if $CompletedQuests.includes("Shinju: Felix Monster Event")>>
+    <<set _npcviewerOutfit.push("Goldrax")>>
+<</if>>
+<<if $OCShinjuSocial >= 100 or $OCShinjuSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

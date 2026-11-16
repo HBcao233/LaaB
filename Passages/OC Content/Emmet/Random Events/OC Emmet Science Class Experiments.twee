@@ -1,0 +1,185 @@
+:: OC Emmet Science Class Experiments [nobr]
+
+/* Intro */
+
+Science class is going rather easy today, with just some worksheets and group experimentation. Overall an enjoyable and relaxing time! As you are wandering about, seeing what each student is working on, you catch the mad inventor <span style="color:DarkTurquoise">Emmet</span> out of the corner of your eye. He appears to be working on some sort of crazy invention that you can’t even begin to describe. <br>
+
+<<set _ad to [
+	{
+		Name: "OC Emmet",
+		State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+		}
+	},
+]>>
+<<ad _ad>>
+
+You internally debate if going near his inventions is safe, but the decision is made for you as <span style="color:DarkTurquoise">Emmet</span> spots you and calls out <span style="color:LightSteelBlue">“Assistant! Good, come here!”</span> The boy doesn’t wait for a response, grabbing you by the arm and hurrying you over to his table. <span style="color:LightSteelBlue">“I am working on something amazing! It will change the face of the world, I tell you! Come, you must help me!”</span> You spot <span style="color:DarkTurquoise">Mr. Chang</span> smirking, no doubt proud of the inventor, though you find yourself a bit worried. <span style="color:Yellow">Who knows what he’s working on?</span> <br>
+<br>
+
+<div id='choice'>
+/*-Accept-*/
+<<link "Accept<br>">>
+	<<replace"#choice">>
+
+    <span style="color:LightSteelBlue">“Brilliant! I knew you wouldn’t let me down!”</span> <span style="color:DarkTurquoise">Emmet</span> claps his hands together happily. <br>
+    <br>
+
+    /*[Go to one of 3 inventions below randomly.]*/
+
+    <<set _random to random(1, 3)>>
+    /*-Invention 1 (Smoke Bomb)-*/
+        <<if _random == 1>>
+
+        <span style="color:DarkTurquoise">Emmet</span> shows you his latest invention, which appears to be a black capsule inside a small sphere. You curiously pick up the sphere and inspect it, confused about what it could be. <span style="color:LightSteelBlue">“Careful there, it’s a bit explosive.”</span> <span style="color:DarkTurquoise">Emmet</span> says. <span style="color:LightCoral">You quickly put the sphere down and back away, along with some other nearby kids, as <span style="color:DarkTurquoise">Emmet</span> laughs.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“Don’t worry! I’ve disarmed it.”</span> He picks up the sphere and begins to show it off to you, <span style="color:LightSteelBlue">“See, it’s a smoke bomb. Useful to escape any would be attackers or to use as a distraction. Pretty nifty, right?”</span> Against your better judgement, you take a step closer. The sphere did look complicated, partially see-through with the black capsule, which most likely contains the ‘smoke’ held in the middle. On the top is a single button, which you could easily guess the purpose of. <br>
+        <br>
+        <span style="color:LightSteelBlue">“You see, I’ve been having a problem with the trigger. It’s supposed to activate after pushing the button and tossing it down, breaking the containment cell, but instead the arming mechanism causes it to activate. I’ve disarmed them all just to be safe, but I need to find a way to-”</span> <span style="color:LightCoral">As if the universe was listening, right as <span style="color:DarkTurquoise">Emmet</span> hits the button there is a flash followed by a small explosion of black smoke. Screams, coughing, and shouting follow and when the smoke clears, you see that you, <span style="color:DarkTurquoise">Emmet</span>, and the nearby desks are covered in a thick black soot!</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "OC Emmet",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Frown",
+                        Blush: 1,
+                    }
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                        Blush: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Oops,”</span> <span style="color:DarkTurquoise">Emmet</span> blinks twice, <span style="color:LightSteelBlue">“I guess I DIDN’T disarm this one… hehe…”</span> Though <span style="color:DarkTurquoise">Mr. Chang</span> isn’t mad, he does make you both spend the rest of class cleaning up the mess and you find your clothes still covered in a thick black layer of soot. Still, <span style="color:DarkTurquoise">Emmet</span> happily talks about his smoke bombs during the entire cleaning process, <span style="color:LightGreen">and you can’t help but be amused by his passion.</span> <br>
+
+        <<socialChange "Emmet" 3 1>>
+        <<needChange "Fun" 5>>
+        <<needChange "Hygiene" -10>>
+        <<include"Attend Science Finish">>
+
+    /*-Invention 2 (Mind Reader)-*/
+        <<elseif _random == 2>>
+
+        <span style="color:DarkTurquoise">Emmet</span>’s latest device appears to be some sort of football helmet with a hole cut off the top filled with wires, lightbulbs, and what you only assume are fruit scented stickers. You can’t begin to imagine what this thing is used for but know what’s coming as <span style="color:DarkTurquoise">Emmet</span> asks you to put the device on. <br>
+        <br>
+        <span style="color:LightSteelBlue">“It’s a mind reader!”</span> He explains, plopping it on your head as you pray to whatever you believe in that this thing doesn’t kill you or burn your hair off. <span style="color:LightSteelBlue">“You see, the combinations of lights, scenes, and sounds should trigger increased brain activity and send the results to my tablet here. Of course, I haven’t tested it yet, but that’s what you’re here for!”</span> He smiles, <span style="color:LightCoral">hooking up the device as a few nearby boys take a few steps back, all too wary of <span style="color:DarkTurquoise">Emmet</span>’s inventions.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "OC Emmet",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Happy",
+                }
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        Once it’s on, you brace yourself as <span style="color:DarkTurquoise">Emmet</span> presses a few buttons. Almost instantly a single electric shock hits your temples, and you quickly jump to your feet. But your brief surge of fear is replaced by… <span style="color:LightGreen">relaxation?</span> You sit back down, feeling your body relaxed as you can’t help but smile. <span style="color:LightGreen">Whatever that thing did, it is really nice!</span> <br>
+        <br>
+        /*-If Aroused-*/
+        <<if $Player.Arousal >= 50>>
+            <span style="color:Pink">Your entire body seems to relax… all of it. You can’t help but notice the boner in your pants has all but disappeared. It seems whatever this device did has completely freed you all of your built-up arousal.</span> <br>
+            <<set $Player.Arousal to 0>>
+            <<set $Player.SexualFrustration to 0>>
+        <</if>>
+
+        <<linkreplace"Continue">>
+
+        <span style="color:LightSteelBlue">“Huh… Well, that didn’t work?”</span> <span style="color:DarkTurquoise">Emmet</span> says, tapping his tablet a few times before sighing. <span style="color:LightSteelBlue">“I guess it didn’t do anything. Back to the drawing board I guess.”</span> <span style="color:LightGreen"> <span style="color:DarkTurquoise">Emmet</span> takes the device back, not noticing you sitting there in utter relaxation. You would say something, but your mind is too relaxed to care. You’ll tell him what happened later… probably.</span> <br>
+
+        <<socialChange "Emmet" 3 1>>
+        <<needChange "Fun" 10>>
+        <<addMoodlet "Stress" 0>>
+        <<include"Attend Science Finish">>
+        <</linkreplace>>
+
+    /*-Invention 3 (Super Bar)-*/
+    <<elseif _random == 3>>
+        What <span style="color:DarkTurquoise">Emmet</span> is working on is scarier than a death ray and more dangerous than a bomb… <span style="color:LightCoral">food.</span> Sitting in front of you is what looks like a granola bar, but it has very clearly been altered to some strange degree, with odd colored pieces sprinkled in. You turn to <span style="color:DarkTurquoise">Emmet</span>, terrified, but he just looks excited, a big smile on his face. <br>
+        <br>
+        <span style="color:LightSteelBlue">“I present to you the latest in food technology! The Super Bar, patent pending!”</span> He says, waving his hands about. <span style="color:LightCoral">Behind him, some other boys gave concerned looks or motioned for you to not eat anything the mad scientist gives you, but it’s too late now.</span> <span style="color:LightSteelBlue">“This bar is designed with all the vitamins and nutrients you need for a day of activity! It should not only fill you as much as a full dinner but also give you a massive boost to strength! Try just a bite for now though… to be safe.”</span> <br>
+        <br>
+        You break off a piece and nervously hold it up. <span style="color:LightCoral">Your stomach is already cringing.</span> Taking a sniff, you detect honey with a hint of what you can only describe as freshly cleaned laundry. Concerning… Turning to <span style="color:DarkTurquoise">Emmet</span>, who is watching with bated breath, you sigh before popping the piece in your mouth and beginning to chew. <br>
+        <br>
+        The taste isn’t bad, per say, but it is weird. Meaty, with a bit of a metallic taste that is quickly replaced with remnants of energy drinks. <span style="color:LightCoral">With a strange expression you swallow, taking a deep breath when suddenly, everything goes black!</span> <br>
+        <br>
+
+    <<linkreplace"Continue">>
+
+    You jump up, opening your eyes. What was that? What just happened!? You glance around the room and see a few students turn to you confused. <span style="color:DarkTurquoise">Emmet</span> sits beside you, taking notes. <br>
+
+    <<set _ad to [
+        {
+            Name: "OC Emmet",
+            State: {
+                Outfit: "Uniform",
+                Eyes: "Tired",
+            }
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“15 minutes, I see I see.”</span> He scribbles down as you ask him what happened, where’s the Super Bar and why did everything get dark for a second? <span style="color:LightSteelBlue">“Oh, you passed out as soon as you swallowed it. Just, plop, right onto the desk. You were out for almost exactly 15 minutes. If you would have got to 30, I would have asked <span style="color:DarkTurquoise">Mr. Chang</span> to take you to the nurse, but you’re fine!”</span> <br>
+    <br>
+    You try to argue that if his invention caused you to pass out, he should have informed the teacher immediately! But after some back and forth and some claims that he checked your pulse and you seemed fine, you realize there is little chance of you getting through to him. <span style="color:LightGreen">For what it’s worth, you do feel more full and pretty rested, but you don’t tell him that.</span> <br>
+
+    <<socialChange "Emmet" 3 1>>
+    <<needChange "Energy" 10>>
+    <<needChange "Hunger" 10>>
+    <<include"Attend Science Finish">>
+    <</linkreplace>>
+    <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Refuse<br>">>
+        /*Refuse*/
+        <<replace"#choice">>
+
+
+    <<set _ad to [
+        {
+            Name: "OC Emmet",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Frown",
+                Eyes: "Tired",
+            }
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You shake your head, apologizing but telling the boy you don’t have time to aid him, sadly. <span style="color:DarkTurquoise">Emmet</span> frowns, glaring at you. <span style="color:LightSteelBlue">“Fine, fine!”</span> He waves his hand at you before turning away, pouting slightly. <span style="color:LightSteelBlue">“I get it, too busy to help change the world! I’ll get someone else to help me instead.”</span> You apologize once more and return to your desk as the experimenting continues. <br>
+
+    <<include"Attend Science Finish">>
+    <</replace>>
+    <</link>>
+</div>

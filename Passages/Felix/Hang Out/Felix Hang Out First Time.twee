@@ -1,0 +1,34 @@
+:: Felix Hang Out First Time [nobr]
+
+Standing in the bus pick up area, you spot <span style="color:DarkTurquoise">Felix</span> sitting on the stairs patting a melody on his knees as he chats with some other students. However, as their bus arrives and they board, he is left alone. You walk up and sit next to him, jokingly claiming that you thought they’d never leave. <br>
+
+    <<set _ad to [
+        {
+            Name: "Felix",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“What is it that can I say, they love my exotic charm.”</span> <span style="color:DarkTurquoise">Felix</span> jokes, beginning to pat his fingers on your shoulder like it’s a drum set, <span style="Color: LightSteelBlue">“How is it that you are doing? School was not too bad?”</span> You shrug, claiming that it was just another day. Though, despite that, you still feel the need to de-stress. You were thinking of wandering around town and seeing what you can find. You are still relatively new to the place, so who knows what sorts of secrets you’ll discover, and you wouldn’t mind some company. <span style="Color: LightSteelBlue">“Oh, what a clever way to ask me out to – what was it? – Hang out?”</span> He laughs, <span style="Color: LightSteelBlue">“But I would be happy to hang out. This place is still very new to me too, so it would be good to ‘explore’.”</span> <br>
+<br>
+You both stand up and <span style="color:DarkTurquoise">Felix</span> grabs his backpack. You notice that it is oddly bulging and ask what exactly he has in there. <span style="Color: LightSteelBlue">“A soccer ball, what else would I have?”</span> He says like it’s the most common thing in the world, <span style="Color: LightSteelBlue">“You never know when someone will want to play a game.”</span> He laughs, patting you on the back, <span style="Color: LightSteelBlue">“But do not think we have to play that. We can do whatever you want. I am – what do they say? – down for anything!”</span> <span style="Color: LightGreen">You roll your eyes at <span style="color:DarkTurquoise">Felix</span> and the two of you head off.</span> <br>
+<<set $InActiveQuests.delete("Felix: Hang Out Intro")>>
+<<set $CompletedQuests.push("Felix: Hang Out Intro")>>
+<br>
+<span style="color:Yellow">Where to Hang Out?</span><br>
+<<link"The Park (0:10)<br>">>
+    <<set $HangOutClothes to "Uniform">>
+    <<set $Minutes += 10>>
+    <<goto "Felix Hang Out Go To Park">>
+<</link>>

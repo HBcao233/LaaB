@@ -1,0 +1,286 @@
+:: Carter Hang Out Arcade [nobr]
+
+/* End Late Check */
+<<if $Time.after(20)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<goto "Carter Hang Out End Late Low Fun">>
+    <<else>>
+        <<goto "Carter Hang Out End Late High Fun">>
+    <</if>>
+<<else>>
+
+    /* LOCATION */
+    <<set $Location to {
+        Name: "Carter Arcade Hang Out",
+        Indoors: 1,
+        Safe: 0,
+        Nudity: 0,
+        Public: 1,
+        Environment: "Arcade",
+    }>>
+
+    <<set $AD.Arms to "Normal">>
+
+    <<if $Time.after(20)>>
+        <<set _location to "Arcade">>
+        <<include "Carter Hang Out Late">>
+    <<else>>
+        <span style="color:Azure"><big><strong>--Arcade--</strong></big></span><br>
+        <<set _ad to [
+            {
+                Name: "Carter",
+                State: {
+                    Mouth: "Happy",
+                    Outfit: $HangOutClothes,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <strong><span style="color:DarkTurquoise">Carter</span>: </strong>
+        <<include "NPC Hang Out Modifiers">>
+        <br>
+
+        You and <span style="color:DarkTurquoise">Carter</span> stand in the arcade of the entertainment district. The design of the room is right out of the 90s, with neon lights and a space-themed carpet full of bright colors that shine under the purple glow of the lights. There was music in the background, but it was mostly drowned out by the sounds of the arcade machines, all mixing together into a symphony of noise that somehow screams fun. <br>
+        <br>
+
+        The machines themselves were a mix of classics and new modern games. Foosball, basketball, claw machines, dance games, shooters, racing; There were so many you didn’t even know where to begin! And despite being full of people, there were still dozens of available games. Being in a popular tourist destination had its benefits, and a large arcade to entertain the children of said tourists was one of them. <br>
+        <br>
+
+        <span style="color:DarkTurquoise">Carter</span> runs around, examing all the games with awe as if it was his first time. <span style="color:LightSteelBlue">“Did you wanna play this first? Or maybe this? Oh! This looks fun!”</span> He ran around with such joy and excitement. <br>
+        <br>
+
+        <span style="color:Azure"><strong>-Talk-</strong></span><br>
+        <<include"Carter Base Talk Code">>
+
+        <span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+        <<link "Play a Beat'em Up Game (0:20)">>
+            <<set _Random to ["Carter Hang Out Arcade Beat Twin Dragons", "Carter Hang Out Arcade Beat LMNL"]>>
+            <<if $HangOutNeedCarter.Comfort > 60>>
+                <<set _Random.push("Carter Hang Out Arcade Beat TD Bet")>>
+            <</if>>
+            <<set _event to _Random.random()>>
+            <<goto _event>>
+        <</link>><br>
+        <<link "Play a Shooter Game (0:20)">>
+            <<set _Random to ["Carter Hang Out Arcade Shooter Scared", "Carter Hang Out Arcade Shooter Gun Broke"]>>
+            <<set _event to _Random.random()>>
+            <<goto _event>>
+        <</link>><br>
+        <<if $Money >= 4>>
+            <<link "Order a Pizza ($4, 0:15)">>
+                <<set _Random to ["Carter Hang Out Arcade Pizza Pick"]>>
+                <<set _event to _Random.random()>>
+                <<goto _event>>
+            <</link>><br>
+        <<else>>
+            <span class="greyed-out">Order a Pizza ($4, 0:15)</span><br>
+        <</if>>
+
+        <span style="color:Azure"><strong>-Travel-</strong></span><br>
+        [[Go to the Park (0:05)|Carter Hang Out Park Intro][$Minutes += 5]] <br>
+        [[Go to the Mall (0:10)|Carter Hang Out Mall Intro][$Minutes += 10]] <br>
+
+        [[Leave for today|Entertainment District]]<br>
+    <</if>>
+
+<</if>>
+
+:: Carter Hang Out Park [nobr]
+
+/* End Late Check */
+<<if $Time.after(20)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<goto "Carter Hang Out End Late Low Fun">>
+    <<else>>
+        <<goto "Carter Hang Out End Late High Fun">>
+    <</if>>
+<<else>>
+
+    /* LOCATION */
+    <<set $Location to {
+        Name: "Carter Park Hang Out",
+        Indoors: 0,
+        Safe: 0,
+        Nudity: 0,
+        Public: 1,
+        Environment: "Park",
+    }>>
+
+    <<if $Time.after(20)>>
+        <<set _location to "Park">>
+        <<include "Carter Hang Out Late">>
+    <<else>>
+        <span style="color:Azure"><big><strong>--Opal City Park--</strong></big></span><br>
+        
+        <<set _ad to [
+            {
+                Name: "Carter",
+                State: {
+                    Mouth: "Happy",
+                    Outfit: $HangOutClothes,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <strong><span style="color:DarkTurquoise">Carter</span>: </strong>
+        <<include "NPC Hang Out Modifiers">>
+        <br>
+        You and <span style="color:DarkTurquoise">Carter</span> stand in the city park. It is a fairly large patch of greenery in the center of the city that, despite being a popular spot, always has plenty of open space for activities. The park has a lot of sidewalk trails that curve around throughout the entire park. There is also a small lake near one corner along with quite a few open fields that can be used for all sorts of things. Along one corner is also a fenced-in playground that has a lot more attractions than the one at your school. <br>
+        <br>
+
+        <span style="color:LightSteelBlue">“Shall we go on patrol?”</span> <span style="color:DarkTurquoise">Carter</span> asks, smiling, <span style="color:LightSteelBlue">“Or, we can play for a little, if you want!”</span><br>
+        <br>
+
+        <span style="color:Azure"><strong>-Talk-</strong></span><br>
+        <<include"Carter Base Talk Code">>
+
+        <span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+        <<link "Take a Walk (0:15)">>
+            <<set _Random to [
+                'Basic',
+                'Basic',
+                'Basic',
+                'Litter',
+            ]>> /* 1/4 chance for Litter */
+            <<set _event to `Carter Hang Out Park Walk ${_Random.random()}`>>
+            <<set $Minutes += 15>>
+            <<goto _event>>
+        <</link>><br>
+        <<link "Challenge him to a Race (0:15)">>
+            <<set $Minutes += 15>>
+            <<goto "Carter Hang Out Park Race">>
+        <</link>><br>
+        <<link "Play on the Playground (0:20)">>
+            <<set _Random to ["Carter Hang Out Park Play On Playground Swings", "Carter Hang Out Park Play On Playground See-Saw", "Carter Hang Out Park Playground Basic"]>>
+            <<if $ToggleOCLeviM == 1 && $CompletedQuests.includes("Levi M: Introduction")>>
+                <<set _Random.push("OC Levi and Carter")>>
+            <</if>>
+            <<set _event to _Random.random()>>
+            <<set $Minutes += 20>>
+            <<goto _event>>
+        <</link>><br>
+        <<link "Play Superheroes (0:20)">>
+            <<set $Minutes += 20>>
+            <<goto "Carter Hang Out Park Play Superheroes">>
+        <</link>>
+        <span style="color:green">+Fun</span><br>
+        [[Sit & Chat (0:10)|Carter Hang Out Park Sit & Chat]] <span style="color:green">+Energy</span><br>
+        <br>
+
+        <span style="color:Azure"><strong>-Travel-</strong></span><br>
+        [[Go to the Arcade (0:05)|Carter Hang Out Arcade Intro][$Minutes += 5]] <br>
+        [[Go to the Mall (0:05)|Carter Hang Out Mall Intro][$Minutes += 5]] <br>
+        <br>
+        [[Leave for today|Park]]<br>
+    <</if>>
+
+<</if>>
+
+:: Carter Hang Out Mall [nobr]
+
+/* End Late Check */
+<<if $Time.after(20)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<goto "Carter Hang Out End Late Low Fun">>
+    <<else>>
+        <<goto "Carter Hang Out End Late High Fun">>
+    <</if>>
+<<else>>
+
+    /* LOCATION */
+    <<set $Location to {
+        Name: "Carter Mall Hang Out",
+        Indoors: 1,
+        Safe: 0,
+        Nudity: 0,
+        Public: 1,
+        Environment: "Park",
+    }>>
+
+    <<if $Time.after(20)>>
+        <<set _location to "Mall">>
+        <<include "Carter Hang Out Late">>
+    <<else>>
+        <span style="color:Azure"><big><strong>--Opal Gate Mall--</strong></big></span><br>
+
+        <<set _ad to [
+            {
+                Name: "Carter",
+                State: {
+                    Mouth: "Happy",
+                    Outfit: $HangOutClothes,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <strong><span style="color:DarkTurquoise">Carter</span>: </strong>
+        <<include "NPC Hang Out Modifiers">>
+        <br>
+
+        You and <span style="color:DarkTurquoise">Carter</span> stand in the Opal City Mall, near the entrance. In front of you is a large, 4-story mall full to the brim with different shops, stores, and other activities. On the first floor is a large water feature that is surrounded by the food court. Shiny coins can be seen inside the fountain and the sound of water is mixed with chatter and distant music. <br>
+        <br>
+
+        The mall is four-stories, with escalators and a central elevator to get to the upper levels. The mall was large for a reason, as tourists and people from downtown filled it. Every single one of the dozens and dozens of stores seemed to have customers in them, even the really obscure ones. <br>
+        <br>
+
+        <span style="color:Azure"><strong>-Talk-</strong></span><br>
+        <<include"Carter Base Talk Code">>
+
+        <span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+        <<link"Explore the Blockz Store (0:15)">>
+            <<set _Random to ["Carter Hang Out Mall Blockz Store Basic", "Carter Hang Out Mall Blockz Store Make Figure"]>>
+            <<set _event to _Random.random()>>
+            <<goto _event>>
+        <</link>><br>
+        <<link "Explore Cool Culture (0:15)">>
+            <<set _Random to ["Carter Hang Out Mall Cool Culture Try On Hats", "Carter Hang Out Mall Cool Culture Dragon Dildos"]>>
+            <<if $HangOutNeedCarter.Comfort > 60>>
+                <<run _Random.push("Carter Hang Out Mall Cool Culture Shirts")>>
+            <</if>>
+            <<set _event to _Random.random()>>
+            <<set $Minutes += 15>>
+            <<goto _event>>
+        <</link>><br>
+        <<if $Money >= 4>>
+            <<link"Eat something ($4, 0:15)">>
+                <<set _Random to ["Carter Hang Out Mall Eat Something"]>>
+                <<set _event to _Random.random()>>
+                <<goto _event>>
+            <</link>><br>
+        <<else>>
+            <span class="greyed-out">Eat something ($4, 0:15)</span><br>
+        <</if>>
+
+        <span style="color:Azure"><strong>-Travel-</strong></span><br>
+        [[Go to the Park (0:05)|Carter Hang Out Park Intro][$Minutes += 5]] <br>
+        [[Go to the Arcade (0:10)|Carter Hang Out Arcade Intro][$Minutes += 10]] <br>
+        <br>
+
+        [[Leave for today|Mall]]<br>
+    <</if>>
+
+<</if>>

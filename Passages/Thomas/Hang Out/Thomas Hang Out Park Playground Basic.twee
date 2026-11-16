@@ -1,0 +1,103 @@
+:: Thomas Hang Out Park Playground Basic [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+<span style="color:DarkTurquoise">Thomas</span> walks behind you as you approach the playground, hands in pockets and head a bit low. You’re unsure how <span style="color:DarkTurquoise">Thomas</span> would take to playing on the playground, considering he doesn’t seem the type, so you ask him. <span style="Color: LightSteelBlue">“Whatever.”</span> He shrugs, <span style="Color: LightSteelBlue">“We can hang out there. Though don’t expect me to run around giggling and laughing.”</span> He smirks and you tell him that’s the best part of a playground! <span style="Color: LightSteelBlue">“Maybe for you, for me it’s the lack of adults. Well, if we’re lucky.”</span> <span style="color:lightgreen">You share a laugh as you drag him over.</span> <br>
+
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                },
+            },
+            {
+            Name: "Thomas",
+            State: {
+                Outfit: $HangOutClothes,
+                Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+Arriving at the jungle gym, you ask <span style="color:DarkTurquoise">Thomas</span> what he wants to do. <span style="color:yellow">He looks up at the sky and frowns,</span> asking <span style="Color: LightSteelBlue">“Mind if we do something in the shade? The sun’s too bright today, giving me a headache.”</span> You chuckle at his brooding demander but agree. You glance around for what things are currently shaded and spot a few, picking one to suggest. <br>
+<br>
+
+<div id="choice">
+	<<link "Tic-tac-toe<br>">>
+    <<replace"#choice">>
+        You point to the plastic, spinning tic-tac-toe game under the jungle gym and ask if he wants a match. Due to its location, it is nicely shaded under the structure and has plenty of cool sand to sit on. <span style="color:lightgreen">Perfect for a pair of boys looking to have fun out of the sun!</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Alright.”</span> <span style="color:DarkTurquoise">Thomas</span> chuckles at your description and the two of you walk over. You decide to let <span style="color:DarkTurquoise">Thomas</span> go first, being such a good friend, and the game swiftly begins! <span style="color:lightgreen">And things get intense quick! <span style="color:DarkTurquoise">Thomas</span> is no slouch and is able to block all of your available moves while setting up near wins himself! Things go back and forth, tie after tie, and even switching up who goes first doesn’t offer a winner!</span> <br>
+        <br>
+        This goes on for a few minutes, both of you focused solely on the game and the victory you crave. But it quickly becomes clear that, no matter what tricks you try to pull, the best either of you can do is tie the other. You use every trick in the book you’ve used to beat your brothers, but it is no use! <span style="color:lightgreen"><span style="color:DarkTurquoise">Thomas</span> is truly a master.</span> <br>
+        
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+                },
+            },
+            {
+            Name: "Thomas",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Smirk",
+                Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“You know, there’s actually a trick to ensure you never lose, right?”</span> He finally says after the 20th game. <span style="Color: LightSteelBlue">“Like, you aren’t guaranteed a victory, but you are a tied game. So, I don’t think either of us are going to win anytime soon.”</span> <span style="color:yellow">You blink twice, realizing that he’s right and this will go on forever.</span> Both of you chuckle and agree to call it a tie, spending the next few minutes trying to come up with a better version of tic-tac-toe that can’t result in a tie. <span style="color:lightgreen">It is pretty hard, but very fun!</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Thomas" 3>>
+        <span style="color:green">+Thomas Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <br>
+        [[Continue|Thomas Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "Relax under the awning<br>">>
+    <<replace"#choice">>
+        Due to the park being outside, you are limited on ‘shaded activities’, however, the area under the jungle gym is nice, dark, and cool. <span style="color:lightgreen">Making it the perfect place to relax and chill.</span> You ask <span style="color:DarkTurquoise">Thomas</span> if that’s alright and he nods. <span style="Color: LightSteelBlue">“As long as you can stand not running around and giggling for a few minutes.”</span> He teases. <br>
+        <br>
+        While that would be fun, you understand that <span style="color:DarkTurquoise">Thomas</span> is the type of person to prefer relaxing hang outs as opposed to crazy, exciting ones. <span style="color:lightgreen">So, you’re happy as long as he’s happy.</span> <span style="Color: LightSteelBlue">“Such a generous soul.”</span> He laughs as you both sit down in the shade. You spend a minute chatting before spotting some sticks and grab one to begin drawing in the sand. <span style="color:lightgreen"><span style="color:DarkTurquoise">Thomas</span> watches you with an amused look before grabbing a stick himself and drawing an accompanying photo.</span> <br>
+        
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                },
+            },
+            {
+            Name: "Thomas",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Happy",
+                Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“You know, this is how I started drawing. Kinda.”</span> He says as he puts together a rather impressive picture of a fox considering sand is his canvas. <span style="Color: LightSteelBlue">“The area by my house is dirt, pretty much, I used to go out when I was bored and draw in it. That was all the time, so I guess I had a lot of practice.”</span> He laughs slightly, <span style="Color: LightSteelBlue">“Got to admit though, paper and pencil is much easier to work with.”</span> <span style="color:lightgreen">He yawns and stretches his arms into the air as he finishes, leaning back and watching you complete the scene. It is a relaxing moment.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Thomas" 3>>
+        <span style="color:green">+Thomas Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:green">+Thomas Energy</span><br>
+        <<set $HangOutNeed.Energy += 10>>
+        <span style="color:green">+Thomas Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 5>>
+        <br>
+        [[Continue|Thomas Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

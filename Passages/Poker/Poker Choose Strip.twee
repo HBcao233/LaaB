@@ -1,0 +1,49 @@
+:: Poker Choose Strip [nobr]
+
+<<set _player = $Poker.players.find(player => player.id === $PokerLoser.playerId)>>
+<<set _isPC = _player.id === 'PC'>>
+
+<<if _isPC>>
+    <<if !$Poker.hasOnlyHandsLeft(_player.id)>>
+        Which piece of clothing will you strip?<br><br>
+        <<for _clothPiece range Object.keys(_player.clothes).filter(cl => _player.clothes[cl] === 1)>>
+            <<set _pieceStrippedName = State.getVar(`$Player${_clothPiece}`)?.Name || _clothPiece>>
+            <<set _pieceStrippedName = _pieceStrippedName === 'None' ? _clothPiece : _pieceStrippedName>>
+            <<capture _clothPiece _pieceStrippedName>>
+                <<if _clothPiece === 'Undies' && !$Poker.hasOnlyBriefsLeft(_player.id)>>
+                    <strike>Strip <<=_pieceStrippedName>></strike>
+                    <span class="greyed-out">(This can only be removed last)</span><br>
+                <<elseif _clothPiece === 'Bottoms' && $Poker.hasNoUndiesButBottomsLeft(_player.id)>>
+                    <strike>Strip <<=_pieceStrippedName>></strike>
+                    <span class="greyed-out">(This can only be removed last)</span><br>
+                <<elseif _clothPiece === 'Socks' && _player.clothes.Shoes === 1>>
+                    <strike>Strip <<=_pieceStrippedName>></strike>
+                    <span class="greyed-out">(First Shoes have to be stripped)</span><br>
+                <<elseif _clothPiece === 'Top' && _player.clothes.Outer === 1>>
+                    <<set _outerName = State.getVar(`$PlayerOuter`)?.Name || "None">>
+                    <strike>Strip <<=_pieceStrippedName>></strike>
+                    <span class="greyed-out">(First <<=_outerName !== "None" ? _outerName : "Outer">> has to be stripped)</span><br>
+                <<elseif _clothPiece !== 'Hands'>>
+                    <<set _linkText = `Strip ${_pieceStrippedName}`>>
+                    <<link _linkText>>
+                        <<set _player.clothes[_clothPiece] = 0>>
+                        <<set $PCStripClothe = _clothPiece>>
+                        <<set $PokerPieceStrippedName = _clothPiece>>
+                        <<include "Poker Strip PC">>
+                        <<set $PokerLoadPassage to "Poker Strip Loser">>
+                        <<goto $Poker.containerPassage>>
+                    <</link>><br>
+                <</if>>
+            <</capture>>
+        <</for>>
+    <<else>>
+        <<set _player.clothes['Hands'] = 0>>
+        <<set $PokerPieceStrippedName = "Hands">>
+        <<set $PokerLoadPassage to "Poker Strip Loser">>
+        <<goto $Poker.containerPassage>>
+    <</if>>
+<<else>>
+    <<set $PokerPieceStrippedName = $Poker.removeNextNPCCloth(_player.id)>>
+    <<set $PokerLoadPassage to "Poker Strip Loser">>
+    <<goto $Poker.containerPassage>>
+<</if>>

@@ -1,0 +1,93 @@
+:: OC Bobby Farm Help Out Fields Oranges [nobr]
+
+/* Intro */
+<<set $Minutes += 25>>
+You find <span style="color:DarkTurquoise">Bobby</span> out in the fields and ask him if he needs any help. <span style="Color: LightSteelBlue">“Sure thing, I was just about to head into the orchard to pick some oranges. They’re looking nice and juicy!”</span> <span style="color:DarkTurquoise">Bobby</span> hands you a basket and the two of you chat as you walk over. The orchard seems to go on forever, with just rows and rows of orange trees all in full bloom, <span style="Color: LightGreen">causing an overwhelmingly citrusy smell to fill the air.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“This climate is perfect for oranges, even when it’s colder, they seem to bloom.”</span> He laughs, <span style="Color: LightSteelBlue">“My grandpa always talked about it being something in the soil. The citrus just loves it here!”</span> He shows you which trees you’ll be picking from and you get to work. <span style="color:DarkTurquoise">Bobby</span> sets up the ladder to pick them, dropping them down for you to catch in the basket. <span style="Color: LightGreen">It’s pretty easy and quick work, the two of you making a great team and <span style="color:DarkTurquoise">Bobby</span> even letting you chow down on a few of the juiciest looking ones.</span> <br>
+<br>
+As you reach the last tree, <span style="color:DarkTurquoise">Bobby</span> takes the basket from you. <span style="Color: LightSteelBlue">“Why don’t you try climbing this one. Don’t worry about the ones at the top if you’re not tall enough. Just pick the good ones and toss them down to me.”</span> He smiles, giving you an assuring thumbs up. <span style="Color: LightGreen">You happily take him up on the offer, excited to be trusted with such a job.</span> <br>
+<br>
+
+<<linkreplace "Continue">>
+    <<skillCheck "Athletics" 45>>
+    <<if _result == 1>>
+        <span style="color:DarkTurquoise">Bobby</span> chuckles as he sees you starting climb. <span style="Color: LightSteelBlue">“I said you don’t have to worry about those, but I guess you’re pretty insistent.”</span> He watches with amusement as you move up the tree like a monkey, channeling your inner primate to reach the highest branches. <span style="Color: LightGreen">It is a little nerve-wracking, considering you are so high up, but you manage to grab the oranges carefully and drop them down. Once finished, you return to the ground slowly and smile as <span style="color:DarkTurquoise">Bobby</span> claps for you.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Blush: 1,
+                    },
+                },
+                {
+                    Name: "OC Bobby",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Smirk",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Well, you certainly have the drive to be a farmer.”</span> <span style="Color: Pink">He ruffles your hair playfully,</span> <span style="Color: LightSteelBlue">“Though don’t do anything too dangerous just to impress me. You’re not use to be injured.”</span> He laughs, before adding, <span style="Color: LightSteelBlue">“Good job though! Somebody earned themselves some freshly squeezed orange juice!”</span> <br>
+        <<socialChange "Bobby" 3 1>>
+        <<skillPoints "Athletics" 3>>
+        <<needChange "Fun" 15>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <<else>>
+        <span style="color:DarkTurquoise">Bobby</span> chuckles as he sees you starting climb. <span style="Color: LightSteelBlue">“I said you don’t have to worry about those, but I guess you’re pretty insistent.”</span> He watches with amusement as you move up the tree like a monkey, though he also seems to suspect what is going to happen at he puts down the basket. <span style="Color: LightCoral">You are about halfway to the top when you suddenly start to lose your grip! You freeze in panic, realizing the painful fall that will surely follow. You try your hardest to hold on, squeezing your hands as hard as you can against the branches, but it isn’t enough. <br>
+        <br>
+        Slip! <br>
+        <br>
+        Thump!</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                        Blush: 2,
+                    },
+                },
+                {
+                    Name: "OC Bobby",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        You land, not on the hard ground, <span style="Color: Pink">but safely into <span style="color:DarkTurquoise">Bobby</span>’s arms, who cradles you like a baby and laughs.</span> <span style="Color: LightSteelBlue">“Not bad, though I’d rather you didn’t hurt yourself. You’re no use to me injured.”</span> He teases, ruffling your hair and rocking you back and forth. <span style="Color: Pink">You feel a little embarrassed to need saving, especially like that, but thank <span style="color:DarkTurquoise">Bobby</span> for the rescue.</span> <span style="Color: LightSteelBlue">“No worries. And don’t stress about the oranges, I’ll get those ones later. Your hands look a little bruised though, so let’s grab you an icepack just in case.”</span> <br>
+        <br>
+        <span style="Color: Pink"> <span style="color:DarkTurquoise">Bobby</span> insists on carrying you back like that. It is a little embarrassing but also tender since no one else is there to see it.</span> <br>
+        <<socialChange "Bobby" 3 1>>
+        <<skillPoints "Athletics" 1>>
+        <<needChange "Fun" 15>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <</if>>
+<</linkreplace>>

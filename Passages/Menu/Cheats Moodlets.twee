@@ -1,0 +1,36 @@
+:: Cheats Moodlets [nobr]
+
+<<set _moodletsArray to ["Pained", "Kissed", "Seen Naked", "Seen Undies", "Gave Wedgie", "Wedgie", "Spanked", "Good Dream", "Bad Dream", "Nightmare", "Lewd Experience", "Raped", "Grossed Out", "Minty Fresh", "Great movie", "Scary movie", "Good Wank", "Good Deed", "Delicious", "Full Diaper", "Stress", "Caffeine Buzz", "Caffeine Crash", "Asthmatic", "Commando", "Coward", "Excited", "Gloomy", "Ticked Off", "Thinking Naughty Thoughts", "No Shoes", "Safe & Secure", "Fresh Air", "Unstable", "Over Eaten", "Feeling Weird"]>>
+
+<<set _timeArray to [1, 2, 3, 4, 5, 6, 7, 8, 9]>>
+
+<span style="color:Azure"><big><strong>-- Add Moodlets --</strong></big></span><br>
+Moodlet: 
+<<listbox "_cheatMood">>
+    <<optionsfrom _moodletsArray>>
+<</listbox>> |
+<span id="customTime"> Custom time: </span>
+<<listbox "_cheatMoodTime" autoselect>>
+    <<optionsfrom _timeArray>>
+<</listbox>><br>
+<<link "Add Moodlet">>
+    <<addMoodlet _cheatMood _cheatMoodTime>>
+<</link>><br>
+<br>
+<span style="color:Azure"><big><strong>-- Remove Moodlets --</strong></big></span><br>
+<<set _currentMoods to []>>
+<<for _x to 0; _x lt $Player.Moodlets.length; _x++>>
+    <<set _temp to $Player.Moodlets[_x].Name>>
+    <<set _currentMoods[_x] to _temp>>
+ <</for>>
+<<listbox "_removeMood">>
+    <<optionsfrom _currentMoods>>
+<</listbox>><br>
+<<link "Remove moodlet">>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == _removeMood>>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+<</link>><br>

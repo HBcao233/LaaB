@@ -1,0 +1,62 @@
+:: Rudy Park Drawing [nobr]
+
+/*Intro*/
+
+<<set $Minutes += 20>>
+
+While enjoying a pleasant stroll through the park, you come across a familiar looking blue-haired boy sitting under a tree on his drawing pad. It is your classmate <span style="color:DarkTurquoise">Rudy</span> who, alongside his ever-present companion Mr. Bear, is enjoying the breeze while sketching. <span style="color:Yellow">You could go up to him and say hi, if you’d like.</span> <br>
+<br>
+
+<div id="choice">
+    /*Approach him*/
+    <<link "Approach him">>
+    <<replace"#choice">>
+
+    With a smile you walk up to the boy, greeting him. He smiles back and waves. Judging by him not blushing and hurriedly covering his sketchpad, you’d wager he isn’t drawing one of your classmates but something else. This is confirmed when you sit down next to him and spot an image of the ducks in the pond on his paper. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Rudy",
+            State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+            Blush: 1,
+            }
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“I like drawing animals too.”</span> He chuckles nervously, rubbing the back of his head. The two of you spend the next few minutes talking and looking at some of the artwork in his pad that he isn’t embarrassed to show you. <span style="color:LightGreen">Overall, it is a nice time and you feel yourself getting closer to <span style="color:DarkTurquoise">Rudy</span>.</span> <br>
+
+    /*-If Artistic Trait and Unlocked Art Skill-*/
+
+    <<if $Player.Traits.includes("Artistic")>>
+
+    Noticing your interest in drawing and your appraisal of his skills, <span style="color:DarkTurquoise">Rudy</span> offers some tips and shows off some of his techniques. <span style="color:LightGreen">You appreciate the help and feel you’ve learned something new!</span> <br>
+    /*[+Art SP]*/
+    <</if>>
+    <<socialChange "Rudy" 3 1>>
+    <br>
+     [[Continue|Park]] 
+
+ <</replace>>
+<</link>>
+
+<div id="choice">
+    /*Leave him alone*/
+    <<link "Leave him alone">>
+    <<replace"#choice">>
+
+    Deciding you’d rather spend time alone, you turn the other way and continue your stroll, leaving both of you in the relaxing peace you had. <br>
+    <br>
+
+ [[Continue|Park]] 
+<</replace>>
+<</link>>
+</div>

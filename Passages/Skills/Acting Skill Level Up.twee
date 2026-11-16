@@ -1,0 +1,18 @@
+:: Acting Skill Level Up [nobr]
+
+<<if $ActingLearned != 1>>
+	<span style="color:LightGreen">You learned the Acting skill! This skill will determine your Drama grade! You can train it at many locations throughout the town!</span><br>
+	<<set $ActingLearned to 1>>
+<</if>>
+
+<<if $ActingXP >= 100>>
+	<<set $ActingXP to 0>>
+	<<set $ActingSkill += 1>>
+		<<if $ActingSkill > 10>>
+			<<set $ActingSkill to 10>>
+		<</if>>
+	
+	<<if $ActingSkill == 2>>
+		<span style="color:LightGreen">You have reached Acting level 2! You can feel your skills becoming stronger! In the future, new things that are unlocked will be listed here.</span><br>
+	<</if>>
+<</if>>

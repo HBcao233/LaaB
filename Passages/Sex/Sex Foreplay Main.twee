@@ -1,0 +1,267 @@
+:: Sex Foreplay Main [nobr]
+
+/* Checking clothing state of both */
+    /* Checking PC State */
+    <<if $Sex.PCClothes.Top == 1 or $Sex.PCClothes.Bottoms == 1>>
+        <<set _PCClothes to 1>>
+    <<elseif $Sex.PCClothes.Bottoms != 1 && $Sex.PCClothes.Undies == 1>>
+        <<set _PCClothes to 0>>
+        /* Clothes reset here until Variants are written */
+        <<set _PCClothes to 1>>
+    <<elseif $Sex.PCClothes.Bottoms != 1 && $Sex.PCClothes.Undies != 1>>
+        <<set _PCClothes to -1>>
+        /* Clothes reset here until Variants are written */
+        <<set _PCClothes to 1>>
+    <</if>>
+    /* Checking Partner */
+    <<if $Sex.PartnerClothes.Top == 1 && $Sex.PartnerClothes.Bottoms == 1>>
+        <<set _PartnerClothes to 1>>
+    <<elseif $Sex.PartnerClothes.Bottoms != 1 && $Sex.PartnerClothes.Undies == 1>>
+        <<set _PartnerClothes to 0>>
+        /* Clothes reset here until Variants are written */
+        <<set _PartnerClothes to 1>>
+    <<elseif $Sex.PartnerClothes.Bottoms != 1 && $Sex.PartnerClothes.Undies != 1>>
+        <<set _PartnerClothes to -1>>
+        /* Clothes reset here until Variants are written */
+        <<set _PartnerClothes to 1>>
+    <</if>>
+    /* Partner Clothes */
+    <<if $Sex.PartnerClothes.Outer == 0>>
+        <<set _partnerOuter to $None>>
+    <</if>>
+    <<if $Sex.PartnerClothes.Top == 0>>
+        <<set _partnerTop to $None>>
+    <</if>>
+    <<if $Sex.PartnerClothes.Bottoms == 0>>
+        <<set _partnerBottoms to $None>>
+    <</if>>
+    <<if $Sex.PartnerClothes.Socks == 0>>
+        <<set _partnerSocks to $None>>
+    <</if>>
+    <<if $Sex.PartnerClothes.Undies == 0>>
+        <<set _partnerUndies to $None>>
+    <</if>>
+/* Position Descrirption */
+
+
+<<set _sexposition to "Sex Foreplay " + $Sex.Partner + " " + $Sex.Position>>
+<<include _sexposition>>
+<<include "Sex Foreplay Avatars">>
+
+<<include "Sex Foreplay Bars">>
+<br>
+<<link "[Positions]">>
+<<replace"#sexchoice">>
+    <<include"Sex Foreplay Main Positions">>
+<</replace>>
+<</link>>
+ | 
+<<link "[Actions]">>
+<<replace"#sexchoice">>
+    <<include"Sex Foreplay Main Actions">>
+<</replace>>
+<</link>>
+ | 
+<<link "[Clothing]">>
+<<replace"#sexchoice">>
+    <<include"Sex Foreplay Main Clothing">>
+<</replace>>
+<</link>>
+<<if $Sex.PartnerArousal >= 50 && $Player.Arousal >= 50>>
+    | 
+    <<link "<strong>[Climax]</strong>">>
+    <<replace"#sexchoice">>
+        <<include"Sex Foreplay Main Climax">>
+    <</replace>>
+    <</link>>
+<</if>>
+
+<div id=sexchoice>
+    <<include"Sex Foreplay Main Actions">>
+</div>
+
+:: Sex Foreplay Main Positions [nobr]
+
+
+<span style="color:Azure"><strong>=Positions=</strong></span><br>
+<strong>Current Position:</strong> $Sex.PositionName<br>
+<strong>Top:</strong> $Sex.PositionTop<br>
+<strong>Bottom:</strong> $Sex.PositionBottom<br>
+<br>
+
+<span style="color:Azure"><strong>=Change Positions=</strong></span><br>
+
+<<set _foreplaypositions to ["Laying Facing", "PC Top Facing", "PC Top Away", "Partner Top Facing", "Partner Top Away", "Spooning PC Back", "Spooning PC Front"]>>
+<<set _foreplaypositionnames to ["Lying facing each other", "Player on top with Partner facing up", "Player on top with Partner facing down", "Partner on top with Player facing up", "Partner on top with Player facing down", "Spooning Partner with Player behind", "Spooning Partner with Partner behind"]>>
+<<for _i to 0; _i lt _foreplaypositions.length; _i++>>
+    <<capture _i>>
+        <<if $Sex.Position != _foreplaypositions[_i]>>
+            <<link _foreplaypositionnames[_i]>>
+                <<set $Sex.Position to _foreplaypositions[_i]>>
+                <<set $Sex.PositionName to _foreplaypositionnames[_i]>>
+                <<if ["Laying Facing"].includes($Sex.Position)>>
+                    <<set $Sex.PositionTop to "None">>
+                    <<set $Sex.PositionBottom to "None">>
+                <<elseif ["PC Top Facing", "PC Top Away", "Spooning PC Back"].includes($Sex.Position)>>
+                    <<set $Sex.PositionTop to $Player.Name>>
+                    <<set $Sex.PositionBottom to $Sex.Partner>>
+                <<elseif ["Partner Top Facing", "Partner Top Away", "Spooning PC Front"].includes($Sex.Position)>>
+                    <<set $Sex.PositionTop to $Sex.Partner>>
+                    <<set $Sex.PositionBottom to $Player.Name>>
+                <</if>>
+                <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Position Change " + $Sex.Position>>
+                <<goto _sexlink>>
+            <</link>><br>
+        <</if>>
+    <</capture>>
+<</for>>
+
+:: Sex Foreplay Main Actions [nobr]
+
+<span style="color:Azure"><strong>=Actions=</strong></span><br>
+
+/* Rubbing Partner's Crotch */
+<<if["Laying Facing", "PC Top Facing", "PC Top Away", "Partner Top Facing", "Spooning PC Back"].includes($Sex.Position)>>
+    <<if $Sex.PartnerClothes.Undies == 1>>
+        <<link "Rub Lucas's Crotch">>
+            <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Rub Crotch " + $Sex.Position>>
+            <<goto _sexlink>>
+        <</link>>
+    <<else>>
+        <<link "Rub Lucas's Penis">>
+            <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Rub Crotch " + $Sex.Position>>
+            <<goto _sexlink>>
+        <</link>>
+    <</if>>
+    <br>
+        <<if $Sex.Position == "PC Top Facing">>
+            <<link"Frot against him">>
+                <<goto "Sex Foreplay Lucas Frot">>
+            <</link>>
+        <</if>>
+<</if>>
+
+:: Sex Foreplay Main Climax [nobr]
+
+<span style="color:Azure"><strong>=Climax=</strong></span><br>
+<<if $Sex.PartnerArousal >= 50 && $Player.Arousal >= 50>>
+    <<if $Sex.Partner == "Lucas">>
+        [[Begin penetration (Doggy Style)|Lucas Sex First Time Doggy Intro]]<br>
+    <</if>>
+<</if>>
+
+:: Sex Foreplay Main Clothing [nobr]
+
+<span style="color:Azure"><strong>=Clothing=</strong></span><br>
+<strong>-Player Clothing-</strong><br>
+<<if $Sex.PCClothes.Outer>>
+    $PlayerOuter.Type, 
+<</if>>
+<<if $Sex.PCClothes.Top>>
+    $PlayerTop.Type, 
+<</if>>
+<<if $Sex.PCClothes.Bottoms>>
+    $PlayerBottoms.Type, 
+<</if>>
+<<if $Sex.PCClothes.Undies>>
+    $PlayerUndies.Name, 
+<</if>>
+<<if $Sex.PCClothes.Socks>>
+    $PlayerSocks.Type
+<</if>>
+<br>
+<strong>-$Sex.Partner Clothing-</strong><br>
+<<print"<<if $Sex.PartnerClothes.Outer>>$" + $Sex.Partner + "Outer.Type, <</if>>">>
+<<print"<<if $Sex.PartnerClothes.Top>>$" + $Sex.Partner + "Top.Type, <</if>>">>
+<<print"<<if $Sex.PartnerClothes.Bottoms>>$" + $Sex.Partner + "Bottoms.Type, <</if>>">>
+<<print"<<if $Sex.PartnerClothes.Undies && $Sex.PartnerClothes.Bottoms != 1>>$" + $Sex.Partner + "Bottoms.Type, <<elseif $Sex.PartnerClothes.Undies>>Unknown Underwear, <</if>>">>
+<<print"<<if $Sex.PartnerClothes.Socks>>$" + $Sex.Partner + "Socks.Type, <</if>>">>
+<br>
+<Br>
+
+<span style="color:Azure"><strong>=$Player.Name=</strong></span><br>
+<<if $Sex.PCClothes.Outer>>
+    <<link "Strip your $PlayerOuter.Type">>
+        <<set $Sex.PCClothes.Outer to 0>>
+        <<set $PlayerOuter to $None>>
+        <<set $PlayerHead to $None>>
+        <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Strip PC Outer " + $Sex.Position>>
+        <<goto _sexlink>>
+    <</link>><br>
+<</if>>
+<<if $Sex.PCClothes.Top && $Sex.PCClothes.Outer != 1>>
+    <<link "Strip your $PlayerTop.Type">>
+        <<set $Sex.PCClothes.Top to 0>>
+        <<set $PlayerTop to $None>>
+        <<set $PlayerOver to $None>>
+        <<set $PlayerUnder to $None>>
+        <<set $PlayerNeck to $None>>
+        <<set $PlayerHands to $None>>
+        <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Strip PC Top " + $Sex.Position>>
+        <<goto _sexlink>>
+    <</link>><br>
+<</if>>
+<<if $Sex.PCClothes.Bottoms>>
+    <<link "Strip your $PlayerBottoms.Type">>
+        <<set $Sex.PCClothes.Bottoms to 0>>
+        <<set $PlayerBottoms to $None>>
+        <<set $PlayerWaist to $None>>
+        <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Strip PC Bottoms " + $Sex.Position>>
+        <<goto _sexlink>>
+    <</link>><br>
+<</if>>
+<<if $Sex.PCClothes.Undies && $Sex.PCClothes.Bottoms != 1>>
+    <<link "Strip your $PlayerUndies.Name">>
+        <<set $Sex.PCClothes.Undies to 0>>
+        <<set $PlayerUndies to $None>>
+        <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Strip PC Undies " + $Sex.Position>>
+        <<goto _sexlink>>
+    <</link>><br>
+<</if>>
+<<if $Sex.PCClothes.Socks>>
+    <<link "Strip your $PlayerSocks.Type">>
+        <<set $Sex.PCClothes.Socks to 0>>
+        <<set $PlayerSocks to $None>>
+        <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Strip PC Socks " + $Sex.Position>>
+        <<goto _sexlink>>
+    <</link>><br>
+<</if>>
+<br>
+
+<span style="color:Azure"><strong>=$Sex.Partner=</strong></span><br>
+<<if $Sex.PartnerClothes.Outer>>
+    <<link "Strip $Sex.Partner's $LucasOuter.Type">>
+        <<set $Sex.PartnerClothes.Outer to 0>>
+        <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Strip Partner Outer " + $Sex.Position>>
+        <<goto _sexlink>>
+    <</link>><br>
+<</if>>
+<<if $Sex.PartnerClothes.Top && $Sex.PartnerClothes.Outer != 1>>
+    <<link "Strip $Sex.Partner's $LucasTop.Type">>
+        <<set $Sex.PartnerClothes.Top to 0>>
+        <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Strip Partner Top " + $Sex.Position>>
+        <<goto _sexlink>>
+    <</link>><br>
+<</if>>
+<<if $Sex.PartnerClothes.Bottoms>>
+    <<link "Strip $Sex.Partner's $LucasBottoms.Type">>
+        <<set $Sex.PartnerClothes.Bottoms to 0>>
+        <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Strip Partner Bottoms " + $Sex.Position>>
+        <<goto _sexlink>>
+    <</link>><br>
+<</if>>
+<<if $Sex.PartnerClothes.Undies && $Sex.PartnerClothes.Bottoms != 1>>
+    <<link "Strip $Sex.Partner's $LucasUndies.Name">>
+        <<set $Sex.PartnerClothes.Undies to 0>>
+        <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Strip Partner Undies " + $Sex.Position>>
+        <<goto _sexlink>>
+    <</link>><br>
+<</if>>
+<<if $Sex.PartnerClothes.Socks>>
+    <<link "Strip $Sex.Partner's $LucasSocks.Type">>
+        <<set $Sex.PartnerClothes.Socks to 0>>
+        <<set _sexlink to "Sex Foreplay " + $Sex.Partner + " Strip Partner Socks " + $Sex.Position>>
+        <<goto _sexlink>>
+    <</link>><br>
+<</if>>
+<br>

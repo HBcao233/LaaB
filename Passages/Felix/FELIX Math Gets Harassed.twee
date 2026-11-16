@@ -1,0 +1,95 @@
+:: FELIX Math Gets Harassed [nobr]
+
+/* OPENING */
+
+Math class is as boring as usual, with <span style="color:DarkTurquoise">Mr. Randolph</span> reexplaining some confusing concepts due to the class average on the last test being low when <span style="color:DarkTurquoise">Headmaster Constantine</span> walks in and asks to speak to <span style="color:DarkTurquoise">Mr. Randolph</span> for a minute. Your teacher gives you all some problems from your textbook to attempt while he is gone and leaves the classroom.<br>
+
+<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+        },
+    },
+]>>
+<<ad _ad>>
+
+It is hardly 60 seconds later when a group of three older students, having failed this class multiple times before, begin to goof off and cause trouble. Suddenly, they turn their ire on the young French boy <span style="color:DarkTurquoise">Felix</span>, who had finished the problems and was now doodling and humming to himself. <span style="color:lightcoral">They grabbed the boy and began to roughhouse him, obviously trying to intimidate him as they attempted to coerce him into letting them copy his homework.</span> <span style="color:DarkTurquoise">Felix</span> stood his ground, but he was clearly outnumbered.<br>
+<br>
+
+<div id=result>
+	<<link "Help Félix">>
+	<<replace"#result">>
+	
+	You quickly jump to your feet and put yourself between <span style="color:DarkTurquoise">Felix</span> and the three elder boys. You tell the boys that they better leave your friend alone if they know what’s good for them. <span style="color:DarkTurquoise">Felix</span> looks at you with a face of surprise, but also joy as you have come to defend him. The three boys pause and look at each other, deciding if you were actually a threat or not.<br>
+<br>
+	/* GOOD REP PASS */
+	<<if $SchoolRep > 0>>
+	<span style="color:Green">They know you have a good reputation and don’t want to draw too much attention to themselves.</span> One of the boys scoffs loudly, saying that you aren’t worth the trouble, and the three head back to their seats to goof around some more.<br>
+
+<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Merci <span style="color:DarkTurquoise">$FelixNickname</span>!”</span> <span style="color:DarkTurquoise">Felix</span> gives you a hug from behind, <span style="color:LightSteelBlue">“I guess you are my hero today.”</span> You blush and tell him it was nothing. <span style="color:DarkTurquoise">Felix</span> offers to help you with the assigned problems and the two of you enjoy your time together.<br>
+	
+	/* BAD REP FAIL */
+	<<else>>
+	<span style="color:Red">The boys all smirk at each other, knowing your poor reputation when one suddenly grabs you from behind and holds your hands behind your back! Another one quickly lifts up your $PlayerTop.Name and smacks you hard in the belly with his open palm!</span> You feel your breath completely knocked out of you as they drop you to the ground and you begin to cough and gasp loudly. <span style="color:DarkTurquoise">Felix</span> quickly kneels down to help you as the older boys walk off to get someone else to do the homework for them.<br>
+
+<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$FelixNickname</span>! Are you alright!?”</span> <span style="color:DarkTurquoise">Felix</span> asks worriedly. Once you are able to catch your breath you assure him you are fine, as it could have been much worse. <span style="color:LightSteelBlue">“I’m sorry. I just hate bullies, but I’m not much of a fighter, so I guess I can’t back up my words.”</span> He helps you up and offers to help you with the assigned problems as a thank you.<br>
+<<addMoodlet "Pained" 6>>
+	
+	<</if>>
+	<<socialChange "Felix" 3>>
+	<br>
+	<<include"Attend Math Finish">>
+	
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Felix</span><br>
+	
+	<<link "Don't intervene<br>">>
+	<<replace"#result">>
+	
+	You decide to not get involved and instead watch from your seat. Angered by the stubborn boy’s refusal, one of the older students get behind him and put him in a full nelson. As <span style="color:DarkTurquoise">Felix</span> tries to break free, one of the other boys lifts up his shirt and smacks him hard in the stomach! <span style="color:DarkTurquoise">Felix</span> is dropped to the floor coughing and clenching his belly as the older boys walk off to find another prey to copy off of.<br>
+
+<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Frown",
+			Eyes: "Sad",
+			Cry: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+Eventually, <span style="color:DarkTurquoise">Mr. Randolph</span> returns, but <span style="color:DarkTurquoise">Felix</span> doesn’t inform him of the incident and the class resumes uneventful.<br>
+<br>
+<<include"Attend Math Finish">>
+
+	
+	<</replace>>
+	<</link>>
+</div>

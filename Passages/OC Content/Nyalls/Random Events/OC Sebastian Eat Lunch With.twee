@@ -1,0 +1,93 @@
+:: OC Sebastian Eat Lunch With [nobr]
+
+/* Intro */
+You spot <span style="color:DarkTurquoise">Sebastian</span> sitting at one of the far tables and walk over to join him. He gives you a smirk and wave, motioning to one of the empty seats. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Sebastian",
+        State: {
+            Mouth: "Happy",
+            Outfit: "Uniform",
+        },
+    },
+]>>
+<<ad _ad>>
+/* Avatars: PC: Smile
+Sebastian: Smile, Uniform */
+
+<<set _random to random(1, 3)>>
+
+/* Outcome 1 */
+<<if _random == 1>>
+    You accept his invitation and the two of you chat about various things, including nature and photography. <span style="color:lightgreen">Despite his strange and somewhat lewd use of his talent, it is clear that he is passionate about photography and enjoys relaxing and taking pictures of nature.</span> <br>
+    <<socialChange "Sebastian" 3 1>>
+    <<include"School Lunch">>
+    <<set $FriendLunch to 1>>
+
+/* Outcome 2 */
+<<elseif _random == 2>>
+    You accept his invitation and the two of you chat about the various places Sebastian visited while traveling. The boy and his family have been to a lot of places and he seems genuinely happy to show off the many pictures he has taken around the world. <span style="color:lightgreen">It was clear that the boy had a passion for both photography and traveling.</span> <br>
+    <<socialChange "Sebastian" 3 1>>
+    <<include"School Lunch">>
+    <<set $FriendLunch to 1>>
+
+/* Outcome 3 */
+<<else>>
+    However, right as you were about to sit down, boys from the upper classes, most likely <span style="color:DarkTurquoise">Sebastian</span>’s classmates, suddenly join him and take every available seat near the boy. <span style="color:lightcoral">They quickly pull out their snacks and drinks, chatting away and pretending they didn’t even see you. <span style="color:DarkTurquoise">Sebastian</span> gives you an apologetic shrug.</span> <br>
+    <br>
+    You sit down near one end, still trying to enjoy your lunch, but find the endless blabber of the older kids a bit vexing. They only seem to talk about three things: cars, sports, and girls, and the way they talked about girls, you’d think they were something you could own like a car. <span style="color:lightcoral">You hope you don’t act like that when you get older.</span> <br>
+    <br>
+    As you are sitting there, trying to eat quickly so you have an excuse to get up and leave, when you spot one of the boys place an unopened can of soda near you. The boy isn’t even paying attention, not caring about putting his stuff in your line of sight. <span style="color:lightcoral">Once again, you try to ignore him, until he elbows you in the side while telling a story. <br>
+    <br>
+    You begin to feel extremely annoyed, especially since the boy not only didn’t apologize for hitting you but didn’t even acknowledge you! These kids were jerks!</span> <br>
+    <br>
+    <div id="choice1">
+    /* Shake the can */
+	    <<link "Shake the can<br>">>
+	    <<replace"#choice1">>
+            Deciding to teach the rude boy a lesson, you stealthfully take the can of soda and give it a good shake before returning it to its spot. You then look around to see if anyone noticed, but they all seemed so enthralled in their stupid conversation. <span style="color:lightgreen">You smirk and wait for the results of your actions, which isn’t long as the boy suddenly picks up the can!</span> <br>
+            <br>
+            <<set _randomchance to random(1, 2)>>
+            /* Success */
+            <<if _randomchance == 1>>
+                <span style="color:lightgreen">As soon as he opens it, an explosion of sticky, carbonated liquid shoots out and blasts three of the boys directly in the face! Immediately, there is yelling and panic as the boy drops the soda, and all three boys stand up soaked.</span> <br>
+                <br>
+                <span style="color:LightSteelBlue">“What the hell man? I’m soaked!”</span> One boy shouts. <br>
+                <br>
+                <span style="color:LightSteelBlue">“It’s not my fault! I just bought this soda!”</span> The other boy defends. You continue to watch the arguing back and forth, trying hard not to laugh, as their conversation turns into a petty squabble. Eventually, you decide to depart before they begin to get suspicious of your involvement. <br>
+                <<include"School Lunch">>
+                <<set $FriendLunch to 1>>
+
+            /* Fail */
+            <<else>>
+                <span style="color:lightcoral">However, right before he opens it, the boy suddenly aims the can directly at you! You have no chance to react as a stream of carbonated soda blasts directly into your face! You begin to cough and gag as your nose and eyes are burnt by the fluid and you are soaked by it.</span> <br>
+                <br>
+                <span style="color:LightSteelBlue">“Idiot, did you really think I wouldn’t notice?”</span> The boy laughs, taking a sip of the remaining soda, <span style="color:LightSteelBlue">“Get out of here, first year!”</span> The remaining boys begin to laugh at you as you quickly jump to your feet and grab your food. You then turn to <span style="color:DarkTurquoise">Sebastian</span>, who wasn’t laughing, though he did sigh and shake his head. Seems he didn’t like you trying to prank his friends, even if they were jerks. <br>
+                <<socialChange "Sebastian" -3 1>>
+                <<include"School Lunch">>
+                <<set $FriendLunch to 1>>
+
+            <</if>>
+        <</replace>>
+        <</link>>
+
+	    <<link "Move seats<br>">>
+	    <<replace"#choice1">>
+            You decide to take that as your queue to leave and get up and move seats. None of the boys even seem to notice you are gone, chatting along as they did. Though even from this far away, they still sounded loud and obnoxious. <br>
+            <br>
+            As you are about to finish eating, you are suddenly surprised as someone puts their arm around you. <span style="color:LightSteelBlue">“Sorry about that!”</span> <span style="color:DarkTurquoise">Sebastian</span> laughs, <span style="color:LightSteelBlue">“Don’t worry, next time we’ll eat together.”</span> He then heads out to hang out with his friends on the playground. <span style="color:lightgreen">At least he remembered you.</span> <br>
+            <<socialChange "Sebastian" 3 1>>
+            <<include"School Lunch">>
+            <<set $FriendLunch to 1>>
+
+        <</replace>>
+        <</link>>
+    </div>
+<</if>>

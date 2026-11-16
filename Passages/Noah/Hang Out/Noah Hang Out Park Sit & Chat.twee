@@ -1,0 +1,136 @@
+:: Noah Hang Out Park Sit & Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You sit down on the bench and tap the spot next to you, motioning for <span style="color:DarkTurquoise">Noah</span> to sit down. Instead, he stands in front of you awkwardly. Confused, you ask him if he doesn’t want to sit down. Instead of responding with words, <span style="color:DarkTurquoise">Noah</span> instead looks down towards your lap. You put the piece together and laugh, grabbing <span style="color:DarkTurquoise">Noah</span> and placing him on your legs. <span style="Color: LightSteelBlue">“Thank you!”</span> <span style="color:DarkTurquoise">Noah</span> says happily, wrapping your arms around him. <span style="Color: LightSteelBlue">“Your softer than the bench.”</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Noah",
+        State: {
+            Mouth: "Happy",
+            Outfit: "Everyday",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Noah</span> how school is going. <span style="Color: LightSteelBlue">“It’s pretty cool. I think I like it better than our old school.”</span> He replies. You had nearly forgotten that the year prior, you and <span style="color:DarkTurquoise">Noah</span> went to the same elementary school, though you never saw each other besides before and after. <span style="Color: LightSteelBlue">“The teachers are nice, but a little strict. Did you know they’re allowed to spank us?”</span> He says in a hushed tone. <span style="Color: LightSteelBlue">“Like, bare butt! They can see your thingy and everything! They don’t do it in front of anyone else, but it still sounds embarrassing.”</span> You and <span style="color:DarkTurquoise">Noah</span> share a laugh. <br>
+            <<socialChange "Noah" 1>>
+            <span style="color:green">+Noah Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Noah Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Noah Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Noah</span> if he’s been making friends at school and he nods. <span style="Color: LightSteelBlue">“Yeah! I have lots of friends! They are really cool, but my best friend is <span style="color:DarkTurquoise">Caleb</span>. He’s super cool! He wears this jacket with a bear on it and when he puts the hood up, he looks like a bear! I want one like that!”</span> <span style="color:DarkTurquoise">Noah</span> laughs, <span style="Color: LightSteelBlue">“We play together every day. He’s the best!”</span> <br>
+            <<socialChange "Noah" 1>>
+            <span style="color:green">+Noah Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Noah Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Noah Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Noah: Stormy Night")>>
+        <<link "Home life<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+                You ask <span style="color:DarkTurquoise">Noah</span> how things have been at home for him. <span style="Color: LightSteelBlue">“Good. I’m still kinda mad at Daddy for lying about the shots.”</span> <span style="color:DarkTurquoise">Noah</span> says with a frown, recalling the extra booster shots he had to get, <span style="Color: LightSteelBlue">“It wasn’t fair since I thought I was only getting one. But Daddy said I can get out of 3 spankings, so I guess it works out. But I should also get to spank him for lying!”</span> <span style="color:DarkTurquoise">Noah</span> giggles. <br>
+                <<socialChange "Noah" 1>>
+                <span style="color:green">+Noah Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Noah Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Noah Hang Out Park]]
+            <<else>>
+                You ask <span style="color:DarkTurquoise">Noah</span> how things have been at home since you talked during your stormy night encounter. <span style="Color: LightSteelBlue">“I don’t know.”</span> He shrugs, fiddling with his shoelace, <span style="Color: LightSteelBlue">“I know I don’t have to be shy anymore, since I love you and Daddy and <span style="color:DarkTurquoise">Gabe</span>, but it still feels weird. I thought about talking with Daddy about all that stuff, but he already gets mad at grandma when she calls, so I didn’t want to cause trouble.”</span> <span style="color:DarkTurquoise">Noah</span> looks up at you with a smile, <span style="Color: LightSteelBlue">“But I did tell Daddy he can give me baths again, if he wants. He seemed happy about that.”</span> You hug <span style="color:DarkTurquoise">Noah</span> happily, asking if you could give him a bath sometime. <span style="Color: LightSteelBlue">“You only want to do it so you can touch my thingy!”</span> He teases, <span style="Color: LightSteelBlue">“But I guess so.”</span> <br>
+                <<socialChange "Noah" 1>>
+                <span style="color:green">+Noah Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Noah Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Noah Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Noah</span> what sorts of things he’s been doing and he thinks for a long second. <span style="Color: LightSteelBlue">“I’ve been watching that new Owlman show, even though Daddy says I’m a little young for it. He lets me watch it with him, even though there is guns and bad words.”</span> <span style="color:DarkTurquoise">Noah</span> says that lost part like it’s a secret, <span style="Color: LightSteelBlue">“It’s really cool! Even with the bad words. But Daddy said if I ever said those words we’d stop watching it and he’d beat my butt.”</span> He laughs. <br>
+            <<socialChange "Noah" 1>>
+            <span style="color:green">+Noah Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Noah Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Noah Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Noah</span> what sorts of game he’s been playing and he quickly perks up. <span style="Color: LightSteelBlue">“Oh! At school we’ve been playing this really fun zombie game! It’s like tag, but when you get tagged you become a zombie and join the other team! It’s super cool!”</span> <span style="color:DarkTurquoise">Noah</span> is bouncing up and down on your lap as he recounts this game, <span style="Color: LightSteelBlue">“We have a bunch of people, so by the end it is super scary since SO many people are chasing you. But the last one alive is the big winner, but then everyone else tackles them in a big pile.”</span> He laughs, <span style="Color: LightSteelBlue">“Though I’ve never been the last one. I got close once though!”</span> <br>
+            <<socialChange "Noah" 1>>
+            <span style="color:green">+Noah Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Noah Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Noah Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Noah: Stormy Night")>>
+        <<link "Something Lewd<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+                 <span style="Color: Pink">With a smirk, you place your hand on <span style="color:DarkTurquoise">Noah</span>’s crotch and ask how his pokey situation has been since you shared a night together.</span> <span style="color:DarkTurquoise">Noah</span> instantly giggles, <span style="Color: LightSteelBlue">“Don’t touch it here!”</span> He shoves your hands away, <span style="Color: LightSteelBlue">“I don’t want anyone to see!”</span> You laugh, apologizing, but ask your question again. <span style="Color: LightSteelBlue">“Hmm…”</span> He thinks for a moment, <span style="Color: LightSteelBlue">“It still does it, but touching it makes it feel really good. I can’t lick it like you do, since my tongue is too short, but sometimes…”</span>  <span style="Color: Pink"> <span style="color:DarkTurquoise">Noah</span> blushes a little, giving you a shy smile and whispering the next part,</span> <span style="Color: LightSteelBlue">“Sometimes I rub it or Bue rubs it and it feels really, really good. Bue’s really good at rubbing it, though I think you’re the best at that.”</span>  <span style="Color: Pink">You can’t help but smile as you share this naughty secret with your little brother.</span> <br>
+                <<socialChange "Noah" 1>>
+                <span style="color:green">+Noah Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Noah Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Noah Hang Out Park]]
+            <<else>>
+                 <span style="Color: Pink">Curious if <span style="color:DarkTurquoise">Noah</span> has started to develop any kinks, you ask <span style="color:DarkTurquoise">Noah</span> if anything has made his penis feel fuzzy recently. <span style="Color: LightSteelBlue">“That’s weird!”</span> He giggles, finding the topic embarrassing but humorous, <span style="Color: LightSteelBlue">“It’s like that when I wake up sometimes though.”</span> You rephrase your question, asking if anything weird makes his penis start to feel fuzzy. Like any thoughts or situations. <span style="color:DarkTurquoise">Noah</span> ponders for a moment, not really understanding your meaning.</span> <span style="Color: LightSteelBlue">“I don’t know.”</span> He blushes, frowning a little, <span style="Color: LightSteelBlue">“Maybe… maybe some stuff. Like when <span style="color:DarkTurquoise">Gabe</span> gives me a wedgie or Daddy walks in on me in the tub, but that’s embarrassing. I don’t want them to see that.”</span> You smile, making a note to teach <span style="color:DarkTurquoise">Noah</span> about all your favorite kinks when you get the chance. <br>
+                <<socialChange "Noah" 1>>
+                <span style="color:green">+Noah Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Noah Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Noah Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+</div>

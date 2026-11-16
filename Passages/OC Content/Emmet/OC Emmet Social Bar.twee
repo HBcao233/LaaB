@@ -1,0 +1,84 @@
+:: OC Emmet Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCEmmetSocialRank == -3>>
+	<<set $OCEmmetRelationship to "Hated">>
+	<span style="color:DarkRed">Emmet Hates you!</span>
+	<br>
+<<elseif $OCEmmetSocialRank == -2>>
+	<<set $OCEmmetRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Emmet are Enemies.</span>
+	<br>
+<<elseif $OCEmmetSocialRank == -1>>
+	<<set $OCEmmetRelationship to "Very Disliked">>
+	<span style="color:Red">Emmet really Dislikes you.</span>
+	<br>
+<<elseif $OCEmmetSocialRank == 0 and $OCEmmetSocial <= -50>>
+	<<set $OCEmmetRelationship to "Disliked">>
+	<span style="color:Red">Emmet Dislikes you. </span>
+	<br>
+<<elseif $OCEmmetSocialRank == 0 and $OCEmmetSocial < 50>>
+	<<set $OCEmmetRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Emmet are Acquaintances.</span>
+	<br>
+<<elseif $OCEmmetSocialRank == 0 and $OCEmmetSocial >= 50>>
+	<<set $OCEmmetRelationship to "Liked">>
+	<span style="color:LightGreen">Emmet Likes you.</span>
+	<br>
+<<elseif $OCEmmetSocialRank == 1>>
+	<<set $OCEmmetRelationship to "Friends">>
+	<span style="color:Green">You and Emmet are Friends.</span>
+	<br>
+<<elseif $OCEmmetSocialRank == 2>>
+	<<set $OCEmmetRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Emmet are Good Friends!</span>
+	<br>
+<<elseif $OCEmmetSocialRank == 3>>
+	<<set $OCEmmetRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Emmet are Close Friends!</span>
+	<br>
+<<elseif $OCEmmetSocialRank == 4>>
+	<<set $OCEmmetRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Emmet are Best Friends!</span>
+	<br>
+<<elseif $OCEmmetSocialRank == 5>>
+	<<set $OCEmmetRelationship to "Love">>
+	<span style="color:Pink">You and Emmet Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCEmmetSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCEmmetSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCEmmetSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCEmmetSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCEmmetSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCEmmetSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCEmmetSocial,
+			value: Math.abs($OCEmmetSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCEmmetSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCEmmetSocial > 120>>
+	<<set $OCEmmetSocial to 120>>
+<</if>>
+<<if $OCEmmetSocial < -120>>
+	<<set $OCEmmetSocial to -120>>
+<</if>>

@@ -1,0 +1,37 @@
+:: OC Quest Little Blueberry 3 [nobr]
+
+Speaking of which, <span style="color:DarkTurquoise">Noah</span> suddenly pops into view with a pair of safety scissors. <span style="color:LightSteelBlue">“I forgot I had some in my backpack!”</span> He laughs. He hands them over to you, and you free <span style="color:DarkTurquoise">Isaac</span>, prompting a cheer of joy from both boys. They grab each other by the arm and begin to spin around in a circle around you, chanting about how ‘they are free, yippee.’ You sigh but can’t help but smile at their playful energy. <br>
+<br>
+It's right then that you hear a man call out to <span style="color:DarkTurquoise">Isaac</span>. You all turn around to see a man in a blue truck on the curb beside you. <br>
+<br>
+<span style="color:LightSteelBlue">“Daddy!”</span> <span style="color:DarkTurquoise">Isaac</span> jumps up and runs over to his dad, who gives him a big hug and kiss on the forehead before helping him into the car seat next to another boy who looks <span style="color:DarkTurquoise">Noah</span>’s age. As he’s buckled in, he turns to you both and does a cute little wave. <br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Isaac">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC ISAAC Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">“Bye-bye, <span style="color:DarkTurquoise">No-uh</span>! Bye-bye <span style="color:DarkTurquoise">No-uh</span> bwuhduh!”</span> <span style="color:pink">You both wave bye, your heart melting at the little boy’s cute voice.</span> His dad gives you a thankful wave as well before they drive off. <br>
+<br>
+<span style="color:LightSteelBlue">“Mission accomplished!”</span> <span style="color:DarkTurquoise">Noah</span> says happily, posing with his hands on his sides. <span style="color:LightSteelBlue">“Now we can go home.”</span> <span style="color:pink"><span style="color:DarkTurquoise">Noah</span> takes your hand, which he claims was to keep you safe, and you both walk home together.</span> <span style="color:DarkTurquoise">Noah</span> doesn’t stop talking the entire walk home, which is extremely cute and annoying. <br>
+	<<set $InActiveQuests.delete("Isaac: The Little Blueberry")>>
+	<<set $CompletedQuests.push("Isaac: The Little Blueberry")>>
+	<<set $OCIsaacSocial to 0>>
+	<<set $OCIsaacSocialRank to 0>>
+	<<socialChange "Isaac" 10 1>>
+<span style="color:Gold">Quest: "The Little Blueberry" Completed!</span><br>
+<br>
+[[Go Home|PH Living Room][$Minutes += 25]]

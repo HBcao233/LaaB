@@ -1,0 +1,67 @@
+:: Swim Stamina [nobr]
+
+/* SETTING MAX STAMINA BASED ON SWIM LEVEL */
+<<if $SwimmingSkill == 1>>
+    <<set $SwimStaminaMax to 50>>
+<<elseif $SwimmingSkill == 2>>
+    <<set $SwimStaminaMax to 75>>
+<<elseif $SwimmingSkill == 3>>
+    <<set $SwimStaminaMax to 100>>
+<<elseif $SwimmingSkill == 4>>
+    <<set $SwimStaminaMax to 125>>
+<<elseif $SwimmingSkill == 5>>
+    <<set $SwimStaminaMax to 150>>
+<<elseif $SwimmingSkill == 6>>
+    <<set $SwimStaminaMax to 200>>
+<<elseif $SwimmingSkill == 7>>
+    <<set $SwimStaminaMax to 250>>
+<<elseif $SwimmingSkill == 8>>
+    <<set $SwimStaminaMax to 300>>
+<<elseif $SwimmingSkill == 9>>
+    <<set $SwimStaminaMax to 400>>
+<<elseif $SwimmingSkill == 10>>
+    <<set $SwimStaminaMax to 500>>
+<</if>>
+
+<<if $SwimStamina > $SwimStaminaMax>>
+	<<set $SwimStamina to $SwimStaminaMax>>
+<<elseif $SwimStamina < 0>>
+	<<set $SwimStamina to 0>>
+<</if>>
+
+/* SETTING PERCENTAGE */
+<<set _width to ($SwimStamina / $SwimStaminaMax) * 100>>
+
+/* PERCENT DISPLAY */
+<div class="stamina-bar-group">
+	<span>Stamina:</span>
+	<div class="stamina-bar-gauge">
+		<<set _data = clone({
+			text: `${_width.toFixed(1)}%`,
+			value: _width,
+			max: 100,
+			min: 0,
+			color: getNeedsBarColor(_width),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+
+:: Swim Stamina Style [stylesheet]
+
+.stamina-bar-group {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.stamina-bar-group > span {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.stamina-bar-gauge {
+  width: 215px;
+  display: inline-block;
+}

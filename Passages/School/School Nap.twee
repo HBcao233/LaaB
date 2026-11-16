@@ -1,0 +1,43 @@
+:: School Nap [nobr]
+
+	<<set $Minutes += 30>>
+        <<addMoodlet "Stress" 0>>
+			/* OPENING */
+	Deciding to relax in the shade, you lay against one of the trees. You think you should have enough time to take a short nap and have little trouble drifting off to sleep.<br>
+<br>
+
+			/* RANDOM EVENT CHECKER */
+<<set $RandomEvent to random(1, 2)>>
+
+	/* NOTHING HAPPENS */
+	<<if $RandomEvent == 1>>
+		<<include"School Nap Basic">>
+		
+	/* EVENT */
+	<<else>>
+		<<set $RandomEvent2 to random(1, 3)>>
+		
+		/* SNEAKY PANTSERS */
+		<<if $RandomEvent2 == 1>>
+		<<include"School Nap Sneaky Pantsers">>
+	
+		/* LUCAS CHECKS IN ON PLAYER */
+		<<elseif $RandomEvent2 == 2>>
+			<<if $LucasSocial > -15>>
+				<<include"LUCAS Courtyard Player Nap">>
+			<<else>>
+				<<include"School Nap Basic">>
+			<</if>>
+			
+		/* BEN NOTICES SPIDER */
+		<<elseif $RandomEvent2 == 3>>
+			<<if $BenSocial >= 50 or $BenSocialRank > 0>>
+				<<include"BEN Nap Sees Spider">>
+			<<else>>
+				<<include"School Nap Basic">>
+			<</if>>
+	
+		<</if>>
+	
+	
+	<</if>>

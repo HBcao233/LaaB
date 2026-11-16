@@ -1,0 +1,69 @@
+:: Artwork Catalog Shinju [nobr]
+
+<span style="color:Azure"><big><strong>--Shinju Catalog--</strong></big></span><br>
+<br>
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+
+/* Character Art (Everyday) */
+    <<if $AchievementArt.includes("Shinju Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Shinju Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Shinju\\Shinju.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Shinju Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Shinju Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Shinju">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("Shinju Character Art Undies")>>
+        <strong><span style="color:lightgreen">Shinju Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Shinju\\Shinju Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Shinju Character Art (Undies)</strong>
+        | 
+        <<if $ShinjuSocial >= 100 or $ShinjuSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Shinju Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Shinju">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Shinju Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+    /*Jackson and Shinju Naked Wrestling */
+    <<if $AchievementArt.includes("Jackson and Shinju Naked Wrestling")>>
+        <strong><span style="color:lightgreen">Jackson and Shinju Naked Wrestling</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Shinju\\Jackson and Shinju-Nude Wrestling.png" "Rayray" "https:rayray.fanbox.cc">>
+    <<else>>
+        <strong>Jackson and Shinju Naked Wrestling</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Jackson and Shinju Naked Wrestling")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Shinju">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+<br>
+[[Back|Artwork Catalog]]

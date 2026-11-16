@@ -1,0 +1,83 @@
+:: Thomas Bus Homework Help [nobr]
+
+/* Written by: Zexion */
+/* Intro */
+Climbing onto the bus, you spot a familiar head of hair and slide into the seat next to your hard-working, ginger friend, <span style="color:DarkTurquoise">Thomas</span>. You offer him a greeting, <span style="color:Yellow">but all you get in return is a grumpy, dismissive grunt as he remains entirely engrossed in the papers on his lap.</span> <br>
+<br>
+Leaning over to get a better look, you see your buddy desperately trying to fill out a history worksheet. It’s a chaotic scene; he’s juggling the textbook and the paper, but judging by the frantic scratching of his pencil, it doesn't seem to be going well. The heavy bags under his eyes suggest he is far more tired than usual, and looking at the time, you doubt he’s going to finish before the beginning of class. <br>
+
+    <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+				Mouth: "Frown",
+    		},	
+        },
+        {
+            Name: "Thomas",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Frown",
+                Eyes: "Tired",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+As you contemplate the situation, watching him struggle, <span style="color:Yellow">you wonder if you should intervene and if his pride would even allow him to accept your assistance.</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Share your homework<br>">>
+    <<replace"#choice">>
+        Wanting to ease the burden on your prickly friend, you reach inside your backpack and pull out your completed sheet, offering your homework with a warm smile. <span style="color:lightsteelblue">“What?”</span> <span style="color:DarkTurquoise">Thomas</span> asks, blinking sluggishly. You explain that you saw him struggling and, as his friend, you just wanted to share the answers to save him the trouble. Initially, this seems to trigger his defenses. The boy bristles, rejecting your offer with a shove. <span style="color:lightsteelblue">“I don't need your pity.”</span> he says gruffly. <br>
+        <br>
+        Startled, you almost fall out of your seat at his forceful decline. However, as you stabilize yourself, you notice the anger draining out of him as quickly as it came, replaced by a look of sudden guilt. He glances at your shocked face, then down at his unfinished paper, and finally sighs, his shoulders slumping in defeat. <br>
+        <br>
+
+        <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },	
+            },
+            {
+                Name: "Thomas",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 1,
+                    Mouth: "Happy",
+                    Eyes: "Tired",
+                },	
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:lightsteelblue">“Wait... I’m sorry,”</span> <span style="color:DarkTurquoise">Thomas</span> mumbles, his voice dropping to a whisper. The ginger boy looks away, a bright, embarrassed flush rising on his cheeks. <span style="color:lightsteelblue">“I didn't mean to snap at you. I’m just... really tired.”</span> He reaches out tentatively, taking the paper from your hand with a shy, apologetic look. <span style="color:lightsteelblue">“Thanks...”</span> <br>
+        <<socialChange "Thomas" 3>>
+        <br>
+					/* GET OFF BUS */
+		<<if $BusRide == "Home">>
+			[[Get off bus|Northend]]
+		<<else>>
+			[[Get off bus|Middle School]]
+		<</if>>
+    <</replace>>
+    <</link>>
+
+	<<link "Don’t share your homework<br>">>
+    <<replace"#choice">>
+        You decide not to help your maybe-friend, mostly because you aren't sure how he would react to simply being handed the answers. That, plus a lot of the teachers at this school seem to possess an almost supernatural ability to sniff out when students cheat. The last thing you need is detention. As the bus rumbles toward the final street before school, <span style="color:DarkTurquoise">Thomas</span> is still furiously scribbling, trying to beat the clock. But as the vehicle brakes, the boy finally reaches his limit. <br>
+        <br>
+        He lets out a short bark of rage at his lack of progress, his grip on the pencil tightening so hard that he accidentally gouges a massive hole right through the paper. <span style="color:lightsteelblue">“Shit!”</span> he exclaims, eyes widening as he stares at the tear. He frantically tries to smooth it over, attempting to magically undo the damage inflicted in his moment of rage, but the worksheet is ruined. He looks utterly defeated, and you can only offer a sympathetic wince as the bus doors hiss open. <br>
+        <br>
+					/* GET OFF BUS */
+		<<if $BusRide == "Home">>
+			[[Get off bus|Northend]]
+		<<else>>
+			[[Get off bus|Middle School]]
+		<</if>>
+    <</replace>>
+    <</link>>
+</div>

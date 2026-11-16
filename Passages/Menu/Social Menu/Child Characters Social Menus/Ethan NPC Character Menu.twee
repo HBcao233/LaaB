@@ -1,0 +1,168 @@
+:: Ethan NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Child Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Ethan--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"Ethan NPC Character Menu Biography">>
+</div>
+
+:: Ethan NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Ethan NPC Character Menu Avatar Display">>
+
+<<if $EthanSocial > 50>>
+
+<<elseif $EthanSocial > -10>>
+
+<<else>>
+
+    <br>
+<</if>>
+
+:: Ethan NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Ethan NPC Character Menu Avatar Display">>
+
+:: Ethan NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Ethan NPC Character Menu Avatar Display">>
+
+/*(<<include"Quest Journal">>*/
+
+:: Ethan NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Ethan NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "Ethan",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $EthanSocial >= 50 or $EthanSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $EthanSocial >= 100 or $EthanSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: Ethan NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "Ethan",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday"]>>
+<<set _npcviewerHard to [0]>>
+<<if $EthanSocial >= 50 or $EthanSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $EthanSocial >= 100 or $EthanSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

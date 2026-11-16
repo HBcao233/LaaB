@@ -1,0 +1,40 @@
+:: Jackson Seen School South Hallway [nobr]
+	<<inspect "JACKSON Inspect School Hallway">> walks down the hallway.
+:: Jackson Seen School West Hallway [nobr]
+	<<inspect "JACKSON Inspect School Hallway">> walks down the hallway. 
+:: Jackson Seen School East Hallway [nobr]
+	<<inspect "JACKSON Inspect School Hallway">> walks down the hallway. 
+:: Jackson Seen School Art [nobr]
+	<<inspect "JACKSON Inspect Art">> is fingerpainting on a cardboard box.
+:: Jackson Seen School Cafeteria [nobr]
+	<<inspect "JACKSON Inspect School Lunch">> is tossing his food into the air and trying to catch it in his mouth.
+:: Jackson Seen School English Classroom [nobr]
+	<<inspect "JACKSON Inspect English">> pretending to play drums on his books.
+:: Jackson Seen School History Classroom [nobr]
+	<<inspect "JACKSON Inspect History">> is trying to do a handstand to impress nearby students.
+:: Jackson Seen School Science Classroom [nobr]
+	<<inspect "JACKSON Inspect Science">> is trying to balance beakers ontop of each other.
+:: Jackson Seen School Math Classroom [nobr]
+	<<inspect "JACKSON Inspect Math">> was told to sit on his hands until class starts.
+:: Jackson Seen School Locker Room [nobr]
+	<<switch $JacksonSche.Activity>>
+		<<case "Gym">>
+			<<inspect "JACKSON Inspect Gym">> playfully jumping around while changing.
+		<<case "Gym Shower">>
+			<span style="color:Pink"><<inspect "JACKSON Inspect Gym Shower">> is completely naked, using his towel to dry his hair!</span>
+	<</switch>>
+:: Jackson Seen School Courtyard [nobr]
+	<<switch $JacksonSche.Activity>>
+		<<case "School Playground">>
+			<<inspect "JACKSON Inspect School Playground">> is swinging around on the branch of a tree.
+		<<case "School Playground Rain">>
+			<<inspect "JACKSON Inspect School Playground Rain">> swings around on a tree branch in nothing but his Boxer Briefs!
+	<</switch>>
+:: Jackson Seen Empty Lot [nobr]
+	<<if !$CompletedQuests.includes("Jackson: Empty Lot")>>
+		You think you hear [[someone|JACKSON Inspect Empty Lot Naked]] in the Empty Lot?
+	<<else>>
+		<span style="color:Pink">As expected, <<inspect "JACKSON Inspect Empty Lot Naked">> is joyfully playing in the Empty Lot naked.</span>
+	<</if>>
+:: Jackson Seen Middle School [nobr]
+	<<inspect "JACKSON Inspect School Waiting for Bus">> skips on rocks while waiting for the bus.

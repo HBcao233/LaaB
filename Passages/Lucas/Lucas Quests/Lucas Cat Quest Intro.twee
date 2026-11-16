@@ -1,0 +1,97 @@
+:: Lucas Cat Quest Intro [nobr]
+
+/* Intro */
+You and <span style="color:DarkTurquoise">Lucas</span> are lounging about in his room, you on the bed while he leans back in his desk chair spinning around. The two of you aren’t doing anything specific, just being in each other’s company, when he suddenly puts down his comic book and randomly says. <span style="Color: LightSteelBlue">“My mom got me a therapist.”</span> <span style="Color: Yellow">You choke on the breath you were taking right as he said that, the words so unexpected and random the air slips down the wrong tube.</span> After you manage to clear your airways, you ask <span style="color:DarkTurquoise">Lucas</span> why he would just randomly say that. <br>
+
+    <<set _ad to [
+		{
+            Name: "Player",
+            State: {
+				Mouth: "Smirk",
+    		},	
+        },
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Everyday",
+				Mouth: "Frown",
+				Blush: 1,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Sorry! I just-”</span> He pauses, looking down a little shyly, <span style="Color: LightSteelBlue">“It’s… kinda embarrassing, but it’s nice. You know, having someone to talk to about… stuff. Talking to you about everything before and then with my mom- She asked if I wanted to give one a try and it was good, I think. I’ve been wanting to tell you, they said it was good to have a friend who I can talk to anything about, but I couldn’t find the words since it’s a little… embarrassing. So… I just said it. Sorry.”</span> He chuckles nervously as you roll your eyes. <span style="Color: Pink">His method may have been a bit random, but you appreciate that he trusts you enough to want to tell you.</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Ask if it has been helping him<br>">>
+	<<replace"#choice">>
+        <span style="Color: Pink">With a smile, you scooch closer and ask <span style="color:DarkTurquoise">Lucas</span> if going has been helping him, if he feels less alone and weird about everything.</span> <span style="color:DarkTurquoise">Lucas</span> looks down, still seeming a bit embarrassed to be talking about all this, but nods. <span style="Color: LightSteelBlue">“Yeah. I know what happened with Ryker and all that isn’t my fault, not really. I accept that now.”</span> He shrugs, <span style="Color: LightSteelBlue">“But I don’t know, it just feels nice to talk about it with someone who knows what to say and has no connection to it. He gives pretty good advice.”</span> <br>
+        <br>
+        <<include"Lucas Cat Quest Intro 2">>
+    <</replace>>
+    <</link>>
+	<<link "Ask if he mentioned your secret encounter<br>">>
+	<<replace"#choice">>
+        <span style="Color: Pink">With a smirk, you ask <span style="color:DarkTurquoise">Lucas</span> if he mentioned the secret encounter between you two to the therapist. <span style="color:DarkTurquoise">Lucas</span> looks confused for a moment, before quickly glowing bright red.</span> <span style="Color: LightSteelBlue">“What-!? No! Of course not!”</span> He looks away, fiddling with his fingers, <span style="Color: LightSteelBlue">“I mean… I could – I wouldn’t – but I could. He’s… I don’t know, cool about that stuff. He doesn’t tell anyone what I say, even my mom, unless I say it’s okay. He’s dealt with way crazier stuff, so it doesn’t feel that weird. Plus, he gives pretty good advice.”</span> <br>
+        <br>
+        <<include"Lucas Cat Quest Intro 2">>
+    <</replace>>
+    <</link>>
+</div>
+
+:: Lucas Cat Quest Intro 2 [nobr]
+
+/* Intro */
+<span style="Color: LightSteelBlue">“In fact, he mentioned that, since my mom is working with her theatre groups and teaching and stuff a lot, that maybe I should get a pet. Friends are nice, but he thinks having someone here that I can talk to or be around, even if they can’t talk back, would be good.”</span> <span style="color:DarkTurquoise">Lucas</span> smiles, <span style="Color: LightGreen">a tinge of excitement in his eyes,</span> <span style="Color: LightSteelBlue">“I’m too busy to care for a dog or something like that, so mom and me decided to adopt a cat from the shelter. That’s actually the second thing I wanted to say, since…”</span> <span style="color:DarkTurquoise">Lucas</span> looks nervous once more, fiddling with his fingers as you laugh and tell him to just get on with it. <br>
+
+    <<set _ad to [
+		{
+            Name: "Player",
+            State: {
+				Mouth: "Happy",
+    		},	
+        },
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Everyday",
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Well, we are going to adopt it after school this week, at the Shelter on Main Street. I wanted to know, if you’re not busy, if you wanted to come with?”</span> He gives you a nervous smile, <span style="Color: LightSteelBlue">“You don’t have to, but I thought it would be nice. You helped me get to this point and I figure you’ll be around the cat as well. Maybe we could pick one out… together?”</span> <span style="color:DarkTurquoise">Lucas</span> gives you an adorably nervous smile, obviously shy and unsure about his request, <span style="Color: Pink">but you find it really wholesome.</span> <span style="Color: LightGreen">It’s clear he really appreciates you and everything you did for him. This must be one way for him to thank you. <br>
+<br>
+You agree to meet <span style="color:DarkTurquoise">Lucas</span> at the Shelter on Mainstreet after school between 3PM and 4PM.</span> <br>
+<<socialChange "Lucas" 3>>
+<<set $InActiveQuests.delete("Lucas: New Member of the Family")>>
+<<set $ActiveQuests.push("Lucas: New Member of the Family")>>
+<<set $QuestLog.push(
+	{
+		Name: "Lucas: New Member of the Family",
+		State: 1,
+		ID: "Lucas",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Lucas",
+		Tags: ["Lucas", "Character", "Quest", "Main Street"],
+		Description: "<span style=\"color:DarkTurquoise\">Lucas</span> has asked you to come with him to adopt a pet. Go to Main Street After School between 3PM and 4PM.",
+		Objectives: [
+			{
+				Name: "Go to Main Street After School between 3PM and 4PM.",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Lucas",
+	Description: "<span style=\"color:DarkTurquoise\">Lucas</span> has asked you to come with him to adopt a pet. Go to Main Street After School between 3PM and 4PM.",
+})>>
+<br>
+[[Continue|Lucas Home Bedroom]]

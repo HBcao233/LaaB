@@ -1,0 +1,48 @@
+:: Neighborhood Playground [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Northend Playground",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+
+/* QUEST CHECK */
+	/* LUCAS RYKER */
+	/* Quest Active and the Time is 'Day' or "Afternooon" */
+<<if $InActiveQuests.includes("Lucas: Ryker") && ["Day", "Afternoon"].contains($Time.ToD)>>
+	<<include"LucasQuest Ryker Part 1">>
+<<elseif $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Sebastian") && $InActiveQuests.includes("Nyalls: Oliver") && $Time.Day == "Thursday" && $Time.between(15,0,19,0)>>
+	<<include"OC Oliver Meeting">>
+<<elseif $ToggleOCAubin == 1 && $InActiveQuests.includes("Aubin: Introduction") && $Time.between(15,0,20,0)>>
+	<<include"OC Aubin Intro">>
+<<elseif $ToggleOCGeorgeTimmy == 1 && $InActiveQuests.includes("George & Timmy: Introduction") && !$Time.schoolday()>>
+	<<include"OC George and Timmy Intro">>
+
+<<else>>
+<span style="color:Azure"><big><strong>--Northend Playground--</strong></big></span><br>
+You stand in the small playground on the corner of Northend. It is relatively small, with only a small jungle gym and two swings, but it is quite popular with younger kids due to how close it is to their homes, being only a short walk away. There are also a few benches where parents watch their kids play.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $ActiveQuests.includes("Arthur & Richard: Hat Quest") && $Time.between(8,0,18,0)>>
+	[[Help Arthur (?:??)|OC Arthur Richard Hat Quest Buttons 1]]<br>
+<</if>>
+[[Play on Playground (0:20)|Northend Playground Play]] <span style="color:Green">-Stress</span><br>
+<<if $Bike == 1>>
+	[[Ride around on Bike (0:20)|Town Ride Around on Bike]] <span style="color:Green">+Fun/Athletics</span><br>
+<</if>>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Player Neighborhood.png">
+	[[Northend (0:01)|Northend][$Minutes += 1]]<br>
+	
+<</if>>

@@ -1,0 +1,128 @@
+:: FELIX Inspect School Playground [nobr]
+
+	<<include"FELIX Avatar Everyday">>
+	<span style="color:DarkTurquoise">Felix</span> is playing soccer in one of the grass fields. He is definitely  skilled, but his team seems to be outnumbered.<br>
+	<br>
+	[[Chat With (0:10)|FELIX Playground Chat With]] <span style="color:Green">+Felix</span><br>
+	<<if $FelixSocial > -50 or ($FelixSocialRank || 0) > 0>>
+		[[Play Soccer With (0:20)|Felix Playground Play Soccer With]] <span style="color:Green">+Felix</span><br>
+	<</if>>
+
+	<<include"Felix Base Talk Code">>
+
+:: FELIX Inspect Cafeteria [nobr]
+
+	<<include"FELIX Avatar Everyday">>
+	<span style="color:DarkTurquoise">Felix</span> sits at a table with a few other boys, but he isn’t interacting with them, instead reading a novel. Upon further investigation, you see that it is an English young adult novel.<br>
+	<br>
+	[[Chat With (0:10)|FELIX Cafeteria Chat With]] <span style="color:Green">+Felix</span><br>
+	<<if $FelixSocial > -50 or ($FelixSocialRank || 0) > 0>>
+		[[Hang Out (0:20)|Felix Cafeteria Rock Paper Scissors]] <span style="color:Green">+Felix</span><br>
+	<</if>>
+
+	<<include"Felix Base Talk Code">>
+
+:: FELIX Inspect School Lunch [nobr]
+
+	<<include"FELIX Avatar Everyday">>
+	<span style="color:DarkTurquoise">Felix</span> sits at a table with a few other boys, chatting and laughing away as they eat. <br>
+	<br>
+	<<if $FriendLunch != 1 and $LunchClass != 2>>
+		[[Eat Lunch With (0:15)|FELIX Eat Lunch]] <span style="color:Green">+Social</span>
+		/* LUNCH QUALITY WHEN EATING WITH PERSON */
+		<<include "School Lunch Level Chooser">>
+	<</if>>
+
+	<<include"Felix Base Talk Code">>
+
+:: FELIX Inspect Waiting for Bus [nobr]
+
+	<<include"FELIX Avatar Everyday">>
+	<span style="color:DarkTurquoise">Felix</span> whistles while he waits for the bus to arrive.<br>
+	<div id="HangOutSchool">
+		<<if $InActiveQuests.includes("Felix: Hang Out Intro")>>
+			<<link"Ask if Felix wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Felix Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Felix: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutSchool">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Uniform">>
+					<<set $Minutes += 10>>
+					<<goto "Felix Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+	</div>
+	<br>
+	[[Leave|Middle School]] 
+
+:: FELIX Inspect School Hallway [nobr]
+
+	<<include"FELIX Avatar Everyday">>
+	<span style="color:DarkTurquoise">Felix</span> walks down the hallway happily.<br>
+	<br>
+	[[Give him a hug (0:02)|Felix School Hug]]<br>
+	<<if !$DailyEvents.includes("Felix School Bully")>>
+		[[Give Felix a Wedgie (0:02)|Felix School Hallway Wedgie]]
+		<<if $FelixSocial < 20 && $FelixSocialRank != 1>>
+			<span style="color:Red"> -Social</span><br>
+		<<else>>
+			<span style="color:Green"> +Social</span><br>
+		<</if>>
+	<<else>>
+		<span style="color:Grey">Give Felix a Wedgie (0:02)</span><br>
+	<</if>>
+
+	<<include"Felix Base Talk Code">>
+
+:: FELIX Inspect English [nobr]
+
+	<<include"FELIX Avatar Everyday">>
+	<span style="color:DarkTurquoise">Felix</span> sits at his desk reading a novel. Upon further investigation, you see that it is an English young adult novel.<br>
+
+:: FELIX Inspect History [nobr]
+
+	<<include"FELIX Avatar Everyday">>
+	<span style="color:DarkTurquoise">Felix</span> is speaking to <span style="color:DarkTurquoise">Mr. De León</span> in French. He seems happy to be able to talk to someone about home.<br>
+
+:: FELIX Inspect Science [nobr]
+
+	<<include"FELIX Avatar Everyday">>
+	<span style="color:DarkTurquoise">Felix</span> is in the middle of preparing his station for class, getting the required materials listed on the whiteboard.<br>
+
+:: FELIX Inspect Math [nobr]
+
+	<<include"FELIX Avatar Everyday">>
+	<span style="color:DarkTurquoise">Felix</span> hums quietly at his desk as he waits for class to begin.<br>
+
+:: FELIX Inspect Music [nobr]
+
+	<<include"FELIX Avatar Everyday">>
+	<span style="color:DarkTurquoise">Felix</span> sits at an electric keyboard playing. He sounds pretty good.<br>
+
+:: FELIX Inspect Gym [nobr]
+
+	<<include"FELIX Avatar Undies">>
+	<span style="color:DarkTurquoise">Felix</span> happily mumbles to himself as he changes, occasionally talking to the boy next to him. <span style="color:Pink">He doesn’t seem at all shy about being in nothing but his $FelixUndies.Name, which fits tightly around his well-defined butt, giving you a nice view.</span> Despite everyone being in their underwear, something about being in the locker room makes it less intimate and embarrassing.<br>
+	<<if $SeenFelixUndies < 1>>
+		<<set $SeenFelixUndies += 1>>
+	<</if>>
+
+:: FELIX Inspect Gym Shower [nobr]
+
+	<<include"FELIX Avatar Towel">>
+	<span style="color:DarkTurquoise">Felix</span> stands in front of his locker in nothing but a towel as he collects his clothes. He whistles happily as he does so, slightly swaying his hips back and forth with his tune. You watch him out of the corner of your eye, partially hoping that his swaying will cause the towel to slip off, but it doesn’t seem likely.<br>

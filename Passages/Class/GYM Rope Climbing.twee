@@ -1,0 +1,394 @@
+:: GYM Rope Climbing [nobr]
+
+/* OPENING */
+As everyone gets dressed and walks into the gym, you all stare at the three ropes that descend from the ceiling to the ground where padded mats were set up. <span style="color:DarkTurquoise">Coach Kohler</span> stood there looking at you all with a smirk, you knew what was coming.<br>
+<br>
+<span style="color:LightSteelBlue">“Today we are going to be climbing these ropes. This will test your grip and upper body strength.”</span> He grabbed the rope and began to demonstrate how to climb it, hardly having any exertion in his voice as he reached the top and climbed back down. <span style="color:LightSteelBlue">“I’ve marked the rope with red lines. Each red line between you and the top is an extra lap you’ll have to run around the gym.”</span> All the boys groaned at the prospect of having to run laps, which just resulted in a chuckle from <span style="color:DarkTurquoise">Coach Kohler</span>, who divided everyone into 3 groups.<br>
+<br>
+
+/* NPC APPEARANCE */
+<<set _random to [
+	"Lucas",
+	"Ben",
+	"Michael",
+	"Carter",
+	"Jackson",
+	"Xavier",
+	"Felix",
+]>>
+
+/* Check absences */
+<<if !$ThomasAbsent>>
+	<<set _random.push("Thomas")>>
+<</if>>
+
+<<set _RandomNPC to _random.random()>>
+
+/* LUCAS */
+<<if _RandomNPC == "Lucas">>
+	<<set _ad to [
+		{
+			Name: "Kohler",
+			State: {
+				Brows: "Suspicious",
+				Mouth: "Frown",
+			},
+		},
+		{
+			Name: "Lucas",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Gym",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+In front of you is <span style="color:DarkTurquoise">Lucas</span>, who looks a bit nervous but gives it his all once it is his turn. While athletics is not his strength, he surprises both you and himself as he makes it halfway up the rope before his arms give out and he falls down to the mat below. Thankfully, the mat seems to fully cushion his fall and the only pain he has is in his arms.<br>
+<br>
+<span style="color:LightSteelBlue">“Not bad.”</span> <span style="color:DarkTurquoise">Coach Kohler</span> says, helping the tired boy up, <span style="color:LightSteelBlue">“Half-way up means you only have to do 5 laps and you’re doing better than half the class.”</span> <span style="color:DarkTurquoise">Lucas</span>’ face is a mix of pride and despair, realizing he still has to actually run the 5 laps.<br>
+<br>
+
+/* BEN */
+<<elseif _RandomNPC == "Ben">>
+	<<set _ad to [
+		{
+			Name: "Kohler",
+			State: {
+				Brows: "Suspicious",
+				Mouth: "Frown",
+			},
+		},
+		{
+			Name: "Ben",
+			State: {
+				Outfit: "Gym",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+You could almost hear <span style="color:DarkTurquoise">Ben</span>’s legs shaking as he stands in front of you waiting for his turn. He nearly jumps out of his Gym Shorts once his name is called and he timidly grips the rope. Taking a deep breath, he jumps up and begins to climb… before immediately losing his grip and falling backward onto the mat.<br>
+<br>
+<span style="color:DarkTurquoise">Coach Kohler</span> blows his whistle and stands over him. <span style="color:LightSteelBlue">“Come on <span style="color:DarkTurquoise">Benjamin</span>! You call that climbing!? How do you expect to get anywhere in life with those scrawny arms?”</span> <span style="color:DarkTurquoise">Ben</span> just sobbed quietly as he picked himself up and was sent off to run the full 10 laps around the gym.<br>
+<br>
+
+/* MICHAEL */
+<<elseif _RandomNPC == "Michael">>
+	<<set _ad to [
+		{
+			Name: "Kohler",
+			State: {
+				Brows: "Suspicious",
+				Mouth: "Frown",
+			},
+		},
+		{
+			Name: "Michael",
+			State: {
+				Mouth: "Happy",
+				Eyes: "Mad",
+				Outfit: "Gym",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> made a cocky show as he walked up to the rope, spitting on his hands and rolling his neck in preparation. <span style="color:DarkTurquoise">Coach Kohler</span> was not impressed, at least not until <span style="color:DarkTurquoise">Michael</span> jumped up and began to climb the rope with impressive speed and skill. But <span style="color:DarkTurquoise">Michael</span>’s confidence gets the better of him as he loses his grip and falls just before reaching the top. Thankfully, he is caught by <span style="color:DarkTurquoise">Coach Kohler</span>.<br>
+<br>
+<span style="color:LightSteelBlue">“Not bad kid, but you used all your strength trying to go fast. Next time try conserving your energy and you may just reach the top. 2 laps, then rest those arms.”</span> <span style="color:DarkTurquoise">Michael</span> is slightly embarrassed that he didn’t reach the top but is still better than most of the class.<br>
+<br>
+
+/* CARTER */
+<<elseif _RandomNPC == "Carter">>
+	<<set _ad to [
+		{
+			Name: "Kohler",
+			State: {
+				Brows: "Suspicious",
+				Mouth: "Frown",
+			},
+		},
+		{
+			Name: "Carter",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Gym",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> approaches the rope and grabs it, staring deeply at it as he quotes an inspiring speech from his favorite T.V. show. Meanwhile, <span style="color:DarkTurquoise">Coach Kohler</span> is standing next to him looking annoyed. He loudly blows his whistle and begins to yell for <span style="color:DarkTurquoise">Carter</span> to climb. Sadly, the small boy overestimated his own strength and only makes it to the third line before he is unable to pull himself up any further and falls down to the mat.<br>
+<br>
+<span style="color:DarkTurquoise">Coach Kohler</span> sighs loudly as <span style="color:DarkTurquoise">Carter</span> picks himself up and gives <span style="color:DarkTurquoise">The Coach</span> a nervous smile. <span style="color:LightSteelBlue">“I guess that was about as good as most of your classmates. 7 laps.”</span> He sighs again as <span style="color:DarkTurquoise">Carter</span> quickly runs off.<br>
+<br>
+
+/* JACKSON */
+<<elseif _RandomNPC == "Jackson">>
+	<<set _ad to [
+		{
+			Name: "Kohler",
+			State: {
+				Brows: "Suspicious",
+				Mouth: "Frown",
+			},
+		},
+		{
+			Name: "Jackson",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Gym",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:DarkTurquoise">Jackson</span> stands in front of you, joyfully jumping up and down waiting for his turn. He was genuinely excited to be able to climb something at school and NOT get in trouble. When his turn was called, he didn’t even wait for <span style="color:DarkTurquoise">Coach Kohler</span> to tell him to go before he was scaling that rope like a monkey. Though his appearance didn’t give it away, anyone who knew <span style="color:DarkTurquoise">Jackson</span> knew that climbing was his specialty.<br>
+<br>
+As <span style="color:DarkTurquoise">Jackson</span> reached the top and climbed back down, <span style="color:DarkTurquoise">Coach Kohler</span> looked on in genuine surprise. <span style="color:LightSteelBlue">“Well, you did reach the top, so no laps. You can sit down and relax.”</span> <span style="color:DarkTurquoise">The Coach</span> was even more surprised when <span style="color:DarkTurquoise">Jackson</span> asked if he could run some laps anyway, since sitting down was too boring. What a strange boy.<br>
+<br>
+
+
+/* THOMAS */
+<<elseif _RandomNPC == "Thomas">>
+	<<set _ad to [
+		{
+			Name: "Kohler",
+			State: {
+				Brows: "Suspicious",
+				Mouth: "Frown",
+			},
+		},
+		{
+			Name: "Thomas",
+			State: {
+				Eyes: "Tired",
+				Outfit: "Gym",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:DarkTurquoise">Thomas</span> looked uninterested as he strolled up to the rope and yanked at it a few times. <span style="color:DarkTurquoise">Coach Kohler</span> blew the whistle and <span style="color:DarkTurquoise">Thomas</span> began climbing, though you can tell he wasn’t giving it his all. He reached just under halfway before he gave up and dropped back down.<br>
+<br>
+<span style="color:DarkTurquoise">Coach Kohler</span> looked unimpressed, also catching on that <span style="color:DarkTurquoise">Thomas</span> wasn’t really trying, and sent him off to run his 6 laps before, sighing as he turned his attention to the next boy.<br>
+<br>
+
+
+/* XAVIER */
+<<elseif _RandomNPC == "Xavier">>
+	<<set _ad to [
+		{
+			Name: "Kohler",
+			State: {
+				Brows: "Suspicious",
+				Mouth: "Frown",
+			},
+		},
+		{
+			Name: "Xavier",
+			State: {
+				Mouth: "Sad",
+				Eyes: "Tired",
+				Outfit: "Gym",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:DarkTurquoise">Xavier</span> is stretching his arms as he walks up to the rope. Some of his followers begin to cheer for him, but it is quickly stopped by <span style="color:DarkTurquoise">Coach Kohler</span>. Once the whistle is blown, <span style="color:DarkTurquoise">Xavier</span> begins to climb with the clearest technique and consistency you’ve seen. It surprises no one that he manages to quickly reach the top and climb back down.<br>
+<br>
+<span style="color:LightSteelBlue">“Good job kid!”</span> <span style="color:DarkTurquoise">Coach Kohler</span> gives him a proud pat on the back, <span style="color:LightSteelBlue">“You can go take a seat on the bleachers and relax.”</span> <span style="color:DarkTurquoise">Xavier</span> doesn’t say anything in response, instead just walking over to the bleachers and sitting down as he takes off his Gym Shirt and drinks some water.<br>
+<br>
+
+
+/* FELIX */
+<<elseif _RandomNPC == "Felix">>
+	<<set _ad to [
+		{
+			Name: "Kohler",
+			State: {
+				Brows: "Suspicious",
+				Mouth: "Frown",
+			},
+		},
+		{
+			Name: "Felix",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Gym",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:DarkTurquoise">Felix</span> was performing some stretches as he waited for his turn. You overhear him mention that back  home all their physical classes were outside, so he’s never done a rope climb before and was a little excited. <span style="color:DarkTurquoise">Coach Kohler</span> calls him up and blows his whistle. <span style="color:DarkTurquoise">Felix</span> has a rough start but manages to perform decently well and gets just over the halfway point.<br>
+<br>
+<span style="color:LightSteelBlue">“Not bad <span style="color:DarkTurquoise">Felix</span>.”</span> <span style="color:DarkTurquoise">Coach Kohler</span> says as the boy climbs back down, <span style="color:LightSteelBlue">“4 laps, then get some water.”</span> You see <span style="color:DarkTurquoise">Felix</span> blowing on his slightly rope-burnt hands as he starts running his laps.<br>
+<br>
+
+<</if>>
+
+/* PLAYER ATTEMPT */
+
+<<set $SkillCheckType to "Athletics">>
+<<set $SkillCheckDifficulty to 4>>
+<<include"Ranked Skill Checks">>
+
+<div id="Choice">
+	<<link "Your turn">>
+	<<replace"#Choice">>
+
+	/* Set to random for now due to Gym needing a rework */
+	<<set _RopeClimb to random(1, 10)>>
+	
+	<span style="color:DarkTurquoise">Coach Kohler</span> calls you up next. You take a deep breath before gripping and tugging the rope a few times. You turn to <span style="color:DarkTurquoise">Coach Kohler</span> and give him a nod, signaling that you are ready. Then the whistle blows and you begin to climb.<br>
+<br>
+	
+	<<if _RopeClimb <= 1>>
+	
+	<<set $RandomChance to random(1, 2)>>
+	
+/* NO EVENT */
+	<<if $RandomChance == 1>>
+	<span style="color:Red">You jump up and grip the rope, passing by the first line, but then instantly feel your grip slip as you fall backward onto the mat.</span> You turn bright red and you hear a few boys laugh as you pick yourself up and turn towards the disappointed <span style="color:DarkTurquoise">Coach Kohler</span>.<br>
+<br>
+
+/* LOSES PANTS */
+	<<elseif $RandomChance == 2>>
+
+	<<set _ad to [
+		{
+			Name: "Kohler",
+			State: {
+				Brows: "Suspicious",
+				Mouth: "Smirk",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Arms: "Bound",
+				Blush: 3,
+				Mouth: "Sad",
+				Outfit: "Gym",
+				PantsDown: true,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+		<<if $PlayerUndies.Type != "None">>
+		<span style="color:Red">You jump up and grip the rope, passing by the first line, but then instantly feel your grip slip as you fall backward onto the mat. To make matters worse, you feel your leg get tangled as you fall and the rope pulls your $PlayerBottoms.Type up to your knee, exposing the front of your $PlayerUndies.Name!</span> <span style="color:Pink">You are stuck there on the ground with your lower half in the air pointing directly at <span style="color:DarkTurquoise">Coach Kohler</span>, who just stares at you unamused as you quickly free yourself and fix your bottoms.</span> Thankfully, you believe <span style="color:DarkTurquoise">The Coach</span>’s large frame blocked most of your classmates from seeing your $PlayerUndies.Type, though a few boys off to the side are laughing hysterically as you finally get back on your feet.<br>
+<<set $SchoolRep -= 2>>
+<span style="color:Red">-Reputation</span><br>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 20 _arousalbs _arousalkink>>
+	<<addMoodlet "Seen Undies" 4>>
+<br>
+		
+		<<else>>
+		<span style="color:Red">You jump up and grip the rope, passing by the first line, but then instantly feel your grip slip as you fall backward onto the mat. To make matters worse, you feel your leg get tangled as you fall and the rope pulls your $PlayerBottoms.Type up to your knee, exposing your $Player.PenisSize Penis and Butt!</span> <span style="color:Pink">You are stuck there on the ground with your lower half raised and your $PlayerTop.Type displaced, giving <span style="color:DarkTurquoise">Coach Kohler</span> the perfect view of your pre-teen Penis and body. He glanced at your boyhood for a moment, before glancing down at you with a mixed look of pity and annoyance.</span> You quickly untangled yourself and covered up your bits, practically burning bright red. Thankfully, <span style="color:DarkTurquoise">Coach Kohler</span>’s large frame blocked most of your classmates from seeing your exposed body, though a few off to the side are laughing hysterically at your misfortune as you finally get to your feet.<br>
+<<set $SchoolRep -= 5>>
+<span style="color:Red">-Reputation</span><br>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 20 _arousalbs _arousalkink>>
+	<<addMoodlet "Seen Naked" 5>>
+<br>
+		<</if>>
+	<</if>>
+<span style="color:LightSteelBlue">“Pathetic. I’ve seen elementary schoolers perform better. 9 laps and don’t let me see you slacking or I’ll double it, you clearly need the exercise.”</span> <span style="color:DarkTurquoise">Coach Kohler</span> gives you a hard slap on the ass as he pushes you aside so the next boy can go. You are left to run 9 long laps as you feel disappointed in yourself.<br>
+		<<set $GymNeedReduce to "Super">>
+		<<include"Gym Need Reduce">>
+<br>
+	
+	<<elseif _RopeClimb == 2>>
+	<span style="color:Red">You jump up and grip the rope, passing by the first line. You feel a pain in your arm but push past it as you pass the second line. The third line is within reach when your weak arms finally give out and you fall hard onto the mat down below.</span><br>
+<br>
+<span style="color:DarkTurquoise">Coach Kohler</span> sighs loudly, <span style="color:LightSteelBlue">“I’ve seen better. But I suppose I’ve also seen worse. 8 laps, and maybe do some pushups at home to strengthen those weak arms.”</span> You head off to run your laps, slightly disappointed in yourself. But at least you weren’t the worst in the class.<br>
+		<<set $GymNeedReduce to "Extra">>
+		<<include"Gym Need Reduce">>
+<br>
+	
+	<<elseif _RopeClimb == 3>>
+	<span style="color:Lightcoral">You grip the rope and begin to climb with impressive speed, quickly passing by the first and second lines. But it doesn’t last as  the pain finally hits you as you pass the third line and you fall down to the mat below.</span> While <span style="color:DarkTurquoise">Coach Kohler</span> doesn’t look impressed, he doesn’t seem too surprised either, as you did only slightly below average.<br>
+<br>
+<span style="color:LightSteelBlue">“Good attempt <span style="color:DarkTurquoise">$Player.Name</span>, but you could do better if you pace yourself. 7 laps and make sure to drink plenty of water.”</span> You sigh in relief now that it is over, but also grimace knowing you still have a lot of laps to run.<br>
+		<<set $GymNeedReduce to "Extra">>
+		<<include"Gym Need Reduce">>
+<br>
+
+	
+	<<elseif _RopeClimb == 4>>
+	<span style="color:lightcoral">You quickly begin climbing, remembering what you have learned, and find yourself going at a steady pace. You pass the first two lines with no problem, but soon find your arms begin to hurt as you struggle to pull yourself up further.</span> Still, you resist giving up and manage to pass two more lines before you are forced to give in and drop down.<br>
+<br>
+<span style="color:LightSteelBlue">“Not bad.”</span> <span style="color:DarkTurquoise">Coach Kohler</span> says as he helps you up, <span style="color:LightSteelBlue">“You’re about average for your class. Now you just have 6 laps to run before you can rest. Get going.”</span> You are hurried off so the next boy takes his turn. Your arms ache, but you feel slightly proud of yourself for making it as far as you did.<br>
+		<<set $GymNeedReduce to "Extra">>
+		<<include"Gym Need Reduce">>
+<br>
+	
+	<<elseif _RopeClimb == 5>>
+	<span style="color:yellow">Using what you’ve learned, you begin to climb, pacing yourself and using your strength to ascend the rope. You are doing quite well, but despite your best efforts you only make it halfway up before you have to stop due to your aching arms.</span><br>
+<br>
+<span style="color:LightSteelBlue">“Very good <span style="color:DarkTurquoise">$Player.Name</span>.”</span> <span style="color:DarkTurquoise">Coach Kohler</span> gives you an affirming smile, <span style="color:LightSteelBlue">“You’ve been making some good progress. Keep it up! Only 5 laps today.”</span> You leave, quite proud of yourself.<br>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+<br>
+	
+	<<elseif _RopeClimb == 6>>
+	<span style="color: yellow">Using what you’ve learned, you begin to climb. You pace yourself carefully and use all your strength to ascend the rope. Right as you reach the halfway point, you feel your arms about to give out, but manage to push yourself a little further, passing by one more red line before you lose your grip and fall.</span> Thankfully, <span style="color:DarkTurquoise">Coach Kohler</span> was watching and caught you, saving you from what could have been a hard fall.<br>
+<br>
+<span style="color:LightSteelBlue">“Good effort, but don’t push yourself too far.”</span> He laughs, putting you down, <span style="color:LightSteelBlue">“But you did pass the 6th line, so only 4 laps. Good job.”</span> He gives you a proud pat on the back as you walk off to run your laps, happy with your performance.<br>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+<br>
+
+	
+	<<elseif _RopeClimb == 7>>
+	<span style="color:lightgreen">You are confident of your ability and quickly begin to scale the rope. Your strength and skill are impressive, as you pass the halfway point and then some. But you are still a bit short of reaching the top and are forced to give in and climb down to prevent your arms from giving way and you crashing into the ground.</span> Still, you are impressed with your efforts, and so is <span style="color:DarkTurquoise">Coach Kohler</span>.<br>
+<br>
+<span style="color:LightSteelBlue">“Not bad at all!”</span> He laughs as he helps you down, grabbing you and placing you on the ground like a small child, <span style="color:LightSteelBlue">“Your improvement is an inspiration. 3 laps today, but keep it up and I’m sure you will reach the top!”</span><br>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+<br>
+
+	
+	<<elseif _RopeClimb == 8>>
+	<span style="color: lightgreen">You are confident of your ability and quickly begin to scale the rope. Your strength and skill are impressive as you manage to pass the halfway point. But soon you begin to feel the familiar pain in your arms as you pass lines 6 and 7. You feel you are about to give way, but just manage to pass the 8th line as your grip fails and you begin to slide down.</span> For better or worse, you use the ropes to slow your descent, stopping you from crashing into the mat, but giving you a pretty bad rope burn on your hands. <br>
+<br>
+<span style="color:LightSteelBlue">“Ouch.”</span> <span style="color:DarkTurquoise">Coach Kohler</span> laughs, grabbing your wrist to examine the slight burns, <span style="color:LightSteelBlue">“I have some cream to help with that. Probably would have been better to just fall, these are some of the best mats money can buy.”</span> He puts some lotion on your hand to help with the burn and sends you off to run 2 laps.<br>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+<br>
+
+	
+	<<elseif _RopeClimb == 9>>
+	<span style="color:green">You push yourself to your limits, climbing with all your might. A few of the boys still waiting for their turn look towards you with impressed gasps as you pass the halfway point with ease. You continue climbing, your eyes on the goal of reaching the top and touching the ceiling. You are nearly there when…</span> your grip slips. You try to grab hold of the rope to stop your fall but are only able to slow it as you descend back down to the floor, only inches away from the goal.<br>
+<br>
+It is only when you reach the ground that the disappointment is drowned out by the pain of rope burn on your hands. You cry out slightly and wave them around in a desperate attempt to stop the burning as <span style="color:DarkTurquoise">Coach Kohler</span> runs over and applies a soothing cream that calms it down. <span style="color:LightSteelBlue">“So close <span style="color:DarkTurquoise">$Player.Name</span>! Only 1 lap, but try to think where you went wrong and how you can reach the top next time as you are resting.”</span><br>
+		<<set $GymNeedReduce to "Easy">>
+		<<include"Gym Need Reduce">>
+<br>
+
+	
+	<<elseif _RopeClimb >= 10>>
+	<span style="color: green"> You push yourself to your limits, climbing with all your might. A few of the boys still waiting for their turn look towards you with impressed gasps as you pass the halfway point with ease. You continue climbing, your eyes on the goal of reaching the top and touching the ceiling. You are nearly there when… you do it. You reach the top and a wave of excitement runs over you!</span> Which only lasts for a second as you realize how tired your arms are and quickly descend back down to the ground before you fall.<br>
+<br>
+<span style="color:DarkTurquoise">Coach Kohler</span> is waiting there with a surprised, but proud look on his face. <span style="color:LightSteelBlue">“Nice job kid! One of only 3 students in your grade who can reach the top. All the training was worth it.”</span> He gives you a pat on the back and lets you sit and relax as everyone else takes their turn and runs laps.<br>
+		<<set $GymNeedReduce to "Easy">>
+		<<include"Gym Need Reduce">>
+<br>
+
+	<</if>>
+	
+	<<include"Attend Gym Finish">>
+	
+	
+	
+	<</replace>>
+	<</link>>
+	<<include"Skill Level Display">>
+</div>

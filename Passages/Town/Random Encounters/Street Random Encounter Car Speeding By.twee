@@ -1,0 +1,62 @@
+:: Street Random Encounter Car Speeding By [nobr]
+
+/* Written by: Manuel */
+
+/* Intro */
+
+/* Rain Check */
+<<if ["Raining", "Sprinkling", "Pouring"].includes($Weather)>>
+    Rain pours down on you as you walk along the curb. You look at the huge amount of water flowing along the sidewalk into the street drain. The rain seems to dampen all the sounds around you, leading to a relaxing symphony of showers. <br>
+    <br>
+    Then suddenly, you see a bright light coming from behind closing in very fast. You barely manage to turn your head in time to see a car flying past at breakneck speed. <span style="color:lightcoral">Accompanied by the car speeding past was a torrent of water that is launched into the air and impacts you with such force that you are thrown to te ground in a wet heap!</span> <br>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    Glancing up at the car as it turns, you realize it is some expensive sports car, probably owned by someone from the rich part of town who wished to show off in the suburbs. As you stand up, you realize that you are soaked from head to toe, even more so then before, and sigh in annoyance. Some people have no empathy. <br>
+    <<needChange "Fun" -5>>
+    <<addMoodlet "Pained" 3>>
+    <br>
+    /*{End}*/
+    <<if $Location.Name == "Northend">>
+        [[Continue|Northend]]
+    <<elseif $Location.Name == "Dellwood Street">>
+        [[Continue|Dellwood Street]]
+    <<elseif $Location.Name == "Wald Street">>
+        [[Continue|Wald Street]]
+    <</if>>
+
+<<else>>
+    The sun is shining down on you while you walk on the sidewalk and hop from curb to curb. You count your hops loudly while imagining lava on the left and right sides of the curbs, leaping the cracked gorges of lava. <br>
+    <br>
+    Suddenly, you hear a car engine roaring and approaching you rapidly. You barely manage to turn your head in time to see the car fly past you at a breakneck speed. <span style="color:lightcoral">The force of the passing car and the wind it creates throws you to the ground, making you groan in pain as you impact the hard cement.</span> <br>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    You quickly look back at the car before it turns and notice that it is an expensive-looking vehicle, probably a rich guy showing off in the suburbs. You slowly stand up and caress your sore butt briefly before brushing off the dirt on your bottoms. You sigh and continue walking along the sidewalk but this time a bit further away from the street to not get caught in surprise again. <br>
+    <<needChange "Fun" -5>>
+    <<addMoodlet "Pained" 2>>
+    <br>
+    /*{End}*/
+    <<if $Location.Name == "Northend">>
+        [[Continue|Northend]]
+    <<elseif $Location.Name == "Dellwood Street">>
+        [[Continue|Dellwood Street]]
+    <<elseif $Location.Name == "Wald Street">>
+        [[Continue|Wald Street]]
+    <</if>>
+
+<</if>>

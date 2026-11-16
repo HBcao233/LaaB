@@ -1,0 +1,87 @@
+:: Carter Quest Intro Invite Event [nobr]
+
+As you enter the school, still yawning and rubbing sleep from your eyes, you spot the curious sight of <span class="char-name">Carter</span> up ahead. He is standing in front of the school notice board looking like he is struggling. In one hand, he carries a stack of papers, a roll of tape, and his partially open backpack. With his other hand, he is attempting to both hold up a piece of paper and hang it up. <span class="green-text">You smile at the sight before walking up and offering a greeting.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Carter",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Sad",
+            Blush: 1,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span class="dialogue-text">“Ah!”</span> <span class="char-name">Carter</span> jumps at the sudden voice behind him, losing his balance as he stumbles back. You manage to catch him, though a few papers slip off the stack and fall to the ground. <span class="dialogue-text">“<span class="char-name">$CarterNickname</span>? Dang, you’re sneaky.”</span> <span class="char-name">Carter</span> laughs in mild embarrassment. Noticing his hands are full, you reach down to pick up the fallen papers. They appear to be fliers.<br>
+<br>
+
+<span class="dialogue-text">“This Saturday. We ask members of the community to participate in a city-sponsored Park Clean-Up. Work together to keep our city beautiful.”</span> Underneath that is various information about the event along with some childish drawings.<br>
+
+<<set _ad to [
+    {
+        Name: "Carter",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span class="dialogue-text">“Isn’t it cool?”</span> <span class="char-name">Carter</span> smiles, finishing hanging up one of the fliers on the notice board. <span class="dialogue-text">“The city does all sorts of events like this, cleaning up the park, community potlucks, Christmas presents for kids. It’s so cool! My brother says they only do it for the publicity, but I think he’s just a sourpuss.”</span> <span class="char-name">Carter</span> laughs, walking down the hallway to hang up more as you follow.<br>
+<br>
+
+<span class="dialogue-text">“We’re trying to get more people to come help out this weekend.”</span> <span class="char-name">Carter</span> stops to hang up another flier, though you insist on helping him to make it easier. <span class="dialogue-text">“So, I had my dad help me make these fliers and the Headmaster said I can hang them up around the school! Hey! If you’re not doing anything this weekend, you should come by! We’ll be starting between <span class="bold">7am and 11am</span>. We can hang out and clean up the park at the same time!”</span><br>
+<br>
+
+<span class="char-name">Carter</span> gives a big smile as he finishes hanging up the last of the posters. The boy is adorable, so eager to help out and clean up the park. You tell him you’ll try to show up, which causes the boy’s smile to grow wide. <span class="dialogue-text">“Perfect! Well, if you do, just come and find me. We can team up and be the best cleaners there!”</span><br>
+<br>
+
+You wave goodbye as <span class="char-name">Carter</span> leaves to return his hanging supplies to the front office. You glance once more at the fliers. <span class="dialogue-text">“Come to the City Park between <span class="bold">7am and 11am this Saturday</span> to help out!”</span><br>
+<br>
+
+<<set $ActiveQuests.push("Carter: Park Clean Up")>>
+<<set $InActiveQuests.delete("Carter: Park Clean Up")>>
+<<set $QuestLog.push(
+	{
+		Name: "Carter: Park Clean Up",
+		State: 1,
+		ID: "Carter_M001",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Carter",
+		Tags: ["Carter", "Character", "Quest", "Park"],
+		Description: "<span style=\"color:DarkTurquoise\">Carter</span> has invited you to join him in a Park clean up event. It occurs Saturday between 7AM and 11AM at the City Park. While it may not be the most exciting thing ever, you know <span style=\"color:DarkTurquoise\">Carter</span> would be very happy if you did show up.",
+		Objectives: [
+			{
+				Name: "Join the Park Clean Up at the <span style=\"color:Teal\">City Park</span>",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Carter",
+	Description: "<span style=\"color:DarkTurquoise\">Carter</span> has invited you to join him in a Park clean up event. It occurs Saturday between 7AM and 11AM at the City Park. While it may not be the most exciting thing ever, you know <span style=\"color:DarkTurquoise\">Carter</span> would be very happy if you did show up.",
+})>>
+
+[[Continue|School South Hallway]]

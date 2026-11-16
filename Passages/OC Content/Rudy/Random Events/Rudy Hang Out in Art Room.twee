@@ -1,0 +1,40 @@
+:: Rudy Hang Out in Art Room [nobr]
+
+/* Intro */
+<<set $Minutes += 15>>
+
+<<if $OCRudySocial < -10 or $OCRudySocialRank < 0>>
+	Greeting <span style="color:DarkTurquoise">Rudy</span>, the boy instantly jumps and hurriedly shoves his things into his backpack, dropping a few on the floor in the process. The boy stiffs up as you sit down next to him, seemingly worried that you were going to try something. Despite this, you still have a semi-pleasant time talking to him. <span style="color:LightGreen">You’d almost think the boy wasn’t absolutely terrified of you.</span> <br>
+<<elseif $OCRudySocial <= 25 && $OCRudySocial >= -10>>
+	Greeting <span style="color:DarkTurquoise">Rudy</span>, you walk over and sit down next to him. Expectedly, he quickly shoves his sketchbook into his bag, blushing as he hides whatever art he was working on away from you. <span style="color:LightGreen">You chuckle at his cute shyness and begin to chat with him about random, various things.</span> <br>
+<<else>>
+	Greeting <span style="color:DarkTurquoise">Rudy</span>, you walk over and sit down next to him. Expectedly, he quickly shoves his sketchbook into his bag, but seems happy to see you regardless. The two of you chat for a bit, enjoying your time together. <span style="color:LightGreen">It seems he enjoys talking with you just as much as working on whatever artwork he was drawing.</span> <br>
+<</if>>
+
+<<if $InActiveQuests.includes("Rudy: Caged")>>
+	<<include"Rudy Cage Scene">>
+<<else>>
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+			},
+		},
+		{
+			Name: "OC Rudy",
+			State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+			}
+		},
+	]>>
+	<<ad _ad>>
+
+	About 15 minutes later, you get up to stretch and wander around the classroom. Eventually, you think about departing and say goodbye to <span style="color:DarkTurquoise">Rudy</span>, allowing him to return to his drawing. <br>
+
+	<<needChange "Fun" 3>>
+	<<socialChange "Rudy" 3 1>> 
+	<br>
+	[[Continue|School Art Classroom]]
+<</if>>

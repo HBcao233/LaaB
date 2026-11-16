@@ -1,0 +1,74 @@
+:: Millers Babysitting Hug Kayden [nobr]
+
+/* Intro */
+<<if $HangOutNeed.Fun >= 50>>
+    As <span style="color:DarkTurquoise">Kayden</span> walks down the stretched hallway humming to himself, you suddenly wrap your arms around him from behind. He freezes for a second, caught off guard. <span style="Color: LightSteelBlue">“Huh? Oh!”</span> He yelps before relaxing into the hug. He stands there for a moment, waiting and processing, then leans his head against you. <span style="Color: LightSteelBlue">“Okay, okay. I get it.”</span> He muttered, though you can hear the grin in his voice. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Kayden",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smile",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    As you keep hugging him, <span style="color:DarkTurquoise">Kayden</span> lets out a dramatic sigh, shaking his head. <span style="Color: LightSteelBlue">“You’re so weird.”</span> He teases, though he still doesn’t pull away. Instead, he stands there for another second or two before finally wiggling out of your arms and spinning around. But before you can react, he suddenly throws himself at you, wrapping his arms around your waist in retaliation. <span style="Color: LightSteelBlue">“There! Now we’re even!”</span> He declares before running off down the hallway laughing. <br>
+    <<socialChange "Kayden" 3 1>>
+    <<needChange "Fun" 3>>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Kids"]>>
+    <<arousalGain 10 _arousalbs _arousalkink>>
+    <span style="color:green">+Kayden Fun</span><br>
+    <<set $HangOutNeed.Fun += 5>>
+    <span style="color:green">+Kayden Comfort</span><br>
+    <<set $HangOutNeed.Comfort += 5>>
+    <br>
+    [[Continue|OC Miller House Hallway]]
+
+/*-Sad Mood-*/
+<<else>>
+    You notice <span style="color:DarkTurquoise">Kayden</span> dragging his feet down the hallway, his usual energy missing and replaced by his current sad and downtrodden self. His arms are crossed and his head is tiled down slightly as he passes by the framed family photos and drawing. Before he can disappear into the loneliness of his room, you come up behind him and wrap him in a firm hug. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Kayden",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="Color: LightSteelBlue">“Wha-!?”</span> <span style="color:DarkTurquoise">Kayden</span> stiffens at first, blinking in surprise. But then, after a beat, he slowly melts into it, his body relaxing against yours. <span style="Color: LightSteelBlue">“You’re being weird again.”</span> He mutters, but his voice is quieter now, less grumpy. He rests his forehead against you for a second, then lets out a long sigh.
+    There is a long moment before he pulls back slightly, his arms still hanging onto your shirt. <span style="Color: LightSteelBlue">“Fine.”</span> He mutters, his lips twitching into the smallest smile, <span style="Color: LightSteelBlue">“You win. But don’t get used to this.”</span> Even as he walks away, he seems a little brighter than before. <br>
+    <<socialChange "Kayden" 3 1>>
+    <<needChange "Fun" 3>>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Kids"]>>
+    <<arousalGain 10 _arousalbs _arousalkink>>
+    <span style="color:green">+Kayden Fun</span><br>
+    <<set $HangOutNeed.Fun += 10>>
+    <span style="color:green">+Kayden Comfort</span><br>
+    <<set $HangOutNeed.Comfort += 5>>
+    <br>
+    [[Continue|OC Miller House Hallway]]
+
+<</if>>

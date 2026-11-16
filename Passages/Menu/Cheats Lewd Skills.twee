@@ -1,0 +1,55 @@
+:: Cheats Lewd Skills [nobr]
+
+<<set $CheatsSkills to "Lewd">>
+
+<span style="color:Azure"><big><strong>--Lewd Skills--</strong></big></span><br>
+
+	/* EXHIBITION */
+<strong>Exhibition:</strong> 
+<<if $ExhibitionLearned == 1>>
+	[[(-)|Cheats Menu][$ExhibitionSkill -= 1]]
+	$ExhibitionSkill
+	[[(+)|Cheats Menu][$ExhibitionSkill += 1]]
+	<br>
+	<div style="text-indent: 2em;">
+		<strong>XP:</strong> 
+		[[(-)|Cheats Menu][$ExhibitionXP -= 5]]
+		$ExhibitionXP / 100
+		[[(+)|Cheats Menu][$ExhibitionXP += 5]]
+	</div>
+	<<if $ExhibitionSkill <= 0>>
+		<<set $ExhibitionSkill to 1>>
+	<<elseif $ExhibitionSkill > 10>>
+		<<set $ExhibitionSkill to 10>>
+	<</if>>
+	<<if $ExhibitionXP < 0>>
+		<<set $ExhibitionXP to 0>>
+	<</if>>
+<<else>>
+	[[Learn|Cheats Menu][$ExhibitionLearned to 1; $ExhibitionSkill to 1]] <br>
+<</if>>
+
+	/* NATURISM */
+<strong>Naturism:</strong> 
+<<if $NaturismSkill >= 1>>
+	[[(-)|Cheats Menu][$NaturismSkill -= 1]]
+	$NaturismSkill
+	[[(+)|Cheats Menu][$NaturismSkill += 1]]
+	<br>
+	<div style="text-indent: 2em;">
+		<strong>XP:</strong> 
+		[[(-)|Cheats Menu][$NaturismXP -= 5]]
+		$NaturismXP / 100
+		[[(+)|Cheats Menu][$NaturismXP += 5]]
+	</div>
+	<<if $NaturismSkill <= 0>>
+		<<set $NaturismSkill to 1>>
+	<<elseif $NaturismSkill > 10>>
+		<<set $NaturismSkill to 10>>
+	<</if>>
+	<<if $NaturismXP < 0>>
+		<<set $NaturismXP to 0>>
+	<</if>>
+<<else>>
+	[[Learn|Cheats Menu][$NaturismSkill to 1]] <br>
+<</if>>

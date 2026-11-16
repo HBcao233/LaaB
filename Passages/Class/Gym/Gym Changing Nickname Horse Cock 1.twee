@@ -1,0 +1,83 @@
+:: Gym Changing Nickname Horse Cock 1 [nobr]
+
+/* Written by: Anon K */
+
+Changing out for Gym feels like it’s taking you forever today, and before you know it, you are one of the few remaining boys left in the locker room. Not that the extra bit of privacy is necessarily a bad thing, but you know you’ve got to get the lead out before Coach has to come calling for any stragglers. <span class="alert-text">You do not want to be a straggler.</span><br>
+<br>
+
+<<if $PlayerUndies.Type != "None">>
+    You feel a sweat coming on as you stand there in your underwear, the fear of God in you as you think about <span class="char-name">Coach</span>’s wrath, and you start to step into your Gym Shorts when <span class="alert-text">you are yanked backwards by a mean pair of hands.</span><br>
+    <br>
+<<else>>
+    You feel a sweat coming on as you stand there without a thread of clothing but a towel, the fear of God in you as you think about Coach’s wrath, and you start to step into your Gym Shorts, towel still secured around your waist. Before you can step down, <span class="alert-text">you are yanked backward by a mean pair of hands.</span><br>
+    <br>
+<</if>>
+
+You’re now sandwiched between two boys in different stages of undress, your arms held behind you by one while the other gives you an odd look that you can’t really read, <span class="alert-text">but most definitely don’t like.</span> As you struggle, the boy behind you laughs against your ear and gives your arms a tighter squeeze, making handling you seem embarrassingly easy.<br>
+<br>
+
+<span class="dialogue-text">“Relax, <span class="char-name">$BullyNickname</span>, we just wanna see if it’s real.”</span> Then, his silent partner grins and drops to his knee in front of you. You ask what they’re talking about, but you already know. 
+
+<<if $PlayerUndies.Type != "None">>
+    The fingers of the boy in front of you dip into your waistband and, without much skill at all, <span class="alert-text">pull down your $PlayerUndies.Type.</span> Jerk, jerk, then a cool breeze. He leaves them to lay uselessly at your ankles.<br>
+    <br>
+<<else>>
+    Before you can blink, the boy in front of you <span class="alert-text">rips off your towel and drops it onto the floor by your feet.</span><br>
+    <br>
+<</if>>
+
+
+<<set _ad = [
+  {
+    Name: "Player",
+    State: {
+      Outfit: "Naked",
+      Mouth: "Sad",
+      Blush: 3,
+      Arms: "Bound",
+    },
+    ShowZoom: true,
+  },
+]>>
+<<ad _ad>>
+
+The temperature difference causes your boyhood to twitch, hard. They both crack up at the sight of it, and a deep blush starts to bloom throughout your body.<br>
+<br>
+
+<span class="dialogue-text">“Ewww!”</span> they say nearly in unison. <span class="dialogue-text">“What’s wrong with you?”</span> the boy in your ear asks. The one in front of you has his face inches away from it; you can even feel soft breaths puff up against your skin. It’s almost, <span class="italic">almost</span>, nice, <span class="alert-text">until he reaches up and smacks the hell out of it without warning.</span> You wince and cry out as it jiggles around, and they laugh even harder, making more noises of disgust.<br>
+<br>
+
+You’re tossed onto the ground to hold yourself. You cover your stinging member with your hands and squeeze your thighs tight, curling up to protect yourself. You choke back a pathetic whimper as they finally leave you to it, laughing all the while.<br>
+<br>
+
+<span class="dialogue-text">“Freak.”</span><br>
+<br>
+
+A part of you would like to keep lying there, nursing your injury, but <span class="char-name">Coach Kohler</span>’s voice shakes the whole locker room as he calls out, <span class="dialogue-text">“Last one out of there is climbing that rope ‘til I see your ass at the top! Move it!”</span><br>
+<br>
+
+You move it, not quite the last boy out, <span class="pink-text">but with your Gym Shorts on backwards.</span><br>
+<br>
+
+<<needChange "Hygiene" 100>>
+<<addMoodlet "Stress" 2>>
+<<addMoodlet "Pained" 4>>
+
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Humiliated"]>>
+<<arousalGain 10 _arousalbs _arousalkink>>
+
+/* GETTING DRESSED */
+<<set $ClothSave to "Restore">>
+
+<<if $GymClassType == "Gym">>
+  <<storeClothing "Restore" "Undies">>
+<<else>>
+  <<storeClothing "Restore" "Naked">>
+<</if>>
+
+<<if $SaveUndies != null>>
+  <<set $PlayerUndies to $SaveUndies>>
+<</if>>
+
+[[Continue|School Locker Room]] 

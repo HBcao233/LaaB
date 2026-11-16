@@ -1,0 +1,59 @@
+:: Farm [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Farm",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Farm",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Farm--</strong></big></span><br>
+You stand by the bus stop in the middle of the near empty fields that make up the farmland. Each property is fenced off and has a few buildings, such as a farmhouse or barn, but mainly goes on for miles of empty fields, pastures, and rows beyond rows of crops. 
+<<if $Time.ToD == "Morning">>
+    Many people seem to be out and about, despite the sun just cresting over the hill. A man waves at you as he drives past, and you see some young boys in overalls chasing around some chickens. Seems the day truly starts at dawn out here.
+<<elseif $Time.ToD == "Day">>
+    The emptiness of this location, save for a few animals grazing away, is a little eerie. Despite the town normally being super busy this time of day, the farm area is scarily quiet.
+<<elseif $Time.ToD == "Afternoon">>
+    As the sun begins to set and the bright orange hue begins to shine off the wheat fields, you see people leading their animals back towards their barns and parking their equipment. There are also a decent few people returning from the bus stop, those who work or had business in town today. 
+<<elseif $Time.ToD == "Night">>
+    Though, at this moment, you can’t see any of that. The only light you can spy for miles are those coming from the distant farmhouses and the single streetlight over the bus stop. You fear your heart racing a bit as you stand under it, unable to see anything beyond your small circle of light. Anything could be out there.
+<</if>><br>
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $CompletedQuests.includes("Bobby: Farm Intro")>>
+    [[Go to Bobby's Farm|OC Bobby Farm Local]]<br>
+<</if>>
+<<link"Explore (0:30)">>
+    <<set _events to ["Farm Explore Donkey", "Farm Explore Piss Goat", "Farm Explore Tire"]>>
+    <<set _event to _events.random()>>
+    <<goto _event>>
+<</link>>
+<span style="color:Yellow">+???</span><br>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+	[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+	<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+<<if $Bike == 1>>
+	[[Ride Bike back to town (0:20)|Farm Bike Back to Town]]
+<<else>>
+	[[Walk back to town (1:00)|Farm Walk Back to Town]]
+<</if>>
+<span style="color:red">-Energy</span><br>
+
+<</if>>

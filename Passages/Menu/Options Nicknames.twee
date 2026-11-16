@@ -1,0 +1,162 @@
+:: Options Nicknames [nobr]
+
+<<if $BoxNickname is undefined>>
+	<<set $BoxNickname to $Player.Name>>
+<</if>>
+
+<div id="options-nicknames-content">
+	<<include "Options Nicknames Content">>
+</div>
+:: Options Nicknames Content [nobr]
+
+<span style="color:Azure"><big><strong>--Nicknames--</strong></big></span><br>
+
+[Note: Nicknames are unlocked the first time they are given to you. You can set custom nicknames by typing in the Text Box at the bottom and clicking <strong>[Set]</strong>. You can <strong>[Lock]</strong> the Bully Nickname to prevent it from changing during normal gameplay.]<br>
+<br>
+
+<span style="color:Azure"><strong>--Social Nicknames--</strong></span><br>
+
+<<if $Nickname.Bully == 0>>
+	<strong>Bully:</strong> $BullyNickname <span style="color:lightcoral"><strong>(Locked)</strong></span>
+<<elseif $Nickname.Bully == 1>>
+	<strong>Bully:</strong> $BullyNickname
+	<<link "[Lock]">>
+		<<set $Nickname.Bully to -1>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>> |
+	<<link "[Set]">>
+		<<set $BullyNickname to $BoxNickname>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>>
+<<elseif $Nickname.Bully == -1>>
+	<strong>Bully:</strong> $BullyNickname
+	<<link "[Unlock]">>
+		<<set $Nickname.Bully to 1>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>>
+<</if>>
+
+<br><br>
+
+<span style="color:Azure"><strong>--Family Nicknames--</strong></span><br>
+
+<strong>Dad:</strong> $DadNickname
+<<link "[Set]">>
+	<<set $DadNickname to $BoxNickname>>
+	<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+<</link>><br>
+
+<strong>Gabe:</strong> $GabeNickname
+<<link "[Set]">>
+	<<set $GabeNickname to $BoxNickname>>
+	<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+<</link>><br>
+
+<strong>Noah:</strong> $NoahNickname
+<<link "[Set]">>
+	<<set $NoahNickname to $BoxNickname>>
+	<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+<</link>>
+
+<br><br>
+
+<span style="color:Azure"><strong>--Friendship Nicknames--</strong></span><br>
+
+<<if $Nickname.Lucas == 0>>
+	<strong>Lucas:</strong> $LucasNickname <span style="color:lightcoral"><strong>(Locked)</strong></span>
+<<elseif $Nickname.Lucas == 1>>
+	<strong>Lucas:</strong> $LucasNickname
+	<<link "[Set]">>
+		<<set $LucasNickname to $BoxNickname>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>>
+<</if>>
+<br>
+
+<<if $Nickname.Ben == 0>>
+	<strong>Ben:</strong> $BenNickname <span style="color:lightcoral"><strong>(Locked)</strong></span>
+<<elseif $Nickname.Ben == 1>>
+	<strong>Ben:</strong> $BenNickname
+	<<link "[Set]">>
+		<<set $BenNickname to $BoxNickname>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>>
+<</if>>
+<br>
+
+<<if $Nickname.Michael == 0>>
+	<strong>Michael:</strong> $MichaelNickname <span style="color:lightcoral"><strong>(Locked)</strong></span>
+<<elseif $Nickname.Michael == 1>>
+	<strong>Michael:</strong> $MichaelNickname
+	<<link "[Set]">>
+		<<set $MichaelNickname to $BoxNickname>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>>
+<</if>>
+<br>
+
+<<if $Nickname.Carter == 0>>
+	<strong>Carter:</strong> $CarterNickname <span style="color:lightcoral"><strong>(Locked)</strong></span>
+<<elseif $Nickname.Carter == 1>>
+	<strong>Carter:</strong> $CarterNickname
+	<<link "[Set]">>
+		<<set $CarterNickname to $BoxNickname>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>>
+<</if>>
+<br>
+
+<<if $Nickname.Jackson == 0>>
+	<strong>Jackson:</strong> $JacksonNickname <span style="color:lightcoral"><strong>(Locked)</strong></span>
+<<elseif $Nickname.Jackson == 1>>
+	<strong>Jackson:</strong> $JacksonNickname
+	<<link "[Set]">>
+		<<set $JacksonNickname to $BoxNickname>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>>
+<</if>>
+<br>
+
+<<if $Nickname.Thomas == 0>>
+	<strong>Thomas:</strong> $ThomasNickname <span style="color:lightcoral"><strong>(Locked)</strong></span>
+<<elseif $Nickname.Thomas == 1>>
+	<strong>Thomas:</strong> $ThomasNickname
+	<<link "[Set]">>
+		<<set $ThomasNickname to $BoxNickname>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>>
+<</if>>
+<br>
+
+<<if $Nickname.Xavier == 0>>
+	<strong>Xavier:</strong> $XavierNickname <span style="color:lightcoral"><strong>(Locked)</strong></span>
+<<elseif $Nickname.Xavier == 1>>
+	<strong>Xavier:</strong> $XavierNickname
+	<<link "[Set]">>
+		<<set $XavierNickname to $BoxNickname>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>>
+<</if>>
+<br>
+
+<<if $Nickname.Felix == 0>>
+	<strong>Felix:</strong> $FelixNickname <span style="color:lightcoral"><strong>(Locked)</strong></span>
+<<elseif $Nickname.Felix == 1>>
+	<strong>Felix:</strong> $FelixNickname
+	<<link "[Set]">>
+		<<set $FelixNickname to $BoxNickname>>
+		<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+	<</link>>
+<</if>>
+
+<br><br>
+
+<strong>Set Nickname:</strong><br>
+<<textbox "$BoxNickname" $BoxNickname>>
+
+<br><br>
+
+<<link "Reset">>
+	<<set $BoxNickname to $Player.Name>>
+	<<replace "#options-nicknames-content">><<include "Options Nicknames Content">><</replace>>
+<</link>>

@@ -1,0 +1,216 @@
+:: Cheats School Skills [nobr]
+
+<<set $CheatsSkills to "School">>
+
+<span style="color:Azure"><big><strong>--School Skills--</strong></big></span><br>
+
+    /* HOMEWORK */
+<strong>Homework:</strong><br>
+	<<if $CheatsHomework == 1>>
+	<span style="color:Green">Automatically Do Your Homework Every Day</span><br>
+	[[Don't Automatically Do Your Homework Every Day|Cheats Menu][$CheatsHomework = 0]]<br>
+	<<else>>
+	[[Automatically Do Your Homework Every Day|Cheats Menu][$CheatsHomework = 1]]<br>
+	<span style="color:Green">Don't Automatically Do Your Homework Every Day</span><br>
+	<</if>>
+	<br>
+
+	/* ENGLISH */
+<strong>English:</strong>
+<<if $EnglishLearned == 1>>
+	[[(-)|Cheats Menu][$EnglishSkill -= 1]]
+	$EnglishSkill
+	[[(+)|Cheats Menu][$EnglishSkill += 1]]
+	<br>
+	<div style="text-indent: 2em;">
+		<strong>XP:</strong> 
+		[[(-)|Cheats Menu][$EnglishXP -= 5]]
+		$EnglishXP / 100
+		[[(+)|Cheats Menu][$EnglishXP += 5]]
+	</div>
+	<<if $EnglishSkill <= 0>>
+		<<set $EnglishSkill to 1>>
+	<<elseif $EnglishSkill > 10>>
+		<<set $EnglishSkill to 10>>
+	<</if>>
+	<<if $EnglishXP < 0>>
+		<<set $EnglishXP to 0>>
+	<</if>>
+	/* Causing Issues, can't go to another screen
+	[[Study English|Cheats Study][$SkillCheckType to "English"]] <span style="color:Green">+English</span><br>
+	<br>
+	*/
+	<<if $CheatsEnglish == 1>>
+	<span style="color:Green">Automatically Study English Every Day</span><br>
+	[[Don't Automatically Study English Every Day|Cheats Menu][$CheatsEnglish = 0]]<br>
+	<<else>>
+	[[Automatically Study English Every Day|Cheats Menu][$CheatsEnglish = 1]]<br>
+	<span style="color:Green">Don't Automatically Study English Every Day</span><br>
+	<</if>>
+	<br>
+<<else>>
+	[[Learn|Cheats Menu][$EnglishLearned to 1; $EnglishSkill to 1]]<br>
+<</if>>
+
+	/* HISTORY */
+<strong>History:</strong> 
+<<if $HistoryLearned == 1>>
+	[[(-)|Cheats Menu][$HistorySkill -= 1]]
+	$HistorySkill
+	[[(+)|Cheats Menu][$HistorySkill += 1]]
+	<br>
+	<div style="text-indent: 2em;">
+		<strong>XP:</strong> 
+		[[(-)|Cheats Menu][$HistoryXP -= 5]]
+		$HistoryXP / 100
+		[[(+)|Cheats Menu][$HistoryXP += 5]]
+	</div>
+	<<if $HistorySkill <= 0>>
+		<<set $HistorySkill to 1>>
+	<<elseif $HistorySkill > 10>>
+		<<set $HistorySkill to 10>>
+	<</if>>
+	<<if $HistoryXP < 0>>
+		<<set $HistoryXP to 0>>
+	<</if>>
+	/* Causing Issues, can't go to another screen
+	[[Study History|Cheats Study][$SkillCheckType to "History"]] <span style="color:Green">+History</span><br>
+	<br>
+	*/
+	<<if $CheatsHistory == 1>>
+	<span style="color:Green">Automatically Study History Every Day</span><br>
+	[[Don't Automatically Study History Every Day|Cheats Menu][$CheatsHistory = 0]]<br>
+	<<else>>
+	[[Automatically Study History Every Day|Cheats Menu][$CheatsHistory = 1]]<br>
+	<span style="color:Green">Don't Automatically Study History Every Day</span><br>
+	<</if>>
+	<br>
+<<else>>
+	[[Learn|Cheats Menu][$HistoryLearned to 1; $HistorySkill to 1]]<br>
+<</if>>
+
+	/* MATH */
+<strong>Math:</strong> 
+<<if $MathLearned == 1>>
+	[[(-)|Cheats Menu][$MathSkill -= 1]]
+	$MathSkill
+	[[(+)|Cheats Menu][$MathSkill += 1]]
+	<br>
+	<div style="text-indent: 2em;">
+		<strong>XP:</strong> 
+		[[(-)|Cheats Menu][$MathXP -= 5]]
+		$MathXP / 100
+		[[(+)|Cheats Menu][$MathXP += 5]]
+	</div>
+	<<if $MathSkill <= 0>>
+		<<set $MathSkill to 1>>
+	<<elseif $MathSkill > 10>>
+		<<set $MathSkill to 10>>
+	<</if>>
+	<<if $MathXP < 0>>
+		<<set $MathXP to 0>>
+	<</if>>
+	/* Causing Issues, can't go to another screen
+	[[Study Math|Cheats Study][$SkillCheckType to "Math"]] <span style="color:Green">+Math</span><br>
+	<br>
+	*/
+	<<if $CheatsMath == 1>>
+	<span style="color:Green">Automatically Study Math Every Day</span><br>
+	[[Don't Automatically Study Math Every Day|Cheats Menu][$CheatsMath = 0]]<br>
+	<<else>>
+	[[Automatically Study Math Every Day|Cheats Menu][$CheatsMath = 1]]<br>
+	<span style="color:Green">Don't Automatically Study Math Every Day</span><br>
+	<</if>>
+	<br>
+<<else>>
+	[[Learn|Cheats Menu][$MathLearned to 1; $MathSkill to 1]]<br>
+<</if>>
+
+	/* SCIENCE */
+<strong>Science:</strong> 
+<<if $ScienceLearned == 1>>
+	[[(-)|Cheats Menu][$ScienceSkill -= 1]]
+	$ScienceSkill
+	[[(+)|Cheats Menu][$ScienceSkill += 1]]
+	<br>
+	<div style="text-indent: 2em;">
+		<strong>XP:</strong> 
+		[[(-)|Cheats Menu][$ScienceXP -= 5]]
+		$ScienceXP / 100
+		[[(+)|Cheats Menu][$ScienceXP += 5]]
+	</div>
+	<<if $ScienceSkill <= 0>>
+		<<set $ScienceSkill to 1>>
+	<<elseif $ScienceSkill > 10>>
+		<<set $ScienceSkill to 10>>
+	<</if>>
+	<<if $ScienceXP < 0>>
+		<<set $ScienceXP to 0>>
+	<</if>>
+	/* Causing Issues, can't go to another screen
+	[[Study Science|Cheats Study][$SkillCheckType to "Science"]] <span style="color:Green">+Science</span><br>
+	<br>
+	*/
+	<<if $CheatsScience == 1>>
+	<span style="color:Green">Automatically Study Science Every Day</span><br>
+	[[Don't Automatically Study Science Every Day|Cheats Menu][$CheatsScience = 0]]<br>
+	<<else>>
+	[[Automatically Study Science Every Day|Cheats Menu][$CheatsScience = 1]]<br>
+	<span style="color:Green">Don't Automatically Study Science Every Day</span><br>
+	<</if>>
+<br>
+<<else>>
+	[[Learn|Cheats Menu][$ScienceLearned to 1; $ScienceSkill to 1]]<br>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Physical Skills--</strong></big></span><br>
+
+	/* ATHLETICS */
+<strong>Athletics:</strong> 
+<<if $AthleticsLearned == 1>>
+	[[(-)|Cheats Menu][$AthleticsSkill -= 1]]
+	$AthleticsSkill
+	[[(+)|Cheats Menu][$AthleticsSkill += 1]]
+	<br>
+	<div style="text-indent: 2em;">
+		<strong>XP:</strong> 
+		[[(-)|Cheats Menu][$AthleticsXP -= 5]]
+		$AthleticsXP / 100
+		[[(+)|Cheats Menu][$AthleticsXP += 5]]
+	</div>
+	<<if $AthleticsSkill <= 0>>
+		<<set $AthleticsSkill to 1>>
+	<<elseif $AthleticsSkill > 10>>
+		<<set $AthleticsSkill to 10>>
+	<</if>>
+	<<if $AthleticsXP < 0>>
+		<<set $AthleticsXP to 0>>
+	<</if>>
+<<else>>
+	[[Learn|Cheats Menu][$AthleticsLearned to 1; $AthleticsSkill to 1]] <br>
+<</if>>
+
+	/* SWIMMING */
+<strong>Swimming:</strong> 
+<<if $SwimmingLearned == 1>>
+	[[(-)|Cheats Menu][$SwimmingSkill -= 1]]
+	$SwimmingSkill
+	[[(+)|Cheats Menu][$SwimmingSkill += 1]]
+	<br>
+	<div style="text-indent: 2em;">
+		<strong>XP:</strong> 
+		[[(-)|Cheats Menu][$SwimmingXP -= 5]]
+		$SwimmingXP / 100
+		[[(+)|Cheats Menu][$SwimmingXP += 5]]
+	</div>
+	<<if $SwimmingSkill <= 0>>
+		<<set $SwimmingSkill to 1>>
+	<<elseif $SwimmingSkill > 10>>
+		<<set $SwimmingSkill to 10>>
+	<</if>>
+	<<if $SwimmingXP < 0>>
+		<<set $SwimmingXP to 0>>
+	<</if>>
+<<else>>
+	[[Learn|Cheats Menu][$SwimmingLearned to 1; $SwimmingSkill to 1]] <br>
+<</if>>

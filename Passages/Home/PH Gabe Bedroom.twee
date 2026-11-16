@@ -1,0 +1,70 @@
+:: PH Gabe Bedroom [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Gabe Bedroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+
+<span style="color:Azure"><big><strong>--Gabe's Bedroom--</strong></big></span><br>
+<<if $Player.Exposed == "Naked">>
+	<<include"PH Gabe Bedroom Naked">>
+<<else>>
+	<<if $GabeSche.Activity == "Porn Room">>
+		You walk up to <span style="color:DarkTurquoise">Gabe</span>’s bedroom door only to find it locked. Listening, you hear what sounds like soft grunts coming from inside his room.<br>
+		<br>
+		[[Peek under the door|GABE Inspect Porn Room]]
+		<br>
+	<<else>>
+		You stand in your brother, <span style="color:DarkTurquoise">Gabe</span>’s room. It is neat outside of a large pile of dirty clothes in the corner of the room. Posters of various bands and sport teams fill the walls. He has padded mats and various weights in one corner of the room and a computer in the other.<br>
+		<br>
+					/* NPC SEEN */
+		<<include "NPC Inspect">>
+		<br>
+		<<if $GabeSche.Location != "Gabe Bedroom">>
+			<span style="color:Azure"><strong>-Actions-</strong></span><br>
+			<<link"Sneak on his PC (0:15)">>
+				<<set $Minutes += 15>>
+				<<goto"Gabe Sneak PC">>
+			<</link>> <span style="color:green">+Fun</span><br>
+			[[Go through Gabe's dresser|Gabe Dresser]]<br>
+			<<if $ActiveQuests.includes("Lucas: Boning the Neighbor")>>
+				<span style="color:Gold">[!]</span>
+				<<link"Search for Lube<br>">>
+					<<goto"Lucas Sex Quest Check Gabe's Room">>
+				<</link>>
+			<</if>>
+			<<if $ToggleOCLeo == 1 && $ActiveQuests.includes("Leo: Shotatube Show") && $Time.schoolday() && $Time.between(7, 0, 9, 0)>>
+				[[Watch the Shotatube Video (0:30)|OC Leo Page Speedo Video]]<br>
+			<</if>>
+		<</if>>
+		<<if $GabeSche.Activity == "Sleeping">>
+			<<if $ToggleOCLeo == 1 && $InActiveQuests.includes("Leo: Shotatube Show")>>
+				[[Sneak onto Gabe's Computer (0:15)|OC Leo Page Intro]]
+			<</if>>
+		<</if>>
+		<br>
+	<</if>>
+
+	<<if $LinkTravel == 1>>
+	<span style="color:Azure"><strong>-Travel-</strong></span><br>
+		[[Hallway (0:01)|PH Hallway][$Minutes += 1]] <br>
+	<</if>>
+	<br>
+
+	<div style="position: relative">
+		<img src="Images\Player House\Player House Map.png" 
+	style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+		<img src="Images\Player House\Player House Room Marker.png" 
+	style="position: absolute; left: 4px; top: 112px"  alt="School Map" usemap="#PlayerHouse">
+		<<include"NPC Tracking Home">>
+	</div>
+
+	<map name="PlayerHouse">
+	<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+	</map>
+<</if>>

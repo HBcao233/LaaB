@@ -1,0 +1,68 @@
+:: Attend Gym [nobr]
+
+/* SWIMMING DAY */
+<<if $Time.Day == "Tuesday" or $Time.Day == "Thursday">>
+	<<set _Random to ["GYM Swimming Basics", "GYM Swimming Diving"]>>
+
+	<<if $MichaelSocial > 50 or $MichaelSocialRank > 0>>
+		<<set _Random.push("Gym Class Swimming Michael Pants")>>
+	<</if>>
+
+			/* Retsu Events */
+	<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+		<<set _Random.push("OC Arthur Swim Race")>>
+	<</if>>
+		/* Shinju Scenes */
+	<<if $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Monster Boy")>>
+		<<set _Random.push("OC Shinju Swim Class Steal")>>
+	<</if>>
+		/* Noah H. Events */
+	<<if $ToggleOCNoahH == 1 && $InActiveQuests.includes("Noah H: Introduction")>>
+		<<set _Random.push("OC Noah Intro")>>
+	<</if>>
+	<<if $ToggleOCNoahH == 1 && $CompletedQuests.includes("Noah H: Introduction")>>
+		<<set _Random.push("OC Noah H School Pool")>>
+	<</if>>
+	<<if $Nickname.Bully == 1 && $BullyNickname == "Horse Cock">>
+		<<set _Random.push("Gym Swimming Nickname Horse Cock Event 2")>>
+	<</if>>
+
+	/* Kazu Events */
+	<<if $ToggleOCKazu == 1 && $CompletedQuests.includes("Kazu: The Deliquent")>>
+		<<set _Random.push("OC Kazu Gym Swimming Shirt")>>
+	<</if>>
+
+	<<set _event to _Random.random()>>
+
+	/* Quest-Forced Events */
+	<<if $InActiveQuests.includes("Xavier: Swimming Chicken")>>
+		<<set _event to "Xavier Swimming Chicken">>
+	<</if>>
+
+	<<include _event>>
+/* GYM DAY */
+<<else>>
+	<<set _Random to ["GYM Rope Climbing", "GYM Running Laps"]>>
+
+	/* Miller Events */
+	<<if $CompletedQuests.includes("Millers: Trouble in Paradise") and $ToggleOCMiller == 1>>
+		<<set _Random.push("OC Isaiah Gym Class")>>
+	<</if>>
+			/* Retsu Events */
+	<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+		<<set _Random.push("OC Richard Volley Ball")>>
+	<</if>>
+		/* Shinju Scenes */
+	<<if $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Monster Boy")>>
+		<<set _Random.push("OC Shinju Gym Sunburn")>>
+	<</if>>
+	<<if $Nickname.Bully == 1 && $BullyNickname == "Little Dick">>
+		<<set _Random.push("Gym Nickname Little Dick 1")>>
+	<</if>>
+
+	<<set _event to _Random.random()>>
+
+	/* Quest-Forced Events */
+
+	<<include _event>>
+<</if>>

@@ -1,0 +1,73 @@
+:: School Courtyard [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Courtyard",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Courtyard",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"School Pass Out">>
+<<elseif $HadAccident>>
+	<<include"School Pee">>
+/* Lucas PG Post Quest Chest */
+<<elseif $Weather != "Rain" and $Weather != "Storm" and $ActiveQuests.includes("Lucas: Punishment Game 2")>>
+	<<include"Lucas Quest PG Post Scene">>
+<<elseif $ToggleOCJames == 1 && $ActiveQuests.includes("James: The Orange Mystery Part 1")>>
+	<<include"OC James Intro Quest Part 1">>
+	
+<<else>>
+
+<span style="color:Azure"><big><strong>--Courtyard--</strong></big></span><br>
+You stand in the school’s Courtyard. It has a large grassy area with scattered picnic tables, a playground, and a basketball field. Despite being surrounded on all sides by the school’s fence, it has an open and natural feel to it with trees and bushes dotting the area.<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+<<if $Weather != "Rain" and $Weather != "Storm">>
+
+[[Play on Playground (0:15)|School Playground]] <span style="color:Green">+Fun</span>
+<<if $TutorPrompt == 1>>
+	<<button "?">>
+	<<script>>
+	Dialog.setup("Random Encounters", " Random Encounters");
+	Dialog.wiki(Story.get("Random Encounters Tutorial").processText());
+	Dialog.open();
+	<</script>>
+	<</button>>
+<</if>>
+<br>
+[[Nap Under Tree (0:30)|School Nap]] <span style="color:Green">+Energy</span><br>
+[[Play Soccer (0:20)|School Play Soccer]] <span style="color:Green">+Athletics</span><br>
+[[Hang Out (0:05)|School Courtyard][$Minutes += 5]]<br>
+
+<</if>>
+<br>
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Cafeteria (0:01)|School Cafeteria][$Minutes += 1]] <br>
+<br>
+<</if>>
+
+<div style="position: relative">
+	<img src="Images\School Map\School Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+    	<img src="Images\School Map\School Map Courtyard Marker.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<<include"NPC Tracking School">>
+</div>
+
+<map name="School">
+
+<area shape="rect" coords="166,58,327,111" alt="Cafeteria" onclick="$.wiki('<<goto[[School Cafeteria]]>><<set $Minutes += 1>>')" />
+
+</map>
+
+<</if>>

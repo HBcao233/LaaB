@@ -1,0 +1,16 @@
+:: Attend Drama Finish [nobr]
+
+<<set $Minutes += $Time.until(10, 50)>>
+
+/* LATE */
+<<if $Late == 1>>
+	You arrive at class late and suffer because of it! You have also been given detention!<br>
+    <<set $Detention += 5>>
+    <<set $Late to 0>>
+<</if>>
+
+<<set $DramaClass to 1>>
+<<skillPoints "Acting" 10>>
+
+<br>
+[[Continue|School Auditorium]]

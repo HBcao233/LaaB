@@ -1,0 +1,75 @@
+:: GYM Swimming Help Ben [nobr]
+
+While <span style="color:DarkTurquoise">Coach Kohler</span> is busy scolding some boys for running around the pool, everyone else is hanging out and enjoying a nice swim. In the corner of your eye, you notice that <span style="color:DarkTurquoise">Ben</span> was hugging the edge of the pool, out of breath and obviously having trouble. While he could paddle enough to keep himself from drowning, he couldn’t do much else. He may appreciate some help while the teacher is busy.<br>
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Blush: 1,
+			Mouth: "Sad",
+			Outfit: "Gym Swim",
+		},
+		Clothes: {
+			Face: $None,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id=Choice>
+	<<link "Help Ben">>
+	<<replace"#Choice">>
+	
+	You swim over to <span style="color:DarkTurquoise">Ben</span> and ask if he would like some help. He blushes, obviously embarrassed that you noticed his weak swimming, but shyly nods. You spend a few minutes giving him pointers and encouragement before the class resumes. While he isn’t going to be a master swimmer anytime soon, he is grateful for your help and seems happy that you were looking out for and thinking of him.<br>
+	<<socialChange "Ben" 3>>
+	
+	/* POSSIBLE LEWD EVENT */
+		<<set $RandomChance to random(1, 2)>>
+	
+	/* BEN SHORTS SLIP DOWN */
+		<<if $RandomChance == 1>>
+
+			<<set _ad to [
+				{
+					Name: "Ben",
+					ShowZoom: true,
+					State: {
+						Arms: "Hide",
+						Blush: 3,
+						Mouth: "Sad",
+						Outfit: "Gym Swim",
+						PantsDown: true,
+					},
+					Clothes: {
+						Face: $None,
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+		You and <span style="color:DarkTurquoise">Ben</span> are about to swim back over when <span style="color:DarkTurquoise">Coach Kohler</span> instead instructs everyone to exit the pool so you can practice diving. <span style="color:Pink">You swim behind <span style="color:DarkTurquoise">Ben</span> over to the ladder and are taken by surprise as <span style="color:DarkTurquoise">Ben</span>’s Swimming Trunks slip down as he exits the water, giving you a full look at the shy boy’s cute, wet butt!</span> <span style="color:DarkTurquoise">Ben</span> almost immediately notices, lets out an embarrassed scream, and pulls them back up. You can’t help but giggle as the poor boy turns bright red and rushes off.<br>
+		<</if>>
+	
+		<<set $GymNeedReduce to "Extra">>
+		<<include"Gym Need Reduce">>
+	<br>
+	<<include"Attend Gym Finish">>
+	
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Ben</span><br>
+	
+	<<link "Relax<br>">>
+	<<replace"#Choice">>
+	
+	You shrug and go back to relaxing, it’s not like the boy is in any danger and <span style="color:DarkTurquoise">Coach Kohler</span> should be able to give him all the help he needs. After a few minutes of relaxing, class resumes.<br>
+	<<addMoodlet "Stress" 0>>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+	<br>
+	<<include"Attend Gym Finish">>
+	
+	<</replace>>
+	<</link>>
+</div>

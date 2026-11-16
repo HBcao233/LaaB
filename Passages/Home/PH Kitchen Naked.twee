@@ -1,0 +1,205 @@
+:: PH Kitchen Naked [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Home Kitchen",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Kitchen",
+}>>
+
+/* SETTING STATE */
+<<if $Time.before(22) and $Time.after(6)>>
+	<<if $HomeDayNudity == 0>>
+		<<set $StreakState to "Day_Embarrassed">>
+	<<elseif $HomeDayNudity == 1>>
+		<<set $StreakState to "Day_Shy">>
+		<<set $Location.Nudity to 1>>
+	<<elseif $HomeDayNudity == 2>>
+		<<set $StreakState to "Day_Fine">>
+		<<set $Location.Nudity to 1>>
+	<</if>>
+<<else>>
+	<<if $HomeNightNudity == 0>>
+		<<set $StreakState to "Night_Embarrassed">>
+	<<elseif $HomeNightNudity == 1>>
+		<<set $StreakState to "Night_Shy">>
+		<<set $Location.Nudity to 1>>
+	<<elseif $HomeNightNudity == 2>>
+		<<set $StreakState to "Night_Fine">>
+		<<set $Location.Nudity to 1>>
+	<</if>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Kitchen--</strong></big></span><br>
+
+/* BASE TEXT BASED ON STATUS */
+<<if $StreakState == "Day_Embarrassed">>
+<span style="color:pink">You stand in your kitchen completely naked! Standing behind the counter to try and grant your body as much cover as possible, you can’t help but feel extremely exposed thanks to the large, glass door that leads into your backyard. </span>
+<<elseif $StreakState == "Day_Shy">>
+<span style="color:pink">You stand in the middle of your kitchen completely naked! Despite the heat on your cheeks, you force yourself to stand in between the kitchen and the small breakfast nook, where you are most exposed. Though embarrassing, you try your best to hold back the urge to cover your penis. </span>
+<<elseif $StreakState == "Day_Fine">>
+You stand in kitchen of your home, leaning against the counter. Despite being naked and exposed to the large glass door to your backyard, you don’t really care. <br>
+<<elseif $StreakState == "Night_Embarrassed">>
+<span style="color:pink">You stand in the darkness of the kitchen, completely naked. Despite it being night, the large glass door to the backyard leaves you feeling vulnerable and you can’t help but cover your penis with your hands.  </span>
+<<elseif $StreakState == "Night_Shy">>
+<span style="color:pink">You stand near the large glass door that leads to your backyard, your entire body laid bare. Despite the darkness, you can’t help but blush as you leave your body exposed to the world. </span>
+<<elseif $StreakState == "Night_Fine">>
+You stand in the darkness of your kitchen naked, glancing out the large glass door into the dark night sky. 
+<</if>>
+
+/* NPC INTERACTIONS */
+	/* FINE */
+	<<if $StreakState == "Day_Fine" or $StreakState == "Night_Fine">>
+		/* NPC SEEN */
+		<<include "NPC Inspect">>
+		<br>
+			
+	/* SHY */
+	<<elseif $StreakState == "Day_Shy" or $StreakState == "Night_Shy">>
+		<<include"PH Kitchen Naked NPC Shy">>
+
+	<</if>>
+/* GABE */
+<<if $GabeSche.Location == "Home Kitchen">>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+<span style="color:Pink">Before you can escape from the kitchen, you suddenly hear laughter and turn to see <span style="color:DarkTurquoise">Gabe</span> sitting at the nook with his phone pointed at you. <span style="color:lightsteelblue">“Sup bro?”</span> He smirks as you turn even redder. You quickly grab the closest thing on the counter to cover yourself with, which happens to be a cup. But as you hold it against your groin, you realize that it somehow made you look ever sillier.</span> <br>
+<br>
+<span style="color:Pink"><span style="color:Lightsteelblue">“Damn <span style="color:DarkTurquoise">$GabeNickname</span>, bet you can’t make the cup stay there without holding it!”</span> <span style="color:DarkTurquoise">Gabe</span> burst out laughing as you quickly toss the cup away and run into better cover.</span> <br>
+<br>
+	<</if>>
+
+/* NOAH */
+<<elseif $NoahSche.Location == "Home Bedroom">>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+		/* POST EVENT NOAH */
+			<<if $NoahSocialRank >= 1>>
+As you duck behind the counter to cover yourself, you are relieved to discover that you seemed to be alone. However, right as you exhale in relief, <span style="color:Pink">you suddenly feel a collection of fingers wiggle between your legs and against your balls! You let out a squeal and quickly jump back, just to see <span style="color:DarkTurquoise">Noah</span> standing behind you giggling loudly.</span> <br>
+<br>
+<span style="color:Lightsteelblue">“Sorry <span style="color:DarkTurquoise">$NoahNickname</span>.”</span> <span style="color:DarkTurquoise">Noah</span> wipes a tear from the corner of his eye, <span style="color:Lightsteelblue">“It just looked so cute dangling between your legs.”</span> <span style="color:Pink">He sticks his tongue out at you, which you return. <span style="color:Lightsteelblue">“You better run back to your room before someone else sees you, or <span style="color:DarkTurquoise">Bue</span> decides to nibble on your willy!”</span> He holds <span style="color:DarkTurquoise">Bue</span> up and makes a growling sound as you roll your eyes at his playful teasing.</span> <br>
+<br>
+
+		/* NORMAL NOAH */
+			<<else>>
+<span style="color:Pink"><span style="color:DarkTurquoise">Noah</span> spots you as you enter the kitchen butt naked and turns a bright red. He quickly lays his head against the table and uses Bue to cover his eyes as you quickly run past, humiliated.</span> <br>
+<br>
+
+			<</if>>
+
+	<</if>>
+
+/* DAD */
+<<elseif $DadSche.Location == "Home Kitchen">>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+	<span style="color:Pink">As you attempt to sprint through the kitchen to reach cover, you suddenly run face-first into <span style="color:DarkTurquoise">Your Father</span> and fall back onto your butt. <span style="color:Lightsteelblue">“Oh, sorry <span style="color:DarkTurquoise">$DadNickname</span>- Well, someone’s in a good mood today!”</span> You hear him chuckle as you open your eyes and find him looking down at you with an amused expression as you realize that you were laying on the floor with your legs spread apart, granting the perfect view of all your bits to <span style="color:DarkTurquoise">Your Father</span>.</span> <br>
+<br>
+	<span style="color:Pink">You turn a bright red, quickly covering yourself, as <span style="color:DarkTurquoise">Your Father</span> helps you up. <span style="color:Lightsteelblue">“You know <span style="color:DarkTurquoise">$DadNickname</span>, if you wanted hotdogs for dinner, you could have just asked.”</span> You turn a much brighter red as <span style="color:DarkTurquoise">Your Father</span> laughs way too long at his own joke.</span> <br>
+<br>
+
+	<</if>>
+
+/* ALONE */
+<<else>>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+			Thankfully, there is currently no one here to see you in such an exposed state.
+	<</if>><br>
+	<br>
+<</if>>
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $Time.after(22) or $Time.before(6)>>
+	<<if $NaturismSkill > 0>>
+		[[Press body against glass door (0:15)|PH Press Body Against Window]] <span style="color:green">+Fun</span><br>
+	<</if>>
+	[[Stick your penis in the fridge door (0:15)|PH Penis Fridge Door]] <span style="color:green">+Fun</span><br>
+<<else>>
+<<if $Time.between(6,0,8,0)>>
+	<<if $Breakfast != 1>>
+	[[Eat Breakfast (0:15)|Breakfast]]<br>
+	<</if>>
+<<elseif $Time.between(11,0,13,0)>>
+	<<if $Lunch != 1>>
+	[[Eat Lunch (0:15)|Lunch]]<br>
+	<</if>>
+<<elseif $Time.between(17,0,19,0)>>
+	<<if $Dinner != 1>>
+	[[Eat Dinner (0:15)|Dinner]]<br>
+	<</if>>
+<<elseif $Time.after(19) and $Dinner != 1>>
+	[[Eat Dinner from Fridge (0:15)|Dinner]]<br>
+<</if>>
+
+<<if $Homework == 1>>
+	<<if $Skill.Perks.includes("Faster Homework")>>
+		[[Do Homework (0:50)|Homework]]<br>
+	<<else>>
+		[[Do Homework (1:00)|Homework]]<br>
+	<</if>>
+<</if>>
+
+
+<<if $CookingLearned == 1>>
+	<<if $Money >= 4>>
+		[[Cook something (0:30)|Cook Something Home]]
+		<<listbox "$MealLevel">>
+		<<option "Basic Meal ($4)" "Basic">>
+		<</listbox>><br>
+	<<else>>
+		<span style="color:LightCoral">Cook something (Not enough money)</span><br>
+	<</if>>
+<</if>>
+
+<<if $ToggleBladder == 1>>
+	[[Drink Water|Kitchen Drink Water]] <span style="color:red">-Bladder</span><br>
+<</if>>
+
+<<if $ChoreEasy == "Laundry" and $ChoreEasyObj == 0>>
+	[[Wash Clothes (0:10)|Laundry]]<br>
+<</if>>
+<<if $ChoreHard == "Mop" and $MopKitchen == 0>>
+	[[Mop Kitchen (0:10)|Mop Kitchen]]<br>
+<</if>>
+
+<<if $ChoreEasy == "Take Out Trash" and $ChoreEasyObj == 0>>
+	[[Take Out Trash (0:05)|Take Out Trash]]<br>
+<</if>>
+
+<</if>>
+	<br>
+
+
+
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Hallway (0:01)|PH Hallway][$Minutes += 1]] <br>
+	[[Living Room (0:01)|PH Living Room][$Minutes += 1]] <br>
+	<<if $NaturismSkill >= 2>>
+			[[Backyard (0:01)|PH Backyard][$Minutes += 1]] <br>
+	<<else>>
+	<span style="color:lightcoral">You are not brave enough yet to go outside naked!</span><br>
+	<</if>>
+<</if>>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Big Room Marker.png" 
+style="position: absolute; left: 166px; top: 166px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="166,58,273,111" alt="Living Room" onclick="$.wiki('<<goto[[PH Living Room]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+	<<if $NaturismSkill >= 2>>
+		<area shape="rect" coords="166,220,273,273" alt="Backyard" onclick="$.wiki('<<goto[[PH Backyard]]>><<set $Minutes += 1>>')" />
+	<</if>>
+</map>

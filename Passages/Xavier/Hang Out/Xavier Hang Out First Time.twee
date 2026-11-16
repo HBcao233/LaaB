@@ -1,0 +1,38 @@
+:: Xavier Hang Out First Time [nobr]
+
+As you walk towards the bus pick up area, you instantly hear a chorus of forced laughter that can only mean one thing. <span style="color:DarkTurquoise">Xavier</span> had just said something vaguely funny and, being constantly surrounded by his goons who worship the ground he walks on for a chance to get even a little of his popularity and influence to rub off on them, everyone broke out laughing a little too hard. <span style="color:DarkTurquoise">Xavier</span> looks a mix of slightly amused but mostly uninterested <span style="Color: LightGreen">until he spots you and suddenly smirks.</span> You get an uneasy feeling and are almost regretting your decision to ask him what you wanted when he walks over. <br>
+<br>
+<span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$XavierNickname</span>. How was your day? As good as it could have been, I’d imagine.”</span> He asks, his goons following behind and mean-mugging you for taking his attention away. You shrug, answer his question, and ask him how his day was. <span style="Color: LightSteelBlue">“Uninteresting, bordering on deathly boring. I have a day of nothing planned after school, so I will have to find a way to entertain myself lest I die of boredom.”</span> <span style="color:DarkTurquoise">Xavier</span> gives you a cheeky smirk, as if he somehow knows what you plan to ask him. <span style="Color: LightSteelBlue">“Have any plans yourself?”</span> <br>
+<br>
+
+    <<set _ad to [
+        {
+            Name: "Xavier",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+/* PC: Smile
+<span style="color:DarkTurquoise">$Xavier</span>: Uniform, Smirk, Tired */
+You comment that you were planning to hang out around town, though were unsure where. In fact, you were thinking about asking him to join you. <span style="color:DarkTurquoise">Xavier</span> raises an eyebrow as the goons behind him gasp and look stunned that you would dare to even ask. One of them steps forward, finger mid wag to chastise you for daring to ask <span style="color:DarkTurquoise">Xavier</span> to waste his time on you, when <span style="color:DarkTurquoise">Xavier</span> lifts his hand sharply to cut him off before he gets even a chance to speak. <br>
+<br>
+<span style="Color: LightSteelBlue">“You know what? That sounds lovely. I’ve been feeling a bit ‘crowded’ today…”</span> He glares back at the followers, who all nervously step back, <span style="Color: LightSteelBlue">“I could do with a bit of one and one interaction. Thanks for the invite – I’m sure NO ONE will disturb us.”</span> The last part is very clearly pointed at his group, a vaguely veiled threat for them not to follow, else risk <span style="color:DarkTurquoise">Xavier</span>’s wrath. They all take the hint and begin to disperse, saying farewell and continuing to scowl at you until they are out of sight. <span style="Color: LightSteelBlue">“Now that the riffraff is out of the way, what exactly did you have in mind?”</span> <br>
+<<set $InActiveQuests.delete("Xavier: Hang Out Intro")>>
+<<set $CompletedQuests.push("Xavier: Hang Out Intro")>>
+<br>
+<span style="color:Yellow">Where to Hang Out?</span><br>
+<<link"The Park (0:10)<br>">>
+    <<set $HangOutClothes to "Uniform">>
+    <<set $Minutes += 10>>
+    <<goto "Xavier Hang Out Go To Park">>
+<</link>>

@@ -1,0 +1,56 @@
+:: OC Shinju Running Meet Up [nobr]
+
+/* Intro */
+
+
+You take off jogging down the street, trying to keep your pace measured and not tire yourself out too quickly. Thankfully, the streets are mostly empty, and you are enjoying the relaxing solitude of jogging when you suddenly spot a familiar boy sitting on the bench near the small playground. It is that white-haired boy, <span style="color:DarkTurquoise">Shinju</span>. Figuring you could do with a short rest, you wave to the boy and take a seat next to him. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Shinju",
+        State: {
+            Outfit: "Hoodie",
+            Mouth: "Smirk",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Well, if it isn’t the hero sidekick!”</span> <span style="color:DarkTurquoise">Shinju</span> chuckles, <span style="color:LightSteelBlue">“Doing a bit of training for our next battle? I admire your commitment, but it will matter not. There is no way you could defeat me.”</span> You roll your eyes, smirking at the boy’s commitment to his role. <span style="color:pink">You then realize that, sitting with his long hoodie, it almost looks like <span style="color:DarkTurquoise">Shinju</span> isn’t wearing anything on his lower half. You commit on this, half-jokingly, but are surprised when <span style="color:DarkTurquoise">Shinju</span> confirms it.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“What point does a monster have for pants?”</span> He laughs. <span style="color:pink">You blush, realizing that he is, in fact, just wearing a hoodie and if anyone looks at him front straight on, they’d see right up his hoodie and spot his bits out in the open!</span> <span style="color:DarkTurquoise">Shinju</span> notices your blushing and laughs, <span style="color:LightSteelBlue">“Unlike you, I’m not ashamed of my body! The only reason I am wearing my hoodie is to prevent unneeded attention.”</span> <br>
+<br>
+<<if $ToggleSupernat == 1>>
+    <span style="color:BlueViolet">As he speaks, you can’t help but notice something a bit off about him. His nails seem almost unnaturally long, as if they had suddenly grown to the size of claws. His teeth also seem sharper than usual as he talks, like a canine’s. You stare at him in disbelief until, in an instant, you blink, and he seemingly returns to normal.</span> <br>
+    <br>
+<</if>>
+
+<<linkreplace"Continue">>
+
+    <span style="color:LightSteelBlue">“But, if you’ll excuse me, I have other matters to attend to. You see, I am investigating some local legends of yokai, or cryptids, as you all call them. People had spoken at length of sightings of a wolfman, a secret haunted manor, and even some sea creatures that look like fish people! This place truly is a wonder full of so many strange occurrences!”</span> <span style="color:DarkTurquoise">Shinju</span> leaps to his feet, <span style="color:pink">causing his hoodie to flutter up and reveal his butt to you! You blush, knowing that he did so intentionally. He then turns towards you and stretches his arms up, allowing the tip of his penis and bottom of his balls to just peek out. Based on his smirk, it is clear he is doing this just to confirm to you that he is bare underneath. He seems to gain amusement as you blush and turn away.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“I’ll see you later, hero sidekick.”</span> He says as he spins on his heels and begins to walk away. <span style="color:DarkTurquoise">Shinju</span> is a very weird kid, but you try to forget about that and return to jogging, heading back towards your house. <br>
+
+    /* NEED DECREASE */
+    <<if $ExerciseType == "No Sweat">>
+        <<needChange "Hygiene" -2>>
+        <<needChange "Energy" -4>>
+    <<elseif $ExerciseType == "Paced">>
+        <<needChange "Hygiene" -5>>
+        <<needChange "Energy" -2>>
+    <<else>>
+        <<needChange "Hygiene" -5>>
+        <<needChange "Energy" -4>>
+    <</if>>
+    <<skillPoints "Athletics" 5>>
+    <br>
+    <<set $Minutes += 30>>
+    [[Continue|Northend]]
+
+<</linkreplace>>

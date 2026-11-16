@@ -1,0 +1,114 @@
+:: Fox Woods Dream [nobr]
+
+/* Intro */
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Wald Street",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+
+As your vision comes into focus you find yourself running through the woods on all fours. <span style="Color: LightGreen">Your tail whips around as the cool breeze of the forest rustles through your fur. The feeling of freedom fills your chest as you leap over a rock, running faster and faster but never getting tired. Nature itself becomes a blur of color around you as you continue to run, faster and faster, with no destination in mind and only the goal of going faster and further filling your head. <br>
+<br>
+It takes you a second to realize that you’re not yourself, but rather a small, agile fox. Yet this doesn’t seem at all strange to you in the dream. It’s like you’ve always been a fox, or maybe you were always meant to be one. Unbound by society, rules, or even clothes. Only your fur to keep you warm, yet that fur makes you feel more dressed than you ever have before as you rush past the endless foliage of the woods.</span> <br>
+<br>
+The breeze feels so real, you can almost feel it on your body. You never want it to end, <span style="Color: Yellow">but alas, it does as your eyes slowly flutter open.</span> <br>
+<br>
+
+<<linkreplace"Continue">>
+
+<<if $Player.Traits.includes("Kitsune")>>
+    The cool morning air hits your skin as you slowly open your eyes. <span style="Color: BlueViolet">Your ears twitch at the sound of a nearby bird and your tails flutters about as you yawn and open your eyes. You yawn and stretch your arms into the air but freeze as you suddenly realize where you are. Not in your bedroom, not even in your house. You’re in the woods, just like in your dream.</span> <br>
+    <<storeClothing "Closet" "Naked" 1>>
+
+        <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Blush: 3,
+                Arms: "Hide",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="Color: Pink">You yelp and quickly cover yourself as you realize your butt naked. You must have ran here in your sleep, your canine blood causing you to strip down to your natural form and run through the woods. You blush at the thought of someone seeing you sprinting through the woods in your birthday suit. <br>
+    <br>
+    Despite the embarrassment and the lingering anxiety of having to now get home without any clothes on, your kitsune spirit seems pleased with having run around so free and you feel a surge of happiness welling up inside you. Though now you have to get home without being seen.</span> <br>
+    <br>
+    [[Continue|Exposure Placeholder Woods to House]]
+    <br>
+<<elseif $PlayerBottoms.Type != "None">>
+    The cool morning air hits your skin as you slowly open your eyes. <span style="Color: BlueViolet">You yawn, stretching out on the cool grass as you rub your eyes… wait a second, grass? Your eyes fly open as you jump to your feet! That was more than just a dream, you’ve somehow ended up in the woods! Did you sleepwalk or-?</span> <br>
+    
+     <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="Color: Pink">You feel a fluttering inside your stomach, like a brief flicker of joy before it calms.</span> You’re alone, at least, though you should probably look into how you sleepwalked so far away from home. <br>
+    <br>
+    [[Continue|Wald Street]]
+<<elseif $PlayerUndies.Type != "None">>
+    The cool morning air hits your skin as you slowly open your eyes. <span style="Color: Pink">You yawn, stretching out on the cool grass as you rub your eyes… wait a second, grass? Your eyes fly open as you jump to your feet! That was more than just a dream, you’ve somehow ended up in the woods! Did you sleepwalk or-?</span> <br>
+    <br>
+    <span style="Color: Pink">Then a sense of terror fills your brain as you slowly look down and see the unmistakable sight of your $PlayerUndies.Name. You gasp out, quickly covering your underwear as you glance around the woods. You’re alone, thankfully, but had you sleepwalked all the way here in your underwear? Had you been frolicked through the woods like this!? <br>
+    <br>
+
+    
+        <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Mouth: "Frown",
+                Blush: 3,
+                Arms: "Hide",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You gulp nervously. You don’t know what’s worse, that someone could have seen you walking out here like this or the fact that you now have to get home like this.</span> <br>
+    <br>
+    [[Continue|Exposure Placeholder Woods to House]]
+    <br>
+<<else>>
+    The cool morning air hits your skin as you slowly open your eyes. <span style="Color: BlueViolet">You yawn, stretching out on the cool grass as you rub your eyes… wait a second, grass? Your eyes fly open as you jump to your feet! That was more than just a dream, you’ve somehow ended up in the woods! Did you sleepwalk or-?</span> <br>
+    <br>
+    <span style="Color: Pink">Then a sense of terror fills your brain as you slowly look down and see the unmistakable sight of your $Player.PenisSize Penis! You gasp out, quickly covering your bits as you glance around the woods. You’re alone, thankfully, but had you really sleepwalked all the way out here without clothes on!? Had you been frolicked through the woods like this!? <br>
+    
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Mouth: "Frown",
+                Blush: 3,
+                Arms: "Hide",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You gulp nervously. You don’t know what’s worse, that someone could have seen you walking out here like this or the fact that you now have to get home like this.</span> <br>
+    <br>
+    [[Continue|Exposure Placeholder Woods to House]]
+    <br>
+<</if>>
+
+<</linkreplace>>

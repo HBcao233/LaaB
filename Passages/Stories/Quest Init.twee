@@ -1,0 +1,353 @@
+:: Quest Init [nobr]
+
+/* Quest Trigger/Tracking Set-Up */
+
+/* Quest Naming:
+	These Strings will use the Quest_Name, which is usually the Category_Name (In most cases the NPC this quest is mainly from) followed by the Quest_Title. Quests that have a varaible title or a non-unique title will use their ID instead.
+	IDs are not used overall since it is easier to know what a quest is by name.
+	
+	
+Unavailable: These quests have NOT had their conditions met and thus won't appear in the gameworld.
+	(Note: New quests added in updates should ALWAYS be put here both in Init and Save Conversion, even if it is a quest that can be unlocked right from the start. This is so variables have time to reset for the day and it doesn't interfer with the Opening Scenes.)
+
+InActive: These quests have had their conditions met and can be acquired in the game world, but has not yet been. Single-Event Quests, such as NPC Introductions, will move from this directly to cimpleted. 
+
+Active: These quests are quests the PC have collected that are in their Quest Log.Only quests that have Stages and kept in the Quest Log go here.
+
+Completed: These are quests/events that have been completed. We will use this array when checking conditions for previous quests completed.
+
+Quest Log: Quest Logs are the details of a Quest that belongs in the Quest Log. Such as Name, Objectives, Descirption, State, etc.
+We don't check this to see Active Quests since it is easier in the above arrays and not all quests go into the log.
+
+Quest Log Complete: This is information on completed quests. This will be used to see which Multi-Stage Quests the PC has completed and act as a reminder of this info. Single-Stage/Event Quests normally won't go into the Completion Quest Log. Only the larger quests.
+
+Daily Events: This array will hold the string names of Daily Events the PC has done to prevent them from doing them again. For example: NPC School Bullying can only be done once per person per day. This string is reset at the start of each day.*/
+	
+<<set $InActiveQuests to []>>
+<<set $ActiveQuests to []>>
+<<set $CompletedQuests to []>>
+
+<<set $UnavailableQuests to [
+	/* Noah */
+		"Noah: Booster Shot",
+		"Noah: Missing Toy",
+		"Noah: Stormy Night",
+		"Noah: Accident",
+		"Noah: Swimming Lessons",
+			/* Noah: Swimming Lessons is technically a Skill Questline, but labeled as a Noah Side-Quest for simplicity */
+		"Noah: Hang Out Intro",
+	/* Lucas */
+		"Lucas: First Visit",
+		"Lucas: Ryker",
+		"Lucas: The Price of Fame",
+		"Lucas: Punishment Game",
+		"Lucas: Boning the Neighbor",
+		"Lucas: Hang Out Intro",
+		"Lucas: New Member of the Family",
+	/* Ben */
+		"Ben: Track Meet Cute",
+		"Ben: 5-Mile Jog",
+		"Ben: Hang Out Intro",
+	/* Michael */
+		"Michael: Little Bear",
+		"Michael: Blackmail",
+		"Michael: Stupid Stepbrothers",
+		"Michael: Hang Out Intro",
+	/* Carter */
+		"Carter: Park Clean Up",
+		"Carter: Lost Pants",
+		"Carter: Mom (Mall)",
+		"Carter: Mom (Main Street)",
+		"Carter: Mall Fight",
+		"Carter: Hang Out Intro",
+		"Carter: First Visit",
+		"Carter: Hero's Weakness",
+		"Carter: Hero Award",
+		"Carter: Connor",
+	/* Jackson */
+		"Jackson: Empty Lot",
+		"Jackson: Sibling Dynamics",
+		"Jackson: Parental Drama",
+		"Jackson: Hang Out Intro",
+	/* Thomas */
+		"Thomas: Out Sick",
+		"Thomas: Study Session",
+		"Thomas: Hang Out Intro",
+	/* Xavier */
+		"Xavier: Big Brother",
+		"Xavier: Swimming Chicken",
+		"Xavier: Collections",
+		"Xavier: Hang Out Intro",
+	/* Felix */
+		"Felix: Mateo",
+		"Felix: The Letter",
+		"Felix: Hang Out Intro",
+	/* Gabe */
+		"Gabe: Sneak Out",
+		"Gabe: Bail Out",
+		"Gabe: Hang Out Intro",
+	/* Dad */
+		"Dad: Dragged Shopping",
+		"Dad: Hang Out Intro",
+
+	/* Ryker */
+		"Ryker: Retaliation",
+
+	/* Supporter Characters */
+	/* Millers */
+		"Millers: Meet the Millers",
+		"Millers: Trouble in Paradise",
+		"Millers: Dog Escape",
+		"Millers: Oliver Meets Twins",
+		"Millers: Isaiah & Shinju",
+		"Millers: Snakes in the Grass",
+		"Millers: Babysitting Kayden",
+	/* Nyalls */
+		"Nyalls: Sebastian",
+		"Nyalls: Oliver",
+		"Nyalls: Evelyn",
+		"Nyalls: Cole",
+	/* Isaac */
+		"Isaac: The Little Blueberry",
+		"Isaac: Jacob",
+		"Isaac: The Nightclub",
+	/* Birdy */
+		"Birdy: Introduction",
+		"Birdy: Lea",
+	/* Erin */
+		"Erin: Introduction",
+		"Erin: Closet Bound",
+	/* Leon */
+		"Leon: Introduction",
+	/* Manuel */
+		"Manuel: Introduction",
+		"Manuel: The Pent-Up Boy",
+		"Manuel: Redlight Boy",
+		"Manuel: The Great Unlocking",
+		"Manuel: Envy of the Unfree",
+	/* Kollin */
+		"Kollin: Boy in the Woods",
+	/* JQ */
+		"JQ: Introduction",
+	/* Arthur & Richard */
+		"Arthur & Richard: Introduction",
+		"Arthur & Richard: Stargazing",
+		"Arthur & Richard: Shower Event",
+		"Arthur & Richard: Hat Quest",
+		"Arthur & Richard: Returning the Favor",
+	/* Shinju */
+		"Shinju: Monster Boy",
+		"Shinju: Felix at the Lake",
+		"Shinju: Dressing Room Teasing",
+		"Shinju: Breaking Drama Conventions",
+		"Shinju: Felix Monster Event",
+		"Shinju: Manuel Skinny Dipping",
+	/* Aurelio */
+		"Aurelio: Introduction",
+	/* Liam */
+		"Liam: Introduction",
+	/* Ion */
+		"Ion: Mysterious Creature",
+	/* Snowpaw */
+		"Snowpaw: Lenny's Wild West Show",
+		"Snowpaw: New Rabbit Around Town",
+	/* Kyren */
+		"Kyren: Introduction",
+	/* Zacky */
+		"Zacky: Introduction",
+	/* Patrick */
+		"Patrick: Introduction",
+		"Patrick: Ivy",
+	/* Mason */
+		"Mason: The Underwear-Loving Squid",
+	/* Rowan */
+		"Rowan: Introduction",
+		"Rowan: Drama Intro",
+	/* Kazu */
+		"Kazu: The Deliquent",
+		"Kazu: Unexpected Friendship",
+		"Kazu: Ben Strip Tease",
+		"Kazu: The Eye",
+		"Kazu: Xavier Showdown",
+		"Kazu: The Tattoo",
+	/* Nikolai */
+		"Nikolai: Introduction",
+		"Nikolai: School Tour",
+		"Nikolai: Dropped Photo",
+		"Nikolai: Aran",
+	/* Luca */
+		"Luca: Introduction",
+	/* The Frosts */
+		"The Frosts: The Foreign Family",
+	/* Micah */
+		"Micah: Introduction",
+	/* Levi M */
+		"Levi M: Introduction",
+	/* Mata */
+		"Mata: Introduction",
+		"Mata: The New Kid At School",
+	/* Rudy */
+		"Rudy: Introduction",
+		"Rudy: Caged",
+	/* Bobby */
+		"Bobby: Farm Intro",
+	/* Emmet */
+		"Emmet: Introduction",
+		"Emmet: Drama Intro",
+	/* Kalim */
+		"Kalim: Introduction",
+	/* Noah H */
+		"Noah H: Introduction",
+		"Noah H: Vibration",
+	/* Nathan */
+		"Nathan: Introduction",
+	/* Chase */
+		"Chase: Birthday Party",
+	/* Enkys */
+		"Enkys: Introduction",
+		"Enkys: Cat Shelter",
+	/* Tyler */
+		"Tyler: Introduction",
+	/* Leo */
+		"Leo: Shotatube Show",
+		"Leo: Modeling",
+	/* Raymond */
+		"Raymond: Introduction",
+		"Raymond: The Kidds",
+	/* Zach Lund */
+		"Zach: Brochella Lite",
+	/* JST */
+		"Jacob: Introduction",
+	/* James */
+		"James: The Orange Mystery Part 1",
+	/* Jonny */
+		"Jonny: The Fret Champion",
+	/* Kade */
+		"Kade: Introduction",
+	/* Aubin */
+		"Aubin: Introduction",
+	/* Alex */
+		"Alex: Introduction",
+	/* George and Timmy */
+		"George & Timmy: Introduction",
+	/* Don */
+		"Don: Introduction",
+
+	/* Other */
+		"Kitsune: Werewolf",
+]>>
+
+<<set $Memories to []>>
+
+<<set $QuestLog to []>>
+<<set $QuestLogCompleted to []>>
+
+<<set $DailyEvents to []>>
+
+
+
+/* QUEST SETTERS */
+<<set $QuestMissingToy to 0>>
+<<set $QuestStormyNight to 0>>
+
+/* Quest Triggers */
+<<set $SchoolQuest to 0>>
+
+/* Gabe Quest Variables */
+	/* Bail Out Quest */
+<<set $QuestGabeBailOut to 0>>
+
+/* LUCAS RYKER QUEST */
+<<set $QuestLucasRyker to {
+	State: 0,
+    RykerOption: "None",
+    DadTruth: "None",
+}>>
+
+/* Lucas Home First Quest */
+<<set $QuestLucasHome to {
+	State: 0,
+}>>
+
+/* Lucas Meet Fam Quest */
+<<set $QuestLucasMeetFam to {
+	State: 0,
+}>>
+
+/* Lucas Home Comfort Quest */
+<<set $QuestLucasHomeComfort to 0>>
+/* Lucas Punishment Game */
+<<set $QuestLucasPunishmentGame to {
+	State: 0,
+}>>
+/* Lucas Sex Quest */
+<<set $QuestLucasSex to {
+	State: 0,
+}>>
+
+/* GABE */
+/* Gabe Sneak Out */
+<<set $QuestGabeSneakOut to {
+	State: 0,
+	Snitch: 0,
+}>>
+
+<<set $GabeSecretBJDone to false>>
+<<set $GabeSecretBJPostSceneHappened to false>>
+<<set $XavierFelixShowerConfrontationSceneHappened to false>>
+
+/* Michael */
+/* Michael Little Bear */
+<<set $QuestMichaelLittleBear to {
+	State: 0,
+	Choice: "Not",
+}>>
+/* Michael Blackmail */
+<<set $QuestMichaelBlackmail to {
+	State: 0,
+	OutsideChoice: "Masturbate",
+	Diaper: 0,
+}>>
+
+/* OC Meet The Millers */
+<<set $OCQuestMeetMillers to {
+	State: 0,
+}>>
+
+/* OC Sebastian Intro */
+<<set $OCSebastianIntro to 0>>
+/* OC Seb Photos */
+<<set $OCSebPhotoTime to -1>>
+<<set $OCSebPhotoCute to ["Thomas Little Bro", "Jackson Tree Nude", "Carter Found Camera", "Felix Training Soccer", "Lucas On Swing", "Ryker with Lucas", "Thomas and Ethan Bandaid", "Thomas and Ethan Accident"]>>
+<<set $OCSebPhotoEmbarrassing to ["Ben Undies Peek", "Carter Buying Briefs", "Michael After Detention", "Michael Caught Before", "Xavier's Little Surprise", "Ryker Doing Pull-Ups", "Shinju Photo Day", "Lovers at the Pool", "Shinju Embarrassing Photo", "Richard and Arthur at Pool"]>>
+<<set $OCSebPhotoSpecial to ["The Squirrel", "Boy Trips into Ben", "Xavier at Home", "Sebastian Sticking Tongue Out", "Ben in Room", "Lucas Wet Dream", "Ben in his Room", "Lucas Wet Dream"]>>
+<<set $OCSebPlayerPhotos to []>>
+/* Seb Other */
+<<set $OCOliverMet to 0>>
+<<set $OCOliverJacksonFelix to 0>>
+<<set $OCOliverMillerTwins to 0>>
+
+/* OC Isaac Intro */
+<<set $OCIsaacIntro to 0>>
+
+/* Intros */
+<<set $ThomasAbsent to false>>
+
+/* Ryker */
+<<set $QuestRykerRetaliation to { State: 0 }>>
+
+
+<<set $QuestNoahSwimmingLessons = { State: 0 }>>
+<<set $QuestNoahAccident = { State: 0 }>>
+<<set $OCQuestManuelBrothel = { State: 0 }>>
+
+<<set $LaserPointer to {
+	Active: 0,
+	Exposed: "Clothed",
+	Show: 0,
+	Days: 0,
+	Repeat: 1,
+	Kids: 0,
+	Preteens: 0,
+	Teens: 0,
+}>>

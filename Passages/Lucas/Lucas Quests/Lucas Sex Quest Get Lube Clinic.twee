@@ -1,0 +1,93 @@
+:: Lucas Sex Quest Get Lube Clinic [nobr]
+
+/* Intro */
+<<set $Minutes += 5>>
+Walking into the clinic trying not to draw any attention to yourself, you begin to browse and search the shelves for what you are looking for, lube. Now, how you are going to convince the clerk to sell it to you when you are pretty sure he’ll question someone of your age buying it is the real problem, for now you focus on finding it. Thankfully, the clerk doesn’t seem to be interested in you, browsing away on a magazine from the rack, so you are able to search in peace until you find it in an area labeled <span style="Color: LightSteelBlue">“Family Planning”</span>. 
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+Unscented Lube. While the bottle doesn’t outright explain what it is used for, you are able to guess this is the type you want and look both ways before picking it up. Outside of you and the clerk, the store seems empty, but you still want to be careful. The last thing you need is someone you know, like a classmate or teacher walking in and seeing you buy this. Odds are, <span style="color:DarkTurquoise">Your Father</span> would hear about it in that case. That is not a conversation you want to have. <br>
+<br>
+Holding it in a way to cover the label without looking like you are trying to steal it, you carefully walk up to the counter and place the bottle facedown along with a $10 bill, hoping he’ll just take the money and let you be on your way. <br>
+<br>
+He picks up the bottle and pauses. <span style="Color: LightSteelBlue">“Hey, kid.”</span> <span style="Color: LightCoral">Dang it.</span> <span style="Color: LightSteelBlue">“Gotta be 15 years or older to buy stuff like this.”</span> You cough twice, trying to make your voice sound deeper, and claim you are 15, just short for your age. The man raises an eyebrow, <span style="Color: LightCoral">not buying it at all.</span> <span style="Color: LightSteelBlue">“Sorry, but you don’t look anywhere near 15.”</span> He pauses, thinking, <span style="Color: LightSteelBlue">“Well, I guess there is a way you can prove it. Show me your dick. If you're 15, you would have already gone through puberty.”</span> 
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    
+You blush and step back. <span style="Color: Pink">Show him your dick to prove your age!? But that’s-!</span> The guy laughs, <span style="Color: LightSteelBlue">“I’m just kidding. What kind of clerk would use that as an age check? Tell you what, plop another 10 in the tip jar and you’ll be good to go. After all, if you are 15 you should have a job and should feel for other minimum wage workers like me.”</span> The guy smirks, pushing the small plastic jar closer. <span style="Color: Yellow">You sigh, it would have been cheaper to just show him your cock.</span> <br>
+<br>
+
+<div id="choice">
+    <<if $Money >= 20>>
+        <<link "Pay the extra $10<br>">>
+        <<replace"#choice">>
+            You pull out another $10 and put it on the counter. The man smiles and takes it, slipping it into his pocket. He then rings up your order and puts the lube in a discrete brown bag, winking at you. <span style="Color: LightSteelBlue">“Thank you, sir. Hope you and your girlfriend have a good time.”</span> He chuckles as you walk away blushing. <span style="Color: Pink">You really hope this sex thing is worth it.</span> <br>
+            <<set $ActiveQuests.delete("Lucas: Boning the Neighbor")>>
+            <<set $ActiveQuests.push("Lucas: Boning the Neighbor 2")>>
+            <<set $CompletedQuests.push("Lucas: Boning the Neighbor (Clinic)")>>
+            <<for _i to 0; _i lt $QuestLog.length; _i++>>
+                <<if $QuestLog[_i].Name == "Lucas: Boning the Neighbor">>
+                    <<set $QuestLog.deleteAt(_i)>>
+                    <<break>>
+                <</if>>
+            <</for>>
+            <<set $QuestLog.push(
+                {
+                    Name: "Lucas: Boning the Neighbor Part 2",
+                    State: 1,
+                    ID: "Lucas_M005",
+                    Category: "Character",
+                    Type: "Quest",
+                    Icon: "Lucas",
+                    Tags: ["Lucas", "Character", "Quest", "Lucas' House", "Sex"],
+                    Description: "You've got the lube! Now to take it to <span style=\"color:DarkTurquoise\">Lucas</span> in at his house to get this 'sex' thing underway! You're sure he'll be surprised you managed to get it.",
+                    Objectives: [
+                        {
+                            Name: "Find Lube",
+                            State: 1,
+                            Total: 1,
+                        },
+                        {
+                            Name: "Take the Lube to <span style=\"color:DarkTurquoise\">Lucas</span>",
+                            State: 0,
+                            Total: 1,
+                        },
+                    ],
+                },
+            )>>
+            <<set $Notifications.push({
+                Name: "Quest Acquired!",
+                Icon: "Quests/Lucas",
+                Description: "You've got the lube! Now to take it to <span style=\"color:DarkTurquoise\">Lucas</span> in at his house to get this 'sex' thing underway! You're sure he'll be surprised you managed to get it.",
+            })>>
+            <<set $Money -= 20>>
+            <br>
+            [[Continue|Hospital]]
+        <</replace>>
+        <</link>>
+    <</if>>
+    <<link "Refuse<br>">>
+    <<replace"#choice">>
+        You shake your head, claiming you don’t have the extra 10 dollars. The man shrugs, <span style="Color: LightCoral">taking the lube and pushing your initial payment back.</span> <span style="Color: LightSteelBlue">“Sorry, then no can do. Come back when you have a job, kid. I’m sure your girlfriend will understand why you couldn’t get it.”</span> The man smirks at you, causing you to blush as you walk away. <span style="Color: Yellow">Guess you’ll need some extra cash or find another way to get it.</span> <br>
+        <br>
+            [[Continue|Hospital]]
+    <</replace>>
+    <</link>>
+</div>

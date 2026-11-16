@@ -1,0 +1,23 @@
+:: Noah Avatar Sleeping [nobr]
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Sleep">>
+	<<set $AD.Eyes to "Closed">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Normal">>
+<<if $NoahStrippedSleeping != 1>>
+	<<set $AD.Outfit to "Pajamas">>
+<<elseif $NoahStrippedSleeping == 1>>
+	<<set $AD.Outfit to "Naked">>
+<</if>>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	<<set $BueHands to "Sleep">>
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>

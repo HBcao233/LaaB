@@ -1,0 +1,23 @@
+:: Athletics Skill Level Up [nobr]
+
+<<if $AthleticsLearned != 1>>
+	<span style="color:Gold">You learned the Athletics Skill! Boys are naturally athletic, but some more-so than others. This skill will aid in your Gym Class, but also comes into play whenever you do something physical. It has many uses which can be viewed from your Skill Journal in your Bedroom.</span><br>
+	<<set $AthleticsLearned to 1>>
+<</if>>
+
+<<if $AthleticsXP >= 100>>
+	<<set $AthleticsXP to 0>>
+	<<set $AthleticsSkill += 1>>
+		<<if $AthleticsSkill > 10>>
+			<<set $AthleticsSkill to 10>>
+		<</if>>
+	
+	<<if $AthleticsSkill == 2>>
+		<span style="color:Gold">You have reached Athletics Level 2! As your knowledge of how to use your body grows, you learn better ways to train and maintain it. When exercising, you can now choose the <span style="color:Teal">[No Sweat]</span> option, which reduces the amount of -Hygiene you gain from exercising.</span><br>
+	<<elseif $AthleticsSkill == 3>>
+		<span style="color:Gold">You have reached Athletics Level 3! You know your own limits and how long you can last. You can now choose the <span style="color:Teal">[Paced]</span> Exercise option, which reduces the amount of -Energy you gain from exercising. You also feel your climbing ability has increased!</span><br>
+	<<else>>
+		<span style="color:Gold">You have leveled up your Athletics! Unfortunately, no new content is available past this point at the moment. But you will still gain the benefits during Skill Checks!</span><br>
+
+	<</if>>
+<</if>>

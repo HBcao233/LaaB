@@ -1,0 +1,76 @@
+:: OC Arthur Richard English Basic [nobr]
+
+/* Intro */
+English class is regulated to another group reading session. Some boys enjoy this, as it makes for an easy day, while others dread the moment they get called to read in front of the entire class. It truly showcases the different reading levels of all of your classmates, with some finding no problem and others stuttering on the simplest of words. Expectedly, there is a large overlap between the two sets of groups. <br>
+<br>
+It is during the reading of one such slow reader that you find your mind wandering and begin to causally gaze around the class. Lucas is reading along patiently while <span style="color:DarkTurquoise">Jackson</span> looks like he is going to explode if things don’t speed up. Then your attention turns to the back of the room, where the lovebirds of <span style="color:DarkTurquoise">Arthur</span> and <span style="color:DarkTurquoise">Richard</span> reside. <br>
+<br>
+Neither one of them seems to be paying much attention. <span style="color:DarkTurquoise">Richard</span> is resting his head in his hands, staring up at the roof, no doubt caught in a fun daydream judging by the dorky smile on his face. <span style="color:DarkTurquoise">Arthur</span>, meanwhile, is at least reading a book, though it isn’t hard to see that it isn’t the book the class is reading, but rather a second, smaller book hidden inside. <span style="color:pink">You can’t help but smile at them, they were indeed perfect for each other.</span> <br>
+<br>
+
+<<set _random to random(1, 2)>>
+
+/* Richard is Called on */
+<<if _random == 1>>
+    <span style="color:LightSteelBlue">“Alright, that’s good.”</span> <span style="color:DarkTurquoise">Mr. Hart</span> yawns, <span style="color:LightSteelBlue">“Let’s move on to another boy. How about… <span style="color:DarkTurquoise">Richard Bright</span>.”</span> There is a brief pause as everyone waits for him to begin, but there is silence. You glance back toward the boy; <span style="color:lightcoral">he still isn’t paying attention.</span> <span style="color:DarkTurquoise">Mr. Hart</span> clears his throat, repeating the boy’s name. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Richard Bright</span>!”</span> <span style="color:DarkTurquoise">Richard</span> suddenly snaps to his senses, suddenly rising to his feet. <br>
+    
+    <<set _ad to [
+        {
+            Name: "Hart",
+            State: {
+                Eyes: "Narrow",
+            },
+        },
+        {
+            Name: "OC Richard",
+            State: {
+                Outfit: "Uniform", 
+                Blush: 2,
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    /* Richard: Uniform, Blush2, Frown */
+    <span style="color:LightSteelBlue">“Uhhh, 42!”</span> He shouts out, no doubt believing he was asked a question. <span style="color:pink">The class erupts in laughter as <span style="color:DarkTurquoise">Mr. Hart</span> shakes his head.</span><br>
+    <br>
+    <span style="color:LightSteelBlue">“Thank you for joining us. Could you please pick on page 142 where we left off?”</span> <span style="color:DarkTurquoise">Mr. Hart</span> asks. <span style="color:DarkTurquoise">Richard</span>, blushing deeply, nods before sitting down and quickly turning to the page. <span style="color:LightSteelBlue">“And to ensure you stay awake this time, I’ll have you read for the last 15 minutes of class.”</span> <br>
+    <br>
+    There is still chuckling as <span style="color:DarkTurquoise">Richard</span> finally reaches the page and begins to read. The poor boy’s voice sounds a little horse by the time class is over. <br>
+    <<needChange "Fun" 10>>
+    <<socialChange "Richard" 3 1>>
+    <br>
+    <<include"Attend English Finish">>
+
+/* Arthur is called on */
+<<else>>
+    <span style="color:LightSteelBlue">“Alright, thank you.”</span> <span style="color:DarkTurquoise">Mr. Hart</span> yawns, <span style="color:LightSteelBlue">“Alright, next up to read is… <span style="color:DarkTurquoise">Arthur Peak</span>.”</span> <span style="color:pink"><span style="color:DarkTurquoise">Arthur</span> makes a strange squeaking sound behind you, no doubt hearing his name and trying to figure out what was asked of him.</span> <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Arthur</span>?”</span> <span style="color:DarkTurquoise">Mr. Hart</span> says with a raised eyebrow, <span style="color:LightSteelBlue">“Did you hear me? I would like you to continue where we left off.”</span> <br>
+    
+    <<set _ad to [
+        {
+            Name: "Hart",
+            State: {
+                Eyes: "Narrow",
+            },
+        },
+        {
+            Name: "OC Arthur",
+            State: {
+                Outfit: "Uniform",
+                Blush: 2,
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Oh, ummm…. Right away!”</span> You turn to see <span style="color:DarkTurquoise">Arthur</span> hastily glancing through the page, trying to remember where the class left off. <span style="color:pink">Following a minute of awkward silence that ended in laughter as most of the class realized he wasn’t paying attention; <span style="color:DarkTurquoise">Arthur</span> decides to just begin reading.</span> <br>
+    <br>
+    He is about a page behind where the previous boy left off, leading to more chuckles as it becomes obvious to everyone. <span style="color:DarkTurquoise">Mr. Hart</span>, however, doesn’t say anything. Simply shushing the class as he allows <span style="color:DarkTurquoise">Arthur</span> to keep reading out loud. <span style="color:pink">Though <span style="color:DarkTurquoise">Arthur</span> doesn’t get off without punishment, as <span style="color:DarkTurquoise">Mr. Hart</span> decides to let the boy continue reading until the class is over.</span> <br>
+    <br>
+    Afterward, he pulls the boy aside and scolds him for not paying attention. <span style="color:DarkTurquoise">Arthur</span> apologizes, but thankfully isn’t punished further. <br>
+    <br>
+    <<include"Attend English Finish">>
+
+<</if>>

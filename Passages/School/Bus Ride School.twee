@@ -1,0 +1,68 @@
+:: Bus Ride School [nobr]
+
+<<set $Minutes += 20>>
+<<if $BusRide == "School">>
+	<<set $RideBusToSchool to 1>>
+<</if>>
+/* Base Events */
+<<if random(1, 4) == 1>>
+	<<set _eventpool to ["BUS No Event"]>>
+<<else>>
+	<<set _eventpool to ["Bus Possible Give Wedgie", "CARTER BUS Underwear in Shirt", "BEN BUS Tripped", "MICHAEL BUS Water Dump", "JACKSON Bus Boner", "FELIX Bus Hard Homework", "LUCAS Bus Falls Into Older Students", "FELIX Bus Wedgie"]>>
+<</if>>
+
+/* Bus Ride To School Only */
+<<if $BusRide == "School">>
+	<<if $ThomasSocial > 0>>
+		<<set _eventpool.push("Thomas Bus Homework Help")>>
+	<</if>>
+/* Bus Ride HOME Only */
+<<else>>
+
+<</if>>
+
+/* Specific Events */
+<<if $LucasSocial > 0 or $LucasSocialRank > 0>>
+	<<set _eventpool.push("LUCAS Bus Lap Fall")>>
+<</if>>
+<<if $CarterSocial >= 50 or $CarterSocialRank > 0>>
+	<<set _eventpool.push("CARTER Bus Dropped Papers")>>
+<</if>>
+<<if !$ThomasAbsent>>
+	<<set _eventpool.push("THOMAS Bus Nap")>>
+<</if>>
+
+/* OC Content */
+<<if $ToggleOCManuel == 1 && $InActiveQuests.includes("Manuel: The Pent-Up Boy")>>
+	<<set _eventpool.push("OC Manuel Intro")>>
+<</if>>
+<<if $ToggleOCMason == 1 && $InActiveQuests.includes("Mason: The Underwear-Loving Squid")>>
+	<<set _eventpool.push("OC Mason Intro")>>
+<</if>>
+
+
+/* Setting Event from Pool */
+<<set _event to _eventpool.random()>>
+
+/* Setting Quest */
+/* Bus Ride To School Only */
+<<if $BusRide == "School">>
+	<<if $InActiveQuests.includes("Michael: Blackmail")>>
+		<<set _event to "Michael Blackmail 1">>
+	<</if>>
+	<<if $ToggleOCJames == 1 && $InActiveQuests.includes("James: The Orange Mystery Part 1")>>
+		<<set _event to "OC James Spotting Bus">>
+	<</if>>
+/* Bus Ride HOME Only */
+<<else>>
+	<<if $ActiveQuests.includes("Kazu: The Deliquent 2")>>
+		<<set _event to "OC Kazu Intro End">>
+	<</if>>
+<</if>>
+
+/* Bus Intro */
+<<if $BusIntroduction != 1>>
+	<<set _event to "Bus Introduction">>
+<</if>>
+
+<<include _event>>

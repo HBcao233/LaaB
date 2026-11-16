@@ -1,0 +1,41 @@
+:: City Park Dry Off [nobr]
+
+<<if $PlayerUndies.Name == "None">>
+	You check each of the stalls to make sure you are alone. You are a bit unsure about stripping in the park’s restroom to dry off your clothes, but you guess it beats walking home dripping wet. You just hope you’ll hear anyone before they come in. <span style="color:Pink">You quickly strip down naked while you dry off your clothes.</span><br>
+<br>
+<<else>>
+	You check each of the stalls to make sure you are alone. You are a bit unsure about stripping in the park’s restroom to dry off your clothes, but you guess it beats walking home dripping wet. You just hope you’ll hear anyone before they come in. <span style="color:Pink">You quickly strip down to your $PlayerUndies.Name while you dry off your clothes.</span><br>
+<br>
+
+<</if>>
+
+<<set $Wet to 0>>
+<<storeClothing "Store" "Undies" 1>>
+
+<div id=choice>
+	<<link "Continue<br>">>
+	<<replace"#choice">>
+
+<<set $RandomEvent to random(1, 5)>>
+
+			/* NO EVENT */
+	<<if $RandomEvent != 5>>
+	<<set $Minutes += 20>>
+	Thankfully, nobody comes into the bathroom while you are exposed and you are quickly able to get dressed, keeping your dignity for now.<br>
+	<br>
+<<storeClothing "Restore" "Undies">>
+		[[Continue|Park Restrooms]]
+		
+			/* PEOPLE WALK IN */
+	<<else>>
+		<<set $RandomEvent2 to random(1, 1)>>
+		
+		/* LITTLE BOY WALKS IN */
+		<<if $RandomEvent2 == 1>>
+			<<include"Park Dry Off Little Boy Walk In">>
+		<</if>>
+	<</if>>
+
+	<</replace>>
+	<</link>>
+</div>

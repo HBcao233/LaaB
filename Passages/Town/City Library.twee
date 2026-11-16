@@ -1,0 +1,62 @@
+:: City Library [nobr]
+
+<<set $Location to {
+    Name: "City Library",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Main Street",
+}>>
+<<if $Time.between(6, 0, 19, 0)>>
+	<<set _randomevent to random(1, 50)>>
+<<else>>
+	<<set _randomevent to 100>>
+<</if>>
+
+<<if _randomevent == 1>>
+	<<set _randomeventpassage to {
+			"Library Random Encounters Napping Kid": 10,
+	}>>
+	<<set _event to _randomeventpassage.random()>>
+	<<include _event>>
+
+<<else>>
+    <span style="color:Azure"><big><strong>--Opal City Public Library--</strong></big></span><br>
+    You stand inside the Opal City Public Library. It is an impressive multistory library with large windows and dark wood floors. It is very modern, with a lot of open floor space, work tables, and computer stations. It has stairs leading up to the other floors, along with a single elevator. Each floor seems to be dedicated to a different type of visitor, with the bottom floors more for workers and college students and the top floors more aimed toward children.<br>
+    <br>
+
+                    /* NPC SEEN */
+    <<include "NPC Inspect">>
+    <br>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<if $CompletedQuests.includes("Leo: Modeling") && $ToggleOCLeo == 1>>
+        [[Watch Leo's Streams (0:20)|OC Leo Repeatable Modeling Streams]]<br>
+    <</if>>
+    <<if $ActiveQuests.includes("Thomas: Study Session") && $Time.Day == "Friday" && $Time.between(14, 50, 16, 0)>>
+        [[Wait for Thomas (3:00)|Thomas Study Session 1]]<br>
+    <</if>>
+    <<if $Skill.Perks.includes("Library Browse")>>
+        [[Browse (0:15)|City Library Browse]]<br>
+    <</if>>
+    <<if $BookNaturism == 1>>
+        [[Study "Naturism: The Free Spirit" (1:00)|City Library Study Naturism]] <span style="color:Green">+Naturism</span><br>
+    <</if>>
+    [[Study Math (0:20)|City Library Study][$SkillCheckType to "Math"]] <span style="color:Green">+Math</span><br>
+    [[Study History (0:20)|City Library Study][$SkillCheckType to "History"]] <span style="color:Green">+History</span><br>
+    [[Study Science (0:20)|City Library Study][$SkillCheckType to "Science"]] <span style="color:Green">+Science</span><br>
+    [[Study English (0:20)|City Library Study][$SkillCheckType to "English"]] <span style="color:Green">+English</span><br>
+    <<if $StudyBookCooking == 1>>
+        [[Study Cooking (0:20)|City Library Study][$SkillCheckType to "Cooking"]] <span style="color:Green">+Cooking</span><br>
+    <</if>>
+    <<if $StudyBookActing == 1>>
+        [[Study Acting (0:20)|City Library Study][$SkillCheckType to "Acting"]] <span style="color:Green">+Acting</span><br>
+    <</if>>
+
+
+    <br>
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+        [[Exit Library|Main Street]] <br>
+    <br>
+<</if>>

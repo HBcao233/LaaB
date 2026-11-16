@@ -1,0 +1,34 @@
+:: Carter Hang Out Mall Cool Culture Try On Hats [nobr]
+
+The two of you decide to stop off at the Pop Culture Store, Cool Culture. It is filled with all sorts of pop culture themed items from clothing to figures to other random collectibles. Upon entering <span style="color:DarkTurquoise">Carter</span> claims that his dad buys a lot of his clothes here, which makes sense considering the collection of t-shirts and underwear you've seen him wear.<br>
+<br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh, check these out!”</span> <span style="color:DarkTurquoise">Carter</span> says, moving over to a series of shelves full of hats. <span style="color:pink">He puts on an Ultraman hat and does a little pose, prompting you to laugh.</span> <span style="color:LightSteelBlue">“Oh, here, try this one on!”</span> <span style="color:DarkTurquoise">Carter</span> shoves a large hat on your head that looks like a pirate hat, but with a series of large purple feathers on them. Upon seeing you in it, he breaks out laughing.<br>
+<br>
+
+The two of you spend the next little bit just trying on different strange hats and posing for each other. A few people give you strange looks, but neither of you seems to care as you enjoy your time together. In the end, neither one of you buys a hat, much to the cashier's annoyance.<br>
+<<needChange "Fun" 20>>
+<span style="color:green">+Carter Fun</span><br>
+<<set $HangOutNeed.Fun += 15>>
+<span style="color:green">+Carter Comfort</span><br>
+<<set $HangOutNeed.Comfort += 5>>
+<<socialChange "Carter" 3>>
+<br>
+[[Continue|Carter Hang Out Mall]]

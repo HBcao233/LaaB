@@ -1,0 +1,273 @@
+:: OC Nyalls Frisbee [nobr]
+
+/* intro */
+<<set $Minutes += 20>>
+
+As you are wandering the park, you spot a familiar trio in the distance playing with a frisbee. The shy boy <span style="color:DarkTurquoise">Oliver</span>, the energetic and feisty <span style="color:DarkTurquoise">Evelyn</span>, and the chubby softy <span style="color:DarkTurquoise">Cole</span>. <span style="color:LightGreen">Despite the vast differences in their personalities, here they are playing and enjoying their time together. It’s really wholesome.</span> <br>
+
+<<set _ad to [
+        {
+        Name: "OC Cole",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        }
+        },
+        {
+            Name: "OC Evelyn",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+        {
+        Name: "OC Oliver",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        }
+        },
+     ]>>
+<<ad _ad>>
+
+As you are watching, <span style="color:DarkTurquoise">Cole</span> suddenly spots you and waves, running over with a big smile. <span style="color:LightSteelBlue">“Oh, hi <span style="color:DarkTurquoise">$Player.Name</span>. Enjoying your day as well?”</span> He laughs as the other two siblings turn to you with mixed expressions, <span style="color:LightSteelBlue">“Hey, care to join us in some frisbee?”</span> <span style="color:DarkTurquoise">Cole</span> asks. <br>
+<br>
+
+<div id="choice">
+/*Join Them*/
+    <<link "Join Them<br>">>
+    <<replace"#choice">>
+
+    You agree to join them for a little and take your spot, the four of you forming a square in the part as the frisbee is tossed back and forth. Eventually, it is thrown your way and you catch it with expert precision. <span style="color:Yellow">Now the question remains, who are you going to throw it to?</span> <br>
+    <br>
+
+<div id="choice2">
+/*Throw to Cole*/
+    <<link "Throw to Cole<br>">>
+    <<replace"#choice">>
+
+    You look to <span style="color:DarkTurquoise">Cole</span> and motion for him to go long, winding up and tossing the frisbee as hard as you can. As the disk soars through the sky, <span style="color:DarkTurquoise">Cole</span> as to back up before leaping as high as he can to reach it. <span style="color:Pink">As he does, his shirt lifts up and you get a good view of his cute chubby belly and a peek at the waistband of his briefs. It is both cute and comical.</span> <br>
+
+    <<set _ad to [
+        {
+         Name: "Player",
+        State: {
+            Mouth: "Happy",
+            },
+        },
+        {
+        Name: "OC Cole",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+            }
+        },
+     ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Good throw, <span style="color:DarkTurquoise">$Player.Name</span>!”</span> <span style="color:DarkTurquoise">Cole</span> exhales as he lands. <span style="color:LightSteelBlue">“You’ve got quite the arm!”</span> The four of you continue playing until the little ones grow tired and you decide to call it for the day. <br>
+    <br>
+
+    <<needChange "Fun" 5>>
+    <<needChange "Energy" -3>>
+    <<socialChange "Cole" 3 1>>  
+    <<socialChange "Evelyn" 1 1>> 
+    <<socialChange "Oliver" 1 1>>
+    [[Continue|Park]] 
+    <</replace>>
+    <</link>>
+
+/*Throw to Oliver*/
+    <<link "Throw to Oliver<br>">>
+    <<replace"#choice">>
+
+    /*Random 1*/  
+    <<set $Random1 to random(1, 2)>>
+	<<if $Random1 == 1>>
+
+        You wind up, pointing to <span style="color:DarkTurquoise">Oliver</span> who nervously prepares himself to catch it. You toss it with all your might, sending it flying far above <span style="color:DarkTurquoise">Oliver</span>’s head. He runs, chasing after the plastic disk and leaps into the air to try and catch it, <span style="color:Pink">giving you a cute look at his bare back and the waistband of his Teal Boxer briefs as he jumps into the air,</span> barely managing to catch it as he crashes into the ground. <br>
+
+        <<set _ad to [
+        {
+        Name: "OC Oliver",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+            Eyes: "Sad",
+            Blush: 1,
+        }
+        },
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Could- could you throw it a little lower… please…”</span> <span style="color:DarkTurquoise">Oliver</span> asks, taking a moment to catch his breath. <span style="color:LightGreen">You apologize, promising to go easier on the kid, but praise <span style="color:DarkTurquoise">Oliver</span> for his impressive catch!</span> The four of you continue playing until the little ones grow tired and you decide to call it for the day. <br>
+
+        <<needChange "Fun" 5>>
+        <<needChange "Energy" -3>>
+        <<socialChange "Cole" 1 1>> 
+        <<socialChange "Evelyn" 1 1>>  
+        <<socialChange "Oliver" 3 1>> 
+        [[Continue|Park]] 
+
+    /*Random 2 */  
+    <<elseif $Random1 == 2>>
+
+        You wind up, pointing to <span style="color:DarkTurquoise">Oliver</span> who nervously prepares himself to catch it. You toss it with all your might, sending it flying far above <span style="color:DarkTurquoise">Oliver</span>’s head. He runs, chasing after the plastic disk and but quickly gives up as it flies off. <span style="color:DarkTurquoise">Cole</span> runs after it as <span style="color:DarkTurquoise">Evelyn</span> gives you a slight dirty look, as per usual. <br>
+
+        <<set _ad to [
+            {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+                },
+            },
+        {
+        Name: "OC Oliver",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Frown",
+            Blush: 1,
+                }
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Could- could you throw it a little lower… please…”</span> <span style="color:DarkTurquoise">Oliver</span> asks, taking a moment to catch his breath. You apologize, promising to go easier on the kid. When <span style="color:DarkTurquoise">Cole</span> returns, the four of you continue playing until the little ones grow tired and you decide to call it for the day. <br>
+
+        <<needChange "Fun" 5>>
+        <<needChange "Energy" -3>>
+        <<socialChange "Cole" 1 1>> 
+        <<socialChange "Evelyn" 1 1>>  
+        <<socialChange "Oliver" 3 1>> 
+        [[Continue|Park]] 
+
+    <</if>>
+    <</replace>>
+    <</link>>
+/*Throw to Evelyn*/
+    <<link "Throw to Evelyn<br>">>
+    <<replace"#choice">>
+
+    /*Random 1 & Girl Toggle Off*/
+    <<set $Random2 to random(1, 2)>>
+	<<if $Random2 == 1 && $ToggleGirlContent != 1>>
+
+
+        You point to <span style="color:DarkTurquoise">Evelyn</span> and shout for her to go long. She smirks, backing up slightly as you wind up, planning to toss it as hard as you can! When you do, the plastic disk soars through the skies at incredible heights. <span style="color:DarkTurquoise">Evelyn</span>, seeing how far it’s going, runs backward before crouching and leaping up to catch it! You are left stunned by just how high she can jump. <br>
+
+        <<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+                },
+            },
+        {
+        Name: "OC Evelyn",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smirk",
+                }
+            },
+        ]>>
+        <<ad _ad>>
+
+
+        <span style="color:LightSteelBlue">“That was a piece of cake!”</span> <span style="color:DarkTurquoise">Evelyn</span> laughs with her smirk that reminds you of Michael, <span style="color:LightSteelBlue">“You should have tried harder, if your little arms could handle it!”</span> Despite her words, she seems to enjoy the challenge you’ve given her and the four of you continue playing until the little ones grow tired and you decide to call it for the day. <br>
+
+        <<needChange "Fun" 5>>
+        <<needChange "Energy" -3>>
+        <<socialChange "Cole" 1 1>> 
+        <<socialChange "Evelyn" 3 1>> 
+        <<socialChange "Oliver" 1 1>> 
+        [[Continue|Park]] 
+
+    /*Random 1 & Girl Toggle On*/
+    <<elseif $Random2 == 1 && $ToggleGirlContent == 1>>
+    /*-Girl Toggle On-*/
+
+        You point to <span style="color:DarkTurquoise">Evelyn</span> and shout for her to go long. She smirks, backing up slightly as you wind up, planning to toss it as hard as you can! When you do, the plastic disk soars through the skies at incredible heights. Then <span style="color:DarkTurquoise">Evelyn</span> leaps an incredible height, managing to catch the frisbee as it flies past! <br>
+        <br>
+        <span style="color:Pink">As she leaps, you spot a brightly colored article peeking out from her bottoms as her shirt lifts up. You blush slightly at how quickly your brain spotted this and a brief thought crossed your mind if she was old enough to wear a bra yet, though, probably not.</span> You shake your head, trying to clear your mind of these thoughts as your cheeks flush. <br>
+
+        <<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+                },
+            },
+        {
+        Name: "OC Evelyn",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smirk",
+                }
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“That was a piece of cake!”</span> <span style="color:DarkTurquoise">Evelyn</span> laughs, <span style="color:LightSteelBlue">“You should have tried harder, if you’re little- What’s with that face? Is something wrong?”</span> She asks puzzled. <br>
+        <br>
+        <span style="color:LightSteelBlue">“Yeah, you’re kind of red. You feeling alright?”</span> <span style="color:DarkTurquoise">Cole</span> asks, sounding genuinely concerned. You quickly cover your face and turn around, telling them it’s nothing as you try to calm your nerves. <span style="color:LightSteelBlue">“Oh, well okay… but if you feel like you need to take a rest that’s fine.”</span> <span style="color:DarkTurquoise">Cole</span> adds as he pats you on the back. The four of you continue playing until the little ones grow tired and you decide to call it for the day. <br>
+
+        <<needChange "Fun" 5>>
+        <<needChange "Energy" -3>>
+        <<socialChange "Cole" 1 1>> 
+        <<socialChange "Evelyn" 3 1>>  
+        <<socialChange "Oliver" 1 1>> 
+        [[Continue|Park]] 
+
+    <<elseif $Random2 == 2>>
+
+        You point to <span style="color:DarkTurquoise">Evelyn</span> and shout for her to go long. She smirks, crossing her arms and not moving from her spot. Seems she is underestimating your abilities and you wind up, tossing it with all your might and… <span style="color:LightCoral">you flub it…</span> <br>
+
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+            },
+            {
+            Name: "OC Evelyn",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smirk",
+                Eyes: "Mad",
+                }
+            },
+        ]>>
+        <<ad _ad>>
+
+        Your arm moves at just the wrong angle so the frisbee only goes a few feet before crashing into the ground. <span style="color:DarkTurquoise">Evelyn</span> laughs as she walks over to pick it up. <span style="color:LightSteelBlue">“Not bad, for a weak armed little boy.”</span> She sticks her tongue out at you teasingly, <span style="color:LightSteelBlue">“But next time, you can go a bit higher. Even a girl could catch anything you’re throwing!”</span> She tosses the frisbee to <span style="color:DarkTurquoise">Oliver</span> as the four of you continue playing until the little ones grow tired and you decide to call it for the day. <br>
+
+        <<needChange "Fun" 5>>
+        <<needChange "Energy" -3>>
+        <<socialChange "Cole" 1 1>> 
+        <<socialChange "Evelyn" 3 1>> 
+        <<socialChange "Oliver" 1 1>> 
+        [[Continue|Park]] 
+        <</if>>
+        <</replace>>
+        <</link>>
+</div>
+<</replace>>
+<</link>>
+
+/*Decline*/
+    <<link "Decline<br>">>
+    <<replace"#choice">>
+
+    You decline their invitation, having your own things to do and not wanting to interrupt their family fun. <span style="color:DarkTurquoise">Cole</span> smiles, <span style="color:LightSteelBlue">“Ah, okay. Well, have a nice day regardless!”</span> He waves as he returns to continue playing. <br>
+
+    [[Continue|Park]] 
+<</replace>>
+<</link>>
+</div>

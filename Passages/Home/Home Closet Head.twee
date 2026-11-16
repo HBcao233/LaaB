@@ -1,0 +1,174 @@
+:: Home Closet Head [nobr]
+
+<<if $HomeClosetCategory2 != "Head">>
+	<<link "Head">>
+		<<set $HomeClosetCategory2 to "Head">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Head]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "Face">>
+	<<link "Face">>
+		<<set $HomeClosetCategory2 to "Face">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Face]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "Mouth">>
+	<<link "Mouth">>
+		<<set $HomeClosetCategory2 to "Mouth">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Mouth]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "Neck">>
+	<<link "Neck">>
+		<<set $HomeClosetCategory2 to "Neck">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Neck]</strong>
+<</if>><br>
+
+<<if $HomeClosetCategory2 == "Head">>
+/* HEAD */
+<<if $PlayerHead.Type != "None">>
+	<span style="color:Azure"><strong><big>--Head--</big></strong></span><br>
+    [img[$PlayerHead.Icon]] <strong><big>$PlayerHead.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerHead.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerHead.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerHead.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerHead.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerHead.Durability/$PlayerHead.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerHead.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerHead.Description<br>
+    </div>
+<</if>>
+<<elseif $HomeClosetCategory2 == "Face">>
+/* FACE */
+<<if $PlayerFace.Type != "None">>
+	<span style="color:Azure"><strong><big>--Face--</big></strong></span><br>
+    [img[$PlayerFace.Icon]] <strong><big>$PlayerFace.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerFace.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerFace.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerFace.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerFace.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerFace.Durability/$PlayerFace.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerFace.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerFace.Description<br>
+    </div>
+<</if>>
+
+<<elseif $HomeClosetCategory2 == "Mouth">>
+/* MOUTH */
+<<if $PlayerMouth.Type != "None">>
+	<span style="color:Azure"><strong><big>--Mouth--</big></strong></span><br>
+    [img[$PlayerMouth.Icon]] <strong><big>$PlayerMouth.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerMouth.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerMouth.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerMouth.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerMouth.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerMouth.Durability/$PlayerMouth.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerMouth.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerMouth.Description<br>
+    </div>
+<</if>>
+
+<<elseif $HomeClosetCategory2 == "Neck">>
+/* NECK */
+<<if $PlayerNeck.Type != "None">>
+	<span style="color:Azure"><strong><big>--Neck--</big></strong></span><br>
+    [img[$PlayerNeck.Icon]] <strong><big>$PlayerNeck.Name</big></strong><br>
+<div style="text-indent: 3em;">
+    <<if $PlayerNeck.Tags.includes("Uniform")>>
+        <span style="color:Azure"><strong>Options: </strong></span>
+        <<if $TieUndone != 1>>
+            [[Loosen Tie|Home Closet][$TieUndone to 1]]<br>
+        <<else>>
+            [[Unloosen Tie|Home Closet][$TieUndone to 0]]<br>
+        <</if>>
+    <</if>>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerNeck.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerNeck.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerNeck.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerNeck.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerNeck.Durability/$PlayerNeck.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerNeck.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerNeck.Description<br>
+    </div>
+<</if>>
+
+<</if>>
+
+<br>
+<span style="color:Azure"><strong><big>--Closet--</big></strong></span><br>
+
+<<closet2 $HomeClosetCategory2>>
+
+<br><<include "Home Closet Inventory">>

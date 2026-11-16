@@ -1,0 +1,28 @@
+:: Bully Nickname Setup [nobr]
+
+/* Bully Nickname Check */
+/* No Nickname Set Yet */
+<<if $Nickname.Bully == 0>>
+	<<set _random to random(1, 4)>>
+	<<if _random != 4>>
+		<<set _setnickname to 1>>
+	<<else>>
+		<<set _setnickname to 0>>
+	<</if>>
+/* Nickname Locked */
+<<elseif $Nickname.Bully == -1>>
+	<<set _random to random(1, 10)>>
+	<<if _random == 1>>
+		<<set _setnickname to 1>>
+	<<else>>
+		<<set _setnickname to 0>>
+	<</if>>
+/* Nickname Set, but not Locked */
+<<elseif $Nickname.Bully == 1>>
+	<<set _random to random(1, 10)>>
+	<<if _random == 10>>
+		<<set _setnickname to 1>>
+	<<else>>
+		<<set _setnickname to 0>>
+	<</if>>
+<</if>>

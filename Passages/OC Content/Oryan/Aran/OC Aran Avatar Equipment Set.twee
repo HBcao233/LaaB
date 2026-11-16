@@ -1,0 +1,235 @@
+:: OC ARAN Avatar Equipment Set [nobr]
+
+<<set $AD.SkinColor to "Sand">>
+<<set $AD.Freckles to 0>>
+<<set $ADArmFreckles to 0>>
+<<set $ADShoulderFreckles to 0>>
+<<set $AD.HairStyle to "Unkempt2">>
+<<set $AD.HairColor to "Charcoal">>
+<<set $AD.EyeColor to "Blue">>
+<<set $AD.LeftEyeColor to "Blue">>
+<<set $AD.RightEyeColor to "Blue">>
+<<set $AD.PenisStyle to "Cut">>
+<<set $AD.PenisSize to "Tiny">>
+<<set $AD.Balls to "Medium">>
+<<set $AD.Butt to "Cute">>
+
+	<<set $ADChestScar to 0>>
+	<<set $ADFaceScar to 0>>
+	<<set $ADLeftArmScar to 0>>
+	<<set $ADRightLegScar to 0>>
+    <<set $ADEyeScar to 0>>
+    <<set $ADShoulderFreckles to 0>>
+    <<set $ADArmFreckles to 0>>
+	<<set $ADLeftSmallFreckles to 0>>
+	<<set $ADNoseHeavyFreckles to 0>>
+
+<<set $ADMoles to {
+    CheekLeft: 0,
+    CheekRight: 0,
+    LipLeft: 0,
+    LipRight: 0,
+    PubicLeft: 1,
+    PubicRight: 0,
+}>>
+
+<<set $ADUndies to {
+    Name: "Gray Panties",
+    Type: "Panties",
+    Color: "Gray",
+    Tags: ["Lewd"],
+    Avatar: "Images/Avatar/Clothes/NPC/OC Aran Underwear.png",
+}>>
+<<set $ADBottoms to {
+    Name: "Black Hotpants",
+    Type: "Hotpants",
+    Color: "Black",
+    Tags: ["None"],
+    Avatar: "Images/Avatar/Clothes/NPC/OC Aran School Bottoms.png",
+}>>
+<<set $ADUnder to $None>>
+<<set $ADOuter to $None>>
+<<set $ADTop to $None>>
+<<set $ADOver to {
+    Name: "White Sweater",
+    Type: "Sweater",
+    Color: "White",
+    Tags: ["Sleeves"],
+    Avatar: "Images/Avatar/Clothes/NPC/OC Aran Over.png",
+    AvatarSleeve: "Images/Avatar/Clothes/NPC/OC Aran Over Sleeves.png",
+    AvatarSleeveBound: "Images/Avatar/Clothes/NPC/OC Aran Over Sleeves Hide.png",
+}>>
+<<set $ADShoes to {
+    Name: "Black Slip-On Shoes",
+    Type: "Slip-On Shoes",
+    Color: "Black",
+    Tags: ["None"],
+    Avatar: "Images/Avatar/Clothes/NPC/OC Aran Shoes.png",
+}>>
+<<set $ADSocks to {
+    Name: "White Scout Socks",
+    Type: "Scout Socks",
+    Color: "White",
+    Tags: ["None"],
+    Avatar: "Images/Avatar/Clothes/NPC/OC Aran Socks.png",
+}>>
+<<set $ADNeck to {
+    Name: "Black Choker",
+    Type: "Choker",
+    Color: "Black",
+    Tags: ["None"],
+    Avatar: "Images/Avatar/Clothes/NPC/OC Aran Neck.png",
+}>>
+<<set $ADFace to {
+    Name: "Black Earrings",
+    Type: "Earrings",
+    Color: "Black",
+    Tags: ["None"],
+    Avatar: "Images/Avatar/Clothes/NPC/OC Aran Earrings.png",
+}>>
+<<set $ADHead to $None>>
+<<set $ADShortsSag to 0>>
+<<set $ADTopTucked to 0>>
+
+<<if $ADMuscleToggle == 1>>
+	<<set $AD.Build to "Normal">>
+<<else>>
+	<<set $AD.Build to "Normal">>
+<</if>>
+
+<<if $ADPubicHairToggle == 1>>
+	<<set $AD.PubicHair to "None">>
+<<else>>
+	<<set $AD.PubicHair to "None">>
+<</if>>
+
+/* DEFAULT SETTING */
+    <<set $ADMouth to $None>>
+    <<set $ADBack to $None>>
+    <<set $ADHands to $None>>
+    <<set $ADWaist to $None>>
+
+<<if $SchoolUniforms == 1 and $AD.Outfit == "Uniform">>
+    <<addClothing "AD" "Top" "School Dress Shirt" "School">>
+    <<set $ADBottoms to {
+        Name: "Black Hotpants",
+        Type: "Hotpants",
+        Color: "Black",
+        Tags: ["None"],
+        Avatar: "Images/Avatar/Clothes/NPC/OC Aran School Bottoms.png",
+    }>>
+    <<set $ADSocks to {
+        Name: "Black Scout Socks",
+        Type: "Scout Socks",
+        Color: "Black",
+        Tags: ["None"],
+        Avatar: "Images/Avatar/Clothes/NPC/OC Aran School Socks.png",
+    }>>
+    <<addClothing "AD" "Over" "School Vest" "Argyle">>
+    <<addClothing "AD" "Outer" "School Jacket" "School">>
+    <<set $ADShoes to {
+        Name: "Black Buckle Shoes",
+        Type: "Buckle Shoes",
+        Color: "Black",
+        Tags: ["None"],
+        Avatar: "Images/Avatar/Clothes/NPC/OC Aran School Shoes.png",
+    }>>
+    <<set $ADFace to {
+        Name: "Black Earrings",
+        Type: "Earrings",
+        Color: "Black",
+        Tags: ["None"],
+        Avatar: "Images/Avatar/Clothes/NPC/OC Aran Earrings.png",
+    }>>
+    <<set $ADNeck to {
+        Name: "Black Choker",
+        Type: "Choker",
+        Color: "Black",
+        Tags: ["None"],
+        Avatar: "Images/Avatar/Clothes/NPC/OC Aran Neck.png",
+    }>>
+	<<set $ADTopTucked to 0>>
+    <<set $ADOuterAlt to 1>>
+<</if>>
+
+<<if $AD.Outfit == "Pajamas">>
+	<<set $ADTop to $None>>
+	<<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Speedo">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Speedo" "Niki">>
+    <<set $ADNeck to $None>>
+    <<addClothing "AD" "Outer" "Designer Hoodie" "Niki">>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADUnder to $None>>
+    <<set $ADOuterAlt to 1>>
+<</if>>
+
+<<if $AD.Outfit == "Naked">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADUnder to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Undies">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUnder to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Towel">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Towel" "White">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADUnder to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym">>
+    <<addClothing "AD" "Top" "Gym Shirt" "School">>
+    <<addClothing "AD" "Bottoms" "Gym Shorts" "School">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADUnder to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym Swim">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Trunks" "Purple">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADUnder to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Swimwear">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Trunks" "Black">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>

@@ -1,0 +1,39 @@
+:: Felix School Hug [nobr]
+
+<<set $Minutes += 2>>
+	
+	
+	<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+/* Normal Social */
+<<if $FelixSocial < 50 or $FelixSocialRank >= 1>>
+<span style="color:pink">You walk up to <span style="color:DarkTurquoise">Felix</span> and ask for a hug, which he gladly accepts, giving you a friendly one.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$FelixNickname</span>, how are you doing?”</span> <span style="color:DarkTurquoise">Felix</span> asks. The two of you chat for a minute before going your separate ways. <br>
+
+/* High Social */
+<<else>>
+<span style="color:pink">You walk up to <span style="color:DarkTurquoise">Felix</span> and ask for a hug, which he gladly accepts, giving you a friendly one.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$FelixNickname</span>, how are you doing?”</span> <span style="color:DarkTurquoise">Felix</span> asks, <span style="color:LightSteelBlue">“Glad to see not everyone here is so averse to touching. You’d think I was trying to kiss them with how they react to a hug.”</span> He laughs, but you are quick to remind him of the incident on his first day, which causes him to blush and chuckle nervously, hoping you had forgotten about that. <br>
+
+<</if>>
+/* End */
+<<socialChange "Felix" 1>>
+<br>
+	<<if $Location.Name == "School South Hallway">>
+		[[Continue|School South Hallway]] 
+	<<elseif $Location.Name == "School East Hallway">>
+		[[Continue|School East Hallway]]
+	<<elseif $Location.Name == "School West Hallway">>
+		[[Continue|School West Hallway]]
+	<</if>>

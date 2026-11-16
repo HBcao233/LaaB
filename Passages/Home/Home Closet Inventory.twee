@@ -1,0 +1,30 @@
+:: Home Closet Inventory [nobr]
+
+<span style="color:Azure"><strong><big>--Inventory--</big></strong></span><br>
+
+<<for _i to 0; _i lt $PlayerInventoryClothes.length; _i++>>
+	<<capture _i>>
+        /* When called from All or Inventory just shows everything, from subcategories shows relevant */
+    <<if $HomeClosetCategory == "All" or $HomeClosetCategory == "Inventory"
+            or $HomeClosetCategory2 == $PlayerInventoryClothes[_i].Slot>>
+        <<link "[img[$PlayerInventoryClothes[_i].Icon]]">>
+        <<if $ClosetMoveToInventory == 1>>
+            <<set _drawer to State.getVar(`$Closet${$PlayerInventoryClothes[_i].Slot}`)>>
+            <<set _drawer.push($PlayerInventoryClothes[_i])>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "Home Closet">>
+            /* WEARING THEM */
+        <<else>>
+            <<set _player_slot to `$Player${$PlayerInventoryClothes[_i].Slot}`>>
+            <<set _player_item to State.getVar(_player_slot)>>
+            <<if _player_item.Type != "None">>
+                <<set $PlayerInventoryClothes.push(_player_item)>>
+            <</if>>
+            <<set State.setVar(_player_slot, $PlayerInventoryClothes[_i])>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "Home Closet">>
+        <</if>>
+        <</link>>
+    <</if>>
+    <</capture>>
+<</for>>

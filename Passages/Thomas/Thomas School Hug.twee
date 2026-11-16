@@ -1,0 +1,133 @@
+:: Thomas School Hug [nobr]
+
+<<set $Minutes += 2>>
+	
+	<<set _ad to [
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Frown",
+			Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+/* Normal Social */
+<<if $ThomasSocial < 50 or $ThomasSocialRank >= 1>>
+	<span style="color:pink">You walk up to <span style="color:DarkTurquoise">Thomas</span> while he isn’t paying attention and suddenly pull him into a big hug.</span> <span style="color:lightcoral"><span style="color:DarkTurquoise">Thomas</span> instantly goes rigid before harshly shoving you off. You look up to see his face has gone red with an uncomfortable expression on his face.</span> <br>
+	<br>
+	<span style="color:LightSteelBlue">“Don’t do that.”</span> <span style="color:DarkTurquoise">Thomas</span> says in a harsh tone. <span style="color:LightSteelBlue">“I- I don’t like being touched.”</span> He then turns and quickly walks away without another word. <br>
+	/* End */
+	<<socialChange "Thomas" 1>>
+	<br>
+	<<if $Location.Name == "School South Hallway">>
+		[[Continue|School South Hallway]] 
+	<<elseif $Location.Name == "School East Hallway">>
+		[[Continue|School East Hallway]]
+	<<elseif $Location.Name == "School West Hallway">>
+		[[Continue|School West Hallway]]
+	<</if>>
+
+/* High Social and random chance */
+<<elseif random(1, 3) == 1>>
+	You come up behind <span style="color:DarkTurquoise">Thomas</span> and get the urge to give him a hug, but you realize he hasn't seen you yet. <span style="color:Yellow">This gives you an idea...</span><br>
+	<br>
+	<div id="choice">
+	/*Sneak attack*/
+	<<link "Sneak attack<br>">>
+	<<replace"#choice">>
+		You sneak up behind him and wrap your arms around his stomach before announcing your presence. <span style="color:Pink">You see his neck is exposed and plant a kiss on the exposed skin like a little affectionate vampire.</span> <br>
+		<br>
+		<span style="color:Red">CRACK!</span> <br>
+		<br>
+		<span style="color:lightcoral">You see a flash of light and your life is filled with pain.</span> The next thing you know, you're on your butt and <span style="color:DarkTurquoise">Thomas</span> is standing over you with his hands over his mouth. <span style="color:LightSteelBlue">“Oh shit, are you okay, <span style="color:DarkTurquoise">$ThomasNickname</span>!? God, I'm sorry, I'm sorry.“</span> You're dizzy and your nose is in pain. <span style="color:DarkTurquoise">Thomas</span> must've decked you in the face good there when you grabbed him. After confirming that you're not bleeding, you give him a wobbly thumbs-up sign. <br>
+
+				<<set _ad to [
+				{
+					Name: "Player",
+					State: {
+						Mouth: "Happy",
+						Eyes: "Sad",
+						},
+					},
+				{
+					Name: "Thomas",
+					State: {
+						Outfit: "Uniform",
+						Mouth: "Frown",
+						Eyes: "Mad",
+						Blush: 1,
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+		<span style="color:DarkTurquoise">Thomas</span> sighs and helps you up. <span style="color:LightSteelBlue">“You can't sneak up on me like that, dude. You know what I'm like...“</span> <span style="color:DarkTurquoise">Thomas</span> looks to the side, sheepish about punching you like that. <span style="color:LightSteelBlue">“I... should go. Sorry again.“</span> he says before hurrying off. Your nose still stings, <span style="color:Pink">but you hugged and kissed a cute boy, so you think it's a fair trade.</span> <br>
+
+		<<socialChange "Thomas" 1>>
+		<<addMoodlet "Kissed" 4>>
+		<<addMoodlet "Pained" 4>>
+		<br>
+		<<if $Location.Name == "School South Hallway">>
+			[[Continue|School South Hallway]] 
+		<<elseif $Location.Name == "School East Hallway">>
+			[[Continue|School East Hallway]]
+		<<elseif $Location.Name == "School West Hallway">>
+			[[Continue|School West Hallway]]
+		<</if>>
+	<</replace>>
+	<</link>>
+/*-Respect his boundaries-*/
+	<<link "Respect his boundaries<br>">>
+	<<replace"#choice">>
+
+		You remember that <span style="color:DarkTurquoise">Thomas</span> doesn't like surprises nor being touched, so you decide it's safer not to violate his personal space. You loudly announce your presence as you approach, causing the boy to jump and turn around. <br>
+		<br>
+		<span style="color:LightSteelBlue">“Gah! Geez, <span style="color:DarkTurquoise">$ThomasNickname</span>, don't sneak up on me like that.”</span> he says. <span style="color:LightSteelBlue">“What's up?”</span> He rolls his eyes when you open your arms and ask for a hug. <span style="color:LightSteelBlue">“Really...?”</span> he grumbles, <span style="color:LightSteelBlue">“Fine, but make it quick.”</span> <span style="color:LightGreen">You wrap your arms around the boy and he awkwardly wraps his arms around you, still looking off to the side.</span> <span style="color:LightSteelBlue">“Tch. There, happy now?”</span><br>
+
+		<<set _ad to [
+			{
+				Name: "Thomas",
+				State: {
+					Outfit: "Uniform",
+					Mouth: "Smirk",
+					Eyes: "Tired",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+		You smile and nod and let go of him, and he takes a step back from you. <span style="color:LightSteelBlue">“You're too touchy-feely for your own good, you know that?”</span> he complains, but his smirk shows he actually enjoys the affection. <span style="color:DarkTurquoise">Thomas</span> bids you farewell and you go your separate ways.<br>
+
+		<<socialChange "Thomas" 1>>
+		<br>
+		<<if $Location.Name == "School South Hallway">>
+			[[Continue|School South Hallway]] 
+		<<elseif $Location.Name == "School East Hallway">>
+			[[Continue|School East Hallway]]
+		<<elseif $Location.Name == "School West Hallway">>
+			[[Continue|School West Hallway]]
+		<</if>>
+	<</replace>>
+	<</link>>
+</div>
+
+/* High Social */
+<<else>>
+	<span style="color:pink">You walk up to <span style="color:DarkTurquoise">Thomas</span> and ask if you could give him a hug. <span style="color:DarkTurquoise">Thomas</span> gives you an uncomfortable look, but seeing you standing there with a smile and your arms outstretched, he sighs and allows you to hug him. He remains rigid and you can tell he is fighting the urge to shove you off of him. But despite its awkwardness, it is still a nice hug.</span> <br>
+	<br>
+	<span style="color:LightSteelBlue">“Thanks, I guess?”</span> <span style="color:DarkTurquoise">Thomas</span> says as you release him, <span style="color:LightSteelBlue">“Sorry, I’m not used to hugging anyone outside of-“</span> He pauses, blushes a little bit, <span style="color:LightSteelBlue">“Never mind.”</span> He quickly turns and walks off as you can’t help but laugh silently. For such a tough kid, he got embarrassed pretty easily. <br>
+	/* End */
+	<<socialChange "Thomas" 1>>
+	<br>
+	<<if $Location.Name == "School South Hallway">>
+		[[Continue|School South Hallway]] 
+	<<elseif $Location.Name == "School East Hallway">>
+		[[Continue|School East Hallway]]
+	<<elseif $Location.Name == "School West Hallway">>
+		[[Continue|School West Hallway]]
+	<</if>>
+
+<</if>>

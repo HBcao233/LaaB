@@ -1,0 +1,18 @@
+:: JACKSON Empty Lot Play Naked [nobr]
+
+<<set _random to ["Jackson Empty Lot Play Naked Wrestling", "Jackson Empty Lot Play Naked Cat Thief"]>>
+
+<<if $Player.Bladder <= 50 and $ToggleBladder == 1>>
+    <<set _random.push("Jackson Empty Lot Play Naked Pee Break")>>
+<</if>>
+
+	/* Shinju Scenes */
+	<<if $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Monster Boy")>>
+		<<set _random.push("OC Shinju Nude Wrestling with Jackson")>>
+		<<if $ToggleSuperNat == 1>>
+			<<set _random.push("OC Shinju Jackson Lot Manic Nudist Fun")>>
+		<</if>>
+	<</if>>
+
+<<set _randomevent to _random.random()>>
+<<include _randomevent>>

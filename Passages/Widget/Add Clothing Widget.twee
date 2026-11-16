@@ -1,0 +1,70 @@
+:: Add Clothing Widget [widget nobr]
+
+/* This is the widget that will be used to access the Clothing Library to apply or add clothing.
+It is used like so:
+    <<addClothing "PC/Closet/Inv/AD/Temp" "Slot" "Clothing_Name" "Color/Costume">> 
+    
+    PC/Closet/Inv/AD: This determines what we are doing with the clothing.
+        PC: This means we are applying the clothing to the Player Character.
+            Note: This is only used when applying clothing NOT from their Closet or inventory.
+
+        Closet: This means we are adding the Clothing to the Player's Closet.
+            Note: This is only used when adding new items to it, moving from PC/Inventory to Closet doesn't use this widget.
+
+        Inv: This means we are adding the Clothing to the Player's Inventory.
+            Note: This is only used when adding new items to it, moving from PC/Closet to Inventory doesn't use this widget.
+
+        AD: This means we are applying the Clothing to the Avatar Display Slot.
+            Note: This will be used to apply clothing to NPCs in their Equipment Set area.
+            Overriding AD in events will require you to input the full item details.
+            [We may add another similar widget that can be used to apply clothing to unique temp variables for easier use in this area.]
+
+        Temp: This sets the clothing item to the _clothingtemp variable and that's it.
+            Note: This is used when we need to set another variable, such as NPC clothing, to an item. This makes it easier then adding it manually.
+
+    Slot: This is the Clothing Slot that is being accessed. For example: Undies, Bottoms, Top.
+
+    Clothing_Name: This is the name of the clothing. Not the type or color, but the unique name of the item. Such as Jeans, Briefs, Designed Briefs, etc. Each type of clothing needs to have a unique Clothing_Name.
+
+    Color: This is the color OR style of the clothing. "Red" would be used for "Red Briefs" but "Owlman" would be used for "Owlman Briefs". The Color and Clothing_Name will be used together to find the item in the library.
+    */
+
+<<widget "addClothing">>
+    <<set _action to _args[0]>>
+    <<set _slot to _args[1]>>
+    <<set _name to _args[2]>>
+    <<if _slot == "Costume">>
+        <<set _costume to _args[3]>>
+    <<else>>
+        <<set _color to _args[3]>>
+    <</if>>
+    /* Costume Store Adjustment */
+    <<if _shopcostume != null>>
+        <<set _slot to "Costume">>
+    <</if>>
+
+    /* The first thing we do is access the library in order to find the piece of clothing we want.
+    This is done by accessing the Main Clothing Library Page where all the information is stored. */
+    <<include"Clothing Library Main">>
+    
+    <<if _costume != null>>
+        <<set _slot to _clothingtemp.Slot>>
+    <</if>>
+    /* Inside the Clothing Library, it will look for the passage using the following name:
+    "Clothing Library [SLOT] [CLOTHING_NAME]" for example: "Clothing Library Undies Briefs"
+    Then, it will search that Library for an item with the matching COLOR. Ex: Red Briefs
+    Once that is done, it will apply that item to a temp variable _clothing. That will be sent back here. */
+
+    /* Once we have the item, we will apply it based on the _action property. If we are applying it to the PC, we will put the clothing on. */
+    <<if _action == "PC">>
+        <<print "<<set $Player" + _slot + " to _clothingtemp>>">>
+    <<elseif _action == "Closet">>
+        <<print "<<set $Closet" + _slot + ".push(_clothingtemp)>>">>
+    <<elseif _action == "Inv">>
+        /* Will be added later, Inventory variables are acting up. */
+    <<elseif _action == "AD">>
+        <<print "<<set $AD" + _slot + " to _clothingtemp>>">>
+    <</if>>
+
+
+<</widget>>

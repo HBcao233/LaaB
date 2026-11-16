@@ -1,0 +1,40 @@
+:: Jackson School Hug [nobr]
+
+<<set $Minutes += 2>>
+	
+	    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+/* Normal Social */
+<<if $JacksonSocial < 50 or $JacksonSocialRank >= 1>>
+<span style="color:pink">You walk up to the playful <span style="color:DarkTurquoise">Jackson</span> and give him a big hug, to which he responds by giving you an even bigger hug!</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Haha, thanks!”</span> <span style="color:DarkTurquoise">Jackson</span> smiles as you release each other. <span style="color:LightSteelBlue">“Hugs are nice! Plus, they are a great way to keep warm when it gets too cold!”</span> <span style="color:DarkTurquoise">Jackson</span> sounded like he was reciting from some manual, though all your mind could think about was getting a big naked hug from the boy. <br>
+
+/* High Social */
+<<else>>
+<span style="color:pink">You walk up to the ever-friendly <span style="color:DarkTurquoise">Jackson</span> and give him a big hug, which he returns with an even bigger hug. <span style="color:DarkTurquoise">Jackson</span> hugs you so tight, he lifts you into the air and shakes you back and forth like a stuffed toy. The kid was a lot stronger than he looked.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Wow! You’re really light!”</span> <span style="color:DarkTurquoise">Jackson</span> comments as he spins you around, making you feel a bit dizzy. <span style="color:LightSteelBlue">“I bet I could carry you around all day and hardly even notice!”</span> He laughs, but you state that wouldn’t be necessary since you were already starting to feel sick from being spun around so much. <br>
+<br>
+<span style="color:LightSteelBlue">“Whoops, sorry!”</span> <span style="color:DarkTurquoise">Jackson</span> chuckles as he puts you down, placing his hands on your shoulders to keep you steady. <br>
+
+<</if>>
+/* End */
+<<socialChange "Jackson" 1>>
+<br>
+	<<if $Location.Name == "School South Hallway">>
+		[[Continue|School South Hallway]] 
+	<<elseif $Location.Name == "School East Hallway">>
+		[[Continue|School East Hallway]]
+	<<elseif $Location.Name == "School West Hallway">>
+		[[Continue|School West Hallway]]
+	<</if>>

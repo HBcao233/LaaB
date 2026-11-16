@@ -1,0 +1,91 @@
+:: OC Aubin Intro [nobr]
+
+/* Intro */
+The park seems mostly empty, not that you mind much since the quiet mixed with having everything to yourself actually makes for quite a relaxing and peaceful time. You spin around on the merry-go-round, hang from the monkey bars, and climb up the slide in reverse just enjoying yourself, though it eventually does start to get a little lonely. <br>
+<br>
+You are sitting at the top of the slide just gazing around the park from the vantage point when your peaceful relaxation is broken by the sound of a soft, muffled cry. You glance down the slide and around the general area, confused since you thought you were alone, <span style="color:Yellow">when you suddenly spot a small boy sitting on the swing by himself, sniffing and sobbing away quietly.</span> You didn’t even notice him, so caught up in your own world. <br>
+<br>
+You glance around, but don’t see a parent or anyone else around. The boy looks to be your little brother’s age and has a backpack sitting next to him. <span style="color:Yellow">Did he get lost or abandoned here by mistake?  Your own brotherly instincts kick in as you slip down the slide and walk over to check in on the poor kid.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "OC Aubin",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Blush: 1,
+                    Cry: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Huh?”</span> The boy jumps suddenly as you approach, <span style="color:Pink">his eyes red from crying as his lower lip trembles.</span> You ask the boy if he’s alright and he turns away, wiping his face on his sleeve. <span style="color:LightSteelBlue">“I’m fine…”</span> <span style="color:Pink">The boy sniffles and glances down at the ground, still whimpering.</span> You take a seat on the swing next to him, asking if he is sure he’s alright. The boy just shrugs in response, sitting there in silence for a minute until speaking in a quiet voice. <br>
+<br>
+<span style="color:LightSteelBlue">“I- I ran away from home. I don’t want to be there anymore.”</span> His voice sounds tired and shaky, <span style="color:LightSteelBlue">“But I don’t know where to go and my feet already hurt and I’m hungry and…”</span> <span style="color:Pink">The boy whines, curling into a ball on the swing as tears start to flow again. You get the feeling the boy didn’t think through running away from home.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Comfort the boy and walk him home (0:10)<br>">>
+    <<replace"#choice">>
+        <<set $Minutes += 10>>
+        You stand up from the swing and walk up behind the boy, giving him a hug. The boy tenses up at first before relaxing, quietly sobbing there for a moment until he calms down. Once he has calmed down, you ask him innocent questions about himself to get his mind off things. You learn the boy’s name is <span style="color:DarkTurquoise">Aubin</span> and that he lives a few streets over. He also loves dogs, and while he doesn’t have one, he has a stuffed dog named Max that he loves very much. When you ask if he has him, the boy frowns and shakes his head no. <br>
+        <br>
+        <span style="color:LightSteelBlue">“I- I forgot to grab him before I left…”</span> He says softly. You finally ask the big question, why did he run away from home, and the boy just shrugs. <span style="color:LightSteelBlue">“I don’t know. I was just sad and… I don’t know.”</span> He slumps down, staring down at the ground with a blank expression. You ask him if he wants to go home, and after a moment of silence, he nods. You offer to walk him home so he isn’t alone and the boy gives you a half smile, taking your hand firmly as you begin to walk down the road. <br>
+        <br>
+        The boy walks in silence the entire way, staring down at the ground and only occasionally giving directions towards his house. <span style="color:Pink">Once you arrive, <span style="color:DarkTurquoise">Aubin</span> stops and stares up at the front door nervously, fiddling with his shirt. You ask him what’s wrong and he shrugs again but gives an answer.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Aubin",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                    Blush: 1,
+                    Cry: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Daddy’s going to be mad. I probably scared him.”</span> He says softly. You smile and pat the boy on the head, reassuring him that it’ll be fine. If anything, his dad will just be happy he’s home. The boy gives you a small smile at this, before taking a deep breath and walking towards the front door. <br>
+        <br>
+        If only takes a few knocks before a man rushes to the door and answers it, sighing in relief as he embraces <span style="color:DarkTurquoise">Aubin</span> tenderly, picking him up and swinging him around. <span style="color:LightSteelBlue">“Oh, thank goodness! I was so worried when you weren’t in your room! Where were you? Are you alright? You look exhausted! Come on, let’s get you changed and something to eat. Oh, <span style="color:DarkTurquoise">Aubin</span>, you can’t scare me like that!”</span> <br>
+        <br>
+        His father seems rather affectionate and was likely worried out of his mind. He gives you a gracious smile and thanks you wholeheartedly. <span style="color:LightSteelBlue">“We got into an argument about housework and stuff, it was really nothing. I just forget how sensitive he is sometimes. Thanks for bringing him home, I was calling his friends and school and anyone I could think of. Thanks again, really, I’m going to get him cleaned up.”</span> The man says goodbye, leaving you happy that you brought the boy back. <br>
+        <br>
+        <span style="color:Pink">Thankfully nothing bad happened to the kid. Plenty of kids his age thinks about running away or something like that when they get upset, but you’ve never seen one go through with it, or at least almost to the degree <span style="color:DarkTurquoise">Aubin</span> did. Well, he’s safe and sound now, and that’s what matters.</span> <br>
+        <<set $InActiveQuests.delete("Aubin: Introduction")>>
+        <<set $CompletedQuests.push("Aubin: Introduction")>>
+        <<set $OCAubinSocial to 0>>
+        <<set $OCAubinSocialRank to 0>>
+        <<socialChange "Aubin" 10 1>>
+        <br>
+        [[Head back|Neighborhood Playground]]
+    <</replace>>
+    <</link>>
+    <<link "Tell him to go home before the police arrest him">>
+    <<replace"#choice">>
+        You tell the boy that if he did run away from home, his parents might have called the police and they’re out here looking for him. If they find him, he’ll be in big trouble. He obviously isn’t cut out to run away and should just suck it up and go home. There are people much worse off than him and running away to live in the woods isn’t a real solution. So, unless he wants to get into even more trouble, he should get home. <br>
+        <br>
+        <span style="color:Yellow">The boy looks up worriedly, fearful of getting into even more trouble. Still, he hesitates and sits there for a moment before slowly getting up and walking towards the street in silence. The kid probably thinks you’re a bit of a jerk, but it’s what’s best for him. You’re sure he’ll thank you one day.</span> <br>
+        <<set $InActiveQuests.delete("Aubin: Introduction")>>
+        <br>
+        [[Contiue|Neighborhood Playground]]
+    <</replace>>
+    <</link>>
+     [Locks Content]<br>
+</div>

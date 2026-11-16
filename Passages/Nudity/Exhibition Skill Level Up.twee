@@ -1,0 +1,20 @@
+:: Exhibition Skill Level Up [nobr]
+
+<<if $ExhibitionLearned != 1>>
+	<span style="color:Pink">You’ve found yourself exposed in public! Your body laid bare to the world. It is humiliating and scary, but also exciting? You feel a strange, pleasant sensation that is new to you. You've learned the Exhibition Skill! <br>
+	<br>
+	You’ve unlocked something new in the Attitudes Menu in your bedroom. You feel brave enough to wander your house naked after your family has gone to sleep.</span>
+	<<set $ExhibitionLearned to 1>>
+<</if>>
+
+<<if $ExhibitionXP >= 100>>
+	<<set $ExhibitionXP to 0>>
+	<<set $ExhibitionSkill += 1>>
+		<<if $ExhibitionSkill > 10>>
+			<<set $ExhibitionSkill to 10>>
+		<</if>>
+	
+	<<if $ExhibitionSkill == 2>>
+		Level 2.
+	<</if>>
+<</if>>

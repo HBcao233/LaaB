@@ -1,0 +1,59 @@
+:: Pool Water Slide [nobr]
+
+/* OPENING */
+You move towards the staircase that leads up to the waterslide. It is a fairly tall slide, going up about 18 feet, with twists and turns that look exciting even from the outside! Once you are at the top, you look over the railing down at the pool below. Following some instructions laid out on a sign, you lay down at the top of the waterslide, before using a pair of small handles to propel yourself forward!<br>
+<br>
+
+/* EVENT SELECTOR */
+<<set _random to random(1, 4)>>
+
+/* NORMAL */
+<<if _random == 1>>
+As soon as your body is taken by the current of the water, you begin to gain intense speed! You can’t contain your laughter as you descend, going so fast you partially go up the side of the slide! Eventually, you notice the slide straighten out and a light appear at the end of the tunnel before- WHOOSH!<br>
+<br>
+You fly out of the slide, gaining a few feet of air, before splashing into the deep section of the pool! You can’t contain your joyous laughter as you fly into the air and, consequently, swallow a bunch of pool water. But you don’t care as much, since that was so exciting!<br>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|Pool Deep]]
+
+/* SPIN AROUND */
+<<elseif _random == 2>>
+As you pull yourself into the decline of the slide, your body is almost immediately taken by the current! You gain speed at an intense rate and, as you take one of the turns a bit too fast, you completely spin around! You now find yourself going down backwards! The dizziness of going down the slide upside down mixed with your laughter prevents you from even attempting to right yourself as you fly out with a loud WHOOSH!<br>
+<br>
+The first thing you see is the sky, as your body flips in the air and you land in the water headfirst. Not seeing the water coming, your mouth and nose are briefly filled with the liquid, causing you to gag and cough as you surface, though still laughing from all the excitement.<br>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|Pool Deep]]
+
+/* TUMBLE */
+<<elseif _random == 3>>
+As you pull yourself into the decline of the slide, your body is almost immediately taken by the current! You gain speed at an intense rate and, as you take one of the turns a bit too fast, you completely spin around! Finding yourself now going down backwards, you attempt to right yourself but instead accidentally throw yourself into a spinning tumble.<br>
+<br>
+Spun this way and that, you begin to get dizzy and are shot out of the slide at a weird angle. Screaming in surprise as you are flung into the air, you enter the water with a loud splash! Now underwater, you still find yourself disoriented and have to take a minute to tell which was is up before you are able to surface. A bit of a scary, but also incredibly exciting!<br>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|Pool Deep]]
+
+/* TUMBLE AND LOSE TRUNKS */
+<<elseif _random == 4>>
+As you lay down in the quick current of the water, you grab the handles and slowly inch over to the edge. <span style="color:pink">Right as you are about to descend, as the rush of water catches you in just the right spot, your $PlayerBottoms.Type are yanked down to your ankles! Letting out a surprised scream, you reach down to pull them up only to be taken by the current yourself. You now find yourself speeding down the slide in a compromising position!</span><br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+			ShowZoom: true,
+            State: {
+				Mouth: "Frown",
+                Blush: 2,
+				PantsDown: true,
+			},
+        },
+    ]>>
+    <<ad _ad>>
+
+As you slide, twist, and spin down, you attempt to pull them back up, but are unable to as each bend to reach them just causes you to spin around, leaving you tumbling down the slide. The only thing you are able to do is keep your $PlayerBottoms.Type around your ankles, focusing on not losing them and having to make a rather embarrassing swim to find them again! Exiting the slide, all too aware of your exposed state as you are flung into the air, you crash into the water and quickly fix your clothing before surfacing. Thankfully, it didn’t seem like anyone saw that.<br>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|Pool Deep]]
+
+<</if>>

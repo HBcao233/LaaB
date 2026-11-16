@@ -1,0 +1,13 @@
+:: Avatar Display Hair [nobr]
+
+<<if $ADHead.Tags.includes("Helmet")>>
+	<<set $AD.HairStyle to "None">>
+<</if>>
+
+<<if $ADHairFlip == 1>>
+	<img @src="`Images/Avatar/Hair/${$AD.HairStyle}/${$AD.HairColor}.png`" style="position: absolute; left: -2px; top: 0; transform: scaleX(-1)">
+<<else>>
+	<img @src="`Images/Avatar/Hair/${$AD.HairStyle}/${$AD.HairColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+<<set $ADHairFlip to 0>>

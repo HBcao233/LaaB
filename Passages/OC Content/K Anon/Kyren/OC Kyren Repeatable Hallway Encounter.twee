@@ -1,0 +1,387 @@
+:: OC Kyren Repeatable Hallway Encounter [nobr]
+
+/* Intro */
+You are walking down the hallway, the path filled with boys of various ages, from your own grade to those above you, <span style="Color: Yellow">when you hear a familiar cry of distress!</span> Such cries often become a common occurrence in these hallways, especially during test days as boys look to relieve the stress that comes from such assessments. However, this cry is familiar, and you are not surprised as you round the corner and <span style="Color: Pink">see <span style="Color: DarkTurquoise">Kyren</span>, the loner loser, being hoisted once more by his ankles and dropped headfirst into a trashcan by some older kids. Laughter is mixed in with the boy’s cries as he is once again the victim of bullying from the upper classmen.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+Most of the other spectators either laugh, gossip, or try to avoid the bully’s attention, lest their stress-relief makes them the next victims. Not one boy goes to the aid of <span style="Color: DarkTurquoise">Kyren</span> or even calls for a teacher, not surprising given his lackluster reputation and the fact that he is known to make for an entertaining bullying target. While no doubt embarrassing, you figure that <span style="Color: DarkTurquoise">Kyren</span> isn’t in any real danger. <span style="Color: Yellow">Plus, you are highly outnumbered, so instead opt to watch from the sidelines until the large group of older boys leave him alone.</span> <br>
+<br>
+They laugh and chuckle loudly, watching as <span style="Color: DarkTurquoise">Kyren</span> kicks his legs about in an attempt to free himself, though he is very clearly wedged in and won’t be getting out anytime soon without some aid. He is teased and shook about a bit more before the boys eventually grow bored and leave, calling out that they’ll <span style="Color: LightSteelBlue">“see you tomorrow, loser!”</span> to the poor lad. <br>
+
+        <<set _ad to [
+            {
+                Name: "OC Kyren",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Eyes: "Mad",
+                    Blush: 2,
+                    Cry: 1,
+                    Arms: "Bound",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+As most of the crowd dissipates, the struggle of a trapped boy only entertaining for so long, you walk over. <span style="Color: DarkTurquoise">Kyren</span> tries for another moment to escape but eventually tires out and you see his legs plop down as he tries to catch his breath in the no doubt stinky trashcan.
+<<set _random_rep_cost to random(1, 3)>>
+
+<<if _random_rep_cost == 1>>
+    <span style="Color: Yellow">Helping him would probably still damage your reputation, even though there aren’t as many boys around as usual, but you do feel bad for the kid as he once again begins to struggle.</span> <br>
+    <br>
+<<elseif _random_rep_cost == 2>>
+    <span style="Color: Yellow">Though not full, enough people are around that word of you aiding him will no doubt spread. You weigh in your mind if doing so is worth the hit to your reputation it will cost.</span> <br>
+    <br>
+<<else>>
+    <span style="Color: LightCoral">Despite the crowd dissipating, there is still a large number of boys lingering in the hallway. Being seen helping someone with as bad of a reputation as <span style="Color: DarkTurquoise">Kyren</span>, will no doubt cause it to spread to you.</span> <span style="Color: Yellow">Helping him may be the right thing to do but will probably earn you the distaste of many of your peers.</span> <br>
+    <br>
+<</if>>
+
+<div id="Choice">
+    /* Help him */
+    <<link "Help him<br>">>
+    <<replace"#Choice">>
+        As <span style="Color: DarkTurquoise">Kyren</span> continues to kick and flail about, drawing in laughter and giggles from the crowd of watching boys, you walk over and place your hands on his legs. Immediately, he begins to flail about even more, thinking you are someone coming to make his situation even worse, <span style="Color: LightGreen">but once you speak and your voice hits his ears, he relaxes.</span> <span style="Color: LightSteelBlue">“<span style="Color: DarkTurquoise">$Player.Name</span>?”</span> You hear the muffled call from inside the trash. <br>
+        <br>
+        Pulling him out isn’t easy, as he has been wedged pretty tightly into the nearly full trashcan. He loses a shoe and nearly his bottoms as you yank, <span style="Color: LightGreen">but with a satisfying POP you are finally able to free him as you both crash to the floor and the trashcan tilts rubbish out into the hallway.</span> <span style="Color: DarkTurquoise">Kyren</span> sits up and shakes his head, getting a banana peel out of his hair, before sighing in relief. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Kyren",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Smile",
+                    Blush: 3,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Tha- thank you…”</span> He says shyly, <span style="Color: Pink">the stars in his hair seeming to twinkle as he sees you,</span> <span style="Color: LightSteelBlue">“I mean, I probably would have gotten out on my own eventually… but… thanks, for helping me.”</span> He gulps, blushing the entire time as you tell him it’s no problem. You then help the boy up and the two of you clean up the spilt trash, lest you get blamed for it, and try to avoid the teasing remarks and giggling from the spectators. <br>
+        <br>
+        <span style="Color: DarkTurquoise">Kyren</span> growls at a boy who mocks you, but you tell him it’s alright. <span style="Color: LightSteelBlue">“I- I just don’t like when they make fun of you. Taunting me is one thing but you-”</span> <span style="Color: DarkTurquoise">Kyren</span> pauses, his face lighting up as he quickly turns away. <span style="Color: LightSteelBlue">“Whatever!”</span> <span style="Color: Pink">You chuckle at his embarrassment and tell him you are happy to help him anytime.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Right!”</span> He responds, then sits in the awkward silence for a moment before he quickly turns away. <span style="Color: LightSteelBlue">“Bye!”</span> <span style="Color: Pink">He runs off, still too flustered to say anything more. You chuckle as he disappears around the corner.</span> <br>
+        <<if _random_rep_cost == 1>>
+            <<set $SchoolRep -= 5>>
+            <span style="Color: Red">-Reputation</span><br>
+        <<elseif _random_rep_cost == 2>>
+            <<set $SchoolRep -= 10>>
+            <span style="Color: Red">-Reputation</span><br>
+        <<else>>
+            <<set $SchoolRep -= 15>>
+            <span style="Color: Red">-Reputation</span><br>
+        <</if>>
+        <<socialChange "Kyren" 3 1>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    /* Ignore him & walk away */
+    <<link "Ignore him & walk away<br>">>
+    <<replace"#Choice">>
+        You decide it is best not to get involved. <span style="Color: DarkTurquoise">Kyren</span> deals with stuff like that all the time, he’ll be fine… probably. Besides, if you help him then their ire would turn on you, and you really don’t need that. So, looking once more at the struggling, stuck boy, you turn around and walk away. The only bright side is that <span style="Color: DarkTurquoise">Kyren</span> will have no idea that you left him there to get out of the trashcan himself. <br>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    /* Stick around & laugh */
+    <<link "Stick around & laugh<br>">>
+    <<replace"#Choice">>
+        Figuring that <span style="Color: DarkTurquoise">Kyren</span> wouldn’t know you are the one laughing at him, or just not caring if he does, you laugh and point at the boy, saying a teasing remark that earns some laughter from nearby spectators. The scene is kind of hilarious and it’s not like this will do any permanent damage to <span style="Color: DarkTurquoise">Kyren</span>, outside of his already awful social status. <span style="Color: LightGreen">So, you have a good laugh, share a few jokes, and enjoy yourself at his expense. By the time you decide to move on, you feel happier and like you are more well-liked by those around you. You’re sure <span style="Color: DarkTurquoise">Kyren</span> would be happy to know his situation helped you out.</span> <br>
+        <<if _random_rep_cost == 1>>
+            <<set $SchoolRep += 2>>
+            <span style="Color: Green">+Reputation</span><br>
+        <<elseif _random_rep_cost == 2>>
+            <<set $SchoolRep += 5>>
+            <span style="Color: Green">+Reputation</span><br>
+        <<else>>
+            <<set $SchoolRep += 8>>
+            <span style="Color: Green">+Reputation</span><br>
+        <</if>>
+        <<needChange "Fun" 5>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+
+    <</replace>>
+    <</link>>
+    /* Smack his butt */
+    <<link "Smack his butt<br>">>
+    <<replace"#Choice">>
+        The way <span style="Color: DarkTurquoise">Kyren</span> is placed in the trashcan leaves his backside facing you. <span style="Color: Pink">His bottoms-covered butt wiggling about as his top droops down due to his inverted nature. The peek at his underwear, Black Boxerbriefs, is a cute display that you never get tired of. Though just watching isn’t what you have in mind.</span> No, despite helping <span style="Color: DarkTurquoise">Kyren</span> out before and maybe even seeing him as a friend, you figured that this was your chance for a little fun. After all, he will have no idea it was you. <br>
+        <br>
+        Walking up to him, you stand behind the trapped boy and hold your hand up high, <span style="Color: Pink">making it obvious to those still watching what you plan to do.</span> A few smirk, some snicker, some keep neutral expressions despite clearly watching. You pull your hand back as far as you can before… <br>
+        <br>
+        <span style="Color: Pink">SMACK! <br>
+        <br>
+        You hit his butt as hard as you can! The sound of palm hitting fabric echoes throughout the hallway followed by the pained cry of <span style="Color: DarkTurquoise">Kyren</span>. Laughter finishes the trio of sounds, as all those watching break out into giggles and chuckles at the boy’s misfortune.</span> Said boy bends up his legs, trying to shield his rear from another strike with his feet, unsure if you only planned to hit him once or if there was more coming. <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        Alas, not wanting to take it overboard or maybe fearful of him discovering it is you, you walk away and leave the poor lad to continue struggling to free himself with a slightly sorer rear. <span style="Color: Pink">But you figure that <span style="Color: DarkTurquoise">Kyren</span> will have no luck escaping from his embarrassing, helpless position. And who knows, maybe some of the other boys will follow your lead.</span> <br>
+        <<if _random_rep_cost == 1>>
+            <<set $SchoolRep += 2>>
+            <span style="Color: Green">+Reputation</span><br>
+        <<elseif _random_rep_cost == 2>>
+            <<set $SchoolRep += 5>>
+            <span style="Color: Green">+Reputation</span><br>
+        <<else>>
+            <<set $SchoolRep += 8>>
+            <span style="Color: Green">+Reputation</span><br>
+        <</if>>
+        <<needChange "Fun" 10>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+
+    <</replace>>
+    <</link>>
+    /* Smack his nuts */
+    <<link "Smack his nuts<br>">>
+    <<replace"#Choice">>
+        The way <span style="Color: DarkTurquoise">Kyren</span> is placed in the trashcan leaves his backside facing you. His bottoms-covered butt wiggling about as his top droops down due to his inverted nature. The peek at his underwear, Black Boxerbriefs, is a cute display that you never get tired of. Though just watching isn’t what you have in mind. No, despite you helping <span style="Color: DarkTurquoise">Kyren</span> out before and maybe even seeing him as a friend, you figured that this was your chance for a little fun. After all, he will have no idea it was you. <br>
+        <br>
+        Walking up to him, you hold your hand a few inches away from your prize. <span style="Color: Pink">Not the wiggling butt that is so prominent, but the much smaller, more sensitive target. The boy’s precious balls. As it becomes obvious what your target is, many boys groan or chuckle, holding their own balls, as they anticipate the pain they are about to witness.</span> You take one last look at the struggling boy, before you wind up with all the force you can muster. He won’t be moving again for a while. <br>
+        <br>
+        <span style="Color: Pink">SMACK! <br>
+        <br>
+        The sound seems to echo throughout the hallway as nearly every boy watching groans out in a shared pain as they see your hand impact <span style="Color: DarkTurquoise">Kyren</span>’s balls.</span> You even feel your own knees buckle a little from how hard you hit him. Strangely, <span style="Color: DarkTurquoise">Kyren</span> doesn’t initially make any sound or noises from the impact, instead freezing in place with his legs outstretched for what feels like a solid minute before he crumbles down into a heap inside the trashcan. <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                },
+            },
+            {
+                Name: "OC Kyren",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Eyes: "Closed",
+                    Blush: 2,
+                    Cry: 1,
+                    Arms: "Bound",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        You may feel a little bad, having literally knocked the fight out of the lad, but then again if it felt too bad you wouldn’t have done it. You begin to hear what you can only imagine is crying from the poor lad, experiencing some of the worst pain a boy can feel. <br>
+        <br>
+        Though some laugh, most still cringe from the sound of your impact. Some are entertained and most are happy it wasn’t them, but it is clear that such an impact to his most sacred place has drawn the sympathy of a few of those watching. Yet despite this, no one helps the boy and most decide to just walk away, leaving him to his pain. You follow suit, taking one last glance at the bin before walking away as the crying fades into the distance. <br>
+        <<needChange "Fun" 10>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    /* Pull his pants down */
+    <<link "Pull his pants down<br>">>
+    <<replace"#Choice">>
+        The way <span style="Color: DarkTurquoise">Kyren</span> is placed in the trashcan leaves his backside facing you. His bottoms-covered butt wiggling about as his top droops down due to his inverted nature.<span style="Color: Pink"> The peek at his underwear, Black Boxerbriefs, is a cute display that you never get tired of. Though just watching isn’t what you have in mind. No, despite you helping <span style="Color: DarkTurquoise">Kyren</span> out before and maybe even seeing him as a friend, you figured that this was your chance for a little fun. After all, he will have no idea it was you.</span> <br>
+        <br>
+        Because why would you let such an opportunity pass? <span style="Color: Pink">The boy is helpless, vulnerable, and has no idea you are the one about to expose his underwear to everyone! With a smirk, you walk over and grip the sides of his bottoms. <span style="Color: DarkTurquoise">Kyren</span> instantly begins to panic and squirm around, but is unable to stop you as you pull his bottoms all the way down to his ankles, exposing his Black Boxerbriefs to everyone in the hallway! <br>
+        <br>
+        Laughter erupts almost immediately as the boy tries to hide his exposed underwear with his legs, though it is pointless. With his underwear-clad backside exposed, you take a moment to take in the view. The crusty white stains on the front stand out amongst the black fabric and tell you that <span style="Color: DarkTurquoise">Kyren</span> must have a habit of cumming inside his underwear, what a dirty boy.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                },
+            },
+            {
+                Name: "OC Kyren",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Eyes: "Closed",
+                    Blush: 2,
+                    Cry: 1,
+                    Arms: "Bound",
+                },
+                Clothes: {
+                    Bottoms: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        You continue to pull his bottoms completely off his body as <span style="Color: DarkTurquoise">Kyren</span> helplessly kicks in your direction, no idea his former savior is the one now exposing him. <span style="Color: Pink">His bottoms in hand, you toss them into another nearby trashcan out of sight, hoping he spends a bit in his underwear trying to find them once he, eventually, frees himself, and take a step back to get the entire sight in all its glory.</span> <br>
+        <br>
+        After taking the humorous visual all in, you walk away before you are discovered by <span style="Color: DarkTurquoise">Kyren</span> or a teacher. <span style="Color: Pink">Poor boy, but hey, he must be used to it by now.</span> <br>
+        <<if _random_rep_cost == 1>>
+            <<set $SchoolRep += 2>>
+            <span style="Color: Green">+Reputation</span><br>
+        <<elseif _random_rep_cost == 2>>
+            <<set $SchoolRep += 5>>
+            <span style="Color: Green">+Reputation</span><br>
+        <<else>>
+            <<set $SchoolRep += 8>>
+            <span style="Color: Green">+Reputation</span><br>
+        <</if>>
+        <<needChange "Fun" 10>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+
+        
+    <</replace>>
+    <</link>>
+    /* Pull his pants & underwear down */
+    <<requiresTrait "Bully" "Pull his pants & underwear down">>
+    <<replace"#Choice">>
+        The way <span style="Color: DarkTurquoise">Kyren</span> is placed in the trashcan leaves his backside facing you. His bottoms-covered butt wiggling about as his top droops down due to his inverted nature. <span style="Color: Pink">The peek at his underwear, Black Boxerbriefs, is a cute display that you never get tired of. Though just watching isn’t what you have in mind. No, despite you helping <span style="Color: DarkTurquoise">Kyren</span> out before and maybe even seeing him as a friend, you figured that this was your chance for a little fun. After all, he will have no idea it was you.</span> <br>
+        <br>
+        Because why would you let such an opportunity pass? <span style="Color: Pink">The boy is helpless, vulnerable, and has no idea you are the one about to expose his underwear to everyone! With a smirk, you walk over and grip the sides of his bottoms. <span style="Color: DarkTurquoise">Kyren</span> instantly begins to panic and squirm around, but is unable to stop you as you pull his bottoms all the way down to his ankles, exposing his Black Boxerbriefs to everyone in the hallway! <br>
+        <br>
+        Laughter erupts almost immediately as the boy tries to hide his exposed underwear with his legs, though it is pointless. With his underwear-clad backside exposed, you take a moment to take in the view. The crusty white stains on the front stand out amongst the black fabric and tell you that <span style="Color: DarkTurquoise">Kyren</span> must have a habit of cumming inside his underwear, what a dirty boy.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                },
+            },
+            {
+                Name: "OC Kyren",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Eyes: "Closed",
+                    Blush: 2,
+                    Cry: 1,
+                    Arms: "Bound",
+                },
+                Clothes: {
+                    Bottoms: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        You continue to pull his bottoms completely off his body as <span style="Color: DarkTurquoise">Kyren</span> helplessly kicks in your direction, no idea his former savior is the one now exposing him. <span style="Color: Pink">His bottoms in hand, you toss them into another nearby trashcan out of sight, hoping he spends a bit in his underwear trying to find them once he, eventually, frees himself, and take a step back to get the entire sight in all its glory. <br>
+        <br>
+        You then get an idea that only someone who likes to bully others would get. Since you already have his bottoms, why not take his underwear as well? A sinister smile forms on your face as you step forward and grip the waistband of his underwear, ready to expose the boy’s most sensitive and private parts to everyone. The boy freezes are you grip them, before he begins to beg.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“No, wait! Please don’t!”</span> His muffled voice calls as he tries to pull away from you, <span style="Color: Pink">but can do nothing as you slowly begin to pull his underwear off his body. The first thing revealed is the top of his butt, somehow paler than his legs and shines in the fluorescent light of the hallway. His cheeks were like two perfectly smooth snowballs. Then you feel his penis pop out. While not directed directly at you, you peer your head over to peek and spy an adorably cute penis with bits of pubic hair above. You let out a snort at the sight, which the boy must hear as he attempts to close his legs to hide his small boyhood from you. <br>
+        <br>
+        Alas, there is nothing he can do as you continue to pull his underwear off his body. His balls are equally cute, tight yet jiggling about as he struggled. Then, as you pull his underwear up to his knees, you spot <span style="Color: DarkTurquoise">Kyren</span>’s most secret prize. His tiny, pink, tight butthole. Laid bare before you completely exposed and vulnerable. With his sticky, cum-stained underwear completely removed, every bit of the boy’s most private and sensitive parts is fully exposed for you and everyone in the hallway to see.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                },
+            },
+            {
+                Name: "OC Kyren",
+                ShowZoom: true,
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Eyes: "Closed",
+                    Blush: 2,
+                    Cry: 1,
+                    Arms: "Bound",
+                },
+                Clothes: {
+                    Bottoms: $None,
+                    Undies: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: Pink">The laughter starts right away, the hallway erupting as teasing remarks and comments about the boy’s genitals erupt. From comments on its small size to how pale he is to even some suggestions of what you should do to him next. Despite probably being used to being bullied, you just know <span style="Color: DarkTurquoise">Kyren</span> is dying of embarrassment inside the trashcan. The best part is he’ll never know it was you who did this to him. The sound of electronic shutters going off clues you in to some boys with phones taking photos of the poor boy’s exposed state, his most private parts forever immortalized in their handheld devices. You’re certain these photos would spread far and wide, so you do your best to try to stay out of the frame, just in case. <br>
+        <br>
+        You consider going further, maybe slapping his white rear to turn it red or finding something to shove in that tight butthole of his,</span> but someone calls out that a teacher is coming and the crowd quickly begins to disperse. <span style="Color: Pink">You toss his pants and underwear into a nearby trashcan, can’t make it too easy for him to find, before fleeing yourself. You take one moment to glance back at <span style="Color: DarkTurquoise">Kyren</span>’s white butt and balls thrashing about before disappearing into the crowd.</span> <br>
+        <<if _random_rep_cost == 1>>
+            <<set $SchoolRep += 2>>
+            <span style="Color: Green">+Reputation</span><br>
+        <<elseif _random_rep_cost == 2>>
+            <<set $SchoolRep += 5>>
+            <span style="Color: Green">+Reputation</span><br>
+        <<else>>
+            <<set $SchoolRep += 8>>
+            <span style="Color: Green">+Reputation</span><br>
+        <</if>>
+        <<needChange "Fun" 15>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    <</replace>>
+
+    <</requiresTrait>>
+</div>

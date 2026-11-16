@@ -1,0 +1,136 @@
+:: Millers Babysitting Living Room Watch TV [nobr]
+
+/* Intro */
+<span style="color:DarkTurquoise">Kayden</span> lies on his stomach, watching TV from the living room floor with an expression that is equal parts amused and vacant. The look of a boy so engrossed in what he’s watching but probably won’t be able to recall a single thing. Your voice seems to snap him out of it, as you ask if you can join him on the floor and watch some TV. <span style="Color: LightGreen">He nods, smiling as you sit down next to the boy and cuddle beside him.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Kayden",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<<set _random to random(1, 3)>>
+<<if _random == 1>>
+    The relaxing moment only lasts a little bit, as once the next show starts, a barrage of bright colors flashing on the screen, <span style="color:DarkTurquoise">Kayden</span> leaps to his feet declaring that this is his favorite show! The cartoon, an over-the-top, action-packed spectacle filled with dazzling effects and dramatic music, has completely captivated him. Each time the hero executes a flashy move – like a soaring kick or an intricate spinning punch – <span style="color:DarkTurquoise">Kayden</span> <span style="Color: LightGreen">can’t resist the urge to mimic it, his small frame bursting with energy. <br>
+    <br>
+    As the hero delivered an epic, spinning punch combo, <span style="color:DarkTurquoise">Kayden</span> leaps off the cushion, his arms flailing as he imitates the action. He kicks his little legs into the air with all his might.</span> <span style="Color: LightSteelBlue">“This move is so awesome!”</span> He shouts, his voice filled with pure enthusiasm. <span style="Color: LightGreen">The room echoes with his laughter and the show’s high-energy sound effects.</span> <br>
+    <br>
+    With concern in your voice, you warn <span style="color:DarkTurquoise">Kayden</span> to be careful. However, he is too excited to listen, and, in a burst of bravado, he stands up on the couch and takes a dramatic pose; one first raised to the sky as if ready for battle. Then, it happens. <span style="Color: Yellow">The couch shifts, just enough, and the boy loses his balance, tumbling gracefully into the loveseat. There is a loud thud, followed by an uneasy silence. Your heart races as you rush over to check if he is okay, worried that his enthusiasm has gone too far this time and the boy has hurt himself.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "OC Kayden",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    However, just when you expect to start hearing the crying of a boy paying for his overeager actions, a soft murmuring emerges from the loveseat, followed by a sheepish <span style="Color: LightSteelBlue">“I meant to do that…”</span> Relief floods through you as you see him clambering back to his feet, a cheeky grin plastered across his face as if he had just barely messed up an impressive stunt. <span style="Color: LightGreen">Undeterred by the fall, <span style="color:DarkTurquoise">Kayden</span> bounces back onto the couch, more determined than ever to continue his imaginary battle against nonexistent villains!</span> <br>
+    <<socialChange "Kayden" 3 1>>
+    <<needChange "Fun" 5>>
+    <span style="color:green">+Kayden Fun</span><br>
+    <<set $HangOutNeed.Fun += 10>>
+    <span style="color:red">-Kayden Energy</span><br>
+    <<set $HangOutNeed.Energy -= 5>>
+    <br>
+    [[Continue|OC Miller House Living Room]] 
+
+<<elseif _random == 2>>
+    <span style="color:DarkTurquoise">Kayden</span> has settled nicely on the floor in the comfort of his own design, a cozy little nook in the center of the floor with a soft blanket and a few colorful throw pillows, as he mindlessly flips through the array of channels on the television. The glow of the screen illuminates his face as he reaches for the small bowl he had placed on the table, piled high with snacks. It is an enticing mix of popcorn, chips, and candy that you hadn’t noticed before. <span style="Color: LightGreen">When did he get the chance to grab all that without you noticing?</span> <br>
+    <br>
+    Every few minutes, he would pause on a show and peer at it with mild interest for a few seconds before shaking his head in disappointment and moving on to the next option. Curious about the relentlessness of his search, you ask what he’s looking for. He responds with a rather serious expression. <span style="Color: LightSteelBlue">“The perfect show to eat to!”</span> <br>
+    <br>
+    You raise an eyebrow, pointing out that his relentless munching has already left him with only half of his original snack pile left. It seems flipping through the channels was good enough entertainment for him to eat to. <span style="Color: LightSteelBlue">“Wait- No!”</span> <span style="color:DarkTurquoise">Kayden</span> gasps as the realization strikes him like a bolt of lightning, eyes widening in horror. <span style="Color: LightSteelBlue">“I wasted all the good bites!”</span> He glances at his bowl, a look of disappointment settling on his face. <span style="Color: LightSteelBlue">“I should have picked a show first…”</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "OC Kayden",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Cry: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    With a sigh, you roll your eyes, amused by his dramatic hesitation, and urge the boy to just pick something. After a long internal struggle between his hunger and finding the perfect show to watch, he finally chooses a lively cartoon that catches his eye, though you are pretty sure he passed by this show twice already. <span style="Color: LightGreen">Regardless, he seems happy and quickly dives back into his snacks, stuffing his cheeks. <br>
+    <br>
+    He even offers you a couple bites. What a kind lad.</span>  <br>
+    <<socialChange "Kayden" 3 1>>
+    <<needChange "Fun" 5>>
+    <span style="color:green">+Kayden Fun</span><br>
+    <<set $HangOutNeed.Fun += 10>>
+    <span style="color:green">+Kayden Energy</span><br>
+    <<set $HangOutNeed.Energy += 5>>
+    <br>
+    [[Continue|OC Miller House Living Room]] 
+
+<<elseif _random == 3>>
+    After a bit, <span style="color:DarkTurquoise">Kayden</span> decides to move positions and shifts to the plush couch, the fabric soft against his skin as he sprawls out all over it. <span style="Color: LightGreen">He eventually requests, pleading with some big puppy dog eyes, for you to make some popcorn.</span> You eventually relent, but make him promise to share it with you, though you get the feeling he’ll be munching down most of it. You return with a large bowl of buttery popcorn, which <span style="color:DarkTurquoise">Kayden</span>s rests firmly on his lap, the mouthwatering smell filling the air. <span style="Color: LightGreen">He then, somehow, manages to coax you into putting on a <span style="Color: LightSteelBlue">“totally not scary movie”</span> which looks pretty scary based off the cover.</span> <br>
+    <br>
+    At first, the film seems like a classic comedy, with the characters chatting in an animated and light fashion as cheerful background music sets a playful tone. You are both laughing at some of the silly antics. The atmosphere is relaxed and cozy and you wonder why the cover looked so scary when the movie seems so light-hearted. <span style="Color: LightCoral">But then, without warning, the screen erupts in a sudden loud noise, accompanied by a horrific image that sends chills down your spine. <br>
+    <br>
+    <span style="color:DarkTurquoise">Kayden</span>’s reaction is instant, as he lets out a high-pitched scream and nearly launches the bowl of popcorn in the air, causing kernels to scatter across the couch. His wide gray eyes are glued to the screen in shock and, in a frantic motion, he snatches a nearby pillow and shields his face with it in utter terror!</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "OC Kayden",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                    Blush: 2,
+                    Cry: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="Color: LightSteelBlue">“Nope! Nope! Nope!”</span> He shouts, his voice a mix of panic and disbelief, <span style="Color: LightSteelBlue">“I hate this. Turn it off! Please!”</span>  You chuckle at his dramatic response, though a bit spooked yourself, and remind him that he was the one who had insisted on watching this film in the first place, declaring that it would be ‘fun’. <span style="Color: LightSteelBlue">“I take it back!”</span> He yells, shaking his head vigorously like how Noah does when he doesn’t want to eat something gross on his plate. <span style="Color: LightSteelBlue">“Put on cartoons! Please!”</span> <br>
+    <br>
+    With a sigh and a grin, you reach for the remote and flip the channel, finding it cute how quickly his bravado vanishes in the face of a scary movie. As the familiar animated show begins to play, you notice his body relax slowly. <span style="Color: LightGreen">Within minutes, he is no longer hiding behind the pillow, though snuggles beside you as you watch the childish show. Laughter eventually begins to bubble from his as he pretends the last 5 minutes of terror never happened. The cozy atmosphere returns and you both lose yourselves in the cheerful antics of the animated characters.</span> <br>
+    <<socialChange "Kayden" 3 1>>
+    <<needChange "Fun" 5>>
+    <span style="color:green">+Kayden Fun</span><br>
+    <<set $HangOutNeed.Fun += 10>>
+    <span style="color:green">+Kayden Comfort</span><br>
+    <<set $HangOutNeed.Comfort += 5>>
+    <br>
+    [[Continue|OC Miller House Living Room]] 
+<</if>>

@@ -1,0 +1,55 @@
+:: DRAMA Lucas Script Steal [nobr]
+
+For today’s class, <span style="color:DarkTurquoise">Mr. Julien</span> asks you each to write a short scene. While he doesn’t require you to perform the scene, he believes that actors should have an understanding of the script writing process and what goes into a scene. Once everyone has finished, he asks you to collect them and place them on his desk backstage.<br>
+
+<<set _ad to [
+	{
+		Name: "Lucas",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You collect <span style="color:DarkTurquoise">Lucas</span>’ last and, as you are turning it in, you notice he had forgotton to write his name on it. You also realize that it’s really good! <span style="color:DarkTurquoise">Lucas</span> seems like he might have a knack for writing. Regardless, it’s much better than any of the others. Shame he had forgotten to put his name on it.<br>
+<br>
+
+You look over your shoulder, you are currently alone. You could write his name on it for him, or put your own on it. Nobody would know either way…<br>
+<br>
+
+
+<div id="Choice">
+	/* DONT TAKE CREDIT */
+	<<link "Write Lucas' name on the paper<br>">>
+		<<replace "#Choice">>
+			You decide against taking credit for someone else’s work and write <span style="color:DarkTurquoise">Lucas</span>’ name at the top of the paper. He definitely owes you one!<br>
+
+			<<set $PlayerDramaFaithChange to "None">>
+			<<set $LucasDramaFaithChange to "Increase">>
+			<<set $CarterDramaFaithChange to "None">>
+
+			<<include"Drama Faith Change">>
+			<br>
+
+			<<include"Attend Drama Finish">>
+		<</replace>>
+	<</link>>
+
+	/* TAKE CREDIT */
+	<<link "Write your name on the paper<br>">>
+		<<replace "#Choice">>
+			You smirk and grab a nearby pen, writing your name atop <span style="color:DarkTurquoise">Lucas</span>’ script and “misplacing” your own. <span style="color:DarkTurquoise">Lucas</span> may lose some points towards his grade for not turning anything in, but you're sure he’ll be fine.<br>
+
+			<<set $PlayerDramaFaithChange to "Increase">>
+			<<set $LucasDramaFaithChange to "Decrease">>
+			<<set $CarterDramaFaithChange to "None">>
+
+			<<include"Drama Faith Change">>
+			<br>
+
+			<<include"Attend Drama Finish">>
+		<</replace>>
+	<</link>>
+</div>

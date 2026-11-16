@@ -1,0 +1,84 @@
+:: OC Mason Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCMasonSocialRank == -3>>
+	<<set $OCMasonRelationship to "Hated">>
+	<span style="color:DarkRed">Mason Hates you!</span>
+	<br>
+<<elseif $OCMasonSocialRank == -2>>
+	<<set $OCMasonRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Mason are Enemies.</span>
+	<br>
+<<elseif $OCMasonSocialRank == -1>>
+	<<set $OCMasonRelationship to "Very Disliked">>
+	<span style="color:Red">Mason really Dislikes you.</span>
+	<br>
+<<elseif $OCMasonSocialRank == 0 and $OCMasonSocial <= -50>>
+	<<set $OCMasonRelationship to "Disliked">>
+	<span style="color:Red">Mason Dislikes you. </span>
+	<br>
+<<elseif $OCMasonSocialRank == 0 and $OCMasonSocial < 50>>
+	<<set $OCMasonRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Mason are Acquaintances.</span>
+	<br>
+<<elseif $OCMasonSocialRank == 0 and $OCMasonSocial >= 50>>
+	<<set $OCMasonRelationship to "Liked">>
+	<span style="color:LightGreen">Mason Likes you.</span>
+	<br>
+<<elseif $OCMasonSocialRank == 1>>
+	<<set $OCMasonRelationship to "Friends">>
+	<span style="color:Green">You and Mason are Friends.</span>
+	<br>
+<<elseif $OCMasonSocialRank == 2>>
+	<<set $OCMasonRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Mason are Good Friends!</span>
+	<br>
+<<elseif $OCMasonSocialRank == 3>>
+	<<set $OCMasonRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Mason are Close Friends!</span>
+	<br>
+<<elseif $OCMasonSocialRank == 4>>
+	<<set $OCMasonRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Mason are Best Friends!</span>
+	<br>
+<<elseif $OCMasonSocialRank == 5>>
+	<<set $OCMasonRelationship to "Love">>
+	<span style="color:Pink">You and Mason Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCMasonSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCMasonSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCMasonSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCMasonSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCMasonSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCMasonSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCMasonSocial,
+			value: Math.abs($OCMasonSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCMasonSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCMasonSocial > 120>>
+	<<set $OCMasonSocial to 120>>
+<</if>>
+<<if $OCMasonSocial < -120>>
+	<<set $OCMasonSocial to -120>>
+<</if>>

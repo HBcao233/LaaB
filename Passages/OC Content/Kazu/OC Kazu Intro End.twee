@@ -1,0 +1,56 @@
+:: OC Kazu Intro End [nobr]
+
+/* Intro */
+You take a seat near the back of the bus, stretching your arms in the air and sighing in relief that another school day is over. It was quite a strange one, considering what happened in math class. As if thinking about what happened earlier summoned him <span style="color:Yellow">you suddenly see <span style="color:DarkTurquoise">Kazu</span> stomping down the aisle towards you!</span> You panic and try to hide, but it’s too late, as <span style="color:DarkTurquoise">Kazu</span> locks eyes with you and plops himself right next to you in the seat, leaving you trapped between him and the window. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Blush: 1,
+        },
+    },
+    {
+        Name: "OC Kazu",
+         State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+            Eyes: "Tired",
+            },
+        },
+    ]>>
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Well, if it isn’t the little perv I caught looking at my ass. Fancy meeting you here!”</span> He laughs as you nervously blush and apologize once again. <span style="Color: LightSteelBlue">“Come on, don’t be such a pussy! I’m just messing with you.”</span> <span style="color:DarkTurquoise">Kazu</span> laughs, punching you slightly roughly in the shoulder. 
+
+/* PC No Undies */
+<<if $PlayerUndies.Type == "None">>
+    <span style="Color: LightSteelBlue">“Besides, I already got an eye full. Gotta say, no underwear is a pretty bold choice kid.”</span> <span style="color:Pink">Your blush deepens at the reminder of him pantsing you earlier.</span> <br>
+    <br>
+/* PC Wearing Diapers */
+<<elseif $PlayerUndies.Tags.includes("Diaper")>>
+    <span style="Color: LightSteelBlue">“Gotta say though, a diaper is a bold choice.”</span> <span style="color:Pink">You quickly turn even redder and glance around to see if anybody heard him,</span> <span style="Color: LightSteelBlue">“Haha, calm down. I’ll keep your little secret. For now, anyway.”</span> <br>
+    <br>
+/* Normal Undies */
+<<else>>
+    <span style="Color: LightSteelBlue">“Besides, I already got to see your cute little $PlayerUndies.Name, so we’ll call it even.”</span> <span style="color:Pink">Your blush deepens at the reminder of him pantsing you earlier.</span> <br>
+    <br>
+<</if>>
+<span style="Color: LightSteelBlue">“So, you’re that new kid I heard about. And here I thought I’d remain one of the newest kids here.”</span> He laughs, <span style="Color: LightSteelBlue">“But I’m glad we’ve got some fresh meat. Most of the other boys here are so basic and boring. Either that, or they try to act tough but are really just weak bitches. So, which one are you?”</span> He leans in with a devious smirk, causing you to nervously blurt out that you don’t know what he’s getting at. <span style="color:DarkTurquoise">Kazu</span> frowns and rolls his eyes, <span style="Color: LightSteelBlue">“Damn, is everyone in this country a damn coward? Back in Japan, I could always find boys willing to cause a little trouble.”</span> <br>
+<br>
+He sighs once more as you realize what he said. Japan? That’s strange. His accent gave away that he was probably from somewhere else, but you didn’t expect Japan considering… <span style="Color: LightSteelBlue">“Considering I’m black?”</span> <span style="color:DarkTurquoise">Kazu</span> says with a raised eyebrow. <span style="color:Yellow">You quickly turn red and try to stutter out an excuse. You didn’t mean it like that!</span> <span style="Color: LightSteelBlue">“It’s fine.”</span> <span style="color:DarkTurquoise">Kazu</span> laughs, finding your flustered state entertaining, <span style="Color: LightSteelBlue">“It’s true and I don’t blame you for thinking that. I’m only half Japanese. The other half is Nigerian, on my mom’s side, and it seems those genes are dominant.”</span> He laughs, stretching out in his seat. <span style="Color: LightSteelBlue">“But I moved here a few years back for… reasons.”</span> He pauses, staring off blankly, before he blinks and suddenly returns to his usual self. <span style="color:Yellow">He turns to you with a smirk and grabs you by the neck in a loose but firm choke hold.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“And as I said, the kids here have been pretty boring. But I get the feeling you may be fun to cause trouble with.”</span> He begins to rub his knuckles against your head, playfully though painfully, <span style="Color: LightSteelBlue">“So what do you say? Care to find out what it’s like hang out with someone who isn’t a pussy? Maybe if you are cool, I’ll only pull your pants down when we’re not in public.”</span> He teases, releasing you. <br>
+<br>
+You are a bit unsure, <span style="color:DarkTurquoise">Kazu</span> is clearly a bad influence, and you get the feeling that hanging out with him will get you in quite a bit of trouble. Then again, it could be fun, and you get the feeling he may be a bit lonelier than he’s letting on. While you don’t give an exact answer, you continue to talk with him for the remainder of the bus ride and make a mental note to keep an eye out for him in the future. <span style="color:Yellow">Who knows? Maybe hanging out with a bad boy like him will make for some good life experience.</span> <br>
+<<set $CompletedQuests.push("Kazu: The Deliquent")>>
+<<set $ActiveQuests.delete("Kazu: The Deliquent 2")>>
+<<socialChange "Kazu" 5 1>>
+<br>
+/* GET OFF BUS */
+<<if $BusRide == "Home">>
+    [[Get off bus|Northend]]
+<<else>>
+    [[Get off bus|Middle School]]
+<</if>>

@@ -1,0 +1,81 @@
+:: OC James Spotting Bus [nobr]
+
+/* Intro */
+You take a seat near the front of the bus and sigh, sleep still lingering in your eyes as you wish to do anything but go to school. Your feet already hurt, you feel you didn’t get enough sleep, it’s too cold. All the common things to run through the mind of a boy about to start another day of school. You stretch your arms out into the air and yawn… <br>
+<br>
+<span style="Color: Yellow">Then you feel something. Eyes, watching, peering, a burning sensation on the back of your skull.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+You turn around and look down the row of seats all the way to the back of the bus. No one. Well, there are boys half asleep or hurriedly doing homework, but none of them are looking at you. <span style="Color: BlueViolet">Strange, guess you are just imagining things.</span> <br>
+<br>
+/* GET OFF BUS */
+<<if $BusRide == "Home">>
+    [[Get off bus|Northend]]
+<<else>>
+    [[Get off bus|Middle School]]
+<</if>>
+
+:: OC James Spotting History [nobr]
+
+/* Intro */
+History class is rather dull, with <span style="color:DarkTurquoise">De Leon</span> trying his best to keep things entertainingly, but the stock market crash and the way numbers and banks screw people over isn’t anything that can keep your interest. <span style="color:Yellow">It feels more like math.</span> <br>
+<br>
+<span style="color:Yellow">Then you feel something, something you felt this morning. Eyes. Right on the back of your neck, your sixth sense telling you that you’re being watched.</span> You spin around, quickly, but see nothing out of the ordinary. A few boys give you a strange look, one chuckles. You blush, turning back. <br>
+
+        <<set _ad to [
+            {
+                Name: "De Leon",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.LastName</span>? Is everything alright?”</span> <span style="color:DarkTurquoise">Mr. De Leon</span> asks, confused by your sudden snapping around. You nod, sinking a little into your chair. <span style="color:BlueViolet">You could have sworn you felt someone watching you. Maybe you’re just paranoid today.</span> <br>
+<br>
+<<set _EventPassFail to "Pass">>
+<<include"Attend History Finish">>
+
+:: OC James Spotting Cafeteria [nobr]
+
+/* Intro */
+<span style="Color: Yellow">You walk into the cafeteria and instantly feel the eyes on you again. A chill runs up your spine; a strange wind blows over your arms. You start to feel worried, maybe even a little scared. You get the feeling something is trying to get your attention, something reaching out before suddenly pulling away. You gulp, glancing around the cafeteria.</span> <br>
+<br>
+Still nothing. Nothing stands out, not a strange figure, a boy staring, even your friends don’t seem to be looking in your direction at this moment. But you still feel it, growing, a weight in your chest that tells you, warns you, about being watched. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+
+You walk a bit forward, trying to ignore the feeling, seeing if it goes away. Eventually, it fades and you exhale in relief. <span style="Color:BlueViolet">But something is very wrong, you feel like something is going to happen, but you can’t be sure if it’ll be bad or good. But whatever it is, it’s coming soon.</span> <br>
+<<set $InActiveQuests.delete("James: The Orange Mystery Part 1")>>
+<<set $ActiveQuests.push("James: The Orange Mystery Part 1")>>
+<br>
+[[Continue|School Cafeteria]]

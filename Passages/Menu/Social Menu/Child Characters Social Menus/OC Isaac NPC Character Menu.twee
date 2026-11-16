@@ -1,0 +1,168 @@
+:: OC Isaac NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Child Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Isaac--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"OC Isaac NPC Character Menu Biography">>
+</div>
+
+:: OC Isaac NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Isaac NPC Character Menu Avatar Display">>
+
+<<if $OCIsaacSocial > 50>>
+
+<<elseif $OCIsaacSocial > -10>>
+
+<<else>>
+
+    <br>
+<</if>>
+
+:: OC Isaac NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Isaac NPC Character Menu Avatar Display">>
+
+:: OC Isaac NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Isaac NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal OC Isaac">>
+
+:: OC Isaac NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Isaac NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "OC Isaac",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCIsaacSocial >= 50 or $OCIsaacSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCIsaacSocial >= 100 or $OCIsaacSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: OC Isaac NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "OC Isaac",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCIsaacSocial >= 50 or $OCIsaacSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCIsaacSocial >= 100 or $OCIsaacSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

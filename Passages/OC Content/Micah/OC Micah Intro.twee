@@ -1,0 +1,78 @@
+:: OC Micah Intro [nobr]
+
+/* Intro */
+You are walking around town, as a boy your age likes to do, <span style="color:Yellow">when you hear a strange series of sounds coming from around the corner.</span> <span style="color:LightSteelBlue">“-aliens controlling the bike makers just to make these dumb chains IMPOSSIBLE to fix! Aaaahhh! Come on you stupid- OW!”</span> The voice is young and rambling, with a large hint of annoyance. The clear sound of a young boy having a rough time, <span style="color:Yellow">though the mention of aliens causes you to raise an eyebrow.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "OC Micah",
+        State: {
+            Outfit: "Everyday",
+            Eyes: "Mad",
+            Blush: 1,
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You turn the corner to spot the source of the ramblings, a young boy about your age wearing a long-sleeved shirt and cargo shorts. He has short strawberry blonde hair, and his hands are covered in grease as he attempts to attempts to adjust the chain on a bike that sits upside down in front of him. The boy is mumbling to himself, frustrated and annoyed at how his job is being <span style="color:LightSteelBlue">“sabotaged by the aliens.”</span> Whatever that means. Curious, you walk up behind the boy and greet him. <br>
+<br>
+<span style="color:LightSteelBlue">“Aaaahhh! Don’t probe me!”</span> <span style="color:Pink">The boy lets out a loud, panicked scream, tossing the small allen wrench in his hand in your general direction, though the throw is so weak it just lands at your feet as the boy cowers before you.</span> You cough awkwardly and inform the boy that you are, in fact, not planning on probing him. <span style="color:LightSteelBlue">“You- oh… you’re not… hehe…”</span> The boy chuckles nervously, blushing bright red as he stands up, realizing you are not some threat here to harm him. <span style="color:LightSteelBlue">“So- sorry… guess I got in my head a bit there.”</span> He picks up the wrench nervously, staring at the ground the whole time, before scratching his cheek awkwardly, <span style="color:Pink">leaving a black greasespot on it as you ask him what he’s doing.</span> <br>
+
+<<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Smirk",
+            Eyes: "Tired",
+        },
+    },
+    {
+        Name: "OC Micah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Frown",
+            Blush: 2,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh!”</span> The boy jumps a little at your question, <span style="color:LightSteelBlue">“Well, well… I was just out for a delivery, my grandparents own the corner store here, when my bike’s chain fell off. Nearly crashed. I was trying to fix it, but this THING won’t work!”</span> He says, gesturing to the allen wrench in his hand. You chuckle and ask if you can take a look, kneeling in front of the bike and inspecting the chain. <span style="color:LightSteelBlue">“Oh, you don’t have- I mean, thank you.”</span> The boy shyly hands you the wrench, <span style="color:Pink">obviously out of his element both in fixing the bike and this social situation.</span> <br>
+<br>
+The chain itself seems to have just slipped off due to one too many bumps, <span style="color:LightGreen">nothing that can’t be fixed with some effort.</span> The boy seems to have made things more difficult than they needed to be, fumbling around with the chain and trying to take apart the entire gear to get it back on. As you point this out the boy, embarrassed, admits that he <span style="color:LightSteelBlue">“doesn’t really know how this stuff works…”</span> <span style="color:LightGreen">You tell him it’s alright and help the boy, taking him through the process so he can fix it himself next time.</span> <br>
+
+<<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Micah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+Once it is fixed and spinning properly again, the boy smiles widely. <span style="color:LightSteelBlue">“Woah! You made that look so easy! Thanks!”</span> <span style="color:Pink">He looks like he is going to give you a hug, but then remembers he is covered in grease and pulls back.</span> He opens his mouth to say something else when his watch suddenly beeps. <span style="color:LightSteelBlue">“Oh no! I’m late! Oh shoot, oh shoot!”</span> The boy panics and quickly grabs the plastic bag next to him and hops on his bike. <span style="color:LightSteelBlue">“I gotta hurry or my butt's going to get beat! Tha- thanks again!”</span> He quickly rides off in a panic, nearly tumbling off his bike a few times, before disappearing into the distance. <br>
+<br>
+<span style="color:Pink">You chuckle at the cute sight. What a weird kid, cute, but a little weird.</span> You are walking away when you realize you didn’t even get his name. <span style="color:Yellow">Oh well, maybe you’ll see him at that store he was talking about.</span> <br>
+<<set $ActiveQuests.push("Micah: Introduction")>>
+<<set $InActiveQuests.delete("Micah: Introduction")>>
+<<set $OCMicahSocial to 0>>
+<<set $OCMicahSocialRank to 0>>
+<<socialChange "Micah" 15 1>>
+<br>
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+ <<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+ <<else>>
+    [[Continue|Wald Street]]
+<</if>>

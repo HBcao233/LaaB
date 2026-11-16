@@ -1,0 +1,237 @@
+:: Artwork Catalog Lucas [nobr]
+
+<span style="color:Azure"><big><strong>--Lucas Taylor Catalog--</strong></big></span><br>
+
+<<if $LucasSocialRank > 0>>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Lucas Taylor</span>!”</span> <span style="color:DarkTurquoise">Orange</span> says happily, <span style="color:LightSteelBlue">“I’ve heard on the grape vine that you and him did some naughty things together.”</span> <span style="color:pink">You blush, how could he possibly know that?</span> <span style="color:LightSteelBlue">“Don’t worry, I won’t tell anyone. What’s not to love about him? He’s the classic boy next door, an easy and true friend, though a little desperate. Plus, you have to love a goofy little gamer. Since you and he are so close, I’ll let you peek at some of his more risqué artwork.”</span> <span style="color:DarkTurquoise">Orange</span> plops down a list of artwork available in front of you.
+
+<<elseif $CompletedQuests.includes("Lucas: First Visit")>>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Lucas Taylor</span>? Oh, we have plenty of him! Did you know he used to model? He wasn’t so shy as a kid and loved modeling all sorts of cute clothes from PJs to underwear! Maybe one day I’ll show you some.”</span> <span style="color:DarkTurquoise">Orange</span> winks, pulling out his binder. <span style="color:LightSteelBlue">“You know, if you get closer with Lucas, I may have some secret stuff to show you, which I’m sure you’ll love. What’s not to love about him? He’s the classic boy next door, an easy and true friend, though a little desperate. Plus, you have to love a goofy little gamer.”</span> <span style="color:DarkTurquoise">Orange</span> plops down a list of artwork available in front of you.
+
+<<else>>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Lucas Taylor</span>? Oh, we have plenty of him! He has a… face of photography.”</span> <span style="color:DarkTurquoise">Orange</span> laughs, enjoying whatever secrets he is keeping. <span style="color:LightSteelBlue">“What’s not to love about him? He’s the classic boy next door, an easy and true friend, though a little desperate. Plus, you have to love a goofy little gamer. Keep in mind, some of his more, interesting, photos won’t be available until you befriend him. I can’t be going and giving you the goods without making you work for them, can I?”</span> <span style="color:DarkTurquoise">Orange</span> plops down a list of artwork available in front of you.
+    
+<</if>><br>
+<br>
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+/* Character Art (Everyday) */
+    <<if $AchievementArt.includes("Lucas Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Lucas Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Lucas\\Lucas.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Lucas Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Lucas Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Lucas">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("Lucas Character Art Undies")>>
+        <strong><span style="color:lightgreen">Lucas Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Lucas\\Lucas Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Lucas Character Art (Undies)</strong>
+        | 
+        <<if $LucasSocial >= 100 or $LucasSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Lucas Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Lucas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Lucas Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Naked) */
+    <<if $AchievementArt.includes("Lucas Character Art Naked")>>
+        <strong><span style="color:lightgreen">Lucas Character Art (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Lucas\\Lucas Naked.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Lucas Character Art (Naked)</strong>
+        | 
+        <<if $LucasSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Lucas Character Art Naked")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Lucas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Reach Lucas Social Rank 1)]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Hard) */
+    <<if $AchievementArt.includes("Lucas Character Art Hard")>>
+        <strong><span style="color:lightgreen">Lucas Character Art (Hard)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Lucas\\Lucas Hard.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Lucas Character Art (Hard)</strong>
+        | 
+        <<if $LucasSocial >= 100 and $LucasSocialRank == 1>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Lucas Character Art Hard")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Lucas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Lucas Social Rank 1)]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Special) */
+    <<if $AchievementArt.includes("Lucas Character Art Special")>>
+        <strong><span style="color:lightgreen">Lucas Character Art (Special)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Lucas\\Lucas Special.gif" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Lucas Character Art (Special)</strong>
+        | 
+        <<if ["Lucas Character Art Everyday", "Lucas Character Art Undies", "Lucas Character Art Naked", "Lucas Character Art Hard", "Spying on Lucas Changing", "Lucas Clothing Preview Thumbnail", "Lucas Childhood Photo (Undies)", "Lucas Childhood Photo (Naked)", "Lucas Sticker Set"].every(ach => $AchievementArt.includes(ach))>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Lucas Character Art Special")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Lucas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Acquire every other Lucas Artwork)]</span><br>
+        <</if>>
+    <</if>>
+/* Lucas Spy Artwork */
+    <<if $AchievementArt.includes("Spying on Lucas Changing")>>
+        <strong><span style="color:lightgreen">Spying on Lucas Changing</span></strong>
+        | 
+        <<apsart "Images\\Special\\Lucas Spy\\Lucas Spy Shop.png" "BubblegumBupkis" "https://baraag.net/@BubblegumBupkis">>
+    <<else>>
+        <strong>Spying on Lucas Changing</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Spying on Lucas Changing")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Lucas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Lucas Clothing Fanbox Thumbnail */
+    <<if $AchievementArt.includes("Lucas Clothing Preview Thumbnail")>>
+        <strong><span style="color:lightgreen">Lucas Clothing Preview Thumbnail</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Lucas Clothing Preview Thumbnail.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Lucas Clothing Preview Thumbnail</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Lucas Clothing Preview Thumbnail")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Lucas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Lucas Childhood Photo (Undies) */
+    <<if $AchievementArt.includes("Lucas Childhood Photo (Undies)")>>
+        <strong><span style="color:lightgreen">Lucas Childhood Photo (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Lucas Childhood Photo (Undies).png" "Hyo!" "https://x.com/HYOJINXSHI">>
+    <<else>>
+        <strong>Lucas Childhood Photo (Undies)</strong>
+        | 
+        <<if $CompletedQuests.includes("Lucas: First Visit")>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Lucas Childhood Photo (Undies)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Lucas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Visit Lucas' House)]</span><br>
+        <</if>>
+    <</if>>
+/* Lucas Childhood Photo (Naked) */
+    <<if $AchievementArt.includes("Lucas Childhood Photo (Naked)")>>
+        <strong><span style="color:lightgreen">Lucas Childhood Photo (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Lucas Childhood Photo (Naked).png" "Hyo!" "https://x.com/HYOJINXSHI">>
+    <<else>>
+        <strong>Lucas Childhood Photo (Naked)</strong>
+        | 
+        <<if $LucasSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Lucas Childhood Photo (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Lucas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Reach Lucas Social Rank 1)]</span><br>
+        <</if>>
+    <</if>>
+/* Lucas Sticker Set */
+    <<if $AchievementArt.includes("Lucas Sticker Set")>>
+        <strong><span style="color:lightgreen">Lucas Embarrassed Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Embarrassed Lucas.png" "Rayray" "https://rayrayart.fanbox.cc">>
+        <strong><span style="color:lightgreen">Chibi Lucas Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Chibi Lucas.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Lucas Icecream Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Lucas Ice Cream.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Lucas Sticker Set</strong>
+        | 
+        <<if $LucasSocial >= 100 or $LucasSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Lucas Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Lucas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Lucas Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+<br>
+[[Back|Artwork Catalog]]
+

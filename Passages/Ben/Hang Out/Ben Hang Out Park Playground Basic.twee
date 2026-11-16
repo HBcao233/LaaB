@@ -1,0 +1,110 @@
+:: Ben Hang Out Park Playground Basic [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+As you and <span style="color:DarkTurquoise">Ben</span> walk around the park, you catch him glancing around with what can only be described as a neutral smile. You ask him what he wants to do and he shrugs. <span style="Color: LightSteelBlue">“Whatever you want to do is fine, as long as it isn’t too physical.”</span> <span style="color:Pink">He blushes a little and rubs the back of his head,</span> <span style="Color: LightSteelBlue">“Sorry, I know I sound lame. Running around making loud noises and getting all sweaty isn’t really my idea of fun. I’m more of a video game, sci-fi novel sort of kid.”</span> You chuckle at his words, which <span style="color:DarkTurquoise">Ben</span> takes the wrong way as he quickly covers his face and cries out. <span style="Color: LightSteelBlue">“I’m sorry! We can do whatever, it’s fine!”</span> <br>
+
+    <<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+            Eyes: "Tired",
+            },
+        },
+        {
+        Name: "Ben",
+        State: {
+            Outfit: $HangOutClothes,
+            Mouth: "Frown",
+            Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:lightgreen">You explain to <span style="color:DarkTurquoise">Ben</span> that you don’t care what you do, as long as you do it together. Though he should probably work on getting some more exercise, so it’s probably a good thing you’re forcing him out here.</span> <span style="Color: LightSteelBlue">“Haha, yeah…”</span> He replies nervously. You ask him to pick something that he’d be comfortable doing and <span style="color:DarkTurquoise">Ben</span> scans the area for a moment before quickly pointing to the teetertotter in the distance. <span style="Color: LightSteelBlue">“There! Fun, without the perspiration. That will work-! As long as it’s okay with you… I mean.”</span> <br>
+<br>
+<span style="color:lightgreen">You roll your eyes and grab <span style="color:DarkTurquoise">Ben</span> by the arm, running over. The nerd needs to learn to lighten up, so you have him sit down first and jump onto the other side to send him bouncing in the air.</span> <span style="Color: LightSteelBlue">“Aaahhh!”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Ben</span> cries out, despite only being lifted a few feet off the ground. He is holding the handle so tightly and, upon seeing you staring with a smirk, turns bright red. You chuckle as you and <span style="color:DarkTurquoise">Ben</span> begin to swing up and down at a slower pace, causing him to lighten his grip… even if only by a little.</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Start going faster<br>">>
+    <<replace"#choice">>
+        You smile at <span style="color:DarkTurquoise">Ben</span> and ask him if he’s ready to pick up the pace! The boy immediately shakes his head. <span style="Color: LightSteelBlue">“I’d- I’d rather not! I think this pace is very good, thank you!”</span> But you don’t listen to him and begin to use your feet to kick up off the ground and your body weight to ensure <span style="color:DarkTurquoise">Ben</span> is sent up at high speeds. <span style="color:Pink">Well, as ‘high speed’ as a teetertotter can go.</span> <br>
+        <br>
+        Still, even at this relatively slow speed, <span style="color:Pink"><span style="color:DarkTurquoise">Ben</span> quickly bends down and hugs the wooden board as if he was going to be flung into space at any moment.</span> You figure the kid just needs to get used to the feeling of going up and down so keep it up as you laugh away and throw encouraging words at your cowardly friend. Still, he doesn’t lessen his hold, though he tries, and fails, to give somewhat of a smile when you ask if he’s having fun. <br>
+
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                },
+            },
+            {
+            Name: "Ben",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Frown",
+                Blush: 2,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:lightgreen"><span style="color:DarkTurquoise">Ben</span> is quick to jump off and fall to his hands and knees as he is thankful to be on the ground again.</span> He looks a little green, so you quickly run over and ask if he’ alright. <span style="Color: LightSteelBlue">“Ye- yeah… I just don’t do…”</span> He gags a little, <span style="Color: LightSteelBlue">“sudden motion very well.”</span> You laugh and rub his back, asking how he survives if rough play on the teetertotter is enough to make him sick. <span style="Color: LightSteelBlue">“By choosing to stay inside most days… though I guess a friend like you is important to test my heart rate and get some vitamin D.”</span> <span style="color:lightgreen">He turns to you with a smile, trying to show that he is enjoying spending time with you regardless, but he still looks a little green.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Ben" 1>>
+        <span style="color:green">+Ben Fun</span><br>
+        <<set $HangOutNeed.Fun += 5>>
+        <span style="color:red">-Ben Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <span style="color:red">-Ben Comfort</span><br>
+        <<set $HangOutNeed.Comfort -= 5>>
+        <br>
+        [[Continue|Ben Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "Go slow & Chat<br>">>
+    <<replace"#choice">>
+        Deciding not to push <span style="color:DarkTurquoise">Ben</span>’s tolerance for motion sickness, despite only being on a teetertotter, you choose to just sit back and casually go up and down while chatting with the boy. <span style="color:lightgreen">You spend the first bit doing most of the work, as <span style="color:DarkTurquoise">Ben</span> is too nervous to propel himself into the air, but once he gets into the swing of things of moving up and down at a constant, and pretty gentle, pace, he starts to loosen up.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Soooo…”</span> <span style="color:DarkTurquoise">Ben</span> says, trying to fill the silence, <span style="Color: LightSteelBlue">“See- see any good shows recently?”</span> You nod, regaling <span style="color:DarkTurquoise">Ben</span> with whatever franchise you are currently obsessed with and, as you talk, his nervous look turns into a smile as chatting about pop culture seems to be a favorite topic of his. <span style="color:lightgreen">Things soon become very relaxed and the motion of the totter becomes almost second nature to you both.</span> <br>
+        
+        <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                    },
+                },
+                {
+                Name: "Ben",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    },
+                },
+            ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“I was watching a really old episode of Space Force with my grandfather last weekend,”</span> <span style="color:DarkTurquoise">Ben</span> explains, <span style="Color: LightSteelBlue">“From like the 60s, I think. Anyway, there was this virus that termed all the men on the ship into love zombies that were completely controllable by the women. Except, it didn’t work on the captain! Turns out it doesn’t work on men who’re gay! The show got a lot of flack for it back in the day, they were really weird about that stuff back then, but I thought it was pretty neat. Grandpa said people were too sensitive if some kissing dudes was enough to upset them.”</span> <span style="color:Pink">You wonder if this is <span style="color:DarkTurquoise">Ben</span> quietly mentioning his own preferences, though as if he sensed your thoughts he quickly adds.</span> <span style="Color: LightSteelBlue">“S- s- so I guess we’d be in pretty big trouble if we were on that ship! Right? Hahaha…”</span>  <br>
+        <br>
+        You decide not to correct the boy, taking his hastiness to add it as your own confirmation. <span style="color:lightgreen">You continue chatting about episodes of this show until his legs get tired and he asks to take a break.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 10>>
+        <<socialChange "Ben" 2>>
+        <span style="color:green">+Ben Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:red">-Ben Energy</span><br>
+        <<set $HangOutNeed.Energy -= 5>>
+        <span style="color:green">+Ben Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 5>>
+        <br>
+        [[Continue|Ben Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

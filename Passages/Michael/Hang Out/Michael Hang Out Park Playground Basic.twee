@@ -1,0 +1,111 @@
+:: Michael Hang Out Park Playground Basic [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+As you walk into the playground, which is thankfully not too busy, you turn to <span style="color:DarkTurquoise">Michael</span> and ask what he wants to do. <span style="color:yellow">Or, at least, that’s what you were going to do before you were suddenly shoved into the sand as <span style="color:DarkTurquoise">Michael</span> yells <span style="Color: LightSteelBlue">“Tag! You’re it, loser!”</span> and runs off!</span> You smirk at your friend’s dick move and quickly get to your feet, giving chase! <span style="Color: LightSteelBlue">“Come on! You gotta be faster than that!”</span> He shouts out teasingly. You chase <span style="color:DarkTurquoise">Michael</span> throughout the playground and park, unable to keep up with his speed and, every time you do manage to corner him, the slippery bastard seems to find a way to escape! As this point, you’ll be ‘it’ for the rest of your life! <br>
+<br>
+<span style="color:DarkTurquoise">Michael</span> eventually turns back to the jungle gym, expertly climbing up the contraption like a monkey right before you are able to tag him. <span style="color:yellow">You growl annoyed as he stands atop it, smirking down at you.</span> <span style="Color: LightSteelBlue">“Dang, I wouldn’t have tagged you so hard if I knew you were this slow! Come on now, put a little effort into it!”</span> <span style="color:DarkTurquoise">Michael</span> sticks his tongue out at you. <br>
+
+    <<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Eyes: "Mad",
+            },
+        },
+        {
+        Name: "Michael",
+        State: {
+            Outfit: $HangOutClothes,
+            Mouth: "Smirk",
+            Eyes: "Mad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+It is clear that following <span style="color:DarkTurquoise">Michael</span> like this isn’t going to work. He’s too quick and nimble, so just tracing his movements will leave you always a few steps behind him. No, what you need is something to catch him off guard. Something he won’t expect. You inspect the jungle gym and spy some possible options. <span style="color:yellow">If you are nimble enough yourself, you could quickly run up the slide before he realizes what’ going on and tag him before he can escape. Then again, you could also try to vanish from his view, hiding under the jungle gym and striking when he least suspects it.</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Run up the slide<br>">>
+    <<replace"#choice">>
+        Thinking fast, you make a fake out towards the stairs to the top of the jungle gym. This leads <span style="color:DarkTurquoise">Michael</span> to naturally move towards the slide, ready to escape. However, once his back is turned you do a 180 and instead make for the slide. You won’t have time to do much of a runup, so try to keep your speed as you leap into the slide and begin to scramble up. <span style="color:lightgreen">As expected, you see <span style="color:DarkTurquoise">Michael</span> right at the top, with no idea you are there until the sound of the plastic slide shaking catches his ears.</span> <br>
+        
+            <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                    },
+                },
+                {
+                Name: "Michael",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Frown",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“What the-?”</span> <span style="color:DarkTurquoise">Michael</span> turns towards the slide just in time to see you nearly at the top! You leap off, stretching your hand at towards the boy as he reacts and… he manages to pull back just in time! <span style="color:yellow">All you tag is air as <span style="color:DarkTurquoise">Michael</span> leaps back and takes off running again. Dang it.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Hahaha! Good try, but you’ll have to be quicker than that!”</span> He calls out, vanishing from sight as you sigh and let your body roll down the slide. <span style="color:lightgreen">Alas, maybe next time.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Michael" 3>>
+        <span style="color:green">+Michael Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:red">-Michael Energy</span><br>
+        <<set $HangOutNeed.Energy -= 5>>
+        <br>
+        [[Continue|Michael Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "Vanish under the jungle gym<br>">>
+    <<replace"#choice">>
+        <span style="color:lightgreen">You look up at <span style="color:DarkTurquoise">Michael</span> and smirk, moving just slightly to the side in order to vanish from his view. You feel like a ninja, disappearing into the shadows under the jungle gym as <span style="color:DarkTurquoise">Michael</span> begins to circle his sight around like a hawk, waiting for you to strike.</span> <span style="Color: LightSteelBlue">“You’re not as sneaky as you think!”</span> <span style="color:DarkTurquoise">Michael</span> laughs, trying his best to keep his eyes on all possible approaches. <br>
+        <br>
+        He keeps his eyes on the stairs, the climbable approaches, even the slide. All possible methods of entry are under his gaze. You watch from below, eyeing your target while ensuring he can’t see you. <span style="color:lightgreen">The fact that <span style="color:DarkTurquoise">Michael</span> is watching all entrances will be his downfall. You don’t have to enter the jungle gym to tag him.</span> <br>
+        <br>
+        <span style="color:lightgreen">You smile as you prowl forward, eyes locked on your prey as he spins and turns around, anxiously awaiting your attack. But in trying to keep his eyes on every direction, he has forsaken the one where he is weakest. Below!</span> <br>
+        <br>
+        <span style="color:Pink">You reach up through the railing from the shadows and grip <span style="color:DarkTurquoise">Michael</span>’s ankle! He jumps and lets out a scream, a sound that completely breaks you out of your ninja guise as you can’t help but start laughing at his childish expression of fear.</span> <br>
+        
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Mad",
+                },
+            },
+            {
+            Name: "Michael",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Frown",
+                Blush: 2,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Wha- what!?”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Michael</span>’s face is red as he looks down at the small gap you were able to grab him through. He sees you down there laughing and turns even redder.</span> <span style="Color: LightSteelBlue">“You-! That’s cheating! Arrrgggg!”</span> <span style="color:DarkTurquoise">Michael</span> leaps off the jungle gym and gives chase. <span style="color:lightgreen">You take off running but are laughing so hard you can’t outrun him.</span> <br>
+        <br>
+        <span style="color:lightgreen"><span style="color:DarkTurquoise">Michael</span> may hit you a few times and be the ultimate winner of the game, but the sound and face he made will forever live in your brain. You mimic it many times as <span style="color:DarkTurquoise">Michael</span> beats you on the ground. In the end, you’re both winners and losers.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Michael" 3>>
+        <span style="color:green">+Michael Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:red">-Michael Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <br>
+        [[Continue|Michael Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

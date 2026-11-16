@@ -1,0 +1,16 @@
+:: Lucas Poker After Game [nobr]
+
+
+<<if $Debug == 1>>
+    Winner: <<=$PokerWinner.playerId>><br>
+    Loser: <<=$PokerLoser.playerId>><br><br>
+<</if>>
+
+<<if $PokerWinner.playerId == "PC">>
+    <<include"Lucas Poker Player Wins">>
+<<else>>
+    <<include"Lucas Poker Lucas Wins">>
+<</if>>
+
+/* Run this when you're done with the poker stuff */
+/* <<include "Poker Destroy Variables">> */

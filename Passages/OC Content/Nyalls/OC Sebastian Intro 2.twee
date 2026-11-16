@@ -1,0 +1,91 @@
+:: OC Sebastian Intro 2 [nobr]
+
+/* OPENING */
+Curious, you ask about the photo. More importantly, who it was of. <br>
+<br>
+<span style="color:LightSteelBlue">“What?”</span> The boy smirks, <span style="color:LightSteelBlue">“Don’t recognize it?”</span> He holds out the photo again and you examine it confused. <span style="color:pink">It takes a second, but then you realize, it was of you! You turn as red as an apple and try to snatch the photo away, but the boy is too quick.</span> <span style="color:LightSteelBlue">“Sorry. No freebies.”</span> <br>
+
+<<set _ad to [
+    {
+        Name: "OC Sebastian",
+        State: {
+			Outfit: "Uniform",
+            Mouth: "Smirk",
+			Eyes: "Tired",
+        },
+    },
+	    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+			Eyes: "Mad",
+			Blush: 2,
+		},
+    },
+]>>
+<<ad _ad>>
+
+He shoves it back into his bag as you demand to know who he thinks he is to take such photos. <br>
+<br>
+<span style="color:LightSteelBlue">“A professional!”</span> The boy puts his arm on your shoulder. <span style="color:LightSteelBlue">“An expert in all things funny, cute, and sometimes, spicy.”</span> He smirks at you, but you shove him away, threatening to tell a teacher. <span style="color:LightSteelBlue">“Go ahead, I can destroy the evidence easily. No one would believe you and you’d be wasting this opportunity.”</span> <br>
+<br>
+He gives you a look that causes you to pause.<span style="color:yellow"> An opportunity? What was he talking about?</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I’m something of an aspiring photographer. People pay good money for photos of people in their most personal moments, when they think they are alone.”</span> You frown. <span style="color:pink">Why would you not snitch on someone who just admitted to selling lewd photos of you!?</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Don’t worry <span style="color:DarkTurquoise">$Player.Name</span>.”</span> The boy laughs in response, <span style="color:LightSteelBlue">“None of my photos show faces, unless it’s a special order. No one will know it’s your butt unless they know your butt. Listen kid, can I call you kid?”</span> He puts his arm around you once more, <span style="color:LightSteelBlue">“I know the way you look at some of the boys here. I’ve seen it, very sneaky but nothing gets past a photographer’s eye.”</span> <span style="color:pink">You blush, asking what he is implying, but he continues as if you said nothing.</span> <span style="color:LightSteelBlue">“I’m here to offer you an exclusive deal. You keep my little secret, and I’ll give you access to my services. Pay a little finder’s fee, and I can get you some VERY interesting photos.”</span> <br>
+
+<<set _ad to [
+    {
+        Name: "OC Sebastian",
+        State: {
+			Outfit: "Uniform",
+            Mouth: "Smirk",
+			Eyes: "Tired",
+        },
+    },
+	    {
+        Name: "Player",
+        State: {
+			Blush: 1,
+		},
+    },
+]>>
+<<ad _ad>>
+
+You pause to think. To be fair, he was right about the photo of you. <span style="color:pink">Unless someone knew your butt as well as you did, they wouldn’t be able to tell it was you without your face. Still, you didn’t like the idea of this weird kid having photos of you…</span> <br>
+<br>
+Then again, if he was that good then maybe he could… What were you thinking!? <span style="color:pink">Were you really going to pay someone to take dirty pictures of your classmates!?</span> Then again… they wouldn’t know about the photos, so would it really hurt them? <br>
+<br>
+
+<div id=choice1>
+/* Agree */
+	<<link "Agree<br>">>
+	<<replace"#choice1">>
+You ask him if he is sure no one would know about the photos, to which he promises. You then nod, agreeing to be his customer as long as he keeps any photos of you minimal. <br>
+<br>
+<span style="color:LightSteelBlue">“No promises there.”</span> He laughs, <span style="color:LightSteelBlue">“You are a cutey, very popular with my buyers. But I’ll keep any identifying features edited out.”</span> The boy takes you out of sight of the other boys as he explains. <span style="color:LightSteelBlue">“I’m <span style="color:DarkTurquoise">Sebastian</span>. Here’s how this works. You know that old janitor’s closet in the South Hallway?”</span> You nod. <span style="color:LightSteelBlue">“There’s an old cardboard box in the corner, empty and the janitor never cleans it. You leave the payment in there along with a description of what you are looking for. Give me a few days, then check back. It’s that easy!”</span> <br>
+<br>
+You question his prices and what sort of ‘photos’ he offers. <span style="color:LightSteelBlue">“General stuff, like an embarrassing moment or a cute little butt is $25. $50 if you want a specific boy. $100 is for the special requests, but we can chat about that later.”</span> He pauses, handing you a business card that was just a cut piece of cardstock with the words <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Sebastian</span>, Special Photography”</span> written on it. <br>
+<br>
+<span style="color:LightSteelBlue">“I’ll even cut you a deal. I’ll give you your first photo free, general only. So, think about what you want and leave a note.”</span> He smiles, <span style="color:LightSteelBlue">“I’ll await your request eagerly.”</span> Without another word, the boy departs through the bushes and disappears. You are left there, a bit stunned, holding his card. Was he really legit? Only one way to find out. <br>
+        <<set $CompletedQuests.push("Nyalls: Sebastian")>>
+        <<set $InActiveQuests.delete("Nyalls: Sebastian")>>
+        <<needChange "Fun" 10>>
+		<br>
+		[[Continue|School Courtyard]]
+
+    <</replace>>
+    <</link>>
+/* Play it safe */
+	<<link "Refuse and leave">>
+	<<replace"#choice1">>
+You refuse, telling him that you are not interested. The boy shrugs before turning away. You could tell a teacher, but figure that wouldn’t do much and instead just decide to forget the encounter ever happened. <br>
+        <<set $InActiveQuests.delete("Nyalls: Sebastian")>>
+        <<needChange "Fun" 10>>
+		<br>
+		[[Continue|School Courtyard]]
+    <</replace>>
+    <</link>>
+    <span style="color:lightcoral">(Locks Content)</span><br>
+</div>

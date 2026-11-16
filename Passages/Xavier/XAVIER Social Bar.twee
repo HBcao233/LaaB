@@ -1,0 +1,84 @@
+:: XAVIER Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $XavierSocialRank == -3>>
+	<<set $XavierRelationship to "Hated">>
+	<span style="color:DarkRed">Xavier Hates you!</span>
+	<br>
+<<elseif $XavierSocialRank == -2>>
+	<<set $XavierRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Xavier are Enemies.</span>
+	<br>
+<<elseif $XavierSocialRank == -1>>
+	<<set $XavierRelationship to "Very Disliked">>
+	<span style="color:Red">Xavier really Dislikes you.</span>
+	<br>
+<<elseif $XavierSocialRank == 0 and $XavierSocial <= -50>>
+	<<set $XavierRelationship to "Disliked">>
+	<span style="color:Red">Xavier Dislikes you. </span>
+	<br>
+<<elseif $XavierSocialRank == 0 and $XavierSocial < 50>>
+	<<set $XavierRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Xavier are Acquaintances.</span>
+	<br>
+<<elseif $XavierSocialRank == 0 and $XavierSocial >= 50>>
+	<<set $XavierRelationship to "Liked">>
+	<span style="color:LightGreen">Xavier Likes you.</span>
+	<br>
+<<elseif $XavierSocialRank == 1>>
+	<<set $XavierRelationship to "Friends">>
+	<span style="color:Green">You and Xavier are Friends.</span>
+	<br>
+<<elseif $XavierSocialRank == 2>>
+	<<set $XavierRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Xavier are Good Friends!</span>
+	<br>
+<<elseif $XavierSocialRank == 3>>
+	<<set $XavierRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Xavier are Close Friends!</span>
+	<br>
+<<elseif $XavierSocialRank == 4>>
+	<<set $XavierRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Xavier are Best Friends!</span>
+	<br>
+<<elseif $XavierSocialRank == 5>>
+	<<set $XavierRelationship to "Love">>
+	<span style="color:Pink">You and Xavier Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $XavierSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $XavierSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $XavierSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $XavierSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $XavierSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $XavierSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $XavierSocial,
+			value: Math.abs($XavierSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($XavierSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $XavierSocial > 120>>
+	<<set $XavierSocial to 120>>
+<</if>>
+<<if $XavierSocial < -120>>
+	<<set $XavierSocial to -120>>
+<</if>>

@@ -1,0 +1,56 @@
+:: OC Micah Nature Hike 2 [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+You walk towards the entrance to the woods, happy and excited to spend this school-free day exploring the great outdoors. The forest is always so peaceful this time of day and, no matter how many times you enter and explore, there always seems to be something new to find. However, this time you find something a bit more than the usual unexpected array of plants, insects, and animals. <span style="color:Yellow">No, this time you find a rather nervous and lost-looking boy a decent walk into the woods. Naturally, the boy is the conspiracy-filled <span style="color:DarkTurquoise">Micah</span>.</span>
+
+    <<set _ad to [
+        {
+            Name: "OC Micah",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Sad",
+                Blush: 2,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh no, oh no!”</span> He mutters, <span style="color:LightSteelBlue">“I should have known the Vilites were shooting their brain-mushing lasers! Everything looks the same and different at the same time… And I really have to pee!”</span> The boy panics about, looking this way and that trying to decide which way to go to escape, but ends up just standing there mumbling without making a real decision. Deciding it may be best to help the boy, you call out to him. <span style="color:LightSteelBlue">“Aaaahh!”</span> Naturally, your sudden appearance makes the boy jump in fear. <span style="color:Pink">You’re surprised he didn’t wet himself.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Oh, <span style="color:DarkTurquoise">$Player.Name</span>, it’s just you.”</span> He sighs in relief, <span style="color:LightSteelBlue">“But what are you doing here? Are you lost too? My brain has been muddled by lasers, and I can’t tell me lefts from my rights! Aaarrgg!”</span> He groans out in frustration, <span style="color:LightSteelBlue">“I knew it was dangerous to wonder the woods around by myself! I was just asking for this to happen!”</span> He falls to the ground in a fetal position and begins to rock back and forth. You watch this for a moment before asking <span style="color:DarkTurquoise">Micah</span> if he wants you to lead him out of the woods. <br>
+<br>
+<span style="color:LightSteelBlue">“Wait, you know the way out!?”</span> He looks up in genuine surprise, <span style="color:LightSteelBlue">“Well, I guess that makes sense. After all, if the Vilites were so focused on lasering my brain, they may not of even noticed you! Perfect, yes! But we must hurry! Otherwise, they’ll fry your brain as well!”</span> You chuckle at this as you begin to lead <span style="color:DarkTurquoise">Micah</span> out, wondering if the boy acts this crazy around all of his friends.<span style="color:LightGreen">Well, at least you can tell he’s getting comfortable around you.</span> <br>
+<br>
+It takes a few minutes, and you nearly lose <span style="color:DarkTurquoise">Micah</span> a few times since he isn’t paying attention to where he is going, eyes in the skies looking for <span style="color:LightSteelBlue">“enemy aircraft”</span>, but you eventually manage to get him back to the entrance in mostly one piece. 
+
+    <<set _ad to [
+        {
+            Name: "OC Micah",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Phew! That was a close one. I thought I was a goner for sure.”</span> He sighs in relief as you make it back to town, <span style="color:LightSteelBlue">“Thanks again! You’re a real life-saver! I really owe you one. If you need anything, just give me a call! Well, not really. Phones are tapped, you know?”</span> He gives you a strange wink before he walks off. <span style="color:Pink">What a weird boy.</span> <br>
+<<addMoodlet "Stress" 0>>
+<<needChange "Fun" 10>>
+<<socialChange "Micah" 3 1>>
+<br>
+[[Continue|Wald Street]]

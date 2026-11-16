@@ -1,0 +1,111 @@
+:: Lucas Home Bedroom [nobr]
+
+    <<set $Location to {
+    Name: "Lucas's Bedroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+<span style="color:Azure"><big><strong>--Lucas' Bedroom--</strong></big></span><br>
+<<if $Time.after(19, 0)>>
+	<<include"Lucas Home Kick Out">>
+<<elseif $InActiveQuests.includes("Lucas: New Member of the Family")>>
+	<<include"Lucas Cat Quest Intro">>
+<<else>>
+	You and <span style="color:DarkTurquoise">Lucas</span> sit in his bedroom. It is a bit bigger than yours, has green walls, and a white carpet with a green rug of a video game character atop it. He has a decent-sized closet with a mirror on the door and a large number of shelves filled with his collectibles. A desk sits by his large window with his bed in the corner on the opposite wall.<br>
+
+	<<set _ad to [
+		{
+			Name: "Lucas",
+			State: {
+				Outfit: "Everyday",
+				Mouth: "Happy",
+			},	
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+			},	
+		},
+	]>>
+		<<ad _ad>>
+
+	<strong><span style="color:DarkTurquoise">Lucas</span>: </strong><<include"NPC Hang Out Modifiers">><br>
+	<br>
+
+	<span style="color:Azure"><strong>-Actions-</strong></span><br>
+	<<link"Wrestle (0:15)">>
+		<<set _Random to ["Lucas Home Wrestle Tap Out"]>>
+		<<set _event to _Random.random()>>
+		<<goto _event>>
+	<</link>><br>
+	<<link"Take a Nap (1:00)">>
+		<<set _Random to ["Lucas Home Nap Naught Peeks"]>>
+		<<set _event to _Random.random()>>
+		<<goto _event>>
+	<</link>><br>
+	<<link"Dance to music (0:15)">>
+		<<set _Random to ["Lucas Home Dance Generic 1", "Lucas Home Dance Generic 2"]>>
+		<<if $CompletedQuests.includes("Lucas: Punishment Game")>>
+			<<set _Random.push("Lucas Home Dance Nude")>>
+		<</if>>
+		<<set _event to _Random.random()>>
+		<<goto _event>>
+	<</link>><br>
+
+		/* Lucas Home Comfort Quest */
+	<<if $InActiveQuests.includes("Lucas: The Price of Fame")>>
+		<span style="color:Gold">[!]</span> [[Lucas seems upset about something|Quest Lucas Home Comfort Intro]]<br>
+	<</if>>
+	<<if $ActiveQuests.includes("Lucas: The Price of Fame")>>
+		<<if $HangOutNeed.Comfort >= 75>>
+			<span style="color:Gold">[!]</span> [[Talk to Lucas|Quest Lucas Home Comfort Part 1]]<br>
+		<<else>>
+			<span style="color:lightcoral"><span style="color:DarkTurquoise">Lucas</span> isn't comfortable enough to talk yet.</span><br>
+		<</if>>
+	<</if>>
+	/* Sex Quest */
+	<<if $ActiveQuests.includes("Lucas: Boning the Neighbor 2")>>
+		<span style="color:Gold">[!]</span> [[Show Lucas the Lube|Lucas Sex Quest Pre Sex]]<br>
+	<</if>>
+
+	/* TEMP FIX
+		(This is a temp fix to a bug with a previous version. Delete this is the version is after V0.03.05b) */
+		<<if $CompletedQuests.includes("Lucas: Punishment Quest")>>
+			<<set $CompletedQuests.delete("Lucas: Punishment Quest")>>
+			<<set $CompletedQuests.push("Lucas: Punishment Game")>>
+		<</if>>
+	/* Unlockables */
+	<<if $CompletedQuests.includes("Lucas: Punishment Game")>>
+			[[Play Strip Poker (0:30)|Lucas Poker Bedroom Intro]]<br>
+		<<link"Offer Lucas a Blowjob">>
+			<<set _Random to ["Lucas Home Give Blowjob Baby Hungry"]>>
+			<<set _event to _Random.random()>>
+			<<goto _event>>
+		<</link>><br>
+		<<link"Ask Lucas for a Blowjob">>
+			<<set _Random to ["Lucas Home Get Blowjob Surprise Penis"]>>
+			<<set _event to _Random.random()>>
+			<<goto _event>>
+		<</link>><br>
+	<</if>>
+	<br>
+
+	<<if $LinkTravel == 1>>
+	<span style="color:Azure"><strong>-Travel-</strong></span><br>
+		[[Hallway (0:01)|Lucas Home Hallway][$Minutes += 1]] <br>
+
+	<</if>>
+	<div style="position: relative">
+		<img src="Images\NPC Homes\Lucas House\Lucas House Map.png" alt="Lucas House Base" usemap="#LucasHouse">
+		<img src="Images\Player House\Player House Room Marker.png" 
+	style="position: absolute; left: 170px; top: 116px"  alt="School Map" usemap="#LucasHouse">
+	</div>
+	<map name="LucasHouse">
+		<area shape="rect" coords="117,63,170,169" alt="Hallway" onclick="$.wiki('<<goto[[Lucas Home Hallway]]>><<set $Minutes += 1>>')" />
+	</map>
+
+<</if>>

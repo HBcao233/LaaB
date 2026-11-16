@@ -1,0 +1,134 @@
+:: OC Micah Corner Store Aggressive Boys [nobr]
+
+/* Intro */
+As you walk into the corner store, you spot two slightly older teenage boys standing at the register talking to <span style="color:DarkTurquoise">Micah</span>, <span style="color:Yellow">or more like harassing.</span> One boy is leaning on the counter with a large smirk while the other is grabbing different bits of candy and chips and tossing them harshly onto the counter. <br>
+
+            <<set _ad to [
+                {
+                    Name: "OC Micah",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Frown",
+                        Blush: 1,
+                        Cry: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+<span style="color:LightSteelBlue">“So, you won’t mind if we just owe you one, right?”</span> The smirking boy says to a nervous and timid Micah, <span style="color:LightSteelBlue">“We’re SUPER hungry, but I left my wallet at home - see - so we can pay you back later, alright?”</span> <span style="color:DarkTurquoise">Micah</span> mumbles something out, telling them he can’t really do that, and they really should pay for what they’re buying, <span style="color:Yellow">but the teens pretend the don’t hear him as they continue to grab goodies to take.</span> <br>
+<br>
+<div id="choice">
+    <<link "Let it happen<br>">>
+    <<replace"#choice">>
+        Not wanting to get involved, you watch from the sidelines until the boys are finished. <span style="color:LightCoral">They end up tossing a few bills towards <span style="color:DarkTurquoise">Micah</span>, but nowhere near enough to pay for what they’ve taken.</span> Once they are gone <span style="color:DarkTurquoise">Micah</span> sighs and puts the money in the register. <span style="color:LightSteelBlue">“Stupid, stupid!”</span> He says to himself, <span style="color:LightSteelBlue">“The government probably sent them to put us out of business. Dang it.”</span> <span style="color:LightCoral">The boy seems upset but quickly gets back to work.</span> <br>
+        <br>
+        [[End|Corner Store]]
+    <</replace>>
+    <</link>>
+    <div id="choice">
+    <<link "<strong>[Cha/Str]</strong>Speak Up<br>">>
+    <<replace"#choice">>
+
+        /* Charisma Pass */
+        <<if $Charisma > 6>>
+            <strong>[Charisma $Charisma]</strong>You call out to the boys that they need to pay for those. The boys turn with an unamused look as <span style="color:DarkTurquoise">Micah</span>, turning red, quickly shakes his head and motions for you to shut up. <span style="color:LightSteelBlue">“Oh? You accusing me of stealing, twerp? I’ll have you know; we’re a respected pair in this community!”</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“Yeah!”</span> The friend says, candy bar jammed in his mouth, <span style="color:LightSteelBlue">“Respected!”</span> You cross your arms and tell the boys the ‘respected’ ones here are <span style="color:DarkTurquoise">Micah</span>’s grandparents. They’ve owned this store for years and have made plenty of friends, including members of the police. So, unless they want the store’s security footage handed off to law enforcement, they better pay for those things. <span style="color:Yellow">This is, of course, completely a bluff on your part.</span> You have no idea how long they’ve owned this store or if they even have cameras, <span style="color:LightGreen">but the bluff seems to work well enough as both boys look at each other nervously.</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“Hold on a second, there’s no need for that!”</span> One of the boys says as the other quickly takes the candy out of his pocket and plops it onto the counter. <span style="color:LightSteelBlue">“We were just messing around with our friend <span style="color:DarkTurquoise">Micah</span> here; we didn’t actually mean to steal anything. Right, <span style="color:DarkTurquoise">Micah</span>?”</span> <span style="color:LightGreen">They laugh nervously, tossing their money onto the counter before quickly taking off.</span> <br>
+            
+            <<set _ad to [
+                    {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Micah",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Happy",
+                        Blush: 1,
+                        Cry: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            Once they are gone, <span style="color:DarkTurquoise">Micah</span> sighs in relief. <span style="color:LightSteelBlue">“Whew! Thanks, I thought they were going to take our entire inventory!”</span> He says with a big smile, counting the money out before putting it inside the register. <span style="color:LightSteelBlue">“Here you go.”</span> He hands you a dollar bill, <span style="color:LightSteelBlue">“They paid a little extra, so have this as a thank you for helping.”</span> <span style="color:LightGreen">With a big smile, he returns to his spot at the register. He seems pretty appreciative of your help, and you feel pretty good for doing a good deed.</span> <br>
+            <<socialChange "Micah" 1 3>>
+            <<set $Money += 1>>
+            <br>
+            [[End|Corner Store]]
+        /* Strength Pass */
+        <<elseif $Strength > 6>>
+            <strong>[Strength $Strength]</strong>You call out to the boys that they need to pay for those. The boys turn to you with an unamused look as <span style="color:DarkTurquoise">Micah</span>, turning red, quickly shakes his head and motions for you to shut up. <span style="color:LightSteelBlue">“Oh? You accusing me of stealing, twerp? I’ll have you know; we’re a respected pair in this community!”</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“Yeah!”</span> The friend says, candy bar jammed in his mouth, <span style="color:LightSteelBlue">“Respected!”</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“And we don’t take kindly to people besmirching our good name. So, I suggest you run off before you regret it.”</span> The boy moves to shove you to the ground, <span style="color:LightGreen">but you quickly sidestep his attempt before kicking him hard in the shin. The boy cries out in a high-pitched voice as he begins leaping on one foot from your assault.</span> <span style="color:LightSteelBlue">“Why you little-!”</span> You grab a nearby broom and hold it up towards them. Seeing you armed, the boys quickly back down. <span style="color:LightSteelBlue">“Let’s get out of here!”</span> They say as they drop the goods and run off. <br>
+            
+            <<set _ad to [
+                    {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Micah",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Happy",
+                        Blush: 1,
+                        Cry: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            Once they are gone, <span style="color:DarkTurquoise">Micah</span> sighs in relief. <span style="color:LightSteelBlue">“That was a close one, I was worried they were going to take our whole inventory! Thanks for the help.”</span> <span style="color:LightGreen">He gives you a smile as you help him clean up the dropped mess of snacks on the ground.</span> <br>
+            <<socialChange "Micah" 1 3>>
+            <br>
+            [[End|Corner Store]]
+        
+            /* Fail */
+        <<else>>
+            You call out to the boys that they need to pay for those. The boys turn to you with an unamused look as <span style="color:DarkTurquoise">Micah</span>, turning red, quickly shakes his head and motions for you to shut up. <span style="color:LightSteelBlue">“Oh? You accusing me of stealing, twerp? I’ll have you know; we’re a respected pair in this community!”</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“Yeah!”</span> The friend says, candy bar jammed in his mouth, <span style="color:LightSteelBlue">“Respected!”</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“And we don’t take kindly to people besmirching our good name. So, I suggest you run off before you regret it.”</span> <span style="color:LightCoral">You are shoved harshly to the ground.</span> <span style="color:DarkTurquoise">Micah</span> shouts for them to leave you alone and just take their stuff and go. <span style="color:LightSteelBlue">“Thanks buddy, we’ll pay you back next time. Promise!”</span> The teens laugh as they run out with their haul. <br>
+            
+            <<set _ad to [
+                    {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Micah",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Frown",
+                        Blush: 1,
+                        Cry: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightSteelBlue">“Are you alright?”</span> <span style="color:DarkTurquoise">Micah</span> runs over and helps you up. You nod, apologizing for not being able to help. <span style="color:LightSteelBlue">“It’s fine, kids like them do this all the time. We lose a bit of money, but it’s not too much to worry about. Plus, it’s better than them coming by and smashing our windows in the middle of the night.”</span> <span style="color:LightGreen">He says with a smile, despite knowing he feels a little bad for letting his grandparents’ store be robbed so brazenly.</span> <br>
+            <<socialChange "Micah" 1 3>>
+            <<addMoodlet "Pained" 3>>
+            <br>
+            [[End|Corner Store]]
+
+        <</if>>
+
+    <</replace>>
+    <</link>>
+</div>

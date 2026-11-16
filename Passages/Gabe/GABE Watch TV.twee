@@ -1,0 +1,29 @@
+:: GABE Watch TV [nobr]
+
+<<set $Channel to "Cartoons">>
+
+<<if $GabeSche.Activity == "TV PJ">>
+	<<set _outfit to "Pajama">>
+<<else>>
+	<<set _outfit to "Everyday">>
+<</if>>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Mouth: "Happy",
+			Outfit: _outfit,
+		},
+	},
+]>>
+<<ad _ad>>
+
+You walk up to the couch and ask <span style="color:DarkTurquoise">Gabe</span> if you can watch TV with him.<br>
+<br>
+<span style="color:LightSteelBlue">“I won’t stop you.”</span> He says without looking away from the TV. You happily sit next to him on the couch and watch some cartoons.<br>
+<<socialChange "Gabe" 1>>
+<br>
+	
+<<include"Watch TV">>
+	

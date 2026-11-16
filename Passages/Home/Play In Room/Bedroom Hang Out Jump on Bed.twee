@@ -1,0 +1,117 @@
+:: Bedroom Hang Out Jump on Bed [nobr]
+
+/* Written by: Ron, Sexyman */
+/* Intro */
+
+<<set $Minutes += 30>>
+
+You pace around your bedroom feeling rather bored, trying to think up something to do, you glance around your room fidgeting idly with your hands, but nothing seems to catch your attention. <br>
+
+     <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Eyes: "Tired",
+                },
+            },
+        ]>>
+    <<ad _ad>>
+
+Feeling frustrated, you leap backwards onto your bed. Feeling yourself bounce up slightly as you do so, this gives you an idea! You place your hands on the mattress s bounce yourself up and down, <span style="color:LightGreen">the mattress is particularly bouncy.</span> <br>
+/*-If Wearing Shoes-*/
+<<if $PlayerShoes.Type =="None">>
+    With a smirk you flick your shoes off with your feet, and get up hopping right onto your bed. <br>
+
+/*-If no shoes-*/
+<<else>>
+    With a smirk you get up, hopping right onto your bed. <br>
+<</if>>
+<br>
+You pretend your bed is a small bouncy castle, jumping up and down on your bed, it felt like the mattress sprung you higher and higher with each jump. You begin laughing and begin to pull of a variety of silly poses as you repeatedly spring yourself into the air. <span style="color:LightGreen">It is a very fun time!</span> <br>
+<br>
+
+/*If Clumsy Trait-*/
+    <<if $Player.Traits.includes("Clumsy")>>
+    After a few more minutes of bouncing, you attempt to finish off with one last giant jump, <span style="color:LightCoral">however you jump far to enthusiastically, and lose your balance, this causes you to fall right off off the bed, and land right on your stomach.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Eyes: "Sad",
+        },
+            Clothes: {
+                Socks: $None,
+                Shoes: $None,
+        },
+            },
+    ]>>
+    <<ad _ad>>
+
+    You slowly get backup and sit on your bed clutching your stomach in pain as you do so.  You curse your constant clumsiness once more- Reminding yourself to be more careful next time, <span style="color:LightCoral">though you know that likely was not going to happen.</span> <br>
+
+    <<addMoodlet "Pained" 4>>
+    <<needChange "Fun" 20>>
+    <br>
+    [[Continue|Player Bedroom]]
+
+<<else>>
+    <<set _random to random(1, 2)>>
+        /*-Normal End-*/
+    <<if _random == 1>>   
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    },
+                Clothes: {
+                Socks: $None,
+                Shoes: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        After a few more minutes of bouncing, you finish off with one last giant jump throwing yourself backwards onto your mattress once more. Though you now feel rather out of breath, <span style="color:LightGreen">you continue to chuckle to yourself, feeling satisfied with how much fun you have just had.</span> <br>
+
+        <<needChange "Fun" 20>>
+        <br>
+        [[Continue|Player Bedroom]]
+
+    /*Caught*/
+    <<elseif _random == 2>>   
+        As you continue to bounce on your bed, you manage to make out footsteps approaching your door, you panic and bounce yourself backwards back down onto your mattress in one quick motion. As you hear the door creak open, you reach for a book nearby and open a random page. <br>
+        <br>
+        You are greeted by the sight of <span style="color:DarkTurquoise">Your Father</span> coming into the room, who looked rather confused, you look up at him and match his expression in faux. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$DadNickname</span>, what on earth was that racket? It sounded like it came from your room.”</span> He questions you sternly. <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Dad",
+                    State: {
+                        Brows: "Suspicious",
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        },
+                    Clothes: {
+                    Socks: $None,
+                    Shoes: $None,
+                },
+                },
+            ]>>
+            <<ad _ad>>
+
+        You shrug in response, explaining to him, holding your book up that though you did hear the noise, you are also unsure what it was, and it must have come from either <span style="color:DarkTurquoise">Noah</span>’s or <span style="color:DarkTurquoise">Gabe</span>’s Room, you’ve just been reading. <br>
+        <br>
+        He looks at you suspiciously, though he seems to accept your answer nodding at you before walking out of your bedroom. Closing it behind him. You sigh in relief knowing <span style="color:DarkTurquoise">Your Father</span> would almost certainly punish you if he caught you in the act. <br>
+
+        <<needChange "Fun" 20>>
+        <br>
+        [[Continue|Player Bedroom]]
+    <</if>>
+<</if>>

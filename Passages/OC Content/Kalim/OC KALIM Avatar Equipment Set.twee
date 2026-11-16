@@ -1,0 +1,233 @@
+:: OC KALIM Avatar Equipment Set [nobr]
+
+<<set $AD.SkinColor to "Honey">>
+<<set $AD.Freckles to 1>>
+<<set $ADArmFreckles to 0>>
+<<set $ADShoulderFreckles to 1>>
+<<set $AD.HairStyle to "Wavy Short">>
+<<set $AD.HairColor to "Black">>
+<<set $AD.EyeColor to "Black">>
+<<set $AD.LeftEyeColor to "Black">>
+<<set $AD.RightEyeColor to "Black">>
+<<set $AD.PenisStyle to "Uncut">>
+<<set $AD.PenisSize to "Average">>
+<<set $AD.Balls to "Medium">>
+<<set $AD.Butt to "Cute">>
+<<set $AD.Balls to "Average">>
+
+	<<set $ADChestScar to 0>>
+	<<set $ADFaceScar to 0>>
+	<<set $ADLeftArmScar to 0>>
+	<<set $ADRightLegScar to 0>>
+    <<set $ADEyeScar to 0>>
+    <<set $ADShoulderFreckles to 0>>
+    <<set $ADArmFreckles to 0>>
+	<<set $ADLeftSmallFreckles to 0>>
+	<<set $ADNoseHeavyFreckles to 0>>
+
+
+<<set $ADUnder to {
+	Name: "Teal Scales",
+    ID: "UnBoGr",
+    Type: "Scales",
+    Color: "Teal",
+    Slot: "Undies",
+    Temp: 0,
+    Tags: ["Sleepwear"],
+    Size: "Teen",
+    Icon: "Images/Equipment/Scales/Teal Scales.png",
+    Avatar: "Images/Avatar/Teen/Clothes/Scales/Teal Scales.png",
+    AvatarTorn: "Images/Avatar/Teen/ClothesTorn/Scales/Teal Scales.png",
+    AvatarDamaged: "Images/Avatar/Teen/ClothesDamaged/Scales/Teal Scales.png",
+    Description: "XXX.",
+}>>
+<<set $ADUndies to $None>>
+<<set $ADBottoms to {
+	Name: "Beige Shorts",
+    ID: "BoShBl",
+    Type: "Shorts",
+    Color: "Beige",
+    Slot: "Bottoms",
+    Size: "Teen",
+    Icon: "Images/Equipment/Shorts/Beige Shorts.png",
+    Avatar: "Images/Avatar/Teen/Clothes/Shorts/Beige Shorts.png",
+    SagAvatar: "None",
+    PulledDownAvatar: "Images/Avatar/Teen/Clothes/Pants Down/Beige Pants Down.png",
+    AvatarTorn: "Images/AvatarTorn/Teen/Clothes/Shorts/Beige Shorts.png",
+    AvatarDamaged: "Images/AvatarDamaged/Teen/Clothes/Shorts/Beige Shorts.png",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A pair of cute Beige Shorts.",
+}>>
+<<set $ADTop to {
+	Name: "Teal T-Shirt",
+    ID: "ToTsGr",
+    Type: "T-Shirt",
+    Color: "Teal",
+    Slot: "Top",
+    Size: "Teen",
+    Tags: ["None"],
+    Icon: "Images/Equipment/T-Shirt/Teal T-Shirt.png",
+    Avatar: "Images/Avatar/Teen/Clothes/T-Shirt/Teal T-Shirt.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "None",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBound: "None",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A cute T-Shirt.",
+}>>
+<<set $ADOuter to $None>>
+<<set $ADSocks to {
+	Name: "White Socks",
+    ID: "SoSoBk",
+    Type: "Socks",
+    Color: "White",
+    Slot: "Socks",
+    Size: "Teen",
+    Icon: "Images/Equipment/Socks/White Socks.png",
+    Avatar: "Images/Avatar/Teen/Clothes/Socks/White Socks.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "A cute pair of White Socks.",
+}>>
+<<set $ADShoes to {
+	Name: "Green Sneakers",
+    ID: "ShSnBk",
+    Type: "Sneakers",
+    Color: "Black",
+    Slot: "Shoes",
+    Size: "Teen",
+    Icon: "Images/Equipment/Sneakers/Green Sneakers.png",
+    Avatar: "Images/Avatar/Teen/Clothes/Sneakers/Green Sneakers.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "A cute pair of sneakers.",
+}>>
+<<set $ADNeck to $None>>
+<<set $ADShortsSag to 0>>
+
+<<if $ADMuscleToggle == 1>>
+	<<set $AD.Build to "Muscular">>
+<<else>>
+	<<set $AD.Build to "Normal">>
+<</if>>
+
+<<if $ADPubicHairToggle == 1>>
+	<<set $AD.PubicHair to "None">>
+<<else>>
+	<<set $AD.PubicHair to "None">>
+<</if>>
+
+/* DEFAULT SETTING */
+	<<set $ADHead to $None>>
+    <<set $ADFace to $None>>
+    <<set $ADMouth to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOver to $None>>
+    <<set $ADBack to $None>>
+    <<set $ADHands to $None>>
+    <<set $ADWaist to $None>>
+
+<<if $SchoolUniforms == 1 and $AD.Outfit == "Uniform">>
+
+<</if>>
+
+<<if $AD.Outfit == "Speedo">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to {
+        Name: "Forest Green Speedo",
+        ID: "BoShBl",
+        Type: "Speedo",
+        Color: "Green",
+        Slot: "Bottoms",
+        Size: "Teen",
+        Icon: "Images/Equipment/Shorts/Beige Shorts.png",
+        Avatar: "Images/Avatar/Teen/Clothes/Speedo/Forest Green Speedo.png",
+        SagAvatar: "None",
+        PulledDownAvatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarAlt: "None",
+        AvatarAltTorn: "None",
+        AvatarAltDamaged: "None",
+        Description: "A pair of cute Beige Shorts.",
+    }>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Pajamas">>
+	<<set $ADTop to $None>>
+	<<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Naked">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Undies">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Towel">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Towel" "White">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym">>
+    <<addClothing "AD" "Top" "Gym Shirt" "School">>
+    <<addClothing "AD" "Bottoms" "Gym Shorts" "School">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym Swim">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Trunks" "Purple">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Swimwear">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Trunks" "Black">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADFace to $None>>
+<</if>>

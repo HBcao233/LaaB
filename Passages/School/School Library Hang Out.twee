@@ -1,0 +1,46 @@
+:: School Library Hang Out [nobr]
+
+<<set $Minutes += 15>>
+You decide to hang out in the school library. <br>
+<br>
+
+<<set _Random to ["School Library Hang Out Basic"]>>
+
+/* OC Content */
+    /* Manuel */
+<<if $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: The Pent-Up Boy")>>
+    <<set _Random.push("OC Manuel School Library Hang Out")>>
+<</if>>
+/* Micah Scenes */
+<<if $ToggleOCMicah == 1 && $CompletedQuests.includes("Micah: Introduction")>>
+    <<set _Random.push("OC Micah Lunch Library")>>
+<</if>>
+
+/* Kazu */
+<<if $ToggleOCKazu == 1 && $CompletedQuests.includes("Kazu: The Deliquent")>>
+	<<set _Random.push("OC Kazu Library Practice")>>
+<</if>>
+
+/* Kade Events */
+<<if $ToggleOCKade == 1 && $CompletedQuests.includes("Kade: Introduction")>>
+    <<set _Random.push("OC Kade Library")>>
+<</if>>
+
+/* SELECTING RANDOM EVENT FROM ARRAY INVENTORY */
+<<set _event to _Random.random()>>
+
+/* Forced-Quests */
+<<if $ToggleOCRaymond == 1 && $InActiveQuests.includes("Raymond: Introduction") && $Time.between(10, 50, 11, 30)>>
+    <<set _event to "OC Raymond Intro">>
+<</if>>
+
+<<include _event>>
+
+
+:: School Library Hang Out Basic [nobr]
+
+Despite the rules limiting noise, you find yourself enjoying your time spent in the library. Playing random browser games on the computer, glancing through interesting books, and quietly chatting with some of the other boys. Overall, it is a fun time. <br>
+<<addMoodlet "Stress" 0>>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|School Library]]

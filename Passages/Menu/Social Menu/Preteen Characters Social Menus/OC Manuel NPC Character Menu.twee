@@ -1,0 +1,345 @@
+:: OC Manuel NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Preteens Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Manuel Bloodred--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"OC Manuel NPC Character Menu Biography">>
+</div>
+
+:: OC Manuel NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Manuel NPC Character Menu Avatar Display">>
+
+<<if $OCManuelSocial > 50>>
+
+<<elseif $OCManuelSocial > -10>>
+
+<<else>>
+
+    <br>
+<</if>>
+
+:: OC Manuel NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Manuel NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Manuel Bloodred <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> October 16th <br>
+<strong>Address:</strong> 
+    <<if $OCManuelSocial >= 50>>
+        Dellwood <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> Amanda Bloodred (Mother) <br>
+<strong>Friends:</strong>
+    <<if $OCManuelSocial >= 80>>
+        Unknown
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $CompletedQuests.includes("Manuel: The Pent-Up Boy")>>
+        Trusting Classmate
+    <<else>>
+        Classmate
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $OCManuelSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Daredevil, Flirty, Lustful, Gamer, Friendly /* No Spoilers :P */
+        </div>
+    <<elseif $OCManuelSocial > 70>>
+        <div style="margin-left: 25px;">
+            Daredevil, Flirty, Lustful, Gamer, Friendly
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [Math] > [Science] > [Computer] > [History] > [English] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <<if $OCManuelSocial >= 50>> 
+        Unknown
+        <<else>>
+    <div style="margin-left: 25px;">
+        Unknown
+    </div>
+    <</if>>
+<strong>Likes:</strong>
+    <<if $OCManuelSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Videogames, Nature, Sweets
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $CompletedQuests.includes("Manuel: The Pent-Up Boy")>>
+        <div style="margin-left: 25px;">
+            Chastity
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $OCManuelSocial >= 50>>
+        <div style="margin-left: 25px;">
+             Relaxing in Nature, Video Games
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $OCManuelSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Burgers
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $OCManuelSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Blue, Red
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $OCManuelSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Shorts, T-shirts, Nothing at home
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $OCManuelSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Blue Briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $OCManuelSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $OCManuelCut == "Cut">>
+                A cut penis. Small for his age.
+            <<else>>
+                An uncut penis. Small for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $OCManuelSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A cute and well-toned butt.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: OC Manuel NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Manuel NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal OC Manuel">>
+
+:: OC Manuel NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Manuel NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "OC Manuel",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<if $OCManuelSocial >= 50 or $OCManuelSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCManuelSocial >= 100 or $OCManuelSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: OC Manuel NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "OC Manuel",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCManuelSocial >= 50 or $OCManuelSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCManuelSocial >= 100 or $OCManuelSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

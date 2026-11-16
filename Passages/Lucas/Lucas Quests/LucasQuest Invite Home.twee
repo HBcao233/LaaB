@@ -1,0 +1,80 @@
+:: LucasQuest Invite Home [nobr]
+
+/* OPENING */
+As you exit the locker room and enter the hallway, excited to be finished with the tiring day of school, you suddenly hear someone call out to you from behind. <br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+    		},	
+        },
+		{
+            Name: "Player",
+            State: {
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$LucasNickname</span>! Wait up!”</span> You turn around to see <span style="color:DarkTurquoise">Lucas</span>, <span style="color:pink">who was hopping on one foot as he tried to get his other shoe on,</span> rushing to catch up with you. <span style="color:LightSteelBlue">“Hey, ummm…. What’s up?”</span> He gives you a nervous smile. You inform him that you were just about to head home, with everyone else. <br>
+<br>
+<span style="color:LightSteelBlue">“Right! I suppose that’s pretty obvious.”</span> <span style="color:DarkTurquoise">Lucas</span> laughs. He seemed to be very nervous about something, as he was fidgeting with his hands quite a bit. There is an awkward silence between you two that you decide to break by informing <span style="color:DarkTurquoise">Lucas</span> that his shirt is backward. <span style="color:pink">He blushes and you watch as he awkwardly slides his arms into his shirt and tries to turn it around. It is a cute and silly sight.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I guess I was in a bit of a rush.”</span> He says as he finishes fixing his $LucasTop.Type. <span style="color:LightSteelBlue">“Well, I was just wondering, you know, if you had any plans after school?”</span> You raise your eyebrow, telling him you are not sure, and ask why he wants to know. <span style="color:LightSteelBlue">“Well, I was just thinking, if you wanted, you could come over to my house? I mean, we live right next door to each other, so it wouldn’t be too far of a walk. Maybe we could hang out or something?”</span> <span style="color:pink"><span style="color:DarkTurquoise">Lucas</span>’ cheeks were bright red, it seemed he was extremely nervous about asking you over.</span> <br>
+<br>
+You couldn’t help but chuckle, which caused <span style="color:DarkTurquoise">Lucas</span> to go into panic mode. <span style="color:LightSteelBlue">“It doesn’t have to be today! It can be any day, if you want to, except Wednesdays. I’m not home until late Wednesday and by that time-“</span> You cut him off, putting your hand on his shoulder and informing him that you’d love to come over sometime. <br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+				Blush: 1,
+    		},	
+        },
+		{
+            Name: "Player",
+            State: {
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Really!?”</span> <span style="color:DarkTurquoise">Lucas</span> smiles widely, but then quickly realizes he is seeming too desperate and tries to put on a more mature expression. <span style="color:LightSteelBlue">“I mean- That’s cool. Yeah, whenever… Yeah…”</span> You roll your eyes, prompting another nervous laugh from <span style="color:DarkTurquoise">Lucas</span>, he knew you could see right through his 'cool demeanour'. <span style="color:LightSteelBlue">“My mom lets me have friends over until about 7 normally, so just come by anytime before then.”</span> <br>
+<br>
+You agree to come by sometime and <span style="color:DarkTurquoise">Lucas</span> smiles and begins walking towards the front of the school. <span style="color:pink">You swear you can see him bouncing with joy as he does so. What a cute, awkward boy.</span> <br>
+<span style="color:Gold">Quest Started: "[Lucas] First Visit".</span><br>
+<<set $ActiveQuests.push("Lucas: First Visit")>>
+<<set $InActiveQuests.delete("Lucas: First Visit")>>
+<<set $QuestLog.push(
+	{
+		Name: "Lucas: First Visit",
+		State: 1,
+		ID: "Lucas_M001",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Lucas",
+		Tags: ["Lucas", "Character", "Quest", "Lucas' House"],
+		Description: "<span style=\"color:DarkTurquoise\">Lucas</span> has invited you over to his house to hang out. This is an important first step in any young friendship! <span style=\"color:DarkTurquoise\">Lucas</span> lives next door to you in <span style=\"color:Teal\">Northend</span>. He said he can normally have friends over most days until <span style=\"color:Teal\">7PM</span>, though isn’t available Wednesdays. You should pay him a visit!",
+		Objectives: [
+			{
+				Name: "Visit <span style=\"color:DarkTurquoise\">Lucas</span> at his house",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Lucas",
+	Description: "<span style=\"color:DarkTurquoise\">Lucas</span> has invited you over to his house to hang out. This is an important first step in any young friendship! <span style=\"color:DarkTurquoise\">Lucas</span> lives next door to you in <span style=\"color:Teal\">Northend</span>. He said he can normally have friends over most days until <span style=\"color:Teal\">7PM</span>, though isn’t available Wednesdays. You should pay him a visit!",
+})>>
+<br>
+[[Continue|School East Hallway]]

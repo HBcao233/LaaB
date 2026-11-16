@@ -1,0 +1,37 @@
+:: Carter House Leaving Late Low Fun [nobr]
+
+/* Intro */
+<<if _swimstate == 1>>
+    <<unapplyEventOutfit>>
+<</if>>
+Unsure of what to do next, you and <span style="color:DarkTurquoise">Carter</span> end up just lying on the ground out of boredom when his father suddenly walks in and knocks twice on the wall. <span style="Color: LightSteelBlue">“Sorry to end… whatever this is, but it’s about time for <span style="color:DarkTurquoise">$Player.Name</span> to head home.”</span> <br>
+<br> 
+<span style="Color: LightSteelBlue">“Already!?”</span> <span style="color:DarkTurquoise">Carter</span> instantly snaps up with a shocked expression. <br>
+<br>
+<span style="Color: LightSteelBlue">“Yeah, it’s just about dinner time. Plus, he should really get home before it gets too dark.”</span> His father replies. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Sad",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“B- but we’ve hardly done anything yet!”</span> <span style="color:DarkTurquoise">Carter</span> complains, <span style="Color: LightSteelBlue">“Can’t he stay a little longer, pretty please?”</span> The boy begs, but his dad doesn’t cave. <span style="Color: LightCoral">Unfortunately, it is time for you to go, despite <span style="color:DarkTurquoise">Carter</span> not really having a lot of fun. He pouts and sighs, but eventually the two of you stand and clean up a little before he leads you to the door.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Sorry, I’m glad you came but…”</span> He shrugs, <span style="Color: LightSteelBlue">“I just felt like we didn’t get to have that much fun. Not your fault though.”</span> He looks up and gives you a partial smile, <span style="Color: LightSteelBlue">“I hope you come over again soon though. We’ll have some real fun to make up for this time! Promise! I’ll see you at school, bye!”</span> He gives you a wave as you walk out the door. <span style="Color: LightCoral">You feel a bit bad that <span style="color:DarkTurquoise">Carter</span> didn’t have much fun, but that just happens sometimes.</span> <br>
+<<socialChange "Carter" -5>>
+<br>
+[[Continue|Carter House Frontyard]]

@@ -1,0 +1,96 @@
+:: Carter House Backyard Swim [nobr]
+
+<<set $Location to {
+    Name: "Carter Backyard",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Backyard",
+}>>
+<span style="color:Azure"><big><strong>--Carter's Backyard--</strong></big></span><br>
+
+<<if $Time.after(19, 0)>>
+    <<set _swimstate to 1>>
+    <<if $HangOutNeed.Fun >= 50>>
+        <<include"Carter House Leaving Late High Fun">>
+    <<else>>
+        <<include"Carter House Leaving Late Low Fun">>
+    <</if>>
+<<else>>
+
+    You stand in <span style="color:DarkTurquoise">Carter</span>’s backyard. One side is covered mostly by a pool and small shed, with some blue deck chairs and various pool toys nearby in a box. The other side of the yard is filled with various fun activities, like a trampoline, a treehouse, and a small jungle gym. <span style="color:DarkTurquoise">Carter</span>’s backyard is truly like a playground and you find yourself feeling a little jealous.<br>
+    <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Swim",
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+
+    <strong>Carter: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<link"Swim around (0:20)">>
+        <<set _events to ["Carter Pool Swimming Basic Splash", "Carter Pool Swimming Diving", "Carter Pool Swimming Holding Breath", "Carter Pool Swimming Marco Polo", "Carter Pool Swimming Relax and Chat"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>> <span style="color:Green">+Fun</span><br>
+    <<link"Jump on the Trampoline (0:20)">>
+        <<set _events to ["Carter Trampoline Wrestle", "Carter Trampoline Superhero Flip", "Carter Trampoline Simple", "Carter Trampoline Center Jump"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>> <span style="color:Green">+Fun</span><br>
+    <<link"Play in the yard (0:20)">>
+        <<set _events to ["Carter Yard Play Swings", "Carter Yard Play Tag", "Carter Yard Play Water Slide", "Carter Yard Play Waterguns"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>> <span style="color:Green">+Fun</span><br>
+    <<link"Go to the Bathroom (0:03)">>
+        <<set _events to ["Carter House Pee Pool"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>> <span style="color:Green">-Bladder</span><br>
+    <<link"Ask for a snack (0:10)">>
+        <<set _events to ["Carter House Kitchen Snack Pool"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>> <span style="color:Green">+Hunger</span><br>
+    <<link"Lounge by the Pool (0:20)">>
+        <<set _events to ["Carter House Lounge By Pool"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>> <span style="color:Green">+Energy</span><br>
+    <br>
+
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    <<link"Finish swimming (0:10)">>
+        <<set _events to ["Carter House Swim State Going Inside"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>><br>
+
+    <br>
+
+    <br>
+    <div style="position: relative">
+    <img src="Images\NPC Homes\Carter House\Carter House Map.png" alt="Carter House Base" usemap="#CarterHouse">
+        <img src="Images\Player House\Player House Big Room Marker.png" 
+    style="position: absolute; left: 54px; top: 162px"  alt="Carter House" usemap="#CarterHouse">
+    </div>
+    <map name="CarterHouse">
+
+    </map>
+
+<</if>>

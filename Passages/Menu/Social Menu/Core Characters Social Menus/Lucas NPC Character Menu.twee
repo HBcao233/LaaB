@@ -1,0 +1,480 @@
+:: Lucas NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Core Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Lucas Taylor--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"Lucas NPC Character Menu Biography">>
+</div>
+
+:: Lucas NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Lucas NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Lucas NPC Character Menu Avatar Display">>
+
+/* Base */
+<<if $LucasSocialRank == 1>>
+    Lucas Taylor is your friend and next-door neighbor. The two of you are in the same grade and share many classes together. You’re probably one of his closest friends and he always seems happy around you. He loves video games, often playing them at home or the arcade. His favorite television show is Cosmic Rangers, proudly wearing their merch nearly everyday. He is still a bit reserved around others, but seems to be opening up more around you. <br>
+    <br>
+<<elseif $LucasSocial > 50>>
+    Lucas Taylor is your next-door neighbor and classmate at Preston Academy. You met on the first day of school and have developed a positive relationship with him. He is often pretty energetic and nervous, though seems comfortable and happy around you. Despite this, he still seems pretty reserved, especially at school. <br>
+    <br>
+<<elseif $LucasSocial > -10>>
+    Lucas Taylor is your next-door neighbor and classmate at Preston Academy. You met him on your first day of school, though you don’t real know him that well. From what you’ve seen, he is an energetic kid who is a tad awkward, though he seems quiet and reserved at school. He seems to like Cosmic Ranger, based on the shirts he wears. <br>
+    <br>
+<<else>>
+    Lucas Taylor is your next-door neighbor and classmate at Preston Academy. You caught him spying on you on your first day of school. He is a shy, nervous mess, but is fun to pick on and never seems to tell an adult no matter what you do. Despite this, he is left alone, almost ignored, at school. <br>
+    <br>
+<</if>>
+/* First Visit & Price of Fame */
+<<if $CompletedQuests.includes("Lucas: First Visit") && $CompletedQuests.includes("Lucas: The Price of Fame")>>
+    Lucas’ mom, Selina Taylor, used to be a very famous actress. Lucas is very proud of what she’s done, though is also clearly embarrassed by this fact. He has also expressed about how many of his friends growing up would only hang around him due to his famous mom, making him extra happy that you had no idea who his mom was when you first became friends. These days, she spends her time teaching and directing at the Community Center. Lucas attends and helps out with a youth theatre group she leads and is often there after school on Wednesdays. Despite his embarrassment around her, it is clear they are very close. <br>
+    <br>
+<<elseif $CompletedQuests.includes("Lucas: First Visit")>>
+    Lucas’ mom, Selina Taylor, used to be a very famous actress. Lucas is very proud of what she’s done, though is also clearly embarrassed by this fact. These days, she spends her time teaching and directing at the Community Center. Lucas attends and helps out with a youth theatre group she leads and is often there after school on Wednesdays. Despite his embarrassment around her, it is clear they are very close. <br>
+    <br>
+<</if>>
+/* Ryker & Punishment Game */
+<<if $CompletedQuests.includes("Lucas: Ryker") && $CompletedQuests.includes("Lucas: Punishment Game")>>
+    Back in elementary school, Lucas had a best friend named Ryker who he did everything with. However, they had a falling out due to Lucas’ growing popularity because of how famous his mom is. Ryker became jealous and, after some hurtful words were exchanged, attack Lucas at school. Lucas’ didn’t fight back, leading to Ryker getting expelled. Since then, he blames Lucas for his life going to hell and often takes his frustrations out on him. <br>
+    <br>
+    He also spread rumors that Lucas got him expelled and that he’d do the same to anyone else he didn’t like. This resulted in Lucas losing most of his friends out of fear and distrust. Since then, Lucas had spent almost all his time alone before you came around and befriended him. <br>
+    <br>
+    After playing a Punishment Game on his home console one day, the two of you were caught naked in an embarrassing situation by his mother. Afterwards, he opened up to you about his loneliness and history with Ryker. This lead your relationship to be taken to a new level as you began to do naughty things together. <br>
+    <br>
+<<elseif $CompletedQuests.includes("Lucas: Ryker")>>
+    Lucas has a rival by the name of Ryker who he used to know back in elementary school. Their relationship broke down after Ryker was expelled for getting into a fight, something he seems to blame Lucas for. While Ryker seems dangerous and enjoys harassing Lucas, he has told you not to worry as he is mostly all talk. You wonder what their history is, though Lucas expressed it wasn’t important. <br>
+    <br>
+<</if>>
+
+
+:: Lucas NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Lucas NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Lucas NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Lucas Taylor <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> March 1st <br>
+<strong>Address:</strong> Northend <br>
+<strong>Family:</strong> 
+    <<if $CompletedQuests.includes("Lucas: First Visit")>>
+        Selina Taylor (Mother)
+    <<else>>
+        ???
+    <</if>>
+    <br>
+<strong>Friends:</strong>
+    <<if $CompletedQuests.includes("Lucas: Punishment Game")>>
+        $Player.Name
+    <<elseif $CompletedQuests.includes("Lucas: The Price of Fame")>>
+        None
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $LucasSocialRank == 1>>
+        Close Friends
+    <<elseif $LucasSocial > 70>>
+        Friends
+    <<elseif $LucasSocial > 30>>
+        Possible Friends
+    <<elseif $LucasSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $LucasSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Gamer, Nerd, Sugar-crazed, Thespian, Sheltered
+        </div>
+    <<elseif $LucasSocial > 70>>
+        <div style="margin-left: 25px;">
+            Gamer, Nerd, Sugar-crazed, Thespian, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [Math] > [Science] > [Drama] > [History] > [English] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <<if $CompletedQuests.includes("Lucas: First Visit")>>
+        <div style="margin-left: 25px;">
+            Wednesdays (After School): Youth Theatre Group
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Likes:</strong>
+    <<if $LucasSocial > 50 or $LucasSocialRank == 1>> 
+        <div style="margin-left: 25px;">
+            Video Games, Cosmic Rangers, Soda, Hanging Out, Dancing
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $LucasSocial > 50 or $LucasSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Bullies, Being Alone, Post-Sugar Headaches, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $LucasSocial > 50 or $LucasSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Video Games, Writing, Acting
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $LucasSocial > 50 or $LucasSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Ice Cream, Soda, Chinese Take-Out
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $LucasSocial > 50 or $LucasSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Green
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $LucasSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Being alone
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Graphic T-Shirts, Comfortable Clothing, Short-Sleeved Hoodies
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $LucasSocial > 50 or $LucasSocialRank > 1>>
+        <div style="margin-left: 25px;">
+            Colorful Briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $LucasSocial > 80 or $LucasSocialRank == 1>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $LucasCut == "Cut">>
+                A cut penis that is average-sized for his age. It is smooth and hairless and very sensitive on the tip.
+            <<else>>
+                A uncut penis that is average-sized for his age. It is smooth and hairless. His tip is bright pink when exposed and very sensitive.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $LucasSocial > 80 or $LucasSocialRank == 1>>
+        <br>
+        <div style="margin-left: 25px;">
+            A cute butt that is smooth and soft.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <<if $LucasSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Lucas is capable of cumming and can produce an average amount of semen. It is capable of shooting out with some force.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown /* No Spoilers */
+        </div>
+    <</if>>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+    <<if $LucasSocialRank == 1>>
+        <br>
+        <div style="margin-left: 25px;">
+            Unknown (Gay leaning)
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Lewd Memories:</strong><br>
+<<if $CompletedQuests.includes("Lucas: Punishment Game")>>
+    <div style="margin-left: 25px;">
+        -You both ran around outside naked after losing the Punishment Game.<br>
+        -You were both caught doing the above by his mother.<br>
+        -You have given each other blowjobs in his bedroom.<br>
+    </div>
+<</if>>
+
+
+:: Lucas NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Lucas NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Lucas NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal Core Lucas">>
+
+
+:: Lucas NPC Character Menu Art [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Artwork]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Lucas NPC Character Menu Avatar Display">>
+
+<<include"Journal Artwork Lucas">>
+
+:: Lucas NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Lucas NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ 
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Lucas NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "Lucas",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $LucasSocial >= 50 or $LucasSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $LucasSocial >= 100 or $LucasSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: Lucas NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "Lucas",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $LucasSocial >= 50 or $LucasSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $LucasSocial >= 100 or $LucasSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

@@ -1,0 +1,215 @@
+:: Ryker Retaliation Quest Part 2 [nobr]
+
+You exit the bathroom, grateful that <span class="char-name">Ryker</span> is nowhere in sight, and continue on with your day. It isn’t until a few minutes later that something stops you as you hear a loud and commanding voice call out to you.<br>
+
+<<set _ad to [{Name: "Player"}]>>
+<<ad _ad>>
+
+<span class="dialogue-text">“You there! Boy!”</span> You turn around to see two policemen walking towards you. The one who shouted was a large, round man with a bald head and puffy cheeks like a baby. Next to him is a taller gentleman with a well-toned body, short black hair, and some unkempt stubble. You vaguely recognized them, as they are often out and about patrolling the streets. <span class="dialogue-text">“Stop there, we need to ask you a few questions.”</span> The large officer continues, holding his hand out.<br>
+<br>
+
+<<set $QuestSusMeter to 0>>
+<<if $Player.SkinColor == "Honey">>
+    <<set $QuestSusMeter += 1>>
+<</if>>
+<<if $Player.HairStyle == "Short Dreads">>
+    <<set $QuestSusMeter += 1>>
+<</if>>
+<<if $Player.HairColor == "Black">>
+    <<set $QuestSusMeter += 1>>
+<</if>>
+<<if [$Player.LeftEyeColor, $Player.RightEyeColor].includes("Gray")>>
+    <<set $QuestSusMeter += 1>>
+<</if>>
+
+<<if $QuestSusMeter > 2>>
+    <span class="dialogue-text">“No need to be so aggressive, <span class="char-name">Barry</span>.”</span> The taller officer says.<br>
+    <br>
+
+    <span class="dialogue-text">“No point being nice to criminals! They get what they deserve!”</span> The larger officer, <span class="char-name">Barry</span>, retorts. Confused, you ask what they were talking about. <span class="dialogue-text">“Now listen here, boy!”</span> <span class="alert-text"><span class="char-name">Officer Barry</span> points his fingers at you</span> <span class="dialogue-text">“You are to do exactly what we say and if you try to fight us, you’ll be in some serious trouble, you hear!?”</span><br>
+    <br>
+<<else>>
+    <span class="dialogue-text">“He doesn’t look anything like our suspect, <span class="char-name">Barry</span>.”</span> The taller officer says, <span class="dialogue-text">“No need to bother him.”</span><br>
+    <br>
+
+    <span class="dialogue-text">“That old bag couldn’t see two feet in front of her!”</span> The larger officer, <span class="char-name">Barry</span>, retorts, <span class="dialogue-text">“She could have misremembered what he looked like.”</span> <span class="alert-text">The man stops in front of you, putting his hands on his hips disapprovingly and glaring down at you.</span> <span class="dialogue-text">“Now then, boy, you listen well, and do as we say unless you want to be in some serious trouble, you hear!?”</span><br>
+    <br>
+<</if>>
+
+<span class="dialogue-text">“Remember, innocent until proven guilty.”</span> The taller officer steps in front of his partner and smiles at you. <span class="dialogue-text">“I’m <span class="char-name">Officer Foley</span>, and this is my partner, <span class="char-name">Officer Barry</span>. We are investigating some shoplifting from a shop on main street this morning. Witnesses saw the culprit and said it was a boy around your age. The mayor has ordered us to search anyone who may be involved for any of the stolen goods. It will just be a quick pat down, should take just 30 seconds and we’ll let you be on your way.”</span><br>
+<br>
+
+<span class="dialogue-text">“That is unless you have something to hide!”</span> <span class="char-name">Officer Barry</span> growls, <span class="alert-text">it is clear he suspects you as the thief, even though you’ve done nothing wrong.</span> <span class="dialogue-text">“So spread your legs and hold your arms out, now!”</span> He orders. His partner sighs, giving you an apologetic look but motions for you to comply. <span class="alert-text">You have a feeling resisting wouldn’t be a good idea, but you also don’t like how they are forcing a search on you when you hadn’t done anything wrong!</span><br>
+<br>
+
+<div id="choice2">
+    <<link "Comply">>
+        <<replace "#choice2">>
+            You agree to a small pat down, not wanting any trouble and also not having anything to hide. You do as instructed and spread out your legs and hold your arms to your side. The taller officer smiles and steps forward to search you. <span class="pink-text">It is a little awkward, having him pat your arms and legs all over, but you can tell he has no ill intentions and just wait for it to be over.</span><br>
+            <br>
+
+            <span class="dialogue-text">“What’s in your pocket?”</span> <span class="char-name">Officer Foley</span> asks, noticing a lump in them. But that’s strange, you didn’t think you had anything in your pocket. He reaches into your pocket and pulls out what appears to be a keychain. You raise an eyebrow and question how that got there- <span class="red-text">Oh no… <span class="char-name">RYKER</span>!</span><br>
+            <br>
+
+            [[Continue|Ryker Retaliation Quest Part 2 Continued]]
+        <</replace>>
+    <</link>><br>
+    <<link "Question if this is legal">>
+        <<set $QuestSusMeter += 1>>
+        <<replace "#choice2">>
+            <<set _ad to [{
+                Name: "Player",
+                State: {
+                    Mouth: "Sad",
+                    Eyes: "Mad",
+                    Blush: 1,
+                },
+            }]>>
+            <<ad _ad>>
+
+            You take a step back, asking if they have probable cause to search you.<br>
+            <br>
+
+            <span class="dialogue-text">“We do indeed!”</span> <span class="alert-text"><span class="char-name">Officer Barry</span> says with a devious smile,</span> <span class="dialogue-text">“You match the description of the suspect, vaguely enough anyway.”</span> But you are a minor, surely, they can’t just search you on the street while you’re alone- <span class="dialogue-text">“You think that defense will save you!? Bah! The mayor passed a law last year that allows us to search, detain, and arrest anyone suspected of a crime, regardless of their age. In an effort to keep our city, and its tourists, safe!”</span> Well, that doesn’t sound right at all, you have rights!<br>
+            <br>
+
+            <span class="dialogue-text">“Please, just comply and this will be over before you know it.”</span> The kinder <span class="char-name">Officer Foley</span> asks, <span class="dialogue-text">“Without evidence, all we can do is a pat down, even with the mayor’s laws. It is a bit of an overreaction, but it has helped keep crime low. So please, just work with us.”</span><br>
+            <br>
+
+            <span class="alert-text">Even if you didn’t want to comply, you have little choice. They surround you and you have little chance of escaping.</span> You have nothing to hide anyway, so you allow yourself to be searched. You do as instructed and hold your arms out and spread your legs. The taller officer smiles and steps forward to search you. <span class="pink-text">It is a little awkward, having him pat your arms and legs all over, but you can tell he has no ill intentions and just wait for it to be over.</span><br>
+            <br>
+
+            <span class="dialogue-text">“What’s in your pocket?”</span> <span class="char-name">Officer Foley</span> asks, noticing a lump in them. But that’s strange, you didn’t think you had anything in your pocket. He reaches into your pocket and pulls out what appears to be a keychain. You raise an eyebrow and question how that got there- <span class="red-text">Oh no… <span class="char-name">RYKER</span>!</span><br>
+            <br>
+
+            [[Continue|Ryker Retaliation Quest Part 2 Continued]]
+        <</replace>>
+    <</link>><br>
+    <<link "Refuse">>
+        <<set $QuestSusMeter += 2>>
+        <<replace "#choice2">>
+            You take a step back, refusing to be searched. <span class="alert-text">They have no warrant, no probable cause, they are just overstepping their authority! Plus, you’re a minor! They have no right to do any of this. You didn’t steal anything, so they can shove it. You begin to walk away when you are suddenly grabbed and harshly tossed against a nearby tree.</span><br>
+
+            <<set _ad to [{
+                Name: "Player",
+                State: {
+                    Mouth: "Sad",
+                    Eyes: "Mad",
+                    Blush: 1,
+                    Cry: 1,
+                    Arms: "Bound",
+                },
+            }]>>
+            <<ad _ad>>
+
+            <span class="dialogue-text">“You think you’re some tough guy, boy!?”</span> <span class="char-name">Officer Barry</span> yells as he holds you against the tree. <span class="dialogue-text">“Well, guess you don’t know the laws! The mayor passed a law last year that allows us to search, detain, and arrest anyone suspected of a crime, regardless of their age. In an effort to keep our city, and its tourists, safe!”</span> <span class="alert-text">You curse at the cop, telling him to let you go. You have rights!</span><br>
+            <br>
+
+            <span class="dialogue-text">“<span class="char-name">Barry</span>, please be gentle. He’s just a kid.”</span> <span class="char-name">Officer Foley</span> tries to calm his partner down. <span class="dialogue-text">“And without evidence, we can only do a pat down, even with the law.”</span> <span class="alert-text">But his partner doesn’t care, he seems to enjoy the power he has over you as he holds you firmly against the tree and painfully grips your arm.</span><br>
+            <br>
+
+            <span class="dialogue-text">“Just shut up and search the kid!”</span> <span class="char-name">Barry</span> yells, <span class="dialogue-text">“And you better hope we don’t find anything, boy!”</span> <span class="alert-text">You struggle to free yourself as <span class="char-name">Officer Foley</span> realizes this wasn’t going to go as easy as he hoped. He begins to search you, patting down your arms and legs and checking your pockets. You curse once more, calling them perverts for touching you and attempt to kick yourself free, but this just earns a punch to the side from <span class="char-name">Officer Barry</span>, who growls for you to shut up and stay still.</span><br>
+            <br>
+
+            You continue to struggle though, deep down, you know you have no chance at overpowering the larger adult, but it is making their job harder, which is a small joy. You continue this pointless struggle until <span class="char-name">Officer Foley</span> suddenly stops and notices something.<br>
+            <br>
+
+            <span class="dialogue-text">“What’s in your pocket?”</span> <span class="char-name">Officer Foley</span> asks, noticing a lump in it. But that’s strange, you don’t think you had anything in your pocket. He reaches into your pocket and pulls out what appears to be a keychain. You raise an eyebrow and question how that got there- <span class="red-text">Oh no… <span class="char-name">RYKER</span>!</span><br>
+            <br>
+
+            [[Continue|Ryker Retaliation Quest Part 2 Continued]]
+        <</replace>>
+    <</link>><br>
+</div>
+
+:: Ryker Retaliation Quest Part 2 Continued [nobr]
+
+<span class="dialogue-text">“Ah ha!”</span> <span class="char-name">Officer Barry</span> shouts out, <span class="dialogue-text">“As clear as the sky is blue, we have our thief!”</span> <span class="alert-text">He smiles widely with satisfaction as he grabs you and holds you harshly with your hands behind your back.</span> You struggle and attempt to defend yourself, claiming you didn’t put that there and explaining that this kid, <span class="char-name">Ryker</span>, shoved you earlier and must have planted it! He is the one they are after!<br>
+<br>
+
+<span class="dialogue-text">“This <span style="color:DarkTurquoise">Ryker</span> kid does sound closer to the shopkeeper’s description.”</span> <span class="char-name">Officer Foley</span> says, looking to his partner hopefully. <span class="dialogue-text">“Perhaps we should-”</span><br>
+<br>
+
+<span class="dialogue-text">“Don’t tell me you believe this brat!”</span> <span class="char-name">Officer Barry</span> interrupts his partner loudly, <span class="dialogue-text">“He’ll say anything if he thinks it’ll save his ass!”</span><br>
+<br>
+
+<span class="dialogue-text">“But this doesn’t prove he’s the thief!”</span> <span class="char-name">Foley</span> protests, <span class="dialogue-text">“He could just have a keychain like one of the stolen ones or found it or-”</span><br>
+<br>
+
+<span class="dialogue-text">“Well, guess we can take him back to the station to find out for sure.”</span> <span class="char-name">Barry</span> smiles with glee, <span class="dialogue-text">“With this, we have cause to take him back, interrogate him, and perform a strip search!”</span> <span class="pink-text">You blush, strip search?</span> <span class="alert-text">Now hold on a second, you didn’t do anything wrong! They can’t be serious.</span> <span class="dialogue-text">“Oh, you better believe we are, boy!”</span> The large officer laughs, <span class="alert-text">taking pleasure in your fear,</span> <span class="dialogue-text">“Just be grateful we aren’t doing it here in front of everyone!”</span><br>
+<br>
+
+<div id="choice3">
+    <<link "Comply">>
+        <<replace "#choice3">>
+            <<set _ad to [{
+                Name: "Player",
+                State: {
+                    Mouth: "Sad",
+                    Blush: 1,
+                    Arms: "Bound",
+                },
+            }]>>
+            <<ad _ad>>
+
+            You gulp, this isn’t good. <span class="char-name">Ryker</span> put you in this position and you can’t see a way out. But you know you are innocent and <span class="char-name">Ryker</span> hadn’t managed to hide anything else on your person, you hope. So, you raise your hands and agree to follow them. <span class="char-name">Officer Foley</span> thanks you for cooperating and promises to get this all figured out at the station, meanwhile, <span class="yellow-text"><span class="char-name">Officer Barry</span> harshly grabs your arms and pins them behind your back as he begins to lead you away.</span><br>
+            <br>
+
+            <<include "Ryker Retaliation Quest Part 2 Final">>
+        <</replace>>
+    <</link>><br>
+    <<link "Demand to call Your Father">>
+        <<set $QuestSusMeter += 1>>
+        <<replace "#choice3">>
+            <<set _ad to [{
+                Name: "Player",
+                State: {
+                    Mouth: "Sad",
+                    Eyes: "Mad",
+                    Blush: 2,
+                    Arms: "Bound",
+                },
+            }]>>
+            <<ad _ad>>
+
+            You hold up your hands, claiming that they can’t just take you away! You demand that they call Your Father, he’d be able to clear this up no problem. <span class="alert-text">But <span class="char-name">Officer Barry</span> just shoves you harshly against the tree and forces your hands behind your back.</span><br>
+            <br>
+
+            <span class="dialogue-text">“Shut up, boy!”</span> He shouts as he begins to drag you towards his cruiser, <span class="dialogue-text">“According to law, we only have to contact a minor’s parents when they are being charged. So, we’ll talk to your little daddy once we have you locked up! Until then, he’s not going to be able to save your thieving ass!”</span><br>
+            <br>
+
+            <<include "Ryker Retaliation Quest Part 2 Final">>
+        <</replace>>
+    <</link>><br>
+    <<link "Run">>
+        <<set $QuestSusMeter += 3>>
+        <<replace "#choice3">>
+            Without a second thought, you break out running as fast as you can! Only <span class="char-name">Officer Barry</span> chases after you, as <span class="char-name">Officer Foley</span> is caught by surprise and calls for you to wait. This would be easy, there is no way that fat cop is going to- <span class="red-text">SLAM!</span> <span class="alert-text">You are tackled to the ground as <span class="char-name">Officer Barry</span> spears into you like a wrestler. The air is knocked out of you and you nearly cough up your breakfast as you crumble to the floor defeated.</span><br>
+
+            <<set _ad to [{
+                Name: "Player",
+                State: {
+                    Mouth: "Sad",
+                    Eyes: "Mad",
+                    Blush: 2,
+                    Cry: 1,
+                    Arms: "Bound",
+                },
+            }]>>
+            <<ad _ad>>
+
+            <span class="dialogue-text">“Nice try, boy!”</span> <span class="char-name">Officer Barry</span> laughs as he picks you up like a wounded puppy, <span class="dialogue-text">“But I was a sprinter back in high school. No one’s ever outrun <span class="char-name">Ol’Barry</span>, even with this gut!”</span> <span class="alert-text"><span class="char-name">Barry</span>’s laugh only adds insult to your injury as he lifts you up and pins your arms behind your back, dragging you toward his vehicle. You groan in pain, bruised and bloodied.</span><br>
+            <<addMoodlet "Pained" 6>>
+            <br>
+
+            <<include "Ryker Retaliation Quest Part 2 Final">>
+        <</replace>>
+    <</link>><br>
+</div>
+
+:: Ryker Retaliation Quest Part 2 Final [nobr]
+
+Even without handcuffs, the officer’s grip is as strong as iron as he practically lifts you up and carries you all the way to his squad car. <span class="alert-text">Passersby gave you looks as if they are happy some ‘punk kid’ is getting what he deserves; No one questions your guilt despite you continuing to defend yourself.</span> <span class="char-name">Officer Foley</span>, for what it’s worth, continues to try to persuade his partner to be gentle. <span class="alert-text">Regardless, you are tossed in the back of their police car and left helpless as you are taken away to the station.</span><br>
+<br>
+
+[[Continue|Ryker Retaliation Quest Part 3][$Minutes += 15]]

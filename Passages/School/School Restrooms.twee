@@ -1,0 +1,61 @@
+:: School Restrooms [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Restroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "School Restroom",
+}>>
+
+<<set _event to random(1, 25)>>
+
+<<if $Player.Exposed == "Undies" or $Player.Exposed == "Naked" or $Player.Exposed == "Diaper">>
+	<<include"School Restrooms Exposed">>
+
+/* Quest-Specific */
+<<elseif $ToggleOCEnkys == 1 && $InActiveQuests.includes("Enkys: Introduction") && $Time.before(8, 0)>>
+	<<include"OC Enkys Intro">>
+<<elseif $ToggleOCErin == 1 && $CompletedQuests.includes("Erin: Introduction") && _event == 1 && $Time.between(14, 50, 15, 5)>>
+	<<include"OC Erin Forced Chastity Cage">>
+<<elseif $ToggleOCManuel == 1 && $InActiveQuests.includes("Manuel: Envy of the Unfree")>>
+	<<include"OC Manuel Envy of the Unfree">>
+<<else>>
+
+<span style="color:Azure"><big><strong>--Restroom--</strong></big></span><br>
+You stand in the restroom of the school. It is larger than most public bathrooms you’ve seen, probably because it is the only student bathroom in the school. It has half a dozen stalls and urinals along with a row of stainless steel sinks. Everything shines as if it has been cleaned recently.<br>
+<br>
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $ToggleBladder == 1>>
+	<<if $ToggleOCMiller == 1 && $ToggleOCShinju == 1 && $InActiveQuests.includes("Millers: Isaiah & Shinju")>>
+		[[Use Bathroom (0:02)|OC Isaiah and Shinju Intro]] <span style="color:Green">-Bladder</span><br>
+	<<else>>
+		[[Use Bathroom (0:02)|Use Bathroom School]] <span style="color:Green">-Bladder</span><br>
+	<</if>>
+<</if>>
+	[[Change Clothes|School Restroom Closet]]<br>
+<<if $Wet > 0>>
+	[[Dry off clothes|School Dry Off]]<br>
+<</if>>
+
+<<link "Masturbate">>
+	<<set $MasturbationLocation to "School Bathroom">>
+	<<set $MasturbationPosition to "Standing">>
+	<<set $MasturbationAction to "None">>
+    <<set $MasturbationPublic to 1>>
+    <<include"Character Save Clothes">>
+    <<goto"Player Masturbate">>
+<</link>><br>
+
+[[Mirror|Mirror]]<br>
+<br>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[South Hallway (0:01)|School South Hallway][$Minutes += 1]] <br>
+<br>
+
+<</if>>

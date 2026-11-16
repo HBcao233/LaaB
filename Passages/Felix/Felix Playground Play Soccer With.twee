@@ -1,0 +1,15 @@
+:: Felix Playground Play Soccer With [nobr]
+
+<<set $Minutes += 20>>
+
+<<set _random to [
+	"FELIX Playground Soccer Game",
+	"Felix Playground Soccer Pants Down",
+	"Felix Playground Soccer Mud",
+]>>
+
+<<if $FelixSocial >= 50>>
+	<<set _random.push("FELIX Playground Help Shooting")>>
+<</if>>
+
+<<include _random.random()>>

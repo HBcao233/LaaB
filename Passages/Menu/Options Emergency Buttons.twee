@@ -1,0 +1,91 @@
+:: Options Emergency Buttons [nobr]
+
+<span style="color: lightcoral;">[Warning: Using emergency buttons can cause issues in your saves. Use only if required]</span>
+
+<br><br>
+
+<<button "Reroll NPC Equipment">>
+    <<include "DAD Equipment">>
+    <<include "NOAH Equipment">>
+    <<include "GABE Equipment">>
+    <<include "LUCAS Equipment">>
+    <<include "BEN Equipment">>
+    <<include "CARTER Equipment">>
+    <<include "MICHAEL Equipment">>
+    <<include "JACKSON Equipment">>
+    <<include "THOMAS Equipment">>
+    <<include "XAVIER Equipment">>
+    <<include "FELIX Equipment">>
+    <<replace "#reroll-npc-equipment-message">>
+        <span style="color: green;">Rerolled!</span>
+        <<timed 3s>>
+            <<replace "#reroll-npc-equipment-message">><</replace>>
+        <</timed>>
+    <</replace>>
+<</button>>
+
+<<button "Re-Init Equipment">>
+    <<include "Equipment Stat Init">>
+    <<replace "#reroll-npc-equipment-message">>
+        <span style="color: green;">Re-Inted!</span>
+        <<timed 3s>>
+            <<replace "#reroll-npc-equipment-message">><</replace>>
+        <</timed>>
+    <</replace>>
+<</button>>
+
+<<button "Reset Non-OC Social Values">>
+    <<set $LucasSocial to 0>>
+    <<set $BenSocial to 0>>
+    <<set $MichaelSocial to 0>>
+    <<set $CarterSocial to 0>>
+    <<set $JacksonSocial to 0>>
+    <<set $ThomasSocial to 0>>
+    <<set $XavierSocial to 0>>
+    <<set $FelixSocial to 0>>
+    <<set $DadSocial to 0>>
+    <<set $NoahSocial to 0>>
+    <<set $GabeSocial to 0>>
+    <<replace "#reroll-npc-equipment-message">>
+        <span style="color: green;">Reset!</span>
+        <<timed 3s>>
+            <<replace "#reroll-npc-equipment-message">><</replace>>
+        <</timed>>
+    <</replace>>
+<</button>>
+<span style="color: lightcoral;">[Use this betton to reset all Social Values to 0 in case of glitch.]</span>
+
+<span id="reroll-npc-equipment-message"></span>
+
+<br><br><br>
+
+<span style="color: lightcoral;">[Warning: Using these emergency buttons will turn on Cheats for your game. They are only to be used when encountering game-breaking bugs or if cheats are already enabled. They may cause issues in your game]</span>
+
+<br><br>
+
+<<button "Unstuck Player (Home)">>
+    <<goto "Player Bedroom">>
+    <<set $CheatsMenu to 1>>
+    <<run Dialog.close()>>
+<</button>>
+
+<br><br>
+
+<<button "Unstuck Player (School)">>
+    <<goto "School Restrooms">>
+    <<set $CheatsMenu to 1>>
+    <<run Dialog.close()>>
+<</button>>
+
+<br>
+<br>
+<strong>-[Temp Update Buttons]-</strong><br>
+<<link"Clear Quest Log">>
+    <<set $QuestLog to []>>
+<</link>><br>
+WARNING: This will Clear your ENTIRE QUEST LOG! Only use if you have glitched quests. This will NOT delete the quests from your active quests, rather clear the log. (EX: If you have the "Chores" Quest, it will clear the log entry but the quest will still be functional. It is recommended you finish all pending quests before using.)
+<br>
+<<link"Clear Moodlets">>
+    <<set $Player.Moodlets to []>>
+<</link>><br>
+[To use, press button, close options Menu, then advance time in-game.]

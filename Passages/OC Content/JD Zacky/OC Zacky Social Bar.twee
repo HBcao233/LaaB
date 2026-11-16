@@ -1,0 +1,84 @@
+:: OC Zacky Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCZackySocialRank == -3>>
+	<<set $OCZackyRelationship to "Hated">>
+	<span style="color:DarkRed">Zacky Hates you!</span>
+	<br>
+<<elseif $OCZackySocialRank == -2>>
+	<<set $OCZackyRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Zacky are Enemies.</span>
+	<br>
+<<elseif $OCZackySocialRank == -1>>
+	<<set $OCZackyRelationship to "Very Disliked">>
+	<span style="color:Red">Zacky really Dislikes you.</span>
+	<br>
+<<elseif $OCZackySocialRank == 0 and $OCZackySocial <= -50>>
+	<<set $OCZackyRelationship to "Disliked">>
+	<span style="color:Red">Zacky Dislikes you. </span>
+	<br>
+<<elseif $OCZackySocialRank == 0 and $OCZackySocial < 50>>
+	<<set $OCZackyRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Zacky are Acquaintances.</span>
+	<br>
+<<elseif $OCZackySocialRank == 0 and $OCZackySocial >= 50>>
+	<<set $OCZackyRelationship to "Liked">>
+	<span style="color:LightGreen">Zacky Likes you.</span>
+	<br>
+<<elseif $OCZackySocialRank == 1>>
+	<<set $OCZackyRelationship to "Friends">>
+	<span style="color:Green">You and Zacky are Friends.</span>
+	<br>
+<<elseif $OCZackySocialRank == 2>>
+	<<set $OCZackyRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Zacky are Good Friends!</span>
+	<br>
+<<elseif $OCZackySocialRank == 3>>
+	<<set $OCZackyRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Zacky are Close Friends!</span>
+	<br>
+<<elseif $OCZackySocialRank == 4>>
+	<<set $OCZackyRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Zacky are Best Friends!</span>
+	<br>
+<<elseif $OCZackySocialRank == 5>>
+	<<set $OCZackyRelationship to "Love">>
+	<span style="color:Pink">You and Zacky Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCZackySocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCZackySocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCZackySocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCZackySocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCZackySocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCZackySocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCZackySocial,
+			value: Math.abs($OCZackySocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCZackySocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCZackySocial > 120>>
+	<<set $OCZackySocial to 120>>
+<</if>>
+<<if $OCZackySocial < -120>>
+	<<set $OCZackySocial to -120>>
+<</if>>

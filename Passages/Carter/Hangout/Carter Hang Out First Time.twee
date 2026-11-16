@@ -1,0 +1,36 @@
+:: Carter Hang Out First Time [nobr]
+
+As you walk towards the front of the school to wait for the buses to pick everyone up, you spot your short and childish classmate <span style="color:DarkTurquoise">Carter</span> leaping around off the rocks and steps nearby probably imagining some intense and cartoonish fight scene in his head as he makes sound effects with his mouth and kicks and flails about. <span style="Color: Pink">It’s cute that <span style="color:DarkTurquoise">Carter</span> can still be so energetic and playful even after a long day at school.</span> Though he does nearly slip off one rock and faceplant onto the sidewalk. That would have been bad. Thankfully, he managed to catch himself and not even the recent threat of injury stops him as he happily continues playing. <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You walk up to <span style="color:DarkTurquoise">Carter</span> and greet him, asking him what he’s doing. <span style="Color: LightSteelBlue">“Oh, hi <span style="color:DarkTurquoise">$CarterNickname</span>! Just going over the last episode of <span style="Color: LightSteelBlue">“My Adventures with Ultraman”</span> in my head. It was so cool and had this really cool fight scene, wham!”</span> <span style="color:DarkTurquoise">Carter</span> tries to kick into the air but just nearly slips and falls instead. <span style="Color: LightSteelBlue">“Whoops, haha. Anyway, there is a new episode tonight that I’m going to watch before bed, so just excited and going over what happened. How are you?”</span> You share some back-and-forth conversation with <span style="color:DarkTurquoise">Carter</span> before asking if he wants to come hang out with you somewhere, as long as his show isn’t on anytime soon. <br>
+<br>
+<span style="Color: LightSteelBlue">“Oh, nah that isn’t until like 9. Dad lets me stay up to watch it.”</span> He says as if staying up until 9PM is a big achievement. <span style="Color: LightSteelBlue">“But I’d love to! I was just going to read comics today, so hanging with you sounds much more exciting! Where did you want to go? We could play games at the arcade or walk around the beach or the park or-”</span> <span style="color:DarkTurquoise">Carter</span> rambles for a second until, realizing, he chuckles nervously and apologizes. <span style="Color: LightSteelBlue">“Haha, sorry. I guess I should just say I’m fine with anything. Oh, but I need to be home by 7 at the latest. Gotta do homework, take a bath, and help dad with dinner, since it’s my night to help. But that gives us like, I don’t know, a few hours?”</span> <br>
+<br>
+<span style="Color: Pink"> <span style="color:DarkTurquoise">Carter</span> is too precious. You lead him away from the school and the two of you head off to hang out.</span> <br>
+<<set $InActiveQuests.delete("Carter: Hang Out Intro")>>
+<<set $CompletedQuests.push("Carter: Hang Out Intro")>>
+<br>
+<span style="color:Yellow">Where to Hang Out?</span><br>
+<<link"The Park (0:10)<br>">>
+    <<set $HangOutClothes to "Uniform">>
+    <<set $Minutes += 10>>
+    <<goto "Carter Hang Out Go To Park">>
+<</link>>

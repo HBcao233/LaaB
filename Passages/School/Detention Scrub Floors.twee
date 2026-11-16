@@ -1,0 +1,41 @@
+:: Detention Scrub Floors [nobr]
+
+/* OPENING */
+	<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Mr. De León</span>. Please head to the history classroom to serve your detention.”</span> The secretary signs your detention slip and sends you on your way.<br>
+<br>
+<div id='choice'>
+	<<link "Continue<br>">>
+	<<replace"#choice">>
+	
+The door to the classroom opens right as you reach it as <span style="color:DarkTurquoise">Mr. De León</span> walks out holding a bucket and a hand brush. <span style="color:LightSteelBlue">“Oh! There you are. Was just about to come looking.”</span> He hands you the bucket and brush and motions for you to follow him. <span style="color:LightSteelBlue">“I was asked to have the detentionees clean the hallway floors. I have a few other students in the South and West hallway, so you will do the East.”</span> Realizing how small the hand scrubber was and how long it would take to clean the entire floor with it on your hands and knees, you ask if there is anything else you could use. <span style="color:LightSteelBlue">“Sorry <span style="color:DarkTurquoise">$Player.Name</span>, but I was told that you all have to use these, to build character. Now get to it, the sooner you are done the sooner you can go home.”</span><br>
+
+<<set _ad to [
+	{
+		Name: "De Leon",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:lightcoral">You groan as you look at the long hallway. It was going to take you forever!</span> You fill the bucket in the bathroom before starting at one of the ends of the hallway, getting on your hands and knees and scrubbing the floor. The brush is old and warn, meaning you have to put a lot of force behind it in order to get the floor looking clean. Your $PlayerBottoms.Type and $PlayerTop.Type also get damp, leading to an uncomfortable time. <span style="color:DarkTurquoise">Mr. De León</span> pops back in every few minutes to check on you, but other than that you are alone in the hallway the entire time.<br>
+<br>
+It takes you a full hour to finish the hallway. Your knees ache and your back is sore, but at least it is done. You inform <span style="color:DarkTurquoise">Mr. De León</span>, who after inspecting your work allows you to leave.<br>
+	<<addMoodlet "Stress" 1>>
+	<<addMoodlet "Pained" 7>>
+	<<set $Minutes += 60>>
+	<<set $Detention to 0>>
+	<br>
+[[Finish Detention|School East Hallway]]
+
+	<</replace>>
+	<</link>>	
+</div>

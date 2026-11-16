@@ -1,0 +1,36 @@
+:: Pool Deep [nobr]
+
+<<include"Pool Guest State">>
+<<set $PoolLocation to "Deep">>
+
+<span style="color:Azure"><big><strong>--City Pool [Deep End]--</strong></big></span><br>
+
+/* BASIC DESCRIPTION */
+You are swimming in the deep end of the pool. You sway your legs slowly to keep afloat, though even if you sank you are pretty sure you could easily surface by kicking off the ground. 
+/* STATE DESCRIPTION */
+<<if $PoolState == "Senior Swim">>
+This part of the pool is pretty crowded, being full of seniors in the middle of their water aerobics. Quite a few of them give you strange and annoyed looks as you swim by, some even whispering under their breath. Though, none of them say anything to you or make any effort to shoo you away.
+<<elseif $PoolState == "After School">>
+The most crowded part of the pool, most middle and high schoolers are hanging out here. Swimming around, playing games, or chatting with their friends. Even some of the more daring elementary kids swim and float around. Despite being ‘crowded’ there is still plenty of room to swim around and you can easily find a spot just for yourself.
+<<elseif $PoolState == "Families">>
+While not as busy as the shallower side, this part of the pool is still packed with kids and adults of all ages. While most have gathered into little friend or family groups, there are still a decent few who seem to be swimming or goofing around by themselves. You even see some who appear to be practicing their swimming with laps.
+<<elseif $PoolState == "Teenagers">>
+Large groups of teenagers dot this area of the pool, chatting, laughing, and hanging out. While not a lot of actual ‘swimming’ is going on, it is still very lively. Some boys are doing stupid things to impress the girls sitting on the edge, while some other boys are attempting to splash them with water or push them in, leading to them getting shoved in themselves.
+<<elseif $PoolState == "Swim Class">>
+A few of the older or more advanced swim students are currently practicing here. Some look nervous, but most seem to be in their element and are probably not far from graduating out of the class, though the instructors are still close by and watch them carefully.
+<<else>>
+This area of the pool is empty and the water is eerily still.
+<</if>><br>
+<br>
+
+/* SWIM STAMINA */
+<<include"Swim Stamina">>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Swim Around (0:10)|Pool Swim Around]] <span style="color:lightgreen">+Fun</span><br>
+[[Rest (0:10)|Pool Rest]] <span style="color:lightgreen">+Stamina</span><br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+[[Swim Deeper (0:01)|Pool Very Deep][$Minutes += 1]]<br>
+[[Swim Shallower (0:01)|Pool Part Shallow][$Minutes += 1]]<br>
+[[Exit the Pool (0:01)|Pool Outside][$Minutes += 1]]<br>

@@ -1,0 +1,63 @@
+:: Lucas Home Backyard [nobr]
+
+    <<set $Location to {
+    Name: "Lucas Home Backyard",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Backyard",
+}>>
+<span style="color:Azure"><big><strong>--Backyard--</strong></big></span><br>
+<<if $Time.after(19, 0)>>
+	<<include"Lucas Home Kick Out">>
+<<else>>
+
+You and <span style="color:DarkTurquoise">Lucas</span> stand in his backyard. It has a wide open, grassy space along with a large trampoline. Along the border of most of the yard were flowerbeds filled to the brim with colorful assorted flowers, which caused the backyard to have a pleasant, floral scent. On the deck was a wooden box that contained a small variety of outdoor toys.<br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<strong>Lucas: </strong><<include"NPC Hang Out Modifiers">><br>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<link"Jump on Trampoline (0:20)">>
+	<<set _Random to ["Lucas Home Trampoline Flip Contest"]>>
+	<<set _event to _Random.random()>>
+	<<goto _event>>
+<</link>><br>
+<<link"Play with Foam Swords (0:20)">>
+	<<set _Random to ["Lucas Home Outside Play Foam Swords Dual"]>>
+	<<set _event to _Random.random()>>
+	<<goto _event>>
+<</link>><br>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+   [[Kitchen (0:01)|Lucas Home Kitchen][$Minutes += 1]] <br>
+
+<</if>>
+<div style="position: relative">
+    <img src="Images\NPC Homes\Lucas House\Lucas House Map.png" alt="Lucas House Base" usemap="#LucasHouse">
+	<img src="Images\Player House\Player House Big Room Marker.png" 
+style="position: absolute; left: 8px; top: 222px"  alt="School Map" usemap="#LucasHouse">
+</div>
+<map name="LucasHouse">
+    <area shape="rect" coords="8,170,116,222" alt="Hallway" onclick="$.wiki('<<goto[[Lucas Home Kitchen]]>><<set $Minutes += 1>>')" />
+</map>
+<</if>>

@@ -1,0 +1,31 @@
+:: FELIX Eat Lunch [nobr]
+
+<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<if $JacksonSocial > -15>>
+You take a seat at the same table as <span style="color:DarkTurquoise">Felix</span> and chat, enjoying your time together.<br>
+		<<socialChange "Felix" 1>>
+
+<br>
+<<else>>
+<<set $Random to random(1, 2)>>
+<<if $Random == 1>>
+You take a seat at the same table as <span style="color:DarkTurquoise">Felix</span> and attempt to start a conversation, but he seems nervous around you and it gets no where.<br>
+<<elseif $Random == 2>>
+You take a seat at the same table as <span style="color:DarkTurquoise">Felix</span> and chat, enjoying your time together.<br>
+    <<socialChange "Felix" 1>>
+<</if>>
+<br>
+<</if>>
+
+<<include"School Lunch">>
+<<set $FriendLunch to 1>>

@@ -1,0 +1,146 @@
+:: OC Miller House Twins Room [nobr]
+
+<<if $OCKaydenBabysit.Active == 1>>
+    <<if $OCKaydenBabysit.State == "PreDin" && $Time.after(18)>>
+        <<goto"Millers Babysitting Dinner">>
+    <<elseif $OCKaydenBabysit.State == "PostDin" && $Time.after(19, 30)>>
+        <<goto"Millers Babysitting Bath Time">>
+    <<elseif $OCKaydenBabysit.State == "Bath" && $Time.after(20)>>
+        <<goto"Millers Babysitting Bath Time Bath Done">>
+    <<elseif $OCKaydenBabysit.State == "Sleep" && $Time.after(21)>>
+        <<goto"Millers Babysitting Ending">>
+    <</if>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--The Twin's Bedroom--</strong></big></span><br>
+<<set $Location to {
+	Name: "The Twin's Bedroom",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+
+You are in the twins' bedroom, which is larger than yours. As with most boys' rooms, it has a bit of a mess, with toys and clothes strewn across the floor, especially on <span style="color:DarkTurquoise">Jayden</span>’s side. The red and blue walls feature charming drawings, pictures, and large logos displaying their initials above the beds. A small TV and a gaming system are in the center of the room. <br>
+<br>
+
+<<if $OCKaydenBabysit.Active == 1 && ["PreDin", "PostDin"].includes($OCKaydenBabysit.State)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<set _mouth to "Frown">>
+        <<set _eyes to "Sad">>
+    <<else>>
+        <<set _mouth to "Happy">>
+        <<set _eyes to "Normal">>
+    <</if>>
+    <<set _ad to [
+        {
+            Name: "OC Kayden",
+            State: {
+                Outfit: "Everyday",
+                Mouth: _mouth,
+                Eyes: _eyes,
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+    <strong>Kayden: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<link"Play Video Games with Kayden (0:20)">>
+        <<set $Minutes += 20>>
+        <<set _events to ["Millers Babysitting Twin Bedroom Play Video Games"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>><br>
+    <<link"Play Wrestling Figures with Kayden (0:20)">>
+        <<set $Minutes += 20>>
+        <<set _events to ["Millers Babysitting Twin Bedroom Play Wrestle"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>><br>
+    <<link"Give Kayden a Wedgie (0:20)">>
+        <<set $Minutes += 20>>
+        <<set _events to ["Millers Babysitting Twin Bedroom Wedgie"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>><br>
+<<elseif $OCKaydenBabysit.Active == 1 && $OCKaydenBabysit.State == "Bath">>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<link"Spy on Kayden's bath (0:10)">>
+        <<set $Minutes += 10>>
+        <<goto "Millers Babysitting Bath Spy">>
+    <</link>><br>
+    <<link"Sniff their underwear (0:05)">>
+        <<set $Minutes += 5>>
+        <<goto "Millers Babysitting Twin Bedroom Closet">>
+    <</link>><br>
+<<elseif $OCKaydenBabysit.Active == 1 && $OCKaydenBabysit.State == "Sleep">>
+    <<if $OCKaydenSleep == 0>>
+        <<link"Remove Kayden's Blanket (0:01)<br>">>
+            <<set $Minutes += 1>>
+            <<set $OCKaydenSleep to 1>>
+            <<goto"Millers Babysitting Twin Bedroom Pull Off Blanket">>
+        <</link>>
+    <<elseif $OCKaydenSleep == 1>>
+        <<link"Remove Kayden's Onesie (0:01)<br>">>
+            <<set $Minutes += 1>>
+            <<set $OCKaydenSleep to 2>>
+            <<goto"Millers Babysitting Twin Bedroom Remove Onesie">>
+        <</link>>
+    <<elseif $OCKaydenSleep == 2>>
+        <<link"Fondle Kayden's penis (0:10)">>
+            <<set $OCKaydenSleep to 3>>
+            <<set $Minutes += 10>>
+            <<goto"Millers Babysitting Twin Bedroom Sleep Fondle">>
+        <</link>><br>
+        <<link"Suck Kayden's penis (0:10)">>
+            <<set $OCKaydenSleep to 3>>
+            <<set $Minutes += 10>>
+            <<goto"Millers Babysitting Twin Bedroom Sleep Penis Mouth">>
+        <</link>><br>
+        <<link"Put your penis in Kayden's mouth (0:10)">>
+            <<set $OCKaydenSleep to 3>>
+            <<set $Minutes += 10>>
+            <<goto"Millers Babysitting Twin Bedroom Sleep Suck">>
+        <</link>><br>
+    <<else>>
+        <span style="color:lightcoral">You've already done too much with Kayden tonight.</span><br>
+    <</if>>
+    <<link"Sniff their underwear (0:05)">>
+        <<set $Minutes += 5>>
+        <<goto "Millers Babysitting Twin Bedroom Closet">>
+    <</link>><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+    <<if $OCKaydenBabysit.State != "Bath">>
+	    [[The Twin's Bathroom (0:01)|OC Miller House Twins Bath][$Minutes += 1]] <br>
+    <</if>>
+	[[Hallway (0:01)|OC Miller House Hallway][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+/* House Map */
+<div style="position: relative">
+	<img src="Images\NPC Homes\Miller House\Miller House.png" 
+style="position: absolute; left: 0; top: 0"  alt="Miller Map" usemap="#MillerHouse">
+	<img src="Images\NPC Homes\Miller House\Room Marker.png" 
+style="position: absolute; left: 216px; top: 216px"  alt="Miller Map" usemap="#MillerHouse">
+</div>
+
+<map name="MillerHouse">
+    <<if $OCKaydenBabysit.State != "Bath">>
+        <area shape="rect" coords="270,216,323,269" alt="Twins Bath" onclick="$.wiki('<<goto[[OC Miller House Twins Bath]]>><<set $Minutes += 1>>')" />
+    <</if>>
+    <area shape="rect" coords="58,162,319,215" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="162,216,215,269" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+
+</map>

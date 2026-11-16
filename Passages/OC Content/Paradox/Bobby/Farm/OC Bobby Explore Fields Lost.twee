@@ -1,0 +1,53 @@
+:: OC Bobby Explore Fields Lost [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+Your curious mind is drawn to the seemingly endless fields of crops and produce that fills the back of <span style="color:DarkTurquoise">Bobby</span>’s farm. Most notably, the orange fields filled with the scents and colors of the bright fruit. The trees swaying gently in the breeze, which brings down the citrus smell. You could just wander around this area for hours and hours! <span style="color:Yellow">In fact, now that you think about it, you’re not sure how long you’ve been wandering out here… </span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+You blink and look around to quickly realize that, no matter which direction you look, all you can see is endless trees! <span style="color:Yellow">You quickly get turned around in your panic, realizing you have no idea which way you came from, which way leads back to the farmhouse or any sort of civilization as you realize you’ve become completely lost in the endless fields of orange trees!</span> <br>
+<br>
+
+<<if $Sense >= 6>>
+    You stop and take a deep breath, thinking what the best move would be here. Everything looks the same here. You could just pick a direction and start walking, but considering how large the orchard is, based on how long you’ve already been wandering, you could still be lost here for hours! Still, you try not to panic and focus on a solution. That’s when you realize the obvious, your tracks! Sure, you didn’t leave much in terms of footprints in the grass, but a short few minutes of investigating lead you to find some small indents in the ground and a broken stick you stepped on. <br>
+    <br>
+    <span style="color:LightGreen">Perfect! This gives you a direction to start with that should lead you back the way you came. It takes a few minutes, but you eventually see the tip of the farmhouse in the distance and smile widely, proud of getting out of the field without too much trouble.</span> <br>
+    <<needChange "Fun" 10>>
+    <<addMoodlet "Stress" 0>>
+    <br>
+    [[Continue|OC Bobby Farm Local]]
+<<else>>
+    <span style="color:Yellow">Your panic only grows as your mind begins to play tricks on you. Your legs feel tired, your stomach grows, and you suddenly get an overwhelming urge to pee. Your entire body feels like it is betraying you as you suddenly believe you’ll be stuck in there forever!</span> You take off running in a random direction, desperate to escape the endless, never changing rows of orange trees. <span style="color:Yellow">It is a little unnerving that, no matter how hard or far you run, nothing seems to change as all the trees continue to loom over you in judging silence.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                    Blush: 2,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    You are pretty sure you are about to collapse to the ground and curl up into a ball before a miracle blesses you just when your hopes are nearly dashed. <span style="color:LightGreen">You see the tip of the farmhouse, just barely peeking out over the trees. You smile in relief and begin to run towards it, not feeling safe until the trees are far behind you!</span> <br>
+    <br>
+    You collapse onto the back porch of the farmhouse, overjoyed that you managed to escape the endless citrus maze. You feel more than a little exhausted and have no idea how long you were in there but just feel happy to have escaped. <br>
+    <<needChange "Fun" 10>>
+    <<addMoodlet "Stress" 0>>
+    <<set $Minutes += 10>>
+    <<needChange "Energy" -5>>
+    <br>
+    [[Continue|OC Bobby Farm Local]]
+<</if>>

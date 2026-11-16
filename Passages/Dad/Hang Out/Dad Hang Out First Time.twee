@@ -1,0 +1,37 @@
+:: Dad Hang Out First Time [nobr]
+
+<span style="Color: LightSteelBlue">“Hey <span style="color:DarkTurquoise">$DadNickname</span>, what are you up too?”</span> <span style="color:DarkTurquoise">Your Father</span> says happily as he sees you, ruffling our hair playfully as he passes by. You explain that you were thinking of going out and <span style="color:DarkTurquoise">Your Father</span> nods. <span style="Color: LightSteelBlue">“Sounds like fun. Be home before dark and don’t do anything I wouldn’t do.”</span> He turns to walk away, but you quickly stop him. You were actually wondering if, maybe, if he’s not too busy, Your Dad would want to come with you? You know, hang out with you. <br>
+<br>
+<span style="color:DarkTurquoise">Your Father</span> turns and gives you a puzzled look, as if he isn’t sure what you are asking. <span style="Color: LightSteelBlue">“Need me to drop you off somewhere? I can do that, but if you need money because you’ve already spent your allowance then I-”</span> You stop him again, explaining that you don’t want him to drop you off or give you money or anything like that. You want him to come with you and hang out with you. Father-son time. That is, if he wants. <span style="color:DarkTurquoise">Your Father</span> pauses again, blinking twice. <span style="Color: LightSteelBlue">“Wait wait, you want to…? You want to hang out with your old man? Like, in public?”</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Dad",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                Brows: "Shocked",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightGreen">A smile quickly grows on his face as he reaches down and lifts you into a spinning hug.</span> <span style="Color: LightSteelBlue">“Ooooooo, my little boy isn’t embarrassed to be seen around his old man! Awwww!”</span> He spins you around and holds you so tightly you can hardly breath and almost regret your decision. Thankfully, he puts you down before you suffocate. <span style="Color: LightSteelBlue">“Of course! I would love nothing more. Let me let the other two know, I’ll meet you by the door!”</span> <span style="color:DarkTurquoise">Your Father</span> rushes off to get his things. <span style="Color: LightGreen">He seems more than a little excited at the prospect of spending time with you. It is enough to put a smile on your face as you wait by the door for him.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Alright! All ready to go! What’s the plan, <span style="color:DarkTurquoise">$DadNickname</span>?”</span> <br>
+<br>
+<span style="color:Yellow">Where to Hang Out?</span><br>
+<<set $InActiveQuests.delete("Dad: Hang Out Intro")>>
+<<set $CompletedQuests.push("Dad: Hang Out Intro")>>
+<<link"The Park (0:10)<br>">>
+    <<set $HangOutClothes to "Everyday">>
+    <<set $Minutes += 10>>
+    <<goto "Dad Hang Out Go To Park">>
+<</link>>

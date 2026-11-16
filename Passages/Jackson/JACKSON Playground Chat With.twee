@@ -1,0 +1,43 @@
+:: JACKSON Playground Chat With [nobr]
+
+    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<<set $Minutes += 10>>
+
+/* OPENING */
+You yell out for <span style="color:DarkTurquoise">Jackson</span> to come down and he does so, nearly tripping as he lands. You ask if he would like to chat and you do so while he swings around the tree in a circle. 
+<<set $RandomTopic to random(1, 3)>>
+
+/* TOPIC ONE */
+<<if $RandomTopic == 1>>
+<span style="color:DarkTurquoise">Jackson</span>, unsurprisingly, talks about some of the various things he’s climbed. From trees to fences. He says he even climbed to the top of his house once, but got in trouble and was spanked pretty hard by his mom.<br>
+
+/* TOPIC TWO */
+<<elseif $RandomTopic == 2>>
+<span style="color:DarkTurquoise">Jackson</span> mentions his love of nature. He loved running around in the woods, camping out with his dad, and swimming in the lake and river. When he was younger, he used to catch bugs and keep them in his room, until his mom found out.<br>
+
+/* TOPIC THREE */
+<<elseif $RandomTopic == 3>>
+In talking about adults, <span style="color:DarkTurquoise">Jackson</span> mentions how his mom is over protective and won’t let him have any fun. He reveals that he sometimes likes to sneak out after his parents have gone to bed and play in the empty lot near his house.<br>
+
+<</if>>
+
+/* SOCIAL POINTS GAIN */
+<<if $JacksonDailyChat != 1>>
+	<<socialChange "Jackson" 3>>
+		<<set $JacksonDailyChat to 1>>
+<<else>>
+	<<socialChange "Jackson" 1>>
+		<<set $JacksonDailyChat to 1>>
+<</if>>
+<br>
+[[Continue|School Courtyard]] 

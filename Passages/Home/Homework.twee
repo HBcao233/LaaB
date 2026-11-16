@@ -1,0 +1,93 @@
+:: Homework [nobr]
+
+<<set $RandomEvent to random(1, 10)>>
+	<<if $Skill.Perks.includes("Faster Homework")>>
+		<<set $Minutes += 50>>
+	<<else>>
+		<<set $Minutes += 60>>
+	<</if>>
+
+<<if $RandomEvent != 10>>
+	You complete your Homework.<br>
+	<span style="color:Green">+Your grade has improved slightly.</span><br>
+
+	<<set $Homework to 2>>
+	<<set $MathGrade +=1>>
+	<<set $HistoryGrade +=1>>
+	<<set $ScienceGrade +=1>>
+	<<set $EnglishGrade +=1>>
+
+[[Continue|PH Kitchen]] 
+
+			/* EVENT */
+<<else>>
+	<<set $RandomEvent2 to random(1, 1)>>
+			/* LEWD SCIENCE HOMEWORK */
+	<<if $RandomEvent2 == 1>>
+	
+	You are doing your homework for <span style="color:DarkTurquoise">Mr. Chang</span>’s Science Class. The current topic is Human Biology and genetic diversity, mainly the differences in things such as height and arm length. The assignment has you using a measuring tape to record the length of your different body parts and comparing them to the average for your age group. You are enjoying the assignment, until you get to the last question: <span style="color:LightSteelBlue"> “Measure the length of your Penis when flaccid and record it on the sheet. Compare it to the average length of other boys your age.” </span> <span style="color:Pink">You blush at not only the idea of measuring your Penis, but also writing it down for your teacher.</span> You could always lie and embellish it, it’s not like he’s going to check. Right?<br>
+<br>
+	<div id=choice>
+
+<<link "Lie and Embellish<br>">>
+<<replace"#choice">>
+		Deciding there is no harm in it, you look at the measurements for boys your age and record it as “Above Average”. You then finish your remaining homework for the day.<br>
+<br>
+<<set $Homework to 2>>
+<<set $MathGrade +=1>>
+<<set $HistoryGrade +=1>>
+<<set $ScienceGrade +=1>>
+<<set $EnglishGrade +=1>>
+
+[[Continue|PH Kitchen]] 
+
+
+<</replace>>
+<</link>>
+
+<<link "Measure Your Penis">>
+<<replace"#choice">>
+	
+	<<if $PlayerBottoms.Name == "None">>
+		<span style="color:Pink">You move behind the counter to shield yourself just in case someone walks in and pull out your Penis, holding it out straight.</span>  You then grab the measuring tape and measure it from base to tip, writing down the length, before fixing your clothing.<br>
+<br>
+
+	<<else>>
+		<span style="color:Pink">You move behind the counter to shield yourself just in case someone walks in and slip down your $PlayerBottoms.Type enough to pull out your Penis, holding it out straight.</span>  You then grab the measuring tape and measure it from base to tip, writing down the length, before fixing your clothing.<br>
+<br>
+
+	<</if>>
+You then compare the length of your Penis to the average of other boys your age listed in the book. 
+
+	<<if $Player.PenisSize == "Tiny">>
+	You blush as you realize your Penis length isn’t even listed under your age group. <span style="color:Pink">Eventually, you find it listed as the average length of a 6 year old.</span> You embarrassingly wonder what your teacher will think when he grades the homework.<br>
+<br>
+
+	<<elseif $Player.PenisSize == "Small">>
+	<span style="color:Pink">You blush as you realize that your Penis length is listed as “Smaller than Average” for your age group.</span> The book tries to reassure you by stating that most length is gained at the end of puberty, but you still feel embarrassed.<br>
+<br>
+
+	<<elseif $Player.PenisSize == "Average">>
+	<span style="color:Pink">Your Penis length is listed as average for your age group, which is what you were expecting.</span> Despite your length being fine, you still feel embarrassed to have it written down.<br>
+<br>
+
+	<<else>>
+	<span style="color:Pink">You blush and smile upon seeing your Penis length listed as “Above Average”.</span> You briefly wonder what your teacher will think about you being well-endowed.<br>
+<br>
+
+	<</if>>
+<<set $Homework to 2>>
+<<set $MathGrade +=1>>
+<<set $HistoryGrade +=1>>
+<<set $ScienceGrade +=1>>
+<<set $EnglishGrade +=1>>
+
+[[Continue|PH Kitchen]] 
+
+<</replace>>
+<</link>>
+
+</div>
+	<</if>>
+
+<</if>>

@@ -1,0 +1,156 @@
+:: Sex Foreplay Avatars [nobr]
+
+/* Arousal */
+<<if $Player.Arousal <= 25>>
+    <<set _pcblush to 0>>
+    <<set _pcmouth to "Normal">>
+    <<set _pceyes to "Normal">>
+<<elseif $Player.Arousal <= 50>>
+    <<set _pcblush to 1>>
+    <<set _pcmouth to "Normal">>
+    <<set _pceyes to "Normal">>
+<<elseif $Player.Arousal <= 75>>
+    <<set _pcblush to 2>>
+    <<set _pcmouth to "Happy">>
+    <<set _pceyes to "Tired">>
+<<elseif $Player.Arousal <= 100>>
+    <<set _pcblush to 3>>
+    <<set _pcmouth to "Happy">>
+    <<set _pceyes to "Tired">>
+<<else>>
+    <<set _pcblush to 3>>
+    <<set _pcmouth to "Happy">>
+    <<set _pceyes to "Tired">>
+<</if>>
+<<if $Sex.PartnerArousal <= 25>>
+    <<set _partnerblush to 0>>
+    <<set _partnereyes to "Normal">>
+    <<set _partnerhard to 0>>
+<<elseif $Sex.PartnerArousal <= 50>>
+    <<set _partnerblush to 1>>
+    <<set _partnereyes to "Normal">>
+    <<set _partnerhard to 1>>
+<<elseif $Sex.PartnerArousal <= 75>>
+    <<set _partnerblush to 2>>
+    <<set _partnereyes to "Tired">>
+    <<set _partnerhard to 1>>
+<<elseif $Sex.PartnerArousal <= 100>>
+    <<set _partnerblush to 3>>
+    <<set _partnereyes to "Tired">>
+    <<set _partnerhard to 1>>
+<<else>>
+    <<set _partnerblush to 3>>
+    <<set _partnereyes to "Tired">>
+    <<set _partnerhard to 1>>
+<</if>>
+/* Comfort */
+<<if $Sex.PartnerComfort <= 25>>
+    <<set _partnermouth to "Frown">>
+<<elseif $Sex.PartnerComfort <= 50>>
+    <<set _partnermouth to "Normal">>
+<<elseif $Sex.PartnerComfort <= 75>>
+    <<set _partnermouth to "Happy">>
+<<elseif $Sex.PartnerComfort <= 100>>
+    <<set _partnermouth to "Happy">>
+<<else>>
+    <<set _partnermouth to "Happy">>
+<</if>>
+/* Partner Clothes */
+<<if $Sex.PartnerClothes.Outer == 0>>
+    <<set _partnerOuter to $None>>
+<</if>>
+<<if $Sex.PartnerClothes.Top == 0>>
+    <<set _partnerTop to $None>>
+<</if>>
+<<if $Sex.PartnerClothes.Bottoms == 0>>
+    <<set _partnerBottoms to $None>>
+<</if>>
+<<if $Sex.PartnerClothes.Socks == 0>>
+    <<set _partnerSocks to $None>>
+<</if>>
+<<if $Sex.PartnerClothes.Undies == 0>>
+    <<set _partnerUndies to $None>>
+<</if>>
+
+/* Image Setting */
+
+<<if $Sex.Partner == "Lucas">>
+    <<set _sexpartner to "Lucas">>
+    <<set _sexcut to $LucasCut>>
+<</if>>
+
+<div id='AvatarViewer'>
+    <<include"Sex Foreplay Avatar Viewer">>
+</div>
+
+
+
+
+<br>
+
+:: Sex Foreplay Avatar Viewer [nobr]
+
+<<if $SexImageOption == "Image">>
+    <<if ["Spooning PC Front", "Spooning PC Back", "PC Top Facing", "Partner Top Facing"].includes($Sex.Position)>>
+        <<set _link to _sexpartner + " " + $Sex.Position>>
+    <<elseif ["PC Top Away", "Partner Top Away", "Laying Facing"].includes($Sex.Position)>>
+        <<set _link to _sexpartner + " " + $Sex.Position + " " + _sexcut + _partnerhard>>
+    <</if>>
+    <img @src="`Images/Sex/Foreplay/${_link}.png`" style="position: relative; left: 0; top: 0">
+    <br>
+<<else>>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Blush: _pcblush,
+                Mouth: _pcmouth,
+                Eyes: _pceyes,
+            },
+            Clothes: {
+                Shoes: $None,
+                Top: _pctop,
+            },
+        },
+        {
+            Name: $Sex.Partner,
+            State: {
+                Blush: _partnerblush,
+                Mouth: _partnermouth,
+                Eyes: _partnereyes,
+                Hard: _partnerhard,
+            },
+            Clothes: {
+                Shoes: $None,
+                Outer: _partnerOuter,
+                Top: _partnerTop,
+                Bottoms: _partnerBottoms,
+                Socks: _partnerSocks,
+                Undies: _partnerUndies,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+<</if>>
+
+<<if $SexImageOption == "Image">>
+    <span style="color:lightgreen">[Image]</span>
+<<else>>
+    <<link"[Image]">>
+        <<set $SexImageOption to "Image">>
+        <<replace"#AvatarViewer">>
+            <<include"Sex Foreplay Avatar Viewer">>
+        <</replace>>
+    <</link>>
+<</if>>
+ | 
+<<if $SexImageOption != "Image">>
+    <span style="color:lightgreen">[Avatars]</span>
+<<else>>
+    <<link"[Avatars]">>
+        <<set $SexImageOption to "Avatars">>
+        <<replace"#AvatarViewer">>
+            <<include"Sex Foreplay Avatar Viewer">>
+        <</replace>>
+    <</link>>
+<</if>>

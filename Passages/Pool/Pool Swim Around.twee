@@ -1,0 +1,141 @@
+:: Pool Swim Around [nobr]
+
+<<set $Minutes += 10>>
+
+/* CHECKING IF EVENT OR GENERIC */
+<<set _random to random(1, 3)>>
+
+/* GENERIC */
+<<if _random != 3>>
+
+    /* EMPTY */
+    <<if $PoolState == "Empty">>
+You decide to swim around. It is fairly relaxing, having the entire pool to yourself. You swim from one side to the other, not having to worry about anyone else. <br>
+
+    /* SENIOR SWIM */
+    <<elseif $PoolState == "Senior Swim">>
+You decide to swim around, though stick to an area away from the Senior’s exercise class. Most of them seem to forget you are there and you enjoying a fun and relaxing swim. <br>
+
+    /* AFTER SCHOOL */
+    <<elseif $PoolState == "After School">>
+Though quite busy, you find some water that is relatively empty and enjoy a nice relaxing swim. You pass a few other boys as you go, also enjoying the cool water and fun. <br>
+
+    /* SWIM CLASS */
+    <<elseif $PoolState == "Swim Class">>
+While part of the pool was full of young kids learning how to swim, the deeper parts were empty and you enjoyed a nice swim. Occasionally turning and watching the young boys struggling to swim and getting overly excited when they manage to float. <br>
+
+    /* FAMILIES */
+    <<elseif $PoolState == "Families">>
+The pool is fairly busy, meaning your swim mainly took your weaving around and through groups of people. As you go, some little kids playfully splash at you, before swimming off giggling as you return fire. <br>
+
+    /* TEENAGERS */
+    <<elseif $PoolState == "Teenagers">>
+While most of the teenagers just hang around and chat by the end of the pool, some groups of older boys enjoy goofing off or swimming laps in the water. You swim by both groups multiple times, but they don’t give you anything more than a friendly wave and you enjoy yourself. <br>
+
+    <</if>>
+/* END NEED AND EXIT */
+<<needChange "Fun" 10>>
+<br>
+<<if $PoolLocation == "Very Deep">>
+    [[Continue|Pool Very Deep]]
+<<elseif $PoolLocation == "Deep">>
+    [[Continue|Pool Deep]]
+<<elseif $PoolLocation == "Part Shallow">>
+    [[Continue|Pool Part Shallow]]
+<<elseif $PoolLocation == "Shallow">>
+    [[Continue|Pool Shallow]]
+<</if>>
+
+/* SPECIAL */
+<<else>>
+    <<if $Time.between(6, 0, 9, 0) && $QuestNoahSwimmingLessons.State >= 3>>
+        <<set _NoahPossible to 1>>
+    <</if>>
+    
+    /* EMPTY EVENTS */
+    <<if $PoolState == "Empty">>
+        <<set _Random to ["Pool Swim Empty Filter"]>>        
+        
+        <<if $NaturismSkill >= 1>>
+		    <<set _Random.push("Pool Swim Empty Nude Spring Board")>>
+        <</if>>
+        <<if _NoahPossible == 1 && $ToggleOCIsaac == 1>>
+		    <<set _Random.push("OC Isaac and Noah at Pool")>>
+        <</if>>
+
+    /* SENIOR SWIM EVENTS */
+    <<elseif $PoolState == "Senior Swim">>
+        <<set _Random to ["Pool Swim Senior Body Example"]>> 
+
+    /* FAMILIES EVENTS */
+    <<elseif $PoolState == "Families">>
+        <<set _Random to ["Pool Swim Toy Floating Away", "Pool Swim See Nude Toss", "Pool Swim Tie Drawstrings"]>>
+        /* Nyalls Scenes */
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Cole")>>
+            <<set _Random.push("OC Cole Swimsuit Missing")>>
+        <</if>>
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Evelyn")>>
+            <<set _Random.push("OC Evelyn and Oliver Pool Peek")>>
+        <</if>>
+        /* Kalim Scenes */
+        <<if $ToggleOCKalim == 1 && $CompletedQuests.includes("Kalim: Introduction")>>
+            <<set _Random.push("OC Kalim Water Polo Training")>>
+        <</if>>
+
+    /* AFTER SCHOOL EVENTS */
+    <<elseif $PoolState == "After School">>
+        <<set _Random to ["Pool Swim Toy Floating Away", "Pool Swim See Nude Toss", "Pool Swim Tie Drawstrings"]>> 
+
+        /* Nyalls Scenes */
+        <<if $ToggleOCSebastian == 1 and $CompletedQuests.includes("Nyalls: Sebastian")>>
+		    <<set _Random.push("OC Pool Swim Sebastian Photo Peek")>>
+        <</if>>
+        /* Nyalls Scenes */
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Cole")>>
+            <<set _Random.push("OC Cole Swimsuit Missing")>>
+        <</if>>
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Evelyn")>>
+            <<set _Random.push("OC Evelyn and Oliver Pool Peek")>>
+        <</if>>
+        /* Kalim Scenes */
+        <<if $ToggleOCKalim == 1 && $CompletedQuests.includes("Kalim: Introduction")>>
+            <<set _Random.push("OC Kalim Water Polo Training")>>
+        <</if>>
+
+    /* SWIM CLASS EVENTS */
+    <<elseif $PoolState == "Swim Class">>
+        <<set _Random to ["Pool Swim Class Help Float"]>>
+        /* Nyalls Scenes */
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Evelyn")>>
+            <<set _Random.push("OC Evelyn and Oliver Pool Peek")>>
+        <</if>>
+        <<if _NoahPossible == 1 && $ToggleOCIsaac == 1>>
+		    <<set _Random.push("OC Isaac and Noah at Pool")>>
+        <</if>>
+        /* Kalim Scenes */
+        <<if $ToggleOCKalim == 1 && $CompletedQuests.includes("Kalim: Introduction")>>
+            <<set _Random.push("OC Kalim Water Polo Training")>>
+        <</if>>
+
+    /* TEENAGERS EVENTS */
+    <<elseif $PoolState == "Teenagers">>
+        <<set _Random to ["Pool Swim See Nude Toss"]>>
+        /* Nyalls Scenes */
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Cole")>>
+            <<set _Random.push("OC Cole Swimsuit Missing")>>
+        <</if>>
+        /* Kalim Scenes */
+        <<if $ToggleOCKalim == 1 && $CompletedQuests.includes("Kalim: Introduction")>>
+            <<set _Random.push("OC Kalim Water Polo Training")>>
+        <</if>>
+    <</if>>
+
+    /* None State-Specific Events */
+    <<if $ToggleOCIsaac == 1 && $OCIsaacSocial > 10>>
+        <<set _Random.push("OC Isaac Nude Swimming")>>
+    <</if>>
+
+<<set _event to _Random.random()>>
+<<include _event>>
+
+<</if>>

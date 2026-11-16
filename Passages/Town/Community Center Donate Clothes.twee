@@ -1,0 +1,20 @@
+:: Community Center Donate Clothes [nobr]
+
+<<if $PlayerInventoryClothes.length == 0>>
+You're not carrying any extra clothes!
+<<else>>
+Click on an item to donate it: <br>
+<<for _i, _item range $PlayerInventoryClothes>><<capture _i>>
+    [img[_item.Name|_item.Icon][ComCen Donate Item][$DonateSlot to _i]]
+<</capture>><</for>>
+<</if>>
+<br><br>
+[[Continue|Community Center]]
+
+:: ComCen Donate Item [nobr]
+<<set _item to $PlayerInventoryClothes[$DonateSlot]>>
+<<run $PlayerInventoryClothes.deleteAt($DonateSlot)>>
+<<addMoodlet "Good Deed" 4>>
+You feed your _item.Name to the donation bin. It seems grateful.
+<br><br>
+[[Continue|Community Center Donate Clothes]]

@@ -1,0 +1,473 @@
+:: Moodlet Display [nobr]
+
+<<if $CC == 1>>
+
+/* New Moodlet Display Code */
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == $Player.Mood>>
+			<<print "<span title=\"" + $Player.Moodlets[_i].Name + "\"> <img @src=\"`Images/Icons/Moodlets/" + $Player.Moodlets[_i].Icon + ".png`\"> </span>">>
+		<</if>>
+	<</capture>>
+<</for>>
+<<set _moodtypes to ["Happy", "Sad", "Neutral", "Tired", "Uncomfortable", "Hyper", "Horny", "Bored", "Mad", "Embarrassed", "Scared"]>>
+
+<<for _m to 0; _m lt _moodtypes.length; _m++>>
+	<<capture _m>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<capture _i>>
+				<<if $Player.Mood != _moodtypes[_m]>>
+					<<if $Player.Moodlets[_i].Type == _moodtypes[_m]>>	
+					<<print "<span title=\"" + $Player.Moodlets[_i].Name + "\"> <img @src=\"`Images/Icons/Moodlets/" + $Player.Moodlets[_i].Icon + ".png`\"> </span>">>
+					<</if>>
+				<</if>>
+			<</capture>>
+		<</for>>
+	<</capture>>
+<</for>>
+
+<</if>>
+
+:: Moodlet Display Old [nobr]
+
+							/* CAFFEINE BUZZ +5 */
+
+	<<if $Caffeine == 1>>
+		<span title="Caffeine Buzz">
+		<img src="Images\Icons\Moodlets\Caffeine Buzz.png" alt="Caffeine Buzz">
+		</span>
+	<</if>>
+
+							/* CLEAN +5 */
+
+	<<if $CleanMoodlet == 1>>
+		<span title="Clean">
+		<img src="Images\Icons\Moodlets\Clean.png" alt="Clean">
+		</span>
+	<</if>>
+							/* DELICIOUS +5 */
+
+	<<if $Delicious == 1>>
+		<span title="Delicious">
+		<img src="Images\Icons\Moodlets\Delicious.png" alt="Delicious">
+		</span>
+	<</if>>
+							/* ENTERTAINED +5 */
+
+	<<if $EntertainedMoodlet == 1>>
+		<span title="Entertained">
+		<img src="Images\Icons\Moodlets\Entertained.png" alt="Entertained">
+		</span>
+	<</if>>
+							/* EXCITING NUDITY +5 */
+
+	<<if $NakedMoodlet == 3>>
+		<span title="Exciting Nudity">
+		<img src="Images\Icons\Moodlets\Exciting Nudity.png" alt="Exciting Nudity">
+		</span>
+	<</if>>
+							/* FRESH AIR +5 */
+
+	<<if $IndoorOutdoorTrait == 2>>
+		<span title="Fresh Air">
+		<img src="Images\Icons\Moodlets\Fresh Air.png" alt="Fresh Air">
+		</span>
+	<</if>>
+							/* GAVE WEDGIE +5 */
+
+	<<if $GaveWedgie == 1>>
+		<span title="Gave Wedgie">
+		<img src="Images\Icons\Moodlets\Gave Wedgie.png" alt="Gave Wedgie">
+		</span>
+	<</if>>
+							/* GOOD DREAM +5 */
+
+	<<if $GoodDream == 1>>
+		<span title="Good Dream">
+		<img src="Images\Icons\Moodlets\Good Dream.png" alt="Good Dream">
+		</span>
+	<</if>>
+							/* GOOD SHOW +5 */
+
+	<<if $GoodShow == 1>>
+		<span title="Good Show">
+		<img src="Images\Icons\Moodlets\Good Show.png" alt="Good Show">
+		</span>
+	<</if>>
+							/* GOOD WANK +5 */
+
+	<<if $GoodWank == 1>>
+		<span title="Good Wank">
+		<img src="Images\Icons\Moodlets\Good Wank.png" alt="Good Wank">
+		</span>
+	<</if>>
+							/* GREAT MOVIE +5 */
+
+	<<if $GreatMovie == 1>>
+		<span title="Great Movie">
+		<img src="Images\Icons\Moodlets\Great Movie.png" alt="Great Movie">
+		</span>
+	<</if>>
+							/* KISSED +5 */
+
+	<<if $Kissed == 1>>
+		<span title="Kissed">
+		<img src="Images\Icons\Moodlets\Kissed.png" alt="Kissed">
+		</span>
+	<</if>>
+							/* LEWD EXPERIENCE +5 */
+
+	<<if $LewdExperience == 1>>
+		<span title="Lewd Experience">
+		<img src="Images\Icons\Moodlets\Lewd Experience.png" alt="Lewd Experience">
+		</span>
+	<</if>>
+							/* Minty Fresh +5 */
+
+	<<if $MintyFresh == 1>>
+		<span title="Minty Fresh">
+		<img src="Images\Icons\Moodlets\Minty Fresh.png" alt="Minty Fresh">
+		</span>
+	<</if>>
+							/* PLEASANT BREEZE +5 */
+
+	<<if $CommandoTrait == 1>>
+		<span title="Pleasant Breeze">
+		<img src="Images\Icons\Moodlets\Pleasant Breeze.png" alt="Pleasant Breeze">
+		</span>
+	<</if>>
+							/* PLEASURABLE BURN +5 */
+
+	<<if $Spanked == 1 and $Player.Traits.includes("Slap Happy")>>
+		<span title="Pleasurable Burn">
+		<img src="Images\Icons\Moodlets\Pleasurable Burn.png" alt="Pleasurable Burn">
+		</span>
+	<</if>>
+							/* REFRESHING +5 */
+
+	<<if $Refreshing == 1>>
+		<span title="Refreshing">
+		<img src="Images\Icons\Moodlets\Refreshing.png" alt="Refreshing">
+		</span>
+	<</if>>
+							/* RELAXED +5 */
+
+	<<if $Relaxed == 1>>
+		<span title="Relaxed">
+		<img src="Images\Icons\Moodlets\Relaxed.png" alt="Relaxed">
+		</span>
+	<</if>>
+							/* SAFE & SECURE +5 */
+
+	<<if $IndoorOutdoorTrait == 1>>
+		<span title="Safe & Secure">
+		<img src="Images\Icons\Moodlets\Safe & Secure.png" alt="Safe & Secure">
+		</span>
+	<</if>>
+							/* TIGHT SQUEEZE +5 */
+
+	<<if $Wedgie == 1 and $Player.Traits.includes("Wedgie Fiend")>>
+		<span title="Tight Squeeze">
+		<img src="Images\Icons\Moodlets\Tight Squeeze.png" alt="Tight Squeeze">
+		</span>
+	<</if>>
+							/* WELL FED +5 */
+
+	<<if $WellFedMoodlet == 1>>
+		<span title="Well Fed">
+		<img src="Images\Icons\Moodlets\Well Fed.png" alt="Well Fed">
+		</span>
+	<</if>>
+							/* WELL RESTED +5 */
+
+	<<if $WellRestedMoodlet == 1>>
+		<span title="Well Rested">
+		<img src="Images\Icons\Moodlets\Well Rested.png" alt="Well Rested">
+		</span>
+	<</if>>
+
+	<<if $GoodDeed == 1>>
+		<span title="Good Deed">
+		<img src="Images\Icons\Moodlets\Good Deed.png" alt="Good Deed">
+		</span>
+	<</if>>
+	
+	
+	
+/* NEUTRAL */
+	
+							/* AROUNSED */
+<<if $Hard == 1>>
+		<span title="Aroused">
+		<img src="Images\Icons\Moodlets\Aroused.png" alt="Uncomfortably Cold">
+		</span>
+	<</if>>
+							/* DAMP */
+<<if $Wet == 1>>
+		<span title="Damp">
+		<img src="Images\Icons\Moodlets\Damp.png" alt="Damp">
+		</span>
+	<</if>>
+
+
+							/* NAKED SAFE */
+	<<if $NakedMoodlet == 2>>
+		<span title="Naked">
+		<img src="Images\Icons\Moodlets\NakedN.png" alt="Naked">
+		</span>
+	<</if>>
+	
+						/* TOWEL SAFE */
+	<<if $TowelMoodlet == 1>>
+		<span title="Towel">
+		<img src="Images\Icons\Moodlets\Towel.png" alt="Towel">
+		</span>
+	<</if>>
+
+							/* UNDERWEAR SAFE */
+	<<if $UndiesMoodlet == 2>>
+		<span title="In Underwear">
+		<img src="Images\Icons\Moodlets\UndiesN.png" alt="Underwear">
+		</span>
+	<</if>>
+	
+							/* Raped -20 */
+<<if $Raped == 1>>
+		<span title="Raped">
+		<img src="Images\Icons\Moodlets\Raped.png" alt="Raped">
+		</span>
+	<</if>>
+	
+							/* ABOUT TO BURST -10 */
+<<if $HoldingItInMoodlet == 2>>
+		<span title="About to Burst">
+		<img src="Images\Icons\Moodlets\About to Burst.png" alt="Hard">
+		</span>
+	<</if>>
+						
+							/* DYING OF BOREDOM -5 */
+<<if $BoredMoodlet == 2>>
+		<span title="Dying of Boredom">
+		<img src="Images\Icons\Moodlets\Dying of Boredom.png" alt="Dirty">
+		</span>
+	<</if>>
+	
+							/* EXHAUSTED -10 */
+		<<if $ExhaustedMoodlet == 1>>
+		<span title="Exhausted">
+		<img src="Images\Icons\Moodlets\Exhausted.png" alt="Exhausted">
+		</span>
+	<</if>>
+							/* FILTHY -10 */
+		<<if $FilthyMoodlet == 1>>
+		<span title="Filthy">
+		<img src="Images\Icons\Moodlets\Filthy.png" alt="Filthy">
+		</span>
+	<</if>>
+							/* Naked -10 */
+		<<if $NakedMoodlet == 1>>
+		<span title="Naked">
+		<img src="Images\Icons\Moodlets\Naked.png" alt="Naked">
+		</span>
+	<</if>>
+							/* NIGHTMARE -10 */
+<<if $Nightmare == 1>>
+		<span title="Nightmare">
+		<img src="Images\Icons\Moodlets\Nightmare.png" alt="Wet">
+		</span>
+	<</if>>
+	
+							/* PAINFULLY HORNY -10 */
+<<if $Hard == 3>>
+		<span title="Painfully Horny">
+		<img src="Images\Icons\Moodlets\Painfully Horny.png" alt="Hard">
+		</span>
+	<</if>>
+	
+							/* REALLY STRESSED -5 */
+<<if $Stress >= 4>>
+		<span title="Really Stressed">
+		<img src="Images\Icons\Moodlets\Really Stressed.png" alt="Really Stressed">
+		</span>
+	<</if>>
+							/* SEEN NAKED -10 */
+		<<if $SeenNaked == 1>>
+		<span title="Seen Naked">
+		<img src="Images\Icons\Moodlets\Seen Naked.png" alt="Seen Naked">
+		</span>
+	<</if>>
+							/* SOAKED -20 */
+<<if $Wet == 3>>
+		<span title="Soaked">
+		<img src="Images\Icons\Moodlets\Soaked.png" alt="Soaked">
+		</span>
+	<</if>>
+							/* STARVING -10 */
+		<<if $StarvingMoodlet == 1>>
+		<span title="Starving">
+		<img src="Images\Icons\Moodlets\Starving.png" alt="Starving">
+		</span>
+	<</if>>
+							/* WET -10 */
+<<if $Wet == 2>>
+		<span title="Wet">
+		<img src="Images\Icons\Moodlets\Wet.png" alt="Wet">
+		</span>
+	<</if>>
+	
+							/* VERY HOT -5 */
+<<if $Hot == 2>>
+		<span title="Very Hot">
+		<img src="Images\Icons\Moodlets\Very Hot.png" alt="Very Hot">
+		</span>
+	<</if>>
+	
+							/* VERY COLD -5 */
+<<if $Cold == 2>>
+		<span title="Very Cold">
+		<img src="Images\Icons\Moodlets\Very Cold.png" alt="Very Cold">
+		</span>
+	<</if>>
+					/* NEGATIVE FIVE */	
+	
+							/* Bad Dream -5 */
+<<if $BadDream == 1>>
+		<span title="Bad Dream">
+		<img src="Images\Icons\Moodlets\Bad Dream.png" alt="Bad Dream">
+		</span>
+	<</if>>
+						
+							/* BORED -5 */
+<<if $BoredMoodlet == 1>>
+		<span title="Bored">
+		<img src="Images\Icons\Moodlets\Bored.png" alt="Dirty">
+		</span>
+	<</if>>
+						
+							/* CAFFEINE CRASH -5 */
+<<if $Caffeine == 2>>
+		<span title="Caffeine Crash">
+		<img src="Images\Icons\Moodlets\Caffeine Crash.png" alt="Caffeine Crash">
+		</span>
+	<</if>>
+						
+							/* Dirty -5 */
+<<if $DirtyMoodlet == 1>>
+		<span title="Dirty">
+		<img src="Images\Icons\Moodlets\Dirty.png" alt="Dirty">
+		</span>
+	<</if>>
+
+	
+							/* Grossed Out -5 */
+<<if $GrossedOut == 1>>
+		<span title="Grossed Out">
+		<img src="Images\Icons\Moodlets\Grossed Out.png" alt="Hard">
+		</span>
+	<</if>>
+	
+							/* HARD -5 */
+<<if $Hard == 2>>
+		<span title="Hard">
+		<img src="Images\Icons\Moodlets\Hard.png" alt="Hard">
+		</span>
+	<</if>>
+	
+							/* HOLDING IT IN -5 */
+<<if $HoldingItInMoodlet == 1>>
+		<span title="Holding It In">
+		<img src="Images\Icons\Moodlets\Holding It In.png" alt="Hard">
+		</span>
+	<</if>>
+							/* HUNGRY -5 */
+<<if $HungryMoodlet == 1>>
+		<span title="Hungry">
+		<img src="Images\Icons\Moodlets\Hungry.png" alt="Hungry">
+		</span>
+	<</if>>
+							/* NO SHOES -5 */
+<<if $NoShoesMoodlet == 1>>
+		<span title="No Shoes">
+		<img src="Images\Icons\Moodlets\No Shoes.png" alt="No Shoes">
+		</span>
+	<</if>>
+	
+							/* PAINED -5 */
+<<if $Pained == 1>>
+		<span title="Pained">
+		<img src="Images\Icons\Moodlets\Pained.png" alt="Pained">
+		</span>
+	<</if>>
+						
+							/* SCARY MOVIE -5 */
+<<if $ScaryMovie == 1>>
+		<span title="Scary Movie">
+		<img src="Images\Icons\Moodlets\Scary Movie.png" alt="Scary Movie">
+		</span>
+	<</if>>
+	
+							/* SPANKED -5 */
+<<if $Spanked == 1 and $Player.Traits.includes("Slap Happy")>>
+
+<<elseif $Spanked == 1>>
+		<span title="Spanked">
+		<img src="Images\Icons\Moodlets\Spanked.png" alt="Spanked">
+		</span>
+	<</if>>
+	
+							/* STRESSED -5 */
+<<if $Stress >= 1 and $Stress < 4>>
+		<span title="Stressed">
+		<img src="Images\Icons\Moodlets\Stressed.png" alt="Stressed">
+		</span>
+	<</if>>
+	
+							/* SEEN UNDIES -5 */
+<<if $SeenUndies == 1>>
+		<span title="Seen in Underwear">
+		<img src="Images\Icons\Moodlets\Seen Undies.png" alt="Seen Undies">
+		</span>
+	<</if>>
+							/* TIRED -5 */
+<<if $TiredMoodlet == 1>>
+		<span title="Tired">
+		<img src="Images\Icons\Moodlets\Tired.png" alt="Tired">
+		</span>
+	<</if>>
+	
+							/* UNCOMFORABLY HOT -5 */
+<<if $Hot == 1>>
+		<span title="Uncomfortably Hot">
+		<img src="Images\Icons\Moodlets\Uncomfortably Hot.png" alt="Uncomfortably Hot">
+		</span>
+	<</if>>
+	
+							/* UNCOMFORABLY COLD -5 */
+<<if $Cold == 1>>
+		<span title="Uncomfortably Cold">
+		<img src="Images\Icons\Moodlets\Uncomfortably Cold.png" alt="Uncomfortably Cold">
+		</span>
+	<</if>>
+							/* UNDERWEAR EXPOSED -5 */
+<<if $UndiesMoodlet == 1>>
+		<span title="Underwear Exposed">
+		<img src="Images\Icons\Moodlets\Undies.png" alt="Underwear Exposed">
+		</span>
+	<</if>>
+	
+							/* UNPLEASANTLY CONSTRAINED -5 */
+<<if $CommandoTrait == -1>>
+		<span title="Unpleasantly Constrained">
+		<img src="Images\Icons\Moodlets\Unpleasantly Constrained.png" alt="Unpleasantly Constrained">
+		</span>
+	<</if>>
+	
+							/* WEDGIE -5 */
+<<if $Wedgie == 1 and $Player.Traits.includes("Wedgie Fiend")>>
+
+<<elseif $Wedgie == 1>>
+		<span title="Wedgie">
+		<img src="Images\Icons\Moodlets\Wedgie.png" alt="Wedgie">
+		</span>
+	<</if>>
+	

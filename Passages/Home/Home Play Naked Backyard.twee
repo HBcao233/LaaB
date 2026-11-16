@@ -1,0 +1,28 @@
+:: Home Play Naked Backyard [nobr]
+
+/* SELECTING GENERIC OR RANDOM */
+    <<set _random to random(1,2)>>
+
+/* GENERIC */
+<<if _random == 1>>
+<<set $Minutes += 20>>
+<span style="color:pink">With a smirk on your face, not a stitch of clothing, and the freedom of the entire backyard, you begin to run around and play! You don’t do anything specific, mainly just running around and enjoying the open air on your exposed body, but it is still a very exciting time. Somehow, even the most basic things become exhilarating when done in the nude.</span> <br>
+
+	<<if $NaturismSkill <= 2>>
+		<span style="color:Green">+3 Naturism XP</span><br>
+		<<set $NaturismXP += 3>>
+		<<include"Naturism Skill Level Up">>
+	<</if>>
+
+<<needChange "Fun" 20>>
+<br>
+
+[[Continue|PH Backyard]]
+
+<<else>>
+<<set _Random to ["Home Play Naked Pretend Locked Out"]>>
+
+<<set _event to _Random.random()>>
+<<include _event>>
+
+<</if>>

@@ -1,0 +1,220 @@
+:: Woods Abandoned Campsite [nobr]
+
+/* Written by: Winters */
+/* Intro */
+<<set $Minutes += 20>>
+
+The sun filters through the thick canopy overhead, causing golden spots to dance across your body. Maneuvering around trees that loom over you like towering sentinels, and thick brambles of bushes, you meander through the forest. The branches rustling overhead, the low-level hum of buzzling insects, and the rustle of hidden animals create a medley of sounds that fills your ears. Branches claw at you from the low hanging canopy, as you weave through the maze of underbrush. The air is thick with the damp, heavy scent of rotting leaves. <br>
+<br>
+However, a moment later, the forest abruptly stops as you step into an unexpected clearing. Compared to the dim forest, the unobstructed sunlight in this clearing is so bright that you squint slightly. Compared to the forest, there is an eerie, pristine silence to the clearing. As your eyes adjust to the light change, what almost immediately catches your attention is the abandoned campsite in the center of the clearing. <span style="color:Yellow">At least, you think it’s abandoned.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You find yourself moving closer to the campsite. At the center of the campsite is a ring of soot-stained rocks surrounding a bed of charcoal and ashes. Poking out of the ash is a crushed aluminum soda can. Nudging it with your foot, it emits a thin, tinny scrape against the rocks. A small puddle of stagnant rainwater sloshes out of the mouth of the can. <br>
+<br>
+Looking past the fire pit is the skeletal remains of a tent, that is nearly fully collapsed. The fabric has several large tears in it, along with large patches of decay. You approach carefully, using a sturdy stick to peel back a flap of the moldering door. <br>
+<br>
+Inside, it is mostly trash covering an old foam sleeping pad. <span style="color:Yellow">Then, tucked amongst the wreckage of the tent, you spot it.</span> <br>
+<br>
+
+<<set _random to random(1, 3)>>
+
+<<if _random == 1>>
+    It’s an old, brown glass beer bottle. The label has peeled away, leaving only a sticky, gray residue where the glue used to be. You pick it up by the neck. It’s surprisingly heavy. Holding it up to the sunlight, you see that there is still liquid inside. Someone put the twist cap back on, preserving the remnants inside the bottle. As you look at the liquid gently sloshing about, a thought pops into your head, both unbidden and intrusive. <br>
+    <br>
+    <span style="color:Yellow">What does beer taste like?</span> <br>
+    <br>
+    <div id="choice">
+        <<link "Leave it alone<br>">>
+        <<replace "#choice">>
+            This thought lingers in your mind for a moment, before you shake your head. The beer must have been open for quite a while, and it likely has gone bad as a result. Better not try and potentially get sick from it. <br>
+            <br>
+            Besides, it’s fun being a kid and not having to deal with adult stuff. Setting the bottle down, you stand back up, brushing your hands as you do so. A sudden, sharp gust of wind causes a piece of the wrecked tent to flap violently. You take a step back, looking over the forgotten camp one last time. <br>
+            <br>
+            Turning on your heel, you head back toward the edge of the woods, the sound of your footsteps once again joining the melody of noises as the forest closes in around you. <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 10>>
+            <br>
+            [[Continue|Wald Street]]
+        <</replace>>
+        <</link>>
+        <<link "Have a sip of beer<br>">>
+        <<replace "#choice">>
+            You know you shouldn't. You know it’s likely so old that it’s gross. But you're a kid, entirely alone in the deep woods, and the thrill of doing something genuinely reckless pulses through your veins. You imagine telling your friends at school, painting yourself as a fearless boy who drank beer. <br>
+            <br>
+            You go to twist off the rusted cap. It gives way after an exerted effort. There is no hiss of carbonation, which you’re pretty sure should happen with beer. Instead, it is just a dull scape of the rusted cap against the glass. <br>
+            <br>
+            You bring the rim to your nose. It smells sweet, metallic, and deeply sour, like rotting fruit left out in the sun. You hesitate. Your stomach tightens in warning. But you tilt the bottle anyway, resolving just to take a small sip. Just enough to say that you did. <br>
+            <br>
+            The lukewarm liquid touches your tongue, and <span style="color:LightCoral">instant, blinding regret slams into you like a physical blow. While you tasted none of these things, it seems like you just had an abominable cocktail of copper, battery acid, and dead leaves. It is thick, flat, and unimaginably foul. <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Frown",
+                            Cry: 2,
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            Your throat convulses instantly, refusing to swallow. The shock of the taste causes you to drop the bottle.</span> It shatters against a root, as you take a step away from it before falling to your knees. <br>
+            <br>
+            <span style="color:LightCoral">You retch, coughing violently as your stomach turns inside out. You spit frantically, trying to scrub the horrific taste off your tongue with the back of your arm, your eyes watering so badly the trees blur into a smear of green and brown. For a terrifying minute, you're convinced you've poisoned yourself. You wipe your mouth, gasping for the clean forest air, your chest heaving.</span> <br>
+            <br>
+            Slowly, the nausea subsides, leaving only a burning throat and a profound sense of foolishness. You stand up on shaky legs, wiping a tear from your cheek. The forest doesn’t feel like a grand adventure anymore. They just feel cold. Turning on your heel, you break into a jog, eager to leave the old campsite, and memories of that awful taste, far behind. <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 10>>
+            <<needChange "Hygiene" -10>>
+            <<addMoodlet "Grossed Out" 6>>
+            <br>
+            [[Continue|Wald Street]]
+        <</replace>>
+        <</link>>
+    </div>
+<<elseif _random == 2>>
+    It’s an old, glossy magazine. <span style="color:Pink">The cover is warped and faded, but the image depicting a half-naked boy smiling back at you makes your face instantly flush hot. You have a strong suspicion that this is an adult magazine.</span> <br>
+    <br>
+    Heart hammers against your ribs, you look over your shoulder, suddenly convinced that your father, a teacher, or some park ranger is watching you from the shadows. But there is no one around. <br>
+    <br>
+    You know you shouldn't look. You know it's a boundary you aren't supposed to cross. But you're entirely alone in the deep woods, and the thrill of a forbidden secret keeps intruding your thoughts. <br>
+    <br>
+    <span style="color:Yellow">Kneeling down in the dirt, your fingers hover over the glossy paper. They linger there for a moment as you hesitate, and your stomach tightens with a mix of excitement and guilt.</span> <br>
+    <br>
+    <div id="choice">
+        <<link "Leave it alone<br>">>
+        <<replace "#choice">>
+            This thought lingers in your mind for a moment, before you shake your head. The magazine likely has things in there a little too naughty for you to see. <br>
+            <br>
+            Standing back up, you look over the forgotten camp one last time, before turning and heading back into the forest. You can’t help but wonder if your father would approve of your self-control, as you once again enter the forest. <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 10>>
+            <br>
+            [[Continue|Wald Street]]
+        <</replace>>
+        <</link>>
+        <<link "Look through the magazine<br>">>
+        <<replace "#choice">>
+            Just a quick peak, you tell yourself. Just one page. You reach out and grasp the edge of the cover, lifting it up. <br>
+            <br>
+            Instantly, the thrill and anticipation vanishes, replaced by a wave of disappointment. <span style="color:LightCoral">The magazine isn't crisp or dry, but incredibly heavy, soaked through with rainwater. The moment your fingers apply the slightest bit of pressure to turn the page, it disintegrates instead of bending.</span> <br>
+            <br>
+            The remaining pages have fused together into a solid, moldy brick of pulp. As you try to peel another page back, the spine splits with a wet, sickening tear. <span style="color:LightCoral">The glossy images turn to mush in your hands, the ink smearing into a gray and green paste as black rot and tiny pale bugs spill out from the center of the binding.</span> <br>
+            <br>
+            The whole thing literally falls apart, crumbling into a pile of foul-smelling, waterlogged debris between your fingers. <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Frown",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            You pull your hands back, shaking them clean with a grimace. <span style="color:LightCoral">Your fingers smell like mildew and stagnant swamp water.</span> You wipe them off on the grass, looking down at the ruined pile of paper. The mystery is gone, replaced only by a mess of wet pulp and dirt. <br>
+            <br>
+            You stand up on shaky legs, the sudden rush of adrenaline fading away into a profound sense of foolishness. The woods don't feel like a grand adventure anymore. They just feel old and decaying. Turning on your heel, you break into a jog, eager to leave the campsite, and the ruined magazine, far behind. <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 10>>
+            <<needChange "Hygiene" -10>>
+            <br>
+            [[Continue|Wald Street]]
+        <</replace>>
+        <</link>>
+    </div>
+<<else>>
+    On the ground is what looks like a cylindrical piece of translucent deflated rubber. After staring at it for a few seconds, you suspect you know what it is. You've heard the older kids at school talk about these things in hushed, giggling whispers, but you’ve never actually seen one in real life. <br>
+    <br>
+    <span style="color:Pink">It’s a used condom.</span> <br>
+    <br>
+    Exposure to the elements have turned the latex a milky, opaque yellowish-gray. It looks ancient, shriveled at the end, and caked with a thin layer of grit and dried forest grime. You continue to stare at it for a long moment, your heart hammering against your ribs as you look at something so taboo. <br>
+    <br> 
+    An intrusive, utterly bizarre thought pops into your head. A mix of profound curiosity and the dumb, reckless daredevil energy that only strikes when you are entirely alone in the woods. <span style="color:Yellow">You wonder how it works and feels. <br>
+    <br>
+    Almost without thinking, you reach out towards it.</span> <br>
+    <br>
+    <div id="choice">
+        <<link "Leave it alone<br>">>
+        <<replace "#choice">>
+            This thought lingers in your mind for a moment, before you shake your head. The condom was likely used and would have all sorts of gross things inside. It could have one of those diseases you heard some of the older kids mention. <br>
+            <br>
+            You take a step back, looking over the forgotten camp one last time. <br>
+            <br>
+            Turning on your heel, you head back toward the edge of the woods, the sound of your footsteps once again joining the melody of noises as the forest closes in around you. <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 10>>
+            <br>
+            [[Continue|Wald Street]]
+        <</replace>>
+        <</link>>
+        <<link "Try it on<br>">>
+        <<replace "#choice">>
+            Before your brain can fully process how terrible of an idea this is, you kneel down. You pinch the clean, dry edge of the latex between your fingers and pick it up. <span style="color:Yellow">Your stomach does a nervous flip.</span> <br>
+            <br>
+            <span style="color:Pink">Likely from both the excitement and taboo of what you’re doing, your $Player.PenisSize penis is already ready as you pull your bottoms down. It springs out, already hard and eager.</span> You peel the base of the condom apart, which takes a moment as grime has partially sealed the end. Once loosened, you press the opening against the tip of your penis and try to roll it down. <br>
+            
+                <<set _tempArousal to $Player.Arousal>>
+                <<set $Player.Arousal to 50>>
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Happy",
+                            Blush: 2,
+                            PantsDown: 1,
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            <<if ["Tiny", "Small", "Average"].includes($Player.PenisSize)>>
+                The condom is far, far too big for your $Player.PenisSize penis. The condom limply surrounds your penis like a loose piece of shedding snake skin. 
+            <<else>>
+                With some satisfaction, you have to stretch and pull at the condom so it fits over the girth of your penis. This satisfaction does not last long. 
+            <</if>>
+            <span style="color:LightCoral">A moment later, a wave of pure revulsion hits you. As the latex stretches, a foul, stagnant smell of trapped rainwater and trapped mildew escapes. The inside is filled with a disgusting slurry of old, slimy condensation, trapped dirt, and a couple of tiny, dead black bugs. <br>
+            <br>
+            The cold, slimy moisture squishes against your skin, mixed with the rough grime of dirt and dead bugs. The sound of your shriek tears through the quiet campsite, as panic spikes through you.</span> <br>
+            <br>
+            Yanking the condom off your penis, you fling it away into the bushes as hard as you can. Rushing towards a different bush, you frantically rub your penis against the rough leaves, desperate to get the phantom feeling of the slime off your skin. <span style="color:Pink">As you do so, you can’t help but notice how good the motion feels.</span> Your face burns with a mixture of intense disgust and deep embarrassment. <br>
+
+                <<set $Player.Arousal to _tempArousal>>
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Sad",
+                            Blush: 2,
+                            Arms: "Hide",
+                            PantsDown: 1,
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            After most of the slime and grime is gone, you step back from the bush.  The enjoyment of the rubbing is completely gone, replaced by a desperate need for hot water and soap. Turning on your heels, you break into brisk walk, eager to leave the old campsite, and your horrifying experiment, far behind. <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 10>>
+            <<needChange "Hygiene" -10>>
+            <br>
+            [[Continue|Wald Street]]
+        <</replace>>
+        <</link>>
+    </div>
+<</if>>

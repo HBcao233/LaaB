@@ -1,0 +1,142 @@
+:: School Restroom Closet [nobr]
+
+<<include"Exposed Tracking">>
+
+<span style="color:Azure"><strong><big>--Equipment--</big></strong></span>
+
+<<link" [Details]">>
+<<script>>
+	Dialog.setup("Player Clothing", "Closet Details");
+	Dialog.wiki(Story.get("Closet Details").processText());
+	Dialog.open();
+<</script>>
+<</link>>
+<br>
+
+<<include"School Restroom Closet Wearing">>
+<br>
+<br>
+
+<span style="color:Azure"><strong><big>--Inventory--</big></strong></span><br>
+
+<<for _i to 0; _i lt $PlayerInventoryClothes.length; _i++>>
+	<<capture _i>>
+    	<<link "[img[$PlayerInventoryClothes[_i].Icon]]">>
+    
+  	<<if $PlayerInventoryClothes[_i].Slot == "Head">>
+        <<if $PlayerHead.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerHead)>>
+        <</if>>
+        	<<set $PlayerHead to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Face">>
+        <<if $PlayerFace.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerFace)>>
+        <</if>>
+        	<<set $PlayerFace to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Mouth">>
+        <<if $PlayerMouth.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerMouth)>>
+        <</if>>
+        	<<set $PlayerMouth to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Neck">>
+        <<if $PlayerNeck.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerNeck)>>
+        <</if>>
+        	<<set $PlayerNeck to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Under">>
+        <<if $PlayerUnder.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerUnder)>>
+        <</if>>
+        	<<set $PlayerUnder to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Top">>
+        <<if $PlayerTop.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerTop)>>
+        <</if>>
+        	<<set $PlayerTop to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Over">>
+        <<if $PlayerOver.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerOver)>>
+        <</if>>
+        	<<set $PlayerOver to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Outer">>
+        <<if $PlayerOuter.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerOuter)>>
+        <</if>>
+        	<<set $PlayerOuter to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Back">>
+        <<if $PlayerBack.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerBack)>>
+        <</if>>
+        	<<set $PlayerBack to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Hands">>
+        <<if $PlayerHands.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerHands)>>
+        <</if>>
+        	<<set $PlayerHands to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Bottoms">>
+        <<if $PlayerBottoms.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerBottoms)>>
+        <</if>>
+        	<<set $PlayerBottoms to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Waist">>
+        <<if $PlayerWaist.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerWaist)>>
+        <</if>>
+        	<<set $PlayerWaist to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Undies">>
+        <<if $PlayerUndies.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerUndies)>>
+        <</if>>
+        	<<set $PlayerUndies to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Socks">>
+        <<if $PlayerSocks.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerSocks)>>
+        <</if>>
+        	<<set $PlayerSocks to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <<elseif $PlayerInventoryClothes[_i].Slot == "Shoes">>
+        <<if $PlayerShoes.Type !="None">>
+        	<<set $PlayerInventoryClothes.push($PlayerShoes)>>
+        <</if>>
+        	<<set $PlayerShoes to $PlayerInventoryClothes[_i]>>
+            <<set $PlayerInventoryClothes.deleteAt(_i)>>
+            <<goto "School Restroom Closet">>
+        <</if>>
+        
+        <</link>>
+    <</capture>>
+<</for>>
+<br>
+<br>
+<<if $Player.Exposed == "Clothed">>
+	[[Close|School Restrooms]] 
+<<else>>
+	<span style="color:lightcoral">You can't go out like this!</span>
+<</if>>

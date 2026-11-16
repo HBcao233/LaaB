@@ -1,0 +1,153 @@
+:: Lucas Home Trampoline Flip Contest [nobr]
+
+/* Opening */
+<<set $Minutes += 20>>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+			},	
+		Clothes: {
+			Shoes: $None,
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+			},	
+		Clothes: {
+			Shoes: $None,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+As the two of you are hanging around outside, <span style="color:DarkTurquoise">Lucas</span> suddenly plops his shoes off and runs over to his trampoline. <span style="color:LightSteelBlue">“Hey, I bet I can flip on the trampoline better than you!”</span> You take him up on his challenge and rush over yourself. <br>
+<br>
+Soon, you are both hopping up and down. <span style="color:pink">The thrill of leaping up and down, the excitement of flipping, and the shirts flying up to reveal bellies and waistbands. Nothing is better than boys jumping on a trampoline.</span> <span style="color:DarkTurquoise">Lucas</span> is pretty skilled at flipping on it, probably due to his many years playing on it in his backyard, but you do your best to keep up. During one flip, you misjudge your momentum and smack into <span style="color:DarkTurquoise">Lucas</span>, causing you both to fall over laughing. It is a fun time. <br>
+<br>
+<div id=choice>
+	<<link "Continue<br>">>
+	<<replace"#choice">>
+    <<set _random to random(1, 2)>>
+/* Lucas Loses */
+<<if _random == 1>>
+<span style="color:LightSteelBlue">“Alright! Watch this!”</span> <span style="color:DarkTurquoise">Lucas</span> calls out as he moves to the center of the trampoline and begins to gain as much height as he can. You watch with increased interest from the edge of the trampoline as you notice something very interesting. <span style="color:pink"><span style="color:DarkTurquoise">Lucas</span>’ $LucasBottoms.Type were ever so slightly falling lower and lower on his waist as he jumped, and judging by their current position, they wouldn’t last much longer.</span> <br>
+<br>
+<span style="color:DarkTurquoise">Lucas</span> does one last preparing jump before leaping into the air with all his might, gaining incredible height, and doing an impressive flip. <span style="color:pink">At least, it was impressive, until his $LucasBottoms.Type fly completely off his body midjump and cause a panicked <span style="color:DarkTurquoise">Lucas</span> to fall face first. You are rolling on the trampoline laughing as a red-faced <span style="color:DarkTurquoise">Lucas</span> gets up to his knees, holding his $LucasTop.Type down to cover his $LucasUndies.Name, as he looks around desperately for his bottoms.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Frown",
+			Blush: 2,
+			Arms: "Hide",
+			},	
+		Clothes: {
+			Shoes: $None,
+			Bottoms: $None,
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Smirk",
+			Eyes: "Tired",
+			},	
+		Clothes: {
+			Shoes: $None,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+He spots them and you watch laughing as <span style="color:DarkTurquoise">Lucas</span> runs over and retrieves them from the fence. <span style="color:pink">Despite being very embarrassed, <span style="color:DarkTurquoise">Lucas</span> is laughing the entire time as well and falls to the ground giggling as he pulls his $LucasBottoms.Type back up.</span> You decide to declare him the winner out of pity. <br>
+    <<needChange "Fun" 10>>
+    <span style="color:green">+Lucas Fun</span><br>
+    <span style="color:green">+Lucas Comfort</span><br>
+    <span style="color:Red">-Lucas Energy</span><br>
+    <<needChange "Energy" -5>>
+    <<set $HangOutNeed.Fun += 10>>
+    <<set $HangOutNeed.Comfort += 10>>
+    <<set $HangOutNeed.Energy -= 10>>
+<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Home Backyard]]
+
+/* PC Loses */
+<<else>>
+<span style="color:LightSteelBlue">“Alright! Watch this!”</span> <span style="color:DarkTurquoise">Lucas</span> calls out as he moves to the center of the trampoline and begins to gain as much height as he can. You watch from the edge of the trampoline as <span style="color:DarkTurquoise">Lucas</span> gains incredible height and performs an impressive double flip! Sure, he messed up the landing a bit and landed on his knees, but it still looked good! <span style="color:LightSteelBlue">“Beat that!”</span> <br>
+<br>
+You smirk, claiming it will be easy, and move to the center yourself. You begin to jump to gain height, so focused on trying to beat <span style="color:DarkTurquoise">Lucas</span> <span style="color:pink">that you don’t notice the loosening of your $PlayerBottoms.Type as you jump.</span> You follow <span style="color:DarkTurquoise">Lucas</span>’ example and try to gain as much height as you can until- <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Smirk",
+			Eyes: "Tired",
+			},	
+		Clothes: {
+			Shoes: $None,
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Frown",
+			Eyes: "Sad",
+			Blush: 2,
+			Arms: "Hide",
+			},	
+		Clothes: {
+			Shoes: $None,
+			Bottoms: $None,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+    /* PC Wearing Undies */
+    <<if $PlayerUndies.Type != "None">>
+    You jump as high as you can! You only manage to do one and a half flips, landing on your stomach, but that’s not the worst of it. <span style="color:pink">The cold breeze on your legs and the suddenly hysterical laughter of <span style="color:DarkTurquoise">Lucas</span> were the first things to key you in. You look down to see, not your $PlayerBottoms.Type, but your $PlayerUndies.Name on full display! You turn bright red as you realize that your bottoms have completely flown off your body as you jumped!</span> <br>
+<br>
+    <span style="color:pink"><span style="color:DarkTurquoise">Lucas</span> is rolling with laughter as you cover yourself with your hands and begin to search for where your bottoms have flown off to. Spotting them, you run over as <span style="color:DarkTurquoise">Lucas</span> continues to giggle and jeer at you.</span> <span style="color:LightSteelBlue">“Look on the bright side, <span style="color:DarkTurquoise">$LucasNickname</span>, at least you remember to put on underwear this morning!”</span> You roll your eyes as you put your bottoms back on before having to giggle along with <span style="color:DarkTurquoise">Lucas</span> at the silliness of the situation. <br>
+    <<needChange "Fun" 10>>
+    <span style="color:green">+Lucas Fun</span><br>
+    <span style="color:green">+Lucas Comfort</span><br>
+    <span style="color:Red">-Lucas Energy</span><br>
+    <<needChange "Energy" -5>>
+    <<set $HangOutNeed.Fun += 10>>
+    <<set $HangOutNeed.Comfort += 10>>
+    <<set $HangOutNeed.Energy -= 10>>
+<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Home Backyard]]
+    /* PC Not Wearing Undies */
+    <<else>>
+    You jump as high as you can! You only manage to do one and a half flips, landing on your stomach, but that’s not the worst of it. <span style="color:pink">The cold breeze on your legs and the suddenly hysterical laughter of <span style="color:DarkTurquoise">Lucas</span> were the first things to key you in. You look down to see, not your $PlayerBottoms.Type, but your $Player.PenisSize Penis on full display! You turn bright red as you realize that your bottoms have completely flown off your body as you jumped!</span> <br>
+<br>
+    <span style="color:pink"><span style="color:DarkTurquoise">Lucas</span> is rolling with laughter as you cover yourself with your hands and begin to search for where your bottoms have flown off to. Spotting them, you run over as <span style="color:DarkTurquoise">Lucas</span> continues to giggle and jeer at you.</span> <span style="color:LightSteelBlue">“Nice one, <span style="color:DarkTurquoise">$LucasNickname</span>! I’m never going to let you live that one down!”</span> You roll your eyes as you put your bottoms back on before having to giggle along with <span style="color:DarkTurquoise">Lucas</span> at the silliness of the situation. <br>
+    <<needChange "Fun" 10>>
+    <span style="color:green">+Lucas Fun</span><br>
+    <span style="color:green">+Lucas Comfort</span><br>
+    <span style="color:Red">-Lucas Energy</span><br>
+    <<needChange "Energy" -5>>
+    <<set $HangOutNeed.Fun += 10>>
+    <<set $HangOutNeed.Comfort += 10>>
+    <<set $HangOutNeed.Energy -= 10>>
+<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Home Backyard]]
+<</if>>
+<</if>>
+    <</replace>>
+    <</link>>
+</div>

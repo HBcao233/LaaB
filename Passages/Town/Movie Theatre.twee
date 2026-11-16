@@ -1,0 +1,36 @@
+:: Movie Theatre [nobr]
+
+<<set $Location to {
+    Name: "Movie Theatre",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Mall",
+}>>
+
+<span style="color:Azure"><big><strong>--Movie Theatre--</strong></big></span><br>
+You stand outside your local movie theatre. It is quite old-timey, with a large, triangular neon sign above the entrance listing some of the current movies being shown and posters of said movies lining the walls that lead up to it. It shows a variety of new movies along with a collection of older ones. Right next to the doors were two small booths where the ticket clerks sat. There was also a security guard that checked tickets as people entered, but that didn’t stop the occasional troublemaker from trying to sneak in, which generally lands them with a few hours of cleaning up after movies as punishment.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $Money >= 9>>
+[[See a Movie ($9 1:30)|Watch Movie]]
+<<listbox "$MovieGenre">>
+	<<option "Animated" "Animated">>
+	<<option "Comedy" "Comedy">>
+	<<option "Horror" "Horror">>
+	<<option "Superhero" "Superhero">>
+<</listbox>><br>
+<<else>>
+	<span style="color:lightcoral">See a Movie ($9 1:30)</span><br>
+<</if>>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Entertainment District.png">
+	[[Entertainment District (0:01)|Entertainment District][$Minutes += 1]]<br>
+	

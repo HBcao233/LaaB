@@ -1,0 +1,188 @@
+:: OC Erin and the Dog [nobr]
+
+/* Written by: Zexion */
+/* Intro */
+<<set $Minutes += 20>>
+While you’re walking through the park, taking a shortcut through a wooded trail, you hear a frantic scuffling sound and a high-pitched, desperate shout. You round a large oak tree to find a scene that perfectly clashes with <span style="color:DarkTurquoise">Erin</span>’s "lone wolf" persona.<br>
+<br>
+<span style="color:DarkTurquoise">Erin</span> is standing behind a thin sapling, clutching his oversized black hoodie down as far as it will go. His shaggy hair is windswept, and his face is an incredible shade of scarlet. A few yards away, a medium-sized golden retriever is wagging its tail furiously, bouncing around with a pair of dark denim jeans clamped firmly in its jaws.<br>
+<br>
+<span style="color:LightSteelBlue">"Hey! Drop it! Bad dog! Extremely bad dog!"</span> <span style="color:DarkTurquoise">Erin</span> hisses, not daring to step out from behind his meager cover. The dog sees you and lets out a playful "woof," shaking the pants back and forth like a trophy.<br>
+<br>
+You stop and stare, taking in the view. Because the sapling is so thin, you get a clear look at <span style="color:DarkTurquoise">Erin</span>'s choice of undergarments for the day. Beneath the dark, brooding hoodie, he’s wearing a pair of bright white briefs covered in a pattern of tiny, black paw prints.<br>
+
+<<set _pawprint to {
+    Name: "Paw Print Briefs",
+    Type: "Briefs",
+    Color: "White",
+    Slot: "Undies",
+    Temp: 0,
+    Tags: ["Sleepwear"],
+    Durability: 5,
+    MaxDurability: 5,
+    Weight: 1,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Styled Briefs/Paw Print Briefs.png",
+    Avatar: "Images/Avatar/Clothes/Styled Briefs/Paw Print Briefs.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "Made by 雪村 𝐘𝐨𝐬𝐮𝐤𝐞",
+}>>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smirk",
+        },
+    },
+    {
+        Name: "OC Erin",
+        State: {
+            Outfit: "Everyday",
+            Eyes: "Mad",
+            Blush: 2,
+            Mouth: "Frown",
+            Arms: "Hide",
+        },
+        Clothes: {
+            Bottoms: $None,
+            Undies: _pawprint,
+        },
+    },
+]>>
+<<ad _ad>>
+
+You point at the dog, then at his briefs, and let out a silent, mocking huff of laughter.<br>
+<br>
+<span style="color:LightSteelBlue">"Shut up! It's not funny!"</span> <span style="color:DarkTurquoise">Erin</span> yelps, trying to pull his hoodie even lower, which only makes the paw prints on his backside peek out more. <span style="color:LightSteelBlue">"I... I ran out of clean laundry, okay? My mom bought these as a joke! And then that—that four-legged demon snatched my pants while I was adjusting my shoes! Just... do something!"</span><br>
+<br>
+The dog, thinking this is a great new game, begins to trot toward the open field where a group of families are having a picnic.<br>
+<br>
+
+<div id="choice">
+	<<link "Help him get his pants back<br>">>
+    <<replace"#choice">>
+        You realize that if that dog reaches the picnic area, <span style="color:DarkTurquoise">Erin</span> is going to have to expose his little "paw-print" situation to a bunch of families if he wants his pants back. You whistle sharply at the dog, catching its attention. You spend the next few minutes jogging after the retriever, eventually bribing it with a convenient old ball on the ground.<br>
+        <br>
+        The dog drops the jeans, and you retrieve the slobber-covered denim. You walk back to the tree where <span style="color:DarkTurquoise">Erin</span> is still cowering.<br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smile",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "OC Erin",
+                State: {
+                    Outfit: "Everyday",
+                    Eyes: "Tired",
+                    Blush: 3,
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        You toss the damp pants to him. He catches them with a look of pure relief, though he immediately makes a face at the dog drool.<br>
+        <br>
+        <span style="color:LightSteelBlue">"Gross,"</span> he mutters, quickly stepping into them while keeping his back to you. Once he's decent, he adjusts his hoodie and tries to regain his composure, though his face is still pink. <span style="color:LightSteelBlue">"I guess... thanks. You didn't have to do that. And if you tell anyone about the... the prints... I'll tell everyone you're the one who plays with dolls. Got it?"</span><br>
+        <br>
+        Despite the threat, he gives you a quick, awkward nod of appreciation before heading in the opposite direction of the dog. <br>
+        <<socialChange "Erin" 3 1>>
+	    <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 25>>
+        <br>
+        [[Continue|Park]] 
+    <</replace>>
+    <</link>>
+
+	<<link "Laugh at him<br>">>
+    <<replace"#choice">>
+        You look at the dog, then at <span style="color:DarkTurquoise">Erin</span>, and then back at the dog. The image of the "dark and mysterious" <span style="color:DarkTurquoise">Erin</span> being defeated by a golden retriever while wearing puppy-print underwear is simply too much. You lean against the oak tree, clutching your stomach as you let out a series of silent, shoulder-shaking laughs.<br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "OC Erin",
+                State: {
+                    Outfit: "Everyday",
+                    Eyes: "Mad",
+                    Blush: 3,
+                    Mouth: "Frown",
+                    Cry: 1,
+                },
+                Clothes: {
+                    Bottoms: $None,
+                    Undies: _pawprint,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">"Hey! Stop it! This isn't a spectator sport!"</span> <span style="color:DarkTurquoise">Erin</span> screams, his voice cracking with humiliation. <span style="color:LightSteelBlue">"Help me! He's going toward the popular areas! My life will be over! I'll have to move to a different state!"</span><br>
+        <br>
+        You ignore his pleas, taking joy in his suffering, fully intending to burn this moment into your memory. <span style="color:DarkTurquoise">Erin</span> lets out a strangled sound of horror and tries to make a break for it, hopping awkwardly toward the dog while trying to keep his hoodie pulled down over his briefs.  <br>
+        <br>
+        He trips over a root almost immediately, landing face-first in the grass. The paw prints on his briefs are now on full display to anyone passing by on the main trail. You continue to laugh as he scrambles to get up, his "cool" reputation dissolving into the dirt.<br>
+        <br>
+        <span style="color:LightSteelBlue">"I hate you!"</span> he yells over his shoulder, his eyes watery with shame. <span style="color:LightSteelBlue">"I hope a dog steals your soul!"</span><br>
+        <br>
+        He finally manages to corner the dog behind a bush, but the damage is done—as a group of passing joggers are already pointing and whispering. Deciding you’ve had enough fun, you leave <span style="color:DarkTurquoise">Erin</span> to attempt to get his stollen pants back from a dog.<br>
+        <<socialChange "Erin" -3 1>>
+	    <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 32>>
+        <br>
+        [[Continue|Park]] 
+    <</replace>>
+    <</link>>
+	<<link "Steal his underwear<br>">>
+    <<replace"#choice">>
+        You approach <span style="color:DarkTurquoise">Erin</span> with a serious nod, as if you have a plan to catch the dog. <span style="color:DarkTurquoise">Erin</span> watches with hope, dropping his guard slightly as you near the tree. You gesture for him to turn so you can check if the dog left any 'surprises' on his back. Relieved, <span style="color:DarkTurquoise">Erin</span> obeys and turns, still clutching his hoodie. As soon as he turns, you grab the waistband of his white, paw-printed briefs and yank them down sharply.<br>
+        <br>
+        <span style="color:LightSteelBlue">"Wha—Hey!"</span> <span style="color:DarkTurquoise">Erin</span> yelps, his balance failing as the fabric is pulled past his knees. In one swift motion, you step on the discarded briefs and pull them away as he stumbles. Before he can even process what happened, you’ve snatched the underwear up and started backing away, dangling the "paw print" trophy from your index finger with a mocking grin.<br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "OC Erin",
+                ShowZoom: true,
+                State: {
+                    Blush: 3,
+                    Mouth: "Frown",
+                },
+                Clothes: {
+                    Undies: $None,
+                    Bottoms: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:DarkTurquoise">Erin</span> is left standing there, completely bare from the waist down, his hands flying to cover himself as he lets out a high-pitched cry of betrayal. "Give those back! You—you traitor! That’s not funny! I’m going to freeze!"<br>
+        <br>
+        You simply wave the briefs at him and turn, jogging toward the exit of the park. You leave <span style="color:DarkTurquoise">Erin</span> shivering and completely exposed behind a tree, wondering how he's ever going to make it home without a stitch of clothing below his waist. <br>
+        <<socialChange "Erin" -5 1>>
+        <<addClothing "Closet" "Undies" "Styled Briefs" "Paw Print">>
+	    <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 32>>
+        <br>
+        [[Continue|Park]] 
+    <</replace>>
+    <</link>>
+</div>

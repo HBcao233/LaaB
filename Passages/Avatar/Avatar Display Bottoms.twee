@@ -1,0 +1,16 @@
+:: Avatar Display Bottoms [nobr]
+
+<<if $ADPantsDown == 1>>
+	<<set _pants_avatar to $ADBottoms.PulledDownAvatar>>
+<<elseif $ADShortsSag == 1 and $ADBottoms.SagAvatar != "None">>
+	<<set _pants_avatar to $ADBottoms.SagAvatar>>
+<<else>>
+	<<set _pants_avatar to $ADBottoms.Avatar>>
+<</if>>
+
+<<if _pants_avatar != "None">>
+	<img @src="_pants_avatar" style="position: absolute; left: 0; top: 0">
+	<<if $ADBottoms.Tags.includes("Sleeves") and $AD.Arms == "Normal">>
+	<img @src="$ADBottoms.AvatarSleeve" style="position: absolute; left: 0; top: 0">
+    <</if>>
+<</if>>

@@ -1,0 +1,102 @@
+:: School East Hallway [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School East Hallway",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Hallway",
+}>>
+
+/* Random Encounter Check */
+/* Set to 1% atm due to large amount of times in hallways. */
+<<set _randomencounter to random(1, 100)>>
+
+<<if $Player.Energy <= 5>>
+	<<include"School Pass Out">>
+<<elseif $HadAccident>>
+	<<include"School Pee">>
+
+/* QUEST CHECKS */
+<<elseif $InActiveQuests.includes("Lucas: First Visit") and $Time.Day != "Wednesday" and $GymClass == 2 and $SchoolQuest == 0>>
+	<<set $SchoolQuest to 1>>
+	<<include"LucasQuest Invite Home">>
+<<elseif $ActiveQuests.includes("Thomas: Out Sick") && $Time.Day == "Friday" && $GymClass == 2>>
+	<<set $Detention to 0>>
+	<<set $SchoolQuest to 1>>
+	<<include "Thomas Intro Quest 1">>
+/* Isaac Quest */ /* Detention Checks? */
+<<elseif $ToggleOCIsaac == 1 && $InActiveQuests.includes("Isaac: The Little Blueberry") && $GymClass == 2 && $SchoolQuest == 0>>
+	<<set $SchoolQuest to 1>>
+	<<include"OC Quest Little Blueberry 1">>
+<<elseif $ToggleOCKyren == 1 && $InActiveQuests.includes("Kyren: Introduction") && _randomencounter < 11>>
+	<<include "OC Kyren Intro">>
+
+/* Kalim Alt Intro */
+<<elseif $Time.daysSinceStart() >= 25 && $ToggleOCKalim == 1 && $InActiveQuests.includes("Kalim: Introduction") && !$ActiveQuests.includes("Kalim: Introduction Tease") && $GymClass == 2 && $SchoolQuest == 0>>
+	<<set $SchoolQuest to 1>>
+	<<set $ActiveQuests.push("Kalim: Introduction Tease")>>
+	<<include"OC Kalim Alt Intro">>
+
+/* Kazu: Tattoo Quest */
+<<elseif $ToggleOCKazu == 1 && $InActiveQuests.includes("Kazu: The Tattoo") && $GymClass == 2 && $SchoolQuest == 0>>
+	<<set $SchoolQuest to 1>>
+	<<include"OC Kazu The Tattoo">>
+
+/* Kade Intro part 2 */
+<<elseif $ToggleOCKade == 1 && $ActiveQuests.includes("Kade: Introduction") && $GymClass == 2>>
+	<<include"OC Kade Intro 2">>
+	
+<<elseif $ToggleNonCon == 1 && $LaserPointer.Active == 1 && $LaserPointer.Preteens == 0>>
+	<<goto"BLP Con Preteens">>
+
+/* Random Encounter Check */
+<<elseif _randomencounter == 1>>
+	<<include "Hallway Random Encounters">>
+<<else>>
+
+<span style="color:Azure"><big><strong>--East Hallway--</strong></big></span><br>
+You stand in the East Hallway of your school. The walls are lined with pictures of sports teams along with a large mural showcasing the school’s first ever baseball team. The entire hallway seems to be dedicated to the school’s impressive sports reputation. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Wait (0:05)|School East Hallway][$Minutes += 5]]<br>
+<br>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Cafeteria (0:01)|School Cafeteria][$Minutes += 1]] <br>
+	[[South Hallway (0:01)|School South Hallway][$Minutes += 1]] <br>
+	[[History Classroom (0:01)|School History Classroom][$Minutes += 1]] <br>
+	[[Locker Room (0:01)|School Locker Room][$Minutes += 1]] <br>
+<</if>>	
+<br>
+
+
+<div style="position: relative">
+	<img src="Images\School Map\School Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+    	<img src="Images\School Map\School Map East Marker.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<<include"NPC Tracking School">>
+</div>
+
+<map name="School">
+<area shape="rect" coords="58,328,435,381" alt="South Hallway" onclick="$.wiki('<<goto[[School South Hallway]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="220,324,273,435" alt="South Hallway" onclick="$.wiki('<<goto[[School South Hallway]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="166,58,327,111" alt="Cafeteria" onclick="$.wiki('<<goto[[School Cafeteria]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="328,220,381,273" alt="History Classroom" onclick="$.wiki('<<goto[[School History Classroom]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="436,58,489,111" alt="Locker Room" onclick="$.wiki('<<goto[[School Locker Room]]>><<set $Minutes += 1>>')" />
+
+</map>
+
+<</if>>

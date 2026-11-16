@@ -1,0 +1,155 @@
+:: School Playground [nobr]
+
+<<set $Minutes += 15>>
+
+/* OPENING */
+Despite some of the older kids seeing themselves as “too mature” to play on the playground, many of the younger kids enjoy its inclusion and run around happily.<br>
+<br>
+
+/* RANDOM EVENT CHECKER */
+<<set _Random to [
+	"PLAYGROUND No Event",
+	"PLAYGROUND Slide Wedgie",
+	"LUCAS Playground Rope Ladder",
+	"BEN Playground Bullied",
+	"CARTER Playground Fly Down",
+	"JACKSON Playground Standing on Monkey Bars",
+	"FELIX Playground Lost Ball",
+	"BEN Playground Backpack Tree",
+	"PLAYGROUND Found Penny",
+	"JACKSON Playground Tree Underwear",
+	"School Playground Water on Crotch",
+	"School Playground Random Boner",
+]>>
+
+<<if $Player.Arousal > 50>>
+	<<set _Random.push("School Playground Jungle Gym Hump")>>
+<</if>>
+
+<<if !$ThomasAbsent>>
+	<<set _Random.push("THOMAS Playground Ball Hits Papers")>>
+	<<set _Random.push("THOMAS XAVIER Playground Fight")>>
+<</if>>
+
+/* FRIENDSHIP BASED EVENTS */
+<<if $MichaelSocial >= 50 or $MichaelSocialRank > 0>>
+	<<set _Random.push("MICHAEL Playground Protect")>>
+<<else>>
+	<<set _Random.push("MICHAEL Playground Pants Player")>>
+<</if>>
+
+/* Nyall Events */
+/* OC Sebastian Intro */
+	<<if $ToggleOCSebastian == 1 && $InActiveQuests.includes("Nyalls: Sebastian")>>
+		<<set _Random.push("OC Sebastian Intro 1")>>
+	<</if>>
+	<<if $CompletedQuests.includes("Nyalls: Sebastian") && $ToggleOCSebastian == 1 && $CarterSocial > 25>>
+		<<set _Random.push("OC Sebastian and Carter")>>
+	<</if>>
+	<<if $CompletedQuests.includes("Nyalls: Sebastian") && $ToggleOCSebastian == 1 && $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+		<<set _Random.push("OC Seb with Arthur and Richard")>>
+	<</if>>
+/* OC Cole Intro */
+	<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Sebastian") && $CompletedQuests.includes("Nyalls: Sebastian") && $InActiveQuests.includes("Nyalls: Cole")>>
+		<<set _Random.push("OC Cole Intro 1")>>
+	<</if>>
+	<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Cole")>>
+		<<set _Random.push("OC Cole Carter's Troubles")>>
+	<</if>>
+
+<<if $ToggleOCBirdy == 1 && $CompletedQuests.includes("Birdy: Introduction")>>
+	<<set _Random.push("OC Birdy School Playground")>>
+<</if>>
+
+<<if $ToggleOCErin == 1 && $InActiveQuests.includes("Erin: Introduction")>>
+	<<set _Random.push("OC Erin Intro 1")>>
+<</if>>
+
+<<if $ToggleOCLeon == 1 && $InActiveQuests.includes("Leon: Introduction")>>
+	<<set _Random.push("OC Leon Intro")>>
+<</if>>
+
+<<if $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: Introduction") && $ActiveQuests.includes("Manuel: The Pent-Up Boy")>>
+	<<set _Random.push("OC Manuel Michael Beg")>>
+<</if>>
+
+<<if $ToggleOCKollin == 1 && $CompletedQuests.includes("Kollin: Boy in the Woods") && $OCKollinPlaygroundVisit != 1 && $Time.between(10,0,13,0)>>
+	<<set _Random.push("OC Kollin Playground Visit")>>
+<</if>>
+
+/* Miller Events */
+<<if $CompletedQuests.includes("Millers: Trouble in Paradise") && $ToggleOCMiller == 1>>
+	<<set _Random.push("OC Isaiah Recess Framed Spank")>>
+<</if>>
+
+/* Shinju Events */
+<<if $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Monster Boy") && $LucasSocialRank > 0>>
+    <<set _Random.push("OC Shinju Schoolyard Kidnapping")>>
+<</if>>
+
+/* Rudy Events */
+<<if $ToggleOCRudy == 1 && $CompletedQuests.includes("Rudy: Introduction")>>
+	<<set _Random.push("Rudy Caught Spying", "Rudy Michael Bully")>>
+<</if>>
+
+/* Emmet Scenes */
+<<if $ToggleOCEmmet == 1 && $CompletedQuests.includes("Emmet: Introduction") && $MichaelSocial < 10>>
+	<<set _Random.push("OC Emmet Tries to Save PC from Michael")>>
+<</if>>
+
+/* Tyler Events */
+<<if $ToggleOCTyler == 1 && $CompletedQuests.includes("Tyler: Introduction")>>
+	<<set _Random.push("OC Tyler School Playground Wedgie")>>
+<</if>>
+
+/* Mata Events */
+<<if $ToggleOCMata == 1 && $CompletedQuests.includes("Mata: The New Kid At School")>>
+	<<set _Random.push("OC Mata Catch Drawing")>>
+<</if>>
+
+/* Luca Events */
+<<if $ToggleOCLuca == 1 && $CompletedQuests.includes("Luca: Introduction")>>
+	<<set _Random.push("OC Luca Sweet Treat Addiction")>>
+<</if>>
+
+/* Kazu */
+<<if $ToggleOCKazu == 1 && $CompletedQuests.includes("Kazu: The Deliquent")>>
+	<<set _Random.push("OC Kazu Playground Music Chat")>>
+	<<set _Random.push("OC Kazu Playground Pull-Up Bars")>>
+<</if>>
+
+/* Erin Events */
+<<if $ToggleOCErin == 1 && $CompletedQuests.includes("Erin: Introduction")>>
+	<<set _Random.push("OC Erin Wedgie Without Pants")>>
+	<<set _Random.push("OC Erin Left in Just Underwear School Playground")>>
+<</if>>
+
+/* Patrick Events */
+<<if $ToggleOCPatrick == 1 && $CompletedQuests.includes("Patrick: Introduction")>>
+	<<set _Random.push("OC Patrick and Michael Roughhousing")>>
+	<<set _Random.push("OC Patrick and Felix Soccer")>>
+	<<set _Random.push("OC Patrick and Carter Playground")>>
+<</if>>
+
+<<set _event to _Random.random()>>
+
+/* Quest-Forced Events */
+<<if $ToggleOCTyler == 1 && $InActiveQuests.includes("Tyler: Introduction") && random(1, 3) == 1>>
+	<<set _event to "OC Tyler Intro">>
+<</if>>
+<<if $ToggleOCKazu == 1 && $InActiveQuests.includes("Kazu: The Eye") && random(1, 3) == 1>>
+	<<set _event to "OC Kazu The Eye">>
+<</if>>
+<<if $ToggleOCArthurRichard == 1 && $InActiveQuests.includes("Arthur & Richard: Returning the Favor") && random(1, 3) == 1>>
+	<<set _event to "OC Arthur Richard Return Favor">>
+<</if>>
+<<if $ToggleOCAlex == 1 && $InActiveQuests.includes("Alex: Introduction")>>
+	<<set _event to "OC Alex Intro">>
+<</if>>
+
+<<include _event>>
+
+/* WET/TEMP CHECK */
+/* ROLLS TWICE DURING OUTDOOR ACTIVITY, MAY FIND BETTER SOLUTION LATER */
+<<include"Wet Control">>
+<<include"Wet Control">>

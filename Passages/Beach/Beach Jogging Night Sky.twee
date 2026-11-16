@@ -1,0 +1,43 @@
+:: Beach Jogging Night Sky [nobr]
+
+/* Written by: Senpai */
+/* Intro */
+
+You notice it's a nice night out, so you decide to go for a run. You jog along the sidewalk, now illuminated by small lamps that light the way through the darkness, it's fairly quiet out with just the sound of the ocean waves not far away and the smell of saltwater carried gently by the breeze. You look over at the beach; it's much emptier than it was during the day, but there's still some people out there relaxing under the stars.<br>
+<br>
+<<if $Player.Traits.includes("Child of the Sea")>>
+    [Child of The Sea] You smile softly. It might seem a bit odd for people to still be out here this late, but the beach is beautiful and the ocean moreso, so you certainly get the appeal of a late night spent under the stars by the water. Speaking of stars, the glittery night sky catches your eye and you look up.
+<<else>>
+    You tilt your head slightly. It's odd that there are still people here at the beach this late, yourself excluded. It's dark, it's starting to get cold, and it's a bit of a long distance from home. You wonder why they're still here? <span style="Color: LightGreen">However, the glittery night sky gives you a potential answer as you look up.</span>
+<</if>><br>
+<br>
+You stop jogging for a moment and take in the sight. <span style="Color: LightGreen">The brilliant night sky stretches before you deep into the horizon where it meets the equally brilliant black and sparkly ocean before you. With no clouds or light pollution, the sky lit up with billions of sparkles as far as the eye can see with even the clouds of the Milky Way cutting down the sky like a cosmic river.</span><br>
+<br>
+<<if $Player.Traits.includes("Genius") or $Player.Traits.includes("Nerd")>>
+    [<<if $Player.Traits.includes("Genius")>>Genius<</if>><<if $Player.Traits.includes("Genius") and  $Player.Traits.includes("Nerd")>>/<</if>><<if $Player.Traits.includes("Nerd")>>Nerd<</if>>] <span style="Color: LightGreen">You can see the bright and elaborate constellations brighter than ever before.</span> You see the entirety of Ursa Major, the smaller cub that is Ursa Minor with Polaris at the tip of its tail. You spot Orion's Belt and the rest of the great hunter of the cosmos with his sword held high. You see another constellation that looks like a kite, all nestled in endless sea of stars.
+<<elseif $Player.Traits.includes("Artistic") or $Player.Traits.includes("Outdoorsy")>>
+    [<<if $Player.Traits.includes("Artistic")>>Artistic<</if>><<if $Player.Traits.includes("Artistic") and  $Player.Traits.includes("Outdoorsy")>>/<</if>><<if $Player.Traits.includes("Outdoorsy")>>Outdoorsy<</if>>] <span style="Color: LightGreen">The glittering sea of stars is nothing short of beautiful as the black sky is lit up by an endless forest of light, with the cosmic milky river flowing through them in an endless astronomic dance across the heavens.</span> White, yellow, orange, with the bright planets piercing through the crowd, the tapestry of night unfolds before you endlessly.
+<<else>>
+    <span style="Color: LightGreen">It really is a beautiful sight. The endless sea of stars before you stretches on endlessly, lit up brightly with stars bright and faint.</span> It's rare that you can see the night sky packed this densely and brightly and you can really appreciate just how many stars there are out there.
+<</if>><br>
+<br>
+The ocean is reflecting the stars in its surface, looking much like another night sky stretching below the earth, and the horizon itself is difficult to make out as a result. <span style="Color: LightGreen">For a moment you feel like you're floating, all alone with in the infinite abyss all around.</span> This feeling makes you feel small, like some cosmic creature might come out of the void for you, <span style="Color: LightGreen">but the feeling of connecting to an infinite universe is comforting in some way.</span><br>
+<br>
+A gentle breeze breaks you out of your reverie, and you continue on your jog while smiling softly to yourself.
+<br>
+<<needChange "Fun" 10>>
+/* NEED DECREASE */
+<<if $ExerciseType == "No Sweat">>
+    <<needChange "Hygiene" -2>>
+    <<needChange "Energy" -4>>
+<<elseif $ExerciseType == "Paced">>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -2>>
+<<else>>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -4>>
+<</if>>
+<<skillPoints "Athletics" 5>>
+<br>
+<<set $Minutes += 30>>
+[[Continue|Beach]]

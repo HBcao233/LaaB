@@ -1,0 +1,232 @@
+:: Artwork Catalog Thomas [nobr]
+
+<span style="color:Azure"><big><strong>--Thomas Taylor Catalog--</strong></big></span><br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Thomas Byrne</span>! A favorite of my partner in crime. He may have a rough exterior, but he’s so warm and squishy on the inside.”</span> <span style="color:DarkTurquoise">Orange</span> blushes as he trails off to fantasy land, <span style="color:LightSteelBlue">“But I digress! <span style="color:DarkTurquoise">Thomas</span> only shows his true self to those he trusts completely, and he isn’t one to trust easily. Maybe if you befriend him, I can show you some art that shows off what he’s hiding on the inside.”</span> <span style="color:DarkTurquoise">Orange</span> winks as he places down a list of available art in front of you. <br>
+<br>
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+/* Character Art (Everyday) */
+    <<if $AchievementArt.includes("Thomas Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Thomas Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Thomas\\Thomas.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Thomas Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Thomas Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Thomas">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("Thomas Character Art Undies")>>
+        <strong><span style="color:lightgreen">Thomas Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Thomas\\Thomas Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Thomas Character Art (Undies)</strong>
+        | 
+        <<if $ThomasSocial >= 100 or $ThomasSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Thomas Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Thomas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Thomas Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Locker Wedgie (Normal) */
+    <<if $AchievementArt.includes("Locker Wedgie (Normal)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Normal)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Normal).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Normal)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Normal)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Thomas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Locker Wedgie (Good End) */
+    <<if $AchievementArt.includes("Locker Wedgie (Good End)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Good End)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Good End).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Good End)</strong>
+        | 
+        <<if $ThomasSocial >= 100 or $ThomasSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Good End)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Thomas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Thomas Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Locker Wedgie (Bad End) */
+    <<if $AchievementArt.includes("Locker Wedgie (Bad End)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Bad End)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Bad End).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Bad End)</strong>
+        | 
+        <<if $ThomasSocial >= 100 or $ThomasSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Bad End)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Thomas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Thomas Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Locker Wedgie (Naked) */
+    <<if $AchievementArt.includes("Locker Wedgie (Naked)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Naked).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Naked)</strong>
+        | 
+        <<if $CompletedQuests.includes("Thomas: Out Sick")>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Thomas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Complete "Thomas: Homesick")]</span><br>
+        <</if>>
+    <</if>>
+/* Locker Wedgie (Hard) */
+    <<if $AchievementArt.includes("Locker Wedgie (Hard)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Hard)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Hard).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Hard)</strong>
+        | 
+        <<if $CompletedQuests.includes("Thomas: Out Sick")>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Hard)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Thomas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Complete "Thomas: Homesick")]</span><br>
+        <</if>>
+    <</if>>
+/* Ethan Byrne Homesick */
+    <<if $AchievementArt.includes("Ethan Byrne Homesick")>>
+        <strong><span style="color:lightgreen">Ethan Byrne Homesick</span></strong>
+        | 
+        <<apsart "Images\\Special\\Thomas\\Ethan Intro.png" "Hyo!" "https://x.com/HYOJINXSHI">>
+    <<else>>
+        <strong>Ethan Byrne Homesick</strong>
+        | 
+        <<if $CompletedQuests.includes("Thomas: Out Sick")>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ethan Byrne Homesick")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Thomas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Complete "Thomas: Homesick")]</span><br>
+        <</if>>
+    <</if>>
+/* Thomas Ethan Nap */
+    <<if $AchievementArt.includes("Thomas Ethan Nap")>>
+        <strong><span style="color:lightgreen">Thomas Ethan Nap</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Thomas Ethan Nap.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Thomas Ethan Nap</strong>
+        | 
+        <<if $CompletedQuests.includes("Thomas: Out Sick")>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Thomas Ethan Nap")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Thomas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Complete "Thomas: Homesick")]</span><br>
+        <</if>>
+    <</if>>
+
+
+/* Thomas Sticker Set */
+    <<if $AchievementArt.includes("Thomas Sticker Set")>>
+        <strong><span style="color:lightgreen">Thomas Mad Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Mad Thomas.png" "Rayray" "https://rayrayart.fanbox.cc">>
+        <strong><span style="color:lightgreen">Chibi Thomas Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Chibi Thomas.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Thomas Burger Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Thomas Burger.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Thomas Sticker Set</strong>
+        | 
+        <<if $ThomasSocial >= 100 or $ThomasSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Thomas Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Thomas">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Thomas Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+<br>
+[[Back|Artwork Catalog]]

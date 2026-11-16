@@ -1,0 +1,33 @@
+:: Science Lemon Juice in Eye [nobr]
+
+/* OPENING */
+<span style="color:DarkTurquoise">Mr. Chang</span> has you all doing an interesting experiment using a few substances, including lemon juice which he has you all squeeze freshly from a lemon. Things are going well and everyone is having fun, until another boy accidentally bumps you as you are squeezing the lemon, <span style="color:lightcoral">resulting in lemon juice going directly into your eye!</span><br>
+
+<<set _ad to [
+    {
+        Name: "Chang",
+        State: {
+            Mouth: "Frown",
+            Eyes: "Wide",
+            Brows: "Shocked",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Cry: 1,
+            Blush: 1,
+            Eyes: "Sad",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You are unable to contain your scream of pain as your eye begins to burn. <span style="color:DarkTurquoise">Mr. Chang</span> quickly realizes what had happened, grabs you by the shoulders, leads you over to the eye washing station, and begins to help you wash out the lemon juice. As he does so, he explains to the rest of the class that even something as simple as lemon juice can cause damage to your cornea and should be washed out as soon as possible. Using the eye wash station is uncomfortable, but is better than the burning sensation of lemon juice in your eye.<br>
+<br>
+<span style="color:lightcoral">Unfortunately, the washing station doesn’t work exactly as intended and a stray stream of water blasts you in the chest, completely soaking the front of your $PlayerTop.Type and $PlayerBottoms.Type.</span> As the class ends, <span style="color:DarkTurquoise">Mr. Chang</span> recommends you use the hand dryer in the bathroom to dry off your clothes before your next class, apologizing for the malfunction.<br>
+<br>
+<<addMoodlet "Pained" 4>>
+<<set $Wet to 2>>
+<<include"Attend Science Finish">>

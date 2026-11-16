@@ -1,0 +1,92 @@
+:: Daily Events [nobr]
+
+<<include "Daily Cheats">>
+
+/* SCHOOL DAILIES */
+<<set $MathClass to 0>>
+<<set $HistoryClass to 0>>
+<<set $LunchClass to 0>>
+<<set $ScienceClass to 0>>
+<<set $EnglishClass to 0>>
+<<set $GymClass to 0>>
+<<set $GymNoShower to 0>>
+<<set $PlayerGymWearing to "None">>
+<<set $SchoolBreakfast to 0>>
+
+<<if $Elective == "Drama">>
+	<<set $DramaClass to 0>>
+<</if>>
+			
+<<set $RideBusToSchool to 0>>
+				
+/* NPC Dailies */
+<<include"LUCAS Daily Events">>
+<<include"BEN Daily Events">>
+<<include"MICHAEL Daily Events">>
+<<include"CARTER Daily Events">>
+<<include"JACKSON Daily Events">>
+<<include"THOMAS Daily Events">>
+<<include"XAVIER Daily Events">>
+<<include"FELIX Daily Events">>
+
+<<include"NOAH Daily Events">>
+<<include"GABE Daily Events">>
+<<include"DAD Daily Events">>
+			
+/* Meal Reset */
+<<set $Breakfast to 0>>
+<<set $Lunch to 0>>
+<<set $FriendLunch to 0>>
+<<set $Dinner to 0>>
+
+/* SCHOOL VARIABLE RESET */
+<<set $ShoweredGym to 0>>
+<<set $GymReawrdEXP to 0>>
+
+/* QUEST DAILIES */
+<<set $SchoolQuest to 0>>
+<<include"Quest Tracking Daily">>
+
+/* Once per Day Event Reset */
+<<set $DailyEvents to []>>
+				
+/* DAILY JOBS */
+<<include"Community Center Daily Jobs">>
+
+/* REMOVING ANY UNFINISHED JOBS, SINCE DEADLINE IS DAILY */
+<<set $RandomJobList to []>>
+
+/* Daily OC/Social Stuff */
+<<if $ToggleOCMiller == 1 and $CompletedQuests.includes("Millers: Meet the Millers")>>
+
+<<unset $MillerLemonLocation>>
+
+<<if $Time.Day == "Saturday" or $Time.Day == "Sunday">>
+	<<if $Weather.Name != "Chance at Rain" and $Weather.Name != "Scattered Showers" and $Weather.Name != "Rainy" and $Weather.Name != "Heavy Rain" and $Weather.Name != "Stormy" and $Weather.Name != "Thunderstorm">>
+		<<set _Random to ["Northend", "Dellwood", "Wald", "Park"]>>		
+		<<set $MillerLemonLocation to _Random.random()>>
+	<</if>>
+<</if>>
+<</if>>
+
+/* Seb Photo Day Decrease */
+<<if $OCSebPhotoTime > 0>>
+	<<set $OCSebPhotoTime -= 1>>
+<</if>>
+
+/* Kollin Daily Checks */
+<<set $OCKollinPlaygroundVisit to 0>>
+<<set $OCKollinJobBoard to 0>>
+
+
+/* Daily Event Checks */
+<<set $Daily to {
+	RandolphPunishment: 0,
+}>>
+
+<<if $ToggleSpanking == 1>>
+	<<set _randomchance to random(1, 4)>>
+	<<if _randomchance == 4>>
+		<<set $Daily.RandolphPunishment to 1>>
+	<</if>>
+<</if>>

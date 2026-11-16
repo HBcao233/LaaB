@@ -1,0 +1,24 @@
+:: Home Closet Outfits [nobr]
+
+<span style="color:Azure"><strong><big>--Outfits--</big></strong></span><br>
+
+<<for _i, _outfit range $ClosetOutfits>>
+    <<capture _i, _outfit>>
+        <<displayOutfit _outfit>>
+        <br>
+        <<link [[Wear|passage()]]>>
+            <<applyOutfit _outfit "Type">>
+        <</link>>
+        <strong> | </strong>
+        <<link [[Wear Exact|passage()]]>>
+            <<applyOutfit _outfit "Avatar">>
+        <</link>>
+        <strong> | </strong>
+        [[Delete|passage()][$ClosetOutfits.deleteAt(_i)]]
+    <</capture>>
+    <br><br>
+<</for>>
+
+<<link [[Set New Outfit|passage()]]>>
+    <<saveOutfit>>
+<</link>>

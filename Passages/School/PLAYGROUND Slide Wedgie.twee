@@ -1,0 +1,21 @@
+:: PLAYGROUND Slide Wedgie [nobr]
+
+		<<if $PlayerUndies.Name != "None">>
+			You spend your time joyfully running around and playing with the other kids. At one point, you run up to the top of the big slide, sitting down excitedly. <span style="color:Red">Right as you go down, you feel a painful yank on the back of your underwear. </span>You look back and realize that your $PlayerUndies.Name had gotten caught, leaving you painfully dangling at the top of the slide. Luckily, no one is around to see as you embarrassingly unhook yourself and continue down the slide.<br>
+        <<addMoodlet "Stress" 0>>
+			<<set _arousalbs to []>>
+			<<set _arousalkink to ["Wedgiee"]>>
+			<<arousalGain 15 _arousalbs _arousalkink>>
+			<<addMoodlet "Wedgie" 3>>
+			<br>
+			[[Continue|School Courtyard]] 
+
+		
+		<<else>>
+			You spend your time joyfully running around and playing with the other kids.<br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 20>>
+			<br>
+		[[Continue|School Courtyard]] 
+	
+		<</if>>

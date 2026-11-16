@@ -1,0 +1,32 @@
+:: Lucas Home Ask for Snack Basic [nobr]
+
+    <<set $Minutes += 15>>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+You ask <span style="color:DarkTurquoise">Lucas</span> if they has anything to snack on in here. <span style="color:LightSteelBlue">“Feeling a bit peckish?”</span> He says in a slight imitation of an English accent, to which you raise your eyebrow at. <span style="color:LightSteelBlue">“Haha, yeah we should. Let’s see here-”</span> He walks over and opens the fridge, searching through it. <span style="color:LightSteelBlue">“My mom hates junk food, but she always buys some fruit and crackers for snacking.”</span> <br>
+<br>
+<span style="color:DarkTurquoise">Lucas</span> pulls out some cheese and crackers, putting them next to a bowl of fruit they had on the counter. While not the most exciting meal, it is fairly nice and does hit the spot! <br>
+<br>
+<span style="color:LightSteelBlue">“Yeah, my mom’s a bit of a health nut.”</span> He laughs as he unpeels a banana, <span style="color:LightSteelBlue">“Must come from her time working in film. But she does allow us to have what she calls 'cheat meals' every Wednesday. We get pizza on the way home and we normally eat some ice cream after, as long as I hadn’t gotten myself in trouble at some point during the week.”</span> He chuckles as you both finish eating. <br>
+    <span style="color:green">+Lucas Energy</span><br>
+    <<set $HangOutNeed.Energy += 10>>
+    <<needChange "Hunger" 15>>
+<<socialChange "Lucas" 1>>
+    <br>
+[[Continue|Lucas Home Kitchen]]

@@ -1,0 +1,91 @@
+:: Spank Randolph Talk [nobr]
+
+/* RANDOM SELCTOR */
+<<set _variable to random(1, 2)>>
+
+/* REMOVE PANTS */
+<<if $NPCSpankAction == "Remove Bottoms">>
+
+	/* BRIEFS */
+	<<if $PlayerUndies.Type == "Briefs">>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“Cute Briefs, my grandson wears similar. But he is a good boy, so I don’t have to spank him.”</span>
+		<<elseif _variable == 2>>
+		<span style="color:LightSteelBlue">“Briefs, a common underwear for little boys who don’t listen.”</span>
+		<</if>>
+	/* BOXER BRIEFS */
+	<<elseif $PlayerUndies.Type == "Boxer Briefs">>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“How cute, but I’m afraid the underwear must come off as well.”</span>
+		<<elseif _variable == 2>>
+		<span style="color:LightSteelBlue">“Have Boxer Briefs have become popular with boys your age? Been seeing them a lot recently.”</span>
+		<</if>>
+	/* BOXERS */
+	<<elseif $PlayerUndies.Type == "Boxers">>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“Why do all the naughty boys were Boxers?”</span>
+		<<elseif _variable == 2>>
+		<span style="color:LightSteelBlue">“Cute, your little friend <span style="color:DarkTurquoise">Michael</span> has a pair just like this.”</span>
+		<</if>>
+	/* Diapers/Pull-Ups */
+	<<elseif $PlayerUndies.Tags.includes("Diaper")>>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“You must be pretty brave to wear something like this to school. That, or you enjoy humiliation.”</span>
+		<<elseif _variable == 2>><span style="color:LightSteelBlue">“This undergarment better not be used, young man. I believe potty training is a requirement at this school.”</span>
+		<</if>>
+	/* NONE */
+	<<elseif $PlayerUndies.Type == "None">>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“Guess I’ll have to add some more spankings to your session.”</span>
+		<<elseif _variable == 2>>
+		<span style="color:LightSteelBlue">“Good thing you are already here.”</span>
+		<</if>>
+	<</if>>
+/* REMOVE UNDIES */
+<<elseif $NPCSpankAction == "Remove Undies">>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“I have a feeling I’m going to get well acquainted with this rear of yours.”</span>
+		<<elseif _variable == 2>>
+		<span style="color:LightSteelBlue">“Hope you’re not too shy, I can see everything from back here.”</span>
+		<</if>>
+
+/* NONE */
+<<elseif $SpankPlayerAction == "None">>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“This is what you get for misbehaving!”</span>
+		<<elseif _variable == 2>>
+		<span style="color:LightSteelBlue">“This is what you get for misbehaving!”</span>
+		<</if>>
+
+/* PLEAD */
+<<elseif $SpankPlayerAction == "Plead">>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“Sorry <span style="color:DarkTurquoise">$Player.Name</span>, but begging will get you nowhere.”</span>
+		<<elseif _variable == 2>>
+		<span style="color:LightSteelBlue">“I love it when naughty boys like you beg. Makes you more likely to learn your lesson.”</span>
+		<</if>>
+
+/* CRY */
+<<elseif $SpankPlayerAction == "Cry">>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“All you boys act tough until you start crying like a baby.”</span>
+		<<elseif _variable == 2>>
+		<span style="color:LightSteelBlue">“Cry as much as you want, I won’t stop until you’ve learned your lesson.”</span>
+		<</if>>
+
+/* TAKE IT */
+<<elseif $SpankPlayerAction == "Take It">>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“You think you’re a tough guy, huh? Give it some time and you’ll be crying like a baby.”</span>
+		<<elseif _variable == 2>>
+		<span style="color:LightSteelBlue">“Even the bravest boys are crying and begging by the time I’m done with them.”</span>
+		<</if>>
+
+/* CLENCH */
+<<elseif $SpankPlayerAction == "Clench">>
+		<<if _variable == 1>>
+		<span style="color:LightSteelBlue">“Clench as much as you want, it won’t make a difference.”</span>
+		<<elseif _variable == 2>>
+		<span style="color:LightSteelBlue">“We used to put ginger root in the butts of boys who clenched. I should convince the <span style="color:DarkTurquoise">Headmaster</span> to bring it back.”</span>
+		<</if>>
+<</if>>

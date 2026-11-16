@@ -1,0 +1,15 @@
+:: Lucas Hang Out Park Playground [nobr]
+
+<<set _Random to ["Lucas Hang Out Park Playground Slide Test", "Lucas Hang Out Park Playground Basic", "Lucas Hang Out Park Playground Nasty Kids"]>>
+
+/* Shinju Events */
+<<if $ToggleOCShinju == 1 && $InActiveQuests.includes("Shinju: Monster Boy") && $LucasSocialRank > 0>>
+    <<set _Random.push("OC Shinju Intro 1")>>
+<<elseif $ToggleOCShinju == 1 && $InActiveQuests.includes("Shinju: Felix Monster Event")>>
+    <<set _Random.push("OC Shinju Felix Monster Event")>>
+<<elseif $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Felix Monster Event")>>
+    <<set _Random.push("OC Shinju Felix Lucas Soccer Match")>>
+<</if>>
+
+<<set _event to _Random.random()>>
+<<include _event>>

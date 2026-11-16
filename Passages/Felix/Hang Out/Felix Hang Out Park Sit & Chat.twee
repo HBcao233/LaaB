@@ -1,0 +1,108 @@
+:: Felix Hang Out Park Sit & Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You sit down at the bench to catch your breath and <span style="color:DarkTurquoise">Felix</span> follows suit, though instead of sitting he lies down on it, resting his head on your side. <span style="Color: LightSteelBlue">“Hope you don’t mind, backs feeling kind of stiff. Is that the right word?”</span> You laugh, claiming it’s fine and even place your hand on his chest as he squirms about trying to stretch out his back. <span style="color:DarkTurquoise">Felix</span> seems very comfortable with physical touch, despite only knowing you for a little while. <br>
+
+<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask him how he’s liking the school. <span style="Color: LightSteelBlue">“It’s great! Much bigger than old school.”</span> He pauses, <span style="Color: LightSteelBlue">“No, not bigger. More stuff? Old school was bigger but didn’t have as much. If that makes sense.”</span> He laughs, <span style="Color: LightSteelBlue">“Though Preston’s football field is lacking.”</span> You laugh as well, originally thinking more about how his classes are treating him, but should have realized how he’d respond. <br>
+            <<socialChange "Felix" 1>>
+            <span style="color:green">+Felix Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Felix Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Felix Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Felix</span> about how classes are going for him. <span style="Color: LightSteelBlue">“Very good! Though pretty easy.”</span> You can’t help but laugh at his response to finding the classes easy, asking how he got so smart. <span style="Color: LightSteelBlue">“Uhh… haha, I do not know!”</span> He laughs nervously, seemingly a little embarrassed at being referred to as smart. <span style="Color: LightSteelBlue">“Maybe my old school was just a little ahead? I’m sure things will get hard for me soon as well!”</span> <br>
+            <<socialChange "Felix" 1>>
+            <span style="color:green">+Felix Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Felix Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Felix Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Felix: Mateo")>>
+        <<link "Home life<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+                You ask about how things are at his host home and <span style="color:DarkTurquoise">Felix</span> smiles. <span style="Color: LightSteelBlue">“Very nice! They are super friendly! They asked me to call them auntie and uncle, which was a little weird at first, but they treat me like family.”</span> <span style="color:DarkTurquoise">Felix</span>’s smile makes it clear he cares for the family he is staying with. <span style="Color: LightSteelBlue">“Joshua is very funny, much like my older brother back home. <span style="color:DarkTurquoise">Mateo</span> is very cute. Took a liking to me very quickly. Very cuddly.”</span> He laughs. <br>
+                <<socialChange "Felix" 1>>
+                <span style="color:green">+Felix Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Felix Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Felix Hang Out Park]]
+            <<else>>
+                You ask <span style="color:DarkTurquoise">Felix</span> about how things are back home. <span style="Color: LightSteelBlue">“Oh, very nice! They are treating me like family.”</span> He smiles, though you explain that you were talking about’ back home’ back home, in France. <span style="Color: LightSteelBlue">“Oh! Things are… okay. Though I have not been there for some time, I started here a month before school started, to learn language and get settled in.”</span> He nods, speaking slowly to ensure he is using the right words, <span style="Color: LightSteelBlue">“But I am sure things are good.”</span> <br>
+                <<socialChange "Felix" 1>>
+                <span style="color:green">+Felix Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Felix Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Felix Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Felix</span> what things he likes to do, already knowing the answer. <span style="Color: LightSteelBlue">“Football! I cannot wait until the season starts here. <span style="color:DarkTurquoise">Mr. Kohler</span> said I can join the football team!”</span> <span style="color:DarkTurquoise">Felix</span> pauses, <span style="Color: LightSteelBlue">“Not the one with the shoulder pads, the one where you use your feet, like the name. What is it called? Soccer?”</span> He shrugs, <span style="Color: LightSteelBlue">“That name I will never understand. But I will call it whatever if I get to be on team!”</span> <br>
+            <<socialChange "Felix" 1>>
+            <span style="color:green">+Felix Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Felix Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Felix Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Felix</span> what sort of things he likes to do, making sure to include that you mean other than soccer. <span style="color:DarkTurquoise">Felix</span> laughs at this. <span style="Color: LightSteelBlue">“Yes, I do talk about that a lot.”</span> He blushes slightly, <span style="Color: LightSteelBlue">“I like other sports as well. Swimming, biking, all sorts! Camping is also fun, I want to take <span style="color:DarkTurquoise">Mateo</span> camping, though he is scared of many things. I also started playing video games. Never played much at home, but <span style="color:DarkTurquoise">Mateo</span> and Joshua have been teaching me.”</span> You smile, continuing to chat about the things <span style="color:DarkTurquoise">Felix</span> does with his host brothers. <br>
+            <<socialChange "Felix" 1>>
+            <span style="color:green">+Felix Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Felix Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Felix Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

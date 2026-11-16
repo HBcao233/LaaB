@@ -1,0 +1,57 @@
+:: DRAMA Monologue [nobr]
+
+/* OPENING */
+For today’s class, <span style="color:DarkTurquoise">Mr. Julien</span> asks you each to perform a monologue, which is generally a long dramatic speech. You are each given one at random and given a short amount of time to memorize it. <span style="color:DarkTurquoise">Mr. Julien</span> will allow you to consult the script if need be but would deduct points for doing so.<br>
+
+<<set _ad to [
+	{
+		Name: "Julien",
+		State: {
+			Mouth: "Smile",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You are given a speech from an old movie, which you vaguely remember having seen once with your family. This doesn’t make memorizing it much easier, but by the time you have to give your monologue, you are fairly confident and ready.<br>
+<br>
+
+<<set _skillcheckdif to random(20, 70)>>
+
+<div id="Choice">
+	/* SKILL CHECK */
+	<<link "Continue">>
+		<<replace "#Choice">>
+			<<skillCheck "Acting" _skillcheckdif>>
+			/* PASS */
+			<<if _result == 1>>
+				<span style="color:Green">Though nervous, you are able to remember the entire speech and deliver it well enough to earn applause from <span style="color:DarkTurquoise">Mr. Julien</span>!</span> <span style="color:LightSteelBlue"> “Brilliant, <span style="color:DarkTurquoise">Mr. $Player.LastName</span>. Keep up that quality and you may find yourself center stage one day!”</span><br>
+
+				<<set $PlayerDramaFaithChange to "Increase">>
+				<<set $LucasDramaFaithChange to "None">>
+				<<set $CarterDramaFaithChange to "None">>
+
+				<<include"Drama Faith Change">>
+				<br>
+
+				<<include"Attend Drama Finish">>
+
+			/* FAIL */
+			<<elseif _result == 0>>
+				<span style="color:Red">Despite being confident, the nervous feeling in your stomach and the heat of the lights cause you to stutter your lines.</span> Seeing <span style="color:DarkTurquoise">Mr. Julien</span> stare at you with an unimpressed glare made it even worse as you begin to forget your lines and completely bomb the monologue.<br>
+
+				<<set $PlayerDramaFaithChange to "Decrease">>
+				<<set $LucasDramaFaithChange to "None">>
+				<<set $CarterDramaFaithChange to "None">>
+
+				<<include"Drama Faith Change">>
+				<br>
+
+				<<include"Attend Drama Finish">>
+			<</if>>
+		<</replace>>
+	<</link>>
+
+	<<skillDiff "Acting" _skillcheckdif>>
+	<br>
+</div>

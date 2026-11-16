@@ -1,0 +1,73 @@
+:: MICHAEL History Wedgie [nobr]
+
+/* FRIENDSHIP */
+
+<<if $MichaelSocial > 30 or $MichaelSocialRank > 0>>
+	The class is watching an old documentary, but it wasn’t very well made. A few students have passed out while others have found quiet ways to entertain themselves. You are laying your head on your desk, looking up at the film, and trying hard to stay awake when you feel a hand poke your shoulder. You turn and see <span style="color:DarkTurquoise">Michael</span>, grinning ear to ear, who was pointing at another boy quietly napping at his desk. More specifically, to the boy’s Red Boxers, which were prominently poking out of the back of his Jeans.<br>
+
+	<<set _ad to [
+		{
+			Name: "Michael",
+			State: {
+				Eyes: "Mad",
+				Mouth: "Happy",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:DarkTurquoise">Michael</span> quickly slid over <span style="color:Pink">and in one quick motion, gripped the back of the sleeping boy’s underwear and yanked them up into the air.</span> The poor boy, suddenly awoken from his nap by a painful squeezing of his balls, let out a girlish scream as he quickly jumped to his feet. <span style="color:DarkTurquoise">Mr. De León</span> quickly yelled at the boy, not seeing <span style="color:DarkTurquoise">Michael</span> as he jumped back to his seat, and told him to be quiet or risk detention. The boy did as he was told, not knowing who had given him the sudden wedgie.<br>
+
+	<<socialChange "Michael" 1>>
+	<br>
+
+	<<include "Attend History Finish">>
+
+/* NO FRIENDSHIP */
+<<else>>
+
+/* WEDGIE */
+	<<if $PlayerUndies.Type != "None">>
+		The class is watching an old documentary, but it isn’t made very well. A few students have passed out while others have found quiet ways to entertain themselves. You are laying your head on your desk, looking up at the film, and trying hard to stay awake. This position unintentionally makes the back of your $PlayerUndies.Name poke out, a fact you only learn as you suddenly feel a hand grip them!<br>
+
+		<<set _ad to [
+			{
+				Name: "Michael",
+				State: {
+					Eyes: "Mad",
+					Mouth: "Happy",
+					Outfit: "Uniform",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+		<span style="color:Red">You let out a pained yell as <span style="color:DarkTurquoise">Michael</span> yanks the back of your $PlayerUndies.Type upward, giving you a painful wedgie!</span> You stand up to confront <span style="color:DarkTurquoise">Michael</span> but are quickly yelled at to sit down and be quiet by <span style="color:DarkTurquoise">Mr. De León</span>. <span style="color:DarkTurquoise">Michael</span> giggles to himself as you sit back down and fix your clothing.<br>
+		<<set _arousalbs to []>>
+		<<set _arousalkink to ["Wedgiee", "Humiliation"]>>
+		<<arousalGain 10 _arousalbs _arousalkink>>
+		<<addMoodlet "Wedgie" 2>>
+
+	/* CHAIR PULL OUT */
+	<<else>>
+		Having just watched a short documentary, <span style="color:DarkTurquoise">Mr. De León</span> has everyone complete a short assignment on what they watched. Once everyone is finished, you are asked to collect them and bring them up, and you return to your seat and are about to sit down <span style="color:Red">when <span style="color:DarkTurquoise">Michael</span> pulls your chair out from behind you, causing you to fall  painfully to the floor!</span><br>
+
+		<<set _ad to [
+			{
+				Name: "Michael",
+				State: {
+					Eyes: "Mad",
+					Mouth: "Happy",
+					Outfit: "Uniform",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+		You let out a pained cry as <span style="color:DarkTurquoise">Michael</span> and his friends begin to laugh at you. You quickly get up to confront the bully but are stopped when <span style="color:DarkTurquoise">Mr. De León</span> demands everyone to sit down and shut up. You have no choice but to oblige as <span style="color:DarkTurquoise">Michael</span> gives you a taunting smirk.<br>
+	<</if>>
+	<<socialChange "Michael" -3>>
+	<br>
+	<<include"Attend History Finish">>
+<</if>>

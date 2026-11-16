@@ -1,0 +1,77 @@
+:: School West Hallway [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School West Hallway",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Hallway",
+}>>
+
+/* Random Encounter Check */
+/* Set to 1% atm due to large amount of times in hallways. */
+<<set _randomencounter to random(1, 100)>>
+
+<<if $Player.Energy <= 5>>
+	<<include"School Pass Out">>
+<<elseif $HadAccident>>
+	<<include"School Pee">>
+
+/* Random Encounter Check */
+<<elseif _randomencounter == 1>>
+	<<include "Hallway Random Encounters">>
+<<elseif $ToggleOCKyren == 1 && $InActiveQuests.includes("Kyren: Introduction") && _randomencounter < 11>>
+	<<include "OC Kyren Intro">>
+<<elseif $ToggleNonCon == 1 && $LaserPointer.Active == 1 && $LaserPointer.Preteens == 0>>
+	<<goto"BLP Con Preteens">>
+<<else>>
+
+<span style="color:Azure"><big><strong>--West Hallway--</strong></big></span><br>
+You stand in the West Hallway of your school. Unlike the other halls, this one is filled with artsy murals and numerous framed paintings. You gather that they’ve all been painted by students or alumni. Next to the entrance to the Auditorium are framed photographs from some of the various plays they’ve held over the years. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Wait (0:05)|School West Hallway][$Minutes += 5]]<br>
+<br>
+
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Cafeteria (0:01)|School Cafeteria][$Minutes += 1]] <br>
+	[[South Hallway (0:01)|School South Hallway][$Minutes += 1]] <br>
+	[[English Classroom (0:01)|School English Classroom][$Minutes += 1]] <br>
+	[[Music Room (0:01)|School Music Room][$Minutes += 1]] <br>
+	[[Art Classroom (0:01)|School Art Classroom][$Minutes += 1]] <br>
+<</if>>	
+<br>
+
+
+<div style="position: relative">
+	<img src="Images\School Map\School Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+    	<img src="Images\School Map\School Map West Marker.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<<include"NPC Tracking School">>
+</div>
+
+<map name="School">
+<area shape="rect" coords="58,328,435,381" alt="South Hallway" onclick="$.wiki('<<goto[[School South Hallway]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="220,324,273,435" alt="South Hallway" onclick="$.wiki('<<goto[[School South Hallway]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="166,58,327,111" alt="Cafeteria" onclick="$.wiki('<<goto[[School Cafeteria]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="112,112,165,165" alt="English Classroom" onclick="$.wiki('<<goto[[School English Classroom]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="112,220,165,273" alt="Art Classroom" onclick="$.wiki('<<goto[[School Art Classroom]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="4,58,57,111" alt="Music Room" onclick="$.wiki('<<goto[[School Music Room]]>><<set $Minutes += 1>>')" />
+
+</map>
+
+<</if>>

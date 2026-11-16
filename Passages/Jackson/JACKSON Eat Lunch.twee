@@ -1,0 +1,39 @@
+:: JACKSON Eat Lunch [nobr]
+
+    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+/* Quest Specific */
+<<if $ActiveQuests.includes("Jackson: Parental Drama 2")>>
+    <<include"Jackson Parental Drama 3">>
+
+<<elseif $JacksonSocial > -15>>
+    <<set $Random to random(1, 2)>>
+    <<if $Random == 1>>
+        You take a seat at the same table as <span style="color:DarkTurquoise">Jackson</span> and chat, enjoying your time together. He talks a majority of the time, but it is still nice.<br>
+        <<socialChange "Jackson" 1>>
+        <br>
+    <<elseif $Random == 2>>
+        <<include"Jackson Eat Lunch Pea">>
+    <</if>>
+<<else>>
+    <<set $Random to random(1, 2)>>
+    <<if $Random == 1>>
+        You take a seat at the same table as <span style="color:DarkTurquoise">Jackson</span> and attempt to start a conversation, but he seems nervous around you and it goes no where.<br>
+    <<elseif $Random == 2>>
+        You take a seat at the same table as <span style="color:DarkTurquoise">Jackson</span> and chat, enjoying your time together. He talks a majority of the time, but it is still nice.<br>
+        <<socialChange "Jackson" 1>>
+    <</if>>
+    <br>
+<</if>>
+
+<<include"School Lunch">>
+<<set $FriendLunch to 1>>

@@ -1,0 +1,71 @@
+:: PH Dad Bath [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Dad's Bathroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 1,
+    Public: 0,
+    Environment: "Bathroom",
+}>>
+
+<span style="color:Azure"><big><strong>--Dad's Bathroom--</strong></big></span><br>
+
+<<if $Player.Exposed == "Naked">>
+	<<include"PH Dad Bathroom Naked">>
+<<elseif $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+	<<include"PH Dad Bathroom Naked">>
+<<else>>
+
+
+
+<<if $DadSche.Location == "Dad Bath">>
+	<<include "Dad Seen Dad Bathroom">>
+
+<<else>>
+You stand in <span style="color:DarkTurquoise">Your Father</span>’s Bathroom. It is larger than you and your brother’s and much more organized. It has new bright silver appliances that <span style="color:DarkTurquoise">Your Father</span> had put in before you moved in. It is very clean.<br>
+<br>
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<<if $ActiveQuests.includes("Chores")>>
+	<<for _i to 0; _i lt $QuestLog.length; _i++>>
+		<<if $QuestLog[_i].Name == "Weekly Chores">>
+			<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+				<<if $QuestLog[_i].Objectives[_o].Name == "Mop">>
+					<<if !$QuestLog[_i].Objectives[_o].Tags.includes("Dad")>>
+						[[Mop Dad's Bathroom (0:10)|Mop Dad Bath]]<br>
+					<</if>>
+				<</if>>
+			<</for>>
+			<<break>>
+		<</if>>
+	<</for>>
+<</if>>
+
+
+<</if>>
+<br>
+
+<br>
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Your Father's Bedroom (0:01)|PH Dad Bedroom][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Room Marker.png" 
+style="position: absolute; left: 58px; top: 4px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="58,58,111,111" alt="Dad Bedroom" onclick="$.wiki('<<goto[[PH Dad Bedroom]]>><<set $Minutes += 1>>')" />
+</map>
+
+<</if>>

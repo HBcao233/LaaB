@@ -1,0 +1,116 @@
+:: Boy Barn Kids Tops Animal Shirts [nobr]
+<span style="color:Azure"><strong>-Animal T-Shirt ($5)-</strong></span><br>
+
+
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+	<<set $ADTop to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADOver to $None>>
+    <<set $ADNeck to $None>>
+    <<if $ShopColor == "Black">>
+    	<<set $ADTop to $KidsBlackAnimalShirt>>
+	<<elseif $ShopColor == "Blue">>
+    	<<set $ADTop to $KidsBlueAnimalShirt>>
+	<<elseif $ShopColor == "Gray">>
+    	<<set $ADTop to $KidsGrayAnimalShirt>>
+	<<elseif $ShopColor == "Green">>
+    	<<set $ADTop to $KidsGreenAnimalShirt>>
+	<<elseif $ShopColor == "Orange">>
+    	<<set $ADTop to $KidsOrangeAnimalShirt>>
+	<<elseif $ShopColor == "Red">>
+    	<<set $ADTop to $KidsRedAnimalShirt>>
+	<<elseif $ShopColor == "Teal">>
+    	<<set $ADTop to $KidsTealAnimalShirt>>
+	<<elseif $ShopColor == "White">>
+    	<<set $ADTop to $KidsWhiteAnimalShirt>>
+    <</if>>
+    
+<<include"Kid Avatar Display">>
+<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+<br>
+<<set _random to random(1, 6)>>
+<<if _random == 1>>
+    <span style="color:LightSteelBlue">“Trying these on in front of you is kinda embarrassing.”</span>
+<<elseif _random == 2>>
+    <span style="color:LightSteelBlue">“Why are you smiling at me like that?”</span>
+<<elseif _random == 3>>
+    <span style="color:LightSteelBlue">“These are kinda cool. And they fit nice.”</span>
+<<elseif _random == 4>>
+    <span style="color:LightSteelBlue">“So? How do I look?”</span>
+<<elseif _random == 5>>
+    <span style="color:LightSteelBlue">“Keep the door shut! I don’t want anyone to see me!”</span>
+<<elseif _random == 6>>
+    <span style="color:LightSteelBlue">“Do you think I look good in these?”</span>
+<</if>><br>
+<br>
+
+<strong>Animal T-Shirt:</strong><br>
+	<<link [img["Images/Icons/Shop Icons/Colors/Black.png"]]>>
+    	<<set $ShopColor to "Black">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Blue.png"]]>>
+    	<<set $ShopColor to "Blue">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Gray.png"]]>>
+    	<<set $ShopColor to "Gray">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Green.png"]]>>
+    	<<set $ShopColor to "Green">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Orange.png"]]>>
+    	<<set $ShopColor to "Orange">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Red.png"]]>>
+    	<<set $ShopColor to "Red">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Teal.png"]]>>
+    	<<set $ShopColor to "Teal">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/White.png"]]>>
+    	<<set $ShopColor to "White">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+    <br>
+
+
+	/* PURCHASE */
+<<if $Money >= 5>>
+	<<link "Purchase ($5)">>
+    <<if $ShopColor == "Black">>
+    	<<set $NoahInClosetTop.push($KidsBlackAnimalShirt)>>
+	<<elseif $ShopColor == "Blue">>
+    	<<set $NoahInClosetTop.push($KidsBlueAnimalShirt)>>
+	<<elseif $ShopColor == "Gray">>
+    	<<set $NoahInClosetTop.push($KidsGrayAnimalShirt)>>
+	<<elseif $ShopColor == "Green">>
+    	<<set $NoahInClosetTop.push($KidsGreenAnimalShirt)>>
+	<<elseif $ShopColor == "Orange">>
+    	<<set $NoahInClosetTop.push($KidsOrangeAnimalShirt)>>
+	<<elseif $ShopColor == "Red">>
+    	<<set $NoahInClosetTop.push($KidsRedAnimalShirt)>>
+	<<elseif $ShopColor == "Teal">>
+    	<<set $NoahInClosetTop.push($KidsTealAnimalShirt)>>
+	<<elseif $ShopColor == "White">>
+    	<<set $NoahInClosetTop.push($KidsWhiteAnimalShirt)>>
+    <</if>>
+        <<set $Money -= 5>>
+        <<goto "Kids Boy Barn">>
+    <</link>>
+<<else>>
+	<span style="color:Lightcoral">Purchase ($5)</span>
+<</if>>

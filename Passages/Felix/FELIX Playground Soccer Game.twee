@@ -1,0 +1,84 @@
+:: FELIX Playground Soccer Game [nobr]
+
+	<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You call out to <span style="color:DarkTurquoise">Felix</span> as he is celebrating scoring a goal and ask to join him. <span style="color:LightSteelBlue">“Yeah!”</span> He says excitedly, <span style="color:LightSteelBlue">“We are a man down and could do with another striker if you think you can keep up! The other team could probably do with another goalie as well!”</span> <span style="color:DarkTurquoise">Felix</span> laughs. It was clear from what you saw that the other team’s goalie wasn’t the best, especially against a player like <span style="color:DarkTurquoise">Felix</span>. <br>
+<br>
+
+<div id=choice>
+	<<link "Join Félix's team as a striker">>
+	<<replace"#choice">>
+	
+	You decide to play on <span style="color:DarkTurquoise">Felix</span>’s team as a striker! He gladly welcomes you and the next match begins with both teams even, with the enemy starting out with the ball. At the start, your team is forced to play on the defensive, but a failed shot soon puts the ball in <span style="color:DarkTurquoise">Felix</span>’s hands, or feet. He is surrounded, but the goal is wide open for you. Noticing this, <span style="color:DarkTurquoise">Felix</span> waits for his opening and passes the ball to you!<br>
+	<br>
+	<<skillCheck "Athletics" 70>>
+	
+	<<if _result == 1>>
+	<span style="color:Green">Timing it perfectly, you kick the ball hard towards the goal!</span> The goalie wasn’t expecting your shot and is unable to stop the ball from entering the goal. Your team cheers and runs over to you. <span style="color:DarkTurquoise">Felix</span> jumps on your back, causing you both to tumble to the ground laughing. The game continues for a while longer, with your team ending up the clear victor.<br>
+	<<needChange "Fun" 20>>
+	<<socialChange "Felix" 3>>
+	<<skillPoints "Athletics" 3>>
+	<br>
+	[[Continue|School Courtyard]] 
+
+	<<else>>
+	<span style="color:Red">You kick, but unfortunately are a bit too slow and miss the ball!</span> To add to this, you’ve kicked so hard that you throw yourself off balance and fall backwards onto your butt. Some of the opposing team laughs at you as they take the ball back and manage to score a goal. You feel embarrassed at your mistake, but <span style="color:DarkTurquoise">Felix</span> gives you an encouraging pat on the back as the game continues.<br>
+	<<needChange "Fun" 20>>
+	<<socialChange "Felix" 3>>
+	<<addMoodlet "Stress" 1>>
+	<<skillPoints "Athletics" 3>>
+	<br>
+	[[Continue|School Courtyard]] 
+	<</if>>
+	
+	<</replace>>
+	<</link>>
+	<<skillDiff "Athletics" 70>><br>
+	
+	<<link "Join opposing team as a goalie">>
+	<<replace"#choice">>
+	You decide to play as a goalie against <span style="color:DarkTurquoise">Felix</span>’s team. He wishes you luck and everyone takes their positions. Things are seemingly going well for the first few minutes, with your team having near complete control of the ball, but eventually <span style="color:DarkTurquoise">Felix</span> manages to steal it and has a clear path right to you. You ready yourself to block his attack.<br>
+	<br>
+	<<skillCheck "Athletics" 70>>
+
+	<<if _result == 1>>
+<span style="color:Green"><span style="color:DarkTurquoise">Felix</span> tries to fake you out, but you see it coming!</span> He kicks, sending the ball curving towards the goal, but you manage to dive towards it just in time, catching it and blocking the shot! Your team cheers as you kick the ball back towards one of your teammates and your team manages to score a goal not long after.<br>
+<br>
+<span style="color:DarkTurquoise">Felix</span> seems impressed by your skills.<br>
+
+	<<needChange "Fun" 20>>
+	<<socialChange "Felix" 3>>
+	<<skillPoints "Athletics" 3>>
+	<br>
+	[[Continue|School Courtyard]] 
+
+	<<else>>
+<span style="color:Red">You keep your eye on <span style="color:DarkTurquoise">Felix</span>, believing you know where he is going. But as he kicks the ball, it curves in the air, heading towards the other side of the goal!</span> You dive towards the ball, but are just short. You fall face first into the grass as the ball enters the goal and the opposing team cheers. Embarrassed by your fail, you sigh, as <span style="color:DarkTurquoise">Felix</span> runs over to help you up.<br>
+<br>
+<span style="color:LightSteelBlue">“Don’t be too hard on yourself.”</span> He laughs, <span style="color:LightSteelBlue">“That was a hard one to block!”</span> Despite your failure, you still have a fun time playing soccer.<br>
+
+	<<needChange "Fun" 20>>
+	<<socialChange "Felix" 3>>
+
+	<<addMoodlet "Stress" 1>>
+	<<skillPoints "Athletics" 3>>
+	<br>
+	[[Continue|School Courtyard]] 
+	<</if>>
+	
+	
+	
+	<</replace>>
+	<</link>>
+	<<skillDiff "Athletics" 70>><br>
+
+</div>

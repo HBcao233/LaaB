@@ -1,0 +1,133 @@
+:: PH Kitchen [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Home Kitchen",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Kitchen",
+}>>
+<<set _randomencounter to random(1, 100)>>
+/* ONLY ONE RE IN KITCHEN, SO UNSETS IF THAT EVENTS CONDITIONS AREN'T MET.
+TO BE REMOVED ONCE DEFAULT RE'S ARE ADDED */
+<<if !$PlayerHead.Tags.includes("Fox Costume") && !$PlayerWaist.Tags.includes("Fox Costume") && $Player.Traits.includes("Kitsune")>>
+	<<set _randomencounter to 100>>
+<</if>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Home Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Home Pee">>
+
+/* Random Encounters */
+<<elseif _randomencounter == 1>>
+	<<if $PlayerHead.Tags.includes("Fox Costume") or $PlayerWaist.Tags.includes("Fox Costume") or $Player.Traits.includes("Kitsune")>>
+		<<set _randomeventpassage to ["Home Kitchen Random Encounter Fox Costume", "Home Kitchen Random Encounter Fox Gabe Teasing", "Dad Asking PC to be Family Pet Jokingly"]>>
+		<<set _event to _randomeventpassage.random()>>
+		<<include _event>>
+	<</if>>
+<<else>>
+
+<<if $Player.Exposed == "Naked">>
+	<<include"PH Kitchen Naked">>
+<<else>>
+
+<span style="color:Azure"><big><strong>--Kitchen--</strong></big></span><br>
+
+You stand in the kitchen. There is a small nook where you and your family eat. Breakfast, Lunch, and Dinner are served here and you can work on your homework here.
+<br>
+<br>
+/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $Time.between(6,0,8,0)>>
+	<<if $Breakfast != 1>>
+	[[Eat Breakfast (0:15)|Breakfast]]<br>
+	<</if>>
+<<elseif $Time.between(11,0,13,0)>>
+	<<if $Lunch != 1>>
+	[[Eat Lunch (0:15)|Lunch]]<br>
+	<</if>>
+<<elseif $Time.between(17,0,19,0)>>
+	<<if $Dinner != 1>>
+	[[Eat Dinner (0:15)|Dinner]]<br>
+	<</if>>
+<<elseif $Time.after(19) and $Dinner != 1>>
+	[[Eat Dinner from Fridge (0:15)|Dinner]]<br>
+<</if>>
+
+<<if $Homework == 1>>
+	<<if $Skill.Perks.includes("Faster Homework")>>
+		[[Do Homework (0:50)|Homework]]<br>
+	<<else>>
+		[[Do Homework (1:00)|Homework]]<br>
+	<</if>>
+<</if>>
+
+<<if $FrozenDinners > 0>>
+	[[Eat Frozen Dinner (0:15)|PH Kitchen][$FrozenDinners -= 1; $Minutes += 15; $Player.Hunger += 35]] $FrozenDinners/5<br>
+<</if>>
+
+
+<<if $Money >= 4>>
+	[[Cook something (0:30)|Cook Something Home]]
+	<<listbox "$MealLevel">>
+	<<option "Basic Meal ($4)" "Basic">>
+	<</listbox>><br>
+<<else>>
+	<span style="color:LightCoral">Cook something (Not enough money)</span><br>
+<</if>>
+
+<<if $ToggleBladder == 1>>
+	[[Drink Water|Kitchen Drink Water]] <span style="color:red">-Bladder</span><br>
+<</if>>
+
+<<if $ActiveQuests.includes("Chores")>>
+	<<for _i to 0; _i lt $QuestLog.length; _i++>>
+		<<if $QuestLog[_i].Name == "Weekly Chores">>
+			<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+				<<if $QuestLog[_i].Objectives[_o].Name == "Take out Trash" && $QuestLog[_i].Objectives[_o].State != $QuestLog[_i].Objectives[_o].Total>>
+					[[Take Out Trash (0:05)|Take Out Trash]]<br>
+				<<elseif $QuestLog[_i].Objectives[_o].Name == "Do Laundry" && $QuestLog[_i].Objectives[_o].State != $QuestLog[_i].Objectives[_o].Total>>
+					[[Wash Clothes (0:10)|Laundry]]<br>
+				<<elseif $QuestLog[_i].Objectives[_o].Name == "Mop">>
+					<<if !$QuestLog[_i].Objectives[_o].Tags.includes("Kitchen")>>
+						[[Mop Kitchen (0:10)|Mop Kitchen]]<br>
+					<</if>>
+				<</if>>
+			<</for>>
+			<<break>>
+		<</if>>
+	<</for>>
+<</if>>
+
+[[Wait (0:05)|PH Kitchen][$Minutes += 5]]<br>
+
+<br>
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Hallway (0:01)|PH Hallway][$Minutes += 1]] <br>
+	[[Living Room (0:01)|PH Living Room][$Minutes += 1]] <br>
+	[[Backyard (0:01)|PH Backyard][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Big Room Marker.png" 
+style="position: absolute; left: 166px; top: 166px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="166,58,273,111" alt="Living Room" onclick="$.wiki('<<goto[[PH Living Room]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="166,220,273,273" alt="Backyard" onclick="$.wiki('<<goto[[PH Backyard]]>><<set $Minutes += 1>>')" />
+</map>
+<</if>>
+<</if>>

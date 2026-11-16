@@ -1,0 +1,115 @@
+:: Skill EXP Gain [nobr]
+
+/* SETTING TIME */
+<<set _time to $SkillCheckTime>>
+
+/* SKILL CHECK DIFFICULTY */
+<<set _dif to $SkillCheckDifficulty>>
+
+/* WHAT SKILL ARE WE TESTING */
+<<if $SkillCheckType == "Athletics">>
+	<<set _skill to $AthleticsSkill>>
+<<elseif $SkillCheckType == "Math">>
+	<<set _skill to $MathSkill>>
+<<elseif $SkillCheckType == "History">>
+	<<set _skill to $HistorySkill>>
+<<elseif $SkillCheckType == "Science">>
+	<<set _skill to $ScienceSkill>>
+<<elseif $SkillCheckType == "English">>
+	<<set _skill to $EnglishSkill>>
+<<elseif $SkillCheckType == "Swimming">>
+	<<set _skill to $SwimmingSkill>>
+<<elseif $SkillCheckType == "Acting">>
+	<<set _skill to $ActingSkill>>
+<<elseif $SkillCheckType == "Cooking">>
+	<<set _skill to $CookingSkill>>
+<<elseif $SkillCheckType == "Exhibition">>
+	<<set _skill to $ExhibitionSkill>>
+<</if>>
+
+<<set _skilllevel to _dif - _skill>>
+<<if _skilllevel == 0>>
+	<<set _skilllevel to 1>>
+<<elseif _skilllevel == -1 or _skilllevel == -2>>
+	<<set _skilllevel to 0.5>>
+<<elseif _skilllevel < -2>>
+	<<set _skilllevel to 0.2>>
+<<elseif _skilllevel == 1 or _skilllevel == 2>>
+	<<set _skilllevel to 1.5>>
+<<elseif _skilllevel > 2>>
+	<<set _skilllevel to 2>>
+<</if>>
+
+/* FINDING OUT HOW MUCH XP */
+<<set _xp to _time * _skilllevel>>
+<<set _xp *= 10>>
+<<set _xp to Math.round(_xp)>>
+
+/* TRAIT BASED XP GAIN */
+<<set _txp to 0>>
+/* ATHLETIC */
+<<if $SkillCheckType == "Athletics">>
+	<<if $Player.Traits.includes("Athletic")>>
+		<<if _time >= 1 and _skilllevel >= 1>>
+			<<set _txp to 4>>
+		<<else>>
+			<<set _txp to 2>>
+		<</if>>
+	<</if>>
+<</if>>
+/* BOOKWORM */
+<<if $SkillTrainBook == 1>>
+	<<set $SkillTrainBook to 0>>
+	<<if $Player.Traits.includes("Bookworm")>>
+		<<if _time >= 1 and _skilllevel >= 1>>
+			<<set _txp to 4>>
+		<<else>>
+			<<set _txp to 2>>
+		<</if>>
+	<</if>>
+<</if>>
+
+<<if $Debug == 1>>
+	<span style="color:Azure"><strong>XP Gained</strong></span>: _xp<br>
+	<span style="color:Azure"><strong>XP Gained via Traits</strong></span>: _txp<br>
+<</if>>
+
+<<set _xp += _txp>>
+
+/* IF FAILED, ONLY GAIN 2XP */
+<<if $SkillResults == "Fail">>
+	<<if _xp > 2>>
+		<<set _xp to 2>>
+	<<else>>
+		<<set _xp to 1>>
+	<</if>>
+<</if>>
+
+<span style="color:green">+_xp $SkillCheckType XP Gained!</span><br>
+
+/* APPLYING THE EXP */
+<<if $SkillCheckType == "Athletics">>
+	<<set $AthleticsXP += _xp>>
+	<<include"Athletics Skill Level Up">>
+<<elseif $SkillCheckType == "Math">>
+	<<set $MathXP += _xp>>
+	<<include"Math Skill Level Up">>
+<<elseif $SkillCheckType == "History">>
+	<<set $HistoryXP += _xp>>
+	<<include"History Skill Level Up">>
+<<elseif $SkillCheckType == "Science">>
+	<<set $ScienceXP += _xp>>
+	<<include"Science Skill Level Up">>
+<<elseif $SkillCheckType == "English">>
+	<<set $EnglishXP += _xp>>
+	<<include"English Skill Level Up">>
+<<elseif $SkillCheckType == "Swimming">>
+	<<set $SwimmingXP += _xp>>
+	<<include"Swimming Skill Level Up">>
+<<elseif $SkillCheckType == "Acting">>
+	<<set $ActingXP += _xp>>
+	<<include"Acting Skill Level Up">>
+<<elseif $SkillCheckType == "Cooking">>
+	<<set $CookingXP += _xp>>
+	<<include"Cooking Skill Level Up">>
+<</if>>

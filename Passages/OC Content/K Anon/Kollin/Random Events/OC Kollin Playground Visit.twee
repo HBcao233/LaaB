@@ -1,0 +1,152 @@
+:: OC Kollin Playground Visit [nobr]
+
+/*-Intro (First Time)-*/ 
+<<if $OCKollinPlaygroundFirst != 1>>
+While wandering around the edge of the courtyard near the tall stone fence that outlines the area, <span style="color:Yellow">you hear some commotion ahead and run over to investigate.</span> Once there, you notice a crowd of boys gathered around the edge of the fence, a spot normally devoid of students, with a strange boy at its center who appears to be handing out business cards while chatting away. <span style="color:LightGreen">Then you spot the green streak in his hair and realize it is <span style="color:DarkTurquoise">Kollin</Span></span>, that strange boy you met in the woods! <br>
+
+<<set _ad to [
+    {
+        Name: "OC Kollin",
+        State: {
+            Mouth: "Happy", 
+        },
+    },
+]>>
+<<ad _ad>>
+
+/*If Uniforms */
+<<if $SchoolUniforms == 1>>
+    The boy’s outfit makes him completely stand out; surrounded by boys wearing their Preston uniform, he is in his normal casual clothes. It would be clear to anyone that he didn’t belong. Not even mentioning the rope hanging from his belt, which you realize is a grappling hook and explains how he snuck into the courtyard; the boy is clearly a strange sight which explains the attention he is getting. <br>
+    <<else>>
+/*If no Uniforms */
+    While the boy may have been able to blend in with the crowd of boys, the large rope hanging from his belt, which you realize is a grappling hook and explains how he snuck into the courtyard, makes him stand out. You’re guessing by the commotion that some boys saw him scaling the fence and word spread from there, leading to the crowd that now surrounds him. <br>
+<</if>>
+<br>
+
+<div id="choice">
+<<link "Continue">>
+<<replace "#choice">>
+
+    As you are wondering what exactly he is doing here, since he goes to the public school to the south, <span style="color:DarkTurquoise">Kollin</Span> spots you. He waves and runs over, about half of the crowd slowly following while others watch from their original spot. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+        Mouth: "Happy", 
+         },
+     },
+
+        {
+        Name: "OC Kollin",
+        State: {
+        Mouth: "Happy", 
+        },
+     },
+]>>
+    <<ad _ad>>  
+
+    <span style="color:LightSteelBlue">“Hey there, <span style="color:DarkTurquoise">$Player.Name</Span>! How are you doing?”</span> <span style="color:DarkTurquoise">Kollin</Span> asks with a smile. You greet him, stating that you are fine, but quizzically ask him what he’s doing here. <span style="color:LightSteelBlue">“Well, I’ve never met someone as interesting as you from Preston before. So, figured I should finally check this place out. It's not bad here. The walls are nice but fail pretty hard at keeping things out.”</span> <span style="color:DarkTurquoise">Kollin</Span> taps the Kevlar rope and foldable grappling hook on his belt, <span style="color:LightSteelBlue">“But I guess they are more so trying to keep things inside.”</span> He smirks as you roll your eyes. <span style="color:LightSteelBlue">“Plus, it means I get a chance to chat more with you.”</span> He slightly bends forwards, moving his arm in an elaborate gesture and winks at you.  The crowd of boys seems very curious about this strange boy and even more curious how you know him. However, as <span style="color:DarkTurquoise">Kollin</Span> continues to talk to you and ignore them, parts of the crowd begins to slowly disperse. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Funnily enough, my school is on its lunch break as well, so figured I’d hop on over!”</span> <span style="color:DarkTurquoise">Kollin</Span> explains. It’s no wonder he drew such a crowd. Not only did he scale the school fence with a grappling hook, but he is also quite the talker. Using elaborate gestures and words, it was a little bit captivating. You chat with <span style="color:DarkTurquoise">Kollin</Span> for a while, wandering around this back corner of the courtyard, and compare notes on your different schools. You persuade him against going deeper into the courtyard to investigate, you don’t even want to think about what would happen if he were discovered by someone like Mr. Randolph. You don’t think he’d take kindly to people sneaking into the school with a grappling hook. You wonder how <span style="color:DarkTurquoise">Kollin</Span> would try to get himself out of that situation. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Oh!”</span> <span style="color:DarkTurquoise">Kollin</Span>’s smartwatch suddenly beeps, <span style="color:LightSteelBlue">“Seems it’s time to go. It was a pleasure talking to you my friend, we should do this again.”</span> <span style="color:DarkTurquoise">Kollin</Span> turns and waves to the few members of the crowd who stuck around at a distance to spy on you both before turning back to you. He stretches out his hand for a handshake. His entire routine feels very professional and rehearsed; it is like he’s a businessman who just met with a client for lunch and was departing on proper terms. <span style="color:LightSteelBlue">“I’d give you one of my cards, but I know you already have it. Until next time!”</span> He grins and waves before running back towards the wall. <br>
+    <br>
+    <span style="color:DarkTurquoise">Kollin</Span> pulls out his grappling hook and swings it around, before tossing it to the wall. Perfect aim: it’s clear he has done this quite a few times, though you wonder if he really needed the grappling hook to scale the wall. As he departs, you and the rest of the boys just stare in slight disbelief, <span style="color:Pink">though you are more so admiring the good view of <span style="color:DarkTurquoise">Kollin</Span>’s butt you get from this angle.</span> <br>
+    <br>
+    News quickly spread throughout the small group that remained that word had hit the teachers of some commotion over here and they were on their way. So, the rest of you quickly disperse. However, you notice quite a few boys are glancing your way and talking about you. <span style="color:LightGreen">Seems having some strange kid climb over the school walls like some sort of spy or rebel, walk straight towards you and chat like buddies has caused many of them to take an interest in you.</span> <br>
+
+
+    <<needChange "Fun" 10>>
+    <span style="color:Green">+Reputation</span>
+    <<set $SchoolRep += 5>><br>
+    <<socialChange "Kollin" 3 1>>
+    <<set $OCKollinPlaygroundVisit to 1>>
+    <<set $OCKollinPlaygroundFirst to 1>>
+    <br>
+    [[Continue|School Courtyard]] 
+
+<</replace>>
+<</link>>
+</div>
+
+/*-Intro (Repeatable)-*/ 
+<<else>>
+    While wandering around the edge of the courtyard near the tall stone fence that outlines the area, <span style="color:Yellow">you hear some commotion ahead and run over to investigate.</span> Once there, you notice a crowd of boys gathered around the edge of the fence, a spot normally devoid of students, with a strange boy at its center who appears to be handing out business cards while chatting away. <span style="color:LightGreen"><span style="color:LightGreen">Then you spot the green streak in his hair and realize it is <span style="color:DarkTurquoise">Kollin</Span></span></span>. The boy has once again snuck into the school on his school’s lunch break. <br>
+
+<<set _ad to [
+    {
+        Name: "OC Kollin",
+        State: {
+            Mouth: "Happy", 
+        },
+    },
+]>>
+<<ad _ad>>
+
+/*If Uniforms */
+<<if $SchoolUniforms == 1>>
+    The boy’s outfit makes him completely stand out; surrounded by boys wearing their Preston uniform, he is in his normal casual clothes. It would be clear to anyone that he didn’t belong. Not even mentioning the rope hanging from his belt, which you realize is a grappling hook and explains how he snuck into the courtyard; the boy is clearly a strange sight which explains the attention he is getting. <br>
+    <<else>>
+/*If no Uniforms */
+    While the boy may have been able to blend in with the crowd of boys, the large rope hanging from his belt, which you realize is a grappling hook and explains how he snuck into the courtyard, makes him stand out. You’re guessing by the commotion that some boys saw him scaling the fence and word spread from there, leading to the crowd that now surrounds him. <br>
+    <</if>>
+    <br>
+
+<div id="choice">
+<<link "Continue">>
+<<replace "#choice">>
+
+    The crowd looks a little bigger than last time, seems word of <span style="color:DarkTurquoise">Kollin</Span>’s break-in has reached more ears. The boys around him all chat and ask questions, though <span style="color:DarkTurquoise">Kollin</Span> appears to chat and politely answer a few questions, he doesn’t seem too terribly interested in them; you’d wager he was hoping he’d be able to see you again. <span style="color:Yellow"><span style="color:DarkTurquoise">Kollin</Span> doesn’t seem to have spotted you yet. You could go over and chat with him or ignore him and go back to playing on the playground.</span><br>
+    <br>
+    <div id="choice">
+    <<link "Greet Him<br>">>
+    <<replace "#choice">>
+        
+        You call out to <span style="color:DarkTurquoise">Kollin</Span> by name, who turns to you with a smile and politely excuses himself from the crowd before quickly running over. They seem a little annoyed to have so quickly lost the strange boy’s attention but do little more than grumble away and start to disperse.
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                Mouth: "Happy", 
+                },
+            },
+
+                {
+                Name: "OC Kollin",
+                State: {
+                Mouth: "Happy", 
+                },
+            },
+        ]>>
+        <<ad _ad>>  
+
+        <span style="color:LightSteelBlue">“Greetings <span style="color:DarkTurquoise">$Player.Name</Span>!”</span> <span style="color:DarkTurquoise">Kollin</Span> shakes your hand pleasantly. <span style="color:LightSteelBlue">“Glad to see you expected my return.”</span> The two of you take a walk and chat for a bit. <span style="color:DarkTurquoise">Kollin</Span> says that he is already very familiar with his school, so he’s taken a keen interest in Preston and its students. <span style="color:LightGreen">The boy hounds you with odd questions and queries, but overall, it is a pleasant conversation and you feel closer to <span style="color:DarkTurquoise">Kollin</Span> by the time his watch beeps and he quickly departs back over the wall.</span> <br>
+
+        <<needChange "Fun" 10>>
+        <<set $SchoolRep += 5>><br>
+        <<socialChange "Kollin" 3 1>>
+        <<set $OCKollinPlaygroundVisit to 1>>
+        <br>
+        [[Continue|School Courtyard]] 
+        <</replace>>
+        <</link>>
+
+    <<link "Ignore Him<br>">>
+    <<replace "#choice">>
+        Nothing against <span style="color:DarkTurquoise">Kollin</Span>, but you don’t think chatting with him would be best for now. He seems to have quite the company already and you’d rather relax on the playground. Plus, who knows when a teacher would show up and you don’t want to be involved in whatever trouble that would bring.
+
+        <<needChange "Fun" 15>>
+        <<set $OCKollinPlaygroundVisit to 1>>
+        <br>
+        [[Continue|School Courtyard]] 
+
+        <</replace>>
+        <</link>>
+        </div>
+    <</replace>>
+    <</link>>
+    </div>
+<</if>>
+

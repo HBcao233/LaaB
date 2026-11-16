@@ -1,0 +1,55 @@
+:: Corner Store [nobr]
+
+<<set $Location to {
+    Name: "Corner Store",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Shopping District",
+}>>
+
+<<if $ActiveQuests.includes("Micah: Introduction") && $Time.between(8, 0, 20, 0)>>
+    <<include"OC Micah Corner Store Intro">>
+<<elseif $CompletedQuests.includes("Micah: Introduction") && random(1, 10) == 1>>
+    <<set _micahevents to ["OC Micah Corner Store Aggressive Boys", "OC Micah Corner Store Siblings", "OC Micah Corner Store Studying"]>>
+    <<set _event to _micahevents.random()>>
+    <<include _event>>
+<<else>>
+
+    <span style="color:Azure"><big><strong>--Corner Store--</strong></big></span><br>
+    You stand in the small, but popular, locally owned Corner Store. It sells a variety of food, cleaners, and other household products. It is commonly visited when people don’t want to make full trips to the grocery store or mall. It has a few rows of shelves, a freezer section, and some coin machines.<br>
+    <br>
+    <<if $CompletedQuests.includes("Micah: Introduction") && $Time.between(8, 0, 20, 0)>>
+        <<if $OCMicahSocial > 0>>
+        <span style="color:DarkTurquoise">Micah</span> stands behind the counter, running the register for his grandparents. <span style="color:LightGreen">He gives you a friendly smile as your eyes meet.</span> Seems to be rather slow at the moment. <br>
+        <<else>>
+        <span style="color:DarkTurquoise">Micah</span> stands behind the counter, running the register for his grandparents. <span style="color:Yellow">He looks away nervously as your eyes meet, seemingly uncomfortable around you.</span> Unfortunately for him, things are slow at the moment so he can’t run off to try to distract himself with work. <br>
+        <</if>>
+    <</if>>
+
+                    /* NPC SEEN */
+    <<include "NPC Inspect">>
+    <br>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+    /*
+    <<if $Money >= 5 and $FrozenDinners <= 5>>
+        [[Buy frozen dinner ($5)|Corner Store][$Money -= 5; $FrozenDinners += 1]]  $FrozenDinners/5<br>
+    <<else>>
+        <span style="color:lightcoral">Buy frozen dinner ($5)</span> $FrozenDinners/5<br>
+    <</if>>
+    */
+    <br>
+    <<set $Vendor = clone($VendingMachine || {})>>
+
+    <<include "Vendor">>
+    <br>
+    <br>
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    <img src="Images\World Map\Individual Icons\Shopping District.png">
+        [[Shopping District (0:01)|Shopping District][$Minutes += 1]]<br>
+    <br>
+
+<</if>>

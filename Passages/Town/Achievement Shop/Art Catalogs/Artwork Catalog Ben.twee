@@ -1,0 +1,269 @@
+:: Artwork Catalog Ben [nobr]
+
+<span style="color:Azure"><big><strong>--Benjamin Fischer Catalog--</strong></big></span><br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Benjamin Fischer</span>. I wonder how many people actually call him <span style="color:DarkTurquoise">Benjamin</span>?”</span> <span style="color:DarkTurquoise">Orange</span> ponders as he pulls out his binder, <span style="color:LightSteelBlue">“Regardless, this boy has quite a lot of fans, since everyone loves a little nerd. Oh, the things I could tell you about this boy! But alas, you’ll have to figure that all out for yourself. Maybe one day you’ll be able to befriend him and learn all his little secrets.”</span> <span style="color:DarkTurquoise">Orange</span> laughs as he places down a list of available art in front of you. <br>
+<br>
+
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+/* Character Art (Everyday) */
+    <<if $AchievementArt.includes("Ben Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Ben Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Ben\\Ben.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ben Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Ben Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Ben">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("Ben Character Art Undies")>>
+        <strong><span style="color:lightgreen">Ben Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Ben\\Ben Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ben Character Art (Undies)</strong>
+        | 
+        <<if $BenSocial >= 100 or $BenSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ben Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Ben Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Locker Wedgie (Normal) */
+    <<if $AchievementArt.includes("Locker Wedgie (Normal)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Normal)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Normal).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Normal)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Normal)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Locker Wedgie (Good End) */
+    <<if $AchievementArt.includes("Locker Wedgie (Good End)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Good End)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Good End).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Good End)</strong>
+        | 
+        <<if $BenSocial >= 100 or $BenSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Good End)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Ben Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Locker Wedgie (Bad End) */
+    <<if $AchievementArt.includes("Locker Wedgie (Bad End)")>>
+        <strong><span style="color:lightgreen">Locker Wedgie (Bad End)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Locker Wedgie (Bad End).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Locker Wedgie (Bad End)</strong>
+        | 
+        <<if $BenSocial >= 100 or $BenSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Locker Wedgie (Bad End)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Ben Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Ben Undie Hang (Normal) */
+    <<if $AchievementArt.includes("Ben Undie Hang (Normal)")>>
+        <strong><span style="color:lightgreen">Ben Undie Hang (Normal)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Ben Undie Hang (Normal).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ben Undie Hang (Normal)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ben Undie Hang (Normal)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Ben Undie Hang (Normal) */
+    <<if $AchievementArt.includes("Ben Undie Hang (Naked)")>>
+        <strong><span style="color:lightgreen">Ben Undie Hang (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Ben Undie Hang (Naked).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ben Undie Hang (Naked)</strong>
+        | 
+        <<if $BenSocial >= 100 or $BenSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ben Undie Hang (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Ben Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Ben Wet Pants (Normal) */
+    <<if $AchievementArt.includes("Ben Wet Pants (Normal)")>>
+        <strong><span style="color:lightgreen">Ben Wet Pants (Normal)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Ben Wet Pants (Normal).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ben Wet Pants (Normal)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ben Wet Pants (Normal)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Ben Wet Pants (Undies) */
+    <<if $AchievementArt.includes("Ben Wet Pants (Undies)")>>
+        <strong><span style="color:lightgreen">Ben Wet Pants (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Ben Wet Pants (Undies).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ben Wet Pants (Undies)</strong>
+        | 
+        <<if $BenSocial >= 100 or $BenSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ben Wet Pants (Undies)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Ben Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Ben Wet Pants (Naked) */
+    <<if $AchievementArt.includes("Ben Wet Pants (Naked)")>>
+        <strong><span style="color:lightgreen">Ben Wet Pants (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Ben Wet Pants (Naked).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ben Wet Pants (Naked)</strong>
+        | 
+        <<if $BenSocial >= 100 or $BenSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ben Wet Pants (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Ben Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Ben Dog Dream */
+    <<if $AchievementArt.includes("Ben Dog Dream")>>
+        <strong><span style="color:lightgreen">Ben Dog Dream</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Ben Dog Dream.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Ben Dog Dream</strong>
+        | 
+        <<if $BenSocial >= 100 or $BenSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ben Dog Dream")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Ben Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+/* Ben Sticker Set */
+    <<if $AchievementArt.includes("Ben Sticker Set")>>
+        <strong><span style="color:lightgreen">Ben Crying Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Crying Ben.png" "Rayray" "https://rayrayart.fanbox.cc">>
+        <strong><span style="color:lightgreen">Chibi Ben Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Chibi Ben.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Ben Steak Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Ben Steak.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Ben Sticker Set</strong>
+        | 
+        <<if $BenSocial >= 100 or $BenSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ben Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Ben">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Ben Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+
+<br>
+[[Back|Artwork Catalog]]

@@ -1,0 +1,397 @@
+:: CC Details [nobr]
+
+<span style="color:Azure"><strong>--Details--</strong></span><br>
+
+<<if $Adopted == 0>>
+	<<link "$Player.Name lives with his biological family.">>
+    	<<set $Adopted to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+<<elseif $Adopted == 1>>
+	<<link "$Player.Name was adopted as a baby.">>
+    	<<set $Adopted to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+<</if>><br>
+
+<<if $Bedwetter == 0>>
+	<<link "$Player.Name does not have nighttime problems.">>
+    	<<set $Bedwetter to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>><br>
+<<elseif $Bedwetter == 1>>
+	<<link "$Player.Name occasionally wets the bed.">>
+    	<<set $Bedwetter to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>><br>
+<div style="text-indent: 3em;">
+    Protection Preference: 
+    <label>
+        <<radiobutton "$BedWettingPref" 1 autocheck>>Diaper
+    </label>
+    <label>
+        <<radiobutton "$BedWettingPref" 2 autocheck>>Pull Ups
+    </label>
+</div>
+<</if>>
+
+<<if $PlayerGlasses != 1>>
+	<<link "$Player.Name does not wear glasses.">>
+    	<<set $PlayerGlasses to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+<<elseif $PlayerGlasses == 1>>
+	<<link "$Player.Name wears glasses.">>
+    	<<set $PlayerGlasses to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+<</if>><br>
+/*
+<<if $SexKnowledge == 0>>
+	<<link "$Player.Name has no idea what Sex is.">>
+    	<<set $SexKnowledge to 1>>
+        <<goto "CC Attributes">>
+    <</link>>
+<<elseif $SexKnowledge == 1>>
+	<<link "$Player.Name knows about Sex and Masturbation.">>
+    	<<set $SexKnowledge to 0>>
+        <<goto "CC Attributes">>
+    <</link>>
+<</if>><br>
+*/
+<<if $CanCum != 1>>
+	<<link "$Player.Name has dry orgasms.">>
+    	<<set $CanCum to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+<<elseif $CanCum == 1>>
+	<<link "$Player.Name can produce cum.">>
+    	<<set $CanCum to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+<</if>><br>
+
+
+<span style="color:Azure"><strong>--Family Details--</strong></span><br>
+<<if $NoahWetting != 1>>
+	<<link "Noah does not wet the bed">>
+    	<<set $NoahWetting to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+<<elseif $NoahWetting == 1>>
+	<<link "Noah does wet the bed">>
+    	<<set $NoahWetting to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+<</if>><br>
+
+<span>Noah Appearance:</span>
+<<if $NoahAppearance == 1>>
+	<<link"Same as PC">>
+		<<set $NoahAppearance to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+	<</link>><br>
+<<else>>
+	<<link"Custom">>
+		<<set $NoahAppearance to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+	<</link>><br>
+	<div style="text-indent: 3em;">
+		<span>Skin Color:</span> 
+		<<listbox "$Noah.SkinColor" autoselect>>
+			<<optionsfrom $SkinColorOptions>>
+		<</listbox>>
+	</div>
+	<div style="text-indent: 3em;">
+		<span>Hair Color:</span>
+		<<listbox "$Noah.HairColor" autoselect>>
+			<<optionsfrom $HairColorOptions>>
+		<</listbox>>
+	</div>
+	<div style="text-indent: 3em;">
+	<span>Eye Color:</span>
+	<<listbox "$Noah.EyeColor" autoselect>>
+		<<optionsfrom $EyeColorOption>>
+	<</listbox>>
+</div>
+	<div style="text-indent: 3em;">
+<span>Penis Style:</span>
+	<<listbox "$Noah.PenisStyle" autoselect>>
+		<<optionsfrom ['Cut', 'Uncut']>>
+	<</listbox>>
+	</div>
+<</if>>
+<span>Gabe Appearance:</span>
+<<if $GabeAppearance == 1>>
+	<<link"Same as PC">>
+		<<set $GabeAppearance to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+	<</link>><br>
+<<else>>
+	<<link"Custom">>
+		<<set $GabeAppearance to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+	<</link>><br>
+	<div style="text-indent: 3em;">
+		<span>Skin Color:</span> 
+		<<listbox "$Gabe.SkinColor" autoselect>>
+			<<optionsfrom $SkinColorOptions>>
+		<</listbox>>
+	</div>
+	<div style="text-indent: 3em;">
+<span>Penis Style:</span>
+	<<listbox "$Gabe.PenisStyle" autoselect>>
+		<<optionsfrom ['Cut', 'Uncut']>>
+	<</listbox>>
+	</div>
+<</if>>
+<span>Dad Appearance:</span>
+<<if $DadAppearance == 1>>
+	<<link"Same as PC">>
+		<<set $DadAppearance to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+	<</link>><br>
+<<else>>
+	<<link"Custom">>
+		<<set $DadAppearance to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+	<</link>><br>
+	<div style="text-indent: 3em;">
+		<span>Skin Color:</span> 
+		<<listbox "$Dad.SkinColor" autoselect>>
+			<<optionsfrom $SkinColorOptions>>
+		<</listbox>>
+	</div>
+	<div style="text-indent: 3em;">
+		<span>Hair Color:</span>
+		<<listbox "$Dad.HairColor" autoselect>>
+			<<optionsfrom $HairColorOptions>>
+		<</listbox>>
+	</div>
+<</if>>
+
+<br>
+<span style="color:Azure"><strong>--$Player.Name's Fears--</strong></span>
+<br>
+<span style="color:Red">Afraid</span> | <span style="color:Green">Not Afraid</span>
+<br>
+<<if $FearDark == 0>>
+	<span class="green"><<link "The Dark">>
+    	<<set $FearDark to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<<elseif $FearDark == 1>>
+	<span class="red"><<link "The Dark">>
+    	<<set $FearDark to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<</if>>
+ | 
+<<if $FearBugs == 0>>
+	<span class="green"><<link "Bugs & Spiders">>
+    	<<set $FearBugs to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<<elseif $FearBugs == 1>>
+	<span class="red"><<link "Bugs & Spiders">>
+    	<<set $FearBugs to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<</if>>
+ | 
+<<if $FearThunder == 0>>
+	<span class="green"><<link "Thunder">>
+    	<<set $FearThunder to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<<elseif $FearThunder == 1>>
+	<span class="red"><<link "Thunder">>
+    	<<set $FearThunder to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<</if>>
+ | 
+<<if $FearOcean == 0>>
+	<span class="green"><<link "Ocean">>
+    	<<set $FearOcean to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<<elseif $FearOcean == 1>>
+	<span class="red"><<link "Ocean">>
+    	<<set $FearOcean to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<</if>>
+ | 
+<<if $FearMonsters == 0>>
+	<span class="green"><<link "Imaginary Monsters">>
+    	<<set $FearMonsters to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<<elseif $FearMonsters == 1>>
+	<span class="red"><<link "Imaginary Monsters">>
+    	<<set $FearMonsters to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<</if>>
+ | 
+<<if $FearHeights == 0>>
+	<span class="green"><<link "Heights">>
+    	<<set $FearHeights to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<<elseif $FearHeights == 1>>
+	<span class="red"><<link "Heights">>
+    	<<set $FearHeights to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<</if>>
+ | 
+<<if $FearAnimals == 0>>
+	<span class="green"><<link "Vicious & Large Animals">>
+    	<<set $FearAnimals to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<<elseif $FearAnimals == 1>>
+	<span class="red"><<link "Vicious & Large Animals">>
+    	<<set $FearAnimals to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<</if>>
+ | 
+<<if $FearDogs == 0>>
+	<span class="green"><<link "Dogs">>
+    	<<set $FearDogs to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<<elseif $FearDogs == 1>>
+	<span class="red"><<link "Dogs">>
+    	<<set $FearDogs to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<</if>>
+ | 
+<<if $FearDoctor == 0>>
+	<span class="green"><<link "The Doctor">>
+    	<<set $FearDoctor to 1>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<<elseif $FearDoctor == 1>>
+	<span class="red"><<link "The Doctor">>
+    	<<set $FearDoctor to 0>>
+		<<replace"#CC">>
+			<<include"CC Details">>
+		<</replace>>
+    <</link>>
+    </span>
+<</if>>
+<br>
+<br>
+
+<span style="color:Azure"><strong>--Family Nicknames--</strong></span><br>
+<<if $nickname != 1>>
+	What Noah calls $Player.Name: 
+	<<textbox "$NoahNickname" $Player.Name>>
+	<br>
+	What Gabe calls $Player.Name: 
+	<<textbox "$GabeNickname" $Player.Name>>
+	<br>
+	What Dad calls $Player.Name: 
+	<<textbox "$DadNickname" $Player.Name>>
+	<br>
+	[[Confirm Nicknames|CC Main][$nickname to 1]]
+<<else>>
+	What Noah calls $Player.Name: 
+	$NoahNickname
+	<br>
+	What Gabe calls $Player.Name: 
+	$GabeNickname
+	<br>
+	What Dad calls $Player.Name: 
+	$DadNickname
+	<br>
+	[[Reset Nicknames|CC Main][$nickname to 0]]
+<</if>>

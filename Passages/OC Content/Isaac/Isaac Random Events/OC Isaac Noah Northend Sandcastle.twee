@@ -1,0 +1,229 @@
+:: OC Isaac Noah Northend Sandcastle [nobr]
+
+/* Intro */
+<<include"NOAH Avatar Equipment Set">>
+
+You walk over to your brother and find him playing in the sandbox with his little blueberry-haired friend <span style="color:DarkTurquoise">Isaac</span>. <span style="color:lightgreen">Even without the help of shovels and buckets, the two were in the process of building an impressive looking sandcastle.</span> <br>
+
+ <<set _ad to [
+        {
+            Name: "Noah",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "OC Isaac",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+<<ad _ad>>
+
+You watch from afar as the boys complete a mote, a central tower, and even use a bundle of weeds to create a dragon. <span style="color:lightgreen">Their imagination knows no bounds and you find enjoyment from just watching them.</span> <br>
+<br>
+
+<div id="choice">
+/*-Continue Watching-*/
+    <<link "Continue Watching<br>">>
+    <<replace"#choice">>
+
+    You continue watching as the boys play, eventually using rocks to tell a story of a brave ogre storming the castle in order to save a princess. You are pretty sure <span style="color:DarkTurquoise">Noah</span> is just copying the plot of a movie you saw, <span style="color:lightgreen">but <span style="color:DarkTurquoise">Isaac</span> seems so enthralled and loves playing the goofy animal sidekick…</span> <span style="color:Pink">until he tries to take his clothes off since <span style="color:lightsteelblue">“Animals dun wear clothes.”</span></span> <br>
+
+    <<set _ad to [
+            {
+                Name: "Noah",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Blush: 1,
+                },	
+
+            },
+            {
+                Name: "OC Isaac",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Happy",
+                },	
+                Clothes: {
+                    Top: $None,
+                },
+            },
+        ]>>
+    <<ad _ad>>
+
+    It takes your brother a solid 5 minutes to convince the young nudist that stripping in the middle of the park was not a good idea. <span style="color:lightgreen">In the end, they settle on him just removing his shirt.</span> <br>
+
+    <<needChange "Fun" 10>>
+    <<socialChange "Noah" 3>>
+    <<socialChange "Isaac" 3 1>>
+    <br>
+    [[Continue|Neighborhood Playground]]
+<</replace>>
+<</link>>
+
+<<if $Player.Traits.includes("Evil")>>
+/*-Break the Sandcastle (Evil)-*/
+    <<link "Break the Sandcastle (Evil)<br>">>
+    <<replace"#choice">>
+
+    With a mischievous grin and evil in your heart, you walk up to the boys and ask what they are doing. <br>
+    <br>
+    <span style="color:lightsteelblue">“We built this castle so we can play a game.”</span> <span style="color:DarkTurquoise">Noah</span> says happily, <span style="color:lightsteelblue">“Imma be a brave ogre trying to rescue a princess while <span style="color:DarkTurquoise">Isaac</span> is my animal sidekick!”</span> <br>
+    <br>
+    <span style="color:lightsteelblue">“Imma Dongee!”</span> <span style="color:DarkTurquoise">Isaac</span> adds happily, making a donkey sound. You smile at this as they put on the finishing touches, <span style="color:Yellow">but ask what they are going to do about the earthquake.</span> <br>
+    <br>
+    <span style="color:lightsteelblue">“Earthquake?”</span> <span style="color:DarkTurquoise">Noah</span> asks quizzically. <span style="color:lightgreen">On queue with his question, you leap into the air and slam both your feet down on the sandbox, causing it to shake with such force that the large tower at the center of the castle crumbles and crashes into it, taking out a large portion of their work.</span> <br>
+
+    <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                },	
+            },
+            {
+                Name: "Noah",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Eyes: "Mad",
+                    Cry: 1,
+                },	
+            },
+            {
+                Name: "OC Isaac",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                    Cry: 2,
+                },	
+            },
+        ]>>
+    <<ad _ad>>
+
+    <span style="color:lightsteelblue">“No!”</span> <span style="color:DarkTurquoise">Noah</span> says, trying to save as much of the castle as possible. <span style="color:lightsteelblue">“You’re a jerk! Go away or I’m telling Daddy!”</span> He yells, tears welling in his eyes as <span style="color:DarkTurquoise">Isaac</span> begins to cry, not understanding why you did that. <span style="color:lightgreen">You shrug and walk away chuckling, finding enjoyment out of ruining their fun.</span> <br>
+    <br>
+    <span style="color:lightsteelblue">“It’s okay <span style="color:DarkTurquoise">Isaac</span>, we can fix it. Don’t worry.”</span> Your brother tries to comfort to sobbing boy. Sure they may fix it, but it’ll never be the same and their game will be tainted by the memory of your evil actions. <span style="color:lightgreen">But hey, at least you’re proud of yourself.</span> <br>
+
+    <<needChange "Fun" 20>>
+    <<socialChange "Noah" -5>>
+    <<socialChange "Isaac" -5 1>>
+    <br>
+    [[Continue|Neighborhood Playground]]
+<</replace>>
+<</link>>
+<</if>>
+
+/*-Join in (Childish)-*/
+<<if $Player.Traits.includes("Childish")>>
+    <<link "Join in (Childish)<br>">>
+    <<replace"#choice">>
+
+    <span style="color:lightgreen">You walk into the sandbox and kneel down next to their creation, praising its impressive structure.</span> <br>
+    <br>
+    <span style="color:lightsteelblue">“Thanks!”</span> <span style="color:DarkTurquoise">Noah</span> replies with a hint of pride, <span style="color:lightsteelblue">“<span style="color:DarkTurquoise">Isaac</span> is great with sand.”</span> <br>
+    <br>
+    <span style="color:lightsteelblue">“Me and my bruhduh play on the beach a lot and build castles and other stuff all da time!”</span> <span style="color:DarkTurquoise">Isaac</span> says, matching <span style="color:DarkTurquoise">Noah</span>’s prideful pose. <span style="color:lightsteelblue">“Wanna pway?”</span> <br>
+    <br>
+    <span style="color:lightsteelblue">“Yeah!”</span> <span style="color:DarkTurquoise">Noah</span> says, grabbing some rocks, <span style="color:lightsteelblue">“We built this so we can play a game. I’m going to be a brave ogre knight while <span style="color:DarkTurquoise">Isaac</span> is my animal sidekick.”</span> <br>
+    <br>
+    <span style="color:lightsteelblue">“Imma Dongee!”</span> <span style="color:DarkTurquoise">Isaac</span> adds, making donkey noises. <br>
+    <br>
+    <span style="color:lightsteelblue">“Yeah. We are trying to rescue this princess. If you want, you can play the dragon and try to stop us! Oh, just be careful, we don’t want the castle to get messed up.”</span> <br>
+
+    <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },	
+            },
+            {
+                Name: "Noah",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Happy",
+                },	
+            },
+            {
+                Name: "OC Isaac",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Happy",
+                },	
+            },
+        ]>>
+    <<ad _ad>>
+
+    You join the two boys in their game of make believe, playing the perfect fierce fire-breathing dragon in their game. You even follow part of the movie plot that you know <span style="color:DarkTurquoise">Noah</span> is basing this game off of, playfully flirting with <span style="color:DarkTurquoise">Isaac</span>’s donkey and even giving the little lad a kiss on the cheek, which sends him into a giggle fit. <br>
+    <br>
+    You are pretty sure he doesn’t know what is going on or the movie <span style="color:DarkTurquoise">Noah</span> based this off of, <span style="color:lightgreen">but you all have fun regardless and when the game comes to an end, the boys are all smiles and laughter.</span> <br>
+
+    <<needChange "Fun" 20>>
+    <<socialChange "Noah" 5>>
+    <<socialChange "Isaac" 5 1>>
+    <br>
+    [[Continue|Neighborhood Playground]]
+<</replace>>
+<</link>>
+<</if>>
+
+<div id="choice">
+/*-Peek at their underwear (Kids Kink)-*/
+<<if $Player.Kinks.Kids == 1>>
+    <<link "Peek at their underwear (Kids Kink)<br>">>
+    <<replace"#choice">>
+    
+    Stealthfully, without giving away your true intention, you move from the bench facing the boys to the bench facing their backs. You have one single purpose in mind, one goal. <span style="color:Pink">Naturally as the boys sit on the sand and lean forward and move about, their clothing becomes slightly displaced, giving you a perfect view of their underwear.</span> Well, one boy’s underwear, as <span style="color:DarkTurquoise">Isaac</span> never seems to wear any. <br>
+
+    <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                    Blush: 1,
+                },	
+            },
+            {
+                Name: "Noah",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Happy",
+                },	
+            },
+            {
+                Name: "OC Isaac",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Happy",
+                },	
+            },
+        ]>>
+    <<ad _ad>>
+
+    <span style="color:Pink">You smirk as the pure $NoahUndies.Type come into view, shining a radiant $NoahUndies.Color. $NoahUndies.Name. You’ve always loved your little bother’s underwear of choice, so innocent and cute. It was a mixture both of seeing it without him knowing and the unknown embarrassment he’d be feeling if he knew just how much of his underwear-clad but is exposed as he leans forward. You could make out the entire shape of his adorable butt. <br>
+    <br>
+    And <span style="color:DarkTurquoise">Isaac</span>’s lack of underwear doesn’t make his peeks any less interesting. In the place of cute briefs, you get peeks at his cute butt instead! From little glances at his cute crack, to him leaning forward so his bottoms slide down to reveal nearly half of his squeezable, loveable rearend! You just wanted to go up and snuggle your face in it!</span> <br>
+    <br>
+    Alas, in such a public place the most you can do is watch. Which, to be fair, is still very nice! <span style="color:Pink">You hope they never grow up.</span> <br>
+
+    <<needChange "Fun" 10>>
+    <<socialChange "Noah" 3>>
+    <<socialChange "Isaac" 3 1>>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Kids"]>>
+    <<arousalGain 10 _arousalbs _arousalkink>>
+    <br>
+    [[Continue|Neighborhood Playground]]`
+<</replace>>
+<</link>>
+<</if>>
+</div>

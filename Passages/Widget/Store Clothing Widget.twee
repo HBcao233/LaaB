@@ -1,0 +1,319 @@
+:: Store Clothing Widget [widget nobr]
+
+/*
+This is a widget that stores the characters clothing. It is to be used before striping a character OR to save a character's clothing prior to a scene, like Strip Poker, to restore them after.
+
+It is called like so:
+    <<storeClothing "Closet/Store/Restore" "Undies/Naked" 0/1>>
+    
+Closet/Store: This dictates if the clothing should be moved to the character's closet or stored in a variable. 
+If it goes into the closet, it can only be accessed by opening a closet. Use this for things such as removing clothes before bathing at home of if they are taken by dad.
+If it goes into a stored variable, it is added to the $SaveXXX variable, which allows us to Restore it.
+
+Restore: Use this is you want to restore the clothing the PC was wearing from the SaveXXX Variables. For example, this is used when returning the PC to their normal clothes after gym or after an event temporarily strips them.
+
+Undies/Naked: This argument is for whether or not Undies should be included. For example, in Gym Class the PC's underwear remains the same, so those are not stripped or restored. If you set it to Undies, the underwear not will not touched. Not saved, removed, or restored.
+
+0/1: This is asking if the PC should be stripped after the clothing has been stored. If 1, the PC will be striped of their clothing after it is stored. Use this to store their clothing and then strip them all in one. Do not set this when restoring. As if you strip the character after restoring, the clothes will be lost.
+     */
+
+<<widget "storeClothing">>
+    /* Setting Arguments */
+    <<set _store to _args[0]>>
+    <<set _undies to _args[1]>>
+    <<set _strip to _args[2]>>
+
+    /* Adding clothes to Closet */
+    <<if _store == "Closet">>
+        <<include"Store Clothing Widget Closet">>
+    /* Added clothes to Storage */
+    <<elseif _store == "Store">>
+        <<include"Store Clothing Widget Store">>
+    /* Restoring Clothes */
+    <<else>>
+        <<include"Store Clothing Widget Restore">>
+    <</if>>
+
+    /* Strip Character? */
+    <<if _strip>>
+        <<if _undies == "Undies">>
+            <<stripCharacter "Undies">>
+        <<else>>
+            <<stripCharacter "Naked">>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+:: Store Clothing Widget Closet [nobr]
+
+/* SENDING CLOTHES TO THE CLOSET */
+<<if $PlayerHead.Type != "None">>
+	<<set $ClosetHead.push($PlayerHead)>>
+<</if>>
+<<if $PlayerFace.Type != "None">>
+	<<set $ClosetFace.push($PlayerFace)>>
+<</if>>
+<<if $PlayerMouth.Type != "None">>
+	<<set $ClosetMouth.push($PlayerMouth)>>
+<</if>>
+<<if $PlayerNeck.Type != "None">>
+	<<set $ClosetNeck.push($PlayerNeck)>>
+<</if>>
+<<if $PlayerUnder.Type != "None">>
+	<<set $ClosetUnder.push($PlayerUnder)>>
+<</if>>
+<<if $PlayerTop.Type != "None">>
+	<<set $ClosetTop.push($PlayerTop)>>
+<</if>>
+<<if $PlayerOver.Type != "None">>
+	<<set $ClosetOver.push($PlayerOver)>>
+<</if>>
+<<if $PlayerOuter.Type != "None">>
+	<<set $ClosetOuter.push($PlayerOuter)>>
+<</if>>
+<<if $PlayerBack.Type != "None">>
+	<<set $ClosetBack.push($PlayerBack)>>
+<</if>>
+<<if $PlayerHands.Type != "None">>
+	<<set $ClosetHands.push($PlayerHands)>>
+<</if>>
+<<if $PlayerBottoms.Type != "None">>
+	<<set $ClosetBottoms.push($PlayerBottoms)>>
+<</if>>
+<<if $PlayerWaist.Type != "None">>
+	<<set $ClosetWaist.push($PlayerWaist)>>
+<</if>>
+<<if _undies == "Naked">>
+    <<if $PlayerUndies.Type != "None">>
+        <<set $ClosetUndies.push($PlayerUndies)>>
+    <</if>>
+<</if>>
+<<if $PlayerSocks.Type != "None">>
+	<<set $ClosetSocks.push($PlayerSocks)>>
+<</if>>
+<<if $PlayerShoes.Type != "None">>
+	<<set $ClosetShoes.push($PlayerShoes)>>
+<</if>>
+
+:: Store Clothing Widget Store [nobr]
+
+/* You can only store 1 set of clothing. If this is done twice, it will unset previously saved clothing. Storing clothes in this way should always end in a series of events that restores them. Such as them being restored after Gym Class. If you don't plan to restore the clothing, either add them to the closet or just remove them. */
+
+/* SAVING CLOTHES */
+<<if $PlayerHead.Type != "None">>
+	<<set $SaveHead to $PlayerHead>>
+<<else>>
+	<<unset $SaveHead>>
+<</if>>
+
+<<if $PlayerFace.Type != "None">>
+	<<set $SaveFace to $PlayerFace>>
+<<else>>
+	<<unset $SaveFace>>
+<</if>>
+
+<<if $PlayerMouth.Type != "None">>
+	<<set $SaveMouth to $PlayerMouth>>
+<<else>>
+	<<unset $SaveMouth>>
+<</if>>
+
+<<if $PlayerNeck.Type != "None">>
+	<<set $SaveNeck to $PlayerNeck>>
+<<else>>
+	<<unset $SaveNeck>>
+<</if>>
+
+<<if $PlayerUnder.Type != "None">>
+	<<set $SaveUnder to $PlayerUnder>>
+<<else>>
+	<<unset $SaveUnder>>
+<</if>>
+
+<<if $PlayerTop.Type != "None">>
+	<<set $SaveTop to $PlayerTop>>
+<<else>>
+	<<unset $SaveTop>>
+<</if>>
+
+<<if $PlayerOver.Type != "None">>
+	<<set $SaveOver to $PlayerOver>>
+<<else>>
+	<<unset $SaveOver>>
+<</if>>
+
+<<if $PlayerOuter.Type != "None">>
+	<<set $SaveOuter to $PlayerOuter>>
+<<else>>
+	<<unset $SaveOuter>>
+<</if>>
+
+<<if $PlayerBack.Type != "None">>
+	<<set $SaveBack to $PlayerBack>>
+<<else>>
+	<<unset $SaveBack>>
+<</if>>
+
+<<if $PlayerHands.Type != "None">>
+	<<set $SaveHands to $PlayerHands>>
+<<else>>
+	<<unset $SaveHands>>
+<</if>>
+
+<<if $PlayerBottoms.Type != "None">>
+	<<set $SaveBottoms to $PlayerBottoms>>
+<<else>>
+	<<unset $SaveBottoms>>
+<</if>>
+
+<<if $PlayerWaist.Type != "None">>
+	<<set $SaveWaist to $PlayerWaist>>
+<<else>>
+	<<unset $SaveWaist>>
+<</if>>
+
+<<if _undies == "Naked">>
+    <<if $PlayerUndies.Type != "None">>
+        <<set $SaveUndies to $PlayerUndies>>
+    <<else>>
+        <<unset $SaveUndies>>
+    <</if>>
+<</if>>
+
+<<if $PlayerSocks.Type != "None">>
+	<<set $SaveSocks to $PlayerSocks>>
+<<else>>
+	<<unset $SaveSocks>>
+<</if>>
+
+<<if $PlayerShoes.Type != "None">>
+	<<set $SaveShoes to $PlayerShoes>>
+<<else>>
+	<<unset $SaveShoes>>
+<</if>>
+
+:: Store Clothing Widget Restore [nobr]
+
+/* RESTORING CLOTHES */
+<<if $SaveHead != null && $SaveHead != "None">>
+	<<set $PlayerHead to $SaveHead>>
+	<<unset $SaveHead>>
+<<else>>
+	<<set $PlayerHead to $None>>
+	<<unset $SaveHead>>
+<</if>>
+
+<<if $SaveFace != null && $SaveFace != "None">>
+	<<set $PlayerFace to $SaveFace>>
+	<<unset $SaveFace>>
+<<else>>
+	<<set $PlayerFace to $None>>
+	<<unset $SaveFace>>
+<</if>>
+
+<<if $SaveMouth != null && $SaveMouth != "None">>
+	<<set $PlayerMouth to $SaveMouth>>
+	<<unset $SaveMouth>>
+<<else>>
+	<<set $PlayerMouth to $None>>
+	<<unset $SaveMouth>>
+<</if>>
+
+<<if $SaveNeck != null && $SaveNeck != "None">>
+	<<set $PlayerNeck to $SaveNeck>>
+	<<unset $SaveNeck>>
+<<else>>
+	<<set $PlayerNeck to $None>>
+	<<unset $SaveNeck>>
+<</if>>
+
+<<if $SaveUnder != null && $SaveUnder != "None">>
+	<<set $PlayerUnder to $SaveUnder>>
+	<<unset $SaveUnder>>
+<<else>>
+	<<set $PlayerUnder to $None>>
+	<<unset $SaveUnder>>
+<</if>>
+
+<<if $SaveTop != null && $SaveTop != "None">>
+	<<set $PlayerTop to $SaveTop>>
+	<<unset $SaveTop>>
+<<else>>
+	<<set $PlayerTop to $None>>
+	<<unset $SaveTop>>
+<</if>>
+
+<<if $SaveOver != null && $SaveOver != "None">>
+	<<set $PlayerOver to $SaveOver>>
+	<<unset $SaveOver>>
+<<else>>
+	<<set $PlayerOver to $None>>
+	<<unset $SaveOver>>
+<</if>>
+
+<<if $SaveOuter != null && $SaveOuter != "None">>
+	<<set $PlayerOuter to $SaveOuter>>
+	<<unset $SaveOuter>>
+<<else>>
+	<<set $PlayerOuter to $None>>
+	<<unset $SaveOuter>>
+<</if>>
+
+<<if $SaveBack != null && $SaveBack != "None">>
+	<<set $PlayerBack to $SaveBack>>
+	<<unset $SaveBack>>
+<<else>>
+	<<set $PlayerBack to $None>>
+	<<unset $SaveBack>>
+<</if>>
+
+<<if $SaveHands != null && $SaveHands != "None">>
+	<<set $PlayerHands to $SaveHands>>
+	<<unset $SaveHands>>
+<<else>>
+	<<set $PlayerHands to $None>>
+	<<unset $SaveHands>>
+<</if>>
+
+<<if $SaveBottoms != null && $SaveBottoms != "None">>
+	<<set $PlayerBottoms to $SaveBottoms>>
+	<<unset $SaveBottoms>>
+<<else>>
+	<<set $PlayerBottoms to $None>>
+	<<unset $SaveBottoms>>
+<</if>>
+
+<<if $SaveWaist != null && $SaveWaist != "None">>
+	<<set $PlayerWaist to $SaveWaist>>
+	<<unset $SaveWaist>>
+<<else>>
+	<<set $PlayerWaist to $None>>
+	<<unset $SaveWaist>>
+<</if>>
+
+<<if _undies == "Naked">>
+    <<if $SaveUndies != null && $SaveUndies != "None">>
+        <<set $PlayerUndies to $SaveUndies>>
+        <<unset $SaveUndies>>
+    <<else>>
+        <<set $PlayerUndies to $None>>
+        <<unset $SaveUndies>>
+    <</if>>
+<</if>>
+
+<<if $SaveSocks != null && $SaveSocks != "None">>
+	<<set $PlayerSocks to $SaveSocks>>
+	<<unset $SaveSocks>>
+<<else>>
+	<<set $PlayerSocks to $None>>
+	<<unset $SaveSocks>>
+<</if>>
+
+<<if $SaveShoes != null && $SaveShoes != "None">>
+	<<set $PlayerShoes to $SaveShoes>>
+	<<unset $SaveShoes>>
+<<else>>
+	<<set $PlayerShoes to $None>>
+	<<unset $SaveShoes>>
+<</if>>

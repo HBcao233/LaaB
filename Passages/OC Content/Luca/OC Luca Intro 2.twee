@@ -1,0 +1,63 @@
+:: OC Luca Intro 2 [nobr]
+
+/* GETTING DRESSED */
+<<set $ClothSave to "Restore">>
+<<if $GymClassType == "Gym">>
+    <<storeClothing "Restore" "Undies">>
+<<else>>
+    <<storeClothing "Restore" "Naked">>
+<</if>>
+<<if $SaveUndies != null>>
+    <<set $PlayerUndies to $SaveUndies>>
+<</if>>
+
+/* Intro */
+Once dressed, you spot something curious as everyone else is finishing up. <span style="color:DarkTurquoise">Luca</span>, the boy you spoke to before class who didn’t come to the pool, is standing awkwardly by his locker. <span style="color:Pink">He is still in his gym clothes and seems to be waiting shyly for everyone else to finish.</span> Knowing that it has already been a few minutes since showers started and that <span style="color:DarkTurquoise">Coach Kohler</span> hates to be left waiting for ‘little pansies who are too scared to shower in front of their classmates’, you feel it is best to give him a warning. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "OC Luca",
+        State: {
+            Outfit: "Gym",
+            Mouth: "Frown",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh? I- it’s fine. The Coach gave me special permission to wait.”</span> He says, sounding a little uncomfortable on the topic and avoiding eye contact. <span style="color:LightSteelBlue">“Thanks for looking out for me though! I appreciate it!”</span> <span style="color:LightGreen">He gives you a genuine smile, happy that someone seems to care enough to say something.</span> Though you are a bit distracted by how he got said permission, you didn’t think <span style="color:DarkTurquoise">Kohler</span> would cut anyone some slack! How does he do it? <br>
+<br>
+<span style="color:LightSteelBlue">“Well, it’s nothing like that or anything… it’s just… it’s complicated.”</span> He says softly. <span style="color:Yellow">It is clear he doesn’t want to talk about it, though you are very curious.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Drop it<br>">>
+    <<replace"#choice">>
+        Though you respect his privacy and push no more, instead shrugging it off and making a joke about being sad to not be able to see him change.<span style="color:Pink"> <span style="color:DarkTurquoise">Luca</span> chuckles at this cutely,</span> <span style="color:LightSteelBlue">“Don’t worry, I’m sure I’ll be back with the rest of you soon. Then you can peek all you want.”</span> He sticks his tongue out at you playfully as <span style="color:DarkTurquoise">Coach Kohler</span> begins to herd you and the rest of the class out. <span style="color:LightGreen">You turn back as you exit, seeing <span style="color:DarkTurquoise">Luca</span> give you a wave and a smile.</span> <br>
+        <<socialChange "Luca" 15 1>>
+        <<set $CompletedQuests.push("Luca: Introduction")>>
+        <<set $ActiveQuests.delete("Luca: Introduction")>>
+        <br>
+		[[Continue|School Locker Room]] 
+
+    <</replace>>
+    <</link>>
+    <<link "Push the topic<br>">>
+    <<replace"#choice">>
+        Unable to resist your intense curiosity, you ask him to give you a hint. You’d love to get <span style="color:DarkTurquoise">Kohler</span> off your back sometimes and if he could help with that, he’d be a great friend! <span style="color:LightCoral"> <span style="color:DarkTurquoise">Luca</span> seems to grow more uncomfortable the more you push, looking at the ground with flushed cheeks.</span> <span style="color:LightSteelBlue">“I told you; it isn’t-”</span> He is interrupted by <span style="color:DarkTurquoise">Coach Kohler</span>, who begins to shout and herd all the boys out, telling them to stop <span style="color:LightSteelBlue">“dicking around”</span>. You turn back to  <span style="color:DarkTurquoise">Luca</span> as you are shoved out, <span style="color:LightCoral">seeing him still nervously staring at the ground uncomfortable.</span> <br>
+        <<socialChange "Luca" -10 1>>
+        <<set $CompletedQuests.push("Luca: Introduction")>>
+        <<set $ActiveQuests.delete("Luca: Introduction")>>
+        <br>
+
+		[[Continue|School Locker Room]] 
+    <</replace>>
+    <</link>>
+</div>

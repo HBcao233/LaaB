@@ -1,0 +1,66 @@
+:: Elementary School [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Elementary School",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Town",
+}>>
+
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Preston Boys' Academy Elementary School--</strong></big></span><br>
+You stand at the gate of the Preston Boys' Academy’s Elementary School Building. Unlike the other two schools, the elementary building is smaller and older. While still in pristine condition, it's very clearly the oldest school. Though the school does have a large playground and its own sports fields, it's not uncommon for them to use the Middle School’s facilities for their sports teams or events. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Middle School.png">
+	[[Middle School (0:10)|Middle School][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Hospital.png">
+	[[Hospital (0:10)|Hospital][$Minutes += $TravelTime]]<br>
+    <<else>>
+<img src="Images\World Map\Individual Icons\Middle School.png">
+	[[Middle School (0:05)|Middle School][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Hospital.png">
+	[[Hospital (0:05)|Hospital][$Minutes += $TravelTime]]<br>
+    <</if>>
+<</if>>
+<br>
+
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 448px; top: 229px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="448,155,501,208" alt="Middle School" onclick="$.wiki('<<goto[[Middle School]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="374,229,427,282" alt="Hospital" onclick="$.wiki('<<goto[[Hospital]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+<</if>>

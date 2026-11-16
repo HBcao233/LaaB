@@ -1,0 +1,18 @@
+:: English Skill Level Up [nobr]
+
+<<if $EnglishLearned != 1>>
+	<span style="color:Gold">You have learned the English Skill! This will determine your class grade. The English Language is a complex beast, where none of the rules make sense. But somehow, it is one of the most widely spoken languages in the world. Improving your English Skill will increase your persuasion ability.</span><br>
+	<<set $EnglishLearned to 1>>
+<</if>>
+
+<<if $EnglishXP >= 100>>
+	<<set $EnglishXP to 0>>
+	<<set $EnglishSkill += 1>>
+		<<if $EnglishSkill > 10>>
+			<<set $EnglishSkill to 10>>
+		<</if>>
+	
+	<<if $EnglishSkill == 2>>
+		<span style="color:Gold">You have reached English Level 2! Your mind becomes stronger as you explore more worlds between the pages. You can now “Browse” in the Public Library to discover new books of interest. You can read and research these books to uncover new stories and interests.</span><br>
+	<</if>>
+<</if>>

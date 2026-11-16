@@ -1,0 +1,64 @@
+:: CARTER Science Magnet Pants [nobr]
+
+/* OPENING */
+<span style="color:DarkTurquoise">Mr. Chang</span> has separated everyone into pairs to perform an experiment involving very strong magnets. You are paired up with <span style="color:DarkTurquoise">Carter</span> and both of you listen as he goes over the experiment and safety instructions for dealing with such strong magnets.<br>
+<br>
+The experiment is going well and you both are enjoying yourselves when suddenly <span style="color:DarkTurquoise">Carter</span> drops one of the magnets onto the metal sink on the table. As he goes to try to free it, it grabs hold of his metal watch leaving him stuck! The boy’s misfortune doesn’t end there, however, as he leans forward over the table in an attempt to free his hand, another magnet pulls at the button to his $CarterBottoms.Type, causing them to become undone and fall to his ankles!<br>
+
+<<set _ad to [
+	{
+		Name: "Chang",
+		State: {
+			Mouth: "Frown",
+			Blush: 1,
+			Eyes: "Wide",
+		},
+	},
+	{
+		Name: "Carter",
+		State: {
+			Arms: "Bound",
+			Cry: 1,
+			Blush: 3,
+			Mouth: "Sad",
+			Outfit: "Uniform",
+			PantsDown: 1,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:Pink">You watch in disbelief as the unlucky boy now finds himself leaning over the table, his hands stuck, his $CarterBottoms.Type around his ankles, and his $CarterUndies.Name on display for everyone in the class to see!</span> It is truly an embarrassing sight to behold and you find yourself wondering just how unlucky one little boy could be as the class erupts into laughter.<br>
+<br>
+
+<div id="choice">
+	<<link "Help Carter">>
+		<<replace "#choice">>
+			You quickly kneel down and pull up <span style="color:DarkTurquoise">Carter</span>’s $CarterBottoms.Type, preserving the little dignity he has left, and make sure they are securely buttoned and away from any more magnets. You then aid the small boy in freeing his hands. In the end, <span style="color:DarkTurquoise">Carter</span> is very embarrassed but also thankful for your help.<br>
+			
+			<<socialChange "Carter" 3>>
+			<br>
+
+			<<include "Attend Science Finish">>
+			
+		<</replace>>
+	<</link>><span style="color:Green">+Carter</span><br>
+	<<link "Laugh<br>">>
+			<<replace "#choice">>
+			You begin to laugh at the boy’s misfortune, leaning back to get a good look at his underwear-clad butt. <span style="color:DarkTurquoise">Carter</span> struggling to free himself only adds to his helpless appearance as he is stuck there for nearly 5 minutes before <span style="color:DarkTurquoise">Mr. Chang</span> realizes what has happened and frees the poor lad. This is surely a humiliation that <span style="color:DarkTurquoise">Carter</span> won’t soon forget.<br>
+			<<set _arousalbs to []>>
+			<<set _arousalkink to ["Humiliation"]>>
+			<<arousalGain 15 _arousalbs _arousalkink>>
+			<br>
+			
+			<<include "Attend Science Finish">>
+		<</replace>>
+	<</link>>
+</div>

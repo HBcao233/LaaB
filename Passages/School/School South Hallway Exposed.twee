@@ -1,0 +1,29 @@
+:: School South Hallway Exposed [nobr]
+
+<<if $Player.Exposed == "Naked">>
+<span style="color:Red"> You stand in the South Hallway of your school, completely naked and using your hands to cover your $Player.PenisSize Penis.</span> Thankfully, no one else is currently in the hallway, letting you keep your dignity for the time being, but you’re not sure how long that will last and the school’s cameras make you turn bright red, <span style="color:Pink">as you wonder if anybody is watching you from the other side.</span><br>
+<br>
+<<elseif $Player.Exposed == "Undies" or $Player.Exposed == "Diaper" or $Player.Exposed == "Diaper">>
+<span style="color:Red"> You stand in the South Hallway of your school in nothing but your $PlayerUndies.Name as you attempt to cover them with your hands.</span> Thankfully, no one else is currently in the hallway, letting you keep your dignity for the time being, but you’re not sure how long that will last and the school’s cameras make you turn bright red, <span style="color:Pink">as you wonder if anybody is watching you from the other side.</span><br>
+<br>
+
+<</if>>
+			/* LOST AND FOUND ON */
+	<<if $SchoolLostFoundClothes == 1>>
+		[[Walk into Main Office|School Main Office]]<br>
+	<</if>>
+
+
+<div style="position: relative">
+	<img src="Images\School Map\School Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+    	<img src="Images\School Map\School Map South Marker.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<<include"NPC Tracking School">>
+</div>
+
+<map name="School">
+<area shape="rect" coords="58,382,111,435" alt="Restrooms" onclick="$.wiki('<<goto[[School Restrooms]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="220,274,273,327" alt="Main Office" onclick="$.wiki('<<goto[[School Main Office]]>><<set $Minutes += 1>>')" />
+</map>

@@ -1,0 +1,39 @@
+:: Masturbation Clothing Description [nobr]
+
+<<if $PlayerHead.Type != "None">>
+	You are wearing a $PlayerHead.Name atop your head. 
+<</if>>
+
+<<if $PlayerMouth.Type != "None">>
+	Your mouth is covered by a $PlayerMouth.Type.
+<</if>>
+
+<<if $PlayerOuter.Type != "None" and $PlayerTop.Type != "None">>
+	Your chest is covered by a $PlayerOuter.Name with a $PlayerTop.Type underneath.
+<<elseif $PlayerTop.Type == "None" and $PlayerOuter.Type != "None">>
+	Your chest is covered by a $PlayerOuter.Name. 
+<<elseif $PlayerOver.Type != "None">>
+	Your chest is covered by a $PlayerOver.Name. 
+<<elseif $PlayerTop.Type != "None">>
+	Your chest is covered by a $PlayerTop.Name. 
+<<elseif $PlayerUnder.Type != "None">>
+	Your chest is covered by a $PlayerUnder.Name. 
+<<else>>
+	<span style="color:Pink">Your chest is bare, leaving your belly and nipples exposed. </span>
+<</if>>
+
+<<if $PlayerShoes.Type != "None">>
+	Your feet are covered by a pair of $PlayerShoes.Name. 
+<<elseif $PlayerSocks.Type != "None">>
+	Your feet are covered by a pair of $PlayerSocks.Name. 
+<<else>>
+	<span style="color:Pink">Your cute feet and toes are exposed and bare. </span>
+<</if>>
+
+<<if $PlayerBottoms.Type != "None">>
+	Your lower half is covered by a pair of $PlayerBottoms.Name. 
+<<elseif $PlayerUndies.Type != "None">>
+	The only thing covering your lower half is a cute pair of $PlayerUndies.Name. 
+<<else>>
+	<span style="color:Pink">Your lower half is completely exposed! Leaving your $Player.PenisSize Penis and Butt in clear view. </span>
+<</if>>

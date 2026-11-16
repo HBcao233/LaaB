@@ -1,0 +1,26 @@
+:: Kid Avatar Display Bottoms [nobr]
+
+<<if $ADPantsDown == 1>>
+	<<if $ADBottoms.PulledDownAvatar != "None">>
+		<img @src="$ADBottoms.PulledDownAvatar" 
+	  style="position: absolute; left: 0; top: 0">
+	<</if>>
+	<<set $ADPantsDown to 0>>
+
+	<<elseif $ADShortsSag != 1 or $ADBottoms.SagAvatar == "None">>
+
+	<<if $ADBottoms.Avatar != "None">>
+		<img @src="$ADBottoms.Avatar" 
+	  style="position: absolute; left: 0; top: 0">
+	<</if>>
+
+	<<elseif $ADShortsSag == 1 and $ADBottoms.SagAvatar != "None">>
+
+	<<if $ADBottoms.SagAvatar != "None">>
+		<img @src="$ADBottoms.SagAvatar" 
+	  style="position: absolute; left: 0; top: 0">
+	<</if>>
+<<elseif $ADBottoms.Avatar != "None">>
+		<img @src="$ADBottoms.Avatar" 
+	  style="position: absolute; left: 0; top: 0">
+<</if>>

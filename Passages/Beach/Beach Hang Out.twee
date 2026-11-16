@@ -1,0 +1,26 @@
+:: Beach Hang Out [nobr]
+
+<<set _Random to ["Beach Hang Out Watch Ferris Wheel"]>>  
+
+/* Non-Rain Events */
+<<if !["Sprinking", "Raining", "Pouring", "Storm", "Thunderstorm"].includes($Weather)>>
+    <<set _Random.push("Beach Hang Out Relax in Sun", "Beach Hang Out Watch Kids Swim", "Beach Hang Out Nude Toddler", "Beach Hang Out Build Sandcastle", "Beach Hang Out Watching the Waves")>>
+    <<if $ToggleOCSnowpaw == 1 && $CompletedQuests.includes("Snowpaw: New Rabbit Around Town")>>
+        <<set _Random.push("OC Snowpaw Beach Theft")>>
+    <</if>>
+<</if>>
+
+<<if ["Overcast", "Mostly Cloudy"].includes($Weather)>>
+    <<if $ToggleOCNikolai == 1 && $InActiveQuests.includes("Nikolai: Introduction") && $Time.between(5, 0, 12, 0)>>
+        <<set _Random.push("OC Nikolai Intro")>>
+    <</if>>
+<</if>>
+
+/* Kalim Events */
+<<if $ToggleOCKalim == 1 && $CompletedQuests.includes("Kalim: Introduction")>>
+    <<set _Random.push("OC Kalim Beach Relaxing")>>
+    <<set _Random.push("OC Kalim Beach Napping")>>
+<</if>>
+
+<<set _event to _Random.random()>>
+<<include _event>>

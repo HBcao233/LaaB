@@ -1,0 +1,98 @@
+:: Progress Bar Widget [widget]
+
+<<nobr>>
+
+
+/*  Widget to create progress bar to show experience, social levels or needs tracking
+    Usage example:
+
+    <<set _values to {
+        text: '50/100',
+        value: 50,
+        max: 100,
+        min: 0, // can be negative
+        color: 'yellow', // any CSS detectable color
+        showText: true,
+    }>>
+
+    <<progressbar _values>>
+ */
+<<widget "progressbar">>
+    <<set _text to _args[0]?.text || ''>>
+    <<set _value to _args[0]?.value || 0>>
+    <<set _max to _args[0]?.max || 100>>
+    <<set _min to _args[0]?.min || 0>>
+    <<set _color to _args[0]?.color || 'transparent'>>
+    <<set _showText to _args[0]?.showText || false>>
+
+    <<if typeof _text !== 'string' && typeof _text !== 'number'>>
+        <<run throw new Error('Error in progressbar widget: _data.text must be a string')>>
+    <</if>>
+    <<if typeof _value !== 'number'>>
+        <<run throw new Error('Error in progressbar widget: _data.value must be a number (positive or negative)')>>
+    <</if>>
+    <<if typeof _max !== 'number'>>
+        <<run throw new Error('Error in progressbar widget: _data.max must be a number (positive or negative)')>>
+    <</if>>
+    <<if typeof _min !== 'number'>>
+        <<run throw new Error('Error in progressbar widget: _data.min must be a number (positive or negative)')>>
+    <</if>>
+    <<if _min > _max>>
+        <<run throw new Error('Error in progressbar widget: _data.min cannot be greater than _data.max')>>
+    <</if>>
+    <<if typeof _color !== 'string'>>
+        <<run throw new Error('Error in progressbar widget: _data.color must be a string (CSS recognizable color e.g. "red", "#eb3737" or "rgb(235 55 55)")')>>
+    <</if>>
+    <<if typeof _showText !== 'boolean'>>
+        <<run throw new Error('Error in progressbar widget: _data.showText must be a boolean')>>
+    <</if>>
+
+    <<set _width = (_value * Math.abs(_min - _max)) / 100>>
+    <<set _width = _width > 100 ? 100 : _width>>
+    <<set _width = _width < 0 ? 0 : _width>>
+
+    <div class="progress-bar">
+        <<if _showText>>
+            <span class="progress-bar-text"><<=_text>></span>
+        <</if>>
+        <span class="progress-bar-fill" @style="`width: ${_width}%; background-color: ${_color};`" />
+    </div>
+<</widget>>
+
+<</nobr>>
+
+:: Progress Bar Style [stylesheet]
+
+.progress-bar {
+	position: relative;
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: bold;
+	background: linear-gradient(#191c23, #2d3341);
+	border: 1px solid #4e4c4c;
+}
+
+.progress-bar > .progress-bar-text {
+	display: flex;
+	position: absolute;
+    align-items: center;
+    justify-content: center;
+	width: 50%;
+    height: 100%;
+	left: 25%;
+	text-shadow: 1px 1px 1px #000000;
+	z-index: 2;
+}
+
+.progress-bar > .progress-bar-fill {
+    display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+    height: 100%;
+    border-radius: 9px;
+	box-shadow: inset 0 -3px 5px 0px #000000;
+	z-index: 1;
+}

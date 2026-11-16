@@ -1,0 +1,32 @@
+:: City Library Study [nobr]
+
+<<set $Minutes += 20>>
+
+<span style="color:Gray">[Studying is currently a place holder that gives XP, later on it may have events or such.]</span><br>
+<br>
+<span style="color:LightGreen">You spend some time studying $SkillCheckType! You feel you understand it a bit better than before!</span><br>
+
+/* XP GAIN */
+	<<set $SkillCheckDifficulty to $SchoolSkillLevel - 1>>
+	<<set $SkillCheckTime to 0.3>>
+	<<set $SkillTrainBook to 1>>
+
+/* COOKING */
+<<if $SkillCheckType == "Cooking">>
+	<<if $CookingSkill > 3>>
+		<<set $SkillCheckDifficulty to 0>>
+	<</if>>
+<</if>>
+/* ACTING */
+<<if $SkillCheckType == "Acting">>
+	<<if $ActingSkill > 3>>
+		<<set $SkillCheckDifficulty to 0>>
+	<</if>>
+<</if>>
+
+<<skillPoints $SkillCheckType 3>>
+<br>
+
+<<include"Study Bonus">>
+
+[[Continue|City Library]]

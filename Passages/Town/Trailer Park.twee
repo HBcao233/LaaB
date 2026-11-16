@@ -1,0 +1,92 @@
+:: Trailer Park [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Trailer Park",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+
+
+<<set _randomevent to random(1, 50)>>
+<<set _randomeventpassage to []>>
+<<if $InActiveQuests.includes("Isaac: Jacob") && $ToggleOCIsaac == 1>>
+	<<set _randomeventpassage.push("OC Isaac Jacob Intro")>>
+<</if>>
+<<if _randomeventpassage.length == 0>>
+	<<set _randomevent to 50>>
+<</if>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+<<elseif _randomevent == 1>>
+	<<set _event to _randomeventpassage.random()>>
+	<<include _event>>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Trailer Park--</strong></big></span><br>
+You stand near a collection of trailers and old, worn-down houses built near the edge of downtown. Despite its close proximity to the beach and other tourist spots, it is nearly completely surrounded by larger buildings and is hardly noticed by tourists. The poor, homeless, or downtrodden of Opal City are shoved into spaces like this. Despite the poor lives they live, you do sense a feeling of community and family between the residents here. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:10)|Food District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Beach.png">
+	[[Beach (0:10)|Beach][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Boardwalk.png">
+	[[Boardwalk (0:10)|Boardwalk][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Redlight District.png">
+	[[Redlight District (0:10)|Redlight District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Mall.png">
+	[[Mall (0:10)|Mall][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:05)|Food District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Beach.png">
+	[[Beach (0:05)|Beach][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Boardwalk.png">
+	[[Boardwalk (0:05)|Boardwalk][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Redlight District.png">
+	[[Redlight District (0:05)|Redlight District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Mall.png">
+	[[Mall (0:05)|Mall][$Minutes += $TravelTime]]<br>
+	<</if>>
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 152px; top: 229px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="152,81,205,134" alt="Food District" onclick="$.wiki('<<goto[[Food District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="152,155,205,208" alt="Redlight District" onclick="$.wiki('<<goto[[Redlight District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="4,229,57,282" alt="Beach" onclick="$.wiki('<<goto[[Beach]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="4,155,57,208" alt="Boardwalk" onclick="$.wiki('<<goto[[Boardwalk]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="300,229,353,282" alt="Mall" onclick="$.wiki('<<goto[[Mall]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+<</if>>

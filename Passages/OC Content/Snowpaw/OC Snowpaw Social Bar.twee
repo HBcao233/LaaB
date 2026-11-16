@@ -1,0 +1,84 @@
+:: OC Snowpaw Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCSnowpawSocialRank == -3>>
+	<<set $OCSnowpawRelationship to "Hated">>
+	<span style="color:DarkRed">Snowpaw Hates you!</span>
+	<br>
+<<elseif $OCSnowpawSocialRank == -2>>
+	<<set $OCSnowpawRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Snowpaw are Enemies.</span>
+	<br>
+<<elseif $OCSnowpawSocialRank == -1>>
+	<<set $OCSnowpawRelationship to "Very Disliked">>
+	<span style="color:Red">Snowpaw really Dislikes you.</span>
+	<br>
+<<elseif $OCSnowpawSocialRank == 0 and $OCSnowpawSocial <= -50>>
+	<<set $OCSnowpawRelationship to "Disliked">>
+	<span style="color:Red">Snowpaw Dislikes you. </span>
+	<br>
+<<elseif $OCSnowpawSocialRank == 0 and $OCSnowpawSocial < 50>>
+	<<set $OCSnowpawRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Snowpaw are Acquaintances.</span>
+	<br>
+<<elseif $OCSnowpawSocialRank == 0 and $OCSnowpawSocial >= 50>>
+	<<set $OCSnowpawRelationship to "Liked">>
+	<span style="color:LightGreen">Snowpaw Likes you.</span>
+	<br>
+<<elseif $OCSnowpawSocialRank == 1>>
+	<<set $OCSnowpawRelationship to "Friends">>
+	<span style="color:Green">You and Snowpaw are Friends.</span>
+	<br>
+<<elseif $OCSnowpawSocialRank == 2>>
+	<<set $OCSnowpawRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Snowpaw are Good Friends!</span>
+	<br>
+<<elseif $OCSnowpawSocialRank == 3>>
+	<<set $OCSnowpawRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Snowpaw are Close Friends!</span>
+	<br>
+<<elseif $OCSnowpawSocialRank == 4>>
+	<<set $OCSnowpawRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Snowpaw are Best Friends!</span>
+	<br>
+<<elseif $OCSnowpawSocialRank == 5>>
+	<<set $OCSnowpawRelationship to "Love">>
+	<span style="color:Pink">You and Snowpaw Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCSnowpawSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCSnowpawSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCSnowpawSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCSnowpawSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCSnowpawSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCSnowpawSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCSnowpawSocial,
+			value: Math.abs($OCSnowpawSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCSnowpawSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCSnowpawSocial > 120>>
+	<<set $OCSnowpawSocial to 120>>
+<</if>>
+<<if $OCSnowpawSocial < -120>>
+	<<set $OCSnowpawSocial to -120>>
+<</if>>

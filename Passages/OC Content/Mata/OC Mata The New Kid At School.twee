@@ -1,0 +1,350 @@
+:: OC Mata The New Kid At School [nobr]
+
+/* Intro */
+<span style="color:DarkTurquoise">Mr. Randolph</span> is just about to start class, nary a minute into his opening lecture, when the classroom door opens. Everyone turns in unison to see a nervous looking boy standing in the doorway. <span style="color:Yellow">It takes you a second to realize you recognize the kid; it is the boy who moved in on your street the other day.</span> What was his name? As you are thinking, <span style="color:DarkTurquoise">Randolph</span> suddenly barks at the boy, asking him if he’s just going to stand there or tell him what he needs.
+
+        <<set _ad to [
+            {
+                Name: "Randolph",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 2,
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+The boy jumps, obviously extremely nervous, as he hurries over and hands <span style="color:DarkTurquoise">Randolph</span> a note. Confused, he reads it as the boy glances briefly at the class but quickly turns away upon seeing everyone staring at him. He looks down at his feet, blushing, until <span style="color:DarkTurquoise">Mr. Randolph</span> finishes reading the note and sighs. <br>
+<br>
+<span style="Color: LightSteelBlue">“Alright everyone, listen up.”</span> He says loudly, causing the timid boy to jump again, <span style="Color: LightSteelBlue">“This is <span style="color:DarkTurquoise">Mata Takashi</span>. He’ll be joining our class. Some travel difficulties delayed his family’s return here so he’s starting the year a little late. He is still relearning English, so I want you all to be respectful and help him if he needs it. Understand?”</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“He’s still learning?”</span> One boy says curiously, <span style="Color: LightSteelBlue">“But how is he here? Is Preston accepting more foreign kids?”</span> <span style="color:DarkTurquoise">Randolph</span> glares at him and the kid quickly quiets up, but it is a valid question. You recall that <span style="color:DarkTurquoise">Your Father</span> had to jump through some hoops to get you enrolled. <span style="color:DarkTurquoise">Gabe</span> was lucky he spent some time here before you moved, or he’d be going to normal public school. <span style="color:Yellow">It is a rather confusing system.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“It seems he spent a year and a half here when he was about 6.”</span> <span style="color:DarkTurquoise">Mr. Randolph</span> explains as the shy boy continues to avoid eye-contact with the class, <span style="Color: LightSteelBlue">“So he qualified on a technicality. But he spent most of his life abroad, hence why he has to relearn the language. But that’s enough questions! If you have any more, you can ask him after my class. <span style="color:DarkTurquoise">Mr. Takashi</span>, you can sit in that empty seat near <span style="color:DarkTurquoise">$Player.LastName</span>. <span style="color:DarkTurquoise">$Player.LastName</span>, raise your hand!”</span> You do as you’re told and the boy quietly rushes over, walking stiffly as if he is counting every step. <span style="color:Yellow">A look of remembrance appears on his face as he spots you, but he quickly looks away and sits down.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Shoot, now we’re down a math book.”</span> <span style="color:DarkTurquoise">Mr. Randolph</span> sighs, looking annoyed, <span style="Color: LightSteelBlue">“Everyone, stay here and shut up. I’m going to grab another book for him from storage. If I can hear you blabbering from the hallway, you get detention!”</span> He warns as he quickly exits the classroom, speed-walking down the hallway to the storage room. Naturally, the class immediately erupts into talking once he is gone. <br>
+<br>
+You turn to <span style="color:DarkTurquoise">Mata</span> to see him doodling away in his notebook. He looks nervous and a little bit tired. Glancing at his drawings, they appear to be a mixture of anime characters and some pretty impressive nature drawings. Seems he uses this notebook mainly for drawing. <span style="color:Yellow">You consider saying something to him.</span> <br>
+<br>
+<div id="choice">
+    <<if $OCMataSocial > 0>>
+        <<link "Mention seeing him before<br>">>
+        <<replace "#choice">>
+            You smile, waving to get his attention and recall how you saw him on the street the other day. You spotted him and his family moving in and talked to him. He smiles in response, nodding. <span style="Color: LightSteelBlue">“I was thinking you not remembered.”</span> He says with a thick but cute accent. <span style="Color: LightSteelBlue">“It is… very nice to see face I know.”</span> While his English could still use some work, you catch what he is trying to say and laugh it off. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“This school is… scary. Very big. Teacher scare me.”</span> He comments. You chuckle, <span style="color:DarkTurquoise">Randolph</span> can be very intimidating and strict, but most of the teachers here are quite nice. As long as he stays on their good side and doesn’t cause any trouble, he’ll be fine. <span style="color:DarkTurquoise">Mata</span> nods assuredly, <span style="Color: LightSteelBlue">“Back in Japan, teachers very strict. So, me no cause trouble.”</span>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Happy",
+                    },
+                },
+                {
+                    Name: "OC Mata",
+                    State: {
+                        Outfit: "Uniform",
+                        Blush: 1,
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            You spend the next few minutes until <span style="color:DarkTurquoise">Randolph</span> comes back chatting with <span style="color:DarkTurquoise">Mata</span>. <span style="color:LightGreen">While still obviously shy and nervous, with the language barrier occasionally causing problems, he seems to open up a bit more around you since you are a somewhat familiar face. In the end, you feel closer to him and he seems much more relaxed as class continues.</span> <br>
+            <<socialChange "Mata" 3 1>>
+            <<set $InActiveQuests.delete("Mata: The New Kid At School")>>
+            <<set $ActiveQuests.push("Mata: The New Kid At School")>>
+            <br>
+            <<include"Attend Math Finish">>
+        <</replace>>
+        <</link>>
+    <<else>>
+        <<link "Compliment his drawing<br>">>
+        <<replace "#choice">>
+            You lean over and whisper a compliment of his drawings. <span style="color:DarkTurquoise">Mata</span> jumps at your voice, nearly falling out of his chair and dropping his pencil to the ground. You chuckle and apologize, picking his pencil off the ground as a blushing <span style="color:DarkTurquoise">Mata</span> says <span style="Color: LightSteelBlue">“No no, I sorry.”</span> He takes the pencil back, giving you a slight nod in thanks. You comment again on his drawings, this time not startling him, and ask him if he likes to draw often. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Yes, I like… drawing.”</span> He says with his thick yet cute accent. <span style="Color: LightSteelBlue">“My name is <span style="color:DarkTurquoise">Mata</span>. Nice to meet you.”</span> He says shyly, bowing his head slightly towards you. You smile and introduce yourself, commenting that you may have seen him when he was moving in the other day. <span style="Color: LightSteelBlue">“Oh! Yes, I did see someone…”</span> He says a little nervously. You apologize for not speaking to him then, not wanting to get in the way while they were trying to get unpacked and all that. <span style="Color: LightSteelBlue">“Yes, very busy. Lots of… unpacking.”</span> 
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Happy",
+                    },
+                },
+                {
+                    Name: "OC Mata",
+                    State: {
+                        Outfit: "Uniform",
+                        Blush: 1,
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            Though he is very shy, you spend the next few minutes talking and chatting with <span style="color:DarkTurquoise">Mata</span> until <span style="color:DarkTurquoise">Randolph</span> comes back. <span style="color:LightGreen">Despite the language barrier causing some problems, he seems happy that someone was willing to talk to him and opens up a little. By the time class is back in session, he seems much more relaxed.</span> <br>
+            <<socialChange "Mata" 3 1>>
+            <<set $InActiveQuests.delete("Mata: The New Kid At School")>>
+            <<set $ActiveQuests.push("Mata: The New Kid At School")>>
+            <br>
+            <<include"Attend Math Finish">>
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Stay silent<br>">>
+	<<replace "#choice">>
+        You decide to avoid introducing yourself for now. He seems very nervous and shy in these new surroundings, which is fair considering how far he has moved from. Plus, you would hate to risk getting him into trouble on his first day. You know from experience that <span style="color:DarkTurquoise">Randolph</span> isn’t the type to give new kids a break. So outside of a smile when he looks in your direction, which causes him to quickly blush and look away, you stay silent and await the return of the teacher. <br>
+        <br>
+        As class continues, <span style="color:DarkTurquoise">Mata</span> continues to look nervous and unsure, still not comfortable with all the new people around him. When he gets called to answer a question by <span style="color:DarkTurquoise">Mr. Randolph</span>, he looks like he wants to crawl into the corner in a little ball as people give him strange looks from struggling to pronounce the words. <span style="color:Yellow">You’re sure he’ll get used to things eventually.</span> <br>
+        <<set $InActiveQuests.delete("Mata: The New Kid At School")>>
+        <<set $ActiveQuests.push("Mata: The New Kid At School")>>
+        <br>
+        <<include"Attend Math Finish">>
+    <</replace>>
+    <</link>>
+</div>
+
+:: OC Mata The New Kid At School 2 [nobr]
+
+/* Intro */
+You walk into the cafeteria and thoughtlessly stroll towards the line to get your food. You yawn and rub your eyes, the sleepiness of half-a-day’s work already filling you. As you lower your arms and your vision slowly fades back, <span style="color:BlueViolet">you briefly see a flash of purple before your sight clears and you spot <span style="color:DarkTurquoise">Mata</span> standing nervously by the entrance.</span> He is clutching a small box that you guess is a lunch box, though it appears a little… strange. 
+
+        <<set _ad to [
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 1,
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<span style="color:Yellow">He glances around nervously, seeming to not understand what to do.</span> You guess things must be different in Japan and as you get your lunch, you consider walking over to help him out. <br>
+<br>
+
+<div id="choice">
+    <<link "Walk over and eat lunch with him<br>">>
+    <<replace "#choice">>
+        You walk over and call out to <span style="color:DarkTurquoise">Mata</span>, who looks absolutely relieved to see you. <span style="Color: LightSteelBlue">“Hello $Player.LastName!”</span> He calls you by your last name, though you suppose it is a normal thing in Asia. <span style="Color: LightSteelBlue">“I am being confused. Do I sit somewhere… specific? Weird that you have room just to eat. Seems like waste of space when classrooms have chairs and tables.”</span> You know what, that’s a fair point. Then again, kids here probably aren’t as careful about being clean when eating compared to Japan. <span style="color:Yellow">In fact, you’re pretty sure you’ve already seen 2 juice spills.</span> <br>
+        <br>
+        You walk <span style="color:DarkTurquoise">Mata</span> over to one of the tables and explain to him how lunch works here. Everyone either buys their lunch, gets a free one, or brings their own from home, like he did. Then you just sit… well, anywhere! No real assigned seating, though kids will often stick with their groups or cliques. <span style="color:DarkTurquoise">Mata</span> nods along as you explain, even though you get the feeling he isn’t fully understanding. 
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        You find a quiet spot to sit down with <span style="color:DarkTurquoise">Mata</span>, not wanting to subjugate him to your more… wild friends just yet. As you do and begin to eat your lunch, you see <span style="color:DarkTurquoise">Mata</span> take the lid off of his box and are surprised by what you see. <span style="color:LightGreen">It is a beautifully arranged lunch: perfect little rice balls, slices of rolled omelet, tiny sausages cut into octopus shapes, steamed vegetables tucked into colorful paper cups. It looks amazing compared to your sad cafeteria food!</span> <br>
+        <br>
+        He pulls out some chopsticks and begins to eat. He does so slowly and methodically, clearly using precise manners. You can’t help but stare as you watch him consume the absolutely stunning looking food. You wonder if it would be rude to comment on his meal. <br>
+        <br>
+        <div id="choice2">
+            <<link "Compliment his lunch<br>">>
+            <<replace "#choice2">>
+                You smile and compliment his lunch. <span style="color:LightGreen">It looks absolutely delicious! The school lunch may be pretty good by school cafeteria standards, but his is on a different level! You ask him if it’s a special lunch for his first day, or if he somehow eats like this everyday.</span> <br>
+                <br>
+                <span style="Color: LightSteelBlue">“My mother made it,”</span> <span style="color:DarkTurquoise">Mata</span> blushes, ducking his head down shyly, <span style="Color: LightSteelBlue">“She says… a good lunch gives strong heart.”</span> You spy a tiny, private smile on his face. One of genuine happiness as he looks down at his lunch. Though he must realize you are staring at him as he quickly blushes and looks back up, answering your question. <span style="Color: LightSteelBlue">“Ye- yes! She makes this everyday. For school. Lunch… important…”</span> <span style="color:LightGreen">His smile becomes more nervous as you can’t help but chuckle. His mom must really care about him.</span> <br>
+                <br>
+                [[Continue|OC Mata The New Kid At School 3]]
+            <</replace>>
+            <</link>>
+            <<link "Ask if he made it himself<br>">>
+            <<replace "#choice2">>
+                Curious by his impressive culinary display, you ask him if he made it himself. <span style="Color: LightSteelBlue">“Nani!?”</span> <span style="color:DarkTurquoise">Mata</span>’s eyes widen in horror, like he thinks you are accusing him of something way above his skill level. <span style="Color: LightSteelBlue">“N- no! Mother-! Mother made!”</span> He says quickly, bowing his head. You’re a bit unsure why he got so stressed about it, <span style="color:LightGreen">you think it’s super cool that his mom makes him lunches like that. Must be great, not to mention delicious.</span> <br>
+                <br>
+                <span style="Color: LightSteelBlue">“Y- yes…”</span> He says softly, fiddling with the edge of the bento box, <span style="Color: LightSteelBlue">“…I want to learn…”</span> He adds quietly after a moment of silence, sounding almost like a confession. You give him a smile, unsure why he is so nervous about that. You’re sure he’ll be a as good a cook as his mom in no time! <span style="color:LightGreen">He smiles slightly at this, before returning to eating.</span> <br>
+                <br>
+                [[Continue|OC Mata The New Kid At School 3]]
+            <</replace>>
+            <</link>>
+            <<link "Offer him some of your food as a friendly gesture<br>">>
+            <<replace "#choice2">>
+                You ponder for a moment, looking at him eating his very Japanese lunch, before offering him some of your lunch. You pick the thing on your plate that most signifies your country. Some tatter tots. You hold them out on a fork and ask him if he’d like to try them. <span style="color:DarkTurquoise">Mata</span> looks up staring at it with his mouth slightly agape, as if the idea of sharing food is somehow huge to him. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“I… Yes, thank you very much!”</span> He says, taking the tatter tot off of your fork with his chopsticks and inspecting it for a moment. He gives it a curious look, sniffing and poking it before taking a curious bite. You watch his expression carefully and can tell that he must like it by the slight smile on the corner of his lips. <span style="Color: LightSteelBlue">“T- thank you. It very good.”</span> <span style="color:LightGreen">He bows his head deeply in gratitude, holding the remaining bits of tatter tots in both hands like it is something precious. It’s a little weird, but pretty cute as well.</span> <br>
+                <br>
+                [[Continue|OC Mata The New Kid At School 3]]
+            <</replace>>
+            <</link>>
+        </div>
+        <</replace>>
+        <</link>>
+    <<link "Ignore him<br>">>
+    <<replace "#choice">>
+        You decide against going over and helping him. You’re sure he’ll figure it out! So, you take a seat around where you normally would and begin to eat your delicious lunch. Man, you really needed that! As you are finishing up you see <span style="color:DarkTurquoise">Mata</span> sitting alone in the corner eating his lunch. <span style="color:Yellow">It looks a little… strange.</span> <br>
+        <<set $ActiveQuests.delete("Mata: The New Kid At School")>>
+        <<set $CompletedQuests.push("Mata: The New Kid At School")>>
+        <br>
+        [[Continue|School Cafeteria]]
+    <</replace>>
+    <</link>>
+</div>
+
+:: OC Mata The New Kid At School 3 [nobr]
+
+/* Intro */
+As you both continue eating, you begin to chat and ask him how his day is going. He seems a little awkward to be eating and talking at the same time but also seems to enjoy your company. He explains that his day has been pretty good, though a little confusing. Lots of words he has yet to learn and he gets some strange looks from people whenever he talks. You try to calm his nerves, explaining that some people just aren’t used to anything different. Things will calm down once they get used to him. <br>
+<br>
+Just as you are settling into another conversation, you hear it: <span style="color:LightCoral">snickering from a nearby table.</span> You both glance in the direction at the same time. <span style="Color: LightSteelBlue">“Check out the new kid.”</span> A boy at the tables whispers just loud enough for you both to be able to hear him with ease. <span style="Color: LightSteelBlue">“Still eating like he’s at some samurai sushi diner or something. I mean, he’s using like sticks to eat?”</span> <span style="color:LightCoral">The kids laugh and snicker under their breath.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“What? Do they not have forks over there?”</span> Another adds in, <span style="Color: LightSteelBlue">“I thought they were supposed to be ‘advanced’!”</span> They all laugh again. You feel anger welling up inside you. Stupid kids make fun of anything they don’t understand. It just makes them look even more stupid. You move to tell <span style="color:DarkTurquoise">Mata</span> to ignore them, <span style="color:LightCoral">but then notice that his face is flushing a deep, painful red as he has frozen mid-movement, the sausage slipping form his chopsticks.</span>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Mad",
+                },
+            },
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 1,
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<span style="color:Yellow">He looks super upset and this just makes you madder. You have to do something!</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Stand up and tell the bullies to shut it<br>">>
+    <<replace "#choice">>
+        You slam your hands down on the table hard enough to rattle the lunch trays, springing to your feet as righteous anger flows through you. You snap at the bullies, glaring at them as you tell them off for making fun of <span style="color:DarkTurquoise">Mata</span>. They’re just mad that they’re boring and uncultured and that their mothers don’t love them enough to make them a lunch half as good as <span style="color:DarkTurquoise">Mata</span>’s! <br>
+        <br>
+        This may be going a bit too far, as you realize everyone is staring at you with a surprised expression. Yelling that out may have been a bit much, <span style="color:LightCoral">but it seems to work as the main kid laughing turns red and mumbles out <span style="Color: LightSteelBlue">“whatever!”</span> before quickly grabbing his lunch and moving to another table, followed by his friends.</span> Eventually, everyone returns to their lunch, and you sit back down blushing yourself from causing such a scene. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“…Thank you.”</span> You hear <span style="color:DarkTurquoise">Mata</span> whisper. You glance at him and see him giving you a genuine, cute smile, his voice full of something heavy and raw. <span style="color:Pink">Your blush deepens as you chuckle, rubbing the back of your head and telling him it was nothing. You can’t stand bullies like that and had to say something. As long as you’re here, he has nothing to worry about!</span> <br>
+        <br>
+
+         <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 1,
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:DarkTurquoise">Mata</span> can’t wipe the smile off of his face as he continues eating. You know, at this moment, you’ve earned a deep level of trust with the boy and enjoy the rest of your time eating with him. You’ve definitely made a new friend today. <br>
+        <<socialChange "Mata" 10 1>>
+        <<set $ActiveQuests.delete("Mata: The New Kid At School")>>
+        <<set $CompletedQuests.push("Mata: The New Kid At School")>>
+        <<set $Minutes += 15>>
+        <<set $LunchClass to 1>>
+        <<needChange "Hunger" 35>>
+        <br>
+        [[Continue|School Cafeteria]] <br>
+    <</replace>>
+    <</link>>
+    <<link "Distract Mata with conversation<br>">>
+    <<replace "#choice">>
+        You glare at the boys, feeling anger continue to build, until you take a deep breath. Making a scene here won’t do anyone any good. The best thing for you to do is to take <span style="color:DarkTurquoise">Mata</span>’s mind off of what they are saying and distract him. So, you pretend you don’t hear the boys and start talking to <span style="color:DarkTurquoise">Mata</span> again, asking him about what his favorite things he’s drawn recently. <span style="color:DarkTurquoise">Mata</span> blinks – caught a bit off guard – but gratefully follows your lead. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Places… that are not real.”</span> He says, his voice a little shaky at first, but then grows steadier. <span style="Color: LightSteelBlue">“Dream cities and… floating gardens… things like that.”</span> As he talks, the red slowly fades from his cheeks and you have a wonderful conversation about his interests and the things he tries to draw. The boy has some pretty interesting ideas, and you mention wanting to see them someday. 
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 1,
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“M- maybe.”</span> He pauses, staring down at his food with a smile, <span style="Color: LightSteelBlue">“I would like for you to see them. I want to… to share them with you.”</span> <span style="color:LightGreen">You notice that <span style="color:DarkTurquoise">Mata</span> can’t wipe the smile off his face as he continues eating. Seems you’ve gotten a level of trust with the boy and have definitely made a new friend today.</span> <br>
+        <<socialChange "Mata" 5 1>>
+        <<set $ActiveQuests.delete("Mata: The New Kid At School")>>
+        <<set $CompletedQuests.push("Mata: The New Kid At School")>>
+        <<set $Minutes += 15>>
+        <<set $LunchClass to 1>>
+        <<needChange "Hunger" 35>>
+        <br>
+        [[Continue|School Cafeteria]] <br>
+    <</replace>>
+    <</link>>
+    <<link "Defuse the situation with a joke<br>">>
+    <<replace "#choice">>
+        You glare at the boys, feeling an anger well up inside you, but take a deep breath and calm yourself. Yelling or starting a scene will probably just make <span style="color:DarkTurquoise">Mata</span> feel worse, so you decide another way to help him out. Nothing improves a mood quite like humor. <span style="color:LightGreen">So, with a smirk and a quick wit, you comment out loud that eating expertly with chopsticks is a whole of a lot better than being unable to use the more ‘advanced’ fork well enough to avoid looking like a slob stuffing your face.</span> <br>
+        <br>
+        The boy who was bullying <span style="color:DarkTurquoise">Mata</span> freezes, glancing down at his shirt, which already has food spots on it, and quickly blushes, reaching for his napkin to try and clean it off. <span style="color:Pink">This shuts the boys up as you notice <span style="color:DarkTurquoise">Mata</span> chuckling quietly to himself, probably the first real laugh you’ve heard from him.</span> 
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 1,
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Thank you.”</span> He says softly with a smile, the tension in the room eases as the bullies eventually walk away, now too self-conscious about how they look to say anything more about <span style="color:DarkTurquoise">Mata</span>. As lunch continues, you and <span style="color:DarkTurquoise">Mata</span> dive into quiet conversation about food, art, and what it’s like moving to a new place. You do have that in common with him, even if your move was a lot less far. <br>
+        <br>
+        As you finish eating, <span style="color:DarkTurquoise">Mata</span> packs up his bento neatly before giving you a shy but deeply sincere look. <span style="Color: LightSteelBlue">“Today… good day.”</span> <span style="color:LightGreen">He says, like he’s trying out the words for the first time. You can’t help but smile back, you’re pretty sure you’ve made a new friend.</span> <br>
+        <<socialChange "Mata" 5 1>>
+        <<set $ActiveQuests.delete("Mata: The New Kid At School")>>
+        <<set $CompletedQuests.push("Mata: The New Kid At School")>>
+        <<set $Minutes += 15>>
+        <<set $LunchClass to 1>>
+        <<needChange "Hunger" 35>>
+        <br>
+        [[Continue|School Cafeteria]] <br>
+    <</replace>>
+    <</link>>
+</div>

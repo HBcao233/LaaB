@@ -1,0 +1,101 @@
+:: NOAH Pretend Doctor Noah Doctor [nobr]
+	
+	/* Setting Outfit Variables */
+	<<if $NoahSche.Activity == "Playing in Room">>
+		<<set $AD.Outfit to "Everyday">>
+<<else>>
+		<<set $AD.Outfit to "Pajamas">>
+	<</if>>
+	<<include"Noah Outfit Set">>
+
+<span style="color:DarkTurquoise">Noah</span> puts on the lab coat, head mirror, and stethoscope. It was a bit of an old-fashioned doctor’s outfit but worked for playing pretend, <span style="color:Pink">and <span style="color:DarkTurquoise">Noah</span> looked very cute in it.</span><br>
+
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Normal">>
+<<set $AD.Cry to 0>>
+<<set $AD.Blush to 2>>
+<<set $AD.Mouth to "Happy">>
+<<if $NoahSche.Activity == "Playing in Room">>
+	<<set $AD.Outfit to "Everyday">>
+<<else>>
+	<<set $AD.Outfit to "Pajamas">>
+<</if>>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>	
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+<<if $PlayerUndies.Type != "None">>
+<span style="color:LightSteelBlue">“Alright patient, please strip down to your undies and lay on the bed here.”</span> <span style="color:DarkTurquoise">Noah says</span>, mimicking the voice of his own doctor. <span style="color:Pink">You do as he says, laying down on his bed in your underwear, as <span style="color:DarkTurquoise">Noah</span> listens to your heart and taps your knee with a tiny hammer. It is obvious that he doesn’t fully understand what this all does.</span> <span style="color:LightSteelBlue">“Alright <span style="color:DarkTurquoise">$NoahNickname</span>, where do you hurt?”</span> <br>
+<br>
+<<storeClothing "Store" "Undies" 1>>
+
+
+<<else>>
+<span style="color:LightSteelBlue">“Alright patient, please strip down to your undies and lay on the bed here.”</span> <span style="color:DarkTurquoise">Noah</span> says, mimicking the voice of his own doctor. <span style="color:Pink">You smirk and inform <span style="color:DarkTurquoise">Noah</span> that you are not wearing any underwear, causing him to blush.</span> <span style="color:LightSteelBlue">“Oh, ummm…”</span> <span style="color:DarkTurquoise">Noah</span> looks around the room, unprepared for this, before grabbing a small blanket and handing it to you. <span style="color:LightSteelBlue">“Use this to cover your peepee. I’ll turn around while you do it.”</span> <span style="color:Pink">You roll your eyes at Noah’s innocence but do as he asks. It does feel a little weird to be laying on his bed completely naked.</span> <br>
+<br>
+Once you are covered, you tell <span style="color:DarkTurquoise">Noah</span> he can turn around and he comes up and begins the check-up. He listens to your heart with his stethoscope and taps your knee with a tiny hammer. It is obvious that he doesn’t fully understand what this all does. <span style="color:Pink">Interestingly, he also doesn’t seem to notice as your penis begins to slowly lift the blanket from all the touching.</span> <span style="color:LightSteelBlue">“Alright <span style="color:DarkTurquoise">$NoahNickname</span>, where do you hurt?”</span> <br>
+<br>
+<<storeClothing "Store" "Undies" 1>>
+
+<</if>>
+
+<div id=choice1>
+/* BELLY HURTS */
+	<<link "Your Belly Hurts<br>">>
+	<<replace"#choice1">>
+	
+	You point to your belly and tell the tiny doctor that you have a nasty stomach ache from eating too many sweets. <span style="color:DarkTurquoise">Noah</span> puts his fingers to his chin and nods along as you explore. <span style="color:LightSteelBlue">“I see, lemme listen to your belly with my scope-thingy.”</span> He places his stethoscope on your stomach and listens intently. He then tells you to wait a second and runs out of the room. <br>
+<br>
+When he returns he has a small cup full of some juice and a bandage. <span style="color:Pink">He tells you the juice is medicine and helps you drink it, though considering you are laying down you do get some on his bed. He then places the bandage on your nipple <span style="color:LightSteelBlue">“Just in case”</span>.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“And for the final most important thing to make you feel better!”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Noah</span> leans down and plants a kiss right on your belly, the ultimate medicine to heal a boy. You get up and tell <span style="color:DarkTurquoise">Noah</span> that you are already feeling better and give him a big hug as thanks.</span> <span style="color:LightSteelBlue">“All in a day’s work for <span style="color:DarkTurquoise">Dr. Noah</span>!”</span> He gives you a military salute, still not fully understanding how doctors work. <br>
+
+<<storeClothing "Restore" "Undies">>
+<<set $Player.Exposed to "Clothed">>
+<<socialChange "Noah" 3>>
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Kids"]>>
+<<arousalGain 10 _arousalbs _arousalkink>>
+<<set $BandaidRightNipple to 1>>
+<<needChange "Fun" 20>>
+<br>
+
+[[Continue|PH Noah Bedroom]] 
+
+	
+	<</replace>>
+	<</link>>
+	
+/* PENIS HURTS */
+	<<link "Your Penis Hurts<br>">>
+	<<replace"#choice1">>
+	
+	You smile and motion for him to come closer. <span style="color:Pink">He leans down and you whisper that your penis hurts and you want him to check it.</span> <span style="color:DarkTurquoise">Noah</span> blushes and tries to explain that he isn’t that type of doctor, but you pretend that you will die if he doesn’t help you and begin to beg. <br>
+<br>
+<span style="color:LightSteelBlue">“I guess I can try…”</span> He says shyly. <span style="color:Pink">He covers his eyes with one hand and uses the other to move his stethoscope against your $Player.PenisSize Penis. You flinch slightly as the cold metal touches your sensitive skin, but he only holds it there for a second before pulling away.</span> <span style="color:LightSteelBlue">“I don’t hear anything wrong. Maybe you just have to pee really bad.”</span> <br>
+<br>
+<span style="color:Pink">You lift your pelvis up and ask if he will kiss it to make it feel better.</span> <span style="color:LightSteelBlue">“That’s gross!”</span> <span style="color:DarkTurquoise">Noah</span> laughs. He quickly changes the subject and begins to listen to your heart and head, making a joke about not being able to hear your brain. <span style="color:Pink">You reach up and pinch his nipples in retaliation, causing the little boy to squeal and giggle.</span> Eventually, he ends the check-up and takes off the doctor’s outfit. <br>
+
+<<storeClothing "Restore" "Undies">>
+<<set $Player.Exposed to "Clothed">>
+<<socialChange "Noah" 3>>
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Exhibitionism", "Kids"]>>
+<<arousalGain 15 _arousalbs _arousalkink>>
+<<needChange "Fun" 20>>
+<br>
+
+[[Continue|PH Noah Bedroom]] 
+
+	
+	<</replace>>
+	<</link>>
+</div>

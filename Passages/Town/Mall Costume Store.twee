@@ -1,0 +1,54 @@
+:: Mall Costume Store [nobr]
+
+<<set $Location to {
+    Name: "Costume Store",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Mall",
+}>>
+<span style="color:Azure"><big><strong>--Costume Store--</strong></big></span><br>
+You stand in a small costume store in the mall. Despite believing it would only be popular around Halloween, the Costume Store somehow makes enough money to be open year-round. They have a wide arrange of costumes along with accessories.<br>
+<br> 
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Categories-</strong></span><br>
+[[Colored Contacts|Mall Costume Store][$CostumeStore to "Contacts"]]
+ - 
+[[Angel|Mall Costume Store][$CostumeStore to "Angel"]]
+ - 
+[[Demon|Mall Costume Store][$CostumeStore to "Demon"]]
+ - 
+[[Mummy|Mall Costume Store][$CostumeStore to "Mummy"]]
+ - 
+[[Vampire|Mall Costume Store][$CostumeStore to "Vampire"]]
+ - 
+[[Werewolf|Mall Costume Store][$CostumeStore to "Werewolf"]]
+<br>
+<span style="color:Gray">[Note: All Costumes Pieces appear under the Accessories Tab in the Closet.]</span><br>
+<<if $CostumeStore == "Contacts">>
+	<<include"Costume Store Contacts">>
+<<elseif $CostumeStore == "Angel">>
+	<<include"Costume Store Angel">>
+<<elseif $CostumeStore == "Demon">>
+	<<include"Costume Store Demon">>
+<<elseif $CostumeStore == "Mummy">>
+	<<include"Costume Store Mummy">>
+<<elseif $CostumeStore == "Vampire">>
+	<<include"Costume Store Vampire">>
+<<elseif $CostumeStore == "Werewolf">>
+	<<include"Costume Store Werewolf">>
+<<else>>
+	<<include"Costume Store Contacts">>
+<</if>>
+
+
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+<img src="Images\World Map\Individual Icons\Mall.png">
+	[[Mall (0:10)|Mall][$Minutes += 10]]<br>

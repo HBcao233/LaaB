@@ -1,0 +1,47 @@
+:: DAD Help Water Plants [nobr]
+
+<<set $Minutes += 20>>
+
+You run up to <span style="color:DarkTurquoise">Your Father</span> and call out to him. He doesn’t respond, so you yell louder. He snaps back to reality and turns to you.<br>
+
+<<set _ad to [
+    {
+        Name: "Dad",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Sorry son, was lost in thought for a second there.”</span> You ask if you could water the plants with him and he smiles. <span style="color:LightSteelBlue">“Sure! Here, you just move the hose slowly over them. Careful not to drown them.”</span> He hands you the hose and the two of you chat as you water the plants.<br>
+<br>
+
+/* DECIDING IF WATER FIGHT */
+<<set $RandomEvent to random(1, 2)>>
+
+/* NO WATER FIGHT */
+<<if $RandomEvent == 1>>
+After a few minutes, all the plants are watered and <span style="color:DarkTurquoise">Your Father</span> turns off the hose. <span style="color:LightSteelBlue">“Good job, thanks buddy!”</span> He says, ruffling your hair. <span style="color:LightSteelBlue">“Your mother was a much better gardener than me, but with your help maybe we can keep these flowers alive.”</span><br>
+<<socialChange "Dad" 3>>
+	<br>
+	[[Continue|PH Backyard]] 
+	
+/* WATER FIGHT */
+<<elseif $RandomEvent == 2>>
+After a few minutes, all the plants are watered and <span style="color:DarkTurquoise">Your Father</span> walks over to turn the hose off. You suddenly get a fiendish idea and spray <span style="color:DarkTurquoise">Your Father</span> in the back with water. He calls out in shock, as he is now soaked, and turns to you with an annoyed look. He walks up to you and demands the hose. You give it to him, believing yourself in trouble, but are taken by surprise when <span style="color:DarkTurquoise">Your Father</span> blasts you right in the face with the water, sending you crashing backwards onto the grass.<br>
+<br>
+You both can’t help but burst out laughing as <span style="color:DarkTurquoise">Your Father</span> puts the hose away.<br>
+	<<socialChange "Dad" 3>>
+	<<set $Wet to 2>>
+	<br>
+	[[Continue|PH Backyard]] 
+
+
+<</if>>

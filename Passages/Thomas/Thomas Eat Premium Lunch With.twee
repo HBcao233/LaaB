@@ -1,0 +1,70 @@
+:: Thomas Eat Premium Lunch With [nobr]
+
+You plop down next to <span class="char-name">Thomas</span> with a big plate of food and a bigger smile, greeting the boy. He gives you a strange look, glancing at your tray of food with a raised eyebrow before shaking his head. <span class="yellow-text">Confused, you ask him what’s wrong.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Sad",
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span class="dialogue-text">“That ‘premium lunch’ the school sells is a scam.”</span> He replies, <span class="dialogue-text">“It’s just a bunch of marked-up, already overpriced trash. Just a waste of money, to be honest.”</span> You shrug, telling <span class="char-name">Thomas</span> that, whatever it was, it did taste better than the normal lunch for being only a few bucks more. <span class="dialogue-text">“I guess if you got the money to spare, knock yourself out.”</span><br>
+<br>
+
+<span class="char-name">Thomas</span> returns to his lunch, seeming a little downtrodden. You guess <span class="char-name">Thomas</span> normally didn’t get the premium lunch, in fact, you’ve never even seen him get the standard lunch, just the free one that comes with a sandwich and some fruit. <span class="alert-text">Suddenly, you felt a little bad sitting next to him like this, almost flaunting your wealth and ‘higher quality’ lunch right in his face.</span> You try to think of a way to salvage the situation, when an idea pops into your head.<br>
+<br>
+
+You scoot your tray over and ask <span class="char-name">Thomas</span> if he’d like to split some of your lunch. <span class="dialogue-text">“No thanks.”</span> <span class="char-name">Thomas</span> says flatly, not even glancing in your direction. You insist, the premium lunch gives you extra anyway, so there is no way you’d be able to finish it- <span class="dialogue-text">“I said no thanks.”</span> <span class="alert-text"><span class="char-name">Thomas</span> said with a bit more annoyance in his voice.</span><br>
+<br>
+
+<<if $ThomasSocial < 70 && ($ThomasSocialRank || 0) < 1>>
+    It was clear he isn't interested in your charity and all you’ve done is make him upset. You decide to shut up and finish your lunch without upsetting him any further. <span class="alert-text">The rest of the lunch period is extremely awkward.</span><br>
+	<<socialChange "Thomas" -3>>
+
+<<else>>
+    You shrink back at his words, but you swear you saw him consider it for a moment. You are pretty sure you know why he rejected it, as <span class="char-name">Thomas</span> wasn’t a fan of charity. He didn’t like to be pitied or looked down on. You try to think of a way to give it to him without upsetting him, or, at least, make him unable to give it back.<br>
+    <br>
+
+    So, you ‘accidentally’ knock over <span class="char-name">Thomas</span>’ apple. Apologizing profusely, you wait until he bends down to pick it up and quickly and stealthily take half of your premium lunch and plop it down on his tray. Though it wasn’t really stealthy, as <span class="char-name">Thomas</span> notices immediately and glares at you.<br>
+    <br>
+
+    <span class="dialogue-text">“Why did you put your lunch on my tray?”</span> He asks. To avoid the question, you stuff a bunch of food in your mouth and mumble something about having absolutely no idea what he is talking about. <span class="char-name">Thomas</span> continues to glare at you for a minute as you nervously try to both avoid his gaze while also avoiding choking on the large amount of food in your mouth.<br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Smirk",
+            },
+        },
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span class="dialogue-text">“God, you’re so annoying.”</span> <span class="char-name">Thomas</span> sighs, <span class="dialogue-text">“You’re lucky I don’t hate you as much as everyone else.”</span> <span class="char-name">Thomas</span> accepts defeat and you watch with glee as he takes a bite of the gifted food. <span class="green-text">While you know he’d never admit it, you can tell by his face that he really likes it! At least, until he gets flustered and yells at you for staring at him.</span><br>
+	<<socialChange "Thomas" 3>>
+
+<</if>>
+
+<br>

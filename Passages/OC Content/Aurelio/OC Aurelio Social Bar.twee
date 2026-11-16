@@ -1,0 +1,84 @@
+:: OC Aurelio Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCAurelioSocialRank == -3>>
+	<<set $OCAurelioRelationship to "Hated">>
+	<span style="color:DarkRed">Aurelio Hates you!</span>
+	<br>
+<<elseif $OCAurelioSocialRank == -2>>
+	<<set $OCAurelioRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Aurelio are Enemies.</span>
+	<br>
+<<elseif $OCAurelioSocialRank == -1>>
+	<<set $OCAurelioRelationship to "Very Disliked">>
+	<span style="color:Red">Aurelio really Dislikes you.</span>
+	<br>
+<<elseif $OCAurelioSocialRank == 0 and $OCAurelioSocial <= -50>>
+	<<set $OCAurelioRelationship to "Disliked">>
+	<span style="color:Red">Aurelio Dislikes you. </span>
+	<br>
+<<elseif $OCAurelioSocialRank == 0 and $OCAurelioSocial < 50>>
+	<<set $OCAurelioRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Aurelio are Acquaintances.</span>
+	<br>
+<<elseif $OCAurelioSocialRank == 0 and $OCAurelioSocial >= 50>>
+	<<set $OCAurelioRelationship to "Liked">>
+	<span style="color:LightGreen">Aurelio Likes you.</span>
+	<br>
+<<elseif $OCAurelioSocialRank == 1>>
+	<<set $OCAurelioRelationship to "Friends">>
+	<span style="color:Green">You and Aurelio are Friends.</span>
+	<br>
+<<elseif $OCAurelioSocialRank == 2>>
+	<<set $OCAurelioRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Aurelio are Good Friends!</span>
+	<br>
+<<elseif $OCAurelioSocialRank == 3>>
+	<<set $OCAurelioRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Aurelio are Close Friends!</span>
+	<br>
+<<elseif $OCAurelioSocialRank == 4>>
+	<<set $OCAurelioRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Aurelio are Best Friends!</span>
+	<br>
+<<elseif $OCAurelioSocialRank == 5>>
+	<<set $OCAurelioRelationship to "Love">>
+	<span style="color:Pink">You and Aurelio Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCAurelioSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCAurelioSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCAurelioSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCAurelioSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCAurelioSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCAurelioSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCAurelioSocial,
+			value: Math.abs($OCAurelioSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCAurelioSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCAurelioSocial > 120>>
+	<<set $OCAurelioSocial to 120>>
+<</if>>
+<<if $OCAurelioSocial < -120>>
+	<<set $OCAurelioSocial to -120>>
+<</if>>

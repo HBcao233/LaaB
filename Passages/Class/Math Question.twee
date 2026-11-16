@@ -1,0 +1,66 @@
+:: Math Question [nobr]
+
+<<set _skillcheckdif to random(20, 70)>>
+
+<<set _ad to [
+	{
+		Name: "Randolph",
+		State: {
+			Mouth: "Frown",
+			Brows: "Angry",
+		},
+	},
+]>>
+<<ad _ad>>
+
+	<span style="color:DarkTurquoise">Mr. Randolph</span> is teaching the class about fractions when he puts an equation on the board. <span style="color:LightSteelBlue"> “Alright, who here thinks they can solve this one?”</span> He looks around the room for a volunteer, but no one responds. <span style="color:LightSteelBlue"> “Nobody? Come on, it’s not that hard.” </span>
+	
+<<if _skillcheckdif < 30>>
+	<span style="color:Green">The question does seem to be at your skill level.</span> You could give it a shot, but are worried what is would look like if you are wrong.
+	
+<<elseif _skillcheckdif < 50>>
+	<span style="color:Yellow">The question seems a bit above your skill level.</span> You could give it a shot, but are nervous about looking dumb in front of everyone.
+	
+<<else>>
+	<span style="color:Red">The question looks very hard, you wouldn’t even know where to begin on solving it.</span> You could always guess, but will look stupid if you get it wrong.
+	
+<</if>><br>
+	<br>
+	
+	<div id=choice>
+
+<<link "Attempt to solve it">>
+<<replace"#choice">>
+	<<skillCheck "Math" _skillcheckdif>>
+	
+	<<if $SkillResults == "Pass">>
+	As you begin to solve the equation, your thoughts seem to flow naturally, and you soon find yourself coming to an answer you are confident about. As you turn around, however, you are worried since it seems most of the other students weren’t able to follow your process. <span style="color:Green">You worries disappear when <span style="color:DarkTurquoise">Mr. Randolph</span> pats you on the back joyfully!</span> <span style="color:LightSteelBlue">”Well, at least I know ONE of you was paying attention. Good job <span style="color:DarkTurquoise">$Player.Name</span>.”</span><br>
+	<<set $GradeChange to "Math">>
+	<<set $GradeChangeType to "Increase">>
+	<<include"Grade Change">>
+	<br>
+	<<set _EventPassFail to "Pass">>
+<<include"Attend Math Finish">>
+
+	<<else>>
+	You find your confidence weaken as you begin to work out the problem. Before long, it is clear you are moving in circles. The rest of the class seems to have noticed as well, as you begin to hear whispering and giggles behind you. <span style="color:Red">You feel your face begin to turn red as <span style="color:DarkTurquoise">Mr. Randolph</span> sighs and asks you to return to your seat.</span> You avoid eye contact with the other students as he reteaches the concept.<br>
+	<br>
+	<<set _EventPassFail to "Fail">>
+<<include"Attend Math Finish">>
+
+	<</if>>
+
+<</replace>>
+<</link>>
+
+<<skillDiff "Math" _skillcheckdif>><br>
+
+<<link "Keep your head low<br>">>
+<<replace"#choice">>
+You decide not to take the risk, sinking lower in your chair and avoiding eye contact. Eventually, after a few moments of silence, another boy offers to give it a shot. Surprisingly, he gets the question right, garnering praise from <span style="color:DarkTurquoise">Mr. Randolph</span>.<br>
+<br>
+<<include"Attend Math Finish">>
+
+<</replace>>
+<</link>>
+</div>

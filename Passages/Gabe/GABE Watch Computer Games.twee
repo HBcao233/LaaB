@@ -1,0 +1,234 @@
+:: GABE Watch Computer Games [nobr]
+
+<<if $GabeSche.Activity == "Computer Games">>
+	<<set _outfit to "Everyday">>
+<<else>>
+	<<set _outfit to "Pajama">>
+<</if>>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Mad",
+			Outfit: _outfit,
+		},
+	},
+]>>
+<<ad _ad>>
+
+You disregard <span style="color:DarkTurquoise">Gabe</span>’s warnings and take a few steps closer to his computer. You ask if you can stay and watch him play for a bit, promising to be quiet.<br>
+<br>
+
+<<set $Minutes += 20>>
+<<set $RandomEvent to random(1, 2)>>
+	/* WILL MAKE THIS BETTER CODED DURING GABE UPDATE */
+		<<if $Player.Exposed == "Naked">>
+		<<set $RandomEvent to 3>>
+	<</if>>
+
+/* LETS YOU WATCH */
+	<<if $RandomEvent == 1>>
+	<span style="color:DarkTurquoise">Gabe</span> raises his eyebrow and gives a slightly annoyed look, but realizing he is still in the middle of a game he just sighs. <span style="color:LightSteelBlue">”You’re lucky this is an important match.”</span> <span style="color:Green">He motions towards the bed and you happily sit down, watching your brother play.</span> He is playing a game called Herowatch, which seems to be a team based shooter. He is playing as a strong looking lady with pink hair and a laser gun.<br>
+
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Eyes: "Mad",
+				Mouth: "Happy",
+				Outfit: _outfit,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+Even though you don’t fully understand what is going on, you get excited with <span style="color:DarkTurquoise">Gabe</span> as he and his team manages to clutch a close fight! He jumps up in celebration, picking you up and squeezing you before tossing you on the bed. <span style="color:LightSteelBlue">”You just got to watch your brother kick ass!”</span> He seems so caught up in his victory that he has forgotten his earlier annoyance at your presence and you feel that the two of you have bonded a little.<br>
+<<socialChange "Gabe" 3>>
+	<<needChange "Fun" 15>>
+	<br>
+	[[Continue|PH Gabe Bedroom]] 
+
+/* GETS MAD */
+	<<elseif $RandomEvent == 2>>
+<span style="color:DarkTurquoise">Gabe</span> sighs loudly before telling his friends that he’ll be right back. You quickly turn around and attempt to sprint out the door, but <span style="color:DarkTurquoise">Gabe</span> manages to grab you from behind and put you in a headlock. <span style="color:LightSteelBlue">”I warned you! Now, how should I punish you?”</span> <span style="color:Red"> You are unable to escape as <span style="color:DarkTurquoise">Gabe</span> pulls you over to his bed.</span><br>
+<br>
+
+	<div id=choice>
+		<<link "Continue<br>">>
+		<<replace"#choice">>
+
+/* WEDGIE */
+	<<if $PlayerUndies.Type != "None">>
+	<span style="color:LightSteelBlue">”Oh I have an idea!”</span> <span style="color:DarkTurquoise">Gabe</span> looks at you with an evil grin. He turns you over, laying you face down on his bed, <span style="color:Red">and begins to tie your arms behind your back!</span> You panic, attempting to struggle free, but soon find yourself helpless with your arms completely bound.<br>
+
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Eyes: "Mad",
+				Outfit: _outfit,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightSteelBlue">“There we go! Now, let’s see here…”</span> You blush as you feel <span style="color:DarkTurquoise">Gabe</span>’s hand reach down your back and grip your $PlayerUndies.Type. <span style="color:Pink"> He yanks them, holding your body down as he gives you a painful wedgie!</span> <span style="color:LightSteelBlue">“Just got to make sure these are strong enough!”</span> He laughs, releasing your underwear, causing it to snap painfully against your back, before picking you up and walking you over to a rack on his wall.<br>
+
+/* WEARING BOTTOMS */
+	<<if $PlayerBottoms.Type != "None">>
+	He grabs your $PlayerUndies.Type again, <span style="color:Red">but this time hooks it around the rack and lets you go, painfully hanging you by your underwear!</span> He takes a step back to admire his work, <span style="color:LightSteelBlue"> “Something is still missing. Oh, I know!”</span> His smile widens as he grips the bottom of your $PlayerBottoms.Type and pulls them completely off your legs, leaving you hanging with your $PlayerUndies.Type completely exposed! <span style="color:Pink">Your underwear is also being pulled back so hard that it clearly shows the outline of your $Player.PenisSize Penis and Balls, which just add to your humiliation as <span style="color:DarkTurquoise">Gabe</span> pulls out his phone and takes a picture of you in such an embarrassing state!</span><br>
+
+/* NO BOTTOMS */
+	<<else>>
+	He grabs your $PlayerUndies.Type again, <span style="color:Red">but this time hooks it around the rack and lets you go, painfully hanging you by your underwear!</span> He takes a step back to admire his work, leaving you hanging with your $PlayerUndies.Type completely exposed! <span style="color:Pink">Your underwear is also being pulled back so hard that it clearly shows the outline of your $Player.PenisSize Penis and Balls, which just add to your humiliation as <span style="color:DarkTurquoise">Gabe</span> pulls out his phone and takes a picture of you in such an embarrassing state!</span><br>
+<br>
+
+<</if>>
+
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Eyes: "Mad",
+				Outfit: _outfit,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightSteelBlue"> “There! Now you can watch, and I have a nice little photo for the family scrap book!”</span> He smiles, returning to his game. You attempt to wiggle free, but find yourself completely stuck and unable to move with your arms bound. To make things worse, every move only tightens the wedgie <span style="color:Pink">squeezing your privates even more!</span> After nearly 20 minutes, you manage to get one hand free and unhook your $PlayerUndies.Type, sending you crashing to the ground. <span style="color:DarkTurquoise">Gabe</span> laughs as he watches you run out into the hallway.<br>
+<<if $PlayerBottoms.Type != "None">>
+	<<set $ClosetBottoms.push($PlayerBottoms)>>
+<</if>>
+<<set $PlayerBottoms to $None>>
+<<set $Player.Exposed to "Undies">>
+	<<socialChange "Gabe" -3>>
+	<<addMoodlet "Wedgie" 8>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Wedgiee", "Humiliated"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+			<br>
+			[[Leave|PH Hallway]]
+
+
+/* NO UNDERWEAR, TOSSED OUT */
+	<<else>>
+<span style="color:LightSteelBlue">“Oh I have an idea!”</span> <span style="color:DarkTurquoise">Gabe</span> looks at you with an evil grin. He turns you over, laying you face down on his bed, <span style="color:Red">and begins to tie your arms behind your back!</span> You panic, attempting to struggle free, but soon find yourself helpless with your arms completely bound. <br>
+<br>
+<span style="color:LightSteelBlue">“There we go! Now let’s see here…”</span> <span style="color:Pink">You blush as you feel <span style="color:DarkTurquoise">Gabe</span>’s hand reach into the back of your $PlayerBottoms.Type, searching for your underwear but instead just finds your bare butt.</span> <span style="color:LightSteelBlue">“Not wearing any underwear <span style="color:DarkTurquoise">$GabeNickname</span>? What would dad think? Guess I’ll have to give you an extra harsh punishment and I know just how!”</span> <span style="color:DarkTurquoise">Gabe</span> pulls his hand out of your $PlayerBottoms.Type, instead choosing to grip the side of them!<br>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Mad",
+			Outfit: _outfit,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:Red">You yell out as he quickly pulls your $PlayerBottoms.Name off, completely exposing your rear-end to him!</span> <span style="color:LightSteelBlue"> “What a cute, spankable butt!”</span> He laughs, placing his cold hand onto your buttcheek, causing shivers to run down your spine, <span style="color:LightSteelBlue"> “But I have a much better punishment than spanking in mind.”</span> <span style="color:Pink">He flips you over and you blush as he leers at your $Player.PenisSize Penis.</span><br>
+<br>
+
+/* PENIS SIZE CHECK */
+	<<if $Player.PenisSize == "Tiny" or $Player.PenisSize == "Small">>
+<span style="color:LightSteelBlue">“Fuck, I forgot how tiny your cock is!”</span> He laughs at the size of your boyhood, adding to your embarrassment, <span style="color:LightSteelBlue">“I’d bet even <span style="color:DarkTurquoise">Noah</span> is bigger!”</span><br>
+<br>
+	
+	<<elseif $Player.PenisSize == "Large" or $Player.PenisSize == "Gigantic">>
+		He chuckles as he sees your <span style="color:Pink">$Player.PenisSize Penis</span>, <span style="color:LightSteelBlue">“At least you’re not a baby where it matters.”</span> He smirks, <span style="color:LightSteelBlue">“I’m sure if I tied you up outside like this we’d have lines going all the way down the road wanting to suck this bad boy.”</span><br>
+<br>
+	
+	<<else>>
+		<span style="color:LightSteelBlue">“What a cute little thing!”</span> He laughs, poking the tip of your penis, causing you to squirm in embarrassment. 
+	
+	<</if>>
+<span style="color:Red"><span style="color:DarkTurquoise">Gabe</span> then pulls out his phone and takes a picture of you</span>, causing you to bend your legs in a desperate attempt to hide your privates. <br>
+<br>
+<span style="color:LightSteelBlue">“Just something to remember our bonding time together!”</span> <span style="color:Pink">He then picks you up, tossing you over his shoulder in an embarrassing and exposing position, and carries you into the hallway and drops you to the floor.</span> <span style="color:LightSteelBlue">“Good luck trying to put some pants on without your hands!”</span> He laughs once more, closing the door to his bedroom and <span style="color:Red">leaving you on the floor bound and exposed!</span> It takes some time for you to get up without your hands, but you manage to get to your feet.<br>
+<<if $PlayerBottoms.Type != "None">>
+	<<set $ClosetBottoms.push($PlayerBottoms)>>
+<</if>>
+<<set $PlayerBottoms to $None>>
+<<set $Player.Exposed to "Naked">>
+<<socialChange "Gabe" -3>>
+<<addMoodlet "Seen Naked" 5>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 20 _arousalbs _arousalkink>>
+			<br>
+			[[Leave|PH Hallway]]
+	<</if>>
+<</replace>>
+<</link>>
+</div>
+
+/* NAKED */
+<<elseif $RandomEvent == 3>>
+<span style="color:Pink"><span style="color:DarkTurquoise">Gabe</span> raises an eyebrow and you notice his eyes flick down toward your exposed penis.</span> <span style="color:LightSteelBlue">“Fine, since you haven’t been such a twerp lately, I’ll let you watch, even give you a good seat.”</span> As the round ends, <span style="color:DarkTurquoise">Gabe</span> stands up and suddenly picks you up from behind! <span style="color:Pink">You blush as your nude form is lifted into the air as <span style="color:DarkTurquoise">Gabe</span> walks back to his seat.</span> <span style="color:LightSteelBlue">“You’re lucky my webcam isn’t on, or my friends would be getting a free show!”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Gabe</span> laughs, pointing out that your private bits were perfectly at camera level as he held you like this.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Mouth: "Happy",
+			Outfit: _outfit,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Outfit: "Naked",
+		},
+		ShowZoom: true,
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Gabe</span> then sits down on his chair, positioning you perfectly on his lap. He then moves his arms under your armpits to reach his mouse and keyboard, forcing your arms to rest on his desk as he lays his chin on top of your head. <span style="color:Pink">This position left you feeling half like you were being hugged and half like you were being trapped. Still, it felt nice to have such quality time with your brother when he normally wouldn’t let you.</span> <br>
+<br>
+The match is going well, at least you are pretty sure it is based on <span style="color:DarkTurquoise">Gabe</span>’s reactions. <span style="color:Pink">You also realize that, whenever he is focusing really hard, your brother shakes his leg, which in turn bounced you up and down. In between rounds, <span style="color:DarkTurquoise">Gabe</span> would explain the game to you and answer any questions you had and whenever he was waiting to respawn, he would rub your bare belly in a surprisingly soothing way with his left hand. Overall, it was a really fun and calming experience!</span> <br>
+<br>
+<div id="continue">
+	<<link "Continue">>
+	<<replace"#continue">>
+It was near the end of the game when, according to <span style="color:DarkTurquoise">Gabe</span>, an enemy player disconnected, and a timeout was called that would seemingly last a few minutes. <span style="color:DarkTurquoise">Gabe</span> stretched his arm out, before placing his left hand once again on your belly and pulling you in close as he scooted his chair closer to his desk, practically rubbing your chest against it, and once again rested his chin atop your head. You both are silent and motionless for a minute, until suddenly, <span style="color:Pink">you feel <span style="color:DarkTurquoise">Gabe</span>’s right hand lay on top of your groin! You blush and tense up slightly, <span style="color:DarkTurquoise">Gabe</span>’s bored and blank expression either indicating that he didn’t notice where his hand fell, or was pretending not too.</span> <br>
+<br>
+<span style="color:Pink">At first you think to ignore, since it wasn’t a big deal just laying there, until you feel him ever so slightly begin to rub your penis. You turn a brighter red and quietly call out his name.</span> <span style="color:LightSteelBlue">“Yeah, timeouts suck. Game will continue in just a minute, so we’re stuck doing nothing until then.”</span> <span style="color:Pink">His tone was passive, which would be expected if he wasn’t currently stroking your boyhood under the desk! Along with his arms being under yours, you were so close to his desk that you couldn’t even use your hands to try and stop him.</span> <br>
+<br>
+<span style="color:Pink">He increased his pace, at this point practically jacking you off! Your body began to twitch as you bit your lower lip and any protest you would give was replaced with quiet muffled moans. You lay your head on the table as you gave into the pleasure, the feeling of his hands echoing throughout your body in bliss as you feel it build up until… It stops?</span> <br>
+
+<<set $Player.Arousal to 90>>
+<<set $Player.SexualFrustration += 30>>
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Tired",
+			Outfit: _outfit,
+		},
+	},
+	{
+		Name: "Player",
+		ShowZoom: true,
+		State: {
+			Blush: 3,
+			Outfit: "Naked",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Are you alright <span style="color:DarkTurquoise">$GabeNickname</span>?”</span> <span style="color:DarkTurquoise">Gabe</span> asks, you look up. He was playing his game again, giving you a confused expression. <span style="color:LightSteelBlue">“I know time outs are boring but you basically fell asleep at the desk. You haven’t been staying up have you?”</span> You blink in confusion, your eyes did feel groggy. Did you fall asleep and dream that? <span style="color:DarkTurquoise">Gabe</span> didn’t mention it at all and it does seem like you missed a round or two while laying your head down? <span style="color:Pink">But your penis was still rock hard, twitching with desire for the release it was denied. You decide it is probably best to not bring it up, in case it was a dream, and instead sit there in frustration, since you still couldn’t reach your penis in this position and were left with a raging boner that eventually faded by the time the game ended and <span style="color:DarkTurquoise">Gabe</span> freed you.</span> <br>
+	<<socialChange "Gabe" 3>>
+	<<needChange "Fun" 15>>
+	<br>
+	[[Continue|PH Gabe Bedroom][$Player.Arousal to 0]] 
+
+	<</replace>>
+	<</link>>
+</div>
+
+<</if>>

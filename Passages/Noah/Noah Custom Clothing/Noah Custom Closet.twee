@@ -1,0 +1,411 @@
+:: Noah Custom Closet [nobr]
+<span style="color:Azure"><big><strong>--Customizing Noah's Closet--</strong></big></span>
+<<link "[Help]">>
+<<script>>
+	Dialog.setup("Noah Custom Help", "Noah Custom Help");
+	Dialog.wiki(Story.get("Noah Custom Help").processText());
+	Dialog.open();
+<</script>>
+<</link>><br>
+<<if $NoahCustomCat == "Everyday">>
+    <span style="color:Green">--Everyday--</span>
+<<else>>
+<<link"-Everyday-">>
+    <<set $NoahCustomCat to "Everyday">>
+    <<goto "Noah Custom Closet">>
+<</link>>
+<</if>>
+ | 
+ <<if $NoahCustomCat == "Outside">>
+    <span style="color:Green">--Outside--</span>
+<<else>>
+<<link"-Outside-">>
+    <<set $NoahCustomCat to "Outside">>
+    <<goto "Noah Custom Closet">>
+<</link>>
+<</if>>
+ | 
+ <<if $NoahCustomCat == "Undies">>
+    <span style="color:Green">--Underwear--</span>
+<<else>>
+<<link"-Underwear-">>
+    <<set $NoahCustomCat to "Undies">>
+    <<goto "Noah Custom Closet">>
+<</link>>
+<</if>>
+ | 
+ <<if $NoahCustomCat == "Pajamas">>
+    <span style="color:Green">--Pajamas--</span>
+<<else>>
+<<link"-Pajamas-">>
+    <<set $NoahCustomCat to "Pajamas">>
+    <<goto "Noah Custom Closet">>
+<</link>>
+<</if>>
+<br>
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+<<if $NoahCustomCat == "Everyday">>
+	<<set $AD.Outfit to "Everyday">>
+<<elseif $NoahCustomCat == "Outside">>
+    <<set $AD.Outfit to "Everyday Outside">>
+<<elseif $NoahCustomCat == "Undies">>
+    <<set $AD.Outfit to "Undies">>
+<<elseif $NoahCustomCat == "Pajamas">>
+    <<set $AD.Outfit to "Pajamas">>
+<</if>>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+$ADUndies.Type
+<<if $NoahCustomCat == "Undies">>
+<big><strong>Underwear:</strong></big><br>
+    <strong>Active Inventory:</strong><br>
+    <<if $NoahClosetUndies.length == 0>>
+        <img src="Images/Icons/Kids Clothes/Briefs/Owlman Briefs.png" style="position: an; left: 0; top: 0">[Default]<br>
+    <<else>>
+        <<for _i to 0; _i lt $NoahClosetUndies.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahClosetUndies[_i].Icon]]">>
+                    <<set $NoahInClosetUndies.push($NoahClosetUndies[_i])>>
+                    <<set $NoahClosetUndies.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+    <</if>>
+    <strong>Inactive Inventory:</strong><br>
+        <<for _i to 0; _i lt $NoahInClosetUndies.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahInClosetUndies[_i].Icon]]">>
+                    <<set $NoahClosetUndies.push($NoahInClosetUndies[_i])>>
+                    <<set $NoahInClosetUndies.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+<big><strong>Socks:</strong></big>
+<<if $NoahInsideSocks == 0>>
+    <<link"[Noah WON'T wear socks inside]">>
+        <<set $NoahInsideSocks to 1>>
+        <<goto "Noah Custom Closet">>
+    <</link>>
+<<else>>
+    <<link"[Noah WILL wear socks inside]">>
+        <<set $NoahInsideSocks to 0>>
+        <<goto "Noah Custom Closet">>
+    <</link>>
+<</if>>
+
+<br>
+    <strong>Active Inventory:</strong><br>
+    <<if $NoahClosetSocks.length == 0>>
+        <img src="Images/Icons/Kids Clothes/Socks/White Socks.png" style="position: an; left: 0; top: 0">[Default]<br>
+    <<else>>
+        <<for _i to 0; _i lt $NoahClosetSocks.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahClosetSocks[_i].Icon]]">>
+                    <<set $NoahInClosetSocks.push($NoahClosetSocks[_i])>>
+                    <<set $NoahClosetSocks.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+    <</if>>
+    <strong>Inactive Inventory:</strong><br>
+        <<for _i to 0; _i lt $NoahInClosetSocks.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahInClosetSocks[_i].Icon]]">>
+                    <<set $NoahClosetSocks.push($NoahInClosetSocks[_i])>>
+                    <<set $NoahInClosetSocks.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+
+<<elseif $NoahCustomCat == "Outside">>
+<big><strong>Outerwear:</strong></big><br>
+    <strong>Active Inventory:</strong><br>
+    <<if $NoahClosetOuter.length == 0>>
+        <img src="Images/Icons/Kids Clothes/Hoodie/Blue Hoodie.png" style="position: an; left: 0; top: 0">[Default]<br>
+    <<else>>
+        <<for _i to 0; _i lt $NoahClosetOuter.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahClosetOuter[_i].Icon]]">>
+                    <<set $NoahInClosetOuter.push($NoahClosetOuter[_i])>>
+                    <<set $NoahClosetOuter.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+    <</if>>
+    <strong>Inactive Inventory:</strong><br>
+        <<for _i to 0; _i lt $NoahInClosetOuter.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahInClosetOuter[_i].Icon]]">>
+                    <<set $NoahClosetOuter.push($NoahInClosetOuter[_i])>>
+                    <<set $NoahInClosetOuter.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+<big><strong>Shoes:</strong></big><br>
+    <strong>Active Inventory:</strong><br>
+    <<if $NoahClosetShoes.length == 0>>
+        <img src="Images/Icons/Kids Clothes/Sneakers/Blue Sneakers.png" style="position: an; left: 0; top: 0">[Default]<br>
+    <<else>>
+        <<for _i to 0; _i lt $NoahClosetShoes.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahClosetShoes[_i].Icon]]">>
+                    <<set $NoahInClosetShoes.push($NoahClosetShoes[_i])>>
+                    <<set $NoahClosetShoes.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+    <</if>>
+    <strong>Inactive Inventory:</strong><br>
+        <<for _i to 0; _i lt $NoahInClosetShoes.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahInClosetShoes[_i].Icon]]">>
+                    <<set $NoahClosetShoes.push($NoahInClosetShoes[_i])>>
+                    <<set $NoahInClosetShoes.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+
+<<elseif $NoahCustomCat == "Everyday">>
+<<if $NoahCustomCatTemp == "Warm">>
+<<link"-Cold-">>
+    <<set $NoahCustomCatTemp to "Cold">>
+    <<goto "Noah Custom Closet">>
+<</link>>
+ | 
+<span style="color:Green">-Warm-</span>
+<br>
+<big><strong>Tops:</strong></big><br>
+    <strong>Active Inventory:</strong><br>
+    <<if $NoahClosetWarmTop.length == 0>>
+        <img src="Images/Icons/Kids Clothes/T-Shirt/Owlman T-Shirt.png" style="position: an; left: 0; top: 0">[Default]<br>
+    <<else>>
+        <<for _i to 0; _i lt $NoahClosetWarmTop.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahClosetWarmTop[_i].Icon]]">>
+                    <<set $NoahInClosetTop.push($NoahClosetWarmTop[_i])>>
+                    <<set $NoahClosetWarmTop.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+    <</if>>
+    <strong>Inactive Inventory:</strong><br>
+        <<for _i to 0; _i lt $NoahInClosetTop.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahInClosetTop[_i].Icon]]">>
+                    <<set $NoahClosetWarmTop.push($NoahInClosetTop[_i])>>
+                    <<set $NoahInClosetTop.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+<big><strong>Bottoms:</strong></big><br>
+    <strong>Active Inventory:</strong><br>
+    <<if $NoahClosetWarmBottoms.length == 0>>
+        <img src="Images/Icons/Kids Clothes/Shorts/Blue Shorts.png" style="position: an; left: 0; top: 0">[Default]<br>
+    <<else>>
+        <<for _i to 0; _i lt $NoahClosetWarmBottoms.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahClosetWarmBottoms[_i].Icon]]">>
+                    <<set $NoahInClosetBottoms.push($NoahClosetWarmBottoms[_i])>>
+                    <<set $NoahClosetWarmBottoms.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+    <</if>>
+    <strong>Inactive Inventory:</strong><br>
+        <<for _i to 0; _i lt $NoahInClosetBottoms.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahInClosetBottoms[_i].Icon]]">>
+                    <<set $NoahClosetWarmBottoms.push($NoahInClosetBottoms[_i])>>
+                    <<set $NoahInClosetBottoms.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+        
+<<else>>
+<span style="color:Green">-Cold-</span>
+ | 
+<<link"-Warm-">>
+    <<set $NoahCustomCatTemp to "Warm">>
+    <<goto "Noah Custom Closet">>
+<</link>>
+<br>
+<big><strong>Tops:</strong></big><br>
+    <strong>Active Inventory:</strong><br>
+    <<if $NoahClosetColdTop.length == 0>>
+        <img src="Images/Icons/Kids Clothes/T-Shirt/Owlman T-Shirt.png" style="position: an; left: 0; top: 0">[Default]<br>
+    <<else>>
+        <<for _i to 0; _i lt $NoahClosetColdTop.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahClosetColdTop[_i].Icon]]">>
+                    <<set $NoahInClosetTop.push($NoahClosetColdTop[_i])>>
+                    <<set $NoahClosetColdTop.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+    <</if>>
+    <strong>Inactive Inventory:</strong><br>
+        <<for _i to 0; _i lt $NoahInClosetTop.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahInClosetTop[_i].Icon]]">>
+                    <<set $NoahClosetColdTop.push($NoahInClosetTop[_i])>>
+                    <<set $NoahInClosetTop.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+<big><strong>Bottoms:</strong></big><br>
+    <strong>Active Inventory:</strong><br>
+    <<if $NoahClosetColdBottoms.length == 0>>
+        <img src="Images/Icons/Kids Clothes/Jeans/Blue Jeans.png" style="position: an; left: 0; top: 0">[Default]<br>
+    <<else>>
+        <<for _i to 0; _i lt $NoahClosetColdBottoms.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahClosetColdBottoms[_i].Icon]]">>
+                    <<set $NoahInClosetBottoms.push($NoahClosetColdBottoms[_i])>>
+                    <<set $NoahClosetColdBottoms.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+    <</if>>
+    <strong>Inactive Inventory:</strong><br>
+        <<for _i to 0; _i lt $NoahInClosetBottoms.length; _i++>>
+            <<capture _i>>
+                <<link "[img[$NoahInClosetBottoms[_i].Icon]]">>
+                    <<set $NoahClosetColdBottoms.push($NoahInClosetBottoms[_i])>>
+                    <<set $NoahInClosetBottoms.deleteAt(_i)>>
+                    <<goto "Noah Custom Closet">>
+                <</link>>
+            <</capture>>
+        <</for>><br>
+
+<</if>>
+<<elseif $NoahCustomCat == "Pajamas">>
+/* Auto Setting PJ Ratio based on Current PJs */
+<<if $NoahPJTop.Type == "None" and $NoahPJBottoms.Type == "None">>
+    <<set $NoahPJRatio to -1>>
+<</if>>
+<<if $NoahPJRatio == 1>>
+    <span style="color:Green">--Always PJs--</span>
+<<else>>
+    <<link"-Always PJs-">>
+        <<set $NoahPJRatio to 1>>
+        <<set $NoahPJType to "Two">>
+        <<goto "Noah Custom Closet">>
+    <</link>>
+<</if>>
+<<if $NoahPJRatio == 0>>
+    <span style="color:Green">--50/50--</span>
+<<else>>
+    <<link"-50/50-">>
+        <<set $NoahPJRatio to 0>>
+        <<goto "Noah Custom Closet">>
+    <</link>>
+<</if>>
+<<if $NoahPJRatio == -1>>
+    <span style="color:Green">--Always Undies--</span>
+<<else>>
+    <<link"-Always Undies-">>
+        <<set $NoahPJRatio to -1>>
+        <<set $NoahPJType to "None">>
+        <<goto "Noah Custom Closet">>
+    <</link>>
+<</if>><br>
+<big><strong>Active PJs:</strong></big><br>
+    <<if $NoahPJTop.Type == "None">>
+
+    <<else>>
+        <<link "[img[$NoahPJTop.Icon]]">>
+            <<set $NoahPJTop to $None>>
+            <<goto "Noah Custom Closet">>
+        <</link>>
+    <</if>>
+    <<if $NoahPJBottoms.Type == "None">>
+
+    <<else>>
+        <<link "[img[$NoahPJBottoms.Icon]]">>
+            <<set $NoahPJBottoms to $None>>
+            <<goto "Noah Custom Closet">>
+        <</link>>
+    <</if>><br>
+<big><strong>Top:</strong></big><br>
+    <<for _i to 0; _i lt $NoahClosetWarmTop.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetWarmTop[_i].Icon]]">>
+                <<set $NoahPJTop to $NoahClosetWarmTop[_i]>>
+                <<goto "Noah Custom Closet">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahClosetColdTop.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetColdTop[_i].Icon]]">>
+                <<set $NoahPJTop to $NoahClosetColdTop[_i]>>
+                <<goto "Noah Custom Closet">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahInClosetTop.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahInClosetTop[_i].Icon]]">>
+                <<set $NoahPJTop to $NoahInClosetTop[_i]>>
+                <<goto "Noah Custom Closet">>
+            <</link>>
+        <</capture>>
+    <</for>><br>
+<big><strong>Bottoms:</strong></big><br>
+    <<for _i to 0; _i lt $NoahClosetWarmBottoms.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetWarmBottoms[_i].Icon]]">>
+                <<set $NoahPJBottoms to $NoahClosetWarmBottoms[_i]>>
+                <<goto "Noah Custom Closet">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahClosetColdBottoms.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetColdBottoms[_i].Icon]]">>
+                <<set $NoahPJBottoms to $NoahClosetColdBottoms[_i]>>
+                <<goto "Noah Custom Closet">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahInClosetBottoms.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahInClosetBottoms[_i].Icon]]">>
+                <<set $NoahPJBottoms to $NoahInClosetBottoms[_i]>>
+                <<goto "Noah Custom Closet">>
+            <</link>>
+        <</capture>>
+    <</for>><br>
+<</if>>
+
+
+<br>
+[[Exit|PH Noah Bedroom]]

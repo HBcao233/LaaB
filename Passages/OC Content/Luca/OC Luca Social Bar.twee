@@ -1,0 +1,84 @@
+:: OC Luca Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCLucaSocialRank == -3>>
+	<<set $OCLucaRelationship to "Hated">>
+	<span style="color:DarkRed">Luca Hates you!</span>
+	<br>
+<<elseif $OCLucaSocialRank == -2>>
+	<<set $OCLucaRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Luca are Enemies.</span>
+	<br>
+<<elseif $OCLucaSocialRank == -1>>
+	<<set $OCLucaRelationship to "Very Disliked">>
+	<span style="color:Red">Luca really Dislikes you.</span>
+	<br>
+<<elseif $OCLucaSocialRank == 0 and $OCLucaSocial <= -50>>
+	<<set $OCLucaRelationship to "Disliked">>
+	<span style="color:Red">Luca Dislikes you. </span>
+	<br>
+<<elseif $OCLucaSocialRank == 0 and $OCLucaSocial < 50>>
+	<<set $OCLucaRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Luca are Acquaintances.</span>
+	<br>
+<<elseif $OCLucaSocialRank == 0 and $OCLucaSocial >= 50>>
+	<<set $OCLucaRelationship to "Liked">>
+	<span style="color:LightGreen">Luca Likes you.</span>
+	<br>
+<<elseif $OCLucaSocialRank == 1>>
+	<<set $OCLucaRelationship to "Friends">>
+	<span style="color:Green">You and Luca are Friends.</span>
+	<br>
+<<elseif $OCLucaSocialRank == 2>>
+	<<set $OCLucaRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Luca are Good Friends!</span>
+	<br>
+<<elseif $OCLucaSocialRank == 3>>
+	<<set $OCLucaRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Luca are Close Friends!</span>
+	<br>
+<<elseif $OCLucaSocialRank == 4>>
+	<<set $OCLucaRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Luca are Best Friends!</span>
+	<br>
+<<elseif $OCLucaSocialRank == 5>>
+	<<set $OCLucaRelationship to "Love">>
+	<span style="color:Pink">You and Luca Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCLucaSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCLucaSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCLucaSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCLucaSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCLucaSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCLucaSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCLucaSocial,
+			value: Math.abs($OCLucaSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCLucaSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCLucaSocial > 120>>
+	<<set $OCLucaSocial to 120>>
+<</if>>
+<<if $OCLucaSocial < -120>>
+	<<set $OCLucaSocial to -120>>
+<</if>>

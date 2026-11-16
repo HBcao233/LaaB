@@ -1,0 +1,84 @@
+:: OC Kazu Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCKazuSocialRank == -3>>
+	<<set $OCKazuRelationship to "Hated">>
+	<span style="color:DarkRed">Kazu Hates you!</span>
+	<br>
+<<elseif $OCKazuSocialRank == -2>>
+	<<set $OCKazuRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Kazu are Enemies.</span>
+	<br>
+<<elseif $OCKazuSocialRank == -1>>
+	<<set $OCKazuRelationship to "Very Disliked">>
+	<span style="color:Red">Kazu really Dislikes you.</span>
+	<br>
+<<elseif $OCKazuSocialRank == 0 and $OCKazuSocial <= -50>>
+	<<set $OCKazuRelationship to "Disliked">>
+	<span style="color:Red">Kazu Dislikes you. </span>
+	<br>
+<<elseif $OCKazuSocialRank == 0 and $OCKazuSocial < 50>>
+	<<set $OCKazuRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Kazu are Acquaintances.</span>
+	<br>
+<<elseif $OCKazuSocialRank == 0 and $OCKazuSocial >= 50>>
+	<<set $OCKazuRelationship to "Liked">>
+	<span style="color:LightGreen">Kazu Likes you.</span>
+	<br>
+<<elseif $OCKazuSocialRank == 1>>
+	<<set $OCKazuRelationship to "Friends">>
+	<span style="color:Green">You and Kazu are Friends.</span>
+	<br>
+<<elseif $OCKazuSocialRank == 2>>
+	<<set $OCKazuRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Kazu are Good Friends!</span>
+	<br>
+<<elseif $OCKazuSocialRank == 3>>
+	<<set $OCKazuRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Kazu are Close Friends!</span>
+	<br>
+<<elseif $OCKazuSocialRank == 4>>
+	<<set $OCKazuRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Kazu are Best Friends!</span>
+	<br>
+<<elseif $OCKazuSocialRank == 5>>
+	<<set $OCKazuRelationship to "Love">>
+	<span style="color:Pink">You and Kazu Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCKazuSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCKazuSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCKazuSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCKazuSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCKazuSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCKazuSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCKazuSocial,
+			value: Math.abs($OCKazuSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCKazuSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCKazuSocial > 120>>
+	<<set $OCKazuSocial to 120>>
+<</if>>
+<<if $OCKazuSocial < -120>>
+	<<set $OCKazuSocial to -120>>
+<</if>>

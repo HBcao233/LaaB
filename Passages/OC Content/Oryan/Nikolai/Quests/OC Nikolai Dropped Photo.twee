@@ -1,0 +1,120 @@
+:: OC Nikolai Dropped Photo [nobr]
+
+/* Intro */
+/* Written by: Oryan */
+You shuffle down the hallway, backpack digging into your shoulders. The fluorescent lights hum overhead, making everyone look a little pale and tired. You're trying to dodge the worst of the crowds when your attention is grabbed by the familiar red hair of <span style="color:DarkTurquoise">Niki</span>, fumbling with his locker. <br>
+
+<<set _ad to [
+    {
+        Name: "OC Nikolai",
+        State: {
+            Outfit: "Uniform",
+            Eyes: "Tired",
+            Mouth: "Frown",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+When he slams his locker shut, <span style="Color: yellow">you notice a small rectangular piece of paper slip from his pocket and flutter to the floor,</span> he doesn’t seem to notice as he turns and heads in the opposite direction, probably to escape the hall chaos, just as you had been trying to do. <br>
+<br>
+Your eyes flick down to the fallen object. A photo. Curiosity starts to gnaw at you. You tell yourself you should probably just pick it up and give it back to him. Be the good guy. But something stops you. A strange feeling, like you're on the verge of uncovering a secret. You glance around. No one seems to be paying attention. Bending down, you scoop up the photo. <br>
+
+<<art "Images\\Special\\OC\\Nikolai Dropped Photo.png" "Glink_Artist" "https://x.com/Glinkart" 700>>
+
+It's faded around the edges, like it's been handled a lot. A snapshot of a family. A woman, a man, and a young boy. The woman is stunning, with that same shocking red hair as <span style="color:DarkTurquoise">Niki</span>. She’s got a genuine smile and her hand is on a younger boy’s shoulders. On the other side of the boy is a man with dark hair and a kind face, his eyes crinkled at the corners like he's always laughing. <br>
+<br>
+But the boy is what really grabs your attention. He can’t be more than, like, five or six years old, younger than your own brother. And he’s the spitting image of a younger <span style="color:DarkTurquoise">Niki</span>. Same delicate bone structure, same slightly pointed chin, same gentle expression. Except… his hair is dark, almost black, like the man and his eyes are the same piercing blue as the woman with <span style="color:DarkTurquoise">Niki</span>’s hair. It’s like looking at a parallel universe version of <span style="color:DarkTurquoise">Niki</span>. Like someone took <span style="color:DarkTurquoise">Niki</span> and tweaked him, just a little, to create a completely different person. <br>
+<br>
+You stare at the photo, your mind racing. Who are these people? Why does <span style="color:DarkTurquoise">Niki</span> have this? Is it an old family photo? Maybe an uncle or a cousin? But the resemblance is uncanny. <br>
+<br>
+You bite your lip, weighing your options. You could just run after <span style="color:DarkTurquoise">Niki</span> and hand it back, no questions asked. Pretend you didn't see anything. Be the good guy. That’s the easiest thing to do. <br>
+<br>
+But a much louder, much more insistent voice is whispering in your ear. The whisper of curiosity, the same whisper that always gets people into trouble. <br>
+<br>
+You glance around again, feeling a thrill of… something. <span style="Color: lightgreen">Excitement?</span> <span style="Color: lightcoral">Guilt?</span> Probably both. <br>
+<br>
+If you keep the photo, you could try to find out more. Maybe ask <span style="color:DarkTurquoise">Niki</span> about it casually, see if he offers any information. You could look on a computer later, try to find similar pictures online. <br>
+<br>
+But keeping it feels… wrong. It’s invading his privacy. It’s like stealing a piece of his life. And what if he notices it’s gone? What if he needs it? What if it’s super important to him? <br>
+<br>
+Your conscience is starting to feel a little prickly. <br>
+<br>
+But the mystery! The pull of the unknown is almost irresistible. You imagine yourself as a detective, piecing together clues, uncovering a hidden past. It’s like something straight out of a book. <br>
+<br>
+<span style="Color: yellow">You can almost see the two paths laid out before you. The straight, well-lit path of returning the photo and forgetting you ever saw it. Or the winding, shadowy path of secrets, hidden identities, and maybe, just maybe, a really incredible story.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Return the Photo<br>">>
+    <<replace"#choice">>
+        You catch up to <span style="color:DarkTurquoise">Niki</span>. You tap him on the shoulder, let him know that he dropped the photo, and hand it over with a casual smile. <span style="color:DarkTurquoise">Niki</span>’s look of surprise turns into a blush as he takes the photo and pockets it. <span style="Color: LightSteelBlue">“Thanks”</span> <span style="color:DarkTurquoise">Niki</span> mutters, sounding noticeably more timid that he usually is, before turning to walk away. <br>
+
+        <<set _ad to [
+            {
+                Name: "OC Nikolai",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 2,
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smile",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <div id="choice2">
+            <<link "Let him leave<br>">>
+            <<replace"#choice2">>
+                You stand there for a few moments and watch him walk away, questions lingering in your mind that you didn’t ask. Until the bell rings through the hall pulling you out of your thoughts and back to heading to where you were going. <br>
+                <<socialChange "Nikolai" 5 1>>
+                <<set $InActiveQuests.delete("Nikolai: Dropped Photo")>>
+                <<set $CompletedQuests.push("Nikolai: Dropped Photo")>>
+                <<set $CompletedQuests.push("Nikolai: Dropped Photo (Returned)")>>
+                <br>
+                <<endByLocation>>
+            <</replace>>
+            <</link>>
+            <<link "Ask about the photo<br>">>
+            <<replace"#choice2">>
+                You call out to him, hoping to ask him about the photo. <span style="Color: LightSteelBlue">“Um…ok”</span> <span style="color:DarkTurquoise">Niki</span> decides allowing you to walk with him. You start with the simple question of who the people are. <span style="color:DarkTurquoise">Niki</span> seems to hesitate before telling you <span style="Color: LightSteelBlue">“They…they’re my birth parents…and…um…my little brother”</span> you have more questions, <span style="Color: lightcoral">but you can see that he’s uncomfortable about discussing this,</span> leading you to drop the subject. <br>
+                <br>
+                The bell rings, which prevents you from asking anything more even if you wanted to. You both head your separate ways. <br>
+                <<socialChange "Nikolai" 5 1>>
+                <<set $InActiveQuests.delete("Nikolai: Dropped Photo")>>
+                <<set $CompletedQuests.push("Nikolai: Dropped Photo")>>
+                <<set $CompletedQuests.push("Nikolai: Dropped Photo (Returned)")>>
+                <br>
+                <<endByLocation>>
+            <</replace>>
+            <</link>>
+        </div>
+    <</replace>>
+    <</link>>
+    <<link "Keep the photo for now<br>">>
+    <<replace"#choice">>
+        You tuck the photo into your pocket to keep it hidden so you can embark later on your own little investigation. Observe <span style="color:DarkTurquoise">Niki</span>, ask subtle questions, maybe even try to find other photos of them online. Become a junior Sharrock Jones, uncovering the truth behind the mysterious family in the faded snapshot. Risky. Potentially embarrassing. Infinitely more interesting. <br>
+        <br>
+        You take a deep breath. The bell rings, a jarring shriek that echoes through the hallway. Kids surge forward, a wave of backpacks and chattering voices. Your decision is made. You clench the photo tighter in your hand in your pocket. It’s done. You’ve crossed the line. <br>
+        <br>
+        Now, you just have to figure out what to do next. This is going to be… interesting. <br>
+        <<set $InActiveQuests.delete("Nikolai: Dropped Photo")>>
+        <<set $CompletedQuests.push("Nikolai: Dropped Photo")>>
+        <<set $CompletedQuests.push("Nikolai: Dropped Photo (Kept)")>>
+        <br>
+        <<endByLocation>>
+    <</replace>>
+    <</link>>
+</div>

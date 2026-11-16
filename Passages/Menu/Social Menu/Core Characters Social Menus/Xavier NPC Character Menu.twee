@@ -1,0 +1,437 @@
+:: Xavier NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Core Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Xavier--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"Xavier NPC Character Menu Biography">>
+</div>
+
+:: Xavier NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Xavier NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Xavier NPC Character Menu Avatar Display">>
+
+<<if $XavierSocial > 50>>
+    Xavier Richards is the most popular boy in school thanks to the money and social status of his parents. While he can be a bit overbearing and full of himself, you still find him pretty pleasant to be around and think you’ve started to see the real boy underneath. Though whether that real boy is just a normal kind kid or a manipulative psychopath, you can’t be sure. To be fair, it might be both. <br>
+    <br>
+<<elseif $XavierSocial > -10>>
+    Xavier Richards is the most popular boy at Preston. Coming from a family of large generational wealth, his money, social status, and generally confident and assured personality has led him to be the envy of most at your school. Still, people seem just as afraid of him as they are envious. <br>
+    <br>
+<<else>>
+    Xavier Richards is the most popular boy at Preston, mainly due to his parents’ money and social standing. The boy is full of himself and seems to think he’s the most important person in whatever room he is in and uses his power to place himself above others. You find both his smug face and horde of followers at his beck and call to be extremely annoying. <br>
+    <br>
+<</if>>
+
+<<if $CompletedQuests.includes("Xavier: Big Brother")>>
+    Xavier has a little brother named Levi who is even more full of himself than Xavier is. The kid is a little twerp who even Xavier seems to find annoying. Interestingly enough, Levi seems to be just as terrified of Xavier as most of the kids in your grades. For good reasons too, as you learn that Xavier is apparently in charge of punishing the boy when he acts out. <br>
+    <br>
+<</if>>
+
+:: Xavier NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Xavier NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Xavier NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Xavier Richards <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> December 1st <br>
+<strong>Address:</strong> 
+    <<if $XavierSocial >= 50>>
+        Avendale <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> 
+    <<if $CompletedQuests.includes("Xavier: Big Brother")>>
+        Unnamed Father, Levi (Little Brother)
+    <<else>>
+        ???
+    <</if>>
+    <br>
+<strong>Friends:</strong>
+    <<if $XavierSocial >= 80>>
+        $Player.Name, His horde of followers(?), ...
+    <<else>>
+        His horde of followers(?), ...
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $XavierSocialRank == 1>>
+        Close Friends
+    <<elseif $XavierSocial > 80>>
+        Friends
+    <<elseif $XavierSocial > 30>>
+        Possible Friends
+    <<elseif $XavierSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $XavierSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Charismatic, Mature, Lucky, Manipulative, P... /* No Spoilers :P */
+        </div>
+    <<elseif $XavierSocial > 70>>
+        <div style="margin-left: 25px;">
+            Charismatic, Mature, Lucky, Manipulative, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [Math] > [English] > [Computer Science] > [Science] > [History] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <div style="margin-left: 25px;">
+        Unknown
+    </div>
+<strong>Likes:</strong>
+    <<if $XavierSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Whatever catches his interest, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $XavierSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Things that are uninteresting, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $XavierSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Playing with his toys, Testing limits
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $XavierSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Salmon, Tea
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $XavierSocial >= 50>>
+        <div style="margin-left: 25px;">
+            White & Gold
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $XavierSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Expensive and Fashionable
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $XavierSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Designer Boxer Briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $XavierSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $XavierCut == "Cut">>
+                A cut penis that is smooth and soft. Large for his age.
+            <<else>>
+                An uncut penis that is smooth and soft. Large for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $XavierSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A firm, smooth, and well-toned butt.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+
+:: Xavier NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Xavier NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Xavier NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal Core Xavier">>
+
+
+:: Xavier NPC Character Menu Art [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Artwork]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Xavier NPC Character Menu Avatar Display">>
+
+<<include"Journal Artwork Xavier">>
+
+:: Xavier NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Xavier NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ 
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Xavier NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "Xavier",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $XavierSocial >= 50 or $XavierSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $XavierSocial >= 100 or $XavierSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: Xavier NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "Xavier",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $XavierSocial >= 50 or $XavierSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $XavierSocial >= 100 or $XavierSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

@@ -1,0 +1,76 @@
+:: BEN Science Spilled Water [nobr]
+
+You all stand at your tables following along as <span style="color:DarkTurquoise">Mr. Chang</span> demonstrates and experiment that recreates the water cycle. While the content is nothing new, seeing it shown off on a small scale is interesting. You can’t help but notice two boys near the front trying to pour water on each other whenever <span style="color:DarkTurquoise">Mr. Chang</span> looks away. Expectedly, this roughhousing eventually leads to shoving, which in turns leads to one of the boys getting pushed into the table behind them, causing one of the containers of water to spill all over poor <span style="color:DarkTurquoise">Ben</span>, soaking his shirt.<br>
+
+<<set _ad to [
+	{
+		Name: "Chang",
+		State: {
+			Mouth: "Frown",
+			Brows: "Angry",
+		},
+	},
+	{
+		Name: "Ben",
+		State: {
+			Eyes: "Sad",
+			Blush: 1,
+			Mouth: "Sad",
+			Outfit: "Uniform",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Mr. Chang</span> quickly turns around and begins to angrily scold the two boys, yanking them by the ear and dragging them to the Headmaster’s office as they continuously blame each other. You notice <span style="color:DarkTurquoise">Ben</span> struggling to dry his shirt with the also soaked towel from his table.<br>
+<br>
+
+<div id="choice">
+	<<link "Help Ben">>
+		<<replace "#choice">>
+			You grab the dry towel from your own table and walk up to <span style="color:DarkTurquoise">Ben</span>, offering your help. He accepts, moving to grab the towel, but you decide to help him more personally. You begin to rub the front of his shirt dry.<br>
+			<br>
+			<span style="color:LightSteelBlue">“Oh! <span style="color:DarkTurquoise">$BenNickname</span>, I can do that-“</span> The boy was very clearly flustered and embarrassed, freezing up as you continued to rub him dry. While his chest was slightly bony, he overall still had the soft body of a young boy. <span style="color:Pink">As you moved up, you couldn’t help but notice that his nipples had hardened slightly from the cold water. They were obviously sensitive as well, causing him to squirm uncomfortably as you rubbed them.</span> Eventually, <span style="color:DarkTurquoise">Ben</span> takes a step back and crosses his arms nervously.<br>
+
+			<<set _ad to [
+				{
+					Name: "Ben",
+					State: {
+						Arms: "Hide",
+						Eyes: "Sad",
+						Blush: 3,
+						Mouth: "Sad",
+						Outfit: "Uniform",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			<span style="color:LightSteelBlue">“I’m good now <span style="color:DarkTurquoise">$BenNickname</span>. Ah- all dry!”</span> He was so red, part of you thinks he may have enjoyed it. <span style="color:LightSteelBlue">“Thank you.”</span> You return to your table as <span style="color:DarkTurquoise">Ben</span> finishes cleaning up his table.<br>
+			<<socialChange "Ben" 3>>
+			<<set _arousalbs to []>>
+			<<set _arousalkink to ["Voyeurism"]>>
+			<<arousalGain 10 _arousalbs _arousalkink>>
+			<br>
+
+			<<include "Attend Science Finish">>
+		<</replace>>
+	<</link>>
+	<span style="color:Green">+Ben</span><br>
+	<<link "Chat with classmates">>
+		<<replace "#choice">>
+			You ignore <span style="color:DarkTurquoise">Ben</span> and instead turn to the other boys around you and begin chatting. A few minutes pass before <span style="color:DarkTurquoise">Mr. Chang</span> returns with the two troublemakers, each sadly holding a detention slip, and returns to the lesson. <span style="color:DarkTurquoise">Ben</span>’s shirt is still soaked, leaving him uncomfortable and unable to fully focus on the lesson.<br>
+
+			<br>
+			<<include "Attend Science Finish">>
+		<</replace>>
+	<</link>>
+	
+</div>

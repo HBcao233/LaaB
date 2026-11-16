@@ -1,0 +1,34 @@
+:: Shower Quick [nobr]
+
+<<storeClothing "Closet" "Naked" 1>>
+<<set $Minutes += 15>>
+
+/* Intro */
+/* Checking if player is already considered Nude */
+<<if $PlayerBottoms.Type != "None" or $PlayerTop.Type != "None" or $Player.Undies != "None">>
+    Wanting to get this done as quickly as possible, you flick the water on and begin to strip down to your birthday suit, <span style="color:Pink">only remember to close the door all the way once a chill from the hallway hits your bare dick.</span> Thankfully, no one sees you. Once nude, you quickly step into the water, not even checking the water first. You want to get this done as quickly as possible. <br>
+    <br>
+<<else>>
+    Wanting to get this done as quickly as possible, you flick the water on and, already naked, hop inside right away, not even checking the water first. You want to get this done as quickly as possible. <br>
+    <br>
+<</if>>
+
+/* Default Post-Intro Avatar */
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+As if you are competing in a race against time, you wash each of your parts with speed and efficiency. While you may not be doing the best job, it is enough to get you clean and only a few minutes later you are hoping out of the shower to quickly dry off. <span style="color:lightgreen">You’re sure if there was a record for fastest shower, you’d win… or at least be pretty close.</span> <br>
+<<needChange "Hygiene" 50>>
+<<addClothing "PC" "Bottoms" "Towel" "White">>
+<<set $Player.Exposed to "Towel">>
+<br>
+[[Continue|PH Bathroom]]

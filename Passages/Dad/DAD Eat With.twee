@@ -1,0 +1,164 @@
+:: DAD Eat With [nobr]
+
+/* BREAKFAST */
+<<if $EatWith == "Breakfast">>
+	/* If Player is Dry AND Good Dream */
+	<<if $Bedwetter == 1 and $PlayerUndies.Tags.includes("Diaper") and $FullDiaper != 1 and $PlayerBottoms.Type == "None" and $Player.Mood == "Happy">>
+	/* Opening */
+	You take a seat next to <span style="color:DarkTurquoise">Your Father.</span> He starts asking you about how you slept and if you had any good dreams. He's all smiles as he listens. Nodding along and asking questions in all the right places. It's no surprise he is finished with his food before you wrap up your story.<br>
+	
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+			}
+		}
+	]>>
+	<<ad _ad>>
+
+	<span style="color:LightSteelBlue">“Interesting dream. Glad to hear it, kiddo.”</span> <span style="color:DarkTurquoise">Your Father</span>'s voice is soft and encouraging this morning as he reaches a hand to your shoulder to shake you back and forth. <span style="color:pink">He keeps this up until you smile back and tell him to knock it off. Satisfied, he lets his hand fall so it lands on the elastic of your $PlayerUndies.Name and he gives it a tug.</span><span style="color:LightSteelBlue">”Don't forget to change out of your $PlayerUndies.Type before you go somewhere this morning, <span style="color:DarkTurquoise">$Player.Name</span>.”</span> He tells you, letting the material snap back into place as he leaves to put his dishes away.<br>
+		<<socialChange "Dad" 1>>
+	<br>
+	<<include"Breakfast">>
+
+	/* If Player is Dry */
+	<<elseif $Bedwetter == 1 and $PlayerUndies.Tags.includes("Diaper") and $FullDiaper != 1 and $PlayerBottoms.Type == "None">>
+		/* Opening */
+	As you walk over to the chair next to where <span style="color:DarkTurquoise">Your Father</span> is eating you catch him eyeing you up and down, a look of serious concentration on his face. <span style="color:pink">Feeling a little self-conscious about how he is looking at you, particularly your $PlayerUndies.Type, you quickly take your seat and scooch the chair under the table.</span> Hoping to just eat your breakfast in peace, you avoid eye contact and focus on your meal. <span style="color:pink">That is until you feel <span style="color:DarkTurquoise">Your Father</span>'s hand grab at the crotch of your $PlayerUndies.Name and gently squeezes around.</span><br>
+
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Arms: "Hide",
+				Blush: 2,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:LightSteelBlue">”I thought so!”</span> <span style="color:DarkTurquoise">Your Father</span> happily announces; letting go as your hands reach down to try to cover yourself. <span style="color:LightSteelBlue">”You're dry this morning.”</span> <span style="color:Lightgreen">He hums happily as he looks back at you with a proud smile on his face. Clearly happy for you and your big boy accomplishment, he rubs his hand back and forth between hiding hands and the crinkly fabric underneath.</span> Not stopping until he is satisfied you've squirmed enough for him. <span style="color:LightSteelBlue">”You didn't swap out to a clean one did you? I kid, I kid. Congratulations, <span style="color:DarkTurquoise">$Player.Name</span>!”</span> He tells you before finally letting go and eating his meal. <span style="color:DarkTurquoise">Your Father</span> then starts asking you how school is going and what your plans for the day are. All the while remaining enthusiastic and proud of you.<br>
+	<<socialChange "Dad" 1>>
+	<br>
+	<<include"Breakfast">>
+
+	/* If Player is Wet */
+	<<elseif $Bedwetter == 1 and $PlayerUndies.Tags.includes("Diaper") and $FullDiaper == 1 and $PlayerBottoms.Type == "None">>
+/* Opening */
+	You take a seat next to <span style="color:DarkTurquoise">Your Father</span> and start digging into your food. <span style="color:Lightcoral">A little ways into eating you can hear the sounds of dramatic sniffing next to you.</span> Looking up you see <span style="color:DarkTurquoise">Your Father</span> peering across the table to your chair down at your $PlayerUndies.Name.<br>
+	<br>
+	<span style="color:LightSteelBlue">“Tell me you're going to change out of that before you leave the house.”</span> It sounds almost as much of a plea as it is a command. As if he has doubts that you really wouldn't put on clean underwear for the day. <span style="color:Lightcoral">His glare is intense; a mix of his usual sternness and hope that you won't shame him by parading around in wet pants. The best you can offer in response is a sheepish smile, hands instinctively going to cover your wetness.</span><br>
+
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Arms: "Hide",
+				Eyes: "Sad",
+				Blush: 1,
+				Mouth: "Happy",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:pink">Sinking into the chair, you blush at being called out like that.</span> And you promise <span style="color:DarkTurquoise">Your Father</span> that you will change. He looks back up at you and nods his head. Satisfied, his face softens as he resumes eating his meal. A deep breath later his smile returns and he starts chatting with you about the neighbors.<br>
+	<<socialChange "Dad" 1>>
+	<br>
+	<<include"Breakfast">>
+
+	<<else>>
+	You take a seat next to <span style="color:DarkTurquoise">Your Father</span> and eat breakfast with him while chatting. He asks if you slept well and if you have clean clothes for the day.<br>
+	<<socialChange "Dad" 1>>
+	
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Arms: "Hide",
+				Eyes: "Sad",
+				Blush: 1,
+				Mouth: "Happy",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+		<<include"Breakfast">>
+	<</if>>
+	
+/* LUNCH */
+<<elseif $EatWith == "Lunch">>
+	You take a seat next to <span style="color:DarkTurquoise">Your Father</span> and eat lunch with him. The two of you talk about some movies that have come out recently.<br>
+		<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+			}
+		}
+	]>>
+	<<ad _ad>>
+	<<socialChange "Dad" 1>>
+	
+
+	<<include"Lunch">>
+	
+/* Dinner Special Quest */
+<<elseif $EatWith == "Dinner" && $ActiveQuests.includes("Jackson: Parental Drama")>>
+	<<include"Jackson Parental Drama 2">>
+
+/* DINNER */
+<<elseif $EatWith == "Dinner">>
+	You take a seat next to <span style="color:DarkTurquoise">Your Father</span> and eat dinner with him. He mainly asks you about school, but at least he is interested in your life.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+			}
+		}
+	]>>
+	<<ad _ad>>
+	<<socialChange "Dad" 1>>
+
+	<<include"Dinner">>
+	
+<</if>>

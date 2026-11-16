@@ -1,0 +1,211 @@
+:: Artwork Catalog Felix [nobr]
+
+<span style="color:Azure"><big><strong>--Felix Taylor Catalog--</strong></big></span><br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Felix Allard</span>! For some reason I have a strange love of French boys, they’re just so exotic!”</span> <span style="color:DarkTurquoise">Orange</span> daydreams for a second, before you clear your throat to bring him back to reality, <span style="color:LightSteelBlue">“You know, nudity isn’t as big of a deal in Europe, especially when it comes to boys! I have a feeling Felix may be easily convinced to partake in less-than-wholesome things if you befriended him. Maybe someday!”</span> <span style="color:DarkTurquoise">Orange</span> laughs as he places down a list of available art in front of you. <br>
+<br>
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+/* Character Art (Everyday) */
+    <<if $AchievementArt.includes("Felix Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Felix Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Felix\\Felix.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Felix Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Felix Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Felix">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("Felix Character Art Undies")>>
+        <strong><span style="color:lightgreen">Felix Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Felix\\Felix Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Felix Character Art (Undies)</strong>
+        | 
+        <<if $FelixSocial >= 100 or $FelixSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Felix Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Felix">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Felix Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+    
+    /* Felix Soccer Mud */
+    <<if $AchievementArt.includes("Felix Soccer Mud")>>
+        <strong><span style="color:lightgreen">Felix Soccer Mud</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Felix Soccer Mud.png" "Rayray" "https:rayray.fanbox.cc">>
+    <<else>>
+        <strong>Felix Soccer Mud</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Felix Soccer Mud")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Felix">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+        /* Felix Soccer Mud (Naked) */
+    <<if $AchievementArt.includes("Felix Soccer Mud (Naked)")>>
+        <strong><span style="color:lightgreen">Felix Soccer Mud (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Felix Soccer Mud (Naked).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Felix Soccer Mud (Naked)</strong>
+        | 
+        <<if $FelixSocial >= 100 or $FelixSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Felix Soccer Mud (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Felix">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Felix Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Felix Poolside */
+    <<if $AchievementArt.includes("Felix Poolside")>>
+        <strong><span style="color:lightgreen">Felix Poolside</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Felix Poolside.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Felix Poolside</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Felix Poolside")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Felix">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Felix Poolside (Naked) */
+    <<if $AchievementArt.includes("Felix Poolside (Naked)")>>
+        <strong><span style="color:lightgreen">Felix Poolside (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Felix Poolside (Naked).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Felix Poolside (Naked)</strong>
+        | 
+        <<if $FelixSocial >= 100 or $FelixSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Felix Poolside (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Felix">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Felix Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Felix Poolside (Hard) */
+    <<if $AchievementArt.includes("Felix Poolside (Hard)")>>
+        <strong><span style="color:lightgreen">Felix Poolside (Hard)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Felix Poolside (Hard).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Felix Poolside (Hard)</strong>
+        | 
+        <<if $FelixSocial >= 100 or $FelixSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Felix Poolside (Hard)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Felix">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Felix Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Felix Xavier Dream */
+    <<if $AchievementArt.includes("Felix Xavier Dream")>>
+        <strong><span style="color:lightgreen">Felix Xavier Dream</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Felix Xavier Dream.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Felix Xavier Dream</strong>
+        | 
+        <<if $FelixSocial >= 100 or $FelixSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Felix Xavier Dream")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Felix">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Felix Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+    
+/* Felix Sticker Set */
+    <<if $AchievementArt.includes("Felix Sticker Set")>>
+        <strong><span style="color:lightgreen">Felix Sussy Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Sussy Felix.png" "Rayray" "https://rayrayart.fanbox.cc">>
+        <strong><span style="color:lightgreen">Chibi Felix Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Chibi Felix.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Felix Croissant Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Felix Croissant.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Felix Speedo</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Chibi Felix Speedo.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Felix Sticker Set</strong>
+        | 
+        <<if $FelixSocial >= 100 or $FelixSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Felix Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Felix">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Felix Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+
+<br>
+[[Back|Artwork Catalog]]

@@ -1,0 +1,57 @@
+:: Carter House Intro [nobr]
+
+/* Intro */
+<span style="color:DarkTurquoise">Mr. Chang</span> decides to give everyone a pop quiz, a decision that leads to groans and complaints, but thankfully he quickly explains that it won’t be graded and instead he wants people to group up to compare answers to practice. This makes the act of the pop quiz a little more digestible, though still a bit annoying. You are put in the same group as <span style="color:DarkTurquoise">Carter</span>, who seems strangely confident in his academic ability today. <span style="color:LightGreen">When you exchange papers to compare, you are surprised that he scored a solid 85% correct!</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Pretty nice, right?”</span> He laughs, proud of himself, <span style="Color: LightSteelBlue">“I’m normally pretty bad with numbers and stuff, but I’ve been studying super hard! My dad said that as long as I keep my math and science grades at least a B, he’ll uncover our pool and I could invite people over to swim!”</span> <span style="color:DarkTurquoise">Carter</span> smiles widely, <span style="Color: LightSteelBlue">“Speaking of… whatcha doing after school?”</span> He asks with a grin, swinging his legs playfully. <span style="Color: LightSteelBlue">“It’s still pretty hot, and our pool is super nice! Unlike swimming class, we can actually goof around and jump into the pool and stuff!”</span> <span style="color:LightGreen">You get the feeling he is trying to invite you over for a pool playdate, despite him not actually asking the question. When you point this out, <span style="color:DarkTurquoise">Carter</span> chuckles and blushes.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+	},
+	{
+		Name: "Carter",
+		State: {
+            Outfit: "Uniform",
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Yeah, whoops, guess I got a little too excited. So, did you want to come over? We could swim around and play and stuff. I’m allowed to have friends over whenever, well until about 7. Since after 7 is dinner time and then I gotta get ready for bed. But anytime before that! Sooooo, want to come over?”</span> <span style="color:DarkTurquoise">Carter</span> <span style="color:Pink">smiles widely, obviously already excited and planning all the fun times you’ll have.</span> You admit that being able to swim and play around in his pool with just you two would be pretty fun, so agree to come over sometime. <span style="Color: LightSteelBlue">“Nice! This is going to be so fun!”</span> <span style="color:DarkTurquoise">Carter</span> nearly jumps out of his chair, though quickly quiets down when this attracts attention. <span style="Color: LightSteelBlue">“Whoops, haha. I live on Wald Street. Big blue house with a red mailbox, you can’t miss it! Come over anytime after school. Oh, and make sure you’re wearing something you can swim in!”</span> <br>
+<br>
+<span style="color:LightGreen">Plans made, you and <span style="color:DarkTurquoise">Carter</span> get back to comparing answers with the rest of your group, though you can’t help but notice how <span style="color:DarkTurquoise">Carter</span> seems to be bouncing in his chair, overjoyed at the plans you two have made.</span> <br>
+<<socialChange "Carter" 2>>
+<<set $InActiveQuests.delete("Carter: First Visit")>>
+<<set $ActiveQuests.push("Carter: First Visit")>>
+<<set $QuestLog.push(
+	{
+		Name: "Carter: First Visit",
+		State: 1,
+		ID: "Carter_M002",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Carter",
+		Tags: ["Carter", "Character", "Quest", "Carter House"],
+		Description: "<span style=\"color:DarkTurquoise\">Carter</span> has invited you over to his house for some swimming fun! Go to his house on Wald Street on any weekday after school. [You can set your Swimming Event Outfit in your Closet!]",
+		Objectives: [
+			{
+				Name: "Go to <span style=\"color:DarkTurquoise\">Carter</span>'s House after school.",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Carter",
+	Description: "<span style=\"color:DarkTurquoise\">Carter</span> has invited you over to his house for some swimming fun! Go to his house on Wald Street on any weekday after school. [You can set your Swimming Event Outfit in your Closet!]",
+})>>
+<br>
+<<set _EventPassFail to "Pass">>
+<<include"Attend Science Finish">>

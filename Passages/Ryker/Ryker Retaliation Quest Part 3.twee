@@ -1,0 +1,26 @@
+:: Ryker Retaliation Quest Part 3 [nobr]
+
+Once you are in the back of the squad car, resisting is pretty much pointless. Mercifully, the drive to the station is rather short, as your heart is beating at 1,000 beats per minute in anticipation of what’s to come. You know you didn’t do anything wrong, <span class="alert-text">but the police didn’t believe that.</span> Was <span class="char-name">Ryker</span> really going to get away with pinning this on you? <span class="char-name">Officer Barry</span> isn’t helping your nerves, <span class="alert-text">as he goes on and on about how much trouble you are in and degrades you verbally in all sorts of ways.</span><br>
+
+<<set _ad to [{
+    Name: "Player",
+    State: {
+        Mouth: "Sad",
+        Eyes: "Sad",
+        Blush: 1,
+        Arms: "Bound",
+    },
+}]>>
+<<ad _ad>>
+
+As you arrive at the station, <span class="char-name">Officer Barry</span> yanks you out of the back of the car and painfully holds your hands behind your back once more, dragging you inside. You wonder why he doesn’t just handcuff you, but you are thankful he doesn’t as you are already scared enough.<br>
+<br>
+
+None of the other officers give you a second glance, as if troublemaking boys are dragged in here all the time. Eventually, you reach an interrogation room at the end of a hall and are tossed inside. The room is mostly empty and plain, outside of a table and some chairs; The plain grayness of the room makes you uncomfortable. On one wall is a large mirror, which you know from TV shows is actually a one-way window where any number of people could be peering inside without you knowing.<br>
+<br>
+
+<<if $ToggleNonCon == 0 || $QuestSusMeter < 3>> /* GOOD-ISH ENDING */
+    <<include "Ryker Retaliation Quest Part 3 Goodish Ending">>
+<<else>> /* BAD ENDING */
+    <<include "Ryker Retaliation Quest Part 3 Bad Ending">>
+<</if>>

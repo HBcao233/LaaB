@@ -1,0 +1,43 @@
+:: SCI Smoke Bomb [nobr]
+
+/* SOCIAL LATER */
+The class is performing a small experiment, mixing two substances together to create small, different colored clouds of smoke. <span style="color:DarkTurquoise">Mr. Chang</span> instructed everyone to only measure out a small amount of each substance, to keep the reaction small. The class is going well and <span style="color:DarkTurquoise">Mr. Chang</span> is currently helping a group in the back of the class when you notice the group next to you giggle as they are about to combine two large vials of the substances. Before you can react, the classroom is suddenly engulfed in a large cloud of colorful smoke, obscuring everyone’s vision as some of the students panic, accidentally knocking over and breaking some of the glass vials.<br>
+
+<<set _ad to [
+	{
+		Name: "Chang",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+It takes <span style="color:DarkTurquoise">Mr. Chang</span> nearly 20 minutes to open all the windows and completely air out the room. As everyone is cleaning up, he addresses the class. <span style="color:LightSteelBlue">“The instructions were very clear to only use a small amount. So, who are the troublemakers?”</span> <span style="color:DarkTurquoise">Mr. Chang</span> crosses his arms in disappoint as he scans the room. No one speaks up. You notice the two culprits avoiding eye contact. <span style="color:LightSteelBlue">“So no one knows? I’ll give them the benefit of the doubt and we’ll say it was an accident, but someone has to stay behind and help clean up the rest of this mess.”</span> You could speak up, <span style="color:DarkTurquoise">Mr. Chang</span> would appreciate not having to clean up the mess by himself, but you don’t think your classmates would like being snitched on.<br>
+<br>	
+			
+<div id=Choice>
+
+<<link "Speak up<br>">>
+<<replace"#Choice">>
+
+You quickly raise your hand and point to the two boys, explaining what you saw. They quickly try to defend themselves, but <span style="color:DarkTurquoise">Mr. Chang</span> stops them. <span style="color:LightSteelBlue">“I had my suspicions it was you two, I just needed someone to confirm them. You two will stay after class and help clean this up. You two will also have detention, since you couldn’t come clean of your own accord. Thank you for your honesty <span style="color:DarkTurquoise">$Player.Name</span>.”</span> The two boys pout and glare at you angrily. You feel you’ve done the right thing, but the other students may not feel the same way.<br>
+<<set $SchoolRep -= 10>>
+<span style="color:Red">-Reputation</span><br>
+<br>
+<<include"Attend Science Finish">>
+
+<</replace>>
+<</link>>
+
+<<link "Remain Quiet">>
+<<replace"#Choice">>
+
+You decide to follow everyone else’s lead and remain quiet, not wanting a reputation as a snitch. After a few more minutes of trying to get someone to confess, even pressuring the two culprits, obviously suspicious of them, <span style="color:DarkTurquoise">Mr. Chang</span> eventually sighs and gives up. As everyone leaves class you look back and see him cleaning up the rest of the mess alone.<br>
+<br>
+<<include"Attend Science Finish">>
+
+<</replace>>
+<</link>>
+
+</div>

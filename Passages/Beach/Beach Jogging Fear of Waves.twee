@@ -1,0 +1,85 @@
+:: Beach Jogging Fear of Waves [nobr]
+
+/* Written by: -AN */
+/* Intro */
+
+
+<<if $Time.between(7, 0, 16, 59)>>
+    You stand at the beginning of the beach’s shopping strip, briefly warming up with some stretches. <span style="Color: LightGreen">As you perform your warm-up, you note how it’s the perfect time for beach activities. There’s absolutely no shortage of people walking along or just sitting idly to enjoy the ocean view, and bright sun.</span><br>
+    <br>
+    A group of joggers passing by is your cue to start your own run, and you set off down the path at your own pace. The dense conditions of the strip add an interesting challenge as you sometimes have to weave through thick crowds. <span style="Color: LightGreen">The backdrop of music, voices, and pleasant ocean wind is the perfect ambience to exercise and lose yourself in.</span>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+<<elseif $Time.between(17, 0, 19, 0)>>
+    You stand at the beginning of the beach’s shopping strip, briefly warming up with some stretches. <span style="Color: Yellow">While you warm up you note that this point of the day beach activity is beginning to wind down. There’s still a plenty of people around the shops, but many people on the sands are packing up to go home.</span><br>
+    <br>
+    <span style="Color: LightGreen">You finish your warm-up and immediately set off running down the path at your own pace, easily weaving through the lighter foot traffic. You look towards the ocean and see a beautiful golden sky. It’s definitely magic hour right now, and you can’t help but feel relaxed by the soothing light and wind breezing past your ears.</span>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Eyes: "Tired",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+<<elseif $Time.after(19, 1) or $Time.before(7)>>
+    You stand at the beginning of the beach’s shopping strip, briefly warming up with some stretches. <span style="Color: Yellow">While you warm up, you note how empty the beach is at this point. The strip is dimly illuminated by a few lamp posts, and there’s barely any shops open at this point. Only a handful of people walk along the path, or on the dark sands.</span><br>
+    <br>
+    You finish your warm-up and quickly begin jogging down the quiet strip. <span style="Color: LightGreen">Despite the lack of activity, you quickly appreciate how you can run along the path with fewer impedances than in the day. There’s also a certain tranquility to the beach at this hour you enjoy. You hear the wind, and the ocean waves with perfect clarity, and the serenity of it makes it easy to maintain your pace.</span>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Eyes: "Tired",
+                Mouth: "Smirk",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    <span style="Color: LightGreen">Time flies, and it doesn’t take long to jog from one end of the strip to the other several times. Satisfied from the exercise, you stop to catch your breath..</span><br>
+    <br>
+<</if>>
+<<linkreplace "Continue">>
+    <span style="Color: Yellow">You suddenly hear the distant, yet loud rumble of a horn from the ocean. The sound is slightly startling, not enough to make you jump, but enough to make you turn to face the source sound.</span><br>
+    <br>
+    <<if $Time.between(7, 0, 19, 0)>>
+        You stare at the ocean for a moment, and see a distant cruise ship on the horizon. Several others nearby have turned to face it just as you have. You smile at the adorable sight of some young kids waving to the ship with enviable enthusiasm. <span style="Color: Yellow">But as you return to looking at the distant ship on the ocean, a pit forms in your stomach as your imagination begins running wild..</span><br>
+    <<elseif $Time.after(19, 1) or $Time.before(7)>>
+        You stare at the ocean for a moment, and manage to spot a glowing vessel in the darkness. Seeing it in the distance is a sudden reminder of life in these quiet hours, and there’s something pretty about the way it seems to illuminate the dark horizon. But as you continue to stare at the lone vessel on the ocean, a pit forms in your stomach as your imagination begins running wild..<br>
+    <</if>>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Eyes: "Sad",
+                Mouth: "Normal",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    <span style="Color: LightCoral">You suddenly find yourself thinking about being out at sea on a ship in the most remote areas of the ocean where you can’t see anything except water. If the ship ever lost power, or a strong enough storm capsized the entire ship, there’d be absolutely no chance of rescue. You shudder, wondering how anybody aboard such vessels can tolerate such a terrifying possibility.<br>
+    <br>
+    But worst of all, that’s not even considering the horrifying, and disgusting abyssal terrors lurking far beneath waves.. Sharks can’t even contend to the unknown and nameless creatures so far removed from the surface, they may as well be aliens. If you fell off a ship in the middle of the ocean, there’s no doubt some unimaginable beast would drag you down into the cold, dark depths never to be seen again..</span><br>
+    <br>
+    <span style="Color: Yellow">You force yourself to stop looking at the ship, eager to think about anything other than the ocean.</span> You depart from the area, slightly unnerved, <span style="Color: LightGreen">but satisfied once your thoughts turn to more pleasant things.</span><br>
+    <br>
+    <<set $Minutes += 30>>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -2>>
+    <<skillPoints "Athletics" 10>>
+    <br>
+    [[Continue|Beach]]
+<</linkreplace>>

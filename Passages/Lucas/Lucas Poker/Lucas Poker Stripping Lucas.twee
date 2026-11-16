@@ -1,0 +1,26 @@
+:: Lucas Poker Stripping Lucas [nobr]
+
+<<if $PokerPieceStrippedName === 'Shoes'>>
+    <<include "Lucas Poker Strip Shoes">>
+    <<run $Poker.setPlayerState("Lucas", "Mouth", "Smirk")>>
+
+<<elseif $PokerPieceStrippedName === 'Socks'>>
+    <<include "Lucas Poker Strip Socks">>
+
+<<elseif $PokerPieceStrippedName === 'Outer'>>
+    <<include "Lucas Poker Strip Outer">>
+
+<<elseif $PokerPieceStrippedName === 'Top'>>
+    <<include "Lucas Poker Strip Top">>
+
+<<elseif $PokerPieceStrippedName === 'Bottoms'>>
+    <<include "Lucas Poker Strip Bottoms">>
+    <<run $Poker.setPlayerState("Lucas", "Mouth", "Smirk")>>
+    <<run $Poker.setPlayerState("Lucas", "Blush", 1)>>
+    
+<<elseif $PokerPieceStrippedName === 'Undies'>>
+    <<include "Lucas Poker Strip Undies">>
+    <<run $Poker.setPlayerState("Lucas", "Mouth", "Frown")>>
+    <<run $Poker.setPlayerState("Lucas", "Blush", 2)>>
+
+<</if>>

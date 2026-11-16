@@ -1,0 +1,1156 @@
+:: Child Characters Social [nobr]
+
+<<link"[Core Characters]">>
+	<<replace"#SocialMenu">>
+        <<include"Core Characters Social">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Children]</span>
+ | 
+<<link"[Preteens]">>
+	<<replace"#SocialMenu">>
+        <<include"Preteens Characters Social">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Teens]">>
+	<<replace"#SocialMenu">>
+        <<include"Teens Characters Social">>
+    <</replace>>
+<</link>>
+ | 
+ <<link"[Adults]">>
+	<<replace"#SocialMenu">>
+        <<include"Adult Characters Social">>
+    <</replace>>
+<</link>>
+ | 
+<br>
+
+
+<span style="color:Azure"><big><strong>--Child-Aged Characters--</strong></big></span><br>
+
+<table style="border-collapse: separate; border-spacing: 15px 0;">
+    <tr>
+        <<if $CompletedQuests.includes("Xavier: Big Brother")>>
+            <th>
+                <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                <<if $LeviSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $LeviSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $LeviSocial > -10 && $LeviSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $LeviSocial <= -10 && $LeviSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $LeviSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Levi1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "Levi NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+                </span>
+            </th>
+        <<else>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Ben: Track Meet Cute")>>
+            <th>
+                <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                     <<if $WilliamSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $WilliamSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $WilliamSocial > -10 && $WilliamSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $WilliamSocial <= -10 && $WilliamSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $WilliamSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/William1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "William NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+                </span>
+            </th>
+        <<else>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Felix: Mateo")>>
+            <th>
+                <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                     <<if $MateoSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $MateoSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $MateoSocial > -10 && $MateoSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $MateoSocial <= -10 && $MateoSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $MateoSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Mateo1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "Mateo NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+                </span>
+            </th>
+        <<else>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Jackson: Sibling Dynamics")>>
+            <th>
+                <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                     <<if $TheoSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $TheoSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $TheoSocial > -10 && $TheoSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $TheoSocial <= -10 && $TheoSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $TheoSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Theo1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "Theo NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+                </span>
+            </th>
+        <<else>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Thomas: Out Sick")>>
+            <th>
+                <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                     <<if $EthanSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $EthanSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $EthanSocial > -10 && $EthanSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $EthanSocial <= -10 && $EthanSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $EthanSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                      <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Ethan1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "Ethan NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+                </span>
+            </th>
+        <<else>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Arthur & Richard: Hat Quest")>>
+            <th>
+                <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                     <<if $ZeusSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $ZeusSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $ZeusSocial > -10 && $ZeusSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $ZeusSocial <= -10 && $ZeusSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $ZeusSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                      <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Zeus1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "Zeus NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+                </span>
+            </th>
+        <<else>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Arthur & Richard: Hat Quest")>>
+            <th>
+                <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                     <<if $SyeSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $SyeSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $SyeSocial > -10 && $SyeSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $SyeSocial <= -10 && $SyeSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $SyeSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                      <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Sye1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "Sye NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+                </span>
+            </th>
+        <<else>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Arthur & Richard: Hat Quest")>>
+            <th>
+                <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                     <<if $DezSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $DezSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $DezSocial > -10 && $DezSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $DezSocial <= -10 && $DezSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $DezSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                      <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dez1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "Dez NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+                </span>
+            </th>
+        <<else>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+    </tr>
+    <tr>
+        <<if $CompletedQuests.includes("Xavier: Big Brother")>>
+            <th style="text-align: center;">
+            <<link"Levi">>
+                <<replace"#SocialMenu">>
+                    <<include"Levi NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<else>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Ben: Track Meet Cute")>>
+            <th style="text-align: center;">
+            <<link"William">>
+                <<replace"#SocialMenu">>
+                    <<include"William NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<else>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Felix: Mateo")>>
+            <th style="text-align: center;">
+            <<link"Mateo">>
+                <<replace"#SocialMenu">>
+                    <<include"Mateo NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<else>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Jackson: Sibling Dynamics")>>
+            <th style="text-align: center;">
+            <<link"Theo">>
+                <<replace"#SocialMenu">>
+                    <<include"Theo NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<else>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Thomas: Out Sick")>>
+            <th style="text-align: center;">
+            <<link"Ethan">>
+                <<replace"#SocialMenu">>
+                    <<include"Ethan NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<else>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Arthur & Richard: Hat Quest")>> 
+            <th style="text-align: center;">
+            <<link"Zeus">>
+                <<replace"#SocialMenu">>
+                    <<include"Zeus NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<else>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Arthur & Richard: Hat Quest")>>
+            <th style="text-align: center;">
+            <<link"Sye">>
+                <<replace"#SocialMenu">>
+                    <<include"Sye NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<else>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $CompletedQuests.includes("Arthur & Richard: Hat Quest")>>
+            <th style="text-align: center;">
+            <<link"Dez">>
+                <<replace"#SocialMenu">>
+                    <<include"Dez NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<else>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+    </tr>
+        <tr>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $LeviSocial,
+                    value: Math.abs($LeviSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($LeviSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $WilliamSocial,
+                    value: Math.abs($WilliamSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($WilliamSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $MateoSocial,
+                    value: Math.abs($MateoSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($MateoSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $TheoSocial,
+                    value: Math.abs($TheoSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($TheoSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $EthanSocial,
+                    value: Math.abs($EthanSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($EthanSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $ZeusSocial,
+                    value: Math.abs($ZeusSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($ZeusSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $SyeSocial,
+                    value: Math.abs($SyeSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($SyeSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $DezSocial,
+                    value: Math.abs($DezSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($DezSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+    </tr>
+</table>
+
+<table style="border-collapse: separate; border-spacing: 15px 0;">
+    <tr>
+        <<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCKaydenSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCKaydenSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCKaydenSocial > -10 && $OCKaydenSocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCKaydenSocial <= -10 && $OCKaydenSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCKaydenSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Kayden1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC Kayden NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCMiller == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCJaydenSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCJaydenSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCJaydenSocial > -10 && $OCJaydenSocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCJaydenSocial <= -10 && $OCJaydenSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCJaydenSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Jayden1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC Jayden NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCMiller == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Oliver")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCOliverSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCOliverSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCOliverSocial > -10 && $OCOliverSocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCOliverSocial <= -10 && $OCOliverSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCOliverSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Oliver1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC Oliver NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCSebastian == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Evelyn")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCEvelynSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCEvelynSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCEvelynSocial > -10 && $OCEvelynSocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCEvelynSocial <= -10 && $OCEvelynSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCEvelynSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Evelyn1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC Evelyn NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCSebastian == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $ToggleOCIsaac == 1 && $CompletedQuests.includes("Isaac: The Little Blueberry")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCIsaacSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCIsaacSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCIsaacSocial > -10 && $OCIsaacSocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCIsaacSocial <= -10 && $OCIsaacSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCIsaacSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Isaac1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC Isaac NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCIsaac == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $ToggleOCIsaac == 1 && $CompletedQuests.includes("Isaac: Jacob")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCJacobSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCJacobSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCJacobSocial > -10 && $OCJacobSocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCJacobSocial <= -10 && $OCJacobSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCJacobSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Jacob1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC JacobB NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCIsaac == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $ToggleOCZacky == 1 && $CompletedQuests.includes("Zacky: Introduction")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCZackySocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCZackySocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCZackySocial > -10 && $OCZackySocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCZackySocial <= -10 && $OCZackySocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCZackySocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Zacky1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC Zacky NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCZacky == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $ToggleOCChase == 1 && $CompletedQuests.includes("Chase: Birthday Party")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCChaseSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCChaseSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCChaseSocial > -10 && $OCChaseSocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCChaseSocial <= -10 && $OCChaseSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCChaseSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Chase1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC Chase NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCChase == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+    </tr>
+    <tr>
+        <<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+            <th style="text-align: center;">
+            <<link"Kayden">>
+                <<replace"#SocialMenu">>
+                    <<include"OC Kayden NPC Character Menu">>
+                <</replace>>
+            <</link>>                
+            </th>
+        <<elseif $ToggleOCMiller == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+            <th style="text-align: center;">
+            <<link"Jayden">>
+                <<replace"#SocialMenu">>
+                    <<include"OC Jayden NPC Character Menu">>
+                <</replace>>
+            <</link>>                
+            </th>
+        <<elseif $ToggleOCMiller == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Oliver")>>
+            <th style="text-align: center;">
+            <<link"Oliver">>
+                <<replace"#SocialMenu">>
+                    <<include"OC Oliver NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<elseif $ToggleOCMiller == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Evelyn")>>
+            <th style="text-align: center;">
+            <<link"Evelyn">>
+                <<replace"#SocialMenu">>
+                    <<include"OC Evelyn NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<elseif $ToggleOCMiller == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $ToggleOCIsaac == 1 && $CompletedQuests.includes("Isaac: The Little Blueberry")>>
+            <th style="text-align: center;">
+            <<link"Isaac">>
+                <<replace"#SocialMenu">>
+                    <<include"OC Isaac NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<elseif $ToggleOCMiller == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $ToggleOCIsaac == 1 && $CompletedQuests.includes("Isaac: Jacob")>>
+            <th style="text-align: center;">
+            <<link"Jacob">>
+                <<replace"#SocialMenu">>
+                    <<include"OC JacobB NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<elseif $ToggleOCMiller == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $ToggleOCZacky == 1 && $CompletedQuests.includes("Zacky: Introduction")>>
+            <th style="text-align: center;">
+            <<link"Zacky">>
+                <<replace"#SocialMenu">>
+                    <<include"OC Zacky NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<elseif $ToggleOCZacky == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $ToggleOCChase == 1 && $CompletedQuests.includes("Chase: Birthday Party")>>
+            <th style="text-align: center;">
+            <<link"Chase">>
+                <<replace"#SocialMenu">>
+                    <<include"OC Chase NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<elseif $ToggleOCChase == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+    </tr>
+        <tr>
+        <<if $ToggleOCMiller == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCKaydenSocial,
+                        value: Math.abs($OCKaydenSocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCKaydenSocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+        <<if $ToggleOCMiller == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCJaydenSocial,
+                        value: Math.abs($OCJaydenSocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCJaydenSocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+        <<if $ToggleOCSebastian == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCOliverSocial,
+                        value: Math.abs($OCOliverSocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCOliverSocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+        <<if $ToggleOCSebastian == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCEvelynSocial,
+                        value: Math.abs($OCEvelynSocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCEvelynSocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+        <<if $ToggleOCIsaac == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCIsaacSocial,
+                        value: Math.abs($OCIsaacSocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCIsaacSocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+        <<if $ToggleOCIsaac == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCJacobSocial,
+                        value: Math.abs($OCJacobSocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCJacobSocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+        <<if $ToggleOCZacky == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCZackySocial,
+                        value: Math.abs($OCZackySocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCZackySocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+        <<if $ToggleOCChase == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCChaseSocial,
+                        value: Math.abs($OCChaseSocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCChaseSocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+    </tr>
+</table>
+
+<table style="border-collapse: separate; border-spacing: 15px 0;">
+    <tr>
+        <<if $ToggleOCRaymond == 1 && $CompletedQuests.includes("Raymond: The Kidds")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCAlexKiddSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAlexKiddSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAlexKiddSocial > -10 && $OCAlexKiddSocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAlexKiddSocial <= -10 && $OCAlexKiddSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAlexKiddSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/AlexKidd1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC Alex Kidd NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCRaymond == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $ToggleOCRaymond == 1 && $CompletedQuests.includes("Raymond: The Kidds")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCAlanKiddSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAlanKiddSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAlanKiddSocial > -10 && $OCAlanKiddSocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAlanKiddSocial <= -10 && $OCAlanKiddSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAlanKiddSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/AlexKidd1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC Alan Kidd NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCRaymond == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+        <<if $ToggleOCAubin == 1 && $CompletedQuests.includes("Aubin: Introduction")>>
+        <th>
+            <span style="display:inline-flex; align-items:center; position:relative; width:100px; height:100px;">
+                 <<if $OCAubinSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAubinSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAubinSocial > -10 && $OCAubinSocial < 50>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAubinSocial <= -10 && $OCAubinSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $OCAubinSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Aubin1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                    <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                        <<replace "#SocialMenu">>
+                            <<include "OC Aubin NPC Character Menu">>
+                        <</replace>>
+                    <</link>>
+            </span>
+        </th>
+        <<elseif $ToggleOCAubin == 1>>
+            <th>
+                <span style="display: inline-flex; align-items: center; position: relative;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Unknown.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                </span>
+            </th>
+        <</if>>
+    </tr>
+    <tr>
+        <<if $ToggleOCRaymond == 1 && $CompletedQuests.includes("Raymond: The Kidds")>>
+            <th style="text-align: center;">
+            <<link"Alex Kidd">>
+                <<replace"#SocialMenu">>
+                    <<include"OC Alex Kidd NPC Character Menu">>
+                <</replace>>
+            <</link>>                
+            </th>
+        <<elseif $ToggleOCRaymond == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $ToggleOCRaymond == 1 && $CompletedQuests.includes("Raymond: The Kidds")>>
+            <th style="text-align: center;">
+            <<link"Alan Kidd">>
+                <<replace"#SocialMenu">>
+                    <<include"OC Alan Kidd NPC Character Menu">>
+                <</replace>>
+            <</link>>                
+            </th>
+        <<elseif $ToggleOCRaymond == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+        <<if $ToggleOCAubin == 1 && $CompletedQuests.includes("Aubin: Introduction")>>
+            <th style="text-align: center;">
+            <<link"Aubin">>
+                <<replace"#SocialMenu">>
+                    <<include"OC Aubin NPC Character Menu">>
+                <</replace>>
+            <</link>>   
+            </th>
+        <<elseif $ToggleOCAubin == 1>>
+            <th style="text-align: center;">
+                ????
+            </th>
+        <</if>>
+    </tr>
+        <tr>
+        <<if $ToggleOCRaymond == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCAlexKiddSocial,
+                        value: Math.abs($OCAlexKiddSocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCAlexKiddSocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+        <<if $ToggleOCRaymond == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCAlanKiddSocial,
+                        value: Math.abs($OCAlanKiddSocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCAlanKiddSocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+        <<if $ToggleOCAubin == 1>>
+            <th>
+                <div class="social-bar-gauge">
+                    <<set _data = clone({
+                        text: $OCAubinSocial,
+                        value: Math.abs($OCAubinSocial),
+                        max: 100,
+                        min: 0,
+                        color: getSocialBarColor($OCAubinSocial),
+                        showText: true,
+                    })>>
+                    <<progressbar _data>>
+                </div>
+            </th>
+        <</if>>
+    </tr>
+</table>
+

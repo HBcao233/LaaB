@@ -1,0 +1,153 @@
+:: CALLUM Avatar Equipment Set [nobr]
+
+<<set $AD.SkinColor to "Ivory">>
+<<set $AD.Freckles to 0>>
+<<set $ADArmFreckles to 0>>
+<<set $ADShoulderFreckles to 0>>
+<<set $AD.HairStyle to "Sharp Tussled">>
+<<set $AD.HairColor to "Dark Brown">>
+<<set $AD.EyeColor to "Blue">>
+<<set $AD.LeftEyeColor to "Blue">>
+<<set $AD.RightEyeColor to "Blue">>
+<<set $AD.PenisStyle to $Gabe.PenisStyle>>
+<<set $AD.PenisSize to "Large">>
+<<set $AD.Balls to "Average">>
+
+<<set $ADUndies to $GabeUndies>>
+<<set $ADBottoms to {
+	Name: "Blue Jeans",
+    ID: "BoShBl",
+    Type: "Shorts",
+    Color: "Blue",
+    Slot: "Bottoms",
+    Size: "Teen",
+    Icon: "Images/Equipment/Jeans/Blue Jeans.png",
+    Avatar: "Images/Avatar/Teen/Clothes/Jeans/Medium Denim Jeans.png",
+    SagAvatar: "None",
+    PulledDownAvatar: "Images/Avatar/Teen/Clothes/Pants Down/Blue Pants Down.png",
+    AvatarTorn: "Images/Avatar/Teen/Clothes/Jeans/Blue Jeans.png",
+    AvatarDamaged: "Images/Avatar/Teen/Clothes/Jeans/Blue Jeans.png",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A pair of Blue Jeans.",
+}>>
+<<set $ADTop to {
+	Name: "Callum's Sporty Tee",
+    ID: "ToTsGr",
+    Type: "T-Shirt",
+    Color: "Teal",
+    Slot: "Top",
+    Size: "Teen",
+    Tags: ["Sleeves"],
+    Icon: "Images/Equipment/T-Shirt/Teal T-Shirt.png",
+    Avatar: "Images/Avatar/Teen/Clothes/Designed T-Shirts/Callum's Sporty Tee.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "Images/Avatar/Teen/Clothes/Designed T-Shirts/Callum's Sporty Tee Sleeves Default.png",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBound: "Images/Avatar/Teen/Clothes/Designed T-Shirts/Callum's Sporty Tee Sleeves.png",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A cute T-Shirt.",
+}>>
+
+<<set $ADOuter to $GabeOuter>>
+<<set $ADSocks to $GabeSocks>>
+<<set $ADShoes to $GabeShoes>>
+<<set $ADUnder to $None>>
+<<set $ADShortsSag to 0>>
+
+<<if $ADMuscleToggle == 1>>
+	<<set $AD.Build to "Muscular">>
+<<else>>
+	<<set $AD.Build to "Normal">>
+<</if>>
+
+<<if $AD.Outfit == "Pajama">>
+/* NOT WEARING PJs */
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+	<<set $ADShoes to $None>>
+	<<set $ADSocks to $None>>
+	<<set $ADOuter to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Naked">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+
+<<if $AD.Outfit == "Towel">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to {
+        Name: "White Towel",
+        ID: "None",
+        Type: "Towel",
+        Color: "White",
+        Slot: "Bottoms",
+        Size: "Teen",
+        Icon: "None",
+        Avatar: "Images/Avatar/Teen/Clothes/Towel/Towel.png",
+        SagAvatar: "None",
+        PulledDownAvatar: "None",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        AvatarAlt: "None",
+        AvatarAltTorn: "None",
+        AvatarAltDamaged: "None",
+        Description: "None",
+    }>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+
+<<if $AD.Outfit == "Undies">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>
+
+<<if $GabeNoShoes == 1>>
+	<<set $ADShoes to $None>>
+<</if>>
+<<if $GabeNoShirt == 1>>
+	<<set $ADTop to $None>>
+    <<set $GabeNoShirt to 0>>
+<</if>>
+
+    /* X-Ray Mode Test */
+    <<if $Xray == 1>>
+        <<set $ADHead to $None>>
+        <<set $ADFace to $None>>
+        <<set $ADMouth to $None>>
+        <<set $ADNeck to $None>>
+        <<set $ADUnder to $None>>
+        <<set $ADOver to $None>>
+        <<set $ADBack to $None>>
+        <<set $ADHands to $None>>
+        <<set $ADWaist to $None>>
+        <<set $ADTop to $None>>
+        <<set $ADBottoms to $None>>
+        <<set $ADNeck to $None>>
+        <<set $ADOuter to $None>>
+        <<set $ADSocks to $None>>
+        <<set $ADShoes to $None>>
+    <</if>>

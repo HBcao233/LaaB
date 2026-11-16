@@ -1,0 +1,46 @@
+:: Hair Styled {"position":"7125,3550","size":"100,100"}
+<<nobr>>
+You sit down at one of the chairs and the stylist asks what type of Hair Style you would like.<br>
+<br>
+<strong>Current Style:</strong> $Player.HairStyle<br>
+<strong>New Style:</strong>
+<<if $Player.HairStyle == $Player.HairStyleNew>>
+	<span style="color:lightcoral">$Player.HairStyleNew</span><br>
+<<else>>
+	$Player.HairStyleNew<br>
+<</if>>
+
+<br>
+[[Short|Hair Styled][$Player.HairStyleNew to "Short"]]
+ - 
+[[Messy|Hair Styled][$Player.HairStyleNew to "Messy"]]
+ - 
+[[Medium|Hair Styled][$Player.HairStyleNew to "Medium"]]
+ - 
+[[Combed|Hair Styled][$Player.HairStyleNew to "Combed"]]
+ - 
+[[Long|Hair Styled][$Player.HairStyleNew to "Long"]]
+ - 
+[[Spiked|Hair Styled][$Player.HairStyleNew to "Spiked"]]
+ - 
+[[Parted|Hair Styled][$Player.HairStyleNew to "Parted"]]
+<br>
+[[Heroic|Hair Styled][$Player.HairStyleNew to "Heroic"]]
+ - 
+[[Swooped|Hair Styled][$Player.HairStyleNew to "Swooped"]]
+ - 
+[[Shaggy|Hair Styled][$Player.HairStyleNew to "Shaggy"]]
+ - 
+[[Unkempt|Hair Styled][$Player.HairStyleNew to "Unkempt"]]
+ - 
+[[Stylish|Hair Styled][$Player.HairStyleNew to "Stylish"]]
+<br>
+<br>
+<<if $Player.HairStyle == $Player.HairStyleNew>>
+	<span style="color:lightcoral">Confirm ($3 0:10)</span><br>
+<<else>>
+	[[Confirm ($3 0:10)|Shopping District Hair Salon][$Player.HairStyle to $Player.HairStyleNew;$Money -= 3;$Minutes += 10]]<br>
+<</if>>
+<<back>>
+
+<</nobr>>

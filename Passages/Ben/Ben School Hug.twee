@@ -1,0 +1,50 @@
+:: Ben School Hug [nobr]
+
+<<set $Minutes += 2>>
+
+/* Normal Social */
+<<if $BenSocialRank < 0 or $BenSocial < 50>>
+	You walk up towards <span style="color:DarkTurquoise">Ben</span>, who spots you and blushes upon noticing you were looking at him. You wave back, <span style="color:pink">but don’t stop there and pull <span style="color:DarkTurquoise">Ben</span> into a big hug! <span style="color:DarkTurquoise">Ben</span> lets out an embarrassed squeak and turns bright red as you hold him against your chest. When you finally release him, he’s as red as a tomato.</span> <br>
+
+	<<set _ad to [
+		{
+			Name: "Ben",
+			State: {
+				Blush: 2,
+				Mouth: "Sad",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:LightSteelBlue">“I- I-“</span> <span style="color:DarkTurquoise">Ben</span> stutters, <span style="color:LightSteelBlue">“I’m sorry!”</span> <span style="color:DarkTurquoise">Ben</span> quickly rushes past you, running away. <span style="color:pink">It seems your hug was too much for the shy boy to handle.</span> <br>
+
+	/* High Social */
+	<<else>>
+	<span style="color:pink">You walk up towards <span style="color:DarkTurquoise">Ben</span>, who waves at you happily. But as he notices you are not slowly down, he realizes what you are about to do and turns bright red, holding out his hands and claiming that a hug wasn’t necessary. You just smirk and pull him into a big bear hug, lifting him up slightly off the ground.</span> <br>
+
+	<<set _ad to [
+		{
+			Name: "Ben",
+			State: {
+				Blush: 2,
+				Mouth: "Sad",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:LightSteelBlue">“I- I-“</span> <span style="color:pink"><span style="color:DarkTurquoise">Ben</span> stutters, his face was bright red. You plop him down and laugh at the sight, asking if he is that embarrassed to be hugged by you.</span> <span style="color:LightSteelBlue">“I’m not-“</span> He pauses, trying to gather his thoughts. <span style="color:LightSteelBlue">“Thank you.”</span> He gives you a little bow before slightly scolding himself for doing that and runs off. <span style="color:pink">The poor kid got embarrassed far too easily.</span> <br>
+<</if>>
+
+<<socialChange "Ben" 1>>
+<br>
+<<if $Location.Name == "School South Hallway">>
+	[[Continue|School South Hallway]] 
+<<elseif $Location.Name == "School East Hallway">>
+	[[Continue|School East Hallway]]
+<<elseif $Location.Name == "School West Hallway">>
+	[[Continue|School West Hallway]]
+<</if>>

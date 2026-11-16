@@ -1,0 +1,18 @@
+:: Cooking Skill Level Up [nobr]
+
+<<if $CookingLearned != 1>>
+	<span style="color:LightGreen">You learned the Cooking skill! This skill allows you to cook various foods and snacks. You've unlocked the ability to cook basic meals at home, just be careful not to start a fire.</span><br>
+	<<set $CookingLearned to 1>>
+<</if>>
+
+<<if $CookingXP >= 100>>
+	<<set $CookingXP to 0>>
+	<<set $CookingSkill += 1>>
+		<<if $CookingSkill > 10>>
+			<<set $CookingSkill to 10>>
+		<</if>>
+	
+	<<if $CookingSkill == 2>>
+		<span style="color:LightGreen">You have reached Cooking level 2! You can feel your skills becoming stronger! In the future, new things that are unlocked will be listed here.</span><br>
+	<</if>>
+<</if>>

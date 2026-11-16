@@ -1,0 +1,78 @@
+:: Hospital [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Hospital",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Downtown",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Opal City Hospital--</strong></big></span><br>
+You stand outside the large Opal City Hospital, more specifically the smaller Pharmacy attached to it. This small, attached pharmacy offers consultation, medicine, and medical check-ups to the people of Opal City. While the hospital itself has a great reputation, you have heard that the pharmacy does offer some “under the counter” services. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Pharmacy|Hospital Pharmacy]]<br>
+<<if $ActiveQuests.includes("Noah: Booster Shot") && ["Saturday", "Sunday"].includes($Time.Day) && $Time.between(15, 0, 18, 0)>>
+	[[Take Noah to his Appointment (1:00)|Quest Booster Shot 2]]<br>
+<</if>>
+<<if $ActiveQuests.includes("Lucas: Boning the Neighbor")>>
+	<<if $Money >= 10>>
+		<span style="color:Gold">[!]</span>[[Try to buy Lube from the Clinic ($10 0:05)|Lucas Sex Quest Get Lube Clinic]]
+	<<else>>
+		<span style="color:Gold">[!]</span><span style="color:Red">Try to buy Lube from the Clinic ($10 0:05)</span><br>
+	<</if>>
+<</if>>
+<br>
+
+/* CITY BUS */
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Mall.png">
+	[[Mall (0:10)|Mall][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Elementary School.png">
+	[[Elementary School (0:10)|Elementary School][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Mall.png">
+	[[Mall (0:05)|Mall][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Elementary School.png">
+	[[Elementary School (0:05)|Elementary School][$Minutes += $TravelTime]]<br>
+	<</if>>
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 374px; top: 229px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="300,229,353,282" alt="Mall" onclick="$.wiki('<<goto[[Mall]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="448,229,501,282" alt="Elementary School" onclick="$.wiki('<<goto[[Elementary School]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

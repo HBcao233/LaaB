@@ -1,0 +1,162 @@
+:: Social Change Widget [widget nobr]
+
+/* A widget for adding or removing Social points from NPCs. It will update the social points, apply max, and display text.
+
+To use, do the following:
+<<socialChange "NPC" amount>>
+
+"NPC" is the name of the NPC. EX: Lucas, Noah, Michael, etc.
+If the NPC is an OC, place a 3rd arguement as 1.
+
+amount is the level of social gain. 
+On average these range from 1 for small gains, 3 for average gains, and 5 for large gains.
+
+There is an extra arguement if the character is an OC. If so, it'll look like this:
+<<socialChange "NPC" amount 1>>
+
+ */
+
+<<widget "socialChange">>
+    <<set _finished to ["Lucas", "Ben", "Michael", "Carter", "Jackson", "Xavier", "Thomas", "Felix", "Noah", "Dad"]>>
+
+    <<set _kids to ["Noah", "Kayden", "Jayden", "Oliver", "Isaac"]>>
+    <<set _adults to ["Dad"]>>
+
+    <<set _npc to _args[0]>>
+    <<set _amount to _args[1]>>
+    <<set _isOc to _args[2]>>
+
+    <<if _amount > 0>>
+        <<set _color to "Green">>
+        <<set _change to "+">>
+        <<set _number to 1>>
+    <<else>>
+        <<set _color to "Red">>
+        <<set _change to "-">>
+        <<set _number to 0>>
+    <</if>>
+    <<if _isOc != null && _isOc == 1>>
+        <<set _oc to 1>>
+    <<else>>
+        <<set _oc to 0>>
+    <</if>>
+
+    /* Trait Bonuses */
+    /* Bully (Gains a bonus with Michael.)
+        (Gains more Negative with Ben[Nerd] and Carter[Good]) */
+    <<if _npc == "Michael" && _amount > 0 && $Player.Traits.includes("Bully")>>
+        <<set _amount += 2>>
+    <<elseif ["Ben", "Carter"].includes(_npc) && _amount < 0 && $Player.Traits.includes("Bully")>>
+        <<set _amount -= 2>>
+    <</if>>
+    /* Charismatic (Gains more with all) */
+    <<if _amount > 0 && $Player.Traits.includes("Charismatic")>>
+        <<set _amount += 2>>
+    <</if>>
+    /* Childish (More with Kids, Less with Adults) */
+    <<if $Player.Traits.includes("Childish")>>
+        <<if _kids.includes(_npc) && _amount > 0>>
+            <<set _amount += 2>>
+        <<elseif _adults.includes(_npc) && _amount < 0>>
+            <<set _amount -= 2>>
+        <</if>>
+    <</if>>
+    /* Easily Annoyed (Less social with childish characters, Carter, Jackson, Noah) */
+    <<if $Player.Traits.includes("EasilyAnnoyed") && ["Carter", "Jackson", "Noah"].includes(_npc)>>
+        <<if _amount > 2>>
+            <<set _amount -= 1>>
+        <<elseif _amount < 0>>
+            <<set _amount -= 2>>
+        <</if>>
+    <</if>>
+    /* Mean (Less social with Good/Friendly characters, Carter, Jackson, Felix, Ben) */
+    <<if $Player.Traits.includes("Evil") && ["Carter", "Jackson", "Felix", "Ben"].includes(_npc)>>
+        <<if _amount > 2>>
+            <<set _amount -= 1>>
+        <<elseif _amount < 0>>
+            <<set _amount -= 2>>
+        <</if>>
+    <</if>>
+    /* Friendly */
+    <<if _amount > 0 && $Player.Traits.includes("Friendly")>>
+        <<set _amount += 1>>
+    <</if>>
+    /* Good (Bonus to Good Characters: Carter) */
+    <<if ["Carter"].includes(_npc) && $Player.Traits.includes("Good") && _amount > 0>>
+        <<set _amount += 2>>
+    <</if>>
+    /* Lucky (25% chance to get a +2 bonus to positive social changes.) */
+    <<if $Player.Traits.includes("Lucky") && _amount > 0>>
+        <<set _random to random(1, 4)>>
+        <<if _random == 1>>
+            <<set _amount += 2>>
+        <</if>>
+    <</if>>
+    /* Mature (More with Adults and other Mature[Ben, Xavier]) */
+    <<if $Player.Traits.includes("Mature")>>
+        <<if _adults.includes(_npc) && _amount > 0>>
+            <<set _amount += 2>>
+        <<elseif ["Ben", "Xavier"].includes(_nps) && _amount < 0>>
+            <<set _amount += 2>>
+        <</if>>
+    <</if>>
+    /* Nerd (Bonus to Nerd Characters: Ben, Lucas) */
+    <<if ["Ben", "Lucas"].includes(_npc) && $Player.Traits.includes("Nerd") && _amount > 0>>
+        <<set _amount += 2>>
+    <</if>>
+    /* Nurturing (More with Kids) */
+    <<if $Player.Traits.includes("Nurturing")>>
+        <<if _kids.includes(_npc) && _amount > 0>>
+            <<set _amount += 2>>
+        <</if>>
+    <</if>>
+    /* Rebellious (Less with Adults) */
+    <<if $Player.Traits.includes("Rebellious")>>
+        <<if _adults.includes(_npc) && _amount > 1>>
+            <<set _amount -= 1>>
+        <<elseif _adults.includes(_npc) && _amount < 0>>
+            <<set _amount -= 2>>
+        <</if>>
+    <</if>>
+    /* Shy (Less with strangers, more with close friends.) */
+    <<if $Player.Traits.includes("Shy") && _amount > 2>>
+        <<if _oc == 0>>
+            <<print "<<if $" + _npc + "Social >= 30>><<set _amount += 2>><<else>><<set _amount -= 2>><</if>>">>
+        <<else>>
+            <<print "<<if $OC" + _npc + "Social >= 30>><<set _amount += 2>><<else>><<set _amount -= 2>><</if>>">>
+        <</if>>
+    <</if>>
+
+    /* Low Hygiene Affecting Social Gains */
+    <<if $Player.Hygiene <= 30 && _amount > 2>>
+        <<set _amount -= 2>>
+    <<elseif $Player.Hygiene <= 30 && _amount < 0>>
+        <<set _amount -= 1>>
+    <</if>>
+
+    <<if _oc == 0>>
+        <<print "<<set $" + _npc + "Social += _amount>>">>
+    <<else>>
+        <<print "<<set $OC" + _npc + "Social += _amount>>">>
+    <</if>>
+
+    <<if !_finished.includes(_npc)>>
+        <<set _npcicon to "Default">>
+    <<else>>
+        <<set _npcicon to _npc>>
+    <</if>>
+
+    <<if _npc == "JSTJacob">>
+        <<set _npc to "Jacob">>
+    <</if>>
+
+    <span style="display: inline-flex; align-items: center;">
+        <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 45px; height: 45px;">
+        <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/${_npcicon}${_number}.png`" style="position: absolute; width: 45px; height: 45px;"> 
+        <<print "<span style=\"color:" + _color + "\">" + _change + _npc + "</span>">>
+        <<if $Debug == 1>>
+           [_amount]
+        <</if>>
+    </span>
+    <br>
+<</widget>>

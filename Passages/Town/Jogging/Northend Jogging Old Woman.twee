@@ -1,0 +1,92 @@
+:: Northend Jogging Old Woman [nobr]
+
+/* OPENING */
+The jog is going well and it is a relatively quiet day on Northend Street, with hardly any people or even cars passing by you. It is only as you round the corner that you finally see someone else, an old woman who had just closed her front gate and started walking down the street toward town. You think nothing of it until your attention is brought back to her by her loud ringtone. As she pulls out her phone you see, even from this distance, a small light green object slip out of her purse and land on the ground.<br>
+<br>
+It is only as you get closer, a few feet away from overtaking the old woman, that you realize it was a folded dollar bill. You stop, bend over, and pick it up. It was only a $5 note, though you would be upset if you had lost it, despite its smaller value. You look up towards the woman, who was chatting away on her phone as she continued walking, not noticing you or that she had dropped anything. Outside of the two of you, the street was empty. <span style="color:yellow">So you could take it, no one would know. But returning it would be the right thing to do.</span><br>
+<br>
+
+/* TAKE THE DOLLAR */
+<div id=Choice>
+	<<link "Take the money">>
+	<<replace"#Choice">>
+<span style="color:lightgreen">You stealthily slide the money into your pocket and stretch, double-checking that no one saw you, before continuing your jog.</span> As you pass by the woman, she briefly glances towards you, but neither of you pays the other any attention and you pass by her without so much as a glance.<br>
+<<set $Money += 5>>
+    <span style="color:green">+$5</span><br>
+
+/* NEED DECREASE */
+<<if $ExerciseType == "No Sweat">>
+    <<needChange "Hygiene" -2>>
+    <<needChange "Energy" -4>>
+<<elseif $ExerciseType == "Paced">>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -2>>
+<<else>>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -4>>
+<</if>>
+<<skillPoints "Athletics" 5>>
+<br>
+<<set $Minutes += 30>>
+[[Continue|Northend]]
+    <</replace>>
+    <</link>>
+    <span style="color:green">+$5</span><br>
+
+/* GIVE IT BACK */
+	<<link "Return the money">>
+	<<replace"#Choice">>
+    <<set _random to random(1, 3)>>
+
+    /* GIVEN 10 IN RETURN  */
+<<if _random == 1>>
+You call out to the woman and run up to her. At first, she doesn’t realize it is her being called to, but as you stop behind her she turns around, holding her hand to her phone to block the microphone, and gives you a quizzical look. You inform her that she dropped this and hand her the dollar bill.<br>
+<br>
+<span style="color:lightgreen">She gives a gasp and lightly smacks her cheeks.</span> <span style="color:LightSteelBlue">“Thank you!”</span> She says with a big smile, <span style="color:LightSteelBlue">“I swear I’m so clumsy!”</span> She gave a great big laugh before quickly recounting what just occurred to her friend on the phone. <span style="color:LightSteelBlue">“This is why I don’t like those credit card things, one wrong move and I have to order a new one!”</span> She laughs again and you chuckle in response, trying not to be rude.<br>
+<br>
+<span style="color:LightSteelBlue">“You know, I’m not strapped for cash, and you are such a good little boy, here.”</span> <span style="color:lightgreen">She reaches into her purse and pulls out an additional $5 bill, pushing it into your hand with the one you find.</span> <span style="color:LightSteelBlue">“There we go! Go get yourself a nice treat. Oh no, I insist!”</span> She responds as you make a motion to give the money back to her. Realizing that she wouldn’t take no for an answer and that this must be karma for your good deed, you thank the woman and stow away the money. <span style="color:lightgreen">You both bid each other a friendly farewell and you continue on with your jog, feeling quite happy with the outcome of that encounter.</span><br>
+<<set $Money += 10>>
+    <span style="color:green">+$10</span><br>
+    
+    /* THANKFUL KISS */
+<<elseif _random == 2>>
+You call out to the woman and run up to her. At first, she doesn’t realize it is her being called to, but as you stop behind her she turns around, holding her hand to her phone to block the microphone, and gives you a quizzical look. You inform her that she dropped this and hand her the dollar bill.<br>
+<br>
+<span style="color:lightgreen">She gives a gasp and lightly smacks her cheeks.</span> <span style="color:LightSteelBlue">“Thank you!”</span> She says with a big smile, <span style="color:LightSteelBlue">“Would have been in a pickle if I lost this. Was just heading to get some bread for lunch.”</span> <span style="color:lightgreen">She takes the money from you before suddenly leaning in and giving you a big kiss on the cheek.</span> <span style="color:LightSteelBlue">“Such a kind young man. You know, I am always dropping stuff. My daughter even got me this phone protector because I dropped it so many times, I swear I’d drop my brain if it wasn’t attached!”</span><br>
+<br>
+You worry for a moment that the woman may talk your ear off, but thankfully the voice on the other end of the phone pulls her attention back. You bid her a quiet farewell and continue on your way, hearing her recounting your good deed to her friend on the phone. <span style="color:lightgreen">You couldn’t help but smile as you left, feeling proud of yourself.</span><br>
+	<<addMoodlet "Stress" 1>>
+
+
+    /* SCOLDED */
+<<elseif _random == 3>>
+You call out to the woman and run up to her. At first, she doesn’t realize it is her being called to, but as you stop behind her she turns around, holding her hand to her phone to block the microphone, and gives you a quizzical look. You inform her that she dropped this and hand her the dollar bill.<br>
+<br>
+<span style="color:lightcoral">In a quick and slightly violent movement, she rips the dollar out of your hand and stows it away back in her purse, giving you a look as if she had just caught you rummaging through her bag.</span> <span style="color:LightSteelBlue">“Nice try, but I know all about this little scam!”</span> She took a step back, wagging her finger in an accusatory circle, <span style="color:LightSteelBlue">“Yeah, I use the internet too bucko!”</span><br>
+<br>
+Puzzled, you ask her what she is talking about, prompting a loud scoff from the woman. <span style="color:LightSteelBlue">“I’ve read all about your little urchin tricks, you ‘pretend’ to return something of mine in return for a reward. Well I’m not giving you shit, you got that!? Now leave me alone before I call the police and have them arrest you for harassment!”</span> <span style="color:lightcoral">Feeling threatened, and more than a little angry at her response to your good deed, you give her a fowl look and begin to jog away.</span><br>
+<br>
+<span style="color:LightSteelBlue">“I swear, this is why parents should still beat their kids.”</span> You hear her rant to her friend on the phone, <span style="color:LightSteelBlue">“Yeah, some dirty little urchin just tried to scam me. Had to practically beat him away with my bag, little shit.”</span><br>
+<<addMoodlet "Stress" 1>>
+
+<</if>>
+
+/* NEED DECREASE */
+<<if $ExerciseType == "No Sweat">>
+    <<needChange "Hygiene" -2>>
+    <<needChange "Energy" -4>>
+<<elseif $ExerciseType == "Paced">>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -2>>
+<<else>>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -4>>
+<</if>>
+<<skillPoints "Athletics" 5>>
+<br>
+<<set $Minutes += 30>>
+[[Continue|Northend]]
+    <</replace>>
+    <</link>>
+    <span style="color:yellow">+???</span><br>
+</div>

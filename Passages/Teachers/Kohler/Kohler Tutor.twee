@@ -1,0 +1,110 @@
+:: Kohler Tutor [nobr]
+
+/* Intro */
+<<set $Minutes += 15>>
+You walk into the locker room and over to <span style="color:DarkTurquoise">Kohler</span>’s office. You wonder what a gym teacher would do in his free time, since he doesn’t have to grade or read essays. Interestingly, you find him going over some spreadsheets full of numbers. You are so caught off guard by this, you ask him what he’s doing as he looks up and notices you. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "Kohler",
+            State: {
+                Brows: "Angry",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Sneaky little bastard.”</span> He says to himself, jumping by your sudden appearance. He must have been so focused he didn’t hear you walk in. <span style="Color: LightSteelBlue">“If you must know, I’m going over budgets for this year. Figuring out equipment costs, team travels, etc. Very important part of managing all the different sports teams Preston has.”</span> You nod along, staring at the massive piles of numbers and expenses. It makes your head spin a little. <span style="Color: LightSteelBlue">“What, think I was too much of a meathead to understand finances?”</span> He growls, but once he sees the fear in your face, he lets out a loud belly laugh. <br>
+<br>
+<span style="Color: LightSteelBlue">“I’m pulling your chain, <span style="color:DarkTurquoise">$Player.LastName</span>, don’t piss yourself. What did you need anyway?”</span> You sigh in relief, worried that you’ve earned yourself detention without meaning to, and say that you wanted to ask him for pointers and stuff. <span style="Color: LightSteelBlue">“Pointers?”</span> He raises an eyebrow. You explain you mean for exercise and physical stuff. He can’t really give one-on-one advice in class all the time, so you wanted to know if he had any ideas to help you there. <span style="Color: LightSteelBlue">“Oh, yeah suppose I can do that. Let’s see, how did you do last class?”</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Kohler",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightGreen"> <span style="color:DarkTurquoise">Coach Kohler</span> actually gives some pretty good advice, going over some good stretching techniques and advice for things he’s noticed you struggle with. Cutely, he seems pretty happy to be asked for advice like this outside of class, and you feel pretty happy with his answers as he finishes up.</span> Before he returns to his work, you figure it may be a good chance to ask him about himself. <br>
+<br>
+
+<div id="choice">
+    <<link "Ask about his family<br>">>
+    <<replace"#choice">>
+        <<if $KohlerSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Kohler</span> about his family, and while you can’t see it, you ask if he’s married and has kids. <span style="Color: LightSteelBlue">“Free time for you doesn’t mean social time for me.”</span> He replies bluntly, sounding more like his normal drill sergeant self. <span style="Color: LightSteelBlue">“I’m your teacher, not your friend, so carry on.”</span> <span style="Color: Yellow">You nod, accepting that and quickly leave before you do make him upset.</span> <br>
+            <<socialChange "Kohler" 3>>
+            <<skillPoints "Athletics" 5>>
+            <br>
+            [[Continue|School Locker Room]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Kohler</span> about his family, and while you can’t see it, you ask if he’s married and has kids. <span style="Color: LightSteelBlue">“Yeah. Beautiful wife, 5 kids. My youngest is in 2nd grade at Preston Elementary and my eldest is actually expecting later this year.”</span> <span style="Color: Pink">He says with a certain warmth in his voice that he quickly realizes, coughing extra harshly.</span> <span style="Color: LightSteelBlue">“But that’s not… shit, when did I get comfortable talking to this kid?”</span> He says to himself, seemingly not expecting to speak so casually to you. <span style="Color: LightSteelBlue">“Get out of here, <span style="color:DarkTurquoise">$Player.LastName</span>! I have to get some work done!”</span> <span style="Color: LightGreen">You chuckle a little to yourself and quickly run off. You’ll make a friend of him yet.</span> <br>
+            <<socialChange "Kohler" 3>>
+            <<skillPoints "Athletics" 5>>
+            <br>
+            [[Continue|School Locker Room]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his career<br>">>
+    <<replace"#choice">>
+        <<if $KohlerSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Coach Kohler</span> about why he decided to become a teacher and he shrugs. <span style="Color: LightSteelBlue">“Not because I wanted my students to ask my about my life, that’s for sure.”</span> You take the hint, thanking him again for his help as you quickly exit the room. <span style="Color: Yellow">Maybe if you got to know him a bit better.</span> <br>
+            <<socialChange "Kohler" 3>>
+            <<skillPoints "Athletics" 5>>
+            <br>
+            [[Continue|School Locker Room]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Coach Kohler</span> about why he decided to become a teacher and he shrugs. <span style="Color: LightSteelBlue">“Keeps the bills paid, keeps the belly from getting any bigger, and keeps the stress down since I can take it out on you brats when you act up!”</span> He laughs loudly, as if that was a joke, though you’re pretty sure he actually does that. <span style="Color: LightSteelBlue">“Bah, but why am I telling you that? Get out of here!”</span> He chuckles as he shoos you out of the room. <span style="Color: LightGreen">Seems he’s started to take a liking to you.</span> <br>
+            <<socialChange "Kohler" 3>>
+            <<skillPoints "Athletics" 5>>
+            <br>
+            [[Continue|School Locker Room]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his hobbies<br>">>
+    <<replace"#choice">>
+        <<if $KohlerSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Coach Kohler</span> what he likes to do outside of work and he snorts. <span style="Color: LightSteelBlue">“Trying to butter me up to avoid whatever punishments your class gets when they act up? Nice try, but it won’t work. I’m actually harder on people I like. Back when I worked at the elementary, I made my own kids run extra laps.”</span> He chuckles, shooing you away. <span style="Color: Yellow">Now you start to second-guess getting to know him better.</span> <br>
+            <<socialChange "Kohler" 3>>
+            <<skillPoints "Athletics" 5>>
+            <br>
+            [[Continue|School Locker Room]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Coach Kohler</span> what he likes to do in his free time outside of work and he snorts. <span style="Color: LightSteelBlue">“Free time? Hah, dads don’t get free time. Working here is actually my break!”</span> He laughs, <span style="Color: LightSteelBlue">“My kids and the wife keep me pretty busy, so don’t really have an answer for you. Not that I need to give one, since I’m your coach and not your friend.”</span> <span style="Color: LightGreen">He smirks, shooing you out as he goes back to work.</span> <br>
+            <<socialChange "Kohler" 3>>
+            <<skillPoints "Athletics" 5>>
+            <br>
+            [[Continue|School Locker Room]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Nothing<br>">>
+    <<replace"#choice">>
+        You decide against asking him anything specific for now, instead thanking him for taking the time to help you out and leaving him to his work. <span style="Color: LightGreen">He isn’t all that scary when he isn’t running you around like a drill sergeant.</span> <br>
+        <<socialChange "Kohler" 3>>
+        <<skillPoints "Athletics" 5>>
+        <br>
+        [[Continue|School Locker Room]]
+    <</replace>>
+    <</link>>
+</div>

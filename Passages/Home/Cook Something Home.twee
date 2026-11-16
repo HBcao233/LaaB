@@ -1,0 +1,89 @@
+:: Cook Something Home [nobr]
+
+<<set _whiteapron to {
+	Name: "White Apron",
+    Type: "Apron",
+    Color: "White",
+    Slot: "Outer",
+    Temp: 10,
+    Tags: ["Uniform"],
+    Durability: 15,
+    MaxDurability: 15,
+    Weight: 3,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Apron/White Apron.png",
+    Avatar: "Images/Avatar/Clothes/Apron/White Apron.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "None",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBase: "None",
+    AvatarSleeveBaseTorn: "None",
+    AvatarSleeveBaseDamaged: "None",
+    AvatarSleeveBound: "None",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    AvatarAltBase: "None",
+    AvatarAltBaseTorn: "None",
+    AvatarAltBaseDamaged: "None",
+    Description: "A cooking apron for the little chef in your house.",
+}>>
+
+<<set $Minutes += 30>>
+<<set $Money -= 4>>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+		Clothes: {
+			Outer: _whiteapron,
+		},
+	},
+]>>
+<<ad _ad>>
+
+Grabbing ingredients from the fridge, you plop them atop the counter and grab one of the aprons <span style="color:DarkTurquoise">Your Father</span> bought for you and your brothers. Tying it around your waist to avoid making a mess or burning yourself, you begin to cook a basic meal.<br>
+<br>
+
+
+<div id=choice>
+	<<link "Continue">>
+	<<replace"#choice">>
+
+		/* BASIC MEAL */
+	<<if $MealLevel == "Basic">>
+		<<skillCheck "Cooking" 50>>
+
+			/* PASS */
+		<<if _result == 1>>
+		<span style="color:Green">While the recipe may be basic, you still manage to nail it and make something quite tasty!</span> You enjoy your meal, made all the more tastier by the fact that you made it all by yourself.<br>
+		<<skillPoints "Cooking" 5>>
+		<<needChange "Hunger" 30>>
+
+		<br>
+		[[Continue|PH Kitchen]]
+		
+			/* FAIL */
+		<<else>>
+		<span style="color:Red">Despite your best efforts, you make a few mistakes and the meal turns out worse than you had hoped.</span> A few burnt spots and an utter lack of taste makes it something you’d rather not finish.<br>
+		<<skillPoints "Cooking" 5>>
+		<<needChange "Hunger" 15>>
+
+		<br>
+		[[Continue|PH Kitchen]]
+		
+		<</if>>
+	<</if>>
+
+	<</replace>>
+	<</link>>
+		<<skillDiff "Cooking" 50>>
+</div>
+

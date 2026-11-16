@@ -1,0 +1,22 @@
+:: History Skill Level Up [nobr]
+
+<<if $HistoryLearned != 1>>
+	<span style="color:Gold">You have learned the History Skill! This skill will determine your class grade. Learning from the past is the most important step for improving your future. Improving your History Skill will allow you to unlock secret locations and access Collections in the Museum.</span><br>
+	<<set $HistoryLearned to 1>>
+<</if>>
+
+<<if $HistoryXP >= 100>>
+	<<set $HistoryXP to 0>>
+	<<set $HistorySkill += 1>>
+		<<if $HistorySkill > 10>>
+			<<set $HistorySkill to 10>>
+		<</if>>
+	
+	<<if $HistorySkill == 2>>
+		<span style="color:Gold">You have reached History Level 2! Knowing the history behind something can help you understand where it is and where it is going. /*You’ve heard that there was an incident at the local Museum. You’ve also unlocked a secret location.*/</span><br>
+	<</if>>
+	
+	<<if $HistorySkill == 3>>
+		<span style="color:Gold">You have reached History Level 3! The Town of Opal City has its own history, but it is steeped in mystery and intrigue. /*You’ve unlocked a secret location.*/</span><br>
+	<</if>>
+<</if>>

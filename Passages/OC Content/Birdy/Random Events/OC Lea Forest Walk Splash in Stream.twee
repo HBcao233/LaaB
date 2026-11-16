@@ -1,0 +1,272 @@
+:: OC Lea Forest Walk Splash in Stream [nobr]
+
+<<set $Minutes += 30>>
+/* Intro */
+
+<span style="color:LightGreen">You smile and agree, you’d love to hang out with her!</span> The problem is, what are you going to do? <span style="color:LightSteelBlue">“I was going to chill and maybe splash around in one of the small streams.”</span> <span style="color:DarkTurquoise">Lea</span> replies, pointing deeper into the forest where you assume such a stream resides. <span style="color:LightSteelBlue">“It’s not that deep, so you’ll be fine without a swimsuit. I was just going to let the sun dry me off anyway. Care to join me, or would you rather do something else?”</span> You think for a moment before agreeing, <span style="color:LightGreen">some fun in the water sounds perfect!</span>
+
+<<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Happy", 
+                },
+            },
+            {
+            Name: "OC Lea",
+            State: {
+                Mouth: "Happy", 
+            },
+        },
+    ]>>
+<<ad _ad>> 
+
+<<if $Player.Traits.includes("Outdoorsy")>>
+/*-Ourdoorsy Trait-*/
+    You follow <span style="color:DarkTurquoise">Lea</span>, watching as she glances around and picks which direction to go. <span style="color:LightGreen">She’s clearly skilled in moving around outdoors and traversing the woods. You spot strange looking trees or clumps of rocks that she passes. Landmarks that she no doubt uses to navigate. You make note of them yourself, creating a map in your head.</span> Then you hear it, the refreshing sound of water. You crawl through some tall bushes and emerge into a beautiful sight! <span style="color:LightGreen">A crystal clear stream that cuts through the forest, the sun causing it to seemingly glow a brilliant blue!</span> <br>
+
+<<else>>
+/*-No Outdoorsy Trait-*/
+    You follow <span style="color:DarkTurquoise">Lea</span> deeper into the woods. Despite everything looking the same to you, you get the feeling she has some sixth sense that allows to traverse through nature without the need of a map… either that or she’s walked this path many times. <span style="color:LightGreen">Still, you are pleasantly surprised when, after climbing past some bushes, you reach a small stream that shines in the sunlight and lets off a cool, refreshing glow!</span> <br>
+<</if>>
+
+<br>
+
+/*-Continued-*/
+
+<span style="color:LightSteelBlue">“Ta-da~!”</span> <span style="color:DarkTurquoise">Lea</span> holds out her arms, presenting the location to you. You smile widely, taking in the amazing sight and ask her how she found this place. <span style="color:LightSteelBlue">“This is nothing, the woods got all sorts of stuff like this. This stream merges with a larger river a bit down that way. That river connects this cool lake to the ocean. It’s pretty neat, though I just wanted to relax so thought this area would be perfect!”</span> You agree, stating that you feel relaxed already. <br>
+<br>
+<span style="color:DarkTurquoise">Lea</span> kicks off her shoes and leaps into the water, sighing in comfort as the cool water envelopes her feet. <span style="color:LightSteelBlue">“Come on in, the water feels great! Promise not to push you over.”</span> She sticks her tongue out you in such a way that you are unsure if she actually promises or not. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+		Clothes: {
+			Shoes: $None,
+			Socks: $None,
+		},
+	},
+	{
+		Name: "OC Lea",
+		State: {
+			Mouth: "Happy",
+		},
+        Clothes: {
+			Shoes: $None,
+			Socks: $None,
+		},
+	},
+]>>
+<<ad _ad>>
+
+Still, you follow suit and follow <span style="color:DarkTurquoise">Lea</span> into the stream, making sure you are not wearing anything low enough to dip below the water. It is just as she says, cool and refreshing without being too cold. The constant flow of the stream also tickles your ankles pleasantly. <span style="color:LightGreen">It is extremely relaxing!</span> <br>
+<br>
+
+/*-Continue-*/
+
+/*-High Dex [7+]-*/
+<<if $Dexterity >= 7>>
+
+<span style="color:LightGreen">Then something hits your mind, a sense of danger. Quickly, you lean back, narrowly dodging a splash of water!</span> <span style="color:LightSteelBlue">“Haha, you’re pretty quick. But not quick enough!”</span> <span style="color:DarkTurquoise">Lea</span> splashes towards you again, this time you are even more ready and duck down, dodging the water without wetting your clothes. <span style="color:LightGreen">Then, with the agility of a cat, you splash back, causing a blast of water to hit <span style="color:DarkTurquoise">Lea</span> directly in the face!</span> <br>
+
+/*-Low Dex-*/
+<<elseif $Dexterity <= 6>>
+
+
+<span style="color:LightCoral">But you can’t enjoy it for long as suddenly an icy wet chill hits the back of your head.</span> You nearly fall over face first into the stream as you hear the laughter of <span style="color:DarkTurquoise">Lea</span>. <span style="color:LightSteelBlue">“Got ya! You didn’t really think I wouldn’t get you a little wet, did ya?”</span> She laughs, splashing at you again. You manage to duck under this one, dodging the water, but sadly lose your balance and land butt first into the stream! <span style="color:LightCoral">Instantly your bottoms are soaked.</span> <span style="color:LightSteelBlue">“Oh shoot, you alright?”</span> <span style="color:DarkTurquoise">Lea</span> says, sounding genuinely concerned. She begins to walk over to check on you. Perfect. <span style="color:LightGreen">You take the chance and splash her back as hard as you can, hitting her directly in the face!</span> <br>
+<</if>>
+<br>
+
+/*-Continued (Girl Toggle Off)-*/
+<<if $ToggleGirlContent == 0>>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Smirk",
+            Eyes: "Mad",
+		},
+		Clothes: {
+			Shoes: $None,
+			Socks: $None,
+		},
+	},
+	{
+		Name: "OC Lea",
+		State: {
+			Mouth: "Smirk",
+            Eyes: "Mad",
+		},
+        Clothes: {
+			Shoes: $None,
+			Socks: $None,
+		},
+	},
+]>>
+<<ad _ad>>
+
+What follows is a splashing battle that turns the ‘gentle relaxing soak’ into a water war that leaves you both pretty drenched. In the end you both are dripping with water and out of breath, red-faced both from the strain and from laughing. You both collapse back on the bank, letting the grass absorb the water on your clothes as the sun dries you. <br>
+<br>
+<span style="color:LightSteelBlue">“Not bad, <span style="color:DarkTurquoise">$Player.Name</span>!”</span> <span style="color:DarkTurquoise">Lea</span> says between deep breaths, <span style="color:LightSteelBlue">“I admit, you are a worthy adversary! Though don’t think I’ll forget this! Next time, I won’t go easy on you.”</span> You chuckle, rolling your eyes as you verbally doubt she was going that easy on you. In fact, you’re pretty sure she was trying her hardest and could still barely keep up! <span style="color:LightSteelBlue">“Oh yeah? Care to go another round?”</span> <br>
+
+<<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Happy", 
+                },
+            },
+            {
+            Name: "OC Lea",
+            State: {
+                Mouth: "Happy", 
+            },
+        },
+    ]>>
+<<ad _ad>> 
+
+<span style="color:LightSteelBlue">“This was fun though.”</span> <span style="color:DarkTurquoise">Lea</span> smiles, staring at the sky. <span style="color:LightSteelBlue">“Thanks for hanging out with me.”</span> She turns to you and smiles. <span style="color:LightGreen">You smile back, pretty happy you decided to hang out with her yourself. She’s pretty cool. With that, the two of you continue to stare off into the clouds and chat idly until you are dry enough to make it back out of the forest.</span> <br>
+
+<<needChange "Fun" 30>>
+<<socialChange "Lea" 5 1>>
+[[Continue|Wald Street]]
+
+<<else>>
+
+[[Continue|OC Lea Forest Walk Splash in Stream 2]]
+
+<</if>>
+
+:: OC Lea Forest Walk Splash in Stream 2 [nobr]
+
+What follows is a splashing battle that turns the ‘gentle relaxing soak’ into a water war that leaves the two of you pretty drenched. In the end you are both dripping with water and out of breath, red-faced both from the strain and from laughing. <span style="color:LightGreen">The two of you collapse onto the bank, still giggling from the battle.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Not bad, <span style="color:DarkTurquoise">$Player.Name</span>!”</span> <span style="color:DarkTurquoise">Lea</span> says between deep breaths, <span style="color:LightSteelBlue">“I must admit, you are a worthy adversary!”</span> <span style="color:Pink">You turn to reply, only to see <span style="color:DarkTurquoise">Lea</span> pulling her shirt off! You blush, seeing the back of her bra, and quickly face away before she turns around.</span> <span style="color:LightSteelBlue">“What? Afraid of a little exposed skin?”</span> <span style="color:DarkTurquoise">Lea</span> laughs. You see the blur of her figure lean towards you out of the corner of your eye. <span style="color:LightSteelBlue">“No need to be so shy, dude. Not like I even have boobs yet!”</span> She laughs again. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Eyes: "Closed",
+            Blush: 3,
+		},
+	},
+	{
+		Name: "OC Lea",
+		State: {
+			Mouth: "Smirk",
+            Eyes: "Tired",
+		},
+        Clothes: {
+			Top: $None,
+		},
+	},
+]>>
+<<ad _ad>>
+/* Lea: [Bra sprite in the works, will be added once finished.]*/
+
+As you listen, glancing away to ensure you don’t see anything, you hear the sound of more movement and struggle, followed by four distinct wet sounds of something being dropped. <span style="color:Pink">Though curious, you are still too embarrassed to glance over as you hear even more rustling.</span> After a moment and some more strange noises, you hear <span style="color:DarkTurquoise">Lea</span> call out. <br>
+<br>
+<span style="color:LightSteelBlue">“You’re free to turn around, shy boy.”</span> Her laughter makes you more nervous, but eventually you peek one eye over. Much to your relief, or perhaps to your displeasure, <span style="color:DarkTurquoise">Lea</span> is mostly out of sight, lying behind a bush with only her feet and head poking out. <span style="color:Pink">Sitting on a large rock next to the bush is her clothes… all of them! You blush and glance away again as you see not only her top and bottoms, but her bra and panties as well!</span> <span style="color:LightSteelBlue">“I don’t want to catch a cold, but you’re free too!”</span> She laughs, rolling her eyes as she stares at the sky. <br>
+<br>
+As you slowly glance back around, you realize what she is offering. <span style="color:Pink">The large bush keeps both of your ‘bits’ out of sight of one another. Despite this, you know deep down that <span style="color:DarkTurquoise">Lea</span>, a girl, is completely nude on the other side; her body bare in the open air… And she is silently offering you the chance to do the same…</span> <br>
+<br>
+
+<div id="choice">
+/*-Strip as well-*/
+	<<link "Strip As Well<br>">>
+	<<replace"#choice">>
+
+    <span style="color:Pink">Gulping nervously, you move so the bush will completely cover you and slowly strip off your wet clothes as well. You glance towards the top of the bush multiple times, ensuring she is not spying on you, before letting yourself become completely naked and placing your clothes on the rock next to <span style="color:DarkTurquoise">Lea</span>’s. Being outside naked feels weird and strangely cold, despite the sun beating down on you. It is even weirder knowing that <span style="color:DarkTurquoise">Lea</span>, a girl, is lying nude as well just on the other side of a bush; the foliage the only thing keeping your bodies out of sight of each other. As you place the last of your clothing on the rock, you lie down on the grass and turn to face a smirking <span style="color:DarkTurquoise">Lea</span>.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Naked",
+                Blush: 1,
+                Arms: "Hide",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Guess you’re not such a shy boy after all.”</span> She laughs. You smirk back, still blushing. From this angle you can see her head and part of her shoulders, though nothing else. <span style="color:Pink">You figure she has the same view, though still cover your bits with your hands just in case.</span> You both then turn to the sky and stare at the clouds. <br>
+    <br>
+    <span style="color:LightGreen">Then the two of you just… talk. Not about anything in particular, just life, school, family, everything. Idle chatter between two friends.</span> <span style="color:Pink">Nothing of the conversation would hint at the fact that you are both naked beneath the sun, mere feet apart.</span> Actually, it’s kind of nice. Just talking with a friend with no inhibition between you two. <span style="color:Pink">That is, of course, until a stray leaf or gust of wind hits your just right to remind you of your nudity. Then you blush and recover yourself, which <span style="color:DarkTurquoise">Lea</span> spots even though she can only see your face, causing her to giggle and tease you.</span> <br>
+    <br>
+    After a few minutes, <span style="color:DarkTurquoise">Lea</span> yawns before sitting up, disappearing behind the bush. You follow suit and spot her hands reaching over and grabbing her clothes from the rock. <span style="color:LightSteelBlue">“Guess I should get going, if I’m gone too long <span style="color:DarkTurquoise">Birdy</span> will start to freak. Plus, if I’m out here any longer, I’m going to get a sun burn.”</span> She chuckles as you hear her begin to dress herself. <br>
+    <br>
+    Carefully waiting to ensure she won’t spot a peek at you, you quickly reach for your own clothes and begin to get dressed as well. <span style="color:Pink">The thought that <span style="color:DarkTurquoise">Lea</span> may have grabbed your clothes and ran briefly enters your mind. You chuckle at the idea of Lea running off and leaving you stranded naked in the forest or making you do some dare to get your clothes back.</span> As you are laughing at yourself for the thought and pulling up your bottoms, <span style="color:LightCoral">you suddenly lose your balance and go tumbling through the bush!</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: $PlayerUndies.Type == "None",
+            State: {
+                Mouth: "Frown",
+                Blush: 3,
+                PantsDown: true,
+            },
+        },
+        {
+            Name: "OC Lea",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+            Clothes: {
+                Bottoms: $None,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You land on the other side, right next to <span style="color:DarkTurquoise">Lea</span>! She is just about to finish pulling up her shorts and you lock eyes with her… then your eyes move lower of their own accord! <span style="color:Pink">You glance at her crotch, though covered by her panties, and instantly spot the strange ‘gap’ between her legs! You gasp out in embarrassment and quickly cover your eyes, apologizing over and over. <span style="color:DarkTurquoise">Lea</span>, for her part, simply laughs.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“Calm down, it’s not a big deal.”</span> She laughs as she buttons her shorts, <span style="color:LightSteelBlue">“You didn’t see anything anyway, plus I don’t really care.”</span> She says, <span style="color:Pink">before chuckling and pointing out that your bottoms are still down as well. You quickly yank them up before stumbling to your feet and trying to compose yourself.</span> <span style="color:LightSteelBlue">“You’re pretty weird,”</span> She says with a smirk, <span style="color:LightSteelBlue">“But I like that. Keeps things interesting.”</span> She laughs and you have no choice but to join in, deciding to make light of the awkward situation instead of dwelling on it. <span style="color:LightSteelBlue">“Welp. I’m heading off. See you around, shy boy.”</span> She sticks her tongue out at you before running off. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "OC Lea",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:Pink">As you wave, you can’t get the image of what you saw, her crotch, out of your mind…</span> <span style="color:Yellow">girls are weird…</span> <br>
+
+    <<needChange "Fun" 30>>
+    <<socialChange "Lea" 5 1>>
+    <br>
+    [[Continue|Wald Street]]
+
+    <</replace>>
+    <</link>>
+/*-Leave-*/
+	<<link "Leave<br>">>
+	<<replace"#choice">>
+
+
+    Unable to deal with the idea of stripping out here so close to a girl, you turn around once more and tell <span style="color:DarkTurquoise">Lea</span> you are just going to head home and let the sun dry you. <span style="color:LightSteelBlue">“Whatever floats your boat, shy boy!”</span> She laughs, waving one hand as you walk away, completely embarrassed. Still, despite the awkward ending, you feel closer to <span style="color:DarkTurquoise">Lea</span> and enjoyed your time playing with her. <span style="color:Yellow">Still, you feel a bit weird that it ended with her naked, even if you didn’t see anything.</span> <br>
+
+    <<needChange "Fun" 30>>
+    <<socialChange "Lea" 5 1>>
+    <br>
+    [[Continue|Wald Street]]
+    <</replace>>
+<</link>>
+</div>

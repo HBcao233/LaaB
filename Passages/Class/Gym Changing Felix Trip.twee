@@ -1,0 +1,52 @@
+:: Gym Changing Felix Trip [nobr]
+
+/* UNDIES */
+<<if $PlayerUndies.Type != "None">>
+You then grab your bottoms and balance on one leg to put them on <span style="color:lightcoral">when you suddenly feel your leg buckle!</span> You try to adjust your balance to avoid falling, but it is already too late as you find yourself tumbling backward. You close your eyes and brace for impact when you are suddenly caught from behind only a foot from the ground. <span style="color:Pink">You open your eyes and see <span style="color:DarkTurquoise">Felix</span> standing there in just his $FelixUndies.Type, having just barely caught you in time.</span><br>
+
+<<set _ad to [
+	{
+		Name: "Felix",
+		State: {
+			Blush: 1,
+			Mouth: "Happy",
+			Outfit: "Undies",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Having trouble?”</span> <span style="color:DarkTurquoise">Felix</span> smiles as you give an embarrassed chuckle. <span style="color:Pink">Being held by <span style="color:DarkTurquoise">Felix</span> like this with you both in your underwear was embarrassing, but he just seemed to find the situation funny.</span> He helps you back up to your feet and hands you your bottoms, which you had tossed aside as you fell. You thank him and he gives you a big smile before returning to getting dressed.<br>
+<<socialChange "Felix" 3>>
+
+
+/* NUDE */
+<<else>>
+You then grab your bottoms and balance on one leg to put them on <span style="color:lightcoral">when you suddenly feel your leg buckle!</span> You reach out in a desperate attempt to save yourself but are unable to stop your tumble as you fall backward out of the curtain. You close your eyes and brace for impact when you are suddenly caught from behind only a foot from the ground. <span style="color:Pink">You open your eyes and see <span style="color:DarkTurquoise">Felix</span> standing there in just his $FelixUndies.Type, having just barely caught you in time.</span><br>
+
+<<set _ad to [
+	{
+		Name: "Felix",
+		State: {
+			Blush: 2,
+			Mouth: "Happy",
+			Outfit: "Undies",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Having trouble?”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Felix</span> chuckles, before he looks at your body briefly and smiles, blushing slightly. You are confused for a moment before you look down and realize you are still completely naked! Your $Player.PenisSize Penis sitting in clear view of <span style="color:DarkTurquoise">Felix</span> and anyone else who’d be looking.</span> You let out an embarrassed squeal and quickly cover your privates with your hands as <span style="color:DarkTurquoise">Felix</span> helps you back to your feet. You then quickly dive back behind the curtain to protect what little dignity you have left and pop your head out, now bright red from embarrassment. <span style="color:DarkTurquoise">Felix</span> can only laugh at your misfortune.<br>
+<br>
+<span style="color:LightSteelBlue">“The boys here are so shy about their bodies.”</span> <span style="color:Pink">He stretches his arms out, giving you a clearer look at his well-defined body,</span> <span style="color:LightSteelBlue">“Back home we’d all shower in one big room after soccer, everybody saw everybody. But I guess being shy is pretty cute too.”</span> He gives you one last smile before walking away and finishing getting dressed.<br>
+	<<socialChange "Felix" 3>>
+	<<addMoodlet "Seen Naked" 6>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 10 _arousalbs _arousalkink>>
+<</if>>
+
+/* PUTTING ON CLOTHES */
+	<<include"Gym Get Dressed">>
+	[[Continue|School Locker Room]] 
+

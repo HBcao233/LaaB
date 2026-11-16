@@ -1,0 +1,89 @@
+:: THOMAS XAVIER Playground Fight [nobr]
+
+/* OPENING */
+You are hanging out on the playground when you start to hear a large amount of commotion coming from near the picnic tables. You glance over and see <span style="color:DarkTurquoise">Xavier</span>, flanked by about 5 of his followers, confronting <span style="color:DarkTurquoise">Thomas</span>. An argument has broken out, loud enough for you to hear.<br>
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Frown",
+			Eyes: "Mad",
+        },
+    },
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Frown",
+			Eyes: "Mad",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“The phone was in my backpack when we were eating lunch and now it is gone. They saw you snooping around, so just give it to me and we’ll put this all behind us.”</span> <span style="color:DarkTurquoise">Xavier</span> held out his hand, seemingly accusing <span style="color:DarkTurquoise">Thomas</span> of stealing his property.<br>
+<br>
+<span style="color:LightSteelBlue">“I didn’t take your damn phone.”</span> <span style="color:DarkTurquoise">Thomas</span> cursed, attempting to walk away but is stopped by <span style="color:DarkTurquoise">Xavier</span>’s followers. <span style="color:LightSteelBlue">“I was only looking at the backpacks because you self-important dicks left them all over the tables like you own the whole courtyard!”</span><br>
+<br>
+<span style="color:LightSteelBlue">“Please <span style="color:DarkTurquoise">Thomas</span>, you’re making a fool of yourself. We both know this isn’t the first time you’ve been caught stealing.”</span> <span style="color:DarkTurquoise">Xavier</span> took a step forward. <span style="color:lightcoral">It looked like a fight was about to break out!</span><br>
+<br>
+
+<div id=Choice>
+	/* SIDE WITH THOMAS */
+	<<link "Side with Thomas">>
+	<<replace"#Choice">>
+You rush to <span style="color:DarkTurquoise">Thomas</span>’ side and tell <span style="color:DarkTurquoise">Xavier</span> to leave him alone. <span style="color:DarkTurquoise">Xavier</span> looks at you with a raised eyebrow while <span style="color:DarkTurquoise">Thomas</span> tries to push you away, saying he doesn’t need anyone to protect him.<br>
+<br>
+<span style="color:LightSteelBlue">“I’ll leave him alone as soon as he returns my property!”</span> <span style="color:DarkTurquoise">Xavier</span> responds back. Soon, everyone is shouting and yelling back and forth loud enough to attract the attention of <span style="color:DarkTurquoise">Mr. De León</span>, who storms over and breaks up the argument. The two boys are taken to the headmaster to get everything sorted out while the rest of you are told to disperse before he starts handing out detentions.<br>
+	<<socialChange "Thomas" 3>>
+	<<socialChange "Xavier" -3>>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 20>>
+		<br>
+		[[Continue|School Courtyard]] 
+
+
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Thomas</span>
+	<span style="color:Red">-Xavier</span><br>
+	
+	
+	
+	/* SIDE WITH XAVIER */
+	<<link "Side with Xavier">>
+	<<replace"#Choice">>
+You rush between the two boys and ask what is going on. <span style="color:DarkTurquoise">Xavier</span> explains that his phone is missing from his backpack and a few boys saw <span style="color:DarkTurquoise">Thomas</span> sitting around it while drawing. They believe that he stole the phone to pawn it off for cash. You ask <span style="color:DarkTurquoise">Thomas</span> if you could check his backpack, just to clear up the misunderstanding, but he holds his ground and refuses to let himself be treated like a criminal.<br>
+<br> 
+Soon, everyone is shouting and yelling back and forth loud enough to attract the attention of <span style="color:DarkTurquoise">Mr. De León</span>, who storms over and breaks up the argument. The two boys are taken to the headmaster to get everything sorted out while the rest of you are told to disperse before he starts handing out detentions.<br>
+	<<socialChange "Xavier" 3>>
+	<<socialChange "Thomas" -3>>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 20>>
+		<br>
+		[[Continue|School Courtyard]] 
+
+
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Xavier</span>
+	<span style="color:Red">-Thomas</span><br>
+	
+	
+	
+	/* STAY OUT OF IT */
+	<<link "Stay out of it<br>">>
+	<<replace"#Choice">>
+You decide to stay out of it and let the two boys deal with it themselves. It isn’t long before the yelling grows louder and it looks like a fight is about to break out between the two of them! Thankfully, right before things get physical, <span style="color:DarkTurquoise">Mr. De León</span> runs over and manages to break it up. <span style="color:DarkTurquoise">Thomas</span> and <span style="color:DarkTurquoise">Xavier</span> are hauled off to the headmaster to get everything sorted out.<br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 20>>
+		<br>
+		[[Continue|School Courtyard]] 
+
+
+
+	<</replace>>
+	<</link>>
+</div>

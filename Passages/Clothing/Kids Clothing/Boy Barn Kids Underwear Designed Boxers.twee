@@ -1,0 +1,128 @@
+:: Boy Barn Kids Underwear Designed Boxers [nobr]
+
+<span style="color:Azure"><strong>-Designed Boxers ($5)-</strong></span><br>
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADOver to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADWaist to $None>>
+    <<set $ADNeck to $None>>
+
+    <<if $ShopColor == "Flames">>
+    	<<set $ADUndies to $KidsFlameBoxers>>
+    <<elseif $ShopColor == "Black Pink Hearts">>
+    	<<set $ADUndies to $KidsBlackPinkHeartBoxers>>
+    <<elseif $ShopColor == "Black Red Hearts">>
+    	<<set $ADUndies to $KidsBlackRedHeartBoxers>>
+    <<elseif $ShopColor == "Black White Hearts">>
+    	<<set $ADUndies to $KidsBlackWhiteHeartBoxers>>
+    <<elseif $ShopColor == "Pink Pink Hearts">>
+    	<<set $ADUndies to $KidsPinkPinkHeartBoxers>>
+    <<elseif $ShopColor == "Pink Red Hearts">>
+    	<<set $ADUndies to $KidsPinkRedHeartBoxers>>
+    <<elseif $ShopColor == "Pink White Hearts">>
+    	<<set $ADUndies to $KidsPinkWhiteHeartBoxers>>
+    <<elseif $ShopColor == "White Pink Hearts">>
+    	<<set $ADUndies to $KidsWhitePinkHeartBoxers>>
+    <<elseif $ShopColor == "White Red Hearts">>
+    	<<set $ADUndies to $KidsWhiteRedHeartBoxers>>
+    <</if>>
+    
+<<include"Kid Avatar Display">>
+<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+<br>
+<<set _random to random(1, 6)>>
+<<if _random == 1>>
+    <span style="color:LightSteelBlue">“Trying these on in front of you is kinda embarrassing.”</span>
+<<elseif _random == 2>>
+    <span style="color:LightSteelBlue">“Why are you smiling at me like that?”</span>
+<<elseif _random == 5>>
+    <span style="color:LightSteelBlue">“These are kinda cool. And they fit nice.”</span>
+<<elseif _random == 4>>
+    <span style="color:LightSteelBlue">“So? How do I look?”</span>
+<<elseif _random == 5>>
+    <span style="color:LightSteelBlue">“Keep the door shut! I don’t want anyone to see me!”</span>
+<<elseif _random == 6>>
+    <span style="color:LightSteelBlue">“Do you think I look good in these?”</span>
+<</if>><br>
+<br>
+
+<strong>Boxers:</strong><br>
+	<<link [img["Images/Equipment/Designed Boxers/Flame Boxers.png"]]>>
+    	<<set $ShopColor to "Flames">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Equipment/Designed Boxers/Black Pink Heart Boxers.png"]]>>
+    	<<set $ShopColor to "Black Pink Hearts">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Equipment/Designed Boxers/Black Red Heart Boxers.png"]]>>
+    	<<set $ShopColor to "Black Red Hearts">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Equipment/Designed Boxers/Black White Heart Boxers.png"]]>>
+    	<<set $ShopColor to "Black White Hearts">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Equipment/Designed Boxers/Pink Pink Heart Boxers.png"]]>>
+    	<<set $ShopColor to "Pink Pink Hearts">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Equipment/Designed Boxers/Pink Red Heart Boxers.png"]]>>
+    	<<set $ShopColor to "Pink Red Hearts">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Equipment/Designed Boxers/Pink White Heart Boxers.png"]]>>
+    	<<set $ShopColor to "Pink White Hearts">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Equipment/Designed Boxers/White Pink Heart Boxers.png"]]>>
+    	<<set $ShopColor to "White Pink Hearts">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Equipment/Designed Boxers/White Red Heart Boxers.png"]]>>
+    	<<set $ShopColor to "White Red Hearts">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+    <br>
+
+	/* PURCHASE */
+<<if $Money >= 5>>
+	<<link "Purchase ($5)">>
+    <<if $ShopColor == "Flames">>
+    	<<set $NoahInClosetUndies.push($KidsFlameBoxers)>>
+    <<elseif $ShopColor == "Black Pink Hearts">>
+    	<<set $NoahInClosetUndies.push($KidsBlackPinkHeartBoxers)>>
+    <<elseif $ShopColor == "Black Red Heart">>
+    	<<set $NoahInClosetUndies.push($KidsBlackRedHeartBoxers)>>
+    <<elseif $ShopColor == "Black White Heart">>
+    	<<set $NoahInClosetUndies.push($KidsBlackWhiteHeartBoxers)>>
+    <<elseif $ShopColor == "Pink Pink Heart">>
+    	<<set $NoahInClosetUndies.push($KidsPinkPinkHeartBoxers)>>
+    <<elseif $ShopColor == "Pink Red Heart">>
+    	<<set $NoahInClosetUndies.push($KidsPinkRedHeartBoxers)>>
+    <<elseif $ShopColor == "Pink White Heart">>
+    	<<set $NoahInClosetUndies.push($KidsPinkWhiteHeartBoxers)>>
+    <<elseif $ShopColor == "White Pink Heart">>
+    	<<set $NoahInClosetUndies.push($KidsWhitePinkHeartBoxers)>>
+    <<elseif $ShopColor == "White Red Heart">>
+    	<<set $NoahInClosetUndies.push($KidsWhiteRedHeartBoxers)>>
+    <</if>>
+        <<set $Money -= 5>>
+        <<goto "Kids Boy Barn">>
+    <</link>>
+<<else>>
+	<span style="color:Lightcoral">Purchase ($5)</span>
+<</if>>

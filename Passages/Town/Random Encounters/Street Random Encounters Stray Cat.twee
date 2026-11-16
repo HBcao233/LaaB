@@ -1,0 +1,118 @@
+:: Street Random Encounters Stray Cat [nobr]
+
+/* Written by: -AN */
+/* Intro */
+
+Your eyes passively wander to various buildings, and houses as you navigate the streets, you’re not looking for anything in particular, just enjoying the sights. <br>
+<br>
+<span style="color:Yellow">You pass by a brick fence and come to a stop when you suddenly spot a tabby cat perched atop one of its corners.</span> It seems to have noticed you, but you’re not close enough that it focuses solely on you. Its ears twitch occasionally as it moves its head, slowly observing its surroundings. <br>
+<br>
+Seeing a cat like this isn’t an uncommon sight, yet, you still find your attention drawn to the cute creature as it lazily watches its domain. <span style="color:Yellow">You begin wondering if it might be friendly enough to pet if you approach it carefully.</span> <br>
+<br>
+
+<div id="choice">
+/*Try to pet it*/
+    <<link "Try to pet it<br>">>
+     <<replace "#choice">>
+
+    <<set _random to random(1, 2)>>
+    <<if _random == 1>>
+        /*Success */
+        You slowly approach the cat’s perch and click your tongue at the cat to get its attention. It quickly faces you and begins watching you intently, green eyes tracking your every move. It’s likely to run away if you get any closer, so you change tactics and begin whispering at it and beckoning with various hand motions and gestures. The cat remains seated despite your attempts, but you keep trying. <br>
+        <br>
+        <span style="color:Yellow">Just as you’re about to give up and carry on, the cat suddenly rises from its position and jumps down to the ground. It lets out an almost inquisitive meow and gradually walks towards you.</span> It initially flinches when you extend a hand towards its head, but then slowly leans in and begins sniffing your fingers. <br>
+        <br>
+        <span style="color:LightGreen">The cat begins rubbing its head and cheeks on your hand, which is all the invitation you need to begin stroking its head. As you gently scratch around its ears, you note how incredibly soft its fur is. The tabby clearly enjoys the sensations and leans into all of your strokes and scratches, you can both feel and hear it purring.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    },
+                },
+            ]>>
+        <<ad _ad>>
+
+        <span style="color:LightGreen">Several minutes and a thorough petting later, you give the affectionate cat one last stroke before continuing on your way.</span> <br>
+
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 5>> 
+        <br>
+        /*{End}*/
+        <<if $Location.Name == "Northend">>
+            [[Continue|Northend]]
+        <<elseif $Location.Name == "Dellwood Street">>
+            [[Continue|Dellwood Street]]
+        <<else>>
+            [[Continue|Wald Street]]
+        <</if>>
+
+    <<elseif _random == 2>>
+    /*Fail*/
+
+        You slowly approach the cat’s perch and click your tongue at the cat to get its attention. It quickly faces you and begins watching you intently, green eyes tracking your every move. It’s likely to run away if you get any closer, so you change tactics and begin whispering at it and beckoning with various hand motions and gestures. The cat remains seated despite your attempts, but you keep trying. <br>
+        <br>
+        <span style="color:Yellow">Just as you’re about to give up and carry on, the cat suddenly rises from its position and jumps down to the ground. It lets out an almost inquisitive meow and gradually walks towards you.</span> It initially flinches when you extend a hand towards its head, but then slowly leans in and begins sniffing your fingers. <br>
+        <br>
+        <span style="color:LightCoral">Suddenly, the cat raises its paw and quickly swipes at your hand! You feel a claw raked across your skin, and a stinging pain immediately follows. The cat scurries off at the same time you reflexively pull away your hand.</span> <br>
+
+            <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        You sigh in relief seeing the scratch wound is minor and only really hurts. There’s no reason to linger here anymore, so you decide it’s time to go. You feel a strange mix of disappointment and frustration as you leave the area. <br>
+
+        <<addMoodlet "Stress" 1>>
+        <<addMoodlet "Pained" 3>>
+        <br>
+            /*{End}*/
+            <<if $Location.Name == "Northend">>
+                [[Continue|Northend]]
+            <<elseif $Location.Name == "Dellwood Street">>
+                [[Continue|Dellwood Street]]
+            <<elseif $Location.Name == "Wald Street">>
+                [[Continue|Wald Street]]
+            <</if>>
+        <</if>>
+<</replace>>
+<</link>>
+
+/*Just watch*/
+    <<link "Just watch">>
+     <<replace "#choice">>
+        You’re content to just watch the cat at a distance for a little bit. <span style="color:LightGreen">Despite the cat not really doing anything, there’s still just something endearing about its aloof demeanor. It just sits on its perch seemingly without a care in the world, it almost makes you jealous.</span> <br>
+        <br>
+        The cat begins grooming itself, starting by licking its front paws and rubbing them over its face. It’s very thorough, and later on splays out the toes of its back legs, meticulously licking between each one. After a few more licks, the cat yawns and stands up stretching in a drawn-out manner. Moments later, it jumps down the other side of the fence out of view. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        With the cat gone, you decide it’s time to head out. <span style="color:LightGreen">Though it was such a simple thing, you leave feeling entertained by the cute sight.</span> <br>
+        <<needChange "Fun" 5>>
+        <br>
+            /*{End}*/
+        <<if $Location.Name == "Northend">>
+            [[Continue|Northend]]
+        <<elseif $Location.Name == "Dellwood Street">>
+            [[Continue|Dellwood Street]]
+        <<elseif $Location.Name == "Wald Street">>
+            [[Continue|Wald Street]]
+        <</if>>
+<</replace>>
+<</link>>
+</div>

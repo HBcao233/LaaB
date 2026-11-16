@@ -1,0 +1,51 @@
+:: Pool Splash Around [nobr]
+
+<<set $Minutes += 10>>
+
+/* MATURE */
+<<if $Player.Traits.includes("Mature")>>
+You decide to try and relax in the shallow area of the pool, rather than the deeper parts. <span style="color:lightcoral">You try splashing around and floating, but overall find it to be a rather childish pastime that you get no enjoyment out of due to your more mature nature.</span><br>
+<br>
+[[Continue|Pool Shallow]]
+/* CHILDISH */
+<<elseif $Player.Traits.includes("Childish")>>
+    <<set _random to random(1, 3)>>
+
+/* RANDOM CHANCE */
+<<if _random == 1>>
+Deciding to relax in the shallow area rather than the deeper parts of the pool. As you are enjoying yourself, you are suddenly tumbled into from behind by a small body. You manage to hold your footing, but the loud splash indicates that whoever fell into you didn’t. You turn around to see a very young boy, couldn’t be more than 5, in the water giggling.<br>
+<br>
+<span style="color:LightSteelBlue">“Sowry!”</span> He apologies as you help him up, <span style="color:LightSteelBlue">“It’s slippery! Bye!”</span> The boy didn’t seem to be much of a conversationalist as he wades back over to his family. <span style="color:pink">As he leaves, you notice that the back of his dinosaur trunks had slipped down, giving you a perfect look at his shiny, cute little booty as he waddled away.</span><br>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|Pool Shallow]]
+
+<<else>>
+Deciding to relax in the shallow area rather than the deeper parts of the pool. Splashing around and practicing floating in the less deep water provides a fun and relaxing experience! You even play some fun, Childish games on your own and have a great time!<br>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|Pool Shallow]]
+
+<</if>>
+/* NORMAL */
+<<else>>
+    <<set _random to random(1, 3)>>
+
+/* RANDOM CHANCE */
+<<if _random == 1>>
+Deciding to relax in the shallow area rather than the deeper parts of the pool. As you are enjoying yourself, you are suddenly tumbled into from behind by a small body. You manage to hold your footing, but the loud splash indicates that whoever fell into you didn’t. You turn around to see a very young boy, couldn’t be more than 5, in the water giggling.<br>
+<br>
+<span style="color:LightSteelBlue">“Sowry!”</span> He apologies as you help him up, <span style="color:LightSteelBlue">“It’s slippery! Bye!”</span> The boy didn’t seem to be much of a conversationalist as he wades back over to his family. <span style="color:pink">As he leaves, you notice that the back of his dinosaur trunks had slipped down, giving you a perfect look at his shiny, cute little booty as he waddled away.</span><br>
+<<needChange "Fun" 5>>
+<br>
+[[Continue|Pool Shallow]]
+
+<<else>>
+Deciding to relax in the shallow area rather than the deeper parts of the pool. Splashing around and practicing floating in the less deep water provides a fun and relaxing experience!<br>
+<<needChange "Fun" 5>>
+<br>
+[[Continue|Pool Shallow]]
+
+<</if>>
+
+<</if>>

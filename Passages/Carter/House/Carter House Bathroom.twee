@@ -1,0 +1,45 @@
+:: Carter House Bathroom [nobr]
+
+<<set $Location to {
+    Name: "Carter Bathroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 1,
+    Public: 0,
+    Environment: "Bathroom",
+}>>
+<span style="color:Azure"><big><strong>--Carter's Living Room--</strong></big></span><br>
+
+You stand in <span style="color:DarkTurquoise">Carter</span>’s bathroom. Your friend sits outside in the living room. The bathroom is blue in color, with a large bath-shower combo. Despite being used by multiple boys of various ages, it seems pretty well cleaned.<br>
+<br>
+
+<<set _ad to [
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+<<ad _ad>>
+
+<strong>Carter: </strong><<include"NPC Hang Out Modifiers">><br>
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Pee (0:02)|Carter House Normal Pee]] <span style="color:Green">-Bladder</span><br>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+[[Living Room (0:01)|Carter House Living Room][$Minutes += 1]] <br>
+
+<br>
+
+<br>
+<div style="position: relative">
+<img src="Images\NPC Homes\Carter House\Carter House Map.png" alt="Carter House Base" usemap="#CarterHouse">
+	<img src="Images\Player House\Player House Room Marker.png" 
+style="position: absolute; left: 162px; top: 0px"  alt="Carter House" usemap="#CarterHouse">
+</div>
+<map name="CarterHouse">
+    <area shape="rect" coords="166,54,215,161" alt="Living Room" onclick="$.wiki('<<goto[[Carter House Living Room]]>><<set $Minutes += 1>>')" />
+</map>

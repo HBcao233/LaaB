@@ -1,0 +1,127 @@
+:: CARTER Equipment [nobr]
+
+
+/* Resetting */
+<<set $CarterUnder to $None>>
+
+/* UNDERWEAR SELECTION */
+<<set $CarterRandomUndies to random(1, 6)>>
+<<if $CarterRandomUndies == 1>>
+	<<addClothing "Temp" "Undies" "Styled Briefs" "Blue Ultraman">>
+	<<set $CarterUndies to _clothingtemp>>
+<<elseif $CarterRandomUndies == 2>>
+	<<addClothing "Temp" "Undies" "Styled Briefs" "Red Ultraman">>
+	<<set $CarterUndies to _clothingtemp>>
+<<elseif $CarterRandomUndies == 3>>
+	<<addClothing "Temp" "Undies" "Styled Briefs" "Green Camo">>
+	<<set $CarterUndies to _clothingtemp>>
+<<elseif $CarterRandomUndies == 4>>
+	<<addClothing "Temp" "Undies" "Styled Briefs" "Owlman">>
+	<<set $CarterUndies to _clothingtemp>>
+<<elseif $CarterRandomUndies == 5>>
+	<<addClothing "Temp" "Undies" "Styled Briefs" "Red Camo">>
+	<<set $CarterUndies to _clothingtemp>>
+<<elseif $CarterRandomUndies == 6>>
+	<<addClothing "Temp" "Undies" "Styled Briefs" "Blue Camo">>
+	<<set $CarterUndies to _clothingtemp>>
+<</if>>
+
+/* SHOES/SOCKS SELECTION */
+<<addClothing "Temp" "Shoes" "Classmates" "Carter">>
+<<set $CarterShoes to _clothingtemp>>
+<<addClothing "Temp" "Socks" "Classmates" "Carter">>
+<<set $CarterSocks to _clothingtemp>>
+		
+/* PAJAMA SELECTION */
+<<set $CarterPJs to "Blue Superhero Onsie">>
+
+/* EVERYDAY SELECTION */
+<<if $NPCClothingSet == "Rain">>
+	<<set $CarterRandomTop to random(1, 2)>>
+	<<set $CarterRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Designed Designer Hoodie" "Heroic">>
+	<<set $CarterOuter to _clothingtemp>>
+	<<if $CarterRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Designed Shirt" "White Ultraman">>
+		<<set $CarterTop to _clothingtemp>>
+	<<elseif $CarterRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Designed Shirt" "Blue Ultraman">>
+		<<set $CarterTop to _clothingtemp>>
+	<</if>>
+	<<if $CarterRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Jeans" "Blue Denim">>
+		<<set $CarterBottoms to _clothingtemp>>
+	<<elseif $CarterRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Jeans" "Denim">>
+		<<set $CarterBottoms to _clothingtemp>>
+	<</if>>
+<<elseif $NPCClothingSet == "Temperate">>
+	<<set $CarterRandomTop to random(1, 2)>>
+	<<set $CarterRandomBottoms to random(1, 2)>>
+	<<set $CarterOuter to $None>>
+	<<if $CarterRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Designed Shirt" "Blue Ultraman">>
+		<<set $CarterTop to _clothingtemp>>
+	<<elseif $CarterRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Classmates" "Carter">>
+		<<set $CarterTop to _clothingtemp>>
+		<<addClothing "Temp" "Under" "Classmates" "Carter">>
+		<<set $CarterUnder to _clothingtemp>>
+	<</if>>
+	<<if $CarterRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Carter">>
+		<<set $CarterBottoms to _clothingtemp>>
+	<<elseif $CarterRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Carter">>
+		<<set $CarterBottoms to _clothingtemp>>
+	<</if>>
+<<elseif $NPCClothingSet == "Warm">>
+	<<set $CarterRandomTop to random(1, 2)>>
+	<<set $CarterRandomBottoms to random(1, 2)>>
+	<<set $CarterOuter to $None>>
+	<<if $CarterRandomTop == 1>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Yellow">>
+		<<set $CarterTop to _clothingtemp>>
+	<<elseif $CarterRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Classmates" "Carter">>
+		<<set $CarterTop to _clothingtemp>>
+	<</if>>
+	<<if $CarterRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Carter">>
+		<<set $CarterBottoms to _clothingtemp>>
+	<<elseif $CarterRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Carter">>
+		<<set $CarterBottoms to _clothingtemp>>
+	<</if>>
+<<else>>
+	<<set $CarterRandomTop to random(1, 2)>>
+	<<set $CarterRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Designed Designer Hoodie" "Heroic">>
+	<<set $CarterOuter to _clothingtemp>>
+	<<if $CarterRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Designed Shirt" "Blue Ultraman">>
+		<<set $CarterTop to _clothingtemp>>
+	<<elseif $CarterRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Classmates" "Carter">>
+		<<set $CarterTop to _clothingtemp>>
+		<<addClothing "Temp" "Under" "Classmates" "Carter">>
+		<<set $CarterUnder to _clothingtemp>>
+	<</if>>
+	<<if $CarterRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Jeans" "Blue Denim">>
+		<<set $CarterBottoms to _clothingtemp>>
+	<<elseif $CarterRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Jeans" "Light Denim">>
+		<<set $CarterBottoms to _clothingtemp>>
+	<</if>>
+<</if>>
+
+/* CARTER BANDAGES RANDOM */
+<<set $CarterBandaidLeftKnee to random(1, 2)>>
+<<set $CarterBandaidRightKnee to random(1, 2)>>
+<<set $CarterBandaidLeftArm to random(1, 5)>>
+<<set $CarterBandaidRightArm to random(1, 5)>>
+<<set $CarterBandaidLeftCheek to random(1, 7)>>
+<<set $CarterBandaidRightCheek to random(1, 7)>>
+<<set $CarterBandaidLeftNipple to random(1, 10)>>
+<<set $CarterBandaidRightNipple to random(1, 10)>>

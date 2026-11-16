@@ -1,0 +1,37 @@
+:: Arcade Games Racing Basic [nobr]
+
+<<set $Minutes += 20>>
+<<set $Money -= 1>>
+
+Browsing the large collection of games and activities that fill the arcade, your eyes spot the collection of large racing games. Built with a moveable cockpit to fully immerse the player, Fonz Sunset was the racing game that everyone was talking about. Seeing as an entire prix of 3 races was only a dollar, you decide to strap in and see if you have a need for speed. <br>
+<br>
+Your knowledge of cars is lacking, though the display of different stats and speeds allow you to select something that you think will perform well. You even get the car in your favorite color and select which grand prix you’d like to play. Once selected, the countdown begins and you smirk and strap in as the starting horn chimes, all the cars taking off at incredible speeds! <br>
+<br>
+The first race is smooth, a point-to-point race in the city with minimal turns and lots of long stretches where the speed of your car shines. <span style="color:lightgreen">You hardly even need to try to get first place!</span> You can’t help but roll your eyes at the AI in last place, who were randomly given off-road vehicles whose tires were wholly unprepared for the roads of the city. <br>
+<br>
+<<set _Random to random(1, 2)>>
+<div id=choice>
+	<<link "Continue">>
+	<<replace"#choice">>
+        /* Victory */
+        <<if _Random == 1>>
+            But the next race proves to be a struggle, an off-road race. <span style="color:lightgreen">Thankfully, the car you picked had some off-roading capability, even if it wasn’t the best.</span> Despite this setback, your skill and luck are able to keep you in the running and you finish in the top 5, leaving you in a great position to win the entire prix. <br>
+            <br>
+            The final race was a mix of off-roading and on-roading, which mixed something your car was good at with something your car was great at! Your choice of vehicle really proved to be a boon, as you are able to keep a consistent pace as you battle with two other properly suited cars for the gold. Sadly, in the end, you get second. <span style="color:lightgreen">However, that is enough to get you enough points to finish the prix in first place and you fist bump the air in celebration as the music of victory blares from your machine!</span> <br>
+            <<needChange "Fun" 25>>
+            <br>
+            [[Continue|Arcade]]
+
+        /* Defeat */
+        <<else>>
+            <span style="color:lightcoral">However, in the next race, you are forced to eat your words. An off-road dirt track. While your car was perfect for street races, in fact too perfect, it was useless off-roading.</span> As soon as you hit the dirt your speed is cut in half and you find yourself losing positions faster than you could count. You tried your damnest to gain speed on the small parts of the track with paved roads, but it did little to offset the large amount of slowing dirt. You even get your car stuck in the mud at one point and are forced to respawn in order to continue. <br>
+            <br>
+            <span style="color:lightcoral">In the end, you are left in last place, which brings you down in the rankings for the overall prix.</span> The final race goes better, having a larger mix of paved roads for you to gain speed on, but your turning sinks any chances of you placing in the top 3 and in the end, you finish 6th in the race and 4th in the overall prix. <span style="color:lightcoral">Not an embarrassing defeat, but still a defeat.</span> <br>
+            <<needChange "Fun" 20>>
+            <br>
+            [[Continue|Arcade]]
+
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

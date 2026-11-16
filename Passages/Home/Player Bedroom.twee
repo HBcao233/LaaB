@@ -1,0 +1,448 @@
+:: Player Bedroom [nobr]
+
+<<include"Toggle Setting Confirm">>
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Player Bedroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 1,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+
+<<if $ActiveQuests.includes("Laser Pointer") && random(1, 10) == 1>>
+	<<include"Bedroom Laser Pointer">>
+<<else>>
+	<<if $Sleeping>>
+		<<include "Dream Modifier Add">>
+		<<set $Sleeping to 0>>
+	<</if>>
+	<span style="color:Azure"><big><strong>--Your Bedroom--</strong></big></span><br>
+
+	You stand in your modest-sized bedroom. 
+	/* Walls */
+	<<if $PlayerBedroom.WallStyle == "Paint">>
+		Your walls are painted a nice $PlayerBedroom.WallColor and 
+	<<else>>
+		Your walls a covered in a nice wallpaper featuring $PlayerBedroom.WallColor and 
+	<</if>>
+	/* Posters */
+	<<if $PlayerBedroom.Posters.length == 0>>
+		are pretty bare, lacking posters, photos, or anything else on them. 
+	<<elseif $PlayerBedroom.Posters.length == 1>>
+		is decorated with a single $PlayerBedroom.Posters. 
+	<<else>>
+		is decorated with many things, including: $PlayerBedroom.Posters. 
+	<</if>>
+	/* Rug */
+	<<if $PlayerBedroom.Rug != "None">>
+		The center of yor floor is covered by a $PlayerBedroom.Rug, which lies atop your 
+	<<else>>
+		Beneath your feet is your 
+	<</if>>
+	/* Floor */
+	<<if $PlayerBedroom.FloorStyle == "Carpet">>
+		$PlayerBedroom.FloorColor carpet. 
+	<<else>>
+		$PlayerBedroom.FloorColor hardwood floor. 
+	<</if>>
+	In one corner, facing your $PlayerBedroom.DoorColor door is your twin bed, which is covered in $PlayerBedroom.BedSpread sheets and a blanket. Opposite that is your wardrobe and a mirror with a shelf next to it that
+	/* Shelf */
+	<<if $PlayerBedroom.Shelves.length == 0>>
+		lies empty outside of gathering dust. 
+	<<elseif $PlayerBedroom.Shelves.length < 4>>
+		has a few keepsakes on it. 
+	<<else>>
+		is full of keepsakes and collectables. 
+	<</if>>
+
+	/* Room Clean */
+	<<if $PlayerBedroom.Clean == 0>>
+		<span style="color:lightgreen">Your bedroom is clean and tidy.</span>
+	<<else>>
+		<span style="color:yellow">Your bedroom is a bit of a mess, with toys and clothes spewn about.</span>
+	<</if>>
+	<br><br>
+
+	/* Bedroom Background */
+	<<if $bedroomOpen>>
+		<<link "▼ Hide Bedroom">>
+			<<set $bedroomOpen = false>>
+			<<goto "Player Bedroom">>
+		<</link>>
+
+		<<include "Player's Bedroom Background">>
+
+		[[Beta Edit Button|Player's Bedroom Background Edit]]
+
+	<<else>>
+		<<link "▶ View Bedroom">>
+			<<set $bedroomOpen = true>>
+			<<goto "Player Bedroom">>
+		<</link>>
+	<</if>>
+	<br>
+
+	/* NPC SEEN 
+	<<include "NPC Inspect">> */
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $Time.after(19) or $Time.before(4)>>
+<<link "Sleep until recovered" "Sleep">><<set $AlarmClock.Set to false>><</link>> <span style="color:green">+Energy</span><br>
+<<link "Sleep until Alarm" "Sleep">><<set $AlarmClock.Set to true>><</link>>
+<<listbox "$AlarmClock.Hour" autoselect>>
+<<option "1 AM" 1>>
+<<option "2 AM" 2>>
+<<option "3 AM" 3>>
+<<option "4 AM" 4>>
+<<option "5 AM" 5>>
+<<option "6 AM" 6>>
+<<option "7 AM" 7>>
+<<option "8 AM" 8>>
+<<option "9 AM" 9>>
+<<option "10 AM" 10>>
+<<option "11 AM" 11>>
+<<option "12 PM" 12>>
+<</listbox>>
+<<listbox "$AlarmClock.Minute" autoselect>>
+<<option "00" 0>>
+<<option "05" 5>>
+<<option "10" 10>>
+<<option "15" 15>>
+<<option "20" 20>>
+<<option "25" 25>>
+<<option "30" 30>>
+<<option "35" 35>>
+<<option "40" 40>>
+<<option "45" 45>>
+<<option "50" 50>>
+<<option "55" 55>>
+<</listbox>> 
+<span style="color:green">+Energy</span><br>
+<</if>>
+
+<div id="listboxdiv" style="margin-top: 8px;">
+<<link "Rest">>
+	<<set $Rest to _restTrigger>>
+	<<if $Rest == "Nap">>
+		<<set _random to ["Bedroom Nap Floating Island", "Bedroom Nap Math Underwear", "Bedroom Nap Hedge"]>>
+		<<if $Player.Bladder < 60>>
+			<<set _random.push("Bedroom Nap Have to Pee")>>
+		<</if>>
+		<<set _event to _random.random()>>
+		<<goto _event>>
+	<<elseif $Rest == "Day Dream">>
+		<<set _random to ["Bedroom Daydream Parkour", "Bedroom Daydream Monster Attack"]>>
+		<<set _event to _random.random()>>
+		<<goto _event>>
+	<</if>>
+<</link>>
+<<listbox "_restTrigger">>
+	<<option "Nap (1:00)" "Nap">>
+	<<option "Daydream (0:30)" "Day Dream">>
+<</listbox>>
+<span style="color:green">+Energy, -Stress</span>
+</div>
+<div id="listboxdiv">
+<<link "Play">>
+	<<if _playTrigger != "any">>
+		<<set $playTrigger to _playTrigger>>
+	<<else>>
+		<<set $playTrigger to ["toys","pretend"].random()>>
+	<</if>>
+	<<if $playTrigger == "toys">>
+		<<goto "Play in Room">>
+	<<elseif $playTrigger == "pretend">>
+		<<set _random to ["Bedroom Play Pretend Pose in Mirror", "Bedroom Play Pretend Racecar Driver", "Bedroom Play Pretend Gladiator"]>>
+		<<set _event to _random.random()>>
+		<<goto _event>>
+	<<elseif $playTrigger == "hang">>
+		<<set _random to ["Bedroom Hang Out Jump on Bed", "Bedroom Hang Out Ball Toss", "Bedroom Hang Out Jump on Bed2"]>>
+		<<if ["Raining", "Sprinkling", "Pouring"].includes($Weather)>>
+			<<set _random.push("Bedroom Hang Out Raindrop Race")>>
+		<</if>>
+		<<set _event to _random.random()>>
+		<<goto _event>>
+	<</if>>
+<</link>>
+<<listbox "_playTrigger">>
+	<<option "Play with toys (0:30)" "toys">>
+	<<option "Play pretend (0:30)" "pretend">>
+	<<option "Hang out (0:30)" "hang">>
+	<<option "Play Anything N/A" "any">>
+<</listbox>>
+<span style="color:green">+Fun</span><br>
+</div>
+<div id="listboxdiv">
+<<link "Read">>
+	<<set $readTrigger to _readTrigger>>
+	<<if $readTrigger == "book">>
+		<<script>>
+			Dialog.setup("Player Bedroom Read Book", "Player Bedroom Read Book");
+			Dialog.wiki(Story.get("Player Bedroom Read Book").processText());
+			Dialog.open();
+		<</script>>
+	<<elseif $readTrigger == "comic">>
+		<<script>>
+			Dialog.setup("Player Bedroom Read Comic", "Player Bedroom Read Comic");
+			Dialog.wiki(Story.get("Player Bedroom Read Comic").processText());
+			Dialog.open();
+		<</script>>
+	<<elseif _readTrigger == "any">>
+		<<set _readAny to ["Read Master of the Amulet: The Guildship", "Read The Hungry Worm", "Read Owlman: Knight of Revengeance", "Read Ultraman: Boy of Tomorrow", "Read Arachnikid vs the Sucky Six"].random()>>
+		<<goto _readAny>>
+	<</if>>
+<</link>>
+<<listbox "_readTrigger">>
+	<<option "Read a book (1:00)" "book">>
+	<<option "Read a comic (00:30)" "comic">>
+	<<option "Read Anything (00:30 - 01:00)" "any">>
+<</listbox>>
+<span style="color:green">+Fun</span>
+</div>
+<div id="listboxdiv">
+/* Chores:
+
+<<listbox "_choresTrigger">>
+<<option "WIP" "WIP">>
+<</listbox>> */
+/* WIP options and Go button
+<<option "Study N/A" "study">>
+<<option "Clean N/A" "clean">>
+<<option "Do homework N/A" "hmwk">>
+<<link "Go">>
+<<set $choresTrigger to _choresTrigger>>
+<<if $choresTrigger == "">>
+
+<</if>>
+<</link>> */
+<<if $PBedroom.BedMessy == 1>>
+[[Make Bed (0:01)|Player Bedroom][$PBedroom.BedMessy to 0;$Minutes += 1]]
+<</if>>
+<<if $PBedroom.Messy > 0>>
+[[Clean Room (0:10)|Player Bedroom][$PBedroom.Messy to 0;$Minutes += 10]]
+<</if>>
+</div>
+<div id="listboxdiv">
+<<link "Lewd">>
+	<<set $lewdTrigger to _lewdTrigger>>
+	<<if $lewdTrigger == "fap">>
+		<<set $MasturbationLocation to "Home Bedroom">>
+		<<set $MasturbationPosition to "Standing">>
+		<<set $MasturbationAction to "None">>
+		<<set $MasturbationPublic to 0>>
+		<<include"Character Save Clothes">>
+		<<goto "Player Masturbate">>
+	<<elseif $lewdTrigger == "IML">>
+		<<goto "Imagine Lewd Scenarios">>
+	<</if>>
+<</link>>
+<<listbox "_lewdTrigger">>
+	<<option "Masturbate" "fap">>
+	<<option "Imagine Lewd Things (0:30)" "IML">>
+<</listbox>>
+<span style="color:green">+Fun</span><br>
+</div>
+
+	[[Wait (0:05)|Player Bedroom][$Minutes += 5]]<br>
+	<br>
+
+
+	/*<<link"Nap (1:00)">>
+		One event is currently not done. This is:
+			Nap Strange Hedge. It is assigned to someone. 
+		<<set _random to ["Bedroom Nap Floating Island", "Bedroom Nap Math Underwear", "Bedroom Nap Hedge"]>>
+		<<if $Player.Bladder < 60>>
+			<<set _random.push("Bedroom Nap Have to Pee")>>
+		<</if>>
+		<<set _event to _random.random()>>
+		<<goto _event>>
+	<</link>>
+	| 
+	<<link"Day dream (0:30)">>
+		<<set _random to ["Bedroom Daydream Parkour", "Bedroom Daydream Monster Attack"]>>
+		<<set _event to _random.random()>>
+		<<goto _event>>
+	<</link>>
+	| 
+	<<link"Relax (0:15) [N/A]">>
+
+	<</link>>
+	| 
+	<span style="color:green">+Energy, -Stress</span><br>
+
+	<<link"Play with toys">>
+		<<goto "Play in Room">>
+	<</link>>
+	| 
+	<<link"Play pretend">>
+		
+			<<set _random to ["Bedroom Play Pretend Pose in Mirror", "Bedroom Play Pretend Racecar Driver", "Bedroom Play Pretend Gladiator"]>>
+		<<set _event to _random.random()>>
+		<<goto _event>>
+	<</link>>
+	| 
+	<<link"Hang out">>
+		<<set _random to ["Bedroom Hang Out Jump on Bed", "Bedroom Hang Out Ball Toss", "Bedroom Hang Out Jump on Bed2", "Bedroom Hang Out Spin and Fall"]>>
+		<<if ["Raining", "Sprinkling", "Pouring"].includes($Weather)>>
+			<<set _random.push("Bedroom Hang Out Raindrop Race")>>
+		<</if>>
+		<<set _event to _random.random()>>
+		<<goto _event>>
+	<</link>>
+	| 
+	<<link"Play anything [N/A]">>
+
+	<</link>>
+	| 
+	(0:30) <span style="color:green">+Fun</span><br>
+
+	<<link"Read a book">>
+		<<script>>
+			Dialog.setup("Player Bedroom Read Book", "Player Bedroom Read Book");
+			Dialog.wiki(Story.get("Player Bedroom Read Book").processText());
+			Dialog.open();
+		<</script>>
+	<</link>>
+	| 
+	<<link"Read a comic [N/A]">>
+		/* STILL SETTING UP 
+	<</link>>
+	| 
+	<<link"Read anything">>
+		<<set _books to ["Read Master of the Amulet: The Guildship", "Read The Hungry Worm"]>>
+		<<set _scene to _books.random()>>
+		<<goto _scene>>
+	<</link>>
+	| 
+	(0:30-1:00) <span style="color:green">+Fun</span><br>
+
+	/* 
+	[[Play in room (0:30)|Play in Room]]
+	<span style="color:green">+Fun</span><br> 
+
+	<<link"Study [N/A]">>
+
+	<</link>>
+	| 
+	<<link"Clean [N/A]">>
+
+	<</link>>
+	| 
+	<<link"Do homework [N/A]">>
+
+	<</link>><br>
+
+	<<link "Masturbate">>
+		<<set $MasturbationLocation to "Home Bedroom">>
+		<<set $MasturbationPosition to "Standing">>
+		<<set $MasturbationAction to "None">>
+		<<set $MasturbationPublic to 0>>
+		<<include"Character Save Clothes">>
+		<<goto"Player Masturbate">>
+	<</link>>
+	| 
+	<<link"Imagine Lewd Things (0:30)">>
+		<<goto"Imagine Lewd Scenarios">>
+	<</link>>
+	<span style="color:green">+Fun</span><br>
+
+
+	<br>
+
+	[[Wait (0:05)|Player Bedroom][$Minutes += 5]]<br>
+	<br>
+	*/
+
+	<span style="color:Azure"><strong>-Character-</strong></span><br>
+	[[Closet|Home Closet]]<br>
+	[[Mirror|Mirror]]<br>
+
+	<<link "Toybox">>
+		<<script>>
+			Dialog.setup("Player Toybox", "Player Toybox");
+			Dialog.wiki(Story.get("Player Toybox").processText());
+			Dialog.open();
+		<</script>>
+	<</link>><br>
+
+	<<link "Bookshelf">>
+		<<script>>
+			Dialog.setup("Player Bookshelf", "Player Bookshelf");
+			Dialog.wiki(Story.get("Player Bookshelf").processText());
+			Dialog.open();
+		<</script>>
+	<</link>><br>
+
+	<<for _slot range ["Top", "Bottoms", "Shoes"]>>
+		<<scroungeCloset _slot>>
+	<</for>>
+	<br>
+
+	<span style="color:Azure"><strong>-Menus-</strong></span><br>
+	[[Journal|Journal]]<br>
+	[[Attitudes|Attitudes Menu]]<br>
+	/* [[Options Menu]]<br> */
+	<<if $CheatsMenu == 1>>
+		[[Cheats Menu]]<br>
+	<</if>>
+
+	<<if $Debug == 1>>
+		[[Debug Test Menu|Debug Test Menu]]<br>
+	<</if>>
+	<br>
+
+	<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	<<if $Player.Exposed != "Naked">>
+	<<if $LinkTravel == 1>>
+		[[Hallway (0:01)|PH Hallway][$Minutes += 1]] 
+	<</if>>
+	<</if>>
+
+	<<if $Player.Exposed == "Naked">>
+	<<if $Time.before(6) or $Time.after(22)>>
+			[[Sneak out naked|PH Hallway][$Minutes += 1]]
+		<<elseif $HomeDayNudity > 0>>
+			[[Hallway (0:01)|PH Hallway][$Minutes += 1]]
+		<<else>>
+			<span style="color:Red">There's no way you can go out like this!</span><br>
+	<</if>>
+	<</if>>
+	<br>
+
+	<br>
+
+
+	<div style="position: relative">
+		<img src="Images\Player House\Player House Map.png" 
+	style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+		<img src="Images\Player House\Player House Room Marker.png" 
+	style="position: absolute; left: 112px; top: 166px"  alt="School Map" usemap="#PlayerHouse">
+		<<include"NPC Tracking Home">>
+	</div>
+
+	<<if $Player.Exposed != "Naked">>
+	<map name="PlayerHouse">
+	<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+	</map>
+	<<else>>
+
+	<<if $Time.before(6) or $Time.after(22)>>
+			<map name="PlayerHouse">
+	<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+	</map>
+		<<elseif $HomeDayNudity > 0>>
+			<map name="PlayerHouse">
+	<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+	</map>
+	<</if>>
+
+	<</if>>
+<</if>>
+
+:: Player Bedroom style [stylesheet]
+
+#listboxdiv{
+	margin-top: 8px;
+}

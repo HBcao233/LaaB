@@ -1,0 +1,34 @@
+:: Thomas Hang Out First Time [nobr]
+
+Your legs are feeling sore after gym class, so as you wait for the buses to arrive you find a nice big rock in the shade to take a seat. It is only as you sit down and let out a sigh of relief <span style="Color: LightCoral">that you suddenly feel someone is sitting next to you and you jump in surprise.</span> <span style="Color: LightSteelBlue">“What’s wrong with you?”</span> <span style="color:DarkTurquoise">Thomas</span> says, giving you a confused and possibly mildly annoyed look. You sigh, sitting back down and apologizing. You didn’t see him there. <span style="Color: LightSteelBlue">“Yeah, because the bright orange hair doesn’t stand out.”</span> You blush and apologize once more as <span style="Color:DarkTurquoise">Thomas</span>’ glare turns into a teasing smirk. <span style="Color: LightSteelBlue">“I’m just messing with you. You’re lucky you’re tolerable though. Anyone else sat down on my notebook would get a black eye.”</span> <span style="Color: Yellow">You quickly jump back to your feet and apologize, not even noticing the notebook under your butt.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Frown",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“It’s fine.”</span> <span style="color:DarkTurquoise">Thomas</span> waves it off as he puts the notebook on the other side of him. <span style="Color: LightSteelBlue">“It’s just my math notes.”</span> <span style="color:DarkTurquoise">Thomas</span> leans back on the rock, stretching his legs out. <span style="Color: LightSteelBlue">“Man, <span style="color:DarkTurquoise">Kohler</span>'s' been running us ragged lately. Weekend can’t come soon enough. How you holding up?”</span> You mention that your feet are a little sore, but otherwise not too bad. Despite your feet, you were thinking about wandering around town a little before heading home. Maybe going to the park or get a bite to eat or something. <span style="Color: LightGreen">In fact, you wouldn’t mind the company and ask <span style="color:DarkTurquoise">Thomas</span> if he would want to hang out for a bit.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Hang out?”</span> <span style="color:DarkTurquoise">Thomas</span> glares at you up and down, as if deciding if his tolerance of you was enough to deal with you outside of school. You seal the deal with a friendly smile. <span style="Color: LightSteelBlue">“Sure, guess I have a few hours to spare. Though I have work around 6. What did you have in mind?”</span> Despite his words and attitude, you get the impression <span style="color:DarkTurquoise">Thomas</span> is at least a little excited that you would want to hang out with him. <span style="Color: LightGreen">So, the two of you collect your things and head off into town.</span> <br>
+<<set $InActiveQuests.delete("Thomas: Hang Out Intro")>>
+<<set $CompletedQuests.push("Thomas: Hang Out Intro")>>
+<br>
+<span style="color:Yellow">Where to Hang Out?</span><br>
+<<link"The Park (0:10)<br>">>
+    <<set $HangOutClothes to "Uniform">>
+    <<set $Minutes += 10>>
+    <<goto "Thomas Hang Out Go To Park">>
+<</link>>

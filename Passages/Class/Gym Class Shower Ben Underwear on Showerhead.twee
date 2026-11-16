@@ -1,0 +1,145 @@
+:: Gym Class Shower Ben Underwear on Showerhead [nobr]
+
+/* Opening */
+
+As you finish cleaning and are leaving the showers, you hear a distinctly annoyed sigh coming from one of the shower stalls. You stop in your tracks and peek your head in to witness an interesting sight. <span style="color:Pink"><span style="color:DarkTurquoise">Ben</span> was standing in the stall wearing a towel, looking very annoyed. His brow furrowed, his cheeks puffed, and his fists clenched, the boy glared up at the showerhead where, somehow, a cute pair of white briefs had been hung.</span> <br>
+<br>
+<<art "Images\\Special\\Buyable\\Ben Undie Hang (Normal).png" "Rayray" "https://rayrayart.fanbox.cc" 850>>
+
+It is hard not to laugh at the sight as the nerdy boy lowers his head and lets out another loud sigh. He seemed to be more annoyed than anything, having dealt with things like this on a daily basis. <span style="color:DarkTurquoise">Ben</span> takes a few steps forward and reaches up, finding himself just too short to unhook his underwear, even on his tippy toes. <span style="color:Pink">He even tries a little hop, but quickly gives up on that idea as he nearly loses his towel. Thankfully, from his perspective at least, no one saw that nearly embarrassing display.</span> <br>
+<br>
+
+He then takes a step back, examining the underwear while trying to figure out how he was going to get them down without embarrassing himself in the process. <br>
+<br>
+
+<div id="choice">
+    <<if $BenSocial >= 50 or $BenSocialRank >= 1>>
+        /* Offer to help */
+        <<link "Offer to help">>
+        <<replace "#choice">>
+            You call out to <span style="color:DarkTurquoise">Ben</span>, causing the timid boy to jump and let out a scream. He spins around fearfully, slips on the wet floor, and nearly crashes into you. You manage to catch him just in time, preventing him from hitting the ground. <span style="color:Pink">The boy’s towel also slips, but he manages to catch the front of it just in time, though his butt is briefly visible.</span> <br>
+            
+            <<set _ad to [
+                {
+                    Name: "Ben",
+                    State: {
+                        Outfit: "Towel",
+                        Blush: 2,
+                        Mouth: "Sad",
+                        Arms: "Hide",
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Outfit: "Towel",
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightSteelBlue">“So- sorry!”</span> <span style="color:DarkTurquoise">Ben</span> says as he quickly fixes his towel, his face bright red. You laugh in response, claiming that you should be the one to apologize, as you didn’t mean to scare him. <span style="color:LightSteelBlue">“It’s fine, I just-“</span> He pauses, glancing at the ground, <span style="color:LightSteelBlue">“I’ll be out there in a minute.”</span> <span style="color:Pink">You look up at the hanging underwear and give him a pitiful smirk, it’s clear he was embarrassed.</span> You ask if he needs any help, but <span style="color:DarkTurquoise">Ben</span> is quick to refuse. <br>
+            <br>
+            <span style="color:LightSteelBlue">“No- no thanks! I got it.”</span> He replies, blushing deeper. Though it was clear from what you saw before that he was struggling, so you don’t take no for an answer and get on your hands and knees in front of the shower and offer him a boost. Thankfully, your towel is very secure. <span style="color:LightSteelBlue">“You’re fine, you don’t have to-“</span> <span style="color:DarkTurquoise">Ben</span> starts to say, though you insist. After all, friends are meant to help each other. <br>
+            <br>
+            <span style="color:DarkTurquoise">Ben</span> relents and cautiously walks over, grabbing the side of the shower stall to balance himself and gripping his towel with his other hand as he slowly steps onto your back. It isn’t the easiest thing, to climb onto your back with his bare, damp feet while also ensuring that both he and his towel don’t fall. But, eventually, <span style="color:DarkTurquoise">Ben</span> is stable enough to let go of his towel and reach out for his underwear. <br>
+            <br>
+            <span style="color:LightSteelBlue">“I- I got it!”</span> He calls out. You are about to respond when you suddenly hear <span style="color:DarkTurquoise">Ben</span> cry out, <span style="color:LightSteelBlue">“Ah! Wait-!”</span> <span style="color:Pink">You feel his body suddenly shift on your back and are immediately blinded as his towel slips down and covers your face. The blinding is followed by <span style="color:DarkTurquoise">Ben</span> crying out and a loud slapping sound as, judging by the lack of weight on your back, <span style="color:DarkTurquoise">Ben</span> collides with the floor.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Ben",
+                    State: {
+                        Outfit: "Naked",
+                        Blush: 3,
+                        Mouth: "Sad",
+                        Arms: "Hide",
+                    },
+                    ShowZoom: true,
+                    ShowZoomOnlyButt: true,
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Outfit: "Towel",
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:Pink">You pull the towel off your head and look up to see <span style="color:DarkTurquoise">Ben</span> on his back with a pained and embarrassed look on his face. He was using his crumbled up $BenUndies.Name to cover his bits.</span> He cringes in pain as he sits up before sputtering out <span style="color:LightSteelBlue">“I’m sorry! I- I lost my balance and… are you okay?”</span> He sounds genuinely apologetic, even though he’s the one who got hurt. <br>
+            <br>
+            You smile, tossing <span style="color:DarkTurquoise">Ben</span> his towel before standing up and helping the boy to do the same. <span style="color:LightSteelBlue">“Thanks, <span style="color:DarkTurquoise">$BenNickname</span>. You’re… thank you.”</span> He gives you a smile before the two of you return to the locker room to get dressed. <br>
+            <<socialChange "Ben" 3>>
+            <br>
+            /* GETTING DRESSED */
+            <<set $ClothSave to "Restore">>
+            <<if $GymClassType == "Gym">>
+                <<storeClothing "Restore" "Undies">>
+            <<else>>
+                <<storeClothing "Restore" "Naked">>
+            <</if>>
+            <<if $SaveUndies != null>>
+                <<set $PlayerUndies to $SaveUndies>>
+            <</if>>
+
+            [[Continue|School Locker Room]] 
+            
+        <</replace>>
+        <</link>>
+        <br>
+    <</if>>
+
+    /* Offer to help */
+    <<link "Hide and watch">>
+    <<replace "#choice">>
+        You decide to stand back and watch what <span style="color:DarkTurquoise">Ben</span> is going to do, maybe hoping to get a peek at his towel slipping. <span style="color:DarkTurquoise">Ben</span> sighs loudly in annoyance and glances behind him, you quickly dive back to avoid being seen as <span style="color:DarkTurquoise">Ben</span> closes the curtain to the shower. <span style="color:Pink">He leaves it open just enough for you to peek back in and watch as <span style="color:DarkTurquoise">Ben</span> gives it one last big jump! Allowing his towel to fall to the floor, leaving the boy’s cute little butt exposed to you, as he managed to just barely unhook his underwear.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Ben",
+                ShowZoom: 1,
+                State: {
+                    Outfit: "Naked",
+                    Blush: 2,
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        
+        <span style="color:Pink"><span style="color:DarkTurquoise">Ben</span> smiles, happy with himself, and turns around to put on his underwear, unexpectedly giving you a direct look at his small penis, whose adorable sight causes you to blush deeply. You then get to watch <span style="color:DarkTurquoise">Ben</span> stand there in his $BenUndies.Name as he bends down and picks up his towel, rewrapping it around his waist, before he leaves.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Ben",
+                State: {
+                    Outfit: "Undies",
+                    Blush: 1,
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        
+        You follow behind to the locker room a few moments later, <span style="color:Pink">leaving <span style="color:DarkTurquoise">Ben</span> none the wiser that you were spying on him the entire time.</span> <br>
+        <br>
+        /* GETTING DRESSED */
+        <<set $ClothSave to "Restore">>
+        <<if $GymClassType == "Gym">>
+            <<storeClothing "Restore" "Undies">>
+        <<else>>
+            <<storeClothing "Restore" "Naked">>
+        <</if>>
+        <<if $SaveUndies != null>>
+            <<set $PlayerUndies to $SaveUndies>>
+        <</if>>
+		
+		[[Continue|School Locker Room]] 
+
+    <</replace>>
+    <</link>>
+</div>

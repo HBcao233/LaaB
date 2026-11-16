@@ -1,0 +1,63 @@
+:: Watch TV [nobr]
+
+/* NAKED DIFFERENCE */
+<<if $Player.Exposed == "Naked">>
+	/* SHY */
+	<<if $HomeDayNudity == 1>>
+		You grab a towel and lay it down before sitting, as <span style="color:DarkTurquoise">Your Father</span> had made it clear that if anyone’s bare butts rub against his couch, he would redden them. Plus, you had read that this is what people do to keep things clean when living naked. <span style="color:pink">You also couldn’t help but still be a little nervous, being naked while doing something so mundane and your mind kept wandering back to your exposed form as you watched TV. </span><br>
+		<br>
+	/* FINE */
+	<<elseif $HomeDayNudity == 2>>
+		You grab a towel and lay it down before sitting, as <span style="color:DarkTurquoise">Your Father</span> had made it clear that if anyone’s bare butts rub against his couch, he would redden them. Plus, you had read that this is what people do to keep things clean when living naked. <br>
+		<br>
+	<</if>>
+	<br>
+<</if>>
+
+
+<<if !['Sleeping', 'School'].includes($GabeSche.Activity)>>
+	<<set _randomEvent to random(1, 4)>>
+
+	<<if _randomEvent == 1 && $GabeSocial < 30>>
+		As you are watching TV, <span style="color:DarkTurquoise">Gabe</span> passes by in front of you, staring blankly at his phone. You don’t think much of it, until, <span style="color:lightcoral">in one quick motion, <span style="color:DarkTurquoise">Gabe</span> slaps his hand down against your crotch! You instantly let out a groan of pain as your groin is slapped.</span> Though he didn’t hit you that hard, it still sends shockwaves of pain throughout your entire body and causes you to lean forward in pain. <br>
+		<br>
+		<span style="color:LightSteelBlue">“Don’t be such a baby.”</span> <span style="color:DarkTurquoise">Gabe</span> laughed, <span style="color:LightSteelBlue">“I barely touched you.”</span><br>
+		<br>
+		<<addMoodlet "Pained" 3>>
+
+		<<include "Watch TV End">>
+
+		[[Continue|PH Living Room]]
+	<<elseif _randomEvent == 2>>
+		<<include "Gabe Watch TV Pee Self">>
+	<<else>>
+		<<include "Watch TV End">>
+		
+		[[Continue|PH Living Room]]
+	<</if>>
+<<else>>
+	<<include "Watch TV End">>
+	
+	[[Continue|PH Living Room]]
+<</if>>
+
+/* I don't like how these are done at the moment
+<<if $GabeSche.Location == "Living Room" and $PlayerUndies.Type != "None">>
+	<<set $RandomChance to random(1, 4)>>
+	<<if $RandomChance == 1>>
+	<<set $TimesWedgied += 1>>
+	<<set $TimesGotGabeWedgie += 1>>
+	<<set $Wedgie to 1>>
+	<<set $WedgieHours += 2>>
+	  As you are sitting down watching TV, you don’t notice <span style="color:DarkTurquoise">Gabe</span> sneak up behind you. <span style="color:Yellow">In one quick motion, he reaches his hands into the back of your $PlayerUndies.Type, gripping the waistband and lifting you into the air by them!</span> You let our a groan as your Penis and Balls are squeezed uncomfortably by the wedgie. <span style="color:DarkTurquoise">Gabe</span> laughs as he dangles you above the couch for a few seconds before dropping you. He sticks his tongue at you as you fix the back of your underwear and return to your show.<br>
+	<</if>>
+
+<<elseif $GabeSche.Location == "TV PJ" and $Player.Exposed == "Naked">>
+	<span style="color:pink">As you are watching TV, you can’t help but have the feeling you are being watched. You turn towards <span style="color:DarkTurquoise">Gabe</span>, but he is looking away, though you can’t help but notice his red cheeks. You turn back to the TV, but soon enough get the feeling you are being watched again. Stealthfully glancing to the side, this time you notice <span style="color:DarkTurquoise">Gabe</span> staring at your exposed body with the occasional quick glance or pretend act of checking his phone.</span> <br>
+<br>
+
+<<elseif $GabeSche.Location == "TV" and $Player.Exposed == "Naked">>
+	<span style="color:pink">As you are watching TV, you can’t help but have the feeling you are being watched. You turn towards <span style="color:DarkTurquoise">Gabe</span>, but he is looking away, though you can’t help but notice his red cheeks. You turn back to the TV, but soon enough get the feeling you are being watched again. Stealthfully glancing to the side, this time you notice <span style="color:DarkTurquoise">Gabe</span> staring at your exposed body with the occasional quick glance or pretend act of checking his phone.</span> <br>
+<br>
+<</if>>
+*/

@@ -1,0 +1,35 @@
+:: CARTER Eat Lunch [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<<if $CarterSocial >= 15>>
+	You take a seat at the same table as <span style="color:DarkTurquoise">Carter</span> and chat, enjoying your time together.<br>
+	<<socialChange "Carter" 1>>
+	<br>
+<<elseif $CarterSocial >= -10>>
+	<<set $Random to random(1, 3)>>
+	<<if $Random > 1>>
+		You take a seat at the same table as <span style="color:DarkTurquoise">Carter</span> and chat, enjoying your time together.<br>
+		<<socialChange "Carter" 1>>
+		<br>
+	<<else>>
+		You take a seat at the same table as <span style="color:DarkTurquoise">Carter</span> and try to start a conversation, but he is distracted the entire time.<br>
+		<br>
+	<</if>>
+	
+<<elseif $CarterSocial < -10>>
+	You take a seat at the same table as <span style="color:DarkTurquoise">Carter</span> and try to start a conversation, but he is so nervous around you he is quiet the entire time.<br>
+	<br>
+<</if>>
+
+<<include "School Lunch">>
+<<set $FriendLunch to 1>>

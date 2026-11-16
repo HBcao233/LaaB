@@ -1,0 +1,32 @@
+:: Carter Trampoline Simple [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+<span style="Color: LightSteelBlue">“Come on!”</span> <span style="color:DarkTurquoise">Carter</span> <span style="Color: Pink">says as he climbs and crawls into the netted trampoline, cutely crawling to the middle as he begins to jump up and down. His trunks, the only thing the small boy is wearing, bounce about on his little body, cutely exposing his pale upper legs as he does so.</span> <span style="Color: LightSteelBlue">“Bet I can jump higher than you! Come on!”</span> You smile and climb in as well, hopping about playfully with <span style="color:DarkTurquoise">Carter</span>. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Carter",
+        State: {
+            Outfit: "Swim",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+For such a little guy with tiny legs, <span style="color:DarkTurquoise">Carter</span> is able to get some impressive height. You imagine that he practices often, jumping around out here to get rid of all the excess energy you’re sure he has. <span style="Color: Pink">Though you can’t help but glance at his trunks with every bounce, the swim shorts look like they may slip off with each hop.</span> Yet, alas, they do stay on, and the trampoline jumping is simply a fun, wholesome activity, which you can’t complain about. <br>
+<span style="color:Red">-Carter Energy</span><br>
+<<set $HangOutNeed.Energy -= 10>>
+<span style="color:Green">+Carter Fun</span><br>
+<<set $HangOutNeed.Fun += 5>>
+<<needChange "Fun" 5>>
+<<socialChange "Carter" 1>>
+<br>
+[[Continue|Carter House Backyard Swim]]

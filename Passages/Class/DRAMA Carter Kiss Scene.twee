@@ -1,0 +1,141 @@
+:: DRAMA Carter Kiss Scene [nobr]
+
+/* OPENING */
+<span style="color:DarkTurquoise">Mr. Julien</span> announces that today everyone will be practicing the scene most of the boys had been dreading, <span style="color:Pink">the kissing scene at the end of Romeo & Julius.</span> He splits you each into groups, deciding who will be laying down pretending to be dead and who will be doing the kissing, to avoid any conflict. For better or for worse, you are paired with the young <span style="color:DarkTurquoise">Carter</span> and assigned the role of doing the actual kissing.<br>
+
+<<set _ad to [
+	{
+		Name: "Julien",
+		State: {
+			Mouth: "Smile",
+		},
+	},
+	{
+		Name: "Carter",
+		State: {
+			Blush: 1,
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Blush: 1,
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“So I guess we’re going to, uh… kiss…”</span> <span style="color:DarkTurquoise">Carter</span> says shyly, avoiding eye contact, <span style="color:LightSteelBlue">“But it's all for the play, Right? and we’re both boys, So, it doesn’t count? Right?”</span> He chuckles nervously. You get the feeling that this boy has not had much practice in the kissing department. You all take your seat and watch as each group does the scene, sharing a, usually only brief, kiss. <span style="color:DarkTurquoise">Mr. Julien</span> is disappointed with most of the groups for being so embarrassed and not giving it their all, <span style="color:Pink">except for <span style="color:DarkTurquoise">Lucas</span>, who doesn’t see it as a big deal and gives it his all, much to the surprise of his partner.</span><br>
+<br>
+Finally, you and <span style="color:DarkTurquoise">Carter</span> are called up to the stage. <span style="color:DarkTurquoise">Carter</span> nervously lays down and closes his eyes, leaving you to give your lines and decide on just how the kiss will go.<br>
+<br>
+
+<div id="Choice">
+	/* PASSIONATE KISS */
+	<<link "Give him a passionate kiss<br>">>
+		<<replace"#Choice">>
+			You smile as you begin the scene, reading your lines with passion and drive. You glance over at <span style="color:DarkTurquoise">Mr. Julien</span>, who is on the edge of his seat with a smile on his face. You command the stage, letting your excitement for what is to come put emotion behind your words. Now you just have to finish the scene.<br>
+			<br>
+
+			<span style="color:Pink">You bend down and look at <span style="color:DarkTurquoise">Carter</span>, who was laying with his eyes closed. If not for how red he was, you’d think he was asleep. You caress his cheek, causing the small boy’s eyes to twitch, before leaning down and pressing your lips together! You smile as you not only kiss the boy but force your tongue into his mouth. <span style="color:DarkTurquoise">Carter</span> squirms as he feels your tongue invade his mouth and tickle his own, but you use your hand to hold his head in place, forcing the boy to kiss you for nearly a minute.</span><br>
+
+			<<set _ad to [
+				{
+					Name: "Carter",
+					State: {
+						Blush: 3,
+						Mouth: "Sad",
+						Outfit: "Uniform",
+					},
+				},
+				{
+					Name: "Player",
+					State: {
+						Blush: 1,
+						Mouth: "Smirk",
+						Eyes: "Tired",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			<span style="color:Pink">When you finally pull away, a string of saliva connects your mouths. <span style="color:DarkTurquoise">Carter</span> was looking at you, redder than you’ve ever seen him and seemingly speechless. As you stared back at the boy, you couldn’t help but notice the small tent that was being pitched in his $CarterBottoms.Type, no doubt a result of your forward actions.</span> The lustful silence is broken by <span style="color:DarkTurquoise">Mr. Julien</span>, who jumps up and applauds, motioning some of the other students to give a standing ovation as well.<br>
+			<br>
+
+			<span style="color:LightSteelBlue">“Now that is a kissing scene!”</span> <span style="color:DarkTurquoise">Mr. Julien</span> cheered, <span style="color:LightSteelBlue">“Passion, lust, desire! Those are the emotions you all must strive to display. Brilliant job from both of you!”</span> <span style="color:Pink">As you both returned to your seat, <span style="color:DarkTurquoise">Carter</span> seemingly notices his mild erection and attempts to discreetly hide it.</span> He avoided eye contact with you the entire rest of the class, still seemingly in shock from the kiss.<br>
+			<<addMoodlet "Kissed" 6>>
+			<<set $KissedCarter += 1>>
+			<<set $PlayerDramaFaithChange to "Increase">>
+			<<set $LucasDramaFaithChange to "None">>
+			<<set $CarterDramaFaithChange to "Increase">>
+			<<set $DramaFaithPlayer += 5>>
+			<<set $DramaFaithLucas += 5>>
+			
+			<<include"Drama Faith Change">>
+			<br>
+
+			<<include"Attend Drama Finish">>
+		<</replace>>
+	<</link>>
+
+	/* SMALL PECK */
+	<<link "Give him a small peck<br>">>
+		<<replace "#Choice">>
+			<<if $ActingSkill < 3>>
+				You have trouble remembering your lines, knowing what is to come. <span style="color:Pink">When you finally finish and turn towards <span style="color:DarkTurquoise">Carter</span>, who lays down with his eyes closed, looking like he was asleep if not for the fact that he was also bright red. You lean down slowly over him, you both twitching as you feel each other's breath, before planting a small peck on his lips.</span> It is a dry kiss, with little romance behind it, but <span style="color:DarkTurquoise">Mr. Julien</span> seems content enough and allows you both to return to your seat. <span style="color:DarkTurquoise">Carter</span> just seems thankful that it is over.<br>
+				<<set $KissedCarter += 1>>
+				<<set $PlayerDramaFaithChange to "Increase">>
+				<<set $LucasDramaFaithChange to "None">>
+				<<set $CarterDramaFaithChange to "Increase">>
+
+				<<include"Drama Faith Change">>
+				<br>
+
+				<<include"Attend Drama Finish">>
+			/* Slightly different scene if he knows the player can 'do better' */
+			<<else>>
+				<span style="color:Pink">You can easily remember your lines now, but knowing what comes next still feels weird.</span> You decide to just do it quickly and get it over with. Maybe no one would tease you if you act like you don't want to do it. You deliver your role flatly and lacking emotion before turning towards <span style="color:DarkTurquoise">Carter</span>. He lay there still pretending to sleep, still blushing as you lean close.<br>
+				<br>
+
+				<span style="color:Pink">It is a dry kiss lacking passion. And it shows.</span> <span style="color:DarkTurquoise">Mr. Julien</span> Sighs heavily. <br>
+				<br>
+
+				<span style="color:LightSteelBlue">"I know you can do better than that. The back row won't be able to see your lips, so you need to convey the full depth of your emotion and passion through more than a simple act. Your body language needs to show them what they can't see!"</span> He twirls melodramatically letting his arms sweep across a large imaginary audience. He sighs again and shooes <span style="color:DarkTurquoise">Carter</span> back to his seat, who looks all too happy to exit the stage. <br>
+				<br>
+
+				<span style="color:DarkTurquoise">Mr. Julien</span> smiles at you warmly and says <span style="color:LightSteelBlue">"Let me show you."</span> He directs you to lie down. You can't help but blush like <span style="color:DarkTurquoise">Carter</span> had. Is a teacher actually going to kiss a student? Your heart is in your throat. The other boys in class seem to be holding their breath in nervous anticipation.<br>
+				<br>
+
+				Of course, <span style="color:DarkTurquoise">Mr. Julien</span> won't really kiss you. That would be crossing a line. He only intends to act out the part, to show the class that you can show passion without really doing much of anything.<span style="color:Pink"> But as the man leans over you your lips brush ever so lightly. A shiver races down your back. It's scary but also exciting and before you realize what you are doing you part your lips.</span> His tongue explores your mouth gently, slowly. You can't help but shiver even though the room isn't cold. He wasn't just acting. Was he? His hand is innocently on your knee as he kisses you, but you can feel his hand starting to slide up your thigh. Getting closer and closer to your $Player.PenisSize prize. <br>
+
+				<<set _ad to [
+					{
+						Name: "Player",
+						State: {
+							Blush: 3,
+							Outfit: "Uniform",
+							Hard: 1,
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				Your eyes finally meet, snapping you both back to reality. He seems confused for a moment, like he didn't know what he was doing. He steps away and turns to the class explaining why it's important to commit to a role. But maybe <span style="color:DarkTurquoise">Mr. Julien</span> was blushing just a little bit too. <br>
+				/* Maybe add Kissed Moodlet if attracted to Julien */
+				<<set $KissedMrJulien += 1>>
+				<<set $KissedCarter += 1>>
+				<<set $PlayerDramaFaithChange to "Increase">>
+				<<set $LucasDramaFaithChange to "None">>
+				<<set $CarterDramaFaithChange to "None">>
+
+				<<include"Drama Faith Change">>
+				<br>
+
+				<<include"Attend Drama Finish">>
+			<</if>>
+		<</replace>>
+	<</link>>
+</div>

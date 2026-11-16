@@ -1,0 +1,166 @@
+:: Bedroom Play Pretend Pose in Mirror [nobr]
+
+/* Written by: Ron the cutest boy in the land */
+/*Intro */
+
+<<set $Minutes += 30>>
+
+You pretend to be a strongman, imagining you are in front of a large crowd, striking various poses and flexes.
+<<if $PlayerTop.Type != "None">>
+    <span style="color:Pink">You remove your $PlayerTop.Name, striking another pose for the imaginary crowd as you do so and turn towards your mirror giving you a full view of your exposed chest.</span> <br>
+<<else>>
+    You strike another pose for the imaginary crowd and turn towards your mirror giving you a full view of your already exposed chest. <br>
+<</if>>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+            Clothes: {
+            Top: $None,
+            Outer: $None,
+            Over: $None,
+            Under: $None,
+            Neck: $None,
+        },
+    },
+]>>
+<<ad _ad>>
+
+/*-if Body Anxiety Trait-*/
+<<if $Player.Traits.includes("BodyAnxiety")>>
+    You go to examine yourself in the mirror, <span style="color:LightCoral">however you gasp at the sight of your reflection and immediately back away from it.  What were you thinking? You couldn’t look at yourself in the mirror … not like that.</span> <br>
+    
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Eyes: "Sad",
+                Blush: 2,
+            },
+                Clothes: {
+                Top: $None,
+                None,
+                Over: $None,
+                Under: $None,
+                Neck: $None,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    <span style="color:LightCoral">You feel your heart pounding and your chest tighten; your mind now full of negative thoughts about your body.</span> You decide to shake it off and decide it was best to do something else to take your mind off this. <br>
+
+    <<addMoodlet "Stress" 1>>
+    <br>
+    [[Continue|Player Bedroom]]
+
+/*Normal Variant*/
+<<else>>
+        
+    /* Skinny */
+    <<if $Player.Build == "Skinny">>
+        You examine your reflection, flexing in the mirror as you do so. You see a skinny boy looking back at you. You make out the faint outline of your ribs on your thin stomach as you strike numerous poses, upon further inspection you’re not sure you would be a good strongman, having little in the way of actual muscles. <br>
+        <br>
+       <span style="color:Pink"> You do however find your skinny body pretty cute, giving you a rather boyish look. You smile to yourself and strike some more cutesy poses fitting of your stature, picturing the crowd ‘Awwing’ at you as you do so.</span> <br>
+        <br>
+    /* Husky*/
+    <<elseif $Player.Build == "Husky">>
+        You examine your reflection, flexing in the mirror as you do so. You see a chubby boy looking back at you. You see your belly jiggle slightly as you strike numerous poses. Upon further inspection you’re not sure you would be a good strongman, having little in the way of actual muscles. <br>
+        <br>
+        <span style="color:Pink">You do however find your chubby body pretty cute, admiring how cuddly you look, wanting to give yourself a big squeeze. You smile to yourself and strike some more cutesy poses fitting of your stature, picturing the crowd ‘Awwing’ at you as you do so.</span> <br>
+        <br>
+    /* Muscular */
+    <<else>>
+        You examine your reflection, flexing in the mirror as you do so. You see a muscular boy looking back at you. You admire your abs as your strike numerous poses, Upon further inspection you think that you could actually make for a good strongman, your toned body being the ideal shape for it. <br>
+        <br>
+        Though you don’t find your muscled body makes you look as cute or boyish as some of the other boys your age, <span style="color:Pink">You do admire the shape you are in. You begin flexing your muscles again into the mirror doing a number of atypical strongman poses as you, imagining the crowd admiring your form.</span> <br>
+        <br>
+    <</if>>
+    /*If PC in undies*/
+    <<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type != "None">>
+        You decide to take one last look at yourself, <span style="color:Pink">and blush as you are reminded by your reflection, that you have been standing there posing in nothing but your $PlayerUndies.Name, This Entire time! </span>
+
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                Blush: 2,
+                },
+            Clothes: {
+                Top: $None,
+                Outer: $None,
+                Over: $None,
+                Under: $None,
+                Neck: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    /*If PC naked*/
+    <<elseif $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+        You decide to take one last look at yourself, <span style="color:Pink">and blush heavily as you are reminded by your reflection, that you have been standing there posing with your $Player.PenisSize penis exposed, this entire time!</span>
+        
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                Blush: 3,
+                },
+            Clothes: {
+                Top: $None,
+                Outer: $None,
+                Over: $None,
+                Under: $None,
+                Neck: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    /*If PC is wearing bottoms*/
+    <<else>>
+        You decide to take one last look at yourself, blushing slightly at the sight of your exposed chest in the exposed reflection once more.
+
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                Blush: 1,
+                },
+            Clothes: {
+                Top: $None,
+                Outer: $None,
+                Over: $None,
+                Under: $None,
+                Neck: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+    <</if>>
+
+        <span style="color:LightGreen">In spite of any negative thoughts that you may have regarding your appearance, you smile to yourself knowing that overall, you are happy with your body the way it is.</span> You turn away from the mirror <span style="color:Pink">but not before striking one final dramatic pose!</span> <br>
+
+    /*If Player has Unlucky Trait*/
+    <<if $Player.Traits.includes("Unlucky") && $PlayerBottoms.Type != "None" and $PlayerUndies.Type != "None">>
+        <span style="color:Pink">However as you do this your pants you see your $PlayerBottoms.Name suddenly fall down to your ankles,</span> You chuckle to yourself and roll your eyes as you pull them back up, knowing with your luck you should have expected this! <br>
+    <</if>>
+
+    <<if $Player.Traits.includes("Childish")>>
+        <<needChange "Fun" 30>>
+    <<elseif $Player.Traits.includes("Mature")>>
+        <<needChange "Fun" 10>>
+    <<else>>
+        <<needChange "Fun" 20>>
+    <</if>>
+    <br>
+    [[Continue|Player Bedroom]]
+
+<</if>>

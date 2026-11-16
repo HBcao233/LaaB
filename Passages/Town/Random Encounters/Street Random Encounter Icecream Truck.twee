@@ -1,0 +1,107 @@
+:: Street Random Encounter Icecream Truck [nobr]
+
+/* Written by: Ronald (<3) */
+/* Intro */
+
+As you walk down the street, your ears are suddenly filled with a familiar jingle, getting louder and louder, the sound of which fills you with joy. <span style="color:Yellow">That could only mean one thing…</span> <span style="color:LightGreen">Ice Cream!</span> <br>
+<br>
+
+It isn’t long before you spot the ice cream truck appear around the corner parking next to you, to attract passersby. 
+
+<<if $Money >= 2>>
+
+<span style="color:LightGreen">You smile happily to yourself, knowing you have enough money on you to get an ice cream,</span> but now the hard part, <span style="color:Yellow">what flavour should you get?</span> <br>
+<br>
+
+<div id=choice>
+/*Vanilla*/
+    <<link "Vanilla ($2)<br>">>
+    <<replace"#choice">>
+    You walk up to the ice cream truck, the driver offers you a warm smile, asking you what you would like, you decide to go for a vanilla cone!
+    You savour every last bit of your ice cream before quickly following up by devouring the cone. As you finish this off you feel a slight cold tingle on your nose, chuckling to yourself upon realising you have accidentally dabbed your nose with the delicious snack. You wipe the ice cream off it with your finger cleaning the remains with your mouth, without a care in the world for what anyone nearby may think. <br>
+    <br>
+    <span style="color:LightGreen">You walk away with a skip in your step, feeling a lot happier than you did before. It’s the small things in life you can appreciate the most sometimes!</span><br>
+    <<needChange "Hunger" 15>>
+    <br>
+    /*{End}*/
+    <<if $Location.Name == "Northend">>
+        [[Continue|Northend]]
+    <<elseif $Location.Name == "Dellwood Street">>
+        [[Continue|Dellwood Street]]
+    <<elseif $Location.Name == "Wald Street">>
+        [[Continue|Wald Street]]
+    <</if>>
+<</replace>>
+<</link>>
+
+/* Chocolate */
+    <<link " Chocolate ($2)<br>">>
+    <<replace"#choice">>
+    You walk up to the ice cream truck, the driver offers you a warm smile, asking you what you would like, you decide to go for a chocolate cone!
+    You savour every last bit of your ice cream before quickly following up by devouring the cone. As you finish this off you feel a slight cold tingle on your nose, chuckling to yourself upon realising you have accidentally dabbed your nose with the delicious snack. You wipe the ice cream off it with your finger cleaning the remains with your mouth, without a care in the world for what anyone nearby may think. <br>
+    <br>
+    <span style="color:LightGreen">You walk away with a skip in your step, feeling a lot happier than you did before. It’s the small things in life you can appreciate the most sometimes!</span><br>
+    <<needChange "Hunger" 15>>
+    <br>
+        /*{End}*/
+    <<if $Location.Name == "Northend">>
+        [[Continue|Northend]]
+    <<elseif $Location.Name == "Dellwood Street">>
+        [[Continue|Dellwood Street]]
+    <<elseif $Location.Name == "Wald Street">>
+        [[Continue|Wald Street]]
+    <</if>>
+<</replace>>
+<</link>>
+
+/* Strawberry */
+    <<link " Strawberry ($2)<br>">>
+    <<replace"#choice">>
+    You walk up to the ice cream truck, the driver offers you a warm smile, asking you what you would like, you decide to go for a strawberry cone!
+    You savour every last bit of your ice cream before quickly following up by devouring the cone. As you finish this off you feel a slight cold tingle on your nose, chuckling to yourself upon realising you have accidentally dabbed your nose with the delicious snack. You wipe the ice cream off it with your finger cleaning the remains with your mouth, without a care in the world for what anyone nearby may think. <br>
+    <br>
+    <span style="color:LightGreen">You walk away with a skip in your step, feeling a lot happier than you did before. It’s the small things in life you can appreciate the most sometimes!</span><br>
+    <<needChange "Hunger" 15>>
+    <br>
+        /*{End}*/
+    <<if $Location.Name == "Northend">>
+        [[Continue|Northend]]
+    <<elseif $Location.Name == "Dellwood Street">>
+        [[Continue|Dellwood Street]]
+    <<elseif $Location.Name == "Wald Street">>
+        [[Continue|Wald Street]]
+    <</if>>
+<</replace>>
+<</link>>
+
+/* Do not buy an Ice Cream */
+    <<link "Do not buy an Ice Cream <br>">>
+    <<replace"#choice">>
+
+    Upon thinking about it further, you do not feel like having an ice cream right now, deciding your hard-earned money could be spent on something better anyway. As you walk away from the truck, you hope you do not regret missing out on this opportunity for a delicious frozen snack later. <br>
+    <br>
+        /*{End}*/
+    <<if $Location.Name == "Northend">>
+        [[Continue|Northend]]
+    <<elseif $Location.Name == "Dellwood Street">>
+        [[Continue|Dellwood Street]]
+    <<elseif $Location.Name == "Wald Street">>
+        [[Continue|Wald Street]]
+    <</if>>
+<</replace>>
+<</link>>
+</div>
+
+<<else>>
+This feeling of joy quickly drops however, as you realise you do not have enough money to buy an ice cream, whether you wanted one or not. You silently curse the lack of cash you have on you, you distance yourself away from the truck feeling a little disappointed. <br>
+<br>
+
+    /*{End}*/
+    <<if $Location.Name == "Northend">>
+        [[Continue|Northend]]
+    <<elseif $Location.Name == "Dellwood Street">>
+        [[Continue|Dellwood Street]]
+    <<elseif $Location.Name == "Wald Street">>
+        [[Continue|Wald Street]]
+    <</if>>
+<</if>>

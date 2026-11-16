@@ -1,0 +1,557 @@
+:: Traits Init [nobr]
+
+/* "Name" works for both icon file name (no file extension) and display name in-game */
+/* "ID" is used as an identifyer, must be unique. $Player.Traits is an array of strings, each being a trait's ID */
+/* "Exclude" and "Features" are optional arrays */
+/* Each string in "Exclude" array should be and ID of another Trait which cannot be added as $Player.Traits at the same time */
+/* Each string in "Features" array can be any string, even html formatted */
+
+/* To add new Traits, add them to this array and set DoTraitsInit to true in saves.js */
+
+<<set $TraitOptions = [
+    {
+        ID: "AbsentMinded",
+        Name: "Absent Minded",
+        Description: "Your boy gets easily distracted or lost in their thoughts. This often leads to them forgetting what they are doing.",
+        Features: [
+            "Small disadvantage during class.",
+            "May occasionally forget what they are doing mid-event.",
+            "May forget to put on pants.",
+        ],
+    },
+    {
+        ID: "Artistic",
+        Name: "Artistic",
+        Description: "Your boy is naturally gifted in the creative arts, whether it be drawing, writing, or music. He also finds creative hobbies more fun.",
+        Features: [
+            "Bonus to skills that use Creativity.",
+            "Gains more +Fun from creative actions.",
+        ],
+    },
+    {
+        ID: "Asthma",
+        Name: "Asthma",
+        Description: "Your boy has asthma, which may lead to trouble breathing during physically straining activities. He needs to be careful when overexerting himself.",
+        Features: [
+            "Gains a debuff after physical activity which increases -Energy losses.",
+            "Minor disadvantage to skills that use Endurance.",
+            "Good excuse to get easier Gym Classes.",
+        ],
+    },
+    {
+        ID: "Athletic",
+        Name: "Athletic",
+        Description: "Your boy is one of the best athletes in town, or at least he thinks he is. Regardless, he gets an advantage when it comes to physical activities and enjoys them more.",
+        Exclude: ["CouchPotato"],
+        Features: [
+            "Gains a bonus to skills that use Strength and Dexterity.",
+            "Gains more +Fun from Physical Activities.",
+        ],
+    },
+    {
+        ID: "BodyAnxiety",
+        Name: "Body Anxiety",
+        Description: "Your boy has a lot of anxiety about their body and hates when people see it. They become more embarrassed when their body is exposed in front of others.",
+        Features: [
+            "Becomes more embarrassed during scenes where their body is exposed.",
+            "Embarrassed Moodlets last longer.",
+        ],
+    },
+    {
+        ID: "Bookworm",
+        Name: "Bookworm",
+        Description: "Your boy loves books and reading. English is one of his favorite classes and all he wants to do is curl up and read a good book.",
+        Features: [
+            "Bonus to English Class.",
+            "Bonus to English Skill.",
+            "More +Fun from Reading Books.",
+        ],
+    },
+    {
+        ID: "Brave",
+        Name: "Brave",
+        Description: "Your boy is brave and always willing to face danger. He may still have fears, but he is always willing to face them if needed, even if this may lead him into trouble from time to time.",
+        Exclude: ["Coward"],
+        Features: [
+            "More willing to face fears.",
+            "Less likely to consider consequences of stepping into trouble.",
+            "May not always think things through.",
+        ],
+    },
+    {
+        ID: "Bully",
+        Name: "Bully",
+        Description: "Your boy is a bit of a bully and gets joy out of hurting and humiliating others. Whether it’s pantsings, wedgies, or something a bit more extreme, your boy loves the feeling of control bullying gives.",
+        Exclude: ["Friendly"],
+        Features: [
+            "More +Fun from bullying others.",
+            "Easier +Social with other bullies.",
+            "Harder +Social with Nerd/Good Characters.",
+        ],
+    },
+    {
+        ID: "Charismatic",
+        Name: "Charismatic",
+        Description: "Your boy is a social butterfly and great at showing it. He makes friends easier and can more easily recover from conversational mistakes.",
+        Exclude: ["Shy"],
+        Features: [
+            "Bonus to Charm Skills",
+            "Easier +Social with most NPCs.",
+        ],
+    },
+    {
+        ID: "ChildOfTheSea",
+        Name: "Child Of The Sea",
+        Description: "Your boy loves the water. Swimming is one of his favorite things and he wants nothing more than to be in the water.",
+        Exclude: ["Hydrophobic"],
+        Features: [
+            "More +Fun from Water Activities.",
+            "Bonus to Swimming Skill.",
+        ],
+    },
+    {
+        ID: "Childish",
+        Name: "Childish",
+        Description: "Despite already being in the double digits, your boy has a habit of acting like a little kid. From enjoying toys and cartoons to throwing tantrums and pouting, he plans to never leave his childhood behind.",
+        Exclude: ["Mature"],
+        Features: [
+            "More +Fun from Childish Activities.",
+            "Easier +Social with Kid-Aged Characters.",
+            "Harder +Social with Adult-Aged Characters",
+        ],
+    },
+    {
+        ID: "Clumsy",
+        Name: "Clumsy",
+        Description: "Your boy has a habit of tripping over his feet. Don’t trust him around the glassware or even to remember to tie his shoes, else something will end up broken.",
+        Features: [
+            "More likely to slip up during Events.",
+            "Debuff on Dexterity Skill Checks.",
+        ],
+    },
+    {
+        ID: "Commando",
+        Name: "Commando",
+        Description: "Your boy loves the feeling of being free, in more ways than one. He hates wearing underwear and prefers to attend every occasion without that piece of clothing, no matter the risks.",
+        Features: [
+            "Buff when not wearing underwear.",
+            "Debuff when wearing underwear.",
+        ],
+    },
+    {
+        ID: "ComputerSavvy",
+        Name: "Computer Savvy",
+        Description: "Your boy was raised in the modern age and thus has modern skills. He is a whiz on the computer and can make it do things that older folks would believe is magic.",
+        Features: [
+            "Bonus to the Computers Skill.",
+            "More options when using a computer.",
+        ],
+    },
+    {
+        ID: "CouchPotato",
+        Name: "Couch Potato",
+        Description: "Nothing’s better for your boy than relaxing on the couch. Running around and playing sports is overrated. The true way to your boy’s heart is a soft seat, some snacks, and something fun to watch.",
+        Exclude: ["Athletic"],
+        Features: [
+            "Debuff to Physical Activities",
+            "More +Fun from Lazy Activities",
+        ],
+    },
+    {
+        ID: "Coward",
+        Name: "Coward",
+        Description: "What was that noise!? Your boy jumps at every little creak in the house and is terrified of everything from a little bug to the imaginary monsters under his bed. Your family is used to you asking to sleep with them after a night terror or two.",
+        Exclude: ["Brave"],
+        Features: [
+            "Always afraid regardless of Fears",
+            "More likely to become Afraid during Events.",
+            "May randomly become Afraid.",
+        ],
+    },
+    {
+        ID: "Daredevil",
+        Name: "Daredevil",
+        Description: "Being safe is for losers! Your boy loves the feeling of adrenaline from doing something dangerous. It’s a thrill and high like no other! Who cares if you break a few bones or lose a couple teeth in the meantime?",
+        Features: [
+            "More likely to take Risks during Events.",
+            "Less -Mood from Injuries and Pain.",
+            "Injuries and Pain heal faster.",
+        ],
+    },
+    {
+        ID: "Diplomatic",
+        Name: "Diplomatic",
+        Description: "Your boy is very agreeable and great at figuring out a solution to make everyone happy. His best weapon in an argument is his words and he know how to wield them perfectly.",
+        Features: [
+            "Advantage to Charm Skills.",
+            "Easier to solve arguments during Events.",
+        ],
+    },
+    {
+        ID: "EasilyAnnoyed",
+        Name: "Easily Annoyed",
+        Description: "Your boy is easily annoyed and frustrated by the less pleasant things in life. He prefers it when things are simple and easy to handle. He also prefers when people are easy to handle, which they often are not.",
+        Features: [
+            "Less +Social from Childish Characters.",
+            "Becomes Annoyed more easily.",
+        ],
+    },
+    {
+        ID: "Evil",
+        Name: "Evil",
+        Description: "What makes someone evil? Well, for your boy it is about finding joy in the suffering of others. Why do for others what you can do for yourself? Plus, seeing other people miserable is a bonus!",
+        Exclude: ["Good"],
+        Features: [
+            "More +Fun from being Mean to others.",
+            "Harder +Social from Good and Friendly Characters.",
+            "More options to be Evil during Events.",
+        ],
+    },
+    {
+        ID: "Excitable",
+        Name: "Excitable",
+        Description: "Your boy will cheer for and be excited about even the most simple things in life. Because why not use every reason you can to be happy?",
+        Features: [
+            "Becomes Excited more easily.",
+            "Gains more +Fun from Simple Activities.",
+        ],
+    },
+    {
+        ID: "Flirty",
+        Name: "Flirty",
+        Description: "Hey good looking! Whether a desire to find love or just being cute, your boy loves flirting and being playful with those around him. Some people may get the wrong idea, but it’s a risk worth taking to see them blush.",
+        Features: [
+            "More +Fun and +Social from Flirty Actions.",
+            "More Flirty options during Events.",
+        ],
+    },
+    {
+        ID: "FreeFooted",
+        Name: "Free Footed",
+        Description: "Shoes and socks are for losers! Your boy loves the feeling of the ground beneath his feet and the dirt between his toes. What others may find annoying or uncomfortable your boy prefers. Just make sure he watches where he steps.",
+        Features: [
+            "No debuff when walking around barefoot.",
+        ],
+    },
+    {
+        ID: "Friendly",
+        Name: "Friendly",
+        Description: "Being kind is easy and cheap, so why not do it for others? Your boy tries to always be nice and happy to others to make them feel special. Because putting a smile on another person’s face is a reward all on its own.",
+        Exclude: ["Bully"],
+        Features: [
+            "Gains +Social more easily.",
+            "Ability to be extra Friendly during Events.",
+        ],
+    },
+    {
+        ID: "Gamer",
+        Name: "Gamer",
+        Description: "Your boy is a gamer! From consoles, to computers, to arcades, he loves all things gaming! His idea of a relaxing time is beating that hard level and getting a new high score!",
+        Features: [
+            "Bonus to the Video Game Skill.",
+            "Bonus to +Fun from playing Video Games.",
+        ],
+    },
+    {
+        ID: "Genius",
+        Name: "Genius",
+        Description: "Some boys are clever, some boys are smart, but your boy is a genius! He’s been told he was gifted from a young age, and while that may lead to problems later in life, right now he enjoys showing off his intellectual abilities!",
+        Features: [
+            "Bonus to all 4 Core Classes.",
+            "Bonus to all 4 Core School Skills",
+        ],
+    },
+    {
+        ID: "Gloomy",
+        Name: "Gloomy",
+        Description: "A cloud is always hanging over your boy’s head. For one reason or another, he always seems to find a way to put himself down or ruin a good mood. Poor kid just can’t go too long without feeling sad.",
+        Features: [
+            "Will randomly become Sad.",
+            "Easier to become Sad.",
+            "Being Sad gives less of a debuff.",
+        ],
+    },
+    {
+        ID: "Glutton",
+        Name: "Glutton",
+        Description: "Food is the fastest way to your boy’s heart. He loves eating, munching, snacking, and everything in between! He may eat a little too much, but at least he is enjoying himself!",
+        Exclude: ["LightEater"],
+        Features: [
+            "Hunger goes down Faster.",
+            "Larger Debuff when Hungry.",
+            "Can't become Sick from over-eating.",
+        ],
+    },
+    {
+        ID: "Good",
+        Name: "Good",
+        Description: "Your boy is good, plain and simple. He loves helping others, making people happy, and aiding those in need. He doesn’t need thanks or rewards, being kind to others and making their life easier is all the reward he needs.",
+        Exclude: ["Evil"],
+        Features: [
+            "Bonus to Mood from doing Good Deeds.",
+            "Ability to be Extra Good during Events.",
+            "Bonus to +Social from other Good Characters.",
+        ],
+    },
+    {
+        ID: "GreenThumb",
+        Name: "Green Thumb",
+        Description: "Your boy has a way with plants; they just seem to grow better around him! He just has that magic touch that makes the green parts of the world grow happier and healthier. ",
+        Features: [
+            "Bonus to the Gardening Skill.",
+            "Bonus to +Fun from Gardening.",
+            "Gains more information about Plants during Events.",
+        ],
+    },
+    {
+        ID: "HeavySleeper",
+        Name: "Heavy Sleeper",
+        Description: "Your boy can sleep through anything! From a loud thunderstorm, to his dad’s yelling, to maybe even someone doing something to him they shouldn’t. Then again, he’d be asleep, so he’d never know!",
+        Exclude: ["LightSleeper"],
+        Features: [
+            "Less likely to have interrupted Sleep.",
+            "Less Likely to wake up when disturbed.",
+        ],
+    },
+    {
+        ID: "HotHeaded",
+        Name: "Hot Headed",
+        Description: "Your boy gets upset very easily. Little inconveniences are enough to make him blow his top. He can also have a bit of a short fuse with friends, leading to him saying or doing things he didn’t mean.",
+        Features: [
+            "Gets Mad more easily.",
+            "More likely to Lash Out during Events.",
+        ],
+    },
+    {
+        ID: "Hydrophobic",
+        Name: "Hydrophobic",
+        Description: "Water is the enemy. The idea of swimming turns your boy off for one reason or another. Showering is the most he can handle, anything more than that is enough to make him shiver in discomfort.",
+        Exclude: ["ChildOfTheSea"],
+        Features: [
+            "Becomes Very Uncomfortable in Water or when Wet.",
+            "Disadvantage when Swimming.",
+        ],
+    },
+    {
+        ID: "IndoorKid",
+        Name: "Indoor Kid",
+        Description: "Your boy prefers the indoor life. Nature is overrated, he would rather sit inside to entertain himself in a nice, cozy, temperature-controlled environment.",
+        Exclude: ["Outdoorsy"],
+        Features: [
+            "Bonus to +Mood when Indoors.",
+            "Bonus to +Fun from Indoor Activities.",
+        ],
+    },
+    {
+        ID: "Kitsune",
+        Name: "Kitsune",
+        Description: "The soul of a magical fox lives inside your boy. He has features resembling a fox, though only those with special eyes can see it. (Requires Supernatural Toggle On.)",
+        Features: [
+            "You always appear with Fox Tails and Ears.",
+            "Limited Special Events can trigger.",
+        ],
+    },
+    {
+        ID: "LightEater",
+        Name: "Light Eater",
+        Description: "Your boy isn’t much of a foodie. He has a light and sensitive stomach and doesn’t need much food to feel full. He also tends to prefer lighter foods and doesn’t feel the negative effects of going hungry as much as others.",
+        Exclude: ["Glutton"],
+        Features: [
+            "Bonus to Hunger when Eating.",
+            "Hunger Need decreases Slower.",
+            "Becomes Sick easier from Over-Eating.",
+        ],
+    },
+    {
+        ID: "LightSleeper",
+        Name: "Light Sleeper",
+        Description: "Your boy would wake up from a pin dropping. He is a very light sleeper and not only has trouble falling asleep, but staying asleep as well! Expect him to spend many nights tossing and turning from even the slightest noise.",
+        Exclude: ["HeavySleeper"],
+        Features: [
+            "More likely to have interrupted sleep.",
+            "More likely to wake up when disturbed.",
+        ],
+    },
+    {
+        ID: "LikesCold",
+        Name: "Likes Cold",
+        Description: "Your boy prefers the chilly and comforting cold that comes from the night and winter months. He is much more accustomed to it and thus won’t be as unhappy about being chilly. ",
+        Features: [
+            "Doesn't become Uncomfortable when Cold.",
+            "Less Uncomfortable when Freezing.",
+        ],
+    },
+    {
+        ID: "LikesHeat",
+        Name: "Likes Heat",
+        Description: "Your boy prefers the warm and comforting heat that comes from the day and summer months. He is much more accustomed to it and thus won’t be as unhappy about being a little warm.",
+        Features: [
+            "Doesn't become Uncomfortable when Warm.",
+            "Less Uncomfortable when Hot.",
+        ],
+    },
+    {
+        ID: "Lucky",
+        Name: "Lucky",
+        Description: "Things just seem to go your boys way! He has a natural luck that is almost supernatural in how much it helps him in little and small ways. But he never notices it, since what is lucky for other people is pretty normal for him.",
+        Exclude: ["Unlucky"],
+        Features: [
+            "Small random Bonuses to Skill/Social Checks.",
+            "Will randomly have Good Luck during Events.",
+        ],
+    },
+    {
+        ID: "Lustful",
+        Name: "Lustful",
+        Description: "Puberty is hitting your boy hard, in a sense that you are seemingly always hard! Your boys mind is full of dirty thoughts and even the slightest thought can make his penis stand at attention, for better or worse.",
+        Features: [
+            "Becomes Horny more Often.",
+            "Bonus to +Arousal Gains.",
+            "More likely to have Lewd Thoughts.",
+        ],
+    },
+    {
+        ID: "Mature",
+        Name: "Mature",
+        Description: "Everyone says your boy is very mature for his age. He takes responsibility seriously and doesn’t let his childish inhibitions get in the way of his life. He prefers more adult activities and scoffs at the more childish things in life.",
+        Exclude: ["Childish"],
+        Features: [
+            "Bonus to +Fun from Mature Activities.",
+            "Less +Fun from Childish Activities.",
+            "Bonus to +Social with Adults and other Mature Characters.",
+        ],
+    },
+    {
+        ID: "Messy",
+        Name: "Messy",
+        Description: "Your boy’s room has not been clean since the day he moved in, outside of the few days his dad threatened to spank him. He just doesn’t see the point in cleaning things up if they’re going to get dirty again!",
+        Exclude: ["Neat"],
+        Features: [
+            "Doesn't become Uncomfortable when Dirty.",
+            "Gets Annoyed when forced to clean.",
+        ],
+    },
+    {
+        ID: "NaturalCook",
+        Name: "Natural Cook",
+        Description: "Your boy has a talent in the kitchen that none can explain. With simple ingredients and simple methods, he is able to turn an average meal into a masterpiece!",
+        Features: [
+            "Bonus to Cooking Skill.",
+            "Gets Annoyed from eating Bland Food.",
+        ],
+    },
+    {
+        ID: "Neat",
+        Name: "Neat",
+        Description: "Your boy is a bit of a neat freak. He prefers things tidy and well-kept. He often finds himself cleaning things without even thinking and gets really anxious when he’s dirty.",
+        Exclude: ["Messy"],
+        Features: [
+            "Hygiene goes down slower.",
+            "Becomes more upset when dirty.",
+        ],
+    },
+    {
+        ID: "Nerd",
+        Name: "Nerd",
+        Description: "Your boy in a nerd in every sense of the word. He loves fantasy, sci-fi, and every other aspect of pop culture! He gets lost in these magical words and loves gushing about whatever fandom is on his mind.",
+        Features: [
+            "Bonus to +Fun from Nerdy Activities.",
+            "Bonus to +Social with other Nerds.",
+            "Can randomly spurt Nerd Facts in Events.",
+        ],
+    },
+    {
+        ID: "Neurotic",
+        Name: "Neurotic",
+        Description: "Your boy will freak out at the most minor of provocations. He easily becomes stressed and can find it difficult to calm down. Thankfully, he is also pretty good at sharing his worries with others.",
+        Features: [
+            "Becomes Stressed more easily.",
+            "More options to remove Stress.",
+        ],
+    },
+    {
+        ID: "Nurturing",
+        Name: "Nurturing",
+        Description: "Your boy is very caring and loves taking care of those around him. From cuddling and babying younger kids to watching the back of older, he has a natural desire to look after people, especially his family and friends. You can expect him to be the first person to bring you soup when you’re sick in bed.",
+        Features: [
+            "Bonus to +Social from Kid Characters.",
+            "Bonus to Teaching and Babysitting younger kids.",
+            "Bonus when caring for Sick Friends.",
+        ],
+    },
+    {
+        ID: "Outdoorsy",
+        Name: "Outdoorsy",
+        Description: "Your boy loves the great outdoors and is always looking for an excuse to go outside. He gets upset if he spends to long inside and would rather feel the breeze through his hair and the sun on his skin.",
+        Exclude: ["IndoorKid"],
+        Features: [
+            "Bonus to +Mood when Outside.",
+            "Bonus to +Fun from Outdoor Activities.",
+        ],
+    },
+    {
+        ID: "Rebellious",
+        Name: "Rebellious",
+        Description: "Your boy is a bit of a rebel. He has a disdain for all levels of authority and will sometimes break the rules just because he can. He can often be found in detention or at the end of his dad’s bed receiving his punishments for acting out.",
+        Features: [
+            "Debuff to +Social with Adults.",
+            "More rebel actions during Events.",
+            "Becomes upset when forced to conform.",
+        ],
+    },
+    {
+        ID: "Shy",
+        Name: "Shy",
+        Description: "Your boy isn’t the most social one in the world. He prefers to spend his time alone and gets really anxious around people he doesn’t know that well. But he can be chatty around people he is comfortable with.",
+        Exclude: ["Charismatic"],
+        Features: [
+            "Bonus to +Social with Close Friends.",
+            "Debuff to +Social with Strangers.", 
+            "Becomes Uncomfortable around Larger Groups.",
+        ],
+    },
+    {
+        ID: "SmallBladder",
+        Name: "Small Bladder",
+        Description: "Your boy has an infamously small bladder. He can’t go a few hours without a potty break, making long trips quite hard. But his constant need to pee and the faces he makes while trying to hold it in are very cute.",
+        Features: [
+            "Bladder Need goes down faster.",
+        ],
+    },
+    {
+        ID: "SugarCrazed",
+        Name: "Sugar Crazed",
+        Description: "Your boy isn’t often allowed sugar. Not because it is unhealthy, but because he becomes a wild animal whenever he has too much! Take care when giving him anything sweet or be prepared to deal with the consequences.",
+        Features: [
+            "Becomes Hyper more easily from Sugar.",
+        ],
+    },
+    {
+        ID: "Unlucky",
+        Name: "Unlucky",
+        Description: "Things just don’t go your boy’s way. He is super unlucky and has spent his life dealing with it. Sure, it isn’t the worst thing the world, but often leads to embarrassing, painful, or downright strange encounters. But hey, at least it keeps things interesting.",
+        Exclude: ["Lucky"],
+        Features: [
+            "Random Debuffs to Skill Checks.",
+            "Will randomly become Unlucky during Events.",
+        ],
+    },
+    {
+        ID: "Unstable",
+        Name: "Unstable",
+        Description: "While mean, calling your boy crazy wouldn’t be too far off. For some reason, he isn’t always there mentally and finds his mood changing randomly throughout the day for seemingly no reason at all. It’s almost a challenge in of itself.",
+        Features: [
+            "Mood will randomly change during the day without reason.",
+            "Harder to manage your mood.",
+        ],
+    },
+    {
+        ID: "Virtuoso",
+        Name: "Virtuoso",
+        Description: "Your boy has a natural talent for music. He can pick up almost any instrument quickly and can often memorize a song just by hearing it. This natural gift is both a blessing and a curse, as almost every song will always be stuck in his head.",
+        Features: [
+            "Bonus to the Music Skill.",
+            "Bonus to +Fun from Musical Activities.",
+        ],
+    },
+]>>

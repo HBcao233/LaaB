@@ -1,0 +1,183 @@
+:: Quest Stormy Night 2 [nobr]
+
+<span style="color:Azure"><big><strong>--Living Room--</strong></big></span><br>
+<<set $NPCHunger -= 5>>
+<<set $NPCHygiene -= 5>>
+
+<<if $QuestStormyNight == 1 and $Time.after(20, 0)>>
+	<<include"Quest Stormy Night 3">>
+	
+<<else>>
+
+You stand in your living room, a vicious storm raging outside. You have been tasked to watch over your little brother. 
+/* OPENING */
+<<if $NPCComfort < 25>>
+	<span style="color:DarkTurquoise">Noah</span> stands right next to you, hugging you leg tightly. <span style="color:lightcoral">He is shaking slightly from the sound of the wind and rain and won’t move more than a foot away from you.</span> 
+	
+<<elseif $NPCComfort < 75>>
+	<span style="color:DarkTurquoise">Noah</span> sits on the couch nervously fiddling with stuff from the coffee table. <span style="color:lightgreen">He tries to keep you in eye sight, but seems fine with you walking away for a minute.</span> 
+
+<<else>>
+	<span style="color:DarkTurquoise">Noah</span> is laying back on the couch staring up at the ceiling mumbling to himself, as he does when he is bored. <span style="color:lightgreen">He doesn’t seem too afraid, though he does turn towards you to make sure you are still there everytime he hears a distant thunder strike.</span> 
+
+<</if>>
+/* POSSIBLE RANDOM EVENT */
+<<set $Random to random(1, 10)>>
+<<if $Random == 1>>
+	<<set $Random2 to random(1, 2)>>
+	<<if $Random2 == 1>>
+		<span style="color:Red">Suddenly, there is an extremely loud thunder strike that illuminates the living room. Noah screams and quickly runs into your arms shaking.</span> 
+	<<else>>
+		<span style="color:Red">Noah’s eyes dart towards a window as a distant thunder strike is followed by the lights flickering. He moves closer to you and grabs your hand.</span> 
+	<</if>><br>
+	<span style="color:Red">-Noah Comfort</span><br>
+	<<set $NPCComfort -= 10>>
+<</if>><br>
+<br>
+
+/* NPC AVATAR */
+
+				/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<if $NPCComfort < 25>>
+	<<set $AD.Arms to "Hide">>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 1>>
+	<<set $AD.Blush to 2>>
+	<<set $AD.Mouth to "Sad">>
+<<elseif $NPCComfort < 50>>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 1>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Sad">>
+<<elseif $NPCComfort < 75>>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Normal">>
+<<else>>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+<</if>>
+<<set $AD.Outfit to "Everyday">>
+<<set $AD.Hard to 0>>
+	<<set $NoahNoShoes to 1>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+
+/* NPC STATS */
+
+<strong>Comfort:</strong> 
+<<include "NPC Comfort">><br>
+/* NOAH COMFORT */
+<<if $NPCComfort < 25>>
+<div style="text-indent: 2em;">
+	<span style="color:lightcoral"><span style="color:DarkTurquoise">Noah</span> is terrified.</span>
+</div>
+<<elseif $NPCComfort < 50>>
+<div style="text-indent: 2em;">
+	<span style="color:yellow"><span style="color:DarkTurquoise">Noah</span> is scared.</span>
+</div>
+<<elseif $NPCComfort < 75>>
+<div style="text-indent: 2em;">
+	<span style="color:lightgreen"><span style="color:DarkTurquoise">Noah</span> is feeling less afraid.</span>
+</div>
+<<elseif $NPCComfort <= 100>>
+<div style="text-indent: 2em;">
+	<span style="color:pink"><span style="color:DarkTurquoise">Noah</span> feels comfortable.</span>
+</div>
+<</if>>
+
+<<if $QuestStormyNight >= 2>>
+
+<strong>Hunger:</strong> 
+<<include "NPC Hunger">><br>
+/* NOAH HUNGER */
+<<if $NPCComfort < 60>>
+<div style="text-indent: 2em;">
+	<span style="color:lightcoral"><span style="color:DarkTurquoise">Noah</span> is too afraid to eat.</span>
+</div>
+<<else>>
+<div style="text-indent: 2em;">
+	<span style="color:lightgreen"><span style="color:DarkTurquoise">Noah</span> will be ready to eat soon.</span>
+</div>
+<</if>>
+
+<strong>Hygiene:</strong> 
+<<include "NPC Hygiene">><br>
+/* NOAH Hygiene */
+<<if $NPCComfort < 60>>
+<div style="text-indent: 2em;">
+	<span style="color:lightcoral"><span style="color:DarkTurquoise">Noah</span> is too afraid to bathe.</span>
+</div>
+<<else>>
+<div style="text-indent: 2em;">
+	<span style="color:lightgreen"><span style="color:DarkTurquoise">Noah</span> will be ready to bathe soon.</span>
+</div>
+<</if>>
+
+<</if>>
+
+/* TUTORIAL */
+<<if $QuestStormyNight == 1>>
+	<span style="color:Gray">[Noah is terrified of thunder and without Bue he is relying on you for support. Performing actions to raise his comfort will calm him down.]</span><br>
+<</if>>
+
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+<<if $Time.after(22, 30)>>
+
+[[Cook Dinner Together (0:20)|Stormy Night Dinner]]
+	<span style="color:Green">+Noah Hunger</span><br>
+
+<<else>>
+
+[[Watch Cartoons (0:20)|Stormy Night Cartoons]]
+	<span style="color:Green">+Noah Comfort</span><br>
+[[Play in Room (0:20)|Stormy Night Play]]
+	<span style="color:Green">+Noah Comfort</span><br>
+[[Watch the Rain (0:20)|Stormy Night Watch Rain]]
+	<span style="color:Yellow">+Noah Comfort?</span><br>
+<<if $QuestStormyNight >= 2>>
+
+[[Cuddle on Couch (0:20)|Stormy Night Cuddle]]
+	<span style="color:Green">++Noah Comfort</span><br>
+[[Pillow Attack (0:20)|Stormy Night Pillow Fight]]
+	<span style="color:Green">++Noah Comfort</span><br>
+	
+<<if $NPCComfort >= 50>>
+[[Tickle Noah (0:20)|Stormy Night Tickle]]
+	<span style="color:Green">++Noah Comfort</span><br>
+<<if $QuestStormyNight == 2>>
+[[Build a Pillow Fort (0:20)|Stormy Night Pillow Fort 1]]
+	<span style="color:Green">++Noah Comfort</span><br>
+<<elseif $QuestStormyNight == 3>>
+[[Finish Pillow Fort (0:20)|Stormy Night Pillow Fort 2]]
+	<span style="color:Green">++Noah Comfort</span><br>
+<<elseif $QuestStormyNight == 4>>
+[[Cuddle in Pillow Fort (0:20)|Stormy Night Fort Cuddle]]
+	<span style="color:Green">++Noah Comfort</span><br>
+[[Watch Cartoons in Pillow Fort (0:20)|Stormy Night Fort TV]]
+	<span style="color:Green">++Noah Comfort</span><br>
+
+<</if>>
+
+<</if>>
+
+<</if>>
+<</if>>
+
+<</if>>

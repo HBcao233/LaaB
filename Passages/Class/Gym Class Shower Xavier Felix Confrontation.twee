@@ -1,0 +1,70 @@
+:: Gym Class Shower Xavier Felix Confrontation [nobr]
+
+As you are finishing up your shower, drying your hair and wrapping the towel around your waist, you hear some muffled commotion from the shower at the end of the hall. You peek your head out, no one else is around to hear what is going on. <span class="yellow-text">Your curiosity gets the better of you as you sneak over to listen in.</span><br>
+<br>
+
+<span class="dialogue-text">“What’s wrong, <span class="char-name">Felix</span>? too shy to share a shower with someone like me?”</span> That is <span class="char-name">Xavier</span>’s voice, his signature demeanor of self-righteousness coming out strong.<br>
+<br>
+
+<span class="dialogue-text">“I do not care about whatever game you are playing.”</span> As expected, the second voice belongs to <span class="char-name">Felix</span>, who sounds annoyed yet unafraid. <span class="dialogue-text">“I already told you; I’m not interested. So, leave me alone before I tell <span style="color:DarkTurquoise">Coach Kohler</span> you’re trying to cause trouble.”</span><br>
+
+<<set _adXavier to {
+    Name: "Xavier",
+    State: {
+        Outfit: "Towel",
+        Eyes: "Tired",
+        Mouth: "Smirk",
+    },
+}>>
+<<set _ad to [
+    _adXavier,
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Towel",
+            Mouth: "Sad",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span class="dialogue-text">“Come now!”</span> <span class="char-name">Xavier</span> laughs, you peek your head in and see both boys, wearing only towels, standing near the far wall of the shower. <span class="red-text"><span class="char-name">Xavier</span> has cornered <span class="char-name">Felix</span>, backing him up against the wall and leaving no room for him to wiggle free.</span> <span class="dialogue-text">“Snitching to the teachers doesn’t befit people like us. Besides, I already explained what would happen if you don’t-”</span><br>
+<br>
+
+<span class="dialogue-text">“You don’t scare me.”</span> <span class="char-name">Felix</span> cuts off <span class="char-name">Xavier</span>, leading to the latter’s annoyance. <span class="dialogue-text">“I know how it goes; I’ve dealt with people like you all my life. But you won’t tell people unless it benefits you and, as it stands, it doesn’t unless I agree to be your lackey. You see me as a threat, but I am not. I just want to have a normal school year like a normal kid.”</span><br>
+<br>
+
+<span class="dialogue-text">“For someone so clever, you have a very important fact incorrect.”</span> <span class="red-text"><span class="char-name">Xavier</span> suddenly slams his hands into <span class="char-name">Felix</span>’s shoulder, pinning the boy against the wall with such force that</span> <span class="pink-text"><span class="char-name">Felix</span>’s towel slips off and he cringes in pain.</span> <span class="dialogue-text">“I don’t see you as a threat, just a wasted tool. If you truly wish to waste your time pretending to be some hapless child, be my guest, but do not think you are invulnerable or above my control. One wrong move and I’ll have you BEGGING to go back home.”</span><br>
+
+<<set _ad to [
+    _adXavier,
+    {
+        Name: "Felix",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Eyes: "Mad",
+            Mouth: "Sad",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span class="red-text"><span class="char-name">Xavier</span> had a lot of venom in his voice, more than you were used to hearing.</span> He roughly releases the French boy before turning around to exit the shower. You quickly hide to avoid being seen as <span class="char-name">Xavier</span> heads to the locker room, a look of annoyance on his face. You hear <span class="char-name">Felix</span> say something in French before he heads off as well. You think about asking him what that was about, but figure now wouldn’t be the best time.<br>
+<br>
+/* GETTING DRESSED */
+<<set $ClothSave to "Restore">>
+<<if $GymClassType == "Gym">>
+    <<storeClothing "Restore" "Undies">>
+<<else>>
+    <<storeClothing "Restore" "Naked">>
+<</if>>
+<<if $SaveUndies != null>>
+    <<set $PlayerUndies to $SaveUndies>>
+<</if>>
+
+<<set $XavierFelixShowerConfrontationSceneHappened to true>>
+
+[[Continue|School Locker Room]] 

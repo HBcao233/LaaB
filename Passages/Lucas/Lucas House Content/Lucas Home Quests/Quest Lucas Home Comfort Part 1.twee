@@ -1,0 +1,155 @@
+:: Quest Lucas Home Comfort Part 1 [nobr]
+
+/* Opening */
+<span style="color:DarkTurquoise">Lucas</span> sits down on his bed. He looked a lot more comfortable, though you still couldn’t shake that something seemed to be bothering him. <span style="color:pink">Feeling this was as good a time as any, you sit down next to him and put your arm on his shoulder, asking him once more if everything is okay.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Frown",
+			Blush: 2,
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Yeah, like I said, everything is fine.”</span> He says, though you notice his feet shifting uncomfortably, <span style="color:LightSteelBlue">“I mean, you’re having fun, right?”</span> You confirm that you were, but you could tell that something was bothering him. <span style="color:pink"><span style="color:DarkTurquoise">Lucas</span> turns away and you spot him cross his feet and begin to rub the tops of his feet against each other.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Can I ask you something?”</span> He turns back to you as you nod in response. <span style="color:LightSteelBlue">“Did you really not know who my mom was? Before you came over, I mean.”</span> Confused, you tell him that you had no idea and were generally surprised. His last name isn’t super unique and no one had mentioned that to you. You question why that’s important. <br>
+<br>
+<span style="color:LightSteelBlue">“It’s just-“</span> <span style="color:DarkTurquoise">Lucas</span> sighs, slouching down, <span style="color:LightSteelBlue">“When your mom's famous, everyone tends to find out really quick. I can’t even remember a time when everyone in class didn’t see me as ‘<span style="color:DarkTurquoise">Selina Taylor</span>’s son’. And it’s cool, it really is. It’s just-“</span> <span style="color:DarkTurquoise">Lucas</span> shrugs, <span style="color:pink">he was avoiding eye contact with you and messing with his fingers in an attempt to soothe his nerves.</span> <span style="color:LightSteelBlue">“Growing up, I could never really tell if people wanted to be friends with me or my mom’s son.”</span> <br>
+<br>
+He sighs once more and lays back on his bed, which you follow lying next to him. <span style="color:LightSteelBlue">“It’s stupid, I know.”</span> You tell him it isn’t stupid, it’s a genuine concern that you didn’t even consider he’d have to have. But you assure him that you are his friend because you like him, not because of who his mom is. <br>
+<br>
+<span style="color:LightSteelBlue">“Thanks.”</span> <span style="color:DarkTurquoise">Lucas</span> smiles, turning and staring at the ceiling. <span style="color:LightSteelBlue">“Believe it or not, I used to have tons of friends at school, like pretty much everyone in our grade and then some. But then I realized, they weren’t my friends. Not really. So since then, it’s just been me. I didn’t mind it that much, but it was nice when you moved in.”</span> He turns back to you, <span style="color:LightSteelBlue">“Probably why I seemed a bit over-excited when you moved in. The thought of someone who didn’t know who my mom was, a real friend, was exciting.”</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+			Blush: 2,
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Smirk",
+			Eyes: "Tired",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<div id=choice>
+/* Hug and Comfort */
+	<<link "Comfort him with a hug<br>">>
+	<<replace"#choice">>
+<span style="color:pink">Without warning, you wrap your arms around <span style="color:DarkTurquoise">Lucas</span> and pull him in for a big hug, rolling on top of him. <span style="color:DarkTurquoise">Lucas</span>’ face turns a deep crimson as he questions what you are doing. You hold him tightly, telling him that he doesn’t have to worry about any of that with you, that you like him for him, with all the silly awkwardness that comes with it.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+			Eyes: "Sad",
+			Blush: 3,
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Smirk",
+			Eyes: "Tired",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Thank you, <span style="color:DarkTurquoise">$LucasNickname</span>.”</span> <span style="color:pink">You swear you hear his voice crack slightly as he hugs you back.</span> <span style="color:LightSteelBlue">“Really.”</span> <span style="color:pink">The moment of cute embrace quickly turns awkward as the sound of a passing car brings you both back to reality.</span> Releasing the hug, you both sit back up, fixing your hair and clothing. <br>
+<br>
+<span style="color:LightSteelBlue">“Well, now that the sappy stuff is over, let’s do something fun!”</span> <span style="color:DarkTurquoise">Lucas</span> says, his still red cheeks indicating he wanted to quickly change the subject. <span style="color:LightSteelBlue">“Let’s go play some video games or something!”</span> He grabs you by the hand and helps you up. He really did seem much more comfortable now, reassured that you are his friend. <br>
+<span style="color:Gold">Quest: "Lucas: The Price of Fame" Complete!</span><br>
+<<set $CompletedQuests.push("Lucas: The Price of Fame")>>
+<<set $ActiveQuests.delete("Lucas: The Price of Fame")>>
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+    <<if $QuestLog[_i].Name == "Lucas: The Price of Fame">>
+        <<set $QuestLog.deleteAt(_i)>>
+        <<break>>
+    <</if>>
+<</for>>
+<<set $Notifications.push({
+    Name: "Quest Completed!",
+    Icon: "Quests/Lucas",
+    Description: "<span style=\"color:DarkTurquoise\">Lucas</span> has opened up to you about his feelings and you have grown closer to each other.",
+})>>
+<<socialChange "Lucas" 5>>
+<br>
+[[Continue|Lucas Home Bedroom]]
+
+    <</replace>>
+    <</link>>
+/* Break tension */
+	<<link "Break the tension with a tickle attack<br>">>
+	<<replace"#choice">>
+<span style="color:pink">The awkward silence of your emotional conversation hangs thick in the air, so you decide to break the tension. Quickly spotting <span style="color:DarkTurquoise">Lucas</span>’ exposed sides, as his $LucasTop.Type has lifted up as he lay down, you quickly roll on top of him and begin to tickle him relentlessly!</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Wait-! Hahaha!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Lucas</span> tries to push you off of him, but finds himself at your mercy as you lift his $LucasTop.Type all the way up and begin to tickle his armpits as well. <span style="color:DarkTurquoise">Lucas</span> could only laugh and try to slide his way out of your grasp, though you held him down tight enough to where all he managed to do was slide his $LucasBottoms.Type down slightly, revealing a good portion of his $LucasUndies.Name, which only made you want to tickle him harder.</span> <br>
+<br>
+<span style="color:pink">You swear you see a lump forming on his crotch when he finally manages to break free and escape your torture, quickly running to the other side of the room.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+			Blush: 2,
+			Cry: 1,
+			Arms: "Hide",
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Smirk",
+			Eyes: "Mad",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“You menace!”</span> He laughs, <span style="color:pink">trying to catch his breath as he pulls his slipping $LucasBottoms.Type.</span> <span style="color:LightSteelBlue">“I air my feelings to you, and you decide to attack me!”</span> He teased, making over-exagerated movements around his heart to emphasis his ‘feeling of betrayal’. But he couldn’t hide the smile on his deeply blushing face. <br>
+<br>
+You laugh in return, stating that you only did what a true friend would to cheer him up. <span style="color:DarkTurquoise">Lucas</span> rolls his eyes at this defense, claiming that he could <span style="color:LightSteelBlue">“Never trust you again!”</span> Though, one short threat to assault him again makes him quickly recount this. <span style="color:pink">Man, the kid sure is ticklish.</span> <br>
+<span style="color:Gold">Quest: "Lucas: The Price of Fame" Complete!</span><br>
+<<set $CompletedQuests.push("Lucas: The Price of Fame")>>
+<<set $ActiveQuests.delete("Lucas: The Price of Fame")>>
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+    <<if $QuestLog[_i].Name == "Lucas: The Price of Fame">>
+        <<set $QuestLog.deleteAt(_i)>>
+        <<break>>
+    <</if>>
+<</for>>
+<<set $Notifications.push({
+    Name: "Quest Completed!",
+    Icon: "Quests/Lucas",
+    Description: "<span style=\"color:DarkTurquoise\">Lucas</span> has opened up to you about his feelings and you have grown closer to each other.",
+})>>
+<<socialChange "Lucas" 5>>
+<br>
+[[Continue|Lucas Home Bedroom]]
+
+
+    <</replace>>
+    <</link>>
+</div>

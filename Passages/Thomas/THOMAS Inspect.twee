@@ -1,0 +1,131 @@
+:: THOMAS Inspect School Playground [nobr]
+
+<<include"THOMAS Avatar Everyday">>
+
+<span style="color:DarkTurquoise">Thomas</span> sits at one of the far picnic tables, quietly drawing by himself. He instinctively hides what he is drawing whenever someone walks by.<br>
+<br>
+
+<<include"Thomas Base Talk Code">>	
+[[Chat With (0:10)|THOMAS Playground Chat With]]
+<span style="color:Green">+Thomas</span><br>
+
+<<if $ThomasSocial > -50 or ($ThomasSocialRank || 0) > 0>>
+	[[Hang Out (0:20)|Thomas Playground Hang Out]]
+	<span style="color:Green">+Thomas</span><br>
+<</if>>
+
+:: THOMAS Inspect School Lunch [nobr]
+
+	<<include"THOMAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Thomas</span> sits at the end of one of the tables by himself quietly eating.<br>
+	<br>
+	<<if $FriendLunch != 1 and $LunchClass != 2>>
+		[[Eat Lunch With (0:15)|THOMAS Eat Lunch]] <span style="color:Green">+Social</span>
+		/* LUNCH QUALITY WHEN EATING WITH PERSON */
+		<<include "School Lunch Level Chooser">>
+	<</if>>
+
+	<<include"Thomas Base Talk Code">>
+
+:: THOMAS Inspect Cafeteria [nobr]
+
+	<<include"THOMAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Thomas</span> sits at a table by himself quietly drawing in his notebook.<br>
+	<br>
+	
+	[[Chat With (0:10)|THOMAS Cafeteria Chat With]] <span style="color:Green">+Thomas</span><br>
+	[[Hang Out (0:20)|Thomas Cafeteria Drawing Hang Out]] <span style="color:Green">+Thomas</span><br>
+
+	<<include"Thomas Base Talk Code">>
+
+:: THOMAS Inspect School Waiting for Bus [nobr]
+
+	<<include"THOMAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Thomas</span> stands off to the side from everyone else waiting for the bus.<br>
+	<div id="HangOutSchool">
+		<<if $InActiveQuests.includes("Thomas: Hang Out Intro")>>
+			<<link"Ask if Thomas wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Thomas Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Thomas: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutSchool">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Uniform">>
+					<<set $Minutes += 10>>
+					<<goto "Thomas Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+	</div>
+	<br>
+	[[Leave|Middle School]] 
+
+:: THOMAS Inspect School Hallway [nobr]
+
+	<<include"THOMAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Thomas</span> walks down the hallway.<br>
+	<br>
+	[[Give him a hug (0:02)|Thomas School Hug]]<br>
+	<<if !$DailyEvents.includes("Thomas School Bully")>>
+		[[Give Thomas a Wedgie (0:02)|Thomas School Hallway Wedgie]]
+		<<if $ThomasSocial < 20 && $ThomasSocialRank != 1>>
+			<span style="color:Red"> -Social</span><br>
+		<<else>>
+			<span style="color:Green"> +Social</span><br>
+		<</if>>
+	<<else>>
+		<span style="color:Grey">Give Thomas a Wedgie (0:02)</span><br>
+	<</if>>
+
+	<<include"Thomas Base Talk Code">>
+
+:: THOMAS Inspect English [nobr]
+
+	<<include"THOMAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Thomas</span> sits at his desk doodling in his notebook. You glance over and see that he appears to be drawing animals.<br>
+
+:: THOMAS Inspect History [nobr]
+
+	<<include"THOMAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Thomas</span> lays his head on his desk and tiredly waits for class to begin.<br>
+
+:: THOMAS Inspect Science [nobr]
+
+	<<include"THOMAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Thomas</span> is doodling pictures of animals on his homework.<br>
+
+:: THOMAS Inspect Math [nobr]
+
+	<<include"THOMAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Thomas</span> sits at his desk tapping his pencil as he waits for class to begin.<br>
+
+:: THOMAS Inspect Art [nobr]
+
+	<<include"THOMAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Thomas</span> sits in the corner quietly drawing in his notebook away from all the other boys.<br>
+
+:: THOMAS Inspect Gym [nobr]
+
+	<<include"THOMAS Avatar Undies">>
+	<span style="color:DarkTurquoise">Thomas</span> stands along in the corner alone, changing away from the other boys. <span style="color:Pink">He doesn’t seem shy, making no attempt to hide his $ThomasUndies.Name or thin body, </span> but rather he seems to have no interest in interacting with any of the other boys. Despite everyone being in their underwear, something about being in the locker room makes it less intimate and embarrassing.<br>
+	<<if $SeenThomasUndies < 1>>
+		<<set $SeenThomasUndies += 1>>
+	<</if>>
+	
+:: THOMAS Inspect Gym Shower [nobr]
+
+	<<include"THOMAS Avatar Towel">>
+	<span style="color:DarkTurquoise">Thomas</span> stands off in a corner in nothing but a towel getting dressed. He puts his shirt on first before starting to put on his $ThomasUndies.Name under his towel. You can’t tell if the quiet boy is actually shy or just wants to avoid drawing attention to himself. <br>

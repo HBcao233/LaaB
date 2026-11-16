@@ -1,0 +1,60 @@
+:: Father Journal [nobr]
+
+<span style="color:Azure"><big><strong>--Your Father--</strong></big></span><br>
+<<if $JournalInfo == "Info">>
+	[X]
+<<else>>
+	[ ] 
+<</if>>
+[[NPC Information|Father Journal][$JournalInfo to "Info"]]<br>
+<<if $JournalInfo == "Stats">>
+	[X]
+<<else>>
+	[ ] 
+<</if>>
+[[NPC Stats|Father Journal][$JournalInfo to "Stats"]]<br>
+[[Return|Journal]]<br>
+<br>
+
+<<if $JournalInfo == "Stats">>
+	<<include"Dad Stats">>
+
+<<elseif $JournalInfo == "Info">>
+
+<span style="color:DarkTurquoise">James</span> is <span style="color:DarkTurquoise">Your Father</span>. <br>
+<br>
+<strong>--Appearance--</strong><br>
+He is 41 years old, has Short Brown Hair, Stubble, and Green Eyes. <br>
+He is tall and slender.<br>
+He has $Dad.SkinColor skin.<br>
+<br>
+<strong>--Clothing--</strong><br>
+<strong>Everyday</strong>: Tends to wear a Button-Up Shirt and Pants most days and Shorts and T-Shirts on weekends.<br>
+<strong>Pajamas</strong>: Generally wears Red Pajama Pants.<br>
+<strong>Underwear</strong>: Wears Boxer-Briefs<br>
+<br>
+<strong>--Privates--</strong><br>
+<<if $SeenDadNaked == 1>>
+	<span style="color:Pink">UNKNOWN.</span><br>
+<<else>>
+	<span style="color:Yellow">You have not seen <span style="color:DarkTurquoise">Your Father</span> Naked.</span><br>
+<</if>>
+<br>
+<strong>--Personality--</strong><br>
+<span style="color:DarkTurquoise">Your Father</span> is a workaholic and tends spend most of his time on his small financial advisory business.<br>
+He tends to leave <span style="color:DarkTurquoise">Gabe</span> in charge.<br>
+Is very strict, but fair.<br>
+Makes sure to set time aside on the weekend to spend time with his sons.<br>
+Lost his wife recently.<br>
+<br>
+<strong>Likes</strong>: Working with money, his sons, barbecuing, movies<br>
+<strong>Dislikes</strong>: Freeloading, nosy neighbors, his brothers<br>
+<br>
+<strong>--Reputation--</strong><br>
+<span style="color:DarkTurquoise">Your Father</span> is known as a very smart and professional man who cares for his kids.<br>
+<br>
+<strong>--Secrets--</strong><br>
+<span style="color:Yellow">You do not know any secrets about <span style="color:DarkTurquoise">Your Father</span>.</span><br>
+<br>
+<</if>>
+[[Return|Journal]] 

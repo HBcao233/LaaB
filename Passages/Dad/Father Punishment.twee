@@ -1,0 +1,64 @@
+:: Father Punishment [nobr]
+
+<span style="color:DarkTurquoise">Your Father</span> takes you into his room, shuts the door, and sits you down at the end his bed. You can feel your heart beating in your chest as he sighs and sits down at his desk. <span style="color:LightSteelBlue">“Do you want to say what you did or shall I?”</span> He asks, but doesn’t give you a chance to respond.<br>
+
+<<set _ad to [
+	{
+		Name: "Dad",
+		State: {
+			Brows: "Angry",
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+/* MISSED CLASS */
+<<if $PunishmentReason.includes("Missed Class")>>
+<span style="color:LightSteelBlue">“Got a call from your school, says you missed class? I don’t remember you telling me you were staying home today. I’d ask what you were doing instead of going to class, but it clearly wasn’t what you were suppose to be doing.”</span><br>  
+<br>
+
+/* NOT DOING CHORES */
+<<elseif $PunishmentReason.includes("Chores")>>
+<span style="color:LightSteelBlue">“You know you need to get your chores done every week, no excuses. You had a whole week to do them and still didn’t get them done.”</span><br>  
+<br>
+
+/* BULLYING NOAH */
+<<elseif $PunishmentReason.includes("Bully Noah")>>
+<span style="color:LightSteelBlue">“Have you been bullying your brother? I found him crying in his room and he told me what you did.”</span> He gives you a disappointed glare, <span style="color:LightSteelBlue">“Just because he’s smaller, doesn’t mean you can take advantage of him!”</span><br>  
+<br>
+
+/* BREAKING PLANT POT */
+<<elseif $PunishmentReason.includes("Broken Pot")>>
+<span style="color:LightSteelBlue">“You want to tell me what happened to that broken pot?”</span> He crosses his arm and glares at you, <span style="color:LightSteelBlue">“And don't try to deny it, an anonymous source snitched on you.”</span><br>  
+<br>
+
+<</if>>
+<<set $PunishmentReason to []>>
+
+<div id=choice>
+	<<link "Continue<br>">>
+	<<replace"#choice">>
+	
+/* MINOR PUNISHMENT */
+
+<<if $Punishment < 10>>
+	<<include"Punishment Timeout">>
+
+/* MEDIUM PUNISHMENT */
+
+<<else>>
+	<<include"Punishment Spanking">>
+	
+<</if>>
+
+	<</replace>>
+	<</link>>
+</div>

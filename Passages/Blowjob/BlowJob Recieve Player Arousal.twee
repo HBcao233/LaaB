@@ -1,0 +1,43 @@
+:: BlowJob Recieve Player Arousal [nobr]
+
+<<if $SexNPCAction == "Come Up For Air">>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to []>>
+<<elseif $SexNPCAction == "Blow Gently">>
+    <<set _arousalbs to ["Tip", "Shaft"]>>
+    <<set _arousalkink to ["GentleSex"]>>
+<<elseif $SexNPCAction == "Blow Roughly">>
+    <<set _arousalbs to ["Tip", "Shaft"]>>
+    <<set _arousalkink to ["RoughSex"]>>
+<<elseif $SexNPCAction == "Squeeze Balls Gently">>
+    <<set _arousalbs to ["Balls"]>>
+    <<set _arousalkink to ["GentleSex"]>>
+<<elseif $SexNPCAction == "Squeeze Balls Roughly">>
+    <<set _arousalbs to ["Balls"]>>
+    <<set _arousalkink to ["RoughSex"]>>
+<<elseif $SexNPCAction == "Finger Gently">>
+    <<set _arousalbs to ["Butthole"]>>
+    <<set _arousalkink to ["GentleSex"]>>
+<<elseif $SexNPCAction == "Finger Roughly">>
+    <<set _arousalbs to ["Butthole"]>>
+    <<set _arousalkink to ["RoughSex"]>>
+<<elseif $SexNPCAction == "Tickle Taint Gently">>
+    <<set _arousalbs to ["Butt"]>>
+    <<set _arousalkink to ["GentleSex"]>>
+<<elseif $SexNPCAction == "Tickle Taint Roughly">>
+    <<set _arousalbs to ["Butt"]>>
+    <<set _arousalkink to ["RoughSex"]>>
+<</if>>
+
+/* SPEED MODIFIER */
+<<if $Speed < 0>>
+	<<set _arousalgain to 10>>
+<<else>>
+	<<set _arousalgain to 5>>
+<</if>>
+    
+<<if $SexNPCAction == "Come Up For Air">>
+    <<set _arousalgain to 0>>
+<</if>>
+
+<<arousalGain _arousalgain _arousalbs _arousalkink>>

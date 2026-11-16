@@ -1,0 +1,41 @@
+:: Dellwood Empty Lot [nobr]
+
+/* LOCATION */
+<<if $NaturismSkill < 1>>
+<<set $Location to {
+	Name: "Empty Lot",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+<<else>>
+/* LOCATION */
+<<set $Location to {
+	Name: "Empty Lot",
+    Indoors: 0,
+    Safe: 1,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Empty Lot--</strong></big></span><br>
+You stand at an empty lot at the end of Dellwood Street. The end of the street has quite a few empty or unfinished lots, which you heard was due to some budgeting issue. This one in particular was around a corner of the end of the street and was surrounded by large bushes, making it essentially hidden from view. While the concrete foundation was mostly clear, there were a large amount of discarded boxes and construction supplies scattered around the bushes.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+	[[Explore (0:15)|Dellwood Lot Explore]]<br>
+
+
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Two Story Neighborhood.png">
+	[[Dellwood Street (0:01)|Dellwood Street][$Minutes += 1]]<br>
+	

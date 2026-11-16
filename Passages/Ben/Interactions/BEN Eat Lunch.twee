@@ -1,0 +1,40 @@
+:: BEN Eat Lunch [nobr]
+
+<<if $BenSocial > 0>>
+	<<set _benmouth to "Happy">>
+<<else>>
+	<<set _benmouth to "Frown">>
+<</if>>
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Mouth: _benmouth,
+			Outfit: "Uniform",
+		}
+	}
+]>>
+<<ad _ad>>
+
+<<if $BenSocial >= 15>>
+	You take a seat at the same table as <span style="color:DarkTurquoise">Ben</span> and chat, enjoying your time together.<br>
+	<<socialChange "Ben" 1>>
+	<br>
+<<elseif $BenSocial >= 0>>
+	<<set $Random to random(1, 3)>>
+	<<if $Random > 1>>
+		You take a seat at the same table as <span style="color:DarkTurquoise">Ben</span> and chat, enjoying your time together.<br>
+		<<socialChange "Ben" 1>>
+		<br>
+	<<else>>
+		You take a seat at the same table as <span style="color:DarkTurquoise">Ben</span> and try to start a conversation, but he is quiet the entire time.<br>
+		<br>
+	<</if>>
+<<elseif $BenSocial < 0>>
+	You take a seat at the same table as <span style="color:DarkTurquoise">Ben</span> and try to start a conversation, but he is so nervous around you he is quiet the entire time.<br>
+	<br>
+<</if>>
+
+<<include "School Lunch">>
+<<set $FriendLunch to 1>>

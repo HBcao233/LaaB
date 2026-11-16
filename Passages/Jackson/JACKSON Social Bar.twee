@@ -1,0 +1,84 @@
+:: JACKSON Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $JacksonSocialRank == -3>>
+	<<set $JacksonRelationship to "Hated">>
+	<span style="color:DarkRed">Jackson Hates you!</span>
+	<br>
+<<elseif $JacksonSocialRank == -2>>
+	<<set $JacksonRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Jackson are Enemies.</span>
+	<br>
+<<elseif $JacksonSocialRank == -1>>
+	<<set $JacksonRelationship to "Very Disliked">>
+	<span style="color:Red">Jackson really Dislikes you.</span>
+	<br>
+<<elseif $JacksonSocialRank == 0 and $JacksonSocial <= -50>>
+	<<set $JacksonRelationship to "Disliked">>
+	<span style="color:Red">Jackson Dislikes you. </span>
+	<br>
+<<elseif $JacksonSocialRank == 0 and $JacksonSocial < 50>>
+	<<set $JacksonRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Jackson are Acquaintances.</span>
+	<br>
+<<elseif $JacksonSocialRank == 0 and $JacksonSocial >= 50>>
+	<<set $JacksonRelationship to "Liked">>
+	<span style="color:LightGreen">Jackson Likes you.</span>
+	<br>
+<<elseif $JacksonSocialRank == 1>>
+	<<set $JacksonRelationship to "Friends">>
+	<span style="color:Green">You and Jackson are Friends.</span>
+	<br>
+<<elseif $JacksonSocialRank == 2>>
+	<<set $JacksonRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Jackson are Good Friends!</span>
+	<br>
+<<elseif $JacksonSocialRank == 3>>
+	<<set $JacksonRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Jackson are Close Friends!</span>
+	<br>
+<<elseif $JacksonSocialRank == 4>>
+	<<set $JacksonRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Jackson are Best Friends!</span>
+	<br>
+<<elseif $JacksonSocialRank == 5>>
+	<<set $JacksonRelationship to "Love">>
+	<span style="color:Pink">You and Jackson Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $JacksonSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $JacksonSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $JacksonSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $JacksonSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $JacksonSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $JacksonSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $JacksonSocial,
+			value: Math.abs($JacksonSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($JacksonSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $JacksonSocial > 120>>
+	<<set $JacksonSocial to 120>>
+<</if>>
+<<if $JacksonSocial < -120>>
+	<<set $JacksonSocial to -120>>
+<</if>>

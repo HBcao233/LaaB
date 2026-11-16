@@ -1,0 +1,92 @@
+:: Entertainment District [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Entertainment District",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Town",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Entertainment District--</strong></big></span><br>
+You stand in the middle of The Entertainment District, which sits strategically near the schools, catering to its targeted audience of children. From arcades, to bowling, to laser tag, this area is the go-to place for after-school fun, or for kids to be dropped off while their parents enjoy their vacation. A full wallet and an afternoon could easily lead to a lifetime of memories. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+	<<capture _i>>
+		<<if $RandomJobList[_i].Type == "Leo Quest" && $Time.between(6,0,18,0)>>
+			[[Job: Modeling (0:30)|OC Leo Modeling Quest]]<br>
+		<</if>>
+	<</capture>>
+<</for>>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<<if $Time.between(10,0,23,0)>>
+	[[Movie Theatre|Movie Theatre]]<br>
+<<else>>
+	<span style="color:lightcoral">Movie Theatre (Open 10am to Midnight)</spaN><br>
+<</if>>
+<<if $Time.between(7,0,22,0)>>
+	[[Arcade|Arcade]]<br>
+<<else>>
+	<span style="color:lightcoral">Arcade (Open 7am to 10pm)</span><br>
+<</if>>
+<br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Park.png">
+	[[Park (0:10)|Park][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Pool.png">
+	[[Pool (0:10)|Pool][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Middle School.png">
+	[[Middle School (0:10)|Middle School][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Park.png">
+	[[Park (0:05)|Park][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Pool.png">
+	[[Pool (0:05)|Pool][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Middle School.png">
+	[[Middle School (0:05)|Middle School][$Minutes += $TravelTime]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 374px; top: 155px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="300,155,353,208" alt="Park" onclick="$.wiki('<<goto[[Park]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="374,81,427,134" alt="Pool" onclick="$.wiki('<<goto[[Pool]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="448,155,501,208" alt="Middle School" onclick="$.wiki('<<goto[[Middle School]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

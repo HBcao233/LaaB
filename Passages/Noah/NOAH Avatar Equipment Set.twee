@@ -1,0 +1,140 @@
+:: NOAH Avatar Equipment Set [nobr]
+
+    /* Setting Body Basics */
+<<set $AD.SkinColor to $Noah.SkinColor>>
+<<set $AD.Freckles to $Noah.Freckles>>
+<<set $ADArmFreckles to 0>>
+<<set $ADShoulderFreckles to 0>>
+<<set $AD.HairStyle to $Noah.Hair>>
+<<set $AD.HairColor to $Noah.HairColor>>
+<<set $AD.EyeColor to $Noah.EyeColor>>
+<<set $AD.LeftEyeColor to $Noah.EyeColor>>
+<<set $AD.RightEyeColor to $Noah.EyeColor>>
+<<set $AD.PenisStyle to $Noah.PenisStyle>>
+<<set $AD.PenisSize to "Average">>
+
+    /* Setting Everything to None for safety */
+    <<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADHead to $None>>
+    <<set $ADFace to $None>>
+
+    <<if $AD.Outfit == "Undies">>
+        <<set $ADUndies to $NoahDayUndies>>
+        <<set $ADSocks to $NoahSocks>>
+    <</if>>
+
+    <<if $AD.Outfit == "Everyday">>
+        <<set $ADUndies to $NoahDayUndies>>
+        <<set $ADTop to $NoahEverydayTop>>
+        <<set $ADBottoms to $NoahEverydayBottoms>>
+        <<if $NoahInsideSocks == 0>>
+            <<set $ADSocks to $None>>
+        <<else>>
+            <<set $ADSocks to $NoahSocks>>
+        <</if>>
+    <</if>>
+
+    <<if $AD.Outfit == "Everyday Outside">>
+        <<set $ADUndies to $NoahDayUndies>>
+        <<set $ADSocks to $NoahSocks>>
+        <<set $ADTop to $NoahEverydayTop>>
+        <<set $ADBottoms to $NoahEverydayBottoms>>
+        <<set $ADShoes to $NoahShoes>>
+        <<if $NoahOuter.Type != "None">>
+            <<set $ADOuter to $NoahOuter>>
+        <</if>>
+    <</if>>
+
+    <<if $AD.Outfit == "Pajamas">>
+        <<if $NoahPJRatio != -1 and $NoahPJType == "Two">>
+            <<set $ADTop to $NoahPJTop>>
+            <<set $ADBottoms to $NoahPJBottoms>>
+        <</if>>
+        <<if $NoahWetting == 1>>
+            <<set $ADUndies to $KidsWhiteDiaper>>
+        <<else>>
+            <<set $ADUndies to $NoahDayUndies>>
+        <</if>>
+    <</if>>
+    
+    <<if $AD.Outfit == "Naked">>
+        <<set $ADTop to $None>>
+        <<set $ADBottoms to $None>>
+        <<set $ADNeck to $None>>
+        <<set $ADOuter to $None>>
+        <<set $ADSocks to $None>>
+        <<set $ADShoes to $None>>
+        <<set $ADUndies to $None>>
+    <</if>>
+    
+    <<if $AD.Outfit == "Swim">>
+        <<set $ADTop to $None>>
+        <<set $ADBottoms to {
+            Name: "Blue Trunks",
+            ID: "BoTrBl",
+            Type: "Trunks",
+            Color: "Blue",
+            Slot: "Bottoms",
+            Size: "Kid",
+            Icon: "Images/Equipment/Trunks/Blue Trunks.png",
+            Avatar: "Images/Avatar/Kids/Clothes/Trunks/Blue Trunks.png",
+            SagAvatar: "None",
+            PulledDownAvatar: "Images/Avatar/Kids/Clothes/Pants Down/Blue Pants Down.png",
+            AvatarTorn: "Images/AvatarTorn/Kids/Clothes/Trunks/Blue Trunks.png",
+            AvatarDamaged: "Images/AvatarDamaged/Kids/Clothes/Trunks/Blue Trunks.png",
+            AvatarAlt: "None",
+            AvatarAltTorn: "None",
+            AvatarAltDamaged: "None",
+            Description: "A pair of cute Trunks.",
+        }>>
+        <<set $ADNeck to $None>>
+        <<set $ADOuter to $None>>
+        <<set $ADSocks to $None>>
+        <<set $ADShoes to $None>>
+        <<set $ADUndies to $None>>
+    <</if>>
+
+    <<if $AD.Outfit == "Towel">>
+        <<set $ADBottoms to {
+	Name: "White Towel",
+    ID: "BoToWh",
+    Type: "Towel",
+    Color: "White",
+    Slot: "Bottoms",
+    Temp: 5,
+    Tags: ["Lewd"],
+    Durability: 1,
+    MaxDurability: 1,
+    Weight: 2,
+    Size: "Kids",
+    Icon: "Images/Equipment/Towel/White Towel.png",
+    Avatar: "Images/Avatar/Kids/Clothes/Towel/Towel.png",
+    AvatarSleeve: "None",
+    AvatarSleeveBound: "None",
+    SagAvatar: "None",
+    PulledDownAvatar: "None",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A towel you can tie around your waist. It’s pretty loose though, so better hold onto it tightly unless you want to lose it.",
+}>>
+    <</if>>
+
+
+    /* X-Ray Mode Test */
+    <<if $Xray == 1>>
+        <<set $ADTop to $None>>
+        <<set $ADBottoms to $None>>
+        <<set $ADNeck to $None>>
+        <<set $ADOuter to $None>>
+        <<set $ADSocks to $None>>
+        <<set $ADShoes to $None>>
+    <</if>>

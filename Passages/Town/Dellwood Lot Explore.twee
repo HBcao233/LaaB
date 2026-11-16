@@ -1,0 +1,32 @@
+:: Dellwood Lot Explore [nobr]
+
+<<set $Minutes+= 15>>
+
+You step into the bushes and shrubbery and begin to search around the foliage and boxes, seeing if you can find anything of interest. 
+
+<<set $RandomEvent to random(1, 10)>>
+
+/* DOLLAR */
+<<if $RandomEvent == 1>>
+While most of the boxes seem to be empty or full of trash, <span style="color:lightgreen">you eventually do find a dollar that was snagged on one of the bushes and pocket it before returning to the empty lot.</span><br>
+<<needChange "Energy" -1>>
+<<set $Money += 1>>
+<br>
+[[Continue|Dellwood Empty Lot]] 
+
+/* CUT SELF */
+<<elseif $RandomEvent == 2>>
+As you are moving through a collection of bushes, <span style="color:lightcoral">you suddenly feel a sharp pain as one of the brambles cuts your legs.</span> You wince and hop out of the bush to discover you are bleeding slightly. It's only a small cut, but still stings like hell!<br>
+<<needChange "Energy" -2>>
+<<addMoodlet "Pained" 5>>
+<br>
+[[Continue|Dellwood Empty Lot]] 
+
+/* NOTHING */
+<<else>>
+After searching for roughly 15 minutes and finding only trash, bugs, and strange scraps of cloth, you decide to take a break and return to the empty lot to rest and dust the dirt off your clothes.<br>
+<<needChange "Energy" -1>>
+<br>
+[[Continue|Dellwood Empty Lot]] 
+
+<</if>>

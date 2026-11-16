@@ -1,0 +1,685 @@
+:: NOAH Inspect Sleeping [nobr]
+
+	<<include"Noah Avatar Sleeping">>
+
+		/* Setting Outfit Variables */
+	<<set $AD.Outfit to "Pajamas">>
+	<<include"Noah Outfit Set">>
+
+	<span style="color:DarkTurquoise">Noah</span> sleeps quietly in his bed, cuddling his stuffed bear <span style="color:DarkTurquoise">Bue</span>.
+	<<if $NoahBlanket == 1>>
+		His blue superhero blanket lays on top of him, keeping him warm. 
+		<<if $NoahPJType == "None">>
+			<span style="color:Pink">He is currently not wearing a shirt, revealing his boyish chest.</span><br>
+		<<else>>
+			He is currently wearing a $ADTop.Type.<br>
+		<</if>>
+	<<else>>
+		His blue superhero blanket has been tossed aside to the floor.
+		<<if $NoahPJType == "None" and $NoahStrippedSleeping != 1>>
+			<span style="color:Pink">He is currently wearing nothing but a pair of small $NoahUndies.Name, which leave little to the imagination.</span><br>
+		<<elseif $NoahStrippedSleeping == 1>>
+			<span style="color:Pink">He is completely naked, his Tiny Penis and Balls laying cutely between his legs. He shivers from the cold, tossing and turning in his sleep as he unintentionally gives you a clear look at his Soft Butt.</span><br>
+		<<else>>
+			He is currently wearing a $ADTop.Type and $ADBottoms.Type.<br>
+		<</if>>
+	<</if>>
+
+	<<if $NoahBlanket == 1>>
+		[[Pull off his blanket|PH Noah Bedroom][$NoahBlanket to 0]]<br>
+	<<else>>
+		<<if $NoahPJType == "Two" and $NoahStrippedSleeping != 1>>
+			[[Remove his pajamas (0:05)|NOAH Remove Pajamas]]<br>
+		<<elseif $NoahPJType == "None" and $NoahStrippedSleeping != 1>>
+			[[Remove his briefs (0:05)|NOAH Remove Briefs]]<br>
+		<<elseif $NoahPJType == "None" and $NoahStrippedSleeping == 1>>
+			<<if $NoahSocialRank >= 1>>
+				<<if $NoahSleepCum != 1>>
+					[[Suck Noah's Penis|NOAH Sleep Pre-Blow]]<br>
+				<</if>>
+			<</if>>
+			[[Play with his Penis (0:10)|NOAH Sleep Penis Play]]<br>
+			[[Play with his Nude Body (0:10)|Noah Sleep Pose]]<br>
+			[[Smell his Underwear (0:10)|NOAH Smell Worn Undies]]<br>
+		<</if>>
+		[[Tuck him in|NOAH Tuck In]]<br>
+	<</if>>
+
+:: NOAH Inspect Hallway PJ [nobr]
+
+	<<include"Noah Avatar PJs">>
+	/* Setting Outfit Variables */
+	<<set $AD.Outfit to "Pajamas">>
+	<<include"Noah Outfit Set">>
+
+	<span style="color:DarkTurquoise">Noah</span> walks through the hallway tiredly, rubbing his eye with one hand and carrying his stuffed bear <span style="color:DarkTurquoise">Bue</span> in the other.
+	<<if $NoahPJType == "None">>
+		<span style="color:Pink">He is currently wearing nothing but a pair of small $NoahUndies.Name, which leave little to the imagination.</span><br>
+	<<else>>
+		He is currently wearing a $ADTop.Type and $ADBottoms.Type.<br>
+		<<set $NoahEquipment to "PJs">>
+	<</if>>
+	<br>
+	[[Give him a hug (0:02)|Noah Hug]]<br>
+
+:: NOAH Inspect Hallway Towel [nobr]
+
+	<<include"Noah Avatar Towel">>
+	<span style="color:DarkTurquoise">Noah</span> walks through the hallway carrying <span style="color:DarkTurquoise">Bue</span>. He is wearing nothing but a towel, which is tied loosely around his waist. 
+	<<if $NoahSocial > 0>>
+		He sticks his tongue out at you and laughs as he walks by.
+	<</if>>
+	<br>
+	[[Give him a hug (0:02)|Noah Hug]]<br>
+	[[Pull off his towel|NOAH Towel Pull Off]]<br>
+
+:: NOAH Inspect Hallway [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> walks through the hallway carrying <span style="color:DarkTurquoise">Bue</span>. He hums something to himself as he swings his arms back and forth. He has $Noah.HairColor Hair and Blue Eyes. He smiles and waves <span style="color:DarkTurquoise">Bue</span>’s little hand at you as he walks by. <br>
+	<br>
+	[[Give him a hug (0:02)|Noah Hug]]<br>
+
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Ask if Noah wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Noah Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Noah Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: NOAH Inspect Breakfast [nobr]
+
+	<<include"Noah Avatar PJs">>
+	/* Setting Outfit Variables */
+	<<set $AD.Outfit to "Pajamas">>
+	<<include"Noah Outfit Set">>
+
+	<span style="color:DarkTurquoise">Noah</span> sits in the nook with <span style="color:DarkTurquoise">Bue</span> on his lap eating his breakfast.
+	<<if $NoahPJType == "None">>
+		<span style="color:Pink">He is currently wearing nothing but a pair of small $NoahUndies.Name, which leave little to the imagination.</span><br>
+	<<else>>
+		He is currently wearing a $ADTop.Type and $ADBottoms.Type.<br>
+	<</if>>
+		
+	<<if $Breakfast != 1>>
+		[[Eat With (0:15)|NOAH Eat With][$EatWith to "Breakfast"]]<br>
+	<</if>>
+
+:: NOAH Inspect Lunch [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> sits in the nook with <span style="color:DarkTurquoise">Bue</span> on his lap eating his Lunch.<br>
+
+	<<if $Lunch != 1>>
+		[[Eat With (0:15)|NOAH Eat With][$EatWith to "Lunch"]]<br>
+	<</if>>
+
+:: NOAH Inspect Dinner [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<set $BueHands to "Hands">>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> sits in the nook with <span style="color:DarkTurquoise">Bue</span> on his lap eating his dinner.<br>
+
+	<<if $Dinner != 1>>
+		[[Eat With (0:15)|NOAH Eat With][$EatWith to "Dinner"]]<br>
+	<</if>>
+
+:: NOAH Inspect Bath [nobr]
+
+	<<include"Noah Avatar Bubbles">>
+	<span style="color:DarkTurquoise">Noah</span> gasps as he hears someone walk in and moves his hands to cover his privates, even though you wouldn't have been able to see anything through the bubbles. <span style="color:Pink">Upon seeing it is only you he yells out your name, half laughing, as he stands up. A convient wad of bubbles is covering his penis, but you still get a good look at his wet body. His plump boyish belly and nipples shine as the water drips down, ever so slightly causing the bubbles around his groin to sag, giving you a cute glimpse of his pubic area.</span><br>
+	<br>
+	<span style="color:LightSteelBlue">"Get out of here, you weirdo!"</span> He laughs as he tosses a wet washcloth at you, which hits you in the face.<br>
+	<br>
+	<<if $NoahSocialRank >= 1>>
+		<<link"Ask to join him (0:30)">>
+			<<set _Random to ["Noah Bathtime Too Many Bubbles", "Noah Bathtime Butt Face"]>>
+			<<storeClothing "Closet" "Naked" 1>>
+			<<set _event to _Random.random()>>
+			<<goto _event>>
+		<</link>>
+		<span style="color:green">+Hygiene +Fun</span>
+		<br>
+	<</if>>
+	<br>
+	[[Leave|PH Hallway]]
+
+:: NOAH Inspect Changing [nobr]
+
+	<<include"Noah Avatar Undies">>
+	<span style="color:DarkTurquoise">Noah</span> stands in his room in nothing but a pair of $NoahUndies.Name, currently in the process of changing. He is facing away from you, not realizing you entered his room yet, and <span style="color:Pink">bends down to pick something up, giving you a full look at his cute underwear-clad butt!</span><br>
+
+:: NOAH Inspect Time Out [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<set $NPCHurt to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> sits on his hands in the “Time-Out Corner”. <span style="color:Pink">He is sniffling from crying after being scolded by <span style="color:DarkTurquoise">Your Father</span> and occasionally looks towards <span style="color:DarkTurquoise">Bue</span>, who was placed atop the fridge where <span style="color:DarkTurquoise">Noah</span> couldn’t get him. You don’t know what Noah did to earn this punishment, but there was something cute about seeing him be punished.</span><br>
+
+:: NOAH Inspect Playing in Room [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> sits cross legged on the floor playing with some of his superhero actions figures. <span style="color:DarkTurquoise">Bue</span> sits next to him. 
+	<<if $InActiveQuests.includes("Noah: Missing Toy")>>
+		<span style="color:Gold">Noah seems upset about something. </span>
+	<</if>>
+	<br>
+	<br>
+	<<if $ActiveQuests.includes("Noah: Missing Toy Finish")>>
+		[[Return Noah's Toy|Noah Missing Toy Finish]]<br>
+	<</if>>
+	<<if $InActiveQuests.includes("Noah: Missing Toy")>>
+		[[Ask him what's wrong|Noah Missing Toy1]]<br>
+	<</if>>
+	<<if $NoahMad != 1>>
+		[[Play with (0:30)|NOAH Room Play]]<br>
+	<</if>>
+	<<if $NoahMad != 1>>
+			<<if $NoahSocialRank >= 1>>
+				<<if $NoahPlayCum != 1>>
+					[[Offer a Blowjob|NOAH Play Pre-Blow]]<br>
+				<</if>>
+				<<if $NoahPlayGiveCum != 1>>
+					[[Ask for a Blowjob|NOAH Play Give Pre-Blow]]<br>
+				<</if>>
+			<</if>>
+	<</if>>
+	<<if $NoahRoomWedgie != 1>>
+		[[Give him a Wedgie|NOAH Room Wedgie]]
+			<<listbox "$WedgieType">>
+			<<option "Playful" "Playful">>
+			<<option "Painful" "Painful">>
+			<</listbox>><br>
+	<</if>>
+
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Ask if Noah wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Noah Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Noah Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: NOAH Inspect Watching Cartoons [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<set $BueHands to "Hands">>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> sits cross legged on the center of the couch watching Cartoons with his arms wrapped around <span style="color:DarkTurquoise">Bue</span>, who sits on his lap. He giggles at something on the screen, nearly falling over, but manages to keep his balance.<br>
+	<br>
+	<<if $NoahMad != 1>>
+		<<if $NoahSocial >= 50 or $NoahSocialRank > 0>>
+			[[Cuddle & Watch TV (0:30)|Noah Cuddle TV]]<br>
+		<</if>>
+		[[Watch Cartoons With (0:30)|NOAH Watch Cartoons]]<br>
+	<</if>>
+
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Ask if Noah wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Noah Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Noah Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: NOAH Inspect Coloring [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> sits at the kitchen counter with a pile of papers, crayons, and markers coloring. He happily swings his legs and hums as he does so.<br>
+	<br>
+	[[Ask to Join (0:20)|NOAH Join Coloring]]<br>
+
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Ask if Noah wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Noah Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Noah Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: NOAH Inspect Drawing Kitchen [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> sits at the nook drawing with a collection of pencils and crayons. He seems to be drawing himself as a superhero with his blue bear sidekick. <span style="color:DarkTurquoise">Bue</span> sits on the table next to him.<br>
+	<br>
+	[[Model for Him (0:20)|NOAH Drawing Model]]<br>
+
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Ask if Noah wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Noah Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Noah Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: NOAH Inspect Playing in Backyard [nobr]
+
+	<<set $NoahNoShoes to 0>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> is playing in the backyard, kicking around a soccer ball attempting to hit it between a makeshift goal made of two large rocks while <span style="color:DarkTurquoise">Bue</span> acts as the 'goalie'.
+	<<if $InActiveQuests.includes("Noah: Missing Toy")>>
+		<span style="color:Gold">Noah seems upset about something. </span>
+	<</if>>
+		<br>
+		<br>
+	<<if $InActiveQuests.includes("Noah: Missing Toy")>>
+		[[Ask him what's wrong|Noah Missing Toy1]]<br>
+	<</if>>
+	<<if $ActiveQuests.includes("Noah: Missing Toy Finish")>>
+		[[Return Noah's Toy|Noah Missing Toy Finish]]<br>
+	<</if>>
+	<<if $NoahMad != 1>>
+		[[Challenge to shooting contest (0:30)|NOAH Shooting Contest]]<br>
+	<</if>>
+	
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Ask if Noah wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Noah Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Noah Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: NOAH Inspect Reading in Room [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> lays on his bed on his stomach reading a book. It is a children's book, but has more words than pictures. He seems to be enjoying himself, reading parts out loud to <span style="color:DarkTurquoise">Bue</span>.<br>
+
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Ask if Noah wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Noah Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Noah Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: NOAH Inspect Hurt Bedroom [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<set $NPCHurt to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> is sitting on his bed, with tears in his eyes. He is inspecting a nasty cut on his knee that is bleeding a little bit. He is trying his best not to cry, but you can tell it hurts.<br>
+	<br>
+	[[Nurse His Wounds (0:20)|NOAH Nurse Wounds]]<br>
+
+:: NOAH Inspect Watchign Cartoons Scared [nobr]
+
+	<<set $NPCHurt to 1>>
+	<<set $NoahNoShoes to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> lays on the ground wrapped up like a burrito in a big blanket with <span style="color:DarkTurquoise">Bue</span> held tightly against his chest. The bottom half of his face is hidden underneath the blanket and he jumps from the occasional thunder strike in the distance.
+	<br>
+	<<if $NoahMad != 1>>
+		[[Watch Cartoons With (0:30)|NOAH Watch Cartoons]]<br>
+	<</if>>
+
+:: NOAH Inspect Hiding Under Bed [nobr]
+
+	<<set $NPCHurt to 1>>
+	<<set $NoahNoShoes to 1>>
+	<<set $BueHands to "Hands">>
+	<<include"Noah Avatar Everyday">>
+ 	You peek under the bed and see <span style="color:DarkTurquoise">Noah</span> curled up into a ball in the corner, clenching <span style="color:DarkTurquoise">Bue</span> tightly. He is lightly sobbing and flinches whenever thunder strikes in the distance.
+	<br>
+	[[Comfort (0:30)|NOAH Hiding Comfort]]<br>
+
+:: NOAH Inspect Playing in Room PJ [nobr]
+
+	<<include"Noah Avatar PJs">>
+	<span style="color:DarkTurquoise">Noah</span> sits cross legged on the floor playing with some of his superhero actions figures. <span style="color:DarkTurquoise">Bue</span> sits next to him.
+	<<if $NoahPJType == "None">>
+		<span style="color:Pink">He is currently wearing nothing but a pair of small $NoahUndies.Name, which leave little to the imagination.</span><br>
+	<<else>>
+		He is currently wearing a $ADTop.Type and $ADBottoms.Type.<br>
+	<</if>>
+	<br>
+	<<if $ActiveQuests.includes("Noah: Missing Toy Finish")>>
+		[[Return Noah's Toy|Noah Missing Toy Finish]]<br>
+	<</if>>
+	<<if $NoahMad != 1>>
+		<<if $NoahSocialRank >= 1>>
+			<<if $NoahPlayCum != 1>>
+				[[Offer a Blowjob|NOAH Play Pre-Blow]]<br>
+			<</if>>
+			<<if $NoahPlayGiveCum != 1>>
+				[[Ask for a Blowjob|NOAH Play Give Pre-Blow]]<br>
+			<</if>>
+		<</if>>
+		[[Play with (0:30)|NOAH Room Play]]
+	<</if>>
+	<br>
+	<<if $NoahRoomWedgie != 1>>
+		[[Give him a Wedgie|NOAH Room Wedgie]]
+			<<listbox "$WedgieType">>
+			<<option "Playful" "Playful">>
+			<<option "Painful" "Painful">>
+			<</listbox>><br>
+	<</if>>
+
+:: NOAH Inspect Hiding Under Bed PJ [nobr]
+
+	<<set $NPCHurt to 1>>
+	<<set $BueHands to "Hands">>
+	<<include"Noah Avatar PJs">>
+ 	You peek under the bed and see <span style="color:DarkTurquoise">Noah</span> curled up into a ball in the corner, clenching <span style="color:DarkTurquoise">Bue</span> tightly. He is lightly sobbing and flinches whenever thunder strikes in the distance.
+	<<if $NoahPJType == "None">>
+		<span style="color:Pink">He is currently wearing nothing but a pair of small $NoahUndies.Name, which leave little to the imagination.</span><br>
+	<<else>>
+		He is currently wearing a $ADTop.Type and $ADBottoms.Type.<br>
+	<</if>>
+	<br>
+	[[Comfort (0:30)|NOAH Hiding Comfort]]<br>
+
+:: NOAH Inspect Watching Cartoons PJ [nobr]
+
+	<<include"Noah Avatar PJs">>
+	<span style="color:DarkTurquoise">Noah</span> lies on his stomach watching TV in the living room. He rests his head on <span style="color:DarkTurquoise">Bue</span> and looks as though he is about to fall asleep. 
+	<<if $NoahPJType == "None">>
+		<span style="color:Pink">He is currently wearing nothing but a pair of small $NoahUndies.Name, which leave little to the imagination.</span><br>
+	<<else>>
+		He is currently wearing a $ADTop.Type and $ADBottoms.Type.<br>
+	<</if>>
+	<br>
+	<<if $NoahMad != 1>>
+		<<if $NoahSocial >= 50 or $NoahSocialRank > 0>>
+			[[Cuddle & Watch TV (0:30)|Noah Cuddle TV]]<br>
+		<</if>>
+		[[Watch Cartoons With (0:30)|NOAH Watch Cartoons]]<br>
+	<</if>>
+	
+:: NOAH Inspect Watching Cartoons Scared PJ [nobr]
+
+	<<set $NPCHurt to 1>>
+	<<include"Noah Avatar PJs">>
+	<span style="color:DarkTurquoise">Noah</span> lays on the ground wrapped up like a burrito in a big blanket with <span style="color:DarkTurquoise">Bue</span> held tightly against his chest. The bottom half of his face is hidden underneath the blanket and he jumps from the occasional thunder strike in the distance.
+		<br>
+	<<if $NoahMad != 1>>
+		[[Watch Cartoons With (0:30)|NOAH Watch Cartoons]]<br>
+	<</if>>
+
+:: NOAH Inspect Homework [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> sits at the counter doing his homework with <span style="color:DarkTurquoise">Bue</span> on his lap. Looking at what his homework entails, you find yourself slightly jealous.<br>
+	<br>
+	<<if $Skill.Perks.includes("Helping Kids with Homework")>>
+		[[Help Noah with his Homework (0:30)|NOAH Help with Homework]]<br>
+	<</if>>
+
+:: NOAH Inspect Homework Hard [nobr]
+
+	<<set $NoahNoShoes to 1>>
+	<<set $NPCHurt to 1>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> sits at the counter doing his homework with <span style="color:DarkTurquoise">Bue</span> on his lap. You hear him say a kid version of a swear and slam his head on the table. Seems he was having some trouble.<br>
+	<br>
+	<<if $Skill.Perks.includes("Helping Kids with Homework")>>
+		[[Help Noah with his Homework (0:30)|NOAH Help with Homework]]<br>
+	<</if>>
+
+:: NOAH Inspect Northend Walking [nobr]
+
+	<<set $NoahNoShoes to 0>>
+	<<include"Noah Avatar Everyday">>
+	<span style="color:DarkTurquoise">Noah</span> is walking down the sidewalk happily swinging his arms and humming to a tune in his head. <span style="color:DarkTurquoise">Your Father</span> only lets <span style="color:DarkTurquoise">Noah</span> walk down the street to the small playground by himself, since he is too nervous about letting him wander alone too far from home.<br>
+
+:: NOAH Inspect Small Playground [nobr]
+
+	<<set $NoahNoShoes to 0>>
+	/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+<<if $NPCHurt == 1>>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 1>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Sad">>
+	<<set $NPCHurt to 0>>
+<<else>>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+<</if>>
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+	<span style="color:DarkTurquoise">Noah</span> is playing on the swings, happily kicking his feet and gaining height, though not too much since he is a little nervous. He doesn’t know any of the other kids playing, but seems content to just play by himself.<br>
+
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Ask if Noah wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Noah Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Noah: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Noah Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+	<br>
+	[[Push on the Swings (0:20)|NOAH Push Swings]]<br>
+	<<if $NoahSocial > 30 or $NoahSocialRank >= 1>>
+		[[Play on the playground (0:30)|NOAH Northend Playground]]<br>
+	<</if>>
+
+:: NOAH Inspect Touching Self [nobr]
+
+	<<set $NoahNoShoes to 0>>
+	/* AVATAR DISPLAY */
+		<<set $AD.Name to "Noah">>
+		<<set $AD.Arms to "Normal">>
+		<<set $AD.Eyes to "Normal">>
+		<<set $AD.Cry to 0>>
+		<<set $AD.Blush to 1>>
+		<<set $AD.Mouth to "Normal">>
+		<<set $AD.Outfit to "Naked">>
+		<<set $AD.Hard to 0>>
+			<<include"NOAH Avatar Equipment Set">>
+		/* VARIABLE OVERRIDES */
+		<<set $BueHands to "Hands">>
+	<div style="position: relative">
+		<<include"Kid Avatar Display">>
+	/* END LAYER */
+		<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+	</div>
+
+	<span style="color:DarkTurquoise">Noah</span> is completely naked, huddled in the corner of his bed with his stuffed friend, <span style="color:DarkTurquoise">Bue</span>, sitting in front of him. You can’t see exactly what he is doing, but his hands are messing with something and he is mumbling to himself.<br>
+	<br>
+	[[Investigate|Noah Bedroom Touching Self]]<br>

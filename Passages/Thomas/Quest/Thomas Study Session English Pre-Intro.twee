@@ -1,0 +1,64 @@
+:: Thomas Study Session English Pre-Intro [nobr]
+
+The first half of English Class is a bit more energetic than usual. <span style="color:DarkTurquoise">Mr. Hart</span> goes around asking everyone questions about the themes and morals of the class’s latest read. While he still can’t get through a question without yawning, he must have actually gotten a few hours of sleep last night to have this larger-than-average amount of energy. Though, it doesn’t last, as by the last quarter of the hour, he slumps down on his desk and has everyone go over worksheets in small groups. How does that man function that tired all the time? <br>
+<br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$ThomasNickname</span>.”</span> <span style="color:DarkTurquoise">Thomas</span> walks up and sits at the table next to you. You greet him and ask him how his worksheet is going. You’re doing pretty well and are actually enjoying this latest book. You ask him how far along he is and if he has any theories about the ending. <span style="color:LightSteelBlue">“Yeah… I haven’t actually read it yet… at all, to be honest...”</span> You give him a strange look. <span style="color:Yellow">He hasn’t even started it? But you’ve been reading it for over a week now. The book report for it is due soon!</span> <span style="color:LightSteelBlue">“I know, I know…”</span> <span style="color:DarkTurquoise">Thomas</span> sighs slumping down in his chair and looking nearly as tired as <span style="color:DarkTurquoise">Mr. Hart</span>. <br>
+<br>
+<span style="color:LightSteelBlue">“I’ve had to work a lot of extra shifts recently. Haven’t been getting home until after midnight the past couple days. Kind of just pass out while I can, so haven’t really had time for any homework.”</span> He explains. <span style="color:Pink">You feel bad for him, knowing a bit about his situation and little brother.</span> You ask if there is anything you can do to help and he sighs loudly again. <span style="color:LightSteelBlue">“Yeah… wanted to talk to you about that. You mentioned before when we chatted that you could… help me…”</span> <span style="color:Pink">He seems a little embarrassed to be asking, almost like it’s painful.</span> You lower your voice and ask if he wants you to do it for him and he gives you an offended look. <br>
+<br>
+<span style="color:LightSteelBlue">“What? No. I don’t accept handouts. What, you think I can’t-?!”</span> <span style="color:DarkTurquoise">Thomas</span> pauses, pinkness glowing on his pale face. <span style="color:LightSteelBlue">“Sorry, I know you’re just trying to be nice. But no, I don’t want you to do it for me. It’s just…”</span> He rubs the back of his neck, obviously not use to asking for help, <span style="color:LightSteelBlue">“I’ve… been falling asleep in class… a lot. Think I missed some important lessons and shit like that. Most of the homework doesn’t make any sense and it’s not like I have the time to go digging through my textbook.”</span> He sighs for a third time, laying his forehead on the table. <span style="color:LightSteelBlue">“What I’m trying to ask is would you help me understand enough so that I can do it… Please…”</span> <br>
+<br>
+You smile at <span style="color:DarkTurquoise">Thomas</span>, patting him on the head. He almost bites your hand off, however, so you quickly pull away. You agree to help him whenever. If he wants to come over, you could work on it together at your place and- <span style="color:LightSteelBlue">“No!”</span> <span style="color:DarkTurquoise">Thomas</span> says a bit too harshly. <span style="color:LightSteelBlue">“I mean, I’d rather do it somewhere else. Like the library or something. No offense but… I don’t do friend’s houses.”</span> He turns away, a little embarrassed. You tell him that’s fine. <span style="color:Yellow">How about the two of you meet up at the City Library this Friday after school?</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Yeah, that… that would be good.”</span> He attempts to give you a half smile, but it looks a little too forced. <span style="color:LightSteelBlue">“In the meantime, think you can explain this book to me? Short version? If I skip another worksheet <span style="color:DarkTurquoise">Mr. Hart</span>’s going to chew my ass out.”</span> You laugh and question how tired <span style="color:DarkTurquoise">Mr. Hart</span> could chew anyone’s ass out. <span style="color:LightSteelBlue">“Trust me. He can be strict when he wants to be.”</span> <br>
+<br>
+You spent the rest of class talking through the book to <span style="color:DarkTurquoise">Thomas</span>, though you can’t tell if he’s interested or extremely bored at your retelling. <span style="color:LightGreen">But at the very least, he manages to get most of the questions done before class is over.</span> <br>
+<<socialChange "Thomas" 1>>
+<<set $InActiveQuests.delete("Thomas: Study Session")>>
+<<set $ActiveQuests.push("Thomas: Study Session")>>
+<<set $QuestLog.push(
+	{
+		Name: "Thomas: Study Session",
+		State: 1,
+		ID: "Thomas_M002",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Thomas",
+		Tags: ["Thomas", "Character", "Quest", "City Library"],
+		Description: "You have agreed to help <span style=\"color:DarkTurquoise\">Thomas</span> with his homework. You are meeting him at the City Library on Friday after school.",
+		Objectives: [
+			{
+				Name: "Meet <span style=\"color:DarkTurquoise\">Thomas</span> at the City Library after school on Friday",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Thomas",
+	Description: "You have agreed to help <span style=\"color:DarkTurquoise\">Thomas</span> with his homework. You are meeting him at the City Library on Friday after school.",
+})>>
+<br>
+<<include"Attend English Finish">>
+

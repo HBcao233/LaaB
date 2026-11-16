@@ -1,0 +1,45 @@
+:: Poker Strip PC [nobr]
+
+<<set _player = $Poker.players.find(player => player.id === 'PC')>>
+
+/* Shoes */
+<<if _player.clothes.Shoes === 0>>
+    <<set $PlayerShoes to $None>>
+<</if>>
+
+/* Socks */
+<<if _player.clothes.Socks === 0>>
+    <<set $PlayerSocks to $None>>
+<</if>>
+
+/* Outer */
+<<if _player.clothes.Outer === 0>>
+    <<set $PlayerOuter to $None>>
+<</if>>
+
+/* Top */
+<<if _player.clothes.Top === 0>>
+    <<set $PlayerUnder to $None>>
+    <<set $PlayerTop to $None>>
+    <<set $PlayerOver to $None>>
+    <<set $PlayerBack to $None>>
+    <<set $PlayerHands to $None>>
+<</if>>
+
+/* Face */
+<<set $PlayerHead to $None>>
+/* Not removing face to keep glasses on
+<<set $PlayerFace to $None>> */
+<<set $PlayerMouth to $None>>
+<<set $PlayerNeck to $None>>
+
+/* Bottoms */
+<<if _player.clothes.Bottoms === 0>>
+    <<set $PlayerBottoms to $None>>
+    <<set $PlayerWaist to $None>>
+<</if>>
+
+/* Undies */
+<<if _player.clothes.Undies === 0>>
+    <<set $PlayerUndies to $None>>
+<</if>>

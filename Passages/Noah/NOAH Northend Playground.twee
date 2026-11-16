@@ -1,0 +1,71 @@
+:: NOAH Northend Playground [nobr]
+
+<<set $Minutes += 30>>
+	
+	/* Setting Outfit Variables */
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<include"Noah Outfit Set">>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 2>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* SECOND LAYER */
+	<<include"Player Avatar Display Set">>
+	<<set $AD.Name to "Player">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: absolute; left: 125px; top: 0px">
+	<<include"Avatar Display">>
+</div>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+/* OPENING */
+You sneak up behind <span style="color:DarkTurquoise">Noah</span> while he isn’t looking and tickle his sides! The little boy lets out a high-pitched scream in surprise before giggling loudly and falling backward into your arms. <span style="color:LightSteelBlue">“You butt!”</span> He laughed, <span style="color:LightSteelBlue">“Don’t sneak up on me like that!”</span> <span style="color:Pink">Despite his attempt to sound mad, his big smile made it clear that he actually enjoyed your surprise tickle attacks.</span> <span style="color:LightSteelBlue">“Did you wanna play with me, <span style="color:DarkTurquoise">$NoahNickname</span>? The slide here makes you go super fast!”</span> <br>
+<br>
+
+/* EVENT SELECTION */
+
+<<set _Random to ["Noah Northend Playground Dare"]>>
+
+/* ADDING SPECIFIC EVENTS */
+		<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Sebastian") && $CompletedQuests.includes("Nyalls: Oliver")>>
+			<<set _Random.push("OC Oliver Playground Mess")>>
+		<</if>>
+
+		/* Xavier Story Event */
+		<<if $InActiveQuests.includes("Xavier: Big Brother")>>
+			<<set _Random.push("Xavier Brother Encounter Event 1")>>
+		<</if>>
+
+		/* Isaac Events */
+		<<if $ToggleOCIsaac == 1 && $CompletedQuests.includes("Isaac: The Little Blueberry")>>
+			<<set _Random.push("OC Isaac Northend Soccer with Noah", "OC Isaac Noah Northend Sandcastle")>>
+			<<if $CompletedQuests.includes("Isaac: Jacob")>>
+				<<set _Random.push("OC Isaac Jacob Noah Northend Race")>>
+			<</if>>
+		<</if>>
+    
+/* SELECTING RANDOM EVENT FROM ARRAY INVENTORY */
+
+<<set _event to _Random.random()>>
+<<include _event>>

@@ -1,0 +1,62 @@
+:: Carter Hang Out Modifiers [nobr]
+
+/* Basically tracks Carter State of mind during the Hang Out. Has 3 base, Energy, Fun, and Comfort, along with other special ones. They are displayed below the avatars. */
+
+<div class="hangout-needs-container">
+    /* ENERGY */
+    <div class="hangout-need-bar">
+        <<if $HangOutNeed.Energy > 100>>
+            <<set $HangOutNeed.Energy to 100>>
+        <<elseif $HangOutNeed.Energy < 0>>
+            <<set $HangOutNeed.Energy to 0>>
+        <</if>>
+        <<set _energy to {
+            text: "Energy: " + $HangOutNeed.Energy,
+            value: $HangOutNeed.Energy,
+            max: 100,
+            min: 0,
+            color: getHangoutNeedColor($HangOutNeed.Energy),
+            showText: true,
+        }>>
+
+        <<progressbar _energy>>
+    </div>
+
+    /* Fun */
+    <div class="hangout-need-bar">
+        <<if $HangOutNeed.Fun > 100>>
+            <<set $HangOutNeed.Fun to 100>>
+        <<elseif $HangOutNeed.Fun < 0>>
+            <<set $HangOutNeed.Fun to 0>>
+        <</if>>
+        <<set _fun to {
+            text: "Fun: " + $HangOutNeed.Fun,
+            value: $HangOutNeed.Fun,
+            max: 100,
+            min: 0,
+            color: getHangoutNeedColor($HangOutNeed.Fun),
+            showText: true,
+        }>>
+
+        <<progressbar _fun>>
+    </div>
+
+    /* Comfort */
+    <div class="hangout-need-bar">
+        <<if $HangOutNeed.Comfort > 120>>
+            <<set $HangOutNeed.Comfort to 120>>
+        <<elseif $HangOutNeed.Comfort < 0>>
+            <<set $HangOutNeed.Comfort to 0>>
+        <</if>>
+        <<set _comfort to {
+            text: "Comfort: " + $HangOutNeed.Comfort,
+            value: $HangOutNeed.Comfort,
+            max: 120,
+            min: 0,
+            color: getHangoutNeedColor($HangOutNeed.Comfort),
+            showText: true,
+        }>>
+
+        <<progressbar _comfort>>
+    </div>
+</div>

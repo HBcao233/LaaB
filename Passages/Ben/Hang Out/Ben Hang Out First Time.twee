@@ -1,0 +1,36 @@
+:: Ben Hang Out First Time [nobr]
+
+Waiting by the front of the school for the buses to show up with the rest of the boys, you spot <span style="color:DarkTurquoise">Ben</span> sitting on a large rock reading a book. You tilt your head over and see a collection of starships, lasers, and galactic wonders on the cover. Seems to be a sci-fi novel. The boy is slowly mouthing the words as he reads and seems to be enjoying himself. The watchful eye of the teachers ensuring people aren’t messing around so close to the street keeping the bullies who enjoy antagonizing him away for now. <br>
+<br>
+You walk up within <span style="color:DarkTurquoise">Ben</span>’s eyesight, patiently waiting for him to notice you. After a few moments, the boy looks up for his book to chuckle to himself, having just read a funny line, when he suddenly sees you standing over him. He panics, losing his balance and falling off the rock as his book flies into the air. You manage to expertly catch it. <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$BenNickname</span>! S- sorry! I didn’t see you there! Oh- tha- thank you.”</span> He shyly takes the book away from you, quickly putting it back in his backpack. <br>
+
+    <<set _ad to [
+        {
+            Name: "Ben",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“W- what’s up?”</span> <span style="color:DarkTurquoise">Ben</span> is a nervous and timid kid, even around you despite the fact that you’d consider him a friend at this point. Maybe he is still unsure if you are playing some long-con on him and just pretending to be his friend. Either that, or he’s just naturally wired to be jumpy. You tell <span style="color:DarkTurquoise">Ben</span> you were planning to wander around town a bit now that class is over and ask if he wants to join you. <span style="color:DarkTurquoise">Ben</span> gives you an unexpected look, as if unsure if he heard you right, before realizing you are serious and bumbling out an answer. <br>
+<br>
+<span style="Color: LightSteelBlue">“Hang out? S- sure! Of course! I mean, I’m not really an outdoorsy hang out type of guy – but I’m sure it’ll be fun with you! I just burn easily if I’m outside too long and I have to be home by 7 or at least call my mom and…”</span> <span style="color:DarkTurquoise">Ben</span> pauses, seeing your amused face. <span style="Color: LightSteelBlue">“I’m overthinking this. Sorry.”</span> You laugh, telling him it’s alright. <span style="color:Pink">It’s kind of cute. <span style="color:DarkTurquoise">Ben</span> blushes at this as the two of you begin walking off.</span> <br>
+<<set $InActiveQuests.delete("Ben: Hang Out Intro")>>
+<<set $CompletedQuests.push("Ben: Hang Out Intro")>>
+<br>
+<span style="color:Yellow">Where to Hang Out?</span><br>
+<<link"The Park (0:10)<br>">>
+    <<set $HangOutClothes to "Uniform">>
+    <<set $Minutes += 10>>
+    <<goto "Ben Hang Out Go To Park">>
+<</link>>

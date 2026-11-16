@@ -1,0 +1,67 @@
+:: OC Liam Intro [nobr]
+
+/* Intro */
+
+You turn on the water and slowly begin to clean yourself, allowing the stress and fatigue of the day to wash away. Your shower is, thankfully, uneventful and you are able to dry off and begin walking back to the locker room without any hassle. You pass by some groups of boys goofing around, whipping their towels at each other or tossing each other’s clothes around, though they don’t seem to pay any attention to you. <br>
+
+<<set _ad to [
+  {
+    Name: "Player",
+    State: {
+      Outfit: "Towel",
+    },
+  },
+]>>
+<<ad _ad>>
+
+Then it happens; you feel a large puddle of water under your feet, which is not uncommon in a locker room, <span style="color:LightCoral">but feel the water loosening the grip your foot has on the ground as it slides and suddenly sends you tumbling forward! You cry out in surprise, trying and failing to keep your balance, as you slide forward and <span style="color:Red">SLAM!</span> Your head collides directly into a nearby locker. You cry out in pain, groaning as you rub your bruised head.</span> The only positive was that your towel had mostly stayed on as you fell. <br>
+<br>
+As you sit near the locker groaning, you don’t realize that your impact with it has caused it to slowly drift open and shake. A sock falls out of the locker, landing next to you. Confused about where it came from, <span style="color:Pink">you glance upwards at the locker right as a pair of underwear falls out and lands directly on your face!</span> <br>
+<br>
+You are completely stunned at first, frozen as your brain processes what had fallen onto you. <span style="color:Pink">As you realize that it is another boy’s pair of underwear, you feel your cheeks warm, and your senses are immediately bombarded. The underwear is warm and slightly moist, no doubt being worn by its owner during gym class. It had been left in the locker mostly inside-out, no doubt a result of its owner quickly pulling them off before showering. This unfortunately left the inside part of the crotch directly against your nose.</span> <br>
+<br>
+<span style="color:Pink">They smell deeply of sweat with the slightest tinge of pee, acting as a reminder that, only a few minutes ago, this part of the underwear had been pressed up against another boy’s cock. The intense smell instinctively causes you to gasp, which in turn causes part of the underwear to be sucked into your mouth! You only get a brief taste of them before you quickly spit it out into your hand and begin to gag, using your free hand to wipe your face with the towel as the taste and smell lingers.</span> <br>
+
+<<set _ad to [
+  {
+    Name: "Player",
+    State: {
+      Outfit: "Towel",
+      Blush: 2,
+      Mouth: "Frown",
+    },
+  },
+  {
+    Name: "OC Liam",
+    State: {
+      Outfit: "Towel",
+      Mouth: "Frown",
+      Blush: 2,
+    },
+  },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Ummmm…”</span> You hear a voice and quickly glance up. A boy with dirty blonde hair wearing a towel is looking down at you, a confused look on his face. <span style="color:Pink">His cheeks are pink, and it only takes you a moment to put together that he is most likely the owner of both the locker and the underwear. An awkward moment of silence falls as you both try to think of something to say but considering you had just unintentionally had the boy’s well-worn underwear in your nose and mouth, you can only think about how humiliated you feel.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I mean… they did look good on you like that, but I kinda need those back. If you don’t mind?”</span> The boy chuckles, trying to make light of the extremely awkward situation. Thankfully, his words snap you out of your stupor as you quickly jump to your feet, spewing out apologies and explanations, before quickly handing the boy his underwear. <span style="color:LightSteelBlue">“Thanks…”</span> <br>
+<br>
+<span style="color:Pink">Despite the jokes, the situation is still extremely awkward, and you quickly excuse yourself and run over to your locker. Also, despite only the owner of the undies seeing that, you feel extremely embarrassed and quickly hide your face as you reach your locker. You’re pretty sure you’ll die of humiliation if you ever see that kid again.</span> <br>
+<br>
+<<set $CompletedQuests.push("Liam: Introduction")>>
+<<set $InActiveQuests.delete("Liam: Introduction")>>
+<<set $OCLiamSocial to 0>>
+<<set $OCLiamSocialRank to 0>>
+
+	/* GETTING DRESSED */
+	<<set $ClothSave to "Restore">>
+    <<if $GymClassType == "Gym">>
+		<<storeClothing "Restore" "Undies">>
+	<<else>>
+		<<storeClothing "Restore" "Naked">>
+    <</if>>
+	<<if $SaveUndies != null>>
+		<<set $PlayerUndies to $SaveUndies>>
+	<</if>>
+
+			[[Continue|School Locker Room]] 

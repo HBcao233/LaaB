@@ -1,0 +1,258 @@
+:: Skill Check Widget [nobr widget]
+
+/* 
+This is a widget for running skill checks. You run is like so:
+<<skillCheck "Skill" Difficulty []"Other"]>>
+
+Skill is the skill being tested. For example: "Athletics"
+Difficulty is a int variable for the difficulty. See the following for info on Difficulty:
+    10 – Extremely Easy
+    20 – Very Easy
+    50 – Easy
+    70 – Medium
+    80 – Hard
+    90 – Very Hard
+    100+ - Extremely Hard
+Lastly, "Other" is an optional argument if the check has a special flag that a Perk or Trait will trigger. For example, conflicts will have the "Conflict" tage. This should be an Array.
+
+We start by setting our variables from the args. If the Other is empty, is sets it to 0 to tell the code to skip that step when we get there.
+
+We then set our Rank Bonus, based on the skills Rank, our ability bonus, based on our ability scores, and whether we get advantage or disadvantage from the current mood.
+
+Also, we check if the PC is a certain mood, which gives advantage/disadvantage on certain skill checks. This also overrides the Disadvantage.
+Hyper: Bonus to Strength, Dexterity, and Endurance
+Tired: Negative to Strength, Dexterity, and Endurance
+Horny: Tiny bonus to Charm
+Bored: Negative to Smarts, BUT Bonus to Sense
+Mad: Negative to Charm, BUT Bonus to Strength
+Embarrassed: Negative to All except Creativity and Sense
+Scared: Negative to All, BUT Bonus to Sense
+
+We then roll the d100, which rolls twice if advantage or disadvantage is active.
+
+We then compare the final score to the difficulty and return the result.
+
+*/
+
+
+<<widget "skillCheck">>
+
+<<set _skill to _args[0]>>
+<<set _difficulty to _args[1]>>
+<<if _args[2] != null>>
+    <<set _other to _args[2]>>
+<<else>>
+    <<set _other to 0>>
+<</if>>
+
+<<set _skillrankbonus to $Skill[_skill].Rank * 5>>
+<<set _skillabilitybonus to $Player>>
+<<print "<<set _skillability to $" + $Skill[_skill].Ability + " - 5>>">>
+<<set _skillabilitybonus to _skillability * 5>>
+
+<<if ["Happy", "Hyper"].includes($Player.Mood)>>
+    <<set _mood to 1>>
+<<elseif ["Sad", "Tired", "Uncomfortable", "Bored", "Mad", "Embarrassed", "Scared"].includes($Player.Mood)>>
+    <<set _mood to -1>>
+<<else>>
+    <<set _mood to 0>>
+<</if>>
+
+<<set _moodbonus to 0>>
+
+<<if ["Strength", "Dexterity", "Endurance"].includes($Skill[_skill].Ability) && $Player.Mood == "Hyper">>
+    <<set _moodbonus to 10>>
+<<elseif ["Smarts"].includes($Skill[_skill].Ability) && $Player.Mood == "Hyper">>
+    <<set _moodbonus to -10>>
+<<elseif ["Strength", "Dexterity", "Endurance"].includes($Skill[_skill].Ability) && $Player.Mood == "Tired">>
+    <<set _moodbonus to -20>>
+<<elseif ["Smarts", "Charm", "Sense"].includes($Skill[_skill].Ability) && $Player.Mood == "Uncomfortable">>
+    <<set _moodbonus to -10>>
+<<elseif ["Charm"].includes($Skill[_skill].Ability) && $Player.Mood == "Horny">>
+    <<set _moodbonus to 5>>
+<<elseif ["Smarts"].includes($Skill[_skill].Ability) && $Player.Mood == "Bored">>
+    <<set _moodbonus to -20>>
+<<elseif ["Sense"].includes($Skill[_skill].Ability) && $Player.Mood == "Bored">>
+    <<set _moodbonus to 10>>
+    <<set _mood to 0>>
+<<elseif ["Charm"].includes($Skill[_skill].Ability) && $Player.Mood == "Mad">>
+    <<set _moodbonus to -20>>
+<<elseif ["Strength"].includes($Skill[_skill].Ability) && $Player.Mood == "Mad">>
+    <<set _moodbonus to 10>>
+    <<set _mood to 0>>
+<<elseif ["Strength", "Dexterity", "Endurance", "Smarts", "Charm"].includes($Skill[_skill].Ability) && $Player.Mood == "Embarrassed">>
+    <<set _moodbonus to -20>>
+<<elseif ["Strength", "Dexterity", "Endurance", "Smarts", "Charm", "Creativity"].includes($Skill[_skill].Ability) && $Player.Mood == "Scared">>
+    <<set _moodbonus to -20>>
+<<elseif ["Sense"].includes($Skill[_skill].Ability) && $Player.Mood == "Scared">>
+    <<set _moodbonus to 20>>
+    <<set _mood to 0>>
+<</if>>
+
+<<if _mood == 1>>
+    <<set _roll1 to random(1, 100)>>
+    <<set _roll2 to random(1, 100)>>
+    <<if _roll1 > _roll2>>
+        <<set _roll to _roll1>>
+    <<else>>
+        <<set _roll to _roll2>>
+    <</if>>
+<<elseif _mood == -1>>
+    <<set _roll1 to random(1, 100)>>
+    <<set _roll2 to random(1, 100)>>
+    <<if _roll1 < _roll2>>
+        <<set _roll to _roll1>>
+    <<else>>
+        <<set _roll to _roll2>>
+    <</if>>
+<<else>>
+    <<set _roll to random(1, 100)>>
+<</if>>
+
+/* Trait Bonuses */
+<<set _traitbonus to 0>>
+/* Artistic */
+<<if $Skill[_skill].Ability == "Creativity" && $Player.Traits.includes("Artistic")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Asthma */
+<<if $Skill[_skill].Ability == "Endurance" && $Player.Traits.includes("Asthma")>>
+    <<set _traitbonus -= 10>>
+<</if>>
+/* Athletic */
+<<if ["Strength", "Dexterity"].includes($Skill[_skill].Ability) && $Player.Traits.includes("Athletic")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Bookworm */
+<<if _skill == "English" && $Player.Traits.includes("Bookworm")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Charismatic */
+<<if $Skill[_skill].Ability == "Charm" && $Player.Traits.includes("Charismatic")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Child of the Sea */
+<<if _skill == "Swimming" && $Player.Traits.includes("ChildOfTheSea")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Clumsy */
+<<if $Skill[_skill].Ability == "Dexterity" && $Player.Traits.includes("Clumsy")>>
+    <<set _traitbonus -= 10>>
+<</if>>
+/* Computer Savvy */
+<<if _skill == "Computers" && $Player.Traits.includes("ComputerSavvy")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Couch Potato */
+<<if ["Strength", "Dexterity", "Endurance"].includes($Skill[_skill].Ability) && $Player.Traits.includes("CouchPotato")>>
+    <<set _traitbonus -= 10>>
+<</if>>
+/* Diplomatic */
+<<if $Skill[_skill].Ability == "Charm" && $Player.Traits.includes("Diplomatic")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Gamer */
+<<if _skill == "Video_Games" && $Player.Traits.includes("Gamer")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Genius */
+<<if ["Math", "Science", "English", "History"].includes(_skill) && $Player.Traits.includes("Genius")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Green Thumb */
+<<if ["Gardening"].includes(_skill) && $Player.Traits.includes("GreenThumb")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Hydrophobic */
+<<if ["Swimming"].includes(_skill) && $Player.Traits.includes("Hydrophobic")>>
+    <<set _traitbonus -= 15>>
+<</if>>
+/* Lucky (25% chance to get a bonus to any skill check.) */
+<<if $Player.Traits.includes("Lucky")>>
+    <<set _random to random(1, 4)>>
+    <<if _random == 1>>
+        <<set _traitbonus += 10>>
+    <</if>>
+<</if>>
+/* Natural Cook */
+<<if ["Cooking"].includes(_skill) && $Player.Traits.includes("NaturalCook")>>
+    <<set _traitbonus += 10>>
+<</if>>
+/* Unlucky (25% chance to get a debuff to any skill check.) */
+<<if $Player.Traits.includes("Unlucky")>>
+    <<set _random to random(1, 4)>>
+    <<if _random == 1>>
+        <<set _traitbonus -= 10>>
+    <</if>>
+<</if>>
+/* Natural Cook */
+<<if ["Music"].includes(_skill) && $Player.Traits.includes("Virtuoso")>>
+    <<set _traitbonus += 10>>
+<</if>>
+
+/* Perk Bonuses */
+<<set _perkbonus to 0>>
+<<if _other != 0>>
+    <<if _other.includes("Gym") && $Skill.Perks.includes("Gym Class Bonus")>>
+        <<set _perkbonus += 5>>
+    <</if>>
+    <<if _other.includes("Swim") && $Skill.Perks.includes("Swim Class Bonus")>>
+        <<set _perkbonus += 5>>
+    <</if>>
+    <<if _other.includes("Class")>>
+        <<if _skill == "Math" && $Skill.Perks.includes("Math Class Bonus")>>
+            <<set _perkbonus += 5>>
+        <<elseif _skill == "History" && $Skill.Perks.includes("History Class Bonus")>>
+            <<set _perkbonus += 5>>
+        <<elseif _skill == "Science" && $Skill.Perks.includes("Science Class Bonus")>>
+            <<set _perkbonus += 5>>
+        <<elseif _skill == "English" && $Skill.Perks.includes("English Class Bonus")>>
+            <<set _perkbonus += 5>>
+        <</if>>
+    <</if>>
+<</if>>
+
+<<set _bonus to _skillrankbonus + _skillabilitybonus + _moodbonus + _traitbonus + _perkbonus>>
+<<set _difference to _difficulty - _bonus>>
+<<set _percent to 100 - _difference>>
+
+<<set _finalscore to _roll + _skillrankbonus + _skillabilitybonus + _moodbonus + _traitbonus + _perkbonus>>
+
+<<if _finalscore >= _difficulty>>
+    <<set _result to 1>>
+<<else>>
+    <<set _result to 0>>
+<</if>>
+
+<<if $Debug>>
+    Skill: _skill<br>
+    <<if _other != 0>>
+        Skill Check Types: _other<br>
+    <</if>>
+    Difficulty: _difficulty<br>
+    Skill Rank Bonus: _skillrankbonus<br>
+    Skill Ability Bonus: _skillabilitybonus<br>
+    Mood Advantage?: _mood<br>
+    Mood Bonus: _moodbonus<br>
+    Trait Bonus: _traitbonus<br>
+    Skill Roll: _roll<br>
+    Perk Bonus: _perkbonus<br>
+    Roll after Bonus: _finalscore<br>
+    Result: _result<br>
+<</if>>
+
+/* Moodlets added after a skill check based on traits. */
+<<if ["Strength", "Dexterity", "Endurance"].includes($Skill[_skill].Ability) && $Player.Traits.includes("Asthma")>>
+    <<if _difficulty < 30>>
+        <<set _hours to 1>>
+    <<elseif _difficulty < 50>>
+        <<set _hours to 3>>
+    <<elseif _difficulty < 75>>
+        <<set _hours to 5>>
+    <<else>>
+        <<set _hours to 7>>
+    <</if>>
+    <<addMoodlet "Asthmatic" _hours>>
+<</if>>
+
+<</widget>>

@@ -1,0 +1,207 @@
+:: Attend Science [nobr]
+
+<<include"School Skill Level">>
+
+/* TEACHER INTRODUCTION */
+<<if $ScienceIntro != 1>>
+	<<include"Chang Intro">>
+	<<include"Attend Science Finish">>
+<<else>> 
+
+	/* CLASS EVENT SELECTOR */
+	/* Normal Class Style */
+	<<if $ClassStyle == "Normal" or $ClassStyle == "Late">>
+		<<set _random to {
+			"Science Question": 10,
+			"Science Good Class": 10,
+			"SCI Arm Bone Example": 10,
+			"SCI Smoke Bomb": 10,
+			"BEN Science Spilled Water": 10,
+			"CARTER Science Chest Bone": 10,
+			"XAVIER Science Spilled on Shirt": 10,
+			"FELIX Science Frog Legs": 10,
+			"CARTER Science Magnet Pants": 10,
+			"Science Lemon Juice in Eye": 10,
+		}>>
+		/* Social Requirement Events */
+		<<if $BenSocial >= 50 or $BenSocialRank > 0>>
+			<<set _random["BEN Science Helping with Work"] = 10>>
+		<</if>>
+		<<if $FelixSocial >= 50 or $FelixSocialRank > 0>>
+			<<set _random["FELIX Science Goo Explosion"] = 10>>
+		<</if>>
+		/* OC Content */
+		/* Miller */
+		<<if $ToggleOCMiller == 1 and $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay Science Accidental Water Spill"] = 10>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Science Trip Fluid Carter"] = 10>>
+			<<set _random["OC Richard Science Explosion"] = 10>>
+		<</if>>
+		/* Emmet */
+		<<if $ToggleOCEmmet == 1 && $CompletedQuests.includes("Emmet: Introduction")>>
+			<<set _random["OC Emmet Science Class Experiments"] = 10>>
+		<</if>>
+		/* Noah H Events */
+		<<if $CompletedQuests.includes("Noah H: Introduction") && !$CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Science Basic"] = 10>>
+		<<elseif $CompletedQuests.includes("Noah H: Introduction") && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator Science 1"] = 10>>
+			<<set _random["OC Noah Vibrator Science 2"] = 10>>
+		<</if>>
+	/* Pay Attention Class Style */
+	<<elseif $ClassStyle == "Attention">>
+		<<set _random to {
+			"Science Question": 20,
+			"Science Good Class": 25,
+			"SCI Arm Bone Example": 5,
+			"SCI Smoke Bomb": 5,
+			"BEN Science Spilled Water": 5,
+			"CARTER Science Chest Bone": 5,
+			"XAVIER Science Spilled on Shirt": 5,
+			"FELIX Science Frog Legs": 5,
+			"CARTER Science Magnet Pants": 5,
+			"Science Lemon Juice in Eye": 1,
+		}>>
+		/* Social Requirement Events */
+		<<if $BenSocial >= 50 or $BenSocialRank > 0>>
+			<<set _random["BEN Science Helping with Work"] = 15>>
+		<</if>>
+		<<if $FelixSocial >= 50 or $FelixSocialRank > 0>>
+			<<set _random["FELIX Science Goo Explosion"] = 5>>
+		<</if>>
+		/* OC Content */
+		/* Miller */
+		<<if $ToggleOCMiller == 1 and $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay Science Accidental Water Spill"] = 5>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Science Trip Fluid Carter"] = 5>>
+			<<set _random["OC Richard Science Explosion"] = 5>>
+		<</if>>
+		/* Emmet */
+		<<if $ToggleOCEmmet == 1 && $CompletedQuests.includes("Emmet: Introduction")>>
+			<<set _random["OC Emmet Science Class Experiments"] = 10>>
+		<</if>>
+		/* Noah H Events */
+		<<if $CompletedQuests.includes("Noah H: Introduction") && !$CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Science Basic"] = 10>>
+		<<elseif $CompletedQuests.includes("Noah H: Introduction") && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator Science 1"] = 10>>
+			<<set _random["OC Noah Vibrator Science 2"] = 10>>
+		<</if>>
+	/* Socialize Class Style */
+	<<elseif $ClassStyle == "Socialize">>
+		<<set _random to {
+			"Science Question": 1,
+			"Science Good Class": 1,
+			"SCI Arm Bone Example": 5,
+			"SCI Smoke Bomb": 5,
+			"BEN Science Spilled Water": 10,
+			"CARTER Science Chest Bone": 10,
+			"XAVIER Science Spilled on Shirt": 10,
+			"FELIX Science Frog Legs": 5,
+			"CARTER Science Magnet Pants": 5,
+			"Science Lemon Juice in Eye": 1,
+		}>>
+		/* Social Requirement Events */
+		<<if $BenSocial >= 50 or $BenSocialRank > 0>>
+			<<set _random["BEN Science Helping with Work"] = 15>>
+		<</if>>
+		<<if $FelixSocial >= 50 or $FelixSocialRank > 0>>
+			<<set _random["FELIX Science Goo Explosion"] = 15>>
+		<</if>>
+		/* OC Content */
+		/* Miller */
+		<<if $ToggleOCMiller == 1 and $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay Science Accidental Water Spill"] = 10>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Science Trip Fluid Carter"] = 10>>
+			<<set _random["OC Richard Science Explosion"] = 10>>
+		<</if>>
+		/* Emmet */
+		<<if $ToggleOCEmmet == 1 && $CompletedQuests.includes("Emmet: Introduction")>>
+			<<set _random["OC Emmet Science Class Experiments"] = 10>>
+		<</if>>
+		/* Noah H Events */
+		<<if $CompletedQuests.includes("Noah H: Introduction") && !$CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Science Basic"] = 10>>
+		<<elseif $CompletedQuests.includes("Noah H: Introduction") && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator Science 1"] = 10>>
+			<<set _random["OC Noah Vibrator Science 2"] = 10>>
+		<</if>>
+	/* Goof Off Class Style */
+	<<elseif $ClassStyle == "Goof">>
+		<<set _random to {
+			"SCI Arm Bone Example": 5,
+			"SCI Smoke Bomb": 15,
+			"BEN Science Spilled Water": 15,
+			"CARTER Science Chest Bone": 15,
+			"XAVIER Science Spilled on Shirt": 10,
+			"FELIX Science Frog Legs": 10,
+			"CARTER Science Magnet Pants": 15,
+			"Science Lemon Juice in Eye": 15,
+		}>>
+		/* Social Requirement Events */
+		<<if $BenSocial >= 50 or $BenSocialRank > 0>>
+			<<set _random["BEN Science Helping with Work"] = 15>>
+		<</if>>
+		<<if $FelixSocial >= 50 or $FelixSocialRank > 0>>
+			<<set _random["FELIX Science Goo Explosion"] = 15>>
+		<</if>>
+		/* OC Content */
+		/* Miller */
+		<<if $ToggleOCMiller == 1 and $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay Science Accidental Water Spill"] = 10>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Science Trip Fluid Carter"] = 10>>
+			<<set _random["OC Richard Science Explosion"] = 10>>
+		<</if>>
+		/* Emmet */
+		<<if $ToggleOCEmmet == 1 && $CompletedQuests.includes("Emmet: Introduction")>>
+			<<set _random["OC Emmet Science Class Experiments"] = 15>>
+		<</if>>
+		/* Noah H Events */
+		<<if $CompletedQuests.includes("Noah H: Introduction") && !$CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Science Basic"] = 10>>
+		<<elseif $CompletedQuests.includes("Noah H: Introduction") && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator Science 1"] = 10>>
+			<<set _random["OC Noah Vibrator Science 2"] = 10>>
+		<</if>>
+	/* Homework Class Style */
+	<<elseif $ClassStyle == "Homework">>
+		<<set _random to {
+			"Science Question": 10,
+			"Science Good Class": 10,
+		}>>
+	/* Nap Class Style */
+	<<elseif $ClassStyle == "Nap">>
+		<<set _random to {
+			"Science Class Sleep" : 10,
+		}>>
+
+	<</if>>
+
+	<<set _event to _random.random()>>
+
+	/* Forced Events */
+	<<if $ToggleOCEnkys == 1 && $ActiveQuests.includes("Enkys: Introduction")>>
+		<<set _event to "OC Enkys Meeting">>
+	<</if>>
+	<<if $InActiveQuests.includes("Carter: First Visit")>>
+		<<set _event to "Carter House Intro">>
+	<<elseif $InActiveQuests.includes("Carter: Hero's Weakness")>>
+		<<set _event to "Carter Hero's Weakness Intro">>
+	<</if>>
+
+	<<include _event>>
+
+
+<</if>>

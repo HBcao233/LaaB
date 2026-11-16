@@ -1,0 +1,85 @@
+:: Requires Ability Widget [widget nobr]
+/*
+note: for container widgets, _contents is filled by SugarCube
+
+Call like so:
+
+<<requiresAbility "Sense" 10 "Perceive That which Lies Beyond (1:00)" "Enter Hell Dimension">>
+<<set $Minutes += 60>>
+<</requiresAbility>>
+*/
+<<widget "requiresAbility" container>>
+<<if _args.length > 4>>
+    <<error "requiresAbility takes at most 4 arguments">>
+<<elseif _args.length < 3>>
+    <<error "requiresAbility takes least 3 arguments">>
+<<else>>
+    <<set _name to _args[0]>>
+    <<set _ability to State.getVar(`$${_name}`)>>
+    <<set _level to _args[1]>>
+    <<set _desc to _args[2]>>
+    <<set _passage to _args[3]>>
+    <<if _ability >= _level>>
+        <<set _text to `<b>[${_name}]</b> ${_desc}`>>
+        <<link _text _passage>>
+        _contents
+        <</link>><br>
+    <<elseif $HiddenOptions>>
+        [_name _level] _desc<br>
+    <</if>>
+<</if>>
+<</widget>>
+/*
+Call like so:
+
+<<requiresSkill "Math" 2 "Help Noah with his Homework (0:30)" "NOAH Help with Homework">>
+<<set $Minutes += 30>>
+<</requiresSkill>>
+*/
+<<widget "requiresSkill" container>>
+<<if _args.length > 4>>
+    <<error "requiresSkill takes at most 4 arguments">>
+<<elseif _args.length < 3>>
+    <<error "requiresSkill takes least 3 arguments">>
+<<else>>
+    <<set _name to _args[0]>>
+    <<set _skill to State.getVar(`$${_name}Skill`)>>
+    <<set _level to _args[1]>>
+    <<set _desc to _args[2]>>
+    <<set _passage to _args[3]>>
+    <<if _skill >= _level>>
+         <<set _text to `<b>[${_name}]</b> ${_desc}`>>
+        <<link _text _passage>>
+        _contents
+        <</link>><br>
+    <<elseif $HiddenOptions>>
+         [_name _level] _desc<br>
+    <</if>>
+<</if>>
+<</widget>>
+/*
+Call like so:
+
+<<requiresTrait "Commando" "Have a Neat Idea" "JACKSON Apotheosis">>
+<<set $JacksonUndies to $None>>
+<</requiresTrait>>
+*/
+<<widget "requiresTrait" container>>
+<<if _args.length > 3>>
+    <<error "requiresTrait takes at most 3 arguments">>
+<<elseif _args.length < 2>>
+    <<error "requiresTrait takes at least 2 arguments">>
+<<else>>
+    <<set _trait to _args[0]>>
+    <<set _desc to _args[1]>>
+    <<set _passage to _args[2]>>
+    <<if $Player.Traits.includes(_trait)>>
+        <<set _text to `<b>[${_trait}]</b> ${_desc}`>>
+        <<link _text _passage>>
+        _contents
+        <</link>><br>
+    <<elseif $HiddenOptions>>
+        [_trait] _desc<br>
+    <</if>>
+<</if>>
+<</widget>>

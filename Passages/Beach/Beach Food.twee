@@ -1,0 +1,126 @@
+:: Beach Food [nobr]
+
+/* This intro will play the event based on what the PC buys. It will also unset the Variable to save space. All food passages should be in this twee file. */
+
+<<if $FoodType == "Pizza">>
+    <<include"Beach Food Pizza">>
+<<elseif $FoodType == "Hot Dog">>
+    <<include"Beach Food Hot Dog">>
+<</if>>
+
+<<unset $FoodType>>
+
+:: Beach Food Pizza [nobr]
+
+/* Written by: -AN */
+/* Intro */
+
+<<set $Minutes += 15>>
+<<set $Money -= 1>>
+
+You approach a small pizzeria on the strip that’s facing the ocean. There’s a counter with a display case containing multiple pizza pies. The workers behind the counter are busy fulfilling orders, or making the next batch of pies. You place your order at the counter, watching as a worker quickly cuts yours from one of the recently-made pies, and reheats it in a large oven alongside other individual slices.<br>
+<br>
+In no time the worker takes yours out of the oven, and hands you the large, piping-hot slice over a paper plate. <span style="color: Yellow">You nearly recoil seeing just how big the single pizza slice is up close, especially since it dwarfs the paper plate it came with!</span> There are no seats at the pizzeria, so you turn towards the ocean and take in the bustling, beach view while you eat.<br>
+<br>
+Because the slice is so big, you have to fold it lengthwise to make it easier to enjoy. <span style="Color: LightGreen">From the very first bite, you realize it’s just the right dough consistency, sauce, and cheese to make the perfect pizza. The gorgeous view is an added bonus that makes the $1 price an absolute steal! You leisurely consume the rest of your pizza while appreciating the sights and sounds of the beach.</span>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<set _randomRoll to random(1 ,2)>>
+<<if _randomRoll == 1>>
+    After a few minutes you finally finish your slice and quickly discard the paper plate into a nearby trash can. <span style="Color: LightGreen">You leave the area with a smile on your face from such a filling, and delicious treat.</span><br>
+    <br>
+    <<needChange "Hunger" 20>>
+    [[Continue|Beach]]
+<<elseif _randomRoll == 2>>
+    After a few minutes you finally finish your slice and discard the paper plate into a nearby trash can. <span style="Color: Yellow">Your hands are left noticeably greasy from holding the pizza slice,</span> <span style="Color: LightGreen">but you nonetheless feel satisfied from the filling, and delicious treat.</span><br>
+    <br>
+    <<needChange "Hunger" 20>>
+    <<needChange "Hygiene" -10>>
+    [[Continue|Beach]]
+<</if>>
+
+:: Beach Food Hot Dog [nobr]
+
+/* Written by: Manuel */
+/* Intro */
+
+/* For the other two endings, random 1-20, if 1 the first bad outcome. If 2 the second.
+If PC is Unlucky, roll 1-10 instead. */
+
+<<set $Minutes =+ 15>>
+<<set $Money -= 1>>
+
+You walk up to the small hot dog stand. It seems small and inconspicuous, but the smell of the freshly made hot dogs makes your mouth water, and not just yours. The line in front of the stand is long, which is no wonder since a hot dog only costs $1 and there is such a large selection of toppings.<br>
+<br>
+The stand is run by two workers; one takes payments and the other prepares the hot dogs. They both stand under a large umbrella that protects them from the bright sun. It isn't long before it's your turn. Overwhelmed by the selection, you need a moment to put together your perfect Hot Dog - everything you could have imagined, but also things you would never put on a hot dog.<br>
+<br>
+The worker takes your order, and you pay the price of $1; you still can’t imagine that it’s that cheap. In no time at all, his partner prepares your hot dog and hands it to you in a small cardboard bowl. You beam from ear to ear as you accept it.<br>
+<br>
+<<if $Player.Traits.includes("Unlucky")>>
+    <<set _randomRoll to random(1, 10)>>
+<<else>>
+    <<set _randomRoll to random(1, 20)>>
+<</if>>
+<<if _randomRoll == 1>>
+    You look around and see a free bench a little way off. You slowly walk towards the bench, the smell of the hot dog wafting into your nose. You can't help but take a bite. It's difficult for you to even open your mouth that wide, but when you take the first bite, you feel like you're in heaven. The taste of the dough, the topping you've chosen, the crispy sausage—everything harmonizes in your mouth and makes you shiver with joy.<br>
+    <br>
+    <span style="Color: LightCoral">At that exact moment, however, you stumble, and your hot dog falls in a high arc to the ground, scattering itself.</span> You can't help but look sadly at the hot dog you were only allowed to taste with one bite.
+
+    <<set _adBD to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Sad",
+            },
+        },
+    ]>>
+
+    <<ad _adBD>>
+
+    <<needChange "Fun" -5>>
+    <br>
+    [[Continue|Beach]]
+<<elseif _randomRoll == 2>>
+    You look around and see a free bench, which would be perfect for eating the wonderfully smelling hot dog. You sit down on the bench and are just about to start eating when a small gust of wind blows your napkin onto the ground. 
+    You briefly put your hot dog down on the bench while you run after the napkin. <span style="Color: LightCoral">When you pick it up and look at your hot dog, you just see a bird flying away with your hot dog.</span> You stand sadly on the beach with the napkin in your hand.
+
+    <<ad _adBD>>
+    
+    <<needChange "Fun" -5>>
+    <br>
+    [[Continue|Beach]]
+<<else>>
+    You look around, sit down on a free bench, and stare at the hot dog with wide eyes. <span style="Color: LightGreen">It is difficult for you to even open your mouth that wide, but when you take the first bite, you feel like you are in heaven. The taste of the dough, the topping you have chosen, the crispy sausage—everything harmonizes in your mouth and makes you shiver with joy.</span><br>
+    <br>
+    You look alongside the beach and enjoy the view while you eat the hot dog. A small breeze goes through your hair while the sun burns on your head. After a while, you finish the hot dog and stand up.<br>
+    <br>
+    <span style="Color: LightGreen">With a small smile, you take the cardboard box and the paper. Crumple it up, and as if you were playing basketball, you throw the cardboard towards the trash can, and "GOAL!" you jump up in joy and leave the area.</span>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <<needChange "Fun" 10>>
+    <<needChange "Hunger" 20>>
+    <br>
+    [[Continue|Beach]]
+<</if>>
+

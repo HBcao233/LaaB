@@ -1,0 +1,50 @@
+:: School Auditorium [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Auditorium",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Auditorium",
+}>>
+
+<span style="color:Azure"><big><strong>--Auditorium--</strong></big></span><br>
+You stand in the school’s Auditorium. It is a large room with seats for a few hundred audience members, a large and impressive stage, and backstage area with different rooms for cast and equipment. This is where the school performs its famous plays and concerts and it is also where <span style="color:DarkTurquoise">Mr. Julien</span> teaches the Drama Class. The back stage area has posters from some of the plays and movies <span style="color:DarkTurquoise">Mr. Julien</span> starred in during his youth.<br>
+
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+<<if $DramaIntro == 1>>
+	[[View Role Board|Drama Role Board]]<br>
+<</if>>
+
+<<if $DramaIntro == 1>>
+	<<if $Time.between(6, 45, 7, 40) or $Time.between(11, 0, 11, 40) or $Time.between(15, 0, 16, 0)>>
+		[[Ask Julien for help with Acting (0:15)|Julien Tutor]] <span style="color:green">+Acting, +Julien</span><br>
+	<</if>>
+<</if>>
+
+<<if $DramaClass == 0>>
+	/* ATTEND CLASS NORMALLY */
+	<<if $Time.between(9,50,10,10)>>
+		[[Attend Class|Attend Drama]]<br>
+	/* LATE */
+	<<elseif $Time.between(10,10,10,30)>>
+		[[Atend Class Late|Attend Drama][$Late to 1]]<br>
+	<</if>>
+<</if>>
+
+
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[South Hallway (0:01)|School South Hallway][$Minutes += 1]] <br>
+
+<br>

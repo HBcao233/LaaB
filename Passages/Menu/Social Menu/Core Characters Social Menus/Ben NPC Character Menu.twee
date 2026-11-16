@@ -1,0 +1,436 @@
+:: Ben NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Core Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Ben--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"Ben NPC Character Menu Biography">>
+</div>
+
+:: Ben NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Ben NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Ben NPC Character Menu Avatar Display">>
+
+<<if $BenSocial > 50>>
+    Ben Fischer is your friend and classmate. He is a bit nerdy; short, glasses, and the strength of a first grader; but is also very friendly and knowledgeable about everything from school subjects to obscure sci-fi facts. He enjoys reading and, despite getting flustered around you easily, seems to really enjoy your company. <br>
+    <br>
+<<elseif $BenSocial > -10>>
+    Ben Fischer is your classmate and the local nerd of Preston. Short, glasses, the inability to fight back, all the classic traits of one. Though despite the bullying and his clear nervousness around anything even remotely threatening, he tends to keep up a positive attitude. He gets good grades and often spends his free time reading or daydreaming. <br>
+    <br>
+<<else>>
+    Ben Fischer is your nerdy classmate. He has the strength of a toddler and the height of a 3rd grader, making him a prime target for bullies or just anyone who wants to let off some steam. He is nervous around anything that moves faster than a slug and often jumps at the sight of you. The only thing he has going for him is his grades and he often spends his spare time reading like the dork he is. <br>
+    <br>
+<</if>>
+
+<<if $CompletedQuests.includes("Ben: Track Meet Cute")>>
+    You met Ben’s overbearing and slightly eccentric family at a High School track meet. He lives with his parents, an old fashioned but well-meaning mother and military father, his younger brother, a hyperactive ball of energy the complete opposite of Ben, his older brother you’ve yet to properly meet, and his veteran grandfather. They seemed nice, though vastly different from the quiet and timid boy you know. <br>
+    <br>
+<</if>>
+
+:: Ben NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Ben NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Ben NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Benjamin "Ben" Fischer <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> September 8th <br>
+<strong>Address:</strong> 
+    <<if $BenSocial >= 50>>
+        Dellwood Street <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> 
+    <<if $CompletedQuests.includes("Ben: Track Meet Cute")>>
+        Saundra (Mother), Unnamed Father, Unnamed Grandfather, Clark (Older Brother), William (Little Brother)
+    <<else>>
+        ???
+    <</if>>
+    <br>
+<strong>Friends:</strong>
+    <<if $BenSocial >= 60>>
+        $Player.Name, ...
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $BenSocialRank == 1>>
+        Close Friends
+    <<elseif $BenSocial > 70>>
+        Friends
+    <<elseif $BenSocial > 30>>
+        Possible Friends
+    <<elseif $BenSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $BenSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Nerd, Genius, Bookworm, Resourceful, S... /* No Spoilers :P */
+        </div>
+    <<elseif $BenSocial > 70>>
+        <div style="margin-left: 25px;">
+            Nerd, Genius, Bookworm, Resourceful, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [English] > [History] > [Computer Science] > [Science] > [Math] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <div style="margin-left: 25px;">
+        Unknown
+    </div>
+<strong>Likes:</strong>
+    <<if $BenSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Sci-fi, Old Television Shows, Organization
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $BenSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Michael, Exercise, Spicy Foods
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $BenSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Reading, Watching TV with his Grandfather, Model-Building
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $BenSocial >= 50>>
+        <div style="margin-left: 25px;">
+            BBQ, Steak, Anything his mom makes
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $BenSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Silver
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $BenSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Long-Sleeved Shirts, Neutral Colors, Freshly Washed
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $BenSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Tighty Whities
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $BenSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $BenCut == "Cut">>
+                A cut penis that looks like a little sausage. Small for his age.
+            <<else>>
+                An uncut penis that looks like a little grape. Small for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $BenSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A small, cute butt that looks fairly warm and huggable.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: Ben NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Ben NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Ben NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal Core Ben">>
+
+
+:: Ben NPC Character Menu Art [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Artwork]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Ben NPC Character Menu Avatar Display">>
+
+<<include"Journal Artwork Ben">>
+
+:: Ben NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Ben NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ 
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Ben NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "Ben",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $BenSocial >= 50 or $BenSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $BenSocial >= 100 or $BenSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: Ben NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "Ben",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $BenSocial >= 50 or $BenSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $BenSocial >= 100 or $BenSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

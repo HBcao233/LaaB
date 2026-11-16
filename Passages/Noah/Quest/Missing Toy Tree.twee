@@ -1,0 +1,95 @@
+:: Missing Toy Tree [nobr]
+
+<<set $Minutes += 15>>
+<<skillCheck "Athletics" 50>>
+
+You walk up to the base of the tree. It was tall, taller than your house. The top was full of branches that looked sturdy enough to hold you, but the problem was actually getting up there. You stretch, take a deep breath, then begin climbing!<br>
+<br>
+
+<<if _result == 1>>
+	/* RIGHT LOCATION */
+	<<if $QuestMissingToyLocation == 1>>
+		<<set $ActiveQuests.delete("Noah: Missing Toy")>>
+		<<set $ActiveQuests.push("Noah: Missing Toy Finish")>>
+		<<unset $QuestMissingToyLocation>>
+		<<for _i to 0; _i lt $QuestLog.length; _i++>>
+			<<if $QuestLog[_i].Name == "Noah: Missing Toy">>
+				<<set $QuestLog[_i].Objectives[0].State to 1>>
+				<<set $QuestLog[_i].Objectives.push({
+					Name: "Return the toy to <span style=\"color:DarkTurquoise\">Noah</span>",
+					State: 0,
+					Total: 1,
+				})>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<span style="color:lightgreen">It is a struggle to scale this large tree with your much smaller body, but eventually, you reach a large enough branch for you to sit on to rest for a minute.</span> You take a moment to admire the view, being able to see into the town to the south and the woods to the north. You are also able to see into other people’s yards, which feels a bit wrong but also exciting.<br>
+		<br>
+		Having caught your breath, you continue climbing when you suddenly notice a small hole in the tree and see a small black figure poking out of it. Jackpot! You position yourself on a nearby branch and move towards the hole. Right as you are about to reach into it, a squirrel suddenly pops out, staring at you. As your eyes meet, you yell and slam your hand against the tree to scare it away. It works, as the squirrel suddenly darts further up the tree.<br>
+		<br>
+		<span style="color:Green">You retrieve <span style="color:DarkTurquoise">Noah</span>’s toy before descending back down to the ground. Mission accomplished!</span> You should return the toy to <span style="color:DarkTurquoise">Noah</span> to make sure you are properly rewarded.<br>
+		<<needChange "Energy" -4>>
+		<br>
+		[[Continue|PH Backyard]] 
+	<<else>>
+		<<addMoodlet "Pained" 4>>
+		Scaling a tree seemed so much easier in cartoons because in reality, you had very few places to grip. You wonder how <span style="color:DarkTurquoise">Jackson</span> makes it look so easy. Though after a bit of struggling, you make it to a branch large enough for you to sit down to catch your breath.<br>
+		<br>
+		As you are resting, you hear a strange chittering noise from above you. Climbing up to the next branch, you notice a hole in the base of the tree with a small silhouette inside of it. Was this Noah’s toy? You reach in carefully inside and are suddenly scratched as a squirrel leaps out at your face! You let out a high-pitched scream as you toss the squirrel off you.<br>
+		<br>
+		It catches itself on a branch and looks at you in a way that could only be described as tiny anger. Your instincts take over and you begin to rapidly descend from the tree as the squirrel gives chase! You call out for help as you reach the bottom when suddenly the squirrel jumps at you from behind and crawls into your clothing! You let out another high-pitched yelp as the beast begins to run wild and scratch at your defenseless body. Your screams attracted <span style="color:DarkTurquoise">Gabe</span> who, after realizing what was happening, began to laugh uncontrollably from the deck. <br>
+		<br>
+		Without warning, the squirrel becomes fascinated by your nuts, even though they are not the nuts it would normally be after. <span style="color:Pink">As you feel the creature begin to mess with them, you panic and quickly rip down your $PlayerBottoms.Type!</span> <br>
+
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Arms: "Hide",
+					Blush: 2,
+					Mouth: "Sad",
+					PantsDown: true,
+				}
+			}
+		]>>
+		<<ad _ad>>
+
+		/* WEARING UNDIES */
+		<<if $PlayerUndies.Type != "None">>
+			<span style="color:Pink"><span style="color:DarkTurquoise">Gabe</span> begins to laugh uncontrollably as you begin to flail about in your underwear, the squirrel gripping onto your waistband as you shake it back and forth, convinced you are hiding something inside your $PlayerUndies.Type. And while this was true, it was something you REALLY did not want the squirrel to get ahold of.</span><br>
+			<br>
+			Right as the creature finally manages to pull down the front of your underwear, <span style="color:Pink">causing your $Player.PenisSize Penis to plop out,</span> you manage to grab it and chuck it against the tree! The creature seems angry, having been so close to its prize, but relents and scurries off up the tree. <br>
+			<br>
+			<span style="color:Pink">You are so exhausted from the struggle that you don’t even realize you are standing there with your balls out until you turn to <span style="color:DarkTurquoise">Gabe</span> and realize he has been holding his phone up filming the entire time! You turn bright red, fix your clothing, and run inside to nurse your wounds as Gabe begins to rewatch the recording of the small creature basically stripping you. You really hope no one else sees that.</span><br>
+			<<needChange "Energy" -4>>
+			<span style="color:Red">+Pained</span><br>
+			<<set _arousalbs to []>>
+			<<set _arousalkink to ["Humiliated"]>>
+			<<arousalGain 15 _arousalbs _arousalkink>>
+			<br>
+			[[Continue|PH Kitchen]] 
+		/* NOT WEARING UNDIES */
+		<<else>>
+			<span style="color:Pink"><span style="color:DarkTurquoise">Gabe</span> begins to laugh uncontrollably as you begin to flail about with your privates exposed to the wind! As the squirrel continues to leap around and scratch at you, it suddenly glances up and notices the cute balls dangling between your legs and becomes enticed by them! </span><br>
+			<br>
+			It leaps up to try and snatch them and, desperate to keep your privates safe, you jump back to dodge and fall backward onto the grass. <span style="color:Pink">You quickly cover your bits with your hands as the little demon leaps on your stomach and begins to scratch at your hands in an attempt to free your boyhood.</span><br>
+			<br>
+			At this point, you couldn't hold back your pained tears and begin to cry out for help. <span style="color:DarkTurquoise">Gabe</span>, despite having been laughing and filming the entire tiny assault with his phone, realizes you were in real pain and quickly runs over and kicks the squirrel across the yard. He then stands between you and the small creature until it relents and retreats back up the tree. He then turns around to help you up, still stifling laughter, but with some genuine worry in his voice. <br>
+			<br>
+			<span style="color:LightSteelBlue">“You alright <span style="color:DarkTurquoise">$GabeNickname</span>?”</span> You are a little cut up, but otherwise, tell him you are fine as you fix your clothing. <span style="color:LightSteelBlue">“Fuck, didn't know the squirrels around here were pedos! Better keep your windows locked tonight.”</span> <span style="color:DarkTurquoise">Gabe</span> laughs as he ruffles your hair and inspects your wounds. <span style="color:LightSteelBlue">“You should probably clean those, just in case. Oh, and don't worry about the video.”</span> He gives you an evil grin, <span style="color:LightSteelBlue">“I'll keep that private, at least until your wedding!”</span> <span style="color:DarkTurquoise">Gabe</span> walks off laughing as you head inside to nurse your wounds before continuing the search. <br>
+			<<needChange "Energy" -4>>
+			<<set _arousalbs to []>>
+			<<set _arousalkink to ["Humiliated"]>>
+			<<arousalGain 15 _arousalbs _arousalkink>>
+			<<addMoodlet "Seen Naked" 5>>
+			<br>
+			[[Continue|PH Kitchen]] 
+		<</if>>
+	<</if>>
+<<else>>
+	You are seemingly doing well, getting about halfway up the tree, <span style="color:lightcoral">when you suddenly feel your grip slipping!</span> You try to hold on, but are unable to as you slip down the tree and fall hard to the grass on your butt. That hurt. You get up and rub your bruised behind, rethinking your plan before trying again. Maybe you should try again when you are in a better mood.<br>
+	<<needChange "Energy" -4>>
+	<<addMoodlet "Pained" 4>>
+	<br>
+	[[Continue|QUEST Search For Toy]] 
+<</if>>

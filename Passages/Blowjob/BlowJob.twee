@@ -1,0 +1,111 @@
+:: BlowJob [nobr]
+
+/* Consent */
+<<if $SexConsensual != 0>>
+
+	<<set $Minutes += 1>>
+
+	<<include"BlowJob Action Descriptions">>
+	<<include"BlowJob NPC Response">>
+	<<include"BlowJob NPC Movements">>
+	<br>
+	<<include"BlowJob NPC Reactions">>
+	<br>
+	<<include"BlowJob Position">>
+	<br>
+	<<include"BlowJob NPC Avatar">>
+
+	<strong>Comfort:</strong>
+	<<include"NPC Comfort">>
+	<div style="text-indent: 2em;">
+		<<include"BlowJob NPC Comfort">>
+	</div>
+
+	<strong>Arousal:</strong>
+	<<include"NPC Arousal">>
+	<div style="text-indent: 2em;">
+		<<include"BlowJob NPC Arousal">>
+	</div>
+	<br>
+	<<if $NPCArousal < 100>>
+		<span style="color:Azure"><strong>-Actions-</strong></span><br>
+		[[Blow Him Slowly|BlowJob][$SexPlayerAction to "Blow Him Slowly"]]<br>
+		[[Blow Him Furiously|BlowJob][$SexPlayerAction to "Blow Him Furiously"]]<br>
+		[[Nibble His Shaft|BlowJob][$SexPlayerAction to "Nibble His Shaft"]]<br>
+		[[Tease His Tip with Your Tongue|BlowJob][$SexPlayerAction to "Tease His Tip"]]<br>
+		[[Tickle His Taint|BlowJob][$SexPlayerAction to "Tickle His Taint"]]<br>
+		[[Squeeze His Balls|BlowJob][$SexPlayerAction to "Squeeze His Balls"]]<br>
+		<<if $SexPosition != "Sitting">>
+			[[Finger Him Gently|BlowJob][$SexPlayerAction to "Finger Him Gently"]]<br>
+			[[Finger Him Forcefully|BlowJob][$SexPlayerAction to "Finger Him Forcefully"]]<br>
+		<</if>>
+	<<else>>
+		<span style="color:Azure"><strong>-Climax-</strong></span><br>
+		<<if $SexPartner == "Noah">>
+			<<if $SexLocation == "Living Room Quest">>
+				[[Noah Finishes|Quest Stormy Night Post-Blow]]
+			<<elseif $SexLocation == "Noah Bedroom Sleeping">>
+				[[Noah Finishes|Noah Sleeping Post Blow]]
+			<<elseif $SexLocation == "Noah Bedroom Playing">>
+				[[Noah Finishes|Noah Playing Post Blow]]
+			<</if>>
+		<<elseif $SexPartner == "Lucas">>
+			<<if $SexLocation == "Lucas Bedroom Quest">>
+				[[Lucas Finishes|Lucas Quest PG Climax]]
+			<<elseif $SexLocation == "Lucas Bedroom">>
+				[[Lucas is about to blow!|Lucas Give Blowjob Cute Sound]]<br>
+			<<elseif $SexLocation == "Lucas Bedroom Poker">>
+				[[Climax|Poker Lucas Win Give BJ Climax]]<br>
+			<<elseif $SexLocation == "School Restroom">>
+				<<set _random to random(1, 2)>>
+				<<if _random == 1>>
+					[[Lucas Climaxes!|Lucas BJ At School Climax]]
+				<<else>>
+					[[Lucas Climaxes!|Lucas BJ At School Return Favor]]
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+/* Non-Consent */
+<<else>>
+	<<include"BlowJob NonCon Action Descriptions">>
+	<<include"BlowJob NonCon NPC Response">>
+	<<include"BlowJob NonCon NPC Movements">>
+	<br>
+	<<include"BlowJob NonCon NPC Reactions">>
+	<br>
+	<<include"BlowJob NonCon Position">>
+	<br>
+	<<include"BlowJob NonCon NPC Avatar">>
+	<strong>Mood:</strong>
+	<<include"NPC Anger">>
+	<div style="text-indent: 2em;">
+		<<include"BlowJob NonCon NPC Anger">>
+	</div>
+
+	<strong>Arousal:</strong>
+	<<include"NPC Arousal">>
+	<div style="text-indent: 2em;">
+		<<include"BlowJob NonCon NPC Arousal">>
+	</div>
+	<br>
+
+	<<if $NPCArousal < 100>>
+		<span style="color:Azure"><strong>-Actions-</strong></span><br>
+		[[Resist|BlowJob][$SexPlayerAction to "Resist"]]<br>
+		[[Fight|BlowJob][$SexPlayerAction to "Fight"]]<br>
+		[[Cry|BlowJob][$SexPlayerAction to "Cry"]]<br>
+		[[Submit|BlowJob][$SexPlayerAction to "Submit"]]<br>
+	<<else>>
+		<span style="color:Azure"><strong>-Climax-</strong></span><br>
+		<<if $SexPartner == "Gabe">>
+			<<if $SexLocation == "Gabe Bedroom Quest">>
+				[[Gabe Finishes|Quest Gabe Bail Out 7]]
+			<</if>>
+		<<elseif $SexPartner == "Michael">>
+			<<if $SexLocation == "Michael Blackmail Quest">>
+				[[Michael Finishes|Michael Blackmail 5 Climax]]
+			<</if>>
+		<</if>>
+	<</if>>
+<</if>>

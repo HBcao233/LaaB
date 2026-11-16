@@ -1,0 +1,82 @@
+:: NOAH Pretend Superheroes Belt Lost [nobr]
+
+The two of you arrive outside the bank that <span style="color:DarkTurquoise">Dr. Bue</span> is currently robbing and sneak inside. You follow <span style="color:DarkTurquoise">Noah</span>’s lead, squeezing through a tight ventilation shaft behind him. Eventually, you locate the villain and leap down from the vent to attack!<br>
+<br>
+During the battle, <span style="color:DarkTurquoise">Noah</span> describes how <span style="color:DarkTurquoise">Dr. Bue</span> catches one of your boomerangs and tosses it back at you! <span style="color:lightcoral">It doesn’t hit you, instead cutting your belt causing it and all your gadgets to fall to the ground!</span><br>
+<br>
+
+<div id=choice1>
+<<if $PlayerUndies.Type != "None" and $PlayerBottoms.Type != "None">>
+	<<link "Pull your pants down and pretend to be embarrassed <br>">>
+	<<replace"#choice1">>
+	
+		/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Normal">>
+<<set $AD.Cry to 0>>
+<<set $AD.Blush to 1>>
+<<set $AD.Mouth to "Happy">>
+<<if $NoahSche.Activity == "Playing in Room">>
+	<<set $AD.Outfit to "Everyday">>
+<<else>>
+	<<set $AD.Outfit to "Pajamas">>
+<</if>>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+	<div style="position: absolute; left: 125px; top: 0px">
+    	
+	<<include"Player Avatar Display Set">>
+	<<set $AD.Name to "Player">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 2>>
+	<<set $AD.Mouth to "Sad">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"Player Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */<<set $ADPantsDown to 1>>
+		<<include"Avatar Display">>
+	</div>
+</div>
+	You get a funny idea, pretending that the make-believe belt was doing more than holding up your gadgets. <span style="color:Pink">You quickly grab the sides of your $PlayerBottoms.Type and yank them down to your ankles, exposing your $PlayerUndies.Name!</span> You pretend to be super embarrassed, attempting to cover your exposed underwear with your hands and falling over, causing your $PlayerBottoms.Type to fly off in an over-dramatic fashion.<br>
+<br>
+<span style="color:DarkTurquoise">Noah</span> giggles loudly at your funny response to his story. You spend the rest of the fight battling in your underwear, much to <span style="color:DarkTurquoise">Noah</span>’s amusement. The two of you fight well together and manage to recover the stolen money, but unfortunately the evil <span style="color:DarkTurquoise">Dr. Bue</span> escapes into the night! <span style="color:DarkTurquoise">Noah</span> gives a short speech about how “evil will always exist” and that you two will have to catch him another night.<br>
+<br>
+As the game ends, <span style="color:DarkTurquoise">Noah</span> runs up and gives you a hug, thanking you for playing with him.<br>
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Exhibitionism", "Humiliation"]>>
+<<arousalGain 10 _arousalbs _arousalkink>>
+	<<socialChange "Noah" 3>>
+	<<needChange "Fun" 20>>
+	<br>
+	
+	[[Leave|PH Noah Bedroom]] 
+	
+	<</replace>>
+	<</link>>
+<</if>>
+	
+	<<link "Battle without your gadgets<br>">>
+	<<replace"#choice1">>
+	
+	You laugh and say you don’t need your gadgets to defeat <span style="color:DarkTurquoise">Dr. Bue</span>! The two of you fight well together and manage to recover the stolen money, but unfortunately the evil <span style="color:DarkTurquoise">Dr. Bue</span> escapes into the night! <span style="color:DarkTurquoise">Noah</span> gives a short speech about how “evil will always exist” and that you two will have to catch him another night.<br>
+<br>
+As the game ends, <span style="color:DarkTurquoise">Noah</span> runs up and gives you a hug, thanking you for playing with him.<br>
+	<<socialChange "Noah" 3>>
+	<<needChange "Fun" 20>>
+	<br>
+	
+	[[Leave|PH Noah Bedroom]] 
+	
+	<</replace>>
+	<</link>>
+</div>

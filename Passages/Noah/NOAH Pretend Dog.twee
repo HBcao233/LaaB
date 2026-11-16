@@ -1,0 +1,78 @@
+:: NOAH Pretend Dog [nobr]
+	
+	/* Setting Outfit Variables */
+	<<if $NoahSche.Activity == "Playing in Room">>
+		<<set $AD.Outfit to "Everyday">>
+<<else>>
+		<<set $AD.Outfit to "Pajamas">>
+	<</if>>
+	<<include"Noah Outfit Set">>
+<span style="color:DarkTurquoise">Noah</span> thinks for a moment what game he wants to play when he suddenly remembers something and begins to search his toy chest. <span style="color:Pink">You watch his butt cutely sway back and forth as he searches</span> until he pops out holding a dog ear headband, a clip-on tail, and a collar. All once part of a costume <span style="color:DarkTurquoise">Noah</span> wore as a toddler, though the actual costume part was given away once Noah outgrew it.<br>
+
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Normal">>
+<<set $AD.Cry to 0>>
+<<set $AD.Blush to 0>>
+<<set $AD.Mouth to "Happy">>
+<<if $NoahSche.Activity == "Playing in Room">>
+	<<set _noah_outfit to "Everyday">>
+<<else>>
+	<<set _noah_outfit to "Pajamas">>
+<</if>>
+<<set $AD.Outfit to _noah_outfit>>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	<img src="Images\Avatar\Kids\Clothes\Dog Stuff\Dog Collar.png" 
+style="position: absolute; left: 0; top: 0">
+	<img src="Images\Avatar\Kids\Clothes\Dog Stuff\Dog Ears.png" 
+style="position: absolute; left: 0; top: 0">
+	<img src="Images\Avatar\Kids\Clothes\Dog Stuff\Dog Tail.png" 
+style="position: absolute; left: 0; top: 0">
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">“I’ll pretend to be a dog and you’ll be my owner!”</span> <span style="color:DarkTurquoise">Noah</span> smiles as he 
+
+<<if $NoahSche.Location == "Playing in Room">>
+puts on the collar and ears before attaching the tail to the back of his $NoahBottoms.Name. He then got on his hands and knees and cutely barked while panting with his tongue out. <span style="color:Pink">He looks incredibly cute as he crawled around, shaking his butt in order to get his tail to wag.</span> You briefly wondered if you could convince him to let you take him on a walk down the street like this.<br>
+<br>
+
+
+<<elseif $NoahPJType == "Two">>
+puts on the collar and ears before attaching the tail to the back of his $ADBottoms.Type. He then got on his hands and knees and cutely barked while panting with his tongue out. <span style="color:Pink">He looks incredibly cute as he crawled around, shaking his butt in order to get his tail to wag.</span> You briefly wondered if you could convince him to let you take him on a walk down the street like this.<br>
+<br>
+
+
+<<elseif $NoahPJType == "None">>
+puts on the collar and ears before attaching the tail to the back of his $NoahUndies.Name. He then got on his hands and knees and cutely barked while panting with his tongue out. <span style="color:Pink"> He looks incredibly cute as he crawled around, shaking his butt in order to get his tail to wag. The fact that he was only wearing a pair of $NoahUndies.Type only added to the incredible cuteness.</span> You briefly wondered if you could convince him to let you take him on a walk down the street like this.<br>
+<br>
+
+<</if>>
+	<<set $Minutes += 30>>
+
+<div id=choice>
+	<<link "Continue">>
+	<<replace"#choice">>
+	
+	<<set $RandomEvent to random(2, 2)>>
+	
+/* DOG WHINES */
+	<<if $RandomEvent == 1>>
+		<<include"NOAH Pretend Dog Whines">>
+/* DOG WALK */
+	<<elseif $RandomEvent == 2>>
+		<<include"NOAH Pretend Dog Walk">>
+
+	<</if>>
+	
+	
+	<</replace>>
+	<</link>>
+</div>

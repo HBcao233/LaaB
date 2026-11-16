@@ -1,0 +1,375 @@
+:: Artwork Catalog Other [nobr]
+
+<span style="color:Azure"><big><strong>--Miscellaneous Catalog--</strong></big></span><br>
+<br>
+
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+
+<strong>-Bonus LaaB Art-</strong><br>
+
+/* Classmate Group Art Everyday*/
+    <<if $AchievementArt.includes("Classmate Group Art Everyday")>>
+        <strong><span style="color:lightgreen">Classmate Group Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Classmate Group Art.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Classmate Group Art (Everyday)</strong>
+        | 
+        <<if ["Lucas Character Art Everyday", "Ben Character Art Everyday", "Michael Character Art Everyday", "Carter Character Art Everyday", "Jackson Character Art Everyday", "Thomas Character Art Everyday", "Xavier Character Art Everyday", "Felix Character Art Everyday"].every(ach => $AchievementArt.includes(ach))>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Classmate Group Art Everyday")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Acquire every other Classmates Everyday Artwork)]</span><br>
+        <</if>>
+    <</if>>
+    /* Classmate Group Art Alt */
+    <<if $AchievementArt.includes("Classmate Group Art Everyday Alt")>>
+        <strong><span style="color:lightgreen">Classmate Group Art (Everyday Alt)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Classmate Group Art Alt.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Classmate Group Art (Everyday Alt)</strong>
+        | 
+        <<if ["Lucas Character Art Everyday", "Ben Character Art Everyday", "Michael Character Art Everyday", "Carter Character Art Everyday", "Jackson Character Art Everyday", "Thomas Character Art Everyday", "Xavier Character Art Everyday", "Felix Character Art Everyday"].every(ach => $AchievementArt.includes(ach))>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Classmate Group Art Everyday Alt")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Acquire every other Classmates Everyday Artwork)]</span><br>
+        <</if>>
+    <</if>>
+    /* CClassmate Group Art Undies*/
+    <<if $AchievementArt.includes("Classmate Group Art Undies")>>
+        <strong><span style="color:lightgreen">Classmate Group Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Classmate Group Art Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Classmate Group Art (Undies)</strong>
+        | 
+        <<if ["Lucas Character Art Undies", "Ben Character Art Undies", "Michael Character Art Undies", "Carter Character Art Undies", "Jackson Character Art Undies", "Thomas Character Art Undies", "Xavier Character Art Undies", "Felix Character Art Undies"].every(ach => $AchievementArt.includes(ach))>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Classmate Group Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Acquire every other Classmates Undies Artwork)]</span><br>
+        <</if>>
+    <</if>>
+    /* Classmate Chibi Group Art */
+    <<if $AchievementArt.includes("Classmate Chibi Group Art")>>
+        <strong><span style="color:lightgreen">Classmate Chibi Group Art</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Classmate Chibi Group Art.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Classmate Chibi Group Art</strong>
+        | 
+        <<if ["Lucas Sticker Set", "Ben Sticker Set", "Michael Sticker Set", "Carter Sticker Set", "Jackson Sticker Set", "Thomas Sticker Set", "Xavier Sticker Set", "Felix Sticker Set"].every(ach => $AchievementArt.includes(ach))>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Classmate Chibi Group Art")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Acquire every other Classmates Sticker Sets)]</span><br>
+        <</if>>
+    <</if>>
+    /* Elliot Warren (Default)*/
+    <<if $AchievementArt.includes("Elliot Warren (Default)")>>
+        <strong><span style="color:lightgreen">Elliot Warren (Default)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Elliot Warren (Default).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Elliot Warren (Default)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Elliot Warren (Default)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+
+<strong>-Devs Art-</strong> <br>
+
+/* Orange and Oni-10k Downloads (Undies) */
+    <<if $AchievementArt.includes("Orange and Oni 10k Downloads (Undies)")>>
+        <strong><span style="color:lightgreen">Orange and Oni 10k Downloads (Undies)</span></strong>
+        |                                                       
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Orange and Oni 10k Downloads (Undies).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Orange and Oni 10k Downloads (Undies)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Orange and Oni 10k Downloads (Undies)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+    /* Orange and Oni-10k Downloads (Naked) */
+    <<if $AchievementArt.includes("Orange and Oni 10k Downloads (Naked)")>>
+        <strong><span style="color:lightgreen">Orange and Oni 10k Downloads (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Orange and Oni 10k Downloads (Naked).png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Orange and Oni 10k Downloads (Naked)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Orange and Oni 10k Downloads (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+     /* Orange Beta Thumbnail 1*/
+    <<if $AchievementArt.includes("Orange Beta Thumbnail 1")>>
+        <strong><span style="color:lightgreen">Orange Beta Thumbnail 1</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Orange Beta Thumbnail 1.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Orange Beta Thumbnail 1</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Orange Beta Thumbnail 1")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+    /* Orange Beta Thumbnail 2*/
+    <<if $AchievementArt.includes("Orange Beta Thumbnail 2")>>
+        <strong><span style="color:lightgreen">Orange Beta Thumbnail 2</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Orange Beta Thumbnail 2.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Orange Beta Thumbnail 2</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Orange Beta Thumbnail 2")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+    /* Onis Undies Muncher*/
+    <<if $AchievementArt.includes("Oni Undies Muncher")>>
+        <strong><span style="color:lightgreen">Oni Undies Muncher</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Oni Undies Muncher.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Oni Undies Muncher</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Oni Undies Muncher")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+    /* Phlixel Character Art */
+    <<if $AchievementArt.includes("Phlixel Character Art")>>
+        <strong><span style="color:lightgreen">Phlixel Character Art</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Phlixel.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Phlixel Character Art</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Phlixel Character Art")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+    /* Phlixel Character Art Naked */
+    <<if $AchievementArt.includes("Phlixel Character Art Naked")>>
+        <strong><span style="color:lightgreen">Phlixel Character Art (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Phlixel Naked.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Phlixel Character Art (Naked)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Phlixel Character Art Naked")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/*Ron OC James Character Art Everyday*/
+        <<if $AchievementArt.includes("Ron OC James Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Ron OC James Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Ron OC James.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ron OC James Character Art (Everyday)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ron OC James Character Art Everyday")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("Ron OC James Character Art Undies")>>
+        <strong><span style="color:lightgreen">Ron OC James Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Ron OC James Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ron OC James Character Art (Undies)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ron OC James Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Character Art (Naked) */
+    <<if $AchievementArt.includes("Ron OC James Character Art Naked")>>
+        <strong><span style="color:lightgreen">Ron OC James Character Art (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Ron OC James Naked.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ron OC James Character Art (Naked)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ron OC James Character Art Naked")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/*Ron OC James Character Art (Hard) */
+    <<if $AchievementArt.includes("Ron OC James Character Art Hard")>>
+        <strong><span style="color:lightgreen">Ron OC James Character Art (Hard)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Ron OC James Hard.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ron OC James Character Art (Hard)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ron OC James Character Art Hard")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Character Art (Special) */
+    <<if $AchievementArt.includes("Ron OC James Character Art Special")>>
+        <strong><span style="color:lightgreen">Ron OC James Character Art (Special)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Ron OC James Special.gif" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Ron OC James Character Art (Special)</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Ron OC James Character Art Special")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Dev Sticker Set */
+    <<if $AchievementArt.includes("Devs Sticker Set")>>  
+        <strong><span style="color:lightgreen">Chibi Orange Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Chibi Orange.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Oni Sticker</span></strong> 
+        |  
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Chibi Oni.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Oni (Undies) Sticker</span></strong> 
+        |  
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Chibi Oni (Undies).png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi RayRay Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Chibi RayRay.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Phlixel Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Chibi Phlixel.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Ron Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Chibi Ron.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Rudy Excited Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Bonus\\Rudy Excited.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Devs Sticker Set</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Devs Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Other">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+    <br>
+[[Back|Artwork Catalog]]

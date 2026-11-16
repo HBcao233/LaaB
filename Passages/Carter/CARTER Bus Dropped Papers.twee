@@ -1,0 +1,26 @@
+:: CARTER Bus Dropped Papers [nobr]
+
+You are riding on the bus, sitting next to <span style="color:DarkTurquoise">Carter</span> chatting and rifling through your backpack looking for something, when it suddenly hits a very large pothole. It bounces you up a few inches, causing you to drop your backpack, spilling some of the papers onto the floor. You curse and quickly go to pick them up, but notice a few of them has slide a few seats back.<br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“I’ll get them!”</span> <span style="color:DarkTurquoise">Carter</span> jumps up out of his chair before you have a chance and begins to crawl under the seats to collect your papers. After a few moments of watching him disappear under the seats, leaving only his lower half exposed, you hear him call out. <span style="color:LightSteelBlue">“Got them! But uh… I may require your assistance!”</span> It seems the boy was stuck. You laugh and grab him by the waist, pulling him out and helping him up. He gives you a thankful smile and hands you your papers. You thank him in return and the two of you return to your seat.<br>
+
+<<socialChange "Carter" 1>>
+
+/* GET OFF BUS */
+<<if $BusRide == "Home">>
+	[[Get off bus|Northend]]
+<<else>>
+	[[Get off bus|Middle School]]
+<</if>>
+

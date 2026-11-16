@@ -1,0 +1,65 @@
+:: DRAMA Too Small Costume [nobr]
+
+<<storeClothing "Store" "Undies" 1>>
+
+
+/* UNDIES */
+<<if $PlayerUndies.Type != "None">>
+Today the class will be practicing some scenes in costume. Everyone is given an outfit to wear and sent into one of the small, curtained changing shacks. You strip down to your $PlayerUndies.Type and place your clothes in a bag before attempting to get dressed, only to find the outfit given to you to be way too small! As <span style="color:DarkTurquoise">Mr. Julien</span> walks by, telling everyone to head to the stage once they are changed, you inform him of your predicament and ask for a larger costume. Instead, <span style="color:DarkTurquoise">Mr. Julien</span> opens the curtain to the changing shack and walks in!<br>
+
+<<set _ad to [
+	{
+		Name: "Julien",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+			Blush: 2,
+			Arms: "Hide",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id='Dressed'>
+<<link "Continue">>
+<<replace"#Dressed">>
+	<span style="color:LightSteelBlue">“Too small? I could have sworn it was your size, let me see.”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Mr. Julien</span> grabs the costume from you and inspects it while you stand there blushing and attempting to cover your $PlayerUndies.Name with your hands.</span> <span style="color:LightSteelBlue">“Perhaps you are right, put your arms out and let me take your measurements and I will find a suitable costume.”</span><br>
+	<br>
+	You attempt to protest but are forced to hold your arms out as <span style="color:DarkTurquoise">Mr. Julien</span> measures your arms and waist. <span style="color:Pink">It is humiliating to stand there in nothing but your $PlayerUndies.Type in front of your teacher, but you eventually get through it and are given an outfit that fits.</span><br>
+
+	<<storeClothing "Restore" "Undies">>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 10 _arousalbs _arousalkink>>
+	<<addMoodlet "Seen Undies" 3>>
+	<br>
+	<<include"Attend Drama Finish">>
+<</replace>>
+<</link>>
+</div>
+
+/* NO UNDIES */
+<<else>>
+	Today the class will be practicing some scenes in costume. Everyone is given an outfit to wear and sent into one of the small, curtained changing shacks. You strip down and place your clothes in a bag before attempting to give dressed, only to find the outfit given to you to be way too small! As <span style="color:DarkTurquoise">Mr. Julien</span> walks by, telling everyone to head to the stage once they are changed, you inform him of your predicament and ask for a larger costume. Instead, <span style="color:DarkTurquoise">Mr. Julien</span> opens the curtain to the changing shack and walks in!<br>
+	<br>
+<div id='Dressed'>
+	<<link "Continue">>
+	<<replace"#Dressed">>
+		<span style="color:LightSteelBlue">“Too small? I could have sworn it was your size, let me see.”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Mr. Julien</span> grabs the costume and begins to inspect it while you stand there blushing, completely naked, and covering your $Player.PenisSize Penis with your hands.</span> <span style="color:LightSteelBlue">“Perhaps you are right, put your arms out and let me take your measurements and I will find a suitable costume.”</span><br>
+		<br>You attempt to protest but in the end are forced to hold your arms out, completely exposing yourself to your teacher, as he measures your arms and waist. <span style="color:Pink">It is humiliating to stand there completely naked with your Penis in clear view of your teacher, unable to cover yourself as your teacher measures your body, but you eventually get through it and are given an outfit that fits.</span><br>
+		<<storeClothing "Restore" "Undies">>
+		<<set _arousalbs to []>>
+		<<set _arousalkink to ["Humiliated"]>>
+		<<arousalGain 20 _arousalbs _arousalkink>>
+		<<addMoodlet "Seen Naked" 3>>
+		<br>
+		<<include"Attend Drama Finish">>
+	<</replace>>
+	<</link>>
+</div>
+<</if>>

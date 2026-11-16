@@ -1,0 +1,56 @@
+:: MICHAEL Race Challenge [nobr]
+
+<<set $Minutes += 20>>
+
+Thinking of a way to earn the respect of <span style="color:DarkTurquoise">Michael</span> and his goons, you walk up to them and loudly announce that you were challenging <span style="color:DarkTurquoise">Michael</span> to a race across the courtyard. Naturally, <span style="color:DarkTurquoise">Michael</span> smiled at the prospect and accepted.<br>
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“We’ll race from here to the cafeteria door,”</span> <span style="color:DarkTurquoise">Michael</span> pointed to the door over 200 meters away. <span style="color:LightSteelBlue">“First one to touch the door wins. Sound easy enough?”</span> You agree and the two of you take positions at a line drawn in the dirt as one of <span style="color:DarkTurquoise">Michael</span>’s goons take off his shirt to act as the starting flag.<br>
+<br>
+
+<span style="color:DarkTurquoise">Michael</span> smirked at you as he stretched out, he was no pushover when it came to athletics, his muscled physique made that obvious. If you wanted to win you’d need both skill and luck on your side. Still, winning wasn’t everything as it was clear that both <span style="color:DarkTurquoise">Michael</span> and his goons were impressed by your challenge alone.<br>
+<br>
+
+As the countdown finishes and you both take off, the race is looking neck to neck. <span style="color:DarkTurquoise">Michael</span> is quick, but he underestimated you and you find yourself nearly halfway and still able to keep up with him.<br>
+<br>
+
+<<skillCheck "Athletics" 85>>
+
+/* WIN */
+<<if _result == 1>>
+	<span style="color:Green">In his attempt to get ahead of you, <span style="color:DarkTurquoise">Michael</span> nearly stumbles and has to slow down to regain his balance. This allows you to easily grab the victory as you reach the door to the cafeteria and begin to cheer!</span> Michael looks upset at having lost, but gives you a smile and pat on the back regardless.<br>
+	<br>
+
+	<span style="color:LightSteelBlue">“Not bad <span style="color:DarkTurquoise">$MichaelNickname</span>. But you won’t get so lucky next time.”</span> <span style="color:DarkTurquoise">Michael</span> walks you back to his goons, who only cheer your victory when they see that <span style="color:DarkTurquoise">Michael</span> wasn’t too angry about having lost.<br>
+	<<socialChange "Michael" 3>>
+	<<needChange "Fun" 20>>
+	<<skillPoints "Athletics" 5>>
+	<br>
+	
+	[[Continue|School Courtyard]] 
+
+/* LOSE */
+<<else>>
+	<span style="color:Red">But it isn’t long until <span style="color:DarkTurquoise">Michael</span> manages to pull ahead of you. You feel your chance at victory fading away as you try to push your legs faster and faster until… you trip. Landing hard on the ground and tumbling forward, rolling a few meters before you come to a rest on your back.</span> You let out a pained groan as <span style="color:DarkTurquoise">Michael</span> stops and turns back towards you, unable to contain his laughter at your fall.<br>
+	<br>
+
+	<span style="color:LightSteelBlue">“Fuck, you alright dude?”</span> <span style="color:DarkTurquoise">Michael</span> surprisingly reaches down and helps you up. Your elbow bled slightly and your whole body felt bruised, but other than that you were fine. <span style="color:LightSteelBlue">“Shit, if you wanted to win that badly maybe I should have just let you.”</span> Your face is red, both from the pain and the embarrassment of falling, but <span style="color:DarkTurquoise">Michael</span> seems to have developed a bit of respect for you.<br>
+	<<addMoodlet "Pained" 7>>
+	<<socialChange "Michael" 3>>
+	<<skillPoints "Athletics" 3>>
+	<br>
+
+	[[Continue|School Courtyard]] 
+
+<</if>>

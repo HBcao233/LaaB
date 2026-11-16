@@ -1,0 +1,143 @@
+:: CC Finalize [nobr]
+
+<span style="color:Azure"><strong>--$Player.Name $Player.LastName--</strong></span><br>
+
+<br>
+/* AVATAR DISPLAY */
+<div style="position: relative">
+<<include"Player Avatar Display Set">>
+<<include"Avatar Display">>
+<<include"Player Avatar Display Set">>
+<div style="position: absolute; left: 175px; top: 150px">
+<<set $AD.Name to "Player">>
+<<include"Penis Zoom Display">>
+	<div style="position: absolute; left: 133px; top: 0px">
+		<<include"Butt Zoom Display">>
+	</div>
+</div>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+<span style="color:Azure"><strong>--Appearance--</strong></span><br>
+<strong>Body:</strong> $Player.SkinColor, $Player.Build, $Player.Height Body <br>
+<strong>Hair:</strong> $Player.HairColor $Player.HairStyle Hair <br>
+<strong>Privates:</strong> $Player.PenisStyle $Player.PenisSize Penis and a $Player.Butt Butt. <br>
+<br>
+
+<span style="color:Azure"><strong>--Character--</strong></span><br>
+<span style="color:Lightblue"><strong>Strength:</strong></span>
+<<if $Strength > 5>>
+	<span style="color:lightgreen">$Strength</span>
+<<elseif $Strength == 5>>
+	<span style="color:yellow">$Strength</span>
+<<elseif $Strength < 5>>
+	<span style="color:lightcoral">$Strength</span>
+<</if>>
+<br>
+
+<span style="color:Lightblue"><strong>Dexterity:</strong></span>
+<<if $Dexterity > 5>>
+	<span style="color:lightgreen">$Dexterity</span>
+<<elseif $Dexterity == 5>>
+	<span style="color:yellow">$Dexterity</span>
+<<elseif $Dexterity < 5>>
+	<span style="color:lightcoral">$Dexterity</span>
+<</if>>
+<br>
+
+<span style="color:Lightblue"><strong>Endurance:</strong></span>
+<<if $Endurance > 5>>
+	<span style="color:lightgreen">$Endurance</span>
+<<elseif $Endurance == 5>>
+	<span style="color:yellow">$Endurance</span>
+<<elseif $Endurance < 5>>
+	<span style="color:lightcoral">$Endurance</span>
+<</if>>
+<br>
+
+<span style="color:Lightblue"><strong>Smarts:</strong></span>
+<<if $Smarts > 5>>
+	<span style="color:lightgreen">$Smarts</span>
+<<elseif $Smarts == 5>>
+	<span style="color:yellow">$Smarts</span>
+<<elseif $Smarts < 5>>
+	<span style="color:lightcoral">$Smarts</span>
+<</if>>
+<br>
+
+<span style="color:Lightblue"><strong>Charm:</strong></span>
+<<if $Charm > 5>>
+	<span style="color:lightgreen">$Charm</span>
+<<elseif $Charm == 5>>
+	<span style="color:yellow">$Charm</span>
+<<elseif $Charm < 5>>
+	<span style="color:lightcoral">$Charm</span>
+<</if>>
+<br>
+
+<span style="color:Lightblue"><strong>Sense:</strong></span>
+<<if $Sense > 5>>
+	<span style="color:lightgreen">$Sense</span>
+<<elseif $Sense == 5>>
+	<span style="color:yellow">$Sense</span>
+<<elseif $Sense < 5>>
+	<span style="color:lightcoral">$Sense</span>
+<</if>>
+<br>
+
+<span style="color:Lightblue"><strong>Creativity:</strong></span>
+<<if $Creativity > 5>>
+	<span style="color:lightgreen">$Creativity</span>
+<<elseif $Creativity == 5>>
+	<span style="color:yellow">$Creativity</span>
+<<elseif $Creativity < 5>>
+	<span style="color:lightcoral">$Creativity</span>
+<</if>>
+<br>
+<div style="display: flex; align-items: center;">
+	<strong>Traits:</strong>&nbsp;&nbsp;
+	<<for _i to 0; _i lt $Player.Traits.length; _i++>>
+		<<capture _i>>
+			<img class="trait-icon" @src="`Images/Icons/Traits/${getTraitByID($Player.Traits[_i]).Name}.png`">
+		<</capture>>
+	<</for>><br>
+</div>
+<br>
+
+<span style="color:Azure"><strong>--Details--</strong></span><br>
+<<if $Adopted == 0>>
+    $Player.Name lives with his biological family.
+<<elseif $Adopted == 1>>
+    $Player.Name was adopted as a baby.
+<</if>><br>
+
+<<if $Bedwetter == 0>>
+	$Player.Name does not have nighttime problems.
+<<elseif $Bedwetter == 1>>
+	$Player.Name occasionally wets the bed.
+<</if>><br>
+
+<<if $PlayerGlasses != 1>>
+	$Player.Name does not wear glasses.
+<<elseif $PlayerGlasses == 1>>
+	$Player.Name wears glasses.
+<</if>><br>
+
+<<if $CanCum != 1>>
+	$Player.Name has dry orgasms.
+<<elseif $CanCum == 1>>
+	$Player.Name can produce semen.
+<</if>><br>
+<br>
+
+<span style="color:Azure"><strong>--Family Details--</strong></span><br>
+<<if $NoahWetting == 0>>
+	Noah does not wet the bed
+<<elseif $NoahWetting == 1>>
+	Noah does wet the bed
+<</if>><br>
+<br>
+
+<span style="color:Azure"><strong>--Finish--</strong></span><br>
+[[Confirm and Begin|CC Finish]]<br>
+[[Go Back|CC Main]]

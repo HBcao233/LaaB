@@ -1,0 +1,88 @@
+:: Moodlet Decay [nobr]
+
+/* New Moodlet Decay Code */
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				<<set $Player.Moodlets[_i].Value -= 1>>
+				<<if $Player.Moodlets[_i].Value <= 0>>
+					/* Special Decay Rules */
+						/* Caffeine */
+						<<if $Player.Moodlets[_i].ID == "Caffeine Buzz">>
+							<<set _caffeine to true>>
+						<</if>>
+					<<set $Player.Moodlets.deleteAt(_i)>>
+				<</if>>
+			<</if>>
+    <</capture>>
+<</for>>
+
+/* Trait Based Moodlet Adds Per Hour */
+<<set _random to random(1, 50)>>
+<<if $Player.Traits.includes("Coward") && _random == 1>>
+	<<addMoodlet "Coward" 5>>
+<</if>>
+<<set _random to random(1, 50)>>
+<<if $Player.Traits.includes("Excitable") && _random == 1>>
+	<<addMoodlet "Excited" 5>>
+<</if>>
+<<set _random to random(1, 50)>>
+<<if $Player.Traits.includes("Gloomy") && _random == 1>>
+	<<addMoodlet "Gloomy" 5>>
+<</if>>
+<<set _random to random(1, 50)>>
+<<if $Player.Traits.includes("HotHeaded") && _random == 1>>
+	<<addMoodlet "Ticked Off" 5>>
+<</if>>
+<<set _random to random(1, 50)>>
+<<if $Player.Traits.includes("Lustful") && _random == 1>>
+	<<addMoodlet "Thinking Naughty Thoughts" 5>>
+<</if>>
+<<set _random to random(1, 25)>>
+<<if $Player.Traits.includes("Unstable") && _random == 1>>
+	<<addMoodlet "Unstable" 1>>
+<</if>>
+
+/* Special Decay Moodlets */
+<<if _caffeine != null>>
+	<<addMoodlet "Caffeine Crash" 6>>
+	<<unset _caffeine>>
+<</if>>
+
+<<for _name range [
+	"SeenNaked",
+	"SeenUndies",
+	"Wedgie",
+	"Spanked",
+	"Pained",
+	"GoodWank",
+	"Raped",
+	"GaveWedgie",
+	"Delicious",
+	"GoodShow",
+	"LewdExperience",
+	"Kissed",
+	"GoodDream",
+	"BadDream",
+	"Nightmare",
+	"GreatMovie",
+	"ScaryMovie",
+	"Refreshing",
+	"MintyFresh",
+	"GrossedOut",
+	"GoodDeed"
+]>>
+	<<set _moodlet to `$${_name}`>>
+	<<set _hours to `$${_name}Hours`>>
+	<<if State.getVar(_moodlet) == 1>>
+		<<run State.setVar(_hours, State.getVar(_hours) - 1)>>
+		<<if State.getVar(_hours) <= 0>>
+			<<run State.setVar(_moodlet, 0)>>
+		<</if>>
+	<</if>>
+<</for>>
+
+/* Arousal Decay */
+<<if $Player.Arousal > 0>>
+	<<set $Player.Arousal -= 15>>
+<</if>>

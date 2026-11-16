@@ -1,0 +1,28 @@
+:: Pool Rest [nobr]
+
+<<set $Minutes += 10>>
+
+/* RANDOM SELECTION */
+<<set _random to random(1, 2)>>
+
+/* FLOAT */
+<<if _random == 1>>
+You decide to relax for a few minutes, laying on your back and floating along. It feels as if you are floating on clouds with a cool breeze blowing over you. You are so comfortable, you nearly fall asleep.<br>
+<br>
+
+/* REST */
+<<elseif _random == 2>>
+You head over to the edge of the pool and decide to rest for a minute. It is very relaxing to just float there, listening and watching the pool and the noises that surround it.<br>
+<br>
+
+<</if>>
+<<if $PoolLocation == "Very Deep">>
+    [[Continue|Pool Very Deep]]
+<<elseif $PoolLocation == "Deep">>
+    [[Continue|Pool Deep]]
+<<elseif $PoolLocation == "Part Shallow">>
+    [[Continue|Pool Part Shallow]]
+<<elseif $PoolLocation == "Shallow">>
+    [[Continue|Pool Shallow]]
+<</if>>
+<<set $SwimStamina += 30>>

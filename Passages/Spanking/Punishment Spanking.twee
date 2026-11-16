@@ -1,0 +1,44 @@
+:: Punishment Spanking [nobr]
+
+<span style="color:LightSteelBlue">“You know the punishment for acting out like this.”</span> <span style="color:DarkTurquoise">Your Father</span> says, sitting down on his bed and patting his lap, <span style="color:LightSteelBlue">“Come here.”</span> Your butt instinctively clenches as you walk over and lay down across his lap.<br>
+<br>
+
+
+<<if $ToggleSpanking == 1>>
+/* SAVING CLOTHES */
+	<<include"Character Save Clothes">>
+
+<<set $SpankClothing to "None">>
+<<set $SpankNumber to $Punishment>>
+<<set $SpankAnger to 75>>
+<<set $SpankPain to 0>>
+<<set $SpankLocation to "Father Bedroom">>
+<<set $Spanker to "Dad">>
+<<set $SpankingStart to 0>>
+<<set $SpankPosition to "On Lap">>
+<<set $SpankPlayerAction to "None">>
+
+	<<if $SpankNumber > 30>>
+		<<set $SpankNumber to 30>>
+	<</if>>
+	<<set $TimesSpanked += $SpankNumber>>
+[[Continue|Spanking]]
+
+<<else>>
+
+For disobeying <span style="color:DarkTurquoise">Your Father</span>, he gives you a proper punishment that leaves your butt red and reeling. Though afterwards he gives you a hug and reassures you that he is only doing this because he loves you.<br>
+<br>
+<<if $HomeDayNudity == 0>>
+	<<addMoodlet "Seen Naked" 8>>
+<</if>>
+
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Spankee"]>>
+<<arousalGain 20 _arousalbs _arousalkink>>
+<<set $Minutes += 10>>
+<<addMoodlet "Spanked" 7>>
+<<set $Punishment to 0>>
+
+[[Continue|PH Hallway]] 
+
+<</if>>

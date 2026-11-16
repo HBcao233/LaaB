@@ -1,0 +1,84 @@
+:: OC Birdy Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCBirdySocialRank == -3>>
+	<<set $OCBirdyRelationship to "Hated">>
+	<span style="color:DarkRed">Birdy Hates you!</span>
+	<br>
+<<elseif $OCBirdySocialRank == -2>>
+	<<set $OCBirdyRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Birdy are Enemies.</span>
+	<br>
+<<elseif $OCBirdySocialRank == -1>>
+	<<set $OCBirdyRelationship to "Very Disliked">>
+	<span style="color:Red">Birdy really Dislikes you.</span>
+	<br>
+<<elseif $OCBirdySocialRank == 0 and $OCBirdySocial <= -50>>
+	<<set $OCBirdyRelationship to "Disliked">>
+	<span style="color:Red">Birdy Dislikes you. </span>
+	<br>
+<<elseif $OCBirdySocialRank == 0 and $OCBirdySocial < 50>>
+	<<set $OCBirdyRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Birdy are Acquaintances.</span>
+	<br>
+<<elseif $OCBirdySocialRank == 0 and $OCBirdySocial >= 50>>
+	<<set $OCBirdyRelationship to "Liked">>
+	<span style="color:LightGreen">Birdy Likes you.</span>
+	<br>
+<<elseif $OCBirdySocialRank == 1>>
+	<<set $OCBirdyRelationship to "Friends">>
+	<span style="color:Green">You and Birdy are Friends.</span>
+	<br>
+<<elseif $OCBirdySocialRank == 2>>
+	<<set $OCBirdyRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Birdy are Good Friends!</span>
+	<br>
+<<elseif $OCBirdySocialRank == 3>>
+	<<set $OCBirdyRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Birdy are Close Friends!</span>
+	<br>
+<<elseif $OCBirdySocialRank == 4>>
+	<<set $OCBirdyRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Birdy are Best Friends!</span>
+	<br>
+<<elseif $OCBirdySocialRank == 5>>
+	<<set $OCBirdyRelationship to "Love">>
+	<span style="color:Pink">You and Birdy Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCBirdySocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCBirdySocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCBirdySocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCBirdySocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCBirdySocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCBirdySocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCBirdySocial,
+			value: Math.abs($OCBirdySocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCBirdySocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCBirdySocial > 120>>
+	<<set $OCBirdySocial to 120>>
+<</if>>
+<<if $OCBirdySocial < -120>>
+	<<set $OCBirdySocial to -120>>
+<</if>>

@@ -1,0 +1,23 @@
+:: Notifications [nobr]
+
+<span style="color:Grey">[Notifications will be removed upon closing this Window and advancing to a new passage.]</span><br>
+
+<<if $Notifications.length > 0>>
+    <<for _i to 0; _i lt $Notifications.length; _i++>>
+        <<capture _i>>
+            <span style="display: inline-flex; align-items: center;">
+                <img @src="`Images/Icons/${$Notifications[_i].Icon}.png`" style="width: 41px; height: 41px;">
+                <span style="color:Lightgreen"><big><strong>=$Notifications[_i].Name=</strong></big></span><br>
+            </span>
+            <div style="margin-left: 50px;">
+                $Notifications[_i].Description<br>
+            </div>
+            <hr>
+        <</capture>>
+    <</for>>
+
+    <<set $SeenNotifications to true>>
+<<else>>
+    You have no Notifications.<br>
+<</if>>
+

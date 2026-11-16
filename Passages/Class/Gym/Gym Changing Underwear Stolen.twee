@@ -1,0 +1,54 @@
+:: Gym Shower Underwear Stolen [nobr]
+
+
+/* GETTING DRESSED (Done Early for Checks) */
+<<set $ClothSave to "Restore">>
+
+<<if $GymClassType == "Gym">>
+  <<storeClothing "Restore" "Undies">>
+<<else>>
+  <<storeClothing "Restore" "Naked">>
+<</if>>
+
+<<if $SaveUndies != null>>
+  <<set $PlayerUndies to $SaveUndies>>
+<</if>>
+
+/* Intro */
+Turning off the water to the shower, the sound of the steady drip of water droplets from both the shower head and your body fill the stall.  Reaching for your towel, you start to dry yourself off.  The rough fabric of the school towels slightly scouring your skin.  On either side of your stall, you can hear the roar of the shower, and the chatter of boys as they wash themselves after class.  After finishing drying yourself off, you wrap the towel around your waist.  <span style="Color:LightCoral">The damp towel is starting to get cold and is a bit uncomfortable on your bare skin.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Towel",
+        }
+    }
+]>>
+<<ad _ad>>
+
+Brushing aside the shower curtain, you make your way to your locker.  Your bare feet make a loud slapping sound as you walk across the wet tile. Walking past other boys, either in their towels or in the process of changing, you do your best not to get caught staring.  Upon reaching your locker though, you stop suddenly.  The door to your locker is ajar, and your $PlayerBottoms.Type are partially hanging out.  <span style="Color:yellow">It appears someone was rummaging through your locker.</span><br>
+<br>
+Your heart starts to pound heavily as a slight panic starts to form in you.  Quickly closing the distance to your locker, you wrench open the door and your $PlayerBottoms.Type slide out onto the floor.   <br>
+<br>
+
+<<if $PlayerUndies.Tags.includes("Diaper")>>
+    You pull out your $PlayerTop.Type and drop it next to your $PlayerBottoms.Type. So far, you don’t see anything missing.  <span style="Color:LightCoral">As you pull out more articles of clothing, your rummaging in your locker starts to get more frantic. It appears that one thing is missing, and your panic starts to rise.  Someone has stolen your $PlayerUndies.Name!</span><br>
+    <br>
+    You turn around quickly to see if anyone is watching, possibly giving themselves away as the thief. No one is nearby or watching.  <span style="Color:LightCoral">Knowing someone nearby not only knows you wear $PlayerUndies.Name but has them to potentially use against you is worrying. You start to imagine all sorts of scenario the thief could do with your $PlayerUndies.Name, which does nothing to help with your worrying.</span><br>
+    <br>
+<<elseif $PlayerUndies.Type == "None">>
+    Inside your locker, the rest of your clothing is in there.  Your clothing is rumpled and in a different state than when you left it, but it appears everything is still there. <span style="Color:LightCoral">You’re not sure what the person was looking for, but the fact that nothing is missing is somewhat unnerving.</span><br>
+    <br>
+<<else>>
+    Rummaging inside the locker, you start pulling out the remainder of your clothing.  It appears everything is still in there, except for one thing.  <span style="Color:LightCoral">Your $PlayerUndies.Name are missing.  You double check to see if $PlayerUndies.Name got stuck in your other clothes, but your search is in vain.  Someone has stolen your underwear!  Heat starts to rise in your face as embarrassment starts to sink in.  You’re not sure what the thief plans to do with your underwear, but each scenario you imagine is worse than the previous.</span><br>
+    <br>
+    Looking around, you see if anyone is watching that would incriminate them as the thief. Unfortunately, you don’t see any clues to who the culprit may be.<br>
+    <br>
+<</if>>
+
+Realizing that this mystery won’t be solved anytime soon, you drop your towel and start to pick up the crumpled clothes at your feet to put on.  Even after your clothes are back on, you still feel rather uncomfortable. <span style="Color:LightCoral"> Realizing that someone recently was fondling them and handling them without your knowledge is a bit unnerving.</span>  Closing the locker, you look around once more for a potential culprit, before heading out of the locker room.    <br>
+<<set $PlayerUndies to $None>>
+<<addMoodlet "Stress" 5>>
+<br>
+[[Continue|School Locker Room]] 

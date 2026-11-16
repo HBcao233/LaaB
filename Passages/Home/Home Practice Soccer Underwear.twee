@@ -1,0 +1,34 @@
+:: Home Practice Soccer Underwear [nobr]
+
+<<set $SkillCheckType to "Athletics">>
+<<set $Minutes += 20>>
+<<set $SkillCheckDifficulty to 0>>
+
+/* SELECTING GENERIC OR RANDOM */
+    <<set _random to random(1,2)>>
+
+/* GENERIC */
+<<if _random == 1>>
+You grab you and your brother’s soccer ball from next to the deck and begin to kick it around. While not as exciting or useful as a real game, <span style="color:lightgreen">kicking it against the fence and trying to stop it as it bounces back towards you is good practice and gets your blood flowing.</span> <span style="color:pink">Doing it in just your $PlayerUndies.Type makes it even more fun!</span> <br>
+
+
+	<<skillPoints "Athletics" 3>>
+	<<if $NaturismSkill <= 1>>
+		<span style="color:Green">+3 Naturism XP</span><br>
+		<<set $NaturismXP += 3>>
+		<<include"Naturism Skill Level Up">>
+	<</if>>
+<<needChange "Energy" -2>>
+<<needChange "Hygiene" -2>>
+<<needChange "Fun" 20>>
+<br>
+
+[[Continue|PH Backyard]]
+
+<<else>>
+<<set _Random to ["Home Soccer Underwear Keepy Uppy"]>>
+
+<<set _event to _Random.random()>>
+<<include _event>>
+
+<</if>>

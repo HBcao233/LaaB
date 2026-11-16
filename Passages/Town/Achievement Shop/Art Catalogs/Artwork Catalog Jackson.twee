@@ -1,0 +1,83 @@
+:: Artwork Catalog Jackson [nobr]
+
+<span style="color:Azure"><big><strong>--Jackson Taylor Catalog--</strong></big></span><br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Jackson Ward</span>, everyone’s favorite little nudist!”</span> <span style="color:DarkTurquoise">Orange</span> laughs as he pulls out his binder, <span style="color:LightSteelBlue">“That boy’s dick is so easy to see, it almost isn’t even worth it! Almost. The true challenge of <span style="color:DarkTurquoise">Jackson</span> is convincing him to do something lewd or naughty; maybe you’ll be the one to teach him all that. I’m sure his parents dread the day he learns how to use that willy of his.”</span> <span style="color:DarkTurquoise">Orange</span> chuckles as he places down a list of available art in front of you. <br>
+<br>
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+/* Character Art (Everyday) */
+    <<if $AchievementArt.includes("Jackson Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Jackson Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Jackson\\Jackson.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Jackson Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Jackson Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Jackson">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("Jackson Character Art Undies")>>
+        <strong><span style="color:lightgreen">Jackson Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Jackson\\Jackson Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Jackson Character Art (Undies)</strong>
+        | 
+        <<if $JacksonSocial >= 100 or $JacksonSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Jackson Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Jackson">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Jackson Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+
+/* Jackson Sticker Set */
+    <<if $AchievementArt.includes("Jackson Sticker Set")>>
+        <strong><span style="color:lightgreen">Jackson Happy Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Happy Jackson.png" "Rayray" "https://rayrayart.fanbox.cc">>
+        <strong><span style="color:lightgreen">Chibi Jackson Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Chibi Jackson.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Jackson Bagel Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Jackson Bagel.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Jackson Sticker Set</strong>
+        | 
+        <<if $JacksonSocial >= 100 or $JacksonSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Jackson Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Jackson">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Jackson Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+
+<br>
+[[Back|Artwork Catalog]]

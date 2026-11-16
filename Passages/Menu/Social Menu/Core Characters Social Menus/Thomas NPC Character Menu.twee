@@ -1,0 +1,437 @@
+:: Thomas NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Core Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Thomas--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"Thomas NPC Character Menu Biography">>
+</div>
+
+:: Thomas NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Thomas NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Thomas NPC Character Menu Avatar Display">>
+
+<<if $ThomasSocial > 50>>
+    Thomas Byrne is your friend and classmate. While a loner who seems to mostly prefer his own company, you do catch the occasional smile or curious glance your way whenever you hang around him. Despite the bad boy attitude he puts up, you’re pretty sure he enjoys your company. He likes to spend time quietly doodling away or getting lost in his own thoughts when he isn’t passing out due to lack of sleep. <br>
+    <br>
+<<elseif $ThomasSocial > -10>>
+    Thomas Byrne is the quiet loner of Preston. He can often be found on his own quietly doodling away in his notebook. He doesn’t have the best reputation and is known to fall to anger quickly and will easily snap at those that annoy him. This has left him often on his own, but he doesn’t seem to mind this at all. Most people leave him alone out of fear of being punched or worse. <br>
+    <br>
+<<else>>
+    Thomas Byrne is the bad boy loner Preston. He can often be found brooding away on his own like he’s too cool to care about what anyone else thinks. People see him as some scary tough guy that shouldn’t be messed with, but you just see him as a quiet loser who lets his emotions get the best of him. <br>
+    <br>
+<</if>>
+
+<<if $CompletedQuests.includes("Thomas: Out Sick")>>
+    After Thomas was out sick for a few days, you were sent by Headmaster Alistair to deliver his homework. You learned that Thomas lives in the trailer park with his father and younger brother Ethan, who seems a bit aloof and shy, only whispering to Thomas when you are around. Thomas seemed a bit caught off-guard and embarrassed when you showed up at his house, but not as upset as you expected. <br>
+    <br>
+<</if>>
+
+:: Thomas NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Thomas NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Thomas NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Thomas Byrne <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> October 17th <br>
+<strong>Address:</strong> 
+    <<if $ThomasSocial >= 50>>
+        Trailer Park <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> 
+    <<if $CompletedQuests.includes("Thomas: Out Sick")>>
+        Unnamed Father, Ethan (Little Brother)
+    <<else>>
+        ???
+    <</if>>
+    <br>
+<strong>Friends:</strong>
+    <<if $ThomasSocial >= 80>>
+        $Player.Name, ...
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $ThomasSocialRank == 1>>
+        Close Friends
+    <<elseif $ThomasSocial > 80>>
+        Friends
+    <<elseif $ThomasSocial > 30>>
+        Possible Friends
+    <<elseif $ThomasSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $ThomasSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Hot-Headed, Nurturing, Artistic, Resilient, M... /* No Spoilers :P */
+        </div>
+    <<elseif $ThomasSocial > 70>>
+        <div style="margin-left: 25px;">
+            Hot-Headed, Nurturing, Artistic, Resilient, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [Science] > [History] > [Art] > [Math] > [English] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <div style="margin-left: 25px;">
+        Unknown
+    </div>
+<strong>Likes:</strong>
+    <<if $ThomasSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Quiet, Sleeping, Ethan
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $ThomasSocial >= 50>>
+        <div style="margin-left: 25px;">
+            His Father, Nosy Adults, Noisy People
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $ThomasSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Drawing
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $ThomasSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Hamburgers, Soda, Coffee
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $ThomasSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Gray
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $ThomasSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Whatever he has, comfortable clothing
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $ThomasSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Whatever he has, boxers
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $ThomasSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $ThomasCut == "Cut">>
+                A cut penis that is pale and slightly pink. Average for his age with a small tuft of pubic hair.
+            <<else>>
+                An uncut penis that is pale and slightly pink on the tip. Average for his age with a small tuft of pubic hair.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $ThomasSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A pale, slightly freckled butt
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: Thomas NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Thomas NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Thomas NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal Core Thomas">>
+
+
+:: Thomas NPC Character Menu Art [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Artwork]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Thomas NPC Character Menu Avatar Display">>
+
+<<include"Journal Artwork Thomas">>
+
+:: Thomas NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Thomas NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ 
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Thomas NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "Thomas",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $ThomasSocial >= 50 or $ThomasSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $ThomasSocial >= 100 or $ThomasSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: Thomas NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "Thomas",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $ThomasSocial >= 50 or $ThomasSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $ThomasSocial >= 100 or $ThomasSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>
+

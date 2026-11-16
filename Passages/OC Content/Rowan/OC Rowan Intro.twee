@@ -1,0 +1,53 @@
+:: OC Rowan Intro [nobr]
+
+/* Written by Dicey the diciest around*/
+/* Intro */
+You're picking at your food, not really thinking about much, when something catches your eye. A group of boys lingers near the vending machine, chatting before suddenly taking off toward the playground, waving at one of their friends. <br>
+<br>
+One boy stays behind, shoving a few coins into the machine and pressing a button. A soda clunks down—then, out of nowhere, a second one follows. His face lights up like he just won the lottery. He glances around, grinning, then spots you watching him. <br>
+<br>
+Without hesitation, he strides over to your table, a cheeky smirk on his face. Sliding the extra soda your way, he plops himself down across from you. <span style="color:LightSteelBlue"> “Oi, I’m <span style="color:DarkTurquoise">Rowan—Rowan Leighton</span>! Don’t reckon I’ve seen ya ‘round before. You new ‘ere, yeah? Proper nice to get a fresh face ‘round ‘ere.”</span> <br>
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Rowan",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+He cracks open his drink with a satisfying hiss, taking a sip before nodding toward you. <span style="color:LightSteelBlue"> “Ya look like an interestin’ one. What’s ya name, then?”</span> <br>
+<br>
+You tell him your name. <br>
+<br>
+<span style="color:DarkTurquoise">Rowan</span> raises an eyebrow, studying you with playful curiosity. <span style="color:LightSteelBlue">“Ahh, so you’re <span style="color:DarkTurquoise">$Player.Name</span>, yeah? Fair play! Got a feelin’ you’re gonna shake things up ‘round ‘ere.”</span> He grins, shooting you a wink. <span style="color:LightSteelBlue">“Bet ya got a bit o’ mischief in ya.”</span> <br>
+<br>
+Leaning in slightly, his eyes glint with energy. <span style="color:LightSteelBlue">“So, what d’ya get up to, then? Any hobbies, or…?”</span> His grin turns sly. <span style="color:LightSteelBlue">“You here to cause a bit o’ trouble?” </span> He snickers. <br>
+<br>
+You tell him how you just moved to Opal City. <br>
+<br>
+Rowan lets out a low whistle. <span style="color:LightSteelBlue"> “Ohh, Cachu bant, that’s a proper big move! Must be a right pain in the bum, aye? New school, new rules, all that bloody nonsense.”</span> He swirls his soda and sighs. <span style="color:LightSteelBlue"> “Ya can prolly tell, but I ain't from ‘ere neither. Moved from Wales with my brother a while back.”</span> He pauses just long enough to take another sip before adding, casual as anything, <span style="color:LightSteelBlue"> “He’s gone now, though. Passed away.” </span>  There’s a brief beat, but <span style="color:DarkTurquoise">Rowan</span> doesn’t linger on it. He just shrugs, then jerks his thumb toward the playground, where his friends are roughhousing. <span style="color:LightSteelBlue"> “Still, you’ll fit right in with us lot. We’re a proper gang o’ misfits, but that’s what makes it fun.”</span> <br>
+<br>
+The two of you chat for a while, cracking jokes and laughing. He’s got this easygoing way about him, never taking things too seriously, always quick with a playful jab or a grin. <br>
+<br>
+Finishing his drink, he tosses the can into the bottle with a lazy flick of his wrist. <span style="color:LightSteelBlue"> “Right, I’m off then. Catch ya later, <span style="color:DarkTurquoise">$Player.Name</span>.”</span> He pats his hands against his shorts before hopping to his feet. <span style="color:LightSteelBlue"> “Take care, rascal.” </span> With a playful nudge to your shoulder, he flashes you one last grin before heading off. <br>
+<br>
+As he reaches the playground, he pulls a yo-yo from his pocket, flicking it up and down as he joins his friends. Within seconds, he's already cracking jokes, leaving you alone at the cafeteria table with the drink he got you. <br>
+<br>
+
+<<set $CompletedQuests.push("Rowan: Introduction")>>
+<<set $InActiveQuests.delete("Rowan: Introduction")>>
+<<set $OCRowanSocial to 0>>
+<<set $OCRowanSocialRank to 0>>
+<<socialChange "Rowan" 10 1>>
+
+<<include "School Lunch">>

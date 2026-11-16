@@ -1,0 +1,133 @@
+:: OC COLE Avatar Equipment Set [nobr]
+
+<<set $AD.SkinColor to "Pink">>
+<<set $AD.Freckles to 0>>
+<<set $ADArmFreckles to 0>>
+<<set $ADShoulderFreckles to 0>>
+<<set $AD.HairStyle to "Parted2">>
+<<set $AD.HairColor to "Gray">>
+<<set $AD.EyeColor to "Black">>
+<<set $AD.LeftEyeColor to "Black">>
+<<set $AD.RightEyeColor to "Black">>
+<<set $AD.PenisStyle to "Uncut">>
+<<set $AD.PenisSize to "Small">>
+<<set $AD.Balls to "Medium">>
+<<set $AD.Butt to "Big">>
+
+	<<set $ADChestScar to 0>>
+	<<set $ADFaceScar to 0>>
+	<<set $ADLeftArmScar to 0>>
+	<<set $ADRightLegScar to 0>>
+    <<set $ADEyeScar to 0>>
+    <<set $ADShoulderFreckles to 0>>
+    <<set $ADArmFreckles to 0>>
+
+<<addClothing "AD" "Undies" "Alt Briefs" "Red">>
+<<addClothing "AD" "Bottoms" "Shorts" "Brown">>
+<<addClothing "AD" "Top" "T-Shirt" "White">>
+<<addClothing "AD" "Outer" "Hoodie" "Red">>
+<<addClothing "AD" "Socks" "Socks" "White">>
+<<addClothing "AD" "Shoes" "Tennis Shoes" "Red">>
+<<set $ADNeck to $None>>
+<<set $ADShortsSag to 0>>
+
+<<if $ADMuscleToggle == 1>>
+	<<set $AD.Build to "Husky">>
+<<else>>
+	<<set $AD.Build to "Husky">>
+<</if>>
+
+<<if $ADPubicHairToggle == 1>>
+	<<set $AD.PubicHair to "Wisps">>
+<<else>>
+	<<set $AD.PubicHair to "None">>
+<</if>>
+
+/* DEFAULT SETTING */
+	<<set $ADHead to $None>>
+    <<set $ADFace to $None>>
+    <<set $ADMouth to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADUnder to $None>>
+    <<set $ADOver to $None>>
+    <<set $ADBack to $None>>
+    <<set $ADHands to $None>>
+    <<set $ADWaist to $None>>
+
+<<if $SchoolUniforms == 1 and $AD.Outfit == "Uniform">>
+    <<addClothing "AD" "Top" "School Dress Shirt" "School">>
+    <<addClothing "AD" "Bottoms" "Dress Shorts" "Black">>
+    <<addClothing "AD" "Neck" "School Tie" "School">>
+    <<addClothing "AD" "Outer" "School Jacket" "School">>
+    <<addClothing "AD" "Socks" "School Socks" "Knee">>
+    <<addClothing "AD" "Shoes" "Loafers" "Black">>
+<</if>>
+
+<<if $AD.Outfit == "Pajamas">>
+	<<set $ADTop to $None>>
+	<<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Naked">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Undies">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Towel">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Towel" "White">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADUnder to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym">>
+    <<addClothing "AD" "Top" "Gym Shirt" "School">>
+    <<addClothing "AD" "Bottoms" "Gym Shorts" "School">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADUnder to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym Swim">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Trunks" "Purple">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADUnder to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Swimwear">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Trunks" "Black">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADFace to $None>>
+<</if>>

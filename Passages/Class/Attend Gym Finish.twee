@@ -1,0 +1,27 @@
+:: Attend Gym Finish [nobr]
+
+<<if $Time.Day == "Tuesday" or $Time.Day == "Thursday">>
+	<<set _skill to "Swimming">>
+<<else>>
+	<<set _skill to "Athletics">>
+<</if>>
+<<skillPoints _skill 10>>
+
+<<set $Minutes += $Time.until(14, 55 + 5 * $GymNoShower)>>
+<<set $GymClass to 2>>
+
+/* LATE */
+<<if $Late == 1>>
+    You arrive at class late! You have been given detention!
+    <<set $Late to 0>>
+    <<set $Detention += 5>>
+<</if>>
+
+/* REDOING CONSTANTS TO FIX A GLITCH THE EASY WAY */
+<<include "LUCAS Constant">>
+<<include "MICHAEL Constant">>
+<<include "THOMAS Constant">>
+<<include "XAVIER Constant">>
+<br>
+
+[[Continue|School Locker Room]]

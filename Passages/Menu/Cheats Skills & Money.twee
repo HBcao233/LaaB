@@ -1,0 +1,87 @@
+:: Cheats Skills & Money [nobr]
+
+/* MONEY */
+<span style="color:Azure"><big><strong>--Money--</strong></big></span><br>
+
+/* Money */
+[[(---)|Cheats Menu][$Money -= 100]]
+[[(--)|Cheats Menu][$Money -= 10]]
+[[(-)|Cheats Menu][$Money -= 1]]
+	<strong>Money:</strong> $Money
+[[(+)|Cheats Menu][$Money += 1]]
+[[(++)|Cheats Menu][$Money += 10]]
+[[(+++)|Cheats Menu][$Money += 100]]
+
+<<if $Money < 0>>
+	<<set $Money to 0>>
+<</if>>
+<br>
+<br>
+/* SKILLS */
+<span style="color:Azure"><big><strong>--Skills--</strong></big></span><br>
+<span style="color:Gray">[If you set XP to 100 or more, the skill will level up during the next natural XP gain.]</span><br>
+
+<<link "[School Skills]">>
+<<replace "#CheatsSkillMenu">>
+	<<include "Cheats School Skills">>
+<</replace>>
+<</link>>
+-
+<<link "[Creative Skills]">>
+<<replace "#CheatsSkillMenu">>
+	<<include "Cheats Creative Skills">>
+<</replace>>
+<</link>>
+-
+<<link "[Lewd Skills]">>
+<<replace "#CheatsSkillMenu">>
+	<<include "Cheats Lewd Skills">>
+<</replace>>
+<</link>>
+
+<div id="CheatsSkillMenu">
+	<<if $CheatsSkills == "School">>
+		<<include"Cheats School Skills">>
+	<<elseif $CheatsSkills == "Creative">>
+		<<include"Cheats Creative Skills">>
+	<<elseif $CheatsSkills == "Lewd">>
+		<<include"Cheats Lewd Skills">>
+	<<else>>
+		<<include"Cheats School Skills">>
+	<</if>>
+</div><br>
+<span style="color:Azure"><big><strong>--SP--</strong></big></span><br>
+/* Will leave Gardening, Computers, Charisma and Video Games out as they're not implemented yet. Just add them into this array when needed. */
+<<set _skillNames to ["Athletics", "Swimming", "Acting", "Cooking", "Art", "Music", "English", "History", "Math", "Science"]>> 
+<<listbox "_skillChoice">>
+	<<optionsfrom _skillNames>>
+<</listbox>><br>
+<br>
+<<link "Add 10 SP">>
+	<<skillPoints _skillChoice 10>>
+	<<replace "#confirm">>
+		<span style="Color: Green">SP Added!</span>
+	<</replace>>
+<</link>><br>
+<<link "Add 15 SP">>
+	<<skillPoints _skillChoice 15>>
+	<<replace "#confirm">>
+		<span style="Color: Green">SP Added!</span>
+	<</replace>>
+<</link>><br>
+<<link "Add 50 SP">>
+	<<skillPoints _skillChoice 50>>
+	<<replace "#confirm">>
+		<span style="Color: Green">SP Added!</span>
+	<</replace>>
+<</link>><br>
+<<link "Remove all SP">>
+	<<set $Skill[_skillChoice].TotalSP -= $Skill[_skillChoice].SP >>
+	<<set $Skill[_skillChoice].SP to 0>>
+	<<replace "#confirm">>
+		<span style="Color: Red">SP Removed!</span>
+	<</replace>>
+<</link>><br>
+<div id="confirm">
+
+</div>

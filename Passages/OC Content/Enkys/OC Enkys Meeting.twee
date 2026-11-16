@@ -1,0 +1,105 @@
+:: OC Enkys Meeting [nobr]
+
+/* Intro */
+Science class has <span style="color:DarkTurquoise">Mr. Chang</span> having everyone practice different measurements and the different uses of the various vials and flasks in the classroom. Not a very exciting class, and he only lets you all use the plastic sets since he doesn’t yet trust the class with the glass ones, but at least it goes by nice and easily. Class is nearing its end, and everyone is in the process of putting everything away <span style="color:LightCoral">when you are suddenly bumped from the side and drop one of the small plastic vials.</span> <br>
+
+    <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+                Name: "OC Enkys",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 1,
+            },
+        }
+        ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“S- sorry!”</span> A nervous, high-pitched voice says. You turn and see the same pink-haired boy you saw in the bathroom. He panics, holding his hands up as if he is worried that you were going to yell or swing at him. <span style="color:LightSteelBlue">“I- I- I slipped and- I- I’ll get it!”</span> He stutters out, quickly bending down to pick it up. That’s when you see it. <span style="color:Pink">Your eyes naturally fall to his waist, so trained to look there whenever any boy bends down near you, but instead of the expected briefs or boxers poking out, you see something a bit different. Bright, pink frilly underwear. Not like any boy’s underwear you’ve seen before, and you gasp out the color without thinking.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Wha- what!?”</span> He quickly straights up, <span style="color:Pink">pulling his shirt down and turning bright red.</span> Realizing what you said, you think fast and tell him you were referring to his hair. It’s pink. You think that is pretty cool. <span style="color:Yellow">You give a smile, but the boy continues to look at you nervously.</span> <br>
+<br>
+<<if $CompletedQuests.includes("Manuel: Manuel: The Pent-Up Boy")>>
+    <span style="color:LightSteelBlue">“I… I…”</span> <span style="color:Pink">The boy looks like he is about to explode in embarrassment, turning redder and redder, when someone thankfully comes to your aid.</span>
+    
+    <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+        {
+                Name: "OC Enkys",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 2,
+            },
+        }
+        {
+            Name: "OC Manuel",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+            },
+        },
+        ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Oh! Hey <span style="color:DarkTurquoise">Enkys</span>!”</span> It’s <span style="color:DarkTurquoise">Manuel</span>, walking over with a big smile, <span style="color:LightSteelBlue">“I see you’ve met <span style="color:DarkTurquoise">$Player.Name</span>. Remember? He’s the one I told you about. The one who knows about the…”</span> He nudges <span style="color:DarkTurquoise">Enkys</span> twice, <span style="color:Pink">probably referring to your knowledge of <span style="color:DarkTurquoise">Manuel</span>’s little cage.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“O- Oh! H- hi there. I’m <span style="color:DarkTurquoise">Enkys</span>.”</span> The boy introduces himself, seeming a bit calmer since you are <span style="color:DarkTurquoise">Manuel</span>’s friend. <span style="color:Pink">You figure it would be weird for you to mention his own cage, since you’re not supposed to know about that,</span> so simply smile and introduce yourself as well. <span style="color:LightSteelBlue">“S- sorry about bumping into you. I- I felt a pinch and slipped and…”</span> The boy freezes, <span style="color:Pink">realizing he said too much and quickly looks down still blushing.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Enkys</span> is a little shy, but he’s super cool.”</span> <span style="color:DarkTurquoise">Manuel</span> happily puts his arm around the quiet boy, smiling. <span style="color:LightSteelBlue">“I actually just met him recently. Turns out we have a lot in common.”</span> <span style="color:Pink">You figure he is implying about the cages again, but refrain from bringing up your knowledge about <span style="color:DarkTurquoise">Enkys</span>’, to prevent the shy boy from getting more embarrassed.</span> <span style="color:LightSteelBlue">“We’ve got a lot of classes together too! Hey, the two of you should hang out sometime. I’m sure you’d get along great!”</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“I- I-<span style="color:LightSteelBlue">“ <span style="color:DarkTurquoise">Enkys</span> stutters out, <span style="color:LightSteelBlue">“I’m okay with that… if- if he wants to.”</span> He gives you a nervous smile. You return his smile and nod; you’d love to hang out with and get to know him. <span style="color:Pink">Though whether that is out of a desire to have another friend or learn more about his tiny cage and that strange underwear he is wearing is your business.</span> With that, both boys return to their seats, <span style="color:DarkTurquoise">Enkys</span> seeming a little less stressed now that he’s maybe made another friend. <br>
+    <<set $OCEnkysSocial to 0>>
+    <<set $OCEnkysSocialRank to 0>>
+    <<socialChange "Enkys" 15 1>>
+    <<set $ActiveQuests.delete("Enkys: Introduction")>>
+    <<set $CompletedQuests.push("Enkys: Introduction")>>
+    <br>
+    <<include"Attend Science Finish">>
+<<else>>
+    <span style="color:LightSteelBlue">“I… I…”</span> <span style="color:Pink">The boy looks like he is about to explode in embarrassment, turning redder and redder.</span> <span style="color:LightSteelBlue">“I got to go!”</span> He quickly spins around, running towards the door even though class is still in session. Not wanting an awkward moment that will turn everyone’s attention to you, you quickly stop him by grabbing him by the arm. <br>
+    <br>
+    You apologize to the boy if you made him nervous. You introduce yourself and tell him he has no need to be scared, you don’t bite. <span style="color:LightGreen">Your smile and kind words seem to calm him down a little, though he still seems very shy.</span> <span style="color:LightSteelBlue">“I- I- I’m <span style="color:DarkTurquoise">Enkys</span>. N- Nice to meet you.”</span> He stutters out, staring at his feet. <span style="color:LightSteelBlue">“S- sorry again.”</span> You tell him it’s no problem, nothing broke and no one was injured, so it’s all good!
+    
+            <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                    Name: "OC Enkys",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Happy",
+                        Eyes: "Sad",
+                        Blush: 1,
+                },
+            }
+            ]>>
+        <<ad _ad>>
+
+    <span style="color:Pink">As you talk, your eyes fall to his crotch. You remember the flat disk you saw and are curious about what it looks like up close. Plus, that underwear he is wearing.</span> You have so much about this boy you want to ask about and see but decide to just play it friendly for now. You tell him you really like his hair, it’s so cool and colorful. If he ever wants to hang out or anything, you’d love too as well. You’re always looking for new friends. <span style="color:LightGreen">You end your friendly introduction with a smile, which the boy tries to return though still looks very nervous.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“Th- thank you… I- I-”</span> He gulps, trying to calm himself, <span style="color:LightSteelBlue">“I would like that… I- I should get back to my seat though…”</span> He continues to stare at the ground as he hurries back to his table. <span style="color:Pink">He seems like a nice kid, though he is a little too shy for his own good. Still very cute though.</span> <br>
+    <<set $OCEnkysSocial to 0>>
+    <<set $OCEnkysSocialRank to 0>>
+    <<socialChange "Enkys" 5 1>>
+    <<set $ActiveQuests.delete("Enkys: Introduction")>>
+    <<set $CompletedQuests.push("Enkys: Introduction")>>
+    <br>
+    <<include"Attend Science Finish">>
+<</if>>

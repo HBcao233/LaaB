@@ -1,0 +1,19 @@
+:: NPC Inspect Widget [widget]
+
+<<nobr>>
+<<widget "inspect">>
+<<set _pti to _args[0]>>
+<<set _name to _npc.ID>>
+<<if Story.has(_pti)>>
+    <<capture _pti, _name>>
+        <<link _name>>
+            <<run Dialog.setup("NPC Interactions", "NPC_Inspect")>>
+            <<run Dialog.wiki(Story.get(_pti).processText())>>
+            <<run Dialog.open()>>
+        <</link>>
+    <</capture>>
+<<else>>
+    <s><<= _name>></s>
+<</if>>
+<</widget>>
+<</nobr>>

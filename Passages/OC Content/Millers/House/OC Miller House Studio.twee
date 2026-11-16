@@ -1,0 +1,46 @@
+:: OC Miller House Studio [nobr]
+
+<<if $OCKaydenBabysit.Active == 1>>
+    <<if $OCKaydenBabysit.State == "PreDin" && $Time.after(18)>>
+        <<goto"Millers Babysitting Dinner">>
+    <<elseif $OCKaydenBabysit.State == "PostDin" && $Time.after(19, 30)>>
+        <<goto"Millers Babysitting Bath Time">>
+    <<elseif $OCKaydenBabysit.State == "Bath" && $Time.after(20)>>
+        <<goto"Millers Babysitting Bath Time Bath Done">>
+    <<elseif $OCKaydenBabysit.State == "Sleep" && $Time.after(21)>>
+        <<goto"Millers Babysitting Ending">>
+    <</if>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Hakeem's Studio--</strong></big></span><br>
+<<set $Location to {
+	Name: "Miller Studio",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Studio",
+}>>
+
+You enter the studio room, where soft, padded walls in a deep charcoal gray decorated with framed records surround you. In one corner, there’s a sleek glass desk with an array of high-tech monitors and sound equipment, each piece gleaming with a subtle glow. The mixing console's buttons, sliders, and dials look like they belong in the cockpit of a spaceship. <br>
+<br>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Hallway (0:01)|OC Miller House Hallway][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+/* House Map */
+<div style="position: relative">
+	<img src="Images\NPC Homes\Miller House\Miller House.png" 
+style="position: absolute; left: 0; top: 0"  alt="Miller Map" usemap="#MillerHouse">
+	<img src="Images\NPC Homes\Miller House\Room Marker.png" 
+style="position: absolute; left: 108px; top: 216px"  alt="Miller Map" usemap="#MillerHouse">
+</div>
+
+<map name="MillerHouse">
+    <area shape="rect" coords="58,162,319,215" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="162,216,215,269" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+
+</map>

@@ -1,0 +1,21 @@
+:: Avatar Display Penis Hard [nobr]
+
+<<set _size to $AD.PenisSize>>
+<<if $ADGrower == 1>>
+	<<set _sizes to ["Tiny", "Small", "Average", "Large", "Gigantic", "Gigantic"]>>
+	<<set _size to _sizes[_sizes.indexOf(_size) + 1]>>
+<</if>>
+<<set $ADGrower to 0>>
+
+/* Balls */
+<<if $ADVagina != 1>>
+	<img @src="`Images/Avatar/Penis/Balls/${$AD.Balls}/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+
+	/* Hack to get an erection to show over shirts and jackets if there's nothing covering it */
+	<<set _zindex = ''>>
+	<<if ($ADBottoms.Type == "None" || $ADPantsDown == 1) && $ADUndies.Type == "None" && $ADBonerOverClothes>>
+		<<set _zindex = 'z-index: 1000;'>>
+	<</if>>
+
+	<img @src="`Images/Avatar/Penis/Erect/${$AD.SkinColor}/${_size}.png`" @style="`position: absolute; left: 0; top: 0; ${_zindex}`">
+<</if>>

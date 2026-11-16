@@ -1,0 +1,61 @@
+:: OC Birdy School Playground [nobr]
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Birdy">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+    <<set $AD.Outfit to "Uniform">>
+	<<set $AD.Hard to 0>>
+		<<include"OC BIRDY Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* SECOND LAYER */
+	<<include"Player Avatar Display Set">>
+	<<set $AD.Name to "Player">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Uniform">>
+	<<set $AD.Hard to 0>>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: absolute; left: 125px; top: 0px">
+	<<include"Avatar Display">>
+</div>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+You are playing on the playground when you see the familiar red glasses and blonde hair of <span style="color:DarkTurquoise">Birdy</span>. You call out and wave to him, prompting him to run over and greet you. <span style="color:LightSteelBlue">“Oh, hey <span style="color:DarkTurquoise">$Player.Name</span>! How are you?”</span> You chat for a moment before <span style="color:DarkTurquoise">Birdy</span> asks you if you would like to play on the merry-go-round, to which you accept.<br>
+<br>
+
+You both run over and begin to spin the merry-go-round as fast as you can, nearly getting flung off from the speed and crashing into the ground. After some rough tumbles and a close call with throwing up, you both decide to just relax as it spins slowly and chat.<br>
+<br>
+
+<span style="color:LightSteelBlue">“It must be really cool to have two brothers!”</span> <span style="color:DarkTurquoise">Birdy</span> comments, in reference to you telling him about your family, <span style="color:LightSteelBlue">“You must always have someone to play with!”</span> You laugh, stating that having to share a bathroom with two other people is not always the best situation. <span style="color:LightSteelBlue">“Haha, I guess that's true. But having to share it with a girl is even worse, my twin sister takes HOURS in the bathroom sometimes!”</span> You both laugh as you share stories of your siblings.<br>
+
+<<if $OCBirdySocial >= 70>>
+    <br>
+    <span style="color:LightSteelBlue">“She's cool though, even when she annoys me. We have this really fun game where she plays with my-”</span> <span style="color:DarkTurquoise">Birdy</span> suddenly stops, realizing that he is getting lost in the story, beginning to overshare, and turns bright red. <span style="color:LightSteelBlue">“My toys. She like, acts out these scenes with them and stuff… It's, umm… Fun.”</span> He looks away nervously.<br>
+    <br>
+
+    <<if $NoahSocialRank >= 1>>
+        You smirk, giving <span style="color:DarkTurquoise">Birdy</span> a knowing look, which causes him to blush deeper. You state that Noah also likes to play with your toys, and you like to play with his too. Sometimes, you even put each other's toys in your mouth. Realizing what you are talking about, <span style="color:DarkTurquoise">Birdy</span> turns bright red, laughs nervously, and quickly changes the subject.<br>
+    <<else>>
+        You laugh, stating that neither Gabe nor Noah are too interested in your toys. Gabe says he is too old for toys and Noah has so many he doesn't need yours. Your response causes <span style="color:DarkTurquoise">Birdy</span> to sigh in relief as you keep chatting.<br>
+    <</if>>
+<</if>>
+
+<<addMoodlet "Stress" 0>>
+<<needChange "Fun" 20>>
+<<socialChange "Birdy" 3 1>>
+<br>
+
+[[Continue|School Courtyard]]

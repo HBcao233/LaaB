@@ -1,0 +1,217 @@
+:: Ability Points [nobr]
+
+<<liveblock>>
+    <span style="color:Azure"><strong>--Abilities--</strong></span><br>
+
+    <<if $Strength > 1>>
+        <<link"[-]">>
+            <<set $Strength -= 1>>
+            <<set $AbilityPoints += 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[-]</span>
+    <</if>>
+    |
+    <<if $AbilityPoints > 0 and $Strength < 10>>
+        <<link"[+]">>
+            <<set $Strength += 1>>
+            <<set $AbilityPoints -= 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[+]</span>
+    <</if>>
+
+    <span style="color:Lightblue"><strong>Strength:</strong></span>
+    <<if $Strength > 5>>
+        <span style="color:lightgreen">$Strength</span>
+    <<elseif $Strength == 5>>
+        <span style="color:yellow">$Strength</span>
+    <<elseif $Strength < 5>>
+        <span style="color:lightcoral">$Strength</span>
+    <</if>>
+    <br>
+
+    <<if $Dexterity > 1>>
+        <<link"[-]">>
+            <<set $Dexterity -= 1>>
+            <<set $AbilityPoints += 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[-]</span>
+    <</if>>
+    |
+    <<if $AbilityPoints > 0 and $Dexterity < 10>>
+        <<link"[+]">>
+            <<set $Dexterity += 1>>
+            <<set $AbilityPoints -= 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[+]</span>
+    <</if>>
+
+    <span style="color:Lightblue"><strong>Dexterity:</strong></span>
+    <<if $Dexterity > 5>>
+        <span style="color:lightgreen">$Dexterity</span>
+    <<elseif $Dexterity == 5>>
+        <span style="color:yellow">$Dexterity</span>
+    <<elseif $Dexterity < 5>>
+        <span style="color:lightcoral">$Dexterity</span>
+    <</if>>
+    <br>
+
+    <<if $Endurance > 1>>
+        <<link"[-]">>
+            <<set $Endurance -= 1>>
+            <<set $AbilityPoints += 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[-]</span>
+    <</if>>
+    |
+    <<if $AbilityPoints > 0 and $Endurance < 10>>
+        <<link"[+]">>
+            <<set $Endurance += 1>>
+            <<set $AbilityPoints -= 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[+]</span>
+    <</if>>
+
+    <span style="color:Lightblue"><strong>Endurance:</strong></span>
+    <<if $Endurance > 5>>
+        <span style="color:lightgreen">$Endurance</span>
+    <<elseif $Endurance == 5>>
+        <span style="color:yellow">$Endurance</span>
+    <<elseif $Endurance < 5>>
+        <span style="color:lightcoral">$Endurance</span>
+    <</if>>
+    <br>
+
+    <<if $Smarts > 1>>
+        <<link"[-]">>
+            <<set $Smarts -= 1>>
+            <<set $AbilityPoints += 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[-]</span>
+    <</if>>
+    |
+    <<if $AbilityPoints > 0 and $Smarts < 10>>
+        <<link"[+]">>
+            <<set $Smarts += 1>>
+            <<set $AbilityPoints -= 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[+]</span>
+    <</if>>
+
+    <span style="color:Lightblue"><strong>Smarts:</strong></span>
+    <<if $Smarts > 5>>
+        <span style="color:lightgreen">$Smarts</span>
+    <<elseif $Smarts == 5>>
+        <span style="color:yellow">$Smarts</span>
+    <<elseif $Smarts < 5>>
+        <span style="color:lightcoral">$Smarts</span>
+    <</if>>
+    <br>
+
+    <<if $Charm > 1>>
+        <<link"[-]">>
+            <<set $Charm -= 1>>
+            <<set $AbilityPoints += 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[-]</span>
+    <</if>>
+    |
+    <<if $AbilityPoints > 0 and $Charm < 10>>
+        <<link"[+]">>
+            <<set $Charm += 1>>
+            <<set $AbilityPoints -= 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[+]</span>
+    <</if>>
+
+    <span style="color:Lightblue"><strong>Charm:</strong></span>
+    <<if $Charm > 5>>
+        <span style="color:lightgreen">$Charm</span>
+    <<elseif $Charm == 5>>
+        <span style="color:yellow">$Charm</span>
+    <<elseif $Charm < 5>>
+        <span style="color:lightcoral">$Charm</span>
+    <</if>>
+    <br>
+
+    <<if $Sense > 1>>
+        <<link"[-]">>
+            <<set $Sense -= 1>>
+            <<set $AbilityPoints += 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[-]</span>
+    <</if>>
+    |
+    <<if $AbilityPoints > 0 and $Sense < 10>>
+        <<link"[+]">>
+            <<set $Sense += 1>>
+            <<set $AbilityPoints -= 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[+]</span>
+    <</if>>
+
+    <span style="color:Lightblue"><strong>Sense:</strong></span>
+    <<if $Sense > 5>>
+        <span style="color:lightgreen">$Sense</span>
+    <<elseif $Sense == 5>>
+        <span style="color:yellow">$Sense</span>
+    <<elseif $Sense < 5>>
+        <span style="color:lightcoral">$Sense</span>
+    <</if>>
+    <br>
+
+    <<if $Creativity > 1>>
+        <<link"[-]">>
+            <<set $Creativity -= 1>>
+            <<set $AbilityPoints += 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[-]</span>
+    <</if>>
+    |
+    <<if $AbilityPoints > 0 and $Creativity < 10>>
+        <<link"[+]">>
+            <<set $Creativity += 1>>
+            <<set $AbilityPoints -= 1>>
+            <<update>>
+        <</link>>
+    <<else>>
+        <span style="color:Gray">[+]</span>
+    <</if>>
+
+    <span style="color:Lightblue"><strong>Creativity:</strong></span>
+    <<if $Creativity > 5>>
+        <span style="color:lightgreen">$Creativity</span>
+    <<elseif $Creativity == 5>>
+        <span style="color:yellow">$Creativity</span>
+    <<elseif $Creativity < 5>>
+        <span style="color:lightcoral">$Creativity</span>
+    <</if>><br>
+    <br>
+
+    <strong>Points to Spend:</strong> $AbilityPoints
+<</liveblock>>

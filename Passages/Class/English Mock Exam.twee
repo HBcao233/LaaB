@@ -1,0 +1,162 @@
+:: English Mock Exam [nobr]
+
+Near the end of the class, <span style="color:DarkTurquoise">Mr. Hart</span> gives everyone a mock exam of the final test. It tests everything you’ve learned so far and will determine your final grade for the month. Your Final Grade is based on your Current Grade for Classwork and Homework. How much you’ve studied for the Exam, your Skill Level, and your results on the test itself.<br>
+<br>
+
+<strong>Current Grade:</strong>
+
+<<if $EnglishGrade >= 98>>
+<span style="color:Teal">A+</span>
+<<elseif $EnglishGrade >= 93>>
+<span style="color:Teal">A</span>
+<<elseif $EnglishGrade >= 90>>
+<span style="color:Teal">A-</span>
+<<elseif $EnglishGrade >= 88>>
+<span style="color:Green">B+</span>
+<<elseif $EnglishGrade >= 83>>
+<span style="color:Green">B</span>
+<<elseif $EnglishGrade >= 80>>
+<span style="color:Lightgreen">B-</span>
+<<elseif $EnglishGrade >= 78>>
+<span style="color:Lightgreen">C+</span>
+<<elseif $EnglishGrade >= 73>>
+<span style="color:Yellow">C</span>
+<<elseif $EnglishGrade >= 70>>
+<span style="color:Yellow">C-</span>
+<<elseif $EnglishGrade >= 68>>
+<span style="color:Red">D+</span>
+<<elseif $EnglishGrade >= 63>>
+<span style="color:Red">D</span>
+<<elseif $EnglishGrade >= 60>>
+<span style="color:Red">D-</span>
+<<elseif $EnglishGrade >= 50>>
+<span style="color:DarkRed">F</span>
+<<else>>
+<span style="color:DarkRed">F-</span>
+<</if>>
+<br>
+
+
+/* STUDY *
+<strong>Study Results:</strong>
+<<if $EnglishStudyFinal == 0>>
+	<span style="color:DarkRed">F-</span>
+	<<set $StudyFinal to 0>>
+<<elseif $EnglishStudyFinal == 1>>
+	<span style="color:DarkRed">F</span>
+	<<set $StudyFinal to 10>>
+<<elseif $EnglishStudyFinal == 2>>
+	<span style="color:Red">D</span>
+	<<set $StudyFinal to 20>>
+<<elseif $EnglishStudyFinal == 3>>
+	<span style="color:Red">D+</span>
+	<<set $StudyFinal to 30>>
+<<elseif $EnglishStudyFinal == 4>>
+	<span style="color:Yellow">C-</span>
+	<<set $StudyFinal to 40>>
+<<elseif $EnglishStudyFinal == 5>>
+	<span style="color:Yellow">C</span>
+	<<set $StudyFinal to 50>>
+<<elseif $EnglishStudyFinal == 6>>
+	<span style="color:Lightgreen">C+</span>
+	<<set $StudyFinal to 60>>
+<<elseif $EnglishStudyFinal == 7>>
+	<span style="color:Green">B</span>
+	<<set $StudyFinal to 70>>
+<<elseif $EnglishStudyFinal == 8>>
+	<span style="color:Green">B+</span>
+	<<set $StudyFinal to 80>>
+<<elseif $EnglishStudyFinal == 9>>
+	<span style="color:Teal">A</span>
+	<<set $StudyFinal to 90>>
+<<elseif $EnglishStudyFinal == 10>>
+	<span style="color:Teal">A+</span>
+	<<set $StudyFinal to 100>>
+<</if>>
+	
+<br>
+/* SKILL LEVEL *
+<strong>Skill Level:</strong>
+	<<set $ExamSkill to $SchoolSkillLevel - $EnglishSkill>>
+	
+<<if $ExamSkill <= -1>>
+	<span style="color:Teal">A+</span>
+	<<set $SkillFinal to 100>>
+<<elseif $ExamSkill == 0>>
+	<span style="color:Green">B</span>
+	<<set $SkillFinal to 80>>
+<<elseif $ExamSkill == 1>>
+	<span style="color:Yellow">C</span>
+	<<set $SkillFinal to 70>>
+<<elseif $ExamSkill == 2>>
+	<span style="color:DarkRed">F</span>
+	<<set $SkillFinal to 50>>
+<<else>>
+	<span style="color:DarkRed">F-</span>
+	<<set $SkillFinal to 0>>
+<</if>>
+
+
+<br>
+/* FINAL */
+		<<set $SkillCheckType to "English">>
+		<<set $SkillCheckDifficulty to $SchoolSkillLevel>>
+		<<set $SchoolFinal to 1>>
+		<<include"Ranked Skill Checks">>
+<strong>Exam Score:</strong>
+<<if $SkillResults == "Major Pass">>
+		<span style="color:Teal">A+</span>
+	<<set $FinalFinal to 100>>
+	<<elseif $SkillResults == "Pass">>
+		<span style="color:Green">B</span>
+	<<set $FinalFinal to 80>>
+	<<elseif $SkillResults == "Close Pass">>	
+		<span style="color:Lightgreen">C+</span>
+	<<set $FinalFinal to 75>>
+	<<elseif $SkillResults == "Close Fail">>
+		<span style="color:Yellow">C</span>
+	<<set $FinalFinal to 65>>
+	<<elseif $SkillResults == "Fail">>
+		<span style="color:Red">D</span>
+	<<set $FinalFinal to 55>>
+	<<elseif $SkillResults == "Major Fail">>
+		<span style="color:DarkRed">F</span>
+	<<set $FinalFinal to 30>>
+<</if>>
+
+
+<br>
+/* CURRENT FINAL GRADE */
+<strong>Current Final Grade:</strong>
+<<set $FinalGrade to $EnglishGrade + $FinalFinal>>
+<<if $FinalGrade >= 200>>
+<span style="color:Teal">A+</span>
+<<elseif $FinalGrade >= 180>>
+<span style="color:Teal">A</span>
+<<elseif $FinalGrade >= 170>>
+<span style="color:Teal">A-</span>
+<<elseif $FinalGrade >= 160>>
+<span style="color:Green">B+</span>
+<<elseif $FinalGrade >= 150>>
+<span style="color:Green">B</span>
+<<elseif $FinalGrade >= 140>>
+<span style="color:Lightgreen">B-</span>
+<<elseif $FinalGrade >= 130>>
+<span style="color:Lightgreen">C+</span>
+<<elseif $FinalGrade >= 120>>
+<span style="color:Yellow">C</span>
+<<elseif $FinalGrade >= 100>>
+<span style="color:Yellow">C-</span>
+<<elseif $FinalGrade >= 80>>
+<span style="color:Red">D+</span>
+<<elseif $FinalGrade >= 60>>
+<span style="color:Red">D</span>
+<<elseif $FinalGrade >= 40>>
+<span style="color:Red">D-</span>
+<<elseif $FinalGrade >= 20>>
+<span style="color:DarkRed">F</span>
+<<else>>
+<span style="color:DarkRed">F-</span>
+<</if>><br>
+
+<span style="color:Gray">[End of the Month Finals are not yet implemented.]</span><br>

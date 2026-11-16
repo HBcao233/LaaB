@@ -1,0 +1,32 @@
+:: FELIX Cafeteria Chat With [nobr]
+
+<<set $Minutes += 10>>
+
+/* OPENING */
+You sit down next to <span style="color:DarkTurquoise">Felix</span>, who puts his book down and smiles upon seeing you. You start up a conversation with him and the two of you enjoy your time together.
+<<set $RandomTopic to random(1, 3)>>
+
+/* TOPIC ONE */
+<<if $RandomTopic == 1>>
+<span style="color:DarkTurquoise">Felix</span> talks about his home, in France. He didn’t live in any of the major cities, but a smaller town slightly near Paris. It had some farms and was a bit of a tourist destination due to its “French Old Country Town” appearance. His parents owned a bakery there that was quite popular.<br>
+
+/* TOPIC TWO */
+<<elseif $RandomTopic == 2>>
+You ask if <span style="color:DarkTurquoise">Felix</span> played soccer back home and he simply laughs. He didn’t just play soccer, he was the best player in his town. He didn’t like to brag, but he was very proud of his skills and really enjoyed talking about his special moves.<br>
+
+/* TOPIC THREE */
+<<elseif $RandomTopic == 3>>
+<span style="color:DarkTurquoise">Felix</span> describes himself as a free spirit. When you question what he means by that he explains that his parents always let him explore his various interests and be whoever he wanted to be. He wasn’t a fan of strict rules or regulations and he enjoyed wandering around and trying new things.<br>
+
+<</if>>
+
+/* SOCIAL POINTS GAIN */
+<<if $FelixDailyChat != 1>>
+		<<socialChange "Felix" 3>>
+		<<set $FelixDailyChat to 1>>
+<<else>>
+		<<socialChange "Felix" 1>>
+		<<set $FelixDailyChat to 1>>
+<</if>>
+<br>
+[[Continue|School Cafeteria]] 

@@ -1,0 +1,30 @@
+:: THOMAS Eat Lunch [nobr]
+
+<<set _ad to [{Name: "Thomas", State: {Outfit: "Uniform"}}]>>
+<<ad _ad>>
+
+<<if $SchoolLunchLevel == 2>>
+	<<include "Thomas Eat Premium Lunch With">>
+<<else>>
+	<<if $ThomasSocial >= 15>>
+		You take a seat at the same table as <span style="color:DarkTurquoise">Thomas</span> and chat, enjoying your time together, even though you are the only one talking most of the time.<br>
+			<<socialChange "Thomas" 1>>
+		<br>
+	<<elseif $ThomasSocial >= 0>>
+		<<set $Random to random(1, 3)>>
+		<<if $Random > 1>>
+			You take a seat at the same table as <span style="color:DarkTurquoise">Thomas</span> and chat, enjoying your time together, even though you are the only one talking most of the time<br>
+			<<socialChange "Thomas" 1>>
+			<br>
+		<<else>>
+			You take a seat at the same table as <span style="color:DarkTurquoise">Thomas</span> and try to start a conversation, but he is quiet the entire time.<br>
+			<br>
+		<</if>>
+	<<elseif $ThomasSocial < 0>>
+		You take a seat at the same table as <span style="color:DarkTurquoise">Thomas</span> and try to start a conversation, but he is so nervous around you he is quiet the entire time.<br>
+		<br>
+	<</if>>
+<</if>>
+
+<<include"School Lunch">>
+<<set $FriendLunch to 1>>

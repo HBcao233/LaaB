@@ -1,0 +1,18 @@
+:: Carter Ask for Nickname [nobr]
+
+/* This is the scene that appears when the PC asks to be called by a nickname. */
+<span style="Color: LightSteelBlue">“Hey there, <span style="color:DarkTurquoise">$CarterNickname</span>!”</span> <span style="color:DarkTurquoise">Carter</span> says with a smile, somehow as dorky as ever as he does a cute pose, <span style="Color: LightSteelBlue">“What can I do for you, my good man?”</span> You ask <span style="color:DarkTurquoise">Carter</span> if he wouldn’t mind calling you by a nickname. Your real name is fine, and all, but since you are friends you’d rather if he called you by something else. <span style="Color: LightSteelBlue">“You mean like I code name? Oh, I have a codename I use when I’m under cover. Just don’t tell anyone.”</span> <span style="color:DarkTurquoise">Carter</span> leans in close, whispering, <span style="Color: LightSteelBlue">“It’s Ultraboy! You know? Like Ultraman, but I’m a boy. Clever, right?”</span> He chuckles as you explain that you meant more like a nickname, something that he can call you besides your real name, since you’re friends. <span style="Color: LightSteelBlue">“Oh, of course! It can be both, that way if I mention you during my missions the villains won’t know who I’m talking about!”</span> <br>
+<br>
+
+<div id="choice">
+    <<textbox "$CarterNickname" $CarterNickname>><br>
+    <br>
+	<<link "Continue">>
+        <<replace"#choice">>
+            <<set $Nickname.Carter to 1>>
+            <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$CarterNickname</span>! Perfect! You can keep calling me <span style="color:DarkTurquoise">Carter</span>, though. My code name is only for when we are on missions.”</span> He says with a smirk, <span style="Color: LightSteelBlue">“You know, you should come up with a code name as well! Always good to have one ready to go!”</span> <br>
+            <br>
+            <<endByLocation>>
+        <</replace>>
+    <</link>>
+</div>

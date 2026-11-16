@@ -1,0 +1,65 @@
+:: Carter House Kitchen [nobr]
+
+<<set $Location to {
+    Name: "Carter's Kitchen",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Kitchen",
+}>>
+<span style="color:Azure"><big><strong>--Carter's Kitchen--</strong></big></span><br>
+
+<<if $Time.after(19, 0)>>
+    <<if $HangOutNeed.Fun >= 50>>
+        <<include"Carter House Leaving Late High Fun">>
+    <<else>>
+        <<include"Carter House Leaving Late Low Fun">>
+    <</if>>
+<<else>>
+
+    You stand in <span style="color:DarkTurquoise">Carter</span>’s kitchen. It is outfitted with nice, black steel counters and bright blue appliances. It matches the nearby dining room and looks very clean, almost too clean.<br>
+    <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+
+    <strong>Carter: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    [[Ask for a snack (0:10)|Carter House Normal Snack]] <span style="color:Green">+Hunger</span><br>
+    <br>
+
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Dining Room (0:01)|Carter House Dining Room][$Minutes += 1]] <br>
+    [[Backyard (0:01)|Carter House Backyard][$Minutes += 1]] <br>
+
+    <br>
+
+    <br>
+    <div style="position: relative">
+    <img src="Images\NPC Homes\Carter House\Carter House Map.png" alt="Carter House Base" usemap="#CarterHouse">
+        <img src="Images\Player House\Player House Room Marker.png" 
+    style="position: absolute; left: 54px; top: 108px"  alt="Carter House" usemap="#CarterHouse">
+    </div>
+    <map name="CarterHouse">
+        <area shape="rect" coords="108,108,161,161" alt="Dining Room" onclick="$.wiki('<<goto[[Carter House Dining Room]]>><<set $Minutes += 1>>')" />
+        <area shape="rect" coords="54,162,161,215" alt="Backyard" onclick="$.wiki('<<goto[[Carter House Backyard]]>><<set $Minutes += 1>>')" />
+    </map>
+
+<</if>>

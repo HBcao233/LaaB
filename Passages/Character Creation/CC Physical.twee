@@ -1,0 +1,79 @@
+:: CC Physical [nobr]
+
+/* AVATAR DISPLAY */
+<<include"Player Avatar Display Set">>
+<<include"Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+<br>
+<<if $CCBodyCat != "Body">>
+<<link"-[Body]-">>
+	<<set $CCBodyCat to "Body">>
+	<<replace"#CC">>
+		<<include"CC Physical">>
+	<</replace>>
+<</link>>
+<<else>>
+<span style="color:lightgreen">-[Body]-</span>
+<</if>>
+
+<<if $CCBodyCat != "Hair Style">>
+<<link"-[Hair Style]-">>
+	<<set $CCBodyCat to "Hair Style">>
+	<<replace"#CC">>
+		<<include"CC Physical">>
+	<</replace>>
+<</link>>
+<<else>>
+<span style="color:lightgreen">-[Hair Style]-</span>
+<</if>>
+
+<<if $CCBodyCat != "Hair Color">>
+<<link"-[Hair Color]-">>
+	<<set $CCBodyCat to "Hair Color">>
+	<<replace"#CC">>
+		<<include"CC Physical">>
+	<</replace>>
+<</link>>
+<<else>>
+<span style="color:lightgreen">-[Hair Color]-</span>
+<</if>>
+
+<<if $CCBodyCat != "Eyes">>
+<<link"-[Eyes]-">>
+	<<set $CCBodyCat to "Eyes">>
+	<<replace"#CC">>
+		<<include"CC Physical">>
+	<</replace>>
+<</link>>
+<<else>>
+<span style="color:lightgreen">-[Eyes]-</span>
+<</if>>
+
+<<if $CCBodyCat != "Other">>
+<<link"-[Other]-">>
+	<<set $CCBodyCat to "Other">>
+	<<replace"#CC">>
+		<<include"CC Physical">>
+	<</replace>>
+<</link>>
+<<else>>
+<span style="color:lightgreen">-[Other]-</span>
+<</if>>
+<br>
+
+<<if $CCBodyCat == "Body">>
+	<<include"CC Physical Body">>
+<<elseif $CCBodyCat == "Hair">>
+	<<include"CC Physical Hair">>
+<<elseif $CCBodyCat == "Hair Style">>
+	<<include"CC Physical Hair">>
+<<elseif $CCBodyCat == "Hair Color">>
+	<<include"CC Physical Hair">>
+<<elseif $CCBodyCat == "Eyes">>
+	<<include"CC Physical Eyes">>
+<<elseif $CCBodyCat == "Other">>
+	<<include"CC Physical Other">>
+<<else>>
+	<<include"CC Physical Body">>
+<</if>>

@@ -1,0 +1,21 @@
+:: Gym Get Dressed [nobr]
+
+<<if $GymClassType == "Swimming">>
+	<<set $PlayerUndies to $None>>
+	<<addClothing "PC" "Bottoms" "Trunks" "Purple">>
+<<else>>
+	<<addClothing "PC" "Top" "Gym Shirt" "Purple">>
+	<<addClothing "PC" "Bottoms" "Gym Shorts" "Purple">>
+
+	<<if $SaveSocks != null && $SaveSocks.Type != "None">>
+		<<set $PlayerSocks to $SaveSocks>>
+	<<else>>
+		<<unset $SaveSocks>>
+	<</if>>
+
+	<<if $SaveShoes != null>>
+		<<set $PlayerShoes to $SaveShoes>>
+	<<else>>
+		<<unset $SaveShoes>>
+	<</if>>
+<</if>>

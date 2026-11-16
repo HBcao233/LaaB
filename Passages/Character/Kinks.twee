@@ -1,0 +1,43 @@
+:: Kinks [nobr]
+
+<span style="color:Azure"><strong>--$Player.Name's Kinks--</strong></span>
+<br>
+<span class="greyed-out">[Affects Arousal gain from certain actions. Disabled Content won't appear regardless of Turn On/Off.]</span>
+<br><br>
+
+<<liveblock>>
+	<div class="kink-container">
+		<<for _kink range $PlayerKinkOptions>>
+			<<set _kinkName to _kink.Name>>
+			<<set _kinkText to _kink.Text || _kinkName>>
+			<<set _kinkValue to $Player.Kinks[_kinkName]>>
+			<<capture _kinkName _kinkText _kinkValue>>
+				<div class="kink-item">
+					<div class="kink-item-icon">
+						<img @title="_kinkName" @alt="_kinkName" @src="`Images/Icons/Kinks/${_kinkName}${_kinkValue}.png`">
+						<span>_kinkText</span>
+					</div>
+					<div class="kink-item-options">
+						<<set _valueIndex to 1>>
+						<<for _option range $PlayerKinkValues>>
+							<<capture _option>>
+								<<if _option.Value === _kinkValue>>
+									<span style="color: lightgreen;">[_option.Text]</span>
+								<<else>>
+									<<link `_option.Text`>>
+										<<set $Player.Kinks[_kinkName] to _option.Value>>
+										<<update>>
+									<</link>>
+								<</if>>
+								<<if _valueIndex !== $PlayerKinkValues.length>>
+									|
+								<</if>>
+								<<set _valueIndex++>>
+							<</capture>>
+						<</for>>
+					</div>
+				</div>
+			<</capture>>
+		<</for>>
+	</div>
+<</liveblock>>

@@ -1,0 +1,384 @@
+:: OC Zach Brochella Intro [nobr]
+
+/* Intro */
+You walk past the different groups of kids lingering in the halls for one reason or another as you head to the exit to finally end the school day, when something strange catches your ears. <br>
+<br>
+<span style="color:LightSteelBlue">“Yo, dude! Are you going to Brochella-Lite this weekend?”</span> An older kid asked as he munched on what could only be described as a ‘suspiciously-colored sandwich’. <br>
+<br>
+<span style="color:LightSteelBlue">“Bro-… what? What are you talking about.”</span> His friend responded in confusion before adding, <span style="color:LightSteelBlue">“And you really shouldn’t be eating that. It’s been in my locker for like a week.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Well, they have Brochella, right?”</span> The boy takes another bite. His friend makes the exact same face you make as he munches on the discolored food, <span style="color:LightSteelBlue">“It’s like this big, sick-ass music festival they have in the city. Well, they sometimes do Brochella-Lite, it’s like the indie version of Brochella dude! All the real artists go to Brochella-Lite, no posers like the normie Brochella. It’s Saturday from like 8 to midnight. Free entry too! Going to be wild. Dude, what is this, ham? Tastes great.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Oh, that does sound pretty cool.”</span> The boy responds, <span style="color:LightSteelBlue">“And it’s peanut butter. Or it was… I think you need to go to the hospital.”</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Sad",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+You walk away before witnessing a medical emergency brought upon by pure stupidity and hunger. You’re sure he’ll be fine. What’s more, this ‘Brochella-Lite’ sounded pretty interesting. It could be pretty fun to attend, just to look around and listen to some music. Then again, you’re unsure if <span style="color:DarkTurquoise">Your Father</span> would allow you to be out that late, even on a weekend. <span style="color:Yellow">But it couldn’t hurt to ask.</span> <br>
+<<set $InActiveQuests.delete("Zach: Brochella Lite")>>
+<<set $ActiveQuests.push("Zach: Brochella Lite")>>
+<<set $QuestLog.push(
+	{
+		Name: "Brochella Lite",
+		State: 1,
+		ID: "OCZach_M001",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Music",
+		Tags: ["Zach", "Character", "Quest", "Park"],
+		Description: "You have heard about a music festival coming up. You want to attend, but will need to get permission from <span style=\"color:DarkTurquoise\">Your Father</span> due to its late night time.",
+		Objectives: [
+			{
+				Name: "Ask <span style=\"color:DarkTurquoise\">Your Father</span> for Permission to attend Brochella Lite",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Music",
+	Description: "You have heard about a music festival coming up. You want to attend, but will need to get permission from <span style=\"color:DarkTurquoise\">Your Father</span> due to its late night time.",
+})>>
+<br>
+[[Continue|School South Hallway]]
+
+:: OC Zach Brochella Ask Dad [nobr]
+
+/* Cooking */
+<<if $BroDadLocation == "Cooking">>
+    You watch as <span style="color:DarkTurquoise">Your Father</span> slaves away cooking dinner for you and your brothers. <span style="color:Yellow">You gulp nervously, trying to build up the courage to ask him about the music festival.</span> You’re not exactly afraid of <span style="color:DarkTurquoise">Your Father</span>, but are feeling the nervousness all kids feel just before asking their parents for something they know they normally wouldn’t be allowed to do. It is as you are about to open your mouth that <span style="color:DarkTurquoise">Your Father</span>’s voice suddenly causes you to jump. <br>
+
+        <<set _ad to [
+            {
+                Name: "Dad",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smile",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“If you are going to just stand there not saying anything, could you at least help wash up?”</span> You nod, quickly running over to clean up what he’s finished with as you go over how you are going to ask him in your head one more time before finally asking if he’s heard of Brochella-Lite. <br>
+    <br>
+
+/* In his Room */
+<<elseif $BroDadLocation == "Bedroom">>
+    You stand at the doorway of <span style="color:DarkTurquoise">Your Father</span>’s bedroom, <span style="color:Yellow">trying to work up the courage to ask him about the music festival.</span> You aren’t exactly afraid of <span style="color:DarkTurquoise">Your Father</span>, but are still feeling the nervousness all kids feel just before asking their parents for something they know they normally wouldn’t be allowed to do. <span style="color:DarkTurquoise">Your Father</span> spots you standing there and, with a smirk, asks <span style="color:LightSteelBlue">“Alright, what do you want or what did you do?”</span> <br>
+    
+        <<set _ad to [
+            {
+                Name: "Dad",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smile",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    You blush, asking him what he’s talking about. <span style="color:LightSteelBlue">“Please. The only reason one of my lovely sons would be standing there looking like that is because he is either in trouble or wants something. I don’t hear any crying or things breaking, so I assume you want something. So come on. The worst I can say is no. Well, maybe I’ll give you a spank if it’s something silly, but just a little one.”</span> Chuckling nervously, you ask him if he’s heard of Brochella-Lite. <br>
+    <br>
+
+/* Watching TV */
+<<elseif $BroDadLocation == "TV">>
+    You stand just behind <span style="color:DarkTurquoise">Your Father</span>, who is sitting in his recliner watching TV. <span style="color:Yellow">You are trying to work up the courage to ask him about the music festival.</span> You aren’t exactly afraid of <span style="color:DarkTurquoise">Your Father</span>, but are still feeling the nervousness all kids feel just before asking their parents for something they know they normally wouldn’t be allowed to do. You are just about to finally say something when the voice of <span style="color:DarkTurquoise">Your Father</span> makes you jump. <br>
+
+        <<set _ad to [
+            {
+                Name: "Dad",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smile",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“What it is, $DadNickname?”</span> You nearly fall back in surprise. Parents really do have eyes on the back of their heads! You think about sneaking away, maybe he was just guessing and hadn’t really seen you, but then he turns around and looks at you with a smirk. It is obvious you want something. So, you take a deep breath and ask him if he’s heard of Brochella-Lite. <br>
+    <br>
+<</if>>
+
+<<unset $BroDadLocation>>
+
+/* Continued */
+<span style="color:LightSteelBlue">“Brochella-Lite…”</span> <span style="color:DarkTurquoise">Your Father</span> looks off into the distance with a smile like people do on TV when a flashback occurs. <span style="color:LightSteelBlue">“Now that brings back some memories. I didn’t even think they still did that! Haha.”</span> He stops what he’s doing and steps over to you, <span style="color:LightSteelBlue">“You know, Alister, some friends, and I used to sneak out to go to these when we were around your age. The atmosphere is something else. The music, the people, the food. Those were the days!”</span> He sighs in happy remembrance, <span style="color:LightSteelBlue">“Of course, when the folks caught us, it became a very, very bad day. Haha.”</span> He pauses, as if suddenly remember where he was, <span style="color:LightSteelBlue">“And if you try to sneak out like that, it’ll be a lot worse for you.”</span> <span style="color:Pink">He slaps his wrist, a playful threat of what your rear will be feeling if you try that.</span> <br>
+<br>
+You blush and blurt out that you would NEVER try something like that. Which is why you are here, actually. You heard about the festival at school and wanted to go check it out. You know it goes late, but you figured this would be a great way experience musical culture and the town and… and he’s always telling you to be more open to new experiences and-! <span style="color:LightSteelBlue">“Alright, alright.”</span> <span style="color:DarkTurquoise">Your Father</span> laughs, <span style="color:LightSteelBlue">“I’d be a hypocrite if I just banned it outright, but midnight is a little late for a little kid like you to be out by himself.”</span> You blush, you’re not that little. <br>
+<br>
+<span style="color:LightSteelBlue">“I’d take you, but I need to be up early Sunday…”</span> He pauses and thinks for a second, <span style="color:LightSteelBlue">“Alright. You can go…”</span> You smile, <span style="color:LightSteelBlue">“BUT! Only if <span style="color:DarkTurquoise">Gabe</span> agrees to go with you.”</span> You frown. <span style="color:LightSteelBlue">“Ah come on, <span style="color:DarkTurquoise">Gabe</span> loves music. I’m sure he was planning to go anyway. I’m sure he was planning to ask me, if he knows what’s good for him. So, you tell <span style="color:DarkTurquoise">Gabe</span> that he can go if he takes you. Think of it as brotherly bonding. And because neither one of you can go without the other.”</span> He smiles, as if he had come up with some great plan. He then pats you on the head before returning to what he was doing, proud of his parenting skills. <br>
+<br>
+<span style="color:Yellow"> <span style="color:DarkTurquoise">Gabe</span>… You’re pretty sure this would be up his alley, but whether or not he’d be interested in having to drag his little brother around is another story… <br>
+<br>
+Well, the only thing you can do is ask.</span> <br>
+<<set $ActiveQuests.delete("Zach: Brochella Lite")>>
+<<set $ActiveQuests.push("Zach: Brochella Lite 2")>>
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+    <<if $QuestLog[_i].Name == "Brochella Lite">>
+        <<set $QuestLog.deleteAt(_i)>>
+        <<break>>
+    <</if>>
+<</for>>
+<<set $QuestLog.push(
+	{
+		Name: "Brochella Lite",
+		State: 1,
+		ID: "OCZach_M001",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Music",
+		Tags: ["Zach", "Character", "Quest", "Park"],
+		Description: "<span style=\"color:DarkTurquoise\">You Father</span> has given you permission to attend Brochella Lite… if <span style=\"color:DarkTurquoise\">Gabe</span> agrees to go with you.",
+		Objectives: [
+			{
+				Name: "Ask <span style=\"color:DarkTurquoise\">Your Father</span> for Permission to attend Brochella Lite",
+				State: 1,
+				Total: 1,
+			},
+			{
+				Name: "Ask <span style=\"color:DarkTurquoise\">Gabe</span> to attend with you",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Music",
+	Description: "<span style=\"color:DarkTurquoise\">You Father</span> has given you permission to attend Brochella Lite… if <span style=\"color:DarkTurquoise\">Gabe</span> agrees to go with you.",
+})>>
+<br>
+<<endByLocation>> 
+
+
+:: OC Zach Brochella Ask Gabe [nobr]
+
+/* Bedroom */
+<<if $GabeBroLocal == "Bedroom">>
+    Nervously, you step into <span style="color:DarkTurquoise">Gabe</span>’s bedroom. You do it loud enough to make it clear you weren’t trying to sneak in, but not too loud as to annoy him. It is a delicate balance, and you feel your butt clench as <span style="color:DarkTurquoise">Gabe</span> looks up from what he is doing and glares at you with suspicion. <span style="color:LightSteelBlue">“What do you want?”</span> He says, trying to decide if he’s going to hit you or not. You gulp, saying you wanted to ask him something. <span style="color:Yellow">With a curious expression, <span style="color:DarkTurquoise">Gabe</span> stands up and walks over to you, staring down at you as he so often does to try and intimidate you.</span> <br>
+    <br>
+
+/* Living Room TV */
+<<elseif $GabeBroLocal == "TV">>
+    Seeing <span style="color:DarkTurquoise">Gabe</span> lounging on the couch watching TV, you walk into his field of vision and stare at him. You needed him in a good mood, so you wanted to get his attention and let him know you wanted to speak with him without interrupting what he is watching. It is a delicate balance. <span style="color:Yellow"> <span style="color:DarkTurquoise">Gabe</span> briefly glances to you out of the corner of his eyes, but waits until a commercial comes on before addressing you. <span style="color:LightSteelBlue">“Alright. What do you want?”</span> He says standing up and walking over to you.</span> <br>
+    <br>
+
+/* Hallway */
+<<elseif $GabeBroLocal == "Hallway">>
+    As you pass <span style="color:DarkTurquoise">Gabe</span> in the hallway, you say his name. The boy stops in his tracks, spins around, and glares at you. You can’t tell if he is actually upset or just messing with you. Probably just messing with you, as he wouldn’t normally get upset at just small talk unless he is having a particularly bad day. Still, you can never be too careful around teenagers. <span style="color:LightSteelBlue">“What do you want?”</span> He asks, walking up to you. <span style="color:Yellow">His voice is stern, yet with a hint of friendliness. Seems like it’s been a good day for him.</span> <br>
+    <br>
+<</if>>
+<<unset $GabeBroLocal>>
+
+/* Continue */
+You ask him if he is planning to go this festival you heard about, Bro-something. You had heard about it randomly and thought it would be cool and know he’s into that and maybe, if he didn’t mind, he could maybe take you? <span style="color:Yellow">Your words stumble out like word vomit as you try to play it off as something you heard in passing, which is technically true, and you don’t feel your heart beating until you get them all out.</span> <span style="color:DarkTurquoise">Gabe</span> nods slowly in response. <span style="color:LightSteelBlue">“You know, I was thinking about going. Crazy thing though, I asked dad about it, and he said I could go on one condition.”</span> You inhale sharply and hold your breath. Uh-oh. <span style="color:LightSteelBlue">“Yeah, for some reason he said I could only go if I take you. I asked why I had to take my annoying little brother to a music festival I wanted to hang out with my friends at, and he just said that I take you or I don’t go.”</span> <br>
+<br>
+
+        <<set _ad to [
+            {
+                Name: "Gabe",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+Your heart is beating faster and faster and you felt your lungs turning blue from lack of oxygen. <span style="color:Yellow">This isn’t good. Dad already got to him, meaning he already knows that your going is a requirement for him going.</span> You are already thinking all the ways he’s going to punish you for ruining his weekend plans when <span style="color:DarkTurquoise">Gabe</span> just sighs and shrugs. <span style="color:LightSteelBlue">“So, I told him that’s fine. I don’t mind taking you…”</span> You finally breathe out, on the brink of falling unconscious. <span style="color:LightSteelBlue">“On two conditions.”</span> <span style="color:Yellow">Dang it.</span> <br>
+<br>
+
+<<if $GabeSocial > 50 or $GabeSociallRank > 0>>
+<span style="color:LightSteelBlue">“First, when we get there, we split up. I don’t need my friends knowing I had to babysit you during the festival. You have your fun, and I have mine. We’ll meet up before the last performance and maybe if you prove to me you have good taste, I might get you a souvenir.”</span> You nod, that sounds pretty generous actually. What’s the second condition? <span style="color:LightSteelBlue">“Simple. Don’t tell Dad I did this.”</span> <br>
+<br>
+    <<if $PlayerUndies.Type != "None">>
+        <span style="color:Pink">Before you can process what he said, <span style="color:DarkTurquoise">Gabe</span> grips the back of your $PlayerUndies.Name and yanks them into the air, giving you a massive wedgie! He then hooks them onto something, leaving you in quite a painful and embarrassing position. He laughs and ruffles your hair before walking off, leaving you to free yourself. Man, he’s annoying, though you have to admit he got you good.</span> <br>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Wedgiee"]>>
+        <<arousalGain 10 _arousalbs _arousalkink>>
+        <<addMoodlet "Wedgie" 4>>
+        <<set $ActiveQuests.delete("Zach: Brochella Lite 2")>>
+        <<set $ActiveQuests.push("Zach: Brochella Lite 3")>>
+        <<for _i to 0; _i lt $QuestLog.length; _i++>>
+            <<if $QuestLog[_i].Name == "Brochella Lite">>
+                <<set $QuestLog.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</for>>
+        <<set $QuestLog.push(
+            {
+                Name: "Brochella Lite",
+                State: 1,
+                ID: "OCZach_M001",
+                Category: "Character",
+                Type: "Quest",
+                Icon: "Music",
+                Tags: ["Zach", "Character", "Quest", "Park"],
+                Description: "<span style=\"color:DarkTurquoise\">Gabe</span> has agreed to take you to Brochella Lite with him! You are to meet him at the <span style=\"color:Teal\">City Park</span> on <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">8PM</span> and <span style=\"color:Teal\">9PM</span>. This is going to be exciting!",
+                Objectives: [
+                    {
+                        Name: "Ask <span style=\"color:DarkTurquoise\">Your Father</span> for Permission to attend Brochella Lite",
+                        State: 1,
+                        Total: 1,
+                    },
+                    {
+                        Name: "Ask <span style=\"color:DarkTurquoise\">Gabe</span> to attend with you",
+                        State: 1,
+                        Total: 1,
+                    },
+                    {
+                        Name: "Attend Brochella at the <span style=\"color:Teal\">City Park</span> on <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">8PM</span> and <span style=\"color:Teal\">9PM</span>.",
+                        State: 0,
+                        Total: 1,
+                    },
+                ],
+            },
+        )>>
+        <<set $Notifications.push({
+            Name: "Quest Acquired!",
+            Icon: "Quests/Music",
+            Description: "<span style=\"color:DarkTurquoise\">Gabe</span> has agreed to take you to Brochella Lite with him! You are to meet him at the <span style=\"color:Teal\">City Park</span> on <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">8PM</span> and <span style=\"color:Teal\">9PM</span>. This is going to be exciting!",
+        })>>
+        <br>
+        <<endByLocation>> 
+    <<else>>
+        <span style="color:Pink">Before you can process what he said, <span style="color:DarkTurquoise">Gabe</span> reaches down and yanks down your $PlayerBottoms.Type, exposing your boyish bits! He then quickly flicks your $Player.PenisSize Penis, causing you to yelp, before running off laughing. You quickly fix your clothes, bright red, and smirk. Man, he’s annoying, though you have to admit he got you good.</span> <br>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Humiliated"]>>
+        <<arousalGain 10 _arousalbs _arousalkink>>
+        <<addMoodlet "Seen Naked" 4>>
+        <<set $ActiveQuests.delete("Zach: Brochella Lite 2")>>
+        <<set $ActiveQuests.push("Zach: Brochella Lite 3")>>
+        <<for _i to 0; _i lt $QuestLog.length; _i++>>
+            <<if $QuestLog[_i].Name == "Brochella Lite">>
+                <<set $QuestLog.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</for>>
+        <<set $QuestLog.push(
+            {
+                Name: "Brochella Lite",
+                State: 1,
+                ID: "OCZach_M001",
+                Category: "Character",
+                Type: "Quest",
+                Icon: "Music",
+                Tags: ["Zach", "Character", "Quest", "Park"],
+                Description: "<span style=\"color:DarkTurquoise\">Gabe</span> has agreed to take you to Brochella Lite with him! You are to meet him at the <span style=\"color:Teal\">City Park</span> on <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">8PM</span> and <span style=\"color:Teal\">9PM</span>. This is going to be exciting!",
+                Objectives: [
+                    {
+                        Name: "Ask <span style=\"color:DarkTurquoise\">Your Father</span> for Permission to attend Brochella Lite",
+                        State: 1,
+                        Total: 1,
+                    },
+                    {
+                        Name: "Ask <span style=\"color:DarkTurquoise\">Gabe</span> to attend with you",
+                        State: 1,
+                        Total: 1,
+                    },
+                    {
+                        Name: "Attend Brochella at the <span style=\"color:Teal\">City Park</span> on <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">8PM</span> and <span style=\"color:Teal\">9PM</span>.",
+                        State: 0,
+                        Total: 1,
+                    },
+                ],
+            },
+        )>>
+        <<set $Notifications.push({
+            Name: "Quest Acquired!",
+            Icon: "Quests/Music",
+            Description: "<span style=\"color:DarkTurquoise\">Gabe</span> has agreed to take you to Brochella Lite with him! You are to meet him at the <span style=\"color:Teal\">City Park</span> on <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">8PM</span> and <span style=\"color:Teal\">9PM</span>. This is going to be exciting!",
+        })>>
+        <br>
+        <<endByLocation>> 
+    <</if>>
+<<else>>
+    <span style="color:LightSteelBlue">“First, when we get there, we split up. I don’t need my friends knowing I had to babysit you during the festival. I don’t have to see your stupid face, and you don’t end up head-first in a trashcan.”</span> You nod, that sounds fair, and you weren’t planning on spending the time with him anyway. What’s the second condition? <span style="color:LightSteelBlue">“That’s simple. Just don’t tell Dad I did this-!”</span> <br>
+    <br>
+    <span style="color:LightCoral">Without warning, <span style="color:DarkTurquoise">Gabe</span> slaps you in the nuts! It’s not hard, at least not as hard as it could have been, but you instantly feel your entire body tingle and you fall to the ground in a heap, gripping your balls. <span style="color:DarkTurquoise">Gabe</span>’s laughter is the only thing you can hear as you groan on the floor for a few minutes before you are able to stand again. God, he’s such a jerk.</span> <span style="color:Yellow">But at least you get to go to the festival.</span> <br>
+    <<addMoodlet "Pained" 6>>
+    <<set $ActiveQuests.delete("Zach: Brochella Lite 2")>>
+    <<set $ActiveQuests.push("Zach: Brochella Lite 3")>>
+    <<for _i to 0; _i lt $QuestLog.length; _i++>>
+        <<if $QuestLog[_i].Name == "Brochella Lite">>
+            <<set $QuestLog.deleteAt(_i)>>
+            <<break>>
+        <</if>>
+    <</for>>
+    <<set $QuestLog.push(
+        {
+            Name: "Brochella Lite",
+            State: 1,
+            ID: "OCZach_M001",
+            Category: "Character",
+            Type: "Quest",
+            Icon: "Music",
+            Tags: ["Zach", "Character", "Quest", "Park"],
+            Description: "<span style=\"color:DarkTurquoise\">Gabe</span> has agreed to take you to Brochella Lite with him! You are to meet him at the <span style=\"color:Teal\">City Park</span> on <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">8PM</span> and <span style=\"color:Teal\">9PM</span>. This is going to be exciting!",
+            Objectives: [
+                {
+                    Name: "Ask <span style=\"color:DarkTurquoise\">Your Father</span> for Permission to attend Brochella Lite",
+                    State: 1,
+                    Total: 1,
+                },
+                {
+                    Name: "Ask <span style=\"color:DarkTurquoise\">Gabe</span> to attend with you",
+                    State: 1,
+                    Total: 1,
+                },
+                {
+                    Name: "Attend Brochella at the <span style=\"color:Teal\">City Park</span> on <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">8PM</span> and <span style=\"color:Teal\">9PM</span>.",
+                    State: 0,
+                    Total: 1,
+                },
+            ],
+        },
+    )>>
+    <<set $Notifications.push({
+        Name: "Quest Acquired!",
+        Icon: "Quests/Music",
+        Description: "<span style=\"color:DarkTurquoise\">Gabe</span> has agreed to take you to Brochella Lite with him! You are to meet him at the <span style=\"color:Teal\">City Park</span> on <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">8PM</span> and <span style=\"color:Teal\">9PM</span>. This is going to be exciting!",
+    })>>
+    <br>
+    <<endByLocation>>
+
+<</if>>

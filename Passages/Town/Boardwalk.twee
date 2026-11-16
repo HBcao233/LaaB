@@ -1,0 +1,93 @@
+:: Boardwalk [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Boardwalk",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Downtown",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Boardwalk--</strong></big></span><br>
+You stand at the entrance to the city’s impressive Boardwalk. Your old town didn’t have anything like this, it's like a permanent fair or amusement park built atop a dock! It is a bit pricey, having an entry fee along with fees for most of the rides, but you're sure it would be worth it! You can see a Ferris Wheel and a small coaster from the entrance. <br>
+<br>
+<span style="color:lightcoral">“Majority of Board Walk currently closed due to renovations.”</span><br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<link"Explore the Boardwalk (0:20)">>
+    <<set _Random to ["Boardwalk Explore Tourist Photo", "Boardwalk Explore Stuck on Railing"]>>
+	<<set _event to _Random.random()>>
+	<<goto _event>>
+<</link>>
+<br>
+<<if $ActiveQuests.includes("James: The Orange Mystery Part 1.2") && $Time.Day == "Saturday" && $Time.between(7, 0, 9, 0)>>
+	[[Meet with James (0:30)|OC James Intro Quest Part 2]]<br>
+<<elseif $ActiveQuests.includes("James: The Orange Mystery Part 1.3") && $Time.Day == "Saturday" && $Time.between(20, 0, 22, 0)>>
+	[[Meet with James (0:30)|OC James Intro Quest Part 3]]<br>
+<</if>>
+[[Enter Abandoned Shop|Achievement Shop Entrance]]<br>
+
+<br>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+	[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+	<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:10)|Food District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Beach.png">
+	[[Beach (0:10)|Beach][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Redlight District.png">
+	[[Redlight District (0:10)|Redlight District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Trailer Park.png">
+	[[Trailer Park (0:10)|Trailer Park][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:05)|Food District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Beach.png">
+	[[Beach (0:05)|Beach][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Redlight District.png">
+	[[Redlight District (0:05)|Redlight District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Trailer Park.png">
+	[[Trailer Park (0:05)|Trailer Park][$Minutes += $TravelTime]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 4px; top: 155px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="152,81,205,134" alt="Food District" onclick="$.wiki('<<goto[[Food District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="152,155,205,208" alt="Redlight District" onclick="$.wiki('<<goto[[Redlight District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="4,229,57,282" alt="Beach" onclick="$.wiki('<<goto[[Beach]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="152,229,205,282" alt="Trailer Park" onclick="$.wiki('<<goto[[Trailer Park]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

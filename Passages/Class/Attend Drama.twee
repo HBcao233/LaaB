@@ -1,0 +1,34 @@
+:: Attend Drama [nobr]
+
+/* TEACHER INTRODUCTION */
+
+<<if $DramaIntro != 1>>
+	<<include"Drama Introduction">>
+	<<set $DramaIntro to 1>>
+	<<include"Attend Drama Finish">>
+
+<<else>>
+	<<set _Random to ["DRAMA Pulley System Wedgie", "DRAMA Oversized Pants", "DRAMA Pick Lead Part", "DRAMA Monologue", "DRAMA Partner Skill Check", "DRAMA Lucas Script Steal", "DRAMA Carter Steal Prop", "DRAMA Good Class", "DRAMA Too Small Costume", "DRAMA Carter Kiss Scene", "DRAMA Lucas Spy", "Drama Lucas Kiss Scene", "Drama Lucas Carter Kiss Scene"]>>
+
+	/* Shinju Scenes */
+	<<if $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Monster Boy")>>
+		<<set _Random.push("OC Shinju Adam and Eve Play", "OC Shinju Romance Play")>>
+	<</if>>
+	<<if $ToggleOCShinju == 1 && $InActiveQuests.includes("Shinju: Breaking Drama Conventions")>>
+		<<set _Random.push("OC Shinju and Lucas Drama Conventions Intro")>>
+	<</if>>
+	/* Emmet Scenes */
+	<<if $ToggleOCEmmet == 1 && $InActiveQuests.includes("Emmet: Drama Intro")>>
+		<<set _Random.push("OC Emmet Drama Intro")>>
+	<</if>>
+	/* Rowan Scenes */
+	<<if $ToggleOCRowan == 1 && $CompletedQuests.includes("Rowan: Introduction")>>
+		<<set _Random.push("OC Rowan Drama Intro")>>
+	<<elseif $ToggleOCRowan == 1 && $CompletedQuests.includes("Rowan: Drama Intro")>>
+		<<set _Random.push("OC Rowan Costume Model")>>
+	<</if>>
+
+	/* SELECTING RANDOM EVENT FROM ARRAY INVENTORY */
+	<<set _event to _Random.random()>>
+	<<include _event>>
+<</if>>

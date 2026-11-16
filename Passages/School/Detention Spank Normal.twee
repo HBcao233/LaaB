@@ -1,0 +1,53 @@
+:: Detention Spank Normal [nobr]
+
+/* OPENING */
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Mr. Randolph</span>.”</span> They chuckle. <span style="color:LightSteelBlue">“Well, at least you know what to expect.”</span> They sign your detention slip and send you to the Math Classroom.<br>
+<br>
+
+<div id='choice'>
+	<<link "Continue<br>">>
+	<<replace"#choice">>
+
+<span style="color:DarkTurquoise">Mr. Randolph</span> is waiting for you, sitting on his desk with the wooden paddle next to him and a folder in his hand with your name on it. You can already feel your butt aching as he tells you to stand in front of him. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name $Player.LastName</span>. Let’s see what you did to end up here this evening.”</span> He begins to list off what you did to earn detention before pausing for a moment and picking up the painful-looking paddle. <span style="color:LightSteelBlue">“Lucky for you, I don’t think you deserve the paddle today. But ungrateful boys like you must still be punished, so I’ll just use my hand. Lean on the desk.”</span> He moves aside and places a small pillow on the desk for you to lean over and tells you to grip the other end of the desk with your hand and spread your legs. <span style="color:Pink">This position leaves your rear completely defenseless.</span><br>
+<br>
+
+<<if $ToggleSpanking == 1>>
+
+/* SAVING CLOTHES */
+	<<include"Character Save Clothes">>
+
+<<set $SpankClothing to "None">>
+<<set $SpankNumber to $Detention>>
+<<set $SpankAnger to 100>>
+<<set $SpankPain to 0>>
+<<set $SpankLocation to "School Math Classroom">>
+<<set $Spanker to "Randolph">>
+<<set $SpankingStart to 0>>
+<<set $SpankPosition to "Lean Over Desk">>
+<<set $SpankPlayerAction to "None">>
+	<<if $SpankNumber > 30>>
+		<<set $SpankNumber to 30>>
+	<</if>>
+	<<set $TimesSpanked += $SpankNumber>>
+[[Continue|Spanking]]
+
+<<else>>
+
+For breaking school rules, <span style="color:DarkTurquoise">Mr. Randolph</span> gives you a punishment that leaves your bottom red and reeling. He then makes you stand in the corner with your red buttocks exposed until your detention is over and he finally lets you leave.<br>
+<<addMoodlet "Seen Naked" 8>>
+<<addMoodlet "Spanked" 7>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated", "Spankee"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+	<<addMoodlet "Stress" 1>>
+	<br>
+<<set $Minutes += 30>>
+<<set $Detention to 0>>
+<br>
+[[Continue|School South Hallway]] 
+
+<</if>>
+
+	<</replace>>
+	<</link>>	
+</div>

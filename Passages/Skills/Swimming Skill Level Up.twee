@@ -1,0 +1,25 @@
+:: Swimming Skill Level Up [nobr]
+
+<<if $SwimmingLearned != 1>>
+	<span style="color:Gold">You have learned the Swimming Skill! Swimming is a very physical activity and requires a lot of Endurance to do it for long periods of time, but it’s also a very fun and revealing activity. This skill will aid in your Swimming Classes, but also comes into play whenever you try to do things in water. Its uses can be viewed from your Skill Journal in your Bedroom.</span><br>
+	<<set $SwimmingLearned to 1>>
+<</if>>
+
+<<if $SwimmingXP >= 100>>
+	<<set $SwimmingXP to 0>>
+	<<set $SwimmingSkill += 1>>
+		<<if $SwimmingSkill > 10>>
+			<<set $SwimmingSkill to 10>>
+		<</if>>
+	
+	<<if $SwimmingSkill == 2>>
+		<span style="color:Gold">You have reached Swimming Level 2! As your muscles get use to the feeling of constant use when swimming, you start noticing you can swim longer and harder. Your Swimming Stamina has been upgraded, meaning you can swim for longer, and you can also practice your diving at places such as the City Pool.</span><br>
+	
+	<<elseif $SwimmingSkill == 3>>
+		<span style="color:Gold">You have reached Swimming Level 3! After numerous incidents of accidentally swallowing a bunch of water, your lungs have strengthened! You can now dive in more complex locations and can hold your breath for longer. Your Swimming Stamina has also increased.</span><br>
+	
+	<<else>>
+		<span style="color:Gold">You have leveled up your Swimming! Unfortunately, no new content is available past this point at the moment. But you will still gain the benefits during Skill Checks!</span><br>
+
+	<</if>>
+<</if>>

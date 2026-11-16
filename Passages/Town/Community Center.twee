@@ -1,0 +1,115 @@
+:: Community Center [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Community Center",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Town",
+}>>
+
+/* Random Check */
+<<set _random to random(1, 10)>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+/* Kollin Event Check */
+<<elseif _random == 10 && $OCKollinJobBoard != 1 && $ToggleOCKollin == 1 && $InActiveQuests.includes("Kollin: Boy in the Woods")>>
+	<<include "OC Kollin Job Board Meeting">>
+
+/* Bobby Intro */
+<<elseif $ToggleOCBobby == 1 && $InActiveQuests.includes("Bobby: Farm Intro") && !$Time.schoolday() && $Time.between(8, 0, 15, 0)>>
+	<<include"OC Bobby Intro">>
+
+/* Snowpaw Quest */
+<<elseif $ToggleOCSnowpaw == 1 && !$Time.schoolday() && $Time.between(7, 0, 12, 0) && $InActiveQuests.includes("Snowpaw: New Rabbit Around Town")>>
+	<<include"OC Snowpaw New Rabbit Around Town">>
+	
+<<else>>
+
+<span style="color:Azure"><big><strong>--Opal City Community Center--</strong></big></span><br>
+You stand just outside The Opal City Community Center, which is a large, modern building that was built only a few years ago. It houses everything from locally taught classes, concerts, plays, and even has a daycare. The center is always looking for volunteers and is often a great way to connect with the community. <br>
+<br>
+The main room has a Bulletin Board where people can put up jobs they are looking to have done. A common way for the young in town to gain a little bit of extra cash.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+/* Quests Checks */
+<<if $ActiveQuests.includes("Snowpaw: Lenny's Wild West Show") && $Time.Day == "Friday" && $Time.between(15,30,17,0)>>
+	[[Attend Lenny's Wild West Show (2:00)|Snowpaw Intro 2]]<br>
+<</if>>
+
+[[Check the Job Bulletin Board|Community Center Bulletin Board]]<br>
+[[Donate Clothes|Community Center Donate Clothes]]<br>
+<<if $Skill.Perks.includes("Tutoring")>>
+	<<if $Time.between(10,0,17,0)>>
+    	<<if $TutorIntro ==1 >>
+		[[Tutor Kids (1:00)|CC Tutor]]
+        <<else>>
+        [[Apply to be a Tutor|CC Tutor]]
+        <</if>>
+		<span style="color:Green">+???</span>
+		<br>
+	<</if>>
+<</if>>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Other Neighborhood.png">
+	[[Wald Street (0:10)|Wald Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Pool.png">
+	[[Pool (0:10)|Pool][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\High School.png">
+	[[High School (0:10)|High School][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Middle School.png">
+	[[Middle School (0:10)|Middle School][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Other Neighborhood.png">
+	[[Wald Street (0:05)|Wald Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Pool.png">
+	[[Pool (0:05)|Pool][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\High School.png">
+	[[High School (0:05)|High School][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Middle School.png">
+	[[Middle School (0:05)|Middle School][$Minutes += $TravelTime]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 448px; top: 81px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="374,81,427,134" alt="Pool" onclick="$.wiki('<<goto[[Pool]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="522,81,575,134" alt="High School" onclick="$.wiki('<<goto[[High School]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="448,155,501,208" alt="Middle School" onclick="$.wiki('<<goto[[Middle School]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="374,7,427,60" alt="Other Neighborhood" onclick="$.wiki('<<goto[[Wald Street]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

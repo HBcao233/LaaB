@@ -1,0 +1,60 @@
+:: Home Soccer Squirrel [nobr]
+
+/* OPENING */
+You grab the old soccer ball that belongs to you and your brothers and begin to kick it against the fence and pretend to duck and weave around players to score a goal. As you do so, you suddenly hear some rustling and turn around to see a squirrel atop one of the low branches of the tree in your yard. <span style="color:yellow">Your intrusive thoughts creep in and you wonder if you could kick the ball accurately enough to hit the squirrel. But that would be mean.</span> <br>
+<br>
+
+/* TRY TO HIT THE SQUIRREL */
+<div id=choice>
+	<<link "Try to hit the squirrel">>
+	<<replace"#choice">>
+        <<skillCheck "Athletics" 70>>
+    /* PASS */
+    <<if _result == 1>>
+    <span style="color:lightgreen">With precision that would make <span style="color:DarkTurquoise">Felix</span> proud, you kick the ball with great force as it curves through the air directly toward the squirrel.</span> Yet somehow, the creature seems to sense danger as it dashes to the side to barely dodge your attack! But, as if you had planned it, your ball still hits the branch and the force of your kick causes it to shake violently and send the squirrel flying off into your neighbor's yard! <br>
+<br>
+    You smirk to yourself as the ball rolls back towards you and you spot the squirrel climbing onto your neighbor’s roof and dashing away with the knowledge that your yard was off limits. Sure, hurting animals is wrong, but that squirrel is a jerk so you feel a sense of accomplishment from ridding your family of its presence for now. <br>
+    <<skillPoints "Athletics" 3>>
+<<needChange "Energy" -2>>
+<<needChange "Hygiene" -2>>
+<<needChange "Fun" 20>>
+<br>
+[[Continue|PH Backyard]]
+<br>
+
+
+    /* FAIL */
+    <<else>>
+    <span style="color:lightcoral">With precision that would make <span style="color:DarkTurquoise">Felix</span> die of shame, you kick the ball at an off-angle that completely misses the tree. Your fear that the ball would land in the neighbor's yard is quickly replaced with another fear as the ball instead bounces off the fence, hits the railing of the deck before… <span style="color:Red">CRASH!</span> You cringe in fear at the sound as you peek over and see that the ball had broken a plant pot.</span> <span style="color:red"><span style="color:DarkTurquoise">Your Father</span> won’t be happy about that.</span> <br>
+    <<skillPoints "Athletics" 3>>
+<<needChange "Energy" -2>>
+<<needChange "Hygiene" -2>>
+<<needChange "Fun" 20>>
+<<set $PunishmentReason.push("Broken Pot")>>
+<<set $Punishment += 5>>
+<br>
+[[Continue|PH Backyard]]
+
+
+    <</if>>
+    <</replace>>
+    <</link>>
+    <<skillDiff "Athletics" 70>><br>
+
+/* HIT THE TREE */
+	<<link "Kick it against the tree<br>">>
+	<<replace"#choice">>
+Either not wanting to hit the squirrel, or not confident enough that you could, you instead decide to kick the ball against the tree. <span style="color:green">Bang!</span> It has the desired effect, as the tree rumbles the squirrel panics and leaps off the tree into your neighbor's yard. <span style="color:DarkTurquoise">Your Father</span> is always complaining about squirrels stealing stuff from the porch, so this felt only fair. <br>
+    <<skillPoints "Athletics" 3>>
+<<needChange "Energy" -2>>
+<<needChange "Hygiene" -2>>
+<<needChange "Fun" 20>>
+<br>
+
+[[Continue|PH Backyard]]
+<br>
+
+
+    <</replace>>
+    <</link>>
+</div>

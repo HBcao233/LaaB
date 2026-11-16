@@ -1,0 +1,482 @@
+:: Character Menu [nobr]
+
+<span style="color:Azure"><strong><big>$Player.Name $Player.LastName</big></strong></span><br>
+
+<div id="CharacterMenuAvatar">
+/* AVATAR DISPLAY */
+<<set $AD.Outfit to "Everyday">>
+<<include"Player Avatar Mood">>
+<<include"Avatar Backgrounds">>
+<<include"Player Avatar Display Set">>
+<<include"Avatar Display">>
+<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+<br>
+</div>
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+	<div style="position: relative"><div style="position: absolute; left: 237px; top: -300px">
+        <<include"Penis Zoom Display">></div>
+	</div>
+	<div style="position: relative"><div style="position: absolute; left: 237px; top: -155px">
+        <<include"Butt Zoom Display">></div>
+	</div>
+<</if>>
+/* AVATAR OPTIONS */
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">> <<else>>
+<<link"-[Normal]-">>
+	<<replace"#CharacterMenuAvatar">>
+<<set $AD.Outfit to "Everyday">>
+<<include"Player Avatar Mood">>
+<<include"Avatar Backgrounds">>
+<<include"Player Avatar Display Set">>
+<<include"Avatar Display">>
+<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+	<div style="position: relative"><div style="position: absolute; left: 237px; top: -300px">
+        <<include"Penis Zoom Display">></div>
+	</div>
+	<div style="position: relative"><div style="position: absolute; left: 237px; top: -155px">
+        <<include"Butt Zoom Display">></div>
+	</div>
+<</if>>
+<br>
+<</replace>>
+<</link>>
+<</if>>
+
+
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">> <<else>>
+<<if $PlayerUndies.Type != "None">>
+	<<link"-[Undies]-">>
+	<<replace"#CharacterMenuAvatar">>
+<<set $AD.Outfit to "Undies">>
+<<include"Player Avatar Mood">>
+<<include"Avatar Backgrounds">>
+<<include"Player Avatar Display Set">>
+<<include"Avatar Display">>
+<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+<br>
+	<</replace>>
+	<</link>>
+<</if>><</if>>
+
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">> <<else>><<link"-[Naked]-">>
+	<<replace"#CharacterMenuAvatar">>
+<<set $AD.Outfit to "Naked">>
+<<include"Player Avatar Mood">>
+<<include"Avatar Backgrounds">>
+<<include"Player Avatar Display Set">>
+<<include"Avatar Display">>
+
+<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+	<div style="position: relative"><div style="position: absolute; left: 237px; top: -300px">
+        <<include"Penis Zoom Display">></div>
+	</div>
+	<div style="position: relative"><div style="position: absolute; left: 237px; top: -155px">
+        <<include"Butt Zoom Display">></div>
+</div>
+	
+<br>
+	<</replace>>
+	<</link>>
+        <</if>>
+<br>
+
+/* BASIC DESCRIPTION */
+	You are a young boy. You have $Player.HairColor Hair and $Player.LeftEyeColor Eyes. Your skin is $Player.SkinColor. When naked, you have a <span style="color:Pink">$Player.PenisSize $Player.PenisStyle Penis
+	<<if $Player.PubicHair == "None">>
+	<<else>>
+	 with $Player.PubicHair Pubic Hair around it
+	<</if>>
+	and a $Player.Butt Butt.</span>
+
+	/* CURRENT MOOD */
+<<print "<span style=\"color:" + _moodcolor[_moodcolorvalue] + "\">You are " + $Player.Mood + "</span>">><br>
+	
+/* CHARACTER MENU CATEGORIES */
+
+<<link"-[Abilities & Traits]-">>
+	<<replace"#CharacterMenuCat">>
+<span style="color:Azure"><strong>--Abilities--</strong></span><br>
+<span style="color:Lightblue"><strong>Strength:</strong></span>
+<<if $Strength > 5>>
+	<span style="color:lightgreen">$Strength</span>
+<<elseif $Strength == 5>>
+	<span style="color:yellow">$Strength</span>
+<<elseif $Strength < 5>>
+	<span style="color:lightcoral">$Strength</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Dexterity:</strong></span>
+<<if $Dexterity > 5>>
+	<span style="color:lightgreen">$Dexterity</span>
+<<elseif $Dexterity == 5>>
+	<span style="color:yellow">$Dexterity</span>
+<<elseif $Dexterity < 5>>
+	<span style="color:lightcoral">$Dexterity</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Endurance:</strong></span>
+<<if $Endurance > 5>>
+	<span style="color:lightgreen">$Endurance</span>
+<<elseif $Endurance == 5>>
+	<span style="color:yellow">$Endurance</span>
+<<elseif $Endurance < 5>>
+	<span style="color:lightcoral">$Endurance</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Smarts:</strong></span>
+<<if $Smarts > 5>>
+	<span style="color:lightgreen">$Smarts</span>
+<<elseif $Smarts == 5>>
+	<span style="color:yellow">$Smarts</span>
+<<elseif $Smarts < 5>>
+	<span style="color:lightcoral">$Smarts</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Charm:</strong></span>
+<<if $Charm > 5>>
+	<span style="color:lightgreen">$Charm</span>
+<<elseif $Charm == 5>>
+	<span style="color:yellow">$Charm</span>
+<<elseif $Charm < 5>>
+	<span style="color:lightcoral">$Charm</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Sense:</strong></span>
+<<if $Sense > 5>>
+	<span style="color:lightgreen">$Sense</span>
+<<elseif $Sense == 5>>
+	<span style="color:yellow">$Sense</span>
+<<elseif $Sense < 5>>
+	<span style="color:lightcoral">$Sense</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Creativity:</strong></span>
+<<if $Creativity > 5>>
+	<span style="color:lightgreen">$Creativity</span>
+<<elseif $Creativity == 5>>
+	<span style="color:yellow">$Creativity</span>
+<<elseif $Creativity < 5>>
+	<span style="color:lightcoral">$Creativity</span>
+<</if>>
+<br>
+<span style="color:Azure"><strong>--Traits--</strong></span><br>
+<<for _i to 0; _i lt $Player.Traits.length; _i++>>
+    <<capture _i>>
+    <span style="color:Teal">[<<=getTraitByID($Player.Traits[_i]).Name>>]</span>, 
+    <</capture>>
+<</for>>
+<br>
+	<</replace>>
+<</link>>
+
+<<link"-[Mood]-">>
+	<<replace"#CharacterMenuCat">>
+		<<include"Mood Menu">>
+	<</replace>>
+<</link>>
+<<link"-[Grades & Schedule]-">>
+	<<replace"#CharacterMenuCat">>
+<span style="color:Azure"><big><strong>--Schedule--</strong></big></span><br>
+<strong>Math</strong> -> <strong>History</strong> -> <strong>$Elective</strong> -> <strong>Lunch</strong> -> <strong>Science</strong> -> <strong>English</strong> -> <strong>Gym</strong><br>
+<span style="color:Azure"><big><strong>--Grades--</strong></big></span><br>
+<<if $Homework == 1>>
+	<span style="color:Red">You have Homework due!</span><br>
+<</if>>
+
+<img src="Images\School Map\Individual Icons\Math Classroom.png" alt="Math">
+
+<strong>Math: </strong>
+<<if $MathGrade >= 98>>
+<span style="color:Teal">A+</span>
+<<elseif $MathGrade >= 93>>
+<span style="color:Teal">A</span>
+<<elseif $MathGrade >= 90>>
+<span style="color:Teal">A-</span>
+<<elseif $MathGrade >= 88>>
+<span style="color:Green">B+</span>
+<<elseif $MathGrade >= 83>>
+<span style="color:Green">B</span>
+<<elseif $MathGrade >= 80>>
+<span style="color:Lightgreen">B-</span>
+<<elseif $MathGrade >= 78>>
+<span style="color:Lightgreen">C+</span>
+<<elseif $MathGrade >= 73>>
+<span style="color:Yellow">C</span>
+<<elseif $MathGrade >= 70>>
+<span style="color:Yellow">C-</span>
+<<elseif $MathGrade >= 68>>
+<span style="color:Red">D+</span>
+<<elseif $MathGrade >= 63>>
+<span style="color:Red">D</span>
+<<elseif $MathGrade >= 60>>
+<span style="color:Red">D-</span>
+<<elseif $MathGrade >= 50>>
+<span style="color:DarkRed">F</span>
+<<else>>
+<span style="color:DarkRed">F-</span>
+<</if>>
+
+<<if $MathStudyClass > 0>>
+	<span style="color:Lightgreen">(+$MathStudyClass Next Class Bonus) </span>
+<</if>>
+<br>
+
+<img src="Images\School Map\Individual Icons\History Classroom.png" alt="History">
+
+<strong>History: </strong>
+<<if $HistoryGrade >= 98>>
+<span style="color:Teal">A+</span>
+<<elseif $HistoryGrade >= 93>>
+<span style="color:Teal">A</span>
+<<elseif $HistoryGrade >= 90>>
+<span style="color:Teal">A-</span>
+<<elseif $HistoryGrade >= 88>>
+<span style="color:Green">B+</span>
+<<elseif $HistoryGrade >= 83>>
+<span style="color:Green">B</span>
+<<elseif $HistoryGrade >= 80>>
+<span style="color:Lightgreen">B-</span>
+<<elseif $HistoryGrade >= 78>>
+<span style="color:Lightgreen">C+</span>
+<<elseif $HistoryGrade >= 73>>
+<span style="color:Yellow">C</span>
+<<elseif $HistoryGrade >= 70>>
+<span style="color:Yellow">C-</span>
+<<elseif $HistoryGrade >= 68>>
+<span style="color:Red">D+</span>
+<<elseif $HistoryGrade >= 63>>
+<span style="color:Red">D</span>
+<<elseif $HistoryGrade >= 60>>
+<span style="color:Red">D-</span>
+<<elseif $HistoryGrade >= 50>>
+<span style="color:DarkRed">F</span>
+<<else>>
+<span style="color:DarkRed">F-</span>
+<</if>>
+
+<<if $HistoryStudyClass > 0>>
+	<span style="color:Lightgreen">(+$HistoryStudyClass Next Class Bonus) </span>
+<</if>>
+<br>
+
+<img src="Images\School Map\Individual Icons\Science Classroom.png" alt="Science">
+
+<strong>Science: </strong>
+<<if $ScienceGrade >= 98>>
+<span style="color:Teal">A+</span>
+<<elseif $ScienceGrade >= 93>>
+<span style="color:Teal">A</span>
+<<elseif $ScienceGrade >= 90>>
+<span style="color:Teal">A-</span>
+<<elseif $ScienceGrade >= 88>>
+<span style="color:Green">B+</span>
+<<elseif $ScienceGrade >= 83>>
+<span style="color:Green">B</span>
+<<elseif $ScienceGrade >= 80>>
+<span style="color:Lightgreen">B-</span>
+<<elseif $ScienceGrade >= 78>>
+<span style="color:Lightgreen">C+</span>
+<<elseif $ScienceGrade >= 73>>
+<span style="color:Yellow">C</span>
+<<elseif $ScienceGrade >= 70>>
+<span style="color:Yellow">C-</span>
+<<elseif $ScienceGrade >= 68>>
+<span style="color:Red">D+</span>
+<<elseif $ScienceGrade >= 63>>
+<span style="color:Red">D</span>
+<<elseif $ScienceGrade >= 60>>
+<span style="color:Red">D-</span>
+<<elseif $ScienceGrade >= 50>>
+<span style="color:DarkRed">F</span>
+<<else>>
+<span style="color:DarkRed">F-</span>
+<</if>>
+
+<<if $ScienceStudyClass > 0>>
+	<span style="color:Lightgreen">(+$ScienceStudyClass Next Class Bonus) </span>
+<</if>>
+<br>
+
+
+
+<img src="Images\School Map\Individual Icons\English Classroom.png" alt="English">
+
+<strong>English: </strong>
+<<if $EnglishGrade >= 98>>
+<span style="color:Teal">A+</span>
+<<elseif $EnglishGrade >= 93>>
+<span style="color:Teal">A</span>
+<<elseif $EnglishGrade >= 90>>
+<span style="color:Teal">A-</span>
+<<elseif $EnglishGrade >= 88>>
+<span style="color:Green">B+</span>
+<<elseif $EnglishGrade >= 83>>
+<span style="color:Green">B</span>
+<<elseif $EnglishGrade >= 80>>
+<span style="color:Lightgreen">B-</span>
+<<elseif $EnglishGrade >= 78>>
+<span style="color:Lightgreen">C+</span>
+<<elseif $EnglishGrade >= 73>>
+<span style="color:Yellow">C</span>
+<<elseif $EnglishGrade >= 70>>
+<span style="color:Yellow">C-</span>
+<<elseif $EnglishGrade >= 68>>
+<span style="color:Red">D+</span>
+<<elseif $EnglishGrade >= 63>>
+<span style="color:Red">D</span>
+<<elseif $EnglishGrade >= 60>>
+<span style="color:Red">D-</span>
+<<elseif $EnglishGrade >= 50>>
+<span style="color:DarkRed">F</span>
+<<else>>
+<span style="color:DarkRed">F-</span>
+<</if>>
+
+<<if $EnglishStudyClass > 0>>
+	<span style="color:Lightgreen">(+$EnglishStudyClass Next Class Bonus) </span>
+<</if>>
+<br>
+
+
+<strong>Reputation: </strong>
+<<include"School Reputation">><br>
+	<</replace>>
+<</link>>
+
+<<link"-[Upgrades]-">>
+	<<replace"#CharacterMenuCat">>
+		<<include"Character Upgrades">>
+	<</replace>>
+<</link>>
+
+<<link"-[Achievements]-">>
+	<<replace"#CharacterMenuCat">>
+		<<include"Character Achievements">>
+	<</replace>>
+<</link>>
+
+/* CHARACTER MENU CAT DISPLAY */
+<div id=CharacterMenuCat>
+<span style="color:Azure"><strong>--Abilities--</strong></span><br>
+<span style="color:Lightblue"><strong>Strength:</strong></span>
+<<if $Strength > 5>>
+	<span style="color:lightgreen">$Strength</span>
+<<elseif $Strength == 5>>
+	<span style="color:yellow">$Strength</span>
+<<elseif $Strength < 5>>
+	<span style="color:lightcoral">$Strength</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Dexterity:</strong></span>
+<<if $Dexterity > 5>>
+	<span style="color:lightgreen">$Dexterity</span>
+<<elseif $Dexterity == 5>>
+	<span style="color:yellow">$Dexterity</span>
+<<elseif $Dexterity < 5>>
+	<span style="color:lightcoral">$Dexterity</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Endurance:</strong></span>
+<<if $Endurance > 5>>
+	<span style="color:lightgreen">$Endurance</span>
+<<elseif $Endurance == 5>>
+	<span style="color:yellow">$Endurance</span>
+<<elseif $Endurance < 5>>
+	<span style="color:lightcoral">$Endurance</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Smarts:</strong></span>
+<<if $Smarts > 5>>
+	<span style="color:lightgreen">$Smarts</span>
+<<elseif $Smarts == 5>>
+	<span style="color:yellow">$Smarts</span>
+<<elseif $Smarts < 5>>
+	<span style="color:lightcoral">$Smarts</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Charm:</strong></span>
+<<if $Charm > 5>>
+	<span style="color:lightgreen">$Charm</span>
+<<elseif $Charm == 5>>
+	<span style="color:yellow">$Charm</span>
+<<elseif $Charm < 5>>
+	<span style="color:lightcoral">$Charm</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Sense:</strong></span>
+<<if $Sense > 5>>
+	<span style="color:lightgreen">$Sense</span>
+<<elseif $Sense == 5>>
+	<span style="color:yellow">$Sense</span>
+<<elseif $Sense < 5>>
+	<span style="color:lightcoral">$Sense</span>
+<</if>>
+<br>
+<span style="color:Lightblue"><strong>Creativity:</strong></span>
+<<if $Creativity > 5>>
+	<span style="color:lightgreen">$Creativity</span>
+<<elseif $Creativity == 5>>
+	<span style="color:yellow">$Creativity</span>
+<<elseif $Creativity < 5>>
+	<span style="color:lightcoral">$Creativity</span>
+<</if>>
+<br><br>
+<span style="color:Azure"><strong>--Traits--</strong></span><br>
+<<set $selectedTrait to null>>
+<<if $Player.Traits.length>>
+	<span class="greyed-out">
+		Click on a trait to see what it's about
+	</span>
+	<div class="traits-added">
+		<<for _traitId range $Player.Traits>>
+			<<set _trait to clone($TraitOptions[$TraitOptions.findIndex(t => t.ID === _traitId)])>>
+			<<capture _traitId _trait>>
+				<span @id="`trait-icon-${_trait.ID}`" @class="`trait-icon ${$selectedTrait?.ID === _trait.ID ? 'trait-icon-highlight' : ''}`">
+					<<set _imgLink = `Images/Icons/Traits/${_trait.Name}.png`>>
+					<<link [img[_imgLink]]>>
+						<<set $selectedTrait to _trait>>
+						<<replace "#character-menu-trait-explanation">>
+							<hr>
+							<div class="traits-info">
+								<div class="traits-info-header">
+										<img @alt="$selectedTrait.Name" @title="$selectedTrait.Name" class="trait-icon" @src="`Images/Icons/Traits/${$selectedTrait.Name}.png`">
+										<span class="bold">$selectedTrait.Name</span>
+								</div>
+								<div class="traits-info-desc">
+									$selectedTrait.Description
+									<br>
+									<<if $selectedTrait.Features?.length > 0>>
+										<ul>
+												<<for _feature range $selectedTrait.Features>>
+														<<capture _feature>>
+																<li>_feature</li>
+														<</capture>>
+												<</for>>
+										</ul>
+									<</if>>
+								</div>
+							</div>
+						<</replace>>
+						<<script>>
+							document.querySelector('.trait-icon-highlight')?.classList.remove('trait-icon-highlight');
+							document.querySelector('#trait-icon-' + State.getVar('$selectedTrait').ID)?.classList.add('trait-icon-highlight');
+							
+							// added little timeout since we don't know when DOM is updated
+							setTimeout(() => {
+								var objDiv = document.getElementById('ui-dialog-body');
+								objDiv.scrollTop = objDiv.scrollHeight;
+							}, 100);
+						<</script>>
+					<</link>>
+				</span>
+			<</capture>>
+		<</for>>
+	</div>
+	<div id="character-menu-trait-explanation"></div>
+<<else>>
+	<span class="greyed-out">
+		$Player.Name has no Traits
+	</span>
+<</if>>
+</div>

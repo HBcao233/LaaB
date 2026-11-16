@@ -1,0 +1,32 @@
+:: BEN Cafeteria Chat With [nobr]
+
+<<set $Minutes += 10>>
+
+/* OPENING */
+You sit down next to <span style="color:DarkTurquoise">Ben</span> at his table and begin to chat with him for a while. He seems shy, but is able to hold a conversation once he gets comfortable.
+<<set $RandomTopic to random(1, 3)>>
+
+/* TOPIC ONE */
+<<if $RandomTopic == 1>>
+In talking about the various cartoon shows you each watch, he reveals that he doesn’t watch too much TV, but he does enjoy an old Sci-fi show that he watches with his grandfather. It's called Space Force and is about a team of space rangers traveling around the galaxy and meeting aliens. You believe you have seen some of the show before, as it is an old favorite of <span style="color:DarkTurquoise">Your Father</span>.<br>
+
+/* TOPIC TWO */
+<<elseif $RandomTopic == 2>>
+<span style="color:DarkTurquoise">Ben</span> tells you about how he likes to read comic books in his spare time and has a pretty decent collection. He seems mildly embarrassed by it, but also passionate. His favorite hero is, ironically, a spider themed hero named Arachnokid.<br>
+
+/* TOPIC THREE */
+<<elseif $RandomTopic == 3>>
+The topic of conversation falls to music, with <span style="color:DarkTurquoise">Ben</span> stating he mainly listened to older music from the 50s and 60s, since it is what his grandfather always listened to.<br>
+
+<</if>>
+
+/* SOCIAL POINTS GAIN */
+<<if $BenDailyChat != 1>>
+		<<socialChange "Ben" 3>>
+		<<set $BenDailyChat to 1>>
+<<else>>
+		<<socialChange "Ben" 1>>
+		<<set $BenDailyChat to 1>>
+<</if>>
+<br>
+[[Continue|School Cafeteria]] 

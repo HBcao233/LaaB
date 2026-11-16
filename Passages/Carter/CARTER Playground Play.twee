@@ -1,0 +1,25 @@
+:: CARTER Playground Play [nobr]
+
+<<set $Minutes += 20>>
+<<set $RandomPlay to random(1, 1)>>
+
+/* PRETEND KNIGHTS */
+<<if $RandomPlay == 1 or $RandomPlay == 2>>
+	You walk up to <span style="color:DarkTurquoise">Carter</span> and ask if he would like to play something. He gives you a wide smile before dragging you over towards the trees and picking up and handing you a stick, which he insists is actually a sword.<br>
+
+	<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:LightSteelBlue">“Well my dear squire,”</span> <span style="color:DarkTurquoise">Carter</span> says, grabbing a stick of his own and holding it like a knight, <span style="color:LightSteelBlue">“As a Knight of Preston, I have been on the look out for a quest suitable to my skills and believe I have found one!”</span> He puffed out his chest and attempted a British accent as he spoke. <span style="color:LightSteelBlue">“But alas, I fear this may be too big a task for me alone. If you would accompany me on this quest I would be forever grateful!”</span> You can’t help but smile at his enthusiasm and give him a bow, agreeing to aid him.<br>
+	<br>
+
+	<<include"CARTER Playground Knights">>
+<</if>>

@@ -1,0 +1,55 @@
+:: Skill Menu [nobr]
+
+<<set $SelectedTabSkillsMenu = $SelectedTabSkillsMenu || 0>>
+<<set _tabs = [
+	{
+		title: 'Physical Skills',
+		passage: 'Physical Skills Menu',
+	},
+	{
+		title: 'Creative Skills',
+		passage: 'Creative Skills Menu',
+	},
+	{
+		title: 'Intellect Skills',
+		passage: 'Intellect Skills Menu',
+	},
+	{
+		title: 'Kinks',
+		passage: 'Lewd Skills Menu',
+	},
+]>>
+
+<<tabs _tabs "$SelectedTabSkillsMenu">>
+
+:: Skill Menu Script [script]
+
+window.getSkillBarColor = width => {
+	if (width > 50 && width <= 90) {
+		return '#69b4d3';
+	}
+	if (width > 90) {
+		return '#207497';
+	}
+
+	return '#b8eaff';
+};
+
+:: Skill Menu Style [stylesheet]
+
+.skill-bar-group {
+	height: 40px;
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+}
+
+.skill-bar-group > span {
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+.skill-bar-gauge {
+	width: 215px;
+	display: inline-block;
+}

@@ -1,0 +1,43 @@
+:: LUCAS Playground Chat With [nobr]
+
+<<set $Minutes += 10>>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+/* OPENING */
+You sit down next to <span style="color:DarkTurquoise">Lucas</span> on the swings and chat about your various interests while swaying back and forth. 
+<<set $RandomTopic to random(1, 3)>>
+
+/* TOPIC ONE */
+<<if $RandomTopic == 1>>
+<span style="color:DarkTurquoise">Lucas</span> talks about one of his favorite shows, called The Cosmic Rangers. A live action show where a team of 5 colorful, spandex wearing heroes battle aliens and monsters. He knows it is not super popular, but loves it all the same.<br>
+
+/* TOPIC TWO */
+<<elseif $RandomTopic == 2>>
+<span style="color:DarkTurquoise">Lucas</span> brings up that he has been writing a lot recently. While he has never been much of a reader, he has always enjoyed writing and loves coming up with stories and characters.<br>
+
+/* TOPIC THREE */
+<<elseif $RandomTopic == 3>>
+<span style="color:DarkTurquoise">Lucas</span> gushes over a new episode of his favorite cartoon that came out recently. He realizes he is ranting and tries to stop himself, but you just find it adorable.<br>
+
+<</if>>
+
+/* SOCIAL POINTS GAIN */
+<<if $LucasDailyChat != 1>>
+	<<socialChange "Lucas" 3>>
+		<<set $LucasDailyChat to 1>>
+<<else>>
+	<<socialChange "Lucas" 1>>
+		<<set $LucasDailyChat to 1>>
+<</if>>
+<br>
+[[Continue|School Courtyard]] 

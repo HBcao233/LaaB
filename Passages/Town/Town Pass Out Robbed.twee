@@ -1,0 +1,17 @@
+:: Town Pass Out Robbed [nobr]
+
+
+You groggily open your eyes. You back and arms ache from laying on the hard ground. You sit up and try to look around to figure out where you were, finding yourself sitting on the ground outside. <span style="color:lightcoral">You panic upon realizing you passed out in public and check your stuff to discover that your pockets have been turned inside out! You sigh in disbelief as your realize that some of your money has been stolen!</span><br>
+<<if $Money >= 5>>
+	<<set $Money -= 5>>
+    <span style="color:Red">-Money</span><br>
+<<else>>
+	<<set $Money to 0>>
+     <span style="color:Red">-Money</span><br>
+<</if>>
+<<needChange "Energy" 18>>
+
+	<<set $Minutes += 60>>
+    <<set $Sleeping to 0>>
+
+<<include"Town Fail Location">>

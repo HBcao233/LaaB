@@ -1,0 +1,96 @@
+:: CARTER Playground Knight Thomas Dragon [nobr]
+
+<span style="color:DarkTurquoise">Carter</span> leads you over to the outskirts of the courtyard, where some of the stranger playground equipment is, such as the large concrete tunnel, which sits shaded under some trees surrounded by pull-up bars and other exercise equipment disguised as playground structures. The two of you duck behind a bush and scout out the tunnel as <span style="color:DarkTurquoise">Carter</span> explains the mission.<br>
+<br>
+
+<span style="color:LightSteelBlue">“I have received word from two distressed peasants of the kingdom.”</span> <span style="color:DarkTurquoise">Carter</span> said, determined to stay in character, <span style="color:LightSteelBlue">“The mystical cavern over yonder use to be where they would relax and play games, but lately an evil dragon has taken to nesting inside the cave and has driven them away. They have tasked us with slaying this beast and returning to them their cave of friendship!”</span> <span style="color:DarkTurquoise">Carter</span> stood up and posed, but quickly knelt back down once he remember the two of you were meant to be hiding.<br>
+<br>
+
+You both sneak over towards the tunnel, careful not to make too much noise, and peeked your heads in. The evil dragon turned out to be a familiar face, as you recognized <span style="color:DarkTurquoise">Thomas</span> quietly napping within the tunnel. <span style="color:LightSteelBlue">“I believe our best course of action would be to charge in and scare the beast off. With two of us, armed and ready, the dragon would be a fool to attempt to attack us. What do you think squire?”</span><br>
+<br>
+
+<div id="choice">
+	<<link "Attempt to scare the dragon away<br>">>
+		<<replace "#choice">>
+			You agree to <span style="color:DarkTurquoise">Carter</span>’s plan and the two of you ready yourselves as he counts down from three. Then you both rush in yelling and smacking your swords against the concrete tunnel in order to make as much noise as possible in order to scare off the dragon.<br>
+			<br>
+
+			<<set $RandomEvent to random(1, 2)>>
+
+			/* NOTHING HAPPENS */
+			<<if $RandomEvent == 1>>
+
+				<span style="color:DarkTurquoise">Thomas</span> let out a short panicked scream as he was awoken by surprise, jumping to his feet before losing his balance on the curved floor and tumbling back to the ground. You both stopped a foot from the beast as he looked up at you, recognizing you both, and groaned loudly.<br>
+				<br>
+
+				<span style="color:LightSteelBlue">“What the hell is wrong with you two!?”</span> <span style="color:DarkTurquoise">Thomas</span> yelled, standing up and patting the dust off his $ThomasBottoms.Type. <span style="color:LightSteelBlue">“You nearly gave me a heart attack!”</span><br>
+				<br>
+
+				<span style="color:LightSteelBlue">“Foul creature!”</span> <span style="color:DarkTurquoise">Carter</span> called out, still speaking in an accent as he pointed his stick towards <span style="color:DarkTurquoise">Thomas</span>, <span style="color:LightSteelBlue">“You will no longer torment the two friends whose bond of friendship was formed within this tunnel! Relinquish your hold and return to from whence you came!”</span><br>
+
+				<<set _ad to [
+					{
+						Name: "Carter",
+						State: {
+							Mouth: "Happy",
+							Outfit: "Uniform",
+						},
+					},
+					{
+						Name: "Thomas",
+						State: {
+							Eyes: "Mad",
+							Mouth: "Sad",
+							Outfit: "Uniform",
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				You actually see <span style="color:DarkTurquoise">Thomas</span>’ eye twitch as he let out an angered sigh, before grabbing <span style="color:DarkTurquoise">Carter</span>’s sword from him. <span style="color:LightSteelBlue">“God you are so annoying!”</span> The angered boy said through gritted teeth as he snapped the stick in two. <span style="color:DarkTurquoise">Thomas</span> than walked off to look for another place to nap, grumbling at having been awoken. You wonder if the boys who requested help had actually been driven off by <span style="color:DarkTurquoise">Thomas</span>, or if they had simply found him sleeping here when the came to do… whatever it is they do here.<br>
+				<br>
+
+				Regardless, the mission was complete and the two of you informed the two boys who happily returned to their cave now that the ‘monster’ was driven off. <span style="color:DarkTurquoise">Carter</span> was awfully proud of himself for having completed the mission so successfully; Retelling an over-exaggerated version of the tale as the two of you walked off.<br>
+
+			/* CARTER GETS KICKED */
+			<<elseif $RandomEvent == 2>>
+				As expected of one who was suddenly awoken by two screaming figures running towards him, <span style="color:DarkTurquoise">Thomas</span>’ first reaction was to defend himself and kick towards the shadowy figures. The sound of <span style="color:DarkTurquoise">Thomas</span>’ scream of surprised soon mixed with <span style="color:DarkTurquoise">Carter</span>’s scream of pain as the unlucky boy was kicked right in the leg. He soon fell to the ground as <span style="color:DarkTurquoise">Thomas</span> realized that it was just you two.<br>
+
+				<<set _ad to [
+					{
+						Name: "Carter",
+						State: {
+							Arms: "Hide",
+							Eyes: "Sad",
+							Cry: 1,
+							Mouth: "Sad",
+							Outfit: "Uniform",
+						},
+					},
+					{
+						Name: "Thomas",
+						State: {
+							Eyes: "Mad",
+							Mouth: "Sad",
+							Outfit: "Uniform",
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				<span style="color:LightSteelBlue">“What the hell is wrong with you!?”</span> <span style="color:DarkTurquoise">Thomas</span> yelled out as <span style="color:DarkTurquoise">Carter</span> rolled on the ground holding his leg in pain. <span style="color:LightSteelBlue">“You nearly gave me a heart attack!”</span><br>
+				<br>
+
+				<span style="color:LightSteelBlue">“Begone… foul… beast…”</span> <span style="color:DarkTurquoise">Carter</span> managed to say through his pained groans. The boy didn’t know how fortunate he was, had <span style="color:DarkTurquoise">Thomas</span> kicked a bit higher the pain he’s feeling would have been multiplied a hundred fold. <span style="color:DarkTurquoise">Thomas</span> looked at you for some sort of explanation, but you just shrugged. The tired boy sighed loudly, apologized to <span style="color:DarkTurquoise">Carter</span>, then left to find somewhere else to rest.<br>
+				<br>
+
+				You looked down at the heroic boy, who honestly probably deserved to be kick for scaring <span style="color:DarkTurquoise">Thomas</span>, before helping him to his feet and walking him over to a table to rest for a few minutes.<br>
+			<</if>>
+			<<needChange "Fun" 10>>
+			<<socialChange "Carter" 3>>
+			<br>
+
+			[[Continue|School Courtyard]] 
+		<</replace>>
+	<</link>>
+</div>

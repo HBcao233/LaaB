@@ -1,0 +1,127 @@
+:: MICHAEL Playground Pants Player [nobr]
+
+<<include "Bully Nickname Setup">>
+
+You are playing and enjoying your time on the playground, <span style="color:Red">not noticing as <span style="color:DarkTurquoise">Michael</span> sneaks up behind you.</span> In a quick motion he crouches down behind you, grabs the side of your $PlayerBottoms.Type, and yanks them down to your ankles.<br>
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+	{
+		Name: "Player",
+		ShowZoom: $PlayerUndies.Name === "None",
+		State: {
+			Mouth: "Sad",
+			Arms: "Bound",
+			Blush: 2,
+			Outfit: "Uniform",
+			PantsDown: true,
+		},
+	},
+]>>
+<<ad _ad>>
+
+/* Diaper */
+<<if $PlayerUndies.Tags.includes("Diaper")>>
+	<span style="color:pink">You gasp as your $PlayerUndies.Name is exposed and freeze as you feel your face heating up! It is only the laughter of <span style="color:DarkTurquoise">Michael</span> and his goons that break you out of it as you bend down to pull up your bottoms, when you feel a hand grip the back of your $PlayerUndies.Name and pull!</span><br>
+	<br>
+
+	/* Bully Nickname */
+	<<if ["Diaper Boy"].includes($BullyNickname)>>
+		<<set _setnickname to 0>>
+	<</if>>
+
+	<<if _setnickname == 1>>
+		<span style="color:LightSteelBlue">“It fucking suits you, always knew you were a big baby!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Michael</span> laughs hysterically, utterly amazed that you are wearing such undergarments.</span> <span style="color:lightcoral">With your padded protection exposed for all to see, you feel on the verge of crying.</span> <span style="color:LightSteelBlue">“Oh look, the baby is going to cry! Well go ahead, <span style="color:DarkTurquoise">Diaper Boy</span>, you already look the part! Maybe if you cry hard enough, someone will come change your pathetic ass!”</span><br>
+		<br>
+
+		<span style="color:lightcoral">As <span style="color:DarkTurquoise">Michael</span> laughs and jeers, you can’t help but feel your social status plummeting. Having been seen like this, you get the feeling you’ll be known throughout the school as <span style="color:DarkTurquoise">Diaper Boy</span>.</span> <br>
+		<br>
+
+		<<if $Nickname.Bully == 0>>
+			<span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Diaper Boy”</span>, due to being seen to wear diapers or other padded protection. Nicknames can be edited in the Journal in your Bedroom.]</span> <br>
+			<br>
+		<</if>>
+
+		<<set $Nickname.Bully to 1>>
+		<<set $BullyNickname to "Diaper Boy">>
+	<</if>>
+
+	<span style="color:LightSteelBlue">“Guess we should check to see if the baby had an accident!”</span> <span style="color:DarkTurquoise">Michael</span> laughs as he nearly rips them off with his tugging. <span style="color:pink">He doesn’t even look, instead just tugging on them until you lose your balance and fall backward onto your butt!</span> <span style="color:LightSteelBlue">“What a fucking loser!”</span> <span style="color:DarkTurquoise">Michael</span> laughs as he and his goons begin to walk off, some kicking dirt and rocks at you as they do. <br>
+	<br>
+<<elseif $PlayerUndies.Name != "None">>
+	<span style="color:Pink">You gasp as your $PlayerUndies.Name are exposed and instinctively bend over to pull them back up, giving <span style="color:DarkTurquoise">Michael</span> the perfect opportunity to grip the back of your $PlayerUndies.Type and yank them upwards, giving you a wedgie!</span> The sudden yank of your rear as you bend forward causes you to lose your balance and fall, leaving you completely at the mercy of <span style="color:DarkTurquoise">Michael</span> as he dangles you in the air.<br>
+	<br>
+	<span style="color:LightSteelBlue">“Nice ass <span style="color:DarkTurquoise">$BullyNickname</span>!”</span> <span style="color:DarkTurquoise">Michael</span> laughs as he drops you hard onto the ground and walks off laughing. You quickly fix your clothes, blushing as quite a few boys watch you giggling, before running off.<br>
+	<<set $SchoolRep -= 10>>
+	<span style="color:Red">-Reputation</span><br>
+	<<addMoodlet "Stress" 1>>
+	<<socialChange "Michael" -3>>
+	<<addMoodlet "Seen Undies" 5>>
+	<<addMoodlet "Wedgie" 2>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Wedgiee", "Humiliated"]>>
+	<<arousalGain 10 _arousalbs _arousalkink>>
+	<br>
+<<else>>
+	<span style="color:Pink">You gasp as your $Player.PenisSize Penis and Butt are completely exposed to everyone!</span> <span style="color:DarkTurquoise">Michael</span>, getting an eyeful of your bare ass, can’t contain his laughter and falls backwards laughing loudly, getting the attention of everyone around you.<br>
+	<br>
+
+	/* Bully Nickname */
+	<<if ["Little Dick", "Horse Cock"].includes($BullyNickname)>>
+		<<set _setnickname to 0>>
+	<</if>>
+
+	<<if _setnickname == 1>>
+		<<if $Player.PenisSize == "Tiny" or $Player.PenisSize == "Small">>
+			<span style="color:LightSteelBlue">“That fucking thing is smaller than a grape, how fucking pathetic!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Michael</span> laughs and jeers as your minuscule boyhood is exposed,</span> <span style="color:LightSteelBlue">“Though I guess it makes sense for a loser like you. I mean, you’re hardly even a boy with such a <span style="color:DarkTurquoise">Little Dick</span>! Hey, that’s what we should call you. <span style="color:DarkTurquoise">Little Dick<span> because of your little prick!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Michael</span> laughs, proud of himself.</span> <br>
+			<br>
+
+			<span style="color:lightcoral">Having your bits exposed and discovered to be so small has earned you the nickname <span style="color:DarkTurquoise">Little Dick</span> around school. You’re sure everyone will soon learn of your nickname, and lack of size, as it spreads.</span> <br>
+			<br>
+
+			<<if $Nickname.Bully == 0>>
+				<span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Little Dick”</span> after seeing your less-than-average penis size. Nicknames can be edited in the Journal in your Bedroom.]</span> <br>
+				<br>
+			<</if>>
+
+			<<set $Nickname.Bully to 1>>
+			<<set $BullyNickname to "Little Dick">>
+		<<elseif $Player.PenisSize == "Gigantic">>
+			<span style="color:LightSteelBlue">“God damn, no wonder you’re such a loser! All the blood goes to your cock instead of your brain!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Michael</span> laughs and jeers, somehow turning a large penis into a thing to mock,</span> <span style="color:LightSteelBlue">“Guess we should probably start calling you <span style="color:DarkTurquoise">Horse Cock</span>, huh? Works well, since you also like to get ridden!”</span> <br>
+			<br>
+
+			<span style="color:lightcoral">Having your bits exposed and discovered to be so massive has earned you the nickname <span style="color:DarkTurquoise">Horse Cock</span> around school. While you wouldn’t think having a large penis would be a bad thing, it seems the bullies have somehow turned it against you.</span> <br>
+			<br>
+
+			<<if $Nickname.Bully == 0>>
+				<span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Horse Cock”</span> after seeing your greater-than-average penis size. Nicknames can be edited in the Journal in your Bedroom.]</span> <br>
+				<br>
+			<</if>>
+
+			<<set $Nickname.Bully to 1>>
+			<<set $BullyNickname to "Horse Cock">>
+		<</if>>
+	<</if>>
+
+	<span style="color:LightSteelBlue">“The kids not even wearing any underwear!”</span> <span style="color:DarkTurquoise">Michael</span> was crying at this point, <span style="color:LightSteelBlue">“What a fucking loser!”</span> Everyone begins laughing and pointing at your exposed body. You quickly cover your Penis with one hand as you pull up your $PlayerBottoms.Type with the other, unable to control the tears that form in your eyes as you run off.<br>
+
+	<<set $SchoolRep -= 20>>
+	<span style="color:Red">-Reputation</span><br>
+	<<addMoodlet "Stress" 1>>
+	<<addMoodlet "Seen Naked" 6>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 20 _arousalbs _arousalkink>>
+	<<socialChange "Michael" -5>>
+	<br>
+
+<</if>>
+
+[[Continue|School Courtyard][$PantsDown to 0]]

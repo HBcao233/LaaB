@@ -1,0 +1,108 @@
+:: Lucas Home Hallway Photos [nobr]
+
+	<<set $Minutes += 10>>
+
+While walking down the hallway, your eyes naturally wander to the various photos that line the wall. They are all of <span style="color:DarkTurquoise">Lucas</span> and his mother, though mostly of <span style="color:DarkTurquoise">Lucas</span> from various ages. <span style="color:pink">You stop at one of baby <span style="color:DarkTurquoise">Lucas</span> smiling up in his crib. He was wearing a onesie with leaves printed on it and looked so precious.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+			Blush: 1,
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Yeah, my mom is big on photos.”</span> He laughed nervously. <span style="color:pink">He seemed a bit embarrassed that you were looking at the baby photo of him.</spaN> <span style="color:LightSteelBlue">“This is nothing compared to the photo albums she has…”</span> <span style="color:pink"><span style="color:DarkTurquoise">Lucas</span> pauses, turning a darker shade of red, most likely remembering just what was in those photo albums.</span> <span style="color:LightSteelBlue">“Which you will never see."</span> He then clicks his tongue and continues walking. <br>
+<br>
+You laugh and roll your eyes, continuing to browse the photos as you walk. <br>
+<br>
+<div id=choice>
+/* Look for Embarrassing Photos */
+	<<link "Look for Embarrassing Photos<br>">>
+	<<replace"#choice">>
+    <<set _random to random(1, 2)>>
+
+    /* Little Lucas in Undies */
+    <<if _random == 1>>
+You spot one photo in the corner of a collage and smile brightly. <span style="color:pink">There was <span style="color:DarkTurquoise">Lucas</span>, a little younger than <span style="color:DarkTurquoise">Noah</span>, on Christmas day opening a big present with an even bigger smile on his face. The best part? He was wearing nothing but a cute little pair of briefs. Naturally, they were Cosmic Ranger briefs and they fit him snuggly.</span> <br>
+
+<<art "Images\\Special\\Buyable\\Lucas Childhood Photo (Undies).png" "Hyo!" "https://x.com/HYOJINXSHI" 500>>
+
+You turn to <span style="color:DarkTurquoise">Lucas</span> and, in your best doting voice, call him such a cutie in this photo and ask if he still has those undies. <span style="color:DarkTurquoise">Lucas</span> stopped dead in his tracks, turning around with a look of worry on his face as he sprinted towards the photo. <span style="color:pink">His embarrassment was clear as he quickly grabbed the photo and held it against his chest.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Frown",
+			Blush: 3,
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“I told <span style="color:DarkTurquoise">Mom</span> to take that one down!”</span> He said, in a cute high-pitched voice. You chuckle as <span style="color:DarkTurquoise">Lucas</span> backs away to hide the photo. <span style="color:LightSteelBlue">“You didn’t see anything!”</span> <br>
+    <<needChange "Fun" 5>>
+    <span style="color:Red">-Lucas Comfort</span><br>
+    <<set $HangOutNeed.Comfort -= 10>>
+<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Home Living Room]]
+
+    /* Halloween Costume */
+    <<else>>
+You eye a photo from Halloween a few years back, based on how old <span style="color:DarkTurquoise">Lucas</span> looked. <span style="color:pink">As expected, <span style="color:DarkTurquoise">Lucas</span> was dressed as the Red Cosmic Ranger. He was holding a sword and doing a silly but adorable pose. He wasn’t wearing a mask, which was good because it meant you could see his cute little heroic smile.</span> <br>
+<br>
+<span style="color:pink">While it wasn’t extremely obvious, leaning in close revealed that you could just make out <span style="color:DarkTurquoise">Lucas</span>’ tiny little bulge due to the tight one-piece costume. You smile as you examine that section of the costume closely, trying to see if you could tell if he was wearing underwear or not.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+			Blush: 2,
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“What are you doing?”</span> <span style="color:DarkTurquoise">Lucas</span> says, seeing you examining the picture closely. <span style="color:pink">He doesn’t seem to be able to tell you are staring at his past self’s little crotch.</span> <span style="color:LightSteelBlue">“Oh yeah, I remember that. Mom ordered that costume online since all the local stores just had cheap knock-offs. What did you dress up as for Halloween when you were little?”</span> <br>
+<br>
+You inform <span style="color:DarkTurquoise">Lucas</span> of some of your own costume choices, which prompts a laugh from him. <span style="color:LightSteelBlue">“Bet those were cool. You’ll have to show me some pictures sometime, to make it fair. Maybe this year we can go trick-or-treating together. I mean- if you still do that… sort of thing…”</span> <span style="color:DarkTurquoise">Lucas</span> chuckled nervously as you rolled your eyes, informing him that you did indeed still do that. <br>
+
+    <<needChange "Fun" 5>>
+    <span style="color:green">+Lucas Comfort</span><br>
+    <<set $HangOutNeed.Comfort += 10>>
+<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Home Living Room]]
+
+    <</if>>
+
+    <</replace>>
+    <</link>>
+</div>

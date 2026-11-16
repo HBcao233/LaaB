@@ -1,0 +1,72 @@
+:: OC Kade Park Night Encounter [nobr]
+
+/* Intro */
+The park at night is always a pleasant and unique experience. Fireflies and other nighttime critters dot the cool air, with lights along the paths and street providing ample illumination, making the park well-lit and fun even after the sun has gone to sleep. You are swinging and taking in the sights of the city after dark when you spy a curious sight: <span style="Color: Yellow">A boy, who you realize is your classmate <span style="color:DarkTurquoise">Kade</span> after squinting into the distance for a moment, is crouched behind a large rock.</span> He is out of sight of everyone, except for you due to the height you get with every swing. You notice him peeking out every so often and wonder if he is playing hide and seek or something? <br>
+
+    <<set _ad to [
+        {
+            Name: "OC Kade",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: Yellow">You wonder if you should go over and say hello or just keep swinging.</span> <br>
+<br>
+
+<div id="choice1">
+    <<link "Go say hello<br>">>
+    <<replace"#choice1">>
+        You stop swinging and hop off, walking over to the boy’s hiding spot. You peek around the rock to see him glancing the other way, eyes narrowed as he looks towards the parking lot. He sighs in relief before moving back behind the rock, spotting you, <span style="Color: Yellow">and screaming like he just saw a ghost!</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Ahhh!”</span> The boy jumps, trying to jump to his feet but instantly losing his balance as he tumbles backwards and lands flat on his back. <span style="Color: LightSteelBlue">“I- I wasn’t hiding, I was just… lost?”</span> He takes a second to realize the person who snuck up on him wasn’t who he was hiding from, but just you. <span style="Color: LightSteelBlue">“Oh… hi… <span style="color:DarkTurquoise">$Player.Name</span>… heh heh…”</span> He blushes, rubbing the back of his head in embarrassment as you help him up and ask him what he’s doing. <br>
+
+            <<set _ad to [
+                {
+                    Name: "OC Kade",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Frown",
+                        Blush: 1,
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Oh, nothing! I’m just… hiding…”</span> He sighs, <span style="Color: LightSteelBlue">“Sorry. Dad normally sends his goons to come and get me around this time, but I… just don’t want to go home yet. It’s a nice night and I hardly get anytime to myself and-”</span> He pauses, blushing, <span style="Color: LightSteelBlue">“Sorry, not your problem. But, since you’re here, want to hide with me? Keep me company and maybe I could use you as an excuse when I get caught?”</span> He laughs, looking at you hopefully. <span style="Color: Yellow">You have no idea what is going on in the boy’s life that he would not want to go home, but you also know not to pry.</span> <br>
+        <br>
+        So, instead, you and <span style="color:DarkTurquoise">Kade</span> decide to hide together and chat about school, cartoons, and whatever other things you have in common. You are eventually found by two of his minders, since chatting and laughing makes hiding hard, but <span style="color:DarkTurquoise">Kade</span> doesn’t seem to mind. <span style="Color: LightSteelBlue">“Thanks. It was nice.”</span> He smiles as he is led away. <span style="Color: LightGreen">Despite everything, you seemed to have made his night a little brighter.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 25>>
+        <<set $Minutes += 20>>
+        <<socialChange "Kade" 3 1>>
+        <br>
+        [[Continue|Park]] 
+    <</replace>>
+    <</link>>
+    <<link "Just keep swinging<br>">>
+    <<replace"#choice1">>
+        You decide to leave it alone. If he is playing a game, you’d ruin his hiding spot, and if not… well, you’d rather not get involved if that was the case. <span style="Color: LightGreen">So, instead you just keep on swinging and enjoying the cool night air and the sounds of the city as it slows down for the day. It is incredibly relaxing.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 25>>
+        <<set $Minutes += 20>>
+        <br>
+        [[Continue|Park]] 
+    <</replace>>
+    <</link>>
+</div>

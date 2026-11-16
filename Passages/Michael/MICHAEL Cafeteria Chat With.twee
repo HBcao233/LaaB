@@ -1,0 +1,32 @@
+:: MICHAEL Cafeteria Chat With [nobr]
+
+<<set $Minutes += 10>>
+
+/* OPENING */
+You sit down at the same table as <span style="color:DarkTurquoise">Michael</span> and his goons. In the midst of the gossip and roughhousing, the fit boy turns his attention to you and the two of you begin chatting. 
+<<set $RandomTopic to random(1, 3)>>
+
+/* TOPIC ONE */
+<<if $RandomTopic == 1>>
+<span style="color:DarkTurquoise">Michael</span> mentions his love for soccer. He used to play on the elementary school’s team but fell out of it over the last year for various reasons.<br>
+
+/* TOPIC TWO */
+<<elseif $RandomTopic == 2>>
+In a conversation about music, <span style="color:DarkTurquoise">Michael</span> shows an above average amount of knowledge of singing. You question this, but he brushes it off just random stuff he read off the internet and changes the subject.<br>
+
+/* TOPIC THREE */
+<<elseif $RandomTopic == 3>>
+<span style="color:DarkTurquoise">Michael</span> spends a majority of the time complaining about his two older brothers, using a lot of choice words and swears. You assume they had gotten into a fight this morning judging by his level of anger.<br>
+
+<</if>>
+
+/* SOCIAL POINTS GAIN */
+<<if $MichaelDailyChat != 1>>
+	<<socialChange "Michael" 3>>
+		<<set $MichaelDailyChat to 1>>
+<<else>>
+	<<socialChange "Michael" 1>>
+		<<set $MichaelDailyChat to 1>>
+<</if>>
+<br>
+[[Continue|School Cafeteria]] 

@@ -1,0 +1,46 @@
+:: BEN Nap Sees Spider [nobr]
+
+/* OPENING */
+You are awoken by a stick poking you in the stomach. You open your eyes to see <span style="color:DarkTurquoise">Ben</span> on his knees poking you from a foot away looking quite scared. <span style="color:LightSteelBlue">“Sorry!”</span> He whispers, before pointing the stick at your shoulder. <span style="color:lightcoral">You turn and are immediately greeted by a large brown spider on your shoulder.</span><br>
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Blush: 2,
+			Mouth: "Sad",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="Choice">
+	/* FREAK OUT */
+	<<link "Freak out<br>">>
+		<<replace"#Choice">>
+			You let out a panicked scream and jump back, waving your $PlayerTop.Type around in an attempt to get the spider off. The spider lands on the grass and begins to scurry away in the direction of <span style="color:DarkTurquoise">Ben</span>, who also freaks out as it comes near him. Once it is gone, you notice a few other boys giving you both weird looks, but just chuckle nervously and ensure them everything is fine.<br>
+			<br>
+			<span style="color:LightSteelBlue">“I’m sorry!”</span> <span style="color:DarkTurquoise">Ben</span> apologizes as you both stand up, <span style="color:LightSteelBlue">“I saw it on your shoulder and tried to wake you up before it crawled into your nose or-“</span> <span style="color:DarkTurquoise">Ben</span> visibly shivers, terrified of spiders. But since he came close enough to it to wake you, you can tell that he at least cares about your wellbeing.<br>
+			<<socialChange "Ben" 3>>
+			<<needChange "Energy" 10>>
+			<br>
+
+			[[Continue|School Courtyard]] 
+		<</replace>>
+	<</link>>
+	
+	/* Laugh */
+	<<link "Laugh<br>">>
+		<<replace"#Choice">>
+			You chuckle and move your arm against the tree, prompting the harmless spider to crawl off you. Once you stand up and take a step away from it, <span style="color:DarkTurquoise">Ben</span> runs over to you, making sure to keep you between him and the spider. <span style="color:LightSteelBlue">“Are you alright!? Did it bite you!? I thought it was going to crawl into your nose or something!”</span><br>
+			<br>
+			You calm the panicked boy down and inform him that the spider is harmless and that you were in no real danger. <span style="color:LightSteelBlue">“Oh… well that’s good.”</span> He glances toward the spider, but visibly shivers and looks away. <span style="color:LightSteelBlue">“They freak me out, if it would have been on me, I probably would have screamed.”</span> You tease him for a moment and you both share a laugh before he heads off.<br>
+			<<socialChange "Ben" 3>>
+			<<needChange "Energy" 10>>
+			<br>
+
+			[[Continue|School Courtyard]] 
+		<</replace>>
+	<</link>>
+</div>

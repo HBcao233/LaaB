@@ -1,0 +1,58 @@
+:: School Infirmary New Pull Up [nobr]
+
+<span style="color:Pink">You enter the nurses office with no small amount of butterflies in your stomach. You hadn't thought to bring a change with you when you came to school today, whatever your reasons were. So now you find yourself needing a change and the only person you can ask is the school nurse.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+			Blush: 3,
+			Arms: "Hide",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Dr. Bertrum</span> is sitting at his desk as you enter and looks up at you with a smile tinged with concern. <br>
+<br>
+<span style="color:LightSteelBlue">"<span style="color:DarkTurquoise">$Player.Name</span>, Is everything okay?"</span> He asks in his normal, kind and caring voice. <br>
+<br>
+<span style="color:Pink">With a solid blush on your face and unable to look him in the eye due to your embarrassment, you tell <span style="color:DarkTurquoise">The Doctor</span> exactly what it is you need.</span> You notice he doesn't really seem surprised by your need either. <br>
+<br>
+<<if $PlayerUndies.Type == "Pull Ups">>
+    <<addClothing "Temp" "Undies" "Pull Ups" "Blue">>
+    /* Hidden for later 
+	<<set _NewPullUp to [$BlueStripedPullUps, $BlackStripedPullUps, $HulkPullUps, $RedPullUps, $TealPullUps, $PinkPullUps, $BluePullUps, $GreenPullUps].random()>> */
+<<else>>
+    <<addClothing "Temp" "Undies" "Diaper" "White">>
+<</if>>
+<span style="color:LightSteelBlue">"That's not a problem, I keep a good stock here for just this reason."</span> The nice doctor informs you. He turns away and goes into his closet. <span style="color:LightSteelBlue">"What size are you?"</span> You hear him call out. After calling back your answer, he emerges and hands you the <<= _clothingtemp.Type>>. <br>
+
+    <<addMoodlet "Full Diaper" 0>>
+<<set $PlayerUndies to _clothingtemp>>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+			Blush: 3,
+	},
+		Clothes: {
+			Bottoms: $None,
+			Shoes: $None,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">"You can change over here."</span> He tells you then, leading you over to one of the beds and pull the curtain around. <span style="color:LightSteelBlue">"I'm just out here if you need anything."</span> <br>
+<br>
+He then steps out of the little enclosure the curtain made and gives you the privacy you need to change real quick. <span style="color:Pink">Looking around the little area inside the curtain, you don't see a trash can so your forced to carry the used undergarment out with you.</span> <br>
+<br>
+<span style="color:LightSteelBlue">"You can throw that in the bin there."</span> <span style="color:DarkTurquoise">The Doctor</span> tells you, pointing to a waste bin marked for biohazard waste where you quickly discard the soiled item. <br>
+<br>
+<span style="color:LightSteelBlue">"Do you need anything else?"</span> <span style="color:DarkTurquoise">Dr. Bertrum</span> asks you. <br>
+<br>
+[[Continue|School Infirmary]]

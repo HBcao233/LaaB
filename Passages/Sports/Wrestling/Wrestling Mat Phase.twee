@@ -1,0 +1,101 @@
+:: Wrestling Mat Phase [nobr]
+
+This is the Mat Phase. This phase occurs when one characters gets the advantage over the other. This is where they are trying to pin the disadvantaged character. In this phase, the Advantaged is the Attacker while the Disadvantaged is the Defender. A scene will play here, setting up the pin attempt, along with some flavor based on exhaustion and special moves, then a Continue Button will appear to show the results to add some tension. This is not the case in this test.<br>
+<br>
+The Mat Phase works where both characters will pick a number 1-6 (Default). If the Attacker picks the same number as the Defender, then they win. If not, the Defender manages to break free and it returns to the Strike Phase. However, the max number is reduced or increased by the Strength Difference between the characters. So if the Attacker has 7 Strength and the Defender has 5, then they will only have 1-4. This increases the chance that the Attacker picks the same number and wins.<br>
+<br>
+Every time the Defender escapes, their Strength is reduced by 1 due to exhaustion. So everytime you fall to the mat at disadvantage, you have less of a chance to escape. The max number of options a Defender can have is 10. Below you will see the current results: <br>
+
+Attacker: 
+<<if $Wrestling.Advantage == 1>>
+    Player<br>
+<<else>>
+    Opponent<br>
+<</if>>
+Defender: 
+<<if $Wrestling.Advantage == -1>>
+    Player<br>
+<<else>>
+    Opponent<br>
+<</if>>
+
+<<if $Wrestling.Advantage == 1>>
+    <<set _attackerStrength to $Wrestling.PlayerStrength>>
+    <<set _defenderStrength to $Wrestling.Opponent.Strength>>
+<<else>>
+    <<set _attackerStrength to $Wrestling.Opponent.Strength>>
+    <<set _defenderStrength to $Wrestling.PlayerStrength>>
+<</if>>
+
+    
+Attacker Strength: _attackerStrength<br>
+Defender Strength: _defenderStrength<br>
+<br>
+If the Defender's Strength equals 0, they will automatically lose this phase. This is checked here.<br>
+<br>
+<<if _defenderStrength == 0>>
+    The defender has no strength left and is pinned. This may include a special scene, though the outcome should be rare.<br>
+    <br>
+<<else>>
+
+    The math is done in the code, but is will subtract the Attacker Strength from the Defender Strength, then add 5, with a max of 1 or 10, to get the number they have to pick. See below for the number of Buttons that will be shown.<br>
+    <<set _difference to _defenderStrength - _attackerStrength>>
+    Difference: _difference<br>
+    <<if _difference > 5>>
+        <<set _difference to 5>>
+    <<elseif _difference < -5>>
+        <<set _difference to -5>>
+    <</if>>
+    <<set _buttons to 5 + _difference>>
+    Buttons: _buttons<br>
+    <br>
+    The A.I. will then pick a number randomly. This is completely random and is meant to just be chance based after strength is taken into account. For the sake of this test, the opponents number will be displayed below. If we want, in the future, we can set this to be something other than numbers, maybe special buttons or icons.<br>
+    <<set _opponentChoice to random(1, _buttons)>>
+    Opponent's Choice: _opponentChoice<br>
+    <br>
+    The players choices are shown below:<br>
+    <div id=continue>
+    <<for _i to 0; _i lt _buttons; _i++>>
+        <<set _number to _i + 1>>
+        <<capture _number>>
+        <<link"[_number]">>
+            <<set _playerChoice to _number>>
+            <<replace"#continue">>
+                <<include"Wrestling Mat Phase Results">>
+            <</replace>>
+        <</link>>
+        <</capture>>
+    <</for>>
+    </div>
+<</if>>
+
+:: Wrestling Mat Phase Results [nobr]
+
+The player chose: _playerChoice<br>
+<br>
+The results are below:<br>
+<<if _playerChoice == _opponentChoice>>
+    <<if $Wrestling.Advantage == 1>>
+        Both picked the same number while the player was in Advantage. This means that the Player wins! A victory scene will play here, followed by a follow-up scene depending on the context of the wrestling.<br>
+        <br>
+    <<else>>
+        Both picked the same number while the opponent was in Advantage. This means that the Player Loses! A Defeat scene will play here, followed by a follow-up scene depending on the context of the wrestling.<br>
+        <br>
+    <</if>>
+
+<<else>>
+    <<if $Wrestling.Advantage == 1>>
+
+        The characters have picked different numbers, which means that the defender escapes. A scene will be played to show this and the game will reset to the Strike Phase. As well, the defender's strength will reduce by 1. Check on the Strike Phase Page to ensure this happened. In this case the OPPONENT'S Strength should go down.<br>
+        <<set $Wrestling.Opponent.Strength -= 1>>
+        <<set $Wrestling.Phase to "Strike">>
+        <br>
+        [[Continue|Wrestling Main]]
+    <<else>>
+        The characters have picked different numbers, which means that the defender escapes. A scene will be played to show this and the game will reset to the Strike Phase. As well, the defender's strength will reduce by 1. Check on the Strike Phase Page to ensure this happened. In this case the PLAYER'S Strength should go down.<br>
+        <<set $Wrestling.PlayerStrength -= 1>>
+        <<set $Wrestling.Phase to "Strike">>
+        <br>
+        [[Continue|Wrestling Main]]
+    <</if>>
+<</if>>

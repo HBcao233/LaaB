@@ -1,0 +1,39 @@
+:: Thomas Hang Out Go To Park [nobr]
+
+/* Intro */
+You ask <span style="color:DarkTurquoise">Thomas</span> what he thinks about the park. <span style="Color: LightSteelBlue">“Yeah, sure.”</span> He yawns loudly, rubbing his eyes, <span style="Color: LightSteelBlue">“That’s fine.”</span> You and <span style="color:DarkTurquoise">Thomas</span> begin to walk over. You try to keep up conversation, though <span style="color:DarkTurquoise">Thomas</span> mostly gives tired, single-word answers. <span style="Color: Yellow">You also notice him dragging his feet as he walks, leading to the trip taking longer than you’d think.</span> Then again, you’re pretty sure <span style="color:DarkTurquoise">Thomas</span> always drags his feet when he walks.<br>
+
+<<set _ad to [
+	{
+		Name: "Thomas",
+		State: {
+            Outfit: $HangOutClothes,
+            Mouth: "Frown",
+            Eyes: "Tired",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="choice">
+	<<link "Drag him along<br>">>
+    <<replace"#choice">>
+        You turn around and grab <span style="color:DarkTurquoise">Thomas</span> by the arm and begin to drag him along faster. <span style="Color: LightSteelBlue">“Hey!”</span> <span style="color:DarkTurquoise">Thomas</span> says in surprise as you force him into more of a normal walking speed, <span style="Color: LightSteelBlue">“What’s the rush? Park’s not going to get up and walk away.”</span> You respond by saying that you’re just excited to hang out with him and want to make the most of the time you have. <span style="Color: LightGreen"> <span style="color:DarkTurquoise">Thomas</span> rolls his eyes at this but doesn’t protest and is able to keep up with you the rest of the trip.</span> <br>
+        <br>
+        [[Continue|Thomas Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "Ask him what his favorite thing on the playground is<br>">>
+    <<replace"#choice">>
+        Looking for a topic of conversation, you ask <span style="color:DarkTurquoise">Thomas</span> what his favorite thing on the playground is. <span style="Color: LightSteelBlue">“My favorite thing?”</span> <span style="color:DarkTurquoise">Thomas</span> repeats the question with a raised eyebrow. You explain that you mean like the equipment. Slide, jungle gym, that sort of thing. What’s his favorite? You tell him yours and <span style="color:DarkTurquoise">Thomas</span> pauses for a moment. <span style="Color: LightSteelBlue">“I’m not really super invested in the playground, but I guess the swings?”</span> He responds, shrugging, <span style="Color: LightSteelBlue">“Mainly since it lets me sit down.”</span> <span style="Color: LightGreen">You smile, telling <span style="color:DarkTurquoise">Thomas</span> that you’d love to push him on the swing set.</span> <span style="color:DarkTurquoise">Thomas</span> frowns at this, <span style="Color: LightSteelBlue">“Yeah, we’re not doing that.”</span><br>
+        <br>
+        [[Continue|Thomas Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

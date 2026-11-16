@@ -1,0 +1,136 @@
+:: Alistair Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 15>>
+You walk up to the counter and ask if the headmaster is available to talk. Both people at the desk give you a strange look, though call it in and are surprised when given the go ahead to bring you back. You are lead into <span style="color:DarkTurquoise">Alistair</span>’s office, the same one you sat in during your first time in school. He sits at his desk, seemingly having been in the middle of some paperwork, and looks up to you with a smile. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Alistair",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>. Did you need something?”</span> A little nervous, you ask if you could perhaps sit and chat with him for a bit, if it’s not too weird. <span style="color:DarkTurquoise">Alistair</span> laughs at this, <span style="Color: LightSteelBlue">“Well, it would be for a normal student. Though I guess I am technically an old family friend, so why not.”</span> He motions to one of the comfy chairs across from him and you take a seat. You do so and he looks at you expectedly. <span style="Color: LightSteelBlue">“So, what did you want to talk about?”</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Ask about his family<br>">>
+    <<replace"#choice">>
+        <<if $AlistairSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Alistair</span> about his own family. Is he married or have kids or…? <span style="Color: LightSteelBlue">“Haha, no, sadly not. I dated a few times in my life, but it sadly never worked out.”</span> He shrugs, <span style="Color: LightSteelBlue">“Guess you could say I’m married to my work.”</span> <span style="Color: Yellow">He doesn’t give anymore details and you spend the net few minutes chatting with him about basic topics.</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Alistair</span> about his own family. Is he married or have kids or…? <span style="Color: LightSteelBlue">“Haha, no. Nothing like that. I dated a bit in school, but only enough to realize I was gay.”</span> You raise your eyebrows at this, surprised about this fact and that he’d tell you. <span style="Color: LightSteelBlue">“It’s not some big secret, though I’d rather you don’t blab it around to your friends. I figured <span style="color:DarkTurquoise">Your Father</span> may have told you, he was the first one I told.”</span> <span style="color:DarkTurquoise">Alistair</span> chuckles, looking like he’s reminiscing. <span style="Color: LightSteelBlue">“But nowadays I’m far too busy for dating and all that. I think I may want kids one day but… well, I don’t think love is in the books for me in that way.”</span> <br>
+            <br>
+            <span style="Color: Yellow">You feel a little sad for him, but he seems content with his life, so you move past it.</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his career<br>">>
+    <<replace"#choice">>
+        <<if $AlistairSocial < 30>>
+            A bit curious about the topic, from what you’ve heard from <span style="color:DarkTurquoise">Your Father</span>, you ask how <span style="color:DarkTurquoise">Alistair</span> became the Headmaster of his old school. <span style="Color: LightSteelBlue">“Haha, it is quite the long story.”</span> He chuckles, <span style="Color: LightSteelBlue">“Teaching wasn’t my original goal, but my… well, I decided it would be a good backup plan. It worked out for the best, I think. I really enjoy my work.”</span> <span style="Color: Yellow">He doesn’t give anymore details and you spend the next few minutes chatting with him about basic topics.</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <<else>>
+            A bit curious about the topic, from what you’ve heard from <span style="color:DarkTurquoise">Your Father</span>, you ask how <span style="color:DarkTurquoise">Alistair</span> become the Headmaster of his old school. <span style="Color: LightSteelBlue">“Haha, I’m sure <span style="color:DarkTurquoise">Your Father</span> told you how crazy it seemed at first. I did well in school, but was a bit of a troublemaker.”</span> He chuckles. You do find it a little hard to believe, with how professional he seems now. <span style="Color: LightSteelBlue">“Well, it wasn’t my first plan. I originally studied for cybersecurity in college, but my…”</span> He pauses for a moment, <span style="Color: LightSteelBlue">“My parents wanted me to have a back-up plan, they really didn’t see a future in technology. They were very… traditional. Old-school.”</span> <br>
+            <br>
+            <span style="Color: Yellow">You notice a change in his tone as he talks about this and feel a little awkward.</span> <span style="Color: LightSteelBlue">“Technology did become a thriving industry, but I fell in love with teaching. So, well, I guess it all worked out in the end.”</span> <span style="Color: LightGreen">He laughs and the two of you spend the next few minutes in idle small talk.</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his hobbies<br>">>
+    <<replace"#choice">>
+        <<if $AlistairSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Alistair</span> about his hobbies and what he likes to do for fun. He actually has to ponder it for a minute, making you ask if all adults do it work. <span style="Color: LightSteelBlue">“Haha, it does take up a lot of our lives sometimes.”</span> He laughs at your statement, <span style="Color: LightSteelBlue">“But I was mainly trying to figure out which one to tell you about. I don’t have a lot of spare time, but I try to fill it. I’m something of a jack of all trades. I’m a bit of a gamer, believe it or not, and enjoy learning new skills on my computer. So, I guess you could say computers are my hobby.”</span> You nod, maybe not being what you expected, but it makes sense. <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Alistair</span> about his hobbies and what he likes to do for fun. <span style="Color: LightSteelBlue">“I do all sorts of things, I’d say learning new skills is my hobby.”</span> He laughs, <span style="Color: LightSteelBlue">“I’m always looking for new tutorials and stuff online. Programming, drawing, even had a few weeks of being obsessed with woodworking, believe it or not. I’d say the only constants are learning something new and playing games on my computer. Just don’t tell anyone their scary headmaster is a low-skill gamer, alright?”</span> He laughs. <span style="Color: LightGreen">You smile, finding his desire to learn new things relatable.</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his childhood<br>">>
+    <<replace"#choice">>
+        <<if $AlistairSocial < 30>>
+            A bit curious about his childhood, since he was <span style="color:DarkTurquoise">Your Father</span>’s best friend, you ask <span style="color:DarkTurquoise">Alistair</span> about his younger years and what it was like. <span style="Color: LightSteelBlue">“Different.”</span> Is the first word that comes to his mind, <span style="Color: LightSteelBlue">“Opal City was still big back then, but it wasn’t as touristy or developed. Lots of empty space between here and downtown. It was kind of like the wild west.”</span> He laughs, <span style="Color: LightSteelBlue">“We got into all sorts of trouble, but that’s a story for another time.”</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <<else>>
+            A bit curious about his childhood, since he was <span style="color:DarkTurquoise">Your Father</span>’s best friend, you ask <span style="color:DarkTurquoise">Alistair</span> about his younger years and what it was like. <span style="Color: LightSteelBlue">“It was a different time, that’s for sure. Imagine Opal City, but kind of the wild west.”</span> He laughs, <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Your Father</span>, our friends, and I used to get into all sorts of trouble. There was a lot more farmland between here and downtown, so we used to sneak onto the farms and mess around. He’d get in so much trouble.”</span> He laughs, remembering it fondly, <span style="Color: LightSteelBlue">“I’ll have to tell you about all the things <span style="color:DarkTurquoise">Your Father</span> used to do that he wouldn’t tell you.”</span> <br>
+            <br>
+            <span style="Color: LightGreen">You smile and laugh along as <span style="color:DarkTurquoise">Alistair</span> regales you with stories of the past. It is interesting to hear about when <span style="color:DarkTurquoise">Your Father</span> was a kid and how he was a bit of a troublemaker.</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about Your Father<br>">>
+    <<replace"#choice">>
+        <<if $AlistairSocial < 30>>
+            Considering they were best friends growing up, you ask <span style="color:DarkTurquoise">Alistair</span> about <span style="color:DarkTurquoise">Your Father</span>. Specifically, how he was when he was your age. <span style="Color: LightSteelBlue">“Haha, I probably shouldn’t say too much.”</span> He laughs, <span style="Color: LightSteelBlue">“Though that’s mainly to save the real embarrassing stories until he’s around. Be funnier that way.”</span> You smile at the idea of turning <span style="color:DarkTurquoise">Your Father</span>’s telling of embarrassing stories about you on him. <span style="Color: LightSteelBlue">“Though most of those stories are my fault. <span style="color:DarkTurquoise">Your Father</span> was always a bit of a goody two shoes. But I dragged him into plenty of trouble growing up.”</span> <br>
+            <br>
+            <span style="Color: LightGreen">You talk about <span style="color:DarkTurquoise">Your Father</span> and <span style="color:DarkTurquoise">Alistair</span> for a while, feeling closer to both of them at the end.</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <<else>>
+            Considering they were best friends growing up, you ask <span style="color:DarkTurquoise">Alistair</span> about <span style="color:DarkTurquoise">Your Father</span>. Specifically, how he was when he was your age. <span style="Color: LightSteelBlue">“Haha, I probably shouldn’t say too much.”</span> He laughs, <span style="Color: LightSteelBlue">“Though that’s mainly to save the real embarrassing stories until he’s around. Be funnier that way.”</span> You smile at the idea of turning <span style="color:DarkTurquoise">Your Father</span>’s telling of embarrassing stories about you on him. <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Your Father</span> was a bit of a goody two shoes growing up, always did what his parents said.”</span> You listen intently, curious about the past. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Thankfully, I was able to help him grow out of that. His parents were strict and his brothers…”</span> <span style="color:DarkTurquoise">Alistair</span> pauses, turning to you, <span style="Color: LightSteelBlue">“I shouldn’t really be talking about your family like this though, sorry. We both helped each other out. Learned a lot, let’s just say.”</span> <span style="Color: Yellow">You know <span style="color:DarkTurquoise">Your Father</span> doesn’t have the best relationship with his brothers, but you didn’t know it extended so far back. You wonder how it got this way?</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about your brothers<br>">>
+    <<replace"#choice">>
+        <<if $AlistairSocial < 30>>
+            A bit curious, since he’s a family friend, you ask <span style="color:DarkTurquoise">Alistair</span> about your brothers. What does he know about them and such? <span style="Color: LightSteelBlue">“Well, <span style="color:DarkTurquoise">Noah</span> was born after you left so I haven’t really gotten the chance to meet him yet. I’ve seen pictures, he seems like a cute kid, but haven’t had the pleasure.”</span> You nod, that makes sense. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Gabe</span> though!”</span> He laughs, <span style="Color: LightSteelBlue">“That boy was a handful. I babysat him a few times and he gave me some good practice for when I became the Headmaster. He’s just lucky he’s in high school. I’d have to get revenge if I was in charge of him!”</span> <span style="Color: LightGreen">You laugh, feeling a little sad that you didn’t get to have the same relationship with <span style="color:DarkTurquoise">Alistair</span> but happy he still feels close to your family.</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <<else>>
+            A bit curious, since he’s a family friend, you ask <span style="color:DarkTurquoise">Alistair</span> about your brothers. What does he know about them and such? <span style="Color: LightSteelBlue">“Well, <span style="color:DarkTurquoise">Noah</span> was born after you left so I haven’t really gotten the chance to meet him yet. I’ve seen pictures, he seems like a cute kid, but haven’t had the pleasure.”</span> You nod, that makes sense. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Gabe</span> though!”</span> He laughs, <span style="Color: LightSteelBlue">“That boy was a handful. I babysat him a few times and he gave me some good practice for when I became the Headmaster. He’s just lucky he’s in high school. I’d have to get revenge if I was in charge of him!”</span> You both laugh, <span style="Color: LightSteelBlue">“His goal during bath time was to soak me as much as possible. He also used to love shoving his butt in people’s faces, it was a whole thing with him. Hope he grew out of that.”</span> You smile as you admit he still does that when he wants to tease you or <span style="color:DarkTurquoise">Noah</span>. <span style="Color: LightGreen">It’s nice talking to him, though you feel a little sad that you didn’t get to have the same relationship with <span style="color:DarkTurquoise">Alistair</span> but happy he still feels close to your family.</span> <br>
+            <<socialChange "Alistair" 2>>
+            <br>
+            [[Continue|School Main Office]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

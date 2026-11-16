@@ -1,0 +1,44 @@
+:: School Math Classroom [nobr]
+
+<<if $Wet > 1>>
+	<<include"Math Wet">>
+<<elseif $PlayerShoes.Type == "None" or ($PlayerTop.Type == "None" and $PlayerUnder.Type == "None")>>
+	<<include"Math Not Dressed">>
+<<elseif $Time.between(15,0,16,0) && $Daily.RandolphPunishment == 1>>
+    <<include"Randolph Spying on School Spanking 1">>
+<<elseif $ActiveQuests.includes("Kazu: The Deliquent")>>
+    <<include"OC Kazu Intro 2">>
+<<else>>
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Math Classroom",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Classroom",
+}>>
+
+<span style="color:Azure"><big><strong>--Math Classroom--</strong></big></span><br>
+You stand in <span style="color:DarkTurquoise">Mr. Randolph</span>’s Math Classroom. It has an old-fashioned feeling to it, with lines of desk all facing the teacher’s desk and a chalk board. Next to the chalk board is a list of rules which has a wooden paddle hanging next to it. You feel your Butt clench at the thought of being on the receiving end of one of <span style="color:DarkTurquoise">Mr. Randolph</span>’s punishments.<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $MathIntro == 1>>
+    <<if $Time.between(6, 45, 7, 40) or $Time.between(11, 0, 11, 40) or $Time.between(15, 0, 16, 0)>>
+        [[Ask Randolph for help with Math (0:15)|Randolph Tutor]] <span style="color:green">+Math, +Randolph</span><br>
+    <</if>>
+<</if>>
+<<attendClass "Math">>
+
+
+<br>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[South Hallway (0:01)|School South Hallway][$Minutes += 1]] <br>
+<br>
+
+<</if>>

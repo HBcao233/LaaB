@@ -1,0 +1,66 @@
+:: Bath Dad Tease [nobr]
+
+/* Intro */
+/* Checking if player is already considered Nude */
+<<if $PlayerBottoms.Type != "None" or $PlayerTop.Type != "None" or $Player.Undies != "None">>
+    Soap, water, rinse, you are finishing up your bath which has gone as good as you could have hoped. You begin to drain the tub and step out, stretching happily as you reach for a towel – <span style="color:lightcoral">wait a second!?</span> You glance over to find the cupboard where you keep the towels completely empty! You blush and silently curse whichever one of your brothers had used the last one without restocking. <br>
+    <br>
+<<else>>
+
+/* Default Post-Intro Avatar */
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+Soap, water, rinse, you are finishing up your bath which has gone as good as you could have hoped. You begin to drain the tub and step out, stretching happily as you reach for a towel – wait a second!? You glance over to find the cupboard where you keep the towels completely empty! You blush and silently curse whichever one of your brothers had used the last one without restocking. <br>
+<br>
+
+<</if>>
+
+/* Written by: Oryan */
+You peek out the door with the intent to sneak across to your room. First looking in one direction as you slowly open the door, nobody. You step out and turn in the other direction only to be greeted by the confused look of your father. <span style="color:Pink">Instinctively your hands reach down and cover yourself as your face burned bright red.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Dad",
+        State: {
+            Brows: "Suspicious",
+            Mouth: "Smirk",
+        },
+    },
+    {
+        Name: "Player",
+        ShowZoom: true,
+        ShowZoomOnlyButt: true,
+        State: {
+            Outfit: "Naked",
+            Arms: "Hide",
+            Blush: 2,
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Your Father</span> asks you what you are doing in a confused tone with a hint of amusement. <br>
+<br>
+With your face still red from embarrassment you explain your predicament, your lack of a towel. He laughs and walks over to the hallway closet where he grabs a towel and walks back to you before handing it to you which you quickly wrap around your waist as he looks at you with humor as he explains that your bedroom is right across the hallway and would have been fine without the towel. <br>
+<br>
+You decide not to state that that was your original plan, just thankful to have finished with the bath as he walks away. <br>
+
+<<addMoodlet "Stress" 0>>
+<<needChange "Fun" 10>>
+<<needChange "Hygiene" 100>>
+<<addClothing "PC" "Bottoms" "Towel" "White">>
+<<set $Player.Exposed to "Towel">>
+<br>
+[[Continue|PH Bathroom]]
+

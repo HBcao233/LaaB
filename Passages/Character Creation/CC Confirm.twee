@@ -1,0 +1,259 @@
+:: CC Confirm [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Player Bedroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 1,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+
+<<include"Toggle Setting Confirm">>
+
+/* SETTING DAILY STUFF */
+<<include"Community Center Daily Jobs">>
+
+/* OPENING */
+
+Your name is <span style="color:DarkTurquoise">$Player.Name $Player.LastName</span>. You are a young boy who has just moved to your new home of <span style="color:Teal">Opal City</span> with your two brothers and father. You had arrived late in the afternoon and spent most of the night unpacking since, due to some unfortunate circumstances, you arrived only a day before the school year started. You awaken groggy in the still unfamiliar bedroom, laying face down without a blanket. The cold morning breeze blowing over your exposed body from your slightly open window causes <span style="color:Pink">you to realize you are completely naked!</span><br>
+<br>
+You quickly sit up and cover yourself with a nearby pillow, until your brain processes just where you are and you relax, returning the pillow to its spot. You were so tired last night that you must have passed out while changing into your pajamas.<br>
+<br>
+
+<<if $Bedwetter == 1>>
+As you stand up you come to another upsetting realization of passing out naked and nervously pat the spot where you slept. Finding it dry, you let out a sigh of relief. Soaking your mattress would have been a poor way to start life at your new home, not to mention embarrassing to have to tell <span style="color:DarkTurquoise">Your Father</span> what happened. <span style="color:Pink">You glance toward your closet, where a slightly hidden box of 'nighttime protection' sat.</span> You make a mental note to remember to put those on before sleeping to avoid any uncomfortable conversations with <span style="color:DarkTurquoise">Your Father</span>.<br>
+<br>
+<<else>>
+You stand up and stretch your arms out, catching the reflection of your fully exposed body in your mirror. You can’t help but blush, wondering if <span style="color:DarkTurquoise">Your Father</span> or anyone else had come into your room to check on you after you passed out, getting an unobstructed view of your boyish body.<br>
+<br>
+<</if>>
+<div id="continue1">
+	<<link "Continue<br>">>
+	<<replace"#continue1">>
+
+As you turn around to close your window, your door suddenly swings open! <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$DadNickname</span>? Are you awake yet? I wanted to talk to you all before-“</span> <span style="color:DarkTurquoise">Your Father</span> pauses and smiles upon seeing your exposed rear end right before you turn around, covering your boy bits with your hands. <span style="color:LightSteelBlue">“You know you don’t have anything I haven’t seen a hundred times, right? Besides, you didn’t seem so shy when I checked in on your last night.”</span> <span style="color:Pink">You blush as <span style="color:DarkTurquoise">Your Father</span> confirms that he saw you in your embarrassing sleeping position and tosses you a towel.</span><br>
+
+<<set _ad to [
+	{
+		Name: "Dad",
+		State: {
+			Mouth: "Smirk",
+			Brows: "Suspicious",
+		},
+	},
+	{
+		Name: "Player",
+		ShowZoom: true,
+		State: {
+			Arms: "Hide",
+			Blush: 2,
+			Mouth: "Frown",
+			Outfit: "Naked",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Your Father</span> is a middle-aged gentleman in his forties with $Dad.HairColor Neatly Cut Hair, a bit of stubble, and Green Eyes. He is tall, slender, and a lot stronger than he looks. While he can be annoying and overbearing, you know he cares about you and your brothers deeply. 
+
+<<if $ToggleSpanking == 1>>
+Though he also believes in strict punishment and your rear end has been on the receiving end of many spankings over the years. 
+	<<if $Player.Kinks.Spankee == 1>>
+    	<span style="color:Pink">Something you’ve grown surprisingly fond of. </span>
+    <</if>>
+<<else>>
+Though he also believes in strict punishment and, while he doesn’t believe in spanking, his punishments can often get a little ‘too creative’ for your liking.
+<</if>><br>
+<br>
+<span style="color:Gray">[Your responses will set up your starting relationship with the various people in $Player.Name’s life. You can also set if you are sexually attracted to that NPC. If $Player.Name is attracted to an NPC, they will generally have more lewd thoughts about that NPC and some interactions may change. You can change his attractions in the Attitude Menu.]</span>
+
+/* Putting On Starting Clothes */
+
+	<<addClothing "AD" "Bottoms" "Towel" "White">>
+	<<set $Player.Exposed to "Towel">>
+<br>
+<br>
+
+<div id="continue2">
+How do you feel about <span style="color:DarkTurquoise">Your Father</span>?<br>
+	<<link "Wrap yourself in the towel">>
+	<<replace"#continue2">>
+   
+   <<if $Player.Kinks.Incest != 1>>
+		<span style="color:Pink">Without thinking, you intentionally expose yourself to <span style="color:DarkTurquoise">Your Father</span> as you grab the towel, though quickly blush and cover yourself with it, prompting a laugh from him.</span> You were at that age when boys became self-conscious about being seen naked by their family. <span style="color:Pink">Though for some reason the thought of being exposed around <span style="color:DarkTurquoise">Your Father</span>, a man who bathed you as a little kid more times than you remember, causes you to grow extra flustered.</span><br>
+
+		<<set _ad to [
+			{
+				Name: "Dad",
+				State: {
+					Mouth: "Smirk",
+					Brows: "Suspicious",
+				},
+			},
+			{
+				Name: "Player",
+				State: {
+					Arms: "Hide",
+					Blush: 2,
+					Mouth: "Frown",
+					Outfit: "Towel",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+		<span style="color:LightSteelBlue">“You don’t have to be shy around me.”</span> <span style="color:DarkTurquoise">Your Father</span> laughs, <span style="color:LightSteelBlue">“But come out here before you get dressed, I want to talk to you and your brothers before you all head to school.”</span> <br>
+		<br>
+	<<else>>
+		<span style="color:Pink">Without thinking, you unintentionally expose yourself to <span style="color:DarkTurquoise">Your Father</span> as you grab the towel, though quickly blush and cover yourself with it, prompting a laugh from him.</span> You are at that age when boys became self-conscious about being seen naked by their family. <span style="color:Pink">This time, however, the thought of <span style="color:DarkTurquoise">Your Father</span>, a man who bathed you as a little kid more times than you remember, looking over your naked body gives you a tingly feeling and you can't help but wonder if he'll ever do more than look.</span><br>
+
+		<<set _ad to [
+			{
+				Name: "Dad",
+				State: {
+					Mouth: "Smirk",
+					Brows: "Suspicious",
+				},
+			},
+			{
+				Name: "Player",
+				State: {
+					Arms: "Hide",
+					Blush: 2,
+					Mouth: "Frown",
+					Outfit: "Towel",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+		Flustered, you shake off the sudden intrusive thought.<span style="color:LightSteelBlue">“You don’t have to be shy around me.”</span> <span style="color:DarkTurquoise">Your Father</span> laughs, <span style="color:LightSteelBlue">“But come out here before you get dressed, I want to talk to you and your brothers before you all head to school.”</span> <br>
+	<</if>>
+    <<set $DadSocial to 25>>
+    <<set $Attractions.Dad to 1>>
+    <<include"CC Confirm 2">>
+    
+    <</replace>>
+    <</link>>
+    [<span style="color:Lightgreen">Positive Relationship</span>/<span style="color:Lightgreen">Attraction</span>]<br>
+    
+	<<link "Wrap yourself in the towel">>
+	<<replace"#continue2">>
+    
+    It is difficult to wrap a towel around your waist while covering your privates with one hand, <span style="color:Pink">a task which <span style="color:DarkTurquoise">Your Father</span> must find amusing as your struggle prompts a few chuckles.</span> <br>
+
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smirk",
+				Brows: "Suspicious",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Arms: "Hide",
+				Blush: 2,
+				Mouth: "Frown",
+				Outfit: "Towel",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightSteelBlue">“You don’t have to be shy around me.”</span> <span style="color:DarkTurquoise">Your Father</span> laughs, <span style="color:LightSteelBlue">“But come out here before you get dressed, I want to talk to you and your brothers before you all head to school.”</span> <br>
+<br>
+    <<set $DadSocial to 25>>
+    <<include"CC Confirm 2">>
+    
+    <</replace>>
+    <</link>>
+    [<span style="color:Lightgreen">Positive Relationship</span>/<span style="color:Lightcoral">No Attraction</span>]<br>
+    
+	<<link "Demand that he knocks before entering">>
+	<<replace"#continue2">>
+    
+    You quickly and haphazardly tie the towel around your waist before turning to <span style="color:DarkTurquoise">Your Father</span> annoyed, demanding that he should knock before entering your room. Your attitude causes <span style="color:DarkTurquoise">Your Father</span> to smirk, being all too used to your rebellious behavior at this point. <br>
+<br>
+<span style="color:LightSteelBlue">“Tell you what, you start paying rent and I’ll start knocking.”</span> <span style="color:DarkTurquoise">Your Father</span> playfully teases you before glancing his eyes downward, <span style="color:LightSteelBlue">“Plus, it’s hard to take you seriously with your cute little thing on display like that.”</span> <span style="color:Pink">You look down and realize that your towel had slipped off nearly right after you put it on, meaning you had been trying to berate <span style="color:DarkTurquoise">Your Father</span> with your $Player.PenisSize Penis visibly dangling between your legs!</span> You quickly grab the towel and wrap it much more securely around your waist. <br>
+
+<<if $Player.Kinks.Incest == 1>>
+	<br>
+	Lately, you've been seeing <span style="color:DarkTurquoise">Your Father</span> in a different light than you have all your life, and the fact that he saw you naked and <span style="color:lightcoral">even said that your penis is "cute" fills your body with the kind of heat that annoys you even further. You turn your head away from him with a huff in the hopes he doesn't notice the effect it had on you.</span><br>
+<</if>>
+
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smirk",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Arms: "Hide",
+				Blush: 3,
+				Mouth: "Frown",
+				Outfit: "Towel",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Now stop playing the little tough guy and come out here real quick.”</span> <span style="color:DarkTurquoise">Your Father</span> laughs, <span style="color:LightSteelBlue">“I want to talk to you and your brothers real quick before you head to school.”</span> <br>
+<br>
+    <<set $DadSocial to -25>>
+    <<set $Attractions.Dad to 1>>
+    <<include"CC Confirm 2">>
+    
+    <</replace>>
+    <</link>>
+    [<span style="color:lightcoral">Negative Relationship</span>/<span style="color:Lightgreen">Attraction</span>]<br>
+    
+	<<link "Demand that he knocks before entering">>
+	<<replace"#continue2">>
+    
+    You quickly and haphazardly tie the towel around your waist before turning to <span style="color:DarkTurquoise">Your Father</span> annoyed, demanding that he should knock before entering your room. Your attitude causes <span style="color:DarkTurquoise">Your Father</span> to smirk, being all too used to your rebellious behavior at this point. <br>
+<br>
+<span style="color:LightSteelBlue">“Tell you what, you start paying rent and I’ll start knocking.”</span> <span style="color:DarkTurquoise">Your Father</span> playfully teases you before glancing his eyes downward, <span style="color:LightSteelBlue">“And until then, maybe you should practice putting on a towel.”</span> <span style="color:Pink">You look down and realize that your towel had slipped off nearly right after you put it on, meaning you had been trying to berate <span style="color:DarkTurquoise">Your Father</span> with your $Player.PenisSize Penis visibly dangling between your legs!</span> You quickly grab the towel and wrap it much more securely around your waist. <br>
+
+		<<set _ad to [
+			{
+				Name: "Dad",
+				State: {
+					Mouth: "Smirk",
+					Brows: "Suspicious",
+				},
+			},
+			{
+				Name: "Player",
+				State: {
+					Arms: "Hide",
+					Blush: 2,
+					Mouth: "Frown",
+					Outfit: "Towel",
+					Eyes: "Mad",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Now stop playing the little tough guy and come out here real quick.”</span> <span style="color:DarkTurquoise">Your Father</span> laughs, <span style="color:LightSteelBlue">“I want to talk to you and your brothers real quick before you head to school.”</span> <br>
+<br>
+    <<set $DadSocial to -25>>
+    <<include"CC Confirm 2">>
+    
+    
+    <</replace>>
+    <</link>>
+    [<span style="color:lightcoral">Negative Relationship</span>/<span style="color:lightcoral">No Attraction</span>]<br>
+    
+</div>
+
+	<</replace>>
+    <</link>>
+</div>

@@ -1,0 +1,273 @@
+:: CARTER Inspect School Playground [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> is happily going down the slide, joyfully laughing and not caring how childish it makes him look. At one point, he even goes down the slide headfirst, imitating a superhero’s flight pose.<br>
+<br>
+[[Chat With (0:10)|CARTER Playground Chat With]] <span style="color:Green">+Carter</span><br>
+<<if $CarterSocial > -50 or $CarterSocialRank > 0>>
+	[[Slide with him (0:20)|CARTER School Slide]] <span style="color:Green">+Carter</span><br>
+<</if>>
+
+<<if $CarterSocial >= 50 or $CarterSocialRank > 0>>
+	[[Ask to play (0:20)|CARTER Playground Play]] <span style="color:Green">+Carter</span><br>
+<</if>>
+
+<<if $CarterSocial >= 39 or $CarterSocialRank > 0>>
+	[[Practice Acting (0:20)|Carter Playground Practice Acting]]
+	<span style="color:Green">+Carter</span>
+	<span style="color:Green">+Acting</span><br>
+	<br>
+<</if>>
+
+<<include"Carter Base Talk Code">>
+
+:: CARTER Inspect School Lunch [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> eats his lunch while reading a colorful superhero comic book. He is extremely careful not to spill anything on it.<br>
+<br>
+<<if $FriendLunch != 1 and $LunchClass != 2>>
+	[[Eat Lunch With (0:15)|CARTER Eat Lunch]] <span style="color:Green">+Social</span>
+	/* LUNCH QUALITY WHEN EATING WITH PERSON */
+	<<include "School Lunch Level Chooser">>
+<</if>>
+
+<<include"Carter Base Talk Code">>
+
+:: CARTER Inspect Cafeteria [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> sits against one of the walls happily reading one of his comic books. This one appears to be an issue of Cosmic Rangers, a cartoon your little brother watches often.<br>
+<br>
+
+<<include"Carter Base Talk Code">>
+
+[[Chat With (0:10)|CARTER Cafeteria Chat With]] <span style="color:Green">+Carter</span><br>
+
+
+:: CARTER Inspect School Waiting for Bus [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> happily hops from rock to rock while he waits for the bus. Despite nearly falling at one point, he continues to make further and further jumps.<br>
+<br>
+	/* HANG OUT */
+	
+<div id="HangOutSchool">
+	<<if $InActiveQuests.includes("Carter: Hang Out Intro")>>
+		<<link"Ask if Carter wants to Hang Out">>
+		<<set $HangOutNeed to {
+			Energy: 100,
+			Fun: 20,
+			Comfort: 20,
+		}>>
+		<<goto "Carter Hang Out First Time">>
+		<</link>><br>
+	<<elseif $CompletedQuests.includes("Carter: Hang Out Intro")>>
+		<<link"Want to hang out?">>
+		<<replace"#HangOutSchool">>
+			<span style="color:Yellow">Where?</span><br>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<link"The Park (0:10)<br>">>
+				<<set $HangOutClothes to "Uniform">>
+				<<set $Minutes += 10>>
+				<<goto "Carter Hang Out Go To Park">>
+			<</link>>
+			<<link"The Arcade (0:05)<br>">>
+				<<set $HangOutClothes to "Uniform">>
+				<<set $Minutes += 5>>
+				<<goto "Carter Hang Out Arcade Intro">>
+			<</link>>
+			<<link"The Mall (0:15)<br>">>
+				<<set $HangOutClothes to "Uniform">>
+				<<set $Minutes += 15>>
+				<<goto "Carter Hang Out Mall Intro">>
+			<</link>>
+			<br>
+		<</replace>>
+		<</link>>
+	<</if>>
+</div>
+[[Leave|Middle School]] 
+
+:: CARTER Inspect School Hallway [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> walks down the hallway happily swinging his arms.<br>
+<br>
+[[Give him a hug (0:02)|Carter School Hug]]<br>
+<<if !$DailyEvents.includes("Carter School Bully")>>
+	[[Give Carter a Wedgie (0:02)|Carter School Hallway Wedgie]]
+	<<if $CarterSocial < 60 && $CarterSocialRank != 1>>
+		<span style="color:Red"> -Social</span><br>
+	<<else>>
+		<span style="color:Green"> +Social</span><br>		
+	<</if>>
+<<else>>
+	<span style="color:Grey">Give Carter a Wedgie (0:02)</span><br>
+<</if>>
+
+<<include"Carter Base Talk Code">>
+
+:: CARTER Inspect English [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> is secretly reading a comic book hidden within his English Textbook. While you can’t tell exactly what the comic is about, you can tell by the bright colors and character designs that it is definitely an old superhero comic.<br>
+
+:: CARTER Inspect History [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> is reading a book about heroic knights. Despite not being entirely historically accurate, <span style="color:DarkTurquoise">Mr. De León</span> doesn’t seem to mind him reading it between assignments.<br>
+
+:: CARTER Inspect Science [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> is helping <span style="color:DarkTurquoise">Mr. Chang</span> set up some equipment for class today. Despite his normally expressive movements, he is extremely careful with the glass beakers and vials.<br>
+
+:: CARTER Inspect Math [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> is struggling to complete some late homework before class begins. Math doesn’t seem to be his strong suit.<br>
+
+:: CARTER Inspect Drama [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> stands at the center of the stage, practicing heroic poses and giving “inspiring” speeches. Some of the other kids giggle at his performance, but he seems to be enjoying himself regardless.<br>
+
+:: CARTER Inspect Gym [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Outfit: "Undies",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> changes away from everyone else, tucked away behind a row of lockers. <span style="color:Pink">He stands there in nothing but his $CarterUndies.Name, which combined with his short height make him look like an elementary schooler.</span> He notices you looking towards him and blushing, turning away to avoid eye-contact. Despite everyone being in their underwear, something about being in the locker room makes it less intimate and embarrassing, though <span style="color:DarkTurquoise">Carter</span> still seems a bit shy.<br><br>
+<<if $SeenCarterUndies < 1>>
+	<<set $SeenCarterUndies += 1>>
+<</if>>
+<<if $CarterDailyUndieComment != 1>>
+	[[Compliment his childish underwear|Carter Gym Undie Complement]] <span style="color:Green">+Carter</span><br>
+	[[Make fun of his childish underwear|Carter Gym Undie Make Fun]] <span style="color:Red">-Carter</span><br>
+<</if>>
+
+:: CARTER Inspect Gym Shower [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Outfit: "Towel",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> sits on a bench in another aisle mostly by himself. He holds his $CarterUndies.Name in his hands and was in the process of putting them on under his towel, shyly trying to keep the large towel from falling off his small body. <br>

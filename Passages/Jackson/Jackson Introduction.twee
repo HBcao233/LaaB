@@ -1,0 +1,138 @@
+:: Jackson Introduction [nobr]
+
+<<set $MetJackson to 1>>
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School South Hallway",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Hallway",
+}>>
+
+You exit the bus and are immediately greeted by the grand sight of the Preston Boy’s Academy’s Middle School building. It is a large, two-story structure with flags of the school’s mascot, the Dragon, hanging along the entrance. The building was mainly white and gray, with accents painted in the school’s colors, Purple and Gold. A tall stone fence lined the property of the school, which was quite large as it also contained multiple sports fields, a pool, and an attached gym and auditorium, among other things. It was far larger and more impressive than any school you had attended previously. The stunning size of it left you looking at it in shocked silence for a moment until another boy suddenly crashes into you, causing you both to tumble to the ground.<br>
+<br>
+<span style="color:LightSteelBlue">“Ouch.”</span> The boy laughs, <span style="color:LightSteelBlue">“Sorry about that!”</span> The boy tries to get up, but almost immediately falls over again. You notice his shoelaces were untied and causing the multiple stumbles. Though after a minute of constantly landing on you, he finally manages to stand. <span style="color:LightSteelBlue">“Sorry about that!”</span> He giggles, helping you up. <span style="color:LightSteelBlue">“I’m just so excited! My first day in middle school! And my teachers said I wouldn’t make it past 3rd grade. Joke’s on them now!”</span><br>
+
+    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+				Blush: 1,
+    		},	
+        },
+		{
+            Name: "Player",
+            State: {
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+The boy looked a bit disheveled, with messy, uncombed hair and a half-tucked-in shirt. His wild hair was a Light Brown and his eyes were Blue. He had tanned skin, most likely from spending much of his time outdoors, and a big smile.<br>
+<br>
+<<if $PlayerUndies.Type != "None">>
+The boy quickly dusts the dirt off of your $PlayerBottoms.Type, though doesn’t bother with his own. 
+<<else>>
+The boy quickly dusts the dirt off of your $PlayerBottoms.Type, though stops partway through and smiles, leaning in to whisper. <span style="color:LightSteelBlue">“You’re not wearing any underwear, are you?”</span> <span style="color:Pink">Your blushing confirms his suspicions, prompting him to laugh cutely.</span> <span style="color:LightSteelBlue">“Don’t worry, I won’t tell. I hate wearing underwear too, but my mom caught me going to school without it a few years ago and got really mad. She bought these like big, poofy undies that I couldn’t get off by myself. She only let me stop wearing them when I promised to always wear underwear to school, she even checks sometimes.”</span> The boy laughs at what would normally be seen as embarrassing, though he doesn’t seem to mind sharing.<br>
+<br>
+<</if>>
+<span style="color:LightSteelBlue">“I’m <span style="color:DarkTurquoise">Jackson</span>! You’re one of those new kids everyone is talking about, right?”</span> He asks. You give him a puzzled look, asking what he meant by everyone talking about you. <span style="color:LightSteelBlue">“Preston never gets any new kids! It’s like against the rules or something, but then people started talking about us getting two!”</span> He shrugs, <span style="color:LightSteelBlue">“You must be really smart if they broke the rules for you, or at least that’s what I heard.”</span> You blush at the sentiment, though you are unsure what kind of attention this would bring you.<br>
+<br>
+<span style="color:LightSteelBlue">“Anyway, I gotta go. I bet some friends that I could climb the biggest tree in the courtyard on the first day of school! See ya later!”</span> As <span style="color:DarkTurquoise">Jackson</span> is about to run off, you notice his shoes were still untied and would, doubtlessly, lead to more tumbles.<br>
+<br>
+<div id=choice>
+	<<link "Tie them for him">>
+	<<replace"#choice">>
+    You quickly stop the boy before he runs off and inform him of his untied shoes. <span style="color:LightSteelBlue">“Oh!”</span> He says as he looks down and realizes, <span style="color:LightSteelBlue">"That would explain why I’ve been tripping so much!”</span> As he laughs, you quickly bend down and begin to tie his shoes for him. <span style="color:DarkTurquoise">Jackson</span> mentions that he knows how to tie them, but just forgot to. You tell the joyful boy that it’s no problem and you’re glad to help.<br>
+
+    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Thanks, <span style="color:DarkTurquoise">$Player.Name</span>!”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Jackson</span> suddenly pulls you in for a big hug.</span> <span style="color:LightSteelBlue">“I owe you one! If you ever want to play during recess, just come find me! I’m planning to find all the best places to play around here!”</span> Jackson gives you a joyful wave as he quickly runs off, no longer tripping.<br>
+	<<set $JacksonSocial to 25>>
+	<span style="color:Green">+Jackson</span><br>
+    <<set $Attractions.Jackson to 1>>
+    <br>
+	[[Enter the school|Middle School Intro]] 
+
+    <</replace>>
+    <</link>>
+    [<span style="color:Lightgreen">Positive Relationship</span>/<span style="color:Lightgreen">Attraction</span>]<br>
+/* */
+
+	<<link "Warn him">>
+	<<replace"#choice">>
+    You quickly stop the boy before he runs off and inform him of his untied shoes. <span style="color:LightSteelBlue">“Oh!”</span> He says as he looks down and realizes, <span style="color:LightSteelBlue">"That would explain why I’ve been tripping so much!”</span> He quickly sits down on the steps of the school and ties his shoes, though doesn’t do the best job at doing so. Regardless, it is enough to keep him from tripping for the time being and he happily runs off.<br>
+	<<set $JacksonSocial to 25>>
+	<span style="color:Green">+Jackson</span><br>
+    <<set $Attractions.Jackson to 0>>
+    <br>
+	[[Enter the school|Middle School Intro]] 
+    <</replace>>
+    <</link>>
+    [<span style="color:Lightgreen">Positive Relationship</span>/<span style="color:lightcoral">No Attraction</span>]<br>
+/* */
+
+	<<link "Threaten to spank him">>
+	<<replace"#choice">>
+    You grab the boy by the arm as he attempts to run off and begin to scold him. You say he needs to be more careful, what if he had hurt you? What would he do then? <span style="color:DarkTurquoise">Jackson</span>’s joyous attitude quickly turns sad as you continue to berate him over his actions.<br>
+
+    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Frown",
+				Eyes: "Sad",
+				Blush: 2,
+				Cry: 1,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“I’m sorry.”</span> He says looking down, <span style="color:LightSteelBlue">“It won’t happen again! I promise!”</span> <span style="color:Pink">You smirk and pull him in, whispering that if it does, you’ll have to strip him down and spank his little butt so he’ll learn his lesson. You end the threat by giving him a hard smack on his behind, prompting the boy to yelp and jump back, holding his rear.</span> <span style="color:LightSteelBlue">“It won’t! I pinky promise!”</span><br>
+<br>
+You decide to let the boy go, for now, and he quickly runs off before he makes you more upset. You sigh and begin to walk inside yourself, partially hoping he does run into you again so you can make good on that threat.<br>
+	<<set $JacksonSocial to -25>>
+	<span style="color:Red">-Jackson</span><br>
+    <<set $Attractions.Jackson to 1>>
+    <br>
+	[[Enter the school|Middle School Intro]] 
+
+    <</replace>>
+    <</link>>
+    [<span style="color:lightcoral">Negative Relationship</span>/<span style="color:Lightgreen">Attraction</span>]<br>
+/* */
+
+	<<link "Scold him">>
+	<<replace"#choice">>
+    You grab the boy by the arm as he attempts to run off and begin to scold him. You say he needs to be more careful, what if he had hurt you? What would he do then? Jackson’s joyous attitude quickly turns sad as you continue to berate him over his actions.<br>
+<br>
+<span style="color:LightSteelBlue">“I’m sorry.”</span> He says looking down, <span style="color:LightSteelBlue">“It won’t happen again! I promise!”</span> You decide to let the boy go, for now, and he quickly runs off before he makes you more upset.<br>
+	<<set $JacksonSocial to -25>>
+	<span style="color:Red">-Jackson</span><br>
+    <<set $Attractions.Jackson to 0>>
+    <br>
+	[[Enter the school|Middle School Intro]] 
+
+    <</replace>>
+    <</link>>
+    [<span style="color:lightcoral">Negative Relationship</span>/<span style="color:lightcoral">No Attraction</span>]<br>
+/* */
+
+
+</div>

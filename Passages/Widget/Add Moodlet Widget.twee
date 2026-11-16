@@ -1,0 +1,1646 @@
+:: Add Moodlet Widget [widget nobr]
+
+
+/* This widget will add a moodlet to the player or update it with new info.
+When a Widget is added you used the following:
+    <<addMoodlet "NAME" value>>
+
+NAME: This is the name of the moodlet. For example: "Pained" is the moodlet for "Pained". It is normall the same as the Name or ID of the Moodlet.
+
+valuie: This is the value for the moodlet. If the moodlet is a Decay Type, it is the number of hours being added to it. If it is a state moodlet, it is the new state or the number the state is being increased by. For toggle moodlets, this is a 1 or 0 based on if it is being turned on or off.
+In most instances, this will either be the amount of hours or won't be used in events.
+
+When a Moodlet is added, it is different based on what the moodlet is. Based on this, the widget will run a passage. These passages should be "Add Moodlet NAME".
+
+*/
+
+<<widget "addMoodlet">>
+
+    <<set _moodlet to "Add Moodlet " + _args[0]>>
+    <<set _value to _args[1]>>
+    <<include _moodlet>>
+
+<</widget>>
+
+/* Moodlet List:
+[This is a list of which moodlets are currently programed in along with their type.] 
+
+-Decay Moodlets-
+    Pained: (Decay)
+        This Moodlet occurs when the PC takes pain. It is an UnComfortable Moodlet, but also adds Mad and Sad.
+
+*/
+
+:: Add Moodlet Pained [nobr]
+
+/* As this is the first Decay Moodlet being added, we will keep it at the top and use it for documentation. */
+
+/* This is setting up a temp variable for if the Moodlet is found to already be in the Player's pool. */
+<<set _found to 0>>
+
+/* Firstly, the widget will check if the Pained Moodlet currently exists in the Player's Moodlet Pool. 
+If the Moodlet is found, since this is a Decay Moodlet, it will add the new hours to the moodlets Value variable. These decrease by 1 every hour.
+It will then set _found to 1 to let us know it was found and does not need to be added.
+It will then break the for loop, as it has no use for looking for more.
+*/
+/* Daredevil trait heals injuries faster, making them last less time. */
+<<if $Player.Traits.includes("Daredevil") and _value > 3>>
+    <<set _value -= 3>>
+<</if>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Pained">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+/* Following the for loop, if the Pained moodlet was not found, it will add it. */
+<<if _found != 1>>
+    /* Daredevil Trait makes this moodlet not as bad. */
+    <<if $Player.Traits.includes("Daredevil")>>
+        <<set $Player.Moodlets.push({
+            ID: "Pained",
+            Name: "Pained",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Uncomfortable",
+            Description: "You are hurt! It will go away with time or medicine.",
+            Icon: "Pained",
+            Values: {
+                Uncomfortable: 10,
+            },
+        })>>
+    <<else>>
+        <<set $Player.Moodlets.push({
+            ID: "Pained",
+            Name: "Pained",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Uncomfortable",
+            Description: "You are hurt! It will go away with time or medicine.",
+            Icon: "Pained",
+            Values: {
+                Uncomfortable: 15,
+                Mad: 5,
+                Sad: 5,
+            },
+        })>>
+    <</if>>
+<</if>>
+
+:: Add Moodlet Kissed [nobr]
+
+/* This is a moodlet for when the PC is seen naked by people they are not comfortable around. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Kissed">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Kissed",
+        Name: "Kissed",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Horny",
+        Description: "You shared a kiss with someone and feel all fuzzy.",
+        Icon: "Kissed",
+        Values: {
+            Horny: 10,
+            Happy: 5,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Seen Naked [nobr]
+
+/* This is a moodlet for when the PC is seen naked by people they are not comfortable around. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<if $Player.Traits.includes("BodyAnxiety")>>
+    <<set _value to _value * 2>>
+<</if>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Seen Naked">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Seen Naked",
+        Name: "Seen Naked",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Embarrassed",
+        Description: "You were seen butt naked by someone!",
+        Icon: "Seen Naked",
+        Values: {
+            Embarrassed: 30,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Seen Undies [nobr]
+
+/* This is a moodlet for when the PC is seen in their underwear by people they are not comfortable around. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<if $Player.Traits.includes("BodyAnxiety")>>
+    <<set _value to _value * 2>>
+<</if>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Seen Undies">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Seen Undies",
+        Name: "Seen in Underwear",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Embarrassed",
+        Description: "People saw you in your underwear!",
+        Icon: "Seen Undies",
+        Values: {
+            Embarrassed: 15,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Gave Wedgie [nobr]
+
+/* This is a moodlet for when the PC gives another person a Wedgie. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Gave Wedgie">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<if $Player.Kinks.Wedgier == 1>>
+        <<set $Player.Moodlets.push({
+            ID: "Gave Wedgie",
+            Name: "Gave Wedgie",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Horny",
+            Description: "You feel a little fuzzy after giving someone else a wedgie.",
+            Icon: "Gave Wedgie Horny",
+            Values: {
+                Horny: 15,
+                Happy: 10,
+            },
+        })>>
+    <<else>>
+        <<set $Player.Moodlets.push({
+            ID: "Gave Wedgie",
+            Name: "Gave Wedgie",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Happy",
+            Description: "You smirk at the memory of giving another boy a wedgie.",
+            Icon: "Gave Wedgie",
+            Values: {
+                Horny: 5,
+                Happy: 10,
+            },
+        })>>
+    <</if>>
+<</if>>
+
+:: Add Moodlet Wedgie [nobr]
+
+/* This is a moodlet for when the PC gets a Wedgie. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<if $Player.Traits.includes("BodyAnxiety")>>
+    <<set _value to _value * 2>>
+<</if>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Wedgie">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<if $Player.Kinks.Wedgiee == 1>>
+        <<set $Player.Moodlets.push({
+            ID: "Wedgie",
+            Name: "Got Wedgied",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Horny",
+            Description: "You can still feel the feeling of being wedgied.",
+            Icon: "Wedgie Horny",
+            Values: {
+                Horny: 15,
+            },
+        })>>
+    <<else>>
+        <<set $Player.Moodlets.push({
+            ID: "Wedgie",
+            Name: "Got Wedgie",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Embarrassed",
+            Description: "You blush at the memory of being wedgied.",
+            Icon: "Wedgie",
+            Values: {
+                Embarrassed: 15,
+            },
+        })>>
+    <</if>>
+<</if>>
+
+:: Add Moodlet Spanked [nobr]
+
+/* This is a moodlet for when the PC gets a Wedgie. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Spanked">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<if $Player.Kinks.Spankee == 1>>
+        <<set $Player.Moodlets.push({
+            ID: "Spanked",
+            Name: "Spanked",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Horny",
+            Description: "Your butt burns pleasurably from getting spanked.",
+            Icon: "Spanked Horny",
+            Values: {
+                Horny: 15,
+            },
+        })>>
+    <<else>>
+        <<set $Player.Moodlets.push({
+            ID: "Spanked",
+            Name: "Spanked",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Uncomfortable",
+            Description: "Your ass still burns after getting spanked.",
+            Icon: "Spanked",
+            Values: {
+                Uncomfortable: 15,
+                Embarrassed: 10,
+                Mad: 10,
+            },
+        })>>
+    <</if>>
+<</if>>
+
+:: Add Moodlet Good Dream [nobr]
+
+/* This is a moodlet for when the PC has a good dream. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Good Dream">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Good Dream",
+        Name: "Good Dream",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Happy",
+        Description: "You smile as you remember the fun dream you had.",
+        Icon: "Good Dream",
+        Values: {
+            Happy: 10,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Bad Dream [nobr]
+
+/* This is a moodlet for when the PC has a Bad dream. To add some flair, it has 3 Moods it can boost, chosen randomly. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Bad Dream">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    /* Dream Moodlet will be slightly random. */
+    <<set _random to random(1, 3)>>
+    <<if _random == 1>>
+        <<set $Player.Moodlets.push({
+            ID: "Bad Dream",
+            Name: "Bad Dream",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Sad",
+            Description: "You feel sad as you remember your bad dream.",
+            Icon: "Bad Dream Sad",
+            Values: {
+                Sad: 10,
+            },
+        })>>
+    <<elseif _random == 2>>
+        <<set $Player.Moodlets.push({
+            ID: "Bad Dream",
+            Name: "Bad Dream",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Uncomfortable",
+            Description: "You feel Uncomfortable as you remember your bad dream.",
+            Icon: "Bad Dream Uncomfortable",
+            Values: {
+                Uncomfortable: 10,
+            },
+        })>>
+    <<elseif _random == 3>>
+        <<set $Player.Moodlets.push({
+            ID: "Bad Dream",
+            Name: "Bad Dream",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Scared",
+            Description: "You feel Scared as you remember your bad dream.",
+            Icon: "Bad Dream Scared",
+            Values: {
+                Scared: 10,
+            },
+        })>>
+    <</if>>
+<</if>>
+
+:: Add Moodlet Nightmare [nobr]
+
+/* This is a moodlet for when the PC has a nightmare. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Nightmare">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Nightmare",
+        Name: "Nightmare",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Scared",
+        Description: "You still feel jumpy and scared remembering your nightmare.",
+        Icon: "Nightmare",
+        Values: {
+            Scared: 20,
+            Sad: 10,
+            Uncomfortable: 10,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Lewd Experience [nobr]
+
+/* This is a moodlet for when the PC has a nightmare. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Lewd Experience">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Lewd Experience",
+        Name: "Lewd Experience",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Horny",
+        Description: "You smile at the naughty things you've done.",
+        Icon: "Lewd Experience",
+        Values: {
+            Horny: 30,
+            Happy: 10,
+            Hyper: 5,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Raped [nobr]
+
+/* This is a moodlet for when the PC is raped. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Raped">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Raped",
+        Name: "Raped",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Sad",
+        Description: "You feel violated and disgusting, used for someone else's sexual pleasure against your will.",
+        Icon: "Raped",
+        Values: {
+            Sad: 50,
+            Mad: 30,
+            Uncomfortable: 30,
+            Horny: 10,
+            Scared: 10,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Grossed Out [nobr]
+
+/* This is a moodlet for when the PC is grossed out. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Grossed Out">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Grossed Out",
+        Name: "Grossed Out",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Uncomfortable",
+        Description: "You are feeling a bit sick to your stomach.",
+        Icon: "Grossed Out",
+        Values: {
+            Uncomfortable: 15,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Minty Fresh [nobr]
+
+/* This is a moodlet for when the PC has just brushed their teeth. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Minty Fresh">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Minty Fresh",
+        Name: "Minty Fresh",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Happy",
+        Description: "Your breath is minty fresh!",
+        Icon: "Minty Fresh",
+        Values: {
+            Happy: 5,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Great Movie [nobr]
+
+/* This is a moodlet for when the PC has watched a great movie */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Great Movie">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Great Movie",
+        Name: "Great Movie",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Happy",
+        Description: "Man, that movie was great!",
+        Icon: "Great Movie",
+        Values: {
+            Happy: 5,
+            Hyper: 5,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Scary Movie [nobr]
+
+/* This is a moodlet for when the PC has watched a Scary movie */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Scary Movie">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Scary Movie",
+        Name: "Scary Movie",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Scared",
+        Description: "You are feeling a bit frightened from that movie.",
+        Icon: "Scary Movie",
+        Values: {
+            Scared: 10,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Good Wank [nobr]
+
+/* This is a moodlet for when the PC has a good wank. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Good Wank">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Good Wank",
+        Name: "Good Wank",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Happy",
+        Description: "You are feeling happy and satisfied.",
+        Icon: "Good Wank",
+        Values: {
+            Happy: 10,
+            Horny: -10,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Good Deed [nobr]
+
+/* This is a moodlet for when the PC does a good deed */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Good Deed">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    /* Better Moodlet with Good Trait */
+    <<if $Player.Traits.includes("Good")>>
+        <<set $Player.Moodlets.push({
+            ID: "Good Deed",
+            Name: "Good Deed",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Happy",
+            Description: "You feel happy from doing a good deed.",
+            Icon: "Good Deed",
+            Values: {
+                Happy: 15,
+            },
+        })>>
+    <<else>>
+        <<set $Player.Moodlets.push({
+            ID: "Good Deed",
+            Name: "Good Deed",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Happy",
+            Description: "You feel happy from doing a good deed.",
+            Icon: "Good Deed",
+            Values: {
+                Happy: 10,
+            },
+        })>>
+    <</if>>
+<</if>>
+
+:: Add Moodlet Delicious [nobr]
+
+/* This is a moodlet for when the PC eats something Delicious */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Delicious">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Delicious",
+        Name: "Delicious",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Happy",
+        Description: "That food tasted amazing!",
+        Icon: "Delicious",
+        Values: {
+            Happy: 5,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Refreshing [nobr]
+
+/* This is a moodlet for when the PC drinks something Refreshing */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Refreshing">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Refreshing",
+        Name: "Refreshing",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Happy",
+        Description: "That drink was super refreshing!",
+        Icon: "Refreshing",
+        Values: {
+            Happy: 5,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Full Diaper [nobr]
+
+/* This is a Moodlet that controls whether or not the PC's Diaper is full */
+/* Toggle Moodlet */
+
+/* Adding the Moodlet */
+<<if _value == 1>>
+
+    <<set _found to 0>>
+    <<set $FullDiaper to 1>>
+
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "Full Diaper">>
+                <<set _found to 1>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+    
+    <<if _found != 1>>
+        <<set $Player.Moodlets.push({
+            ID: "Full Diaper",
+            Name: "Full Diaper",
+            MoodletType: "Toggle",
+            Value: 1,
+            Type: "Uncomfortable",
+            Description: "Your diaper is feeling pretty soaked and full.",
+            Icon: "Full Diaper",
+            Values: {
+                Uncomfortable: 15,
+                Embarrassed: 5,
+            },
+        })>>
+    <</if>> 
+
+/* Removing the Moodlet */
+<<else>>
+    <<set $FullDiaper to 0>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Full Diaper">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+
+<</if>>
+
+:: Add Moodlet Stress [nobr]
+
+/* This is a moodlet that can stack. It is removed by relaxing or my sleeping. */
+/* State Moodlet */
+
+<<set _found to 0>>
+
+
+<<if _value > 0>>
+    /* Increases Value by 1 if Neurotic */
+    <<if $Player.Traits.includes("Neurotic")>>
+        <<set _value += 1>>
+    <</if>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "Stress">>
+                <<set $Player.Moodlets[_i].Value += _value>>
+                <<set _stresslevel to $Player.Moodlets[_i].Value>>
+                <<set $Player.Moodlets[_i].Values.Uncomfortable to 5 * _stresslevel>>
+                <<set _found to 1>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+
+    <<if _found != 1>>
+        <<set _stresslevel to _value * 5>>
+        <<set $Player.Moodlets.push({
+            ID: "Stress",
+            Name: "Stressed",
+            MoodletType: "Level",
+            Value: _value,
+            Type: "Uncomfortable",
+            Description: "You are feeling pretty stressed out.",
+            Icon: "Stressed Uncomfortable",
+            Values: {
+                Uncomfortable: _stresslevel,
+            },
+        })>>
+    <</if>>
+<<else>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Stress">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+
+<</if>>
+
+:: Add Moodlet Caffeine Buzz [nobr]
+
+/* This is a special moodlet that changes after it runs out. */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+        <<if $Player.Moodlets[_i].ID == "Caffeine Buzz">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+        <</if>>
+        <<if $Player.Moodlets[_i].ID == "Caffeine Crash">>
+            <<set $Player.Moodlets.deleteAt(_i)>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Caffeine Buzz",
+        Name: "Caffeine Buzz",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Hyper",
+        Description: "You are feeling very hyper from that caffeine!",
+        Icon: "Caffeine Buzz",
+        Values: {
+            Hyper: 20,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Caffeine Crash [nobr]
+
+/* This is a special moodlet that changes after it runs out. */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+        <<if $Player.Moodlets[_i].ID == "Caffeine Crash">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Caffeine Crash",
+        Name: "Caffeine Crash",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Tired",
+        Description: "That caffeine crash is hitting you hard.",
+        Icon: "Caffeine Crash",
+        Values: {
+            Tired: 20,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Asthmatic [nobr]
+
+/* This is a moodlet for when the PC does something physical with the asthma trait. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Asthmatic">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Asthmatic",
+        Name: "Asthmatic",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Tired",
+        Description: "You are feeling pretty out of breath.",
+        Icon: "Asthmatic",
+        Values: {
+            Tired: 10,
+        },
+    })>>
+<</if>>
+
+
+:: Add Moodlet Commando [nobr]
+
+/* This is a moodlet for when the PC has the commando trait and it or isn't wearing undies. */
+/* Toggle Moodlet */
+
+<<set _found to 0>>
+
+<<if _value == 1>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "Commando">>
+			    <<set $Player.Moodlets.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+    <<set $Player.Moodlets.push({
+        ID: "Commando",
+        Name: "Pleasant Breeze",
+        MoodletType: "State",
+        Value: 1,
+        Type: "Happy",
+        Description: "You feel a pleasant and free feeling down below.",
+        Icon: "Pleasant Breeze",
+        Values: {
+            Happy: 5,
+        },
+    })>>
+<<elseif _value == -1>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "Commando">>
+			    <<set $Player.Moodlets.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+    <<set $Player.Moodlets.push({
+        ID: "Commando",
+        Name: "Unpleasantly Constrained",
+        MoodletType: "State",
+        Value: -1,
+        Type: "Uncomfortable",
+        Description: "Wearing underwear is leaving you feeling unpleasantly constrained.",
+        Icon: "Unpleasantly Constrained",
+        Values: {
+            Uncomfortable: 5,
+        },
+    })>>
+<<else>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "Commando">>
+			    <<set $Player.Moodlets.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+<</if>>
+
+:: Add Moodlet Coward [nobr]
+
+/* This is a moodlet for when the PC has the Coward Trait and becomes randomly afraid. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Coward">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Coward",
+        Name: "Coward",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Scared",
+        Description: "Just the thought of something going wrong has made you afraid!",
+        Icon: "Coward",
+        Values: {
+            Scared: 15,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Excited [nobr]
+
+/* This is a moodlet for when the PC has the Excitable Trait and becomes randomly Excited. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Excited">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Excited",
+        Name: "Excited",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Hyper",
+        Description: "For some reason, you are feeling pretty excited all of a sudden!",
+        Icon: "Excited",
+        Values: {
+            Hyper: 15,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Gloomy [nobr]
+
+/* This is a moodlet for when the PC has the Gloomy Trait and becomes randomly Sad. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Gloomy">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Gloomy",
+        Name: "Gloomy",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Sad",
+        Description: "You are feeling a bit sad because you just know something is going to go wrong.",
+        Icon: "Gloomy",
+        Values: {
+            Sad: 15,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Ticked Off [nobr]
+
+/* This is a moodlet for when the PC has the Hot Headed Trait and becomes randomly Mad. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Ticked Off">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Ticked Off",
+        Name: "Ticked Off",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Mad",
+        Description: "For one reason or another, something has ticked you off!",
+        Icon: "Ticked Off",
+        Values: {
+            Mad: 15,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Thinking Naughty Thoughts [nobr]
+
+/* This is a moodlet for when the PC has the Lustful Trait and becomes randomly Horny. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Thinking Naughty Thoughts">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Thinking Naughty Thoughts",
+        Name: "Thinking Naughty Thoughts",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Horny",
+        Description: "Dirty and naughty thoughts fill your brain.",
+        Icon: "Thinking Naughty Thoughts",
+        Values: {
+            Horny: 15,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet No Shoes [nobr]
+
+/* This is a moodlet for when the PC is outside without shoes on. */
+/* Toggle Moodlet */
+
+<<set _found to 0>>
+
+<<if _value == 1>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "No Shoes">>
+			    <<set $Player.Moodlets.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+    <<set $Player.Moodlets.push({
+        ID: "No Shoes",
+        Name: "No Shoes",
+        MoodletType: "State",
+        Value: 1,
+        Type: "Uncomfortable",
+        Description: "It's a little uncomfortable walking around without anything to protect your feet.",
+        Icon: "No Shoes",
+        Values: {
+            Uncomfortable: 5,
+        },
+    })>>
+<<else>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "No Shoes">>
+			    <<set $Player.Moodlets.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+<</if>>
+
+:: Add Moodlet Safe & Secure [nobr]
+
+/* This is a moodlet for when the PC had the indoor kid trait and is inside. */
+/* Toggle Moodlet */
+
+<<set _found to 0>>
+
+<<if _value == 1>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "Safe & Secure">>
+			    <<set $Player.Moodlets.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+    <<set $Player.Moodlets.push({
+        ID: "Safe & Secure",
+        Name: "Safe & Secure",
+        MoodletType: "State",
+        Value: 1,
+        Type: "Happy",
+        Description: "You feel happy from being safely inside.",
+        Icon: "Safe & Secure",
+        Values: {
+            Happy: 5,
+        },
+    })>>
+<<else>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "Safe & Secure">>
+			    <<set $Player.Moodlets.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+<</if>>
+
+:: Add Moodlet Fresh Air [nobr]
+
+/* This is a moodlet for when the PC had the outside kid trait and is outside. */
+/* Toggle Moodlet */
+
+<<set _found to 0>>
+
+<<if _value == 1>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "Fresh Air">>
+			    <<set $Player.Moodlets.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+    <<set $Player.Moodlets.push({
+        ID: "Fresh Air",
+        Name: "Fresh Air",
+        MoodletType: "State",
+        Value: 1,
+        Type: "Happy",
+        Description: "You love the feeling of fresh air in the great outdoors!",
+        Icon: "Fresh Air",
+        Values: {
+            Happy: 5,
+        },
+    })>>
+<<else>>
+    <<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+        <<capture _i>>
+            <<if $Player.Moodlets[_i].ID == "Fresh Air">>
+			    <<set $Player.Moodlets.deleteAt(_i)>>
+                <<break>>
+            <</if>>
+        <</capture>>
+    <</for>>
+<</if>>
+
+:: Add Moodlet Unstable [nobr]
+
+/* This is a moodlet for when the PC has the Unstable Trait. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Unstable">>
+            <<set $Player.Moodlets.deleteAt(_i)>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<set _type to random(1, 10)>>
+
+<<if _type == 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Unstable",
+        Name: "Unstable: Happy",
+        MoodletType: "Decay",
+        Value: 8,
+        Type: "Happy",
+        Description: "You can not explain why you are feeling this way, but you are.",
+        Icon: "Unstable Happy",
+        Values: {
+            Happy: 15,
+        },
+    })>>
+<<elseif _type == 2>>
+    <<set $Player.Moodlets.push({
+        ID: "Unstable",
+        Name: "Unstable: Sad",
+        MoodletType: "Decay",
+        Value: 8,
+        Type: "Sad",
+        Description: "You can not explain why you are feeling this way, but you are.",
+        Icon: "Unstable Sad",
+        Values: {
+            Sad: 15,
+        },
+    })>>
+<<elseif _type == 3>>
+    <<set $Player.Moodlets.push({
+        ID: "Unstable",
+        Name: "Unstable: Neutral",
+        MoodletType: "Decay",
+        Value: 8,
+        Type: "Neutral",
+        Description: "You can not explain why you are feeling this way, but you are.",
+        Icon: "Unstable Neutral",
+        Values: {
+            Neutral: 15,
+        },
+    })>>
+<<elseif _type == 4>>
+    <<set $Player.Moodlets.push({
+        ID: "Unstable",
+        Name: "Unstable: Uncomfortable",
+        MoodletType: "Decay",
+        Value: 8,
+        Type: "Uncomfortable",
+        Description: "You can not explain why you are feeling this way, but you are.",
+        Icon: "Unstable Uncomfortable",
+        Values: {
+            Uncomfortable: 15,
+        },
+    })>>
+<<elseif _type == 5>>
+    <<set $Player.Moodlets.push({
+        ID: "Unstable",
+        Name: "Unstable: Hyper",
+        MoodletType: "Decay",
+        Value: 8,
+        Type: "Hyper",
+        Description: "You can not explain why you are feeling this way, but you are.",
+        Icon: "Unstable Hyper",
+        Values: {
+            Hyper: 15,
+        },
+    })>>
+<<elseif _type == 6>>
+    <<set $Player.Moodlets.push({
+        ID: "Unstable",
+        Name: "Unstable: Horny",
+        MoodletType: "Decay",
+        Value: 8,
+        Type: "Horny",
+        Description: "You can not explain why you are feeling this way, but you are.",
+        Icon: "Unstable Horny",
+        Values: {
+            Horny: 15,
+        },
+    })>>
+<<elseif _type == 7>>
+    <<set $Player.Moodlets.push({
+        ID: "Unstable",
+        Name: "Unstable: Bored",
+        MoodletType: "Decay",
+        Value: 8,
+        Type: "Bored",
+        Description: "You can not explain why you are feeling this way, but you are.",
+        Icon: "Unstable Bored",
+        Values: {
+            Bored: 15,
+        },
+    })>>
+<<elseif _type == 8>>
+    <<set $Player.Moodlets.push({
+        ID: "Unstable",
+        Name: "Unstable: Mad",
+        MoodletType: "Decay",
+        Value: 8,
+        Type: "Mad",
+        Description: "You can not explain why you are feeling this way, but you are.",
+        Icon: "Unstable Mad",
+        Values: {
+            Mad: 15,
+        },
+    })>>
+<<elseif _type == 9>>
+    <<set $Player.Moodlets.push({
+        ID: "Unstable",
+        Name: "Unstable: Embarrassed",
+        MoodletType: "Decay",
+        Value: 8,
+        Type: "Embarrassed",
+        Description: "You can not explain why you are feeling this way, but you are.",
+        Icon: "Unstable Embarrassed",
+        Values: {
+            Embarrassed: 15,
+        },
+    })>>
+<<else>>
+    <<set $Player.Moodlets.push({
+        ID: "Unstable",
+        Name: "Unstable: Scared",
+        MoodletType: "Decay",
+        Value: 8,
+        Type: "Scared",
+        Description: "You can not explain why you are feeling this way, but you are.",
+        Icon: "Unstable Scared",
+        Values: {
+            Scared: 15,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Over Eaten [nobr]
+
+/* This is a moodlet for when the PC eats when they are already full. */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Over Eaten">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Over Eaten",
+        Name: "Over Eaten",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Uncomfortable",
+        Description: "Your stomach hurts from over eating.",
+        Icon: "Over Eaten",
+        Values: {
+            Uncomfortable: 10,
+            Tired: 10,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Feeling Weird [nobr]
+
+/* This is a moodlet for for the PC experiences something supernatural */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Feeling Weird">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Feeling Weird",
+        Name: "Feeling Weird",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Scared",
+        Description: "You are feeling weird and scared for some reason.",
+        Icon: "Feeling Weird",
+        Values: {
+            Scared: 10,
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Feeling Strange [nobr]
+
+/* This is a moodlet for for the PC experiences something supernatural, but isn't scared */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Feeling Strange">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<set $Player.Moodlets.push({
+        ID: "Feeling Strange",
+        Name: "Feeling Strange",
+        MoodletType: "Decay",
+        Value: _value,
+        Type: "Scared",
+        Description: "You are feeling Strange for some reason.",
+        Icon: "Feeling Strange",
+        Values: {
+        },
+    })>>
+<</if>>
+
+:: Add Moodlet Uncomfortably Cold [nobr]
+
+/* This is a moodlet for when the PC is Uncomfortably Cold but not from Temp/Weather */
+/* Decay Moodlet */
+
+<<set _found to 0>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Uncomfortably Cold">>
+            <<set $Player.Moodlets[_i].Value += _value>>
+            <<set _found to 1>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if _found != 1>>
+    <<if !$Player.Traits.includes("Likes Cold")>>
+        <<set $Player.Moodlets.push({
+            ID: "Uncomfortably Cold",
+            Name: "Uncomfortably Cold",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Uncomfortable",
+            Description: "Your body is freezing from the cold. Your penis has shrunk slightly from the chill.",
+            Icon: "Uncomfortably Cold",
+            Values: {
+                Uncomfortable: 15,
+                Horny: -25,
+            },
+        })>>
+    <<else>>
+        <<set $Player.Moodlets.push({
+            ID: "Uncomfortably Cold",
+            Name: "Uncomfortably Cold",
+            MoodletType: "Decay",
+            Value: _value,
+            Type: "Happy",
+            Description: "You feel a pleasant chill all over your body. Your penis has shrunk slightly from the chill.",
+            Icon: "Uncomfortably Cold Good",
+            Values: {
+                Happy: 10,
+                Horny: -25,
+            },
+        })>>
+    <</if>>
+<</if>>

@@ -1,0 +1,48 @@
+:: Wrestling Lock-Up Phase [nobr]
+
+This is the Lock-Up Phase. During this Phase both characters have selected the same option. This leads to a skill check battle of strength with the highest going into the Mat Phase with advantage. <br>
+<br>
+This battle works by letting both characters roll a 1d10, then adding their strength modifier. Some characters also have additional bonuses to this. See below for the rolls. Note: The rolls won't normally be displayed during gameplay, they are just here for testing purposes. Debug mode will still display these rolls during normal gameplay.<br>
+<br>
+<<set _playerroll to random(1, 10)>>
+<<set _opponentroll to random(1, 10)>>
+Player Dice Roll: _playerroll<br>
+Opponent Dice Roll: _opponentroll<br>
+
+<<set _playerfinal to _playerroll + $Wrestling.PlayerStrength>>
+<<set _opponentfinal to _opponentroll + $Wrestling.Opponent.Strength>>
+
+Player Final Result: _playerfinal ($Wrestling.PlayerStrength + _playerroll)<br>
+Opponent Final Result: _opponentfinal ($Wrestling.Opponent.Strength + _opponentroll)<br>
+<br>
+The result will then be displayed here: 
+<<if _playerfinal == _opponentfinal>>
+    Tied!<br>
+<<elseif _playerfinal > _opponentfinal>>
+    Player Wins!<br>
+<<else>>
+    Opponent Wins!<br>
+<</if>>
+<br>
+A scene will then play out showing what result with some flavor text. If the Player Wins, they will go to the Mat Phase on the advantage. With the opposite occuring if the Opponent Wins. In the result of a Tie, the Lock-Up ends with no one gaining the advantage, thus leading back to the Strike Phase. <br>
+<br>
+Click the button below to move to the resulted phase:<br>
+<br>
+<<if _playerfinal == _opponentfinal>>
+    <<link"Strike Phase">>
+        <<set $Wrestling.Phase to "Strike">>
+        <<goto"Wrestling Main">>
+    <</link>>
+<<elseif _playerfinal > _opponentfinal>>
+    <<link"Mat Phase (Player Winning)">>
+        <<set $Wrestling.Phase to "Mat">>
+        <<set $Wrestling.Advantage to 1>>
+        <<goto"Wrestling Main">>
+    <</link>>
+<<else>>
+    <<link"Strike Phase (Opponent Winning)">>
+        <<set $Wrestling.Phase to "Mat">>
+        <<set $Wrestling.Advantage to -1>>
+        <<goto"Wrestling Main">>
+    <</link>>
+<</if>>

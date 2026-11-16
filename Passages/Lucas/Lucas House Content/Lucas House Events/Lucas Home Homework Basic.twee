@@ -1,0 +1,68 @@
+:: Lucas Home Homework Basic [nobr]
+
+	<<set $Minutes += 30>>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+You sit down at the dining table and pull out your schoolwork, asking if <span style="color:DarkTurquoise">Lucas</span> has finished any of the homework yet. <span style="color:LightSteelBlue">“I have not.”</span> He said, grabbing his own homework. <span style="color:LightSteelBlue">“I was going to, but then you came over.”</span> He chuckled, rubbing the back of his head. <span style="color:LightSteelBlue">“Let’s do it together! That way it’ll only take half the time!”</span> You agree and you both begin to work on your homework together. <br>
+<br>
+<div id=choice>
+/* Ask Lucas for Help */
+	<<link "Ask Lucas for Help<br>">>
+	<<replace"#choice">>
+After a few minutes of working, you turn to <span style="color:DarkTurquoise">Lucas</span> and ask him for some help with the Math homework. <span style="color:LightSteelBlue">“Sure thing!”</span> He says happily, <span style="color:LightSteelBlue">“I may hate math, but I’m pretty good at it.”</span> He scooches his chair over next to you and begins to help you solve the problems. Interestingly, he refuses to just give you the answers, instead trying to help you solve it on your own. <br>
+<br>
+<span style="color:LightSteelBlue">“This problem is really simple, here.”</span> He was almost as good at explaining it as the teacher. You briefly wonder if he had helped someone else with their homework before, but doubt it since he doesn’t have any younger siblings. When you are finally able to solve the problem on your own, he smiles widely and pats you on the back. <span style="color:LightSteelBlue">“Nice job! This stuff can be really confusing, so feel free to ask if you need any more help.”</span> You thank him and you both return to finishing your homework. <br>
+	<<set $Homework to 2>>
+	<<set $MathGrade +=1>>
+	<<set $HistoryGrade +=1>>
+	<<set $ScienceGrade +=1>>
+	<<set $EnglishGrade +=1>>
+    <<needChange "Fun" -15>>
+    <span style="color:Red">-Lucas Fun</span><br>
+    <<set $HangOutNeed.Fun -= 10>>
+	<<socialChange "Lucas" 1>>
+    <br>
+	[[Continue|Lucas Home Dining Room]]
+
+    <</replace>>
+    <</link>>
+/* Quiz him with Flashcards */
+	<<link "Quiz him with Flashcards<br>">>
+	<<replace"#choice">>
+You spot a pile of what appears to be math flashcards in <span style="color:DarkTurquoise">Lucas</span>’ stuff and pick them up. <span style="color:LightSteelBlue">“Oh yeah, my mom uses those to quiz me before a test.”</span> He sighs, <span style="color:LightSteelBlue">“She checks my grades online like every day. If any of them start to slip, TV time gets replaced with study time.”</span> He shrugs, stretching his arms in the air. <span style="color:LightSteelBlue">“Though I’ve gotten pretty good at keeping up a B+ average.”</span> <br>
+<br>
+You hold up the cards with a grin and ask him if he’d like to test his skills. He rolls his eyes, before agreeing. You spend the next few minutes quizzing him with the flashcards. Much to your surprise, he gets most of the answers instantly. <span style="color:DarkTurquoise">Lucas</span> laughs at your expression of confusion and amazement. <br>
+<br>
+<span style="color:LightSteelBlue">“I’m not that good, these are just last week's flashcards. I basically have them memorized at this point.”</span> He leans back in his chair and smirks, <span style="color:LightSteelBlue">“I’ve also gotten good at remembering the answers on the cards my mom makes, that way I can make sure I still get my TV time.”</span> You both laugh at his deviousness. You make a playful threat about telling his mom she should change the flashcards more often but agree not to if <span style="color:DarkTurquoise">Lucas</span> lets you copy his math homework. <br>
+	<<set $Homework to 2>>
+	<<set $MathGrade +=1>>
+	<<set $HistoryGrade +=1>>
+	<<set $ScienceGrade +=1>>
+	<<set $EnglishGrade +=1>>
+    <<needChange "Fun" -15>>
+    <span style="color:Red">-Lucas Fun</span><br>
+    <<set $HangOutNeed.Fun -= 10>>
+    <<set $Player.Fun -= 15>>
+<<socialChange "Lucas" 1>>
+    <br>
+[[Continue|Lucas Home Dining Room]]
+
+    <</replace>>
+    <</link>>
+</div>

@@ -1,0 +1,62 @@
+:: Carter House Entering Pool State [nobr]
+
+/* Intro */
+You and <span style="color:DarkTurquoise">Carter</span> are sitting on two of the patio chairs on the porch in his backyard, just chilling and staring up at the clouds. Your attention turns to the large pool <span style="color:DarkTurquoise">Carter</span> has in his backyard, currently covered by its cover. Sadly, you can’t just strip down and jump in because of said cover, but his family has been pretty alright with opening it for <span style="color:DarkTurquoise">Carter</span> and his friends to swim before, <span style="color:LightGreen">so you take a chance and ask <span style="color:DarkTurquoise">Carter</span> if he would like to go for a bit of a swim.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Sure! That sounds fun. I’ll go see if my dad or brother will get it open. You have something to swim in, right?”</span> <span style="color:DarkTurquoise">Carter</span> leaps from the chair, <span style="Color: LightSteelBlue">“If you want to go get changed in the bathroom, I’ll meet you out here!”</span> You nod and head to the bathroom. <br>
+<br>
+
+[[Choose Clothing from Inventory|SCENE NOT FOUND]] [Coming Soon]<br>
+<<link"Put on \"Swimwear\" Event Outfit">>
+    <<applyEventOutfit "Swim">>
+    <<goto"Carter House Entering Pool State 2">>
+<</link>> [Event Outfits can be customized in the Closet.]<br>
+
+:: Carter House Entering Pool State 2 [nobr]
+
+/* Intro */
+
+<<set _random to random(1, 2)>>
+<<if _random == 1>>
+    Changed into your swimwear, you walk into the yard to find <span style="color:DarkTurquoise">Carter</span>’s dad currently opening up the pool. <span style="Color: LightSteelBlue">“Oh, hey.”</span> He waves, <span style="Color: LightSteelBlue">“Should be done in just a second, think <span style="color:DarkTurquoise">Carter</span>’s changing. You two have fun.”</span> <span style="color:LightGreen">He finishes opening the pool and heads inside, with <span style="color:DarkTurquoise">Carter</span> blasting out a moment later and leaping into the pool with a loud battle cry.</span> <br>
+<<else>>
+    Changed into your swimwear, you walk into the yard to find <span style="color:DarkTurquoise">Carter</span>’s older brother, <span style="color:DarkTurquoise">Callum</span>, opening up the pool. <span style="Color: LightSteelBlue">“Just about done.”</span> He says as he sees you, <span style="Color: LightSteelBlue">“Think Ultraboy’s changing. Try not to get too crazy, alright?”</span> <span style="color:LightGreen">He laughs as he finishes opening the pool and heads inside. <span style="color:DarkTurquoise">Carter</span> blasts out a moment later, leaping into the pool with a loud battle cry.</span> <br>
+<</if>>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Swim",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Yeah!”</span> He laughs as he surfaces, spitting out some water that got into his mouth. <span style="Color: LightSteelBlue">“Come on in! Water’s great.”</span> <span style="color:LightGreen">He gives you a big smile as you jump in next to him, ready to play and relax in the water with <span style="color:DarkTurquoise">Carter</span>.</span> <br>
+<br>
+[[Continue|Carter House Backyard Swim]]

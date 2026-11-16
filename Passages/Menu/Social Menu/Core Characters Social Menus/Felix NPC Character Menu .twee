@@ -1,0 +1,450 @@
+:: Felix NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Core Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Felix--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"Felix NPC Character Menu Biography">>
+</div>
+
+:: Felix NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Felix NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Felix NPC Character Menu Avatar Display">>
+
+<<if $FelixSocial > 50>>
+    Felix Allard is your friend and classmate at Preston. He started at the same time as you, being a French foreign exchange student, and quickly managed to fit in and make some friends. Which makes sense, as the boy is smart, charming, and athletically gifted. You would be annoyed at how easy things seem to come to him, but it helps that he is very humble and friendly. You can’t help but find him a bit charming. <br>
+    <br>
+<<elseif $FelixSocial > -10>>
+    Felix Allard is a French foreign exchange student to Preston Academy. He started at the same time as you and is generally a very friendly, if not a bit weird, boy. Despite his oddness, he seems to have become decently popular due to his charm and exotic flair. He is very smart and sporty, being very fond and skilled at the game of soccer, or as he calls it, football. <br>
+    <br>
+<<else>>
+    Felix Allard is the annoying smart and frustratingly charming French foreign exchange student to Preston Academy. Despite his strangeness, he seems to have gotten pretty popular in a very short amount of time. This is just another thing on the list of reasons you dislike him. Things always come too easily to kids like him, and it’s super annoying! <br>
+    <br>
+<</if>>
+
+<<if $CompletedQuests.includes("Felix: Mateo")>>
+    Felix is living with a host family here, including a clingy little host brother named Mateo. Felix seems to have taken a liking to the boy, who seems to love his new big bro. <br>
+    <br>
+<</if>>
+
+:: Felix NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Felix NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Felix NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Felix Allard <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> November 30th <br>
+<strong>Address:</strong> 
+    <<if $FelixSocial >= 50>>
+        Avendale <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> 
+    <<if $CompletedQuests.includes("Felix: Big Brother")>>
+        Mateo (Host Brother), Unnamed Family back in France
+    <<else>>
+        ???
+    <</if>>
+    <br>
+<strong>Friends:</strong>
+    <<if $FelixSocial >= 80>>
+        $Player.Name, Jackson, ...
+    <<elseif $FelixSocial >= 30>>
+        Jackson, ...
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $FelixSocialRank == 1>>
+        Close Friends
+    <<elseif $FelixSocial > 80>>
+        Friends
+    <<elseif $FelixSocial > 30>>
+        Possible Friends
+    <<elseif $FelixSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $FelixSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Athletic, Genius, Friendly, Charming, C... /* No Spoilers :P */
+        </div>
+    <<elseif $FelixSocial > 70>>
+        <div style="margin-left: 25px;">
+            Athletic, Genius, Friendly, Charming, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [Math] > [English] > [Music] > [Science] > [History] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <div style="margin-left: 25px;">
+        Unknown
+    </div>
+<strong>Likes:</strong>
+    <<if $FelixSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Football(Soccer), Trying new things, Detective Shows
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $FelixSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Bland Foods, Bullies, "The Fake Football they have here"
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $FelixSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Football(Soccer), Sports, Baking
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $FelixSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Baked Goods, Home Cooked Meals
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $FelixSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Blue & White (Home Team Colors)
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $FelixSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Sports Wear, Comfortable yet fashionable
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $FelixSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Plain or patterened briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $FelixSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $FelixCut == "Cut">>
+                A cut penis that is thin and well tanned. Average-sized for his age.
+            <<else>>
+                An uncut penis that is thin and well tanned. Average-sized for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $FelixSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A firm and well-toned butt.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: Felix NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Felix NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Felix NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal Core Felix">>
+
+
+:: Felix NPC Character Menu Art [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Artwork]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Felix NPC Character Menu Avatar Display">>
+
+<<include"Journal Artwork Felix">>
+
+:: Felix NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Felix NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ 
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Felix NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "Felix",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $CompletedQuests.includes("Shinju: Felix Monster Event")>>
+    <<set _npcviewerOutfit.push("Blue Psycho")>>
+<</if>>
+<<if $CompletedQuests.includes("Noah: Swimming Lessons")>>
+    <<set _npcviewerOutfit.push("Swim")>>
+<</if>>
+<<if $FelixSocial >= 50 or $FelixSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $FelixSocial >= 100 or $FelixSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: Felix NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "Felix",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $CompletedQuests.includes("Shinju: Felix Monster Event")>>
+    <<set _npcviewerOutfit.push("Blue Psycho")>>
+<</if>>
+<<if $CompletedQuests.includes("Noah: Swimming Lessons")>>
+    <<set _npcviewerOutfit.push("Swim")>>
+<</if>>
+<<if $FelixSocial >= 50 or $FelixSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $FelixSocial >= 100 or $FelixSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

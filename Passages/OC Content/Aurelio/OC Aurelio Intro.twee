@@ -1,0 +1,139 @@
+:: OC Aurelio Intro [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+<<set $OCAurelioSocial to 0>>
+<<set $OCAurelioSocialRank to 0>>
+
+As you are walking down the path in the park taking in the trees and nature when you spot a boy a little younger than you crouched near some bushes holding a camera. Confused at the sight, you take a few steps over and realize that he is slowly creeping towards a squirrel to try and get a photo. Right as the boy is just about to take the picture, the squirrel suddenly turns and lunges towards him. <span style="color:LightCoral">The boy cries out in surprise and falls back into the grass as the squirrel leaps onto his chest, scratches at his shirt, and then scurries away into the brush.</span> <br>
+<br>
+You quickly rush over to see if the boy is alright. He sits up, inspects his slightly torn shirt, then accepts your hand to help him up. <span style="color:LightSteelBlue">“Yeah…”</span> The boy sighs loudly, <span style="color:LightSteelBlue">“But I was so close! Stupid squirrel.”</span> You relay that the squirrels around here can be pretty vicious and that he should be careful. Glancing down at his camera, you then question why the boy was trying to take that photo anyway, surely there is more interesting things to photograph. <br>
+
+ <<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Aurelio",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“It’s for a school project.”</span> The boy explains, <span style="color:LightSteelBlue">“A science project, to be more accurate. We’re supposed to write a report on the local flora and fauna, and I thought some pictures would really spice things up. Help with my grade, you know? But I haven’t found anything super interesting.”</span> The boy shows you some of the photos on his camera. Some plants, flowers, a rabbit; overall nice, but it is indeed not terribly interesting. As he is showing you his photos, he suddenly perks up and smiles. <br>
+<br>
+<span style="color:LightSteelBlue">“But since you’re here, maybe you can help me?”</span> He says with a big smile. <span style="color:LightSteelBlue">“Pretty please! I just need some help reaching stuff to use as samples in my project! I’ll be your best friend if you help me!”</span> The boy began to plead and beg, <span style="color:Yellow">grabbing your wrist and bouncing up and down. You are a bit taken aback by the boy’s sudden insistence but don’t see the harm in giving him a little bit of aid.</span> <br>
+<br>
+
+    <div id="choice">
+    /* Agree */
+    <<link "Agree<br>">>
+    <<replace"#choice">>
+        You shrug, you suppose you could help him out. Not like reaching something for him could be all that hard. <br>
+        <br>
+        <span style="color:LightSteelBlue">“Great!”</span> The boy jumps up happily, <span style="color:LightSteelBlue">“You’re the best. My name’s <span style="color:DarkTurquoise">Aurelio</span>, by the way. What’s your name?”</span> You introduce yourself to the kid and are led by the arm to a large tree in the center of the park. <span style="color:Yellow">Seeing it, you quickly realize you may be a little in over your head</span>. <span style="color:LightSteelBlue">“There are some mushrooms growing on one of the upper tree branches, see.”</span> He points up to one of the highest branches and, sure enough, you spot a strange colored dot growing on top of it. You chuckle nervously as you realize just what you’ve gotten yourself into. Sadly, it is too late to back out now. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "OC Aurelio",
+                State: {
+                    Outfit: "Everyday",
+                    Eyes: "Tired",
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“I just need you to pick one or two of them to use as a sample. Thanks again for helping! You’re the coolest!”</span> The boy patted you on the back, smiling and stepping back to give you room to climb the tree. <br>
+        <br>
+
+        <<if $Strength <= 4>>
+        <span style="color:LightCoral">Climbing is not your strength. In fact, when it comes to physical strength you are severely lacking. It takes a few tries for you to be able to get your bearings and be able to climb more than a few feet without sliding back down. </span>You swear you hear the young <span style="color:DarkTurquoise">Aurelio</span> chuckling at your many failed attempts. But eventually, you are able to make some progress and begin reaching the top. It is slow and exhausting, but after a few minutes, you finally reach the upper branch where the mushroom is located. <br>
+        <br>
+        <<elseif $Strength > 4 && $Strength < 7>>
+        Climbing the tree isn’t easy. It’s larger than most of the other trees in the park and doesn’t have many low branches to grab onto. After assessing the situation, you grip the tree’s trunk and slowly begin to shimmy your way up. You hear the young <span style="color:DarkTurquoise">Aurelio</span> chuckle slightly, as you no doubt look a little silly climbing the tree like this. Thankfully, once you get going it isn’t too hard to reach the high branch where the mushroom is located. <br>
+        <br>
+        <<else>>
+        <span style="color:LightGreen">With the strength of a gorilla and agility of a cheetah, you leap as high as you can and grip the tree. </span> You have next to no difficulty scaling this tree and reaching the upper branch where the mushroom is located in less than a minute. From below, you hear the young <span style="color:DarkTurquoise">Aurelio</span> stutter out a sound of surprise. Seems he wasn’t expecting it to be that easy.<br>
+        <br>
+        <</if>>
+
+ <<linkreplace "Continue">>
+        
+        <span style="color:LightCoral">One thing you didn’t notice until you got closer is the smell! As you reach the branch, the decaying nasty smell hits your nose and immediately your eyes begin to water. </span>You glance at the mushroom, which is a gross gray and brown, and turn away to gag as another wave of the scent hits you. Your nostrils burn and your eyes continue to water as you do your best to stabilize yourself on the branch. <span style="color:LightCoral">This mushroom is one of the grossest things you’ve ever smelled.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                    Cry: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        Now sitting on the branch, you cover your nose with your hands and yell down to the boy that the mushroom is a bit pungent and ask if he’s sure if he wants it. <span style="color:LightSteelBlue">“What does ‘pungent’ mean?”</span> He asks. You gag a little bit more before telling him that it means it’s very, very smelly! <span style="color:LightSteelBlue">“It’s smelly? Sick! That will really add some flair to my project! Just bring it down here, please!”</span> <br>
+        <br>
+        You figure if the kid wants to carry around a smelly mushroom, that’s his business, but you are wondering how you are going to get it down. Carrying it in your hand would make climbing back down a little difficult and you’re not sure you could handle the smell, simply being this close is making you heave. Your best bet would be to pick it up and toss it down to the boy. It should be fine, mushrooms are soft and durable, right? If he drops it, that’s his fault. You said you’d get it down for him and that’s all you’re going to do. <br>
+        <br>
+        You call down to <span style="color:DarkTurquoise">Aurelio</span> to get ready to catch it and slowly scooch towards it. <span style="color:LightCoral">The smell grows with every inch you take, a mix of sewage and decay burning your nose and eyes.</span> You hold your breath and lean forward to grab it, trying to get it done as quickly as possible when… <br>
+        <br>
+        <span style="color:LightCoral">Like a rotten apple, the mushroom squishes and crumbles away in your hand, almost shrinking like a deflated balloon. As it breaks apart, the scent multiplies by a factor of 10 and suddenly you are hit with the worst smell you’ve ever imagined. Your eyes become faucets, and your nose burns like a furnace as you instinctively reel back and gag loudly. Your mind becomes so overtaken by the revolting smell that you temporarily forget where you are… until you feel your balance shift.</span> <br>
+        <br>
+        Your mind temporarily snaps back to its senses just long enough for you to realize you are about to fall! You reach out as quickly as possible to grab the branch but are just too slow <span style="color:LightCoral">as you fall backward off the branch and begin to plummet to the ground below!</span> <br>
+        <br>
+        [[Continue|OC Aurelio Intro 2]] <br>
+        <</linkreplace>>
+        <</replace>>
+        <</link>>
+    <<link "Refuse<br>">>
+    <<replace"#choice">>
+    
+         /* Refuse */
+        You apologize and shake your head; you don’t have the time nor desire to help him right now. His best bet would be to ask an adult, that way they can make sure whatever he is trying to get is safe. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "OC Aurelio",
+                State: {
+                    Eyes: "Tired",
+                    Mouth: "Frown",
+                    Outfit: "Everyday",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Pppft, whatever.”</span> The boy’s demeanor quickly changes as he turns away from you. <span style="color:LightSteelBlue">“I thought you were cool, but I guess not. Later loser.”</span> The boy begins to walk off in the direction the squirrel went. You are surprised by how quickly his attitude changed once you refused to help him. <span style="color:LightCoral">What a brat!</span> <br>
+        <br>
+        [[Continue|Park]] 
+
+        <</replace>>
+        <</link>>
+        </div>
+
+         
+
+
+

@@ -1,0 +1,147 @@
+:: Thomas Cafeteria Drawing Hang Out [nobr]
+
+/* Written by: Miko2498 */
+<<set $Minutes += 20>>
+/* Intro */
+
+You decide to sit next to <span style="color:DarkTurquoise">Thomas</span>. Though there are many seats to choose from—with every other seat at his table being vacant—you take the one closest to his right. He is so engrossed in his sketchpad that he doesn’t even notice you until you poke him on the shoulder and ask if you can draw alongside him. <br>
+<br>
+
+/*Negative Social*/
+<<if $ThomasSocial < 0 or $ThomasSocialRank < 0>>
+
+<span style="color:lightcoral">He then mutters an obscenity entirely unfit for school</span> before grabbing his sketchbook and heading out of the cafeteria toward the playground. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Eyes: "Sad",
+            },
+        },
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Frown",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+
+<<socialChange "Thomas" -3>>
+[[Continue|School Cafeteria]] 
+/*[End in Cafeteria, -Energy(5), -Thomas(-10)]*/
+
+/*Low Social*/
+<<elseif $ThomasSocial < 20 && $ThomasSocial >= 0>>
+
+<span style="color:lightcoral">In response, he merely glares at you,</span> before grabbing his sketchbook and moving to an empty seat at the other end of the table. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Eyes: "Sad",
+            },
+        },
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Uniform",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<<socialChange "Thomas" -1>>
+[[Continue|School Cafeteria]] 
+/*[End in Cafeteria, -Energy(5), -Thomas(-5)]*/
+
+/*Medium Social*/
+<<elseif $ThomasSocial < 50 && $ThomasSocial >= 20>>
+
+<span style="color:Yellow">Even so, he continues to ignore you</span> —though you're almost certain he's faking it, <span style="color:LightGreen">given the tightly restrained smile he tries to hide</span> as you keep pestering him. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+            },
+        },
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Uniform",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<<socialChange "Thomas" 1>>
+[[Continue|School Cafeteria]] 
+/*[End in Cafeteria, -Energy(5), +Thomas(5)]*/
+
+/*High Social*/
+<<else>>
+
+<span style="color:LightGreen">Without missing a beat, he rips a page from his sketchbook and hands it to you.</span> Then, rummaging through his schoolbag for another colored pencil, he asks, <span style="color:LightSteelBlue">“Would orange be okay? That’s all I have right now.”</span> <br>
+<br>
+You graciously accept his gift and begin doodling as well. When you glance back at him, <span style="color:LightGreen">you notice the faintest hint of a smile on his face.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Uniform",
+                Eyes: "Tired",
+                Mouth: "Smirk",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+The next ten minutes pass in silence, yet peacefully—until you catch <span style="color:DarkTurquoise">Thomas</span> quietly snickering at his drawing. Finally, you bring yourself to ask what he has drawn. <br>
+<br>
+He flips his sketchbook toward you, revealing a remarkably accurate portrait of Xavier being chased by wild dogs. You take note of the bite-shaped hole in <span style="color:DarkTurquoise">Xavier</span>’s pants, <span style="color:Pink">exposing a cartoonish pair of Valentine-print boxers barely covering his behind.</span> <br>
+<br>
+You roll your eyes at the unexpected childishness of <span style="color:DarkTurquoise">Thomas</span>’s drawing and start laughing alongside him. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+            Blush: 1,
+            Cry: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+As if letting you in on the joke suddenly made it even funnier, <span style="color:LightGreen"> <span style="color:DarkTurquoise">Thomas</span> bursts into a full-on giggle fit, only quieting down—face now flushing bright pink—when he catches the glares from an adjacent table.</span> <br>
+
+<<socialChange "Thomas" 3>>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|School Cafeteria]] 
+<</if>>
+

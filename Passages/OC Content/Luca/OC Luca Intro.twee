@@ -1,0 +1,130 @@
+:: OC Luca Intro [nobr]
+
+/* Intro */
+As you finish changing and head towards your locker to put your stuff back in there, you spy a curious sight. A blonde-haired boy you’ve never seen in class before stands a little awkwardly by the exit watching as everyone else heads into the pool area. <span style="color:Yellow">The strangest part is that the boy is dressed not in his swimwear, but in his gym uniform.</span> Is he another new kid who got confused about what day it is? Surely he can see everyone else is dressed for swimming? Wanting to help out or soothe your own curiosity, you walk over to the boy and remind him that it’s a swim day. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+    },
+    {
+        Name: "OC Luca",
+        State: {
+            Outfit: "Gym",
+            Mouth: "Frown",
+            Blush: 2,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh, yeah…”</span> The boy responds awkwardly, <span style="color:LightSteelBlue">“I know, it’s just…”</span> He rubs the back of his head, blushing slightly. Something seems off and you are just about to question it when <span style="color:DarkTurquoise">Coach Kohler</span> walks over. <br>
+<br>
+<span style="color:LightSteelBlue">“Don’t worry about <span style="color:DarkTurquoise">Fuller</span>,”</span> He says, placing his hands on the boy’s shoulder. The kid seems relieved, seems he felt a little weird about explaining it himself, <span style="color:LightSteelBlue">“He’s on a special physical plan for the time being, so he’ll be working on his cardio while the rest of you do your normal class.”</span> <span style="color:DarkTurquoise">Kohler</span> pats the boy twice on the back, nearly knocking him over, before walking away. You are a bit confused about the ‘why’, but figure it is best not to ask. <br>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+			},
+		},
+		{
+			Name: "Kohler",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+        {
+			Name: "OC Luca",
+			State: {
+				Outfit: "Gym",
+                Mouth: "Happy",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightSteelBlue">“My name’s <span style="color:DarkTurquoise">Luca</span>! <span style="color:DarkTurquoise">Luca Fuller</span>, as coach said.”</span> The boy quickly snaps into a more happy, excited expression as he holds his hand out and introduces himself, <span style="color:LightSteelBlue">“You’re one of the new kids right, <span style="color:DarkTurquoise">$Player.Name</span> something? I heard some of my friends talk about you.”</span> You confirm and introduce yourself. <span style="color:LightGreen">The boy shakes your hand happily, his energy completely flipped from what it was before.</span> <span style="color:LightSteelBlue">“I missed the first few days of school for… well, I’m glad I get to meet you now! How do you like it here? What do you think of the-?”</span> <span style="color:Pink">The boy begins to barrage you with questions in a cute, excited way. It is a lot to keep up with, but it is humorous.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Luca</span>? How are you doing?”</span> Carter asks, walking up and smiling at the boy. <span style="color:LightSteelBlue">“Do you need water or anything? Have you already talked to <span style="color:DarkTurquoise">Coach Kohler</span>?”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Yeah!”</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Luca</span> says happily, giving Carter a big hug,</span> <span style="color:LightSteelBlue">“All squared away! Sucks I don’t get to swim with you guys yet, heard you can swim without floaties now!”</span> Carter chuckles, blushing slightly, before turning to you. <br>
+<br>
+
+/* High Carter Social */
+<<if $CarterSocial > 20 or $CarterSocialRank > 0>>
+
+    <<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+			},
+		},
+        {
+			Name: "OC Luca",
+			State: {
+				Outfit: "Gym",
+                Mouth: "Happy",
+			},
+		},
+        {
+			Name: "Carter",
+			State: {
+				Outfit: "Gym Swim",
+                Mouth: "Happy",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Oh, hey <span style="color:DarkTurquoise">$Player.Name</span>! I see you’ve met <span style="color:DarkTurquoise">Luca</span>.”</span> Carter gives you a friendly smile, <span style="color:LightSteelBlue">“He’s really cool, just keep an eye on any candy in your pocket or it may disappear.”</span> Carter chuckles as a blushing <span style="color:DarkTurquoise">Luca</span> claims he would never steal candy and that <span style="color:LightSteelBlue">“that one time”</span> was just a misunderstanding. <span style="color:Pink">But the boys seem to get along well, and you smile at their wholesome friendship</span> until you and <span style="color:DarkTurquoise">Carter</span> have to head to swim class, <span style="color:LightCoral">leaving a slightly lonely-looking <span style="color:DarkTurquoise">Luca</span> to head off to his own lessons.</span> <span style="color:Yellow">You wonder why he has his own physical plan.</span> <br>
+	<<set $ActiveQuests.push("Luca: Introduction")>>
+	<<set $InActiveQuests.delete("Luca: Introduction")>>
+    <<set $OCLucaSocial to 10>>
+    <<set $OCLucaSocialRank to 0>>
+    <br>
+	<<include"Gym Get Dressed">>
+	
+	[[Continue|School Locker Room]] 
+    
+/* Low Carter Social */
+<<else>>
+
+        <<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+			},
+		},
+        {
+			Name: "OC Luca",
+			State: {
+				Outfit: "Gym",
+                Mouth: "Happy",
+			},
+		},
+        {
+			Name: "Carter",
+			State: {
+				Outfit: "Gym Swim",
+                Mouth: "Frown",
+                Blush: 1,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Oh… Hey, <span style="color:DarkTurquoise">$Player.Name</span>…”</span> <span style="color:Yellow"><span style="color:DarkTurquoise">Carter</span> gives you an awkward smile, obviously a bit nervous around you.</span> <span style="color:LightSteelBlue">“This is <span style="color:DarkTurquoise">Luca</span>, but I guess you already know that…”</span> He chuckles uncomfortably. <span style="color:DarkTurquoise">Luca</span> gives you both a strange glance, unsure why you are acting so weird, before trying to lighten the mood with some teasing remarks to the boy. It is clear he and Carter are very friendly, at ease around each other and teasing. <span style="color:DarkTurquoise">Luca</span> tries to bring you into the conversation and the three of you chat until you and Carter have to head to swim class, <span style="color:LightCoral">leaving a slightly lonely-looking <span style="color:DarkTurquoise">Luca</span> to head off to his own lessons.</span> <span style="color:Yellow">You wonder why he has his own physical plan.</span> <br>
+	<<set $ActiveQuests.push("Luca: Introduction")>>
+	<<set $InActiveQuests.delete("Luca: Introduction")>>
+    <<set $OCLucaSocial to 0>>
+    <<set $OCLucaSocialRank to 0>>
+    <<socialChange "Luca" 10 1>>
+    <br>
+	<<include"Gym Get Dressed">>
+	
+	[[Continue|School Locker Room]] 
+<</if>>

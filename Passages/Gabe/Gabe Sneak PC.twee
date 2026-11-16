@@ -1,0 +1,232 @@
+:: Gabe Sneak PC [nobr]
+
+/* Opening */
+You stood in <span style="color:DarkTurquoise">Gabe</span>’s bedroom, alone. Just being in here was risky enough, as you could imagine what he would do if he caught you blatantly disregarding his rule against either you or <span style="color:DarkTurquoise">Noah</span> being in here without his permission. But now you were standing in front of his PC, which sat unlocked on the desktop. <span style="color:lightgreen">With a computer like this, the entire internet was at your fingertips!</span> <br>
+<br>
+Sure, what <span style="color:DarkTurquoise">Gabe</span> didn’t know won’t hurt him, but then again, if he caught you on his computer, the thing he was so protective of, who knows how he would respond? <span style="color:lightgreen">But it was a risk you were willing to take, as you plop down on his chair and begin to play around on your elder brother’s computer!</span> <br>
+<br>
+<div id=choice>
+		<<link "Continue">>
+		<<replace"#choice">>
+    /* Setting random chance */
+    <<set _random to random(1, 3)>>
+
+    /* Fun */
+    <<if _random == 1>>
+Not knowing which icon on his computer is a game, and worrying that it’ll somehow notify his online friends if he went online, you decide to open up an internet browser and search for a website with games on it. Eventually, you find a fun-looking site called LittleClip and browse that site until you find an interesting game on it. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+The game lets you pick one of four cars, each representing one of the elements of Earth, Air, Water, and Fire, before racing on a series of tracks also centered around the same four elements. <span style="color:lightgreen">It isn’t really that hard, but is well-made and fun enough! You enjoy it for about 15 minutes before the prix comes to an end and you are declared the winner!</span> <br>
+<<needChange "Fun" 20>>
+<br>
+
+    /* Arousal */
+    <<elseif _random == 2>>
+You randomly open an internet browser and begin to search around, unsure of what exactly you are looking for. Games, shows, random funny clips, nothing seems all that interesting to you when you have the entire internet at your fingertips! <br>
+<br>
+Then an idea comes to you, a naughty idea. Glancing back at <span style="color:DarkTurquoise">Gabe</span>’s closed door, you gulp before typing in the phrase <span style="color:lightsteelblue">“Boys in underwear”</span> into the search engine and go to images. <span style="color:pink">Immediately you are bombarded with dozens of images of everything from little kids showing off their ‘big boy underwear’ on family blogs to very attractive adult models showcasing very revealing undergarments.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Arms: "Hide",
+			Blush: 2,
+			Hard: 1,
+		}
+	}
+]>>
+<<ad _ad>>
+
+<span style="color:pink">You feel your arousal building and, without even realizing, begin to rub your hardening member with your free hand. Having such easy access to such a large collection of images like this was insane! You could be entertained for hours, just clicking away at every picture that interests you.</span> But you knew, the longer you were here the higher chance you had at getting caught. Deciding you’ve risked it enough, you quickly close the browser. <br>
+<<needChange "Fun" 15>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Kids", "Preteens", "Teens", "Adults"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+	<br>
+<br>
+
+    /* Gross */
+    <<else>>
+You open up everyone’s favorite search engine, Wa~hoo, and begin to randomly search random phrases to see what comes up. You are not really looking for anything in particular and just search up whatever comes to mind and see what sorts of websites you can find. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Blush: 1,
+			Mouth: "Sad",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:lightcoral">This proves to be a mistake, as one random search of some very phallic keywords leads you to an extremely gross website. You only see it for a second, your instincts allowing you to quickly close the site, but you instantly begin to feel sick to your stomach and realize you are not going to be able to forget that sight anytime soon.</span> The internet truly was a dangerous place. <br>
+<<needChange "Fun" 10>>
+<<addMoodlet "Grossed Out" 5>>
+<br>
+    <</if>>
+
+<div id=choice2>
+		<<link "Clean up before you are discovered">>
+		<<replace"#choice2">>
+/* Random Chance of getting caught */
+<<set _caught to random(1, 100)>>
+
+/* Checking if Gabe in Room */
+<<if $GabeSche.Location == "Gabe Bedroom">>
+    <<set _caught to 1>>
+<<elseif $GabeSche.Location == "School">>
+    <<set _caught to 100>>
+<</if>>
+
+/* Not Caught */
+<<if _caught >= 50>>
+Once finished playing on the computer, you quickly return everything back to normal, taking extra care to ensure there is no trace of your actions on the computer or the desk. <span style="color:lightgreen">You then step away, examining the computer to ensure no evidence is left behind, before smiling and turning away, happy you got away with it.</span> <br>
+<br>
+[[Continue|PH Gabe Bedroom]]
+
+/* Caught */
+<<else>>
+	<<set _random to random(1, 4)>>
+<<if _random == 1>>
+	<<include "Gabe Sneak PC Hide Under Bed">>
+<<else>>
+It is right as you are cleaning up and attempting to cover up any evidence of your actions, <span style="color:red">that the door suddenly swings open!</span> <br>
+<br>
+<span style="color:lightsteelblue">“What the fuck do you think you are doing!?”</span> <span style="color:lightcoral"><span style="color:DarkTurquoise">Gabe</span> shouts as he sees you sitting at his desk. You quickly stand up and step away from the desk, apologizing and claiming that you were just sitting there, not doing anything on the computer. But <span style="color:DarkTurquoise">Gabe</span> isn’t listening and roughly grabs your arms and yanks you over to him.</span> <span style="color:lightsteelblue">“You aren’t supposed to be in my room and you sure as hell aren’t supposed to be touching my goddamn computer!”</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Sad",
+			Outfit: "Everyday",
+			Hard: 1,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Sad",
+			Cry: 1,
+			Blush: 2,
+			Mouth: "Sad",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:lightcoral">You once again blurt out apologies and excuses, feeling fearful, and attempt to free yourself and run away. But <span style="color:DarkTurquoise">Gabe</span> holds onto you tightly and tosses you on the bed before shutting and locking his door.</span> <span style="color:lightsteelblue">“Nuh-uh. You are not getting out of this that easily. You know the rules, you know the punishment. <span style="color:DarkTurquoise">Dad</span> told you and <span style="color:DarkTurquoise">Noah</span> both that you are not allowed in my room or to use any of my things without my permission. And <span style="color:DarkTurquoise">Dad</span> also told you, that if I caught you messing with my shit, I get to punish you.”</span> <br>
+<br>
+You were scared, having moved from the bed to the corner of the room, but there was nowhere for you to run. <span style="color:lightcoral">You tried to escape, but couldn’t overpower <span style="color:DarkTyrquoise">Gabe</span> as he grabbed you and held you over his knee. This was going to hurt.</span> <br>
+<br>
+
+<<if $ToggleSpanking == 1>>
+/* SAVING CLOTHES */
+	<<include"Character Save Clothes">>
+
+<<set $SpankClothing to "None">>
+<<set $SpankNumber to 20>>
+<<set $SpankAnger to 100>>
+<<set $SpankPain to 0>>
+<<set $SpankLocation to "Gabe Bedroom">>
+<<set $Spanker to "Gabe">>
+<<set $SpankingStart to 0>>
+<<set $SpankPosition to "On Lap">>
+<<set $SpankPlayerAction to "None">>
+
+	<<if $SpankNumber > 30>>
+		<<set $SpankNumber to 30>>
+	<</if>>
+	<<set $TimesSpanked += $SpankNumber>>
+[[Continue|Spanking][$ArmsBound to 0]]
+
+<<else>>
+
+<span style="color:DarkTurquoise">Gabe</span> does not left you off easy and by the end of it your rearend is sore.<br>
+<br>
+<<if $HomeDayNudity == 0>>
+	<<addMoodlet "Seen Naked" 8>>
+<</if>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated", "Spankee"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+<<set $Minutes += 10>>
+<<addMoodlet "Spanked" 7>>
+
+[[Continue|PH Hallway]] 
+
+<</if>>
+
+<</if>>
+<</if>>
+
+
+<</replace>>
+<</link>>
+</div>
+    <</replace>>
+    <</link>>
+</div>
+
+:: Gabe Sneak PC Hide Under Bed [nobr]
+
+/* Opening */
+Once you finish up on the computer, you quickly begin to close everything and return it to its natural state. <span style="color:lightcoral">You are just about finished when you suddenly hear the sound of someone walking towards the door. You freeze, staring at the door like a deer caught in headlights, and panic as the doorknob begins to turn.</span> <br>
+<br>
+Thinking fast, you dive to the floor and roll under the bed, the sound of the door creaking covering any noise you make. You then cover your mouth to prevent even the slightest noise from escaping. <span style="color:lightcoral">You glance at the door, see <span style="color:DarkTurquoise">Gabe</span>’s feet, and watch as he walks in, closes and locks the door, and steps over to his computer.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Tired",
+			Mouth: "Sad",
+			Outfit: "Everyday",
+			Hard: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:lightsteelblue">“Fuuuuck!”</span> <span style="color:DarkTurquoise">Gabe</span> sighs loudly, <span style="color:lightsteelblue">“I don’t want to do homework.”</span> He pouts for a moment, tossing stuff around on his desk, before walking right next to the bed. You hold your breath as <span style="color:DarkTurquoise">Gabe</span> gets up onto the bed and lays down. There is some shuffling, and then something falls right in front of you. <span style="color:pink"><span style="color:DarkTurquoise">Gabe</span>’s $GabeUndies.Name.</span> <br>
+<br>
+<span style="color:pink"><span style="color:DarkTurquoise">Gabe</span> lets out a soft moan and his bed begins to rock slowly. Your blushing deepens as you realize that <span style="color:DarkTurquoise">Gabe</span> was masturbating directly above you! You hear his soft, almost cute moans and feel his speed quicken and slow as he enjoys himself. In this moment of intimacy, the noises that escaped his lips were almost childish and silly. You couldn’t imagine what <span style="color:DarkTurquoise">Gabe</span> would do to you if he discovered you listening in.</span> <br>
+<br>
+
+<span style="color:pink">
+/* High Social */
+<<if $GabeSocial >= 50 or $GabeSocialRank > 0>>
+<span style="color:lightsteelblue">“<span style="color:DarkTurquoise">$GabeNickname</span>…”</span> You nearly jump as you hear <span style="color:DarkTurquoise">Gabe</span> moan your name. But he didn’t say it because he discovered you, no, he was thinking of you! You couldn’t believe that you would come to his mind in a moment like this. Why would <span style="color:DarkTurquoise">Gabe</span> think of you while pleasuring himself!? <br>
+<br>
+<span style="color:lightsteelblue">“So cute… just want to… uuuhhhggg-!“</span> <span style="color:DarkTurquoise">Gabe</span> climaxes, you can hear the semen landing on what you assume is his chest. You listen as <span style="color:DarkTurquoise">Gabe</span> breathes heavily in exhaustion, trying to fathom that you just heard <span style="color:DarkTurquoise">Gabe</span> jack himself off to thoughts of you. You couldn’t help but wonder what exactly he imagined you doing. <br>
+<br>
+
+/* Low Social */
+<<elseif $GabeSocial <= -50 or $GabeSocialTank < 0>>
+<span style="color:lightsteelblue">“<span style="color:DarkTurquoise">$GabeNickname</span>…”</span> You nearly jump as you hear <span style="color:DarkTurquoise">Gabe</span> moan your name. But he didn’t say it because he discovered you, no, he was thinking of you! You couldn’t believe that you would come to his mind in a moment like this. Why would <span style="color:DarkTurquoise">Gabe</span> think of you while pleasuring himself!? <br>
+<br>
+<span style="color:lightsteelblue">“Wish I could tie you up and fill your ass until you begged for mercy… stupid brat… uuuhhhggg-!“</span> <span style="color:DarkTurquoise">Gabe</span> climaxes, you can hear the semen landing on what you assume is his chest. You listen as <span style="color:DarkTurquoise">Gabe</span> breathes heavily in exhaustion, trying to fathom that you just heard <span style="color:DarkTurquoise">Gabe</span> jack himself off to thoughts of you. You couldn’t help but wonder what exactly he imagined you doing. <br>
+<br>
+
+/* Normal */
+<<else>>
+<span style="color:lightsteelblue">“So… cute…”</span> You hear <span style="color:DarkTurquoise">Gabe</span> moan to himself as his speed quickens, <span style="color:lightsteelblue">“uuuhhhggg-!”</span> <span style="color:DarkTurquoise">Gabe</span> climaxes, you can hear the semen landing on what you assume is his chest. You listen as <span style="color:DarkTurquoise">Gabe</span> breathes heavily in exhaustion, trying to fathom that you just heard <span style="color:DarkTurquoise">Gabe</span> jack himself off unknown to your presence. You wondered what, or who, he was thinking about as he lay there breathing heavily with exhaustion. <br>
+<br>
+
+<</if>>
+</span>
+But <span style="color:DarkTurquoise">Gabe</span> isn’t given long to recover, as you hear <span style="color:DarkTurquoise">Your Father</span> call for him from the other room. <span style="color:DarkTurquoise">Gabe</span> groans loudly and curses, before calling back that he’ll be right there. He sits back up, picks up his underwear, and quickly tosses some clothes on before exiting his room, leaving the door slightly ajar. You decide to take your chance and sprint out of the room before you are discovered. <br>
+<br>
+[[Continue|PH Hallway]]

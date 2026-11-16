@@ -1,0 +1,70 @@
+:: BlowJob Recieve [nobr]
+
+<<set $Minutes += 1>>
+
+<<include "BlowJob Recieve NPC Action">>
+
+<<include "BlowJob Recieve Speed">>
+<<include "BlowJob Recieve NPC Actions">>
+<<include "BlowJob Recieve Player Reaction">>
+<br>
+<<include "BlowJob Recieve Player Arousal">>
+<br>
+<<include "BlowJob Recieve NPC Avatar">>
+<<if $SexPartner == "Noah">>
+	<<include "Noah Training">>
+<</if>>
+
+<<if $Player.Arousal <= 100>>
+	<span style="color:Azure"><strong>-Actions-</strong></span><br>
+	[[Let Him Lead|BlowJob Recieve][$SexPlayerAction to ""]]<br>
+	[[Tell Him to Only Blow You|BlowJob Recieve][$SexPlayerAction to "Only Blow"]]<br>
+	[[Tell Him to Squeeze Your Balls|BlowJob Recieve][$SexPlayerAction to "Only Squeeze Balls"]]<br>
+	[[Tell Him to Tickle Your Taint|BlowJob Recieve][$SexPlayerAction to "Only Tickle Taint"]]<br>
+	[[Tell Him to Finger You|BlowJob Recieve][$SexPlayerAction to "Only Finger"]]<br>
+
+	<<if $SexPartner == "Noah">>
+		<span style="color:Azure"><strong>-Training-</strong></span><br>
+		[[Go Slower|BlowJob Recieve][$SexPlayerAction to "Go Slower"]]<br>
+		[[Go Faster|BlowJob Recieve][$SexPlayerAction to "Go Faster"]]<br>
+		[[Be More Gentle|BlowJob Recieve][$SexPlayerAction to "More Gentle"]]<br>
+		[[Be More Rough|BlowJob Recieve][$SexPlayerAction to "More Rough"]]<br>
+		[[Focus on Your Penis|BlowJob Recieve][$SexPlayerAction to "Focus Penis"]]<br>
+		[[Focus on Your Butt|BlowJob Recieve][$SexPlayerAction to "Focus Butt"]]<br>
+	<</if>>
+<<else>>
+	<span style="color:Azure"><strong>-Climax-</strong></span><br>
+	<<if $SexLocation == "Lucas Bedroom Quest">>
+		[[You can't hold it back anymore|Lucas Quest PG Ending]] <br>
+	<<elseif $SexLocation == "Lucas Bedroom">>
+		<<if $CanCum == 0>>
+		[[You can't hold it back anymore|Lucas Get Blowjob Teasing]]<br>
+		<<else>>
+		[[You can't hold it back anymore|Lucas Get Blowjob Kiss Exchange]]<br>
+		<</if>>
+	<<elseif $SexLocation == "Lucas Bedroom Poker">>
+		[[Climax|Poker Lucas Lose Give BJ Climax]]<br>
+	<<elseif $SexLocation == "Living Room Quest">>
+		<<if $CanCum == 0>>
+		[[Climax|Quest Stormy Night End Dry]]<br>
+		<<else>>
+		[[Cum in His Mouth|Quest Stormy Night End Mouth]]<br>
+			[[Cum on His Face|Quest Stormy Night End Face]]<br>
+		<</if>>
+	<<elseif $SexLocation == "Noah Room Playing">>
+		<<if $CanCum == 0>>
+		[[Climax|Noah Playing Blow Dry]]<br>
+		<<else>>
+		[[Cum in His Mouth|NOAH Playing Blow Mouth]]<br>
+			[[Pull Out|NOAH Playing Blow Pullout]]<br>
+		<</if>>
+	<<elseif $SexLocation == "School Restroom">>
+		<<if $CanCum == 1>>
+			<<set _random to ["Lucas BJ At School Return Favor Cum in Face Climax", "Lucas BJ At School Return Favor Undies in Face Climax"]>>
+		<<else>>
+			<<set _random to ["Lucas BJ At School Return Favor Undies in Face Climax"]>>
+		<</if>>
+		<<set _event to _random.random()>>
+		[[Climax|_event]]
+	<</if>>
+<</if>>

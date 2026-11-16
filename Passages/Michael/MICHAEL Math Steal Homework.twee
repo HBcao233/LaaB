@@ -1,0 +1,88 @@
+:: MICHAEL Math Steal Homework [nobr]
+
+/* OPENING */
+As the class is beginning and everyone is getting their homework out, <span style="color:DarkTurquoise">Mr. Randolph</span> calls <span style="color:DarkTurquoise">Michael</span> up to the front of the class and begins to scold him about bullying another student before class. <span style="color:DarkTurquoise">Michael</span> tries to defend himself, but <span style="color:DarkTurquoise">Mr. Randolph</span> knows better than to believe him. As they are both distracted, you glance over at <span style="color:DarkTurquoise">Michael</span>’s desk and notice what appears to be his math homework poking out of his backpack. You could take it, to get revenge on <span style="color:DarkTurquoise">Michael</span> for everything he does to the other students, but if you get caught you’d be in trouble with both him and <span style="color:DarkTurquoise">Mr. Randolph</span>.<br>
+<br>
+
+<div id="result">
+	/* STEAL */
+	<<link "Throw away his homework">>
+		<<replace "#result">>
+			You wait until you are sure no one is watching, but pretend you are picking something up just in case someone is watching, and quickly reach into <span style="color:DarkTurquoise">Michael</span>’s backpack and grab the homework! <br>
+			<br>
+			<<set $RandomChance to random(1, 2)>>
+
+			/* CAUGHT */
+			<<if $RandomChance == 1>>
+				<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Mr. $Player.LastName</span>!”</span><span style="color:Red"> You freeze as you hear <span style="color:DarkTurquoise">Mr. Randolph</span> yell out. You look up, your hand still in <span style="color:DarkTurquoise">Michael</span>’s backpack, as they both glare at you.</span> <span style="color:DarkTurquoise">Michael</span> curses, taking a step forward like he is going to punch you, but is stopped by the teacher. <span style="color:LightSteelBlue">“Would you mind explaining to me why you are searching through <span style="color:DarkTurquoise">Mr. Reyes</span>’ backpack?”</span><br>
+
+				<<set _ad to [
+					{
+						Name: "Randolph",
+						State: {
+							Brows: "Angry",
+							Mouth: "Frown",
+						},
+					},
+					{
+						Name: "Michael",
+						State: {
+							Eyes: "Mad",
+							Mouth: "Sad",
+							Outfit: "Uniform",
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				You are unable to provide a good enough answer and are given detention for going through another student’s belongings without their permission. What’s worse, <span style="color:DarkTurquoise">Michael</span> seems pissed off.<br>
+				<<socialChange "Michael" -3>>
+				<<set $Detention += 10>>
+				<br>
+
+				<<include "Attend Math Finish">>
+
+			/* NOT CAUGHT */
+			<<elseif $RandomChance == 2>>
+				<span style="color:Green">You act as quickly and quietly as you can, pulling the homework away and stuffing it in your backpack.</span> You then quickly toss it in a nearby trashcan, just in case he searches those who are seated close to him. Once <span style="color:DarkTurquoise">Michael</span> returns to his seat and <span style="color:DarkTurquoise">Mr. Randolph</span> begins collecting homework, you notice <span style="color:DarkTurquoise">Michael</span> start to panic.<br>
+
+				<<set _ad to [
+					{
+						Name: "Randolph",
+						State: {
+							Brows: "Angry",
+							Mouth: "Frown",
+						},
+					},
+					{
+						Name: "Michael",
+						State: {
+							Eyes: "Mad",
+							Mouth: "Sad",
+							Cry: 1,
+							Outfit: "Uniform",
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				He tries to convince the teacher that he had his homework and someone must have taken it, but <span style="color:DarkTurquoise">Mr. Randolph</span> doesn’t believe a word he says and gives him a 0, threatening detention if he doesn’t sit down and shut up. You hear <span style="color:DarkTurquoise">Michael</span> curse under his breath as he glances around, trying to figure out who stole it. You think you’ve gotten away with it, for now.<br>
+				<<addMoodlet "Stress" 0>>
+				<br>
+
+				<<include "Attend Math Finish">>
+			<</if>>
+		<</replace>>
+	<</link>>
+
+	<span style="color:Yellow">-Michael?</span><br>
+	/* DON'T STEAL */
+	<<link "Leave it alone<br>">>
+		<<replace "#result">>
+			You decide it is best to not tempt fate and risk incurring the wrath of both the school bully and the strictest teacher. You leave it alone and soon <span style="color:DarkTurquoise">Michael</span> returns to his seat and the homework is collected.<br>
+			<br>
+			
+			<<include "Attend Math Finish">>
+		<</replace>>
+	<</link>>
+</div>

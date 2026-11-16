@@ -1,0 +1,198 @@
+:: Shopping District Boy Barn [nobr]
+
+<<set $Location to {
+    Name: "Boy Barn",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Shopping District",
+}>>
+<<set _returnlink to "Shopping District Boy Barn">>
+
+<span style="color:Azure"><big><strong>--Boy Barn--</strong></big></span><br>
+
+/* Random Encounter Check */
+	/* Shinju: Dressing Room Teasing */
+ <<if $ToggleOCShinju == 1 && $InActiveQuests.includes("Shinju: Dressing Room Teasing") && !$Time.schoolday() && $Time.between(8, 0, 16, 0)>>
+	<<include"OC Shinju and Felix Clothing Store">>
+
+<<else>> 
+	You stand in the middle of “Boy Barn”, which is the go-to Boy’s Clothing Store in Opal City. While it doesn’t have any name brands or fancy graphic T-Shirts, it does have generic versions of common clothes at reasonable prices. Most of the clothes are on racks or small tables and there are a few curtained changing rooms near the back of the store with some tall mirrors to see how they look on you.<br>
+	<br>
+
+					/* NPC SEEN */
+	<<include "NPC Inspect">>
+	<br>
+
+<<shoppingMenu "BoyBarn">>
+
+/*Keeping old code for now as backup measure */
+/* <span style="color:Azure"><strong>-Categories-</strong></span><br>
+
+	<<link"Under Tops">>
+		<<set $ShopSlot to "Under">>
+		<<set $ShopItem to "Tanktop">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "White">>
+		<<set $ShopCost to 2>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Tops">>
+		<<set $ShopSlot to "Top">>
+		<<set $ShopItem to "T-Shirt">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "Blue">>
+		<<set $ShopCost to 3>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Over">>
+		<<set $ShopSlot to "Over">>
+		<<set $ShopItem to "Vest">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "Blue">>
+		<<set $ShopCost to 6>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Outer">>
+		<<set $ShopSlot to "Outer">>
+		<<set $ShopItem to "Hoodie">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "Blue">>
+		<<set $ShopCost to 8>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Body">>
+		<<set $ShopSlot to "Body">>
+		<<set $ShopItem to "Bath Robe">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "White">>
+		<<set $ShopCost to 8>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Head">>
+		<<set $ShopSlot to "Head">>
+		<<set $ShopItem to "Baseball Cap">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "Red">>
+		<<set $ShopCost to 5>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	<br>
+	<<link"Underwear">>
+		<<set $ShopSlot to "Undies">>
+		<<set $ShopItem to "Briefs">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "White">>
+		<<set $ShopCost to 2>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Bottoms">>
+		<<set $ShopSlot to "Bottoms">>
+		<<set $ShopItem to "Shorts">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "Blue">>
+		<<set $ShopCost to 3>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Waist">>
+		<<set $ShopSlot to "Waist">>
+		<<set $ShopItem to "Leather Belt">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "Black">>
+		<<set $ShopCost to 2>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	<br>
+	<<link"Socks">>
+		<<set $ShopSlot to "Socks">>
+		<<set $ShopItem to "Socks">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "White">>
+		<<set $ShopCost to 2>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Shoes">>
+		<<set $ShopSlot to "Shoes">>
+		<<set $ShopItem to "Sneakers">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "Blue">>
+		<<set $ShopCost to 10>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Hands">>
+		<<set $ShopSlot to "Hands">>
+		<<set $ShopItem to "Knitted Gloves">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "Blue">>
+		<<set $ShopCost to 3>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Mouth">>
+		<<set $ShopSlot to "Mouth">>
+		<<set $ShopItem to "Face Mask">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "White">>
+		<<set $ShopCost to 1>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	- 
+	<<link"Neck">>
+		<<set $ShopSlot to "Neck">>
+		<<set $ShopItem to "Ascot">>
+		<<set $ShopColors to ["Scout"]>>
+		<<set $ShopIcons to ["Red"]>>
+		<<set $ShopColor to "Scout">>
+		<<set $ShopCost to 5>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>>
+	<br>
+
+	<<if $ShopSlot == "Undies">>
+		<<include"Boy Barn Underwear">>
+	<<elseif $ShopSlot == "Bottoms">>
+		<<include"Boy Barn Bottoms">>
+	<<elseif $ShopSlot == "Under">>
+		<<include"Boy Barn Under Tops">>
+	<<elseif $ShopSlot == "Top">>
+		<<include"Boy Barn Tops">>
+	<<elseif $ShopSlot == "Socks">>
+		<<include"Boy Barn Socks">>
+	<<elseif $ShopSlot == "Shoes">>
+		<<include"Boy Barn Shoes">>
+	<<elseif $ShopSlot == "Outer">>
+		<<include"Boy Barn Outer">>
+	<<elseif $ShopSlot == "Head">>
+		<<include"Boy Barn Head">>
+	<<elseif $ShopSlot == "Hands">>
+		<<include"Boy Barn Hands">>
+	<<elseif $ShopSlot == "Mouth">>
+		<<include"Boy Barn Mouth">>
+	<<elseif $ShopSlot == "Waist">>
+		<<include"Boy Barn Waist">>
+	<<elseif $ShopSlot == "Body">>
+		<<include"Boy Barn Body">>
+	<<elseif $ShopSlot == "Neck">>
+		<<include"Boy Barn Neck">>
+	<<elseif $ShopSlot == "Over">>
+		<<include"Boy Barn Over">>
+	<</if>>
+
+	<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:01)|Shopping District][$Minutes += 1]]<br>
+<br> */
+
+<</if>>

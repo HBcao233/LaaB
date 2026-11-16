@@ -1,0 +1,87 @@
+:: Food District [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Food District",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Town",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+<<elseif $InActiveQuests.includes("Felix: Mateo") && !$Time.schoolday() && $Time.between(10, 0, 15, 0)>>
+	<<include"Felix Quest Mateo">>
+<<else>>
+
+<span style="color:Azure"><big><strong>--Food District--</strong></big></span><br>
+You stand in the center of the Food District of Opal City. Many tourists flock to the city, so a very large foodie scene has developed. While formal dining restaurants do exist, a majority of them seem to be small cafés or eateries. There are also a few fast-food restaurants, though those tend to cater more towards locals. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<<if $Time.between(6,0,18,0)>>
+	[[Café Le Chat Blanc|Cafe]]<br>
+<<else>>
+	<span style="color:lightcoral">Cafe Le Chat Blanc (Open 6am to 6pm)</span><br>
+<</if>>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:10)|Shopping District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Boardwalk.png">
+	[[Boardwalk (0:10)|Boardwalk][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Beach.png">
+	[[Beach (0:10)|Beach][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Redlight District.png">
+	[[Redlight District (0:10)|Redlight District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Trailer Park.png">
+	[[Trailer Park (0:10)|Trailer Park][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:05)|Shopping District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Boardwalk.png">
+	[[Boardwalk (0:05)|Boardwalk][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Beach.png">
+	[[Beach (0:05)|Beach][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Redlight District.png">
+	[[Redlight District (0:05)|Redlight District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Trailer Park.png">
+	[[Trailer Park (0:05)|Trailer Park][$Minutes += $TravelTime]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 152px; top: 81px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="226,81,279,134" alt="Shopping District" onclick="$.wiki('<<goto[[Shopping District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="4,155,57,208" alt="Boardwalk" onclick="$.wiki('<<goto[[Boardwalk]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="4,229,57,282" alt="Beach" onclick="$.wiki('<<goto[[Beach]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="152,155,205,208" alt="Redlight District" onclick="$.wiki('<<goto[[Redlight District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="152,229,205,282" alt="Trailer Park" onclick="$.wiki('<<goto[[Trailer Park]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

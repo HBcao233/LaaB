@@ -1,0 +1,239 @@
+:: Lucas Sex Quest Get Lube Steal Science [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+<span style="Color: LightSteelBlue">“<span style="Color:DarkTurquoise">$Player.Name</span>? Did you need something?”</span> <span style="Color:DarkTurquoise">Mr. Chang</span> asks as you walk into the classroom, trying your hardest not to look towards the bottle of lube locked away in the cabinet with the other class supplies. You have no idea why he would have lube here, <span style="Color: Pink">but you guess it could be used for science and isn’t only used for the naughty things you have planned for it.</span> <span style="Color: LightSteelBlue">“Everything alright?”</span> He asks, noticing you stand there silently for a bit too long. Come on, say something! 
+
+    <<set _ad to [
+        {
+            Name: "Chang",
+            State: {
+                Mouth: "Frown",
+                Brows: "Suspicious",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You blurt out the first thing that comes to mind, he is needed in the Main Office. You are internally cursing your own stupidity when Chang stands up, not at all suspicious of your claim. <span style="Color: LightSteelBlue">“Oh, alright then. Thank you.”</span> He grabs a folder from his desk, one you note is labeled <span style="Color: LightSteelBlue">“Tests”</span> and walks out, giving you a slight glance. You smile and try to act innocent. He probably thought if you were up to something, it was getting a peek at test answers. <span style="Color: Yellow">Once he is gone, you move fast and rush to his desk, you need to find the key to the cabinet.</span> <br>
+<br>
+<span style="Color: LightCoral">But you can’t find it anywhere!</span> Damn it, why did you say Main Office? If you had said Cafeteria or Gym, you’d have more time. No, no use complaining about it now, you just had to find the – Got it! You hold up the key, small and silver, and rush to the lock. Unlocking it, you peer back towards the door. No sign of Chang yet, you got this! You grab the lube, quickly close the door and toss the key back where you found it. You are just about to sprint out the door <span style="Color: Pink">when you hear footsteps and <span style="Color:DarkTurquoise">Mr. Chang</span>’s voice!</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“I should have known, kids these days will try anything to get a leg up.”</span> He chuckles, <span style="Color: LightSteelBlue">“Though I guess he could have just been mistaken. I took the tests with me, so no harm done. Thanks again.”</span> He seems to be talking to someone from the main office as he walks back. <span style="Color: Yellow">This isn’t good! If you run out now you are sure to be caught! You have to think of something!</span> <br>
+<br>
+
+<div id="choice">
+    <<link "<strong>[Athletics]</strong> Escape via the window">>
+    <<replace"#choice">>
+        <<skillCheck "Athletics" 75>>
+        <<if _result == 1>>
+            You turn to the window, large enough for you to quickly leap through. <span style="Color: LightGreen">You rush forward and flip up the lock, pulling the window open with speed and precision. His footsteps are right by the door when you leap out into the bush behind the window.</span> <br>
+            
+                <<set _ad to [
+                    {
+                        Name: "Chang",
+                        State: {
+                            Mouth: "Frown",
+                            Eyes: "Wide",
+                        },
+                    },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            <span style="Color: LightSteelBlue">“They said they didn’t-”</span> <span style="Color:DarkTurquoise">Mr. Chang</span> pauses, looking into the empty classroom, <span style="Color: LightSteelBlue">“Oh, must have run off when he realized I took the test. Haha. I may be a new teacher, but those kids won’t get one over on my that easily.”</span> He sounds proud of himself, chuckling away as he goes back to work, so sure that he prevented your actions. <span style="Color: LightGreen">Unknown to him, however, you are currently crawling out from under the bush with your real prize, the lube, tucked carefully in your pocket.</span> <br>
+            <<set $ActiveQuests.delete("Lucas: Boning the Neighbor")>>
+            <<set $ActiveQuests.push("Lucas: Boning the Neighbor 2")>>
+            <<set $CompletedQuests.push("Lucas: Boning the Neighbor (Science)")>>
+            <<for _i to 0; _i lt $QuestLog.length; _i++>>
+                <<if $QuestLog[_i].Name == "Lucas: Boning the Neighbor">>
+                    <<set $QuestLog.deleteAt(_i)>>
+                    <<break>>
+                <</if>>
+            <</for>>
+            <<set $QuestLog.push(
+                {
+                    Name: "Lucas: Boning the Neighbor Part 2",
+                    State: 1,
+                    ID: "Lucas_M005",
+                    Category: "Character",
+                    Type: "Quest",
+                    Icon: "Lucas",
+                    Tags: ["Lucas", "Character", "Quest", "Lucas' House", "Sex"],
+                    Description: "You've got the lube! Now to take it to <span style=\"color:DarkTurquoise\">Lucas</span> in at his house to get this 'sex' thing underway! You're sure he'll be surprised you managed to get it.",
+                    Objectives: [
+                        {
+                            Name: "Find Lube",
+                            State: 1,
+                            Total: 1,
+                        },
+                        {
+                            Name: "Take the Lube to <span style=\"color:DarkTurquoise\">Lucas</span>",
+                            State: 0,
+                            Total: 1,
+                        },
+                    ],
+                },
+            )>>
+            <<set $Notifications.push({
+                Name: "Quest Acquired!",
+                Icon: "Quests/Lucas",
+                Description: "You've got the lube! Now to take it to <span style=\"color:DarkTurquoise\">Lucas</span> in at his house to get this 'sex' thing underway! You're sure he'll be surprised you managed to get it.",
+            })>>
+            <br>
+            [[Continue|School Science Classroom]]
+        <<else>>
+            You turn to the window, large enough for you to quickly leap through. You rush forward and try to flip up the lock, <span style="Color: ;LightCoral">but find it completely jammed!</span> You pull up with all your might, nearly winding yourself when – CLICK – it comes undone! You smile widely and pull the window open when…  <br>
+            <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Chang",
+                        State: {
+                            Mouth: "Frown",
+                            Eyes: "Wide",
+                            Brows: "Suspicious",
+                        },
+                    },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                        Blush: 1,
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            <span style="Color: LightSteelBlue">“What are you doing?”</span> <span style="Color:DarkTurquoise">Mr. Chang</span> asks, standing right behind you. <span style="Color: ;LightCoral">You freeze, the lube sitting in clear view in the windowsill.</span> <span style="Color:DarkTurquoise">Mr. Chang</span> grabs you by the shoulder and spins you around. Your eyes betray you, glancing towards the lube. Following your vision he sees it and chuckles. <span style="Color: LightSteelBlue">“Oh, so that was you goal, huh? What is your plan? Play some prank by squirting that on the floor. Good attempt, but even though I’m a new teacher I know how kids like you operate.”</span> He laughs, <span style="Color: ;LightCoral">grabbing the lube and putting it in his pocket.</span> The only upside to this being that he doesn’t seem to know your actual reason for wanting it, probably thinking you are too young for that sort of thing. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Well, good try, but I’m afraid I’m going to have to give you detention for that.”</span> He sighs, <span style="Color: ;LightCoral">grabbing your wrist and pulling you towards his desk for a write-up.</span> <span style="Color: LightSteelBlue">“No harm done, so I won’t inform the Headmaster, but hopefully a detention will teach you that stealing is wrong.”</span> You are forced to sign your detention slip, which is labeled only as <span style="Color: LightSteelBlue">“misusing school materials”</span> in an attempt to cut you some slack. <br>
+            <br>
+            <span style="Color: ;LightCoral">Well, that didn’t go as planned.</span> <br>
+            <<set $Detention += 10>>
+            <br>
+            [[Continue|School Science Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<skillDiff "Athletics" 75>>
+    <br>
+    <<link "<strong>[Acting]</strong> Try to Lie your way out">>
+    <<replace"#choice">>
+        <<skillCheck "Acting" 75>>
+        <<if _result == 1>>
+            There is no way out. Your only chance to get away is to use your incredible acting skills to lie your way out. <span style="Color: ;LightGreen">You think fast, slipping the lube into your pocket and stand by the collection of textbooks and academic journals Chang has on a bookcase by his desk and pretend to be extremely interested</span> when, in reality, you are going over your lie in your head. It is a good thing you are able to act quick, since you don’t have a lot of time before- <br>
+            <br>
+            <span style="Color: LightSteelBlue">“<span style="Color:DarkTurquoise">$Player.Name</span>? Still here, eh?”</span> He chuckles, sounding proud of himself, <span style="Color: LightSteelBlue">“No one in the office needed me, but I have a feeling you knew that. Nice try, but just because I’m a new teacher doesn’t mean you can get away with something that obvious.”</span> You turn to him with a look of confusion as he holds up the tests, thinking that was your goal. You apologize for the confusion, you must have misheard. Then, before he has the chance to speak, you ask him a question regarding one of the journals. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“The Nature of Blackholes and Beyond?”</span> He quotes the one you pointed out, <span style="Color: ;LightGreen">his interest piqued.</span> <span style="Color: LightSteelBlue">“Well, such things may be beyond your grade level, though I could answer a few questions if you have any. You know, I wrote one of my college papers on-<span style="Color: LightSteelBlue">“ You guessed right. <span style="Color:DarkTurquoise">Mr. Chang</span> always seems much more interested when talking about space science and all the books about space and black holes he had on his shelf were much more beat-up, meaning he must look at them often. <span style="Color: ;LightGreen">Your skills as an actor have allowed you to play your part perfectly,  <span style="Color:DarkTurquoise">Mr. Julien</span> would be so proud.</span> <br>
+            
+                <<set _ad to [
+                    {
+                        Name: "Chang",
+                        State: {
+                            Mouth: "Frown",
+                            Eyes: "Wide",
+                        },
+                    },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            Of course, you maybe play your part a little too well. What was just meant to be an alibi and a way to build an escape turned into a ranting lecture about his own theories about what lies beyond the event horizon. You have to admit, it is a little interesting at first, but by the end your head is spinning and you feel a migraine coming on. <br>
+            <br>
+            <span style="Color: LightGreen">But hey, you have the lube and learned something to boot.</span> <br>
+            <<set $ActiveQuests.delete("Lucas: Boning the Neighbor")>>
+            <<set $ActiveQuests.push("Lucas: Boning the Neighbor 2")>>
+            <<set $CompletedQuests.push("Lucas: Boning the Neighbor (Science)")>>
+            <<for _i to 0; _i lt $QuestLog.length; _i++>>
+                <<if $QuestLog[_i].Name == "Lucas: Boning the Neighbor">>
+                    <<set $QuestLog.deleteAt(_i)>>
+                    <<break>>
+                <</if>>
+            <</for>>
+            <<set $QuestLog.push(
+                {
+                    Name: "Lucas: Boning the Neighbor Part 2",
+                    State: 1,
+                    ID: "Lucas_M005",
+                    Category: "Character",
+                    Type: "Quest",
+                    Icon: "Lucas",
+                    Tags: ["Lucas", "Character", "Quest", "Lucas' House", "Sex"],
+                    Description: "You've got the lube! Now to take it to <span style=\"color:DarkTurquoise\">Lucas</span> in at his house to get this 'sex' thing underway! You're sure he'll be surprised you managed to get it.",
+                    Objectives: [
+                        {
+                            Name: "Find Lube",
+                            State: 1,
+                            Total: 1,
+                        },
+                        {
+                            Name: "Take the Lube to <span style=\"color:DarkTurquoise\">Lucas</span>",
+                            State: 0,
+                            Total: 1,
+                        },
+                    ],
+                },
+            )>>
+            <<set $Notifications.push({
+                Name: "Quest Acquired!",
+                Icon: "Quests/Lucas",
+                Description: "You've got the lube! Now to take it to <span style=\"color:DarkTurquoise\">Lucas</span> in at his house to get this 'sex' thing underway! You're sure he'll be surprised you managed to get it.",
+            })>>
+            <<skillPoints "Science" 5>>
+            <br>
+            [[Continue|School Science Classroom]]
+        <<else>>
+            There is no way out. Your only chance is to use your incredible acting skills to lie your way out. <span style="Color: LightCoral">If only you had incredible acting skills.</span> Instead, you begin to frantically glance around the room looking for something, anything to give you an out. You settled on grabbing a mop and coat, trying to put on an accent and pretending to be someone else. You’re not <span style="Color:DarkTurquoise">$Player.Name</span>, just the new cleaner they hired to… clean… <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Oh, well…”</span> He says in utter confusion, and you foolishly hope that he’ll believe you for a second. <span style="Color: LightSteelBlue">“That is the worst lie I have heard all year. Like… there is no world or universe where I or anyone would believe that. So, congrats on that, I suppose.”</span> <span style="Color: LightCoral">You slip on the wet floor you created and nearly do the splits, falling onto your back to add insult to what is already a humiliating display.</span> <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Chang",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Wide",
+                            Brows: "Suspicious",
+                        },
+                    },
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Frown",
+                            Blush: 1,
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            <span style="Color: LightSteelBlue">“<span style="Color:DarkTurquoise">$Player.Name</span>, just clean up that water and come sign this write-up.”</span> <span style="Color:DarkTurquoise">Mr. Chang</span> sighs, <span style="Color: LightCoral">actually seeing this attempt as more pathetic than anything,</span> <span style="Color: LightSteelBlue">“And please put whatever you put in your pocket back. I don’t know what prank you are trying to pull, but I have far too much work to do to deal with it.”</span> You sigh and relent, putting your prized lube back on the shelf and accepting your detention. The only bright side of this whole exchange being that <span style="Color:DarkTurquoise">Mr. Chang</span> didn’t see what you grabbed, so you don’t have to answer any awkward questions on why you needed it. <span style="Color: LightCpra;">Well, that, and that no one saw how much of a fool you made of yourself.</span> <br>
+            <<set $Detention += 10>>
+            <br>
+            [[Continue|School Science Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<skillDiff "Acting" 75>>
+
+</div>

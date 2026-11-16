@@ -1,0 +1,40 @@
+:: Hair Dyed {"position":"7250,3550","size":"100,100"}
+<<nobr>>
+You sit down at one of the chairs and the stylist asks what color you would like your hair.<br>
+<br>
+<strong>Current Color:</strong> $Player.HairColor<br>
+<strong>New Color:</strong> 
+<<if $Player.HairColor == $Player.HairColorNew>>
+	<span style="color:lightcoral">$Player.HairColorNew</span><br>
+<<else>>
+	$Player.HairColorNew<br>
+<</if>>
+<br>
+[[Brown|Hair Dyed][$Player.HairColorNew to "Brown"]]
+ - 
+[[Black|Hair Dyed][$Player.HairColorNew to "Black"]]
+ - 
+[[Blonde|Hair Dyed][$Player.HairColorNew to "Blonde"]]
+ - 
+[[Ginger|Hair Dyed][$Player.HairColorNew to "Ginger"]]
+ - 
+[[Light Brown|Hair Dyed][$Player.HairColorNew to "Light Brown"]]
+ - 
+[[Dark Brown|Hair Dyed][$Player.HairColorNew to "Dark Brown"]]
+<br>
+[[Dirty Blonde|Hair Dyed][$Player.HairColorNew to "Dirty Blonde"]]
+ - 
+[[Strawberry Blonde|Hair Dyed][$Player.HairColorNew to "Strawberry Blonde"]]
+ - 
+[[Auburn|Hair Dyed][$Player.HairColorNew to "Auburn"]]
+<br>
+<br>
+
+<<if $Player.HairColor == $Player.HairColorNew>>
+	<span style="color:lightcoral">Confirm ($8 0:10)</span><br>
+<<else>>
+	[[Confirm ($8 0:10)|Shopping District Hair Salon][$Player.HairColor to $Player.HairColorNew;$Money -= 8;$Minutes += 10]]<br>
+<</if>>
+<<back>>
+
+<</nobr>>

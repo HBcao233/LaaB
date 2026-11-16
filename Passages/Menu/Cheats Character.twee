@@ -1,0 +1,290 @@
+:: Cheats Character [nobr]
+
+/* BASICS */
+<span style="color:Azure"><big><strong>--Name--</strong></big></span><br>
+
+<div class="cheats-character-item">
+	<span>First Name: </span>
+	<<textbox "$Player.Name" $Player.Name>>
+</div>
+<div class="cheats-character-item">
+	<span>Family Name:</span>
+	<<textbox "$Player.LastName" $Player.LastName>>
+</div>
+<div class="cheats-character-item">
+	<span>Noah Nickname:</span>
+	<<textbox "$NoahNickname" $NoahNickname>>
+</div>
+<div class="cheats-character-item">
+	<span>Gabe Nickname:</span>
+	<<textbox "$GabeNickname" $GabeNickname>>
+</div>
+<div class="cheats-character-item">
+	<span>Dad Nickname:</span>
+	<<textbox "$DadNickname" $DadNickname>>
+</div>
+<br>
+
+/* Physical */
+<span style="color:Azure"><big><strong>--Physical--</strong></big></span><br>
+
+<div class="cheats-character-item">
+	<span>Skin Color:</span>
+	<<listbox "$Player.SkinColor" autoselect>>
+		<<optionsfrom $SkinColorOptions>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Build:</span>
+	<<listbox "$Player.Build" autoselect>>
+		<<optionsfrom ['Skinny', 'Husky','Muscular','Muscular 2','Muscular 3','Muscular 4','Muscular 5','Muscular 6',]>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Height:</span>
+	<<listbox "$Player.Height" autoselect>>
+		<<optionsfrom $CharacterHeightOptions>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Hair Color:</span>
+	<<listbox "$Player.HairColor" autoselect>>
+		<<optionsfrom $HairColorOptions>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Hair Style:</span>
+	<<listbox "$Player.HairStyle" autoselect>>
+		<<optionsfrom $HairStyleOptions>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Player Hair Flip:</span>
+	<span>
+		<label>
+			<<radiobutton "$PlayerHairFlip" 1 autocheck>>
+			On
+		</label>
+		<label>
+			<<radiobutton "$PlayerHairFlip" 0 autocheck>>
+			Off
+		</label>
+	</span>
+</div>
+<div class="cheats-character-item">
+	<span>Left Eye Color:</span>
+	<<listbox "$Player.LeftEyeColor" autoselect>>
+		<<optionsfrom $EyeColorOption>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Right Eye Color:</span>
+	<<listbox "$Player.RightEyeColor" autoselect>>
+		<<optionsfrom $EyeColorOption>>
+	<</listbox>>
+</div>
+<strong>--Extras-- </strong><br>
+<div class="cheats-character-item cheats-character-small" style="float: left;">
+	<span>Freckles:</span>
+	<span>
+		<<checkbox "$Player.Freckles" 0 1 autocheck>>
+		<label class="pointer" for="checkbox-playerfreckles">Face</label><br>
+
+		<<checkbox "$PlayerShoulderFreckles" 0 1 autocheck>>
+		<label class="pointer" for="checkbox-playershoulderfreckles">Shoulder</label><br>
+
+		<<checkbox "$PlayerArmFreckles" 0 1 autocheck>>
+		<label class="pointer" for="checkbox-playerarmfreckles">Arm</label><br>
+
+		<<checkbox "$PlayerNoseHeavyFreckles" 0 1 autocheck>>
+		<label class="pointer" for="checkbox-playernoseheavyfreckles">Nose Heavy</label><br>
+
+		<<checkbox "$PlayerNoseLightFreckles" 0 1 autocheck>>
+		<label class="pointer" for="checkbox-playernoselightfreckles">Nose Light</label><br>
+
+		<<checkbox "$PlayerLeftSmallFreckles" 0 1 autocheck>>
+		<label class="pointer" for="checkbox-playerleftsmallfreckles">Left Small</label><br>
+
+		<<checkbox "$PlayerRightSmallFreckles" 0 1 autocheck>>
+		<label class="pointer" for="checkbox-playerrightsmallfreckles">Right Small</label><br>
+	</span>
+</div>
+<div class="cheats-character-item cheats-character-small">
+	<span>Scars:</span>
+	<span>
+		<<checkbox "$PlayerChestScar" false true autocheck>>
+		<label class="pointer" for="checkbox-playerchestscar">Chest</label><br>
+
+		<<checkbox "$PlayerFaceScar" false true autocheck>>
+		<label class="pointer" for="checkbox-playerfacescar">Face</label><br>
+
+		<<checkbox "$PlayerLeftArmScar" false true autocheck>>
+		<label class="pointer" for="checkbox-playerleftarmscar">Left Arm</label><br>
+
+		<<checkbox "$PlayerRightLegScar" false true autocheck>>
+		<label class="pointer" for="checkbox-playerrightlegscar">Right Leg</label><br>
+	</span>
+</div>
+<br> <br> <br>
+<span style="color:Azure"><big><strong>--Family Appearance--</strong></big></span><br>
+	<div class="cheats-character-item">
+		<span>Noah Appearance:</span> <br>
+			<span>Skin Color:</span>
+			<<listbox "$Noah.SkinColor" autoselect>>
+				<<optionsfrom $SkinColorOptions>>
+			<</listbox>>
+	</div>
+	<div class="cheats-character-item">
+			<span>Hair Color:</span>
+			<<listbox "$Noah.HairColor" autoselect>>
+				<<optionsfrom $HairColorOptions>>
+			<</listbox>>
+	</div>
+	<div class="cheats-character-item">
+		<span>Eye Color:</span>
+		<<listbox "$Noah.EyeColor" autoselect>>
+			<<optionsfrom $EyeColorOption>>
+		<</listbox>>
+	</div>
+	<div class="cheats-character-item">
+	<span>Penis Style:</span>
+		<<listbox "$Noah.PenisStyle" autoselect>>
+			<<optionsfrom ['Cut', 'Uncut']>>
+		<</listbox>>
+	</div>
+	<div class="cheats-character-item">
+	<span>Gabe Appearance:</span> <br>
+			<span>Skin Color:</span>
+			<<listbox "$Gabe.SkinColor" autoselect>>
+				<<optionsfrom $SkinColorOptions>>
+			<</listbox>>
+	</div>
+	<div class="cheats-character-item">
+	<span>Penis Style:</span>
+		<<listbox "$Gabe.PenisStyle" autoselect>>
+			<<optionsfrom ['Cut', 'Uncut']>>
+		<</listbox>>
+	</div>
+
+	<div class="cheats-character-item">
+	<span>Dad Appearance:</span> <br>
+			<span>Skin Color:</span>
+			<<listbox "$Dad.SkinColor" autoselect>>
+				<<optionsfrom $SkinColorOptions>>
+			<</listbox>>
+	<div>
+	<div class="cheats-character-item">
+			<span>Hair Color:</span>
+			<<listbox "$Dad.HairColor" autoselect>>
+				<<optionsfrom $HairColorOptions>>
+			<</listbox>>
+	</div>
+
+/* PRIVATES */
+<span style="color:Azure"><big><strong>--Privates--</strong></big></span><br>
+
+<div class="cheats-character-item">
+	<span>Penis Size:</span>
+	<<listbox "$Player.PenisSize" autoselect>>
+		<<optionsfrom $PenisSizeOptions>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Testicle Size:</span>
+	<<listbox "$Player.Balls" autoselect>>
+		<<optionsfrom $TesticleSizeOptions>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Penis Style:</span>
+	<<listbox "$Player.PenisStyle" autoselect>>
+		<<optionsfrom ['Cut', 'Uncut']>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Foreskin Length(Hard):</span>
+	<<listbox "$Player.PenisLength" autoselect>>
+		<<optionsfrom {
+			'Long': 1,
+			'Short': 0,
+		}>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Pubic Hair:</span>
+	<<listbox "$Player.PubicHair" autoselect>>
+		<<optionsfrom ['None', 'Wisps', 'Short', 'Long']>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Butt:</span>
+	<<listbox "$Player.Butt" autoselect>>
+		<<optionsfrom ['Cute', 'Firm', 'Big']>>
+	<</listbox>>
+</div>
+<div class="cheats-character-item">
+	<span>Grower:</span>
+	<span>
+		<label>
+			<<radiobutton "$Grower" 1 autocheck>>
+			On
+		</label>
+		<label>
+			<<radiobutton "$Grower" 0 autocheck>>
+			Off
+		</label>
+	</span>
+</div>
+<div class="cheats-character-item">
+	<span>Can Cum:</span>
+	<span>
+		<label>
+			<<radiobutton "$CanCum" 1 autocheck>>
+			On
+		</label>
+		<label>
+			<<radiobutton "$CanCum" 0 autocheck>>
+			Off
+		</label>
+	</span>
+</div>
+<br>
+<div class="cheats-character-item">
+	<span>Debug:</span>
+	<span>
+		<label>
+			<<radiobutton "$Debug" 1 autocheck>>
+			On
+		</label>
+		<label>
+			<<radiobutton "$Debug" 0 autocheck>>
+			Off
+		</label>
+	</span>
+</div>
+
+<br>
+
+[[Apply|Cheats Menu]]
+
+:: Chats Character Style [stylesheet]
+
+.cheats-character-item {
+	display: grid;
+    grid-template-columns: 185px 170px;
+    width: 410px;
+	padding: 2px 0;
+}
+
+.cheats-character-item span:first-child {
+	font-weight: 600;
+}
+
+.cheats-character-item.cheats-character-small {
+	grid-template-columns: 80px 125px;
+	width: 205px;
+}
+
+input[type=text].macro-textbox {
+	min-width: 14em;
+}

@@ -1,0 +1,26 @@
+:: Laundry [nobr]
+
+	You open one of the pantries in the Kitchen to reveal your family’s washing machine. You quickly collect yours and your brother’s dirty clothes and begin to toss them into the washing machine, only stopping briefly as you are grossed out by your elder brother’s dirty underwear. Once finished, you put the clean, but wet, clothes into a basket to be dried outside. <br>
+<br>
+
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+	<<if $QuestLog[_i].Name == "Weekly Chores">>
+		<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+			<<if $QuestLog[_i].Objectives[_o].Name == "Do Laundry">>
+				<<set $QuestLog[_i].Objectives[_o].State to 1>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $QuestLog[_i].Objectives.push({
+			Name: "Hang Up Clothes",
+			State: 0,
+			Total: 1,
+		})>>
+		<<break>>
+	<</if>>
+<</for>>
+
+<<set $Minutes += 10>>
+<<set $ChoreEasyObj to 2>>
+
+[[Continue|PH Kitchen]] 

@@ -1,0 +1,101 @@
+:: Northend Playground Slide [nobr]
+
+/* Written by: Winters */
+<<set $Minutes += 20>>
+/* Intro */
+
+Walking into Northend playground, it seems that it is entirely unoccupied.  It’s rare when you have the playground to yourself.   Grinning broadly, you decide to make the best of it.  You begin by running up the slide, your steps on the slide making audible clangs across the empty playground.   From the top of the slide, it is an easy hop onto the top of the jungle gym.  Even from this height, there is a pretty good view of the surrounding cul-de sac. <span style="color:lightgreen">Taking a deep satisfied breath, you admire your surroundings.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+From this perspective, the view over Northend’s fence line shows some new secrets.  Off to the right in one of the backyards, a boy perhaps only a few years younger than yourself, is playing on a swing set.  Much like yourself, he is playing alone and seems to be enjoying the solitude.  He doesn’t seem to notice anyone watching him and seems to be appreciating the small bit of isolation and privacy that you’re both experiencing.  At the top of the slide attached to the swing set, he lays down headfirst and slides down. <span style="color:Pink">As he slides his bottoms catch on the slide, exposing his underwear.  Giggling at the sight, you watch as he gets up awkwardly, looking around to see if anyone noticed as he pulls up his bottoms.</span> He doesn’t seem to have noticed you. <br>
+<br>
+Looking down, you decide that you should join in on the fun.<br>
+<br>
+
+<div id="choice">
+/*Slide down legs first*/
+ <<link "Slide down legs first<br>">>
+ <<replace "#choice">>
+        
+	You slide down with your legs first.  You put your arms up in the air, feeling a brief and faint breeze across your fingertips as you slide down. <span style="color:LightGreen">You stand up, your arms still raised in celebration.</span> It may seem silly, but no one is around to judge. <span style="color:Yellow">No one that you’re aware of…</span> <br>
+	<<needChange "Fun" 20>>
+	<br>
+	[[Continue|Neighborhood Playground]] 
+ <</replace>>
+ <</link>>
+
+/*Slide down head first*/
+<<link "Slide down head first<br>">>
+<<replace "#choice">>
+	Feeling a sense of solidarity with the boy, you decide to slide down head first. <span style="color:LightCoral">With your arms outstretched in front of you it feels like for a brief moment if feels like you’re flying.</span> <span style="color:Pink">However, that is quickly replaced with the sensation of tugging and pulling down of your waistband of your $PlayerBottoms.Type, exposing your $PlayerUndies.Type.</span>
+
+	/*-Diaper*/
+	<<if $PlayerUndies.Tags.includes("Diaper")>>
+
+		The sound of a slight crinkle propagates across the playground. There is the sudden sensation as one side of the diaper becomes unattached. You quickly pull your arms back and grab your $PlayerUndies.Type before they fully come off. <span style="color:Pink">Stopping abruptly at the base of the slide, your upper body hangs awkwardly off the end of the slide, while your $PlayerUndies.Type are in full view. You wonder if anyone is watching, just like you were watching that boy?  Will anyone know that you wear diapers?</span> <br>
+
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Blush: 1,
+					PantsDown: true,
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+	/*-Commando-*/
+	<<elseif $PlayerUndies.Type == "None">>
+		<span style="color:Pink">The lack of underwear exposes your bare butt. Accompanied by a sudden shock of air as it comes in contact with your bare skin.</span> You quickly pull your arms back as you grab your waistband.  Stopping abruptly at the base of the slide, <span style="color:Pink">your upper body hangs awkwardly off the end of the slide, while your butt is in full view. You wonder if anyone is watching you, just like you did with that boy.</span> <br>
+
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Blush: 1,
+					PantsDown: true,
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+	<<else>>
+		/*Other*/
+
+		A sudden sensation of air hits your upper thighs.  You quickly pull your arms back and grab your $PlayerUndies.Type before they’re also pulled down.  <span style="color:Pink">Stopping abruptly at the base of the slide, your upper body hangs awkwardly off the end of the slide, while your $PlayerUndies.Type are in full view.</span>
+
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Blush: 1,
+					PantsDown: true,
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+	<</if>>
+
+	<<linkreplace "Continue">>
+
+		You giggle as you awkwardly get up from the base of the slide and pull up your waistband of your $PlayerBottoms.Type. No one seems to be around to witness that sudden display. <span style="color:Yellow">No one that you’re aware of at least...</span> You’re not sure if you’ll ever meet the boy you spied on, and bring up this private moment that you’ve shared. However, it’s unlikely the playground won’t be quiet for much longer, <span style="color:LightGreen">so you make the best of it as you run around the empty playground and enjoy this moment alone.</span> <br>
+
+		<<needChange "Fun" 20>>
+			<br>
+		[[Continue|Neighborhood Playground]] 
+		<</linkreplace>>
+<</replace>>
+<</link>>
+
+</div>

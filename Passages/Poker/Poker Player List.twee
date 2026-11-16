@@ -1,0 +1,34 @@
+:: Poker Player List [nobr]
+
+Players: <br><br>
+<ul>
+    <<for _i to 0; _i lt $PokerPlayers.length; _i++>>
+        <<capture _i>>
+            <<set _playerId = $PokerPlayers[_i].id>>
+            <<set _isPC = _playerId === 'PC'>>
+            <<set _hand = $PokerPlayers[_i].hand>>
+            <<set _pokerTrait = $PokerPlayers[_i].pokerTrait>>
+            <li>
+                <<if _isPC>>
+                    You
+                <<else>>
+                    <span style="color:DarkTurquoise"><<=_playerId>></span>
+                <</if>>
+                <<if !_isPC>>
+                    <<link "[Remove]">>
+                        <<run $PokerPlayers.splice(_i, 1)>>
+                        <<replace ".player_list">>
+                            <<include "Poker Player List">>
+                        <</replace>>
+                        <<replace "#add_player">>
+                            <<include "Poker Player Addition">>
+                        <</replace>>
+                        <<replace "#poker-continue-link">>
+                            <<include "Poker Game Setup Continue">>
+                        <</replace>>
+                    <</link>>
+                <</if>>
+            </li>
+        <</capture>>
+    <</for>>
+</ul>

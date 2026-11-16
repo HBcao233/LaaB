@@ -1,0 +1,84 @@
+:: OC Erin Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCErinSocialRank == -3>>
+	<<set $OCErinRelationship to "Hated">>
+	<span style="color:DarkRed">Erin Hates you!</span>
+	<br>
+<<elseif $OCErinSocialRank == -2>>
+	<<set $OCErinRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Erin are Enemies.</span>
+	<br>
+<<elseif $OCErinSocialRank == -1>>
+	<<set $OCErinRelationship to "Very Disliked">>
+	<span style="color:Red">Erin really Dislikes you.</span>
+	<br>
+<<elseif $OCErinSocialRank == 0 and $OCErinSocial <= -50>>
+	<<set $OCErinRelationship to "Disliked">>
+	<span style="color:Red">Erin Dislikes you. </span>
+	<br>
+<<elseif $OCErinSocialRank == 0 and $OCErinSocial < 50>>
+	<<set $OCErinRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Erin are Acquaintances.</span>
+	<br>
+<<elseif $OCErinSocialRank == 0 and $OCErinSocial >= 50>>
+	<<set $OCErinRelationship to "Liked">>
+	<span style="color:LightGreen">Erin Likes you.</span>
+	<br>
+<<elseif $OCErinSocialRank == 1>>
+	<<set $OCErinRelationship to "Friends">>
+	<span style="color:Green">You and Erin are Friends.</span>
+	<br>
+<<elseif $OCErinSocialRank == 2>>
+	<<set $OCErinRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Erin are Good Friends!</span>
+	<br>
+<<elseif $OCErinSocialRank == 3>>
+	<<set $OCErinRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Erin are Close Friends!</span>
+	<br>
+<<elseif $OCErinSocialRank == 4>>
+	<<set $OCErinRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Erin are Best Friends!</span>
+	<br>
+<<elseif $OCErinSocialRank == 5>>
+	<<set $OCErinRelationship to "Love">>
+	<span style="color:Pink">You and Erin Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCErinSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCErinSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCErinSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCErinSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCErinSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCErinSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCErinSocial,
+			value: Math.abs($OCErinSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCErinSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCErinSocial > 120>>
+	<<set $OCErinSocial to 120>>
+<</if>>
+<<if $OCErinSocial < -120>>
+	<<set $OCErinSocial to -120>>
+<</if>>

@@ -1,0 +1,154 @@
+:: Mall [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Mall",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Mall",
+}>>
+
+<<set _randomencounter to random(1, 50)>>
+/* Random Encounter Event Set-Up */
+<<set _reevents to []>>
+/* Only OC Encounters, so set to not work if OCs turned off. */
+<<if $CompletedQuests.includes("Birdy: Introduction") && $CompletedQuests.includes("Birdy: Lea") && $ToggleOCBirdy == 1>>
+	<<set _reevents.push("OC Birdy Mall Hang Out Encounter")>>
+<</if>>
+<<if $CompletedQuests.includes("Luca: Introduction") && $ToggleOCLuca == 1>>
+	<<set _reevents.push("OC Luca Mall Candy Store Encounter")>>
+<</if>>
+<<if $CompletedQuests.includes("Enkys: Introduction") && $ToggleOCEnkys == 1>>
+	<<set _reevents.push("OC Enkys Shy at the Mall")>>
+<</if>>
+/* Ensuring there are Events to play */
+<<if _reevents.length == 0>>
+	<<set _randomencounter to 50>>
+<</if>>
+
+/* Quest Specific Random Encounter */
+<<if $Time.after(18) or $Time.before(5)>>
+	<<set _carterevent to 1>>
+<</if>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+/* Quest Triggers */
+/* Quest-Specific Random Encounters */
+<<elseif _carterevent == 1 && $InActiveQuests.includes("Carter: Mom (Mall)")>>
+	<<include"Carter Story Event Mom at Mall">>
+/* OC Content */
+<<elseif $InActiveQuests.includes("Jackson: Parental Drama") && !$Time.schoolday() && $Time.between(10, 0, 14, 0)>>
+	<<include"Jackson Parental Drama 1">>
+
+	/* Arthur Richard Intro */
+<<elseif $ToggleOCArthurRichard == 1 && $InActiveQuests.includes("Arthur & Richard: Introduction")>>
+	<<include"OC Arthur Richard Intro">>
+
+/* Carter: Mall Fight */
+<<elseif $InActiveQuests.includes("Carter: Mall Fight") && !$Time.schoolday() && $Time.between(7, 0, 18, 0)>>
+	<<include"Carter Mall Fight">>
+
+	/* Random Encounters */
+<<elseif _randomencounter == 1>>
+	<<set _event to _reevents.random()>> 
+	<<include _event>>
+<<else>>
+
+<span style="color:Azure"><big><strong>--Opal Gate Mall--</strong></big></span><br>
+You stand in the parking lot of The Opal Gate Mall. A large, multi-story structure that houses all sorts of shops and businesses, the mall attracts people due to its low prices, name brands, and varied items. While locals from the northern part of town prefer the Shopping and Food Districts, tourists and people from downtown tend to flock to the much more impressive Opal Gate Mall. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+/*
+<<if $Time.between(7,0,22,0)>>
+	[[Costume Store|Mall Costume Store]]<br>
+<<else>>
+	<span style="color:lightcoral">Costume Store (Open 7am to 10pm)</span><br>
+<</if>>
+<<if $Time.between(7,0,22,0)>>
+	[[Pop Culture Clothing Store|Mall Pop Culture Clothing]]<br>
+<<else>>
+	<span style="color:lightcoral">Pop Culture Clothing Store (Open 7am to 10pm)</span><br>
+<</if>>
+*/
+<img width="25px" src="Images\Icons\Shop Icons\Shops\Clothing.png">
+<<if $Time.between(9,0,20,0)>>
+	<<link"Eye Doctor">>
+		<<goto "Mall Eye Doctor">>
+	<</link>><br>
+<<else>>
+	<span style="color:lightcoral">Eye Doctor (Open 9am to 8pm)</span><br>
+<</if>>
+
+<img width="25px" src="Images\Icons\Shop Icons\Shops\Clothing.png">
+<<if $Time.between(7,0,22,0)>>
+	<<link"Cool Culture">>
+		<<goto "Mall Cool Culture">>
+	<</link>><br>
+<<else>>
+	<span style="color:lightcoral">Cool Culture (Open 7am to 10pm)</span><br>
+<</if>>
+
+<img width="25px" src="Images\Icons\Shop Icons\Shops\Clothing.png">
+<<if $Time.between(7,0,22,0)>>
+	<<link"Girly Grange">>
+		<<goto "Girly Grange">>
+	<</link>><br>
+<<else>>
+	<span style="color:lightcoral">Girly Grange (Open 7am to 10pm)</span><br>
+<</if>>
+
+[[Check the Vending Machine|Vending Machine][$VendorPreviousPassage = passage()]]<br><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Park.png">
+	[[Park (0:10)|Park][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Trailer Park.png">
+	[[Trailer Park (0:10)|Trailer Park][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Hospital.png">
+	[[Hospital (0:10)|Hospital][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Park.png">
+	[[Park (0:05)|Park][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Trailer Park.png">
+	[[Trailer Park (0:05)|Trailer Park][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Hospital.png">
+	[[Hospital (0:05)|Hospital][$Minutes += $TravelTime]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 300px; top: 229px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="300,155,353,208" alt="Park" onclick="$.wiki('<<goto[[Park]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="374,229,427,282" alt="Hospital" onclick="$.wiki('<<goto[[Hospital]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="152,229,205,282" alt="Trailer Park" onclick="$.wiki('<<goto[[Trailer Park]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

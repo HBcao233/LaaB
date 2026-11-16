@@ -1,0 +1,409 @@
+:: Xavier Brother Encounter Event 1 [nobr]
+
+/* Intro */
+You hang out with your little brother <span style="color:DarkTurquoise">Noah</span> for a little, pushing him on the swing and having a generally good time. After a few minutes, you excuse yourself to use the restroom and return to find <span style="color:DarkTurquoise">Noah</span> no longer at the swings, <span style="color:yellow">but instead sitting at a bench a little bit away kicking rocks around.</span> Curious, you ask <span style="color:DarkTurquoise">Noah</span> if he was done with the swings. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+    {
+        Name: "Noah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Yeah,”</span> He replies, giving a smile though you notice a certain lull in his voice, <span style="Color: LightSteelBlue">“Got kinda boring, so figured we can do something else. Maybe the jungle gym or slides?”</span> <span style="color:lightcoral">Despite his reassurance, you glance over towards the swings to find a rather well-dressed boy barking and shooing away another little kid who walks off sadly. It is all you need to see to begin to march over there.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Wait!”</span> <span style="color:DarkTurquoise">Noah</span> stops you, grabbing your arm and pulling you back, <span style="Color: LightSteelBlue">“It’s fine, really. We can do something else.”</span> Your big brotherly instincts kicking in, you cross your arms and ask <span style="color:DarkTurquoise">Noah</span> what’s going on. <span style="Color: LightSteelBlue">“That’s just <span style="color:DarkTurquoise">Levi</span>. He’s a bit of a jerk and thinks he owns everything just because he’s rich. I normally don’t let him push me around but…”</span> <span style="color:DarkTurquoise">Noah</span> pauses, rubbing the back of his head, <span style="Color: LightSteelBlue">“…he’s a lot meaner outside of school. Since there are no teachers around. It’s not worth getting involved, since we can just do something else.”</span> <br>
+<br>
+<span style="color:DarkTurquoise">Noah</span> pulls on your hand to try to get you to follow him elsewhere, <span style="color:lightcoral">but something about knowing this little punk is messing with your little brother pisses you off, so you continue your march over there.</span> <span style="color:DarkTurquoise">Noah</span> calls out to try and stop you, but you continue on as he watches nervously from afar. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Eyes: "Mad",
+        },
+    },
+    {
+        Name: "Levi",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smirk",
+            Eyes: "Mad",
+        },
+    }, 
+]>>
+<<ad _ad>>
+
+<span style="color:lightcoral">The brat, <span style="color:DarkTurquoise">Levi</span>, had just shoved another kid a year or two younger than him to the ground as you walk up. The little boy gets up crying and runs off as <span style="color:DarkTurquoise">Levi</span> taunts him.</span> <span style="Color: LightSteelBlue">“Yeah, and remember your place next time! Damn rat.”</span> Hearing a little kid your brother’s age curse like that catches you off guard for a moment, causing you to briefly stop in your tracks. <span style="color:DarkTurquoise">Levi</span> spots you approaching him and turns, raising an eyebrow as he gives you a smirk. <span style="Color: LightSteelBlue">“What? You want some too, jackass!?”</span> The kid puffs out his chest and stands with such authority, you’d almost be afraid, if he wasn’t easily a few feet shorter than you. Still, the kid shows no fear, though the way he says ‘jackass’ has a bit of strangeness to it, as if he hasn’t practiced the word much. <br>
+<br>
+<span style="Color: LightSteelBlue">“Do you know who I am? My family BUILT this stupid little park. Which means I OWN it, so all you dirty rats can go find somewhere else to play where I can’t smell your filth!”</span> The kid talks with such venom; it’s a bit crazy. You came over here to teach him a lesson, but find yourself stunned by just how bold and rude this brat it. <span style="color:DarkTurquoise">Levi</span> looks past you, spotting <span style="color:DarkTurquoise">Noah</span> in the distance, and laughs. 
+
+/* Noah Accident Quest Complete */
+<<if $QuestNoahAccident.State == -1>>
+    <span style="Color: LightSteelBlue">“What? Did little baby <span style="color:DarkTurquoise">Noah</span> send his big bro to get his swing back? Well tough! Unless you want me to knock your teeth in and embarrass you in front of that bedwetter little brother of yours, you better beat it!”</span> <br>
+    <br>
+/* Else */
+<<else>>
+    <span style="Color: LightSteelBlue">“What? Did little baby <span style="color:DarkTurquoise">Noah</span> send his big bro to get his swing back? Guess I didn’t push him hard enough! Maybe I’ll teach you both your place and give you matching black eyes! Bet he’d cry like the baby he is!”</span> <br>
+    <br>
+<</if>>
+/* Continued */
+<span style="color:lightcoral">You feel something burn inside you. This kid talking smack to you is one thing, you handle stuff like that all the time, but the way he talked about your little brother lights a fire under you. Combine that with his admission of bullying <span style="color:DarkTurquoise">Noah</span>, and you can hardly contain yourself.</span> Still, you remember <span style="color:DarkTurquoise">Your Father</span>’s words that violence is never the answer and take a deep breath. <br>
+<br>
+<div id=continue>
+    /* Shove the kid */
+	<<link "Shove the kid<br>">>
+	<<replace"#continue">>
+        Meh, who needs impulse control? <span style="color:lightgreen">You use your rage and anger to harshly shove the kid to the ground to give him a taste of his own medicine. The boy hits the ground hard, scrapping his elbow and landing flat on his back.</span> <span style="color:pink">As he does so, his top flutters up, revealing his boyish belly and some of his underwear poking out of his shorts. While name brand, the colorful undergarments remind you that beneath his bravado and confidence, this is still just a little boy who can’t hope to match you in strength or size.</span> <br>
+        <br>
+        /* If Kid Kink */
+        <<if $Player.Kinks.Kids == 1>>
+            <span style="color:pink">You stare at the peek of underwear for a moment and wonderful what the full view looks like. You are already pondering and imagining ways to punish the brat. Maybe taking his clothes and making him run home crying in his underwear. Maybe take the underwear too. Maybe stripping him right here and spanking him in front of everyone until he cries for his mommy. You smile at the ideas.</span> <br>
+            <br>
+        <</if>>
+        <span style="Color: LightSteelBlue">“Owww! What the hell you jackass! Think you can touch me?!”</span> The kid sniffles and you spot tears already rolling down his cheeks. He may be trying to keep up a strong front, but it is clear that he can do little more than crumble and cry when someone stands up to him. <span style="Color: LightSteelBlue">“You- you…! Just you wait! I’m going to get my brother to come over and beat you up! You’ll be sorry! Then I’m going to make him hold you down so I can kick you in the balls so many times you’ll be crying you- you-!”</span> <br>
+        <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                },
+            },
+            {
+                Name: "Levi",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Eyes: "Mad",
+                    Blush: 1,
+                    Cry: 1,
+                },
+            },
+            ]>>
+        <<ad _ad>>
+
+        <span style="color:pink">You can’t help but chuckle at the boy, smirking at him mockingly as his lips quiver and his eyes well up even more. The boy is about to break down in tears from a simple shove; he truly can’t take what he’s been dishing out.</span> You are pondering how to move forward when you suddenly feel a hand on your shoulder. <br>
+        <br>
+        [[Continue|Xavier Brother Encounter Event 2]]
+    <</replace>>
+    <</link>>
+    /* Scold him */
+	<<link "Scold him<br>">>
+	<<replace"#continue">>
+        Like an upset parent, you raise your voice and wiggle your finger at the bratty kid, scolding him and telling him off for his rude and outright obnoxious behavior. You use all your years of experience being scolded yourself to give him the talking too of a lifetime. <span style="color:DarkTurquoise">Levi</span> seems a little taken aback at first, as if this is one of the few times he has been scolded or yelled at, <span style="color:lightcoral">but then quickly starts smirking and then even laughing.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Oh no, big scary boy is yelling at me! I’m sowwy mister, I promise I’ll never do it again. Hah!”</span> He laughs, making faces at you and completely disregarding your words. <span style="color:lightcoral">This just makes you angrier as you continue to scold the kid as you go red in the face.</span> Eventually, the kid rolls his eyes before putting his hands up. <span style="Color: LightSteelBlue">“Fine, just shut up already. I’ll apologize and leave, will that make you happy? God, you big kids are so lame.”</span> <br>
+        <br>
+        Not expecting that to work, you nod. Telling <span style="color:DarkTurquoise">Levi</span> that he better apologize to all the kids he messed with and leave, or else. You’re not sure what the ‘or else’ part is referring to, but are sure you’ll think of something if it comes to that. <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Mad",
+                },
+            },
+            {
+                Name: "Levi",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Eyes: "Tired",
+                },
+            },
+            ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Fine, fine…”</span> <span style="color:DarkTurquoise">Levi</span> sighs and puts his hands in his pockets, glancing down and kicking a rock as he looks a little defeated. You are pretty proud of yourself for handling the situation… <span style="color:lightcoral">until a sudden punch to the groin sends you to the ground in a blast of pain! You hit the dirt hard, nearly throwing up as the impact sends shockwaves throughout your body. The ringing in your ears is only broken by the bratty laughter of <span style="color:DarkTurquoise">Levi</span> as he stands over you chuckling.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Damn, you should see your face! You really think that would work? Like I’d listen to a rat like you!”</span> <span style="color:lightcoral">He continues to laugh as you feel a rage boiling inside you that only builds as his laughter goes on longer and longer. Feeling this raging anger well up inside again, you stand up and begin marching towards the boy, whose tune quickly changes.</span> <br>
+      
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Mad",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Levi",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Eyes: "Mad",
+                },
+            },
+            ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Hey, hey, hey! Back up! Don’t touch me, you rat!”</span> He scurries backward like a mouse cornered, holding his hands up at as he barks threats. <span style="Color: LightSteelBlue">“Don’t you know who I am? Touch me and you’ll spend the rest of your life in jail! Back up! I’m going to get my brother to kick your ass if you don’t leave!”</span> <span style="color:pink">The boy seems to quickly lose his confidence once his enemy doesn’t have his back turned. You continue to approach the boy, unsure if you are going to shove him, yell at him, or punch him in that bratty face of his,</span> when you suddenly feel a hand on your shoulder… <br>
+        <br>
+        [[Continue|Xavier Brother Encounter Event 2]]
+    <</replace>>
+    <</link>>
+    /* Walk away */
+	<<link "Walk away<br>">>
+	<<replace"#continue">>
+        You realize that this kid is just trying to goad you. He isn’t worth the trouble, and he wouldn’t listen to you if you tried to scold him. Instead, you scoff and turn around, not giving him the pleasure of a reaction from you. <span style="Color: LightSteelBlue">“Yeah! That’s what I thought, you dirty jackass!”</span> You don’t react, enjoying the silence that follows his word and imagine how frustrated he must be to not be getting a reaction… <span style="color:lightcoral">then you feel a hard kick against your butt!</span> <br>
+        <br>
+        You nearly tumble forward into the dirt, only barely able to catch yourself as you land on your hands and knees. You turn around to see the little brat laughing his ass off. <span style="Color: LightSteelBlue">“Whoops! Sorry, my leg slipped! Hahaha!”</span> He points and laughs at you mockingly. <span style="color:lightcoral">Feeling the anger well up inside again, you stand up and begin marching towards the boy, whose tune quickly changes.</span> <br>
+        <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Mad",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Levi",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Eyes: "Mad",
+                },
+            },
+            ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Hey, hey, hey! Back up! Don’t touch me, you rat!”</span> He scurries backward like a mouse cornered, holding his hands up at as he barks threats. <span style="Color: LightSteelBlue">“Don’t you know who I am? Touch me and you’ll spend the rest of your life in jail! Back up! I’m going to get my brother to kick your ass if you don’t leave!”</span> <span style="color:pink">The boy seems to quickly lose his confidence once his enemy doesn’t have his back turned. You continue to approach the boy, unsure if you are going to shove him, yell at him, or punch him in that bratty face of his,</span> when you suddenly feel a hand on your shoulder… <br>
+        <br>
+        [[Continue|Xavier Brother Encounter Event 2]]
+    <</replace>>
+    <</link>>
+</div>
+
+:: Xavier Brother Encounter Event 2 [nobr]
+
+/* Intro */
+You turn and find <span style="color:DarkTurquoise">Xavier</span> standing directly behind you. <span style="Color: LightSteelBlue">“Apologies, <span style="color:DarkTurquoise">$XavierNickname</span>, didn’t mean to startle you. Just curious what all this commotion is?”</span> You open your mouth to explain, but are suddenly pushed aside as <span style="color:DarkTurquoise">Levi</span> rushes up to <span style="color:DarkTurquoise">Xavier</span> and ducks behind him. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "Xavier",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Levi",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Mad",
+            },
+        },
+        ]>>
+     <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Xavier</span>! This RAT attacked me! Pushed me to the ground and started kicking me, talking about how he hates our family and is going to make us all pay!”</span> <span style="color:DarkTurquoise">Levi</span> says from behind <span style="color:DarkTurquoise">Xavier</span> sneering at you. It is at that moment, seeing them side by side, <span style="color:lightcoral">that you realize his ‘big brother’ is <span style="color:DarkTurquoise">Xavier</span>!</span> Your eyes widen at this revelation and you try to explain to <span style="color:DarkTurquoise">Xavier</span> what really happened, but are once again silenced, this time by <span style="color:DarkTurquoise">Xavier</span> raising his hand up. <br>
+<br>
+<span style="Color: LightSteelBlue">“Interesting, is that so?”</span> <span style="color:DarkTurquoise">Xavier</span> tilts his head, staring at you. <span style="color:lightcoral">You feel his gaze piercing your eyes like knives,</span> <span style="color:yellow">but then he turns his ice-cold gaze downward towards his brother.</span> <span style="Color: LightSteelBlue">“Because that’s not what I saw. I saw you throwing words and fists around at everyone trying to get your way. Then I saw you turn into a pathetic coward the instant someone stood up to you.”</span> <span style="color:yellow"><span style="color:DarkTurquoise">Xavier</span> suddenly grabs his brother’s wrist, causing the boy to cry out in pain. You look down and notice he is holding it tightly, very tightly.</span> <br>
+<br>
+
+    <<set _ad to [
+        {
+            Name: "Xavier",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Levi",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Sad",
+                Cry: 1,
+            },
+        },
+        ]>>
+     <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Ow! Stop! Let go!”</span> He cries, trying to pry himself free, but even with all his strength he doesn’t even move <span style="color:DarkTurquoise">Xavier</span>’s hand an inch. <br>
+<br>
+<span style="Color: LightSteelBlue">“Now <span style="color:DarkTurquoise">Levi</span>, you know how I feel about people who lie to me. Especially if they can’t do it right.”</span> You see <span style="color:DarkTurquoise">Xavier</span> tighten his grip more, causing his brother to fall to the ground and begin to sob. <span style="color:lightcoral"><span style="color:DarkTurquoise">Xavier</span>’s voice is low, scary. His normal smile, even if fake, is gone. Replaced with a dull, unamused expression. You feel a knot in your stomach and almost worry for the brat.</span> <span style="Color: LightSteelBlue">“How do you think it makes the rest of the family look when you run around acting like that and then cry like some helpless baby the instant you are challenged? What does that say about us? Do you think father cries when he gets push back? Do you think I’m a coward?”</span> <span style="color:DarkTurquoise">Xavier</span> leans in low, pressing his face close to his brother's. <br>
+<br>
+<span style="Color: LightSteelBlue">“N- no!”</span> <span style="color:DarkTurquoise">Levi</span> replies. <span style="color:lightcoral">The boy sounds terrified, still trying his best to pull away despite escape being impossible,</span> <span style="Color: LightSteelBlue">“I- I’m sorry! Please, just let me go!”</span> <span style="color:DarkTurquoise">Levi</span> begs, tears now rolling down his cheeks. <span style="color:DarkTurquoise">Xavier</span> glares at him for a second, the longest second you’ve ever seen, before releasing him. <span style="color:DarkTurquoise">Levi</span> falls to the ground, his wrist bright red from the pressure. He scooches back, trying to put distance between himself and his brother. <br>
+<br>
+<span style="Color: LightSteelBlue">“An apology is all I ask for.”</span> <span style="color:DarkTurquoise">Xavier</span> sighs, his voice returning to normal. <span style="Color: LightSteelBlue">“If you have to make mistakes, own up to them. If you can’t do that, then- Don’t. Make. Mistakes.”</span> <span style="color:DarkTurquoise">Xavier</span> glares back at his brother, who cowers in fear as he rubs his wrist. <span style="Color: LightSteelBlue">“Clean yourself up and go home. We’ll discuss your punishment for bullying other kids when I return.”</span> <span style="color:DarkTurquoise">Levi</span> quickly scurries to his feet and runs off, tears still falling from his cheeks. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "Xavier",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+     <<ad _ad>>
+
+<span style="color:DarkTurquoise">Xavier</span> then lets out a loud sigh, letting his shoulders slump. He speaks in the more natural tone he does around you, letting his guard down a little. <span style="Color: LightSteelBlue">“Sorry you had to see that, <span style="color:DarkTurquoise">$XavierNickname</span>. <span style="color:DarkTurquoise">Levi</span> can be… difficult. Our mother babied him quite a bit, though that’s no excuse to act like that. Hope you’ll forgive me if he caused you or your brother trouble.”</span> He smiles, almost making you forget the tense moment you just saw. Still processing, you ask if he didn’t maybe go a bit hard on him. <br>
+<br>
+<span style="Color: LightSteelBlue">“Trust me, anything less and he wouldn’t learn.”</span> <span style="color:DarkTurquoise">Xavier</span> laughs, <span style="Color: LightSteelBlue">“My grandfather had a saying, <span style="Color: LightSteelBlue">“Children born with wealth and power many times that of other kids, must be disciplined with force many times that of other kids.”</span> It may seem harsh on the outside, but it is the reason my father is so successful and why I’m on the path to follow him. <span style="color:DarkTurquoise">Levi</span> will whine and cry, but then go home to a bedroom full of toys and the latest electronics. So, you shouldn’t feel that sorry for him. Though, rest assured, I’ll make sure he learns his lesson. With father so busy, I volunteered to handle <span style="color:DarkTurquoise">Levi</span> when he acts out.”</span> <span style="color:DarkTurquoise">Xavier</span> lets out another laugh, as if what he is saying is slightly embarrassing, <span style="Color: LightSteelBlue">“Probably why he was so scared. He knows I won’t go easy on him like everyone else does.”</span> <br>
+<br>
+<<linkreplace"Continue">>
+    There is a brief pause as <span style="color:DarkTurquoise">Xavier</span> thinks for a moment, a slightly sinister smirk appearing on his lips. <span style="Color: LightSteelBlue">“I have an idea, if you’ll indulge me. Why don’t you pick his punishment? Since it was you and your brother he messed with most. You can go as light or heavy as you think he deserves, so you don’t have to feel bad about me going too harsh on the kid. What do you say?”</span> You blush, not expecting to have such control over the boy’s discipline. You admit that you do want him to be punished for how he acted, especially to <span style="color:DarkTurquoise">Noah</span>, but you’re not sure how. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "Xavier",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+     <<ad _ad>>
+
+    <span style="Color: LightSteelBlue">“Allow me to give some options then, based on what I would normally do.”</span> <span style="color:DarkTurquoise">Xavier</span> says, <span style="Color: LightSteelBlue">“The simplest would be a grounding. I’d make sure to take out his favorite toys, but he’d probably still find a way to entertain himself, even if being locked in his room would feel insulting. The next would be a spanking. Not only would it hurt, but the fact that I would be delivering it would surely be a hit to his pride.”</span> <span style="color:DarkTurquoise">Xavier</span> then pauses, <span style="color:yellow">turning to you with a smirk as he stares at you deeply, as if trying to read your reaction.</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Of course, we could go a bit more extreme, if you feel he is deserving of such.”</span> You gulp, asking what exactly he means, <span style="Color: LightSteelBlue">“I could take away his clothing privileges the rest of the night and make him help with the cleaning and cooking tonight. Not only would it be demeaning, but <span style="color:DarkTurquoise">Levi</span> is oh so sensitive about his body he’ll probably be sobbing the entire time, especially if I give the help leave to bully him as he does others. That would surely put him in the shoes of his victims.”</span> You pause, wondering if he is being serious. <span style="color:pink">Would he really force his brother into such a humiliating punishment? You imagine <span style="color:DarkTurquoise">Levi</span> stripped and force to cook and clean as those meant to be his servants demean him.</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Although, if you think he truly needs a harsher punishment, I’m open to suggestions.”</span> <span style="color:DarkTurquoise">Xavier</span> watches every moment of your face, staring into your eyes. You can’t tell if he’s just testing you or just curious how you’ll react. <span style="color:yellow">You also can’t tell if he’s serious are not, but something tells you he isn’t above demeaning his little brother like this.</span> You gulp before responding. <br>
+    <br>
+<div id=continue>
+    /* Grounding */
+	<<link "Grounding<br>">>
+	<<replace"#continue">>
+        You feel a bit unnerved by <span style="color:DarkTurquoise">Xavier</span>’s intense and humiliation focused options or simply don’t think <span style="color:DarkTurquoise">Levi</span>’s actions warrant such a response, so tell him that a grounding should be enough. <span style="color:DarkTurquoise">Xavier</span> stares at you in silence for a moment after hearing your answer, before smiling. <span style="Color: LightSteelBlue">“If you say so, sure he’ll be upset regardless, especially if I tell him I let you pick.”</span> <span style="color:DarkTurquoise">Xavier</span> chuckles before turning away. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“I’ll see you around, <span style="color:DarkTurquoise">$XavierNickname</span>. Maybe, if he learns his lesson, I can introduce you to <span style="color:DarkTurquoise">Levi</span> properly next time.”</span> He waves to you as he walks off, leaving you standing there alone until <span style="color:DarkTurquoise">Noah</span> runs over. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“What was that all about?”</span> He asks curiously. You sigh and say you’ll tell him later. <br>
+        <<socialChange "Xavier" 3>>
+        <<socialChange "Noah" 3>>
+        <<needChange "Fun" 25>>
+        <<set $CompletedQuests.push("Xavier: Big Brother")>>
+        <<set $InActiveQuests.delete("Xavier: Big Brother")>>
+        <br>
+        [[Continue|Neighborhood Playground]] 
+    <</replace>>
+    <</link>>
+    /* Spanking */
+	<<link "Spanking<br>">>
+	<<replace"#continue">>
+        You ponder the options for a moment, knowing that a simple grounding won’t be enough. Then again, the last option may be a bit much, or you just prefer something more physical. <span style="color:pink">You tell <span style="color:DarkTurquoise">Xavier</span> that <span style="color:DarkTurquoise">Levi</span> deserves a good spanking for his actions. Something nice and classic to ensure he learns his lesson.</span> <span style="color:DarkTurquoise">Xavier</span> smiles at this. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Good choice. You can rest assured that he will indeed learn his lesson when I am done.”</span> <span style="color:DarkTurquoise">Xavier</span> smiles a bit more, a slight deviousness in his gaze. <span style="Color: LightSteelBlue">“If he keeps up his attitude next time you see him, do let me know. Maybe I could invite you over to engage in the punishment yourself.”</span> <span style="color:DarkTurquoise">Xavier</span> laughs, <span style="color:pink">though you can’t be sure if he is just kidding or finds the idea entertaining.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“I’ll see you around, <span style="color:DarkTurquoise">$XavierNickname</span>. Maybe, if he learns his lesson, I can introduce you to <span style="color:DarkTurquoise">Levi</span> properly next time.”</span> He waves to you as he walks off, leaving you standing there alone until <span style="color:DarkTurquoise">Noah</span> runs over. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“What was that all about?”</span> He asks curiously. You sigh and say you’ll tell him later. <br>
+        <<socialChange "Xavier" 3>>
+        <<socialChange "Noah" 3>>
+        <<needChange "Fun" 25>>
+        <<set $CompletedQuests.push("Xavier: Big Brother")>>
+        <<set $InActiveQuests.delete("Xavier: Big Brother")>>
+        <br>
+        [[Continue|Neighborhood Playground]] 
+    <</replace>>
+    <</link>>
+    /* Strip & Clean */
+	<<link "Strip & Clean<br>">>
+	<<replace"#continue">>
+        <span style="color:pink">You can’t hide your smile at the idea of that brat being stripped nude and forced to cook and clean. The adult servants being tasked with adding to his humiliation the cherry on top of what the boy deserves. You tell <span style="color:DarkTurquoise">Xavier</span> your choice and he smiles pleasantly.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“That would have been my choice as well. A bit of humiliation goes a long way in building character. Plus, I heard he was quite rude to the maids the other day. I’m sure they’ll take pleasure in helping me administer the punishment.”</span> <span style="color:DarkTurquoise">Xavier</span> smiles, staring off into the distance. <span style="color:pink">He is no doubt imagining what will occur and you wish you could be a fly on the wall in their house to witness what will be done.</span> <span style="Color: LightSteelBlue">“If he keeps up his attitude next time you see him, do let me know. Maybe I could invite you over to engage in the punishment yourself.”</span> <span style="color:DarkTurquoise">Xavier</span> laughs, though you can’t be sure if he is just kidding or finds the idea entertaining. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“I’ll see you around, <span style="color:DarkTurquoise">$XavierNickname</span>. Maybe, if he learns his lesson, I can introduce you to <span style="color:DarkTurquoise">Levi</span> properly next time.”</span> He waves to you as he walks off, leaving you standing there alone until <span style="color:DarkTurquoise">Noah</span> runs over. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“What was that all about?”</span> He asks curiously. You sigh and say you’ll tell him later. <br>
+        <<socialChange "Xavier" 3>>
+        <<socialChange "Noah" 3>>
+        <<needChange "Fun" 25>>
+        <<set $CompletedQuests.push("Xavier: Big Brother")>>
+        <<set $InActiveQuests.delete("Xavier: Big Brother")>>
+        <br>
+        [[Continue|Neighborhood Playground]] 
+    <</replace>>
+    <</link>>
+    <<if $Player.Traits.includes("Evil")>>
+    /* Tie up like a dog */
+        <<link "Tie up like a dog<br>">>
+        <<replace"#continue">>
+            <span style="color:pink">You can’t hide your smile at the idea of that brat being stripped nude and forced to cook and clean, but even the addition of the adult servants adding to his humiliation isn’t enough. The brat deserves much more. You tell <span style="color:DarkTurquoise">Xavier</span> you agree with his final option, but think that the ability to curl up under the covers at the end of the day may defeat the purpose.</span> <span style="color:DarkTurquoise">Xavier</span> raises an eyebrow at this curiously, <span style="Color: LightSteelBlue">“Oh? What else did you have in mind?”</span> <br>
+            <br>
+            <span style="color:pink">You smirk and respond that the loss of his clothing privileges should come with more, maybe a loss of his bedroom? Or even being able to stay in the house? You suggest that, after a hard day’s work in his birthday suit, he surprise the boy with the knowledge that he’ll be sleeping in the yard tonight. Tie him up like a dog and let the cold night air act as a reminder to him. <span style="color:DarkTurquoise">Xavier</span> ponders you for a minute before smiling.</span> <br>
+            
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },
+                },
+                {
+                    Name: "Xavier",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Smirk",
+                        Eyes: "Mad",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+    
+            <span style="Color: LightSteelBlue">“Well now, maybe I should get ideas for you more often.”</span> He chuckles, <span style="Color: LightSteelBlue">“You have quite the head for discipline. I’ll definitely take that under consideration, maybe ask your brother if <span style="color:DarkTurquoise">Levi</span> comes to class next time with a cold.”</span> <span style="color:DarkTurquoise">Xavier</span> seems impressed with your deviousness, <span style="color:pink">though you just secretly hope he takes you up on your idea.</span> <span style="Color: LightSteelBlue">“If he keeps up his attitude next time you see him, do let me know. Maybe I could invite you over to engage in the punishment yourself.”</span> <span style="color:DarkTurquoise">Xavier</span> laughs, though you can’t be sure if he is just kidding or finds the idea entertaining. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“I’ll see you around, <span style="color:DarkTurquoise">$XavierNickname</span>. Maybe, if he learns his lesson, I can introduce you to <span style="color:DarkTurquoise">Levi</span> properly next time.”</span> He waves to you as he walks off, leaving you standing there alone until <span style="color:DarkTurquoise">Noah</span> runs over. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“What was that all about?”</span> He asks curiously. You sigh and say you’ll tell him later. <br>
+            <<socialChange "Xavier" 3>>
+            <<socialChange "Noah" 3>>
+            <<needChange "Fun" 25>>
+            <<set $CompletedQuests.push("Xavier: Big Brother")>>
+            <<set $InActiveQuests.delete("Xavier: Big Brother")>>
+            <br>
+            [[Continue|Neighborhood Playground]] 
+        <</replace>>
+        <</link>>
+    <</if>>
+    </div>
+<</linkreplace>>

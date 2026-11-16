@@ -1,0 +1,29 @@
+:: OC Kollin Stranger [nobr]
+
+/* Intro */
+While walking down the street, you spot a vaguely familiar boy with a strange bright green streak of hair. You are not quite sure why your attention has been drawn to him but watch out of the corner of your eye as he chats with an elderly couple at their door. They are laughing and smiling, obviously enjoying the boy’s company, but you can’t make out what they are talking about. <br>
+
+<<set _ad to [
+    {
+        Name: "OC Kollin",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You then see the old couple react like they heard a sudden noise and see the boy glance down at his watch. He then says his goodbyes to the couple before running to his bike and taking off down the street. As he passes by, a nearby man taking out his trash turns with a smile and waves towards the boy. <br>
+<br>
+<span style="color:LightSteelBlue">“Hey there <span style="color:DarkTurquoise">Kollin</span>!”</span> The man says. Kollin looks back and smiles, waving towards the man before turning and taking off to the north. <span style="color:lightgreen">What an interesting sight.</span> <br>
+<<set $CompletedQuests.push("Kollin: Preview")>>
+<br>
+
+<<if $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]] 
+<<elseif $Location.Name == "Wald Street">>
+    [[Continue|Wald Street]]
+<<elseif $Location.Name == "Northend">>
+    [[Continue|Northend]]
+<</if>>

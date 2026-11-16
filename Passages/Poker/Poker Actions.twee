@@ -1,0 +1,68 @@
+:: Poker Actions [nobr]
+
+<<if $Poker.stage === 0 && !$Poker.wereCardsDealt()>> /* Start */
+    <<link "Deal Cards">>
+        <<run $Poker.dealCards()>>
+        <<set $Poker.stage = 1>>
+        <<set $Poker.step = 0>>
+        <<include "Poker Reload">>
+    <</link>>
+<<elseif $Poker.stage === 1>> /* Normal turns (swap cards) */
+    <<set _player = $Poker.players[$Poker.currentTurnIndex]>>
+    <<set _isPC = _player.id === 'PC'>>
+    <<if $Poker.step === 0>>
+        <<if _isPC>>
+            <div class="greyed-out" style="text-align: center;">
+                (Click on any cards you want swapped)
+            </div>
+            <<if $PokerCardsToSwap.length > 0>>
+                <<set _hand to Poker.handDisplay(_player.hand.filter(card => $PokerCardsToSwap.includes(card))).split(' ')>>
+                You will swap <<=_hand.length > 1 ? _hand.slice(0, -1).join(', ') + ' and ' + _hand.slice(-1) : _hand[0]>>
+            <</if>>
+        <<else>>
+            <<set $PokerCardsToSwap = $Poker.decideSwapBasedOnTrait(_player.id)>>
+        <</if>>
+        <br>
+        <<set _linkText = _isPC ? "Swap Cards" : `${_player.id} Swaps`>>
+        <<link _linkText>>
+            <<set $Poker.step = 1>>
+            <<set _pokerRandom to Math.random() * 100>>
+            <<set _isLucky = _player.pokerTrait === 'lucky'>>
+            <<set _isCheater = _player.pokerTrait === 'cheater'>>
+            <<set $PokerLuckyWasSuccessful to _pokerRandom <= $PokerCheaterLuckySuccessRate && _isLucky>>
+            <<set $PokerCheaterWasSuccessful to _pokerRandom <= $PokerCheaterLuckySuccessRate && _isCheater>>
+            <<set $PokerNewCards = $Poker.swapCards(
+                _player.id,
+                $PokerCardsToSwap,
+                ($PokerLuckyWasSuccessful && _isLucky)
+                || ($PokerCheaterLuckySuccessRate && _isCheater),
+            )>>
+            <<include "Poker Reload">>
+        <</link>>
+    <<elseif $Poker.step === 1>>
+        <br>
+        <<set _nextPlayer = $Poker.players[$Poker.currentTurnIndex + 1]>>
+        <<set _linkText = _nextPlayer ? `${_nextPlayer.id}'s Turn` : "Reveal Hands">>
+        <<link _linkText>>
+            <<set $Poker.setNextPlayerTurnIndex()>>
+            <<set _endComing = $Poker.currentTurnIndex >= $Poker.players.length>>
+            <<set $Poker.stage = _endComing ? 2 : 1>>
+            <<set $Poker.step = 0>>
+            <<if _endComing>>
+                <<set $Poker.currentTurnIndex = 0>>
+                <<set _pokerComparison to $Poker.compareHands()>>
+                <<set $PokerWinner to _pokerComparison.winner>>
+                <<set $PokerLoser to _pokerComparison.loser>>
+                <<set $PokerShowNPCHandsPrevious to $PokerShowNPCHands>>
+                <<set $PokerShowNPCHands to true>>
+            <</if>>
+            <<include "Poker Reload">>
+        <</link>>
+    <</if>>
+<<elseif $Poker.stage === 2>> /* Find loser */
+    <br>
+    <<link "Strip Loser">>
+        <<set $PokerLoadPassage to "Poker Choose Strip">>
+        <<goto $Poker.containerPassage>>
+    <</link>>
+<</if>>

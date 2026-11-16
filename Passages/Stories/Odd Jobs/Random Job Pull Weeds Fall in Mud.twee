@@ -1,0 +1,86 @@
+:: Random Job Pull Weeds Fall in Mud [nobr]
+
+/* OPENING */
+As you walk up to the house, you are annoyed to find that the sprinklers were on at this odd time of day. Not only was this making the ground soft and muddy, but it was probably partially responsible for all the weeds that were growing. Knocking on the door and greeting the client, he was a larger man who seemed confused when you pointed out that his sprinklers were on. He fumbled around with their controls for a minute before they finally turned off. He seemed to be quite a bit inept when it came to technology. <br>
+<br>
+<span style="color:LightSteelBlue">“Right well, if you clear out some of these weeds I’ll pay you. That’s the deal, right?”</span> You couldn’t tell if the man was tired, drunk, or both. He hands you some gloves and heads back inside, never changing the dumb, senseless look on his face. Still, his ineptitude wasn’t your problem and you got to work clearing out the weeds. <br>
+<br>
+It was going well. The ground may be soft and muddy, but that seemed to make the weeds easier to pull. Still, the deep mud covering your feet was a bit gross. After a little over 15 minutes, you have cleared out most of the weeds save for a few stubborn ones you’ve saved till the end. Rubbing your hands together, you grip the largest of the weeds with both hands and yank with all your might! Putting all your weight behind it, the weed budges slightly. Then a little more. Before- POP! <span style="color:lightcoral">The weed is suddenly yanked out of the ground and you find yourself tumbling backward and splashing directly in the mud.</span> <br>
+<br>
+<span style="color:lightcoral">You groan as the mud soaks into your clothes and stand up to find yourself drenched. <span style="color:DarkTurquoise">Dad</span> was not going to be happy.</span> You finish up, silently cursing your misfortune, before knocking on the door and telling the client you’ve finished. He seems a bit shocked by your muddied appearance, asking if you are alright. You tell him what happened, in your annoyance slightly pushing the blame onto him for wetting his yard, but tell him it’s no big deal. <br>
+<br>
+<span style="color:LightSteelBlue">“Sorry…”</span> He apologizes, rubbing the back of his head with an expression of guilt, <span style="color:LightSteelBlue">“I guess it is kind of my fault. Want me to wash them for you? Should only take a minute.”</span> You pause in surprise at his unexpected offer. <span style="color:LightSteelBlue">“You’ll have to stay outside, if my wife wakes up to find a half-naked boy in our living room she’ll flip out. But I’ll get you a towel, so you’ll be decent.”</span> Of course, there is always a catch. Though the man didn’t seem to have any ulterior motives and seemed genuinely apologetic. <span style="color:pink">Standing outside in nothing but a towel but be a bit embarrassing, but it may not be as bad as the long walk home soaking wet and covered in mud.</span> <br>
+<br>
+
+/* WALK HOME MUDDY */
+<div id=choice1>
+	<<link "Walk home muddy<br>">>
+	<<replace"#choice1">>
+
+Figuring it is probably not the best idea to give some stranger your clothes and stand in his front yard with nothing but a towel to cover yourself, you decline his offer. The man shrugs, apologizing again, and gives you your promised payment. You thank him and walk back towards the street, <span style="color:lightcoral">the squeaking of your clothes and the muddy footprints you’re leaving behind an all too noticeable reminder of your current state.</span> <br>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<<needChange "Hygiene" -50>>
+<<set $Wet to 2>>
+<br>
+/* GENERIC TIME PASS */
+    <<set $Minutes += 30>>
+	<<set $OddJobsCount += 1>>
+/* RETURN CODE */
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+<<elseif $Location.Name == "Wald Street">>
+    [[Continue|Wald Street]]
+<<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+<</if>>
+    <</replace>>
+    <</link>>
+
+/* LET HIM WASH CLOTHES */
+	<<link "Let him wash your clothes<br>">>
+	<<replace"#choice1">>
+
+You shrug and agree to let the man wash your clothes, it wouldn’t take long and it’s not like you’d be completely naked. The man quickly returns inside and hands you a plastic bag, for your muddy clothes, and a white towel. He then points you to a spot along the side of the house shielded by some trashcans where you can change out of them. You walk over there, quickly glancing around to make sure no one can see you, and strip down. <br>
+<br>
+While it was nice to get the wet, muddy clothes off of you, <span style="color:pink">it did still feel a little embarrassing to be stripping naked outside, especially when you were about to give all your clothes to a random stranger to wash.</span> Still, he seemed nice enough and, if he did try anything, it would be easy to get him caught and in trouble. Once you are completely naked, you quickly tied the towel around yourself and placed your clothes in the plastic bag. Walking back to the front of the house, you swear you see the man blush as he sees you in nothing but a towel. <br>
+
+ <<storeClothing "Store" "Naked" 1>>
+<<addClothing "PC" "Bottoms" "Towel" "White">>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Blush: 1,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+
+You hand him your clothes, thanking him, and he tells you that it should only take about 5-10 minutes, saying you can sit on the chairs on his front porch if you like. You sit down and relax, leaning back in the chair. <span style="color:pink">Unfortunately, the towel was a bit shorter than you thought and your penis and balls were very visible while sitting like this. You don’t notice this until you feel the cold breeze sliding up the towel and overhear the giggling of two teenage girls as they eye you while walking down the sidewalk.</span> <br>
+<br>
+<span style="color:pink">You quickly stand up, holding the towel down and turning bright red from your accidental flash. The girls find your flustered reactions almost as funny as your boyhood, giggling along as they walk out of sight.</span> Not wanting to risk another accidental flash, you decide to instead pace back and forth along the porch, gripping the towel tightly. A few more people walk by the house, a few giving you curious looks and smiles, with one kindly old man asking if you were locked out and needed help. You assure him that you are fine and he walks off. <br>
+<br>
+Finally, the client returns with your clothes neatly folded and cleaned. You take them, run back to the side of the house to dress yourself, and return the towel to the man. He apologizes once again for causing trouble, before paying you the promised amount and sending you on your way. <br>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<br>
+/* GENERIC TIME PASS */
+    <<set $Minutes += 30>>
+	<<set $OddJobsCount += 1>>
+
+<<storeClothing "Restore" "Naked">>
+/* RETURN CODE */
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+<<elseif $Location.Name == "Wald Street">>
+    [[Continue|Wald Street]]
+<<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+<</if>>
+
+    <</replace>>
+    <</link>>
+</div>

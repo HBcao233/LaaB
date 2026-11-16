@@ -1,0 +1,115 @@
+:: Quest Chores [nobr]
+
+/* QUEST STAGE 1 */
+
+<<if $ChoreQuest == 1>>
+<span style="color:Azure"><big><strong>--Weekly Chores--</strong></big></span><br>
+<span style="color:DarkTurquoise">Your Father</span> expects you and your brothers to complete weekly chores in exchange for an allowance. Failure to do your chores will leave you in trouble with <span style="color:DarkTurquoise">Your Father</span>.<br>
+
+<strong>Deadline:</strong> Sunday<br>
+
+<strong>Objectives:</strong><br>
+
+	/* OUTDOOR CHORES */
+	<div style="text-indent: 2em;">
+	<<if $ChoreOutdoor == "Mow Lawn">>
+		<<if $ChoreOutdoorObj == 0>>
+			Mow the Front Lawn: (0/1)
+		<<elseif $ChoreOutdoorObj == 1>>
+			<span style="color:lightgreen">Mow the Front Lawn: (1/1)</span>
+		<</if>>
+	<<elseif $ChoreOutdoor == "Pull Weeds">>
+		<<if $ChoreOutdoorObj == 0>>
+			Pull Weeds in the Backyard: (0/1)
+		<<elseif $ChoreOutdoorObj == 1>>
+			<span style="color:lightgreen">Pull Weeds in the Backyard: (1/1)</span>
+		<</if>>
+	<</if>>
+	</div>
+	
+	/* EASY CHORES */
+	<div style="text-indent: 2em;">
+	<<if $ChoreEasy == "Vacuum">>
+		<<if $ChoreEasyObj == 0>>
+			Vacuum the Living Room: (0/1)
+		<<elseif $ChoreEasyObj == 1>>
+			<span style="color:lightgreen">Vacuum the Living Room: (1/1)</span>
+		<</if>>
+	<<elseif $ChoreEasy == "Laundry">>
+		<<if $ChoreEasyObj == 0>>
+			Wash Clothes: (0/1)<br>		
+			<div style="text-indent: 2em;">
+			Hang Clothes up to Dry: (0/1)
+			</div>
+		<<elseif $ChoreEasyObj == 2>>
+			<span style="color:lightgreen">Wash Clothes: (1/1)<br></span>
+			<div style="text-indent: 2em;">
+			Hang Clothes up to Dry: (0/1)
+			</div>
+		<<elseif $ChoreEasyObj == 1>>
+			<span style="color:lightgreen">Wash Clothes: (1/1)<br></span>
+			<div style="text-indent: 2em;">
+			<span style="color:lightgreen">Hang Clothes up to Dry: (1/1)</span>
+			</div>
+		<</if>>
+	<<elseif $ChoreEasy == "Take Out Trash">>
+		<<if $ChoreEasyObj == 0>>
+			Take out the Trash in the Kitchen: (0/1)
+		<<elseif $ChoreEasyObj == 1>>
+			<span style="color:lightgreen">Take out the Trash in the Kitchen: (1/1)</span>
+		<</if>>
+	<</if>>
+	</div>
+
+	/* HARD CHORES */
+	<<if $ChoreHard == "Mop">>
+		<<if $MopKitchen != 1>>
+	<div style="text-indent: 2em;">
+			Mop the Kitchen: (0/1)
+	</div>
+		<<else>>
+	<div style="text-indent: 2em;">
+			<span style="color:lightgreen">Mop the Kitchen: (1/1)</span>
+	</div>
+		<</if>>
+		<<if $MopDadBath != 1>>
+	<div style="text-indent: 2em;">
+			Mop <span style="color:DarkTurquoise">Your Father</span>'s Bathroom: (0/1)
+	</div>
+		<<else>>
+	<div style="text-indent: 2em;">
+			<span style="color:lightgreen">Mop <span style="color:DarkTurquoise">Your Father</span>'s Bathroom: (1/1)</span>
+	</div>
+		<</if>>
+		<<if $MopBathroom != 1>>
+	<div style="text-indent: 2em;">
+			Mop Your Bathroom: (0/1)
+	</div>
+		<<else>>
+	<div style="text-indent: 2em;">
+			<span style="color:lightgreen">Mop Your Bathroom: (1/1)</span>
+	</div>
+		<</if>>	
+		
+	<</if>>
+	
+<<elseif $ChoreQuest == 2>>
+	/* QUEST STAGE 2 */
+<span style="color:Azure"><big><strong>--Weekly Chores--</strong></big></span><br>
+You have finished your Chores. Go to <span style="color:DarkTurquoise">Your Father</span>’s room to collect your allowance.<br>
+
+<strong>Deadline:</strong> Sunday<br>
+
+<strong>Objectives:</strong><br>
+<div style="text-indent: 2em;">
+	Collect your Allowance: (0/1)<br>
+</div>
+	
+<<elseif $ChoreQuest == 3>>
+	/* QUEST STAGE 3 */
+<span style="color:Azure"><big><strong>--Weekly Chores--</strong></big></span><br>
+<span style="color:lightgreen">Completed!</span><br>
+	
+
+
+<</if>>

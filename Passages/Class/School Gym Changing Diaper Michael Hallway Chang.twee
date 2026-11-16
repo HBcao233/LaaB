@@ -1,0 +1,97 @@
+:: School Gym Changing Diaper Michael Hallway Chang [nobr]
+
+/* SCENE */
+
+<span style="color:lightcoral"><span style="color:DarkTurquoise">Michael</span> pushes you past lockers as you continue to struggle in his grasp. Any moment now, you know he is going to shout for everyone’s attention. After a minute of trying to fight him off and losing ground, you look back in front of you to see you’re at the door to the hallway!</span> <span style="color:LightSteelBlue">“Sorry, <span style="color:DarkTurquoise">$BullyNickname</span>. Only big kids allowed in here.”</span> <span style="color:lightcoral">Is all <span style="color:DarkTurquoise">Michael</span> says as he pushes you against the wall, opens the door, and shoves you out of it!</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Arms: "Hide",
+			Eyes: "Sad",
+			Cry: 1,
+			Blush: 3,
+			Mouth: "Sad",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:lightcoral">Once outside, you pick yourself up and begin to bang on the door, cursing <span style="color:DarkTurquoise">Michael</span> to let you back in; Not finding this situation to have any better odds of being seen than in the locker room. There are probably still students shuffling around the hall going to class!</span> You demand <span style="color:DarkTurquoise">Michael</span> let you back in, but all you get is a couple of knocks back in response. <br>
+<br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>? What are you doing here?”</span> An adult voice calls out to you. <br>
+<br>
+
+<div id=Choice3>
+	<<link "Continue">>
+	<<replace"#Choice3">>
+<span style="color:lightcoral">Seizing up in fear, you can only turn your head slowly from the door and look over to see who has discovered you.</span> The first thing you notice is that he is the only one in the hall, a small mercy, as you lock eyes with <span style="color:DarkTurquoise">Mr. Chang</span>, your science teacher. Wearing his usual polo shirt. He looks puzzled at first seeing you, but seems to be piecing it together. <br>
+
+<<set _ad to [
+	{
+		Name: "Chang",
+		State: {
+			Eyes: "Wide",
+			Mouth: "Frown",
+			Blush: 1,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Arms: "Hide",
+			Eyes: "Sad",
+			Cry: 1,
+			Blush: 3,
+			Mouth: "Sad",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Aren’t you supposed to be changing for gym?”</span> He asks, <span style="color:pink">looking you over with one eyebrow raised upward upon noticing your $PlayerUndies.Type.</span> Instead of scolding you or commenting on your state of undress, he waits for you to calm down and catch your breath. <span style="color:pink">Once you do, you kick the door, tearfully explaining what <span style="color:DarkTurquoise">Michael</span> did to you. You’re trapped out here like this.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I see. Not an ideal situation to find yourself in.”</span> <span style="color:DarkTurquoise">Mr. Chang</span>’s slow voice is soothing as he strokes his chin in thought. His face cracks a smile and he goes to take off his blazer. <span style="color:LightSteelBlue">“Here, put this on.”</span> He holds the brown suede jacket up and you quickly put it on. <span style="color:lightgreen">Weaving your arms through and looking down to fasten a button, you’re relieved to see that it covers your $PlayerUndies.Type!</span> Smiling and ready to thank <span style="color:DarkTurquoise">Mr. Chang</span>, you look up to see him charging the door! <br>
+<br>
+<span style="color:red">CRACK!</span> <span style="color:DarkTurquoise">Mr. Chang</span> barrels through it with his shoulder. Shocked, you peek your head in and almost get hit by <span style="color:DarkTurquoise">Michael</span> as he is being pulled out into the hallway. <span style="color:lightgreen">He’s struggling against the ear pinch hold <span style="color:DarkTurquoise">Mr. Chang</span> has him under.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“You’re coming with me to the office. I’ll inform <span style="color:DarkTurquoise">Kohler</span> where you are and why.”</span> <span style="color:DarkTurquoise">Mr. Chang</span> explains calmly. <span style="color:LightSteelBlue">“Go on ahead, <span style="color:DarkTurquoise">$Player.Name</span>. Leave the jacket with <span style="color:DarkTurquoise">Coach Kohler</span>. I’ll be back for it later.”</span> He casually instructs you as if he didn’t just almost break down a door. <br>
+
+<<set _ad to [
+	{
+		Name: "Chang",
+		State: {
+			Eyes: "Wide",
+			Mouth: "Frown",
+			Brows: "Angry",
+		},
+	},
+	{
+		Name: "Michael",
+		State: {
+			Arms: "Bound",
+			Eyes: "Mad",
+			Cry: 1,
+			Blush: 2,
+			Mouth: "Sad",
+			Outfit: "Undies",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:lightgreen">Dumbfounded, you watch as <span style="color:DarkTurquoise">Michael</span> is the one yanked down the hallway in only his $MichaelUndies.Type, rounding the corner as he attempts to protest.</span> Making a mental note to not get on <span style="color:DarkTurquoise">Mr. Chang</span>’s bad side, you run back into the nearly empty locker room and change. <br>
+<<addMoodlet "Seen Undies" 8>>
+<<socialChange "Michael" -3>>
+	<<addMoodlet "Stress" 1>>
+<br>
+	<<include"Gym Get Dressed">>
+	[[Continue|School Locker Room]] 
+<br>
+
+    <</replace>>
+    <</link>>
+</div>

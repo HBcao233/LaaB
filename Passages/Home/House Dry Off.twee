@@ -1,0 +1,21 @@
+:: House Dry Off [nobr]
+
+You strip off your clothes and dry them off.<br>
+<<set $Wet to 0>>
+<<set $Wetness to 0>>
+<<storeClothing "Store" "Undies" 1>>
+
+<br>
+
+<div id='Dressed'>
+<<link "Get Dressed">>
+<<replace"#Dressed">>
+
+    <<storeClothing "Restore" "Undies">>
+
+Once dry, you get dressed without incident.<br>
+<br>
+[[Continue|PH Bathroom]] 
+<</replace>>
+<</link>>
+</div>

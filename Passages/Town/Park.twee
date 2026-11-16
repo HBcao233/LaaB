@@ -1,0 +1,114 @@
+:: Park [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Park",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Park",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+<<else>>
+
+/* QUESTS IN PARK */
+<<if $Time.between(7, 0, 11, 0) and $Time.Day == "Saturday" and $ActiveQuests.includes("Carter: Park Clean Up")>>
+	<<goto "Carter Quest Intro Park 1">>
+<<elseif ["Day", "Afternoon"].includes($Time.ToD) && $InActiveQuests.includes("Ryker: Retaliation") &&  random(1, 10) === 10>> /* 10% chance of triggering */
+	<<goto "Ryker Retaliation Quest Part 1">>
+<<elseif $InActiveQuests.includes("Carter: Lost Pants") && $Time.ToD == "Day" && !$Time.schoolday()>>
+	<<goto "Carter Quest Lost Pants 1">>
+<<elseif $ActiveQuests.includes("Zach: Brochella Lite 3") && $Time.Day == "Saturday" && $Time.between(20, 0, 21, 0)>>
+	<<goto "OC Zach Brochella 1">>
+<<elseif $ToggleNonCon == 1 && $LaserPointer.Active == 1 && $LaserPointer.Kids == 0 && $Time.between(7,0,18,0)>>
+	<<goto"BLP Con Kids">>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Park--</strong></big></span><br>
+You stand on the outskirts of the city park. It is a large grassy field filled with many trees and other foliage. There is also a playground, some sports fields, places for barbecuing, and plenty of open space for events.
+<<if $Time.ToD == "Morning">>
+	The park is mostly empty, save for a few early morning joggers and dog walkers. 
+<<elseif $Time.ToD == "Day">>
+	Much of the park is full of people enjoying themselves.
+<<elseif $Time.ToD == "Afternoon">>
+	Much of the park is full of people enjoying themselves.
+<<elseif $Time.ToD == "Night">>
+	The park is nearly pitch black, save for a few areas lit by small path lights.
+<</if>><br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<<if $MillerLemonLocation == "Park" and $Time.between(7,0,15,0)>>
+	You notice [[Jayden & Kayden|OC Miller Lemonade Stand]] at a lemonade stand.<br>
+<</if>>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Play on Playground (0:20)|Park Playground Play]] <span style="color:Green">-Stress</span><br>
+<<if $Bike == 1>>
+	[[Ride around on Bike (0:20)|Town Ride Around on Bike]] <span style="color:Green">+Fun/Athletics</span><br>
+<</if>>
+
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+	<<capture _i>>
+		<<if $RandomJobList[_i].Type == "Emmet Intro" && $Time.between(7,0,17,0)>>
+			[[Job: Research Assistant (0:20)|OC Emmet Intro]]<br>
+		<</if>>
+	<</capture>>
+<</for>>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+[[Park Restrooms|Park Restrooms]]<br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Main Street.png">
+	[[Main Street (0:10)|Main Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Entertainment District.png">
+	[[Entertainment District (0:10)|Entertainment District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Mall.png">
+	[[Mall (0:10)|Mall][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Main Street.png">
+	[[Main Street (0:05)|Main Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Entertainment District.png">
+	[[Entertainment District (0:05)|Entertainment District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Mall.png">
+	[[Mall (0:05)|Mall][$Minutes += $TravelTime]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+
+
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 300px; top: 155px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="300,81,353,134" alt="Main Street" onclick="$.wiki('<<goto[[Main Street]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="374,155,427,208" alt="Entertainment District" onclick="$.wiki('<<goto[[Entertainment District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="300,229,353,282" alt="Mall" onclick="$.wiki('<<goto[[Mall]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

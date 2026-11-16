@@ -1,0 +1,73 @@
+:: Noah Missing Toy1 [nobr]
+
+<<set _ad to [
+	{
+		Name: "Noah",
+		State: {
+			Eyes: "Sad",
+			Blush: 1,
+			Mouth: "Sad",
+			Outfit: "Everyday",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You walk over to <span style="color:DarkTurquoise">Noah</span> and ask what’s wrong. <span style="color:LightSteelBlue">“It’s nothing.”</span> He sighs, <span style="color:LightSteelBlue">“I left my Owlman figure outside when I was playing and now I can’t find it anywhere! I thought I left it on the table in the backyard, but now it’s gone.”</span> <span style="color:DarkTurquoise">Noah</span> pouts, looking up at you with sad, puppydog eyes. You can’t help but smirk at <span style="color:DarkTurquoise">Noah</span>’s obvious attempt at pity.<br>
+<br>
+
+<div id=choice1>
+	<<link "Agree to Help<br>">>
+	<<replace"#choice1">>
+		You pat <span style="color:DarkTurquoise">Noah</span> laughing, telling him he should be more careful with his toys. <span style="color:LightSteelBlue">“But I only left it out there for like 30 seconds!”</span> He protests. You smile, giving him a side hug, and agree to look for it. <span style="color:LightSteelBlue">“Thanks!”</span> <span style="color:DarkTurquoise">Noah</span> says, happily jumping into your arms, <span style="color:LightSteelBlue">“You’re the best!”</span><br>
+		<br>
+		<span style="color:DarkTurquoise">Noah</span> said the last place he saw it was on the deck in the backyard, that’s probably the best place to look. <br>
+		<span style="color:Gold">Began quest: “Noah’s Missing Toy”!</span><br>
+		<br>
+		<<set $QuestLog.push(
+			{
+				Name: "Noah: Missing Toy",
+				State: 1,
+				ID: "Noah_R001",
+				Category: "Repeatable",
+				Type: "Quest",
+				Icon: "Noah",
+				Tags: ["Noah", "Repeatable", "Quest", "Player's House"],
+				Description: "<span style=\"color:DarkTurquoise\">Noah</span> has asked you to help him locate his missing toy. He last remembers it being out in the backyard on the deck. It would be worth investigating there. You should search the backyard when it isn’t too dark to see.",
+				Objectives: [
+					{
+						Name: "Search the <span style=\"color:Teal\">Backyard</span> for the missing toy",
+						State: 0,
+						Total: 1,
+					},
+				],
+			},
+		)>>
+		<<set $Notifications.push({
+			Name: "Quest Acquired!",
+			Icon: "Quests/Noah",
+			Description: "<span style=\"color:DarkTurquoise\">Noah</span> has asked you to help him locate his missing toy. He last remembers it being out in the backyard on the deck. It would be worth investigating there. You should search the backyard when it isn’t too dark to see.",
+		})>>
+		<<set $InActiveQuests.delete("Noah: Missing Toy")>>
+		<<set $ActiveQuests.push("Noah: Missing Toy")>>
+		<<set $QuestMissingToyLocation to random(1, 3)>>
+		<<if $NoahSche.Location == "Playing in Room">>
+			[[Continue|PH Noah Bedroom]] 
+		<<else>>
+			[[Continue|PH Backyard]] 
+		<</if>>
+	<</replace>>
+	<</link>>
+	
+	<<link "Wish Him Luck<br>">>
+	<<replace"#choice1">>
+		You pat <span style="color:DarkTurquoise">Noah</span> on the head and wish him luck in finding his toy. As you walk away, <span style="color:DarkTurquoise">Noah</span> sighs again, obviously hoping you would offer to help him, but thanks you anyway.<br>
+		<br>
+		<<if $NoahSche.Location == "Playing in Room">>
+			[[Continue|PH Noah Bedroom]] 
+		<<else>>
+			[[Continue|PH Backyard]] 
+		<</if>>
+	<</replace>>
+	<</link>>
+</div>

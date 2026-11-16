@@ -1,0 +1,936 @@
+:: Moodlet Track [nobr]
+
+/* Need Moodlet Stuff */
+
+/* Hunger */
+	/* Well Fed (1) */
+	<<if $Player.Hunger >= 60 and $MoodState.Hunger != 1>>
+		<<set $MoodState.Hunger to 1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Hunger">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Hunger",
+				Name: "Well Fed",
+				MoodletType: "State",
+				Value: 1,
+				Type: "Happy",
+				Description: "You feel Well Fed from your last meal.",
+				Icon: "Well Fed",
+				Values: {
+					Happy: 10,
+				}
+		})>>
+
+	/* None */
+	<<elseif $Player.Hunger < 60 and $Player.Hunger > 50 and $MoodState.Hunger != 0>>
+		<<set $MoodState.Hunger to 0>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Hunger">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+
+	/* Hungry (-1) */
+	<<elseif $Player.Hunger <= 50 and $Player.Hunger > 20 and $MoodState.Hunger != -1>>
+		<<set $MoodState.Hunger to -1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Hunger">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		/* Stronger Debuff if PC has the Hunger Trait */
+		<<if $Player.Traits.includes("Glutton")>>
+			<<set $Player.Moodlets.push({
+					ID: "Hunger",
+					Name: "Hungry",
+					MoodletType: "State",
+					Value: -1,
+					Type: "Tired",
+					Description: "You are feeling pretty hungry.",
+					Icon: "Hungry",
+					Values: {
+						Happy: -15,
+						Uncomfortable: 15,
+						Tired: 30,
+					}
+			})>>
+		<<else>>
+			<<set $Player.Moodlets.push({
+					ID: "Hunger",
+					Name: "Hungry",
+					MoodletType: "State",
+					Value: -1,
+					Type: "Tired",
+					Description: "You are feeling pretty hungry.",
+					Icon: "Hungry",
+					Values: {
+						Happy: -10,
+						Uncomfortable: 10,
+						Tired: 25,
+					}
+			})>>
+		<</if>>
+
+	/* Starving (-2) */
+	<<elseif $Player.Hunger <= 20 and $MoodState.Hunger != -2>>
+		<<set $MoodState.Hunger to -2>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Hunger">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Hunger",
+				Name: "Starving",
+				MoodletType: "State",
+				Value: -2,
+				Type: "Tired",
+				Description: "You are starving! You need to eat something now.",
+				Icon: "Starving",
+				Values: {
+					Happy: -15,
+					Uncomfortable: 25,
+					Tired: 50,
+				}
+		})>>
+
+	<</if>>
+
+/* Energy */
+	/* Well Rested (1) */
+	<<if $Player.Energy >= 75 and $MoodState.Energy != 1>>
+		<<set $MoodState.Energy to 1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Energy">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Energy",
+				Name: "Well Rested",
+				MoodletType: "State",
+				Value: 1,
+				Type: "Hyper",
+				Description: "You are feeling well rested and full of energy.",
+				Icon: "Well Rested",
+				Values: {
+					Happy: 5,
+					Hyper: 5,
+				}
+		})>>
+
+	/* None */
+	<<elseif $Player.Energy < 75 and $Player.Energy > 50 and $MoodState.Energy != 0>>
+		<<set $MoodState.Energy to 0>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Energy">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+
+	/* Tired (-1) */
+	<<elseif $Player.Energy <= 50 and $Player.Energy > 20 and $MoodState.Energy != -1>>
+		<<set $MoodState.Energy to -1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Energy">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Energy",
+				Name: "Tired",
+				MoodletType: "State",
+				Value: -1,
+				Type: "Tired",
+				Description: "You are starting to feel a little sleepy.",
+				Icon: "Tired",
+				Values: {
+					Hyper: -5,
+					Tired: 25,
+				}
+		})>>
+
+	/* Exhausted (-2) */
+	<<elseif $Player.Energy <= 20 and $MoodState.Energy != -2>>
+		<<set $MoodState.Energy to -2>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Energy">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Energy",
+				Name: "Exhausted",
+				MoodletType: "State",
+				Value: -2,
+				Type: "Tired",
+				Description: "Your eyes feel heavy and you can barely keep them okay. You need to sleep soon or you fear you may pass out.",
+				Icon: "Exhausted",
+				Values: {
+					Happy: -5,
+					Hyper: -10,
+					Tired: 75,
+				}
+		})>>
+	<</if>>
+
+/* Hygiene */
+	/* Clean (1) */
+	<<if $Player.Hygiene >= 60 and $MoodState.Hygiene != 1>>
+		<<set $MoodState.Hygiene to 1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Hygiene">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Hygiene",
+				Name: "Clean",
+				MoodletType: "State",
+				Value: 1,
+				Type: "Happy",
+				Description: "You are feeling squeaky clean.",
+				Icon: "Clean",
+				Values: {
+					Happy: 10,
+				}
+		})>>
+
+	/* None */
+	<<elseif $Player.Hygiene < 60 and $Player.Hygiene > 50 and $MoodState.Hygiene != 0>>
+		<<set $MoodState.Hygiene to 0>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Hygiene">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+
+	/* Dirty (-1) */
+	<<elseif $Player.Hygiene <= 50 and $Player.Hygiene > 20 and $MoodState.Hygiene != -1>>
+		<<set $MoodState.Hygiene to -1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Hygiene">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		/* Less Uncomfortable when MessyTrait */
+		<<if $Player.Traits.includes("Messy")>>
+			<<set $Player.Moodlets.push({
+					ID: "Hygiene",
+					Name: "Dirty",
+					MoodletType: "State",
+					Value: -1,
+					Type: "Uncomfortable",
+					Description: "You are starting to feel a little dirty.",
+					Icon: "Dirty",
+					Values: {
+						Uncomfortable: 10,
+					}
+			})>>
+		/* More Upset if Neat Trait */
+		<<elseif $Player.Traits.includes("Neat")>>
+			<<set $Player.Moodlets.push({
+					ID: "Hygiene",
+					Name: "Dirty",
+					MoodletType: "State",
+					Value: -1,
+					Type: "Uncomfortable",
+					Description: "You are starting to feel a little dirty.",
+					Icon: "Dirty",
+					Values: {
+						Uncomfortable: 35,
+						Happy: -10,
+					}
+			})>>
+		<<else>>
+			<<set $Player.Moodlets.push({
+					ID: "Hygiene",
+					Name: "Dirty",
+					MoodletType: "State",
+					Value: -1,
+					Type: "Uncomfortable",
+					Description: "You are starting to feel a little dirty.",
+					Icon: "Dirty",
+					Values: {
+						Uncomfortable: 25,
+					}
+			})>>
+		<</if>>
+
+	/* Filthy (-2) */
+	<<elseif $Player.Hygiene <= 20 and $MoodState.Hygiene != -2>>
+		<<set $MoodState.Hygiene to -2>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Hygiene">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		/* Less Uncomfortable when Messy Trait */
+		<<if $Player.Traits.includes("Messy")>>
+			<<set $Player.Moodlets.push({
+					ID: "Hygiene",
+					Name: "Filthy",
+					MoodletType: "State",
+					Value: -2,
+					Type: "Uncomfortable",
+					Description: "You feel utterly filthy!",
+					Icon: "Filthy",
+					Values: {
+						Uncomfortable: 25,
+					}
+			})>>
+		/* More Upset if Neat Trait */
+		<<elseif $Player.Traits.includes("Neat")>>
+			<<set $Player.Moodlets.push({
+					ID: "Hygiene",
+					Name: "Filthy",
+					MoodletType: "State",
+					Value: -2,
+					Type: "Uncomfortable",
+					Description: "You feel utterly filthy!",
+					Icon: "Filthy",
+					Values: {
+						Uncomfortable: 60,
+						Happy: -20,
+					}
+			})>>
+		<<else>>
+			<<set $Player.Moodlets.push({
+					ID: "Hygiene",
+					Name: "Filthy",
+					MoodletType: "State",
+					Value: -2,
+					Type: "Uncomfortable",
+					Description: "You feel utterly filthy!",
+					Icon: "Filthy",
+					Values: {
+						Uncomfortable: 50,
+						Happy: -10
+					}
+			})>>
+		<</if>>
+
+
+	<</if>>
+
+/* Fun */
+	/* Entertained (1) */
+	<<if $Player.Fun >= 60 and $MoodState.Fun != 1>>
+		<<set $MoodState.Fun to 1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Fun">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Fun",
+				Name: "Entertained",
+				MoodletType: "State",
+				Value: 1,
+				Type: "Happy",
+				Description: "You are feeling very entertained.",
+				Icon: "Entertained",
+				Values: {
+					Happy: 5,
+					Hyper: 5,
+				}
+		})>>
+
+	/* None */
+	<<elseif $Player.Fun < 60 and $Player.Fun > 50 and $MoodState.Fun != 0>>
+		<<set $MoodState.Fun to 0>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Fun">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+
+	/* Bored (-1) */
+	<<elseif $Player.Fun <= 50 and $Player.Fun > 20 and $MoodState.Fun != -1>>
+		<<set $MoodState.Fun to -1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Fun">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Fun",
+				Name: "Bored",
+				MoodletType: "State",
+				Value: -1,
+				Type: "Bored",
+				Description: "You are feeling bored and need something to entertain yourself with.",
+				Icon: "Bored",
+				Values: {
+					Bored: 50,
+				}
+		})>>
+
+	/* Dying of Boredom (-2) */
+	<<elseif $Player.Fun <= 20 and $MoodState.Fun != -2>>
+		<<set $MoodState.Fun to -2>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Fun">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Fun",
+				Name: "Dying of Boredom",
+				MoodletType: "State",
+				Value: -2,
+				Type: "Bored",
+				Description: "You are so bored you feel you may die! A tad overdramatic...",
+				Icon: "Bored",
+				Values: {
+					Bored: 75,
+				}
+		})>>
+
+	<</if>>
+
+/* Bladder */
+	/* None (Bladder does not have a positive moodlet) */
+	<<if $Player.Bladder >= 60 and $MoodState.Bladder != 1>>
+		<<set $MoodState.Bladder to 1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Bladder">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+
+	/* Holding it in (-1) */
+	<<elseif $Player.Bladder <= 50 and $MoodState.Bladder != -1>>
+		<<set $MoodState.Bladder to -1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Bladder">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Bladder",
+				Name: "Holding It In",
+				MoodletType: "State",
+				Value: -1,
+				Type: "Uncomfortable",
+				Description: "You have to pee!",
+				Icon: "Holding It In",
+				Values: {
+					Uncomfortable: 30,
+				}
+		})>>
+
+	/* About to Burst (-2) */
+	<<elseif $Player.Bladder <= 25 and $MoodState.Bladder != -2>>
+		<<set $MoodState.Bladder to -2>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Bladder">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Bladder",
+				Name: "About to Burst",
+				MoodletType: "State",
+				Value: -2,
+				Type: "Uncomfortable",
+				Description: "You really have to pee! You feel you may burst at any moment!",
+				Icon: "About to Burst",
+				Values: {
+					Uncomfortable: 75,
+				}
+		})>>
+
+	<</if>>
+
+/* Arousal */
+	<<if $Player.Arousal < 0>>
+		<<set $Player.Arousal to 0>>
+	<<elseif $Player.Arousal > 130>>
+		<<set $Player.Arousal to 130>>
+	<</if>>
+
+	/* None When Low */
+	<<if $MoodState.Arousal != 0 && $Player.Arousal < 25>>
+		<<set $MoodState.Arousal to 0>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Arousal">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+				
+	/* Aroused */
+	<<elseif $Player.Arousal >= 25 && $Player.Arousal < 50 && $MoodState.Arousal != 1>>
+		<<set $MoodState.Arousal to 1>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Arousal">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Arousal",
+				Name: "Aroused",
+				MoodletType: "State",
+				Value: 1,
+				Type: "Horny",
+				Description: "Your bits are feeling a bit tingly.",
+				Icon: "Aroused",
+				Values: {
+					Horny: 5,
+				}
+		})>>
+
+	/* Hard */
+	<<elseif $Player.Arousal >= 50 && $Player.Arousal < 100 && $MoodState.Arousal != 2>>
+		<<set $MoodState.Arousal to 2>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Arousal">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Arousal",
+				Name: "Hard",
+				MoodletType: "State",
+				Value: 2,
+				Type: "Horny",
+				Description: "Your penis is erect.",
+				Icon: "Hard",
+				Values: {
+					Horny: 15,
+				}
+		})>>
+
+	/* Painfully Horny */
+	<<elseif $Player.Arousal >= 100 && $MoodState.Arousal != 3>>
+		<<set $MoodState.Arousal to 3>>
+		<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+			<<if $Player.Moodlets[_i].ID == "Arousal">>
+				<<set $Player.Moodlets.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Player.Moodlets.push({
+				ID: "Arousal",
+				Name: "Painfully Horny",
+				MoodletType: "State",
+				Value: 3,
+				Type: "Horny",
+				Description: "Your penis is throbbing and twitching with arousal!",
+				Icon: "Painfully Horny",
+				Values: {
+					Horny: 30,
+					Uncomfortable: 10,
+				}
+		})>>
+
+	<</if>>
+
+/* Sexual Frustration Moodlets */
+/* None */
+<<if $Player.SexualFrustration < 200 && $MoodState.SF != 0>>
+	<<set $MoodState.SF to 0>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Sexual Frustration">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+
+/* Strangly Horny */
+<<elseif $Player.SexualFrustration < 250 && $Player.SexualFrustration >= 200 && $MoodState.SF != 1>>
+	<<set $MoodState.SF to 1>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Sexual Frustration">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+		ID: "Sexual Frustration",
+		Name: "Strangely Horny",
+		MoodletType: "State",
+		Value: 1,
+		Type: "Horny",
+		Description: "You feel a slight tingling in your groin and find yourself feeling strangely horny.",
+		Icon: "Strangely Horny",
+		Values: {
+			Horny: 10,
+		}
+	})>>
+
+/* Pent Up */
+<<elseif $Player.SexualFrustration < 300 && $Player.SexualFrustration >= 250 && $MoodState.SF != 2>>
+	<<set $MoodState.SF to 2>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Sexual Frustration">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+		ID: "Sexual Frustration",
+		Name: "Pent Up",
+		MoodletType: "State",
+		Value: 2,
+		Type: "Horny",
+		Description: "All your arousal without release has caused you to start feeling pent up down there.",
+		Icon: "Pent Up",
+		Values: {
+			Horny: 25,
+		}
+	})>>
+
+/* Getting Desperate */
+<<elseif $Player.SexualFrustration < 350 && $Player.SexualFrustration >= 300 && $MoodState.SF != 3>>
+	<<set $MoodState.SF to 3>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Sexual Frustration">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+		ID: "Sexual Frustration",
+		Name: "Getting Desperate",
+		MoodletType: "State",
+		Value: 3,
+		Type: "Horny",
+		Description: "Your built-up arousal and lack of orgasms has caused your body to become super sensitive and you are beginning to feel desperate!",
+		Icon: "Getting Desperate",
+		Values: {
+			Horny: 50,
+		}
+	})>>
+
+/* Uncomfortable Horny */
+<<elseif $Player.SexualFrustration < 400 && $Player.SexualFrustration >= 350 && $MoodState.SF != 4>>
+	<<set $MoodState.SF to 4>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Sexual Frustration">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+		ID: "Sexual Frustration",
+		Name: "Uncomfortably Horny",
+		MoodletType: "State",
+		Value: 4,
+		Type: "Uncomfortable",
+		Description: "All your pent up sexual frustration is starting to make your entire body feel uncomfortable as all you can think about is release.",
+		Icon: "Uncomfortably Horny",
+		Values: {
+			Horny: 50,
+			Uncomfortable: 50,
+		}
+	})>>
+
+/* Desperate to Cum */
+<<elseif $Player.SexualFrustration < 600 && $Player.SexualFrustration >= 400 && $MoodState.SF != 5>>
+	<<set $MoodState.SF to 5>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Sexual Frustration">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+		ID: "Sexual Frustration",
+		Name: "Desperate to Cum",
+		MoodletType: "State",
+		Value: 5,
+		Type: "Uncomfortable",
+		Description: "Your body is crying out, feeling sensitive and aroused. You are desperate to cum!",
+		Icon: "Desperate to Cum",
+		Values: {
+			Horny: 75,
+			Uncomfortable: 100,
+		}
+	})>>
+
+/* Sexually Crazyed */
+<<elseif $Player.SexualFrustration >= 600 && $MoodState.SF != 6>>
+	<<set $MoodState.SF to 6>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Sexual Frustration">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+		ID: "Sexual Frustration",
+		Name: "Sexually Crazed",
+		MoodletType: "State",
+		Value: 6,
+		Type: "Uncomfortable",
+		Description: "All you can think about is your desire for release. You want to cum. You have to cum. YOU NEED TO CUM!",
+		Icon: "Sexually Crazed",
+		Values: {
+			Horny: 200,
+			Uncomfortable: 150,
+		}
+	})>>
+
+<</if>>
+
+/* Constant Moodlet Checks */
+
+<<if !$PlayerUndies.Tags.includes("Diaper") and $FullDiaper == 1>>
+    <<addMoodlet "Full Diaper" 0>>
+<</if>>
+
+<<if $Player.Traits.includes("Commando")>>
+	<<if $PlayerUndies.Type == "None" && $Commando != 1 && $PlayerBottoms.Type != "None">>
+		<<set $Commando to 1>>
+		<<addMoodlet "Commando" 1>>
+	<<elseif $PlayerUndies.Type != "None" && $Commando != -1 && $PlayerBottoms.Type != "None">>
+		<<set $Commando to -1>>
+		<<addMoodlet "Commando" -1>>
+	<<elseif $Commando != 0 && $PlayerBottoms.Type == "None">>
+		<<set $Commando to 0>>
+		<<addMoodlet "Commando" 0>>
+	<</if>>
+<</if>>
+
+<<if $PlayerShoes.Type != "None" && $NoShoes != 0>>
+	<<set $NoShoes to 0>>
+	<<addMoodlet "No Shoes" 0>>
+<<elseif $Location.Indoors == 1 && $NoShoes != 0>>
+	<<set $NoShoes to 0>>
+	<<addMoodlet "No Shoes" 0>>
+<<elseif $Player.Traits.includes("FreeFooted") && $NoShoes != 0>>
+	<<set $NoShoes to 0>>
+	<<addMoodlet "No Shoes" 0>>
+<<elseif $PlayerShoes.Type == "None" && $Location.Indoors != 1 && $NoShoes != 1>>
+	<<set $NoShoes to 1>>
+	<<addMoodlet "No Shoes" 1>>
+<</if>>
+
+/* Indoor Kid */
+<<if $Location.Indoors == 1 && $Player.Traits.includes("IndoorKid") && $IndoorKid != 1>>
+	<<set $IndoorKid to 1>>
+	<<addMoodlet "Safe & Secure" 1>>
+<<elseif $Location.Indoors != 1 && $Player.Traits.includes("IndoorKid") && $IndoorKid != 0>>
+	<<set $IndoorKid to 0>>
+	<<addMoodlet "Safe & Secure" 0>>
+<</if>>
+/* Outdoorsy */
+<<if $Location.Indoors == 0 && $Player.Traits.includes("Outdoorsy") && $Outdoorsy != 1>>
+	<<set $Outdoorsy to 1>>
+	<<addMoodlet "Fresh Air" 1>>
+<<elseif $Location.Indoors != 0 && $Player.Traits.includes("Outdoorsy") && $Outdoorsy != 0>>
+	<<set $Outdoorsy to 0>>
+	<<addMoodlet "Fresh Air" 0>>
+<</if>>
+
+/* Mood Values Compile Code
+	All code related to adding or removing Moods need to be done before this. Ones added in scenes shall be done as the scene is loaded first. */
+
+<<set $PlayerMood to {
+	Happy: 0,
+	Sad: 0,
+	Neutral: 0,
+	Tired: 0,
+	Uncomfortable: 0,
+	Hyper: 0,
+	Horny: 0,
+	Bored: 0,
+	Mad: 0,
+	Embarrassed: 0,
+	Scared: 0,
+}>>
+
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+	<<if $Player.Moodlets[_i].Values.Happy != null>>
+		<<set $PlayerMood.Happy += $Player.Moodlets[_i].Values.Happy>>
+	<</if>>
+	<<if $Player.Moodlets[_i].Values.Sad != null>>
+		<<set $PlayerMood.Sad += $Player.Moodlets[_i].Values.Sad>>
+	<</if>>
+	<<if $Player.Moodlets[_i].Values.Neutral != null>>
+		<<set $PlayerMood.Neutral += $Player.Moodlets[_i].Values.Neutral>>
+	<</if>>
+	<<if $Player.Moodlets[_i].Values.Tired != null>>
+		<<set $PlayerMood.Tired += $Player.Moodlets[_i].Values.Tired>>
+	<</if>>
+	<<if $Player.Moodlets[_i].Values.Uncomfortable != null>>
+		<<set $PlayerMood.Uncomfortable += $Player.Moodlets[_i].Values.Uncomfortable>>
+	<</if>>
+	<<if $Player.Moodlets[_i].Values.Hyper != null>>
+		<<set $PlayerMood.Hyper += $Player.Moodlets[_i].Values.Hyper>>
+	<</if>>
+	<<if $Player.Moodlets[_i].Values.Horny != null>>
+		<<set $PlayerMood.Horny += $Player.Moodlets[_i].Values.Horny>>
+	<</if>>
+	<<if $Player.Moodlets[_i].Values.Bored != null>>
+		<<set $PlayerMood.Bored += $Player.Moodlets[_i].Values.Bored>>
+	<</if>>
+	<<if $Player.Moodlets[_i].Values.Mad != null>>
+		<<set $PlayerMood.Mad += $Player.Moodlets[_i].Values.Mad>>
+	<</if>>
+	<<if $Player.Moodlets[_i].Values.Embarrassed != null>>
+		<<set $PlayerMood.Embarrassed += $Player.Moodlets[_i].Values.Embarrassed>>
+	<</if>>
+	<<if $Player.Moodlets[_i].Values.Scared != null>>
+		<<set $PlayerMood.Scared += $Player.Moodlets[_i].Values.Scared>>
+	<</if>>
+	<</capture>>
+<</for>>
+
+<<set _moodname to ["Scared", "Embarrassed", "Mad", "Bored", "Horny", "Hyper", "Uncomfortable", "Tired", "Neutral", "Sad", "Happy"]>>
+<<set _moodcolor to ["Purple", "Yellow", "Red", "Grey", "Pink", "Teal", "Orange", "Orange", "White", "Blue", "Green"]>>
+<<set _moodvalues to [$PlayerMood.Scared, $PlayerMood.Embarrassed, $PlayerMood.Mad, $PlayerMood.Bored, $PlayerMood.Horny, $PlayerMood.Hyper, $PlayerMood.Uncomfortable, $PlayerMood.Tired, $PlayerMood.Neutral, $PlayerMood.Sad, $PlayerMood.Happy]>>
+<<set _highestmood to Math.max($PlayerMood.Scared, $PlayerMood.Embarrassed, $PlayerMood.Mad, $PlayerMood.Bored, $PlayerMood.Horny, $PlayerMood.Hyper, $PlayerMood.Uncomfortable, $PlayerMood.Tired, $PlayerMood.Neutral, $PlayerMood.Sad, $PlayerMood.Happy)>>
+<<set _highestmoodindex to _moodvalues.indexOf(_highestmood)>>
+<<set $Player.Mood to _moodname[_highestmoodindex]>>
+<<set $Player.Mood to _moodname[_moodvalues.indexOf(_highestmood)]>>
+
+/* Setting Mood Color */
+<<for _i to 0; _i lt _moodname.length; _i++>>
+	<<capture _i>>
+		<<if _moodname[_i] == $Player.Mood>>
+			<<set _moodcolorvalue to _moodname.indexOf($Player.Mood)>>
+		<</if>>
+	<</capture>>
+<</for>>
+
+/* Old Code */
+	
+
+				/* STRESS MOODLETS */
+<<if $Stress >= 1>>
+	<<set $StressEffect to 0 - $Stress - $Stress>>
+<<elseif $Stress == -1>>
+	<<set $StressEffect to 5>>
+<</if>>
+<<if $Stress == 0>>
+	<<set $StressEffect to 0>>
+<</if>>
+<<if $Stress < -1>>
+	<<set $Stress to -1>>
+<</if>>
+<<if $Stress == -1>>
+	<<set $Relaxed to 1>>
+<<elseif $Stress > -1>>
+	<<set $Relaxed to 0>>
+<</if>>
+
+				/* EXPOSURE MOODLETS */
+				
+<<if $UndiesMoodlet == 1>>
+	<<set $ExposureNegative to -5>>
+<<elseif $UndiesMoodlet == 2>>
+	<<set $ExposureNegative to 0>>
+<<elseif $NakedMoodlet == 1>>
+	<<set $ExposureNegative to -10>>
+<<elseif $NakedMoodlet == 2>>
+	<<set $ExposureNegative to 0>>
+<<elseif $NakedMoodlet == 3>>
+	<<set $ExposureNegative to 5>>
+<<else>>
+	<<set $ExposureNegative to 0>>
+<</if>>
+
+
+				/* EQUIPMENT MOODLETS */
+<<if $PlayerShoes.Type == "None" and $Location.Indoors == 0>>
+	<<if $Player.Traits.includes("FreeFooted")>>
+		<<set $NoShoesMoodlet to 0>>
+		<<set $NoShoesNegative to 0>>
+	<<else>>
+		<<set $NoShoesMoodlet to 1>>
+		<<set $NoShoesNegative to -5>>
+	<</if>>
+<<else>>
+	<<set $NoShoesMoodlet to 0>>
+	<<set $NoShoesNegative to 0>>
+<</if>>
+
+				/* ENVIROMENTAL MOODLETS */
+<<if $Wet == 1>>
+	<<if $Player.Exposed == "Naked" or $Player.Exposed == "Towel">>
+		<<set $Wet to 0>>
+	<</if>>
+<<elseif $Wet == 2>>
+	<<if $Player.Exposed == "Naked" or $Player.Exposed == "Towel">>
+		<<set $Wet to 0>>
+	<</if>>
+<<elseif $Wet == 3>>
+	<<if $Player.Exposed == "Naked" or $Player.Exposed == "Towel">>
+		<<set $Wet to 0>>
+	<</if>>
+<</if>>
+				
+<<if $Wet == 1>>
+	<<set $WetNegative to -5>>
+<<elseif $Wet == 2>>
+	<<set $WetNegative to -10>>
+<<elseif $Wet == 3>>
+	<<set $WetNegative to -20>>
+<<else>>
+	<<set $WetNegative to 0>>
+<</if>>
+
+<<if $Hot == 1>>
+	<<set $TempNegative to -5>>
+<<elseif $Hot == 2>>
+	<<set $TempNegative to -10>>
+<<elseif $Cold == 1>>
+	<<set $TempNegative to -5>>
+<<elseif $Cold == 2>>
+	<<set $TempNegative to -10>>
+<<else>>
+	<<set $TempNegative to 0>>
+<</if>>
+
+/* TRAIT BASED MOOODLETS */
+<<if $Player.Traits.includes("Indoor Kid") and $Location.Indoors == 1>>
+	<<set $IndoorOutdoorTrait to 1>>
+	<<set $IndoorOutdoorTraitPositve to 5>>
+<<elseif $Player.Traits.includes("Outdoorsy") and $Location.Indoors == 0>>
+	<<set $IndoorOutdoorTrait to 2>>
+	<<set $IndoorOutdoorTraitPositve to 5>>
+<<else>>
+	<<set $IndoorOutdoorTrait to 0>>
+	<<set $IndoorOutdoorTraitPositve to 0>>
+<</if>>
+
+<<if $Player.Traits.includes("Commando") and $PlayerBottoms.Type != "None">>
+	<<if $PlayerUndies.Type == "None">>
+		<<set $CommandoTrait to 1>>
+		<<set $CommandoTraitPositive to 5>>
+	<<else>>
+		<<set $CommandoTrait to -1>>
+		<<set $CommandoTraitPositive to -5>>
+	<</if>>
+<<else>>
+		<<set $CommandoTrait to 0>>
+		<<set $CommandoTraitPositive to 0>>
+<</if>>

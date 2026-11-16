@@ -1,0 +1,65 @@
+:: Carter House Hallway [nobr]
+
+<<set $Location to {
+    Name: "Carter Hallway",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Hallway",
+}>>
+<span style="color:Azure"><big><strong>--Carter's Hallway--</strong></big></span><br>
+
+<<if $Time.after(19, 0)>>
+    <<if $HangOutNeed.Fun >= 50>>
+        <<include"Carter House Leaving Late High Fun">>
+    <<else>>
+        <<include"Carter House Leaving Late Low Fun">>
+    <</if>>
+<<else>>
+
+    You are walking down the hallway to <span style="color:DarkTurquoise">Carter</span>’s house. It connects to the living room with 4 doors at the other end. It leads to the 4 bedrooms inside his house, though you only have access to <span style="color:DarkTurquoise">Carter</span>’s. You spy a few pictures of <span style="color:DarkTurquoise">Carter</span> and his family on the walls, along with various awards and certificates, mainly with <span style="color:DarkTurquoise">Carter</span>’s name on them.<br>
+    <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+
+    <strong>Carter: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+    <br>
+
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Carter's Room (0:01)|Carter House Carter Bedroom][$Minutes += 1]] <br>
+    [[Living Room (0:01)|Carter House Living Room][$Minutes += 1]] <br>
+
+    <br>
+
+    <br>
+    <div style="position: relative">
+    <img src="Images\NPC Homes\Carter House\Carter House Map.png" alt="Carter House Base" usemap="#CarterHouse">
+        <img src="Images\Player House\Player House Big Room Marker.png" 
+    style="position: absolute; left: 54px; top: 54px"  alt="Carter House" usemap="#CarterHouse">
+    </div>
+    <map name="CarterHouse">
+        <area shape="rect" coords="108,0,161,53" alt="Carter Room" onclick="$.wiki('<<goto[[Carter House Carter Bedroom]]>><<set $Minutes += 1>>')" />
+        <area shape="rect" coords="166,54,215,161" alt="Living Room" onclick="$.wiki('<<goto[[Carter House Living Room]]>><<set $Minutes += 1>>')" />
+    </map>
+
+<</if>>

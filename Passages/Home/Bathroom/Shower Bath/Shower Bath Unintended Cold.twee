@@ -1,0 +1,95 @@
+:: Shower Unintended Cold [nobr]
+
+/* Intro */
+/* Checking if player is already considered Nude */
+<<if $PlayerBottoms.Type != "None" or $PlayerTop.Type != "None" or $Player.Undies != "None">>
+    You walk over to the shower and turn the knob quickly without even thinking. As the water turns on, you yawn and stretch as you quickly strip off your clothes and toss them in the hamper. You see your slightly disordered hair from the mirror and rub your eyes, feeling a little groggy, before stepping into the shower… <br>
+    <br>
+<<else>>
+    You walk over to the shower and turn the knob quickly without even thinking. As the water turns on, you yawn and stretch, feeling a little groggy. You spot your disordered hair in the mirror and mess with it for a minute before stepping into the shower… <br>
+    <br>
+<</if>>
+
+/* Default Post-Intro Avatar */
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:lightcoral">You let out a squeak as the freezing cold water hits your bare skin and you leap out of the shower only barely drenched.</span> It seems you accidentally turned the knob to the cold setting and got an unpleasant chilly surprise. You quickly adjust the knob before slipping back in. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Frown",
+            Blush: 3,
+        },
+    },
+]>>
+<<ad _ad>>
+/* PC: Penis Size 1 Smaller */
+<span style="color:lightcoral">Your body now shivering and your penis slightly shriveled, you try your best to salvage the shower, but find yourself feeling uncomfortably cold despite turning the water to warm.</span> In the end, you quickly finish washing, your sole thought being to wrap yourself in the warm towel waiting for you to warm up. <span style="color:yellow">Your relaxing shower may have been ruined, but at least it’s done and you are clean.</span> <br>
+<<addMoodlet "Uncomfortably Cold" 8>>
+<<needChange "Hygiene" 100>>
+<<addClothing "PC" "Bottoms" "Towel" "White">>
+<<set $Player.Exposed to "Towel">>
+<br>
+[[Continue|PH Bathroom]]
+
+:: Bath Unintended Cold [nobr]
+
+/* Intro */
+/* Checking if player is already considered Nude */
+<<if $PlayerBottoms.Type != "None" or $PlayerTop.Type != "None" or $Player.Undies != "None">>
+    You walk over and turn on the water to begin filling the tub, a bit distracted and not even thinking as you do so. You then yawn and stretch your arms out as you begin to strip off your clothes and toss them into the hamper. You see your slightly disordered hair from the mirror and rub your eyes, feeling a little groggy, before quickly stepping into the bath… <br>
+    <br>
+<<else>>
+    You walk over and turn on the water to begin filling the tub, a bit distracted and not even thinking as you do so. You then yawn and- stretch, staring at your reflection in the mirror as you wait for it to fill. You see your slightly disordered hair from the mirror and rub your eyes, feeling a little groggy, before quickly stepping into the bath… <br>
+    <br>
+<</if>>
+
+/* Default Post-Intro Avatar */
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:lightcoral">You let out a loud squeak as you are nearly completely seated into the tub before you suddenly realize that the water is freezing cold! You feel your balls leap into your body as you hop out of the shower and nearly slip on the floor.</span> Seems you accidentally turned the knob to the cold setting and got an unpleasant chilly surprise. You quickly wait for the water to warm up before stepping back in. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Frown",
+            Blush: 3,
+        },
+    },
+]>>
+<<ad _ad>>
+/* PC: Penis Size 1 Smaller */
+<span style="color:lightcoral">Your body now shivering and your penis slightly shriveled, you try your best to salvage the bath, but find yourself feeling uncomfortably cold despite turning the water to warm. You’d have to drain the tub to get it to the perfect temperature you desire and find the whole experience disappointing.</span> In the end, you quickly finish washing, your sole thought being to wrap yourself in the warm towel waiting for you to warm up. <span style="color:yellow">Your relaxing bath may have been ruined, but at least it’s done and you are clean.</span> <br>
+<<addMoodlet "Uncomfortably Cold" 8>>
+<<needChange "Hygiene" 100>>
+<<addClothing "PC" "Bottoms" "Towel" "White">>
+<<set $Player.Exposed to "Towel">>
+<br>
+[[Continue|PH Bathroom]]

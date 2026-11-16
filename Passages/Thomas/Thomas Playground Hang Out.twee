@@ -1,0 +1,21 @@
+:: Thomas Playground Hang Out [nobr]
+
+<<set $Minutes += 20>>
+
+<<set _random to [
+	"THOMAS Playground Draw With",
+	"Thomas Playground Music Talk",
+]>>
+
+<<if $ThomasSocial >= 50 || ($ThomasSocialRank || 0) > 0>>
+	<<set _random.push("THOMAS Playground Poke Playfully")>>
+	<<set _random.push("Thomas Playground Nap")>>
+<</if>>
+<<if $ThomasSocial >= 100 || ($ThomasSocialRank || 0) > 0>>
+	<<set _random.push("Thomas Playground Playful Kiss")>>
+<</if>>
+<<if ($ThomasSocial >= 25 || ($ThomasSocialRank || 0) > 0) && ($CarterSocial >= 0 || ($CarterSocialRank || 0) > 0)>>
+	<<set _random.push("Thomas Playground Drawing Contest")>>
+<</if>>
+
+<<include _random.random()>>

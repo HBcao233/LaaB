@@ -1,0 +1,64 @@
+:: XAVIER Playground Attempt to Impress [nobr]
+
+<<set $Minutes += 20>>
+
+You grab a basketball and stand at the 3-point line. As you line up your shot, you notice <span style="color:DarkTurquoise">Xavier</span> and his followers turn towards you. They're all watching, you only have one shot. You take a deep breath before shooting with all your strength and- !<br>
+<br>
+
+<<skillCheck "Athletics" 85>>
+
+/* WIN */
+	<<if _result == 1>>
+
+<span style="color:Green">It goes straight in!</span> You find yourself jumping up in celebration before you stop yourself, not wanting to look silly in front of the popular kids. You manage to play it off like it is no big deal, like you make those shots all the time.<br>
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You hear murmurings of approval amongst the crowd of boys and even get a few thumbs up. You also notice <span style="color:DarkTurquoise">Xavier</span> looking at you, smiling while nodding. You were definitely making your way up the social ladder!<br>
+
+	<<needChange "Fun" 20>>
+	<<socialChange "Xavier" 3>>
+	<<set $SkillEXPGainLevel to "Full">>
+	<<skillPoints "Athletics" 3>>
+	<span style="color:Green">+Reputation</span>
+	<<set $SchoolRep += 5>><br>
+	<br>
+	[[Continue|School Courtyard]] 
+
+	
+	
+/* LOSE */
+	<<else>>
+
+<span style="color:Red">The ball hits the side of the rim and bounces off! But that isn’t the worse of it, as it bounces back directly at you and nails you in the head!</span> You are sent falling backwards onto your back and begin to see stars floating around as you rub your now bruised forehead. As your head stops spinning you suddenly see someone leaning down with their hand out to help you up.<br>
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Are you alright?”</span> <span style="color:DarkTurquoise">Xavier</span> says as you take his hand. <span style="color:LightSteelBlue">“That looked like a hard fall.”</span> You assure him that you are alright, even though you briefly find it hard to stand up without swaying side to side. Once he is sure that you are alright, <span style="color:DarkTurquoise">Xavier</span> gives you a pat on the back before heading back towards the crowd of boys. While that shot may not have done anything good for your reputation, at least <span style="color:DarkTurquoise">Xavier</span> showed some interest in you.<br>
+
+	<<addMoodlet "Pained" 7>>
+	<<socialChange "Xavier" 3>>
+	<<skillPoints "Athletics" 3>>
+	<br>
+	[[Continue|School Courtyard]] 
+
+
+<</if>>

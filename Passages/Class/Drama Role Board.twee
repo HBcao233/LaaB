@@ -1,0 +1,56 @@
+:: Drama Role Board [nobr]
+
+Safely stored behind a thin layer of glass is the Role Board. Each student has their name engraved on a magnet for easily movement, which <span style="color:DarkTurquoise">Mr. Julien</span> does at the end of every class. The board is divided into 5 groups: Lead, Major Character, Side Character, One-Liner, and Extra, with the various roles in the play under one of the categories.<br>
+<br>
+/* PLAYER ROLES */
+<span style="color:DarkTurquoise">$Player.Name</span>: 
+<<if $DramaFaithPlayer > 90>>
+	Romeo [Lead]
+<<elseif $DramaFaithPlayer > 70>>
+	Mercutio [Major Character]
+<<elseif $DramaFaithPlayer > 40>>
+	Lord Capulet [Side Character]
+<<elseif $DramaFaithPlayer > 20>>
+	Night Guard [One-Liner]
+<<else>>
+	House Capulet Servant [Extra]
+<</if>><br>
+<br>
+
+/* LUCAS ROLES */
+<span style="color:DarkTurquoise">Lucas</span>: 
+<<if $DramaFaithLucas > 90 and $DramaFaithLucas >= $DramaFaithCarter>>
+	Julius [Lead]
+<<elseif $DramaFaithLucas > 90>>
+	Friar Laurence [Lead]
+<<elseif $DramaFaithLucas > 70>>
+	The Nurse [Major Character]
+<<elseif $DramaFaithLucas > 40>>
+	Count Paris [Side Character]
+<<elseif $DramaFaithLucas > 20>>
+	Friar John [One-Liner]
+<<else>>
+	Chorus Member [Extra]
+<</if>><br>
+<br>
+
+/* CARTER ROLES */
+<span style="color:DarkTurquoise">Carter</span>: 
+<<if $DramaFaithCarter > 90 and $DramaFaithPlayer < 90>>
+	Romeo [Lead]
+<<elseif $DramaFaithCarter > 90 and $DramaFaithCarter > $DramaFaithLucas>>
+	Julius [Lead]
+<<elseif $DramaFaithCarter > 90>>
+	Friar Laurence [Lead]
+<<elseif $DramaFaithCarter > 70>>
+	Tybalt [Major Character]
+<<elseif $DramaFaithCarter > 40>>
+	Prince Escalus [Side Character]
+<<elseif $DramaFaithCarter > 20>>
+	Apothecary [One-Liner]
+<<else>>
+	Citizen of Verona [Extra]
+<</if>><br>
+<br>
+
+[[Leave|School Auditorium]] 

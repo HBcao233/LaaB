@@ -1,0 +1,107 @@
+:: Shopping District Le Garcon [nobr]
+
+<span style="color:Azure"><big><strong>--Le Garçon Serré--</strong></big></span><br>
+A fancy, expensive looking store with very well-made and formal clothes. Mannequins line the windows and alleys, modeling the fancy clothes they have for sale. You can’t help but notice that the male mannequins seem to have bulges in their pants. Near the back, they have some small changing rooms behind some small wooden doors.<br>
+<br>
+
+<<set _returnlink to "Shopping District Le Garcon">>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<<shoppingMenu "LeGarcon">>
+
+/*Keeping old code for now as backup measure */
+/* <span style="color:Azure"><strong>-Categories-</strong></span><br>
+<<link"Bottoms">>
+	<<set $ShopSlot to "Bottoms">>
+	<<set $ShopItem to "Slacks">>
+	<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+	<<set $ShopColor to "Black">>
+	<<set $ShopCost to 8>>
+	<<goto "Shopping District Le Garcon">>
+<</link>>
+ - 
+<<link"Tops">>
+	<<set $ShopSlot to "Top">>
+	<<set $ShopItem to "Dress Shirt">>
+	<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+	<<set $ShopColor to "White">>
+	<<set $ShopCost to 8>>
+	<<goto "Shopping District Le Garcon">>
+<</link>>
+ - 
+<<link"Over">>
+	<<set $ShopSlot to "Over">>
+	<<set $ShopItem to "School Vest">>
+	<<set $ShopColors to ["Purple", "Argyle"]>>
+	<<set $ShopIcons to ["Purple", "Subdued Purple"]>>
+	<<set $ShopColor to "Purple">>
+	<<set $ShopCost to 8>>
+	<<goto "Shopping District Le Garcon">>
+<</link>>
+ - 
+<<link"Socks">>
+	<<set $ShopSlot to "Socks">>
+	<<set $ShopItem to "School Socks">>
+	<<set $ShopColors to ["Black", "Knee"]>>
+	<<set $ShopIcons to ["Black", "Subdued Purple"]>>
+	<<set $ShopColor to "Purple">>
+	<<set $ShopCost to 4>>
+	<<goto "Shopping District Le Garcon">>
+<</link>>
+ - 
+<<link"Shoes">>
+	<<set $ShopSlot to "Shoes">>
+	<<set $ShopItem to "Dress Shoes">>
+	<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+	<<set $ShopColor to "Black">>
+	<<set $ShopCost to 12>>
+	<<goto "Shopping District Le Garcon">>
+<</link>>
+ - 
+<<link"Outer">>
+	<<set $ShopSlot to "Outer">>
+	<<set $ShopItem to "School Jacket">>
+	<<set $ShopColors to ["School", "Rolled"]>>
+	<<set $ShopIcons to ["Black", "Gray"]>>
+	<<set $ShopColor to "School">>
+	<<set $ShopCost to 8>>
+	<<goto "Shopping District Le Garcon">>
+<</link>>
+ - 
+<<link"Neck">>
+	<<set $ShopSlot to "Neck">>
+	<<set $ShopItem to "School Tie">>
+	<<set $ShopColors to ["School"]>>
+	<<set $ShopColor to "Purple">>
+	<<set $ShopCost to 4>>
+	<<goto "Shopping District Le Garcon">>
+<</link>>
+<br>
+
+<<if $ShopSlot == "Bottoms">>
+	<<include"Le Garcon Bottoms">>
+<<elseif $ShopSlot == "Top">>
+	<<include"Le Garcon Tops">>
+<<elseif $ShopSlot == "Socks">>
+	<<include"Le Garcon Socks">>
+<<elseif $ShopSlot == "Shoes">>
+	<<include"Le Garcon Shoes">>
+<<elseif $ShopSlot == "Outer">>
+	<<include"Le Garcon Outer">>
+<<elseif $ShopSlot == "Neck">>
+	<<include"Le Garcon Neck">>
+<<elseif $ShopSlot == "Over">>
+	<<include"Le Garcon Over">>
+<<elseif $ShopSlot == "Socks">>
+	<<include"Le Garcon Socks">>
+<</if>>
+
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:01)|Shopping District][$Minutes += 1]]<br>
+<br> */

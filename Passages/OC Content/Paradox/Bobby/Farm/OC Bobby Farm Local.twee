@@ -1,0 +1,117 @@
+:: OC Bobby Farm Local [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Bobby Farm",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Farm",
+}>>
+
+/* Bobby Current Location Set */
+<<set $OCBobbyLocation to "Sleeping">>
+<<if $Time.schoolday()>>
+    <<if $Time.between(4, 0, 7, 30)>>
+        <<set $OCBobbyLocation to "Farm">>
+    <<elseif $Time.between(7, 30, 15, 30)>>
+        <<set $OCBobbyLocation to "School">>
+    <<elseif $Time.between(16, 0, 18, 0)>>
+        <<set $OCBobbyLocation to "Farm">>
+    <<elseif $Time.between(18, 0, 21, 0)>>
+        <<set $OCBobbyLocation to "Relaxing">>
+    <</if>>
+<<else>>
+    <<if $Time.between(4, 0, 8, 0)>>
+        <<set $OCBobbyLocation to "Farm">>
+    <<elseif $Time.between(8, 0, 16, 0)>>
+        <<set $OCBobbyLocation to "School">>
+    <<elseif $Time.between(16, 0, 18, 0)>>
+        <<set $OCBobbyLocation to "Farm">>
+    <<elseif $Time.between(18, 0, 21, 0)>>
+        <<set $OCBobbyLocation to "Relaxing">>
+    <</if>>
+<</if>>
+/* Setting Bobby's current Location */
+/* Farm means Bobby is working in the Barn while Fields means fields. This is randomly set each time PC comes to the area if he is working on the farm. Another solution may be better in the future. More locations can be added here as needed. */
+<<if $OCBobbyLocation == "Farm">>
+    <<if random(1, 2) == 1>>
+        <<set $OCBobbyLocation to "Fields">>
+    <</if>>
+<</if>>
+
+
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+<<else>>
+
+    <span style="color:Azure"><big><strong>--Thompson's Farm--</strong></big></span><br>
+    You stand near the entrance to "Thompson's Farm" a large acreage of land owned by the Thompson family who live on and work the land. In the distance the three main features  you can see the family home, a large red barn with it's surrounding animal pens, and vast fields the largest of which seems to be filled with oranges.<br>
+    <br>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<if $OCBobbyLocation == "Sleeping" or $OCBobbyLocation == "School">>
+        <span style="color:yellow">(You don't see or hear any sign of Bobby.)</span><br>
+    <</if>>
+    <span style="color:Azure">-The Barn-</span><br>
+    <<if $OCBobbyLocation == "Farm">>
+        <span style="color:lightgreen">(Bobby is currently working in the barn.)</span><br>
+        <<link"Say Hello to Bobby (0:10)<br>">>
+            <<set _events to ["OC Bobbay Say Hello Barn Feed Chickens", "OC Bobbay Say Hello Barn Cleaning the Barn", "OC Bobby Say Hello Barn Horse Care"]>>
+            <<set _event to _events.random()>>
+            <<goto _event>>
+        <</link>>
+        <<link"Offer to help (0:25)<br>">>
+            <<set _events to ["OC Bobby Farm Help Out Barn Feeding Chickens", "OC Bobby Farm Help Out Barn Cleaning the Barn"]>>
+            <<if $FearAnimals != 1>>
+                <<set _events.push("OC Bobby Farm Help Out Barn Horse Care")>>
+            <</if>>
+            <<set _event to _events.random()>>
+            <<goto _event>>
+        <</link>>
+    <<else>>
+        <<link"Explore the Barn (0:10)">>
+            <<set _events to ["OC Bobby Explore Barn 1", "OC Bobby Explore Barn 2", "OC Bobby Explore Barn 3"]>>
+            <<set _event to _events.random()>>
+            <<goto _event>>
+        <</link>>
+        <span style="color:Green">+Fun, -Stress</span><br>
+    <</if>>
+    <br>
+    <span style="color:Azure">-The Fields-</span><br>
+    <<if $OCBobbyLocation == "Fields">>
+        <span style="color:lightgreen">(Bobby is currently working in the fields.)</span><br>
+        <<link"Say Hello to Bobby<br>">>
+            <<set _events to ["OC Bobby Say Hello Fields Picking Oranges", "OC Bobby Say Hello Fields Bobby & His Dog"]>>
+            <<set _event to _events.random()>>
+            <<goto _event>>
+        <</link>>
+        <<link"Offer to help (0:25)<br>">>
+            <<set _events to ["OC Bobby Farm Help Out Fields Oranges", "OC Bobby Help Out Fields Weeds"]>>
+            <<set _event to _events.random()>>
+            <<goto _event>>
+        <</link>>
+    <<else>>
+        <<link"Explore the Fields (0:10)">>
+            <<set _events to ["OC Bobby Explore Fields Lost"]>>
+            <<set _event to _events.random()>>
+            <<goto _event>>
+        <</link>>
+        <span style="color:Green">+Fun, -Stress</span><br>
+    <</if>>
+    <br>
+    <span style="color:Azure">-The House-</span><br>
+    <<if $OCBobbyLocation == "Relaxing">>
+        <span style="color:lightgreen">(Bobby is currently inside his house.)</span><br>
+    <</if>>
+    <br>
+
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Go back to the bus stop|Farm]]<br>
+
+
+<</if>>

@@ -1,0 +1,498 @@
+:: DAD Inspect Hallway [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> walks down the hallway, reading through the messages on his phone.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Eyes: "Narrow",
+				Mouth: "Frown",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	[[Give him a hug (0:02)|Dad Hug]]<br>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Ask if Dad wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Dad Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Dad Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: DAD Inspect Breakfast [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> sits at the nook eating his breakfast and drinking his morning coffee. He seems pretty tired.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<<if $Breakfast != 1>>
+		[[Eat With (0:15)|DAD Eat With][$EatWith to "Breakfast"]]<br>
+	<</if>>
+
+:: DAD Inspect Dinner [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> sits in the nook eating his dinner while responding to messages from his clients on his phone.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<<if $Dinner != 1>>
+		[[Eat With (0:15)|DAD Eat With][$EatWith to "Dinner"]]<br>
+	<</if>>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite")>>
+		<<set $BroDadLocation to "Cooking">>
+		[[Ask Dad about Brochella|OC Zach Brochella Ask Dad]]<br>
+	<</if>>
+
+:: DAD Inspect Lunch [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> sits in the nook eating his lunch while chatting.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<<if $Lunch != 1>>
+		[[Eat With (0:15)|DAD Eat With][$EatWith to "Lunch"]]<br>
+	<</if>>
+
+/* LEWD ENCOUNTERS */
+
+:: DAD Inspect Changing [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> is in the middle of changing, wearing only his $DadUndies. His clothes are laid out on the bed. <span style="color:Pink">As he turns to face you, you can’t help but be drawn to the large package you see bulging out from the front of his underwear.</span> He notices you staring at him and asks if you need something.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Frown",
+				Brows: "Suspicious",
+				Outfit: "Undies",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+:: DAD Inspect Sleeping [nobr]
+
+	<<if $DadSleepingUnderwear != 1>>
+		<span style="color:DarkTurquoise">Your Father</span> sleeps deeply in his bed, his blanket covering most of his lower body. His well-defined bare chest, however, was exposed along with the slightest peek at his $DadUndies. He slept with his mouth partly open and, though quiet, the occasional snore would escape and fill the otherwise silent room. <span style="color:DarkTurquoise">Your Father</span> was a heavy sleeper, with <span style="color:DarkTurquoise">Noah</span> routinely having trouble waking him up after a nightmare or sudden storm awoke him. <br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Eyes: "Closed",
+				Outfit: "Undies",
+			},
+		},
+	]>>
+	<<ad _ad>>
+		[[Remove his underwear (0:05)|DAD Remove Underwear Sleeping]]<br>
+	<<else>>
+		<span style="color:DarkTurquoise">Your Father</span> sleeps deeply in his bed. <span style="color:pink">His blanket has been tossed aside and his underwear has been removed, leaving him laying naked and exposed. His body, while not muscled, was well-toned and slender, something you’ve heard him complimented on many times. The real prize, however, was his penis. Even flaccid, the large member would put even <span style="color:DarkTurquoise">Gabe</span> to shame and was surrounded by a well-kempt bush of pubic hair.</span> <br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Eyes: "Closed",
+				Outfit: "Naked",
+			},
+		},
+	]>>
+	<<ad _ad>>
+		[[Fondle his penis (0:15)|DAD Fondle Penis Sleeping]]<br>
+	<</if>>
+
+:: DAD Inspect Reading News [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> sits at the counter on one of the stools, scrolling through the news on his phone. While he seems mostly disinterested, you assume knowing things like this is part of his work as a financial advisor.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Eyes: "Narrow",
+				Mouth: "Frown",
+			},
+		},
+	]>>
+	<<ad _ad>>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite")>>
+		<<set $BroDadLocation to "TV">>
+		[[Ask Dad about Brochella|OC Zach Brochella Ask Dad]]<br>
+	<</if>>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Ask if Dad wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Dad Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Dad Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: DAD Inspect Cooking Dinner [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> is currently working to prepare dinner for your family. He busily chops vegetables and stirs the pot. You are not sure what he is making, but it sure smells good!<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	[[Offer to help (0:25)|DAD Help Cook Dinner]]<br>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite")>>
+		<<set $BroDadLocation to "Cooking">>
+		[[Ask Dad about Brochella|OC Zach Brochella Ask Dad]]<br>
+	<</if>>
+
+:: DAD Inspect Dishes [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> is in the process of washing up all the dishes.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	[[Offer to help (0:15)|DAD Wash Dishes]]<br>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite")>>
+		<<set $BroDadLocation to "Cooking">>
+		[[Ask Dad about Brochella|OC Zach Brochella Ask Dad]]<br>
+	<</if>>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Ask if Dad wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Dad Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Dad Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: DAD Inspect Cleaning Room [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> is cleaning his bedroom, dusting his bookshelf, and cleaning the windows. Quiet instrumental music is playing from his computer’s speakers. He gives you a smile and wave as you walk in.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	[[Offer to help (0:25)|DAD Help Clean Room]]<br>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite")>>
+		<<set $BroDadLocation to "Bedroom">>
+		[[Ask Dad about Brochella|OC Zach Brochella Ask Dad]]<br>
+	<</if>>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Ask if Dad wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Dad Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Dad Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: DAD Inspect Watering Plants [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> stands in the backyard watering the bushes and flowerbeds that line the fence. He seems lost in thought, but has a smile upon his face.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	[[Offer to help (0:20)|DAD Help Water Plants]]<br>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Ask if Dad wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Dad Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Dad Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: DAD Inspect TV [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> sits on his recliner watching TV. <br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	[[Watch TV With (0:30)|DAD Watch TV]]<br>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite")>>
+		<<set $BroDadLocation to "TV">>
+		[[Ask Dad about Brochella|OC Zach Brochella Ask Dad]]<br>
+	<</if>>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Ask if Dad wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Dad Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Dad Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: DAD Inspect Watching Film [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> lays on his bed watching an old movie on his TV.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	[[Ask to join him (1:00)|DAD Watch Film]]<br>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite")>>
+		<<set $BroDadLocation to "Bedroom">>
+		[[Ask Dad about Brochella|OC Zach Brochella Ask Dad]]<br>
+	<</if>>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Ask if Dad wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Dad Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Dad Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: DAD Inspect Gardening [nobr]
+
+	<span style="color:DarkTurquoise">Your Father</span> is on his knees in the garden pulling weeds and tending to his plants. He also collects a few trimmings and put them in a basket.<br>
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+	]>>
+	<<ad _ad>>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Ask if Dad wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Dad Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Dad: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Dad Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>

@@ -1,0 +1,116 @@
+:: Traits [nobr]
+
+<span style="color: azure; font-weight: bold;">--Traits--</span>
+<br>
+
+<<set _maxTraits = 5>>
+
+<<if $Debug == 1>>
+    <<set _maxTraits = 10>>
+    <span class="greyed-out">
+        Debug ON: Max traits increased to 10.
+    </span>
+<</if>>
+
+<<liveblock>>
+    <<run console.log('$selectedTrait', $selectedTrait)>>
+    <div class="traits-container">
+        <div class="traits-list-container">
+            <div class="traits-title">Available Traits:</div>
+            <div class="traits-list">
+                <<for _trait range $TraitOptions>>
+                    <<capture _trait>>
+                        <<if $Player.Traits.length < _maxTraits>>
+                            <span @class="`trait-icon ${$selectedTrait?.ID === _trait.ID ? 'trait-icon-highlight' : ''}`">
+                                <<set _imgLink = `Images/Icons/Traits/${_trait.Name}.png`>>
+                                <<link [img[_imgLink]]>>
+                                    <<set $selectedTrait to _trait>>
+                                    <<update>>
+                                <</link>>
+                            </span>
+                        <<else>>
+                            <span @class="`trait-icon ${$selectedTrait?.ID === _trait.ID ? 'trait-icon-highlight' : ''}`">
+                                <<set _imgLink = `Images/Icons/Traits/${_trait.Name}.png`>>
+                                [img[_imgLink]]
+                            </span>
+                        <</if>>
+                    <</capture>>
+                <</for>>
+            </div>
+        </div>
+        <div class="traits-info-container">
+            <div class="traits-pc-owned">
+                <div class="traits-title"><<=addApostrophe($Player.Name)>> Traits:</div>
+                <<if $Player.Traits.length > 0>>
+                    <div class="traits-added">
+                        <<for _traitId range $Player.Traits>>
+                            <<set _trait to clone($TraitOptions[$TraitOptions.findIndex(t => t.ID === _traitId)])>>
+                            <<capture _traitId _trait>>
+                                <span @class="`trait-icon ${$selectedTrait?.ID === _trait.ID ? 'trait-icon-highlight' : ''}`">
+                                    <<set _imgLink = `Images/Icons/Traits/${_trait.Name}.png`>>
+                                    <<link [img[_imgLink]]>>
+                                        <<set $selectedTrait to _trait>>
+                                        <<update>>
+                                    <</link>>
+                                </span>
+                            <</capture>>
+                        <</for>>
+                    </div>
+                <<else>>
+                    <div class="greyed-out traits-added">
+                        Click on a trait, then click "Add". Max _maxTraits Traits.
+                    </div>
+                <</if>>
+            </div>
+            <<if $Player.Traits.length >= _maxTraits>>
+                <div class="greyed-out traits-maxxed">
+                    You've reached the maximum amount of Traits that you can add (_maxTraits).
+                </div>
+            <</if>>
+            <<if $selectedTrait !== null>>
+                <div class="traits-info">
+                    <div class="traits-info-header">
+                        <img @alt="$selectedTrait.Name" @title="$selectedTrait.Name" class="trait-icon" @src="`Images/Icons/Traits/${$selectedTrait.Name}.png`">
+                        <span class="bold">$selectedTrait.Name</span>
+                    </div>
+                    <div class="traits-info-desc">
+                        $selectedTrait.Description
+                        <br>
+                        <<if $selectedTrait.Features?.length > 0>>
+                            <ul>
+                                <<for _feature range $selectedTrait.Features>>
+                                    <<capture _feature>>
+                                        <li>_feature</li>
+                                    <</capture>>
+                                <</for>>
+                            </ul>
+                        <</if>>
+                    </div>
+                    <div class="traits-action">
+                        <<if $Player.Traits.includes($selectedTrait.ID)>>
+                            <<link "Remove">>
+                                <<set _index = $Player.Traits.findIndex(t => t === $selectedTrait.ID)>>
+                                <<run $Player.Traits.splice(_index, 1)>>
+                                <<set $selectedTrait to null>>
+                                <<update>>
+                            <</link>>
+                        <<else>>
+                            <<set _excludedTrait = $TraitOptions.filter(t => $Player.Traits.includes(t.ID)).find(t => t.Exclude?.includes($selectedTrait.ID))>>
+                            <<if _excludedTrait === undefined>>
+                                <<link "Add">>
+                                    <<run $Player.Traits.push($selectedTrait.ID)>>
+                                    <<set $selectedTrait to null>>
+                                    <<update>>
+                                <</link>>
+                            <<else>>
+                                <span class="greyed-out">
+                                    <<=$selectedTrait.Name>> and <<=_excludedTrait.Name>> cannot be added at the same time. Remove <<=_excludedTrait.Name>> before adding <<=$selectedTrait.Name>>.
+                                </span>
+                            <</if>>
+                        <</if>>
+                    </div>
+                </div>
+            <</if>>
+        </div>
+    </div>
+<</liveblock>>

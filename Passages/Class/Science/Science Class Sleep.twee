@@ -1,0 +1,80 @@
+:: Science Class Sleep [nobr]
+
+/* Written by: BruMa */
+/* Intro */
+
+<span style="color:DarkTurquoise">Mr. Chang</span> has organized the class in pairs for an experiment, nothing too complicated, but also not that engaging either. You follow along as best as you can, but your eyes burn slightly as you find it increasingly harder to keep them open, you feel yourself getting sleepier and sleepier by the minute. <br>
+<br>
+You look over at your partner and he seems to be doing a good job by himself, so you figure you could probably rest your eyes for a minute without any problems. <span style="color:Pink">You slouch over the desk and finally give in to the urge of just shutting your eyes and quickly nod off.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Eyes: "Closed",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<linkreplace "Continue">>
+
+<<set _random to random(1,2)>>
+<<if _random == 1>>
+    /*Success*/
+    After what feels like barely a minute or two you are suddenly shot awake by the strident sound of the school bell ringing. You look around the room trying to look awake as everyone starts heading out. You look over at <span style="color:DarkTurquoise">Mr. Chang</span> for a moment and he catches your eyes, <span style="color:lihtgreen">he gives you a small smile as you wipe some drool off your face, you guess he most likely did notice you sleeping during class but decided to give you a break, telling you were tired.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Chang",
+            State: {
+                Mouth: "Smile",
+                Eyes: "Wide",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You smile back at him and quickly grab your stuff and put it in your back, ready to leave. While you managed to get away with sleeping during class, you feel in the back of your mind that this is most likely going to affect your grade. <br>
+    <<needChange "Energy" 10>> 
+    <br>
+    <<include"Attend Science Finish">>
+ 
+<<elseif _random == 2>>
+/*Fail*/
+
+    After what felt like a long blink, <span style="color:LightCoral">you are shot awake by a small explosion next to you. Your partner, feeling a bit experimental, decided to mix some random chemicals after you passed out, resulting in a quite explosive reaction that shot up thick black soot all around him, covering his whole front as well as some of your $PlayerTop.Name and $PlayerBottoms.Name.</span> <br>
+    <br>
+    <span style="color:DarkTurquoise">Mr. Chang</span> runs towards you two and first checks if everyone is okay. Other than a scare--and a thick layer of soot covering you two plus the whole table and some of the floor, you’re both fine. Once he sighs in relief that nothing serious happened, <span style="color:LightCoral">he proceeds to scold the both of you about not following directions and playing around with things that could be dangerous, you two just drop your heads in shame just taking the scolding.</span><br>
+
+        <<set _ad to [
+        {
+            Name: "Chang",
+            State: {
+                Mouth: "Frown",
+                Eyes: "Wide",
+                Brows: "Shocked",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    Once he’s done, he tells you will have to clean the mess you’ve made, <span style="color:LightCoral">and that you’ll be getting detention as well.</span> You and your partner spend the rest of the class cleaning the table and floors, and while you could deal with the residual soot that got on you, the boy had to go to the bathroom to wash his clothes.<br>
+    <<needChange "Energy" 5>> 
+    <<needChange "Hygiene" -10>> 
+    <<set $Detention += 10>>
+    <<include"Attend Science Finish">>
+<</if>>
+<</linkreplace>>

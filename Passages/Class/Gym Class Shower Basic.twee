@@ -1,0 +1,19 @@
+:: Gym Class Shower Basic [nobr]
+
+/* BASIC EVENT */
+You only spend a few minutes washing your body to get rid of the smell of sweat and make yourself presentable enough for <span style="color:DarkTurquoise">The Coach</span> to let you leave. Once finished, you turn off the water and grab the towel from outside, tie it around your waist, and walk back towards your locker. You are quickly able to get dressed and are ready to leave.<br>
+<br>
+
+
+	/* GETTING DRESSED */
+	<<set $ClothSave to "Restore">>
+    <<if $GymClassType == "Gym">>
+		<<storeClothing "Restore" "Undies">>
+	<<else>>
+		<<storeClothing "Restore" "Naked">>
+    <</if>>
+	<<if $SaveUndies != null>>
+		<<set $PlayerUndies to $SaveUndies>>
+	<</if>>
+		
+		[[Continue|School Locker Room]] 

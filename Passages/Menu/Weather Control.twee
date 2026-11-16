@@ -1,0 +1,23 @@
+:: Weather Control [nobr]
+
+<<set $ForecastToday to $ForecastTomorrow>>
+<<if $Time.Month in $WeatherMonths>>
+    <<set $ForecastTomorrow to either($WeatherMonths[$Time.Month])>>
+<<else>>
+    <<set $ForecastTomorrow to either($WeatherMonths["September"])>>
+<</if>>
+
+<<include"Set Weather">>
+
+/* Temp */
+/* NPC Clothing Weather Checks */
+<<if ["Chance at Rain", "Scattered Showers", "Rainy"].includes($ForecastToday.Name)>>
+	<<set $NPCClothingSet to "Rain">>
+<<elseif ["Overcast", "Windy"].includes($ForecastToday.Name)>>
+	<<set $NPCClothingSet to "Cold">>
+<<elseif ["Partly Cloudy", "Mostly Cloudy"].includes($ForecastToday.Name)>>
+	<<set $NPCClothingSet to "Temperate">>
+<<else>>
+	<<set $NPCClothingSet to "Warm">>
+<</if>>
+

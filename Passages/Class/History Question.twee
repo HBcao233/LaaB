@@ -1,0 +1,70 @@
+:: History Question [nobr]
+
+<<set _skillcheckdif to random(20, 70)>>
+
+	As <span style="color:DarkTurquoise">Mr. De León</span> is talking about the founding of democracy in ancient Greece, he stops and asks if anybody can name the father of Athenian democracy. A few students blurt out random Greek people they know, but nobody seems to know the right answer. 
+	
+<<if _skillcheckdif < 30>>
+	<span style="color:Green">You think you know the answer, </span> but worry about looking dumb in front of everyone.
+	
+<<elseif _skillcheckdif < 50>>
+	<span style="color:Yellow">You can’t remember exactly who it was, but have a few ideas in your head. </span> You could give it a shot, but are nervous about looking dumb in front of everyone.
+	
+<<else>>
+	<span style="color:Red">You have no idea who he is referring to. </span> You could always guess, but will look stupid if you get it wrong.
+	
+<</if>><br>
+
+	<<set _ad to [
+		{
+			Name: "De Leon",
+			State: {
+				Mouth: "Smile",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Frown",
+			},
+		},
+	]>>
+	<<ad _ad>>
+	
+	<div id=choice>
+
+<<link "Attempt to answer">>
+<<replace"#choice">>
+	<<skillCheck "History" _skillcheckdif>>
+	
+	<<if _result == 1>>
+<span style="color:Green">You confidently blurt out that the answer is “Cleisthenes”.</span> Though your pronunciation may be off, <span style="color:DarkTurquoise">Mr. De León</span> applauds your answer and praises you for remembering.<br>
+	<<set $GradeChange to "History">>
+	<<set $GradeChangeType to "Increase">>
+	<<include"Grade Change">>
+<br>
+	<<set _EventPassFail to "Pass">>
+<<include"Attend History Finish">>
+
+	<<else>>
+<span style="color:Red">You blurt a Greek name you remember right as a silence falls upon the room, moving everyone’s attention to you.</span> <span style="color:LightSteelBlue"> “I’m sorry <span style="color:DarkTurquoise">$Player.Name</span>, but that’s incorrect as well.”</span> You blush in embarrassment and quickly attempt to hide behind your textboox.<br>
+<br>
+	<<set _EventPassFail to "Fail">>
+<<include"Attend History Finish">>
+
+	<</if>>
+
+<</replace>>
+<</link>>
+
+<<skillDiff "History" _skillcheckdif>><br>
+
+<<link "Pretend to look up answer<br>">>
+<<replace"#choice">>
+You decide not to take the risk, keeping your head down as you flick through your textbook, pretending to search for the answer along with some other students. Eventually, another boy finds out that the answer is “Cleisthenes” in the textbook, though <span style="color:DarkTurquoise">Mr. De León</span> is slightly disappointed no one could remember without looking it up.<br>
+<br>
+<<include"Attend History Finish">>
+
+<</replace>>
+<</link>>
+</div>

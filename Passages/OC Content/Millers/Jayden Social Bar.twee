@@ -1,0 +1,84 @@
+:: Jayden Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCJaydenSocialRank == -3>>
+	<<set $OCJaydenRelationship to "Hated">>
+	<span style="color:DarkRed">Jayden Hates you!</span>
+	<br>
+<<elseif $OCJaydenSocialRank == -2>>
+	<<set $OCJaydenRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Jayden are Enemies.</span>
+	<br>
+<<elseif $OCJaydenSocialRank == -1>>
+	<<set $OCJaydenRelationship to "Very Disliked">>
+	<span style="color:Red">Jayden really Dislikes you.</span>
+	<br>
+<<elseif $OCJaydenSocialRank == 0 and $OCJaydenSocial <= -50>>
+	<<set $OCJaydenRelationship to "Disliked">>
+	<span style="color:Red">Jayden Dislikes you. </span>
+	<br>
+<<elseif $OCJaydenSocialRank == 0 and $OCJaydenSocial < 50>>
+	<<set $OCJaydenRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Jayden are Acquaintances.</span>
+	<br>
+<<elseif $OCJaydenSocialRank == 0 and $OCJaydenSocial >= 50>>
+	<<set $OCJaydenRelationship to "Liked">>
+	<span style="color:LightGreen">Jayden Likes you.</span>
+	<br>
+<<elseif $OCJaydenSocialRank == 1>>
+	<<set $OCJaydenRelationship to "Friends">>
+	<span style="color:Green">You and Jayden are Friends.</span>
+	<br>
+<<elseif $OCJaydenSocialRank == 2>>
+	<<set $OCJaydenRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Jayden are Good Friends!</span>
+	<br>
+<<elseif $OCJaydenSocialRank == 3>>
+	<<set $OCJaydenRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Jayden are Close Friends!</span>
+	<br>
+<<elseif $OCJaydenSocialRank == 4>>
+	<<set $OCJaydenRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Jayden are Best Friends!</span>
+	<br>
+<<elseif $OCJaydenSocialRank == 5>>
+	<<set $OCJaydenRelationship to "Love">>
+	<span style="color:Pink">You and Jayden Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCJaydenSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCJaydenSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCJaydenSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCJaydenSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCJaydenSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCJaydenSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCJaydenSocial,
+			value: Math.abs($OCJaydenSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCJaydenSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCJaydenSocial > 120>>
+	<<set $OCJaydenSocial to 120>>
+<</if>>
+<<if $OCJaydenSocial < -120>>
+	<<set $OCJaydenSocial to -120>>
+<</if>>

@@ -1,0 +1,28 @@
+:: Community Center Bulletin Board [nobr]
+
+<span style="color:Azure"><big><strong>--Bulletin Board--</strong></big></span><br>
+
+<<for _i to 0; _i lt $CCJobBoard.length; _i++>>
+    <<capture _i>>
+    <<set _n to _i + 1>>
+    <span style="color:Azure"><strong>-Job #_n-</strong></span><br>
+    $CCJobBoard[_i].Name<br>
+    <strong>Pay:</strong> &dollar;$CCJobBoard[_i].Pay<br>
+    <strong>Job Description:</strong> <span style="color:LightSteelBlue">$CCJobBoard[_i].Description</span><br>
+    <<link"[Accept Job]">>
+        <<set $RandomJobList.push($CCJobBoard[_i])>>
+        <<set $CCJobBoard.deleteAt(_i)>>
+        <<goto"Community Center Bulletin Board">>
+
+    <</link>><br>
+    <br>
+    <</capture>>
+<</for>>
+
+<<if $CCJobBoard.length < 1>>
+    There are no jobs currently posted.<br>
+<</if>>
+
+<br>
+
+[[Exit|Community Center]]

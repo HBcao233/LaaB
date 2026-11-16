@@ -1,0 +1,159 @@
+:: GYM Swimming Diving [nobr]
+
+<<set $GymReawrdEXP to 1>>
+
+/* OPENING */
+Once everyone is in their Trunks, <span style="color:DarkTurquoise">Coach Kohler</span> tells everyone to line up at the edge of the pool near the diving boards. The school had a collection of Springboards along with a large, climbable Diving Platform went about 10 meters in the air! Some of the boys whispered worries about having to dive off such a height when <span style="color:DarkTurquoise">Coach Kohler</span> blows his whistle and everyone shuts up.<br>
+
+<<set _ad to [
+	{
+		Name: "Kohler",
+		State: {
+			Mouth: "Frown",
+			Brows: "Angry",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Today we are going to practice everyone’s diving. You will each take turns diving into the pool. Once you dive in, swim away from the diving boards for safety then observe your classmates going in. Once everyone is done I want you all to provide tips and criticisms about each other’s diving techniques.”</span> <span style="color:DarkTurquoise">Coach Kohler</span> had you all get in an orderly line, which left you near the front, <span style="color:LightSteelBlue">“I know some of you aren’t the best swimmers or may be afraid of heights, so I’ll let you each choose what height you want to dive off of. Just know, the higher you go, the harder it will be, but you’ll be able to learn a lot more.”</span><br>
+<br>
+Everyone begins diving off one at a time, <span style="color:DarkTurquoise">Coach Kohler</span> shouts tips and words of encouragement to each boy. Most of the boys are having fun, though a few unintentional belly flops have left some redder than others. Finally, it is your turn, and you are asked which height you’d like to dive off of.<br>
+<br>
+
+/* CHOOSING DIVING BOARD */
+<div id=Choice>
+	/* 1M SPRINGBOARD */
+	<<link "1m Springboard<br>">> <br>
+	<<replace"#Choice">>
+		<<skillCheck "Swimming" 20>>
+	
+	You decide to take the springboard that is just above the water, prompting some quiet laughs and taunts from your classmates. You walk to the end and bounce a little to get the springboard going before you jump off and dive into the pool!<br>
+<br>
+	/* PASS */
+	<<if _result == 1>>
+		<span style="color:Green">You dive in head first in a beautiful display, at least you feel like it was.</span> When you surface, <span style="color:DarkTurquoise">Coach Kohler</span> seems impressed enough and the class continues as you swim to the side of the pool to watch the rest of the boys dive.<br>
+<br>
+	/* RANDOM EVENT SELECTION */
+	<<set $RandomEvent to random(1, 3)>>
+	/* BASIC NO EVENT */
+		<<if $RandomEvent == 1>>
+		The rest of the class goes smoothly. By the end everyone feels like they have learned something.<br>
+	/* 2. */
+		<<elseif $RandomEvent == 2>>
+			<<include"Swimming Diving Ben Bellyflop">>
+	/* 3. */
+		<<elseif $RandomEvent ==3>>
+			<<include"Swimming Diving Carter Shorts">>
+		
+		<</if>>
+
+	/* FAIL */
+	<<else>>
+	<span style="color:Red">But right as you jump off, your foot slips ever so slightly. This turns your elegant dive into more of a pathetic tumble.</span> 
+	
+	/* RANDOM EVENT SELECTION */
+	<<set $RandomEvent to random(1, 3)>>
+	/* BASIC NO EVENT */
+		<<if $RandomEvent == 1>>
+		You splash painfully into the water and inhale a large amount of water. You surface coughing and gasping for air. When you finally stop, you look over and see <span style="color:DarkTurquoise">Coach Kohler</span> shaking his head disapprovingly, saying you need a lot more practice. At least it wasn’t as bad as it could have been.<br>
+	/* 2. */
+		<<elseif $RandomEvent == 2>>
+			<<include"Swimming Diving Bellyflop">>
+	/* 3. */
+		<<elseif $RandomEvent ==3>>
+			<<include"Swiming Diving Shorts Come Off">>
+		
+		<</if>>
+	
+	<</if>>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+		<br>
+		<<include"Attend Gym Finish">>
+		
+	<</replace>>
+	<</link>>
+	
+	/* 3M SPRINGBOARD */
+	<<link "3m Springboard<br>">> 
+	<<replace"#Choice">>
+		<<skillCheck "Swimming" 50>>
+	
+	You decide to take the springboard that is a few meters above the pool. You won’t look super brave, but you also won’t look like a coward. It is a bit spooky to be on a springboard that is 3 meters up, as it bends and bounces with your movements. But eventually, you are ready and dive off into the pool!<br>
+<br>
+	/* PASS */
+	<<if _result == 1>>
+		<span style="color:Green">You dive in head first in a beautiful display, at least you feel like it was.</span> When you surface, <span style="color:DarkTurquoise">Coach Kohler</span> seems impressed enough and the class continues as you swim to the side of the pool to watch the rest of the boys dive.<br>
+<br>
+
+	/* FAIL */
+	<<else>>
+	<span style="color:Red">But right as you jump off, your foot slips ever so slightly. This turns your elegant dive into more of a pathetic tumble.</span> 
+	
+	<</if>>
+		<br>
+		<<include"Attend Gym Finish">>
+
+	
+	<</replace>>
+	<</link>>
+	
+	/* 5M PLATFORM */
+	<<link "5m Platform<br>">> 
+	<<replace"#Choice">>
+		<<skillCheck "Swimming" 80>>
+	
+	You decide to try your hand at one of the taller platform diving boards and climb halfway up the ladder to the 5m platform. It is a bit weird that there is no bounce to it like the springboards, but that is probably for the best since looking over the edge makes you feel slightly dizzy. You go to the edge, take a deep breath, and jump up and dive into the water!<br>
+<br>
+	/* PASS */
+	<<if _result == 1>>
+		<span style="color:Green">The acceleration of diving causes adrenaline to swell throughout your body as you spin into a swan dive and enter the water was very nice form and display, at least you feel like it was.</span> When you surface, <span style="color:DarkTurquoise">Coach Kohler</span> seems impressed and gives you an affirming nod as class continues and you swim to the side of the pool to watch the rest of the boys dive.<br>
+<br>
+
+	/* FAIL */
+	<<else>>
+	<span style="color:Red">It is only as you are jumping off that your body freezes in the sudden rush of diving, this turns your elegant dive into more of a pathetic tumble.</span> 
+	
+	<</if>>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+		<br>
+		<<include"Attend Gym Finish">>
+
+	
+	<</replace>>
+	<</link>>
+	
+	/* 10M PLATFORM */
+	<<link "10m Platform">>
+	<<replace"#Choice">>
+		<<skillCheck "Swimming" 100>>
+	
+	You look up to the top of the platform ladder and begin to climb up, impressing some of your classmates who were too afraid to do it. <span style="color:lightcoral">It is only when you reach the top that you begin to second guess yourself. The height was dizzying, and you could feel your butt cheeks clench.</span> Still, you were already up here and if you chickened out now you would never live it down. So you slowly walked to the end of the platform, glancing down. The distance to the bottom seems to double and you feel like you are about to throw up, but take a deep breath and leap off into the water!<br>
+<br>
+	/* PASS */
+	<<if _result == 1>>
+		<span style="color:Green">The acceleration of diving causes adrenaline to swell throughout your body as you spin into a swan dive and enter the water was very nice form and display, at least you feel like it was.</span> When you surface, <span style="color:DarkTurquoise">Coach Kohler</span> seems impressed and gives you an affirming nod as class continues and you swim to the side of the pool to watch the rest of the boys dive.<br>
+<br>
+
+	/* FAIL */
+	<<else>>
+	<span style="color:Red">It is only as you are jumping off that your body freezes in the sudden rush of diving, this turns your elegant dive into more of a pathetic tumble.</span> 
+	
+	<</if>>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+		<br>
+		<<include"Attend Gym Finish">>
+
+	
+	<</replace>>
+	<</link>>
+</div>

@@ -1,0 +1,30 @@
+:: Carter House Kitchen Snack Pool [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You take a minute to catch your breath on the patio, feeling the sun beating down on your skin, as <span style="color:DarkTurquoise">Carter</span> walks over and sits down next to you. <span style="Color: LightSteelBlue">“I’m feeling a little bit hungry, how about you?”</span> <span style="color:DarkTurquoise">Carter</span> asks. You nod, saying you can eat, and ask what he has. <span style="Color: LightSteelBlue">“Oh, we have some popsicles and stuff in the freezer! Those’ll be perfect! I’ll be right back!”</span> <span style="color:DarkTurquoise">Carter</span> stands up and dashes inside, though quickly comes back and dries himself off with one of the towels to not track water inside. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Swim",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightGreen">He returns not long after holding two brightly colored popsicles.</span> <span style="Color: LightSteelBlue">“Do you want blue or red?”</span> He holds them both out to you, <span style="Color: LightSteelBlue">“I think they are meant to be raspberry and cherry? But they all kinda taste the same to me.”</span> He shrugs and you take your preferred color. <span style="color:DarkTurquoise">Carter</span> <span style="color:LightGreen">sits back down next to you and the two of you enjoy a nice, refreshing popsicle as you chat and relax.</span> <br>
+<<needChange "Hunger" 15>>
+<<socialChange "Carter" 1>>
+<span style="color:green">+Carter Energy</span><br>
+<<set $HangOutNeed.Energy += 10>>
+<br>
+[[Continue|Carter House Backyard Swim]]

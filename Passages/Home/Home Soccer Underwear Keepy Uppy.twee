@@ -1,0 +1,60 @@
+:: Home Soccer Underwear Keepy Uppy [nobr]
+
+/* OPENING */
+Grabbing you and your brother’s soccer ball and walking out onto the grass, you take a moment to appreciate the nice breeze on your exposed skin. <span style="color:Pink">There was a sense of freedom that came from being outside with so little clothing, it was nice, if not a bit cold.</span> You decide to toss the ball into the air and begin to kick it back up with your feet and knees, playing a game of keepy-uppy. It is a bit difficult, but you find yourself doing rather well. <br>
+<br>
+<span style="color:Pink">Only wearing your $PlayerUndies.Name, you feel all too aware of how visible your bouncing bits were, as your $Player.PenisSize package very clearly jiggled around inside your $PlayerUndies.Type. The quick hop from one leg to another also caused your butt to bounce around cutely. Despite how embarrassed someone your age would normally feel like this, you actually liked it better this way. It was silly, it was fun, it was freeing.</span> Plus, you wouldn’t have to worry about drenching your clothes in sweat as you increased your pace and felt droplets begin to fall from your forehead. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Blush: 1,
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<<set _random2 to random(1, 2)>>
+
+/* FAIL */
+<<if _random2 == 1>>
+Your strength increases more than you thought, as you hit the ball with your knee with such force that it soars high into the air! Staring up at it, you reposition yourself, aiming to kick one final shot into <span style="color:DarkTurquoise">Noah</span>’s makeshift goalpost. You wait, line it up, and right when it’s about to land… <span style="color:lightcoral">BONK!</span> The ball hits you directly in the head, sending you tumbling backward into the grass. <br>
+<br>
+You rub the tiny new lump on your head, happy that no one saw that, before you begin to laugh at yourself. Guess you still needed some more practice. <span style="color:Pink">As you lay there, chuckling away, you suddenly notice a blue butterfly flaps past and, surprisingly, it lands on you! But it didn’t land on your nose or forehead, as you had seen in movies. No, this particular butterfly instead decided to land on the center of your $PlayerUndies.Name, right on the cute lump that was your groin.</span> <br>
+<br>
+You smile, leaning your head back and staring up at the sky as you feel the sway of the grass lightly tickle your bare body. Eventually, the butterfly departs its boyhood perch and flies away, allowing you to return to your feet and retrieve the ball. Despite having just exercised, you feel rejuvenated! Though your head still hurt. <br>
+<<skillPoints "Athletics" 3>>
+<<addMoodlet "Pained" 2>>
+	<<if $NaturismSkill <= 1>>
+		<span style="color:Green">+3 Naturism XP</span><br>
+		<<set $NaturismXP += 3>>
+		<<include"Naturism Skill Level Up">>
+	<</if>>
+<<needChange "Hygiene" -2>>
+<<needChange "Fun" 20>>
+<br>
+
+[[Continue|PH Backyard]]
+
+/* VICTORY DANCE */
+<<elseif _random2 == 2>>
+Your strength increases more than you thought, as you hit the ball with your knee with such force that it soars high into the air! Staring up at it, you reposition yourself, aiming to kick one final shot into <span style="color:DarkTurquoise">Noah</span>’s makeshift goalpost. You wait, line it up, and right when it’s about to land… <span style="color:green">KICK!</span> <span style="color:lightgreen">Your aim is true and you hit the ball with such force that it soars through the air and hits the center of the goal with a loud echo!</span> You fall to your knees in celebration, imitating what you’ve seen on TV as you imagine a large crowd cheering. <span style="color:Pink">Though a large crowd watching you play soccer in your underwear would in actuality be a bit embarrassing.</span> <br>
+<br>
+<span style="color:Pink">But in this instance, you didn’t care, as you leap back up to your feet and begin to do a cute victory dance. Swaying your arms and shaking your hips, you dance to the music and cheers in your own head. You feel cool, like the best soccer player in the world as the imaginary crowd cheers your name. Though you soon came to the realization of what anybody actually watching would see: A little boy in just his $PlayerUndies.Type, dancing and jumping around in silence as he whisper-cheered his own name. You do stop upon realizing this, but still have to laugh at yourself, it was fun to be silly every now and then, even if other people would make fun of you for it.</span> <br>
+    <<skillPoints "Athletics" 3>>
+	<<if $NaturismSkill <= 1>>
+		<span style="color:Green">+3 Naturism XP</span><br>
+		<<set $NaturismXP += 3>>
+		<<include"Naturism Skill Level Up">>
+	<</if>>
+<<needChange "Energy" -2>>
+<<needChange "Hygiene" -2>>
+<<needChange "Fun" 20>>
+<br>
+
+[[Continue|PH Backyard]]
+
+
+<</if>>

@@ -1,0 +1,67 @@
+:: Social NPC Viewer [nobr]
+
+<<if $NpcKids.includes($NPCViewer.Name) or $NpcTeens.includes($NPCViewer.Name) or $NPCViewer.Outfit != "Naked">>
+    <<set _Zoom to false>>    
+<<else>>
+    <<set _Zoom to true>>
+<</if>>
+
+<<if ["OC Manuel", "OC Enkys", "Dad"].includes($NPCViewer.Name)>>
+    <<set _Zoom to false>>    
+<</if >>
+
+<<set _ad to [
+    {
+        Name: $NPCViewer.Name,
+        ShowZoom: _Zoom,
+        State: {
+            Outfit: $NPCViewer.Outfit,
+            Mouth: "Happy",
+            Hard: $NPCViewer.Hard,
+        }
+    }
+]>>
+<<ad _ad>>
+
+<strong>Outfit:</strong><br>
+<<for _i to 0; _i lt _npcviewerOutfit.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Outfit == _npcviewerOutfit[_i]>>
+            <span style="color:Green">[_npcviewerOutfit[_i]]</span>
+        <<else>>
+            <<link _npcviewerOutfit[_i]>>
+                <<set $NPCViewer.Outfit to _npcviewerOutfit[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Social NPC Viewer">>
+                <</replace>>
+            <</link>>
+        <</if>>
+         | 
+    <</capture>>
+<</for>>
+<br>
+
+<<if !$NPCViewer.Hard>>
+	<<set $NPCViewer.Hard = 0>>
+<</if>>
+
+<<if _npcviewerHard.length > 1 && $NPCViewer.Outfit == "Naked">>
+    <strong>Hard:</strong><br>
+    <<for _i to 0; _i lt _npcviewerHard.length; _i++>>
+        <<capture _i>>
+            <<set _length += 1>>
+            <<if $NPCViewer.Hard == _npcviewerHard[_i]>>
+                <span style="color:Green">[_npcviewerHard[_i]]</span>
+            <<else>>
+                <<link _npcviewerHard[_i]>>
+                    <<set $NPCViewer.Hard to _npcviewerHard[_i]>>
+                    <<replace"#AvatarViewer">>
+                        <<include"Social NPC Viewer">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+             | 
+        <</capture>>
+    <</for>>
+<</if>>

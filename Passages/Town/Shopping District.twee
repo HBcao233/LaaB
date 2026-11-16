@@ -1,0 +1,125 @@
+:: Shopping District [nobr]
+
+/* VARIABLE SETUP */
+<<set $HairStyleNew to $Player.HairStyle>>
+<<set $HairColorNew to $Player.HairColor>>
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Shopping District",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Town",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Shopping District--</strong></big></span><br>
+You stand in a large shopping plaza. Due to the many tourists that flock to the city, a large number of shops that sell just about everything have sprung up in the center of town. While the mall near downtown offers cheaper prices, the quality of the stuff sold here often attracts attention. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+[[Corner Store|Corner Store]]<br>
+
+<img src="Images\Icons\Shop Icons\Shops\Clothing.png">
+<<if $Time.between(7,0,22,0)>>
+	<<link"Boy Barn">>
+		<<set $ShopSlot to "Bottoms">>
+		<<set $ShopItem to "Jeans">>
+		<<set $ShopColors to ["Blue Denim", "Dark Denim", "Denim", "Khaki", "Light Denim", "Medium Denim", "Warm Khaki"]>>
+		<<set $ShopColor to "Blue Denim">>
+		<<set $ShopCost to 5>>
+		<<goto "Shopping District Boy Barn">>
+	<</link>><br>
+<<else>>
+	<span style="color:lightcoral">Boy Barn (Open 7am to 10pm)</span><br>
+<</if>>
+
+<img src="Images\Icons\Shop Icons\Shops\Clothing.png">
+<<if $Time.between(7,0,19,0)>>
+	<<link"Le Garçon Serré">>
+		<<set $ShopSlot to "Bottoms">>
+		<<set $ShopItem to "Slacks">>
+		<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+		<<set $ShopColor to "Black">>
+		<<set $ShopCost to 8>>
+		<<goto "Shopping District Le Garcon">>
+	<</link>><br>
+<<else>>
+	<span style="color:lightcoral">Le Garçon Serré (Open 7am to 7pm)</span><br>
+<</if>>
+
+<<if $Time.between(7,0,20,0)>>
+	[[Hair Salon|Shopping District Hair Salon]]<br>
+<<else>>
+	<span style="color:lightcoral">Hair Salon (Open 7am to 8pm)</span><br>
+<</if>>
+
+<img src="Images\Icons\Shop Icons\Shops\Bike Shop.png">
+<<if $Time.between(7,0,20,0)>>
+	[[Bicycle Shop|Shopping District Bicycle Shop]]<br>
+<<else>>
+	<span style="color:lightcoral">Bicycle Shop (Open 7am to 8pm)</span><br>
+<</if>>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Player Neighborhood.png">
+	[[Northend (0:10)|Player Neighborhood][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Two Story Neighborhood.png">
+	[[Dellwood Street (0:10)|Dellwood Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:10)|Food District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Main Street.png">
+	[[Main Street (0:10)|Main Street][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Player Neighborhood.png">
+	[[Northend (0:05)|Player Neighborhood][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Two Story Neighborhood.png">
+	[[Dellwood Street (0:05)|Dellwood Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:05)|Food District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Main Street.png">
+	[[Main Street (0:05)|Main Street][$Minutes += $TravelTime]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 226px; top: 81px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="152,7,205,60" alt="2Story Neighborhood" onclick="$.wiki('<<goto[[Dellwood Street]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="300,7,353,60" alt="Player Neighborhood" onclick="$.wiki('<<goto[[Player Neighborhood]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="152,81,205,134" alt="Food District" onclick="$.wiki('<<goto[[Food District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="300,81,353,134" alt="Main Street" onclick="$.wiki('<<goto[[Main Street]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<<set $Player.HairStyleNew to $Player.HairStyle>>
+<<set $Player.HairColorNew to $Player.HairColor>>
+
+<</if>>

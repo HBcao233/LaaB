@@ -1,0 +1,106 @@
+:: Redlight District [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Redlight District",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Redlight",
+}>>
+<<set _randomevent to random(1, 5)>>
+<<set _randomeventpassage to []>>
+<<if $InActiveQuests.includes("Isaac: The Nightclub")>>
+	<<set _randomeventpassage.push("OC Isaac Nightclub Event 1")>>
+<<elseif $OCIsaacNightclubDays >= 4 && $ActiveQuests.includes("Isaac: The Nightclub")>>
+	<<set _randomeventpassage.push("OC Isaac Nightclub Event 2")>>
+<</if>>
+<<if _randomeventpassage.length == 0>>
+	<<set _randomevent to 50>>
+<</if>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+/* Quests */
+
+/* Manuel */
+<<elseif $Time.ToD == "Afternoon" && $InActiveQuests.includes("Manuel: Redlight Boy")>>
+	<<include"OC Manuel Brothel Intro">>
+/* Isaac */
+<<elseif _randomevent == 1 && _randomeventpassage.length != 0>>
+    <<set _event to _randomeventpassage.random()>>
+    <<goto _event>>
+<<else>>
+
+<span style="color:Azure"><big><strong>--Redlight District--</strong></big></span><br>
+You stand in the Redlight District, which is built into a collection of alleyways. Also known as “Opal City’s Worst Kept Secret”, this area is the underbelly of sex and crime within Opal City but is never publicly mentioned by anyone. Despite most things here probably being illegal, you can guess why no effort has been put into closing it down. In this part of town, everything goes. You feel nervous just being here, who knows what they would do to a young boy like you? <br>
+<br>
+<span style="color:lightcoral">As you take a step forward, a large, burly man grabs you by the arm.</span> <span style="color:LightSteelBlue"> “Hey! Kids like you shouldn’t be in a place like this unless you want your ass plowed. Get out of here!”</span> You are then picked up like a doll and tossed out of the alley.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<img width="25px" src="Images\Icons\Shop Icons\Shops\Clothing.png">
+<<if $Time.between(7,0,22,0)>>
+	<<link"Kink Couture">>
+		<<goto "Kink Couture">>
+	<</link>><br>
+<<else>>
+	<span style="color:lightcoral">Kink Couture (Open 7am to 10pm)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:10)|Food District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Boardwalk.png">
+	[[Boardwalk (0:10)|Boardwalk][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Beach.png">
+	[[Beach (0:10)|Beach][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Trailer Park.png">
+	[[Trailer Park (0:10)|Trailer Park][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Food District.png">
+	[[Food District (0:05)|Food District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Boardwalk.png">
+	[[Boardwalk (0:05)|Boardwalk][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Beach.png">
+	[[Beach (0:05)|Beach][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Trailer Park.png">
+	[[Trailer Park (0:05)|Trailer Park][$Minutes += $TravelTime]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 152px; top: 155px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="152,81,205,134" alt="Food District" onclick="$.wiki('<<goto[[Food District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="4,155,57,208" alt="Boardwalk" onclick="$.wiki('<<goto[[Boardwalk]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="4,229,57,282" alt="Beach" onclick="$.wiki('<<goto[[Beach]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="152,229,205,282" alt="Trailer Park" onclick="$.wiki('<<goto[[Trailer Park]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

@@ -1,0 +1,41 @@
+:: School English Classroom [nobr]
+
+<<if $Wet > 1>>
+	<<include"English Wet">>
+<<elseif $PlayerShoes.Type == "None" or ($PlayerTop.Type == "None" and $PlayerUnder.Type == "None")>>
+	<<include"English Not Dressed">>
+<<else>>
+
+
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School English Classroom",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Classroom",
+}>>
+
+<span style="color:Azure"><big><strong>--English Classroom--</strong></big></span><br>
+You stand in <span style="color:DarkTurquoise">Mr. Hart</span>’s English Classroom. It has a cozy feel, almost like a grandparent’s house, with dark wood desks, rows of bookcases, and even a carpeted floor. There is also a coffee machine in the corner, which <span style="color:DarkTurquoise">Mr. Hart</span> seems to empty in the span of a single class.<br>
+
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $EnglishIntro == 1>>
+    <<if $Time.between(6, 45, 7, 40) or $Time.between(11, 0, 11, 40) or $Time.between(15, 0, 16, 0)>>
+        [[Ask Hart for help with English (0:15)|Hart Tutor]] <span style="color:green">+English, +Hart</span><br>
+    <</if>>
+<</if>>
+<<attendClass "English" 13>>
+
+<br>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[West Hallway (0:01)|School West Hallway][$Minutes += 1]] <br>
+<br>
+<</if>>

@@ -1,0 +1,149 @@
+:: School Gym Shower [nobr]
+
+/* STRIPPING CLOTHES */
+<<if $PlayerUndies.Type != "None">>
+	<<set $SaveUndies to $PlayerUndies>>
+<</if>>
+
+<<stripCharacter "Naked">>
+        
+/* VARIABLE CHANGE */
+<<set $PlayerGymWearing to "None">>
+<<set $ShoweredGym to 1>>
+<<set $Minutes += 4>>
+
+/* OPENING */
+You quickly grab a towel, undress, and walk over to the showers with the other boys. Each stall has a curtain in front of it that blocks anyone walking around from spying on whoever is inside, <span style="color:Pink">but considering how easily and quietly it can be moved, it doesn't make you feel as secure as you would hope.</span> Once inside, you place your towel on the hook outside next to the curtain and get ready to begin cleaning yourself.<br>
+<<needChange "Hygiene" 51>>
+<br>
+
+<div id="choice">
+	<<link "Continue">>
+		<<replace"#choice">>
+			/* CHECKING RANDOM EVENT CHANCE */
+			<<set _random to random(1, 2)>>
+
+			/* Forced Quest Trigger */
+			<<if $ActiveQuests.includes("Michael: Blackmail 2")>>
+				<<set _random to 0>>
+			<</if>>
+
+			<<if _random == 2>>
+				<<set _RandomScene to [
+					"Gym Class Shower Towel Taken",
+					"Gym Class Shower GNPC Towel Taken",
+					"Gym Class Shower Jackson Shampoo",
+					"Gym Class Shower Spy On NPC",
+					"Gym Class Shower Mid Shower Boner",
+					"Gym Class Shower Xavier Michael Standoff",
+					"Gym Class Shower Ben Underwear on Showerhead",
+					"Gym Class Shower Share with Felix",
+					"Gym Underwear Sniffing",
+					"Gym Shower Underwear Stolen",
+				]>>
+
+				<<if !$ThomasAbsent>>
+					<<set _RandomScene.push("Gym Class Shower Locker Wedgie")>>
+				<</if>>
+
+				/* FELIX EVENTS */
+				<<if !$XavierFelixShowerConfrontationSceneHappened>>
+					<<set _RandomScene.push("Gym Class Shower Xavier Felix Confrontation")>>
+				<</if>>
+
+				/* JACKSON EVENTS */
+				<<if $JacksonSocial > 50 or ($JacksonSocialRank || 0) > 0>>
+					<<if $JacksonSecret1 == 1>>
+						<<set _RandomScene.push("Gym Class Shower Jackson Share Shower")>>
+					<</if>>
+				<</if>>
+
+				/* MICHAEL EVENTS */
+				<<if $MichaelSocial > 50 or ($MichaelSocialRank || 0) > 0>>
+					<<set _RandomScene.push("Gym Class Shower Michael Pull in Shower")>>
+				<</if>>
+
+				/* THOMAS EVENTS */
+				<<if ($ThomasSocial > 80 or ($ThomasSocialRank || 0) > 0) && !$ThomasAbsent>>
+					<<set _RandomScene.push("Gym Class Shower Thomas Shower With")>>
+				<</if>>
+
+				/* XAVIER EVENTS */
+				<<if ($XavierSocial >= 100 or ($XavierSocialRank || 0) > 0) && $Attractions.Xavier == 1>>
+					<<set _RandomScene.push("Gym Class Shower Xavier Shower With")>>
+				<</if>>
+				<<if $XavierSocial >= 90 || ($XavierSocialRank || 0) > 0>>
+					<<set _RandomScene.push("Xavier Gym Changing Towel Drop")>>
+				<</if>>
+
+				/* OC EVENTS */
+				<<if $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: Introduction") && $ActiveQuests.includes("Manuel: The Pent-Up Boy") && $OCManuelSceneCount >= 2>>
+					<<set _RandomScene.push("OC Manuel Shower Secret Reveal")>>
+				<</if>>
+
+				<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Sebastian")>>
+					<<set _RandomScene.push("OC Sebastian Shower Spy")>>
+					<<set _RandomScene.push("OC Sebastian Open Locker")>>
+				<</if>>
+
+					/* Miller Events */
+				<<if $CompletedQuests.includes("Millers: Trouble in Paradise") and $ToggleOCMiller == 1>>
+					<<set _RandomScene.push("OC Isaiah Locker Room Xavier Confrontation", "OC Isaiah Shower Share Simple", "OC Isaiah Shower Scene Wash Back")>>
+				<</if>>
+
+					/* Liam Events */
+				<<if $ToggleOCLiam == 1 && $InActiveQuests.includes("Liam: Introduction")>>
+					<<set _RandomScene.push("OC Liam Intro")>>
+				<</if>>
+
+				/* Birdy Events */
+				<<if $ToggleOCBirdy == 1 && $CompletedQuests.includes("Birdy: Introduction")>>
+					<<set _RandomScene.push("OC Birdy Shower Share")>>
+				<</if>>
+
+				/* Nickname Events */
+				<<if $Nickname.Bully == 1 && $BullyNickname == "Piss Boy">>
+					<<set _RandomScene.push("Gym Shower Nickname Piss Boy 2")>>
+				<</if>>
+				<<if $Nickname.Bully == 1 && $BullyNickname == "Horse Cock">>
+					<<set _RandomScene.push("Gym Changing Nickname Horse Cock 1")>>
+				<</if>>
+
+				/* Nikolai Events */
+				<<if $ToggleOCNikolai == 1 && $CompletedQuests.includes("Nikolai: Introduction")>>
+					<<set _RandomScene.push("OC Nikolai School Locker Room Shower Share")>>
+				<</if>>
+
+				/* Arthur Richard Events */
+				<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Shower Event")>>
+					<<set _RandomScene.push("OC Arthur Richard Shower Spy")>>
+				<</if>>
+
+				/* Erin Events */
+				<<if $ToggleOCErin == 1 && $CompletedQuests.includes("Erin: Introduction")>>
+					<<set _RandomScene.push("OC Erin Clothes Stolen Locker Room")>>
+				<</if>>
+
+				<<set _event to _RandomScene.random()>>
+
+				/* Quest-Forced Scenes */
+				<<if $ActiveQuests.includes("Luca: Introduction")>>
+					<<set _event to "OC Luca Intro 2">>
+				<</if>>
+				<<if $ToggleOCArthurRichard == 1 && $InActiveQuests.includes("Arthur & Richard: Shower Event") && random(1, 3) == 1>>
+					<<set _event to "OC Arthur Richard Shower Event">>
+				<</if>>
+
+				<<include _event>>
+
+			/* FOrced Quest Triggers */
+			<<elseif _random == 0>>
+				<<include"Michael Blackmail 4">>
+
+			<<else>>
+				<<include "Gym Class Shower Basic">>
+			<</if>>
+
+		<</replace>>
+	<</link>>
+</div>

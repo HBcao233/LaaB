@@ -1,0 +1,51 @@
+:: Farm Explore Tire [nobr]
+
+/* Written by: Koinu */
+/* Intro */
+You find a very cool stick on your walk along a trail out in the farmlands, and you’re having a fun time jabbing it into the ground as you travel. The satisfying clunk it makes as it hits the dirt is enough to occupy you, until you come across a tire that’s been left on the side of the road. You set the stick aside to inspect it and discover it’s got some rainwater in it. You make quick work of dumping it out before giving it a little test roll, back and forth. Seems good. And just like that, you’ve got another traveling companion. You scoop down to pick up your stick and take both along with you. <br>
+<br>
+You hold the tire still with one hand, and use the other to aim the stick to push it and keep it rolling forward. It’s wobbly at first and wants to dip off into the ditch, but after a while you get the hang of it and it becomes almost second nature to you. You make a game of pushing it hard and chasing after it to steady it before it veers off. Your heart flutters as you see you’re coming up on a downhill slope, and you give the tire a good push to sent it on its way. <br>
+<br>
+<span style="color:LightCoral">The push was too good, it seems, because as the tire gains speed, it teeters off to the side and off the trail, down to meet a rickety, ancient fence head-on.</span> You cringe and watch through one eye as it snaps the wood and brings a small section tumbling down. It could have been worse, but it’s probably going to be hard to explain that to the farmer who owns the fence. You drop the stick to place your hands on your hips and sigh deeply like you’ve seen <span style="color:DarkTurquoise">Your Father</span> do many times over. Then again, maybe you wouldn’t have to explain… <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<div id="choice">
+	<<link "Apologize<br>">>
+	<<replace "#choice">>
+        In the end, you realize you can’t just break it and run. You rest your palm against your forehead in frustration, gathering your nerve. You make a little noise of protest before heading down the road a ways. The house the fence belongs to is not far off, well within sight, but it feels like you have to drag hundreds of pounds behind you to get yourself there. <br>
+        <br>
+        The porch creaks as you step up onto it, and a dog starts to bark from inside. You open the screen door and it gives a rusty whine in return. You hear someone shush the dog, and the front door opens as you raise your fist to knock. A gruff, sun-baked man is now towering over you, arms crossed and looking at you expectantly. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Yeah?”</span> <br>
+        <br>
+        You take a step back and swallow, wringing your hands while you explain what you had done. You point to the scene of the crime some yards off, and he squints and leans in closer to take a look. <span style="color:LightCoral">He swears under his breath, pulls himself back in to lean against the doorway, and glares down at you.</span> He jams his thumbs into his belt loops and crosses one leg over the other. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Oughta make you fix it, boy. You have any idea how long it takes to build a fence?”</span> <br>
+        <br>
+        <span style="color:Pink">You shake your head no and look down at your feet.</span> He continues to give you an earful until he’s satisfied enough to shoo you off his porch. You breathe a sigh of relief that he didn’t make you fix it after all. <br>
+        <<needChange "Fun" 10>>
+        <<addMoodlet "Stress" 1>>
+        <br>
+        [[Continue|Farm]]
+    <</replace>>
+    <</link>>
+	<<link "Run for it!<br>">>
+	<<replace "#choice">>
+        Your hands move from your hips to your butt without thinking, and you wince as you remember the last round of discipline from Your Father. Plus, the owner of the fence was a total stranger, and you weren’t supposed to talk to strangers. You bite your lip and look around to confirm you’re all alone—and you book it. You pump your legs as fast as they’ll go, heading back the way you came. <span style="color:Yellow">You think you hear a distant, male voice call after you, but then again, it could just be your imagination.</span> <br>
+        <<needChange "Fun" 10>>
+        <<needChange "Energy" -3>>
+        <br>
+        [[Continue|Farm]]
+    <</replace>>
+    <</link>>
+</div>

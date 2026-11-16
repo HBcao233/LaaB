@@ -1,0 +1,111 @@
+:: OC Miller House Hallway [nobr]
+
+<<if $OCKaydenBabysit.Active == 1>>
+    <<if $OCKaydenBabysit.State == "PreDin" && $Time.after(18)>>
+        <<goto"Millers Babysitting Dinner">>
+    <<elseif $OCKaydenBabysit.State == "PostDin" && $Time.after(19, 30)>>
+        <<goto"Millers Babysitting Bath Time">>
+    <<elseif $OCKaydenBabysit.State == "Bath" && $Time.after(20)>>
+        <<goto"Millers Babysitting Bath Time Bath Done">>
+    <<elseif $OCKaydenBabysit.State == "Sleep" && $Time.after(21)>>
+        <<goto"Millers Babysitting Ending">>
+    <</if>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Hallway--</strong></big></span><br>
+<<set $Location to {
+	Name: "Miller Hallway",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Hallway",
+}>>
+
+You find yourself in a hallway that seemingly stretches infinitely. It is characterized by sleek dark gray walls that create a moody, stylish atmosphere. These walls are not just plain but animated by wall plants that cling like vibrant green artworks. Under soft recessed lighting, large family photos and framed awards shine, showcasing <span style="color:DarkTurquoise">Hakeem</span>'s achievements. Alongside these, though incongruous with the space's luxury, crayon-scribbled drawings convey a sense of warmth and affection. <br>
+<br>
+
+<<if $OCKaydenBabysit.Active == 1 && ["PreDin", "PostDin"].includes($OCKaydenBabysit.State)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<set _mouth to "Frown">>
+        <<set _eyes to "Sad">>
+    <<else>>
+        <<set _mouth to "Happy">>
+        <<set _eyes to "Normal">>
+    <</if>>
+    <<set _ad to [
+        {
+            Name: "OC Kayden",
+            State: {
+                Outfit: "Everyday",
+                Mouth: _mouth,
+                Eyes: _eyes,
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+    <strong>Kayden: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<link"Look at Photos (0:05)">>
+        <<set $Minutes += 5>>
+        <<set _events to ["Millers Babysitting Hallway Photos"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>><br>
+    <<link"Hug Kayden (0:05)">>
+        <<set $Minutes += 5>>
+        <<set _events to ["Millers Babysitting Hug Kayden"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>><br>
+<<elseif $OCKaydenBabysit.Active == 1>>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<link"Look at Photos (0:05)">>
+        <<set $Minutes += 5>>
+        <<set _events to ["Millers Babysitting Hallway Photos"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>><br>
+<</if>>
+
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Living Room (0:01)|OC Miller House Living Room][$Minutes += 1]] <br>
+    <<if $OCKaydenBabysit.Active != 1>>
+        [[Hakeem's Room (0:01)|OC Miller House Dad Room][$Minutes += 1]] <br>
+        [[Garage (0:01)|OC Miller House Garage][$Minutes += 1]] <br>
+        [[Recording Studio (0:01)|OC Miller House Studio][$Minutes += 1]] <br>
+        [[Frontyard (0:01)|OC Miller House Frontyard][$Minutes += 1]] <br>
+    <</if>>
+	[[The Twin's Bedroom (0:01)|OC Miller House Twins Room][$Minutes += 1]] <br>
+	[[Isaiah's Room (0:01)|OC Miller House Isaiah Room][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+/* House Map */
+<div style="position: relative">
+	<img src="Images\NPC Homes\Miller House\Miller House.png" 
+style="position: absolute; left: 0; top: 0"  alt="Miller Map" usemap="#MillerHouse">
+	<img src="Images\NPC Homes\Miller House\Miller Hallway Marker.png" 
+style="position: absolute; left: 0; top: 0"  alt="Miller Map" usemap="#MillerHouse">
+</div>
+
+<map name="MillerHouse">
+    <area shape="rect" coords="162,54,215,161" alt="Living Room" onclick="$.wiki('<<goto[[OC Miller House Living Room]]>><<set $Minutes += 1>>')" />
+    <<if $OCKaydenBabysit.Active != 1>>
+        <area shape="rect" coords="54,54,107,161" alt="Dad Room" onclick="$.wiki('<<goto[[OC Miller House Dad Room]]>><<set $Minutes += 1>>')" />
+        <area shape="rect" coords="54,220,107,323" alt="Garage" onclick="$.wiki('<<goto[[OC Miller House Garage]]>><<set $Minutes += 1>>')" />
+        <area shape="rect" coords="108,216,161,269" alt="Studio" onclick="$.wiki('<<goto[[OC Miller House Studio]]>><<set $Minutes += 1>>')" />
+        <area shape="rect" coords="108,270,215,323" alt="Frontyard" onclick="$.wiki('<<goto[[OC Miller House Frontyard]]>><<set $Minutes += 1>>')" />
+    <</if>>
+    <area shape="rect" coords="216,216,269,269" alt="Twins Room" onclick="$.wiki('<<goto[[OC Miller House Twins Room]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="270,108,323,161" alt="Isaiah Room" onclick="$.wiki('<<goto[[OC Miller House Isaiah Room]]>><<set $Minutes += 1>>')" />
+</map>

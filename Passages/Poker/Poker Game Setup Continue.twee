@@ -1,0 +1,9 @@
+:: Poker Game Setup Continue [nobr]
+
+<<if $PokerPlayers.length > 1 && $PokerPlayers.length <= 4>>
+    [[Continue|Poker Game][$Poker to new Poker({players: clone($PokerPlayers)})]]<br>
+<<elseif $PokerPlayers.length > 4>>
+    <span style="color: red;">Too many players. Maximum of 4. Remove a few...</span>
+<<else>>
+    <span style="color: red;">Add players to continue</span>
+<</if>>

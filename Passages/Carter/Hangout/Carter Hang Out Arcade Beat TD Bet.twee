@@ -1,0 +1,183 @@
+:: Carter Hang Out Arcade Beat TD Bet [nobr]
+
+<<set $Minutes += 20>>
+
+/* Opening */
+As the two of you are deciding on what to play, <span style="color:DarkTurquoise">Carter</span> suggests one of his favorites, Twin Dragons, and you accept. Walking over to the machine and putting your quarters, you notice the <span style="color:LightSteelBlue">“Versus Mode”</span> and ask <span style="color:DarkTurquoise">Carter</span> about it. <br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“It’s kind of like a race, but with scores. We both play the same mission and whoever gets the highest score wins. Why? Do you think you can beat me? I’ll have you know, I’ve played this game since I was still in diapers!”</span> <span style="color:pink">You laugh, stating that it must not have been very long ago then, causing <span style="color:DarkTurquoise">Carter</span> to turn bright red and scowl.</span> <span style="color:LightSteelBlue">“Alright! Let’s see which one of us is the best and who is the noob!”</span> You laugh as <span style="color:DarkTurquoise">Carter</span> selects his loadout through his hurt pride and comes up with an idea. You suggest to <span style="color:DarkTurquoise">Carter</span> that the loser must give the winner something as a reward of their choice. <span style="color:DarkTurquoise">Carter</span>’s eyes twitch for a second, you can tell he was thinking it over, worried about what would happen if he lost, <span style="color:pink">but his hurt pride and boasting made it impossible for him to refuse.</span> <br>
+<br>
+
+<span style="color:LightSteelBlue">“Fine! But don’t start crying when you lose!”</span> You both select your loadout and begin the battle. A random level is selected, one in the middle of the game that neither of you has a lot of experience with, and the race begins! Not only did you have to kill every enemy to get points, but you had to complete the level fast with as few deaths as possible in order to increase your multiplier, making every missed shot or accidental death truly devastating. <br>
+<br>
+
+<div id="choice">
+	<<link "Play normally<br>">>
+		<<replace "#choice">>
+			<span style="color:yellow">The game is close, too close.</span> You both occasionally glance at the other’s score and find yourselves neck and neck, battling for the first-place shot. Whoever wins, it was going to be close, and a single mistake could spell defeat! You both race to the end, nearly finishing at the same time and watch the point total with baited breath to see… <br>
+
+			/* Random Check Here Until Video Game Skill Check */
+			<<set _random to random(1, 2)>>
+			<<if _random == 1>>
+					<<include "Carter Hang Out Arcade Beat TD Bet PC Win">>
+			<<else>>
+					<<include "Carter Hang Out Arcade Beat TD Bet Carter Win">>
+			<</if>>
+		<</replace>>
+	<</link>>
+	/* Let Carter Win */
+	<<requiresAbility "Charm" 6 "Let Carter win">>
+    <<replace "#choice">>
+			<span style="color:pink">Despite not seeming like it on the outside, <span style="color:DarkTurquoise">Carter</span> had a lot of pride and you were worried you’d crush the poor kid if you beat him, so you intentionally make a few mistakes here and there, allowing him to get a clear lead.</span> <span style="color:DarkTurquoise">Carter</span> notices his lead and playfully boasts and teases you, claiming you were a fool to challenge him. It’s cute, even cuter since he doesn’t know you are letting him win. As the game comes to a close and the points are totaled, you can’t help but wonder what <span style="color:DarkTurquoise">Carter</span> will ask you to give him. <br>
+
+			<<include"Carter Hang Out Arcade Beat TD Bet Carter Win">>
+    <</replace>>
+	<</requiresAbility>>
+	/* Destroy Him */
+	<<requiresAbility "Dexterity" 8 "Destroy him">>
+    <<replace"#choice">>
+			<span style="color:pink">It was sad, really, that <span style="color:DarkTurquoise">Carter</span> even thought he had a chance against you.</span> Things are close for the first few minutes until you decide to take off the kiddie gloves and suddenly begin to blast and combo your way to victory! Your points skyrocket, not only passing by <span style="color:DarkTurquoise">Carter</span> but leaving him in the dust. You hear a gasp from <span style="color:DarkTurquoise">Carter</span> as he finally peeks at your score and realizes just how ahead you are. He panics, trying his best, but ends up making more mistakes due to his nerves and in the end runs out of lives before even making it to the end. <br>
+
+			<<include"Carter Hang Out Arcade Beat TD Bet PC Win">>
+    <</replace>>
+	<</requiresAbility>>
+</div>
+
+:: Carter Hang Out Arcade Beat TD Bet PC Win [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Blush: 1,
+			Mouth: "Sad",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Tired",
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+/* Opening */
+<span style="color:lightgreen"><span style="color:DarkTurquoise">$CarterNickname</span> wins! The music blasts in celebration of your victory as <span style="color:DarkTurquoise">Carter</span> stands there, stunned at his own defeat.</span> <span style="color:LightSteelBlue">“There’s no way!”</span> He proclaims, falling to his knees. <span style="color:LightSteelBlue">“How!? I’ve played this game for years with <span style="color:DarkTurquoise">Callum</span> and you just-“</span> He sighs loudly, clearly upset but accepts his defeat. <span style="color:LightSteelBlue">“Alright, <span style="color:DarkTurquoise">$CarterNickname</span>, you win. So, what do I have to give you?”</span> <br>
+<br>
+
+<span style="color:pink">You think for a moment, smiling evilly in order to make him worry about what embarrassing thing you could take from him.</span> But, not wanting to upset the boy or ask for something too humiliating that he’ll reject it, like stealing his $CarterBottoms.Type or something, you instead ask for something simple yet cute. <span style="color:pink">A kiss on the cheek; This is still enough to make <span style="color:DarkTurquoise">Carter</span> turn bright red.</span> <br>
+<br>
+
+<span style="color:LightSteelBlue">“But… that’s-!”</span> He pauses, looking around to see if anyone else was nearby. <span style="color:LightSteelBlue">“Fine! But just a little one! And if you tell anybody, I’ll never forgive you!”</span> You laugh and promise to keep the little kiss a secret, leaning closer and pointing to your cheek. <span style="color:DarkTurquoise">Carter</span> was pink and embarrassed, but squeezed his eyes shut and leaned in, puckering his lips. <span style="color:pink">You wait for the perfect moment before quickly turning and forcing him to kiss you on the lips instead of the cheek!</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Blush: 3,
+			Mouth: "Sad",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Tired",
+			Blush: 1,
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:pink">As <span style="color:DarkTurquoise">Carter</span> realizes this and opens his eyes, he somehow turns even pinker and quickly pulls away with a squeal!</span> <span style="color:LightSteelBlue">“Aaaahh!!”</span> <span style="color:DarkTurquoise">Carter</span> calls out as he runs and begins to spit into a nearby trashcan. <span style="color:LightSteelBlue">“That’s disgusting! You weirdo! Why did you do that!?”</span> You laugh at <span style="color:DarkTurquoise">Carter</span>’s over-exaggerated response as he continues to spit and wipe away his lips. Eventually, <span style="color:DarkTurquoise">Carter</span> finds the humor in the situation and promises to get you back. <span style="color:pink">Though you once again send him blushing when you say you’d be up for a payback kiss anytime he wants.</span> <br>
+
+<<needChange "Fun" 20>>
+<span style="color:green">+Carter Fun</span><br>
+<<set $HangOutNeed.Fun += 15>>
+<span style="color:green">+Carter Comfort</span><br>
+<<set $HangOutNeed.Comfort += 5>>
+<<socialChange "Carter" 3>>
+<br>
+[[Continue|Carter Hang Out Arcade]]
+
+:: Carter Hang Out Arcade Beat TD Bet Carter Win [nobr]
+
+/* Opening */
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Happy",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Tired",
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:lightcoral"><span style="color:DarkTurquoise">Carter</span> Wins! The game lights up, declaring him the winner and you the loser.</span> <span style="color:DarkTurquoise">Carter</span> jumps with excitement and begins to do a victory dance. <span style="color:LightSteelBlue">“In your face!”</span> He laughs, shaking his body in tune to the victory music, <span style="color:LightSteelBlue">“It was a good fight, <span style="color:DarkTurquoise">$CarterNickname</span>, but in the end, the more skilled man won. I hope you aren’t too upset.”</span> <span style="color:DarkTurquoise">Carter</span> smirks as you roll your eyes. As he is celebrating, you remind him of your bet and ask what he wants you to give him. <br>
+<br>
+
+<span style="color:LightSteelBlue">“Oh yeah! Forgot about that part.”</span> <span style="color:DarkTurquoise">Carter</span> moves his hand to his chin and begins to think, murmuring loudly to himself about what exactly you could give him. After a few minutes, his eyes light up with an idea and he smirks widely. <span style="color:LightSteelBlue">“I know the perfect thing for you to give me! Something that will truly ensure you understand who among us is the strongest in the ways of the arcade machine!”</span> <span style="color:lightcoral">Despite his corny words, he gave you an evil look that made you worry about what exactly he was going to ask for. It was almost like he had become a supervillain.</span> You gulp as he steps closer and whispers his demand in your ear. <br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Blush: 2,
+			Mouth: "Happy",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Tired",
+			Blush: 1,
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“I want… a hug!”</span> <span style="color:pink">Without warning <span style="color:DarkTurquoise">Carter</span> jumps onto you, giving you a big, tight bear hug! You stumble and fall off your feet, landing on your butt with <span style="color:DarkTurquoise">Carter</span> on top of you, smiling.</span> <span style="color:LightSteelBlue">“Did I get you?”</span> <span style="color:DarkTurquoise">Carter</span> laughed, <span style="color:LightSteelBlue">“You looked so scared, like I was going to ask for your underwear or something!”</span> He laughs at your expression as he gives you another hug before getting off of you. <br>
+<br>
+
+<span style="color:LightSteelBlue">“I would never do something so dastardly! Well, unless you deserved it.”</span> He sticks his tongue out at you before helping you up. <span style="color:LightSteelBlue">“But then again, my dad always says, “A hug is the best thing you can give someone!” So, that’s all I really wanted!”</span> You laugh and roll your eyes, calling him a dork as the two of you continue playing a game together. <br>
+<<needChange "Fun" 20>>
+<span style="color:green">+Carter Fun</span><br>
+<<set $HangOutNeed.Fun += 15>>
+<span style="color:green">+Carter Comfort</span><br>
+<<set $HangOutNeed.Comfort += 10>>
+<<socialChange "Carter" 3>>
+<br>
+[[Continue|Carter Hang Out Arcade]]

@@ -1,0 +1,189 @@
+:: Pool Diving Board Fail [nobr]
+
+<<set _random2 to random(1, 3)>>
+/* BELLY FLOP */
+<<if _random2 != 3>>
+Falling faster and faster towards the water, panic begins to set in as all of your limbs begin to flail wildly. Your screaming and flailing is only halted when- <span style="color:red">SPLAT!</span> <span style="color:lightcoral">You hit the water hard, spread eagle, belly down. The sharp pain all over your body causes it to go numb as you slowly sink into the water.</span> <br>
+<br>
+    <<if $PoolState == "Empty">>
+The only thing that gets your pained limbs to move is the knowledge that, if you don’t, you’d drown. Despite the stinging, you surface and immediately begin to gasp for air, but have trouble getting above the water due to the pain. Finally, you are able to make it to the edge and are able to properly catch your breath. <br>
+<br>
+
+    <<else>>
+A collective cringe falls over the audience, as if they could feel your pain themselves. After a moment of not surfacing, a lifeguard jumps in and pulls you out, his arm around your waist feeling like a sharp burning sensation. Thankfully, as soon as you surface your begin to cough up water and gasp for air. Having to receive mouth-to-mouth after such a failed diving attempt would have only added to your humiliation.<br>
+<br>
+    <</if>>
+    <<addMoodlet "Pained" 5>>
+[[Continue|Pool Deep]]
+
+/* LOSE TRUNKS */
+<<else>>
+Tumbling into the water like a fish being tossed from a boat, you land head first. Thankfully, this prevents the pain from a belly flop, and you are able to quickly surface. However, it is as you surface and feel the strange lightness from your waist that you come to an embarrassing realization: <span style="color:red">Your $PlayerBottoms.Type were gone!</span><br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 2,
+                Cry: 1,
+			},
+			Clothes: {
+        		Bottoms: $None,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+	
+/* EMPTY */
+<<if $PoolState == "Empty">>
+You panic, spinning around frantically in the water until you spot them a few feet away. Letting out a sigh of relief, you swim over to them, <span style="color:pink">unintentionally popping your exposed bottom out of the water.</span> The distant, solo laughter causes you to blush as you remember that you were not completely alone. Quickly grabbing your $PlayerBottoms.Type, you quickly cover yourself as the lifeguard continues to chuckle.<br>
+<br>
+[[Continue|Pool Deep]]
+
+/* SENIOR SWIM */
+<<elseif $PoolState == "Senior Swim">>
+You panic, spinning around frantically in the water until you hear a voice call out to you. <span style="color:pink">You turn and see, much to your misfortune, that one of the seniors was holding up your $PlayerBottoms.Type.</span> <span style="color:LightSteelBlue">“They popped off your little rear as soon as you entered the water!”</span> He laughed, <span style="color:LightSteelBlue">“Here you go!”</span> The old man attempted to toss them to you, though only managed to toss them about a foot.<br>
+<br>
+<<if $PlayerUndies.Type == "None">>
+Aware that your only other option was to remain naked, you swim over to the seniors, who were all watching you, and retrieve your $PlayerBottoms.Type. <span style="color:LightSteelBlue">“Oh his cheeks are so red, how adorable.”</span> You hear one old woman say. <span style="color:LightSteelBlue">“Yeah, both sets of ‘em!”</span> Another one laughs. <span style="color:pink">You turn bright red at the continued comments about your nude body and promptly swim away once you are covered.</span><br>
+<br>
+<<addMoodlet "Seen Naked" 4>>
+[[Continue|Pool Deep]]
+
+<<else>>
+Aware that your only other option was to remain exposed, you swim over to the seniors, who were all watching you, and retrieve your $PlayerBottoms.Type. <span style="color:LightSteelBlue">“You know, my grandson wears a pair of $PlayerUndies.Type just like those!”</span> You hear one old woman say. <span style="color:LightSteelBlue">“Oh, little boy underwear is just so cute! I just want to snuggle him!”</span> Another says. <span style="color:pink">You turn bright red at the continued comments about your underwear and promptly swim away once you are covered.</span><br>
+<br>
+<<addMoodlet "Seen Undies" 4>>
+[[Continue|Pool Deep]]
+
+<</if>>
+/* TEENAGER */
+<<elseif $PoolState == "Teenagers">>
+You panic, spinning around frantically in the water. The good news is, you spot them quickly, <span style="color:pink">the bad news is you only do so due to the large amount of laughing and pointing from the teenagers around you. You could do nothing to cover yourself as you swam as fast as you could to your $PlayerBottoms.Type, and you were surrounded by laughing teenagers who got a view of you from every angle.</span> But look at the bright side, at least they didn’t try anything while you were in such an exposed state.<br>
+<br>
+<<if $PlayerUndies.Type == "None">>
+    <<addMoodlet "Seen Naked" 4>>
+<<else>>
+    <<addMoodlet "Seen Undies" 4>>
+<</if>>
+[[Continue|Pool Deep]]
+
+/* FAMILIES */
+<<elseif $PoolState == "Families">>
+You panic, spinning around frantically in the water until you hear a young voice call out. <span style="color:LightSteelBlue">“Look! His $PlayerBottoms.Type came off!”</span> <span style="color:pink">Laughter erupts from those around you and you quickly blush and try to cover yourself, still searching for your bottoms.</span> Suddenly, an older voice call out to you and you see a lifeguard pulling you $PlayerBottoms.Type out from the edge of the pool.<br>
+<br>
+Thankful, you swim over as quick as you can. But are quickly refused when you ask the lifeguard to toss them to you. <span style="color:LightSteelBlue">“No can do, if you try to put these on under water you’ll sink. Can’t risk it.”</span> You try to argue with him, <span style="color:lightcoral">but his knowing smirk and threats to ‘hold onto them until you learn to follow pool rules’ quickly makes you realize you have no choice.</span><br>
+<br>
+<<if $PlayerUndies.Type == "None">>
+At first you try to climb the ladder with one hand, using the other to hide your boy bits, but nearly falling backward into the pool cues you in that you have no choice. <span style="color:pink">Gripping the ladder with both hands, you exit the pool with everything exposed to the dozens of people behind you.</span><br>
+<br>
+<span style="color:LightSteelBlue">“Nice ass kid!”</span> You hear a teenager yell out.<br>
+<br>
+<span style="color:LightSteelBlue">“I can see his balls!”</span> A little boy cries, <span style="color:pink">prompting a chorus of young laughter as you feel your bits dangling and bouncing for everyone to see.</span> You couldn’t put your bottoms on fast enough. Once they are on, you rush off to the other side of the pool, away from the laughter and teasing.<br>
+<br>
+<<addMoodlet "Seen Naked" 4>>
+[[Continue|Pool Deep]]
+
+<<else>>
+<span style="color:pink">As you moved to the ladder and began to climb out, the visual of your underwear-clad read end, which was clinging tightly to you, caused another eruption and laughter. You felt your cheeks redden, knowing that everyone on this side of the pool was watching you.</span> You very aggressively take your $PlayerBottoms.Type from the lifeguard, who seemed to be enjoying your humiliation himself, and quickly put them on. Once they are on, you rush off to the other side of the pool, away from the laughter and teasing.<br>
+<br>
+<<addMoodlet "Seen Undies" 4>>
+[[Continue|Pool Deep]]
+<</if>>
+
+/* AFTER SCHOOL */
+<<elseif $PoolState == "After School">>
+You panic, spinning around frantically in the water until you spot them some distance away near the edge of the pool. Glancing around, it looks like nobodies noticed your wardrobe malfunction and you quickly begin to move over there, careful to not be seen.<br>
+<br>
+<<if $PlayerUndies.Type == "None">>
+Things are going well <span style="color:lightcoral">until you suddenly feel something brush against your leg.</span> You quickly cover yourself and look down, but see nothing. Pausing for a moment and double checking that not no one was looking in your direction, you begin to continue heading towards your $PlayerBottoms.Type <span style="color:lightcoral">when you suddenly feel an invasive finger penetrate your butthole!</span> <br>
+<br>
+<span style="color:pink">You let out a high-pitched yelp and tumble forward, only barely able to grab your floating $PlayerBottoms.Type as you feel a hand grab your waist and pull you back, causing the finger to go deeper inside you! You nearly yelp again, only stopped by the surge of water that enters your mouth, as the hand around your waist moves down and grips your Penis painfully!</span><br>
+<br>
+<span style="color:LightSteelBlue">“I didn’t know it was nude swimming time!”</span> The voice of your captor laughs. He sounded young, about your age, but you didn’t recognize the voice. <span style="color:LightSteelBlue">“You probably like the attention, don’t you? You little slut.”</span> <span style="color:pink">With his insult, the boy probed deeper and began to jack you off! Causing your boyhood to quickly harden and your cheeks to flush! Your voice slurs slightly as you demand the boy to let you go, as you begin to struggle to keep afloat from the arousal that was beginning to fill your body.</span><br>
+<br>
+<span style="color:LightSteelBlue">“You Preston bitches need a remainder that you’re not as cool as you think you are!”</span> <span style="color:pink">The boy laughed as you began to approach climax from the double molesting going on.</span> <span style="color:LightSteelBlue">“I want you to remember how stupid you look whenever you think you’re all that for going to some smartass school!”</span><br>
+
+<<set $Player.Arousal to 90>>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 3,
+				Hard: 1,
+			},
+			Clothes: {
+        		Bottoms: $None,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:pink">Near seconds away from cumming in the pool, his hands release both your penis and butt as you are suddenly dunked under the water!</span> Having been breathing heavily from the arousal, you swallow a large amount of water and surface coughing and gagging. This draws some attention, though you manage to put your clothes back on before anyone gets close enough to notice your nudity. When you look around for the boy who assaulted you, you can’t seem to figure out who it was.<br>
+<br>
+<<addMoodlet "Seen Naked" 3>>
+[[Continue|Pool Deep]]
+
+<<else>>
+Things seem to be going well, until, SPLASH! <span style="color:lightcoral">A boy jumps in the pool right in front of you where your $PlayerBottoms.Type were floating. When you wipe the water out of your eye, both the boy and your $PlayerBottoms.Type were gone!</span> You spin around to search from them again, <span style="color:pink">but don’t have to search long when you suddenly feel a hard tugging at your $PlayerUndies.Type as someone gives you an underwater wedgie!</span> You yelp, pulling away and turning around to see the boy who stole your trunks with a giant smirk on his face.<br>
+<br>
+<span style="color:LightSteelBlue">“Lose something?”</span> He laughs. You curse at the boy, demanding your clothes back. <span style="color:LightSteelBlue">“Not even a please? That’s no way to get on my good side. Maybe I should just toss these over the fence and yell out so everyone notices?”</span> He swims away, eye the fence. Realizing the position you were in, you quickly apologies to the boy, asking again for your clothes while adding a forced ‘please’.<br>
+<br>
+<span style="color:LightSteelBlue">“Don’t worry, I’ll give them back. In return for your $PlayerUndies.Type that is.”</span> You blush, instinctively putting you hands over your underwear, and ask why he would want those. <span style="color:LightSteelBlue">“Because it’ll be funny and you’ll have to humiliate yourself in front of me? Preston boys like you think you’ll so tough, it’s good to remind you that you aren’t every now and again.”</span> The boy had an evil grin on his face and held up your $PlayerBottoms.Type. <span style="color:LightSteelBlue">“So we have a deal?”</span><br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 2,
+			},
+			Clothes: {
+        		Bottoms: $None,
+				Undies: $None,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+As you had no other choice, you agreed to his demands. <span style="color:pink">With some struggle, you removed your $PlayerUndies.Type under water, all the while the thieving boy watched and laughed at your exposed body. Once you were naked, and thoroughly worried that someone else would notice, you demand that you both hand them over at the exact same time.</span> The boy agreed and in one quick motion, you traded your $PlayerUndies.Type for the $PlayerBottoms.Type.<br>
+<br>
+The boy swam away laughing as you covered yourself up. <span style="color:pink">He called out to his friends, who seemed to have figured out what he did as they pointed and laughed in your direction, before he tossed the soaking wet $PlayerUndies.Type over the fence towards the street.</span> At this point, you are just thankful your name isn’t written on your underwear.<br>
+<br>
+<<addMoodlet "Seen Naked" 3>>
+<<set $PlayerUndies to $None>>
+[[Continue|Pool Deep]]
+
+<</if>>
+/* SWIM CLASS */
+<<elseif $PoolState == "Swim Class">>
+You panic, spinning around in a desperate attempt to find them, when you suddenly hear giggling from behind you. <span style="color:lightcoral">You turn around to see two young boys with your $PlayerBottoms.Type in their hands. Blushing, you demand them back, but their responce is to stick their tongue out at you and taunt you.</span><br>
+<br> 
+<<if $PlayerUndies.Type == "None">>
+Angry and not willing to be humiliated by a bunch of little brats, you quickly swim toward them and reach out to take your clothes back. But right before you reach them, they toss it over your head towards one of their friends. <span style="color:lightcoral">You are unable to stop yourself as you spin around and bump into the two giggling boys.</span><br>
+<br>
+<span style="color:LightSteelBlue">“Gross! His penis touched me!”</span> One of them laughs as you quickly spin around and swim towards the other boy, who was waving your clothes around tauntingly. As he went to throw it over you back to the first boys, you manage to reach up and catch it!<br>
+<br>
+<span style="color:LightSteelBlue">“Boo!”</span> The boy yells, giving you a thumbs down. The three boys all swim back to their class, possibly to deter any thoughts of revenge you may have, and continue laughing amongst themselves at your misfortune.<br>
+<br>
+<<addMoodlet "Seen Naked" 4>>
+[[Continue|Pool Deep]]
+
+<<else>>
+Angry and not willing to be humiliated by a bunch of little brats, you quickly swim toward them and reach out to take your clothes back. But right before you reach them, they toss it over your head towards one of their friends. <span style="color:lightcoral">You are unable to stop yourself as you spin around and bunch into the two giggling boys.</span><br>
+<br>
+<span style="color:LightSteelBlue">“Gross! His underwear touched me!”</span> One of them laughs as you quickly spin around and swim towards the other boy, who was waving your clothes around tauntingly. As he went to throw it over you back to the first boys, you manage to reach up and catch it!<br>
+<br>
+<span style="color:LightSteelBlue">“Boo!”</span> The boy yells, giving you a thumbs down. The three boys all swim back to their class, possibly to deter any thoughts of revenge you may have, and continue laughing amongst themselves at your misfortune.<br>
+<br>
+<<addMoodlet "Seen Undies" 4>>
+[[Continue|Pool Deep]]
+
+<</if>>
+
+<</if>>
+
+<</if>>

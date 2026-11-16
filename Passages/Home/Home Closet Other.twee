@@ -1,0 +1,24 @@
+:: Home Closet Other [nobr]
+
+Empty.
+
+/*
+<<if $HomeClosetCategory2 != "Head">>
+	<<link [img["Images/Icons/Closet/Head.png"]]>>
+		<<set $HomeClosetCategory2 to "Head">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	[img["Images/Icons/Closet/Head_Selected.png"]]
+<</if>>
+
+<br>
+<span style="color:Azure"><strong><big>--Closet--</big></strong></span><br>
+
+<<if $HomeClosetCategory2 == "Head">>
+	<<include"Home Closet2 Head">>
+<<elseif $HomeClosetCategory2 == "Face">>
+	<<include"Home Closet2 Face">>
+
+<</if>>
+*/

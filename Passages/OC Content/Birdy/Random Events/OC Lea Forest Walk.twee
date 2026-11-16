@@ -1,0 +1,96 @@
+:: OC Lea Forest Walk [nobr]
+
+/* Intro */
+
+/* Selecting to play with Lea should select one of the 3 at random and goto that scene.
+Talking should include the below with one of the topics selected at random. */
+
+You stroll through the forest, taking in the sight, sounds, and smell of nature! <span style="color:LightGreen">The sight of greenery bristling in the wind in stark contrast to the bright blue sky. The sounds of the leaves rustling, animals in the distance, and the ever-present comforting wind. And the smell of… pine… mostly pine.</span> It’s a good smell, you enjoy it, but it doesn’t really fit with the listing of different things you were doing. <span style="color:LightGreen">Alas, such is nature. So unpredictable, yet beautiful.</span> <br>
+
+<<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Frown", 
+                Blush: 2,
+                },
+            },
+            {
+            Name: "OC Lea",
+            State: {
+                Mouth: "Happy", 
+            },
+        },
+    ]>>
+<<ad _ad>> 
+
+<span style="color:LightSteelBlue">“Hey!”</span> <span style="color:LightCoral">A shrill voice breaks the tranquil forest sounds as you let out a high-pitched, girlish scream and nearly tumble to the ground from the sudden shock.</span> <span style="color:LightSteelBlue">“Woah! You okay? Sorry, didn’t mean to scare you.”</span> You turn and see <span style="color:DarkTurquoise">Lea</span>, <span style="color:DarkTurquoise">Birdy</span> ’s twin sister, standing behind you smirking. You blush, turning away and explaining that she didn’t scare you. <span style="color:Yellow">You were just… startled is all.</span> <span style="color:LightSteelBlue">“Haha, sure.”</span> She laughs, walking over. <span style="color:LightSteelBlue">“Taking a walk?”</span> <br>
+<br>
+You nod, explaining that you just decided to come and enjoy some nature and the relaxation that comes with it. <span style="color:LightSteelBlue">“Understandable, it’s so nice out here. Weird that it’s not full of tourists.”</span> <span style="color:DarkTurquoise">Lea</span>  walks ahead of you, leaping onto a large rock and peering out into the distance with her hands resting behind her head. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Birdy</span>  and I were going to play around out here, but he got busy. Care to keep a lonely girl company?”</span> She gives you a teasing smirk, <span style="color:LightSteelBlue">“We can just walk and talk if you want too. I’m not picky, I’ll only be a little offended if you’re too busy to hang.”</span> She sticks her tongue out at you, obviously joking around. <br>
+<br>
+
+<<linkreplace"Hang out with Lea (+0:30)<br>">>
+<<set $Random to random(1, 3)>>
+	<<if $Random == 1>>
+    <<goto"OC Lea Forest Walk Tag">>
+    <<elseif $Random == 2>>
+    <<goto"OC Lea Forest Walk Tag 2">>
+    <<elseif $Random == 3>>
+    <<goto"OC Lea Forest Walk Splash in Stream">>
+    <</if>>
+<</linkreplace>>
+<<linkreplace"Chat for a minute<br>">>
+    <<goto"OC Lea Forest Walk Talk">>
+<</linkreplace>>
+<<linkreplace"You can’t<br>">>
+    <<goto"OC Lea Forest Walk Leave">>
+<</linkreplace>>
+
+:: OC Lea Forest Walk Leave [nobr]
+
+You apologize, saying you wish you could, but were just about to head out. <span style="color:LightCoral"><span style="color:DarkTurquoise">Lea</span>  frowns a little hearing this,</span> but quickly her smile returns. <span style="color:LightSteelBlue">“No biggie! I get hanging out with a girl might be too much for a boy like you.”</span> She continues teasing as she leaps off the rock, <span style="color:LightSteelBlue">“But seriously, you’re fine. I’ll catch you around!”</span> She waves as she runs off to do whatever it is girls do in the forest. <span style="color:LightGreen">You can only imagine.</span> <br>
+<<set $Minutes += 20>>
+<<addMoodlet "Stress" 0>>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|Wald Street]]
+
+:: OC Lea Forest Walk Talk [nobr]
+
+/* Intro */
+
+    <<set $Random to random(1, 3)>>
+	<<if $Random == 1>>
+        You decide to ask Lea about her hobbies, listing some of your own. <span style="color:LightSteelBlue">“Well, I like to draw. I have a TON of art supplies at home.”</span> You nod along, asking her what sorts of things she likes to draw. <span style="color:LightSteelBlue">“All sorts! Animals, people, things… just anything! Though I do have a subject I really like. Care to take a guess who that is?”</span> She says with a smirk. <span style="color:LightGreen">You chuckle, you’re pretty sure you’d wager it is her twin brother <span style="color:DarkTurquoise">Birdy</span>.</span><br>
+
+    <<elseif $Random == 2>>
+        Unsure of what to ask, you ask about her brother <span style="color:DarkTurquoise">Birdy</span>. Despite the topic not being the most personal, she seems happy enough to chat about him. <span style="color:LightSteelBlue">“He’s so cute! Can be a little shy though, but I don’t know what I’d do without him. Even though we’re twins, I kinda fell into the big sister role, you know? Used to tie his shoes and help him with his overalls since I learned how to do that stuff first. I also help him talk to adults sometimes because, well, he gets nervous. But I wouldn’t have it any other way!”</span> <span style="color:LightGreen">She says with a genuine smile that shows her love for him is true. You get the feeling she loves the feeling of helping her brother out with whatever he needs.</span><br>
+
+    <<elseif $Random == 3>>
+        You ask her about school, knowing very little of the other schools in town outside of Preston. <span style="color:LightSteelBlue">“Eh, it’s alright.”</span> <span style="color:Yellow">She shrugs, clearly not super interested in the topic, <span style="color:LightSteelBlue">“I do well enough, but it’s not the most exciting thing in the world. Sucks that I can’t go to school with <span style="color:DarkTurquoise">Birdy</span>, Preston seems a lot more interesting from the stories I’ve heard. Then again, if I did go to Preston I’d have to leave my friends. Megan and Melinda would never forgive me for that! Haha!”</span> She laughs as she leans back and yawns.<br>
+    <</if>>
+
+<<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Happy", 
+                },
+            },
+            {
+            Name: "OC Lea",
+            State: {
+                Mouth: "Happy", 
+            },
+        },
+    ]>>
+<<ad _ad>> 
+
+The two of you chat for what seems like a while before Lea stops to stretch and stares at the sky. <span style="color:LightSteelBlue">“Well, I guess I’ve taken up enough of your time. I’ll see you around, <span style="color:DarkTurquoise">$Player.Name</span>! Don’t be a stranger!”</span> <span style="color:LightGreen">You wave goodbye as the girl runs off to do whatever it is girls do in the woods.</span> <br>
+<<needChange "Fun" 20>>
+<<socialChange "Lea" 3 1>>
+<<set $Minutes += 20>>
+<<addMoodlet "Stress" 0>>
+<br>
+[[Continue|Wald Street]]
+

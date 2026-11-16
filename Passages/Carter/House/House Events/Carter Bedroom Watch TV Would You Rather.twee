@@ -1,0 +1,101 @@
+:: Carter Bedroom Watch TV Would Your Rather [nobr]
+
+/* Intro */
+<<set $Minutes += 30>>
+
+<span style="color:LightGreen">You and <span style="color:DarkTurquoise">Carter</span> decide to sit back and watch some cartoons, flipping on his TV and lounging about on his two beanbags in ways that look incredibly uncomfortable, yet somehow are the most comfortable you’ve ever felt.</span> Nothing really too interesting is on, but it is enough to keep your young attentions well enough until it cuts to commercial and both of your brains snap back to reality, as if you’ve just come out of a dream. <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+
+<<set _random to random(1, 2)>>
+
+<<if _random == 1>>
+    <span style="Color: LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$CarterNickname</span>.”</span> <span style="color:DarkTurquoise">Carter</span> says, turning to you, <span style="Color: LightSteelBlue">“Would you rather have to walk a from your house to the school on the hottest day of summer or during the coldest snowstorm?”</span> <span style="color:Yellow">He poses the question and you lean back and take a moment to think.</span> <br>
+    <br>
+    <div id="choice">
+        <<link "Hottest day<br>">>
+        <<replace "#choice">>
+            After a moment of thinking, you respond that you’d do the hottest day. You’d just make sure to bring water and take off your shirt or something. <span style="color:Pink">Maybe you’d even walk naked!</span> <span style="color:DarkTurquoise">Carter</span> giggles at this, <span style="Color: LightSteelBlue">“You wouldn’t walk all the way to school naked!”</span> You have a bit of a back and forth about whether or not you actually would or are just trying to be funny, before you ask <span style="color:DarkTurquoise">Carter</span> which he would choose. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“I’d probably choose the hottest day too.”</span> He nods, not even thinking about it since he already had an answer in mind before asking, <span style="Color: LightSteelBlue">“Heat is pretty dangerous, but not as bad with water and stuff. Plus, I like shorts.”</span> He laughs, lifting his legs up, <span style="Color: LightSteelBlue">“Cold can be bad, especially if it’s snowing! Dad had to save a bunch of people who got stuck in the snow once and my brother said one of them lost like 3 toes!”</span> <br>
+            <br>
+            The conversation briefly turns to frostbite and hypothermia, which you are surprised <span style="color:DarkTurquoise">Carter</span> knows so much about, before the commercial break ends and the two of you return to watching your cartoons. <br>
+            <span style="color:Green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+            <<needChange "Fun" 10>>
+            <<socialChange "Carter" 1>>
+            <br>
+            [[Continue|Carter House Carter Bedroom]]
+        <</replace>>
+        <</link>>
+        <<link "Coldest Day<br>">>
+        <<replace "#choice">>
+            You ponder the question for a moment before responding that you’d take the snowy day. The heat can be unbearable and you’ll be fine if you put on a big coat and mittens! <span style="Color: LightSteelBlue">“But what about the snow!?”</span> <span style="color:DarkTurquoise">Carter</span> protests, obviously a fan of the other answer, <span style="Color: LightSteelBlue">“It is SOOO hard to walk in and you just slip and slide everywhere!”</span> You retort that you have much more stable footing than <span style="color:DarkTurquoise">Carter</span> and are sure you’d be able to avoid slipping that much. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Okay, but what about hypothermia?”</span> He adds, <span style="Color: LightSteelBlue">“It’s not a long walk, but even 30 minutes in the extreme cold can be bad for you! My brother said that it can only take 10 to 15 minutes for it to set in and them – BAM – you lose your little toes!”</span> He holds his foot up to you and wiggles it about to make a point, though you retort yourself that you’ve played in the snow longer than that and still have all your toes. <span style="color:DarkTurquoise">Carter</span> ponders this for a moment, <span style="Color: LightSteelBlue">“True, me to… I guess, maybe, if you’re like naked or something. I wonder if your wiener could fall off!?”</span> <br>
+            <br>
+            <span style="color:Pink">You both laugh at the idea, <span style="color:DarkTurquoise">Carter</span> holding his crotch worriedly. You ask if he’d be willing to be a test subject next time it snows, which he quickly refuses.</span> <span style="Color: LightSteelBlue">“No way! My brother and I jumped in the snow in our underwear before, and it was SOOO cold! I can’t imagine what that would feel like on my crotch!”</span> You both continue to laugh and joke around until the cartoon comes back on and you return to watching it, <span style="color:Pink">making the occasional joke about wieners freezing off.</span> <br>
+            <span style="color:green">+Carter Comfort</span><br>
+            <<set $HangOutNeed.Comfort += 5>>
+            <span style="color:Green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+            <<needChange "Fun" 10>>
+            <<socialChange "Carter" 1>>
+            <br>
+            [[Continue|Carter House Carter Bedroom]]
+        <</replace>>
+        <</link>>
+    </div>
+<<else>>
+    <span style="Color: LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$CarterNickname</span>.”</span> <span style="color:DarkTurquoise">Carter</span> says, turning to you, <span style="Color: LightSteelBlue">“Would you rather have to attend your birthday party butt naked in front of all your friends or spend a month wearing diapers?”</span> You can’t help but snort at <span style="color:DarkTurquoise">Carter</span>’s question, asking where he came up with that? <span style="Color: LightSteelBlue">“I don’t know!”</span> He laughs. You ask follow-ups. Would you have to invite people to your birthday party and can you wear something else with the diapers. <span style="Color: LightSteelBlue">“You have to invite everyone in class, though only your friends and family would come. And you can wear other clothes, but you have to wear a diaper as underwear everyday!”</span> <br>
+    <br>
+    <span style="color:Pink">You think for a moment, since both are pretty embarrassing.</span> <br>
+    <br>
+    <div id="choice">
+        <<link "Naked birthday party<br>">>
+        <<replace "#choice">>
+            <span style="color:Pink">After thinking it over, you go with wearing your birthday suit to your birthday party.</span> <span style="color:DarkTurquoise">Carter</span> laughs as your play on words before saying <span style="Color: LightSteelBlue">“Yeah, but then all your friends will see your wiener!”</span> You chuckle, saying it’s not THAT big of a deal. <span style="color:Pink">Plus, if they were really yours friends, they’d strip naked too so you don’t feel alone. Then you could make it into a nude birthday party!</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Haha, you sound like <span style="color:DarkTurquoise">Jackson</span>. I think he tried something like that back in second grade.”</span> <span style="color:DarkTurquoise">Carter</span> replies before you ask him which he’d choose. <span style="Color: LightSteelBlue">“It’s hard to pick, they’re both so embarrassing…”</span> He thinks for a moment, <span style="Color: LightSteelBlue">“Probably the birthday party one too. It’d be embarrassing, but it would only be a few people. If I wear the diaper I’d have everyone at school thinking I’m some baby!”</span> He laughs nervously. <span style="color:Pink">You jokingly tell <span style="color:DarkTurquoise">Carter</span> that you should make a pact that if either one of you ends up nude at your birthdays without any way to put on clothes, the other will strip in solidarity.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Sure.”</span> <span style="color:DarkTurquoise">Carter</span> laughs, shaking your hand, <span style="Color: LightSteelBlue">“But I really don’t want that to happen.”</span> Though you may have a different opinion. <br>
+            <span style="color:Green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+            <<needChange "Fun" 10>>
+            <<socialChange "Carter" 1>>
+            <br>
+            [[Continue|Carter House Carter Bedroom]]
+        <</replace>>
+        <</link>>
+        <<link "Diaper for a month<br>">>
+        <<replace "#choice">>
+            You think for only a moment before responding that you’d wear the diaper. <span style="Color: LightSteelBlue">“Wah!? Really!?”</span> <span style="color:DarkTurquoise">Carter</span> actually sounds surprised, <span style="Color: LightSteelBlue">“But it’s for a whole month and you’d have to change in gym class with it and stuff! Everyone would probably think you’re some big baby or something.”</span> You shrug, either finding that not as bad as the other or maybe even liking the idea. Or maybe you think you could get away without being seen, which is admittedly very unlikely for you. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“I’d probably do the birthday party. Be super embarrassing, but at least people wouldn’t think I’m a baby.”</span> He laughs nervously. <span style="color:Pink">You add the fact that most of <span style="color:DarkTurquoise">Carter</span>’s friends have probably already seen his wiener, so it’s not that big a deal. <span style="color:DarkTurquoise">Carter</span> turns bright red at this, despite it being true. <span style="Color: LightSteelBlue">“S- shut up! No they haven’t!”</span> You quickly begin to list the times you’ve seen it yourself, causing <span style="color:DarkTurquoise">Carter</span> to grow redder and redder until he covers his face with a pillow.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“You’re the worst!”</span> He says, though with a hint of laughter in his voice. You continue to tease him for a bit until the commercials end and you return to watch cartoons, though he continues to hide behind the pillow cutely. <br>
+            <span style="color:Green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+            <<needChange "Fun" 10>>
+            <<socialChange "Carter" 1>>
+            <br>
+            [[Continue|Carter House Carter Bedroom]]
+        <</replace>>
+        <</link>>
+    </div>
+<</if>>

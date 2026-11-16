@@ -1,0 +1,75 @@
+:: GABE Lift Weights Undies [nobr]
+
+<<set $Minutes += 25>>
+<<storeClothing "Closet" "Undies" 1>>
+
+<span style="color:Pink">You agree and soon find yourself sitting at Gabe’s workout bench in nothing but your $PlayerUndies.Type. You blush slightly as you feel him leering at your body,</span> before he pulls out a few weights. <span style="color:LightSteelBlue">“So, what weight do you wanna try?”</span><br>
+<br>
+
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Eyes: "Mad",
+				Blush: 1,
+				Mouth: "Happy",
+				Outfit: "Everyday",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<div id=choice>
+		<<link "Tiny 2lb weight">>
+		<<replace"#choice">>
+		You point at the 2lb weight. <span style="color:LightSteelBlue">“So still a baby then?”</span> He laughs as he hands you the tiny weight. <span style="color:LightSteelBlue">“Alright, let’s see how you do. Try not to embarrass yourself any more than you already have.”</span><br>
+<br>
+			<<skillCheck "Athletics" 50>>
+		/* PASS */
+		<<if _result == 1>>
+			<span style="color:Green">You manage to do quite a bit before you even start to tire out. <span style="color:DarkTurquoise">Gabe</span> seems generally surprised, and you bond a little as he gives you tips to increase your strength.</span> At the end he happily tells you to flex your new muscles for the camera as he pulls out his phone. <span style="color:Pink">You do so, caught up in his praise, and only remember your state of undress after he shows you the picture laughing.</span><br>
+			<<skillPoints "Athletics" 5>>
+			<<socialChange "Gabe" 3>>
+<br>
+			[[Continue|PH Gabe Bedroom]] 
+		/* FAIL */
+		<<else>>
+		<span style="color:Red">Though you start out fine, you soon realize just how weak your arms are as they quickly become sore and you find yourself struggling.</span> <span style="color:DarkTurquoise">Gabe</span> informs you that your form is all wrong and picks you up, sitting you down on his lap as he grabs your arm and shows you the proper way to lift. <span style="color:Pink">You can’t help but notice how he intentionally places his other hand on the front of your $PlayerUndies.Type, right atop your crotch.</span><br>
+			<<skillPoints "Athletics" 5>>
+			<<socialChange "Gabe" 3>>
+<br>
+			[[Continue|PH Gabe Bedroom]] 
+		<</if>>
+		
+		<</replace>>
+		<</link>>
+			<<skillDiff "Athletics" 50>>
+		
+		<<link "Small 5lb weight">>
+		<<replace"#choice">>
+		You point at the 5lb weight. He chuckles at your request as he hands you the small weight. <span style="color:LightSteelBlue">“Alright, let’s see how you do. Try not to embarrass yourself anymore than you already have.”</span><br>
+<br>
+			<<skillCheck "Athletics" 70>>
+		/* PASS */
+		<<if _result == 1>>
+			<span style="color:Green">You manage to do quite a bit before you even begin to tire out. <span style="color:DarkTurquoise">Gabe</span> seems generally surprised, and you bond a little as he gives you tips to increase your strength.</span> At the end he happily tells you to flex your new muscles for the camera as he pulls out his phone. <span style="color:Pink">You do so, caught up in his praise, and only remember your state of undress after he shows you the picture laughing.</span><br>
+			<<skillPoints "Athletics" 5>>
+			<<socialChange "Gabe" 3>>
+<br>
+			[[Continue|PH Gabe Bedroom]] 
+		/* FAIL */
+		<<else>>
+		<span style="color:Red">Though you start out fine, you soon realize just how weak your arms are as they quickly become sore and you find yourself struggling.</span> <span style="color:DarkTurquoise">Gabe</span> informs you that your form is all wrong and picks you up, sitting you down on his lap as he grabs your arm and shows you the proper way to lift. <span style="color:Pink">You can’t help but notice how he intentionally places his other hand on the front of your $PlayerUndies.Type, right atop your crotch.</span><br>
+			<<skillPoints "Athletics" 5>>
+			<<socialChange "Gabe" 3>>
+<br>
+			[[Continue|PH Gabe Bedroom]] 
+		<</if>>
+		
+		
+		
+		<</replace>>
+		<</link>>
+		<<skillDiff "Athletics" 70>>
+
+</div>

@@ -1,0 +1,188 @@
+:: OC Kollin Intro 1 [nobr]
+
+<<set $OCKollinSecret to 0>>
+<<set $OCKollinSocialRank to 0>>
+<<set $OCKollinSocial to 0>>
+
+You wander around the woods, enjoying the relaxing breeze and view of nature around you when you notice a rabbit looking at you from the bushes. You stop and smile, waving at the rabbit, who sniffs the air near you before running away. You chuckle and continue onwards, figuring you should probably start backtracking when you realize… <span style="color:lightcoral">you have no idea which way you came from!</span><br>
+<br>
+
+Trying not to panic, you spin around as you try to get your bearing, trying to locate your footprints or some familiar aspect of the woods, but find nothing! <span style="color:lightcoral">Your young mind instantly goes to the worst possible outcomes as you imagine being unable to escape the woods and having to sleep in the cold darkness or getting eaten by wolves.</span><br>
+<br>
+
+You try to assure yourself that everything will be fine, and you are panicking for no reason, <span style="color:lightcoral">but the animal noises in the distance convince you that staying here probably isn't the best idea.</span><br>
+<br>
+
+<div id="choice">
+    <<link "Remain calm and pick a direction">>
+        <<replace "#choice">>
+            You try to remain calm and focus on your sense of direction, thinking for a moment before picking a path and starting to walk. Despite everything in the woods looking exactly the same to you, you commit to your choice and continue walking in hopes of finding your way out.<br>
+            <br>
+
+            <span style="color:lightcoral">You then proceed to get your foot stuck in a small hole and trip, tumbling down a small hill, landing in some mud.</span> Uncomfortable and embarrassed, though otherwise unharmed, you sigh and attempt to crawl out of the mud when you realize you are stuck! <span style="color:lightcoral">The mud completely covers you from the waist down and holds you tightly as you begin to panic and call out for help!</span><br>
+
+            /* AVATAR DISPLAY */
+                <<set $AD.Name to "Kollin">>
+                <<set $AD.Arms to "Normal">>
+                <<set $AD.Eyes to "Normal">>
+                <<set $AD.Cry to 0>>
+                <<set $AD.Blush to 0>>
+                <<set $AD.Mouth to "Happy">>
+                <<set $AD.Outfit to "Everyday">>
+                <<set $AD.Hard to 0>>
+                    <<include"OC KOLLIN Avatar Equipment Set">>
+            /* VARIABLE OVERRIDES */
+                    /* */
+            <div style="position: relative">
+                <<include"Avatar Display">>
+            /* END LAYER */
+                <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+            </div>
+
+            Unexpectedly, someone actually hears you and you spot another boy running in your direction. Upon reaching you, he chuckles slightly as he examines your situation. <span style="color:LightSteelBlue">“Well, you've gotten yourself in quite the pickle, haven't you? Really have to watch out for the mud puddles, they pop up everywhere after it rains! Wait one second, I have just the tool for this job!”</span><br>
+            <br>
+
+            You watch, slightly worried that you are starting to sink, as the boy opens up his bag and riffles through, eventually pulling out a long black rope. <span style="color:LightSteelBlue">“Here, grab this!”</span> He tosses you one end while looping the other end over a tree branch. <span style="color:LightSteelBlue">“Just hold on tight and you'll be out in no time!”</span> Once you are ready, the boy begins to pull with all his might! But he didn't have to pull very hard, as his impressive makeshift pulley system slowly frees you from your muddy prison as you reach dry ground and crawl out, thankful and relieved. <span style="color:pink">You then stand up to thank the boy, who blushes and smirks as you do so before pointing down.</span><br>
+                            
+            /* AVATAR DISPLAY */
+            <<set $AD.Name to "Kollin">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Happy">>
+            <<set $AD.Outfit to "Everday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC KOLLIN Avatar Equipment Set">>
+            /* VARIABLE OVERRIDES */
+        <div style="position: relative">
+            <<include"Avatar Display">>
+            /* AVATAR DISPLAY */
+            <<set $AD.Name to "Player">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 2>>
+            <<set $AD.Mouth to "Sad">>
+            <<set $AD.Outfit to "Everday">>
+            <<set $AD.Hard to 0>>
+                <<include"Player Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+                <<set $ADBottoms to $None>>
+                <div style="position: absolute; left: 125px; top: 0px">
+            <<include"Avatar Display">>
+        </div>
+            /* EMPTY LAYER TO END AVATARS */
+            <img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+        </div>
+
+            <<if $PlayerUndies.Type != "None">>
+
+                <span style="color:pink">You glance down and let out an embarrassed squeal as you realize you are no longer wearing $PlayerBottoms.Type and your $PlayerUndies.Name are completely exposed! You cover yourself with your hands and turn back to find your bottoms sticking partially out of the mud. You quickly run over and retrieve them as the boy chuckles at the silliness of the situation. As you reach down and grab them, you can't help but spot the kid curiously trying to catch a peek at your underwear.</span><br>
+                <br>
+
+                <span style="color:LightSteelBlue">“Hehe, look on the bright side! At least they didn't get lost in the mud, imagine having to walk all the way home in your $PlayerUndies.Type!”</span> As he laughs, you quickly fix your clothing before thanking him. You had no idea what you would have done if he hadn't been there.<br>
+                <br>
+
+                [[Continue|OC Kollin Intro 2]]
+            <<else>>
+                /* Pubic Hair Text */
+                <<if $AD.PubicHair == "Wisps">>
+                    <<set _text to "And you have little bits of pubic hair down there, heh.">>
+                <<elseif $AD.PubicHair == "Short">>
+                    <<set _text to "Though I’ve got way more pubes than you! Hehe.">>
+                <<elseif $AD.PubicHair == "Long">>
+                    <<set _text to "Oh, and nice bush! You’re really rocking it!">>
+                <<else>>
+                    <<set _text to "Though I’m a bit surprised you don’t have hair down there yet; I thought most boys would have it by middle school.">>
+                <</if>>
+
+                <<if ['Tiny', 'Small'].includes($Player.PenisSize)>>
+                    <span style="color:LightSteelBlue">“Oh, isn't it supposed to be a bit bigger? Looks nice nonetheless! _text”</span> The boy says as you look down and <span style="color:pink">let out an embarrassed squeal as you realize you are no longer wearing $PlayerBottoms.Type and your $Player.PenisSize penis was completely exposed! You cover yourself with your hands and turn back to find your bottoms sticking partially out of the mud. You quickly run over and retrieve them as the boy chuckles at the silliness of the situation, though you also can't help but spot him curiously trying to catch another glimpse at your genitals.</span><br>
+                    <br>
+                <<elseif $Player.PenisSize == 'Average'>>
+                    <span style="color:LightSteelBlue">“Oh nice one, though it looks a bit different from the one's I've seen on my friends, but everyone's unique I guess. _text”</span> The boy says as you look down and <span style="color:pink">let out an embarrassed squeal as you realize you are no longer wearing $PlayerBottoms.Type and your $Player.PenisSize penis was completely exposed! You cover yourself with your hands and turn back to find your bottoms sticking partially out of the mud. You quickly run over and retrieve them as the boy chuckles at the silliness of the situation, though you also can't help but spot him curiously trying to catch another glimpse at your genitals.</span><br>
+                    <br>
+                <<else>>
+                    <span style="color:LightSteelBlue">“Wow, that's way bigger than the ones my friends have! _text”</span> The boy says as you look down and <span style="color:pink">let out an embarrassed squeal as you realize you are no longer wearing $PlayerBottoms.Type and your $Player.PenisSize penis was completely exposed! You cover yourself with your hands and turn back to find your bottoms sticking partially out of the mud. You quickly run over and retrieve them as the boy chuckles at the silliness of the situation, though you also can't help but spot him curiously trying to catch another glimpse at your genitals.</span><br>
+                    <br>
+                <</if>>
+
+                <span style="color:LightSteelBlue">“Hehe, look on the bright side! At least they didn't get lost in the mud, imagine having to walk all the way home completely naked!”</span> As he laughs, you quickly fix your clothing before thanking him. You had no idea what you would have done if he hadn't been there.<br>
+                <br>
+                <<set $OCKollinSecret += 5>>
+
+                [[Continue|OC Kollin Intro 2]]
+            <</if>>
+
+        <</replace>>
+    <</link>><br>
+    <<link "Panic and run">>
+        <<replace "#choice">>
+            <span style="color:lightcoral">Hearing another animal sound, this time much closer, you panic and begin to run in a random direction.</span> Sprinting through bushes, dodging trees, and leaping over rocks, you run as fast as your little legs can carry you while calling for help into the voice that was the forest. <span style="color:lightcoral">You then proceed to trip on a small rock and go tumbling towards a hill.</span><br>
+            <br>
+
+            <<if $Dexterity < 6>>
+                <span style="color:lightcoral">You try to reach out to stop your tumble, but find nothing to grab onto as you roll off the small hill and plummet down into the leaves of a tree! The good news is, you don't hit the ground, the bad news is that is only because your <<=($PlayerUndies.Type != "None" ? $PlayerUndies.Type : $PlayerBottoms.Type)>> get caught on a low tree branch, leaving you hanging by them in a wedgie that is so painful, you almost wish you had hit the ground.</span><br>
+                <br>
+
+                <span style="color:pink">You are hanging there, embarrassed, in pain, and completely helpless, wondering how you are going to get out of this situation when you hear footsteps running towards you. You glance up to see a boy with a small bag stop a few feet from you. As he notices you hanging there, he can't help but break out laughing.</span><br>
+
+                /* AVATAR DISPLAY */
+                    <<set $AD.Name to "Kollin">>
+                    <<set $AD.Arms to "Normal">>
+                    <<set $AD.Eyes to "Normal">>
+                    <<set $AD.Cry to 0>>
+                    <<set $AD.Blush to 0>>
+                    <<set $AD.Mouth to "Happy">>
+                    <<set $AD.Outfit to "Everyday">>
+                    <<set $AD.Hard to 0>>
+                        <<include"OC KOLLIN Avatar Equipment Set">>
+                /* VARIABLE OVERRIDES */
+                        /* */
+                <div style="position: relative">
+                    <<include"Avatar Display">>
+                /* END LAYER */
+                    <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+                </div>
+
+                <span style="color:LightSteelBlue">“This is quite the predicament to find yourself in my friend.”</span> He laughs, placing his bag on the ground, <span style="color:LightSteelBlue">“Hold on, I'll get you down in no time!”</span> The boy runs over to the base of the tree and begins to climb it with ease and skill you've only seen before in <span style="color:DarkTurquoise">Jackson</span>. <span style="color:lightgreen">Upon reaching the branch you were hanging on, he shimmies over and begins to try and unhook your clothing. Strangely, there is a moment of silence where the kid is still and you get the strange sensation he was taking in the view before he manages to unhook your clothing, allowing you to fall to the ground, free once more.</span> He then hops down and picks up his bag.<br>
+                <br>
+
+                <span style="color:LightSteelBlue">“Well, if the only thing hurt is your pride, I'd say you are one lucky kid! A fall like that could have resulted in your ankle getting twisted, could have even broken your leg. First rule of adventuring is to never do it alone!”</span> He says as you fix your wedgie. You ask him why he is out here on his own, if that is the first rule of adventuring. <span style="color:LightSteelBlue">“Don't worry about me, I'm a professional.”</span> You chuckle at his confidence and thank him for saving you.<br>
+                <br>
+            <<else>>
+                <span style="color:lightgreen">Right before rolling off, you reach out and grab the root of a tree, stopping your roll and allowing you to rest on the ground, only slightly bruised and disoriented.</span> You close your eyes and lay there to catch your breath, exhausted and hurt, when something suddenly blocks the light. You open one eye to see a boy looking down at you with a confused expression.<br>
+
+                /* AVATAR DISPLAY */
+                    <<set $AD.Name to "Kollin">>
+                    <<set $AD.Arms to "Normal">>
+                    <<set $AD.Eyes to "Normal">>
+                    <<set $AD.Cry to 0>>
+                    <<set $AD.Blush to 0>>
+                    <<set $AD.Mouth to "Happy">>
+                    <<set $AD.Outfit to "Everyday">>
+                    <<set $AD.Hard to 0>>
+                        <<include"OC KOLLIN Avatar Equipment Set">>
+                /* VARIABLE OVERRIDES */
+                        /* */
+                <div style="position: relative">
+                    <<include"Avatar Display">>
+                /* END LAYER */
+                    <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+                </div>
+
+                <span style="color:LightSteelBlue">“Are you alright? That was a nasty fall.”</span> He asks as you jump in surprise at his sudden presence. You quickly stand up, but cringe in pain as you realize you had cut your knee and were bleeding. <span style="color:LightSteelBlue">“Oof, that's a rough one. Don't worry, I have just the thing!”</span> You watch as the boy reaches into his bag and pulls out a small first-aid kit. <span style="color:LightSteelBlue">“First rule of adventuring, always be prepared!”</span><br>
+                <br>
+
+                The boy sits you down as he dabs something onto a piece of cloth and rubs it against your wound. It stings like a bitch and you curse loudly, causing the boy to laugh. <span style="color:LightSteelBlue">“Oh yeah, forgot to warn you. Gotta make sure we clean the wound so you don't get an infection.”</span> <span style="color:lightgreen">Once cleaned, he pulls at a bandage and places it over your cut. It still hurt, but it felt a bit better and you were able to walk with only a little pain.</span> You thank the boy as you brush the dirt off your clothes.<br>
+                <<addMoodlet "Wedgie" 12>>
+                <<addMoodlet "Pained" 6>>
+                <br>
+            <</if>>
+
+            [[Continue|OC Kollin Intro 2]]
+        <</replace>>
+    <</link>><br>
+</div>

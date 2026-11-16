@@ -1,0 +1,336 @@
+:: Felix School Hallway Wedgie [nobr]
+
+<<set $Minutes += 2>>
+<<set $DailyEvents.push("Felix School Bully")>>
+
+/* Pass Fail Chance */
+<<if ["Unlucky", "Clumsy"].includes($Player.Traits)>>
+    <<set _random to random(1, 2)>>
+<<else>>
+    <<set _random to random(1, 4)>>
+<</if>>
+
+/* High Social */
+<<if $FelixSocial > 60 or $FelixSocialRank > 0>>
+    A few feet ahead of you is your friend and fellow new student, <span style="color:DarkTurquoise">Felix</span>. Being a foreign exchange student from France who is particularly gifted physically and charismatically, he has gotten quite popular since he started here. <span style="color:LightGreen">Luckily for you, the two of you have bonded since he arrived and you’d even call him a friend.</span> And because of this when you see him your first thought isn’t to say hello or ask him to hang out, but rather to mess with him in a way only friends can. <span style="color:Pink">By giving him a friendly wedgie right here in the middle of the hallway.</span> <br>
+    
+    <<set _ad to [
+        {
+            Name: "Felix",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+ 
+    <span style="color:Pink">You smile deviously as you approach him from behind, spotting the waistband of his $FelixUndies.Name poking out as he lifts his arms up behind his head.</span> He whistles about as he walks down the hallway, completely unaware of your presence or sinister idea. You creep closer, careful not to make any sounds that would give it away, <span style="color:Yellow">until you are close enough to taste it-</span> <br>
+    <br>
+    /* Pass */
+    <<if _random != 1>>
+        <span style="color:Pink">You move like the wind, reaching out and gripping his waistband. <span style="color:DarkTurquoise">Felix</span> only has a brief moment to make a noise of surprise before – YANK – you lift him up to his tippy-toes by his underwear!</span> He cries out in surprise, tumbling forward and losing his balance. <span style="color:Pink">This causes him to be dangling forward by his underwear, which pulls hard against his crotch and exposes his well-tanned butt to you. You can’t help but break out laughing at the sight.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 2,
+                    Arms: "Hide",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$FelixNickname</span>!?”</span> He says in surprise upon seeing it is you, <span style="color:Pink">using his hands to steady himself on the ground as his wedgied butt is still held in the air.</span> <span style="color:LightSteelBlue">“Why you little-!”</span> He tries to spin around to get back at you, <span style="color:Pink">but one harsh tug on his $FelixUndies.Name sends him back to his hands and knees.</span> <span style="color:LightSteelBlue">“Okay, okay! I give up!”</span> He cries out with a pained smile as you continue to squeeze his balls with your wedgie. <br>
+        <br>
+        <span style="color:DarkTurquoise">Felix</span> continues to plead for mercy, both in English and French, as those walking by chuckle and roll their eyes at the sight. <span style="color:Pink"> <span style="color:DarkTurquoise">Felix</span> is popular enough and known to be your friend, so people see it for what it is. A friend playfully messing around with his buddy.</span> Eventually, you decide to release <span style="color:DarkTurquoise">Felix</span>, <span style="color:Pink">yanking his underwear back as far as it can go before releasing it.</span> The snap of it hitting his back echoes throughout the hallway as the impact sends <span style="color:DarkTurquoise">Felix</span> to the ground and he says something in French that you assume is a swear. <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Bon sang, ça pique!”</span> He says before turning to you, <span style="color:LightSteelBlue">“You are, what’s the word, ruthless!”</span> He laughs, hitting you on the shoulder, <span style="color:LightSteelBlue">“Just you wait! I will get revenge. Much worse than this!”</span> <span style="color:LightGreen">You both laugh before departing.</span> <span style="color:DarkTurquoise">Felix</span> is a good sport. <br>
+        <<needChange "Fun" 6>>
+        <<socialChange "Felix" 3>>
+        <<addMoodlet "Gave Wedgie" 4>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    /* Fail */
+    <<else>>
+        But you instead taste defeat… <br>
+        <br>
+        <span style="color:LightCoral">Something must have given you away!</span> Some noise he heard or feeling he felt clueing <span style="color:DarkTurquoise">Felix</span> into your plan. As right as you are about to reach it, leaning down mid-sprint to get as much impact on his underwear as you can, <span style="color:LightCoral"> <span style="color:DarkTurquoise">Felix</span> sidesteps just enough to completely block your attack!</span> Things seem to move in slow motion as you realize that, <span style="color:LightCoral">without his underwear to grab onto, you are falling directly to the floor!</span> You look up and lock eyes with <span style="color:DarkTurquoise">Felix</span>, seemingly glowing red with malice as a devious smirk crosses his lips. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 2,
+                },
+            },
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightCoral">Uh-oh…</span> <br>
+        <br>
+        /* Wearing Underwear */
+        <<if $PlayerUndies.Type != "None">>
+             <span style="color:Pink"> <span style="color:DarkTurquoise">Felix</span> reaches down with skill and speed, gripping your $PlayerUndies.Name instead! You feel his hand twist them, not even needing to pull as your own momentum causes your underwear to tighten and squeeze your bits. He has reversed it on you and instead you end up the one with the painful wedgie, dangling by your underwear in the middle of the hallway! You cringe in pain as you are held aloft in an embarrassing fashion.</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“Would you look at this? I caught a fish!”</span> <span style="color:DarkTurquoise">Felix</span> laughs, <span style="color:Pink">hoisting you further into the air by your underwear.</span> <span style="color:LightSteelBlue">“Did that go how you imagined?”</span> You chuckle, blushing from the position you’ve found yourself in, and ask for a truce. <span style="color:LightSteelBlue">“Truce? I don’t think I know this word.”</span> He smirks, <span style="color:Pink">beginning to bounce you painfully up and down.</span> You groan and blurt out an explanation, begging him to stop. <span style="color:LightSteelBlue">“I know, I know.”</span> He laughs, lifting up back to your feet by your underwear, <span style="color:LightSteelBlue">“I’m just messing.”</span> <br>
+            <br>
+            Now on your feet, <span style="color:DarkTurquoise">Felix</span> releases his hold on your underwear, and you quickly fix your wedgie. He stands there, smirking, as you do so. <span style="color:LightSteelBlue">“Nice try, but you are…”</span> He pauses, thinking of the word, <span style="color:LightSteelBlue">“predictable!”</span> You sigh. <span style="color:Pink"> <span style="color:DarkTurquoise">Felix</span> may have won this time, but next time you’ll be the one wedging him!</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“Well, I wish you luck!”</span> <span style="color:DarkTurquoise">Felix</span> laughs, bowing, <span style="color:LightSteelBlue">“But for now, we better get going.”</span> He makes a teasing face at you before hurrying away. <span style="color:Pink">What a dork.</span> <br>
+            <<needChange "Fun" 6>>
+            <<socialChange "Felix" 3>>
+            <<addMoodlet "Wedgie" 3>>
+            <br>
+            <<if $Location.Name == "School South Hallway">>
+                [[Continue|School South Hallway]] 
+            <<elseif $Location.Name == "School East Hallway">>
+                [[Continue|School East Hallway]]
+            <<else>>
+                [[Continue|School West Hallway]]
+            <</if>>
+        /* Not wearing underwear */
+        <<else>>
+            <span style="color:DarkTurquoise">Felix</span> reaches down with skill and speed, <span style="color:LightCoral">but he can’t find what isn’t there.</span> You see his expression turn to confusion briefly as he realizes you’re not wearing any underwear… His face of surprise then turns to concern as, without anything to grab onto, <span style="color:LightCoral">he can’t stop you from colliding face-first into the ground!</span> You groan in pain as <span style="color:DarkTurquoise">Felix</span> rushes over to help you up. <br>
+            <br>
+            <span style="color:LightSteelBlue">“Are you okay?”</span> He asks worriedly, <span style="color:LightSteelBlue">“Sorry, I didn’t think-”</span> You sigh. It’s your own fault, technically. Once he is sure you are alright, <span style="color:DarkTurquoise">Felix</span> smirks before whispering. <span style="color:LightSteelBlue">“No underwear, huh? Pretty bold. Be a shame of someone pulled your $PlayerBottoms.Type down.”</span> <span style="color:Pink">You blush and instinctively take a step away from <span style="color:DarkTurquoise">Felix</span>.</span> He laughs, sticking his tongue out at you as he walks away. <span style="color:LightSteelBlue">“Better keep your eyes open! Be a shame if someone decided to get revenge like that.”</span> <br>
+            <<needChange "Fun" 6>>
+            <<socialChange "Felix" 3>>
+            <<addMoodlet "Pained" 3>>
+            <br>
+            <<if $Location.Name == "School South Hallway">>
+                [[Continue|School South Hallway]] 
+            <<elseif $Location.Name == "School East Hallway">>
+                [[Continue|School East Hallway]]
+            <<else>>
+                [[Continue|School West Hallway]]
+            <</if>>
+        <</if>>
+    <</if>>
+/* Mid Social */
+<<elseif $FelixSocial > 30>>
+    Walking down the hallway a few feet ahead of you is the ever-popular <span style="color:DarkTurquoise">Felix</span>. Being a foreign exchange student already gives him a boost of popularity, but the fact that he is also smart, athletically gifted, and not hard to look at only increases his ever-improving social status. <span style="color:LightGreen">You have to admit that even you have a positive relationship with him, finding him funny or cool.</span> But despite this, or perhaps because of it, you feel an innate and powerful desire to mess with the French boy. In a way that all boys around your age know. <br>
+    
+    <<set _ad to [
+        {
+            Name: "Felix",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:Pink">A wedgie</span> <br>
+    <br>
+    Your smile grows as the idea enters your mind. <span style="color:DarkTurquoise">Felix</span> walks with his hands behind his head as he whistles, <span style="color:Pink">this causes his top to lift just enough to give you a peek at the waistband of his $FelixUndies.Name. He is practically asking to be wedgied!</span> So, you slowly begin to approach him, eyes locked on your prize as he is none-the-wiser. <span style="color:Yellow">Then, once you are close enough, you strike-!</span> <br>
+    <br>
+    /* Pass */
+    <<if _random != 1>>
+        <span style="color:LightGreen">You find your mark!</span> <span style="color:Pink">Gripping <span style="color:DarkTurquoise">Felix</span>’s underwear, you yank upwards with all your strength!</span> <span style="color:DarkTurquoise">Felix</span> gasps out, nearly tumbling forward, and reaches back and grabs your wrist. <span style="color:LightSteelBlue">“Wha- what are you doing!? <span style="color:DarkTurquoise">$FelixNickname</span>?”</span> <span style="color:Pink">He turns around and spots you smirking as you continue to tug on his underwear. Laughter from those nearby hits your ears as <span style="color:DarkTurquoise">Felix</span> blushes. Seems he can get embarrassed.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 2,
+                    Arms: "Hide",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Quoi?”</span> He says, <span style="color:LightSteelBlue">“Ca- can you let me go? Please?”</span> He tries to pull away, <span style="color:Pink">those this just causes his underwear to be tugged more. You stick out your tongue and tell him not to be so dramatic, a wedgie is a right of passage here.</span> <span style="color:LightSteelBlue">“Yes. We have them at home too.”</span> He eventually says <span style="color:LightCoral">as he grips his underwear and tugs it out of your hand himself.</span> <span style="color:LightSteelBlue">“But I asked nicely.”</span> You are briefly stunned by how he responds and scoff, telling him to lighten up. <br>
+        <br>
+        <span style="color:LightSteelBlue">“Right.”</span> He says awkwardly, clearly a little annoyed by your actions. <span style="color:LightSteelBlue">“Well, I should get going before I’m late. I’ll see you-<span style="color:LightSteelBlue">“ He pauses, <span style="color:LightSteelBlue">“Go- goodbye.”</span> He then quickly turns and continues where he was going. <span style="color:LightCoral">You sigh, you didn’t think <span style="color:DarkTurquoise">Felix</span> would be so butt hurt about a little wedgie. You’d wager if he knew you better, maybe he wouldn’t be so weird about it.</span> Whatever, you’ll never understand how the French brain works. <br>
+        <<needChange "Fun" 6>>
+        <<socialChange "Felix" -3>>
+        <<addMoodlet "Gave Wedgie" 4>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    /* Fail */
+    <<else>>
+        <span style="color:LightCoral">And proceed to fall flat one your face…</span> <br>
+        <br>
+        You don’t know how, but some force must be out to protect <span style="color:DarkTurquoise">Felix</span>, as right as you are mere centimeters away from reaching your prize, <span style="color:DarkTurquoise">Felix</span> turns to enter a classroom. <span style="color:LightCoral">This sudden movement catches you off-guard as, already leaning down to grip something, you suddenly lose your balance and fall face-first to the ground with a hard SMACK!</span> <br>
+        
+         <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightCoral">Laughter fills your ears as from everyone else’s point of view, you just tripped and fell to the ground in an embarrassing heap.</span> <span style="color:DarkTurquoise">Felix</span>, hearing this, quickly spins around and sees you on the ground with a bruised nose. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$FelixNickname</span>!”</span> He gasps, <span style="color:LightSteelBlue">“Are you alright?”</span> He quickly reaches down and helps you up, his quick kindness would cause your face to blush if it wasn’t already red. <span style="color:LightSteelBlue">“Let me see your nose. Are you bleeding?”</span> He gives you a once over, caringly checking your injuries and ensuring you are alright. His selflessness makes you feel almost guilty for what you tried to do, and you quickly run off before things can get any worse. <span style="color:LightCoral">Dang it.</span> <br>
+        <<addMoodlet "Pained" 3>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    <</if>>
+/* Low Social */
+<<else>>
+    Up ahead you spot <span style="color:DarkTurquoise">Felix</span>, the foreign exchange student from France, walking down the hallway with his hands behind his head as he happily whistles away. Despite also being a new student here, <span style="color:DarkTurquoise">Felix</span> had managed to fit in rather quickly and has befriended just about everyone. You’d wager it has something to do with his natural charisma, his good looks, his athletic skills, or, most likely, a combination of all three. <span style="color:Yellow">Something about how easily it all seems to come to him makes an annoying twinge appear at the back of your head. You start to consider maybe bringing the lucky boy down a peg.</span> <br>
+    
+    <<set _ad to [
+        {
+            Name: "Felix",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:Pink">And what better way to bring someone down than with a fun, humiliating wedgie.</span> You smile deviously as you begin to follow behind Feilx. He is known for not being shy or easily flustered, but you’re pretty sure that a tug on his underwear will get him blushing. As you get closer, <span style="color:Pink">you spot the waistband of his $FelixUndies.Name poking at due to his raised hands.</span> This is almost too easy! <span style="color:Yellow">Speeding up, you charge towards <span style="color:DarkTurquoise">Felix</span> and reach for his underwear!</span> <br>
+    <br>
+    /* Pass */
+    <<if _random != 1>>
+        <span style="color:Pink">You grab the waistband of his underwear, yanking up as high as you can! <span style="color:DarkTurquoise">Felix</span> at first makes a sound of confusion that is quickly replaced with the sound of surprise and discomfort as he is brought to his tippy-toes by your powerful wedgie!</span> He cries out, gripping his crotch as he nearly stumbles forward. Those around watching turn towards the noise and chuckle at the sight. <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 2,
+                    Arms: "Hide",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Ahhh!”</span> <span style="color:DarkTurquoise">Felix</span> groans, <span style="color:LightSteelBlue">“$FelixNickname? What are you doing!?”</span> <span style="color:Pink">You continue to tug, pulling his $FelixUndies.Type as high as they can go as you tell the boy you just wanted to say hi.</span> <span style="color:DarkTurquoise">Felix</span> chuckles nervously, the shock having worn off as he now just tries to play it cool. <span style="color:LightSteelBlue">“Oh, well… hello? Could- could you let go now? It’s a little… awkward…”</span> He says with an unsure smile. You’re pretty sure <span style="color:DarkTurquoise">Felix</span> wouldn’t actually mind this if you were closer, though at your current relationship this is just a tad too awkward for him. <br>
+        <br>
+        <span style="color:Pink">You continue pulling for a moment before stretching his underwear as high as it can go and releasing it, causing it to snap painfully against his back.</span> <span style="color:DarkTurquoise">Felix</span> yelps at the stinging pain, quickly fixing his underwear and rubbing his bruise lower back. <span style="color:LightSteelBlue">“Right, haha…”</span> <span style="color:DarkTurquoise">Felix</span> says with a tinge of discomfort as he slowly backs away from you, <span style="color:LightSteelBlue">“I- I guess I’ll see you later…”</span> <span style="color:LightGreen">You can’t help but smile as he hurries off. Seems the boy isn’t always as cool as he tries to be.</span> <br>
+        <<needChange "Fun" 6>>
+        <<socialChange "Felix" -5>>
+        <<addMoodlet "Gave Wedgie" 4>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    /* Fail */
+    <<else>>
+        <span style="color:LightCoral">However, luck seems to be on <span style="color:DarkTurquoise">Felix</span>’s side as, right as you are merely an inch away, he turns to walk into a classroom. This sudden movement is so swift and unexpected that you lose your footing and tumble forward! You fall to the ground in a ball and roll forward directly into a trash can! The trash is knocked over and coats you in varies pieces of garbage as those around you begin to laugh and chuckle.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:DarkTurquoise">Felix</span> turns around, confused, and asks if you need any help. <span style="color:LightCoral">You turn bright red and refuse, excepting help from your would-be victim just the cherry on top of this unfortunate turn of events.</span> You quickly pick yourself, and the trash, up as a shrugging <span style="color:DarkTurquoise">Felix</span> walks into the classroom. <br>
+        <br>
+        <span style="color:LightCoral">Damn it. Some kids have all the luck.</span> <br>
+        <<needChange "Hygiene" -8>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    <</if>>
+<</if>>

@@ -1,0 +1,29 @@
+:: OC Rowan Drama Intro [nobr]
+
+It is decided that everyone will do a dry run of the play, and the class begins to rush about setting up the scene, getting in costume, and going over their lines last minute. It is a chaotic yet energetic scene that is honestly kind of exciting. It is as you are helping to set up that you spy a rather curious sight. <span style="color:DarkTurquoise">Rowan</span>, the skateboarding Welsh boy you’ve met before, is kneeling behind the stage setting things up and moving things around. He isn’t in this class. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+    {
+        Name: "OC Rowan",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Huh?”</span> <span style="color:DarkTurquoise">Rowan</span> says as you walk up behind him and call out his name, <span style="color:LightSteelBlue">“Oh, hello there! Fancy meeting you here.”</span> You agree, stating that you didn’t think he took this class and ask him what he’s doing here. <span style="color:LightSteelBlue">“Oh, I’m a bit of a goffer during this hour. No real class, kinda just go about and help wherever I’m needed. It’s great, helps cover the costs of these uniforms. Too easy to lose clothes in this town.”</span> He chuckles. A little curious, you ponder why he needs a job at school in order to afford the uniform. They’re not super expensive and couldn’t his parents pay for them? <br>
+<br>
+<span style="color:LightSteelBlue">“Oh, well…”</span> <span style="color:DarkTurquoise">Rowan</span> chuckles nervously, blushing and rubbing the back of his head, <span style="color:LightSteelBlue">“Well, it’s not exactly… Oh shoot!”</span> He says, suddenly spinning around on his heels, <span style="color:LightSteelBlue">“Sorry, <span style="color:DarkTurquoise">Mr. Julien</span> needed these all moved before you guys can all start. I really need to hurry. I’ll talk to you later though, bye!”</span> <span style="color:DarkTurquoise">Rowan</span> then runs off as quickly as he can, at first forgetting the boxes he was moving and having to run back and awkwardly grab them before sprinting off again. <br>
+<<set $CompletedQuests.push("Rowan: Drama Intro")>>
+<<set $InActiveQuests.delete("Rowan: Drama Intro")>>
+<<socialChange "Rowan" 2 1>>
+<br>
+<<include"Attend Drama Finish">>

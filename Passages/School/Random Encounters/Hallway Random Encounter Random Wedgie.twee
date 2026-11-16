@@ -1,0 +1,170 @@
+:: Hallway Random Encounter Random Wedgie [nobr]
+
+/* Written by: -AN */
+/* Intro */
+You find yourself passively daydreaming as you walk through the hallway — it’s noticeably quieter than normal. <span style="Color: Yellow">The sound of giggling breaks you from your trance</span> — you follow the sound to a small group of boys by some lockers ahead of you. <span style="Color: Yellow">Some are speaking in whispers, and they all seem to be looking at.. you?</span><br>
+<br>
+<span style="Color: LightCoral">You suddenly hear footsteps from the rear — you feel a presence lurking closely behind you!</span>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Sad",
+        },
+    },
+]>>
+
+<<ad _ad>>
+/* Sense Check (We don't have proper AS checks, so this is a place holder until they are properly implemented.)
+The way it will work is as following. Roll a d20, then add the Player's |IF > 0[(Sense-5)*2]|. So Average Sense will add 0, max will add 10. The player will need 15 or more so pass. */
+
+<<set _roll to random(1, 20)>>
+<<set _playersense to $Sense>>
+<<set _playersense -= 5>>
+<<if _playersense > 0>>
+    <<set _playersense *= 2>>
+<</if>>
+<<set _skillroll to _roll + _playersense>>
+
+<<linkreplace"Turn around?!">>
+    /* Pass */
+    <<if _skillroll >= 15>>
+        <span style="Color: LightGreen">Reacting immediately to the perceived threat, you deftly pivot your body around and hop backwards just in time to see a boy leaning forward and reaching both hands towards you!</span> <span style="Color: Yellow">You’re outside his grasp, and your unexpected movement results in him tripping forward, leaving him dazed and spayed out on the floor!</span><br>
+        <br>
+        <span style="Color: Yellow">You hear frustrated exclamations coming from the boys standing by the lockers.</span> They seem to have been in on whatever the boy sneaking up on you had planned, and they’re definitely not happy with this outcome. You quickly flee the scene before any of them attempt something else.<br>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    /* Fail, non-diaper */
+    <<elseif !$PlayerUndies.Tags.includes("Diaper") && $PlayerUndies.Type != "None">>
+        <span style="Color: LightCoral">By the time you try to turn, you feel a pair of hands being driven down the back of your $PlayerBottoms.Type — too late! Your eyes widen as you feel the unseen assailant grabbing the waistband of your $PlayerUndies.Name, promptly yanking them straight up your back!</span>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Outfit: "Everyday",
+                    Blush: 1,
+                    Eyes: "Sad",
+                    Mouth: "Sad",
+                    Arms: "Bound",
+                },
+            },
+        ]>>
+
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Wedgie!”</span> <span style="Color: LightCoral">You hear your tormentor joyfully exclaiming from behind. At the same time, you squeal from the sudden sensation of your $PlayerUndies.Type being pulled up between your $Player.Butt butt cheeks! You struggle to keep your balance as the prankster repeatedly tugs your underwear up, bringing you to the tips of your toes.<br>
+        <br>
+        Laughter rings out in the hallway as the boys by the locker react to your torment with glee, they all walk closer for a better view. Other boys walking in the hallway have turned to face the commotion and quickly join in. The growing number of eyes on you makes you flushed with embarrassment — not only can everyone see your underwear, but it’s also the tool being used for your discomfort!<br>
+        <br>
+        You’re completely at the mercy of your tormentor, his unceasing grip on your underwear keeps you helplessly tethered. Spurred by the laughter of the crowd, he suddenly pulls up even harder!</span><br>
+        <br>
+        <<if $PlayerUndies.Type == "Briefs">>
+            <span style="Color: LightCoral">You wince from the fierce wedgie, you feel the leg holes of your $PlayerUndies.Type are quickly exposed outside your bottoms. The stretchy fabric is being yanked so high that you can feel it reaching the back of your neck!</span>
+            <<addMoodlet "Wedgie" 4>>
+        <<elseif $PlayerUndies.Type == "Boxers">>
+            <span style="Color: LightCoral">Your $PlayerUndies.Type are pulled painfully taut to the middle of your back. The fabric isn’t made to stretch very far, and you can hear it popping and creaking from the repeated strain. You hope it doesn’t rip!</span>
+            <<addMoodlet "Wedgie" 3>>
+        <<else>>
+            <span style="Color: LightCoral">You groan as you feel the flexible fabric of your $PlayerUndies.Type being pulled nearly to your shoulders! You hear small pops and creaks from the repeated strain, but the fabric remains firm. You hope it’s not pulled any further!</span>
+            <<addMoodlet "Wedgie" 3>>
+        <</if>><br>
+        <br>
+        <span style="Color: LightCoral">You’re little more than a passenger right now, all you can do is hope the prankster and crowd get bored and release you soon..</span><br>
+        <br>
+        After several more minutes of tugging, the boy abruptly releases his grip from your $PlayerUndies.Type, the waistband audibly snaps against your back. You turn to the boy who was holding you and see his friends and other onlookers gushing over him, laughing and exchanging high-fives.<br>
+        <br>
+        Grateful to not be the center of attention anymore, you begin stuffing your stretched-out $PlayerUndies.Type back inside your $PlayerBottoms.Type, then quickly scurry away.<br>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Wedgiee", "Humiliation"]>>
+        <<arousalGain 10 _arousalbs _arousalkink>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    /* Fail, Diaper version */
+    <<elseif $PlayerUndies.Tags.includes("Diaper")>>
+        <span style="Color: LightCoral">By the time you try to turn, you feel a pair of hands being driven down the back of your $PlayerBottoms.Type — too late! Your eyes widen as you feel the unseen assailant grabbing the back of your $PlayerUndies.Name, promptly yanking the material straight up!</span>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Outfit: "Everyday",
+                    Blush: 1,
+                    Eyes: "Sad",
+                    Mouth: "Sad",
+                    Arms: "Bound",
+                },
+            },
+        ]>>
+
+        <<ad _ad>>
+
+        <span style="Color: LightCoral">You squeal from the sensation of your $PlayerUndies.Type being pulled up between your $Player.Butt butt cheeks! The padded garment isn’t made to stretch very far, and is only able to pulled up a short distance. </span>
+
+        <span style="Color: LightSteelBlue">“What the hell? What is this?”</span> You hear from the boy holding your $PlayerUndies.Type. <span style="Color: LightSteelBlue">“Ugh, gross!”</span> <span style="Color: Yellow">The boy says, you feel him release his grip, and you stumble forward free from the wedgie. You turn around and see the prankster wiping his hands on his pants.</span> He looks at the boys standing by the nearby locker then points to you, <span style="Color: LightSteelBle">“He’s wearing a fucking diaper or something!”</span>. <span style="Color: LightCoral">Your cheeks redden with embarrassment at his announcing your padded wear. The group breaks out in laughter.</span><br>
+        <br>
+        <span style="Color: LightSteelBlue">“What a loser!”</span> <span style="Color: LightCoral">You hear one boy say, <span style="Color: LightSteelBlue">“I can’t wait to tell the others!”</span> another boy speaks.</span> Amidst the laughter, you hastily fix your clothing and flee the scene. <span style="Color: Yellow">You probably didn’t get as bad a wedgie as you would have wearing normal underwear</span>, <span style="Color: LightCoral">but there’s no doubt your reputation will suffer once people start hearing about this.</span><br>
+        <span style="color:Red">-Reputation</span>
+			<<set $SchoolRep -= 5>><br>
+        <<addMoodlet "Wedgie" 2>>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Wedgiee", "Humiliation"]>>
+        <<arousalGain 10 _arousalbs _arousalkink>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    /* Fail, No Undies version */
+    <<elseif $PlayerUndies.Type == "None">>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Outfit: "Everyday",
+                    Blush: 2,
+                    Mouth: "Sad",
+                    Arms: "Bound",
+                },
+            },
+        ]>>
+
+        <<ad _ad>>
+
+        <span style="Color: LightCoral">By the time you try to turn, you feel a pair of hands being driven down the back of your $PlayerBottoms.Type — too late! Your eyes widen as you feel the unseen assailant’s hands grazing your bare bottom, fruitlessly searching for underwear.</span>
+
+        <span style="Color: LightSteelBlue">“What the.. ugh!”</span> You hear from behind you, <span style="Color: Yellow">you’re forcefully shoved away at the same time.</span> You turn to face the would-be prankster and see him wiping his hands on his pants, he turns to the boys standing by the locker then points to you. <span style="Color: LightSteelBlue">“This kid isn’t wearing any underwear!”</span> The crowd of boys begin laughing.<br> 
+        <br>
+        <span style="Color: LightSteelBlue">“Dude, you touched his ass!”</span> One boy says, <span style="Color: LightSteelBlue">“That’s pretty gay of you!”</span> another replies. <span style="Color: LightSteelBlue">“Shut up! How the hell was I supposed to know?”</span> The prankster boy barks back. His friends seem more amused at him touching your bottom than you not wearing underwear, they continually bicker and joke at his expense.<br>
+        <br>
+        You realize after a few moments they’ve completely forgotten about you, and you take it as your cue to leave. <span style="Color: LightGreen">You walk away amused by the whole affair — you dodged a wedgie by not wearing underwear, and the prankster was laughed at instead!</span><br>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+	    <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    <</if>>
+<</linkreplace>>
+
+/* Note:
+Leaving the ending code to me unless you are sure. He made this a bit complicated so I am going to go over it all anyway. */

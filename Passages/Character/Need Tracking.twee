@@ -1,0 +1,45 @@
+:: Need Tracking [nobr]
+
+/* MAX/MIN NEEDS */
+<<set $Player.Mood = $Player.Mood > 100 ? 100 : $Player.Mood>>
+<<set $Player.Mood = $Player.Mood < 0 ? 0 : $Player.Mood>>
+
+<<if $ToggleBladder == 0>>
+	/* Temp Bladder Fix */
+	<<set $Player.Bladder to 100>>
+<</if>>
+<<set _showText to $NeedNumbers == 1>>
+<<set _needsTracking = ['Energy', 'Hunger', 'Fun', 'Hygiene']>>
+<<if $ToggleBladder == 1>>
+	<<run _needsTracking.push('Bladder')>>
+<</if>>
+
+<<for _need range _needsTracking>>
+	<<if _need == "Bladder" and $HadAccident>>
+		<<set _value to 0>>
+	<<else>>
+		<<set _value to $Player[_need]>>
+	<</if>>
+	<div class="needs-tracking-group">
+		<label><<=_need>></label>
+		<<set _clonedNeed = clone({
+			text: `${_value.toFixed(1)}/${setup.Needs[_need].max()}`,
+			value: _value,
+			max: setup.Needs[_need].max(),
+			min: setup.Needs[_need].min(),
+			color: getNeedsBarColor(_value),
+			showText: _showText,
+		})>>
+		<<progressbar _clonedNeed>>
+	</div>
+<</for>>
+
+:: Need Tracking Style [stylesheet]
+
+.needs-tracking-group {
+	margin-bottom: 15px;
+}
+
+.needs-tracking-group > label {
+	font-weight: bold;
+}

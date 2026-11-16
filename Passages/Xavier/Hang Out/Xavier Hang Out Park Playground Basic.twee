@@ -1,0 +1,111 @@
+:: Xavier Hang Out Park Playground Basic [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+You turn to <span style="color:DarkTurquoise">Xavier</span> as you reach the playground and ask him if he has anything specific in mind he wants to do. <span style="color:yellow">He gives you a smirk that makes you feel a little uneasy and grabs you by the hand.</span> <span style="Color: LightSteelBlue">“Follow me.”</span> He leads you to the top of the jungle gym, just above the rope climbing area that is normally a fun and tricky way to get to the top. The view is pretty good from this height, though it seems <span style="color:DarkTurquoise">Xavier</span> has some sort of plan in mind. <br>
+
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                },
+            },
+            {
+            Name: "Xavier",
+            State: {
+                Outfit: $HangOutClothes,
+                Moutth: "Smirk",
+                Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“I want you to do a bit of a trust exercise with me.”</span> He explains, <span style="Color: LightSteelBlue">“I’ll hold you by your clothes, like this-“</span> He grips the bottom of your top, <span style="Color: LightSteelBlue">“and I want you to lean over the edge as far as you can.”</span> You raise an eyebrow at this crazy trust exercise. <span style="color:yellow">If he lets go or even lets you slip out of his hand, you’ll plummet face-first over 10 feet to the ground!</span> <span style="Color: LightSteelBlue">“Don’t worry,”</span> <span style="color:DarkTurquoise">Xavier</span> laughs as if he’s simply asking you to fall into his arms, <span style="Color: LightSteelBlue">“I have a very strong grip. Don’t you trust me?”</span> He leans close with a smirk, almost as if this is a challenge. <span style="color:yellow">But now you have to consider if a potential broken neck is worth whatever this is <span style="color:DarkTurquoise">Xavier</span> is trying to do.</span> <br>
+<br>
+
+<div id="choice">
+    <<if $FearHeights != 1>>
+        <<link "Do the trust exercise<br>">>
+        <<replace"#choice">>
+            <span style="color:lightgreen">Gulping nervously and already imagining something going wrong, you agree to do the trust exercise. <span style="color:DarkTurquoise">Xavier</span>’s smile grows wider at this.</span> He steps behind you and grabs the back of your clothing, holding it with both hands. You tug on it a bit to make sure his grip is tight. <span style="Color: LightSteelBlue">“No need to worry.”</span> <span style="color:DarkTurquoise">Xavier</span> laughs, <span style="Color: LightSteelBlue">“You can trust me.”</span> You tell him that trust and the strength to hold you up are two very different things. <span style="Color: LightSteelBlue">“Well, you can trust in my strength then.”</span> <br>
+            <br>
+            Realizing that he’s seriously going to make you do this, you take a deep breath before slowly leaning forward. <span style="color:yellow">Your feet grip the edge of the jungle gym tightly as you feel your butthole clench and your heart jump into your throat. You lean only a few degrees forward but can already feel gravity pulling you down. Your mind screams to grab the edge or lean back, but it is too late to stop it now!</span> <br>
+            
+            <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    Blush: 2,
+                    },
+                },
+                {
+                Name: "Xavier",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Moutth: "Smirk",
+                    Eyes: "Tired",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            But you don’t fall, <span style="color:DarkTurquoise">Xavier</span> continues to hold you in place. <span style="color:yellow">You lean a bit more forward, the only piece of you above the jungle gym now being your feet. It feels strange, both scary and exciting. As if you are falling, or will fall at any minute, but not.</span> It almost becomes fun, if not for the ground still spinning beneath you. <span style="Color: LightSteelBlue">“Come on, a little further.”</span> <span style="color:DarkTurquoise">Xavier</span> says. He can’t be serious, can he? <br>
+            <br>
+            You do as he says, leaning more forward. <span style="color:Pink">Further and further until you are at a 45-degree angle of the edge. You feel your clothing tighten around you, the only thing holding you up from gravity’s grasp. If <span style="color:DarkTurquoise">Xavier</span> let you go now, there would be no stopping your plummet.</span> But he manages to hold onto you without even looking like it’s a struggle. You look back at him with a nervous smile. <br>
+            <br>
+            Thankfully, <span style="color:DarkTurquoise">Xavier</span> eventually pulls you back to safety. You feel a little queasy as you grip the railing tightly. <span style="Color: LightSteelBlue">“So, how was it?”</span> <span style="color:DarkTurquoise">Xavier</span> asks with a chuckle, <span style="Color: LightSteelBlue">“I told you, you could trust me.”</span> <span style="color:Pink">You give your friend an uneasy thumbs up, still unable to understand what <span style="color:DarkTurquoise">Xavier</span> got from that, but he seems to have gotten whatever he wanted.</span> <br>
+            <<addMoodlet "Stress" 1>>
+            <<needChange "Fun" 15>>
+            <<socialChange "Xavier" 3>>
+            <span style="color:green">+Xavier Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+        <span style="color:red">-Xavier Energy</span><br>
+        <<set $HangOutNeed.Energy -= 5>>
+        <span style="color:green">+Xavier Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 5>>
+            <br>
+            [[Continue|Xavier Hang Out Park]]
+        <</replace>>
+        <</link>>
+    <<else>>
+        <strong>[Fear]</strong> Do the trust exercise<br>
+    <</if>>
+	<<link "Refuse<br>">>
+    <<replace"#choice">>
+        <span style="color:Pink">Taking a step back, you shake your head and refuse.</span> You explain that this isn’t because you don’t trust him, which could still be a toss-up or not, but because it is absolutely crazy and could easily end with you breaking your arm or worse! Can’t the two of you do something a little more normal? <br>
+        
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+                },
+            },
+            {
+            Name: "Xavier",
+            State: {
+                Outfit: $HangOutClothes,
+                Moutth: "Smirk",
+                Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Well, at least you can admit you’re scared.”</span> <span style="color:DarkTurquoise">Xavier</span> says, crossing his arms with a raised eyebrow. <span style="Color: LightSteelBlue">“Fine then, let’s go down the slide then, shall we?”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Xavier</span> suddenly grabs you by your clothing, pushes you to the slide, holding you upside down with your head inside the plastic tub.</span> <span style="color:lightgreen">He then gives you a cheeky wink before releasing you, sending you down the slide headfirst!</span> <br>
+        <br>
+        <span style="color:lightgreen"><span style="color:DarkTurquoise">Xavier</span> then follows behind you, finding amusement in your crumbled, confused form as you land in the sand.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 5>>
+        <<socialChange "Xavier" 1>>
+        <span style="color:green">+Xavier Fun</span><br>
+        <<set $HangOutNeed.Fun += 5>>
+        <br>
+        [[Continue|Xavier Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

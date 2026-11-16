@@ -1,0 +1,44 @@
+:: Carter House Frontyard [nobr]
+
+<<set $Location to {
+    Name: "Carter Frontyard",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Front Yard",
+}>>
+<span style="color:Azure"><big><strong>--Carter's Frontyard--</strong></big></span><br>
+
+You stand at the start of <span style="color:DarkTurquoise">Carter</span>’s Frontyard. The mailbox is bright red with the name “Kent” painted onto it. The yard is overall very well kept, with grass the looks to be mowed often and a driveway without any visible cracks. A small birdbath sits in middle of the yard, though judging by how clean it looks, you’d wager birds often ignore it. A short stone path leads up to a wooden patio where the front door sits.<br>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+<<if $Time.schoolday() == 1 && $Time.between(14,0,17,0) && $ActiveQuests.includes("Carter: Hero's Weakness")>>
+        [[Knock on the door|Carter Hero's Weakness Part 1]]<br>
+<<else>>
+    <<if $Time.schoolday() == 1 and $Time.between(14,0,19,0)>>
+        <<if $CompletedQuests.includes("Carter: First Visit")>>
+            [[Knock on the door|Carter House Arriving Weekday]]<br>
+        <</if>>
+    <<elseif $Time.schoolday() == 0 and $Time.between(8,0,19,0)>>
+        <<if $CompletedQuests.includes("Carter: First Visit")>>
+            [[Knock on the door|Carter House Arriving Weekend]]<br>
+        <</if>>
+    <<elseif $CompletedQuests.includes("Carter: First Visit")>>
+        <span style="color:Lightcoral">Carter isn't avaliable to hang out right now.</span>
+    <</if>>
+<</if>>
+
+<br>
+
+[[Exit to Neighborhood|Wald Street]]<br>
+<br>
+<div style="position: relative">
+    <img src="Images\NPC Homes\Carter House\Carter House Map.png" alt="Carter House Base" usemap="#CarterHouse">
+    <img src="Images\NPC Homes\Carter House\Tall Room Marker.png" style="position: absolute; left: 216px; top: 54px"  alt="Carter House Map" usemap="#CarterHouse">
+</div>
+<map name="CarterHouse">
+
+</map>

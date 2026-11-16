@@ -1,0 +1,221 @@
+:: Attend English [nobr]
+
+/* Setting the Difficulty Bonus of School Checks */
+<<include"School Skill Level">>
+
+/* TEACHER INTRODUCTION */
+<<if $EnglishIntro != 1>>
+	<<include"Hart Intro">>
+	<<include"Attend English Finish">>
+<<else>> 
+
+	/* CLASS EVENT SELECTOR */
+	/* Normal Class Style */
+	<<if $ClassStyle == "Normal" or $ClassStyle == "Late">>
+		<<set _random to {
+			"English Question": 10,
+			"English Good Class": 10,
+			"ENG Homework Reminder": 10,
+			"LUCAS English Share Book": 10,
+			"CARTER English Balls Hit": 10,
+			"JACKSON English Can't Deal With": 10,
+			"JACKSON English Strip Midclass": 10,
+			"LUCAS English Movie Actress": 10,
+		}>>
+		/* Checking Thomas Absent */
+		<<if !$ThomasAbsent>>
+			<<set _random["THOMAS English Jekyll Drawing"] = 10>>
+			<<set _random["THOMAS English Accidental Bump"] = 10>>
+			<<if $ThomasSocial >= 50 or $ThomasSocialRank > 0>>
+				<<set _random["THOMAS Don't Know Word"] = 10>>
+				<<if $CarterSocial >= 50 or $CarterSocialRank > 0>>
+					<<set _random["English Class Secret Letter"] = 10>>
+				<</if>>
+			<</if>>
+		<</if>>
+		/* OC Events */
+		/* Millers */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay English Poet Rap"] = 10>>
+		<</if>>
+		/* Manuel */
+		<<if $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: Introduction") && $ActiveQuests.includes("Manuel: The Pent-Up Boy")>>
+			<<set _random["OC Manuel English Class Gossip"] = 10>>
+			<<set _random["OC Manuel English Class Bathroom"] = 10>>
+		<</if>>
+		/* Snowpaw */
+		<<if $InActiveQuests.includes("Snowpaw: Lenny's Wild West Show")>>
+			<<set _random["Snowpaw Intro"] = 10>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard English Basic"] = 10>>
+		<</if>>
+		/* Kazu */
+		<<if $ToggleOCKazu == 1 && $CompletedQuests.includes("Kazu: The Deliquent")>>
+			<<set _random["OC Kazu English Class Story"] = 10>>
+		<</if>>
+
+	/* Pay Attention Class Style */
+	<<elseif $ClassStyle == "Attention">>
+		<<set _random to {
+			"English Question": 20,
+			"English Good Class": 25,
+			"ENG Homework Reminder": 10,
+			"LUCAS English Share Book": 5,
+			"CARTER English Balls Hit": 1,
+			"JACKSON English Can't Deal With": 5,
+			"JACKSON English Strip Midclass": 5,
+			"LUCAS English Movie Actress": 5,
+		}>>
+		/* Checking Thomas Absent */
+		<<if !$ThomasAbsent>>
+			<<set _random["THOMAS English Jekyll Drawing"] = 5>>
+			<<set _random["THOMAS English Accidental Bump"] = 5>>
+			<<if $ThomasSocial >= 50 or $ThomasSocialRank > 0>>
+				<<set _random["THOMAS Don't Know Word"] = 5>>
+				<<if $CarterSocial >= 50 or $CarterSocialRank > 0>>
+					<<set _random["English Class Secret Letter"] = 5>>
+				<</if>>
+			<</if>>
+		<</if>>
+		/* OC Events */
+		/* Millers */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay English Poet Rap"] = 5>>
+		<</if>>
+		/* Manuel */
+		<<if $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: Introduction") && $ActiveQuests.includes("Manuel: The Pent-Up Boy")>>
+			<<set _random["OC Manuel English Class Gossip"] = 5>>
+			<<set _random["OC Manuel English Class Bathroom"] = 5>>
+		<</if>>
+		/* Snowpaw */
+		<<if $InActiveQuests.includes("Snowpaw: Lenny's Wild West Show")>>
+			<<set _random["Snowpaw Intro"] = 10>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard English Basic"] = 5>>
+		<</if>>
+		/* Kazu */
+		<<if $ToggleOCKazu == 1 && $CompletedQuests.includes("Kazu: The Deliquent")>>
+			<<set _random["OC Kazu English Class Story"] = 5>>
+		<</if>>
+
+	/* Socialize Class Style */
+	<<elseif $ClassStyle == "Socialize">>
+		<<set _random to {
+			"English Question": 1,
+			"English Good Class": 1,
+			"ENG Homework Reminder": 1,
+			"LUCAS English Share Book": 15,
+			"CARTER English Balls Hit": 10,
+			"JACKSON English Can't Deal With": 5,
+			"JACKSON English Strip Midclass": 10,
+			"LUCAS English Movie Actress": 10,
+		}>>
+		/* Checking Thomas Absent */
+		<<if !$ThomasAbsent>>
+			<<set _random["THOMAS English Jekyll Drawing"] = 10>>
+			<<set _random["THOMAS English Accidental Bump"] = 10>>
+			<<if $ThomasSocial >= 50 or $ThomasSocialRank > 0>>
+				<<set _random["THOMAS Don't Know Word"] = 15>>
+				<<if $CarterSocial >= 50 or $CarterSocialRank > 0>>
+					<<set _random["English Class Secret Letter"] = 15>>
+				<</if>>
+			<</if>>
+		<</if>>
+		/* OC Events */
+		/* Millers */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay English Poet Rap"] = 10>>
+		<</if>>
+		/* Manuel */
+		<<if $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: Introduction") && $ActiveQuests.includes("Manuel: The Pent-Up Boy")>>
+			<<set _random["OC Manuel English Class Gossip"] = 10>>
+			<<set _random["OC Manuel English Class Bathroom"] = 10>>
+		<</if>>
+		/* Snowpaw */
+		<<if $InActiveQuests.includes("Snowpaw: Lenny's Wild West Show")>>
+			<<set _random["Snowpaw Intro"] = 10>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard English Basic"] = 10>>
+		<</if>>
+		/* Kazu */
+		<<if $ToggleOCKazu == 1 && $CompletedQuests.includes("Kazu: The Deliquent")>>
+			<<set _random["OC Kazu English Class Story"] = 10>>
+		<</if>>
+
+	/* Goof Off Class Style */
+	<<elseif $ClassStyle == "Goof">>
+		<<set _random to {
+			"LUCAS English Share Book": 15,
+			"CARTER English Balls Hit": 15,
+			"JACKSON English Can't Deal With": 5,
+			"JACKSON English Strip Midclass": 15,
+			"LUCAS English Movie Actress": 10,
+		}>>
+		/* Checking Thomas Absent */
+		<<if !$ThomasAbsent>>
+			<<set _random["THOMAS English Jekyll Drawing"] = 10>>
+			<<set _random["THOMAS English Accidental Bump"] = 15>>
+			<<if $ThomasSocial >= 50 or $ThomasSocialRank > 0>>
+				<<set _random["THOMAS Don't Know Word"] = 15>>
+				<<if $CarterSocial >= 50 or $CarterSocialRank > 0>>
+					<<set _random["English Class Secret Letter"] = 15>>
+				<</if>>
+			<</if>>
+		<</if>>
+		/* OC Events */
+		/* Millers */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay English Poet Rap"] = 10>>
+		<</if>>
+		/* Manuel */
+		<<if $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: Introduction") && $ActiveQuests.includes("Manuel: The Pent-Up Boy")>>
+			<<set _random["OC Manuel English Class Gossip"] = 15>>
+			<<set _random["OC Manuel English Class Bathroom"] = 15>>
+		<</if>>
+		/* Snowpaw */
+		<<if $InActiveQuests.includes("Snowpaw: Lenny's Wild West Show")>>
+			<<set _random["Snowpaw Intro"] = 20>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard English Basic"] = 10>>
+		<</if>>
+	/* Homework Class Style */
+	<<elseif $ClassStyle == "Homework">>
+		<<set _random to {
+			"English Question": 10,
+			"English Good Class": 10,
+		}>>
+	/* Nap Class Style */
+	<<elseif $ClassStyle == "Nap">>
+		<<set _random to {
+			"English Class Nap": 10,
+		}>>
+		/* Kazu */
+		<<if $ToggleOCKazu == 1 && $CompletedQuests.includes("Kazu: The Deliquent")>>
+			<<set _random["OC Kazu English Class Story"] = 10>>
+		<</if>>
+
+	<</if>>
+
+
+	<<set _event to _random.random()>>
+
+	/* Quest-Forced */
+	<<if $InActiveQuests.includes("Thomas: Study Session")>>
+		<<set _event to "Thomas Study Session English Pre-Intro">>
+	<</if>>
+	<<if $InActiveQuests.includes("Carter: Hero Award")>>
+		<<set _event to "Carter Hero Award Intro">>
+	<<elseif $ActiveQuests.includes("Carter: Hero Award Class") && random(1, 2) == 1>>
+			<<set _event to "Carter Hero Award Interlude Class">>
+	<</if>>
+
+	<<include _event>>
+<</if>>

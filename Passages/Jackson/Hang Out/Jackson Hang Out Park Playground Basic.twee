@@ -1,0 +1,107 @@
+:: Jackson Hang Out Park Playground Basic [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+Before you even have the chance to ask <span style="color:DarkTurquoise">Jackson</span> what he wants to do, <span style="color:lightgreen">he has grabbed you by the arms and dragged you over to the monkey bars.</span> You should have known. <span style="Color: LightSteelBlue">“Hey! Watch this!”</span> <span style="color:DarkTurquoise">Jackson</span> says as he climbs all the way to the top of the bars <span style="color:Pink">and dangles upside down by his legs, letting his shirt flutter down.</span> <span style="Color: LightSteelBlue">“Look! No hands!”</span> He laughs, holding his hands up in the air as he swings around. <span style="color:lightgreen">The boy has incredible leg strength.</span> <br>
+
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                },
+            },
+            {
+            Name: "Jackson",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“My parents took us to this giant park once, like took HOURS to get there, but they had a massive jungle gym like this with bars and nets and stuff and it had this monkey bar path that was over a big fall onto the trampoline, and I did it all no problem! My brother was too scared, but it was fine since it had the trampoline. Actually, falling was more fun than climbing, which is weird causing falling normally hurts and-“</span> <span style="color:DarkTurquoise">Jackson</span> goes off on his cute, high-energy ramble that somehow evolves into the story of his family’s entire trip they took last summer. <span style="color:lightgreen">It is pretty endearing.</span> <br>
+<br>
+As he chats and swings about, you climb a few rungs up the monkey bars and ponder swinging around. <span style="color:Pink">Then again, <span style="color:DarkTurquoise">Jackson</span>’s sides look awfully exposed like that.</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Swing around<br>">>
+    <<replace"#choice">>
+        You decide to swing around next to <span style="color:DarkTurquoise">Jackson</span>, though you do mainly from your hands, and regale <span style="color:DarkTurquoise">Jackson</span> with your own tales of family vacation and adventure. <span style="color:Pink">For one reason or another, you start telling <span style="color:DarkTurquoise">Jackson</span> a rather embarrassing story about how your elder brother stole your swimming trunks while at a hotel swimming pool back when you were in first grade. The good side was that the pool was empty outside of your family, but the downside of this was that, when you told Your Father, all he did was laugh.</span> <br>
+
+            <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    Blush: 1,
+                    },
+                },
+                {
+                Name: "Jackson",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“You’re brother sounds fun!”</span> <span style="color:DarkTurquoise">Jackson</span> laughs, <span style="color:Pink">understandably taking the side of whomever leads to more nude fun.</span> You briefly wonder how your elder brother would try to embarrass a boy so comfortable in his skin as <span style="color:DarkTurquoise">Jackson</span>. <span style="Color: LightSteelBlue">“I did that to my little brother once, or something like it. But I got in BIG trouble! Which is unfair, since we were just in our backyard and I wasn’t wearing any trunks either! She beat my butt right there!”</span> <span style="color:DarkTurquoise">Jackson</span> laughs. <br>
+        <br>
+        <span style="color:lightgreen">You and <span style="color:DarkTurquoise">Jackson</span> spend the next few minutes sharing embarrassing stories with each other. Well, at least stories you’d find embarrassing. <span style="color:DarkTurquoise">Jackson</span> seems to find most of them funny or exciting. You’re not sure you’ll ever understand this kid.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Jackson" 3>>
+        <span style="color:green">+Jackson Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:green">+Jackson Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 5>>
+        <br>
+        [[Continue|Jackson Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "Tickle his sides!<br>">>
+    <<replace"#choice">>
+        <span style="color:Pink">With a devious smirk and not a single ounce of remorse, you pounce on your upside-down friend and attack his vulnerable sides! <span style="color:DarkTurquoise">Jackson</span> immediately lets out a high-pitched screech before giggling overtakes him. <span style="color:DarkTurquoise">Jackson</span> is extremely ticklish on his sides for one who is so often without a shirt, and you quickly leave him a laughing mess with red cheeks and tears rolling down his face.</span> <br>
+        
+            <<set _ad to [
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                    },
+                },
+                {
+                Name: "Jackson",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    Eyes: "Closed",
+                    Blush: 2,
+                    Cry: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="color:Pink">Eventually, the tickling leads to <span style="color:DarkTurquoise">Jackson</span> losing his hold on the monkey bars and he falls right on top of you! You both crash into the sand, laughing and crying away. You figure that is the end of it, until <span style="color:DarkTurquoise">Jackson</span> suddenly rolls on top of you, pulls your top up, and begins to get vicious revenge!</span> <br>
+        <br>
+        <span style="color:Pink">This leads to a sort of tickling wrestling match in the sand as you keep rolling around trying to tickle the other. By the end, you are both out of breath and completely red. Neither of you are sure who’s the overall winner, so just decide to rest in the sand until you can breathe normally again.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Jackson" 3>>
+        <span style="color:green">+Jackson Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:red">-Jackson Energy</span><br>
+        <<set $HangOutNeed.Energy -= 5>>
+        <span style="color:green">+Jackson Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 5>>
+        <br>
+        [[Continue|Jackson Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

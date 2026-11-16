@@ -1,0 +1,64 @@
+:: Sex Main [nobr]
+
+<<set _sexposition to "Sex " + $Sex.Partner + " " + $Sex.Position>>
+<<include _sexposition>>
+
+<<include "Sex Avatars">>
+
+<<include "Sex Main Progress">>
+
+<<include "Sex Main Actions">>
+
+:: Sex Main Progress [nobr]
+
+<<if $Sex.PartnerArousal >= 100>>
+    <span style="color:Pink">You both are about to burst! <strong>(Climax!)</strong></span> 
+<<elseif $Sex.PartnerArousal >= 70>>
+    <span style="color:Pink">You feel like you are both approaching the edge!</span>
+<<elseif $Sex.PartnerArousal >= 40>>
+    <span style="color:Pink">Both of your bodies twitch and tingle in desire!</span> 
+<<elseif $Sex.PartnerArousal >= 10>>
+    <span style="color:Pink">Your stomach feels all funny from the sensation!</span> 
+<<else>>
+    <span style="color:Pink">You can feel both of your penises tingle with anticipation!</span> 
+<</if>><br>
+
+:: Sex Main Actions [nobr]
+
+<<if $Sex.PartnerArousal < 100>>
+    <span style="color:Azure"><strong>=Actions=</strong></span><br>
+    <<if $Sex.PositionTop == "Player">>
+        <<link"Hump Him Gently<br>">>
+            <<set $SexAction to "Gentle Humping">>
+            <<set $Sex.PartnerArousal += 20>>
+            <<set _sexlink to "Sex PC Top Gentle Humping " + $Sex.Partner>>
+            <<goto _sexlink>>
+        <</link>>
+        <<link"Hump Him Roughly<br>">>
+            <<set $SexAction to "Rough Humping">>
+            <<set $Sex.PartnerArousal += 30>>
+            <<set _sexlink to "Sex PC Top Rough Humping " + $Sex.Partner>>
+            <<goto _sexlink>>
+        <</link>>
+    <<else>>
+        <<link"Tell Him to Hump You Gently<br>">>
+            <<set $SexAction to "Gentle Humping">>
+            <<set $Sex.PartnerArousal += 20>>
+            <<set _sexlink to "Sex Partner Top Gentle Humping " + $Sex.Partner>>
+            <<goto _sexlink>>
+        <</link>>
+        <<link"Tell Him to Hump You Roughly<br>">>
+            <<set $SexAction to "Rough Humping">>
+            <<set $Sex.PartnerArousal += 30>>
+            <<set _sexlink to "Sex Partner Top Rough Humping " + $Sex.Partner>>
+            <<goto _sexlink>>
+        <</link>>
+    <</if>>
+
+<<else>>
+    <span style="color:Azure"><strong>=Climax=</strong></span><br>
+    <<link"You're cumming!">>
+        <<set _sexlink to "Sex Climax " + $Sex.Position + " " + $Sex.Partner>>
+        <<goto _sexlink>>
+    <</link>>
+<</if>>

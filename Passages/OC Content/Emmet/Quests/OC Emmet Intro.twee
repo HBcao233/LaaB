@@ -1,0 +1,162 @@
+:: OC Emmet Intro [nobr]
+
+/* Intro */
+<<set $EmmetIntro to {
+    State: -1,
+    Choice: "None",
+}>>
+<<set $OCEmmetSocial to 0>>
+<<set $OCEmmetSocialRank to 0>>
+
+Glancing at the posting in your hand, you appear to be at the right place. Looking around, you spot someone who is most likely this <span style="color:LightSteelBlue">“mysterious inventor”</span>. Set up on one of the picnic tables filled with strange bits and bobs wearing a white lab coat, is a boy your age with black hair. You get a bit nervous walking closer, hearing the boy mumbling to himself as he scribbles down notes. You are almost considering leaving when the boy suddenly spins around to greet you. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Mouth: "Happy",
+		},
+	},
+	{
+		Name: "OC Emmet",
+		State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+		}
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Hey there!”</span> He says with a smile, eyeing you up and down, <span style="color:LightSteelBlue">“You here about the job, yeah? Good, I’m just about ready to start.”</span> The boy rushes forward, speaking quickly with a certain glint in his eye that reminds you of Noah when he’s had too much sugar. <span style="color:LightSteelBlue">“Name’s <span style="color:DarkTurquoise">Emmet Wadley</span>, but you can just call me <span style="color:DarkTurquoise">Emmet</span>, no need to bring surnames into this. You’re <span style="color:DarkTurquoise">$Player.Name</span>, yeah?”</span> You blush in surprise, asking how he knows your name. <span style="color:LightSteelBlue">“You and that French boy <span style="color:DarkTurquoise">Felix</span> are new to Preston, yeah? ‘Course I’d know your names, everyone does. Well, everyone who pays attention.”</span> <br>
+<br>
+
+/*PC wearing a shirt*/
+    <<if $PlayerTop.Type != "None">>
+    The boy turns back to his inventions, holding up a strange pink puffed out vest and smiling. <span style="color:LightSteelBlue">“Alrighty! This is nice and simple, need you to take your top off though, need skin contact this. Won’t hurt you, promise!”</span> You begin to get even more worried seeing this half-hazardly put together invention. Sure, it looks impressive, but you can’t even begin to imagine what it does and this boy is a little… eccentric. <span style="color:Yellow">If you want to back out this is your only chance.</span> <br>
+
+/*PC not wearing a shirt*/
+    <<else>>
+    The boy turns back to his inventions, holding up a strange pink puffed out vest and smiling. <span style="color:LightSteelBlue">“Alrighty! This is nice and simple, and you’ve already got your top off. Good. I like an assistant who thinks ahead. Skin contact is the perfect way to make sure this thing works!”</span> You begin to get even more worried seeing this half-hazardly put together invention. Sure, it looks impressive, but you can’t even begin to imagine what it does and this boy is a little… eccentric. <span style="color:Yellow">If you want to back out this is your only chance.</span> <br>
+    <</if>>
+    <br>
+
+<div id="choice">
+
+/*Take off your top/Ask what you need to do*/
+    <<link "Ask what you need to do<br>">>
+    <<replace"#choice">>
+
+    /*PC wearing Top*/
+    <<if $PlayerTop.Type != "None">>
+
+        You do as the boy says, removing your top and standing there with your chest bare. <span style="color:Pink">“The boy leans in forward, seemingly inspecting your body, before smiling.</span> <br>
+
+    /*PC wearing Top (Body Anxiety or Shy Trait)*/
+    <<elseif $PlayerTop.Type != "None" && $Player.Traits.includes("BodyAnxiety") or ("Shy")>>
+        Though uncomfortable you do as the boy says and remove your top, leaving you standing with your chest bare. <span style="color:LightCoral">You feel your cheeks warm up as you cover your nipples with your hands, feeling as if the eyes on the entire park are now on you. You feel extremely nervous to be here like this, even more so when you see the boy smirking at you.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“Oh, so you’re a shy one?”</span> He chuckles, <span style="color:LightSteelBlue">“Don’t worry, I won’t bite.”</span> The boy moves your arms away from your chest, causing your heart to beat faster as he seems to inspect your body. <span style="color:Pink">You bite your lower lip, trying to calm your nerves as the boy writes something down before smiling.</span> <br>
+
+    /*PC not wearing Top*/
+    <<else>>
+    Seeing as you are already shirtless, you ask the boy what’s next. <span style="color:LightSteelBlue">“Just a quick examination.”</span> He replies, <span style="color:Pink">leaning forward and inspecting your bare chest,</span> writing something down before smiling. <br>
+    <</if>>
+     <br>
+
+    <span style="color:LightSteelBlue">“Perfect!”</span> The boy says, <span style="color:LightSteelBlue">“Alright, I need you to just sign here real quick, just a formality stating I’m not responsible for any… adverse reactions. But it’s just a formality, everything here is completely safe! You can trust me on that.”</span> Against your better judgement, you sign the papers and hand them back to the boy. <br>
+
+    <<set _ad to [
+	{
+	Name: "Player",
+	State: {
+        Mouth: "Frown",
+            },
+    Clothes: {
+        Top: $None,
+        Outer: $None,
+        Over: $None,
+        Under: $None,
+        Neck: $None,
+        },
+	},
+
+	{
+	Name: "OC Emmet",
+	State: {
+		Outfit: "Everyday",
+        Mouth: "Happy",
+            }
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Right! Now put this on and lay down. Stomach or back, whichever is most natural for you.”</span> The boy hands you the vest and lays a towel on the grass, inviting you to lay down. You examine the vest for a moment. <br>
+    <br>
+
+    <<if $Sense < 7>>
+    /*Sense less than 7*/
+        It appears to be a common pink vest, but holes have been cut into it, with strange objects placed inside. Though you have no idea what they could be. Regardless, it seems safe enough. So, you slip it on and walk over to the towel. <br>
+
+    <<elseif $Sense >= 7>>
+    /*Sense 7+*/
+
+        This is a vest from the store, though it has been modified. Holes have been cut into parts of it and small devices slipped inside. Investigating them, they appear to be small massagers or vibrators. <span style="color:LightGreen">The wires have all been connected to a single button, which you have no doubt will turn them all on, turning the vest into a wearable massager. How… interesting…</span> <br>
+    <</if>>
+    <br>
+
+    /*[Next two options will lead to Passage 2]*/
+
+    <div id="choice2">
+    /*Lay on your back*/
+        /*[Go to Blast Emmet Intro 2 and save temp variable as ”Back”]*/
+        <<link [[Lay on your back|OC Emmet Intro 2]]>>
+        <<replace"#choice">>
+        <<set $EmmetIntroChoice to "Back">> <br>
+        <</replace>>
+        <</link>>
+<br>
+    /*Lay on your stomach*/
+        /*[Go to Blast Emmet Intro 2 and save temp variable as ”Front”]*/
+        <<link [[Lay on your stomach|OC Emmet Intro 2]]>>
+        <<replace"#choice">>
+        <<set $EmmetIntroChoice to "Front">>
+        <</replace>>
+        <</link>>
+        </div>
+<</replace>>
+<</link>>
+
+/*-Back Out (Second option but put here first for simplicity.)*/
+    <<link "Back Out<br>">>
+    <<replace"#choice">>
+
+    You take a step back, holding your arms up. You tell the boy that you must have confused what the job was about, you’re not looking to be some crazy kid’s test subject for whatever weird invention he’s cooked up. <span style="color:LightCoral">Hearing this, the boy frowns.</span> <br>
+
+    <<set _ad to [
+	{
+		Name: "Player",
+		State: {
+		},
+	},
+	{
+		Name: "OC Emmet",
+		State: {
+		    Outfit: "Everyday",
+            Mouth: "Frown",
+            Eyes: "Tired",
+            }
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Fine then, guess I was wrong to think you’d have some spine.”</span> He turns away waving you off, <span style="color:LightSteelBlue">“If you’re not going to help me, then run off now. This puts me behind and I can’t afford anymore distractions!”</span> The kid turns back to his work, continuing to fiddle with his invention. <span style="color:LightCoral">While he lets you leave without trouble, the boy seems very annoyed that you wasted his time.</span> <br>
+    <<set $OCEmmetSocial to -25>>
+    <<set $OCEmmetSocialRank to 0>>
+    <<set $CompletedQuests.push("Emmet: Introduction")>>
+    <<set $InActiveQuests.delete("Emmet: Introduction")>>
+    <br>
+    [[Continue|Park]]
+<</replace>>
+<</link>>
+
+</div>

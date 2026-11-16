@@ -1,0 +1,84 @@
+:: MICHAEL Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $MichaelSocialRank == -3>>
+	<<set $MichaelRelationship to "Hated">>
+	<span style="color:DarkRed">Michael Hates you!</span>
+	<br>
+<<elseif $MichaelSocialRank == -2>>
+	<<set $MichaelRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Michael are Enemies.</span>
+	<br>
+<<elseif $MichaelSocialRank == -1>>
+	<<set $MichaelRelationship to "Very Disliked">>
+	<span style="color:Red">Michael controls you with blackmail.</span>
+	<br>
+<<elseif $MichaelSocialRank == 0 and $MichaelSocial <= -50>>
+	<<set $MichaelRelationship to "Disliked">>
+	<span style="color:Red">Michael Dislikes you. </span>
+	<br>
+<<elseif $MichaelSocialRank == 0 and $MichaelSocial < 50>>
+	<<set $MichaelRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Michael are Acquaintances.</span>
+	<br>
+<<elseif $MichaelSocialRank == 0 and $MichaelSocial >= 50>>
+	<<set $MichaelRelationship to "Liked">>
+	<span style="color:LightGreen">Michael Likes you.</span>
+	<br>
+<<elseif $MichaelSocialRank == 1>>
+	<<set $MichaelRelationship to "Friends">>
+	<span style="color:Green">You and Michael are Friends.</span>
+	<br>
+<<elseif $MichaelSocialRank == 2>>
+	<<set $MichaelRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Michael are Good Friends!</span>
+	<br>
+<<elseif $MichaelSocialRank == 3>>
+	<<set $MichaelRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Michael are Close Friends!</span>
+	<br>
+<<elseif $MichaelSocialRank == 4>>
+	<<set $MichaelRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Michael are Best Friends!</span>
+	<br>
+<<elseif $MichaelSocialRank == 5>>
+	<<set $MichaelRelationship to "Love">>
+	<span style="color:Pink">You and Michael Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $MichaelSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $MichaelSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $MichaelSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $MichaelSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $MichaelSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $MichaelSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $MichaelSocial,
+			value: Math.abs($MichaelSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($MichaelSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $MichaelSocial > 120>>
+	<<set $MichaelSocial to 120>>
+<</if>>
+<<if $MichaelSocial < -120>>
+	<<set $MichaelSocial to -120>>
+<</if>>

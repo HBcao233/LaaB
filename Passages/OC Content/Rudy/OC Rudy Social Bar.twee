@@ -1,0 +1,84 @@
+:: OC Rudy Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCRudySocialRank == -3>>
+	<<set $OCRudyRelationship to "Hated">>
+	<span style="color:DarkRed">Rudy Hates you!</span>
+	<br>
+<<elseif $OCRudySocialRank == -2>>
+	<<set $OCRudyRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Rudy are Enemies.</span>
+	<br>
+<<elseif $OCRudySocialRank == -1>>
+	<<set $OCRudyRelationship to "Very Disliked">>
+	<span style="color:Red">Rudy really Dislikes you.</span>
+	<br>
+<<elseif $OCRudySocialRank == 0 and $OCRudySocial <= -50>>
+	<<set $OCRudyRelationship to "Disliked">>
+	<span style="color:Red">Rudy Dislikes you. </span>
+	<br>
+<<elseif $OCRudySocialRank == 0 and $OCRudySocial < 50>>
+	<<set $OCRudyRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Rudy are Acquaintances.</span>
+	<br>
+<<elseif $OCRudySocialRank == 0 and $OCRudySocial >= 50>>
+	<<set $OCRudyRelationship to "Liked">>
+	<span style="color:LightGreen">Rudy Likes you.</span>
+	<br>
+<<elseif $OCRudySocialRank == 1>>
+	<<set $OCRudyRelationship to "Friends">>
+	<span style="color:Green">You and Rudy are Friends.</span>
+	<br>
+<<elseif $OCRudySocialRank == 2>>
+	<<set $OCRudyRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Rudy are Good Friends!</span>
+	<br>
+<<elseif $OCRudySocialRank == 3>>
+	<<set $OCRudyRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Rudy are Close Friends!</span>
+	<br>
+<<elseif $OCRudySocialRank == 4>>
+	<<set $OCRudyRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Rudy are Best Friends!</span>
+	<br>
+<<elseif $OCRudySocialRank == 5>>
+	<<set $OCRudyRelationship to "Love">>
+	<span style="color:Pink">You and Rudy Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCRudySocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCRudySocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCRudySocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCRudySocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCRudySocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCRudySocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCRudySocial,
+			value: Math.abs($OCRudySocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCRudySocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCRudySocial > 120>>
+	<<set $OCRudySocial to 120>>
+<</if>>
+<<if $OCRudySocial < -120>>
+	<<set $OCRudySocial to -120>>
+<</if>>

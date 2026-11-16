@@ -1,0 +1,100 @@
+:: OC Bobby Intro 2 Driven [nobr]
+
+<<set $Minutes += 10>>
+The drive only takes a few minutes and you go the exact way <span style="color:DarkTurquoise">Bobby</span> described. Turning towards the schools, then going far past the high school. The residential houses and shops soon give way to long stretches of empty fields, lone houses on a range, or impressively maintained farmlands. You have brief memories of driving past here when first moving to town, but you still had no idea such rural farmland was so close! <span style="color:DarkTurquoise">Bobby</span> notices you staring out the window and smiles. <br>
+<br>
+<span style="Color: LightSteelBlue">“Yup, it’s pretty beautiful out here. You know, Opal City used to be a bunch of different smaller towns, lots of ‘em farming communities. So, there’s quite a few of us still around.”</span> He explains before turning onto a dirt road that leads to one such farm. You pass by a sign that says, <span style="Color: LightSteelBlue">“Thompson’s Farm”</span> and park just in front of the large wooden farm house out front. <span style="Color: LightSteelBlue">“Welcome to the farm!”</span> <span style="color:DarkTurquoise">Bobby</span> laughs, putting the truck in park and exiting the vehicle. <span style="Color: LightSteelBlue">“Let me give you the grand tour!”</span> <br>
+<br>
+<<include"OC Bobby Intro 2">>
+
+:: OC Bobby Intro 2 Walked [nobr]
+
+<<set $Minutes += 30>>
+When you set out from the High School in the direction of the farms, you had no idea just how long of a walk it would be. Expecting a brief stroll, <span style="color:Yellow">you are instead greeted by a grueling 45-minute walk that leaves your feet burning and your legs tired.</span> You really should have taken <span style="color:DarkTurquoise">Bobby</span> up on his offer to drive you or at least taken the bus. Despite the long walk, however, you do seem to be going in the right direction as the residential houses and shops soon give way to long stretches of empty fields, lone houses on range, and impressively maintained farmlands. <br>
+<br>
+Then you finally see it, the sign introducing <span style="Color: LightSteelBlue">“Thompson’s Farm”</span>. You’ve made it! Walking up the dirt road leading up to the large farmhouse, you spot <span style="color:DarkTurquoise">Bobby</span> out front moving some boxes. He smiles upon seeing you and runs over. <span style="Color: LightSteelBlue">“Well know, wasn’t sure you were going to make it. Great to see you!”</span> He laughs, patting you on the head, <span style="Color: LightSteelBlue">“Alright then, let me give you the grand tour!”</span> <br>
+<<set $ActiveQuests.delete("Bobby: Farm Intro")>>
+<<set $CompletedQuests.push("Bobby: Farm Intro")>>
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+    <<if $QuestLog[_i].Name == "Bobby: Farm Intro">>
+        <<set $QuestLog.deleteAt(_i)>>
+        <<break>>
+    <</if>>
+<</for>>
+<br>
+<<include"OC Bobby Intro 2">>
+
+:: OC Bobby Intro 2 Bus [nobr]
+
+<<set $Minutes += 10>>
+<<set $Money -= 5>>
+The bus ride itself takes a decent few minutes, especially with quite a few stops between where you got on and the farms, leaving you one of the few people still on the bus once it starts to head in that direction. But as you see just how far the farms are and watch out the windows as the residential houses and shops soon give way to long stretches of empty fields, lone houses on range, and impressively maintained farmlands, <span style="color:LightGreen">you are thankful that you decided to take the bus rather than walk.</span> <br>
+<br>
+The bus drops you off along a nearly deserted road with a few farms nearby. You have to ask the bus driver if he knows the direction of the specific one you are looking for and he is thankfully able to point you towards it. It takes a few more minutes of walking, but eventually you see the <span style="Color: LightSteelBlue">“Thompson’s Farm”</span> sign out front and happily begin to walk up the dirt road. Approaching the large farmhouse, you spot <span style="color:DarkTurquoise">Bobby</span> out front moving some boxes. He smiles upon seeing you and runs over. <span style="Color: LightSteelBlue">“Well know, wasn’t sure you were going to make it. Great to see you!”</span> He laughs, patting you on the head, <span style="Color: LightSteelBlue">“Alright then, let me give you the grand tour!”</span> <br>
+<<set $ActiveQuests.delete("Bobby: Farm Intro")>>
+<<set $CompletedQuests.push("Bobby: Farm Intro")>>
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+    <<if $QuestLog[_i].Name == "Bobby: Farm Intro">>
+        <<set $QuestLog.deleteAt(_i)>>
+        <<break>>
+    <</if>>
+<</for>>
+<br>
+<<include"OC Bobby Intro 2">>
+
+:: OC Bobby Intro 2 [nobr]
+
+The first thing <span style="color:DarkTurquoise">Bobby</span> shows you is the large house you are standing in front of. It is a sizeable wood and stone structure with a rustic yet homely feel. While no Avendale, it is clear that <span style="color:DarkTurquoise">Bobby</span>’s family is pretty well off. <span style="Color: LightSteelBlue">“This is the house and also the only place with air conditioning.”</span> He laughs, <span style="Color: LightSteelBlue">“Feel free to hang out in the living room if you need a break. Also always have cold water and juice in the fridge, so feel free to help yourself. Staying hydrated is important. Bathroom is down this way on the right. Farm work can be pretty swetty, so you can have a shower afterwards if you want. I’m really the only one that uses this bathroom, so you don’t have to worry about my family walking in on you.”</span> <br>
+
+       <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+      {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+Walking back outside, you marvel at just how large the farm is. Outside of the large farmhouse behind you, there are two other main features. First is the nearby barn, a large classically red barn surrounded by animal pens. Walking towards it causes the smell of animals to become stronger and, while a little gross, you quickly get used to it. There you can see a large mixture of chickens, cows, pigs, and even a few horses penned away. <span style="color:Pink">You blush a little when <span style="color:DarkTurquoise">Bobby</span> offers to maybe show you how to ride sometimes.</span> <br>
+<br>
+The last feature of the farms is the large fields that seem to stretch on for miles. There is a large variety of fruit and vegetables, it seems they grow just about everything here and you feel a little overwhelmed by just how much there is. You can see why they need the help! The largest field is an orchard full of trees doted with orange dots, which you’d imagine are likely oranges. The scent from these trees travels far and gives the entire place a pleasant, citrusy smell. <br>
+<br>
+<span style="Color: LightSteelBlue">“And that’s everything, pretty much.”</span> <span style="color:DarkTurquoise">Bobby</span> says as the tour finishes, <span style="Color: LightSteelBlue">“We normally need help all over the farm, so I’m sure we’ll be posting a large variety of stuff on the job board. May be a bit of a trek, but we’ll pay you enough to make the bus fare worth it.”</span> He laughs, stretching his arms into the air, <span style="Color: LightSteelBlue">“Since you’re here, want to try it out? I’ll even let you choose where you wanna work.”</span> <span style="color:Yellow">You ponder which of the locations you’d like to spend your time.</span> <br>
+<br>
+<div id="choice">
+    <<requiresTrait "Flirty" "Work in the House">>
+    <<replace"#choice">>
+        With a smirk, you ask if any work needs done in the house. <span style="color:Pink">Maybe if <span style="color:DarkTurquoise">Bobby</span> needs a shower you could help him out there. Wash those hard-to-reach places.</span> <span style="color:DarkTurquoise">Bobby</span> laughs at your comment, <span style="Color: LightSteelBlue">“That’s not exactly the type of help we’re hiring for. Besides, I got long arms, so I’m pretty good at reaching all the spots. I meant more so with the animals or crops.”</span> He pats you on the head wholesomely and you get the feeling he didn’t catch that you were trying to flirt or just changed the subject. Alas, maybe another time. <br>
+        <br>
+    <</replace>>
+    <</requiresTrait>>
+</div>
+/* This should leave the options below even once the above is clicked */
+[[Work the Fields|OC Bobby Intro 2 Fields]]<br>
+[[Work in the Barn|OC Bobby Intro 2 Barn]]<br>
+
+:: OC Bobby Intro 2 Fields [nobr]
+
+You walk over to one of the large vegetable patches and are given your instructions. A bunch of weeds have been growing here recently, so you need to walk along the field and pull any you see. Busy, tedious work, but simple enough. You are given thick gloves to aid in the process. <span style="Color: LightSteelBlue">“If you could also check to see if any of the plants are in a bad way, that’d be great. Hard to know which ones of them need the extra attention when we get this busy.”</span> <span style="color:DarkTurquoise">Bobby</span> adds. <br>
+<br>
+Starting on one corner, you perform a zig-zag pattern to ensure you don’t miss any weeds or wilting plants, you’d hate to disappoint <span style="color:DarkTurquoise">Bobby</span> on such a simple task. Pulling the weeds is hard work, as some of them have deep roots and you are careful not to damage or disturb the other plants. But when you’ve finished, you’ve cleaned the place out and have an impressive pile of weeds. You’ve even made some mental notes about which plants looked to be in need of extra help. <span style="color:LightGreen">In the end, <span style="color:DarkTurquoise">Bobby</span> is very impressed with your work and gives you a praise-filled pat on your head as he walks you back to the house for some refreshments after a job well done.</span> <br>
+<br>
+<<include"OC Bobby Intro 3">>
+
+:: OC Bobby Intro 2 Barn [nobr]
+
+Walking over to the barn, you are tasked with helping <span style="color:DarkTurquoise">Bobby</span> milk some cows, which you are a little nervous about. Thankfully, <span style="color:DarkTurquoise">Bobby</span> helps you through it and shows you the best way to calm a cow before starting it and how to attach the milking machine. You are a bit impressed about how automated it all is now. <br>
+<br>
+<span style="Color: LightSteelBlue">“Yeah, pops got these fancy machines to make things faster. I grew up doing it by hand, and still do to some of our more nervous girls, but this definitely makes things faster.”</span> He says as you pick up one of the sucking machines and blush. <span style="color:Pink">The shape and size of it makes you instantly wonder what it would feel like to attach this to your penis, forcibly milked by some machine. The thought makes your bits tingle, so you quickly hand the milker to <span style="color:DarkTurquoise">Bobby</span> to attach and turn away slightly embarrassed.</span> <span style="color:DarkTurquoise">Bobby</span> seems to notice and chuckles. <br>
+<br>
+While the machines do most of the actual milking, you still have to haul the milk around once it’s collected and your hands are utterly exhausted by the end of it. Thankfully, you are done before too long and are actually proud of the work you managed to get done. In the end, <span style="color:LightGreen"><span style="color:DarkTurquoise">Bobby</span> is very impressed with your work and gives you a praise-filled pat on your head as he walks you back to the house for some refreshments after a job well done.</span> <br>
+<br>
+<<include"OC Bobby Intro 3">>

@@ -1,0 +1,24 @@
+:: CC Physical Eyes [nobr]
+<span style="color:Azure"><strong>--Eyes--</strong></span><br>
+
+<<for _i to 0; _i lt $EyeDirectionOptions.length; _i++>>
+<<set _dir to $EyeDirectionOptions[_i]>>
+<<capture _dir>>
+	<strong> _dir Eye Color: <<= $Player[`${_dir}EyeColor`]>></strong><br>
+	<div style="text-indent: 2.5em;">
+	<<for _j to 0; _j lt $EyeColorOption.length; _j++>>
+	<<capture _j>>
+		<<set _path = "Images\\Icons\\Shop Icons\\Colors\\" + $EyeColorOption[_j] + ".png">>
+		<span @title="$EyeColorOption[_j]">
+		<<link [img[_path]]>>
+			<<set $Player[`${_dir}EyeColor`] to $EyeColorOption[_j]>>
+			<<replace"#CC">>
+				<<include"CC Physical">>
+			<</replace>>
+		<</link>>
+		</span>
+	<</capture>>
+	<</for>>
+	</div>
+<</capture>>
+<</for>>

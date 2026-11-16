@@ -1,0 +1,65 @@
+:: THOMAS Bus Nap [nobr]
+
+You are sitting on the bus next to <span style="color:DarkTurquoise">Thomas</span>. The entire bus seems to have a low energy, as it is mostly quiet and peaceful, when you suddenly feel something on your shoulder. You turn and see that <span style="color:DarkTurquoise">Thomas</span> had fallen asleep, resting his head on you. <span style="color:Pink">The loner boy’s tough exterior seems to completely vanish, looking almost cute as he sleeps.</span> You have a few minutes before you have to get off the bus, so you could let him sleep if you want to.<br>
+
+<<set _ad to [{
+    Name: "Thomas",
+    State: {
+        Outfit: "Uniform",
+		Eyes: "Closed",
+    },
+}]>>
+<<ad _ad>>
+
+<div id=choice>
+	<<link "Let him sleep">>
+	<<replace"#choice">>
+You smile and decide to let the boy sleep. He does so peacefully a few minutes before a large bump shakes him awake. Upon realizing he was sleeping on your shoulder, he turns bright red and turns towards the window, trying to pretend it didn’t happen. You can’t help but laugh at his embarrassment.<br>
+
+<<set _ad to [{
+    Name: "Thomas",
+    State: {
+        Outfit: "Uniform",
+		Mouth: "Frown",
+		Blush: 3,
+    },
+}]>>
+<<ad _ad>>
+<<socialChange "Thomas" 3>>
+<br>
+					/* GET OFF BUS */
+		<<if $BusRide == "Home">>
+			[[Get off bus|Northend]]
+		<<else>>
+			[[Get off bus|Middle School]]
+		<</if>>
+
+
+
+	<</replace>>
+	<</link>>
+	<br>
+	<<link "Wake him up<br>">>
+	<<replace"#choice">>
+You shake the boy slightly to wake him. He groggily opens his eyes and, upon seeing that he was laying on your shoulder, quickly scoots away and turns towards the window, trying to pretend it didn’t happen.<br>
+
+<<set _ad to [{
+    Name: "Thomas",
+    State: {
+        Outfit: "Uniform",
+		Mouth: "Frown",
+		Blush: 2,
+    },
+}]>>
+<<ad _ad>>
+
+					/* GET OFF BUS */
+		<<if $BusRide == "Home">>
+			[[Get off bus|Northend]]
+		<<else>>
+			[[Get off bus|Middle School]]
+		<</if>>
+
+	<</replace>>
+	<</link>>
+</div>

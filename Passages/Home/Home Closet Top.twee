@@ -1,0 +1,268 @@
+:: Home Closet Top [nobr]
+
+<<if $HomeClosetCategory2 != "Under">>
+	<<link "Under">>
+		<<set $HomeClosetCategory2 to "Under">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Under]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "Top">>
+	<<link "Top">>
+		<<set $HomeClosetCategory2 to "Top">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Top]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "Over">>
+	<<link "Over">>
+		<<set $HomeClosetCategory2 to "Over">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Over]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "Outer">>
+	<<link "Outer">>
+		<<set $HomeClosetCategory2 to "Outer">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Outer]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "Back">>
+	<<link "Back">>
+		<<set $HomeClosetCategory2 to "Back">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Back]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "Hands">>
+	<<link "Hands">>
+		<<set $HomeClosetCategory2 to "Hands">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Hands]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "OverAcc">>
+	<<link "Over Accessory">>
+		<<set $HomeClosetCategory2 to "OverAcc">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Over Accessory]</strong>
+<</if>><br>
+
+<<if $HomeClosetCategory2 == "Under">>
+/* UNDER */
+<<if $PlayerUnder.Type != "None">>
+	<span style="color:Azure"><strong><big>--Under--</big></strong></span><br>
+    [img[$PlayerUnder.Icon]] <strong><big>$PlayerUnder.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerUnder.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerUnder.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerUnder.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerUnder.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerUnder.Durability/$PlayerUnder.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerUnder.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerUnder.Description<br>
+    </div>
+<</if>>
+
+<<elseif $HomeClosetCategory2 == "Top">>
+/* TOP */
+<<if $PlayerTop.Type != "None">>
+	<span style="color:Azure"><strong><big>--Top--</big></strong></span><br>
+    [img[$PlayerTop.Icon]] <strong><big>$PlayerTop.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    <span style="color:Azure"><strong>Options: </strong></span>
+    <<if $TopTucked != 1>>
+    	[[Tuck In Top|Home Closet][$TopTucked to 1]]
+    <<else>>
+    	[[Untuck In Top|Home Closet][$TopTucked to 0]]
+    <</if>>
+    <<if $PlayerTop.Tags.includes("Uniform")>>
+        <<if $TopUnbuttoned != 1>>
+            - [[Unbutton Shirt|Home Closet][$TopUnbuttoned to 1]]<br>
+        <<else>>
+            - [[Button up Shirt|Home Closet][$TopUnbuttoned to 0]]<br>
+        <</if>>
+    <</if>>
+    </div>
+     <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerTop.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerTop.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerTop.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerTop.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerTop.Durability/$PlayerTop.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerTop.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerTop.Description<br>
+    </div>
+<</if>>
+
+<<elseif $HomeClosetCategory2 == "Over">>
+/* OVER */
+<<if $PlayerOver.Type != "None">>
+	<span style="color:Azure"><strong><big>--Over--</big></strong></span><br>
+    [img[$PlayerOver.Icon]] <strong><big>$PlayerOver.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerOver.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerOver.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerOver.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerOver.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerOver.Durability/$PlayerOver.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerOver.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerOver.Description<br>
+    </div>
+<</if>>
+
+<<elseif $HomeClosetCategory2 == "Outer">>
+/* OUTER */
+<<if $PlayerOuter.Type != "None">>
+	<span style="color:Azure"><strong><big>--Outer--</big></strong></span><br>
+    [img[$PlayerOuter.Icon]] <strong><big>$PlayerOuter.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerOuter.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerOuter.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerOuter.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerOuter.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerOuter.Durability/$PlayerOuter.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerOuter.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerOuter.Description<br>
+    </div>
+<</if>>
+
+<<elseif $HomeClosetCategory2 == "Back">>
+/* BACK */
+<<if $PlayerBack.Type != "None">>
+	<span style="color:Azure"><strong><big>--Back--</big></strong></span><br>
+    [img[$PlayerBack.Icon]] <strong><big>$PlayerBack.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerBack.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerBack.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerBack.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerBack.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerBack.Durability/$PlayerBack.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerBack.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerBack.Description<br>
+    </div>
+<</if>>
+
+<<elseif $HomeClosetCategory2 == "Hands">>
+/* HANDS */
+<<if $PlayerHands.Type != "None">>
+	<span style="color:Azure"><strong><big>--Hands--</big></strong></span><br>
+    [img[$PlayerHands.Icon]] <strong><big>$PlayerHands.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerHands.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerHands.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerHands.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerHands.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerHands.Durability/$PlayerHands.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerHands.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerHands.Description<br>
+    </div>
+<</if>>
+
+<</if>>
+
+<br>
+<span style="color:Azure"><strong><big>--Closet--</big></strong></span><br>
+
+<<closet2 $HomeClosetCategory2>>
+
+<br><<include "Home Closet Inventory">>

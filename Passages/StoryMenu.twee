@@ -1,0 +1,64 @@
+:: StoryMenu {"position":"275,1025","size":"100,100"}
+<<if $CC == 1>>
+
+<<if $CheatsMenu == 1>>
+    [[Cheats Menu]]<br>
+    <</if>>
+
+<<link "Character">>
+<<script>>
+	Dialog.setup("Character Menu", "Character Menu");
+	Dialog.wiki(Story.get("Character Menu").processText());
+	Dialog.open();
+<</script>>
+<</link>>
+
+<<link "Inventory">>
+<<script>>
+	Dialog.setup("Player Inventory", "Player Inventory");
+	Dialog.wiki(Story.get("Player Inventory").processText());
+	Dialog.open();
+<</script>>
+<</link>>
+
+<<link "Social">>
+<<script>>
+	Dialog.setup("Social Menu", "Core Characters Social");
+	Dialog.wiki(Story.get("Social Menu").processText());
+	Dialog.open();
+<</script>>
+<</link>>
+
+<<link "Skills">>
+<<script>>
+	Dialog.setup("Skill Menu", "Skill Menu");
+	Dialog.wiki(Story.get("Skill Menu").processText());
+	Dialog.open();
+<</script>>
+<</link>>
+
+<<link "Quests">>
+<<script>>
+	Dialog.setup("Quest Menu", "Quest Menu");
+	Dialog.wiki(Story.get("Quest Menu").processText());
+	Dialog.open();
+<</script>>
+<</link>>
+
+<<link "Options">>
+<<script>>
+	Dialog.setup("Options Menu", "Options Menu");
+	Dialog.wiki(Story.get("Options Menu").processText());
+	Dialog.open();
+<</script>>
+<</link>>
+
+<</if>>
+
+<<link "Help">>
+<<script>>
+	Dialog.setup("Help Menu", "Help Menu");
+	Dialog.wiki(Story.get("Help Menu").processText());
+	Dialog.open();
+<</script>>
+<</link>>

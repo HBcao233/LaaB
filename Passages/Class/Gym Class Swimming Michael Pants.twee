@@ -1,0 +1,68 @@
+:: Gym Class Swimming Michael Pants [nobr]
+
+<span style="color:DarkTurquoise">Coach Kohler</span> runs the class through some swimming drills and laps. The class is going smoothly, better than smoothly even. The class is vibing well and even the weakest swimmers are making great strides. <span style="color:lightgreen">This performance puts <span style="color:DarkTurquoise">Coach Kohler</span> in such a good mood that he decides to declare free swim for the remainder of the class, which everyone is happy about.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Kohler",
+		State: {
+			Mouth: "Smile",
+		},
+	},
+]>>
+<<ad _ad>>
+
+Marco polo, diving, and generally fun water games ensue as everyone just enjoys their time. You are floating near one end of the pool on your own, relaxing, <span style="color:lightcoral">when you suddenly feel something rub against your leg. Scared by the sudden touch, you thrash around and look down just in time to see a dark shadow grab your legs and pull you underwater!</span> <br>
+<br>
+<span style="color:lightcoral">You thrash around in confusion for a moment, feeling hands on your body, until you are released a moment later and resurface. You gasp for air and begin to fearfully spin around and panic, looking for whatever attacked you</span> as you spot a smirking <span style="color:DarkTurquoise">Michael</span> next to you. <br>
+<br>
+<span style="color:LightSteelBlue">“Careful <span style="color:DarkTurquoise">$MichaelNickname</span>, heard there might be a monster in the pool!”</span> <span style="color:pink">He laughs, mimicking your scared expression. You blush and splash at him, angrily telling him that wasn’t funny.</span> <span style="color:LightSteelBlue">“I’d have to argue on that point bud. The look on your face entertained me greatly.”</span> <span style="color:pink">He splashes you back, <span style="color:LightSteelBlue">“Plus, you look so cute scared like that.”</span> He once again mimics your face and laughs.</span> <br>
+<br>
+You roll your eyes, telling him he won’t be laughing when you snitch and tell <span style="color:DarkTurquoise">Kohler</span> he is pulling people underwater. <br>
+<br>
+<span style="color:LightSteelBlue">“Is that a threat?”</span> <span style="color:DarkTurquoise">Michael</span> laughs,
+<<if $Player.PenisSize == "Tiny">>
+    <span style="color:LightSteelBlue">“Well, you might want to get a thimble to cover your little grape before you run to the teacher.”</span>
+<<elseif $Player.PenisSize == "Small">>
+    <span style="color:LightSteelBlue">“Well, you might want to cover up unless you want everyone to see your little noodle.”</span>
+<<elseif $Player.PenisSize == "Average">>
+    <span style="color:LightSteelBlue">“Go on, tell him. I’m sure he’ll have a laugh at your current state.”</span>
+<<elseif $Player.PenisSize == "Large">>
+    <span style="color:LightSteelBlue">“Not a nice thing to say to the person in control of your dignity.”</span>
+<<else>>
+    <span style="color:LightSteelBlue">“Careful though, looks like you got a big water snake under you.”</span>
+<</if>><br>
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Smirk",
+			Outfit: "Gym Swim",
+		},
+	},
+	{
+		Name: "Player",
+		ShowZoom: true,
+		State: {
+			Blush: 2,
+			Mouth: "Sad",
+			Outfit: "Naked"
+		},
+	},
+]>>
+<<ad _ad>>
+
+You raise an eyebrow in confusion until you notice that <span style="color:DarkTurquoise">Michael</span> has something in his hands. <span style="color:pink">A pair of trunks-? You turn even redder and look down to discover that you are completely naked in the pool! You quickly cover yourself as best you can with your hands and sink down as <span style="color:DarkTurquoise">Michael</span> breaks out laughing.</span> <span style="color:LightSteelBlue">“You didn’t even notice you were naked!? God, you’re adorable!”</span> <br>
+<br>
+<span style="color:pink">You scold him and demand your trunks back, as <span style="color:DarkTurquoise">Michael</span> teases about tossing them out of the pool for a minute, before finally giving them back to you. You quickly retrieve them and turn around to put them back on.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Just remember, you’d have to walk back to the locker room butt-ass naked if it wasn’t for my generosity. So, you owe me one!”</span> <span style="color:pink">You gasp as you feel <span style="color:DarkTurquoise">Michael</span> pinch your bare butt before he swims away laughing. If he wasn’t your friend, you’d probably punch him. Then again, you still might.</span> <br>
+<<socialChange "Michael" 3>>
+	<<addMoodlet "Stress" 0>>
+	<span style="color:Green">-Stress</span><br>
+		<<set $GymNeedReduce to "Normal">>
+		<<include"Gym Need Reduce">>
+	<br>
+	<<include"Attend Gym Finish">>

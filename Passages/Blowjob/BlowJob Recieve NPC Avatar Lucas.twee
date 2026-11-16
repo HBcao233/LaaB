@@ -1,0 +1,30 @@
+:: BlowJob Recieve NPC Avatar Lucas [nobr]
+
+<<set _outfit to "Naked">>
+<<set _clothes to {}>>
+
+<<if $SexTypePosition == "Bottom" and $SexLocation == "Lucas Bedroom">>
+	<<set _outfit to "Everyday">>
+<<elseif $SexLocation == "School Restroom">>
+	<<set _outfit to "Uniform">>
+<<else>>
+	<<set _outfit to "Naked">>
+<</if>>
+
+<<if $SexLocation == "School Restroom">>
+	<<set _clothes.Bottoms = $None>>
+	<<set _clothes.Undies = $None>>
+<</if>>
+
+<<set _ad to [
+	{
+		Name: "Lucas",
+		State: {
+			Blush: 3,
+			Mouth: "Happy",
+			Outfit: _outfit,
+		},
+		Clothes: _clothes,
+	},
+]>>
+<<ad _ad>>

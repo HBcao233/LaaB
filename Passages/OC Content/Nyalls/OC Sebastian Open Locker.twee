@@ -1,0 +1,123 @@
+:: OC Sebastian Open Locker [nobr]
+
+Following your quick shower, you head to the locker room when you suddenly spot an open locker. It wasn’t completely out of sight, many boys left their lockers open, especially if they had little in there, but this one stood out. It was open just a crack, just enough to indicate that it wasn’t intentional. That its owner had planned to close it, but didn’t shut it hard enough, leaving it ever so slightly ajar.<br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Player">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Normal">>
+    <<set $AD.Outfit to "Naked">>
+	<<set $AD.Hard to 0>>
+	<<include"Player Avatar Display Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+    <<addClothing "AD" "Bottoms" "Towel" "White">>
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+You couldn’t help but wonder who it belonged to, one of your friends or enemies perhaps? And what could be inside? You glance around the locker room, empty, as far as you could tell. <span style="color:yellow">You wonder if it would be worth it to take a peek?</span><br>
+<br>
+
+<div id="choice">
+    <<link "Peek">>
+        <<replace "#choice">>
+            You slowly walk over to the locker and open it wider, just enough to peek inside. You see a dark shirt and some jeans, nothing too out of the ordinary. <span style="color:pink">There is also something small and black in color sitting in the corner, the familiar look of underwear.</span><br>
+            <br>
+
+            <<set _random to random(1, 2)>>
+            <<if _random === 1>>
+                <span style="color:pink">You pick them up, examining the white dragon on the side, as the front also seemed more bulging. You try to imagine any of your classmates wearing something like this, but no one comes to mind. You don’t recall anyone in your class wearing this kind of underwear.</span><br>
+                <br>
+
+                Suddenly, you hear someone coming and quickly return the underwear and run towards your own locker, out of sight. You hide for a second, ensuring no one sees you, before peeking back out towards the locker. <span style="color:lightgreen">But by this point it was completely closed and its owner was nowhere in sight.</span><br>
+            <<else>>
+                You reach to pick them up, <span style="color:lightcoral">when suddenly the locker slams shut, nearly taking your finger off! You fall back in surprise, following the hand that shut the locker up towards its owner.</span><br>
+
+                /* AVATAR DISPLAY */
+                    <<set $AD.Name to "Sebastian">>
+                    <<set $AD.Arms to "Normal">>
+                    <<set $AD.Eyes to "Tired">>
+                    <<set $AD.Cry to 0>>
+                    <<set $AD.Blush to 0>>
+                    <<set $AD.Mouth to "Smirk">>
+                    <<set $AD.Outfit to "Towel">>
+                    <<set $AD.Hard to 0>>
+                        <<include"OC SEBASTIAN Avatar Equipment Set">>
+                /* VARIABLE OVERRIDES */
+                        /* */
+                <div style="position: relative">
+                    <<include"Avatar Display">>
+                /* SECOND LAYER */
+                    <<set $AD.Name to "Player">>
+                    <<set $AD.Arms to "Normal">>
+                    <<set $AD.Eyes to "Normal">>
+                    <<set $AD.Cry to 0>>
+                    <<set $AD.Blush to 1>>
+                    <<set $AD.Mouth to "Sad">>
+                    <<set $AD.Outfit to "Naked">>
+                    <<set $AD.Hard to 0>>
+                    <<include"Player Avatar Display Set">>
+                /* VARIABLE OVERRIDES */
+                        /* */
+                    <<addClothing "AD" "Bottoms" "Towel" "White">>
+                <div style="position: absolute; left: 125px; top: 0px">
+                    <<include"Avatar Display">>
+                </div>
+                /* END LAYER */
+                    <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+                </div>
+
+                <span style="color:LightSteelBlue">“You like to peek in other people’s lockers? Or do you just like playing with their underwear?”</span> <span style="color:DarkTurquoise">Sebastian</span> stood over you, wearing only a towel, with an intrigued grin on his face. <span style="color:LightSteelBlue">“You know, I could also look in your locker, wouldn’t be hard to open. Also, wouldn’t be hard to hide what’s in there, make you go home in just that little towel.”</span><br>
+                <br>
+
+                As he steps towards you, you quickly scramble to your feet and stand up, backing into a wall. <span style="color:LightSteelBlue">“So, you should really leave other people’s things alone. Understand?”</span> <span style="color:lightcoral">You nod nervously, knowing that this wasn’t some idle threat from <span style="color:DarkTurquoise">Sebastian</span>, as he pokes you in the chest.</span> <span style="color:LightSteelBlue">“Let’s hope so, or else I would have to teach you a lesson.”</span><br>
+                <br>
+
+                <span style="color:pink">You followed his fingers with your eyes as they moved down towards your towel, the only thing protecting your dignity. He grips it with his two fingers, tugging at it slightly as he continues to make direct eye contact. You gulp and close your eyes as he leans in close, his cat-like eyes seeing right through you, when you suddenly feel his fingers disappear.</span><br>
+                <br>
+
+                You open your eyes to find <span style="color:DarkTurquoise">Sebastian</span> gone, your towel still thankfully in place. You sigh in relief as you quickly return to your locker, hoping to forget about that experience.<br>
+                <<socialChange "Sebastian" -3 1>>
+            <</if>>
+
+            /* GETTING DRESSED */
+            <<set $ClothSave to "Restore">>
+            <<if $GymClassType == "Gym">>
+                <<storeClothing "Restore" "Undies">>
+            <<else>>
+                <<storeClothing "Restore" "Naked">>
+            <</if>>
+            <<if $SaveUndies != null>>
+                <<set $PlayerUndies to $SaveUndies>>
+            <</if>>
+
+            <br>
+            [[Continue|School Locker Room]] 
+        <</replace>>
+    <</link>><br>
+    <<link "Don't peek">>
+        <<replace "#choice">>
+            You decide to leave the locker alone. If someone caught you, you’d get into some big trouble, as they’d probably think you were trying to steal something. Not worth the risk. You quickly head towards your own locker and get dressed.<br>
+            <br>
+
+            /* GETTING DRESSED */
+            <<set $ClothSave to "Restore">>
+            <<if $GymClassType == "Gym">>
+                <<storeClothing "Restore" "Undies">>
+            <<else>>
+                <<storeClothing "Restore" "Naked">>
+            <</if>>
+            <<if $SaveUndies != null>>
+                <<set $PlayerUndies to $SaveUndies>>
+            <</if>>
+
+            [[Continue|School Locker Room]] 
+        <</replace>>
+    <</link>>
+</div>

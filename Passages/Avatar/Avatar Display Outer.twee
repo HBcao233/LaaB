@@ -1,0 +1,15 @@
+:: Avatar Display Outer [nobr]
+
+<<if $ADOuterAlt != 1>>
+	<<if $ADOuter.Avatar != "None">>
+		<img @src="$ADOuter.Avatar" 
+style="position: absolute; left: 0; top: 0">
+	<</if>>
+
+<<elseif $ADOuterAlt == 1>>
+	<<set $ADOuterAlt to 0>>
+	<<if $ADOuter.AvatarAlt != "None">>
+		<img @src="$ADOuter.AvatarAlt" 
+style="position: absolute; left: 0; top: 0">
+	<</if>>
+<</if>>

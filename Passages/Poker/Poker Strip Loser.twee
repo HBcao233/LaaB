@@ -1,0 +1,17 @@
+:: Poker Strip Loser [nobr]
+
+<<set _player = $Poker.players[$Poker.players.findIndex(player => player.id === $PokerLoser.playerId)]>>
+<<set _isPC = _player.id === 'PC'>>
+
+<div class="poker-strip-loser">
+    <<if _isPC>>
+        <<set $PokerEquipmentLostCount += 1>>
+        <<if $Poker.hasOnlyHandsLeft(_player.id)>>
+            /* TODO: Make the Player avatar hide his crotch */
+        <</if>>
+
+        <<include "Poker Strip Loser Continue">>
+    <<else>>
+        <<include "Poker Strip Loser Continue">>
+    <</if>>
+</div>

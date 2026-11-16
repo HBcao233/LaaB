@@ -1,0 +1,59 @@
+:: OC Isaac Nightclub Event 2 [nobr]
+
+/* Intro */
+
+You stand outside of the redlight district lost in thought about what you saw before.<span style="color:Yellow"> <span style="color:DarkTurquoise">Isaac</span> and his brother <span style="color:DarkTurquoise">Jacob</span> inside the district with a strange man.</span> You had pondered what it could mean, but until you were sure it wouldn’t leave your mind. <span style="color:Yellow">Plus, it couldn’t be what you thought it was… right?</span> <br>
+<br>
+You glance up near the entrance and see the bouncer, <span style="color:LightCoral">the very one who tossed you out last time.</span> He chuckles, smirking as he motions to the trash bin on the other side of the street. <span style="color:Pink">You blush as you remember the humiliating display of being tossed in there after your bottoms had been yanked off, leading to a humiliating display.</span> <br>
+
+ <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },	
+        }
+    ]>>
+    <<ad _ad>>
+
+Trying to sneak in again would not be good. The man already has your number and would strike the instant he suspected you were up to something, and you weren’t looking to be exposed to the street again. Still, you keep coming back here hoping to find some new knowledge. <br>
+<br>
+
+<<linkreplace"Continue">>
+
+    <span style="color:LightSteelBlue">“…and it’s a good name for him. His hair does make him look like a blueberry after all!”</span> A man’s laughter catches your attention. <span style="color:Yellow">Blueberry? Is he talking about-?</span> You glance up and see two men exiting the district looking slightly drunk and tired. You stealthfully attempt to move closer and listen in. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Shame he’s been out, I can watch that boy all day!”</span> The man continues. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Quiet!”</span> His friend laughs, though is even louder than the first man, <span style="color:LightSteelBlue">“You can’t go around saying that! What if people find out? He’s a kid!”</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“Bah! This town is full of pervs, that’s why they have that little slut dance and charge a premium!”</span> The first man takes a moment to steady himself as they attempt to hail a taxi, <span style="color:LightSteelBlue">“Besides, it’s all look and no touch. I haven’t done anything wrong! And his body is so much better than the wife’s. I wonder if they rent him out for private parties, be great for the office!”</span> <br>
+    <br>
+    The men continue to laugh and chat as a taxi comes and picks them up. <span style="color:Yellow">You are left shocked and speechless as the taxi vanishes into the distance.</span> <br>
+    <br>
+    Were they talking about <span style="color:DarkTurquoise">Isaac</span>? They mentioned he was a kid, and how many kids have blueberry hair! You feel a pit well up in your stomach, thinking about what this means. Your only solace was the man’s words <span style="color:LightSteelBlue">“all look, no touch.”</span>  But the way he talked about his body, the lust in his voice… <br>
+    <br>
+    Is <span style="color:DarkTurquoise">Isaac</span> being paraded as some lewd dancer? There is no way… but… The man you saw them with before, he gave <span style="color:DarkTurquoise">Isaac</span> something. You didn’t know what it was then, but thinking about it now… <span style="color:Yellow">it was money…</span> <br>
+    <br>
+    Your mind is racing. You have to do something, right? But no one would believe you without proof. You could ask <span style="color:DarkTurquoise">Isaac</span>, but he’s too young to know what is going on and his brother didn’t look the type to talk about this either. <br>
+    <br> 
+    You try to think about what steps you can take, <span style="color:Yellow">but realize you can’t think of anything you can do other than wait and hold onto the hope that you’re wrong.</span> <br>
+    <br>
+
+    <<unset $OCIsaacNightclubDays>>
+    <<set $CompletedQuests.push("Isaac: The Nightclub")>>
+    <<set $ActiveQuests.delete("Isaac: The Nightclub")>>
+    		<<for _i to 0; _i lt $QuestLog.length; _i++>>
+			<<if $QuestLog[_i].Name == "Isaac: The Nightclub">>
+				<<set $QuestLog.deleteAt(_i)>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<set $Notifications.push({
+			Name: "Quest Completed!",
+			Icon: "Quests/Redlight",
+			Description: "You learned some unsettling things about the young blueberry, <span style=\"color:DarkTurquoise\">Isaac</span>. But you have no idea what to do with this information.",
+		})>>
+    [[Continue|Redlight District]]
+<</linkreplace>>

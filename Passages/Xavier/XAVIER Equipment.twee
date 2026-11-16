@@ -1,0 +1,109 @@
+:: XAVIER Equipment [nobr]
+
+/* UNDERWEAR SELECTION */
+<<set $XavierRandomUndies to random(1, 4)>>
+<<if $XavierRandomUndies == 1>>
+	<<addClothing "Temp" "Undies" "Boxerbriefs" "White">>
+	<<set $XavierUndies to _clothingtemp>>
+<<elseif $XavierRandomUndies == 2>>
+	<<addClothing "Temp" "Undies" "Boxerbriefs" "Purple">>
+	<<set $XavierUndies to _clothingtemp>>
+<<elseif $XavierRandomUndies == 3>>
+	<<addClothing "Temp" "Undies" "Boxerbriefs" "Black">>
+	<<set $XavierUndies to _clothingtemp>>
+<<elseif $XavierRandomUndies == 4>>
+	<<addClothing "Temp" "Undies" "Classmates" "Xavier">>
+	<<set $XavierUndies to _clothingtemp>>
+<</if>>
+
+
+/* SHOES/SOCKS SELECTION */
+<<addClothing "Temp" "Shoes" "Classmates" "Xavier">>
+<<set $XavierShoes to _clothingtemp>>
+<<addClothing "Temp" "Socks" "Socks" "White">>
+<<set $XavierSocks to _clothingtemp>>
+
+/* PAJAMA SELECTION */
+<<set $XavierPJBottoms to "Purple Pajama Bottoms">>
+<<set $XavierPJBottoms to "Pajama Bottoms">>
+<<set $XavierPJTop to "Purple Pajama Shirt">>
+<<set $XavierPJTopType to "Pajama Shirt">>
+
+/* EVERYDAY SELECTION */
+<<if $NPCClothingSet == "Rain">>
+	<<set $XavierRandomTop to random(1, 2)>>
+	<<set $XavierRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Classmates" "Xavier">>
+	<<set $XavierOuter to _clothingtemp>>
+	<<if $XavierRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Classmates" "Xavier">>
+		<<set $XavierTop to _clothingtemp>>
+	<<elseif $XavierRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "Black">>
+		<<set $XavierTop to _clothingtemp>>
+	<</if>>
+	<<if $XavierRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Pants" "Black">>
+		<<set $XavierBottoms to _clothingtemp>>
+	<<elseif $XavierRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Pants" "White">>
+		<<set $XavierBottoms to _clothingtemp>>
+	<</if>>
+<<elseif $NPCClothingSet == "Temperate">>
+	<<set $XavierRandomTop to random(1, 2)>>
+	<<set $XavierRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Classmates" "Xavier">>
+	<<set $XavierOuter to _clothingtemp>>
+	<<if $XavierRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Classmates" "Xavier">>
+		<<set $XavierTop to _clothingtemp>>
+	<<elseif $XavierRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "Black">>
+		<<set $XavierTop to _clothingtemp>>
+	<</if>>
+	<<if $XavierRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Shorts" "White">>
+		<<set $XavierBottoms to _clothingtemp>>
+	<<elseif $XavierRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Pants" "Black">>
+		<<set $XavierBottoms to _clothingtemp>>
+	<</if>>
+
+<<elseif $NPCClothingSet == "Warm">>
+	<<set $XavierRandomTop to random(1, 2)>>
+	<<set $XavierRandomBottoms to random(1, 2)>>
+	<<set $XavierOuter to $None>>
+	<<if $XavierRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "White">>
+		<<set $XavierTop to _clothingtemp>>
+	<<elseif $XavierRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Classmates" "Xavier">>
+		<<set $XavierTop to _clothingtemp>>
+	<</if>>
+	<<if $XavierRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Shorts" "White">>
+		<<set $XavierBottoms to _clothingtemp>>
+	<<elseif $XavierRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Shorts" "Black">>
+		<<set $XavierBottoms to _clothingtemp>>
+	<</if>>
+<<else>>
+	<<set $XavierRandomTop to random(1, 2)>>
+	<<set $XavierRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Classmates" "Xavier">>
+	<<set $XavierOuter to _clothingtemp>>
+	<<if $XavierRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Classmates" "Xavier">>
+		<<set $XavierTop to _clothingtemp>>
+	<<elseif $XavierRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "White">>
+		<<set $XavierTop to _clothingtemp>>
+	<</if>>
+	<<if $XavierRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Pants" "Black">>
+		<<set $XavierBottoms to _clothingtemp>>
+	<<elseif $XavierRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Pants" "Gray">>
+		<<set $XavierBottoms to _clothingtemp>>
+	<</if>>
+<</if>>

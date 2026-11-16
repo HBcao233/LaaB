@@ -1,0 +1,12 @@
+:: Lucas Hang Out Park Walk [nobr]
+
+<<set _Random to ["Lucas Hang Out Park Walk Bonding School Talk"]>>
+
+/* Shinju Scenes */
+<<if $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Monster Boy") && $CompletedQuests.includes("Thomas: Out Sick")>>
+    <<set _Random.push("OC Shinju and Thomas")>>
+<</if>>
+
+<<set _event to _Random.random()>>
+<<include _event>>
+

@@ -1,0 +1,97 @@
+:: BlowJob Recieve NPC Action Lucas [nobr]
+
+/* SPECIAL ACTION CHECK */
+
+<<set $Random to random(1, 100)>>
+<<if $Random > 95>>
+	<<set $SexNPCAction to "Come Up For Air">>
+<<else>>
+
+	/* CHECK FOR ROUGH OR GENTLE */
+	<<set $Random to random(1, 100)>>
+	<<if $Random <= $NoahGentle>>
+		<<set $SexGentle to 1>>
+	<<else>>
+		<<set $SexGentle to 0>>
+	<</if>>
+
+	/* ASSIGNING NPC ACTION */
+	<<if $SexPlayerAction == "Only Blow">>
+		<<if $SexGentle == 1>>
+			<<set $SexNPCAction to "Blow Gently">>
+		<<else>>
+			<<set $SexNPCAction to "Blow Roughly">>
+		<</if>>
+	<<elseif $SexPlayerAction == "Only Squeeze Balls">>
+		<<if $SexGentle == 1>>
+			<<set $SexNPCAction to "Squeeze Balls Gently">>
+		<<else>>
+			<<set $SexNPCAction to "Squeeze Balls Roughly">>
+		<</if>>
+	<<elseif $SexPlayerAction == "Only Tickle Taint">>
+		<<if $SexGentle == 1>>
+			<<set $SexNPCAction to "Tickle Taint Gently">>
+		<<else>>
+			<<set $SexNPCAction to "Tickle Taint Roughly">>
+		<</if>>
+	<<elseif $SexPlayerAction == "Only Finger">>
+		<<if $SexGentle == 1>>
+			<<set $SexNPCAction to "Finger Gently">>
+		<<else>>
+			<<set $SexNPCAction to "Finger Roughly">>
+		<</if>>
+	<<else>> /* NO DIRECTION */
+		<<set $Random to random(1, 100)>>
+		<<if $Random <= $NoahPenisFocus>>
+			<<set $Random to random(1, 3)>>
+			<<if $Random != 3>>
+				<<if $SexGentle == 1>>
+					<<set $SexNPCAction to "Blow Gently">>
+				<<else>>
+					<<set $SexNPCAction to "Blow Roughly">>
+				<</if>>
+			<<else>>
+				<<if $SexGentle == 1>>
+					<<set $SexNPCAction to "Squeeze Balls Gently">>
+				<<else>>
+					<<set $SexNPCAction to "Squeeze Balls Roughly">>
+				<</if>>
+			<</if>>
+		<<else>>
+			<<set $Random to random(1, 3)>>
+			<<if $Random != 3>>
+				<<if $SexGentle == 1>>
+					<<set $SexNPCAction to "Finger Gently">>
+				<<else>>
+					<<set $SexNPCAction to "Finger Roughly">>
+				<</if>>
+			<<else>>
+				<<if $SexGentle == 1>>
+					<<set $SexNPCAction to "Tickle Taint Gently">>
+				<<else>>
+					<<set $SexNPCAction to "Tickle Taint Roughly">>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+<</if>>
+
+<<if $SexPlayerAction == "Go Faster">>
+	<<set $Speed += 1>>
+	<span style="color:Pink">You tell him to go faster.</span>
+<<elseif $SexPlayerAction == "Go Slower">>
+	<<set $Speed -= 1>>
+	<span style="color:Pink">You tell him to slow down.</span>
+<<elseif $SexPlayerAction == "More Gentle">>
+	<<set $NoahGentle += 10>>
+	<span style="color:Pink">You tell him to be more gentle.</span>
+<<elseif $SexPlayerAction == "More Rough">>
+	<<set $NoahGentle -= 10>>
+	<span style="color:Pink">You tell him to be more rough.</span>
+<<elseif $SexPlayerAction == "Focus Penis">>
+	<<set $NoahPenisFocus += 10>>
+	<span style="color:Pink">You tell him to focus on your penis.</span>
+<<elseif $SexPlayerAction == "Focus Butt">>
+	<<set $NoahPenisFocus -= 10>>
+	<span style="color:Pink">You tell him to play with your ass.</span>
+<</if>>

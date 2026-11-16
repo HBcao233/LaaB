@@ -1,0 +1,300 @@
+:: MICHAEL Inspect School Playground [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> stands at the top of the jungle gym with a bunch of his goons, laughing amongst themselves and occasionally yelling abuse to nearby boys. They seem to be enjoying themselves.<br>
+<br>
+[[Chat With (0:10)|MICHAEL Playground Chat With]] <span style="color:Green">+Michael</span><br>
+
+<<if $MichaelSocial <= 0>>
+	[[Ask to hang out (0:20)|MICHAEL Hang Out Test]] <span style="color:Green">+Michael</span><br>
+<</if>>
+<<if $MichaelSocial > -50>>
+	[[Challenge Michael to a Race (0:20)|MICHAEL Race Challenge]]
+		<<set $SkillCheckType to "Athletics">>
+		<<set $SkillCheckDifficulty to 3>>
+		<<include"Skill Level Display">>
+	<span style="color:Green">+Michael</span><br>
+<</if>>
+
+<<if $MichaelSocial >= 50>>
+	[[Roughhouse on the Jungle Gym (0:20)|MICHAEL Playground Roughhouse]] <span style="color:Green">+Michael</span><br>
+<</if>>
+
+<<include "Michael Base Talk Code">>
+
+:: MICHAEL Inspect School Lunch [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> sits at one of the center tables with his goons eating lunch. At one point, you notice him pick up a carrot and toss it at an unsuspecting teacher. Fortunately for <span style="color:DarkTurquoise">Michael</span>, the teacher seems to think it came from a different table and berates another group of students.<br>
+<br>
+<<if $FriendLunch != 1 and $LunchClass != 2>>
+	[[Eat Lunch With (0:15)|MICHAEL Eat Lunch]] <span style="color:Green">+Social</span>
+	/* LUNCH QUALITY WHEN EATING WITH PERSON */
+	<<include "School Lunch Level Chooser">>
+<</if>>
+
+<<include "Michael Base Talk Code">>
+
+:: MICHAEL Inspect Cafeteria [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> sits at one of the center tables with his goons. You overhear them gossiping about some of the other students, laughing and making fun of various embarrassing things that may or may not be true.<br>
+<br>
+[[Chat With (0:10)|MICHAEL Cafeteria Chat With]] <span style="color:Green">+Michael</span><br>
+
+<<if $MichaelSocial > 0 or $MichaelSocialRank > 0>>
+	[[Hang out (0:15)|Michael Cafeteria Paper Football]]<span style="color:Green">+Michael</span><br>
+<</if>>
+
+<<include "Michael Base Talk Code">>
+
+:: MICHAEL Inspect School Waiting for Bus Detention  [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> stands waiting outside the school after his detention. He stands awkwardly, as if his rear-end hurts. You can easily guess as to why.<br>
+<br>
+<div id="HangOutSchool">
+	<<if $InActiveQuests.includes("Michael: Hang Out Intro")>>
+			<<link"Ask if Michael wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Michael Hang Out First Time">>
+			<</link>><br>
+	<<elseif $CompletedQuests.includes("Michael: Hang Out Intro")>>
+		<<link"Want to hang out?">>
+		<<replace"#HangOutSchool">>
+			<span style="color:Yellow">Where?</span><br>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<link"The Park (0:10)<br>">>
+				<<set $HangOutClothes to "Uniform">>
+				<<set $Minutes += 10>>
+				<<goto "Michael Hang Out Go To Park">>
+			<</link>>
+		<</replace>>
+		<</link>>
+	<</if>>
+</div>
+
+[[Leave|Middle School]]
+
+:: MICHAEL Inspect School Hallway [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> walks down the hallway, pretending to punch some of the smaller boys as he passes, making them flinch.<br>
+<br>
+[[Give him a hug (0:02)|Michael School Hug]]<br>
+[[Attempt to pull his pants down (0:01)|Michael School Hallway Pants Down]] <span style="color:red">-Michael</span><br>
+<<if !$DailyEvents.includes("Michael School Bully")>>
+	[[Give Michael a Wedgie (0:02)|Michael School Hallway Wedgie]]
+	<<if $MichaelSocial < 20 && $MichaelSocialRank != 1>>
+		<span style="color:Red"> -Social</span><br>
+	<<else>>
+		<span style="color:Green"> +Social</span><br>
+	<</if>>
+<<else>>
+	<span style="color:Grey">Give Michael a Wedgie (0:02)</span><br>
+<</if>>
+
+<<include "Michael Base Talk Code">>
+
+:: MICHAEL Inspect English [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> naps comfortably, his head resting on his desk. <span style="color:Pink">You can’t help but notice the waistband of his $MichaelUndies.Type peeking out from his $MichaelBottoms.Type.</span><br>
+
+:: MICHAEL Inspect History [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> slouches in his chair drawing in his notebook. You glance over and notice it appears to be a crude drawing of <span style="color:DarkTurquoise">Mr. De León</span> orally pleasing the headmaster.<br>
+
+:: MICHAEL Inspect Science [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> sits down at his desk looking extremely bored. At one point, he nearly passes out but manages to catch himself before his head falls into his desk.<br>
+
+:: MICHAEL Inspect Math [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> sits at his desk folding paper air planes and tossing them towards the trash can. Eventually, <span style="color:DarkTurquoise">Mr. Randolph</span> notices and threatens him with detention. <span style="color:DarkTurquoise">Michael</span> quickly stops, silently cursing under his breath.<br>
+
+:: MICHAEL Inspect Music [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> sits in one of the corners of the classroom with his friends, half-decently playing the flute. Occasionally, when the teacher’s back is turned, he makes an obscene gesture with the flute, but otherwise doesn’t cause any trouble.<br>
+
+:: MICHAEL Inspect Lunch Detention [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> is sitting at one of the desks serving his lunchtime detention. Seems he had gotten in trouble and is being made to do extra busywork instead of being allowed to play on the playground.<br>
+
+:: MICHAEL Inspect Gym [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Undies",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> stands in a group with two of his goons, chatting away while they change. <span style="color:Pink">He is in nothing but his $MichaelUndies.Name, but he doesn’t seem to mind at all.</span> Interestingly, he isn't making fun of the boys wearing briefs. Despite everyone being in their underwear, something about being in the locker room makes it less intimate and embarrassing.<br>
+
+<<if $SeenMichaelUndies < 1>>
+	<<set $SeenMichaelUndies += 1>>
+<</if>>
+
+:: MICHAEL Inspect Gym Shower [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Towel",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> leans up against his locker flanked by some of his goons. He is wearing nothing but a towel as he and his friends whisper and chuckle to each other, no doubt making jokes at some of the other boys' expense. <br>
+
+:: MICHAEL Inspect Park Bully Little Kid [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> is standing above a young boy, holding his toy in the air taunting him. The kid is trying to jump to reach the toy, but isn't even getting close.<br>
+
+<br>
+[[Leave|Park]]
+
+:: MICHAEL Inspect Main Street Walking  [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Michael</span> is walking down the street.
+
+<br>
+[[Leave|Main Street]]

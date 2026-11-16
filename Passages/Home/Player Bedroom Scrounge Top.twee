@@ -1,0 +1,14 @@
+:: Player Bedroom Scrounge Top [nobr]
+<<if $StarterTops == 1>>
+    <<addClothing "Temp" "Top" "T-Shirt" "Blue">> 
+<<elseif $StarterTops == 2>>
+    <<addClothing "Temp" "Top" "T-Shirt" "Forest Green">>
+<<elseif $StarterTops == 3>>
+    <<addClothing "Temp" "Top" "T-Shirt" "Red">>
+<</if>>
+
+<<set _found to _clothingtemp>>
+
+You look through the back of your closet to try to find an old shirt, and you find something!<br>
+[img[_found.Icon]]<br>
+[[Continue|Player Bedroom][$PlayerTop to _found]]

@@ -1,0 +1,105 @@
+:: Shopping District Bicycle Shop [nobr]
+
+<<set $Location to {
+    Name: "Bicycle Shop",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Shopping District",
+}>>
+
+<<if $Bike == 1>>
+    <<set $TravelTime to 5>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Bicycle Shop--</strong></big></span><br>
+The Bicycle Shop in Opal City is a small, family-owned business that has been in operation for generations. Despite its small size, it makes use of its space with bicycles hanging from the walls and ceilings. There is also a small workshop near the back where an older gentleman seems to be fixing up some bikes. Bikes are locked up to prevent theft, but an older woman and the couple’s young son are both available to help any customers.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Purchase-</strong></span><br>
+
+<<if $Bike != 1>>
+<img width="50" src="Images\Icons\Items\Bicycle\Black Bicycle.png">
+<strong>Black Bicycle</strong>
+ | 
+<<if $Money >= 80>>
+    <<link"Purchase ($80)">>
+        <<set $Money -= 80>>
+        <<set $Bike to 1>>
+        <<set $PlayerInventoryItems.push($BlackBike)>>
+        <<goto"Shopping District Bicycle Shop">>
+    <</link>>
+<<else>>
+    <span style="color:lightcoral">Purchase ($80)</span>
+<</if>><br>
+
+<img width="50" src="Images\Icons\Items\Bicycle\Blue Bicycle.png">
+<strong>Blue Bicycle</strong>
+ | 
+<<if $Money >= 80>>
+    <<link"Purchase ($80)">>
+        <<set $Money -= 80>>
+        <<set $Bike to 1>>
+        <<set $PlayerInventoryItems.push($BlueBike)>>
+        <<goto"Shopping District Bicycle Shop">>
+    <</link>>
+<<else>>
+    <span style="color:lightcoral">Purchase ($80)</span>
+<</if>><br>
+
+<img width="50" src="Images\Icons\Items\Bicycle\Green Bicycle.png">
+<strong>Green Bicycle</strong>
+ | 
+<<if $Money >= 80>>
+    <<link"Purchase ($80)">>
+        <<set $Money -= 80>>
+        <<set $Bike to 1>>
+        <<set $PlayerInventoryItems.push($GreenBike)>>
+        <<goto"Shopping District Bicycle Shop">>
+    <</link>>
+<<else>>
+    <span style="color:lightcoral">Purchase ($80)</span>
+<</if>><br>
+
+<img width="50" src="Images\Icons\Items\Bicycle\Red Bicycle.png">
+<strong>Red Bicycle</strong>
+ | 
+<<if $Money >= 80>>
+    <<link"Purchase ($80)">>
+        <<set $Money -= 80>>
+        <<set $Bike to 1>>
+        <<set $PlayerInventoryItems.push($RedBike)>>
+        <<goto"Shopping District Bicycle Shop">>
+    <</link>>
+<<else>>
+    <span style="color:lightcoral">Purchase ($80)</span>
+<</if>><br>
+
+
+<img width="50" src="Images\Icons\Items\Bicycle\White Bicycle.png">
+<strong>White Bicycle</strong>
+ | 
+<<if $Money >= 80>>
+    <<link"Purchase ($80)">>
+        <<set $Money -= 80>>
+        <<set $Bike to 1>>
+        <<set $PlayerInventoryItems.push($WhiteBike)>>
+        <<goto"Shopping District Bicycle Shop">>
+    <</link>>
+<<else>>
+    <span style="color:lightcoral">Purchase ($80)</span>
+<</if>><br>
+<<else>>
+<span style="color:lightcoral">You already own a bike!</span><br>
+
+<</if>>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:01)|Shopping District][$Minutes += 1]]<br>
+<br>

@@ -1,0 +1,26 @@
+:: Science Skill Level Up [nobr]
+
+<<if $ScienceLearned != 1>>
+	<span style="color:Gold">You have learned the Science Skill! This skill will determine your class grade. From research, to deduction, to experiments. There truly are no limits to what Science can do. Improving this skill will reduce the time it takes for you to complete your homework and give you more insight into skill checks.</span><br>
+	<<set $ScienceLearned to 1>>
+<</if>>
+
+<<if $ScienceXP >= 100>>
+	<<set $ScienceXP to 0>>
+	<<set $ScienceSkill += 1>>
+		<<if $ScienceSkill > 10>>
+			<<set $ScienceSkill to 10>>
+		<</if>>
+	
+	<<if $ScienceSkill == 2>>
+		<span style="color:Gold">You have reached Science Level 2! As your ability to research and solve problems increases, you become faster at completing certain tasks. Completing your Homework will now only take 50 minutes.</span><br>
+	<</if>>
+	
+	<<if $ScienceSkill == 3>>
+		<span style="color:Gold">You have reached Science Level 3! Using the information provided to you to deduce the difficulty and outcome of a task is an important part of Science. You will now get a more accurate Difficulty Display on Skill Checks.</span><br>
+	<</if>>
+	
+	<<if $ScienceSkill == 4>>
+		<span style="color:Gold">You have reached Science Level 4! Some have taken to calling you a young Einstein, well at least you have. Completing your Homework will now only take 40 minutes.</span><br>
+	<</if>>
+<</if>>

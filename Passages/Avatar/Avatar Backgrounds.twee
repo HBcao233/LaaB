@@ -1,0 +1,125 @@
+:: Avatar Backgrounds [nobr]
+
+<<set _background to false>>
+/* Home */
+<<if
+[
+	"Home Hallway",
+	"Home Living Room",
+	"Home Kitchen",
+	"Noah Bedroom",
+	"Player Bedroom",
+].contains($Location.Name)>>
+	<<if $Time.before(7) or $Time.after(18)>>
+		<<set _background to "Images/Backgrounds/Living Room Night.png">>
+	<<else>>
+		<<set _background to "Images/Backgrounds/Living Room Day.png">>
+	<</if>>
+/* Bedroom */
+<<elseif
+[
+	"Gabe Bedroom",
+	"Dad Bedroom",
+].contains($Location.Name)>>
+		<<set _background to "Images/Backgrounds/Bedroom.png">>
+/* Bathroom */
+<<elseif
+[
+	"Home Bathroom",
+	"Dad's Bathroom",
+	"Lucas Home Bathroom",
+].contains($Location.Name)>>
+		<<set _background to "Images/Backgrounds/Bathroom.png">>
+
+/* SCHOOL/PARK RESTROOM */
+<<elseif
+[
+	"School Restroom",
+	"Park Restroom",
+].contains($Location.Name)>>
+		<<set _background to "Images/Backgrounds/Public Restroom.png">>
+/* SCHOOL LOCKEROOM */
+<<elseif
+[
+	"School Locker Room",
+	"Pool Locker Room",
+].contains($Location.Name)>>
+		<<set _background to "Images/Backgrounds/Lockers.png">>
+
+/* Playgrounds */
+<<elseif [
+	"School Courtyard",
+	"Park",
+	"Northend Playground",
+].contains($Location.Name)>>
+ 	<<if $Time.before(7) or $Time.after(18)>>
+		<<set _background to "Images/Backgrounds/School Courtyard Night.png">>
+	<<else>>
+	<<set _background to "Images/Backgrounds/School Courtyard.png">>
+	<</if>>
+
+/* Backyards */
+<<elseif [
+	"Home Backyard",
+	"Miller Backyard",
+	"Lucas Home Backyard",
+	"Carter Backyard",
+].contains($Location.Name)>>
+ 	<<if $Time.before(7) or $Time.after(18)>>
+		<<set _background to "Images/Backgrounds/Backyard Night.png">>
+	<<else>>
+	<<set _background to "Images/Backgrounds/Backyard Day.png">>
+	<</if>>
+
+/* SCHOOL */
+<<elseif $Location.Name != undefined and $Location.Name.startsWith("School")>>
+		<<set _background to "Images/Backgrounds/School Hallway.png">>
+
+/* Boardwalk */
+<<elseif
+[
+	"Boardwalk",
+].contains($Location.Name)>>
+	<<if $Time.before(7) or $Time.after(18)>>
+		<<set _background to "Images/Backgrounds/Boardwalk Night.png">>
+	<<else>>
+		<<set _background to "Images/Backgrounds/Boardwalk.png">>
+	<</if>>
+
+/* OUTSIDE */
+<<elseif [
+	"Northend",
+	"Wald Street",
+	"Dellwood Street",
+	"Avendale",
+	"Shopping District",
+	"Food District",
+	"Main Street",
+	"Pool",
+	"Community Center",
+	"High School",
+	"Middle School",
+	"Elementary School",
+	"Mall",
+	"Hospital",
+	"Entertainment District",
+	"Trailer Park",
+	"Redlight District",
+	"Beach",
+	"Home Frontyard",
+	"Lucas Frontyard",
+
+].contains($Location.Name)>>
+	<<if $Time.before(7) or $Time.after(18)>>
+		<<set _background to "Images/Backgrounds/Neighborhood Night.png">>
+	<<else>>
+		<<set _background to "Images/Backgrounds/Neighborhood.png">>
+	<</if>>
+<</if>>
+
+<<if _background>>
+	<div style="position: relative">
+		<img @src="_background"
+			style="position: absolute; left: 0; top: 0">
+	</div>
+<</if>>

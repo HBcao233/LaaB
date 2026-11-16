@@ -1,0 +1,357 @@
+:: OC Arthur NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Preteens Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Arthur--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"OC Arthur NPC Character Menu Biography">>
+</div>
+
+:: OC Arthur NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Arthur NPC Character Menu Avatar Display">>
+
+Kind and sweet, but hyperactive and loud. An easy going, fun loving, and very respectful boy who is also kind of a crybaby. Can never stay still for long periods of time, he's very active and enjoys sports. He wears his heart on his sleeve and is very caring about others. Arthur loves music, reading and art, he can be seen either dancing around, reading a book or drawing. He's a picky eater but will never say no to a good cookie.
+
+:: OC Arthur NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Arthur NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Arthur Peak <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> July 20th <br>
+<strong>Address:</strong> 
+    <<if $OCArthurSocial >= 50>>
+        Wald Street <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> 
+        Elizabeth Peak (Mom), Buchi (pet dog)
+    <br>
+<strong>Friends:</strong>
+    <<if $OCArthurSocial >= 80>>
+        $Player.Name, Richard
+    <<else>>
+        Richard
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $OCArthurSocialRank == 1>>
+        Close Friends
+    <<elseif $OCArthurSocial > 70>>
+        Friends
+    <<elseif $OCArthurSocial > 30>>
+        Possible Friends
+    <<elseif $OCArthurSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $OCArthurSocial > 70>>
+        <div style="margin-left: 25px;">
+            Nurturing, Nerd, Artistic, Athletic, Bookworm, Friendly
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [Math] > [History] > [Music] > [Science] > [English] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <<if $OCArthurSocial > 50>>
+        <div style="margin-left: 25px;">
+            Wednesdays (After School): Music Lessons
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Likes:</strong>
+    <<if $OCArthurSocial > 50 or $OCArthurSocialRank == 1>> 
+        <div style="margin-left: 25px;">
+            Videogames, music, arts, sports, cookies
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $OCArthurSocial > 50 or $OCArthurSocialRank == 1>>
+        <div style="margin-left: 25px;">
+             Bulling, horror stuff
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $OCArthurSocial > 50 or $OCArthurSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Music, arts & craft, reading, games
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $OCArthurSocial > 50 or $OCArthurSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Hamburgers
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $OCArthurSocial > 50 or $OCArthurSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Lime Green
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $OCArthurSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Injections, horror stuffs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+         Comfortable clothing, flashy clothing
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $OCArthurSocial > 50 or $OCArthurSocialRank > 1>>
+        <div style="margin-left: 25px;">
+            Briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $OCArthurSocial > 80 or $OCArthurSocialRank == 1>>
+        <br>
+        <div style="margin-left: 25px;">
+                A uncut penis that is average-sized for his age. It grows larger than average when Erect.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $OCArthurSocial > 80 or $OCArthurSocialRank == 1>>
+        <br>
+        <div style="margin-left: 25px;">
+            A Big bubble butt
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <<if $OCArthurSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Arthur is capable of cumming and can produce an average amount of semen. It is capable of shooting out with some force.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown /* No Spoilers */
+        </div>
+    <</if>>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <br>
+        <div style="margin-left: 25px;">
+            Gay 
+        </div>
+
+<strong>Lewd Memories:</strong><br>
+
+:: OC Arthur NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Arthur NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal OC Arthur & Richard">>
+
+:: OC Arthur NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Arthur NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "OC Arthur",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $CompletedQuests.includes("Arthur & Richard: Hat Quest")>>
+    <<set _npcviewerOutfit.push("Fur")>>
+<</if>>
+<<if $OCArthurSocial >= 50 or $OCArthurSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCArthurSocial >= 100 or $OCArthurSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: OC Arthur NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "OC Arthur",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $CompletedQuests.includes("Arthur & Richard: Hat Quest")>>
+    <<set _npcviewerOutfit.push("Fur")>>
+<</if>>
+<<if $OCArthurSocial >= 50 or $OCArthurSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCArthurSocial >= 100 or $OCArthurSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

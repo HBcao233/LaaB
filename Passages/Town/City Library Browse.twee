@@ -1,0 +1,63 @@
+:: City Library Browse [nobr]
+
+<<set $Minutes += 15>>
+
+/* OPENING */
+You begin to wander the shelves of unfamiliar books and topics, trying to find something that sparks your interest.<br>
+<br>
+
+<<set _booklist to []>>
+
+/* ADDING BOOKS */
+    /* NATURISM: THE FREE SPIRIT */
+<<if $Skill.Perks.includes("Library Browse") and $BookNaturism != 1 and $BookNaturism != 2>>
+    <<set _booklist.push("Naturism")>>
+<</if>>
+
+    /* LEVEL 2 SKILL BOOKS */
+<<if $Skill.Perks.includes("Library Browse") and $StudyBookCooking != 1>>
+    <<set _booklist.push("Cooking")>>
+<</if>>
+<<if $Skill.Perks.includes("Library Browse") and $StudyBookActing != 1>>
+    <<set _booklist.push("Acting")>>
+<</if>>
+
+/* NO BOOKS */
+<<if _booklist.length == 0>>
+After spending a few minutes searching, you don’t find anything that sparks your interest. <span style="color:Yellow">(There are currently no new books available.)</span>
+        <br>
+        [[Continue|City Library]]
+<<else>>
+    <<set _randombook to _booklist.random()>>
+/* NATURISM: THE FREE SPIRIT */
+    <<if _randombook == "Naturism">>
+        <<set $BookNaturism to 1>>
+You find yourself in the alterative culture section of the library, skimming through the titles along the spine of the books. Some semi-interesting titles here and there, about different countries or religions, but nothing catches your eye, until you reach the far corner and spot a tan book with green writing upon it. Of course, it isn’t the title or design that catch your eye, but the small piece of the cover that you spot. <span style="color:pink">It was a boy, about your own age, and it didn’t look like he was wearing any clothes!</span> <br>
+<br>
+You glance around, making sure you were alone, before taking the book off the shelf and examining its cover. <span style="color:Pink">Sure enough, it was a naked boy along with his whole family, two parents and a sister about the same age. They were all nude, except there was a convenient fig leaf covering their bits.</span> But the small text at the bottom of the cover caught your eye next: <span style="color:LightSteelBlue">“Warning: Book Contains Nudity!”</span>. <br>
+<br>
+Your eyes finally move to the title of the book <strong><span style="color:LightSteelBlue">“Naturism: The Free Spirit”</span></strong>. The word sounded a bit familiar, but you couldn’t place your finger on where you’ve heard it before. Regardless, if it was about naked boys, it may be worth the read! Away from prying eyes, of course. <br>
+<br>
+<span style="color:lightgreen">New Book Unlocked: <strong>“Naturism: The Free Spirit”</strong></span> <br>
+<br>
+
+    [[Continue|City Library]]
+
+    /* COOKING SKILL BOOK */
+    <<elseif _randombook == "Cooking">>
+While mindlessly walking the aisles of books in the library, you unexpectedly find yourself in the cooking section. The pictures of food that line the covers look so good you could almost smell them! One book catches your attention: <span style="color:lightgreen"><strong>“Cooking for Beginners: A Guide to the Essentials!”</strong></span> With this, you could begin your own culinary adventure and cook up some delicious treats! <br>
+<span style="color:lightgreen">Skill Book Unlocked: <strong>“Cooking”</strong></span><br>
+<br>
+<<set $StudyBookCooking to 1>>
+    [[Continue|City Library]]
+
+    /* ACTING SKILL BOOK */
+    <<elseif _randombook == "Acting">>
+They seem to have books about everything these days, leaving you a little overwhelmed and unsure where you should start. That is, until a bright golden star on the spine of a colorful book catches your eye. <span style="color:lightgreen"><strong>“Becoming Someone New”</strong></span>, what a strange title. Was it some sort of mystery novel? Quickly reading the back, you realize that it was a guide to acting and performance written by “Selina Taylor”, a famous actress you’ve seen in a couple of Your Father’s favorite movies. Could be an interesting read! <br>
+<span style="color:lightgreen">Skill Book Unlocked: <strong>“Acting”</strong></span> <br>
+<br>
+<<set $StudyBookActing to 1>>
+    [[Continue|City Library]]
+<</if>>
+
+<</if>>

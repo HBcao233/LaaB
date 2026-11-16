@@ -1,0 +1,179 @@
+:: Attend Class Widgets [widget nobr]
+
+<<widget "attendClass">>
+<<set _start_hours to {
+    "Math": 8,
+    "History": 9,
+    "Drama": 10,
+    "Science": 12,
+    "English": 13,
+    "Gym": 14
+}>>
+<<set _this_class to _args[0]>>
+<<set _start_hour to _start_hours[_this_class]>>
+<<set _can_wait to ["Science", "Math"].contains(_this_class)>>
+<<if State.getVar(`$${_this_class}Class`) == 0>>
+    <<set _attend to `Attend ${_this_class}`>>
+    /* WAIT IN CLASSROOM */
+    <<if _can_wait and $Time.between(_start_hour - 1, 40, _start_hour, 10)>>
+        <<set _wait to `Wait ${_this_class}`>>
+        <strong>Wait in Classroom</strong><br>
+        <div style="text-indent: 3em;">
+            [[Attend Class Normally|_wait][$ClassStyle to "Normal"]]
+        </div>
+        <div style="text-indent: 3em;">
+            [[Pay Extra Attention|_wait][$ClassStyle to "Attention"]] <span style="color:red">-Fun</span>, <span style="color:green">+_this_class</span>
+        </div>
+        <div style="text-indent: 3em;">
+            [[Socialize|_wait][$ClassStyle to "Socialize"]] <span style="color:red">-_this_class</span>, <span style="color:green">+Social</span>
+        </div>
+        <div style="text-indent: 3em;">
+            [[Goof Off|_wait][$ClassStyle to "Goof"]] <span style="color:red">-_this_class</span>, <span style="color:green">+Fun</span>
+        </div>
+        <<if $Homework == 1>>
+            <div style="text-indent: 3em;">
+                [[Finish Homework|_wait][$ClassStyle to "Homework"]] <span style="color:red">-_this_class</span>
+            </div>
+        <</if>>
+        <<if $Player.Energy <= 60>>
+            <div style="text-indent: 3em;">
+                [[Try to Nap|_wait][$ClassStyle to "Nap"]] <span style="color:red">-_this_class</span>, <span style="color:green">+Energy</span>
+            </div>
+        <</if>>
+
+    /* ATTEND CLASS NORMALLY */
+    <<elseif $Time.between(_start_hour - 1, 50, _start_hour, 10)>>
+        <strong>Attend Class</strong><br>
+        <div style="text-indent: 3em;">
+            [[Attend Class Normally|_attend][$ClassStyle to "Normal"]]
+        </div>
+        <div style="text-indent: 3em;">
+            [[Pay Extra Attention|_attend][$ClassStyle to "Attention"]] <span style="color:red">-Fun</span>, <span style="color:green">+_this_class</span>
+        </div>
+        <div style="text-indent: 3em;">
+            [[Socialize|_attend][$ClassStyle to "Socialize"]] <span style="color:red">-_this_class</span>, <span style="color:green">+Social</span>
+        </div>
+        <div style="text-indent: 3em;">
+            [[Goof Off|_attend][$ClassStyle to "Goof"]] <span style="color:red">-_this_class</span>, <span style="color:green">+Fun</span>
+        </div>
+        <<if $Homework == 1>>
+            <div style="text-indent: 3em;">
+                [[Finish Homework|_attend][$ClassStyle to "Homework"]] <span style="color:red">-_this_class</span>
+            </div>
+        <</if>>
+        <<if $Player.Energy <= 60>>
+            <div style="text-indent: 3em;">
+                [[Try to Nap|_attend][$ClassStyle to "Nap"]] <span style="color:red">-_this_class</span>, <span style="color:green">+Energy</span>
+            </div>
+        <</if>>
+
+    /* LATE */
+    <<elseif $Time.between(_start_hour, 10, _start_hour, 30)>>
+        [[Attend Class Late|_attend][$Late to 1, $ClassStyle to "Late"]]
+    <</if>>
+<</if>>
+<</widget>>
+
+
+<<widget "finishClass">>
+<<set _start_hours to {
+    "Math": 8,
+    "History": 9,
+    "Drama": 10,
+    "Science": 12,
+    "English": 13,
+    "Gym": 14
+}>>
+<<set _this_class to _args[0]>>
+<<set _start_hour to _start_hours[_this_class]>>
+<<set $Minutes += $Time.until(_start_hour, 50)>>
+/* SCHOOL FOCUS HARD */
+<<set _skilldiff to 70>>
+<<set _skilldiff += $SchoolSkillLevel>>
+/* Event Based Bonus */
+<<if _EventPassFail == "Pass">>
+<<set _skilldiff -= 30>>
+<<elseif _EventPassFail == "Fail">>
+<<set _skilldiff += 20>>
+<</if>>
+<<if $ClassStyle == "Normal">>
+    /* No Bonus to Skill Diff */
+<<elseif $ClassStyle == "Attention">>
+    <<set _skilldiff -= 20>>
+<<elseif $ClassStyle == "Socialize">>
+    <<set _skilldiff += 20>>
+<</if>>
+
+/* LATE */
+<<if $Late == 1>>
+    You arrive at class late and suffer because of it! You have also been given detention!
+    <<set $Late to 0>>
+    <<set _skilldiff += 50>>
+    <<set $Detention += 5>>
+<</if>>
+
+/* STUDY BONUS Removed due to Studying being reworked.
+<<if State.getVar(`$${_this_class}StudyClass`) > 0>>
+    <span style="color:lightgreen">You gained a bonus thanks to studying! </span>
+    <<run State.setVar(`$${_this_class}StudyClass`, 0)>>
+<</if>> */
+
+/* CLASS SKILL CHECK */
+<<set _skilltypes to ["Math Class"]>>
+<<skillCheck _this_class _skilldiff _skilltypes>>
+
+<<if _result == 1>>
+    <span style="color:lightgreen">You pay attention in class and feel you have learned something!</span><br>
+    <<set $GradeChange to _this_class>>
+    <<set $GradeChangeType to "Increase">>
+    <<include"Grade Change">>
+    <<skillPoints _this_class 10>>
+<<else>>
+    <span style="color:lightcoral">You have trouble paying attention in class and learn little!</span><br>
+    <<set $GradeChange to _this_class>>
+    <<set $GradeChangeType to "Decrease">>
+    <<include"Grade Change">>
+    <<skillPoints _this_class 5>>
+<</if>>
+
+<<run State.setVar(`$${_this_class}Class`, 1)>>
+
+<<if $ClassStyle == "Homework">>
+    <<set $Homework to 2>>
+<</if>>
+
+/* HOMEWORK */
+<<if $Homework == 1>>
+    <span style="color:Red">You didn't complete your homework last night and your grade has suffered!</span><br>
+    <<set $GradeChangeType to "Decrease">>
+    <<for $GradeChange range ["Math", "History", "English", "Science"]>>
+        <<include"Grade Change">>
+    <</for>>
+<</if>>
+<<set $Homework to 0>>
+
+/* Class Style Mood Changes */
+<<if $ClassStyle == "Normal">>
+    /* None */
+<<elseif $ClassStyle == "Attention">>
+    <<needChange "Fun" -10>>
+<<elseif $ClassStyle == "Goof">>
+    <<needChange "Fun" 15>>
+<</if>>
+
+/* FRIDAY MOCK EXAM [REMOVED UNTIL REVAMPED SINCE NOT WORKING]
+<<if $Time.Day == "Friday">>
+<br>
+    <<set _exam to `${_this_class} Mock Exam`>>
+    <<include _exam>>
+<br>
+<</if>>
+*/
+<br>
+<<set _classroom to `School ${_this_class} Classroom`>>
+<<unset $SchoolSkillLevel>>
+<<unset $GradeChange>>
+<<unset $GradeChangeType>>
+
+[[Continue|_classroom]]
+<</widget>>

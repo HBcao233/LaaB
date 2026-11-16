@@ -1,0 +1,81 @@
+:: BEN Playground Backpack Tree [nobr]
+
+/* OPENING */
+You are walking down the sidewalk near the trees when you suddenly hear a ruckus. You look into the trees right as a group of boys runs off laughing. Looking past them, you see <span style="color:DarkTurquoise">Ben</span> looking up at his backpack which has been tossed into a tree. The poor boy tries to jump up to reach it but doesn’t have the strength to do so.<br>
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Eyes: "Sad",
+			Cry: 1,
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="Choice">
+	/* HELP BEN */
+	<<link "Help Ben">>
+		<<replace "#Choice">>
+			You run up to <span style="color:DarkTurquoise">Ben</span> and ask what happened. He sighs and explains that those boys thought it would be funny to toss his backpack onto a branch. It was too high for <span style="color:DarkTurquoise">Ben</span> to reach, meaning he’d have to get a teacher, but he was afraid that they come back and steal his stuff if he left. You get him a reassuring pat on the shoulder and offer to help him get it down.<br>
+
+			<<set _ad to [
+				{
+					Name: "Ben",
+					State: {
+						Eyes: "Sad",
+						Cry: 1,
+						Blush: 1,
+						Mouth: "Happy",
+						Outfit: "Uniform",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			<span style="color:LightSteelBlue">“Thank you but… You don’t have to do that for me.”</span> He says softly. You tell him that’s what friends are for and begin to climb the tree. It is easier than you thought, and you quickly reach the branch and unhook the backpack <span style="color:Red">when you suddenly hear a loud CRACK!</span> You freeze for a moment before the branch suddenly gives way! Sending you crashing to the ground!<br>
+			<br>
+			<span style="color:DarkTurquoise">Ben</span>, despite his normal cowardice, does attempt to catch you, but more so breaks your fall. When you get up, only slightly hurt, you notice that <span style="color:DarkTurquoise">Ben</span> was hunched over holding his wrist and trying to fight back tears. You quickly help him up and take him to the infirmary. By the time you get there, <span style="color:DarkTurquoise">Ben</span> can’t hold back his tears anymore and is crying from the pain.<br>
+			<br>
+			<span style="color:DarkTurquoise">Dr. Bertrum</span> checks his wrist and, thankfully, it is only bruised. He gives <span style="color:DarkTurquoise">Ben</span> some painkillers and lets him sit down for a moment, scolding you both for climbing trees. As you both sit there, you notice that <span style="color:DarkTurquoise">Ben</span> is just staring down at his feet.<br>
+
+			<<set _ad to [
+				{
+					Name: "Ben",
+					State: {
+						Eyes: "Sad",
+						Cry: 2,
+						Blush: 2,
+						Mouth: "Sad",
+						Outfit: "Uniform",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			<span style="color:LightSteelBlue">“I’m such a baby.”</span> He whispers, <span style="color:LightSteelBlue">“I can’t stand up for myself and I cry over the slightest pain…”</span> You notice tears welling up in his eyes again and place your hand on his leg, reassuring him. It seems to have worked and he gives you a half-smile. <span style="color:LightSteelBlue">“Thank you, <span style="color:DarkTurquoise">$BenNickname</span>. I’m going to sit here for a while, I’ll see you back out there.”</span><br>
+			<<socialChange "Ben" 3>>
+			<<needChange "Fun" 20>>
+
+			<br>
+			[[Continue|School Infirmary]] 
+		<</replace>>
+	<</link>>
+	<span style="color:Green">+Ben</span><br>
+
+	/* DON'T HELP BEN */
+	<<link "Ignore him">>
+		<<replace"#Choice">>
+			You watch the weak boy struggle to get his backpack for a few moments, before getting bored and running back off to play.<br>
+			<br>
+			<<addMoodlet "Stress" 0>>
+			<<needChange "Fun" 20>>
+
+			<br>
+			[[Continue|School Courtyard]] 
+		<</replace>>
+	<</link>>
+	<span style="color:Green">-Stress</span><br>
+</div>

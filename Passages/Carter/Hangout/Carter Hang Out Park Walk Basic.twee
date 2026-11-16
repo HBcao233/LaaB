@@ -1,0 +1,29 @@
+:: Carter Hang Out Park Walk Basic [nobr]
+
+You ask <span style="color:DarkTurquoise">Carter</span> if he would like to take a walk around the park. <span style="color:LightSteelBlue">“Yeah! It can be like a patrol! We can watch for danger and villains and anyone else who needs our help!”</span> You laugh and agree to his idea of a relaxing walk and the two of you begin to 'patrol' the park. <span style="color:DarkTurquoise">Carter</span> stops every few minutes to pick up some litter or ask someone if they need any help, but overall, it is a rather relaxing and peaceful time.<br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You can <span style="color:DarkTurquoise">Carter</span> talk about school or cartoons or whatever else catches your interest until you have circled the entire park and <span style="color:DarkTurquoise">Carter</span> proclaims the control <span style="color:LightSteelBlue">“Mission accomplished!”</span><br>
+<<needChange "Fun" 10>>
+<<set $HangOutNeed.Fun += 10>>
+<span style="color:green">+Carter Fun</span><br>
+<<socialChange "Carter" 3>>
+<br>
+
+[[Continue|Carter Hang Out Park]]

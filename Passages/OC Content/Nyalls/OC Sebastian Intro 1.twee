@@ -1,0 +1,42 @@
+:: OC Sebastian Intro 1 [nobr]
+
+/* OPENING */
+You are walking around the playground, enjoying the cool breeze and the fun atmosphere, when a flutter of white catches your eye. You glance over and see what appears to be a small piece of paper flying through the air. You were going to pass it off as some trash that escaped a trashcan, when you see a glimpse of the other side of the paper. <span style="color:yellow">A brief glimpse of $Player.SkinColor color nearly fills one side.</span> <br>
+<br>
+Your curiosity gets the better of you, and seeing as you aren't doing anything particular, you take off after the paper. Thankfully, you didn’t have to go far, as the small white rectangle gets caught in a bush. Picking it up, you glance at the other side and blush bright red upon seeing it. <br>
+<br>
+It wasn’t a piece of paper, but a photo. <span style="color:pink">A photo of a butt! A $Player.Butt $Player.SkinColor Butt! It looked like it was taken from inside the school showers!</span><span style="color:lightcoral"> But does that mean someone was sneaking around the locker room with a camera!?</span> Your panicked thoughts are interrupted as a stealthy figure rips the photo out of your hands. <br>
+
+<<set _ad to [
+    {
+        Name: "OC Sebastian",
+        State: {
+			Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Sorry about that.”</span> The boy said, quickly shoving the photo into his bag. <span style="color:LightSteelBlue">“Can’t put these down for a second without them flying away.”</span> You didn’t recognize the boy, though judging by his uniform and his presence at the school, he is definitely a Preston student. You’d guess a grade or two above you based on his height. He had long dark hair and yellow eyes that reminded you of a cat. His expression did as well, as he peered through you, as if he was judging how much of the photo you had seen. <br>
+<br>
+<div id=choice1>
+/* Ask about the photo */
+	<<link "Ask about the photo<br>">>
+	<<replace"#choice1">>
+        <<goto"OC Sebastian Intro 2">>
+
+    <</replace>>
+    <</link>>
+/* Say nothing and leave */
+	<<link "Say nothing and leave">>
+	<<replace"#choice1">>
+You say nothing to the strange boy, instead turning on your heels and walking away as fast as you could without running. The last thing you needed was some pervert hanging around you. You could tell a teacher, but figure that wouldn’t do much and instead just decide to forget the encounter ever happened. <br>
+        <<set $InActiveQuests.delete("Nyalls: Sebastian")>>
+        <<needChange "Fun" 10>>
+		<br>
+		[[Continue|School Courtyard]]
+    <</replace>>
+    <</link>>
+    <span style="color:lightcoral">(Locks Content)</span><br>
+</div>

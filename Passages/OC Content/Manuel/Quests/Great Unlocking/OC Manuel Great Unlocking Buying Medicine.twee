@@ -1,0 +1,106 @@
+:: OC Manuel Great Unlocking Buying Medicine [nobr]
+
+/* Requires 6 dollars to begin with. */
+/* Intro */
+You walk into the pharmacy and are greeted by the clerk who gives you a slightly confused look as you begin to wander the isles. <span style="Color: Yellow">You can’t help but feel his eyes on you, no doubt confused by the young kid that now perusing the shelves.</span> You keep seeing him out of the corner of your eye, watching you stealthfully for any signs of trouble. <span style="Color: Yellow">Annoyingly, not once does he ask if you need any help,</span> which you kind of do as you aimlessly wander the rows of medicines and medications searching for what you need. <br>
+<br>
+Then you spot it, sleeping medicine. They come in many different strengths and forms, from pills to syrup to powder, which is what you want. Then you search for the strongest you can find. You need to make sure <span style="Color: DarkTurquoise">Manuel’s</span> mom is out cold, else risk being caught. You briefly consider what she may do if she finds you, considering what she does to <span style="Color: DarkTurquoise">Manuel</span>, but push that thought from your mind as you find the perfect product to fix your needs. <br>
+<br>
+You grab a single box off the shelf, buying too much would be suspicious, and walk towards the counter. The clerk’s expression quickly returns to a smile as you walk up, trying to hide the fact that he’s been suspiciously watching you since you walked in. <br>
+<br>
+<span style="Color: LightSteelBlue">“Find everything alright?”</span> He asks in his faux customer service voice. You nod and hand him the medicine. He glances at it for a moment, his smile fading briefly as he reads the label, before he says, <span style="Color: LightSteelBlue">“I’m sorry, but this is adult medicine. Can’t sell it to anyone underage. Do you have a parent or guardian with you?”</span><br>
+<br>
+/* PC: Frown, Blush1 */
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Blush: 1,
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="Color: Yellow">Damn, that’s one thing you and <span style="Color: DarkTurquoise">Manuel</span> didn’t consider. You pause for a moment, trying to think of something to say.</span><br>
+<br>
+
+<div id="Choice">
+    /* Bribe Him */
+    <<if $Money >= 26>>
+        <<link "<strong>[$20]</strong> Bribe him<br>">>
+        <<replace"#Choice">>
+            You stare back at the clerk, looking for a sign of weakness or path to get what you need. Then you see it, behind his eyes, a certain shiny glint that tells you all you need to know. You clear your throat and straighten your back, telling the clerk, in your best adult voice, that he must be mistaken. You are clearly old enough to purchase this. Then, before the man can say anything, <span style="Color: Yellow">you slide an extra $20 onto the table ad glance around; The two of you are alone.</span><br>
+            <br>
+            The clerk eyes you for a second, searching for your own weakness or hint of deception behind your eyes. He then glances around the room, confirming for himself that you’re alone. This tense stand-off lasts only 20 seconds, but feels like hours as you both wait for the other to break… until: <br>
+            <br>
+            /* PC: Smirk, Mad */
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Eyes: "Mad",
+                        Mouth: "Smirk",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="Color: LightSteelBlue">“My mistake, sir.”</span> <span style="Color: LightGreen">The clerk reaches over and takes the money from the table, slyly slipping it into his pocket before pushing the medicine towards you.</span> <span style="Color: LightSteelBlue">“I really need to get my eyesight checked, won’t happen again.”</span> You nod, internally sighing in relief that he took the bribe. You slip the medicine into your own pocket before turning and walking out of the pharmacy, not wanting to give the clerk any reason to change his mind now that he has your money. <br>
+            <br>
+            [End, Get Medicine, -26$]
+        <</replace>>
+        <</link>>
+    <<else>>
+        <span style="color:Red">[$20] Bribe him</span><br>
+    <</if>>
+
+    /* [Charm 8+] Convince Him */
+    <<requiresAbility "Charm" 8 "Convince Him ">>
+    <<replace"#Choice">>
+        <span style="Color: Pink">Putting on your award-winning smile that has gotten you out of many a punishment from Your Father, you make yourself look as cute and wholesome as possible.</span> You tell the clerk that your ‘Daddy’ hurt his leg and hasn’t been able to sleep. He sent you to get some sleep medicine since he just couldn’t come himself without hurting himself more. You know it’s against the rules, but it would be amazing if he would sell it to you. <br>
+        <br>
+        /* PC: Smile, Blush2, Hide Hands */
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Blush: 2,
+                    Mouth: "Happy",
+                    Hands: "Hide",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Your dad?”</span> The clerk ponders, searching your face for any sign of deception or falsehood, then sighs loudly. <span style="Color: LightSteelBlue">“Yeah, I’ve been there. Alright kid, but don’t tell anyone. That’ll be $6.”</span> You thank the man with a big smile and pay him. <span style="Color: LightSteelBlue">“Be good now and take care of <span style="color:DarkTurquoise">Your Father</span> while he’s hurting!”</span> You promise to do your best as you run out of the pharmacy victoriously. <br>
+        <br>
+        /* PC: Smirk, Mad */
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Eyes: "Mad",
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        Right as you are outside and out of sight of the clerk, <span style="Color: Pink">your wholesome smile turns into a devious one as you proudly clutch the fruits of your deception in your hand.</span> <span style="Color: LightGreen">Being a kid may be rough sometimes, but being able to use your charms to get what you want makes it not so bad.</span><br>
+        <br>
+        [End, Get Medicine, -6$]
+    <</replace>>
+    <</requiresAbility>>
+
+    /* Apologize & Leave */
+    <<link "Apologize & leave<br>">>
+    <<replace"#Choice">>
+        You feign confusion, saying you didn’t realize. You explain that your parents sent you to pick it up and state you will return with them. You can’t tell if the clerk believes you or not, his smile unbreakable, though his eyes reveal that he is at least suspicious. <br>
+        <br>
+        Still, he lets you leave without trouble, and you sigh as you find yourself back on the streets. <span style="Color: Yellow">Seems like you have to consider how you are going to get him to sell you it.</span><br>
+        <br>
+        [End, no changes.]
+    <</replace>>
+    <</link>>
+</div>

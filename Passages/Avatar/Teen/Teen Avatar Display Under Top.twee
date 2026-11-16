@@ -1,0 +1,8 @@
+:: Teen Avatar Display Under Top [nobr]
+
+<<if $ADUnder.Avatar != "None">>
+	<img @src="$ADUnder.Avatar" style="position: absolute; left: 0; top: 0">
+	<<if $ADUnder.Tags.includes("Sleeves") and $AD.Arms == "Normal">>
+		<img @src="$ADUnder.AvatarSleeve" style="position: absolute; left: 0; top: 0">
+	<</if>>
+<</if>>

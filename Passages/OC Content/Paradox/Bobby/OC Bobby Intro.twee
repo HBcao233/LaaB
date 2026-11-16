@@ -1,0 +1,173 @@
+:: OC Bobby Intro [nobr]
+
+/* Intro */
+<<set $Minutes += 5>>
+Walking through the community center, you spy something mundane out of the corner of your eye. <span style="color:Yellow">A boy, about your elder brother’s age, in ripped denim jeans and a plaid shirt is putting up some postings on the job board.</span> You’re not sure what draws your eyes to it, but for some reason you watch the boy as he finishes and stretches. He then picks up a large full paper bag as an older gentleman walks up to him. <br>
+
+    <<set _ad to [
+        {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Thanks again for letting me put up those postings, sir.”</span> The boy says with big smile yet respectful tone, <span style="Color: LightSteelBlue">“Pops and I could really use some help on the farm with how big the harvests have been recently. Oh, and here are those oranges I told you about!”</span> He hands the man the bag, who thanks him and takes an orange out of the bag. It looks pristine and juicy. <span style="Color: LightSteelBlue">“Picked ‘em myself this morning. Sure the kids’ll love ‘em! Anway, I better head back. Lots to do today!”</span> <br>
+
+<<set _ad to [
+        {
+            Name: "Player",
+            State: {
+            },
+        },
+        {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+The man bids the kid farewell, and you take a step closer to look at what he posted as he gathers his things and turns to you. <span style="Color: LightSteelBlue">“Oh, hey there! Looking to make some green? Posted some good ones myself if you ain’t afraid of physical labor.”</span> You shrug and ask him what kind of jobs they are, taking a step forward to examine the postings yourself. <span style="Color: LightSteelBlue">“Nothing too crazy. Family owns a farm on the edge of town and we’ve been needing help recently. My pops is still unsure about hiring on full-timers, so decided to post some jobs here to get the odd helper here and there until he makes up his mind. You look pretty strong, care to give it a try?”</span> <br>
+<br>
+<div id=choice>
+    <<link "Sounds good<br>">>
+    <<replace"#choice">>
+        <span style="color:LightGreen">You say it sounds good! Looks like he offers a decent wage and it’ll be a nice change of pace from mowing lawns and tutoring kids.</span> How do you start? <span style="Color: LightSteelBlue">“Perfect! Our farm is to the east of the schools. Best bet would be to take the bus or follow the road past the high school if you’re interested. Come by whenever and I can show you the ropes, as long as it isn’t the middle of the night or during school.”</span> He chuckles. <span style="Color: LightSteelBlue">“Oh, and my name’s <span style="color:DarkTurquoise">Bobby</span>! Pleasure to meet you!”</span> <br>
+        
+        <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+      {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:DarkTurquoise">Bobby</span> gives you a very firm handshake, so firm it almost hurts, before picking up his things and walking to the door. <span style="Color: LightSteelBlue">“Hey, actually, if you’re not doing anything right now, I could give you a lift? Only if you want to, promise I’m not a weirdo or anything. Just figured it’ll save you the walk if you want to check it out.”</span> <br>
+        <br>
+        <div id=choice2>
+            <<link "Accept his offer<br>">>
+            <<replace"#choice2">>
+                You accept his offer. You feel a little weird about getting a ride from a stranger, though figure he’s just a high schooler and that community center worker seemed to like him. Plus, if you accept his jobs, you’ll be going to his house anyway. So, what’s the harm? <span style="Color: LightSteelBlue">“Perfect! My car’s right out here. It should only be about an hour to show you around and stuff, but you can call from my house if you need to let your parents know where you went. Come on.”</span> <br>
+                <br>
+                <span style="color:DarkTurquoise">Bobby</span> takes you by the hand, which is a little embarrassing, and walks you to his car. It is an old red pickup truck that looks like it’s seen better days. The car looks older than you and the back of the truck is made of wood, at least the walls of the bed are. You stop for a second, wondering if such an old car could take you as far as you need. <span style="color:DarkTurquoise">Bobby</span> notices your hesitance and reassures you. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“Don’t worry, she’s the most reliable girl I know, as long as I change her oil every 3,000 miles!”</span> He laughs, opening the passenger door. You have to basically crawl to get in, but once you are seated, <span style="color:DarkTurquoise">Bobby</span> closes the door and walks over to the driver’s side. <span style="color:LightGreen">The car has an odor of oranges, no doubt due to the large amount he just brought, and you spy that, despite the rough-looking outside, the interior of the car is well kept and clean.</span> <span style="color:DarkTurquoise">Bobby</span> enters the car and sits down next to you, buckling himself in. <span style="Color: LightSteelBlue">“Best to put your seatbelt on, the road can get a bit bumpy once we get to the edge of the city.”</span> <br>
+                <<set $OCBobbySocial to 0>>
+                <<set $OCBobbySocialRank to 0>>
+                <<socialChange "Bobby" 5 1>>
+                <<set $InActiveQuests.delete("Bobby: Farm Intro")>>
+                <<set $CompletedQuests.push("Bobby: Farm Intro")>>
+                <br>
+                [[Continue|OC Bobby Intro 2 Driven]]
+            <</replace>>
+            <</link>>
+            <<link "Refuse<br>">>
+            <<replace"#choice2">>
+                You tell <span style="color:DarkTurquoise">Bobby</span> you’ll find your way there later. <span style="Color: LightSteelBlue">“No worries. Remember, past the High School. Just follow the road and you can’t miss it! Just look for me whenever you get there and I’ll show you the ropes.”</span> He gives you a friendly wave before exiting the Community Center. Seems like a nice kid, for a teenager. <span style="color:Yellow">You figured it would be best to get the tour from <span style="color:DarkTurquoise">Bobby</span> before accepting any of his requests.</span> <br>
+                <<set $OCBobbySocial to 0>>
+                <<set $OCBobbySocialRank to 0>>
+                <<socialChange "Bobby" 3 1>>
+                <<set $InActiveQuests.delete("Bobby: Farm Intro")>>
+                <<set $ActiveQuests.push("Bobby: Farm Intro")>>
+                <<set $QuestLog.push(
+                    {
+                        Name: "Bobby: Farm Intro",
+                        State: 1,
+                        ID: "OCBobby_M001",
+                        Category: "Character",
+                        Type: "Quest",
+                        Icon: "Chore",
+                        Tags: ["Bobby", "Character", "Quest", "Farm", "OC"],
+                        Description: "A farmboy named <span style=\"color:DarkTurquoise\">Bobby</span> offered you a job on his farm. If you want to accept, head to the Farm Area via the High School between 4AM and 7AM on the Weekend.",
+                        Objectives: [
+                            {
+                                Name: "Head to the Farm Area",
+                                State: 0,
+                                Total: 1,
+                            },
+                        ],
+                    },
+                )>>
+                <<set $Notifications.push({
+                    Name: "Quest Acquired!",
+                    Icon: "Quests/Chore",
+                    Description: "A farmboy named <span style=\"color:DarkTurquoise\">Bobby</span> offered you a job on his farm. If you want to accept, head to the Farm Area via the High School between 4AM and 7AM on the Weekend.",
+                })>>
+                <br>
+                [[Continue|Community Center]]
+            <</replace>>
+            <</link>>
+        </div>
+    <</replace>>
+    <</link>>
+    <<link "You're unsure<br>">>
+    <<replace"#choice">>
+        <span style="color:Yellow">You tell him you’re unsure if work like that suits you.</span> <span style="Color: LightSteelBlue">“No worries, farmwork isn’t for everyone. But if you ever get curious, you should come ‘round the farm. I could give you a tour and an idea of what you’ll be doing. Our farm is to the east of the schools. Best bet would be to take the bus or follow the road past the high school if you’re interested. Come by whenever and I can show you the ropes, as long as it isn’t the middle of the night or during school.”</span> He chuckles. <span style="Color: LightSteelBlue">“Oh, and my name’s <span style="color:DarkTurquoise">Bobby</span>! Pleasure to meet you!”</span> <br>
+        
+        <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+      {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:DarkTurquoise">Bobby</span> gives you a very firm handshake, so firm it almost hurts, before picking up his things and walking out the door. He turns around to give you one last wave before disappearing. He seems like a nice kid, for a teenager. <span style="color:Yellow">You figure it would be best to get a tour from <span style="color:DarkTurquoise">Bobby</span> before accepting any of his requests, just to be sure you can handle it.</span> <br>
+        <<set $OCBobbySocial to 0>>
+        <<set $OCBobbySocialRank to 0>>
+        <<socialChange "Bobby" 1 1>>
+        <<set $InActiveQuests.delete("Bobby: Farm Intro")>>
+        <<set $ActiveQuests.push("Bobby: Farm Intro")>>
+        <<set $QuestLog.push(
+            {
+                Name: "Bobby: Farm Intro",
+                State: 1,
+                ID: "OCBobby_M001",
+                Category: "Character",
+                Type: "Quest",
+                Icon: "Chore",
+                Tags: ["Bobby", "Character", "Quest", "Farm", "OC"],
+                Description: "A farmboy named <span style=\"color:DarkTurquoise\">Bobby</span> offered you a job on his farm. If you want to accept, head to the Farm Area via the High School between 4AM and 7AM on the Weekend.",
+                Objectives: [
+                    {
+                        Name: "Head to the Farm Area",
+                        State: 0,
+                        Total: 1,
+                    },
+                ],
+            },
+        )>>
+        <<set $Notifications.push({
+            Name: "Quest Acquired!",
+            Icon: "Quests/Chore",
+            Description: "A farmboy named <span style=\"color:DarkTurquoise\">Bobby</span> offered you a job on his farm. If you want to accept, head to the Farm Area via the High School between 4AM and 7AM on the Weekend.",
+        })>>
+        <br>
+        [[Continue|Community Center]]
+    <</replace>>
+    <</link>>
+</div>

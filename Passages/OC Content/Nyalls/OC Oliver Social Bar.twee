@@ -1,0 +1,84 @@
+:: OC Oliver Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCOliverSocialRank == -3>>
+	<<set $OCOliverRelationship to "Hated">>
+	<span style="color:DarkRed">Oliver Hates you!</span>
+	<br>
+<<elseif $OCOliverSocialRank == -2>>
+	<<set $OCOliverRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Oliver are Enemies.</span>
+	<br>
+<<elseif $OCOliverSocialRank == -1>>
+	<<set $OCOliverRelationship to "Very Disliked">>
+	<span style="color:Red">Oliver really Dislikes you.</span>
+	<br>
+<<elseif $OCOliverSocialRank == 0 and $OCOliverSocial <= -50>>
+	<<set $OCOliverRelationship to "Disliked">>
+	<span style="color:Red">Oliver Dislikes you. </span>
+	<br>
+<<elseif $OCOliverSocialRank == 0 and $OCOliverSocial < 50>>
+	<<set $OCOliverRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Oliver are Acquaintances.</span>
+	<br>
+<<elseif $OCOliverSocialRank == 0 and $OCOliverSocial >= 50>>
+	<<set $OCOliverRelationship to "Liked">>
+	<span style="color:LightGreen">Oliver Likes you.</span>
+	<br>
+<<elseif $OCOliverSocialRank == 1>>
+	<<set $OCOliverRelationship to "Friends">>
+	<span style="color:Green">You and Oliver are Friends.</span>
+	<br>
+<<elseif $OCOliverSocialRank == 2>>
+	<<set $OCOliverRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Oliver are Good Friends!</span>
+	<br>
+<<elseif $OCOliverSocialRank == 3>>
+	<<set $OCOliverRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Oliver are Close Friends!</span>
+	<br>
+<<elseif $OCOliverSocialRank == 4>>
+	<<set $OCOliverRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Oliver are Best Friends!</span>
+	<br>
+<<elseif $OCOliverSocialRank == 5>>
+	<<set $OCOliverRelationship to "Love">>
+	<span style="color:Pink">You and Oliver Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCOliverSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCOliverSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCOliverSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCOliverSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCOliverSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCOliverSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCOliverSocial,
+			value: Math.abs($OCOliverSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCOliverSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCOliverSocial > 120>>
+	<<set $OCOliverSocial to 120>>
+<</if>>
+<<if $OCOliverSocial < -120>>
+	<<set $OCOliverSocial to -120>>
+<</if>>

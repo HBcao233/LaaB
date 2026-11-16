@@ -1,0 +1,61 @@
+:: GYM Running Laps [nobr]
+
+/* RAINNING */
+<<if $Weather == "Rain" or $Weather == "Storm">>
+Once everyone is dressed, you all wait in the gym for <span style="color:DarkTurquoise">Coach Kohler</span>, who eventually comes out with a stopwatch and a clipboard. <span style="color:LightSteelBlue">“Alright everyone, today we are going to be working on cardio. Unfortunately, it is raining outside and the last thing I want is you guys to get your uniforms all muddy, so we’ll be running inside the gym today."</span> Everyone groans, knowing that “cardio” is just a fancy way to say “running laps”. You overhear a few of the boys wondering if the class had pissed off <span style="color:DarkTurquoise">Coach Kohler</span> at some point and this was the punishment.<br>
+
+<<set _ad to [
+	{
+		Name: "Kohler",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You all get in line as <span style="color:DarkTurquoise">Coach Kohler</span> prepares his clipboard and explains. <span style="color:LightSteelBlue">“The gym is a lot smaller than the football field outside, so in order to run a mile, you’ll each have to do 20 laps. You don’t have to run the entire way, jogging is fine. But if I see anyone walking I’ll add 5 more laps, understand?”</span> Everyone murmurs quiet responses, but after <span style="color:DarkTurquoise">Coach Kohler</span> clears his throat loudly, everyone gives a much more enthusiastic response. You all lineup and, at the sound of his whistle, take off. Some kids try to run quickly right out of the gate to get ahead, while some either wish to preserve their energy or are only going as fast as they have to in order to not get in trouble.<br>
+<br>
+
+
+/* NOT RAINNING */
+<<else>>
+Once everyone is dressed, you all wait in the gym for <span style="color:DarkTurquoise">Coach Kohler</span>, who eventually comes out with a stopwatch and a clipboard. <span style="color:LightSteelBlue">“Alright everyone, today we are going to be working on cardio. It’s a nice day out so we’ll head outside.”</span> Everyone groans, knowing that “cardio” is just a fancy way to say “running laps”. You overhear a few boys wondering if the class had pissed <span style="color:DarkTurquoise">Coach Kohler</span> off at some point and this was the punishment.<br>
+
+<<set _ad to [
+	{
+		Name: "Kohler",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You are all led to the large track that runs around the football field. <span style="color:LightSteelBlue">“I’m going to be timing how long it takes you to run a mile, that is 4 laps around the field. You don’t have to run the entire way, jogging is fine. But if I see anyone walking I’ll add another lap, understood?”</span> Everyone murmurs quiet responses, but after <span style="color:DarkTurquoise">Coach Kohler</span> clears his throat loudly, everyone gives a much more enthusiastic response. You all line up and, at the sound of his whistle, take off. Some kids try to run quickly right out of the gate to get ahead, while some either wish to preserve their energy or are only going as fast as they have to in order to not get in trouble.<br>
+<br>
+
+<</if>>
+
+<<set _random to [
+	"GYM Laps Player Trips",
+	"GYM Laps Race Carter",
+]>>
+
+<<if !$ThomasAbsent>>
+	<<set _random.push("GYM Laps Thomas Tired")>>
+<</if>>
+
+<<include _random.random()>>

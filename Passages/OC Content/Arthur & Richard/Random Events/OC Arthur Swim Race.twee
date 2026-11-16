@@ -1,0 +1,119 @@
+:: OC Arthur Swim Race [nobr]
+
+/* Intro */
+Today’s swim class is a long, but simple one. Going over different strokes, what to do if your leg cramps in the water, and a reminder of the various rules of the pool. Overall, a simple easy day of going over things you already know for the sake of making sure they stick. <span style="color:lightgreen">The best part of days like this is that, once everyone has been gone over, <span style="color:DarkTurquoise">Coach Kohler</span> allows you all to relax and enjoy yourselves in the pool.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Gym Swim",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Arthur",
+        State: {
+            Outfit: "Gym Swim",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Richard",
+        State: {
+            Outfit: "Gym Swim",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You end up on one side of the pool with the eternal pairing of <span style="color:DarkTurquoise">Richard</span> and <span style="color:DarkTurquoise">Arthur</span>. <span style="color:DarkTurquoise">Arthur</span> is swimming around the pool enjoying himself while <span style="color:DarkTurquoise">Richard</span> claims to be tired, sitting on the edge watching. Despite their many similarities, they also have their differences; <span style="color:DarkTurquoise">Arthur</span> is the much more athletic of the two while <span style="color:DarkTurquoise">Richard</span> is more academic, though this did make them a sort of <span style="color:LightSteelBlue">“power couple”</span>. <br>
+<br>
+<span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>, wanna race? I bet you can’t beat me to the other side of the pool.”</span> <span style="color:DarkTurquoise">Arthur</span> dares with a smirk. <br>
+<br>
+<span style="color:LightSteelBlue">“Yeah! Let’s see who’s faster! I’ll go to the other side so I can call the winner.”</span> <span style="color:DarkTurquoise">Richard</span> adds, standing up and quickly walking to the other edge of the pool. Despite not really being given a chance to decline, you happily agree to his challenge and you both prepare yourselves while <span style="color:DarkTurquoise">Richard</span> gets into position. <br>
+<br>
+The boy raises both of his hands, using them to count down from three. Both of you place your hands on one edge of the pool to act as the starting line and watch as <span style="color:DarkTurquoise">Richard</span> counts down; three, two, one, go! He waves both of his hands down and you both kick off the pool, swimming with all your might! <br>
+<br>
+<span style="color:DarkTurquoise">Arthur</span> is good, moving through the waters like a shark hunting its prey, but you aren’t no slouch either, keeping you two neck and neck. Boys you pass by quickly spot the race and move to make room as you both speed by, approaching the other end as <span style="color:DarkTurquoise">Richard</span> watches, ready to declare a winner. <span style="color:yellow">Whoever wins, it’s going to be very close…!</span> <br>
+<br>
+<<set _skillcheckdif to random(50, 70)>>
+
+<<linkreplace"Continue">>
+<<skillCheck "Swimming" _skillcheckdif>>
+
+    /* WIN THE RACE */
+    <<if _result == 1>>
+        <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span> wins!”</span> <span style="color:DarkTurquoise">Richard</span> declares! <span style="color:lightgreen">You hit the end just a second before <span style="color:DarkTurquoise">Arthur</span>, being declared the victor.</span> Despite this, there is no celebration, as you both stop to catch your breath. Your arms are on fire, you haven’t swum that fast in a while! As you are both gasping for air, you turn to <span style="color:DarkTurquoise">Arthur</span> and give him a thumbs up, it was a very close and exciting race. <br>
+
+        <<set _ad to [
+            {
+                Name: "OC Richard",
+                State: {
+                    Outfit: "Gym Swim",
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "OC Arthur",
+                State: {
+                    Outfit: "Gym Swim",
+                    Blush: 1,
+                },
+                Style: {
+                    'margin-left': '-140px',
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Next time-”</span> <span style="color:DarkTurquoise">Arthur</span> replies between deep breaths, <span style="color:LightSteelBlue">“Next time I’ll get you.”</span> <span style="color:Pink">He smirks, before gasping as <span style="color:DarkTurquoise">Richard</span> jumps into the pool and grabs him from behind.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“Awww, don’t worry <span style="color:DarkTurquoise">Artie</span>,”</span> <span style="color:DarkTurquoise">Richard</span> playfully shakes him back and forth, <span style="color:LightSteelBlue">“You’ll always be number one in my book. Plus, you look really cute when you’re all tired.”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Richard</span> kisses his partner on the cheek, causing the boy to chuckle and blush. You roll your eyes and tell them to get a room.</span> <br>
+        <<socialChange "Arthur" 3 1>>
+        <<socialChange "Richard" 3 1>>
+        <br>
+        <<include"Attend Gym Finish">>
+
+    /* Lose the Race */
+    <<else>>
+        <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Arthur</span> wins!”</span> <span style="color:DarkTurquoise">Richard</span> happily declares! <span style="color:lightcoral">You had hit the end just a second after <span style="color:DarkTurquoise">Arthur</span>; any closer and you would have suspected <span style="color:DarkTurquoise">Richard</span> fudging the numbers.</span> <span style="color:lightgreen">Though you accept this defeat, bowing to <span style="color:DarkTurquoise">Arthur</span> as you both take a minute to catch your breath.</span> Your arms are on fire, swimming so fast is quite the workout and leaves you both completely winded. <br>
+        <br>
+        This doesn’t stop <span style="color:DarkTurquoise">Richard</span>, who leaps from the edge of the pool directly onto his partner. When they both resurface, <span style="color:DarkTurquoise">Richard</span> has his lover in a big bear hug as he happily kisses him on the cheek. <span style="color:LightSteelBlue">“I knew you could do it! That’s my boy!”</span> He celebrates, prompting <span style="color:DarkTurquoise">Arthur</span> to blush and chuckle, too tired to fight back against his partner’s enthusiastic praise. <span style="color:LightSteelBlue">“I’ll have to give you a reward later, maybe do that thing you like.”</span> <span style="color:DarkTurquoise">Richard</span> whispers with a coy grin. <br>
+
+        <<set _ad to [
+            {
+                Name: "OC Richard",
+                State: {
+                    Outfit: "Gym Swim",
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "OC Arthur",
+                State: {
+                    Outfit: "Gym Swim",
+                    Mouth: "Frown",
+                    Blush: 3,
+                },
+                Style: {
+                    'margin-left': '-140px',
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:Pink"><span style="color:DarkTurquoise">Arthur</span> turns bright red, looking at his partner and then at you, turning even more red as your eyes meet. “Hehe, I have no idea what you are talking about…” <span style="color:DarkTurquoise">Arthur</span> sinks below the water, a bit embarrassed, as both you and <span style="color:DarkTurquoise">Richard</span> laugh. You have a feeling you all knew what he was talking about.</span> <br>
+        <<socialChange "Arthur" 3 1>>
+        <<socialChange "Richard" 3 1>>
+        <br>
+        <<include"Attend Gym Finish">>
+    <</if>>
+
+<</linkreplace>>
+<<skillCheck "Swimming" _skillcheckdif>>

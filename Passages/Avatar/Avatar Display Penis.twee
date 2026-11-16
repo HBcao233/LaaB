@@ -1,0 +1,35 @@
+:: Avatar Display Penis [nobr]
+
+/* Balls */
+<<if $ADVagina != 1>>
+	<img @src="`Images/Avatar/Penis/Balls/${$AD.Balls}/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* Checking if Cold */
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+    <<capture _i>>
+		<<if $Player.Moodlets[_i].ID == "Uncomfortably Cold">>
+            <<if $AD.PenisSize == "Gigantic">>
+				<<set $AD.PenisSize to "Large">>
+            <<elseif $AD.PenisSize == "Large">>
+				<<set $AD.PenisSize to "Average">>
+            <<elseif $AD.PenisSize == "Average">>
+				<<set $AD.PenisSize to "Small">>
+            <<elseif $AD.PenisSize == "Small">>
+				<<set $AD.PenisSize to "Tiny">>
+			<</if>>
+            <<break>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+<<if $AD.PenisSize != "None">>
+	<<if $ADCage == 1>>
+		<img @src="`Images/Avatar/Penis/Flaccid ${$AD.PenisStyle}/${$AD.SkinColor}/Small.png`" style="position: absolute; left: 0; top: 0">
+		<img @src="`Images/Avatar/Clothes/JQ Stuff/Cage.png`" style="position: absolute; left: 0; top: 0">
+	<<elseif $ADVagina != 1>>
+		<img @src="`Images/Avatar/Penis/Flaccid ${$AD.PenisStyle}/${$AD.SkinColor}/${$AD.PenisSize}.png`" style="position: absolute; left: 0; top: 0">
+	<<else>>
+		<img @src="`Images/Avatar/Penis/Vagina/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+	<</if>>
+<</if>>

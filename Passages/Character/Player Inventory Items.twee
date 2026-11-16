@@ -1,0 +1,26 @@
+:: Player Inventory Items [nobr]
+
+<<for _i to 0; _i lt $PlayerInventoryItems.length; _i++>>
+	<<capture _i>>
+    	<<link "[img[$PlayerInventoryItems[_i].Icon]]">>
+        	<<set $PlayerInventoryItemsSelected to _i>>
+            	<<replace"#ItemSelect">>
+                    <br>
+                    <span style="color:Azure"><strong><big>--$PlayerInventoryItems[_i].Name--</big></strong></span><br>
+                    [img[$PlayerInventoryItems[_i].Icon]]<br>
+                    <strong>Color:</strong> $PlayerInventoryItems[_i].Color<br>
+                    <strong>Type:</strong> $PlayerInventoryItems[_i].Type<br>
+                    <strong>Description:</strong>$PlayerInventoryItems[_i].Description<br>
+                <</replace>>
+        <</link>>
+    <</capture>>
+<</for>>
+
+<<if $PlayerInventoryItems.length === 0>>
+	<span class="greyed-out">(Empty)</span>
+<</if>>
+
+<br>
+<div id='ItemSelect'>
+	
+</div>

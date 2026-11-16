@@ -1,0 +1,443 @@
+:: Jackson NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Core Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Jackson--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"Jackson NPC Character Menu Biography">>
+</div>
+
+:: Jackson NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Jackson NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Jackson NPC Character Menu Avatar Display">>
+
+<<if $JacksonSocial > 50>>
+    Jackson Ward is your energetic and hyperactive friend who attends Preston Academy with you. You can always count on things to be interesting and exciting around him and, despite his lack of social awareness or disregard for personal space, you always find life a bit more exciting when he is around. He also has a habit of randomly stripping at every chance he gets, due to his general disdain for clothing. Though, for you, this may actually be an upside. <br>
+    <br>
+<<elseif $JacksonSocial > -10>>
+    Jackson Ward is your hyperactive classmate at Preston Academy. The boy is a walking ball of energy that doesn’t understand social cues, personal space, or that normal kids don’t strip randomly and bare it all to strangers. He can constantly be found climbing something or testing the limits of what he can get away with. His love of freedom and hatred for clothes make him an interesting, if not extremely tiring, boy to be around. <br>
+    <br>
+<<else>>
+    Jackson Ward is the most annoying and hyperactive boy in Preston. He is a walking ball of energy that makes your head hurt every time you hear him talk at 300 words per minute. He has no common sense, no respect for personal space, and will randomly strip and pull his dick out at every possible moment. You’d find him interesting if he wasn’t so annoying. <br>
+    <br>
+<</if>>
+
+<<if $CompletedQuests.includes("Jackson: Empty LOt")>>
+    Not long into your relationship, you learned that his distaste for clothing goes further than you imagined. You discovered that Jackson likes to sneak out after dark to the empty lot near his house and run around without clothes on, enjoying the open air on his skin without getting in trouble. While perhaps slightly dangerous, you do find the act very wholesome as he is just being true to who he is. <br>
+    <br>
+<</if>>
+
+<<if $CompletedQuests.includes("Jackson: Sibling Dynamics")>>
+    Jackson lives with his mother and father. You’ve learned that his mother is on the city council while his father is the curator at the local museum. His younger brother Theo also seems much more calm and “normal” compared to Jackson, which leads you to wonder how he came out so different. <br>
+    <br>
+<</if>>
+
+:: Jackson NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Jackson NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Jackson NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Jackson Ward <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> January 11th <br>
+<strong>Address:</strong> 
+    <<if $JacksonSocial >= 50>>
+        Dellwood Street <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> 
+    <<if $CompletedQuests.includes("Jackson: Sibling Dynamics")>>
+        Unnamed Father, Unnamed Mother, Theo (Little Brother)
+    <<else>>
+        ???
+    <</if>>
+    <br>
+<strong>Friends:</strong>
+    <<if $JacksonSocial >= 60>>
+        $Player.Name, Felix, ...
+    <<elseif $JacksonSocial >= 30>>
+        Felix, ...
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $JacksonSocialRank == 1>>
+        Close Friends
+    <<elseif $JacksonSocial > 70>>
+        Friends
+    <<elseif $JacksonSocial > 30>>
+        Possible Friends
+    <<elseif $JacksonSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $JacksonSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Free-Footed, Outdoorsy, Absent-Minded, Independent, B... /* No Spoilers :P */
+        </div>
+    <<elseif $JacksonSocial > 70>>
+        <div style="margin-left: 25px;">
+            Free-Footed, Outdoorsy, Absent-Minded, Independent, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [Science] > [History] > [Art] > [Math] > [English] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <div style="margin-left: 25px;">
+        Unknown
+    </div>
+<strong>Likes:</strong>
+    <<if $JacksonSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Being Outside, Climbing, Nature, Animals
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $JacksonSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Clothing, Being Stuck Inside, Boredom
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $JacksonSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Climbing, Exploring, Camping
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $JacksonSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Bagels, Everything Else
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $JacksonSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Green, Blue
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $JacksonSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Prefers None, Loose-fitting
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $JacksonSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Prefers None, Colorful Boxer-Briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $JacksonSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $JacksonCut == "Cut">>
+                A cut penis that is smooth and tanned. Average-sized for his age.
+            <<else>>
+                An uncut penis that is smooth and tanned. Average-sized for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $JacksonSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A big, soft butt.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: Jackson NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Jackson NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Jackson NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal Core Jackson">>
+
+
+:: Jackson NPC Character Menu Art [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Artwork]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Jackson NPC Character Menu Avatar Display">>
+
+<<include"Journal Artwork Jackson">>
+
+:: Jackson NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Jackson NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ 
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Jackson NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "Jackson",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $JacksonSocial >= 50 or $JacksonSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $JacksonSocial >= 100 or $JacksonSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: Jackson NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "Jackson",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $JacksonSocial >= 50 or $JacksonSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $JacksonSocial >= 100 or $JacksonSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

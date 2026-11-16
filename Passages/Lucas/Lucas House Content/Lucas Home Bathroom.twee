@@ -1,0 +1,42 @@
+:: Lucas Home Bathroom [nobr]
+
+    <<set $Location to {
+    Name: "Lucas Home Bathroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 1,
+    Public: 0,
+    Environment: "Bathroom",
+}>>
+<span style="color:Azure"><big><strong>--Bathroom--</strong></big></span><br>
+<span style="color:DarkTurquoise">Lucas</span> waits in the hall as you stand in the restroom. It is very clean and organized, as you spot <span style="color:DarkTurquoise">Lucas</span>’ toothbrush and other toiletries sitting neatly on the counter. You get the feeling that keeping the bathroom spotless was one of Lucas’ many responsibilities around the house. The right wall is filled with a large shower separated from the rest of the bathroom by a sliding glass door.<br>
+
+<<set _ad to [
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<link"Use Bathroom (0:02)">>
+	/* No random events for this, at least not yet. */
+	<<goto "Lucas Home Use Bathroom">>
+<</link>><br>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Hallway (0:01)|Lucas Home Hallway][$Minutes += 1]] <br>
+
+<</if>>
+<div style="position: relative">
+    <img src="Images\NPC Homes\Lucas House\Lucas House Map.png" alt="Lucas House Base" usemap="#LucasHouse">
+	<img src="Images\Player House\Player House Room Marker.png" 
+style="position: absolute; left: 116px; top: 172px"  alt="School Map" usemap="#LucasHouse">
+</div>
+<map name="LucasHouse">
+    <area shape="rect" coords="117,63,170,169" alt="Hallway" onclick="$.wiki('<<goto[[Lucas Home Hallway]]>><<set $Minutes += 1>>')" />
+</map>

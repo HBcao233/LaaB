@@ -1,0 +1,32 @@
+:: School Pee [nobr]
+
+<<if $PlayerUndies.Tags.includes("Diaper")>>
+	<<if $FullDiaper == 1>>
+		<span style="color:Lightcoral">Unable to hold it in anymore, you are forced to release your hold on your bladder. Unfortunately, even though you are wearing a $PlayerUndies.Type, you very quickly begin to feel it leaking and dripping down your leg! Your protection was already full to the brim and as the fluid leaked out, it became very clear that you had wet yourself! </span> <br>
+		<br>
+		<<set $Player.Hygiene to 0>>
+		<<set $Wet to 2>>
+		<<set $HadAccident to 0>>
+		<<include"School Fail Location">>
+	<<else>>
+		<span style="color:Lightcoral">Unable to hold it in anymore, you are forced to release your hold on your bladder. As you pee yourself, you find yourself grateful to be wearing $PlayerUndies.Type, as it seems to absorb most of the fluid and you can’t even tell you’ve had an accident from the outside. Though your diaper begins to feel full and uncomfortable; You should probably change it soon. </span> <br>
+		<br>
+   	 <<addMoodlet "Full Diaper" 1>>
+		<<set $HadAccident to 0>>
+		<<include"School Fail Location">>
+	<</if>>
+<<else>>
+	<<set _Random to random(1, 3)>>
+	<<if _Random == 1>>
+		<<include"School Pee Run Into">>
+	<<elseif _Random == 2 && $ToggleDiapers == 1>>
+		<<include"Forced Diaper School">>
+	<<else>>
+		<span style="color:Lightcoral">You can’t hold it in anymore and your eyes begin to water as your bladder relieves itself. Your face goes red as the warm fluid envelopes your clothing and you wet yourself. You’re wet, embarrassed, and stink. But on the bright side, no one saw it.</span><br>
+		<br>
+		<<set $Player.Hygiene to 0>>
+		<<set $Wet to 2>>
+		<<set $HadAccident to 0>>
+		<<include"School Fail Location">>
+	<</if>>
+<</if>>

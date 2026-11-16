@@ -1,0 +1,36 @@
+:: Pool Very Deep [nobr]
+
+<<include"Pool Guest State">>
+
+<<set $PoolLocation to "Very Deep">>
+
+<span style="color:Azure"><big><strong>--City Pool [Very Deep End]--</strong></big></span><br>
+
+/* BASIC DESCRIPTION */
+You are swimming in the very deep end of the pool. The water is so deep, multiple people could swim under you without you realizing.
+/* STATE DESCRIPTION */
+<<if $PoolState == "Senior Swim">>
+This area of the pool is pretty empty, as the seniors don’t need that much space to perform their exercise and don’t want to risk getting splashed by anyone going down the diving board. Though you are still close enough to hear the instructions and garner a few looks from some disgruntled looking seniors.
+<<elseif $PoolState == "After School">>
+This area is mostly relegated to older teenagers and some middle schoolers trying to impress girls or their friends. A decent-sized group are watching the diving board, cheering as boys jump down it or laughing and teasing for those that chicken out. Jumping off the highest diving board seems to be a test of courage.
+<<elseif $PoolState == "Families">>
+This area of the pool is mostly empty, outside of the occasional older kid or adult practicing some proper swimming strokes or diving.
+<<elseif $PoolState == "Teenagers">>
+This area has a few groups of teenagers, diving and swimming about or hanging around the edge. One of the most common sights is some of the boys diving to get a view of a girl’s bikini-clad behind and promptly getting smacked when they are discovered.
+<<elseif $PoolState == "Swim Class">>
+This area is completely empty, even the most advanced students feeling a bit nervous about swimming in a pool this deep. 
+<<else>>
+This area, like the rest of the pool, is empty. Something about the deep, still waters is a bit unnerving and strange. Almost like you are in the ocean, with an endless sea below you.
+<</if>><br>
+<br>
+
+/* SWIM STAMINA */
+<<include"Swim Stamina">>
+
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Swim Around (0:10)|Pool Swim Around]] <span style="color:lightgreen">+Fun</span><br>
+[[Rest (0:10)|Pool Rest]] <span style="color:lightgreen">+Stamina</span><br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+[[Swim Shallower (0:01)|Pool Deep][$Minutes += 1]]<br>

@@ -1,0 +1,147 @@
+:: School Cafeteria [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Cafeteria",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Cafeteria",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include "School Pass Out">>
+<<elseif $HadAccident>>
+	<<include "School Pee">>
+/* QUEST CHECKS */
+<<elseif $ActiveQuests.includes("Michael: Blackmail") && ($Time.between(10,50,11,45))>>
+	<<include "Michael Blackmail 2">>
+<<elseif $ToggleOCMiller == 1 && $ActiveQuests.includes("Millers: Trouble in Paradise") && ($Time.between(10,50,11,45))>>
+	<<include "OC Millers Trouble in Paradise 3">>
+<<elseif $InActiveQuests.includes("Arthur & Richard: Stargazing") && $ToggleOCArthurRichard == 1>>
+	<<include "OC Arthur Richard Stargazing Intro">>
+<<elseif $ToggleOCNikolai == 1 && $InActiveQuests.includes("Nikolai: School Tour") && $Time.between(7, 0, 7, 50)>>
+	<<include "OC Nikolai School Tour">>
+<<elseif $ToggleOCMata == 1 && $ActiveQuests.includes("Mata: The New Kid At School") && $Time.between(10, 50, 11, 45)>>
+	<<include"OC Mata The New Kid At School 2">>
+<<elseif $ToggleOCJames == 1 && $InActiveQuests.includes("James: The Orange Mystery Part 1") && $Time.between(11, 0, 13, 0)>>
+	<<include"OC James Spotting Cafeteria">>
+<<elseif $ToggleOCNoahH == 1 && $InActiveQuests.includes("Noah H: Vibration") && $Time.between(11, 0, 13, 0)>>
+	<<include"OC Noah Vibrator Intro">>
+<<elseif $ToggleOCNikolai == 1 && $InActiveQuests.includes("Nikolai: Aran") && $Time.between(10,50,11,45)>>
+	<<include"OC Aran Intro">>
+<<else>>
+
+	<span style="color:Azure"><big><strong>--Cafeteria--</strong></big></span><br>
+	You stand in the school’s Cafeteria. It is a large room with seating for every student and then some. Though most of the kitchen is blocked off, what you can see is very impressive and reminds you more of a fancy restaurant, with much fancier equipment and utensils than what you’ve seen at your previous schools.<br>
+
+	/* NPC SEEN */
+	<<include "NPC Inspect">>
+
+	<br>
+
+	<span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+	<<if $SchoolBreakfast != 1 and $Time.is(7)>>
+		[[Eat Breakfast (0:15)|School Breakfast]]
+		/* LUNCH QUALITY */
+		<<if $Money >= 4>>
+			<<listbox "$SchoolBreakfastLevel" autoselect>>
+			<<option "Free Breakfast" 0>>
+			<<option "Standard Breakfast ($2)" 1>>
+			<<option "Premium Breakfast ($4)" 2>>
+			<</listbox>><br>
+		<<elseif $Money >= 2>>
+			<<listbox "$SchoolBreakfastLevel" autoselect>>
+			<<option "Free Breakfast" 0>>
+			<<option "Standard Breakfast ($2)" 1>>
+			<</listbox>><br>
+		<<else>>
+			<<listbox "$SchoolBreakfastLevel" autoselect>>
+			<<option "Free Breakfast" 0>>
+			<</listbox>><br>
+		<</if>>
+	<</if>>
+
+	<<if $LunchClass == 0 and ($Time.between(10,50,11,45))>>
+
+		<<set _schoolLunchEvent = "School Lunch">>
+
+		<<if $ToggleOCRowan == 1 && $InActiveQuests.includes("Rowan: Introduction")>>
+			<<set _schoolLunchEvent = "OC Rowan Intro">>
+		<<elseif $Nickname.Bully == 1 && $BullyNickname == "Little Dick" && random(1, 10) === 1>>
+			<<set _schoolLunchEvent = "School Lunch Bully Little Dick">>
+		<</if>>
+
+		<<link "Eat Lunch (0:15)">>
+			<<goto _schoolLunchEvent>>
+		<</link>>
+
+		<<include "School Lunch Level Chooser">>
+
+		<<if $ToggleOCMiller == 1 and $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<if $InActiveQuests.includes("Millers: Snakes in the Grass")>>
+				[[Eat with Isaiah (0:15)|OC Isaiah Snakes in the Grass]]<br>
+			<<elseif $InActiveQuests.includes("Millers: Babysitting Kayden") && $Time.Day == "Friday">>
+				[[Eat with Isaiah (0:15)|Millers Babysitting Quest Intro]]<br>
+			<<else>>
+				[[Eat with Isaiah (0:15)|OC Zay Eat Lunch With]]<br>
+			<</if>>
+		<</if>>
+		<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Sebastian")>>
+			[[Eat with Sebastian (0:15)|OC Sebastian Eat Lunch With]]<br>
+		<</if>>
+		<<if $ToggleOCLuca == 1 && $CompletedQuests.includes("Luca: Introduction")>>
+			<<link"Eat with Luca (0:15)<br>">>
+				<<set _events to ["OC Luca Eating With 1", "OC Luca Eating With 2"]>>
+				<<if $CarterSocial >= 10 or $CarterSocialRank > 0>>
+					<<set _events.push("OC Luca Eating With 3")>>
+				<</if>>
+				<<set _event to _events.random()>>
+				<<goto _event>>
+			<</link>>
+		<</if>>
+		<<if $ToggleOCErin == 1 && $CompletedQuests.includes("Erin: Introduction")>>
+			[[Eat with Erin (0:15)|OC Erin Lunchroom Bullying]]<br>
+		<</if>>
+		<<if $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Manuel Skinny Dipping") && $ToggleOCManuel == 1>>
+			[[Eat with Shinju & Manuel (0:15)|OC Shinju Manuel Felix Card Game]]<br>
+		<</if>>
+	<<elseif $LunchClass != 0 && $Time.between(11, 0, 11, 50)>>
+		<<if $ToggleOCKazu == 1 && $CompletedQuests.includes("Kazu: The Deliquent")>>
+			[[Hang Out with Kazu (0:15)|OC Kazu Cafeteria Hang Out]]<br>
+		<</if>>
+	<</if>>
+
+	[[Check the Vending Machine|Vending Machine][$VendorPreviousPassage = passage()]]<br><br>
+	[[Wait (0:05)|School Cafeteria][$Minutes += 5]]<br>
+
+	<br>
+
+	<<if $LinkTravel == 1>>
+		<span style="color:Azure"><strong>-Travel-</strong></span><br>
+			[[Courtyard (0:01)|School Courtyard][$Minutes += 1]] <br>
+			[[West Hallway (0:01)|School West Hallway][$Minutes += 1]] <br>
+			[[East Hallway (0:01)|School East Hallway][$Minutes += 1]] <br>
+		<br>
+	<</if>>
+
+	<div style="position: relative">
+		<img src="Images\School Map\School Map.png" 
+		style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+		<img src="Images\School Map\School Map Cafeteria Marker.png" 
+		style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+		<<include "NPC Tracking School">>
+	</div>
+
+	<map name="School">
+		<area shape="rect" coords="58,58,165,111" alt="West Hallway" onclick="$.wiki('<<goto[[School West Hallway]]>><<set $Minutes += 1>>')" />
+		<area shape="rect" coords="58,58,111,327" alt="West Hallway" onclick="$.wiki('<<goto[[School West Hallway]]>><<set $Minutes += 1>>')" />
+
+		<area shape="rect" coords="328,58,436,111" alt="East Hallway" onclick="$.wiki('<<goto[[School East Hallway]]>><<set $Minutes += 1>>')" />
+		<area shape="rect" coords="382,58,435,327" alt="East Hallway" onclick="$.wiki('<<goto[[School East Hallway]]>><<set $Minutes += 1>>')" />
+
+		<area shape="rect" coords="166,4,327,57" alt="Courtyard" onclick="$.wiki('<<goto[[School Courtyard]]>><<set $Minutes += 1>>')" />
+	</map>
+<</if>>

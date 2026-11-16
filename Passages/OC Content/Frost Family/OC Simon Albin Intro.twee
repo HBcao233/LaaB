@@ -1,0 +1,372 @@
+:: OC Simon Albin Intro [nobr]
+
+/* Intro */
+
+You are walking out of the theatre, still going over that epic last fight scene in your head, when you overhear two boys verbally discussing the film you’ve just watched. Curious about the others opinion, you listen in. <br>
+
+<<set _ad to [
+    { 
+        Name: "OC Simon",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Albin",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smirk",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Come on! The casting was spot on!”</span> The shorter boy says. He looks about your age and has a bit of a thick accent you can’t quiet place. The boy is all smiles as he rubs the back of his strawberry blonde hair, <span style="color:LightSteelBlue">“And the CGI was so good! Could hardly even tell!”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“It was good, but I wouldn’t say that.”</span> The older boy replies with a chuckle. He is older, by probably about a year or two, with dark brown hair. You wouldn’t take them as being related, if their accents didn’t sound the same, though the elder boy’s is a bit thicker. <span style="color:LightSteelBlue">“The big villain kind of just came out of nowhere, I liked it, but the script could have used another pass.”</span> The younger boy rolls his eyes at the older’s criticism, saying something that you don’t even register as words at first as the other boy responds with similar strange words. It takes you a few minutes to realize they are speaking another language! <br>
+<br>
+<span style="color:LightSteelBlue">“Ja! We gotta show <span style="color:DarkTurquoise">Erik</span> it!”</span> The younger boy laughs as they toss away their popcorn. <span style="color:Yellow">They seem nice enough and are just about as interested in the movie as you were. As you feel your own opinions bubbling to the surface and consider walking over there.</span> <br>
+<br>
+<div id=choice>
+<<if $Player.Traits.includes("Shy") or $Player.Traits.includes("Coward")>>
+    <<link "<strong>[Shy/Coward] </strong>You're far too nervous<br>">>
+    <<replace"#choice">>
+
+        <<set _ad to [
+            { 
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        But the instant you take a step forward, <span style="color:LightCoral">you feel something hard form in your gut. You are far too nervous to approach a pair of strangers.</span> You figure they wouldn’t even be interested in what you had to say, they are probably tourists or something, judging by their accents, and the last thing they need is some local butting into their conversation. You sigh and begin to exit the theatre with the crowd, still hearing the boys talking a bit in front of you as you go. <br>
+        <br>
+        [[Continue|OC Simon Albin Intro 2 No Talk]]
+    <</replace>>
+    <</link>>
+<<else>>
+    <<link "Walk away<br>">>
+    <<replace"#choice">>
+        <span style="color:Yellow">You decide it is best to just walk away for now, it would be a little strange to just walk up and start talking to some boys you don’t know.</span> Judging by their accents and that you’ve never seen them before, you figure they are probably tourists who are not interested in the opinions of the locals. <br>
+        <br>
+        Keeping your distance just enough to not draw attention, but close enough to still hear their conversation, as you still find yourself curious, you follow the crowd out of the theatre. <br>
+        <br>
+        [[Continue|OC Simon Albin Intro 2 No Talk]]
+    <</replace>>
+    <</link>>
+    <<requiresAbility "Charm" 7 "Introduce yourself">>
+        <<replace"#choice">>
+            <<include"OC Simon Ablin Intro Introduce">>
+        <</replace>>
+    <</requiresAbility>>
+    <<requiresTrait "Charismatic" "Introduce yourself">>
+        <<replace"#choice">>
+            <<include"OC Simon Ablin Intro Introduce">>
+        <</replace>>
+    <</requiresTrait>>
+    <<requiresTrait "Friendly" "Introduce yourself">>
+        <<replace"#choice">>
+            <<include"OC Simon Ablin Intro Introduce">>
+        <</replace>>
+    <</requiresTrait>>
+
+    <<requiresTrait "Brave" "Walk up confidently">>
+        <<replace"#choice">>
+
+            <<set _ad to [
+                { 
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },
+                },
+                { 
+                    
+                    Name: "OC Simon",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Happy",
+                    },
+                },
+                {
+                    Name: "OC Albin",
+                    State: {
+                        Outfit: "Everyday",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightGreen">With a confident smirk and the swagger only a preteen boy can pull off, you walk up to the boys and expertly insert yourself into the conversation. It is so seamless both boys continue talking for a moment longer as if you were a part of the conversation the entire time before they suddenly stop and look at you curiously before the younger boy laughs.</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“Ah! That was good!”</span> He laughs, <span style="color:LightSteelBlue">“You guys here are so confident, haha!”</span> He chuckles loudly, it is almost a little awkward, as he pats you on the back. <span style="color:LightSteelBlue">“I’m <span style="color:DarkTurquoise">Simon</span>, this is my older brother, <span style="color:DarkTurquoise">Albin</span>.”</span> The older boy greets you in that same language from before and you introduce yourself to both boys. <span style="color:LightSteelBlue">“So, you agree then? Pretty good, huh? <span style="color:DarkTurquoise">Albin</span> just finds reasons to complain, but he was smiling the whole time!”</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“I just like to admit things could be better, unlike you, who loves everything.”</span> <span style="color:DarkTurquoise">Albin</span> says teasingly, patting his shorter brother on the head. You chuckle, explaining your own thoughts on the movie which aligns with the younger brothers. You really enjoyed it! <span style="color:LightGreen">The younger brother takes this as confirmation that he is correct and triumphally chuckles.</span>  <br>
+            <br>
+        [[Continue|OC Simon Albin Intro 2 Talk]]
+        <</replace>>
+    <</requiresTrait>>
+    <<requiresTrait "Diplomatic" "Agree with the younger boy">>
+        <<replace"#choice">>
+
+                <<set _ad to [
+                { 
+                    Name: "Player",
+                    State: {
+                        Mouth: "Happy",
+                    },
+                },
+                { 
+                    
+                    Name: "OC Simon",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Happy",
+                    },
+                },
+                {
+                    Name: "OC Albin",
+                    State: {
+                        Outfit: "Everyday",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightGreen">As both boys pass you with the younger one still arguing his case, you speak up and agree. The younger boy has a point, it was a great movie despite its faults.</span> It sounds like the older boy is just looking for something to complain about. Both boys stop as you speak, with the older boy giving you a raised eyebrow as the younger chuckles loudly. <span style="color:LightSteelBlue">“Aha! I told you, even this boy agrees with me! So, admit it, you liked it just as much as me!”</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“I do not think anyone liked it as much as you.”</span> The older boy teased, rolling his eyes and smirking as he pats the younger boy on the head. The younger boy chuckles again before turning to you and shaking your hand. <br>
+            <br>
+            <span style="color:LightSteelBlue">“I’m <span style="color:DarkTurquoise">Simon</span>, this is my older brother, <span style="color:DarkTurquoise">Albin</span>.”</span> The older boy greets you in that same language from before and you introduce yourself to both boys. <span style="color:LightSteelBlue">“So, you agree then? Pretty good, huh? <span style="color:DarkTurquoise">Albin</span> just finds reasons to complain, but he was smiling the whole time!”</span> <br>
+            <br>
+            <span style="color:LightSteelBlue">“I just like to admit things could be better, unlike you, who loves everything.”</span> <span style="color:DarkTurquoise">Albin</span> says teasingly, patting his shorter brother on the head. You chuckle, explaining your own thoughts on the movie which aligns with the younger brothers. You really enjoyed it! The younger brother takes this as confirmation that he is correct and triumphally chuckles. <br>
+            <br>
+        [[Continue|OC Simon Albin Intro 2 Talk]]
+        <</replace>>
+    <</requiresTrait>>
+    <<requiresTrait "Flirty" "Slide in smoothly">>
+        <<replace"#choice">>
+            <span style="color:Pink">As smoothly and confidently as you can muster, you slip between both boys and put a hand on each of their shoulders, expertly placing you in the middle of their conversation. You tell the boys that they should be talking about how much fun they had, not arguing about the quality of the film. You hate seeing two boys fighting, especially when they are as cute as these two. The younger boy instantly blushes at your comment as the older one laughs.</span> <br>
+            <br>
+
+            <<set _ad to [
+                { 
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },
+                },
+                { 
+                    
+                    Name: "OC Simon",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Frown",
+                        Blush: 2,
+                    },
+                },
+                {
+                    Name: "OC Albin",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Frown",
+                        Eyes: "Tired",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:LightSteelBlue">“The boys here are so confident, aren’t they!?”</span> He chuckles, pulling you in and rubbing his knuckles against your head. It kind of takes away from the flirty aura you were trying to display, but you guess it works as it seems to have endeared you to him. <span style="color:LightSteelBlue">“I guess you’re right, but I just love to argue with my little brother!”</span> He pulls the younger boy closer as well, leaving you in the middle of the tight hug. <span style="color:LightSteelBlue">“I’m <span style="color:DarkTurquoise">Albin</span>, and this little red one is my little brother, <span style="color:DarkTurquoise">Simon</span>.”</span> <br>
+            <br>
+            <span style="color:DarkTurquoise">Simon</span> frees himself from his brother’s grasp and introduces himself properly. <span style="color:LightSteelBlue">“So you agree with me than? That the movie is great and he is just looking for something to dislike?”</span> The younger boy puts his hands on his sides and smiles confidently as the older rolls his eyes. <span style="color:LightGreen">You’ve joined in on their conversation and seem to have steered the conversation into a much more pleasant direction.</span> <br>
+            <br>
+        [[Continue|OC Simon Albin Intro 2 Talk]]
+        <</replace>>
+    <</requiresTrait>>
+<</if>>
+</div>
+
+:: OC Simon Ablin Intro Introduce [nobr]
+
+/* Intro */
+
+        <<set _ad to [
+            { 
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {    
+                Name: "OC Simon",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Albin",
+                State: {
+                    Outfit: "Everyday",
+                },
+            },
+        ]>>
+    <<ad _ad>>
+
+<span style="color:LightGreen">With a deep breath and a smile, you walk up to the boys and introduce yourself, claiming you just came out of the same movie as them as well.</span> Both boys look at each other a little confused for a moment, <span style="color:LightGreen">before the younger one smiles and introduces himself.</span> <span style="color:LightSteelBlue">“Hello! I’m <span style="color:DarkTurquoise">Simon</span>, this is my older brother, <span style="color:DarkTurquoise">Albin</span>.”</span> The older boy greets you in that same strange language from before. <span style="color:LightSteelBlue">“So, what did you think? Pretty good, huh? <span style="color:DarkTurquoise">Albin</span> just finds reasons to complain, but he was smiling the whole time!”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I just like to admit things could be better, unlike you, who loves everything.”</span> <span style="color:DarkTurquoise">Albin</span> says teasingly, patting his shorter brother on the head. You chuckle, explaining your own thoughts on the movie which aligns with the younger brothers. You really enjoyed it! <span style="color:LightGreen">The younger brother takes this as confirmation that he is correct and triumphally chuckles.</span> <br>
+<br>
+[[Continue|OC Simon Albin Intro 2 Talk]]
+
+:: OC Simon Albin Intro 2 No Talk [nobr]
+
+/* Intro */
+
+The accented voices of the boys grow more and more distant as the crowd moves outside, the large group of movie-goers all exiting at once. By the time you reach the front of the theater, you have nearly forgotten about them and are instead having an internal conversation with yourself about the events of the movies. That is, until, you arrive at the parking lot and are deciding where to go next when you hear the young boy’s voice again. <br>
+
+    <<set _ad to [
+        {     
+        Name: "OC Simon",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Albin",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“He said he’d pick us up here, yeah?”</span> He asks, scanning the parking lot in search of something. <br>
+<br>
+<span style="color:LightSteelBlue">“Ja, look, here he comes now.”</span> The older boy responds, pointing out a fancy white car pulling up into a nearby parking spot. Both boys run over, playfully pushing each other, as the car parks and a man steps out. <br>
+<br>
+
+<<if $Player.Traits.includes("Athletic")>>
+    <strong>[Athletic]</strong> The man who steps out is fairly muscular, though a bit on the shorter side, with strawberry blonde hair that is slightly balding. It is immediately clear that he is the boy’s father, judging by how alike he looks to them, but something about him seems familiar. You can’t place your finger on it, until it suddenly hits you! <span style="color:LightGreen"><span style="color:DarkTurquoise">He is Karl “Kalle” Frost!</span> He used to be a world-famous hockey player! While a bit before your time, you’ve heard enough about him to know that he is a big deal!</span> <br>
+    <br>
+    Your mouth agape, you watch as the boys hug their father and begin to tell him about the film he just watched. <span style="color:Pink">The younger boy seems full of energy after sitting for so long, running around and acting out the scenes while the older just smirks and adds his own inputs as well.</span> It would be an incredible wholesome sight, if you weren’t still so distracted. <br>
+    <br>
+    <span style="color:LightCoral">The dad then suddenly notices you staring.</span> <span style="color:Yellow">You panic, blushing and trying to act like you weren’t just watching him for however long it’s been, as the man simply chuckles and gives you a wave.</span> You gulp nervously before waving back as the boys load up into their car and begin to drive away. You can’t believe what you just saw! <br>
+    <<set $OCFrostsMet to -1>>
+    <<set $OCSimonSocial to 0>>
+    <<set $OCSimonSocialRank to 0>>
+    <<set $OCAlbinSocial to 0>>
+    <<set $OCAlbinSocialRank to 0>>
+    <br>
+    [[Continue|Entertainment District]] 
+<<else>>
+    The man who steps out is fairly muscular, though a bit on the shorter side, with strawberry blonde hair that is slightly balding. It is immediately clear that he is the boy’s father, judging by how alike he looks to them. You try not to stare, not wanting anyone to think you are some creep spying on this family, <span style="color:Pink">but find yourself attracted to the wholesome display of the boys hugging their father before recalling the events of the movie they just watched. <br>
+    <br>
+    The younger boy seems full of energy after sitting for so long, running around and acting out the scenes while the older just smirks and adds his own input as well. It is a cute sight,</span> despite the father clearly having no idea what they are talking about, he just seems happy to see them so energized. <br>
+    <br>
+    <span style="color:LightCoral">The dad then suddenly notices you staring.</span> <span style="color:Yellow">You panic, blushing and trying to act like you weren’t just watching him for however long it’s been, as the man simply chuckles and gives you a wave.</span> You gulp nervously before waving back as the boys load up into their car and begin to drive away. You really hope he doesn’t think you are some weirdo, even though he seemed to take it well. <br>
+    <<set $OCFrostsMet to -1>>
+    <<set $OCSimonSocial to 0>>
+    <<set $OCSimonSocialRank to 0>>
+    <<set $OCAlbinSocial to 0>>
+    <<set $OCAlbinSocialRank to 0>>
+    <br>
+    [[Continue|Entertainment District]] 
+<</if>>
+
+:: OC Simon Albin Intro 2 Talk [nobr]
+
+/* Intro */
+/*(Same as above, though if PC chose the Talk” option.)*/
+The three of you walk out towards the parking lot, the young <span style="color:DarkTurquoise">Simon</span> going over his favorite part of the movie bit by bit. <span style="color:Pink">His excitement is infectious and very cute,</span> though as you reach the sidewalk boarding the lot, he pauses suddenly and glances around. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Albin</span>? Dad said he’d be picking us up here, right?”</span> <br>
+
+    <<set _ad to [
+            { 
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                },
+            },
+            {  
+            Name: "OC Simon",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                },
+            },
+            {
+            Name: "OC Albin",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                },
+            },
+        ]>>
+     <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Ja, look, he’s pulling up now.”</span> The older boy points to a very fancy looking white car pulling out of a far parking spot towards where the three of you stand. <span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>? You’re a local, right?”</span> You confirm, though explain that you only moved here recently. <br>
+<br>
+<span style="color:LightSteelBlue">“Oh! Same as us than!”</span> The younger boy says happily, <span style="color:LightSteelBlue">“We just moved here, both to this town and country.”</span> The boy chuckles. This confirms that they are from somewhere else, like you suspected, though you admit you are surprised that they are moving here. You ask if they are going to Preston. The younger boy looks confused for a second before shaking his head. <span style="color:LightSteelBlue">“That fancy school? Nah. Mom tried to get us in, I think, but something something ‘we are too old’.”</span> He shrugs. You figure that makes sense, considering Preston’s strange acceptance policies. <br>
+<br>
+
+<<if $Player.Traits.includes("Athletic")>>
+    The white car pulls up next to you and a man steps out. He is fairly muscular, though a bit on the shorter side, with strawberry blonde hair that is slightly balding. It is immediately clear that he is the boy’s father, judging by how alike he looks to them, but something about him seems familiar. You can’t place your finger on it, until it suddenly hits you! He is <span style="color:DarkTurquoise">Karl “Kalle” Frost</span>! He used to be a world-famous hockey player! While a bit before your time, you’ve heard enough about him to know that he is a big deal! <br>
+    
+            <<set _ad to [
+            { 
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                },
+            },
+            { 
+                 Name: "OC Simon",
+                 State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smirk",
+                },
+            },
+            {
+                Name: "OC Albin",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Hey dad!”</span> The younger boy says giving his father a hug as the older follows. Meanwhile, you are just standing there with your mouth agape at the sight you are seeing. <span style="color:LightSteelBlue">“Oh, this is <span style="color:DarkTurquoise">$Player.Name</span>. We… just met him actually, haha. Came out of the same movie. This is our dad”</span> You interrupt the boy, asking if they know their father is <span style="color:DarkTurquoise">Kalle Frost</span>! <br>
+    <br>
+    <span style="color:LightSteelBlue">“Really? Had no idea!”</span> The older boy laughs, <span style="color:LightSteelBlue">“Can’t believe he’s hide it from us this entire time!”</span> <span style="color:Pink">You blush slightly, realizing how dumb of a question that was,</span> before introducing yourself properly to the man. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Ah, I’m surprised someone your age knows me. Been out of the game for a while, not that it isn’t nice to be recognized.”</span> He smirks, <span style="color:LightSteelBlue">“But I am glad my sons could meet a friendly face on their first day here! Especially since we are still stuck in the hotel for a bit longer.”</span> He chuckles nervously. You question this and both boys sigh and shrug. <br>
+    <br>
+<<else>>
+    The white car pulls up next to you and a man steps out. He is fairly muscular, though a bit on the shorter side, with strawberry blonde hair that is slightly balding. It is immediately clear that he is the boy’s father, judging by how alike he looks to them. <span style="color:LightSteelBlue">“Hey dad!”</span> The younger boy says giving his father a hug as the older follows. Meanwhile, you are just standing there with your mouth agape at the sight you are seeing. <span style="color:LightSteelBlue">“Oh, this is <span style="color:DarkTurquoise">$Player.Name</span>. We… just met him actually, haha. Came out of the same movie. This is our dad.”</span> You shake the man’s hand, though pause on wondering what you should call him since you don’t know their last name. <br>
+    <br>
+    <span style="color:LightSteelBlue">“You can just call me <span style="color:DarkTurquoise">Kalle</span>, I’m not one for titles.”</span> He laughs, <span style="color:LightSteelBlue">“Pleasure to meet you! I am glad my sons could meet a friendly face on their first day here! Especially since we are still stuck in the hotel for a bit longer.”</span> He chuckles nervously. You question this and both boys sigh and shrug. <br>
+    <br>
+<</if>>
+
+<span style="color:LightSteelBlue">“Our house is still being built.”</span> The older boy says with a hint of annoyance, <span style="color:LightSteelBlue">“Somebody decided to wait until the last minute to approve the blueprints.”</span> Both boys glance at their dad with friendly yet accusatory glares. <span style="color:Pink">The dad chuckles nervously.</span> <span style="color:LightSteelBlue">“But mom chewed him out the entire plane ride, so I guess we can learn to forgive.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“We are just nice like that.”</span> The younger boy says, sticking his tongue out playfully towards his dad, who rolls his eyes. <span style="color:LightSteelBlue">“But maybe you’ll see us around town? The hotel is so boring, so my brothers and I kinda just wander. This place is so weird, but in a good way… mostly.”</span> He laughs again. <br>
+<br>
+<span style="color:LightSteelBlue">“Aye, well we should be getting back before your mother worries.”</span> The dad says, opening the back door and letting the two boys slip inside, <span style="color:LightSteelBlue">“It was good meeting you, <span style="color:DarkTurquoise">$Player.Name</span>! I hope my boys get to hang out with you again!”</span> The two boys both bid you farewell as they get buckled in and drive off. <span style="color:LightGreen">They seem like a fun family. You wonder if you’ll see them again.</span> <br>
+<<set $OCFrostsMet to -1>>
+<<set $OCSimonSocial to 0>>
+<<set $OCSimonSocialRank to 0>>
+<<set $OCAlbinSocial to 0>>
+<<set $OCAlbinSocialRank to 0>>
+<<socialChange "Simon" 10 1>>
+<<socialChange "Albin" 10 1>>
+<br>
+[[Continue|Entertainment District]] 

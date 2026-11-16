@@ -1,0 +1,35 @@
+:: Lucas Hang Out Park Walk Bonding School Talk [nobr]
+
+<<set $Minutes += 10>>
+
+You ask <span style="color:DarkTurquoise">Lucas</span> if he’d like to go on a walk around the pond and just relax and chat. You mention that it may not be the most exciting, but <span style="color:DarkTurquoise">Lucas</span> smiles and agrees. The two of you begin to walk down the path, which is mostly empty, and just talk while looking at the nature around you. <br>
+<br>
+The conversation starts, naturally, with school. <span style="color:DarkTurquoise">Lucas</span> expressing frustration with the recent math homework. Despite being normally good in school, he mentions how easily he gets distracted at home and he’ll often get lost in some game or activity. He even laughs about some time he got beat after being caught up at 2am on a school night, trying to finish a late assignment he put off until the last minute. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: $HangOutClothes,
+			Mouth: "Happy",
+			Blush: 1,
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Smirk",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“That day reminded me that I’d rather get in trouble with the teachers than with my mother.”</span> He laughs. <span style="color:pink">It is nice that <span style="color:DarkTurquoise">Lucas</span> feels comfortable enough with you to talk about his home life with you.</span> You can’t help but do the same, bringing up your own stories about stupid things you’ve done that got you in trouble with <span style="color:DarkTurquoise">Your Father</span>. Overall, it is a nice bonding moment between you two. <br>
+    <<needChange "Fun" 5>>
+    <span style="color:green">+Lucas Fun</span><br>
+    <<set $HangOutNeed.Fun += 5>>
+    <span style="color:green">+Lucas Comfort</span><br>
+    <<set $HangOutNeed.Comfort += 10>>
+	<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Hang Out Park]]

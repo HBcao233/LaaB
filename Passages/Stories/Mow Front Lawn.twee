@@ -1,0 +1,112 @@
+:: Mow Front Lawn [nobr]
+
+You grab the push mower from the side of the house and push it into the front lawn. You feel tired just looking at it, but decided to just suck it up and get it done. 
+<<set $RandomEvent to random(1, 4)>>
+
+/* NOTHING HAPPENS */
+
+<<if $RandomEvent > 2>>
+It takes about an hour, but you finally get the lawn looking good enough to please <span style="color:DarkTurquoise">Your Father</span> and return the mower.<br>
+	
+
+/* POSITIVE */
+<<elseif $RandomEvent > 1>>
+Despite taking about an hour, you find yourself strangely relaxed as you mow the lawn, taking in the sounds and smell of the outdoors. <span style="color:Green">Time flies by and you find yourself relaxed upon finishing.</span><br>
+<<addMoodlet "Stress" 0>>
+
+/* NEGATIVE */
+<<elseif $RandomEvent == 1>>
+	<<set $RandomEvent2 to random(1, 2)>>
+	/* SPRINKLERS */
+	<<if $RandomEvent2 == 1>>
+	As you are just about finished, <span style="color:Red">the sprinklers suddenly come on, blasting you with water.</span> You quickly grab the mower and run back to the front porch, soaking wet but otherwise fine.<br>
+	<<set $Wet to 2>>
+	
+	
+	/* PANTS RIPPED */
+	<<elseif $RandomEvent2 == 2>>
+	<<set $TimesPantsRippedOff += 1>>
+	As you are nearly finished, you notice something shining near your feet, wedged between the grass and sidewalk. As you bend down to pick it up, you don’t notice as your $PlayerBottoms.Name get hooked on the mower blades. Realizing it’s just a bottle cap, you attempt to get up, but slip due to your $PlayerBottoms.Type being caught. You fall atop the mower, <span style="color:Red">accidently pushing it forward and completely ripping off your $PlayerBottoms.Name as you tumble onto the sidewalk!</span> <br>
+	
+	<<set $PlayerBottoms to $None>>
+		<<if $PlayerUndies.Type != "None">>
+		
+/* AVATAR DISPLAY */
+	<<include"Player Avatar Display Set">>
+	<<set $AD.Name to "Player">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 2>>
+	<<set $AD.Mouth to "Normal">>
+	<<set $AD.Outfit to "Undies">>
+	<<set $AD.Hard to 0>>
+		<<include"Player Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+	It takes you a second to realize what had happened as <span style="color:Red">you find yourself outside in your $PlayerUndies.Name! </span> You turn bright red and quickly duck into a nearby bush without thinking.<br>
+		<<elseif $PlayerUndies.Type == "None">>
+		
+/* AVATAR DISPLAY */
+	<<include"Player Avatar Display Set">>
+	<<set $AD.Name to "Player">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 3>>
+	<<set $AD.Mouth to "Normal">>
+	<<set $AD.Outfit to "Naked">>
+	<<set $AD.Hard to 0>>
+		<<include"Player Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* PENIS ZOOM DISPLAY (+160px) */
+<<if $ZoomsPlayer != 0>>
+	<div style="position: absolute; left: 160px; top: 0px">
+			<<include"Player Avatar Display Set">>
+			<<include"Penis Zoom Display">>
+			<div style="position: absolute; left: 133px; top: 0px">
+				<<include"Butt Zoom Display">>
+			</div>
+	</div>
+<</if>>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+	It takes you a second to realize what had happened as <span style="color:Red">you find yourself in the middle of the sidewalk naked! </span> You turn bright red and, without thinking, quickly duck into a nearby bush.<br>
+		<</if>>
+	
+	<</if>>
+
+<</if>>
+
+
+<<set $Minutes += 60>>
+
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+	<<if $QuestLog[_i].Name == "Weekly Chores">>
+		<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+			<<if $QuestLog[_i].Objectives[_o].Name == "Mow Lawn">>
+				<<set $QuestLog[_i].Objectives[_o].State to 1>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<break>>
+	<</if>>
+<</for>>
+
+<<set $ChoreOutdoorObj to 1>>
+<<include"Chore Quest Check">>
+
+<<needChange "Energy" -5>>
+<br>
+[[Continue|PH Frontyard]] 

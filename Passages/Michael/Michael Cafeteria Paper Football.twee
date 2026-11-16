@@ -1,0 +1,108 @@
+:: Michael Cafeteria Paper Football [nobr]
+
+/* Written by: Senpai */
+/* Intro */
+<<set $Minutes += 15>>
+
+You look over as you notice <span style="color:DarkTurquoise">Michael</span>  is fiddling with something, and before you can comment, he gestures to get your attention. <span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$MichaelNickname</span>, c'mere.”</span> he says, gesturing for you to come closer. You scoot closer and he produces a small white triangle from his hands; looking closer you see it's a paper football. <span style="color:LightSteelBlue">“Make your hands into a goal, I wanna see if I can score.”</span> he orders you. You nod and make a goal shape with your fingers on the table, and <span style="color:DarkTurquoise">Michael</span> props up the paper football with his hand and places his other hand behind it, ready to flick it, After a moment of aiming, he flicks the football and it quickly passes through your fingers. You compliment him, but he brushes it off. <span style="color:LightSteelBlue"> “Pfft, it's nothing, the goal's too close. Here.”</span> he says, shooing you. <span style="color:LightSteelBlue"> “Scoot back a bit, gimme a challenge.”</span> <br>
+<br>
+
+You nod and scoot back a few feet, giving him a decently long shot to make. You make your hands into a goal and <span style="color:DarkTurquoise">Michael</span> readies the football again. <span style="color:DarkTurquoise">Michael</span> lowers his head to the table and closes one eye, poking out his tongue slightly as he focuses on aiming. After a long silence, he finally flicks the football. <br>
+<br>
+
+<<set _random to random(1, 3)>>
+
+/*-Randomly chosen outcome #1-*/
+<<if _random === 1>>
+    The football sails right through your fingers. Score. <span style="color:DarkTurquoise">Michael</span> pumps his fist as his cadre of goons cheer him, yourself included. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Michael",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Yeah yeah, I know, I'm awesome! You don't gotta remind me.”</span> He says with fake humbleness, the smirk never leaving his face. One of his goons makes a snarky response, and <span style="color:DarkTurquoise">Michael</span>  turns to him. <span style="color:LightSteelBlue"> “Oh shut up <span style="color:DarkTurquoise">Blake</span>, I'd like to see you beat that shot.”</span> He beckons to you. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$MichaelNickname</span>, gimme that, I gotta put some posers in their place.”</span> <br>
+    <br>
+
+    You, <span style="color:DarkTurquoise">Michael</span> and his goons spend the next few minutes flicking the paper football at each other and generally have an amusing time. <br>
+
+    <<socialChange "Michael" 3>>
+    <<needChange "Fun" 10>>
+    [[Continue|School Cafeteria]] 
+
+/*-Randomly chosen outcome #2-*/
+<<elseif _random === 2>>
+    The football sails to the right and lands nowhere near your fingers. <span style="color:DarkTurquoise">Michael</span> lightly punches the table. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Michael",
+            State: {
+                Outfit: "Uniform",
+                Eyes: "Mad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Dammit...”</span> he grumbles, and sticks his tongue out at you when you snicker at him. His goons follow suit, prompting him to turn around. <span style="color:LightSteelBlue">“Yeah, yeah, laugh it up, jackasses.”</span> One of his goons makes a snarky response, and <span style="color:DarkTurquoise">Michael</span>  gives him the finger. <span style="color:LightSteelBlue">“Shut up <span style="color:DarkTurquoise">Blake</span>, how 'bout you try making that shot instead, huh?”</span> <span style="color:DarkTurquoise">Michael</span> says as he reaches over and grabs the football off the table and tosses it at the goon. <span style="color:LightSteelBlue">“C'mon <span style="color:DarkTurquoise">$MichaelNickname</span>, give this little bitch a goal to aim at.”</span> <br>
+    <br>
+    You, <span style="color:DarkTurquoise">Michael</span> and his goons spend the next few minutes flicking the paper football at each other and generally having an amusing time. <br>
+
+    <<socialChange "Michael" 3>>
+    <<needChange "Fun" 10>>
+    <br>
+    [[Continue|School Cafeteria]] 
+
+/*-Randomly chosen outcome #3-*/
+<<elseif _random === 3>>
+    <span style="color:LightCoral">K'tonk!</span> The football hits you square between the eyes, making you flinch and grab your face. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Michael",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Smirk",
+                Eyes: "Mad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:DarkTurquoise">Michael</span> laughs like a gremlin at you, but raises his hands in submission when you give him a dirty look. <span style="color:LightSteelBlue">“Sorry, you got such a hittable face, I just GOTTA flick things at it! It ain't my fault.”</span> he teases in a sing-song voice. You grab the football and flick it back at him, hitting him square in the face, making him flinch slightly.<span style="color:LightSteelBlue">“Woah there, lads, looks like we got a war here.”</span> He says, smirking. He grabs the football and flicks it back at you, but you successfully block it and knock it away. <br>
+    <br>
+    You and <span style="color:DarkTurquoise">Michael</span> spend the next few minutes flicking the football at each other's faces while the latter's goons take sides and cheer you both on, and generally have an amusing time. <br>
+
+    <<socialChange "Michael" 3>>
+    <<needChange "Fun" 10>>
+    <br>
+    [[Continue|School Cafeteria]] 
+<</if>>

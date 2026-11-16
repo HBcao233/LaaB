@@ -1,0 +1,139 @@
+:: MATH Choose Partner [nobr]
+
+<<if $LucasSocial > 50 or $LucasSocialRank > 1>>
+	<<set _LucasSocialCheck to true>>
+<</if>>
+<<if $FelixSocial > 50 or $FelixSocialRank > 1>>
+	<<set _FelixSocialCheck to true>>
+<</if>>
+
+<span style="color:DarkTurquoise">Mr. Randolph</span> looks very annoyed as everyone takes their seats and quiets down for the class. This leaves everyone on edge, worried that he was upset and was going to take it out on the class. When he finally stands up to speak, some of the students jump, expecting yelling.<br>
+
+<<set _ad to [
+	{
+		Name: "Randolph",
+		State: {
+			Brows: "Angry",
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“We are going to have a different sort of class today.”</span> He says with a tired voice and bags visible under his eyes. <span style="color:LightSteelBlue">“My grandson was sick last night and kept me up, so now I am late on grading some exams from my other classes. Because I need to finish these, I’m going to have you all pair up and work on some of the practice problems I handed out the other day.”</span> <br>
+<br>
+The class begins to mumble amongst themselves, both excited and relieved. <span style="color:LightSteelBlue">“I wasn’t finished!”</span> <span style="color:DarkTurquoise">Mr. Randolph</span> yells, returning to his normally angry tone. <span style="color:LightSteelBlue">“You can talk with your partner, but I want you focused on the problems. If I hear people goofing off or talking too loudly, I won’t hesitate to take a break from grading to redden your rear! Understood?”</span> <br>
+<br>
+The class all nodded nervously. Once <span style="color:DarkTurquoise">Mr. Randolph</span> had given everyone leave to group up, everyone begins to move around quietly, finding their friends. As you are wondering who you were going to pair up with, you notice <span style="color:DarkTurquoise">Lucas</span> sitting by himself off to the side. It was quite common for <span style="color:DarkTurquoise">Lucas</span> to get left out in group activities, the other boys seemed to avoid him for some reason. You also notice that <span style="color:DarkTurquoise">Felix</span> was missing, having been allowed to run to the restroom before class began. You could go sit with <span style="color:DarkTurquoise">Lucas</span> or wait for <span style="color:DarkTurquoise">Felix</span> and pair up with him. <br>
+<br>
+
+<div id=choice>
+	<<link "Partner with Lucas">>
+	<<replace"#choice">>
+    
+    You grab your things and walk over to <span style="color:DarkTurquoise">Lucas</span>, who seems genuinely happy to see you. <span style="color:LightSteelBlue">“Did you want to partner up? I went over the practice sheets on the bus the other day, they are pretty easy. I can show you!”</span> <br>
+
+	<<set _ad to [
+		{
+			Name: "Lucas",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+You enjoy your time with <span style="color:DarkTurquoise">Lucas</span>, who is easily able to teach you how to solve the problems on the practice sheet. Once finished, you both quietly chat about random things. <br>
+		<<socialChange "Lucas" 1>>
+		<br>
+		<<include"Attend Math Finish">>
+    
+    <</replace>>
+    <</link>>
+<span style="color:Green">+Lucas</span><br>
+
+	<<link "Partner with Felix">>
+	<<replace"#choice">>
+    
+    You go and wait by the door for <span style="color:DarkTurquoise">Felix</span> to return, and as soon as he does you inform him of what <span style="color:DarkTurquoise">Mr. Randolph</span> said. <span style="color:LightSteelBlue">“And you waited for me because you wanted to partner up!”</span> <span style="color:DarkTurquoise">Felix</span> gives you a teasing smile, <span style="color:LightSteelBlue">“How cute. I would love to be your partner.”</span> <br>
+
+	<<set _ad to [
+		{
+			Name: "Felix",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+You and <span style="color:DarkTurquoise">Felix</span> sit down at one of the desks and go over the practice sheets. They are all simple for <span style="color:DarkTurquoise">Felix</span> and he is able to help you in understanding anything that is confusing. Once finished, you enjoy the rest of your time quietly chatting. <br>
+		<<socialChange "Felix" 1>>
+		<br>
+		<<include"Attend Math Finish">>
+    
+    <</replace>>
+    <</link>>
+<span style="color:Green">+Felix</span><br>
+
+<<if _LucasSocialCheck && _FelixSocialCheck>>
+	<<link "Partner with both">>
+	<<replace"#choice">>
+		<<include"Math Choose Partner Both">>
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Lucas, +Felix</span><br>
+<</if>>
+</div>
+
+:: Math Choose Partner Both [nobr]
+
+/*(During Math Class, when prompted to select a partner, a new option will pop up if the PC has 50+ Social with Lucas and Felix and, at least, a A- in Math Class.*/
+
+You decide that choosing between <span style="color:DarkTurquoise">Lucas</span> and <span style="color:DarkTurquoise">Felix</span> is too hard and come up with the perfect solution. You’ll just partner with both of them! You go over to <span style="color:DarkTurquoise">Lucas</span> and grab his arm, pulling him up to <span style="color:DarkTurquoise">Mr. Randolph</span>. The teacher glances up at you both with a raised eyebrow and sighs. <br>
+<br>
+<span style="color:LightSteelBlue">“What is it, <span style="color:DarkTurquoise">$Player.LastName</span>?”</span> He asks with a slightly annoyed tone, looking down at his papers while rubbing his forehead. You apologize for disturbing him but tell him that you noticed there are an odd number of students in class today, meaning that either someone will be left without a partner or there will need to be a group of three; and since <span style="color:DarkTurquoise">Felix</span> is in the restroom, he’ll probably be the one alone or in a larger group. <span style="color:LightSteelBlue">“Get to the point.”</span> <span style="color:DarkTurquoise">Mr. Randolph</span> barks. Seems he is in no mood for longer-winded explanations. <br>
+<br>
+You do as ordered, getting right to it and asking if you, <span style="color:DarkTurquoise">Lucas</span>, and <span style="color:DarkTurquoise">Felix</span> could be the three-person group of the class. <span style="color:DarkTurquoise">Mr. Randolph</span> begins to speak, but you quickly add that all three of you are A students. So, by pairing all three of you up, the other boys can’t just use you to get the right answers. Plus, you are all well-behaved, meaning it’s less-likely that this 3-person group will cause trouble and- <br>
+<br>
+<span style="color:LightSteelBlue">“Don’t interrupt me.”</span> <span style="color:DarkTurquoise">Mr. Randolph</span> cuts you off. He thinks for a moment before sighing again and rubbing his eyes. <span style="color:LightSteelBlue">“Fine. But I expect you three to get every answer correct.”</span> <span style="color:DarkTurquoise">Mr. Randolph</span> waves you off as you thank him and rush away.<span style="color:LightGreen"> <span style="color:DarkTurquoise">Lucas</span> is surprised you got the teacher to agree, and you both collect <span style="color:DarkTurquoise">Felix</span> as he returns from the bathroom and head to the corner of the room.</span> <br>
+
+    <<set _ad to [
+    {
+            Name: "Player",
+            State: {         
+            Mouth: "Happy",
+                },
+        },
+        {
+            Name: "Lucas",
+            State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+            },
+        },
+		        {
+            Name: "Felix",
+            State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+A few students seem annoyed that three of the top students were grouped together, seems some of them planned to use one of you to finish the worksheet easily, but none dare voice their complaints. <span style="color:LightGreen">With your combined math knowledge, the three of you quickly finish the problems and spend the rest of class quietly chatting. Overall, it is a nice time.</span> <br>
+
+<<if $LucasSocialRank == 1>> <br>
+
+	You can’t help but notice how eager <span style="color:DarkTurquoise">Lucas</span> is to be talking with someone else. As another new student this year, <span style="color:DarkTurquoise">Felix</span> probably doesn’t know about what happened between <span style="color:DarkTurquoise">Lucas</span> and <span style="color:DarkTurquoise">Ryker</span>. <span style="color:Pink">This seems to excite <span style="color:DarkTurquoise">Lucas</span>, with the possibility of another new friend.</span> <br>
+<</if>>
+
+<<socialChange "Felix" 3>>
+<<socialChange "Lucas" 3>>
+<br>
+<<include"Attend Math Finish">>
+
+/* Intro */

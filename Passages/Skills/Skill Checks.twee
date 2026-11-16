@@ -1,0 +1,200 @@
+:: Skill Checks [nobr]
+
+/* MOOD BONUS */
+<<if $Player.CurrentMood == "Ecstatic">>
+	<<set _m to 40>>
+<<elseif $Player.CurrentMood == "Very Happy">>
+	<<set _m to 20>>
+<<elseif $Player.CurrentMood == "Happy">>
+	<<set _m to 10>>
+<<elseif $Player.CurrentMood == "Normal">>
+	<<set _m to 0>>
+<<elseif $Player.CurrentMood == "Sad">>
+	<<set _m to -10>>
+<<elseif $Player.CurrentMood == "Very Sad">>
+	<<set _m to -20>>
+<<elseif $Player.CurrentMood == "Depressed">>
+	<<set _m to -40>>
+<</if>>
+
+/* WHAT SKILL ARE WE TESTING */
+<<if $SkillCheckType == "Athletics">>
+	<<set _s to $AthleticsSkill>>
+	<<set _a to "Strength">>
+<<elseif $SkillCheckType == "Math">>
+	<<set _s to $MathSkill>>
+	<<set _a to "Smarts">>
+<<elseif $SkillCheckType == "History">>
+	<<set _s to $HistorySkill>>
+	<<set _a to "Smarts">>
+<<elseif $SkillCheckType == "Science">>
+	<<set _s to $ScienceSkill>>
+	<<set _a to "Smarts">>
+<<elseif $SkillCheckType == "English">>
+	<<set _s to $EnglishSkill>>
+	<<set _a to "Smarts">>
+<<elseif $SkillCheckType == "Swimming">>
+	<<set _s to $SwimmingSkill>>
+	<<set _a to "Endurance">>
+<<elseif $SkillCheckType == "Acting">>
+	<<set _s to $ActingSkill>>
+	<<set _a to "Charm">>
+<<elseif $SkillCheckType == "Cooking">>
+	<<set _s to $CookingSkill>>
+	<<set _a to "Creativity">>
+<<elseif $SkillCheckType == "Exhibition">>
+	<<set _s to $ExhibitionSkill>>
+	<<set _a to "Sense">>
+<</if>>
+
+/* Difficulty */
+<<set _d to $SkillCheckDifficulty - 1>>
+
+/* SETTING SKILL DIFFICULTY BONUS */
+<<set _sd to _s - _d>>
+<<set _sd *= 20>>
+
+/* SETTING ABILITY SCORE BONUS */
+<<if _a == "Strength">>
+	<<set _as to $Strength - 5>>
+<<elseif _a == "Dexterity">>
+	<<set _as to $Dexterity - 5>>
+<<elseif _a == "Endurance">>
+	<<set _as to $Endurance - 5>>
+<<elseif _a == "Smarts">>
+	<<set _as to $Smarts - 5>>
+<<elseif _a == "Charm">>
+	<<set _as to $Charm - 5>>
+<<elseif _a == "Sense">>
+	<<set _as to $Sense - 5>>
+<<elseif _a == "Creativity">>
+	<<set _as to $Creativity - 5>>
+<</if>>
+	<<set _as *= 10>>
+
+/* TRAIT BONUS */
+<<set _t to 0>>
+/* ATHLETIC */
+<<if $SkillCheckType == "Athletics">>
+	<<if $Player.Traits.includes("Athletic")>>
+		<<set _t += 20>>
+	<</if>>
+<</if>>
+/* BOOKWORM */ 
+<<if $SkillCheckType == "English">>
+	<<if $Player.Traits.includes("Bookworm")>>
+		<<set _t += 20>>
+	<</if>>
+<</if>>
+/* BOOKWORM */ 
+<<if $SkillCheckType == "English" or $SkillCheckType == "Math" or $SkillCheckType == "Science" or $SkillCheckType == "History">>
+	<<if $Player.Traits.includes("Genius")>>
+		<<set _t += 10>>
+	<</if>>
+<</if>>
+
+/* OTHER BONUS */
+<<set _e to 0>>
+
+/* CLASS STUDY BONUSES */
+	/* 1 = MATH */
+<<if $SkillClassCheck == 1>>
+	<<set $SkillClassCheck to 0>>
+	<<set _e += $MathStudyClass>>
+	<<if $MathStudyClass > 0>>
+		<<set $MathStudyClass -= 10>>
+	<</if>>
+<</if>>
+	/* 2 = History */
+<<if $SkillClassCheck == 2>>
+	<<set $SkillClassCheck to 0>>
+	<<set _e += $HistoryStudyClass>>
+	<<if $HistoryStudyClass > 0>>
+		<<set $HistoryStudyClass -= 10>>
+	<</if>>
+<</if>>
+	/* 3 = Science */
+<<if $SkillClassCheck == 3>>
+	<<set $SkillClassCheck to 0>>
+	<<set _e += $ScienceStudyClass>>
+	<<if $ScienceStudyClass > 0>>
+		<<set $ScienceStudyClass -= 10>>
+	<</if>>
+<</if>>
+	/* 4 = English */
+<<if $SkillClassCheck == 4>>
+	<<set $SkillClassCheck to 0>>
+	<<set _e += $EnglishStudyClass>>
+	<<if $EnglishStudyClass > 0>>
+		<<set $EnglishStudyClass -= 10>>
+	<</if>>
+<</if>>
+
+/* RANDOM VARIABLE */
+<<set _r to random(1, 40)>>
+
+/* CLASS BONUSES */
+<<set $SkillCheckRoll to _m + _as + _sd + _t + _e + _r>>
+
+/* SETTING GOAL */
+<<if $SkillDifficulty == 1>>
+	<<set _g to 25>>
+<<elseif $SkillDifficulty == 3>>
+	<<set _g to 75>>
+<<else>>
+	<<set _g to 50>>
+<</if>>
+
+/* CHECKING RESULT OF THE ROLL */
+<<if $SkillCheckRoll - _g < -49>>
+	<<set $SkillResults to "Fail">>
+	<<set $SkillResultsDegree to "Epic">>
+<<elseif $SkillCheckRoll - _g < -24>>
+	<<set $SkillResults to "Fail">>
+	<<set $SkillResultsDegree to "Critical">>
+<<elseif $SkillCheckRoll - _g < 1>>
+	<<set $SkillResults to "Fail">>
+	<<set $SkillResultsDegree to "Close">>
+<<elseif $SkillCheckRoll - _g < 26>>
+	<<set $SkillResults to "Pass">>
+	<<set $SkillResultsDegree to "Close">>
+<<elseif $SkillCheckRoll - _g < 51>>
+	<<set $SkillResults to "Pass">>
+	<<set $SkillResultsDegree to "Critical">>
+<<else>>
+	<<set $SkillResults to "Pass">>
+	<<set $SkillResultsDegree to "Epic">>
+<</if>>
+
+<<if $Debug == 1>>
+	<span style="color:Grey">This is the debug display for testing skill checks to make sure it is all working properly. Debug mode can be turned off by not using the Debug Player Name.</span><br>
+	<span style="color:Azure"><strong>Skill Being Test</strong></span>: $SkillCheckType<br>
+	<span style="color:Azure"><strong>Ability</strong></span>: _a<br>
+	<span style="color:Azure"><strong>Ability Score Bonus</strong></span>: _as<br>
+	<span style="color:Azure"><strong>Mood Bonus</strong></span>: _m<br>
+	<span style="color:Azure"><strong>Skill Bonus</strong></span>: _s<br>
+	<span style="color:Azure"><strong>Difficulty</strong></span>: _d<br>
+	<span style="color:Azure"><strong>Skill Difficulty Bonus</strong></span>: _sd<br>
+	<span style="color:Azure"><strong>Trait Bonus</strong></span>: _t<br>
+	<span style="color:Azure"><strong>Other Bonus</strong></span>: _e<br>
+	<span style="color:Azure"><strong>Random Variable</strong></span>: _r<br>
+	<br>
+	<span style="color:Azure"><strong>Goal</strong></span>: _g<br>
+	<span style="color:Azure"><strong>Final Score</strong></span>: $SkillCheckRoll<br>
+	<span style="color:Azure"><strong>Skill Result</strong></span>: $SkillResults<br>
+<</if>>
+
+
+/*
+MORE - 1%
+4 - 20%
+3 - 20%
+2 - 50%
+1 - 50%
+0 - 70% Chance
+-1 - 80% Chance
+-2 - 80% Chance
+-3 - 60%
+-4 - 90%
+Lower - 99%
+*/

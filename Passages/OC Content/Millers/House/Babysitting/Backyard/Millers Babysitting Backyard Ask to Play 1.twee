@@ -1,0 +1,36 @@
+:: Millers Babysitting Backyard Ask to Play 1 [nobr]
+
+/* Intro */
+You walk up to <span style="color:DarkTurquoise">Kayden</span>, who is sitting on one of the large lounge chairs by the pool quietly singing to himself, and ask if he wants to play. <span style="color:LightGreen">He perks up excitedly at this idea and leaps to his feet.</span> <span style="Color: LightSteelBlue">“Yeah! Let’s play tag!”</span> After agreeing on the rules, which <span style="color:DarkTurquoise">Kayden</span> lays out as if he is writing a contract, you both start playing. Naturally, you start out as it and give the boy a headstart. This proves to be unneeded, as the little twerp is actually pretty quick on his feet and is able to duck, dodge, and slide himself out of your grasp multiple times. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Kayden",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+Following a game full of teasing and racing around the yard, having traded places back and forth with <span style="color:DarkTurquoise">Kayden</span> being just as good at tagging you as he is at avoiding you, <span style="color:LightGreen">you both collapse to the grass out of breath with smiles upon your faces.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“That… was… fun…” </span><span style="color:DarkTurquoise">Kayden</span> pants. <span style="color:LightGreen">Despite the excitement of the game, taking a moment to rest and enjoy the quiet of the backyard is just as nice.</span> You lie there for a few moments before you both decide to get back up. <br>
+<br>
+<<needChange "Fun" 10>>
+<<needChange "Energy" -10>>
+<span style="color:green">+Kayden Fun</span><br>
+<<set $HangOutNeed.Fun += 10>>
+<span style="color:red">-Kayden Energy</span><br> 
+<<set $HangOutNeed.Energy -= 10>>
+<<socialChange "Kayden" 3 1>>
+
+[[Continue|OC Miller House Backyard]]

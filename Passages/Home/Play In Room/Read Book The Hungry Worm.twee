@@ -1,0 +1,62 @@
+:: Read The Hungry Worm [nobr]
+
+/* Written by: Dicey “Let’s split up!” */
+<<set $Minutes += 20>>
+/* Intro */
+
+The moment you open the book, a burst of colors swirls around you, wrapping you up like a warm hug. Before you know it, you're swept into a world where everything feels brighter and more magical. <br>
+
+<blockquote>'From the ground, fresh and new, <br>
+A little worm wiggled through. <br>
+He crawled to his friend, the beetle so bright, <br>
+<span style="color:LightSteelBlue">"Oh, Beetle, dear Beetle, may I have a bite? <br>
+Just a nibble, not too much, I’m so hungry for a crunch!"</span> <br>
+<span style="color:LightSteelBlue">"Of course, little worm, but just a small chew,"</span> <br>
+The beetle said kindly, <span style="color:LightSteelBlue">"I’ll share it with you."</span> <br> 
+So, they nibbled and munched, the worm and his friend, <br>
+But the worm's hungry tummy just wouldn’t end! <br>
+Then up in the sky, he spotted a sight, <br>
+His fluttery friend, the butterfly so light. <br>
+<span style="color:LightSteelBlue">"Mr. Butterfly, please, may I share your sweet meal?"</span> <br> 
+<span style="color:LightSteelBlue">“Mr. Butterfly, please, may I share your sweet meal? <br>
+Just a tiny, little taste—I'm hungry, that's real!”</span> <br>
+The butterfly laughed and gave him a wink, <br>
+<span style="color:LightSteelBlue">"I'll share just a sip, but be careful—don’t sink!"</span> <br>
+The worm took a sip of the nectar so sweet, <br>
+but soon felt a rumble—he needed more to eat! <br>
+He wriggled along and looked left and right, <br>
+then spotted some ants with their picnic in sight. <br>
+<span style="color:LightSteelBlue">"Hello, little ants! Could I have just a crumb? <br>
+I'm still feeling hungry—my tummy's not done!"</span> <br>
+The ants marched along and said with a cheer, <br>
+<span style="color:LightSteelBlue">"You can have just a bit, but don't eat it all, dear!"</span> <br>
+So, the worm took a nibble, then wiggled away, <br>
+still searching for snacks on this bright, sunny day. <br>
+Through gardens and grass, he roamed all around, <br>
+until a big, juicy apple was there to be found! <br>
+<span style="color:LightSteelBlue">“Oh, lucky me!”</span> the worm happily said, <br>
+<span style="color:LightSteelBlue">“This apple's so big, it'll keep me well-fed!”</span> <br>
+He munched and he crunched, <br>
+till he let out a yawn, and curled in the apple... asleep before dawn.’</blockquote>
+
+<<if $Player.Traits.includes("Mature")>>
+As you close the book, you see why kids enjoy it, but you can tell it's not really meant for you. 
+    <<if $FearBugs == 1>>
+        <<needChange "Fun" 5>>
+    <<else>>
+        <<needChange "Fun" 10>>
+    <</if>>
+    <br>
+    [[Continue|Player Bedroom]]
+<<else>>
+    As you finish The Hungry Worm, you shut the book with a smile, feeling all warm and fuzzy inside.<br>
+    <<if $Player.Traits.includes("Childish")>>
+        <<needChange "Fun" 25>>
+    <<else>>
+        <<needChange "Fun" 15>> 
+    <</if>>
+    <br>
+    [[Continue|Player Bedroom]]
+
+<</if>>
+

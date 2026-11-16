@@ -1,0 +1,92 @@
+:: Random Job Fix Fence [nobr]
+
+/* SETTING THE JOBS PAY AND REMOVING THE JOB */
+<<if $Location.Name == "Northend">>
+    <<set _joblocation to "Northend">>
+<<elseif $Location.Name == "Wald Street">>
+    <<set _joblocation to "Wald">>
+<<elseif $Location.Name == "Dellwood Street">>
+    <<set _joblocation to "Dellwood">>
+<</if>>
+
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+	<<capture _i>>
+        <<if $RandomJobList[_i].Location == _joblocation and $RandomJobList[_i].Type == "Fix Fence">>
+            <<set _jobpay to $RandomJobList[_i].Pay>>
+            <<set _jobname to $RandomJobList[_i].Name>>
+            <<set $RandomJobList.deleteAt(_i)>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+/* DECIDING IF RANDOM EVENT */
+<<set _random to random(1, 4)>>
+<<if $ThomasSocial >= 50 or $ThomasSocialRank > 0>>
+    <<set _friendsocial to true>>
+<</if>>
+
+/* RANDOM EVENT */
+<<if _random == 1>>
+    <<include"Random Job Fix Fence Hit Finger">>
+/* Friend Event */
+<<elseif _random == 2 && _friendsocial>>
+    <<include"Random Job Fix Fence Thomas Helps">>
+/* NO RANDOM EVENT/GENERIC */
+<<else>>
+<<set _random2 to random(1, 2)>>
+
+    /* EASY POWER TOOL */
+    <<if _random2 == 1>>
+You approach the house to find the client moving some boxes into their car. <span style="color:LightSteelBlue">“Oh, are you here to fix the fence?”</span> The say happily, spotting the job notice in your hand, <span style="color:LightSteelBlue">“Perfect timing, I was just about to head into town to donate some old clothes and stuff. I have some tools in my garage that should help you out.”</span> They lead you over to the garage and hand you a rather large box that contains a wide array of power tools. <br>
+<br>
+<span style="color:LightSteelBlue">“Should be all charged up and ready to go. I’m assuming you know how to use them?”</span> You assure them that you know what you are doing and see them off before starting work on the rather damaged fence. Parts of it were destroyed, or near enough to be considered destroyed, while other parts had warped or rotting wood that would need to be replaced. A fresh stack of planks is sat near the driveway, not too heavy that you couldn’t lift them on your own, but heavy enough to wish you had brought a friend along, even if it did mean splitting the pay. <br>
+<br>
+The power tools help, a lot, but it is still a large amount of work for a single boy to handle. It takes nearly two hours of lifting, drilling, and hammering before the fence is repaired and the old broken wood discarded. While not perfect, a fresh coat of paint and some well-placed shrubs will easily hide any mistakes you may have made. Regardless, the client seems overjoyed with your work and happily pays you, giving you a nice cold can of soda as a bonus. <br>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<br>
+
+        /* IF HOT */
+        <<if $Temp == "Warm" or $Temp == "Hot" or $Temp == "Scorching">>
+<span style="color:lightcoral">It is as you finish and head back to the sidewalk that the long hours spent in the sun and heat hits you, as you realize you are sweating profusely and are desperately thirsty. <br></span>
+<<needChange "Hygiene" -10>>
+<br>
+        <</if>>
+
+    /* HARD MANUAL TOOL */
+    <<elseif _random2 == 2>>
+You walk up to the front door of the address listed on the job notice and knock. It takes a minute, but eventually a tall, sickly-looking man answers. <span style="color:LightSteelBlue">“Oh, are you here to fix the fence? Bit younger than I was expecting, but who am I to judge.”</span> He coughs loudly, causing you to instinctively take a step back, <span style="color:LightSteelBlue">“It’s nothing too bad, just some old nails that are rusting away and need replacing. I think I have a hammer around here somewhere…”</span> He rummages through an overflowing drawer near the door and pulls out an old, rusted hammer and hands it to you along with a handful of nails. <br>
+<br>
+<span style="color:lightcoral">You take them, glancing back at the fence nervously. It was in rough shape, more rough than a hammer and a bunch of nails could fix,</span> but you think twice about questioning the man who had fallen into another coughing fit and decide to just do as he instructed. <br>
+<br>
+It’s not easy, getting the nails out was tough and tiring, and you hit your thumb more times than you would like to admit while replacing them. It takes just about 2 hours, and by the end of it you feel exhausted, the older man not even offering you water as you labored away. Looking over your work, it looked... nearly exactly the same, rough and uneven, but with shiny new nails in place of the old rusted ones. <br>
+<br>
+Hoping this is what he wanted, you return to the front door and summon the sickly client to inspect your work. He doesn’t give it more than a passing glance to make sure it is standing, before he takes the old nails from you and counts them. Once he is satisfied that you have properly replaced them all, he takes his equipment back from you and hands over your payment without another word. <br>
+<<needChange "Energy" -6>>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<br>
+
+        /* IF HOT */
+        <<if $Temp == "Warm" or $Temp == "Hot" or $Temp == "Scorching">>
+<span style="color:lightcoral">It is as you finish and head back to the sidewalk that the long hours spent in the sun and heat hits you, as you realize you are sweating profusely and are desperately thirsty. <br></span>
+<<set $Player.Hygiene -= 10>>
+<span style="color:red">-Hygiene</span><br>
+<br>
+        <</if>>
+
+    <</if>>
+
+/* GENERIC TIME PASS */
+    <<set $Minutes += 120>>
+    <<set $OddJobsCount += 1>>
+/* RETURN CODE */
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+<<elseif $Location.Name == "Wald Street">>
+    [[Continue|Wald Street]]
+<<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+<</if>>
+
+<</if>>

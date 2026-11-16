@@ -1,0 +1,24 @@
+:: Avatar Display Undies [nobr]
+
+<<if $ADUndies.Tags.includes("Diaper")>>
+	<<if !$ADBottoms.Tags.includes("Body")>>
+		<<if $ADBottoms.Type == "None" or $ADPantsDown == 1>>
+			<img @src="$ADUndies.Avatar" style="position: absolute; left: 0; top: 0">
+		<<elseif $ADUndies.AvatarUnder != null>>
+			<img @src="$ADUndies.AvatarUnder" style="position: absolute; left: 0; top: 0">
+		<</if>>
+	<</if>>
+<<else>>
+	<<if $ADUndies.Avatar != "None">>
+		<img @src="$ADUndies.Avatar" style="position: absolute; left: 0; top: 0">
+	<</if>>
+<</if>>
+
+<<if $ADUndies.Tags.includes("Sleeves") and $AD.Arms == "Normal">>
+	<img @src="$ADUndies.AvatarSleeve" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+<<if $ADUndies.Tags.includes("Hard") and $AD.Hard == 1>>
+	<img @src="$ADUndies.AvatarHard" style="position: absolute; left: 0; top: 0">
+<</if>>
+

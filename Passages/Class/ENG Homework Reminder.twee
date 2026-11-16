@@ -1,0 +1,47 @@
+:: ENG Homework Reminder [nobr]
+
+Class is nearly finished and <span style="color:DarkTurquoise">Mr. Hart</span> lazily sits at his desk, instructing everyone to read together in groups until class is over, though most of the students are using the time to socialize. Suddenly you remember the homework assignment that should have been due today. You had finished it and were really proud of your work, but <span style="color:DarkTurquoise">Mr. Hart</span> seems to have forgotten all about it. You could remind him, it would certainly help your grade, but you can tell some of the other students are glad he forgot, and they wouldn’t appreciate the reminder.<br>
+
+<<set _ad to [
+	{
+		Name: "Hart",
+		State: {
+			Eyes: "Narrow",
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+
+<div id=Choice>
+
+<<link "Remind Him">>
+<<replace"#Choice">>
+
+You walk up to <span style="color:DarkTurquoise">Mr. Hart</span>’s desk and try to quietly remind him about the homework. <span style="color:LightSteelBlue">“Oh right, the assignment!”</span> <span style="color:DarkTurquoise">Mr. Hart</span> exclaims loudly, drawing everyone’s attention. <span style="color:LightSteelBlue">“If everyone could hand in their homework assignment from yesterday. Thank you for reminding me <span style="color:DarkTurquoise">$Player.Name</span>, I nearly forgot!</span> Quite a few of the students grumble and stare daggers at you as they pull out their rushed and low quality assignments.<br>
+<<set $SchoolRep -= 10>>
+<span style="color:Red">-Reputation</span><br>
+<<set $EnglishGrade += 1>>
+<span style="color:Green">+Your English Grade has improved slightly.</span><br>
+<br>
+
+
+		<<include"Attend English Finish">>
+<</replace>>
+<</link>>
+
+<span style="color:Red">-Reputation</span> <span style="color:Green">+English</span><br>
+
+<<link "Remain Quiet<br>">>
+<<replace"#Choice">>
+
+You decide the slight improvement to your grade isn’t worth the risk of incurring the scorn of your classmates. Instead, you decide to enjoy the rest of the class socializing along with everyone else.<br>
+<br>
+
+
+		<<include"Attend English Finish">>
+<</replace>>
+<</link>>
+
+</div>

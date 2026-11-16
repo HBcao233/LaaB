@@ -1,0 +1,184 @@
+:: Attend History [nobr]
+
+<<include"School Skill Level">>
+
+/* TEACHER INTRODUCTION */
+<<if $HistoryIntro != 1>>
+	<<include"De Leon Intro">>
+	<<include"Attend History Finish">>
+<<else>> 
+	/* Class Event Selection */
+	/* Normal Class Style */
+	<<if $ClassStyle == "Normal" or $ClassStyle == "Late">>
+		<<set _random to {
+			"History Question": 10,
+			"History Good Class": 10,
+			"HIS Nude Artwork": 10,
+			"HIS Pants Yanked": 10,
+			"BEN History Spider": 10,
+			"MICHAEL History Historical Dance": 10,
+			"JACKSON History Modeling Colonial": 10,
+			"MICHAEL History Wedgie": 10,
+		}>>
+		/* Check if Thomas Absent */
+		<<if !$ThomasAbsent>>
+			<<set _random["THOMAS History Nap"] = 10>>
+			<<set _random["THOMAS History Pencil Butt"] = 10>>
+		<</if>>
+		/* Social Based Options */
+		<<if $JacksonSocial >= 50 or $JacksonSocialRank > 0>>
+			<<set _random["JACKSON History Flash Penis"] = 10>>
+		<</if>>
+		/* OC Events */
+		/* Miller */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Trouble in Paradise")>>
+			<<set _random["Zay History Dad in Film"] = 10>>
+		<</if>>
+		/* Arthur/Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard Point of History"] = 10>>
+		<</if>>
+		/* Noah H Events */
+		<<if $ToggleOCNoahH == 1 && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator History"] = 10>>
+		<</if>>
+	/* Pay Attention Class Style */
+	<<elseif $ClassStyle == "Attention">>
+		<<set _random to {
+			"History Question": 20,
+			"History Good Class": 25,
+			"HIS Nude Artwork": 10,
+			"HIS Pants Yanked": 1,
+			"BEN History Spider": 5,
+			"MICHAEL History Historical Dance": 5,
+			"JACKSON History Modeling Colonial": 5,
+			"MICHAEL History Wedgie": 1,
+		}>>
+		/* Check if Thomas Absent */
+		<<if !$ThomasAbsent>>
+			<<set _random["THOMAS History Nap"] = 5>>
+			<<set _random["THOMAS History Pencil Butt"] = 5>>
+		<</if>>
+		/* Social Based Options */
+		<<if $JacksonSocial >= 50 or $JacksonSocialRank > 0>>
+			<<set _random["JACKSON History Flash Penis"] = 5>>
+		<</if>>
+		/* OC Events */
+		/* Miller */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Trouble in Paradise")>>
+			<<set _random["Zay History Dad in Film"] = 5>>
+		<</if>>
+		/* Arthur/Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard Point of History"] = 5>>
+		<</if>>
+		/* Noah H Events */
+		<<if $ToggleOCNoahH == 1 && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator History"] = 5>>
+		<</if>>
+		/* Raymond */
+		<<if $ToggleOCRaymond == 1 && $CompletedQuests.includes("Raymond: Introduction")>>
+			<<set _random["OC Raymond History Work Help"] = 5>>
+		<</if>>
+	/* Socialize Class Style */
+	<<elseif $ClassStyle == "Socialize">>
+		<<set _random to {
+			"History Question": 1,
+			"History Good Class": 1,
+			"HIS Nude Artwork": 5,
+			"HIS Pants Yanked": 10,
+			"BEN History Spider": 15,
+			"MICHAEL History Historical Dance": 5,
+			"JACKSON History Modeling Colonial": 15,
+			"MICHAEL History Wedgie": 10,
+		}>>
+		/* Check if Thomas Absent */
+		<<if !$ThomasAbsent>>
+			<<set _random["THOMAS History Nap"] = 10>>
+			<<set _random["THOMAS History Pencil Butt"] = 10>>
+		<</if>>
+		/* Social Based Options */
+		<<if $JacksonSocial >= 50 or $JacksonSocialRank > 0>>
+			<<set _random["JACKSON History Flash Penis"] = 15>>
+		<</if>>
+		/* OC Events */
+		/* Miller */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Trouble in Paradise")>>
+			<<set _random["Zay History Dad in Film"] = 10>>
+		<</if>>
+		/* Arthur/Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard Point of History"] = 10>>
+		<</if>>
+		/* Noah H Events */
+		<<if $ToggleOCNoahH == 1 && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator History"] = 10>>
+		<</if>>
+		/* Raymond */
+		<<if $ToggleOCRaymond == 1 && $CompletedQuests.includes("Raymond: Introduction")>>
+			<<set _random["OC Raymond History Work Help"] = 10>>
+		<</if>>
+	/* Goof Off Class Style */
+	<<elseif $ClassStyle == "Goof">>
+		<<set _random to {
+			"HIS Nude Artwork": 5,
+			"HIS Pants Yanked": 20,
+			"BEN History Spider": 15,
+			"MICHAEL History Historical Dance": 10,
+			"JACKSON History Modeling Colonial": 15,
+			"MICHAEL History Wedgie": 20,
+		}>>
+		/* Check if Thomas Absent */
+		<<if !$ThomasAbsent>>
+			<<set _random["THOMAS History Nap"] = 10>>
+			<<set _random["THOMAS History Pencil Butt"] = 15>>
+		<</if>>
+		/* Social Based Options */
+		<<if $JacksonSocial >= 50 or $JacksonSocialRank > 0>>
+			<<set _random["JACKSON History Flash Penis"] = 20>>
+		<</if>>
+		/* OC Events */
+		/* Miller */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Trouble in Paradise")>>
+			<<set _random["Zay History Dad in Film"] = 10>>
+		<</if>>
+		/* Arthur/Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard Point of History"] = 5>>
+		<</if>>
+		/* Noah H Events */
+		<<if $ToggleOCNoahH == 1 && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator History"] = 5>>
+		<</if>>
+		/* Raymond */
+		<<if $ToggleOCRaymond == 1 && $CompletedQuests.includes("Raymond: Introduction")>>
+			<<set _random["OC Raymond History Work Help"] = 5>>
+		<</if>>
+	/* Homework Class Style */
+	<<elseif $ClassStyle == "Homework">>
+		<<set _random to {
+			"History Question": 10,
+		}>>
+	/* Nap Class Style */
+	<<elseif $ClassStyle == "Nap">>
+		<<set _random to {
+			"History Class Sleep": 5,
+		}>>
+
+	<</if>>
+
+/* Quest-Specific (Increased chance on all Class Types.) */
+<<if $ToggleOCPatrick == 1 && $InActiveQuests.includes("Patrick: Introduction") && $ToggleDiapers == 1 && $ToggleBladder == 1>>
+	<<set _random["OC Patrick Intro Tease"] = 50>>
+<</if>>
+				
+<<set _event to _random.random()>>
+
+/* Forced Events */
+<<if $ToggleOCJames == 1 && $InActiveQuests.includes("James: The Orange Mystery Part 1")>>
+	<<set _event to "OC James Spotting History">>
+<</if>>
+
+<<include _event>>
+
+<</if>>

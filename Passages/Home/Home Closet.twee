@@ -1,0 +1,235 @@
+:: Home Closet [nobr]
+
+/* REMOVING TOWEL */
+<<if $PlayerBottoms.Type == "Towel">>
+	<<set $PlayerBottoms to {
+		Name: "None",
+		ID: "None",
+		Type: "None",
+		Color: "None",
+		Slot: "Bottoms",
+		Temp: 0,
+		Tags: ["Sleepwear"],
+		Durability: 0,
+		MaxDurability: 0,
+		Weight: 0,
+		Size: "Preteen",
+		Icon: "None",
+		Avatar: "None",
+		SagAvatar: "None",
+		PulledDownAvatar: "None",
+		AvatarTorn: "None",
+		AvatarDamaged: "None",
+		AvatarAlt: "None",
+		AvatarAltTorn: "None",
+		AvatarAltDamaged: "None",
+		Description: "Nothing at all.",
+	}>>
+<</if>>
+
+<span style="color:Azure"><strong><big>--Equipment--</big></strong></span><<link" [Details]">>
+<<script>>
+	Dialog.setup("Player Clothing", "Closet Details");
+	Dialog.wiki(Story.get("Closet Details").processText());
+	Dialog.open();
+<</script>>
+<</link>>
+	<strong> | </strong>
+<<if $PlayerUndies.Type != "None">>
+<<link" [Strip to Underwear]">>
+	<<storeClothing "Closet" "Undies" 1>>
+	<<goto "Home Closet">>
+<</link>>
+<</if>>
+<<link" [Strip Naked]">>
+	<<storeClothing "Closet" "Naked" 1>>
+	<<goto "Home Closet">>
+<</link>>
+<br>
+
+<<include "Home Closet Wearing">>
+
+<br>
+<br>
+
+/* VIEW ALL */
+<<if $HomeClosetCategory != "All">>
+	<<link "View All">>
+		<<set $HomeClosetCategory to "All">>
+		<<set $HomeClosetCategory2 to "All">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[View All]</strong>
+<</if>>
+	<strong> | </strong>
+/* WEAR/INVENTORY */
+<<if $ClosetMoveToInventory == 1>>
+	<<link "Wear">>
+    	<<set $ClosetMoveToInventory to 0>>
+        <<goto "Home Closet">>
+    <</link>>
+<<else>>
+	<strong>[Wear]</strong>
+<</if>>
+
+<<if $ClosetMoveToInventory != 1>>
+	<<link "Move to Inventory">>
+    	<<set $ClosetMoveToInventory to 1>>
+        <<goto "Home Closet">>
+    <</link>>
+<<else>>
+	<strong>[Move to Inventory]</strong>
+<</if>>
+
+<br>
+
+/* SLOTS */
+<<if $HomeClosetCategory != "Head">>
+	<<link "Head">>
+		<<set $HomeClosetCategory to "Head">>
+		<<set $HomeClosetCategory2 to "Head">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Head]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory != "Top">>
+	<<link "Top">>
+		<<set $HomeClosetCategory to "Top">>
+		<<set $HomeClosetCategory2 to "Top">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Top]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory != "Bottoms">>
+	<<link "Bottoms">>
+		<<set $HomeClosetCategory to "Bottoms">>
+		<<set $HomeClosetCategory2 to "Bottoms">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Bottoms]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory != "Undies">>
+	<<link "Undies">>
+		<<set $HomeClosetCategory to "Undies">>
+    	<<goto "Home Closet">>
+		<<set $HomeClosetCategory2 to "Undies">>
+	<</link>>
+<<else>>
+	<strong>[Undies]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory != "Feet">>
+	<<link "Feet">>
+		<<set $HomeClosetCategory to "Feet">>
+		<<set $HomeClosetCategory2 to "Socks">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Feet]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory != "Other">>
+	<<link "Other">>
+		<<set $HomeClosetCategory to "Other">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Other]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory != "Inventory">>
+	<<link "Inventory">>
+		<<set $HomeClosetCategory to "Inventory">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Inventory]</strong>
+<</if>>
+    <strong> | </strong>
+
+<<if $HomeClosetCategory != "Outfits">>
+    <<link "Outfits">>
+        <<set $HomeClosetCategory to "Outfits">>
+        <<goto "Home Closet">>
+    <</link>>
+<<else>>
+    <strong>[Outfits]</strong>
+<</if>>
+    <strong> | </strong>
+
+<<if $HomeClosetCategory != "Event Outfits">>
+    <<link "Event Outfits">>
+        <<set $HomeClosetCategory to "Event Outfits">>
+        <<goto "Home Closet">>
+    <</link>>
+<<else>>
+    <strong>[Event Outfits]</strong>
+<</if>>
+<br>
+
+<<if $HomeClosetCategory == "Undies">>
+	<<include"Home Closet Undies">>
+<<elseif $HomeClosetCategory == "Head">>
+	<<include"Home Closet Head">>
+<<elseif $HomeClosetCategory == "Top">>
+	<<include"Home Closet Top">>
+<<elseif $HomeClosetCategory == "Bottoms">>
+	<<include"Home Closet Bottoms">>
+<<elseif $HomeClosetCategory == "Head">>
+	<<include"Home Closet Head">>
+<<elseif $HomeClosetCategory == "Feet">>
+	<<include"Home Closet Feet">>
+<<elseif $HomeClosetCategory == "Other">>
+	<<include"Home Closet Other">>
+<<elseif $HomeClosetCategory == "Inventory">>
+	<<include"Home Closet Inventory">>
+<<elseif $HomeClosetCategory == "Outfits">>
+	<<include"Home Closet Outfits">>
+<<elseif $HomeClosetCategory == "Event Outfits">>
+	<<include"Home Closet Event Outfits">>
+<<elseif $HomeClosetCategory == "All">>
+	<span style="color:Azure"><strong><big>--Closet--</big></strong></span><br>
+    
+	<<for _slot range $ClothingCategories>>
+		<<closet2 _slot>>
+	<</for>>
+	<br>
+	<<include"Home Closet Inventory">>
+	<br>
+	<<include"Home Closet Outfits">>
+    
+<</if>><br>
+
+<br>
+<<if $MetLucas == 1>>
+	[[Close|Player Bedroom]]
+<<else>>
+	<<if $SchoolUniforms != 1>>
+		<<if $PlayerBottoms.Type != "None" and $PlayerTop.Type != "None" and $PlayerShoes.Type != "None">>
+			[[Continue|Opening Breakfast]]
+		<<elseif $PlayerBottoms.Type != "None" and $PlayerUnder.Type != "None" and $PlayerShoes.Type != "None">>
+			[[Continue|Opening Breakfast]]
+	<<else>>
+		<span style="color:lightcoral">You need to be dressed for school!</span>
+	<</if>>
+	<<else>>
+        <<if $PlayerBottoms.Tags.includes("Uniform") and $PlayerTop.Tags.includes("Uniform") and $PlayerShoes.Type != "None">>
+        	[[Continue|Opening Breakfast]]
+        <<else>>
+        	<span style="color:lightcoral">You need to be dressed for school! (School uniforms are turned on, your Top and Bottoms must have the "Uniform" Tags.)</span>
+        <</if>>
+    <</if>>
+<</if>>

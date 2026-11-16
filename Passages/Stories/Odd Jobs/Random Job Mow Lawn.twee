@@ -1,0 +1,96 @@
+:: Random Job Mow Lawn [nobr]
+
+/* SETTING THE JOBS PAY AND REMOVING THE JOB */
+<<if $Location.Name == "Northend">>
+    <<set _joblocation to "Northend">>
+<<elseif $Location.Name == "Wald Street">>
+    <<set _joblocation to "Wald">>
+<<elseif $Location.Name == "Dellwood Street">>
+    <<set _joblocation to "Dellwood">>
+<</if>>
+
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+	<<capture _i>>
+        <<if $RandomJobList[_i].Location == _joblocation and $RandomJobList[_i].Type == "Mow Lawn">>
+            <<set _jobpay to $RandomJobList[_i].Pay>>
+            <<set _jobname to $RandomJobList[_i].Name>>
+            <<set $RandomJobList.deleteAt(_i)>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+/* DECIDING IF RANDOM EVENT */
+<<set _random to random(1, 4)>>
+
+/* RANDOM EVENT */
+<<if _random == 1>>
+    <<include"Random Job Mow Lawn Pulled Along">>
+/* NO RANDOM EVENT/GENERIC */
+<<else>>
+    <<set _random2 to random(1, 3)>>
+    /* PUSH MOWER */
+    <<if _random2 == 1>>
+With the job notice in hand, you knock on the door and inform the resident that you are there to mow their lawn for them. They thank you, leading you towards their garage. <span style="color:lightcoral">Much to your annoyance, they reveal an old, tiny push mower. No engine to ease the work, no bag to catch the debris. Just a circular series of blades on wheels.</span> <br>
+<br>
+You try to hide your annoyance and graciously accept the mower as the client returns inside. Thankfully, the yard isn’t in as bad a shape as it first appeared and you manage to get it down to what you would consider acceptable in only an hour, however, you feel completely exhausted by the end of it and want nothing more than to pass out. The client briefly inspects your work, before happily paying you the promised amount. <br>
+<<needChange "Energy" -6>>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<br>
+
+        /* IF HOT */
+        <<if $Temp == "Warm" or $Temp == "Hot" or $Temp == "Scorching">>
+<span style="color:lightcoral">It is only after you finish up and begin to walk back to the sidewalk that you realize just how hot it was. You were sweating a lot from being outside for so long and smelling your pits confirms that a shower may be in order later.</span> <br>
+<<needChange "Hygiene" -10>>
+<br>
+
+        <</if>>
+    /* GAS MOWER */
+    <<elseif _random2 == 2>>
+With the job notice in hand, you knock on the door and inform the resident that you are there to mow their lawn for them. They thank you, leading you towards their garage. Inside sits a small, though perfect size for you, gas mower. <span style="color:LightSteelBlue">“All filled up and ready.”</span> The client happily pats its side, <span style="color:LightSteelBlue">“Just pull this as hard as you can and it should start out no problem. Let me know when you’re finished.”</span> Once the client is back inside their home, you push the mower out into the yard and attempt to start it. <br>
+<br>
+It takes some doing, and a few choice words <span style="color:DarkTurquoise">Your Father</span> probably wouldn’t approve of, but you get it working and start mowing the lawn. Turning the thing on seemed to have been the hard part, as once it's going it is simply a matter of pushing it. Which, to be fair, does get pretty tiring after a bit, but it could be worse. An hour later and you have turned the once messy, overgrown lawn into a neat and tidy plot of grass. Proud of your work, you fetch the client who happily thanks you and pays you the promised amount. <br>
+<<needChange "Energy" -3>>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<br>
+
+        /* IF HOT */
+        <<if $Temp == "Warm" or $Temp == "Hot" or $Temp == "Scorching">>
+<span style="color:lightcoral">It is only after you finish up and begin to walk back to the sidewalk that you realize just how hot it was. You were sweating a lot from being outside for so long and smelling your pits confirms that a shower may be in order later.</span> <br>
+<<needChange "Hygiene" -10>>
+<br>
+
+        <</if>>
+    /* ELECTRIC MOWER */
+    <<elseif _random2 == 3>>
+With the job notice in hand, you knock on the door and inform the resident that you are there to mow their lawn for them. They thank you, leading you towards their garage. Your eyes go wide as you behold what lies inside. <span style="color:lightgreen">Instead of the small push mower you were expecting, a large, red, go-kart-like thing sits in the corner of the garage, looking shiny and new.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I bought this thing to make it easier for me to mow it, but I still don’t have the time.”</span> The client sighs, <span style="color:LightSteelBlue">“It’s pretty easy to use, here let me show you.”</span> After a brief 10-minute instruction on how to safely operate such a beast, you are given free reign as the client returns inside. It is a bit daunting at first, as you move it slowly out of the garage, but once you get comfortable and begin to cruise the yard looks nearly professionally done only 20 minutes later. <br>
+<br>
+You return the fancy mower to its home inside the garage and get the client, who only briefly pokes their head out of the door to inspect the yard before happily paying you. <br>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<br>
+
+        /* IF HOT */
+        <<if $Temp == "Warm" or $Temp == "Hot" or $Temp == "Scorching">>
+<span style="color:lightcoral">It is only after you finish up and begin to walk back to the sidewalk that you realize just how hot it was. You were sweating a lot from being outside for so long and smelling your pits confirms that a shower may be in order later.</span> <br>
+<<needChange "Hygiene" -10>>
+<br>
+        <</if>>
+
+    <</if>>
+/* GENERIC TIME PASS */
+    <<set $Minutes += 60>>
+    <<set $OddJobsCount += 1>>
+/* RETURN CODE */
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+<<elseif $Location.Name == "Wald Street">>
+    [[Continue|Wald Street]]
+<<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+<</if>>
+
+<</if>>

@@ -1,0 +1,94 @@
+:: School Gym Changing [nobr]
+
+/* SAVING/STRIPPING CLOTHES */
+
+<<set $ClothSave to "Save">>
+
+<<if $PlayerFace.Tags.includes("Glasses") and !($PlayerFace.Name.includes("Aviators"))>>
+	<<set _saveFace to $PlayerFace>>
+<<else>>
+	<<set _saveFace to $None>>
+<</if>>
+
+<<if $GymClassType == "Gym">>
+	<<storeClothing "Store" "Undies" 1>>
+<<else>>
+	<<storeClothing "Store" "Naked" 1>>
+	<<if $SaveUndies != null>>
+		<<set $PlayerUndies to $SaveUndies>>
+	<</if>>
+<</if>>
+
+<<set $PlayerGymWearing to $GymClassType>>
+
+<<if $GymClassType != "Swimming" and _saveFace != $None>>
+	<<set $PlayerFace to _saveFace>>
+<</if>>
+
+/* OPENING */
+
+/* DIAPER/PULL-UP */
+<<if $PlayerUndies.Tags.includes("Diaper")>>
+	<span style="color:lightcoral">Walking up to your locker you remember the $PlayerUndies.Type that you're wearing today.</span> Blushing, you curse your lack of forethought for this situation. Not wanting to be the laughing stock at school for wearing the babyish undergarment, you grab your things and head for one of the shower stalls to change. <br>
+	<br>
+	With the curtain closed you strip your bottoms and put them to the side. <span style="color:Pink">Just taking those off caused the crinkling of your $PlayerUndies.Type to echo off the walls of the stall and into the locker room. With hitched breath you hold still and hope that nobody heard that.</span> Or if they did, they had no idea what it was. The hair on your arms stands on end. Even if they can’t see you they can still hear you. <br>
+	<br>
+	<<if $GymClassType == "Gym">>
+	<span style="color:Pink">The gym shorts don’t muffle the sound of your $PlayerUndies.Type as well as your normal bottoms, but you reckon it is a safer bet than trying to take them off when you don’t have to.</span> As quietly as you can manage you slowly dress yourself in your gym clothes. Moving only the bare minimum to get the task done. <br>
+	<<elseif $GymClassType == "Swimming">>
+	<span style="color:Pink">The swim trunks don’t muffle the sound of your $PlayerUndies.Type as well as your normal bottoms, but you reckon it is a safer bet than trying to take them off when you don’t have to.</span> As quietly as you can manage you slowly dress yourself into your swimming trunks. Moving only the bare minimum to get the task done. <br>
+	<</if>>
+	<br>
+/* WEARING UNDERWEAR */
+<<elseif $PlayerUndies.Type != "None">>
+	You walk up to your locker and quickly strip off your clothes, placing them securely inside. <span style="color:Pink">This leaves you standing in nothing but your $PlayerUndies.Type, but you don’t feel embarrassed since you are in a locker room full of boys in their underwear.</span><br>
+	<br>
+	
+<<else>>
+	Realizing you are not wearing any underwear and are too shy to strip naked in front of your classmates, you quickly grab your clothes from your locker and head into one of the shower stalls to strip. <span style="color:Pink">Getting undressed, you are now standing behind the curtain completely naked. Slightly embarrassing, but at least you are fortunate enough to have somewhere to change away from prying eyes.</span><br>
+	<br>
+<</if>>
+
+<div id="Choice">
+	<<link "Continue">>
+		<<replace"#Choice">>
+			<<if $PlayerUndies.Tags.includes("Diaper")>>
+				<<set _randomchance to random(1, 4)>>
+				<<if _randomchance != 4>>
+					<<set _Random to ["School Gym Changing Diaper Safe"]>>
+				<<else>>
+					<<set _Random to [
+						"School Gym Changing Diaper Caught by Ben",
+						"School Gym Changing Diaper Caught by Xavier",
+					]>>
+					<<if $MichaelSocial <= 0 or $MichaelSocialRank < 0>>
+						<<set _Random.push("School Gym Changing Diaper Caught by Michael")>>
+					<</if>>
+				<</if>>
+			<<else>>
+				<<set _Random to [
+					"Gym Class Changing Basic",
+					"Gym Changing Michael Wedgie",
+					"Gym Changing Xavier Shorts Mix Up",
+				]>>
+
+				<<if $FelixSocial >= 0 or $FelixSocialRank > 0>>
+					<<set _Random.push("Gym Changing Felix Trip")>>
+				<</if>>
+			<</if>>
+
+			<<if $ToggleOCBirdy == 1 && $CompletedQuests.includes("Birdy: Introduction") && $GymClassType == "Swimming">>
+				<<set _Random.push("OC Birdy School Gym Pool Class")>>
+			<</if>>
+			<<if $ToggleOCLuca == 1 && $InActiveQuests.includes("Luca: Introduction") && $GymClassType == "Swimming">>
+				<<set _Random.push("OC Luca Intro")>>
+			<</if>>
+			<<if $ToggleOCNikolai == 1 && $CompletedQuests.includes("Nikolai: School Tour")>>
+				<<set _Random.push("OC Nikolai School Locker Room Pantsed")>>
+			<</if>>
+
+			<<set _event to _Random.random()>>
+			<<include _event>>
+		<</replace>>
+	<</link>>
+</div>

@@ -1,0 +1,288 @@
+:: OC Bobbay Say Hello Barn Feed Chickens [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You see <span style="color:DarkTurquoise">Bobby</span> in the chicken coop, scattering feed and checking on the little cluckers. You call out to him and walk over to the fence, causing the chickens eating over there to scatter as you approach. <span style="Color: LightSteelBlue">“Hey there!”</span> <span style="color:DarkTurquoise">Bobby</span> says with a smile. <span style="Color: LightSteelBlue">“What are you doing over here? Looking for work?”</span> You shrug, saying that you were just in the area and thought you’d say hello. <span style="Color: LightSteelBlue">“Oh, yeah? I’m sure you come all the way out here often.”</span> You both laugh.<br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "OC Bobby",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smile",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="Color: lightgreen">You spend the next few minutes chatting with <span style="color:DarkTurquoise">Bobby</span> and watching him work.</span> You also try to interact with some of the chickens that come near the fence, but whenever you hold your hand out to them, they panic and run off. <span style="color:DarkTurquoise">Bobby</span> chuckles at this and admits that the girls get a bit skittish this time of year. <br>
+<<socialChange "Bobby" 1 1>>
+<<needChange "Fun" 6>>
+<br>
+[[Continue|OC Bobby Farm Local]]
+
+:: OC Bobbay Say Hello Barn Cleaning the Barn [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You spot <span style="color:DarkTurquoise">Bobby</span> near the entrance to the barn. He is lugging a large burlap sack that he plops down heavily before grabbing a shovel. He then begins to shovel… <span style="Color: yellow">well, let’s just say you find it weird that farms collect this sort of thing for fertilizer and you keep yourself down wind.</span> You call out to <span style="color:DarkTurquoise">Bobby</span> and say hello, asking him how he’s doing. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "OC Bobby",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "SmirK",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Doing great! Living the dream!”</span> He laughs, holding up a shovel full of the stuff. <span style="Color: LightSteelBlue">“You should come join me. Plenty of the dream to go around!”</span> You laugh and politely refuse his ‘generous’ offer. Though you do decide to keep him company and chat for a while. <span style="color:DarkTurquoise">Bobby</span> talks about all the different things he has to do around the farm. You quickly learn that shoveling this stuff is one of the easier jobs. <span style="Color: lightgreen">You have no idea how he does it.</span> <br>
+<<socialChange "Bobby" 1 1>>
+<<needChange "Fun" 6>>
+<br>
+[[Continue|OC Bobby Farm Local]]
+
+:: OC Bobby Say Hello Barn Horse Care [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+<span style="color:DarkTurquoise">Bobby</span> is currently in the barn next to one of the horse stables. He is brushing the mane of one of the horses as he talks to it. <span style="Color: LightSteelBlue">“Yeah? Does that feel good, girl? You’ll look great by the time I’m done!”</span> You scare him slightly by asking why he’s talking to the horse. <span style="Color: LightSteelBlue">“Oh! <span style="color:DarkTurquoise">$Player.Name</span>? When did you get here?”</span> He puts the brush down for a second, but the horse loudly neighs at him. <span style="Color: LightSteelBlue">“Alright, alright. Calm down.”</span> He laughs, picking the brush back up and continuing. <span style="Color: LightSteelBlue">“She can be so needy sometimes.”</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "OC Bobby",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smile",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You walk up to the horse cautiously; it’s large size a bit intimidating. <span style="Color: LightSteelBlue">“She’s a bit of a diva. Likes her hair brushed and gets upset if I don’t give it the attention she thinks it deserves. I’d offer you a try, but she gets pretty jealous.”</span> You are a bit confused about how a horse can be jealous, <span style="Color: yellow">but as you see its eyes glaring at you, you figure it is probably for the best.</span> <span style="Color: lightgreen">You spend the next few minutes chatting with <span style="color:DarkTurquoise">Bobby</span> about his horse and all the rides he’s taken for the next few minutes as he finishes up.</span> <br>
+<<socialChange "Bobby" 1 1>>
+<<needChange "Fun" 6>>
+<br>
+[[Continue|OC Bobby Farm Local]]
+
+:: OC Bobby Say Hello Fields Picking Oranges [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You spy <span style="color:DarkTurquoise">Bobby</span> on a ladder climbing up one of the orange trees. He is picking oranges from the tree and dropping them into the basket below. You notice one misses the basket and run over to grab it before it rolls away. <span style="color:DarkTurquoise">Bobby</span> spots you and laughs, <span style="Color: LightSteelBlue">“Thanks! Guess it is getting kind of full.”</span> <span style="color:DarkTurquoise">Bobby</span> climbs down as you place the orange in the basket. <br>
+<<if ["Warm", "Hot", "Temperate"].includes($Temp) && $Player.Kinks.Teens == 1>>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Tired",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smile",
+            },
+            Clothes: {
+                Top: $None,
+                Over: $None,
+                Outer: $None,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="Color: pink">You can’t help but blush as you watch him. <span style="color:DarkTurquoise">Bobby</span> is without a shirt and sweating in the hot sunlight. His skin glistens with sweat on his muscled frame. You have to bite your lower lip as he stretches his arms into the air, causing his muscles to flex. All this farm work really does wonders for his body!</span> <br>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Teens"]>>
+    <<arousalGain 10 _arousalbs _arousalkink>>
+    <br>
+<<else>>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smile",
+            },
+        },
+        {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smile",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+<</if>>
+He thanks you with a head pat before picking up the basket and beginning to carry it off. You follow, asking him how he’s doing. <span style="Color: LightSteelBlue">“Just working. Want to get most of these before they fall off by themselves, make them shelf-stable for as long as possible. Then again, people really love oranges in this town, so they fly off the shelves.”</span> He laughs, placing the basket down next to about a dozen other full ones. He then grabs another one and continues on as you follow behind for a bit chatting. <br>
+<<socialChange "Bobby" 1 1>>
+<<needChange "Fun" 6>>
+<br>
+[[Continue|OC Bobby Farm Local]]
+
+:: OC Bobby Say Hello Fields Bobby & His Dog [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+<<if $OCBobbyDog != 1>>
+    You spot <span style="color:DarkTurquoise">Bobby</span> is one of the large fields holding what appears to be a ball. He throws it and you are confused until you spot the yellow blur race after it and leap into the sky, catching it expertly! His dog had blended in with the tall grass. <span style="Color: yellow">The pup races back to <span style="color:DarkTurquoise">Bobby</span> until it gets a scent of something else… you!</span> <br>
+    <br>
+    <<if $FearDogs == 1>>
+        <span style="Color: lightcoral">Like a bullet, the dog turns in your direction and sprints at full speed towards you! You don’t even have time to scream before –</span> <span style="Color: Red">WHAM</span> <span style="Color: lightcoral">– the dog jumps onto you.</span> <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Jasper</span>?”</span> <span style="color:DarkTurquoise">Bobby</span> says in confusion before he hears you scream and rushes over. <span style="Color: lightcoral">The beast is licking and jumping all over you, causing your heart to race as you try to shove it off. Once you finally get to your feet and try to escape, you feel its vicious teeth sink into the leg of your bottoms. But you don’t care, you let it be ripped off as you are so desperate to escape.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                    Cry: 1,
+                    Blush: 2,
+                },
+                Clothes: {
+                    Bottoms: $None,
+                },
+            },
+            {
+                Name: "OC Bobby",
+                State: {
+                    Outfit: "Everyday",
+                    Blush: 1,
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <<if $PlayerUndies.Type != "None">>
+            <span style="Color: pink"><span style="color:DarkTurquoise">Bobby</span> arrives a moment later, seeing his pet playing with a pair of little boy’s $PlayerBottoms.Type as he looks up and sees you running away, your $PlayerUndies.Name butt shining in the light. He is understandably confused.</span> <br>
+            <br>
+        <<else>>
+            <span style="Color: pink"><span style="color:DarkTurquoise">Bobby</span> arrives a moment later, seeing his pet playing with a pair of little boy’s $PlayerBottoms.Type as he looks up and sees you running away, your $Player.Butt Butt shining in the light. He is understandably confused.</span> <br>
+            <br>
+        <</if>>
+        He finds you a few minutes later, hunched behind some boxes using an empty burlap sack to cover yourself. He tosses you your, slight slobbered on, bottoms and asks if you are alright. <span style="Color: lightcoral">You nod, turning around to fix your clothing, as you admit to <span style="color:DarkTurquoise">Bobby</span> that you are afraid of dogs.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Yeah, kinda figured that when I saw your butt running off without pants.”</span> He chuckles, trying to lighten the mood, <span style="Color: LightSteelBlue">“Sorry about <span style="color:DarkTurquoise">Jasper</span>. He’s super friendly and loves kids, but I get it must have been scary. I put him back inside so you should be good. I’ll try to keep him away when you’re here.”</span> He gives you a smile as you turn back around and thank him. <span style="Color: lightcoral">You know it is a bit ridiculous to be afraid of such a friendly dog, but at least <span style="color:DarkTurquoise">Bobby</span> seems to understand.</span> <br>
+        <<set $OCBobbyDog to 1>>
+        <<socialChange "Bobby" 1 1>>
+        <<needChange "Fun" 2>>
+        <<addMoodlet "Stress" 4>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <<else>>
+        Like a bullet, the dog homes in on your position and flies towards you. You don’t even have a chance to say a word before – <span style="Color: yellow">WHAM</span> – <span style="Color: lightgreen">you are tackled to the ground and barraged with an endless and merciless wave of kisses and slobbery licks. The large yellow lab has you completely pinned down as <span style="color:DarkTurquoise">Bobby</span> approaches and, seeing this, breaks out laughing.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smile",
+                    Blush: 2,
+                    Cry: 1,
+                    Eyes: "Closed",
+                },
+            },
+            {
+                Name: "OC Bobby",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Good boy, <span style="color:DarkTurquoise">Jasper</span>, you caught us a stray!”</span> <span style="color:DarkTurquoise">Bobby</span> suddenly picks you up by the ankles and holds you into the air as <span style="color:DarkTurquoise">Jasper</span> continues to lick your face. <span style="Color: LightSteelBlue">“What say we pluck these clothes off and cook this one up for dinner? I’ll even let you have the sausage, <span style="color:DarkTurquoise">Jasper</span>.”</span> <span style="Color: lightgreen">You blush at the thought but can do nothing as <span style="color:DarkTurquoise">Bobby</span> continues to hold you there like a piece of meat for the dog to play with until, eventually, they both tire out and release you.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Sorry about <span style="color:DarkTurquoise">Jasper</span>, he gets a little excited.”</span> He laughs, petting the dog as you all sit down to catch your breath, <span style="Color: LightSteelBlue">“He loves kids and wouldn’t hurt a fly, but he will go for the face.”</span> You’ve realized, as you try to wipe all the slobber off your face. <span style="Color: LightSteelBlue">“You kind of deserved it, sneaking up on us like that.”</span> <span style="Color: lightgreen">You hang out with <span style="color:DarkTurquoise">Bobby</span> for a bit, playing with his dog until he has to get back to work.</span> <br>
+        <<set $OCBobbyDog to 1>>
+        <<socialChange "Bobby" 1 1>>
+        <<needChange "Fun" 8>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <</if>>
+<<else>>
+    <<if $FearDogs == 1>>
+        You hear <span style="color:DarkTurquoise">Bobby</span> shouting and laughing in the distance and follow the sound to spot him in a large field. <span style="Color: lightcoral">However, you freeze with your heart in your chest as you see who he is with. <span style="color:DarkTurquoise">Jasper</span>, his pet dog. While friendly, you still feel a pit of fear in your stomach and are unable to move. Thankfully, <span style="color:DarkTurquoise">Bobby</span> notices you before <span style="color:DarkTurquoise">Jasper</span> and quickly calls his dog back and holds him by the collar.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 2,
+                },
+            },
+            {
+                Name: "OC Bobby",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Hey! <span style="color:DarkTurquoise">$Player.Name</span>!”</span> He calls out, waving. <span style="Color: LightSteelBlue">“Sorry! I’m giving <span style="color:DarkTurquoise">Jasper</span> his exercise. Can to come back later? I don’t want him to jump on you again.”</span> You nod, grateful that he remembered your fear. <span style="Color: yellow">You quickly move out of sight, worried that <span style="color:DarkTurquoise">Jasper</span> will come running after you the instant he is released. Thankfully, that doesn’t seem to be the case.</span> <br>
+        <<socialChange "Bobby" 1 1>>
+        <<needChange "Fun" 2>>
+        <<addMoodlet "Stress" 1>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <<else>>
+        You hear <span style="color:DarkTurquoise">Bobby</span> shouting and laughing in the distance and follow the sound. Based on his voice and the occasional barking, you assume he is playing with his dog <span style="color:DarkTurquoise">Jasper</span> and hope to get the jump on them both <span style="Color: lightgreen">when, suddenly, the yellow lab leaps out of the grass directly into your face! You fall on your butt and are relentlessly attacked by his tongue as all you can do is giggle and try to shield your nose and mouth.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smile",
+                    Blush: 2,
+                    Cry: 1,
+                    Eyes: "Closed",
+                },
+            },
+            {
+                Name: "OC Bobby",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Well, I thought <span style="color:DarkTurquoise">Jasper</span> smelt a rabbit or something. But guess it was a kid. Gotta say, you’re a weird looking goat though.”</span> <span style="color:DarkTurquoise">Bobby</span> laughs like he just said a joke, but you are too distracted by this assault to figure out what it is. The attack goes on for another minute before you are able to stand up, covered in dog spit. But hey, at least you feel loved. <br>
+        <br>
+        <span style="Color: lightgreen">You spend the next few minutes chatting with <span style="color:DarkTurquoise">Bobby</span> and throwing the dog for <span style="color:DarkTurquoise">Jasper</span>. It is a fun time.</span> <br>
+        <<socialChange "Bobby" 1 1>>
+        <<needChange "Fun" 8>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <</if>>
+<</if>>

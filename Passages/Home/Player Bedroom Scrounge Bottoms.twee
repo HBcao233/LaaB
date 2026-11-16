@@ -1,0 +1,19 @@
+:: Player Bedroom Scrounge Bottoms [nobr]
+
+<<if $StarterBottoms == 1>>
+    <<addClothing "Temp" "Bottoms" "Shorts" "Blue">> 
+<<elseif $StarterBottoms == 2>>
+    <<addClothing "Temp" "Bottoms" "Jeans" "Blue Denim">> 
+<<elseif $StarterBottoms == 3>>
+    <<addClothing "Temp" "Bottoms" "Pants" "Black">> 
+<</if>>
+
+<<set _found to _clothingtemp>>
+
+You look through the back of your closet to try to find some old pants, and you find something!<br>
+[img[_found.Icon]]<br>
+
+<<link "Continue" "Player Bedroom">>
+<<set $PlayerBottoms to _found>>
+<<include"Exposed Tracking">>
+<</link>>

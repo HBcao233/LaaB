@@ -1,0 +1,100 @@
+:: Millers Babysitting Quest Intro [nobr]
+
+/* Intro */
+You walk up to the table where <span style="color:DarkTurquoise">Isaiah</span> and his friends are sitting. In their normal friendly way, everyone raises their milk while shouting your name, welcoming you to the table. You place yourself right beside <span style="color:DarkTurquoise">Isaiah</span> and immediately feel a bit overwhelmed trying to keep up with all the conversations that are going on around the table. <span style="color:LightGreen">Despite how chaotic it is, you enjoy your time. Then, as you are taking a sip of your milk, you feel a tap on your shoulder.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+            },
+        },
+        {
+            Name: "OC Zay",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>, quick random question: Do you want to make good money tonight?”</span> <span style="color:DarkTurquoise">Isaiah</span> whispers in your ear. You raise an eyebrow, shallowing your milk and telling him that it depends on what exactly he’s asking. <span style="color:LightSteelBlue">“You right,”</span> He chuckles, <span style="color:LightSteelBlue">“context matters.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Look, we need a babysitter for <span style="color:DarkTurquoise">Kayden</span>. <span style="color:DarkTurquoise">Jayden</span> has soccer practice on Wednesdays and Fridays and I also have my MMA classes on those days. Dad works in his studio office in the city on Fridays. Well, <span style="color:DarkTurquoise">Kayden</span> has been complaining about being bored sitting and watching <span style="color:DarkTurquoise">Jayden</span>’s practice and he really can’t keep still long enough to sit quietly in the studio with dad.”</span> <span style="color:DarkTurquoise">Isaiah</span> pauses for a second to take a drink before continuing, <span style="color:LightSteelBlue">“I don’t think he’d have any issues staying with me, but I figured since the twins like hanging out with you, this is an excellent opportunity for you to make some extra money.”</span> You pause for a moment to think it over. The twins can be a handful, especially both of them, but not really in a bad way and you enjoyed being around them as well. Plus, if it was only one of them you wouldn’t be outnumbered. It’s not a bad gig. You express your interest to <span style="color:DarkTurquoise">Isaiah</span> and he smiles, explaining the job in more detail. <br>
+<br>
+<span style="color:LightSteelBlue">“You’d come over to our house, babysit <span style="color:DarkTurquoise">Kayden</span>, and make sure he doesn’t die between 4PM and 9PM. Plus some basic stuff, feeding him, making sure he bathes and gets into bed. Dad said he’d pay you $4 for every hour, so that would be 24 bucks for you plus you could raid our fridge.”</span> <span style="color:DarkTurquoise">Isaiah</span> laughs. <span style="color:LightSteelBlue">“And you don’t have to do it every Friday, just the ones your available. So, what do you say?”</span> <br>
+<br>
+
+<<if $Player.Kinks.Kids == 1>>
+
+        <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "OC Zay",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    As you ponder the offer, you can’t help but let some less than wholesome thoughts enter your head. <span style="color:Pink">You’d be alone with and in charge of <span style="color:DarkTurquoise">Kayden</span> for 5 hours. Plus, the mention of bath time and getting ready for bed causes your cheeks to flush just thinking about what you could get up to with the boy.</span> Though you quickly push the thought from your mind, <span style="color:Pink">not wanting to picture lewding the boy in this moment,</span> especially not with his big brother and your friend looking right at you. <span style="color:Pink">Still, the possibilities linger in the back of your mind.</span> <br>
+    <br>
+<</if>>
+
+<div id="choice">
+    <<link "Agree, it sounds fun<br>">>
+    <<replace"#choice">>
+        You nod, agreeing that is sounds like a fun and easy way to earn some money. You’d love to! <span style="color:LightSteelBlue">“Word! Gonna head to the front office to call Pops and let him know. Oh, and before I forget, take this.”</span> <span style="color:DarkTurquoise">Isaiah</span> digs into his bookbag and pulls out a keycard labeled ‘Avendale Visitor’s Pass’, <span style="color:LightSteelBlue">“This is a pass for my neighborhood. Just show it to them guards at the front and he should let you in. Has my address on the back too.”</span> <span style="color:DarkTurquoise">Isaiah</span> finishes his drink before getting up and leaving the table, heading towards the front office. <span style="color:LightGreen">You finish up as well and stand up, slightly excited at the new opportunity you have.</span> <br>
+        <br>
+        Quest Acquired: <span style="color:LightSteelBlue">“Millers: Babysitting Kayden”</span> <br>
+        <<set $InActiveQuests.delete("Millers: Babysitting Kayden")>>
+        <<set $ActiveQuests.push("Millers: Babysitting Kayden")>>
+        <<socialChange "Zay" 1 1>>
+        <<set $QuestLog.push(
+            {
+                Name: "Millers: Babysitting Kayden",
+                State: 1,
+                ID: "OCKayden_M001",
+                Category: "Character",
+                Type: "Quest",
+                Icon: "Kayden",
+                Tags: ["Kayden", "Character", "Quest", "Avendale"],
+                Description: "<span style=\"color:DarkTurquoise\">Isaiah</span> has asked you to babysit his younger brother <span style=\"color:DarkTurquoise\">Kayden</span> Friday after school. He said you'd be paid about $25. Head to <span style=\"color:Teal\">Avendale</span> around <span style=\"color:Teal\">4PM</span>. You expect you'll be there until about <span style=\"color:Teal\">9PM</span>.",
+                Objectives: [
+                    {
+                        Name: "Head to <span style=\"color:Teal\">Avendale</span> around <span style=\"color:Teal\">4PM</span>.",
+                        State: 0,
+                        Total: 1,
+                    },
+                ],
+            },
+        )>>
+        <<set $Notifications.push({
+            Name: "Quest Acquired!",
+            Icon: "Quests/Kayden",
+            Description: "<span style=\"color:DarkTurquoise\">Isaiah</span> has asked you to babysit his younger brother <span style=\"color:DarkTurquoise\">Kayden</span> Friday after school. He said you'd be paid about $25. Head to <span style=\"color:Teal\">Avendale</span> around <span style=\"color:Teal\">4PM</span>. You expect you'll be there until about <span style=\"color:Teal\">9PM</span>.",
+        })>>
+        <br>
+        <<include"School Lunch">>
+        <<set $FriendLunch to 1>>
+    <</replace>>
+    <</link>>
+    <<link "Maybe, but not tonight<br>">>
+    <<replace"#choice">>
+        You shrug, telling <span style="color:DarkTurquoise">Isaiah</span> that is sounds interesting, but not tonight. You’d have to think about it. <span style="color:LightSteelBlue">“Alright, well just let me know bro if you wanna do it at some point in the future, sure <span style="color:DarkTurquoise">Kayden</span> would love it.”</span> <span style="color:DarkTurquoise">Isaiah</span> smiles. You both go back to the conversation around the table, <span style="color:Yellow">though the thought does linger in your head. <span style="color:DarkTurquoise">Isaiah</span> will probably offer it again next week if you change your mind.</span> <br>
+        <<socialChange "Zay" 1 1>>
+        <br>
+        <<include"School Lunch">>
+        <<set $FriendLunch to 1>>
+    <</replace>>
+    <</link>>
+</div>

@@ -1,0 +1,84 @@
+:: OC Mata Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCMataSocialRank == -3>>
+	<<set $OCMataRelationship to "Hated">>
+	<span style="color:DarkRed">Mata Hates you!</span>
+	<br>
+<<elseif $OCMataSocialRank == -2>>
+	<<set $OCMataRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Mata are Enemies.</span>
+	<br>
+<<elseif $OCMataSocialRank == -1>>
+	<<set $OCMataRelationship to "Very Disliked">>
+	<span style="color:Red">Mata really Dislikes you.</span>
+	<br>
+<<elseif $OCMataSocialRank == 0 and $OCMataSocial <= -50>>
+	<<set $OCMataRelationship to "Disliked">>
+	<span style="color:Red">Mata Dislikes you. </span>
+	<br>
+<<elseif $OCMataSocialRank == 0 and $OCMataSocial < 50>>
+	<<set $OCMataRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Mata are Acquaintances.</span>
+	<br>
+<<elseif $OCMataSocialRank == 0 and $OCMataSocial >= 50>>
+	<<set $OCMataRelationship to "Liked">>
+	<span style="color:LightGreen">Mata Likes you.</span>
+	<br>
+<<elseif $OCMataSocialRank == 1>>
+	<<set $OCMataRelationship to "Friends">>
+	<span style="color:Green">You and Mata are Friends.</span>
+	<br>
+<<elseif $OCMataSocialRank == 2>>
+	<<set $OCMataRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Mata are Good Friends!</span>
+	<br>
+<<elseif $OCMataSocialRank == 3>>
+	<<set $OCMataRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Mata are Close Friends!</span>
+	<br>
+<<elseif $OCMataSocialRank == 4>>
+	<<set $OCMataRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Mata are Best Friends!</span>
+	<br>
+<<elseif $OCMataSocialRank == 5>>
+	<<set $OCMataRelationship to "Love">>
+	<span style="color:Pink">You and Mata Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCMataSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCMataSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCMataSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCMataSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCMataSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCMataSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCMataSocial,
+			value: Math.abs($OCMataSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCMataSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCMataSocial > 120>>
+	<<set $OCMataSocial to 120>>
+<</if>>
+<<if $OCMataSocial < -120>>
+	<<set $OCMataSocial to -120>>
+<</if>>

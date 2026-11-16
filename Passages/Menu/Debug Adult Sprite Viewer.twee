@@ -1,0 +1,1256 @@
+:: Debug Adult Sprite Viewer [nobr]
+
+/* Avatars */
+<div id='AvatarViewer'>
+    <<include"Debug Adult Sprite Viewer Div">>
+</div>
+
+<br>
+[[Back|Debug Test Menu]]
+
+:: Debug Adult Sprite Viewer Div [nobr]
+
+
+<<set $AD.BodyType to $DebugViewer.BodyType>>
+<<set $AD.SkinColor to $DebugViewer.SkinColor>>
+<<set $AD.Eyes to $DebugViewer.Eyes>>
+<<set $AD.EyeColor to $DebugViewer.EyeColor>>
+<<set $AD.BodyHair to $DebugViewer.BodyHair>>
+<<set $AD.HairColor to $DebugViewer.HairColor>>
+<<set $AD.Arms to $DebugViewer.Arms>>
+<<set $AD.Abs to $DebugViewer.Abs>>
+<<set $AD.PubicHair to $DebugViewer.PubicHair>>
+<<set $AD.HappyTrail to $DebugViewer.HappyTrail>>
+<<set $AD.Blush to $DebugViewer.Blush>>
+<<set $AD.Brows to $DebugViewer.Brows>>
+<<set $AD.FacialHair to $DebugViewer.FacialHair>>
+<<set $AD.Freckles to $DebugViewer.Freckles>>
+<<set $AD.Mouth to $DebugViewer.Mouth>>
+<<set $AD.Nose to $DebugViewer.Nose>>
+<<set $AD.Scars to $DebugViewer.Scars>>
+<<set $AD.Wrinkles to $DebugViewer.Wrinkles>>
+<<set $AD.Balls to $DebugViewer.Balls>>
+<<set $AD.PenisStyle to $DebugViewer.PenisStyle>>
+<<set $AD.PenisSize to $DebugViewer.PenisSize>>
+<<set $AD.Penis to $DebugViewer.Penis>>
+<<set $AD.Hair to $DebugViewer.Hair>>
+<<set $ADUndies to $DebugViewer.Undies>>
+<<set $ADSocks to $DebugViewer.Socks>>
+<<set $ADShoes to $DebugViewer.Shoes>>
+<<set $ADBottoms to $DebugViewer.Bottoms>>
+<<set $ADTop to $DebugViewer.Top>>
+<<set $ADFace to $DebugViewer.Face>>
+<<set $ADNeck to $DebugViewer.Neck>>
+<<set $ADOuter to $DebugViewer.Outer>>
+
+
+<<include"Avatar Display Adults">>
+
+<<set _bodytypes to ["Average", "Fat", "Muscular", "Slender"]>>
+<<set _skincolors to ["Beige", "Black", "Brown", "Chestnut", "Ebony", "Fair", "Honey", "Ivory", "Mocha", "Peach", "Pink", "Redwood", "Sand", "Shell", "White"]>>
+<<set _eyes to ["Normal", "Narrow", "Wide"]>>
+<<set _eyecolors to ["Amber", "Black", "Blue", "Brown", "Gray", "Green", "Hazel", "Pink", "Purple", "Red", "White"]>>
+<<set _brows to ["Normal", "Angry", "Sad", "Shocked", "Suspicious"]>>
+<<set _bodyhairlocations to ["Biceps", "Calves", "Chest", "Forearms", "Stomach", "Thighs"]>>
+<<set _bodyhair to ["None", "Short", "Average", "Thick"]>>
+<<set _haircolors to ["Auburn", "Black", "Blonde", "Blue", "Brown", "Charcoal", "Dark Blue", "Dark Brown", "Dirty Blonde", "Ginger", "Gray", "Green", "Light Brown", "Lime", "Pink", "Platinum Blonde", "Purple", "Red", "Strawberry Blonde", "Teal", "White"]>>
+<<set _arms to ["Normal", "Hide", "Bound"]>>
+<<set _abs to [0, 1]>>
+<<set _pubichair to ["None", "Wispy", "Short", "Average", "Bushy"]>>
+<<set _pubichappytrail to [0, 1]>>
+<<set _blush to [0, 1, 2, 3]>>
+<<set _facialhair to ["None", "Goatee", "Long Beard", "Long Sideburns", "Medium Flared Beard", "Medium Round Beard", "Neck Beard", "Short Beard", "Stubble", "Thick Mustache", "Upturned Mustache", "Wide Mustache", "Wispy Mustache"]>>
+<<set _freckles to ["None", "Few", "Light", "Medium", "Heavy"]>>
+<<set _mouth to ["Normal", "Frown", "Smile", "Smirk"]>>
+<<set _nose to ["None", "Bulbous", "Downturned", "Narrow", "Round", "Wide"]>>
+<<set _scarslocations to ["Cheek", "Chin", "Ear", "Eye", "Eyebrows", "Head", "Jaw", "Lip", "Nose", "Temple"]>>
+<<set _scars to [0, 1]>>
+<<set _wrinklelocations to ["CrowsFeet", "Forehead", "SmileLines"]>>
+<<set _wrinkles to [0, 1]>>
+<<set _balls to ["Small", "Average", "Large", "Gigantic"]>>
+<<set _penisstyle to ["Cut", "Uncut"]>>
+<<set _penissize to ["Tiny", "Small", "Average", "Large", "Gigantic"]>>
+<<set _penis to ["Slim", "Girthy"]>>
+<<set _hair to ["Buzz Cut", "Buzz Cut Fade", "Buzz Cut Fade Slit", "Cornrows", "Fade Mohawk", "Fatherly Curly", "Fatherly Straight", "Gelled Back", "Gramps", "High Hairline Buzz Cut", "Long Curly", "Long Messy", "Luey Afro", "Medium Afro", "Medium Curly", "Medium Messy", "Round Afro", "Short Afro", "Short Box Braids", "Short Curly", "Short Loose", "Short Messy", "Side Piecy", "Slicked Back", "Soft Laidback", "Styled Short", "Tall Afro", "Waves", "Widows Peak Buzz Cut"]>>
+
+<<if $DebugCategory == "Body">>
+    <span style="color:Green">[Body]</span>
+    | 
+    <<link"[Hair]">>
+        <<set $DebugCategory to "Hair">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    | 
+    <<link"[Genitals]">>
+        <<set $DebugCategory to "Genitals">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    | 
+    <<link"[Pose]">>
+        <<set $DebugCategory to "Pose">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    <br>
+    <<include"Debug Adult Sprite Viewer Body">>
+<<elseif $DebugCategory == "Hair">>
+    <<link"[Body]">>
+        <<set $DebugCategory to "Body">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    | 
+    <span style="color:Green">[Hair]</span>
+    | 
+    <<link"[Genitals]">>
+        <<set $DebugCategory to "Genitals">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    | 
+    <<link"[Pose]">>
+        <<set $DebugCategory to "Pose">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    <br>
+    <<include"Debug Adult Sprite Viewer Hair">>
+<<elseif $DebugCategory == "Pose">>
+    <<link"[Body]">>
+        <<set $DebugCategory to "Body">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    | 
+    <<link"[Hair]">>
+        <<set $DebugCategory to "Hair">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    | 
+    <<link"[Genitals]">>
+        <<set $DebugCategory to "Genitals">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    |
+    <span style="color:Green">[Pose]</span>
+    <br>
+    <<include"Debug Adult Sprite Viewer Pose">>
+<<elseif $DebugCategory == "Genitals">>
+    <<link"[Body]">>
+        <<set $DebugCategory to "Body">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    | 
+    <<link"[Hair]">>
+        <<set $DebugCategory to "Hair">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    |
+    <span style="color:Green">[Genitals]</span>
+    | 
+    <<link"[Pose]">>
+        <<set $DebugCategory to "Pose">>
+        <<replace"#AvatarViewer">>
+            <<include"Debug Adult Sprite Viewer Div">>
+        <</replace>>
+    <</link>>
+    <br>
+    <<include"Debug Adult Sprite Viewer Genitals">>
+<</if>>
+
+
+:: Debug Adult Sprite Viewer Body [nobr]
+
+<strong>Body Types:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _bodytypes.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.BodyType == _bodytypes[_i]>>
+            <span style="color:Green">[_bodytypes[_i]]</span>
+        <<else>>
+            <<link _bodytypes[_i]>>
+                <<set $DebugViewer.BodyType to _bodytypes[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 16>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<<if $DebugViewer.BodyType == "Average">>
+    <strong>Abs Toggle (Average Only):</strong><br>
+    <<set _length to 0>>
+    <<for _i to 0; _i lt _abs.length; _i++>>
+        <<capture _i>>
+            <<set _length += 1>>
+            <<if $DebugViewer.Abs == _abs[_i]>>
+                <span style="color:Green">[_abs[_i]]</span>
+            <<else>>
+                <<link _abs[_i]>>
+                    <<set $DebugViewer.Abs to _abs[_i]>>
+                    <<replace"#AvatarViewer">>
+                        <<include"Debug Adult Sprite Viewer Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            <<if _length < 16>>
+                | 
+            <<else>>
+            <br>
+                <<set _length to 0>>
+            <</if>>
+        <</capture>>
+    <</for>>
+    <br>
+<</if>>
+
+<strong>Skin Color:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _skincolors.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.SkinColor == _skincolors[_i]>>
+            <span style="color:Green">[_skincolors[_i]]</span>
+        <<else>>
+            <<link _skincolors[_i]>>
+                <<set $DebugViewer.SkinColor to _skincolors[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 16>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Eye Color:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _eyecolors.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.EyeColor == _eyecolors[_i]>>
+            <span style="color:Green">[_eyecolors[_i]]</span>
+        <<else>>
+            <<link _eyecolors[_i]>>
+                <<set $DebugViewer.EyeColor to _eyecolors[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 16>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Nose:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _nose.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.Nose == _nose[_i]>>
+            <span style="color:Green">[_nose[_i]]</span>
+        <<else>>
+            <<link _nose[_i]>>
+                <<set $DebugViewer.Nose to _nose[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 16>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Freckles:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _freckles.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.Freckles == _freckles[_i]>>
+            <span style="color:Green">[_freckles[_i]]</span>
+        <<else>>
+            <<link _freckles[_i]>>
+                <<set $DebugViewer.Freckles to _freckles[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 16>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Scars:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _scarslocations.length; _i++>>
+    <<capture _i>>
+        <div style="margin-left: 30px;">
+        <strong>_scarslocations[_i]:</strong> 
+            <<for _l to 0; _l lt _scars.length; _l++>>
+                <<capture _l>>
+                        <<if $DebugViewer.Scars[_scarslocations[_i]] == _scars[_l]>>
+                            <span style="color:Green">[_scars[_l]]</span>
+                        <<else>>
+                            <<link _scars[_l]>>
+                                <<set $DebugViewer.Scars[_scarslocations[_i]] to _scars[_l]>>
+                                <<replace"#AvatarViewer">>
+                                    <<include"Debug Adult Sprite Viewer Div">>
+                                <</replace>>
+                            <</link>>
+                        <</if>>
+                         | 
+                <</capture>>
+            <</for>>
+            </div>
+    <</capture>>
+<</for>>
+
+<strong>Wrinkles:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _wrinklelocations.length; _i++>>
+    <<capture _i>>
+        <div style="margin-left: 30px;">
+        <strong>_wrinklelocations[_i]:</strong> 
+            <<for _l to 0; _l lt _wrinkles.length; _l++>>
+                <<capture _l>>
+                        <<if $DebugViewer.Wrinkles[_wrinklelocations[_i]] == _wrinkles[_l]>>
+                            <span style="color:Green">[_wrinkles[_l]]</span>
+                        <<else>>
+                            <<link _wrinkles[_l]>>
+                                <<set $DebugViewer.Wrinkles[_wrinklelocations[_i]] to _wrinkles[_l]>>
+                                <<replace"#AvatarViewer">>
+                                    <<include"Debug Adult Sprite Viewer Div">>
+                                <</replace>>
+                            <</link>>
+                        <</if>>
+                         | 
+                <</capture>>
+            <</for>>
+            </div>
+    <</capture>>
+<</for>>
+
+:: Debug Adult Sprite Viewer Hair [nobr]
+
+<strong>Hair Color:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _haircolors.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.HairColor == _haircolors[_i]>>
+            <span style="color:Green">[_haircolors[_i]]</span>
+        <<else>>
+            <<link _haircolors[_i]>>
+                <<set $DebugViewer.HairColor to _haircolors[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 12>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Hair:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _hair.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.Hair == _hair[_i]>>
+            <span style="color:Green">[_hair[_i]]</span>
+        <<else>>
+            <<link _hair[_i]>>
+                <<set $DebugViewer.Hair to _hair[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 6>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Facial Hair:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _facialhair.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.FacialHair == _facialhair[_i]>>
+            <span style="color:Green">[_facialhair[_i]]</span>
+        <<else>>
+            <<link _facialhair[_i]>>
+                <<set $DebugViewer.FacialHair to _facialhair[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 7>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Body Hair:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _bodyhairlocations.length; _i++>>
+    <<capture _i>>
+        <div style="margin-left: 30px;">
+        <strong>_bodyhairlocations[_i]:</strong> 
+            <<for _l to 0; _l lt _bodyhair.length; _l++>>
+                <<capture _l>>
+                        <<if $DebugViewer.BodyHair[_bodyhairlocations[_i]] == _bodyhair[_l]>>
+                            <span style="color:Green">[_bodyhair[_l]]</span>
+                        <<else>>
+                            <<link _bodyhair[_l]>>
+                                <<set $DebugViewer.BodyHair[_bodyhairlocations[_i]] to _bodyhair[_l]>>
+                                <<replace"#AvatarViewer">>
+                                    <<include"Debug Adult Sprite Viewer Div">>
+                                <</replace>>
+                            <</link>>
+                        <</if>>
+                         | 
+                <</capture>>
+            <</for>>
+            </div>
+    <</capture>>
+<</for>>
+
+<strong>Pubic Hair:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _pubichair.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.PubicHair == _pubichair[_i]>>
+            <span style="color:Green">[_pubichair[_i]]</span>
+        <<else>>
+            <<link _pubichair[_i]>>
+                <<set $DebugViewer.PubicHair to _pubichair[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 12>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Happy Trail:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _pubichappytrail.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.HappyTrail == _pubichappytrail[_i]>>
+            <span style="color:Green">[_pubichappytrail[_i]]</span>
+        <<else>>
+            <<link _pubichappytrail[_i]>>
+                <<set $DebugViewer.HappyTrail to _pubichappytrail[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 12>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+:: Debug Adult Sprite Viewer Pose [nobr]
+
+<strong>Mouth:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _mouth.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.Mouth == _mouth[_i]>>
+            <span style="color:Green">[_mouth[_i]]</span>
+        <<else>>
+            <<link _mouth[_i]>>
+                <<set $DebugViewer.Mouth to _mouth[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 16>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Eyes:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _eyes.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.Eyes == _eyes[_i]>>
+            <span style="color:Green">[_eyes[_i]]</span>
+        <<else>>
+            <<link _eyes[_i]>>
+                <<set $DebugViewer.Eyes to _eyes[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 16>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Brows:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _brows.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.Brows == _brows[_i]>>
+            <span style="color:Green">[_brows[_i]]</span>
+        <<else>>
+            <<link _brows[_i]>>
+                <<set $DebugViewer.Brows to _brows[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 16>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Arms:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _arms.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.Arms == _arms[_i]>>
+            <span style="color:Green">[_arms[_i]]</span>
+        <<else>>
+            <<link _arms[_i]>>
+                <<set $DebugViewer.Arms to _arms[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 12>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Blush:$DebugViewer.Blush</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _blush.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.Blush == _blush[_i]>>
+            <span style="color:Green">[_blush[_i]]</span>
+        <<else>>
+            <<link _blush[_i]>>
+                <<set $DebugViewer.Blush to _blush[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 12>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Set NPCs:</strong><br>
+<<link"Dad">>
+    <<set $DebugViewer.BodyType to "Slender">>
+    <<set $DebugViewer.SkinColor to $Player.SkinColor>>
+    <<set $DebugViewer.EyeColor to "Green">>
+    <<set $DebugViewer.Nose to "Downturned">>
+    <<set $DebugViewer.HairColor to $Player.HairColor>>
+    <<set $DebugViewer.Hair to "Fatherly Straight">>
+    <<set $DebugViewer.PubicHair to "Wispy">>
+    <<set $DebugViewer.PenisSize to "Large">>
+    <<set $DebugViewer.FacialHair to "None">>
+    <<set $DebugViewer.Wrinkles to {
+            CrowsFeet: 0,
+            Forehead: 0,
+            SmileLines: 0,
+        }>>
+    <<set $DebugViewer.BodyHair to {
+            Biceps: "None",
+            Forearms: "None",
+            Calves: "None",
+            Chest: "None",
+            Stomach: "None",
+            Thighs: "None",
+        }>>
+    <<set $DebugViewer.Undies to {
+            Name: "Gray Boxer Briefs",
+            Type: "Boxer Briefs",
+            Color: "Gray",
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Boxer Briefs/Gray Boxer Briefs.png",
+        }
+    >>
+    <<set $DebugViewer.Socks to {
+            Name: "White Crew Socks",
+            Type: "Micro Crew Socks",
+            Color: "White",
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Micro Crew Socks/White Micro Crew Socks.png",
+        }
+    >>
+    <<set $DebugViewer.Shoes to {
+            Name: "Black Slip Ons",
+            Type: "Slip Ons",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Slip Ons/Black Slip Ons.png",
+        }
+    >>
+    <<set $DebugViewer.Bottoms to {
+            Name: "Black Pants",
+            Type: "Pants",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Pants/Black Pants.png",
+        }
+    >>
+    <<set $DebugViewer.Top to {
+            Name: "Gray T-Shirt",
+            Type: "T-Shirt",
+            Color: "Gray",
+            Tags: ["None"],
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/T-Shirt/Gray T-Shirt.png",
+        }
+    >>
+    <<set $DebugViewer.Outer to $None>>
+    <<replace"#AvatarViewer">>
+        <<include"Debug Adult Sprite Viewer Div">>
+    <</replace>>
+<</link>>
+ | 
+<<link"Alistair">>
+    <<set $DebugViewer.BodyType to "Average">>
+    <<set $DebugViewer.SkinColor to "Beige">>
+    <<set $DebugViewer.EyeColor to "Blue">>
+    <<set $DebugViewer.Nose to "Downturned">>
+    <<set $DebugViewer.HairColor to "Black">>
+    <<set $DebugViewer.Hair to "Slicked Back">>
+    <<set $DebugViewer.PubicHair to "Short">>
+    <<set $DebugViewer.PenisSize to "Large">>
+    <<set $DebugViewer.Balls to "Large">>
+    <<set $DebugViewer.FacialHair to "None">>
+    <<set $DebugViewer.Wrinkles to {
+            CrowsFeet: 0,
+            Forehead: 0,
+            SmileLines: 0,
+        }>>
+    <<set $DebugViewer.BodyHair to {
+            Biceps: "None",
+            Forearms: "None",
+            Calves: "None",
+            Chest: "None",
+            Stomach: "None",
+            Thighs: "None",
+        }>>
+    <<set $DebugViewer.Undies to {
+            Name: "White Briefs",
+            Type: "Briefs",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Briefs/Black Briefs.png",
+        }
+    >>
+    <<set $DebugViewer.Face to {
+            Name: "Black Rectangle Glasses",
+            Type: "Rectangle Glasses",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Rectangle Glasses/Black Rectangle Glasses.png",
+        }
+    >>
+    <<set $DebugViewer.Socks to {
+            Name: "Black Crew Socks",
+            Type: "Micro Crew Socks",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Micro Crew Socks/Black Micro Crew Socks.png",
+        }
+    >>
+    <<set $DebugViewer.Shoes to {
+            Name: "Black Oxfords",
+            Type: "Oxfords",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Oxfords/Black Oxfords.png",
+        }
+    >>
+    <<set $DebugViewer.Bottoms to {
+            Name: "Black Slacks",
+            Type: "Slacks",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Slacks/Black Slacks.png",
+        }
+    >>
+    <<set $ADTopTuck to 1>>
+    <<set $DebugViewer.Top to {
+            Name: "White Dress Shirt",
+            Type: "Dress Shirt",
+            Color: "White",
+            Tags: ["Sleeves"],
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Dress Shirt/White Dress Shirt.png",
+            AvatarSleeves: "Images/Avatar/Adults/Average/Clothes/Dress Shirt/White Dress Shirt Sleeves Default.png",
+            AvatarSleevesHide: "Images/Avatar/Adults/Average/Clothes/Dress Shirt/White Dress Shirt Sleeves.png",
+        }
+    >>
+    <<set $DebugViewer.Outer to {
+            Name: "Black Suit Jacket",
+            Type: "Suit Jacket",
+            Color: "White",
+            Tags: ["None"],
+            Avatar: "Images/Avatar/Adults/Temp Missing Sprite Fixes/Alister_Top.png",
+        }
+    >>
+    <<set $DebugViewer.Neck to {
+            Name: "Black Slacks",
+            Type: "Slacks",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Slacks/Black Slacks.png",
+        }
+    >>
+    <<set $DebugViewer.Over to {
+            Name: "Black Slacks",
+            Type: "Slacks",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Slacks/Black Slacks.png",
+        }
+    >>
+    <<set $DebugViewer.Abs to 1>>
+
+    <<replace"#AvatarViewer">>
+        <<include"Debug Adult Sprite Viewer Div">>
+    <</replace>>
+<</link>>
+ | 
+<<link"Randolph">>
+    <<set $DebugViewer.BodyType to "Muscular">>
+    <<set $DebugViewer.SkinColor to "Mocha">>
+    <<set $DebugViewer.EyeColor to "Black">>
+    <<set $DebugViewer.Nose to "Round">>
+    <<set $DebugViewer.HairColor to "Gray">>
+    <<set $DebugViewer.Hair to "Short Afro">>
+    <<set $DebugViewer.PubicHair to "Average">>
+    <<set $DebugViewer.HappyTrail to 1>>
+    <<set $DebugViewer.PenisSize to "Gigantic">>
+    <<set $DebugViewer.Balls to "Gigantic">>
+    <<set $DebugViewer.FacialHair to "Short Beard">>
+    <<set $DebugViewer.Wrinkles to {
+            CrowsFeet: 1,
+            Forehead: 1,
+            SmileLines: 1,
+        }>>
+    <<set $DebugViewer.BodyHair to {
+            Biceps: "None",
+            Forearms: "Average",
+            Calves: "Short",
+            Chest: "Average",
+            Stomach: "Short",
+            Thighs: "None",
+        }>>
+    <<set $DebugViewer.Undies to {
+            Name: "White Briefs",
+            Type: "Briefs",
+            Color: "White",
+            Avatar: "Images/Avatar/Adults/Muscular/Clothes/Briefs/White Briefs.png",
+        }
+    >>
+    <<set $DebugViewer.Socks to {
+            Name: "Black Crew Socks",
+            Type: "Micro Crew Socks",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Muscular/Clothes/Micro Crew Socks/Black Micro Crew Socks.png",
+        }
+    >>
+    <<set $DebugViewer.Shoes to {
+            Name: "Black Oxfords",
+            Type: "Oxfords",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Muscular/Clothes/Oxfords/Black Oxfords.png",
+        }
+    >>
+    <<set $DebugViewer.Bottoms to {
+            Name: "Black Slacks",
+            Type: "Slacks",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Temp Missing Sprite Fixes/Randolph_Bottoms.png",
+        }
+    >>
+    <<set $DebugViewer.Top to {
+            Name: "White Dress Shirt",
+            Type: "Dress Shirt",
+            Tags: ["None"],
+            Color: "White",
+            Avatar: "Images/Avatar/Adults/Temp Missing Sprite Fixes/Randolph_Top.png",
+        }
+    >>
+    <<set $DebugViewer.Outer to $None>>
+    <<replace"#AvatarViewer">>
+        <<include"Debug Adult Sprite Viewer Div">>
+    <</replace>>
+<</link>>
+ | 
+<<link"De Leon">>
+    <<set $DebugViewer.BodyType to "Average">>
+    <<set $DebugViewer.SkinColor to "Honey">>
+    <<set $DebugViewer.EyeColor to "Brown">>
+    <<set $DebugViewer.Nose to "Downturned">>
+    <<set $DebugViewer.HairColor to "Dark Brown">>
+    <<set $DebugViewer.Hair to "Bun">>
+    <<set $DebugViewer.PubicHair to "Short">>
+    <<set $DebugViewer.HappyTrail to 0>>
+    <<set $DebugViewer.PenisSize to "Average">>
+    <<set $DebugViewer.Balls to "Large">>
+    <<set $DebugViewer.Penis to "Girthy">>
+    <<set $DebugViewer.FacialHair to "None">>
+    <<set $DebugViewer.BodyHair to {
+            Biceps: "None",
+            Forearms: "Short",
+            Calves: "None",
+            Chest: "Average",
+            Stomach: "None",
+            Thighs: "None",
+        }>>
+    <<set $DebugViewer.Undies to {
+            Name: "Red Boxer Briefs",
+            Type: "Boxer Briefs",
+            Color: "Red",
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Boxer Briefs/Red Boxer Briefs.png",
+        }
+    >>
+    <<set $DebugViewer.Bottoms to {
+            Name: "Black Slacks",
+            Type: "Slacks",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Temp Missing Sprite Fixes/DeLeon_Suit.png",
+        }
+    >>
+
+    <<replace"#AvatarViewer">>
+        <<include"Debug Adult Sprite Viewer Div">>
+    <</replace>>
+<</link>>
+ | 
+<<link"Julien">>
+    <<set $DebugViewer.BodyType to "Slender">>
+    <<set $DebugViewer.SkinColor to "Beige">>
+    <<set $DebugViewer.EyeColor to "Green">>
+    <<set $DebugViewer.Nose to "Downturned">>
+    <<set $DebugViewer.HairColor to "Blonde">>
+    <<set $DebugViewer.Hair to "Long Curly">>
+    <<set $DebugViewer.PubicHair to "Wispy">>
+    <<set $DebugViewer.HappyTrail to 0>>
+    <<set $DebugViewer.PenisSize to "Gigantic">>
+    <<set $DebugViewer.Balls to "Gigantic">>
+    <<set $DebugViewer.Penis to "Slim">>
+    <<set $DebugViewer.FacialHair to "None">>
+    <<set $DebugViewer.BodyHair to {
+            Biceps: "None",
+            Forearms: "Short",
+            Calves: "None",
+            Chest: "None",
+            Stomach: "None",
+            Thighs: "None",
+        }>>
+
+    <<set $DebugViewer.Face to {
+            Name: "White Square Glasses",
+            Type: "Square Glasses",
+            Color: "White",
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Square Glasses/White Square Glasses.png",
+        }
+    >>
+    <<set $DebugViewer.Undies to {
+            Name: "Purple Briefs",
+            Type: "Briefs",
+            Color: "Purple",
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Briefs/Purple Briefs.png",
+        }
+    >>
+    <<set $DebugViewer.Bottoms to {
+            Name: "Black Slacks",
+            Type: "Slacks",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Temp Missing Sprite Fixes/Julien_Outfit.png",
+        }
+    >>
+
+    <<replace"#AvatarViewer">>
+        <<include"Debug Adult Sprite Viewer Div">>
+    <</replace>>
+<</link>>
+ | 
+<<link"Chang">>
+    <<set $DebugViewer.BodyType to "Slender">>
+    <<set $DebugViewer.SkinColor to "Beige">>
+    <<set $DebugViewer.EyeColor to "Black">>
+    <<set $DebugViewer.Nose to "Downturned">>
+    <<set $DebugViewer.HairColor to "Dark Brown">>
+    <<set $DebugViewer.Hair to "Short Loose">>
+    <<set $DebugViewer.PubicHair to "Wispy">>
+    <<set $DebugViewer.HappyTrail to 0>>
+    <<set $DebugViewer.PenisStyle to "Cut">>
+    <<set $DebugViewer.PenisSize to "Tiny">>
+    <<set $DebugViewer.Balls to "Small">>
+    <<set $DebugViewer.Penis to "Slim">>
+    <<set $DebugViewer.FacialHair to "None">>
+    <<set $DebugViewer.BodyHair to {
+            Biceps: "None",
+            Forearms: "None",
+            Calves: "None",
+            Chest: "None",
+            Stomach: "None",
+            Thighs: "None",
+        }>>
+    <<set $DebugViewer.Undies to {
+            Name: "Blue Boxers",
+            Type: "Boxers",
+            Color: "Blue",
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Boxers/Subdued Blue Boxers.png",
+        }
+    >>
+    <<set $DebugViewer.Face to {
+            Name: "Subdued Blue Rectangle Glasses",
+            Type: "Rectangle Glasses",
+            Color: "Subdued Blue",
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Rectangle Glasses/Subdued Blue Rectangle Glasses.png",
+        }
+    >>
+    <<set $DebugViewer.Socks to {
+            Name: "White Crew Socks",
+            Type: "Micro Crew Socks",
+            Color: "White",
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Micro Crew Socks/White Micro Crew Socks.png",
+        }
+    >>
+    <<set $DebugViewer.Shoes to {
+            Name: "Black Slip Ons",
+            Type: "Slip Ons",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Slip Ons/Black Slip Ons.png",
+        }
+    >>
+    <<set $DebugViewer.Bottoms to {
+            Name: "Subdued Brown Slacks",
+            Type: "Slacks",
+            Color: "Subdued Brown",
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Slacks/Subdued Brown Slacks.png",
+        }
+    >>
+    <<set $ADTopTuck to 0>>
+    <<set $DebugViewer.Top to {
+            Name: "Subdued Blue Polo Shirt",
+            Type: "Polo Shirt",
+            Color: "Subdued Blue",
+            Tags: ["None"],
+            Avatar: "Images/Avatar/Adults/Slender/Clothes/Polo Shirt/Subdued Blue Polo Shirt.png",
+            AvatarSleeves: "None",
+            AvatarSleevesHide: "None",
+        }
+    >>
+
+    <<replace"#AvatarViewer">>
+        <<include"Debug Adult Sprite Viewer Div">>
+    <</replace>>
+<</link>>
+ | 
+<<link"Hart">>
+    <<set $DebugViewer.BodyType to "Average">>
+    <<set $DebugViewer.SkinColor to "Beige">>
+    <<set $DebugViewer.EyeColor to "Gray">>
+    <<set $DebugViewer.Nose to "Downturned">>
+    <<set $DebugViewer.HairColor to "Brown">>
+    <<set $DebugViewer.Hair to "Long Messy">>
+    <<set $DebugViewer.PubicHair to "Wispy">>
+    <<set $DebugViewer.HappyTrail to 0>>
+    <<set $DebugViewer.PenisSize to "Average">>
+    <<set $DebugViewer.Balls to "Average">>
+    <<set $DebugViewer.Penis to "Slim">>
+    <<set $DebugViewer.FacialHair to "None">>
+    <<set $DebugViewer.Eyes to "Narrow">>
+    <<set $DebugViewer.BodyHair to {
+            Biceps: "None",
+            Forearms: "Short",
+            Calves: "None",
+            Chest: "None",
+            Stomach: "None",
+            Thighs: "None",
+        }>>
+    <<set $DebugViewer.Undies to {
+            Name: "Green Boxer Briefs",
+            Type: "Boxer Briefs",
+            Color: "Green",
+            Avatar: "Images/Avatar/Adults/Average/Clothes/Boxer Briefs/Forest Green Boxer Briefs.png",
+        }
+    >>
+    <<set $DebugViewer.Bottoms to {
+            Name: "Black Slacks",
+            Type: "Slacks",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Temp Missing Sprite Fixes/Hart_Outfit.png",
+        }
+    >>
+
+    <<replace"#AvatarViewer">>
+        <<include"Debug Adult Sprite Viewer Div">>
+    <</replace>>
+
+<</link>>
+ | 
+<<link"Kohler">>
+    <<set $DebugViewer.BodyType to "Fat">>
+    <<set $DebugViewer.SkinColor to "Beige">>
+    <<set $DebugViewer.EyeColor to "Brown">>
+    <<set $DebugViewer.Nose to "Big">>
+    <<set $DebugViewer.HairColor to "Black">>
+    <<set $DebugViewer.Hair to "Short Unkempt">>
+    <<set $DebugViewer.PubicHair to "Bushy">>
+    <<set $DebugViewer.HappyTrail to 1>>
+    <<set $DebugViewer.PenisSize to "Average">>
+    <<set $DebugViewer.Balls to "Gigantic">>
+    <<set $DebugViewer.Penis to "Girthy">>
+    <<set $DebugViewer.FacialHair to "Short Beard">>
+    <<set $DebugViewer.Eyes to "Narrow">>
+    <<set $DebugViewer.BodyHair to {
+            Biceps: "Thick",
+            Forearms: "Thick",
+            Calves: "Thick",
+            Chest: "Thick",
+            Stomach: "Thick",
+            Thighs: "Thick",
+        }>>
+    <<set $DebugViewer.Scars to {
+            Cheek: 1,
+            Chin: 0,
+            Ear: 0,
+            Eye: 1,
+            Eyebrows: 1,
+            Head: 0,
+            Jaw: 0,
+            Lip: 0,
+            Nose: 0,
+            Temple: 0,
+        }>>
+    <<set $DebugViewer.Undies to {
+            Name: "White Briefs",
+            Type: "Briefs",
+            Color: "White",
+            Avatar: "Images/Avatar/Adults/Fat/Clothes/Briefs/White Briefs.png",
+        }
+    >>
+    <<set $DebugViewer.Bottoms to {
+            Name: "Black Slacks",
+            Type: "Slacks",
+            Color: "Black",
+            Avatar: "Images/Avatar/Adults/Temp Missing Sprite Fixes/Kohler_Outfit.png",
+        }
+    >>
+
+    <<replace"#AvatarViewer">>
+        <<include"Debug Adult Sprite Viewer Div">>
+    <</replace>>
+
+<</link>>
+
+:: Debug Adult Sprite Viewer Genitals [nobr]
+
+<strong>Balls:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _balls.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.Balls == _balls[_i]>>
+            <span style="color:Green">[_balls[_i]]</span>
+        <<else>>
+            <<link _balls[_i]>>
+                <<set $DebugViewer.Balls to _balls[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 12>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Penis Style:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _penisstyle.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.PenisStyle == _penisstyle[_i]>>
+            <span style="color:Green">[_penisstyle[_i]]</span>
+        <<else>>
+            <<link _penisstyle[_i]>>
+                <<set $DebugViewer.PenisStyle to _penisstyle[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 12>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Penis Size:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _penissize.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.PenisSize == _penissize[_i]>>
+            <span style="color:Green">[_penissize[_i]]</span>
+        <<else>>
+            <<link _penissize[_i]>>
+                <<set $DebugViewer.PenisSize to _penissize[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 12>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Penis Shape:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _penis.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $DebugViewer.Penis == _penis[_i]>>
+            <span style="color:Green">[_penis[_i]]</span>
+        <<else>>
+            <<link _penis[_i]>>
+                <<set $DebugViewer.Penis to _penis[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug Adult Sprite Viewer Div">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 12>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>

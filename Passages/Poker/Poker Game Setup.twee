@@ -1,0 +1,72 @@
+:: Poker Game Setup [nobr]
+
+Set up a Strip Poker Game:<br><br>
+
+<<include "Character Save Clothes">>
+<<run delete $Poker>>
+<<set $PokerPlayers to [{
+    id: "PC",
+    hand: [],
+    pokerTrait: "basic",
+    state: clone($PokerDefaultState),
+    clothes: {
+        Shoes: $PlayerShoes.Type !== "None" ? 1 : 0,
+        Socks: $PlayerSocks.Type !== "None" ? 1 : 0,
+        Outer: $PlayerOuter.Type !== "None" ? 1 : 0,
+        Top: $PlayerTop.Type !== "None" ? 1 : 0,
+        Bottoms: $PlayerBottoms.Type !== "None" ? 1 : 0,
+        Undies: $PlayerUndies.Type !== "None" ? 1 : 0,
+        Hands: 1,
+    },
+}]>>
+<<set $PossiblePlayers to [
+    'Noah',
+    'Gabe',
+    /*'Dad',*/
+    'Lucas',
+    'Ben',
+    'Michael',
+    'Carter',
+    'Jackson',
+    'Xavier',
+    'Thomas',
+    'Felix',
+]>>
+<<set $PossiblePokerTraits to [
+    'basic',
+    'cautious',
+    'wild',
+    'cheater',
+    'lucky',
+]>>
+<<set _successRates to [0,10,20,30,40,50,60,70,80,90,100]>>
+
+<div class="player_list">
+    <<include "Poker Player List">>
+</div>
+<br>
+
+<span class="bold">-- New Player --</span><br>
+<div id="add_player">
+    <<include "Poker Player Addition">>
+</div>
+<br>
+
+<span class="bold">-- Other Options --</span><br>
+Lucky/Cheater Success rate:
+<<listbox "$PokerCheaterLuckySuccessRate" autoselect>>
+    <<optionsfrom _successRates>>
+<</listbox>>%
+<br>
+Show NPC's hands?
+<<listbox "$PokerShowNPCHands" autoselect>>
+    <<option "No" false>>
+    <<option "Yes" true>>
+<</listbox>>
+<br><br>
+
+<div id="poker-continue-link">
+    <<include "Poker Game Setup Continue">>
+</div>
+
+[[Back|Debug Test Menu]]

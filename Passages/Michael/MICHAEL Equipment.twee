@@ -1,0 +1,105 @@
+:: MICHAEL Equipment [nobr]
+
+/* UNDERWEAR SELECTION */
+<<set $MichaelRandomUndies to random(1, 4)>>
+<<if $MichaelRandomUndies == 1>>
+	<<addClothing "Temp" "Undies" "Boxers" "Forest Green">>
+	<<set $MichaelUndies to _clothingtemp>>
+<<elseif $MichaelRandomUndies == 2>>
+	<<addClothing "Temp" "Undies" "Boxers" "Red">>
+	<<set $MichaelUndies to _clothingtemp>>
+<<elseif $MichaelRandomUndies == 3>>
+	<<addClothing "Temp" "Undies" "Boxers" "Black">>
+	<<set $MichaelUndies to _clothingtemp>>
+<<elseif $MichaelRandomUndies == 4>>
+	<<addClothing "Temp" "Undies" "Classmates" "Michael">>
+	<<set $MichaelUndies to _clothingtemp>>
+<</if>>
+	
+/* SHOES/SOCKS SELECTION */
+<<addClothing "Temp" "Shoes" "Classmates" "Michael">>
+<<set $MichaelShoes to _clothingtemp>>
+<<addClothing "Temp" "Socks" "Classmates" "Michael">>
+<<set $MichaelSocks to _clothingtemp>>
+		
+/* PAJAMA SELECTION */
+<<addClothing "Temp" "Bottoms" "Pajama Pants" "Black">>
+<<set $MichaelPJBottoms to _clothingtemp>>
+		
+/* EVERYDAY SELECTION */
+<<if $NPCClothingSet == "Rain">>
+	<<set $MichaelRandomTop to random(1, 2)>>
+	<<set $MichaelRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Classmates" "Michael">>
+	<<set $MichaelOuter to _clothingtemp>>
+	<<if $MichaelRandomTop == 1>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Black">>
+		<<set $MichaelTop to _clothingtemp>>
+	<<elseif $MichaelRandomTop == 2>>
+		<<addClothing "Temp" "Top" "T-Shirt" "White">>
+		<<set $MichaelTop to _clothingtemp>>
+	<</if>>
+	<<if $MichaelRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Ripped Jeans" "Denim">>
+		<<set $MichaelBottoms to _clothingtemp>>
+	<<elseif $MichaelRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Ripped Jeans" "Dark Denim">>
+		<<set $MichaelBottoms to _clothingtemp>>
+	<</if>>
+<<elseif $NPCClothingSet == "Temperate">>
+	<<set $MichaelRandomTop to random(1, 2)>>
+	<<set $MichaelRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Classmates" "Michael">>
+	<<set $MichaelOuter to _clothingtemp>>
+	<<if $MichaelRandomTop == 1>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Black">>
+		<<set $MichaelTop to _clothingtemp>>
+	<<elseif $MichaelRandomTop == 2>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Red">>
+		<<set $MichaelTop to _clothingtemp>>
+	<</if>>
+	<<if $MichaelRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Michael">>
+		<<set $MichaelBottoms to _clothingtemp>>
+	<<elseif $MichaelRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Ripped Jeans" "Dark Denim">>
+		<<set $MichaelBottoms to _clothingtemp>>
+	<</if>>
+<<elseif $NPCClothingSet == "Warm">>
+	<<set $MichaelRandomTop to random(1, 2)>>
+	<<set $MichaelRandomBottoms to random(1, 2)>>
+	<<set $MichaelOuter to $None>>
+	<<if $MichaelRandomTop == 1>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Black">>
+		<<set $MichaelTop to _clothingtemp>>
+	<<elseif $MichaelRandomTop == 2>>
+		<<addClothing "Temp" "Top" "T-Shirt" "White">>
+		<<set $MichaelTop to _clothingtemp>>
+	<</if>>
+	<<if $MichaelRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Michael">>
+		<<set $MichaelBottoms to _clothingtemp>>
+	<<elseif $MichaelRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Michael">>
+		<<set $MichaelBottoms to _clothingtemp>>
+	<</if>>
+<<else>>
+	<<set $MichaelRandomTop to random(1, 2)>>
+	<<set $MichaelRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Classmates" "Michael">>
+	<<set $MichaelOuter to _clothingtemp>>
+	<<if $MichaelRandomTop == 1>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Black">>
+		<<set $MichaelTop to _clothingtemp>>
+	<<elseif $MichaelRandomTop == 2>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Red">>
+		<<set $MichaelTop to _clothingtemp>>
+	<</if>>
+	<<if $MichaelRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Ripped Jeans" "Denim">>
+		<<set $MichaelBottoms to _clothingtemp>>
+	<<elseif $MichaelRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Ripped Jeans" "Dark Denim">>
+		<<set $MichaelBottoms to _clothingtemp>>
+	<</if>>
+<</if>>

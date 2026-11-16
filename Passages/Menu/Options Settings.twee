@@ -1,0 +1,177 @@
+:: Options Settings [nobr]
+
+<span style="color:Azure"><strong>--Difficulty--</strong></span><br>
+/* No need for Difficulty Need settings on Free Mode */
+<<if $GameMode != -1>>
+<strong>Need Decay:</strong><br>
+/* Disabling Easy on Ironboy Mode */
+<<if $GameMode != 1>>
+<label>
+	<<radiobutton "$NeedDifficulty" 1 autocheck>>
+	<span style="color:Lightgreen">Easy (50% Decay)</span>
+</label>
+<</if>>
+<label>
+	<<radiobutton "$NeedDifficulty" 2 autocheck>>
+	<span style="color:Yellow">Normal (100% Decay)</span>
+</label>
+<label>
+	<<radiobutton "$NeedDifficulty" 3 autocheck>>
+	<span style="color:Lightcoral">Hard (150% Decay)</span>
+</label>
+<br>
+<</if>>
+
+<strong>Skill Checks:</strong><br>
+/* Disabling Easy on Ironboy Mode */
+<<if $GameMode != 1>>
+<label>
+	<<radiobutton "$SkillDifficulty" 1 autocheck>>
+	<span style="color:Lightgreen">Easy (50% Easier)</span>
+</label>
+<</if>>
+<label>
+	<<radiobutton "$SkillDifficulty" 2 autocheck>>
+	<span style="color:Yellow">Normal (Default)</span>
+</label>
+<label>
+	<<radiobutton "$SkillDifficulty" 3 autocheck>>
+	<span style="color:Lightcoral">Hard (50% Harder)</span>
+</label>
+<br>
+<br>
+
+
+<span style="color:Azure"><strong>--Settings--</strong></span><br>
+
+<strong>Map Text Links:</strong>
+<label>
+	<<radiobutton "$LinkTravel" 1 autocheck>>
+	On
+	</label>
+<label>
+	<<radiobutton "$LinkTravel" 0 autocheck>>
+	Off
+</label>
+<br>
+
+<strong>Display Need Value Numbers:</strong>
+<label>
+	<<radiobutton "$NeedNumbers" 1 autocheck>>
+	On
+</label>
+<label>
+	<<radiobutton "$NeedNumbers" 0 autocheck>>
+	Off
+</label>
+<br>
+
+<strong>Enable Quest Hints:</strong> 
+<label>
+	<<radiobutton "$QuestHints" 1 autocheck>>
+	On
+</label>
+<label>
+	<<radiobutton "$QuestHints" 0 autocheck>>
+	Off
+</label>
+<br>
+
+/* Disabling Cheats if in Ironboy Mode */
+<<if $GameMode != 1>>
+<<if $CheatsMenu == 0>>
+<strong>Enable Cheats Menu:</strong> 
+<label>
+	<<radiobutton "$CheatsMenu" 1 autocheck>>
+	On
+</label>
+<label>
+	<<radiobutton "$CheatsMenu" 0 autocheck>>
+	Off
+</label>
+<br>
+<span style="color:lightcoral">[Once cheats are turned on, they can not be turned off and you will be unable to earn Achievements.]</span><br>
+<<else>>
+<span style="color:lightcoral">Cheats are turned on for this save.</span><br>
+<</if>>
+<br>
+<</if>>
+
+<span style="color:Azure"><strong>--NPC Sprites--</strong></span><br>
+<span style="color:Gray">[Settings do not affect Player or Family Sprites.]</span><br>
+<strong>Display Classmate NPC Muscles on Sprite:</strong><br>
+<label>
+	<<radiobutton "$ADMuscleToggle" 1 autocheck>>
+	On
+</label>
+<label>
+	<<radiobutton "$ADMuscleToggle" 0 autocheck>>
+	Off
+</label>
+<br>
+
+<strong>Display Classmate NPC Pubic Hair on Sprite:</strong><br>
+<label>
+	<<radiobutton "$ADPubicHairToggle" 1 autocheck>>
+	On
+</label>
+<label>
+	<<radiobutton "$ADPubicHairToggle" 0 autocheck>>
+	Off
+</label>
+<br>
+
+<strong>Global Penis Cut/Uncut Toggle:</strong><br>
+<label>
+	<<radiobutton "$AD.CutToggle" 1 autocheck>>
+	All Cut
+</label>
+<label>
+	<<radiobutton "$AD.CutToggle" 0 autocheck>>
+	Default <strong>[Mixed]</strong>
+</label>
+<label>
+	<<radiobutton "$AD.CutToggle" -1 autocheck>>
+	All Uncut
+</label>
+<br>
+<br>
+<span style="color:Azure"><strong>--Zoom Sprites--</strong></span><br>
+<strong>Display Player's Penis/Butt Zooms During Certain Scenes:</strong><br>
+<label>
+	<<radiobutton "$ZoomsPlayer" 1 autocheck>>
+	On
+</label>
+<label>
+	<<radiobutton "$ZoomsPlayer" 0 autocheck>>
+	Off
+</label>
+<br>
+<strong>Display NPC's Penis/Butt Zooms During Certain Scenes:</strong><br>
+<label>
+	<<radiobutton "$ZoomsNPC" 1 autocheck>>
+	On
+</label>
+<label>
+	<<radiobutton "$ZoomsNPC" 0 autocheck>>
+	Off
+</label>
+<br>
+<strong>Display Spank Marks & Reddness on Butts:</strong><br>
+<label>
+	<<radiobutton "$ToggleSpankMarks" 1 autocheck>>
+	On
+</label>
+<label>
+	<<radiobutton "$ToggleSpankMarks" 0 autocheck>>
+	Off
+</label>
+
+<br><br>
+<<if $BusIntroduction == 1>> /* So it doesn't show in the setup of new game */
+	<<link "Apply">>
+		<<set _passage to passage()>>
+		<<goto _passage>>
+		<<run Dialog.close()>>
+	<</link>>
+<</if>>

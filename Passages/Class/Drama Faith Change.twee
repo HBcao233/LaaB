@@ -1,0 +1,112 @@
+:: Drama Faith Change [nobr]
+
+/* PLAYER CHANGE */
+<<if $PlayerDramaFaithChange == "Increase">>
+	<<set $DramaFaithPlayer += 10>>
+	<span style="color:Green">+Mr. Julien's Faith in you has increased!</span>
+	<br>
+	
+<<elseif $PlayerDramaFaithChange == "Decrease">>
+	<<set $DramaFaithPlayer -= 10>>
+	<span style="color:Red">-Mr. Julien's Faith in you has decreased!</span>
+	<br>
+
+<<elseif $PlayerDramaFaithChange == "None">>
+
+<</if>>
+
+/* LUCAS CHANGE */
+<<if $LucasDramaFaithChange == "Increase">>
+	<<set $DramaFaithLucas += 10>>
+	<span style="color:Green">+Mr. Julien's Faith in Lucas has increased!</span>
+	<br>
+	
+<<elseif $LucasDramaFaithChange == "Decrease">>
+	<<set $DramaFaithLucas -= 10>>
+	<span style="color:Red">-Mr. Julien's Faith in Lucas has decreased!</span>
+	<br>
+
+<<elseif $LucasDramaFaithChange == "None">>
+
+<</if>>
+
+/* CARTER CHANGE */
+<<if $CarterDramaFaithChange == "Increase">>
+	<<set $DramaFaithCarter += 10>>
+	<span style="color:Green">+Mr. Julien's Faith in Carter has increased!</span>
+	<br>
+	
+<<elseif $CarterDramaFaithChange == "Decrease">>
+	<<set $DramaFaithCarter -= 10>>
+	<span style="color:Red">-Mr. Julien's Faith in Carter has decreased!</span>
+	<br>
+
+<<elseif $CarterDramaFaithChange == "None">>
+
+<</if>>
+
+/* CHANGING ROLE */
+
+/* PLAYER ROLES */
+<<if $DramaFaithPlayer > 90>>
+	<<set $PlayerDramaRole to "Romeo">>
+<<elseif $DramaFaithPlayer > 70>>
+	<<set $PlayerDramaRole to "Mercutio">>
+<<elseif $DramaFaithPlayer > 40>>
+	<<set $PlayerDramaRole to "Lord Capulet">>
+<<elseif $DramaFaithPlayer > 20>>
+	<<set $PlayerDramaRole to "Night Guard">>
+<<else>>
+	<<set $PlayerDramaRole to "House Capulet Servant">>
+<</if>>
+
+/* LUCAS ROLES */
+<<if $DramaFaithLucas > 90 and $DramaFaithLucas >= $DramaFaithCarter>>
+	<<set $LucasDramaRole to "Julius">>
+<<elseif $DramaFaithLucas > 90>>
+	<<set $LucasDramaRole to "Friar Laurence">>
+<<elseif $DramaFaithLucas > 70>>
+	<<set $LucasDramaRole to "The Nurse">>
+<<elseif $DramaFaithLucas > 40>>
+	<<set $LucasDramaRole to "Count Paris">>
+<<elseif $DramaFaithLucas > 20>>
+	<<set $LucasDramaRole to "Friar John">>
+<<else>>
+	<<set $LucasDramaRole to "Chorus Member">>
+<</if>>
+
+/* CARTER ROLES */
+<<if $DramaFaithCarter > 90 and $DramaFaithPlayer < 90>>
+	<<set $CarterDramaRole to "Romeo">>
+<<elseif $DramaFaithCarter > 90 and $DramaFaithCarter > $DramaFaithLucas>>
+	<<set $CarterDramaRole to "Julius">>
+<<elseif $DramaFaithCarter > 90>>
+	<<set $CarterDramaRole to "Friar Laurence">>
+<<elseif $DramaFaithCarter > 70>>
+	<<set $CarterDramaRole to "Tybalt">>
+<<elseif $DramaFaithCarter > 40>>
+	<<set $CarterDramaRole to "Prince Escalus">>
+<<elseif $DramaFaithCarter > 20>>
+	<<set $CarterDramaRole to "Apothecary">>
+<<else>>
+	<<set $CarterDramaRole to "Citizen of Verona">>
+<</if>>
+
+/* MAX MIN */
+<<if $DramaFaithPlayer > 100>>
+	<<set $DramaFaithPlayer to 100>>
+<<elseif $DramaFaithPlayer < 0>>
+	<<set $DramaFaithPlayer to 0>>
+<</if>>
+
+<<if $DramaFaithLucas > 100>>
+	<<set $DramaFaithLucas to 100>>
+<<elseif $DramaFaithLucas < 0>>
+	<<set $DramaFaithLucas to 0>>
+<</if>>
+
+<<if $DramaFaithCarter > 100>>
+	<<set $DramaFaithCarter to 100>>
+<<elseif $DramaFaithCarter < 0>>
+	<<set $DramaFaithCarter to 0>>
+<</if>>

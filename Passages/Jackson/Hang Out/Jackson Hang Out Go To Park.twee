@@ -1,0 +1,39 @@
+:: Jackson Hang Out Go To Park [nobr]
+
+/* Intro */
+<span style="Color: LightGreen">You ask <span style="color:DarkTurquoise">Jackson</span> if he would like to go to the park and he instantly lights up.</span> <span style="Color: LightSteelBlue">“Oh, yeah! Let’s do that! The trees at the park are WAY bigger than the ones at school. Though some of the trees in the forest are bigger. But the ground is also softer so if you fall, it doesn’t hurt as much. Oh! Maybe we can feed the ducks? I didn’t bring any bread though. Do you think we can buy bread on the way? Actually, we should play tag or-!”</span> <span style="Color: Yellow">Mid ramble, <span style="color:DarkTurquoise">Jackson</span> suddenly grabs you by the arm and begins to drag you towards the park at top speed. You can barely even keep up with him!</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Jackson",
+		State: {
+            Outfit: $HangOutClothes,
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Smirk",
+            Eyes: "Tired",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="choice">
+	<<link "Convince him to walk<br>">>
+    <<replace"#choice">>
+        You dig your heels in and manage to come to a stop, <span style="color:DarkTurquoise">Jackson</span> trying to continue pulling you for a moment before coming to a stop. <span style="Color: LightSteelBlue">“What’s wrong? Did you change your mind?”</span> You explain that you still want to go to the park, but would rather walk there. Enjoy the trip, save your energy, that sort of thing. <span style="Color: LightSteelBlue">“Oh…”</span> <span style="color:DarkTurquoise">Jackson</span> replies, sounding a bit confused, before nodding. <span style="Color: LightSteelBlue">“Okay!”</span> <span style="color:DarkTurquoise">Jackson</span> walks alongside you as you move to the park. <span style="Color: LightGreen">He keeps going a bit too fast and has to slow down every couple feet. He eventually starts bouncing about as he walks or humming to himself. You get the feeling that going slow is a strange thing for him.</span> <br>
+        <br>
+        [[Continue|Jackson Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "Run along with him<br>">>
+    <<replace"#choice">>
+        Laughing at his eagerness, you pick up speed and take off running alongside <span style="color:DarkTurquoise">Jackson</span>. Without a word exchanged between you two, the journey quickly becomes a race as you go as fast as you can to beat <span style="color:DarkTurquoise">Jackson</span> to the park. You’re not really sure who wins in the end, as you both trip at the exact moment you reach the park and tumble to the ground. <span style="Color: LightGreen">Thankfully, the grass breaks your fall and you both find yourselves laughing as you stand up, deciding to call it a draw.</span> <br>
+        <br>
+        [[Continue|Jackson Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

@@ -1,0 +1,228 @@
+:: Shower Slip & Fall [nobr]
+
+/* Intro */
+/* Checking if player is already considered Nude */
+<<if $PlayerBottoms.Type != "None" or $PlayerTop.Type != "None" or $Player.Undies != "None">>
+    You walk over to the shower and turn on the water, ensuring the knobs are in that perfect spot that isn’t too hot nor too cold. You then ensure the door is nice and shut, begroaning the lack of a lock, and begin to strip down. One by one, you toss your clothes into the hamper before reaching in and checking the water. Perfect! <br>
+    <br>
+<<else>>
+    You walk over to the shower and turn on the water, ensuring the knobs are in that perfect spot that isn’t too hot nor too cold. You then ensure the door is nice and shut, begroaning the lack of a lock, and turn towards the mirror. You are already butt naked, seeing yourself nude in the mirror not at all strange since you see yourself naked in here just about every day. As you wait for the water to reach optimal temperature, you check your teeth in the mirror and mess with your hair before walking into the shower. <br>
+    <br>
+<</if>>
+
+/* Default Post-Intro Avatar */
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+Your shower goes by mostly uneventful, outside of the usual soap in your eye or the water becoming suddenly too hot or too cold. But this is all business as usual until you turn off the water and begin to step out. As you place your foot down, aiming for the bathmat <span style="color:yellow">but instead find the floor due to either bad luck or just not paying attention.</span> Normally, this wouldn’t be a major deal… <span style="color:lightcoral">if the floor wasn’t wet and you weren’t putting all of your weight on one foot.</span> <br>
+<br>
+<span style="color:red">SLIP!</span> <br>
+<br>
+<<set _random to random(1, 3)>>
+<<if _random == 1>>
+    <span style="color:lightcoral">Your foot slips across the floor and you let out a scream as you are unable to catch yourself and, to avoid a painful split, find your body falling forward as you faceplant onto the floor with your nude body splayed out like some lewd crime scene. You groan as you sit up, rubbing your bruised forehead as you curse the puddle, bathmat, floor, and everything else in the universe that played a part in that unfortunate display.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    Well, at least no one saw that. <br>
+    <<addMoodlet "Pained" 3>>
+    <<needChange "Hygiene" 100>>
+    <<addClothing "PC" "Bottoms" "Towel" "White">>
+    <<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Bathroom]]
+<<elseif _random == 2>>
+    <span style="color:lightcoral">Your foot slips across the floor and you let out a scream as you just barely manage to grip onto the shower curtain to stop your descent, your legs spread apart nearly to the point of straining.</span> Had anyone been watching, <span style="color:Pink">they would see the humorous sight of your legs spread apart with your boyish bits dangling vulnerable and clear between them; Your balls almost dropping low enough to brush against the edge of the bath.</span> <span style="color:lightcoral">Now that would have been a painful fall.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You sigh in relief as you are able to adjust your body to fall to your knees. You stand up, chuckling to yourself as you wipe the puddle that nearly caused your accident up and begin to dry off. Good thing nobody saw that. <br>
+    <<needChange "Hygiene" 100>>
+    <<addClothing "PC" "Bottoms" "Towel" "White">>
+    <<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Bathroom]]
+<<else>>
+    <span style="color:lightcoral">Your foot slips across the floor and you let out a scream as you just barely manage to grip onto the shower curtain to stop your descent, your legs spread apart nearly to the point of straining.</span> <span style="color:Pink">Had anyone been watching, they would see the humorous sight of your legs spread apart with your boyish bits dangling vulnerable and clear between them. But that’s not all. You blink twice, frozen in place as you feel something extremely awkward. Something thin and plastic pressed up against your butthole. <br>
+    <br>
+    You glance over your shoulder and see that you are hovering just above the top of your shampoo bottle with his dangerously close, literally touching, your more vulnerable spot.</span> <span style="color:lightcoral">The realization that had you not been able to catch yourself and even done so a moment later that the thin and tall lid of said shampoo bottle would have likely ended up impaling you from behind causes you to blush.</span> <br>
+
+    <<if $Player.Kinks.Anal == 1>>
+        <<set _hard to 1>>
+    <<else>>
+        <<set _hard to 0>>
+    <</if>>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Blush: 3,
+                Hard: _hard,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <<if $Player.Kinks.Anal == 1>>
+        <span style="color:Pink">Then again, even the feeling of it pressed up against your rear entrance causes tingles to travel up your spine. You briefly imagine what it would have felt like to have something shoved up there so suddenly. You blush, feeling yourself becoming hard as you quickly straighten up and grab your towel.</span> <br>
+        <br>
+    <</if>>
+    But for better or worse, you managed to avoid such a fate. Quickly drying off, you wrap the towel around your waist and cautiously move the shampoo a bit to the right, ensuring it is fully out of the way. <span style="color:Pink">You can’t help but stare at the bottle a moment blushing before turning around quickly.</span> <br>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Anal"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+    <<needChange "Hygiene" 100>>
+    <<addClothing "PC" "Bottoms" "Towel" "White">>
+    <<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Bathroom]]
+<</if>>
+
+:: Bath Slip & Fall [nobr]
+
+/* Intro */
+/* Checking if player is already considered Nude */
+<<if $PlayerBottoms.Type != "None" or $PlayerTop.Type != "None" or $Player.Undies != "None">>
+    You walk over to the bath and turn on the water to begin filling the tub, ensuring that the knobs are in the perfect spot that isn’t too hot nor too cold while keeping in mind that the water will cool slightly as it sits. The mastery of the perfect bath is a skill you have worked on for many years now. With the water filling, you quickly strip down and toss your clothes in the hamper. It is time for a nice soak! <br>
+    <br>
+<<else>>
+    You walk over to the bath and turn on the water to begin filling the tub, ensuring that the knobs are in the perfect spot that isn’t too hot nor too cold while keeping in mind that the water will cool slightly as it sits. The mastery of the perfect bath is a skill you have worked on for many years now. Already naked, you await the water to reach optimal levels. Then, it is time for a nice soak! <br>
+    <br>
+<</if>>
+
+/* Default Post-Intro Avatar */
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+Your bath goes by mostly uneventful, outside of the usual soap in your eye or the water slowly becoming too cold as it sits. But this is all business as usual until you drain the tub and begin to step out. As you place your foot down, aiming for the bathmat <span style="color:yellow">but instead find the floor due to either bad luck or just not paying attention.</span> Normally, this wouldn’t be a major deal… <span style="color:lightcoral">if the floor wasn’t wet and you weren’t putting all of your weight on one foot.</span> <br>
+<br>
+<span style="color:red">SLIP!</span> <br>
+<br>
+<<set _random to random(1, 3)>>
+<<if _random == 1>>
+    <span style="color:lightcoral">Your foot slips across the floor and you let out a scream as you are unable to catch yourself and, to avoid a painful split, find your body falling forward as you faceplant onto the floor with your nude body splayed out like some lewd crime scene. You groan as you sit up, rubbing your bruised forehead as you curse the puddle, bathmat, floor, and everything else in the universe that played a part in that unfortunate display.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    Well, at least no one saw that. <br>
+    <<addMoodlet "Pained" 3>>
+    <<needChange "Hygiene" 100>>
+    <<addClothing "PC" "Bottoms" "Towel" "White">>
+    <<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Bathroom]]
+<<elseif _random == 2>>
+    <span style="color:lightcoral">Your foot slips across the floor and you let out a scream as you just barely manage to grip onto the shower curtain to stop your descent, your legs spread apart nearly to the point of straining.</span> Had anyone been watching, <span style="color:Pink">they would see the humorous sight of your legs spread apart with your boyish bits dangling vulnerable and clear between them; Your balls almost dropping low enough to brush against the edge of the bath.</span> <span style="color:lightcoral">Now that would have been a painful fall.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You sigh in relief as you are able to adjust your body to fall to your knees. You stand up, chuckling to yourself as you wipe the puddle that nearly caused your accident up and begin to dry off. Good thing nobody saw that. <br>
+    <<needChange "Hygiene" 100>>
+    <<addClothing "PC" "Bottoms" "Towel" "White">>
+    <<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Bathroom]]
+<<else>>
+    <span style="color:lightcoral">Your foot slips across the floor and you let out a scream as you just barely manage to grip onto the shower curtain to stop your descent, your legs spread apart nearly to the point of straining.</span> <span style="color:Pink">Had anyone been watching, they would see the humorous sight of your legs spread apart with your boyish bits dangling vulnerable and clear between them. But that’s not all. You blink twice, frozen in place as you feel something extremely awkward. Something thin and plastic pressed up against your butthole. <br>
+    <br>
+    You glance over your shoulder and see that you are hovering just above the top of your shampoo bottle with his dangerously close, literally touching, your more vulnerable spot.</span> <span style="color:lightcoral">The realization that had you not been able to catch yourself and even done so a moment later that the thin and tall lid of said shampoo bottle would have likely ended up impaling you from behind causes you to blush.</span> <br>
+
+    <<if $Player.Kinks.Anal == 1>>
+        <<set _hard to 1>>
+    <<else>>
+        <<set _hard to 0>>
+    <</if>>
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Blush: 3,
+                Hard: _hard,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <<if $Player.Kinks.Anal == 1>>
+        <span style="color:Pink">Then again, even the feeling of it pressed up against your rear entrance causes tingles to travel up your spine. You briefly imagine what it would have felt like to have something shoved up there so suddenly. You blush, feeling yourself becoming hard as you quickly straighten up and grab your towel.</span> <br>
+        <br>
+    <</if>>
+    But for better or worse, you managed to avoid such a fate. Quickly drying off, you wrap the towel around your waist and cautiously move the shampoo a bit to the right, ensuring it is fully out of the way. <span style="color:Pink">You can’t help but stare at the bottle a moment blushing before turning around quickly.</span> <br>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Anal"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+    <<needChange "Hygiene" 100>>
+    <<addClothing "PC" "Bottoms" "Towel" "White">>
+    <<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Bathroom]]
+<</if>>

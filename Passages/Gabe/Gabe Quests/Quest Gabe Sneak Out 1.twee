@@ -1,0 +1,135 @@
+:: Quest Gabe Sneak Out 1 [nobr]
+
+<<set $InActiveQuests.delete("Gabe: Sneak Out")>>
+<<set $CompletedQuests.push("Gabe: Sneak Out")>>
+
+<span style="color:lightcoral">Your peaceful sleep is interrupted by a loud squeaking sound.</span> Your eyes fly open into the silent dark of your room, frozen as you stare into the blackness. <span style="color:LightSteelBlue">“Squeeeeeek!”</span> <span style="color:lightcoral">Another loud sound echoes and it becomes clear what that sound is, a window opening. Only your eyes move, darting to the window near your bed, frozen with fear as a million possibilities fill your tired mind.</span> <br>
+<br>
+Then you hear another sound, one of a window closing. You realize that the sounds were not close enough to be your own window, they were distant. Working up the courage, you sit up and peek out your window. For a brief moment, your heart stops as you see a figure in your backyard tiptoeing to the far fence. But your fear turns to confusion as you realize, it was... <span style="color:DarkTurquoise">Gabe</span>? <br>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Outfit: "Everyday",
+		},
+	},
+]>>
+<<ad _ad>>
+
+He was fully dressed, well dressed even. Like he was going to some event? On the edge of the fence, peeking over, you saw two other figures about his same height. <span style="color:yellow">Was <span style="color:DarkTurquoise">Gabe</span> sneaking out?</span> <br>
+<br>
+As if he heard your thoughts, <span style="color:DarkTurquoise">Gabe</span> turns and locks eyes with you. He looks worried upon seeing you for a second, looking back briefly to his friends before turning back to you and moving his finger to his lips, making the <span style="color:LightSteelBlue">‘shoosh’</span> motion before giving you a wink and climbing over the fence. <span style="color:lightcoral">He WAS sneaking out!</span> <br>
+<br>
+You stare into the empty backyard as it dawns on you what he is doing. He was breaking curfew and sneaking out after bedtime! <span style="color:yellow">Considering he had to use his window, it was clear that <span style="color:DarkTurquoise">Your Father</span> didn't approve of this.</span> If he found out, <span style="color:DarkTurquoise">Gabe</span> would surely earn a grounding, at least. But if <span style="color:DarkTurquoise">Your Father</span> did find out, <span style="color:DarkTurquoise">Gabe</span> would know right away who told him. And if you didn’t snitch, <span style="color:DarkTurquoise">Gabe</span> would owe you one! <br>
+<br>
+<div id=choice>
+    /* Go back to sleep */
+	<<link "Go back to sleep<br>">>
+	<<replace"#choice">>
+You decide that this isn’t your problem, if <span style="color:DarkTurquoise">Gabe</span> got caught it would be from his own mistakes, you weren’t going to snitch on him. So you lay back down and return to your dream-filled world once again, completely forgetting about your elder brother’s escapades. <br>
+<br>
+You have no idea how long it’s been when you are awoken by something poking your cheeks. You open your eyes and let out a tiny scream as you see <span style="color:DarkTurquoise">Gabe</span> standing over you. He quickly covers your mouth, <span style="color:LightSteelBlue">“Calm down, <span style="color:DarkTurquoise">$GabeNickname</span>.”</span> He removes his hand and wipes it on your sheets. <span style="color:LightSteelBlue">“Man, why you gotta drool when you sleep?”</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Tired",
+			Mouth: "Smirk",
+			Outfit: "Everyday",
+			Hard: 1,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Tired",
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+You apologize and quickly wipe your mouth on your blanket before asking him what he’s doing here. <span style="color:LightSteelBlue">“Wanted to thank you for not ratting me out to the old man. Would have been the laughingstock of my friends if I missed this concert.”</span> You shrug, saying you didn’t really care what he did, and lay back down to return to sleep. <br>
+<br>
+<span style="color:LightSteelBlue">“Still, I appreciate it little man. I guess little brothers can be something else other than annoying.”</span> <span style="color:pink">He chuckles, ruffling your hair as you try to get comfortable again.</span> <span style="color:LightSteelBlue">“And to show my appreciation, I got you a little something!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Gabe</span> tosses a shirt on your face. Annoyed, yet amused, you pull the shirt off your face and examine it. It was a band shirt, you’re guessing from the show he saw.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Wear that around town, and everyone will know you have good tastes.”</span> <span style="color:pink">He winks before leaving and sneaking back to his room. You roll your eyes and smile before falling back asleep.</span> <br>
+	<<addClothing "AD" "Top" "Band Shirt" "Contest Bunnica">>
+	<<socialChange "Gabe" 25>>
+<br>
+
+<<link "Continue" _WakeUpType>>
+	<<set $Minutes to _SleepTime>>
+<</link>><br>
+
+    <</replace>>
+    <</link>>
+    /* Snitch */
+	<<link "Snitch<br>">>
+	<<replace"#choice">>
+<span style="color:lightcoral">But then again, <span style="color:DarkTurquoise">Gabe</span> would revel in the idea of getting you in trouble or blackmailing you to keep from snitching. No, you weren’t going to let him get away with this!</span> Getting up out of your bed and walking into the hallway, you knock twice on <span style="color:DarkTurquoise">Your Father</span>’s bedroom door. There are some groans and shuffling before <span style="color:DarkTurquoise">Your Father</span> opens the door, rubbing his eyes. <br>
+<br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$DadNickname</span>?”</span> He yawns, <span style="color:LightSteelBlue">“It’s the middle of the night, what are you doing up?”</span> A bit nervous, you explain what you saw and state you were worried about what <span style="color:DarkTurquoise">Gabe</span> was doing and if <span style="color:DarkTurquoise">Your Father</span> knew. <span style="color:lightcoral">His expression turns from confused to enraged. He stomps over and swings open <span style="color:DarkTurquoise">Gabe</span>’s door, ripping the covers off his bed to discover a pillow in his place.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Dad",
+		State: {
+			Brows: "Angry",
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Blush: 1,
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh, he is crazy if he thinks he is going to disobey me and go to that concert!”</span> He says, stomping back into his room and grabbing his phone. <span style="color:LightSteelBlue">“Go back to bed, <span style="color:DarkTurquoise">$Player.Name</span>. Now.”</span> Knowing better than to question <span style="color:DarkTurquoise">Your Father</span> when he is mad, you run back to your room, but leave your door cracked open to hear what’s being said. <br>
+<br>
+<span style="color:lightcoral"><span style="color:DarkTurquoise">Your Father</span> calls <span style="color:DarkTurquoise">Gabe</span> and yells, as quietly as he can as to not wake up <span style="color:DarkTurquoise">Noah</span>, to get his ass back here right now.</span> <span style="color:DarkTurquoise">Gabe</span> doesn’t argue and not 5 minutes later he comes in from the front door. He reads him the riot act, scolding and whisper-yelling as <span style="color:DarkTurquoise">Gabe</span> tries his best to defend his actions, though there is little he can do to get out of this one. <br>
+<br>
+<span style="color:LightSteelBlue">“You’re grounded young man!”</span> <span style="color:DarkTurquoise">Your Father</span> states, <span style="color:LightSteelBlue">“You’re lucky I don’t bend you over my knee and beat you with my belt!”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I was just going out with some friends!”</span> <span style="color:DarkTurquoise">Gabe</span> pleads, <span style="color:LightSteelBlue">“It’s not a big deal! I’m old enough to not have a curfew-!”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Maybe if you acted like an adult, I’d treat you like one!”</span> <span style="color:DarkTurquoise">Your Father</span> interrupts, <span style="color:LightSteelBlue">“Bed! Now! And if I even catch a whiff of your sneaking out again, I’ll spank you like the child you’re acting like!”</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Dad",
+		State: {
+			Brows: "Angry",
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Mad",
+			Cry: 1,
+			Blush: 1,
+			Mouth: "Sad",
+			Outfit: "Everyday",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:lightcoral">Gabe sighs loudly before stomping back to his room. As he passes by your door, he glares in and locks eyes with you, giving you a very angry look.</span> <span style="color:red">He knows you snitched on him and isn’t likely to forget anytime soon.</span> <br>
+	<<socialChange "Gabe" -25>>
+<br>
+
+<<link "Continue" _WakeUpType>>
+	<<set $Minutes to _SleepTime>>
+<</link>><br>
+
+    <</replace>>
+    <</link>>
+</div>

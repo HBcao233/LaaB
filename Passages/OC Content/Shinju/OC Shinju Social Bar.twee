@@ -1,0 +1,84 @@
+:: OC Shinju Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCShinjuSocialRank == -3>>
+	<<set $OCShinjuRelationship to "Hated">>
+	<span style="color:DarkRed">Shinju Hates you!</span>
+	<br>
+<<elseif $OCShinjuSocialRank == -2>>
+	<<set $OCShinjuRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Shinju are Enemies.</span>
+	<br>
+<<elseif $OCShinjuSocialRank == -1>>
+	<<set $OCShinjuRelationship to "Very Disliked">>
+	<span style="color:Red">Shinju really Dislikes you.</span>
+	<br>
+<<elseif $OCShinjuSocialRank == 0 and $OCShinjuSocial <= -50>>
+	<<set $OCShinjuRelationship to "Disliked">>
+	<span style="color:Red">Shinju Dislikes you. </span>
+	<br>
+<<elseif $OCShinjuSocialRank == 0 and $OCShinjuSocial < 50>>
+	<<set $OCShinjuRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Shinju are Acquaintances.</span>
+	<br>
+<<elseif $OCShinjuSocialRank == 0 and $OCShinjuSocial >= 50>>
+	<<set $OCShinjuRelationship to "Liked">>
+	<span style="color:LightGreen">Shinju Likes you.</span>
+	<br>
+<<elseif $OCShinjuSocialRank == 1>>
+	<<set $OCShinjuRelationship to "Friends">>
+	<span style="color:Green">You and Shinju are Friends.</span>
+	<br>
+<<elseif $OCShinjuSocialRank == 2>>
+	<<set $OCShinjuRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Shinju are Good Friends!</span>
+	<br>
+<<elseif $OCShinjuSocialRank == 3>>
+	<<set $OCShinjuRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Shinju are Close Friends!</span>
+	<br>
+<<elseif $OCShinjuSocialRank == 4>>
+	<<set $OCShinjuRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Shinju are Best Friends!</span>
+	<br>
+<<elseif $OCShinjuSocialRank == 5>>
+	<<set $OCShinjuRelationship to "Love">>
+	<span style="color:Pink">You and Shinju Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCShinjuSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCShinjuSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCShinjuSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCShinjuSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCShinjuSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCShinjuSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCShinjuSocial,
+			value: Math.abs($OCShinjuSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCShinjuSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCShinjuSocial > 120>>
+	<<set $OCShinjuSocial to 120>>
+<</if>>
+<<if $OCShinjuSocial < -120>>
+	<<set $OCShinjuSocial to -120>>
+<</if>>

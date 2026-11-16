@@ -1,0 +1,75 @@
+:: OC Birdy Intro [nobr]
+
+You are idly walking down the sidewalk in the city park, kicking a large pebble along with you as you just look around at the world around you. However, one accidentally angled kick sends the rock pittering to the side and lightly splashing into the pond near the walkway. As you stop, slightly upset to have lost your rock, you spot a curious sight. <br>
+<br>
+<span style="color:lightgreen">A boy, about your age, was kneeling over the side of the pond. He wore a bright yellow shirt and cute blue overalls.</span> You take a few steps forward and realize the boy is dipping his hands into the pond and pulling out small trinkets made of metal and plastic, gasping and muttering to himself over his newly found treasure. <br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Birdy">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+    <<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC BIRDY Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+You smirk, take a step closer and accidentally snap a small stick! The boy jumps in surprise, losing his balance, and begins to flail about and yell as he falls forward! <span style="color:pink">Thinking quickly, you rush forward and grab the back of his overalls, yanking them back to save the kid. As you tug on his overalls, you get a small glimpse of some light blue undies before you both tumble backward into the grass.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Oof, that was close!”</span> The boy let out a sigh of relief as he stood back up and dusted off his overalls. <span style="color:LightSteelBlue">“Thanks, my parents would have killed me if I came back home drenched.”</span> The boy gives you a big smile and offers you a hand up. You laugh, apologizing for startling him, and ask what he’s doing. <br>
+<br>
+<span style="color:LightSteelBlue">“Look!”</span> The boy pulls out a large collection of trinkets from his pockets and holds them out to you. <span style="color:LightSteelBlue">“Tourists drop all sorts of stuff in this pond, they don’t even notice!”</span> You examine the boy’s hoard, which was a collection of small plastic figures, pins, foreign coins, and other various things. <span style="color:pink">Despite most people seeing them as garbage, the boy smiled wide as he looked over his haul.</span> <br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Birdy">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+    <<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC BIRDY Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* SECOND LAYER */
+	<<include"Player Avatar Display Set">>
+	<<set $AD.Name to "Player">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: absolute; left: 125px; top: 0px">
+	<<include"Avatar Display">>
+</div>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">“Oh! I’m <span style="color:DarkTurquoise">Birdy</span>.”</span> He puts his treasure back in his pocket and holds out his hand, <span style="color:LightSteelBlue">“You know, like the animal. What’s your name?”</span> You shake his hand and introduce yourself. <span style="color:LightSteelBlue">“Oh, <span style="color:DarkTurquoise">$Player.Name</span>? You’re that new kid at Preston, right? I go there too, guess we must have never noticed each other before.”</span> You think you vaguely recall seeing him in one of your classes, but you can’t be sure. <br>
+<br>
+<span style="color:LightSteelBlue">“Well, thanks again for saving me. I should start heading home before it gets too late. Oh, but here! Have this as a thank you.”</span> <span style="color:DarkTurquoise">Birdy</span> reaches into his pocket and pulls out a shining silver coin. <span style="color:LightSteelBlue">“I found it in the pond. It’s a foreign coin, they are super fun to collect, but I already have this one, so I want you to have it. Thanks again, <span style="color:DarkTurquoise">$Player.Name</span>, goodbye!”</span> <br>
+<<set $CompletedQuests.push("Birdy: Introduction")>>
+<<set $InActiveQuests.delete("Birdy: Introduction")>>
+<<set $OCBirdySocial to 15>>
+<<set $OCBirdySocialRank to 0>>
+	<<addMoodlet "Stress" 0>>
+		<<needChange "Fun" 25>>
+		<<set $Minutes += 20>>
+		<br>
+		[[Continue|Park]] 

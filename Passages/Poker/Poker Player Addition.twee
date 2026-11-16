@@ -1,0 +1,74 @@
+:: Poker Player Addition [nobr]
+
+<<set $SelectablePlayers to $PossiblePlayers.filter(player => !$PokerPlayers.map(p => p.id).includes(player))>>
+
+<<if $SelectablePlayers.length > 0>>
+    <<set $NewPlayerID to $SelectablePlayers[0]>>
+    <<set $NewPokerTrait to "basic">>
+    <<set _pokerNewPlayerShoes to $PokerDefaultClothes.Shoes>>
+    <<set _pokerNewPlayerSocks to $PokerDefaultClothes.Socks>>
+    <<set _pokerNewPlayerOuter to $PokerDefaultClothes.Outer>>
+    <<set _pokerNewPlayerTop to $PokerDefaultClothes.Top>>
+    <<set _pokerNewPlayerBottoms to $PokerDefaultClothes.Bottoms>>
+    <<set _pokerNewPlayerUndies to $PokerDefaultClothes.Undies>>
+    <<set _pokerNewPlayerHands to $PokerDefaultClothes.Hands>>
+
+    Player: 
+    <<listbox "$NewPlayerID" autoselect>>
+        <<optionsfrom $SelectablePlayers>>
+    <</listbox>>
+    <br>
+    Poker Trait: 
+    <<listbox "$NewPokerTrait">>
+        <<optionsfrom $PossiblePokerTraits>>
+    <</listbox>>&nbsp;&nbsp;
+    <br>
+    Starting Clothes:
+    <div class="poker-starting-clothes">
+        <<for _clothe range Object.keys($PokerDefaultClothes)>>
+            <<capture _clothe>>
+                <<if $PokerDefaultClothes.hasOwnProperty(_clothe)>>
+                    <label>
+                        <<set _receiverName = `_pokerNewPlayer${_clothe}`>>
+                        <<checkbox _receiverName 0 1 autocheck>>
+                        <<=_clothe>>
+                    </label>
+                <</if>>
+            <</capture>>
+        <</for>>
+    </div>
+    <br>
+    <<link "[Add]">>
+        <<run $PokerPlayers.push({
+            id: $NewPlayerID,
+            hand: [],
+            pokerTrait: $NewPokerTrait,
+            state: clone($PokerDefaultState),
+            clothes: {
+                Shoes: _pokerNewPlayerShoes,
+                Socks: _pokerNewPlayerSocks,
+                Outer: _pokerNewPlayerOuter,
+                Top: _pokerNewPlayerTop,
+                Bottoms: _pokerNewPlayerBottoms,
+                Undies: _pokerNewPlayerUndies,
+                Hands: _pokerNewPlayerHands,
+            },
+        })>>
+        <<replace "#add_player">>
+            <<include "Poker Player Addition">>
+        <</replace>>
+        <<replace ".player_list">>
+            <<include "Poker Player List">>
+        <</replace>>
+        <<replace "#poker-continue-link">>
+            <<include "Poker Game Setup Continue">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+:: Poker Player Addition Style [stylesheet]
+
+.poker-starting-clothes > label {
+    margin-right: 10px;
+    cursor: pointer;
+}

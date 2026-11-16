@@ -1,0 +1,160 @@
+:: Park Playground Play [nobr]
+
+<<set _isItDayTime = ($Time.after(6) && $Time.before(20))>>
+
+<<if _isItDayTime>>
+	<<set $RandomEvent to random(1, 2)>>
+<<else>>
+	<<if $ScaryMovie == 1>>
+		<<set $RandomEvent to 1>>
+	<<else>>
+		<<set $RandomEvent to 1>>
+	<</if>>
+<</if>>
+
+<<if $Weather == "Rain" or $Weather == "Storm">>
+	<<set $RandomEvent to 1>>
+<</if>>
+
+<<if $RandomEvent == 1>>
+	The playground is much larger than your school’s, having to cater to more children. It is very fun to run around the more impressive jungle gym and go down the large slides. You enjoy yourself greatly!<br>
+	<<addMoodlet "Stress" 0>>
+	<<needChange "Fun" 25>>
+	<<set $Minutes += 20>>
+	<br>
+	[[Continue|Park]] 
+	
+<<elseif $RandomEvent == 2>>
+	<<set _Random to [
+		"City Park Play Tag",
+		"City Park Water Balloon",
+		"City Park Boy Crying",
+		"City Park Dino Chase",
+		"City Park Lucas Surrounded",
+		"City Park 3 Boys Compare",
+	]>>
+
+	/* Equipment-Based Events */
+	<<if $PlayerHead.Tags.includes("Fox Costume") or $PlayerWaist.Tags.includes("Fox Costume")>>
+		<<set _Random.push("City Park Fox Costume")>>
+	<</if>>
+
+	/* Michael Felix Events */
+	<<if $MichaelSocial > 50 or $MichaelSocialRank > 0>>
+		<<set _michael to true>>
+	<</if>>
+	<<if $FelixSocial > 50 or $FelixSocialRank > 0>>
+		<<set _felix to true>>
+	<</if>>
+	<<if _felix && _michael && $MichaelFelixSoccer != 1>>
+		<<set _Random.push("Michael & Felix Park Soccer Match")>>
+	<</if>>
+
+	/* Isaac Evets */
+	<<if $ToggleOCIsaac == 1 && $CompletedQuests.includes("Isaac: The Little Blueberry") && _isItDayTime>>
+		<<set _Random.push("OC Isaac Park Bench Nap")>>
+		<<set _Random.push("OC Isaac Baby Swing")>>
+		<<if $OCIsaacSocial >= 50>>
+			<<set _Random.push("OC Isaac Fondling")>>
+		<</if>>
+	<</if>>
+	<<if $ToggleOCIsaac == 1 && $CompletedQuests.includes("Isaac: Jacob")>>
+		<<set _Random.push("OC Isaac and Jacob Tube Nap")>>
+	<</if>>
+
+	/* Birdy Event */
+	<<if $ToggleOCBirdy == 1 && $InActiveQuests.includes("Birdy: Introduction") && _isItDayTime>>
+		<<set _Random.push("OC Birdy Intro")>> 
+	<</if>>
+
+	<<if $ToggleOCBirdy == 1 && $CompletedQuests.includes("Birdy: Introduction") && _isItDayTime>>
+		<<set _Random.push("OC Birdy Park Butterflies")>> 
+	<</if>>
+	
+	<<if $ToggleOCBirdy == 1 && $InActiveQuests.includes("Birdy: Lea") && _isItDayTime>>
+		<<set _Random.push("OC Birdy Lea Intro")>>
+	<</if>>
+
+	/* Nyall's Events */
+	<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Sebastian") && _isItDayTime>>
+		<<set _Random.push("OC Sebastian City Park Lost Photo")>>
+	<</if>>
+	<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Oliver") && _isItDayTime>>
+		<<set _Random.push("OC Oliver by the Pond")>>
+	<</if>>		
+	<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Evelyn") && _isItDayTime && $OCQuestEvelynMetCarterMichael != -1>>
+		<<set _Random.push("OC Evelyn Meet Michael and Carter")>>
+	<</if>>
+	<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Oliver") && _isItDayTime && $OCOliverSocial > 20 && $JacksonSocial > 20 && $FelixSocial > 20 && $OCOliverJacksonFelix != 1>>
+		<<set _Random.push("OC Oliver Meets Jackson and Felix")>>
+	<</if>>
+	<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Evelyn") && _isItDayTime && $OCQuestEvelynMetCarterMichael == -1>>
+		<<set _Random.push("OC Oliver and Evelyn Hotdog", "Evelyn and Michael Water Balloon")>>
+	<</if>>
+	<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Evelyn") && _isItDayTime && $CompletedQuests.includes("Nyalls: Cole")>>
+		<<set _Random.push("OC Nyalls Frisbee")>>
+	<</if>>
+	/* Shinju Events */
+	<<if $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Monster Boy")>>
+		<<set _Random.push("OC Shinju Park Chat")>>
+	<</if>>
+
+	/* Aurelio Events */
+	<<if $ToggleOCAurelio == 1 && $InActiveQuests.includes("Aurelio: Introduction") && _isItDayTime>>
+		<<set _Random.push("OC Aurelio Intro")>>
+	<</if>>
+
+	/* Rudy Events */
+	<<if $ToggleOCRudy == 1 && $CompletedQuests.includes("Rudy: Introduction") && $OCRudySocial > 0>>
+		<<set _Random.push("Rudy Park Drawing")>>
+	<</if>>
+
+	/* Patrick Events */
+	<<if $ToggleOCPatrick == 1 && $CompletedQuests.includes("Patrick: Introduction") && $InActiveQuests.includes("Patrick: Ivy") && $ToggleDiapers == 1>>
+		<<set _Random.push("OC Patrick Ivy Park Change")>>
+	<</if>>
+
+	/* Nathan Events */
+	<<if $ToggleOCNathan == 1 && $InActiveQuests.includes("Nathan: Introduction")>>
+		<<set _Random.push("OC Nathan Intro")>>
+	<</if>>
+
+	/* Tyler Events */
+	<<if $ToggleOCTyler == 1 && $CompletedQuests.includes("Tyler: Introduction")>>
+		<<if $Time.between(8, 0, 17, 0)>>
+			<<set _Random.push("OC Tyler Park Daydreaming")>>
+		<<elseif $Time.after(16, 0)>>
+			<<set _Random.push("OC Tyler Found Sleeping Intro")>>
+		<</if>>
+	<</if>>
+
+	/* Erin Events */
+	<<if $ToggleOCErin == 1 && $CompletedQuests.includes("Erin: Introduction")>>
+		<<set _Random.push("OC Erin and the Dog")>>
+	<</if>>
+
+	/* Kazu Events */
+	<<if $ToggleOCKazu == 1 && $InActiveQuests.includes("Kazu: Ben Strip Tease")>>
+		<<set _Random.push("OC Kazu Ben Tease")>>
+	<</if>>
+
+	/* Kade Events */
+	<<if $ToggleOCKade == 1 && $CompletedQuests.includes("Kade: Introduction")>>
+		<<if $Time.between(6,0,18,0)>>
+			<<set _Random.push("OC Kade Park Cat Saving")>>
+		<<elseif $Time.after(18,0)>>
+			<<set _Random.push("OC Kade Park Night Encounter")>>
+		<</if>>
+	<</if>>
+
+	<<set _event to _Random.random()>>
+	<<include _event>>
+/* PARANOID EVENT */
+<<elseif $RandomEvent == 3>>
+
+<</if>>
+		
+/* WET/TEMP CHECK */
+/* ROLLS TWICE DURING OUTDOOR ACTIVITY, MAY FIND BETTER SOLUTION LATER */
+<<include"Wet Control">>
+<<include"Wet Control">>

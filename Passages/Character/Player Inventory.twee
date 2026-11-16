@@ -1,0 +1,25 @@
+:: Player Inventory [nobr]
+
+<<set $SelectedTabInventory = $SelectedTabInventory || 0>>
+<<set _tabs to [
+	{
+		title: 'Clothes',
+		passage: 'Player Inventory Clothes',
+	},
+	{
+		title: 'Items',
+		passage: 'Player Inventory Items',
+	},
+	{
+		title: 'Consumables',
+		passage: 'Player Inventory Consumables',
+	},
+]>>
+
+<<tabs _tabs '$SelectedTabInventory'>>
+
+:: Player Inventory Style [stylesheet]
+
+#ui-dialog-body.Player.Inventory {
+	height: 460px;
+}

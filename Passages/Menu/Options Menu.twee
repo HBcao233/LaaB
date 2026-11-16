@@ -1,0 +1,14 @@
+:: Options Menu [nobr]
+
+<<set $SelectedOptionsMenuTab = $SelectedOptionsMenuTab || 0>>
+<<set _tabs to [
+	{title: 'Game settings', passage: 'Options Settings'},
+	{title: 'Toggles', passage: 'Options Toggles'},
+	{title: 'Nicknames', passage: 'Options Nicknames'},
+]>>
+
+<<if $GymIntro == 1>>
+	<<run _tabs.push({title: 'Emergency Buttons', passage: 'Options Emergency Buttons'})>>
+<</if>>
+
+<<tabs _tabs '$SelectedOptionsMenuTab'>>

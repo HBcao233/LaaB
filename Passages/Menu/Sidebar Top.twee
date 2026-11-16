@@ -1,0 +1,93 @@
+:: Sidebar Top [nobr]
+
+<<set _not to "Notification Open">>
+
+<div style="position: relative;">
+    /* Background of Sidebar */
+    <img src="Images\UI\Sidebar\Top Base Blue.png" style="position: absolute; left: -6px; top: 0px">
+
+    /* Time */
+    <img src="Images\UI\Sidebar\Time\Colon.png" style="position: absolute; left: -6px; top: 0px">
+    <<if $Time.AMPM == "AM">>
+        <img src="Images\UI\Sidebar\Time\AM.png" style="position: absolute; left: -6px; top: 0px">
+    <<else>>
+        <img src="Images\UI\Sidebar\Time\PM.png" style="position: absolute; left: -6px; top: 0px">
+    <</if>>
+    /* Hours */
+    <<if $Time.Hour12 != 0>>
+        <img @src="`Images/UI/Sidebar/Time/Hour/Hour ${$Time.Hour12}.png`" style="position: absolute; left: -6px; top: 0px">
+    <<else>>
+        <img @src="`Images/UI/Sidebar/Time/Hour/Hour 12.png`" style="position: absolute; left: -6px; top: 0px">
+    <</if>>
+    /* Minutes */
+    /* This probably isn't the best way to do this, but it the easiest way for me to do it with how time is set up without changing things to get the tens and singles slot seperately. */
+    <<if $Time.Minute < 10>>
+        <<set _tens to "00">>
+    <<elseif $Time.Minute < 20>>
+        <<set _tens to 10>>
+    <<elseif $Time.Minute < 30>>
+        <<set _tens to 20>>
+    <<elseif $Time.Minute < 40>>
+        <<set _tens to 30>>
+    <<elseif $Time.Minute < 50>>
+        <<set _tens to 40>>
+    <<elseif $Time.Minute < 60>>
+        <<set _tens to 50>>
+    <</if>>
+    <<if _tens != "00">>
+        <<set _singles to $Time.Minute - _tens>>
+    <</if>>
+    /* Tens */
+    <img @src="`Images/UI/Sidebar/Time/Minute/10s/Minute ${_tens}.png`" style="position: absolute; left: -6px; top: 0px">
+    /* Singles */
+    <<if _tens != "00">>
+        <img @src="`Images/UI/Sidebar/Time/Minute/Ones/Minute 0${_singles}.png`" style="position: absolute; left: -6px; top: 0px">
+    <<else>>
+        <img @src="`Images/UI/Sidebar/Time/Minute/Ones/Minute ${$Time.Minute}.png`" style="position: absolute; left: -6px; top: 0px">
+    <</if>>
+
+    /* Notifications */
+    /* This system is still being worked on so is just here for completionist sake until it is ready. */
+    <<if $Notifications.length > 0>>
+        <img src="Images\UI\Sidebar\Notification\Notification.png" style="position: absolute; left: -6px; top: 0px">
+    <<else>>
+        <img src="Images\UI\Sidebar\Notification\No Notification.png" style="position: absolute; left: -6px; top: 0px">
+    <</if>>
+
+    /* Day of the Month */
+    <img @src="`Images/UI/Sidebar/Day of the month/${$Time.Date}.png`" style="position: absolute; left: -6px; top: 0px">
+
+    /* Day of the Week */
+    <img @src="`Images/UI/Sidebar/Days/${$Time.Day}.png`" style="position: absolute; left: -6px; top: 0px">
+
+    /* Month */
+    <img @src="`Images/UI/Sidebar/Months/${$Time.Month}.png`" style="position: absolute; left: -6px; top: 0px">
+    <img src="Images\UI\Sidebar\Months\Slash.png" style="position: absolute; left: -6px; top: 0px">
+
+    /* Temp */
+    <img @src="`Images/UI/Sidebar/Temps/${$Temp}.png`" style="position: absolute; left: -6px; top: 0px">
+
+    /* Time of Day */
+    <img @src="`Images/UI/Sidebar/ToD/${$Time.ToD}.png`" style="position: absolute; left: -6px; top: 0px">
+
+    /* Weather */
+    <img @src="`Images/UI/Sidebar/Weather/${$Weather}.png`" style="position: absolute; left: -6px; top: 0px">
+
+</div>
+
+<<set _title to $Weather + ", " + $Temp + ", " + $Time.ToD>>
+
+/* End Empty */
+<<print "<span title=\"" + _title + "\"> <img src=\"Images/UI/Sidebar/Empty.png\" style=\"position: Relative; left: -6px; top: 0px\" usemap=\"#Sidebar\"> </span>">>
+
+<map name="Sidebar">
+<area shape="rect" coords="160,34,211,75" alt="Kitchen" onclick="$.wiki('<<include _not>>')" />
+</map>
+
+:: Notification Open [nobr]
+
+<<script>>
+	Dialog.setup("Notifications", "Notifications");
+	Dialog.wiki(Story.get("Notifications").processText());
+	Dialog.open();
+<</script>>

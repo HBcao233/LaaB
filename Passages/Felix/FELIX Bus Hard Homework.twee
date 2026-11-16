@@ -1,0 +1,50 @@
+:: FELIX Bus Hard Homework [nobr]
+
+You are riding on the bus sitting across from <span style="color:DarkTurquoise">Felix</span>. He seems to be having some trouble, with his English Textbook open on his lap and his notebook in his hands. He is mumbling to himself in French and looks stressed out. <br>
+
+<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+
+Once he notices you watching he sighs deeply. <span style="color:LightSteelBlue">“It is my English homework, I do not understand it at all!”</span> He sighs louder and buries his head in his books, <span style="color:LightSteelBlue">“Why does your language have to be so complicated!?”</span><br>
+<br>
+
+<div id=choice>
+	<<link "Help him">>
+	<<replace"#choice">>
+You smile at the poor boy’s misfortune and move over to his seat, offering to help. <span style="color:DarkTurquoise">Felix</span> smiles, thanks you, and shows you what he is having trouble with. You spend the rest of the bus ride explaining things to him that are, understandably, confusing about English. By the end he seems to have a better understanding of it all.<br>
+<<socialChange "Felix" 3>>
+					/* GET OFF BUS */
+		<<if $BusRide == "Home">>
+			[[Get off bus|Northend]]
+		<<else>>
+			[[Get off bus|Middle School]]
+		<</if>>
+
+
+
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Felix</span><br>
+	
+	<<link "Wish him luck<br>">>
+	<<replace"#choice">>
+You give <span style="color:DarkTurquoise">Felix</span> a smile and wish him luck, telling him that he’ll get it eventually. The French boy gives you a half smile back and continues to struggle with his homework.<br>
+<br>
+					/* GET OFF BUS */
+		<<if $BusRide == "Home">>
+			[[Get off bus|Northend]]
+		<<else>>
+			[[Get off bus|Middle School]]
+		<</if>>
+
+	<</replace>>
+	<</link>>
+</div>

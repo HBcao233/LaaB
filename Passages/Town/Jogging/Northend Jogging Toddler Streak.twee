@@ -1,0 +1,68 @@
+:: Northend Jogging Toddler Streak [nobr]
+
+/* Intro */
+
+You are keeping a good pace, managing your breathing, and ensuring you don’t overexert yourself when you hear someone cry out to your left. <br>
+<br>
+
+<<set _random1 to random(1, 4)>>
+
+<<if _random1 == 1>>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Raymond</span>! Stop!</span> A mother cries out. <span style="color:Pink">You stop and turn to see a toddler with wet, messy orange hair sprint out of their front door butt naked! Their above-average wiener jiggling about as they begin to jump and leap around the grass, giving you an adorable show as all you can do is chuckle as his mother comes running out with a towel.</span> Seems this little boy has escaped bathtime and decided to take a nude run outside. <br>
+<<elseif _random1 == 2>>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Ronald</span>!</span> A woman’s voice calls sternly <span style="color:Pink">as you see a cute toddler with messy black hair run out into the yard butt naked and dripping wet! You blush and chuckle as the kid begins to roll around in the dirt, standing up on all fours in such a way that you get a perfect view of his tiny, adorably tight butthole as his mother shouts for him from the front door.</span> <br>
+<<elseif _random1 == 3>>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Philip</span>! Get your ass back here!</span> A woman yells out <span style="color:Pink">as you suddenly spot a nude little boy who is probably only 3 years old begin to roll around in the grass without a stitch of clothing to cover himself with. The adorable guy is gripping and playing with his tiny wiener idly the entire time as his mother begins to chase him around the yard trying to get a towel on him.</span> <br>
+<<elseif _random1 == 4>>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Rubert</span>! You better get back here before I-</span> A woman cries out <span style="color:Pink">as you spot an adorable 3-year-boy leap off his front porch and land in the grass. The boy is as naked as the day he was born, his tiny penis flopping in the open air as he bends over and begins to slap his rear, giggling as his mother chases after him carrying a towel.</span> Judging by the fact that he’s dripping wet, you’d guess the little rascal has just escaped bathtime and decided to play outside, sans clothing. <br>
+<</if>>
+<br>
+<<linkreplace"Continue">>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You watch the scene unfold as the tired and desperate mother chases her nude and excitable little boy around the yard until, with a leap and a gasp, the boy jumps directly into a pool of mud, covering his nude, recently cleaned body in a thick layer of goop. The mother’s mouth is agape as the toddler giggles and plays away in the mud. The only thing you can do is give a pitiful smile as the mother spots you and sighs in absolute defeat. <br>
+<br>
+
+/*[If Spanking is off and _random2 == 3, set _random2 to 1.]*/
+
+<<set _random2 to random(1, 3)>>
+<<if $ToggleSpanking == 0 && _random2 == 3>>
+<<set _random2 to 1>>
+<</if>>
+
+<<if _random2 == 1>>
+    You watch as the mother scoops up her muddy little boy in the towel and carries him back inside, probably back into the bath for another round of scrubbing. Maybe this time she won’t let him escape. <span style="color:lightgreen">You laugh, continuing your jog as you are thankful you got quite the cute bit of entertainment during your exercise.</span> <br>
+<<elseif _random2 == 2>>
+    The mother walks back to the porch and sits down in utter defeat at the muddy and naked little boy continues to play in the yard. You give her a reassuring wave, which she returns before shrugging and rolling her eyes with a half smile, indicating that she is too tired to deal with her child right now, however, you get the feeling the boy isn’t going to get off scot-free, and once the mother has regained her energy, he will most likely be forced into another bath. <br>
+<<elseif _random2 == 3>>
+    The mother, clearly having enough, picks up the muddy boy and, with no regard for getting herself muddy or your presence, <span style="color:Pink">begins to spank the little boy right there in the front yard! You watch in surprise as the little boy, crying and trying desperately to escape his mom’s wrath, has his muddy butt furiously beaten until he is crying like the baby he is.</span> <br>
+    <br> 
+    The sobbing toddler is then carried back inside, no doubt back to the bath, and you can only guess what further punishments he would be given. You can’t imagine what <span style="color:DarkTurquoise">Your Father</span> would do if you did that to him, but can’t help but laugh at the thought, thankful for the little show you were given during your run. <br>
+<</if>>
+<br>
+/* NEED DECREASE */
+<<set $Minutes += 30>>
+<<if $ExerciseType == "No Sweat">>
+    <<needChange "Hygiene" -2>>
+    <<needChange "Energy" -4>>
+<<elseif $ExerciseType == "Paced">>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -2>>
+<<else>>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -4>>
+<</if>>
+<<skillPoints "Athletics" 5>>
+<br>
+[[Continue|Northend]]
+
+<</linkreplace>>

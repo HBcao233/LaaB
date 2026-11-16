@@ -1,0 +1,41 @@
+:: NOAH Play Blockz [nobr]
+	
+	/* Setting Outfit Variables */
+	<<set $AD.Outfit to "Everyday">>
+	<<include"Noah Outfit Set">>
+
+<<set $Minutes += 30>>
+
+<span style="color:LightSteelBlue">“Oh oh!”</span> <span style="color:DarkTurquoise">Noah</span> jumps up happily, <span style="color:LightSteelBlue">“Wanna play with my new Blockz set?”</span> You nod and <span style="color:DarkTurquoise">Noah</span> happily runs up and grabs his new Blockz Owlman Owlmobile Set, which he had taken apart, along with his big tub of other Blockz. <span style="color:LightSteelBlue">“I have an idea! I’ll build the Owlmobile and you use all the other Blockz and whoever makes the coolest thing wins! And then we can play with them!”</span> You agree, though acknowledge that the contest was slightly unfair since he had a full set and you had random blocks. Plus, <span style="color:DarkTurquoise">Noah</span> wouldn’t agree that anything was better than the Owlmobile. Still, would be a fun time. Now to think of what to build.<br>
+
+
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Normal">>
+<<set $AD.Cry to 0>>
+<<set $AD.Blush to 0>>
+<<set $AD.Mouth to "Happy">>
+<<if $NoahSche.Activity == "Playing in Room">>
+	<<set $AD.Outfit to "Everyday">>
+<<else>>
+	<<set $AD.Outfit to "Pajamas">>
+<</if>>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+
+<<set $Random to random(1, 1)>>
+
+/* BUILDING CONTEST */
+<<if $Random == 1>>
+	<<include"NOAH Play Blockz Building Contest">>
+	
+<</if>>

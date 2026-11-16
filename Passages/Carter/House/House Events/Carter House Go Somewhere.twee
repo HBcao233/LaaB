@@ -1,0 +1,35 @@
+:: Carter House Go Somewhere [nobr]
+
+<<set _ad to [
+    {
+        Name: "Carter",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+You ask <span style="color:DarkTurquoise">Carter</span> if he would like to go somewhere. <span style="color:LightSteelBlue">“Yeah! Lemme just let someone know.”</span> <br>
+<br>
+<span style="color:Yellow">Where?</span><br>
+<<set $HangOutClothes to "Everyday">>
+<<link"The Park (0:10)<br>">>
+    <<set $Minutes += 10>>
+    <<goto "Carter Hang Out Go To Park">>
+<</link>>
+<<link"The Arcade (0:05)<br>">>
+    <<set $Minutes += 5>>
+    <<goto "Carter Hang Out Arcade Intro">>
+<</link>>
+<<link"The Mall (0:15)<br>">>
+    <<set $Minutes += 15>>
+    <<goto "Carter Hang Out Mall Intro">>
+<</link>>
+

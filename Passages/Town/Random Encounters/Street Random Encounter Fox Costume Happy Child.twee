@@ -1,0 +1,25 @@
+:: Street Random Encounter Fox Costume Happy Child [nobr]
+
+/* Intro */
+
+As you are walking down the sidewalk, you hear a young voice call out. <span style="color:LightSteelBlue">“Hiiiii foxy~!”</span> You turn and see a little boy, probably 4 or 5, waving to you with a mix smile. He then picks up a toy off the ground, a plastic fox, and points to it before waving towards you some more. You are briefly confused, until you remember what you are wearing and chuckle.
+
+<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Happy",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightGreen">You wave back to the child happily and continue on your way, happy that you choice of fun attire has provided some entertainment and memories for someone so young and pure.</span> <br>
+<br>
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+ <<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+ <<else>>
+    [[Continue|Wald Street]]
+<</if>>

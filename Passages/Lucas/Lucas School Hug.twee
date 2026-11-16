@@ -1,0 +1,70 @@
+:: Lucas School Hug [nobr]
+
+<<set $Minutes += 2>>
+
+/* Normal Social */
+<<if $LucasSocial < 50 and $LucasSocialRank < 1>>
+You walk up to <span style="color:DarkTurquoise">Lucas</span> in the hallway, <span style="color:pink">who gives you a friendly wave, and surprise him with a hug. He goes a bit rigid as you hug him, but hugs you back despite it being a little awkward.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Frown",
+			Blush: 1,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh, hey <span style="color:DarkTurquoise">$LucasNickname</span>!”</span> He says, patting you on the back, <span style="color:LightSteelBlue">“How- how are you?”</span> You laugh, claiming to be alright and just wanted to give him a hug. <span style="color:DarkTurquoise">Lucas</span> laughs nervously in response and rubs the back of his head. <span style="color:LightSteelBlue">“Oh, okay! It was a little weird but- I mean, not bad weird, good weird! I mean, I’m not calling you weird, it was just… unexpected?”</span> He chuckles nervously, obviously a bit flustered. <br>
+	<<socialChange "Lucas" 1>>
+<br>
+	<<if $Location.Name == "School South Hallway">>
+		[[Continue|School South Hallway]] 
+	<<elseif $Location.Name == "School East Hallway">>
+		[[Continue|School East Hallway]]
+	<<else>>
+		[[Continue|School West Hallway]]
+	<</if>>
+
+
+/* High Social */
+<<else>>
+	<<if $LucasSocialRank >=1>>
+		<<set _Random to random(1, 3)>>
+	<<else>>
+		<<set _Random to 1>>
+	<</if>>
+	<<if _Random == 2>>
+		<<include"Lucas School Hug 2">>
+	<<elseif _Random == 3>>
+		<<include"Lucas School Hug Judo Throw">>
+	<<else>>
+		<span style="color:pink">You walk up to <span style="color:DarkTurquoise">Lucas</span> in the hallway and hold out your hands for a hug. He chuckles and responds by giving you a big hug, squeezing you just as tightly as you squeeze him.</span> <br>
+
+		<<set _ad to [
+			{
+				Name: "Lucas",
+				State: {
+					Outfit: "Uniform",
+					Mouth: "Happy",
+					Blush: 1,
+				},	
+			},
+		]>>
+			<<ad _ad>>
+
+		<span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$LucasNickname</span>. What’s the occasion?”</span> He laughs. <span style="color:pink">You stick your tongue out at him and claim that the only occasion you need is the fact that he’s cute. <span style="color:DarkTurquoise">Lucas</span> quickly blushes and becomes flustered as you laugh about how easy he is to embarrass.</span> You put your arm around his shoulder and the two of you walk and chat for a bit. <br>
+	<<socialChange "Lucas" 1>>
+		<br>
+			<<if $Location.Name == "School South Hallway">>
+				[[Continue|School South Hallway]] 
+			<<elseif $Location.Name == "School East Hallway">>
+				[[Continue|School East Hallway]]
+			<<else>>
+				[[Continue|School West Hallway]]
+			<</if>>
+	<</if>>
+<</if>>

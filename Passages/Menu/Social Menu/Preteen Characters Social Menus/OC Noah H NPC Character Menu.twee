@@ -1,0 +1,423 @@
+:: OC Noah H NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Preteens Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Noah H--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"OC Noah H NPC Character Menu Biography">>
+</div>
+
+:: OC Noah H NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Noah H NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Noah H NPC Character Menu Avatar Display">>
+
+<<if $OCNoahHSocial > 50>>
+
+<<elseif $OCNoahHSocial > -10>>
+
+<<else>>
+
+    <br>
+<</if>>
+
+:: OC Noah H NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Noah H NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Noah H NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Noah Hartford <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong>  May 9th<br>
+<strong>Address:</strong> 
+    <<if $OCNoahHSocial >= 50>>
+        Northend<br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> 
+    <<if $OCNoahHSocial >= 50>>
+        Zachary Hartford (Father), Rebecca Hartford (Mother)
+    <<else>>
+        ???
+    <</if>>
+    <br>
+<strong>Friends:</strong>
+    <<if $OCNoahHSocial >= 60>>
+        $Player.Name, ...
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $OCNoahHSocialRank == 1>>
+        Close Friends
+    <<elseif $OCNoahHSocial > 70>>
+        Friends
+    <<elseif $OCNoahHSocial > 30>>
+        Possible Friends
+    <<elseif $OCNoahHSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $OCNoahHSocial > 70>>
+        <div style="margin-left: 25px;">
+            Child of the Sea, Friendly, Good, Athletic, Outdoorsy
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+         [Math] > [History] > [Music] > [Science] > [English] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <div style="margin-left: 25px;">
+    <<if $OCNoahHSocial >= 50>> 
+        Wednesdays (After School): Gymnastics Class, Thursdays (After School): Swim and Dive
+    <<else>>
+        Unknown
+    <</if>>
+    </div>
+<strong>Likes:</strong>
+    <<if $OCNoahHSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Exercise, Music, Ballet
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $OCNoahHSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Bullies, Loud Noises (Fireworks)
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $OCNoahHSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Gymnastics, Swimming, Video Games
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $OCNoahHSocial >= 50>>
+        <div style="margin-left: 25px;">
+             Spicy Pork Enchiladas
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $OCNoahHSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Purple
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $OCNoahHSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Heights & Spiders
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Crop Tops, Mesh, Tight form-fitting athletic-leisure and heavy hoodies.
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $OCNoahHSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Jockstraps, Thongs, & Bikinis
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $OCNoahHSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            An uncut penis that is large for his age, even moreso when erect. It is smooth and hairless. His tip is bright pink when exposed and very sensitive.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $OCNoahHSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A muscled butt that is smooth and soft.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: OC Noah H NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+
+ <<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Noah H NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Noah H NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal OC Noah H">>
+
+:: Noah H NPC Character Menu Art [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Artwork]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Noah H NPC Character Menu Avatar Display">>
+
+<<include"Journal Artwork NoahH">>
+
+:: OC Noah H NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Noah H NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+ <<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Noah H NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "OC Noah",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCNoahHSocial >= 50 or $OCNoahHSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCNoahHSocial >= 100 or $OCNoahHSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: OC Noah H NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "OC Noah",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCNoahHSocial >= 50 or $OCNoahHSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCNoahHSocial >= 100 or $OCNoahHSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

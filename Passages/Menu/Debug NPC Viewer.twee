@@ -1,0 +1,287 @@
+:: Debug NPC Viewer [nobr]
+
+<span style="color:Azure"><big><strong>--Debug NPC Viewer--</strong></big></span><br>
+<<include"Avatar Display Init">>
+<br>
+
+<<set _npcviewerNPC to ["Lucas", "Ben", "Michael", "Carter", "Jackson", "Thomas", "Xavier", "Felix", "Noah", "Dad", "Gabe", "Ryker", "Levi", "William", "Mateo", "Theo", "Ethan", "Zeus", "Sye", "Dez", "Callum", "OC Zay", "OC Kayden", "OC Jayden", "OC Sebastian", "OC Oliver", "OC Evelyn", "OC Cole", "OC Isaac", "OC JacobB", "OC Birdy","OC Lea", "OC Erin", "OC Leon", "OC Manuel", "OC Kollin", "OC JQ", "OC Arthur", "OC Richard", "OC Shinju", "OC Aurelio", "OC Liam", "OC Snowpaw", "OC Rudy", "OC Emmet", "OC Kyren", "OC Noah", "OC Kalim", "OC Zacky", "OC Patrick", "OC Mason", "OC Rowan", "OC Kazu", "OC Nikolai", "OC Luca", "OC Simon", "OC Albin", "OC Micah", "OC Levi", "OC Mata", "OC Ivy", "OC Nathan", "OC Chase", "OC Bobby", "OC Enkys", "OC Tyler", "OC Leo", "OC Raymond", "OC Zach", "OC Jacob", "OC James", "OC Jonny", "OC Kade", "OC Alex Kidd", "OC Alan Kidd", "OC Aran", "OC Aubin", "OC Alex", "OC George", "OC Timmy", "OC Don"]>>
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Undies", "Naked"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<if ["Dad"].includes($NPCViewer.Name)>>
+    <<set _npcviewerEyes to ["Normal", "Narrow", "Wide", "Closed"]>>
+    <<set _npcviewerEyebrows to ["Normal", "Angry", "Sad", "Shocked", "Suspicious"]>>
+<<else>>
+    <<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Closed"]>>
+    <<set _npcviewerEyebrows to []>>
+<</if>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0, 1]>>
+
+/* Avatars */
+<div id='AvatarViewer'>
+    <<include"Debug NPC Viewer Avatar">>
+</div>
+
+<br>
+<<link"Back">>
+    <<unset $NPCViewer>>
+    <<goto "Debug Test Menu">>
+<</link>>
+
+:: Debug NPC Viewer Avatar [nobr]
+
+<<set _ad to [
+    {
+        Name: $NPCViewer.Name,
+        State: {
+            Outfit: $NPCViewer.Outfit,
+            Mouth: $NPCViewer.Mouth,
+            Eyes: $NPCViewer.Eyes,
+            Blush: $NPCViewer.Blush,
+            Cry: $NPCViewer.Cry,
+            Arms: $NPCViewer.Arms,
+            Hard: $NPCViewer.Hard,
+            Brows: $NPCViewer.Eyebrows,
+        }
+    }
+]>>
+<<ad _ad>>
+<br>
+
+/* Adult OnlySet Ups */
+/* 
+<<set _npcviewerEyes to ["Normal", "Narrow", "Wide", "Closed"]>>
+<<set _npcviewerEyebrows to ["Normal", "Angry", "Sad", "Shocked", "Suspicious"]>> */
+
+<strong>NPC:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _npcviewerNPC.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Name == _npcviewerNPC[_i]>>
+            <span style="color:Green">[_npcviewerNPC[_i]]</span>
+        <<else>>
+            <<link _npcviewerNPC[_i]>>
+                <<set $NPCViewer.Name to _npcviewerNPC[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug NPC Viewer Avatar">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 10>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Outfit:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _npcviewerOutfit.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Outfit == _npcviewerOutfit[_i]>>
+            <span style="color:Green">[_npcviewerOutfit[_i]]</span>
+        <<else>>
+            <<link _npcviewerOutfit[_i]>>
+                <<set $NPCViewer.Outfit to _npcviewerOutfit[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug NPC Viewer Avatar">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 10>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Mouth:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _npcviewerMouth.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Mouth == _npcviewerMouth[_i]>>
+            <span style="color:Green">[_npcviewerMouth[_i]]</span>
+        <<else>>
+            <<link _npcviewerMouth[_i]>>
+                <<set $NPCViewer.Mouth to _npcviewerMouth[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug NPC Viewer Avatar">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 10>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Eyes:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _npcviewerEyes.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Eyes == _npcviewerEyes[_i]>>
+            <span style="color:Green">[_npcviewerEyes[_i]]</span>
+        <<else>>
+            <<link _npcviewerEyes[_i]>>
+                <<set $NPCViewer.Eyes to _npcviewerEyes[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug NPC Viewer Avatar">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 10>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<<if _npcviewerEyebrows.length > 0>>
+    <strong>Brows:</strong><br>
+    <<set _length to 0>>
+    <<for _i to 0; _i lt _npcviewerEyebrows.length; _i++>>
+        <<capture _i>>
+            <<set _length += 1>>
+            <<if $NPCViewer.Eyebrows == _npcviewerEyebrows[_i]>>
+                <span style="color:Green">[_npcviewerEyebrows[_i]]</span>
+            <<else>>
+                <<link _npcviewerEyebrows[_i]>>
+                    <<set $NPCViewer.Eyebrows to _npcviewerEyebrows[_i]>>
+                    <<replace"#AvatarViewer">>
+                        <<include"Debug NPC Viewer Avatar">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            <<if _length < 10>>
+                | 
+            <<else>>
+            <br>
+                <<set _length to 0>>
+            <</if>>
+        <</capture>>
+    <</for>>
+    <br>
+<</if>>
+
+<strong>Blush:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _npcviewerBlush.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Blush == _npcviewerBlush[_i]>>
+            <span style="color:Green">[_npcviewerBlush[_i]]</span>
+        <<else>>
+            <<link _npcviewerBlush[_i]>>
+                <<set $NPCViewer.Blush to _npcviewerBlush[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug NPC Viewer Avatar">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 10>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Cry:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _npcviewerCry.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Cry == _npcviewerCry[_i]>>
+            <span style="color:Green">[_npcviewerCry[_i]]</span>
+        <<else>>
+            <<link _npcviewerCry[_i]>>
+                <<set $NPCViewer.Cry to _npcviewerCry[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug NPC Viewer Avatar">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 10>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Arms:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _npcviewerArms.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Arms == _npcviewerArms[_i]>>
+            <span style="color:Green">[_npcviewerArms[_i]]</span>
+        <<else>>
+            <<link _npcviewerArms[_i]>>
+                <<set $NPCViewer.Arms to _npcviewerArms[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug NPC Viewer Avatar">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 10>>
+             | 
+        <<else>>
+        <br>
+                    <<set _length to 0>>
+                <</if>>
+    <</capture>>
+<</for>>
+<br>
+
+<<if !$NPCViewer.Hard>>
+	<<set $NPCViewer.Hard = 0>>
+<</if>>
+
+<strong>Hard:</strong><br>
+<<set _length to 0>>
+<<for _i to 0; _i lt _npcviewerHard.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Hard == _npcviewerHard[_i]>>
+            <span style="color:Green">[_npcviewerHard[_i]]</span>
+        <<else>>
+            <<link _npcviewerHard[_i]>>
+                <<set $NPCViewer.Hard to _npcviewerHard[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Debug NPC Viewer Avatar">>
+                <</replace>>
+            <</link>>
+        <</if>>
+        <<if _length < 10>>
+             | 
+        <<else>>
+        <br>
+            <<set _length to 0>>
+        <</if>>
+    <</capture>>
+<</for>>
+<br>

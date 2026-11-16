@@ -1,0 +1,125 @@
+:: StoryBanner [nobr]
+
+/* UPDATING NEW VARIABLES */
+<<include"Update Variables">>
+<<include"Quest Tracking Constant">>
+
+<<include "Exposed Tracking">>
+
+<<if $CC == 1>>
+
+/* Save $minutes into _Minutes */
+<<set _Minutes to $Minutes>>
+
+/* Advance Time consuming $Minutes */
+<<for $Minutes > 0 >>
+	<<set $Minutes to $Time.advance($Minutes, setup.Needs.decay)>>
+	/* is top hour */
+	<<if $Time.is(null,0)>>
+		/* HOUR ADVANCEMENT */
+		<<include"Moodlet Decay">>
+		<<include"Weather Hourly">>
+		/* Spank Mark Decay */
+		<<set $SpankMarks -= 1>>
+		<<if $SpankMarks < 0>>
+			<<set $SpankMarks to 0>>
+		<</if>>
+	<</if>>
+	<<if $Time.is(0,0)>>
+		/* DAY ADVANCEMENT */
+		<<include"Weather Control">>
+		<<include"Daily Events">>
+		<<include"Update Schedules">>
+		<<set $SwimStamina to $SwimStaminaMax>>
+	<</if>>
+<</for>>
+
+/* Time sensitive */
+
+<<if $Sleeping == 1>>
+	/* REMOVING STRESS */
+	<<addMoodlet "Stress" 0>>
+<</if>>
+
+/* 
+<strong><<= $Time.Day>>, <<= $Time.Date>> <<= $Time.Month>>, <<= $Time.Year>></strong><br>
+<strong>Time</strong>: <<= $Time.Hour12>>:<<= $Time.Minute>> <<= $Time.AMPM>> <<= $Time.ToD>><br>
+<strong>Weather</strong>: 
+
+/* WEATHER COLOR CONTROL 
+<<if $Weather == "Clear Skies">>
+	$Weather,
+<<elseif $Weather == "Overcast">>
+	<span style="color:Gray">$Weather</span>,
+<<elseif $Weather == "Rain" or $Weather == "Storm">>
+	<span style="color:LightBlue">$Weather</span>,
+<<else>>
+	$Weather,
+<</if>>
+
+<<if $Temp == "Temperate">>
+	<span style="color:White">$Temp</span>
+<<elseif $Temp == "Cool">>
+	<span style="color:LightBlue">$Temp</span>
+<<elseif $Temp == "Warm">>
+	<span style="color:LightCoral">$Temp</span>
+<<elseif $Temp == "Cold">>
+	<span style="color:DarkTurquoise">$Temp</span>
+<<elseif $Temp == "Hot">>
+	<span style="color:Orange">$Temp</span>
+<<else>>
+	$Temp
+<</if>>
+
+<br> */
+
+<<include"Sidebar Top">>
+
+/* WET/TEMP CHECK AND CONTROL */
+<<include"Wet Control">>
+
+<<include"School Class Tracking">>
+
+/* NEED CALUCATE */
+
+<<include"Moodlet Track">>
+
+
+/* AVATAR */
+<<set $AD.Outfit to "Everyday">>
+<<set $AD.Name to "Player">>
+<<include"Player Avatar Mood">>
+<<include"Avatar Backgrounds">>
+<<include"Player Avatar Display Set">>
+<<include"Avatar Display">>
+<img src="Images\UI\Sidebar\Avatar\Avatar Frame.png" style="position: relative; left: -6px; top: -6px">
+
+/* Mood Display */
+<<print "<span style=\"color:" + _moodcolor[_moodcolorvalue] + "\">You are " + $Player.Mood + "</span>">>
+
+
+/* Needs Display */
+<<include"Need Tracking">>
+
+/*
+<<link "Mood">>
+<<script>>
+Dialog.setup("Mood Menu", "Mood Menu");
+Dialog.wiki(Story.get("Mood Menu").processText());
+Dialog.open();
+<</script>>
+<</link>>
+*/
+
+<</if>>
+
+/* NPC Constants */
+<<include"NPC Constants">>
+
+<<include"Moodlet Display">><br>
+
+/* ACHIEVEMENT ALERT */
+<<if $CheatsMenu != 1>>
+	<<include "Achievement Tracking">>
+<</if>>
+

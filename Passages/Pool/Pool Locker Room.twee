@@ -1,0 +1,61 @@
+:: Pool Locker Room [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Pool Locker Room",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Town",
+}>>
+
+<<include"Pool Guest State">>
+
+<span style="color:Azure"><big><strong>--Pool Locker Room--</strong></big></span><br>
+The locker room has a collection of rows lockers, each acting as a sort of hallway. There were also a few bathroom stalls and some open showers near the entrance to the actual pool that people were expected to use before entering the water. An assistant lifeguard stood just outside the exit, checking that people weren’t wearing outside clothes.<br>
+<br>
+
+<<if $PoolState == "Senior Swim">>
+    <<set _randomtext to random(1, 3)>>
+    <<if _randomtext == 1>>
+You notice a few much older men in the locker room. They have gathered down one of the locker sections and were all sitting on a bench putting on sunscreen. Their wrinkly skin and boring conversations prompt you to stay away and choose a locker on an empty row.
+    <<elseif _randomtext == 2>>
+There are quite a few older men in the locker room, some changing into their swimwear, while others are waiting for their friends. You were pretty sure you were the only person under 50 there. As you are sitting on a bench, you notice one old man at the other end of the bench. <span style="color:lightcoral">He has been looking through his bag for an above average amount of time and you swear you keep noticing him looking at you from the corner of your eyes.</span> 
+    <<else>>
+As you turn the corner, you are greeted by the sight of a trio of naked old men, none of which were making any effort to cover themselves up. <span style="color:lightcoral">The sight of their wrinkly bodies and long, floppy members causes an instant recoil from you.</span> One of the men notices your reaction and laughs, shaking his head as you move on to the next row.
+    <</if>>
+<<elseif $PoolState == "After School">>
+    <<set _randomtext to random(1, 3)>>
+    <<if _randomtext == 1>>
+The locker room is filled, mostly with boys around your own age. As they change into their swimming trunks, they quickly gather their friends and dash through the showers and into the pool for some fun. Most of the boys are in the middle of puberty so, expectedly, most change either in the stalls or use a towel to cover themselves while changing. <span style="color:pink">Towel slippage in common, but you tend to only get a few peeks at some bare behinds.</span>
+    <<elseif _randomtext == 2>>
+The locker room is filled, mostly with boys your own age and some elementary schoolers. Unlike those your age, most of the younger kids see no problem with changing in the open. <span style="color:pink">To your left was a trio of boys in various bright and cute briefs, playfully laughing and chatting as they changed. On your right as an even less shy boy, who was completely naked! Squatted down and putting his stuff in the locker near the floor. You couldn’t help but notice the visible and tight-looking hole that sat exposed and the cute little penis and balls that dangled between his legs.</span>
+    <<else>>
+The locker room is filled with school-aged boys of all ages. The room was a sight to behold. <span style="color:pink">Little elementary schoolers running around either in cute, colorful underwear or baring it all as their little penises bounced and their butts wiggled, most didn’t seem to care and those that did were quickly succumbing to peer pressure. Most boys your age tended to not strip further than their underwear and change in the stalls, their early stages of puberty leading to some self-conscious faces. The highschoolers, however, had a mix of both. Some strong, good-looking teenagers bared it all, even some erections were seen, while some were just as shy and tended to wait for the next available stall.</span>
+    <</if>>
+<<elseif $PoolState == "Families">>
+Families seemed to dominate the locker room, with dad’s either rounding up their young kids or chatting with their older ones. A couple were even helping their young sons change into their swimwear, but you dare not try to sneak a peek due to the risk of angering some over-protective father.
+<<elseif $PoolState == "Teenagers">>
+The locker room is mostly filled with High Schoolers or older Middle Schoolers. With the families and younger kids gone, the mischievous and rebellious teenagers use this as one of their hang-outs. Despite the crowd, you do see many of them changing, most instead choosing this use this space so smoke or chat away from any prying eyes.
+<<elseif $PoolState == "Swim Class">>
+A group of younger elementary kids, along with some nervous looking older kids and some parents with their toddlers, are all changing and get ready to go in. You assume they are with the swimming class that they do here this early. The large presence of adults make you warry of trying anything scandalous.
+<<else>>
+The locker room is completely empty, with the pool being pretty deserted at this part of the day. Whether that is a good thing or a bad thing, you are unsure.
+<</if>><br>
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Change|Pool Change]]<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<<if $Player.Exposed != "Naked" and $Player.Exposed != "Undies">>
+    [[Enter the Pool|Enter Pool Outside]]<br>
+<<else>>
+    <span style="color:lightcoral">You're not Bold enough to swim like this!</span><br>
+<</if>>
+<img src="Images\World Map\Individual Icons\Pool.png">
+<<if $Player.Exposed == "Clothed">>
+[[Exit to Street|Pool]]<br>
+<<else>>
+<span style="color:lightcoral">You can't go out like this!</span>
+<</if>>

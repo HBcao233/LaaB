@@ -1,0 +1,221 @@
+:: Carter Hang Out Arcade Beat LMNL [nobr]
+
+<<set $Minutes += 20>>
+
+/* Opening */
+The two of you wander around the arcade, trying to decide on a game to play, when <span style="color:DarkTurquoise">Carter</span> spots a bright yellow machine dotted with illustrations of what appeared to be ninja lions? It was titled <span style="color:LightSteelBlue">“Little Mutant Ninja Lions: Simba’s Revenge”</span>. You walk over as <span style="color:DarkTurquoise">Carter</span> is already putting a quarter into the machine. <span style="color:LightSteelBlue">“This game is great! The combos you can do on the enemies look so cool!”</span> He proudly exclaims as he selects his character, a ninja lion with a blue mask wielding a pair of katanas. <br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You put your own quarter in and select one of the three remaining ninja lions. There was a red, strong looking one built around strength and power, a purple smaller one with a staff and a backpack full of smart gadgets, and finally a wildcard orange one on a skateboard. <span style="color:yellow">The announcer tells you to pick the lion that best matches your own personality and skills:</span> <br>
+<br>
+
+<<link"The Smart Purple Lion<br>">>
+    <<set $lion to "Purple">>
+    <<goto"Carter Hang Out Arcade Beat LMNL 2">>
+<</link>>
+<<link"The Strong Red Lion<br>">>
+    <<set $lion to "Red">>
+    <<goto"Carter Hang Out Arcade Beat LMNL 2">>
+<</link>>
+<<link"The Cool Orange Lion<br>">>
+    <<set $lion to "Orange">>
+    <<goto"Carter Hang Out Arcade Beat LMNL 2">>
+<</link>>
+
+:: Carter Hang Out Arcade Beat LMNL 2 [nobr]
+
+/* Opening */
+With your characters selected, you both watch an intro movie where the lion brothers jump out of their apartment in the big city in order to battle an evil clan full of ninjas, gangsters, and other mutant animals that were trying to take over. <br>
+<br>
+The game was a side-scrolling beat’em up that saw your two lions moving across the screen battling waves of enemies followed by tough bosses. And, just as <span style="color:DarkTurquoise">Carter</span> said, the combos and pixel animation were stunning and the two of you were soon bouncing with excitement and calling out warnings and plans to each other as you worked together to combo attack a boss to death. <span style="color:Pink">Every successful level is followed by a high-five or other celebratory action. <span style="color:DarkTurquoise">Carter</span> even tries to give you a chest bump, though nearly knocks himself to the ground in the process.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Sad",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Sad",
+		},
+	},
+]>>
+<<ad _ad>>
+
+
+However, it is near level 4 that you run into your biggest challenge yet. The cutscene shows the two of you being separated and <span style="color:DarkTurquoise">Carter</span> is forced to fight the boss alone while you are surrounded by a collection of minions blocking your way. <span style="color:DarkTurquoise">Carter</span> is struggling and you have to think fast if you are going to be able to defeat the minions and reach your friend in time. <span style="color:yellow">You try to think of a plan to best use your character’s special abilities to overcome this challenge.</span> <br>
+<br>
+
+<div id="choice2">
+	/* Default */
+	<<link "Just wing it<br>">>
+		<<replace "#choice2">>
+		With no plan and no idea how to best use your character’s special abilities, you decide to just wing it and charge the enemy forces, button-mashing your way to victory! Or, at least, that’s how you hoped it would go. <span style="color:lightcoral">Instead, you are soundly beaten and overwhelmed by the horde of enemies. Anytime you start a combo on one group of enemies, another comes from behind and knocks you out of it. All the while, <span style="color:DarkTurquoise">Carter</span> is doing as best as he can against the boss, but on his own, it is a losing battle and you both are soundly defeated.</span> <br>
+		<br>
+
+		The end screen adds insult to injury, as not only does it display the word <span style="color:red">“Failure”</span> in big red letters, <span style="color:lightcoral">but it is accompanied by an image of the four ninja lion brothers stripped down to their underwear and hanging by them from a lamppost soundly beat-up and defeated. The scene would be kind of cute, if you didn’t know the game was using it to laugh at you.</span> <br>
+
+		<<set _ad to [
+			{
+				Name: "Carter",
+				State: {
+					Mouth: "Happy",
+					Outfit: $HangOutClothes,
+				},
+			},
+			{
+				Name: "Player",
+				State: {
+					Blush: 1,
+					Mouth: "Happy",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+		<span style="color:LightSteelBlue">“That… could have gone better.”</span> <span style="color:DarkTurquoise">Carter</span> laughs, <span style="color:LightSteelBlue">“Maybe you should pick a different character next time, one that suits you better?”</span> <br>
+		<<needChange "Fun" 12>>
+		<span style="color:green">+Carter Fun</span><br>
+		<<set $HangOutNeed.Fun += 8>>
+		<<socialChange "Carter" 3>>
+		<br>
+		[[Continue|Carter Hang Out Arcade]]
+		<</replace>>
+	<</link>>
+
+/* Purple */
+	<<if $lion == "Purple">>
+		<<requiresAbility "Smarts" 7 "Use your gadgets">>
+			<<replace "#choice2">>
+				Remembering that your chosen hero has a bag full of gadgets, you use your own smarts to select and number of them to quickly build an interesting, if not haphazard, contraption. At first, <span style="color:DarkTurquoise">Carter</span> is confused, nearly dying from the boss as he watches in confusion, but after seeing your plan he happily exclaims that you’re a genius! <br>
+				<br>
+
+				<span style="color:lightgreen">The trap laid, you begin to aggro every enemy pack and draw them into one spot. Once they are in position, you set up your trap and a massive explosion takes out every enemy in a single blast! You both let out an excited cheer as you rush into the boss’s room to aid <span style="color:DarkTurquoise">Carter</span>. It is a hard-fought battle, but in the end, you win</span> <span style="color:pink">and are greeted by a celebratory victory screen with a special scene of the main boss and his minions all hanging from a rooftop by their underwear until the police can collect them.</span> <br>
+
+				<<set _ad to [
+					{
+						Name: "Carter",
+						State: {
+							Mouth: "Happy",
+							Outfit: $HangOutClothes,
+						},
+					},
+					{
+						Name: "Player",
+						State: {
+							Mouth: "Happy",
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				<span style="color:LightSteelBlue">“We did it!”</span> <span style="color:DarkTurquoise">Carter</span> cheered, doing a cute little dance, <span style="color:LightSteelBlue">“That move with the explosive trap was genius! I’ve never seen someone do that before!”</span> You laugh, stating that you weren’t even sure you could pull it off, but it was worth the risk. <span style="color:LightSteelBlue">“Totally! You killed, like, a million guys! And the way you busted in and kicked the boss in the face-!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Carter</span> begins to mimic the fight that occurs in the game, doing a little hop and kick that nearly sends him tumbling to the floor. Still, he seems extremely happy to have won.</span> <br>
+				<<needChange "Fun" 20>>
+				<span style="color:green">+Carter Fun</span><br>
+				<<set $HangOutNeed.Fun += 15>>
+				<span style="color:green">+Carter Comfort</span><br>
+				<<set $HangOutNeed.Comfort += 5>>
+				<<socialChange "Carter" 3>>
+				<br>
+				[[Continue|Carter Hang Out Arcade]]
+    <</replace>>
+	<</requiresAbility>>
+
+	/* Red */
+	<<elseif $lion == "Red">>
+		<<requiresAbility "Strength" 7 "Rage!">>
+			<<replace "#choice2">>
+				No matter how many enemies you took out, there seemed to be a million more! You keep fighting and fighting and fighting, all the while <span style="color:DarkTurquoise">Carter</span> is slowly losing both ground and health to the boss. You are beginning to feel frustrated, but you aren't the only one. <span style="color:lightgreen">You notice that, as you killed enemies, a meter next to your character was beginning to fill. A rage meter. You keep fighting, battling as many enemies as you can until the meter fills and your character unleashes a roar of <span style="color:Red">RAGE!</span></span> <br>
+				<br>
+
+				<span style="color:lightgreen">Your character suddenly picks up a massive dumpster for a weapon and you begin to plow through every enemy that dares approach you. You were a monster, destroying everything that dared stand in your way, and once the final enemy was dead, you tossed the dumpster into the wall, creating an over-the-top explosion that allowed you to bust into the boss room and aid <span style="color:DarkTurquoise">Carter</span> in the final battle against the boss, who stood no chance against your rage-induced strength.</span> <span style="color:pink">In the end, you win and are greeted by a celebratory victory screen with a special scene on the main boss and his minions all hanging from a rooftop by their underwear until the police can collect them.</span> <br>
+
+				<<set _ad to [
+					{
+						Name: "Carter",
+						State: {
+							Mouth: "Happy",
+							Outfit: $HangOutClothes,
+						},
+					},
+					{
+						Name: "Player",
+						State: {
+							Mouth: "Happy",
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				<span style="color:LightSteelBlue">“That was so cool!”</span> <span style="color:DarkTurquoise">Carter</span> jumps into the air, his eyes lighting up with excitement, <span style="color:LightSteelBlue">“The way you picked up the dumpster, yelling out! RAWR!”</span> <span style="color:DarkTurquoise">Carter</span> mimicked and replayed the events, making explosive and battle noises with his mouth as he reenacted the events. <span style="color:pink">It was adorable how easily he got excited.</span> <br>
+				<<needChange "Fun" 20>>
+				<span style="color:green">+Carter Fun</span><br>
+				<<set $HangOutNeed.Fun += 15>>
+				<span style="color:green">+Carter Comfort</span><br>
+				<<set $HangOutNeed.Comfort += 5>>
+				<<socialChange "Carter" 3>>
+				<br>
+				[[Continue|Carter Hang Out Arcade]]
+			<</replace>>
+		<</requiresAbility>>
+
+	/* Orange */
+	<<else>>
+		<<requiresAbility "Creativity" 7 "Maybe you can use these cars?">>
+			<<replace "#choice2">>
+				Your chosen character was a goofball, more useful for a laugh than anything combat-related, right? Then again, he had a lot of strange moves he could do. Like smacking his skateboard against items in the background. But how would that be useful… unless? Unsure if this will work or is even a good idea, you dodge through the pack of enemies and approach a large bus sitting in the background of the scene and begin to smack it with your skateboard. It honks and shakes as you hit it, indicating that something is happening, but <span style="color:DarkTurquoise">Carter</span> begins to give you a strange look as you continue to hit it as the horde begins to surround you. <br>
+				<br>
+
+				<span style="color:LightSteelBlue">“What are you doing? They are going to get you!”</span> <span style="color:DarkTurquoise">Carter</span> calls out. <span style="color:lightgreen">But you continue, delivering a 10th strike to the bus, causing it to light up and suddenly speed forward directly into the building <span style="color:DarkTurquoise">Carter</span> was fighting the boss. He manages to dodge it by a hair and the bus collides directly into the boss, sending him crashing into another wall as an explosion of dust and debris fill the screen! <br>
+				<br>
+
+				As the game ends, the words <span style="color:green">“Secret Ending!”</span> appear on the screen. You both watch, mouth agape, as a small cutscene of the 4 brothers celebrating with pizza and music plays. In the background, the main boss and a collection of his minions are buried under a pile of bricks, with only their lower halves hanging out.</span> <span style="color:pink">Your chosen character, the orange goofy lion, walks over with a mischievous grin and pulls down the boss’s pants, revealing his cute butt, and signs it before taking a selfie.</span> <br>
+
+				<<set _ad to [
+					{
+						Name: "Carter",
+						State: {
+							Outfit: $HangOutClothes,
+						},
+					},
+					{
+						Name: "Player",
+					},
+				]>>
+				<<ad _ad>>
+
+				<span style="color:LightSteelBlue">“That was…”</span> <span style="color:DarkTurquoise">Carter</span> pauses in confusion and disbelief, <span style="color:LightSteelBlue">“Huh! Well, I will never doubt your ideas again.”</span> <span style="color:DarkTurquoise">Carter</span> and you both break out laughing at the absurdity that the strange plan worked better than either of you imagined. <span style="color:DarkTurquoise">Carter</span> turns to you, making a bowing motion, and claims that he “bows to your skills.” You puff out your chest and claim that you knew the plan was perfect the entire time and weren’t worried for a second, but <span style="color:DarkTurquoise">Carter</span> seems to doubt that. <br>
+				<<needChange "Fun" 20>>
+				<span style="color:green">+Carter Fun</span><br>
+				<<set $HangOutNeed.Fun += 15>>
+				<span style="color:green">+Carter Comfort</span><br>
+				<<set $HangOutNeed.Comfort += 5>>
+				<<socialChange "Carter" 3>>
+				<br>
+				[[Continue|Carter Hang Out Arcade]]
+			<</replace>>
+		<</requiresAbility>>
+	<</if>>
+
+	<<unset $lion>>
+</div>

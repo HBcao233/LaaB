@@ -1,0 +1,26 @@
+:: Noah Avatar Bubbles [nobr]
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+<<if $NPCHurt == 1>>
+	<<set $AD.Eyes to "Sad">>
+	<<set $AD.Cry to 1>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Sad">>
+	<<set $NPCHurt to 0>>
+<<else>>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+<</if>>
+	<<set $AD.Outfit to "Naked">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	<img src="Images/Avatar/Kids/Clothes/Bubbles/Bubbles.png" style="position: absolute; left: 0; top: 0">
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>

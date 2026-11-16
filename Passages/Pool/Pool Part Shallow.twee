@@ -1,0 +1,36 @@
+:: Pool Part Shallow [nobr]
+
+<<include"Pool Guest State">>
+<<set $PoolLocation to "Part Shallow">>
+
+<span style="color:Azure"><big><strong>--City Pool [Partially Shallow End]--</strong></big></span><br>
+
+/* BASIC DESCRIPTION */
+You are currently standing in the partially shallow end of the pool. You can stand on the floor of the pool, but the water goes up to your chin and any waves causes water to go up your nose. 
+/* STATE DESCRIPTION */
+<<if $PoolState == "Senior Swim">>
+This area of the pool is mostly empty, with most of the seniors in the deeper end exercising with their strange water aerobics. Though, you do notice a few of them resting on this end near the edges and quietly chatting.
+<<elseif $PoolState == "After School">>
+Nearly all the elementary students who aren’t on the shallow end are here. To them, this was the deep end and going deeper was a bit of a risk. Not only due to how deep it was, but also the older kids who always seemed ready to tease their younger counterparts. A few middle schoolers also choose to hang out here, chatting and swimming around casually.
+<<elseif $PoolState == "Families">>
+This was probably the busiest part of the pool. With people constantly coming down the water slide, parents swimming with their younger children, and groups of kids and teenagers hanging out and chatting.
+<<elseif $PoolState == "Teenagers">>
+This part of the pool was mostly empty, as most teenagers stuck to the deep end and no one was interested in the water slide. No one really seemed to pay any attention to you as you floated here.
+<<elseif $PoolState == "Swim Class">>
+This area was full of the young kids learning how to swim. Despite being shallow for you, most of them would be completely submerged without their floatation devices. A few floated on their backs, being assisted by some of the instructors, while a few clung to the railing, too afraid to let go despite the assurance of the instructors.
+<<else>>
+This area of the pool, like the rest, is currently empty.
+<</if>><br>
+<br>
+
+/* SWIM STAMINA */
+<<include"Swim Stamina">>
+
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Swim Around (0:10)|Pool Swim Around]] <span style="color:lightgreen">+Fun</span><br>
+[[Rest (0:10)|Pool Rest]] <span style="color:lightgreen">+Stamina</span><br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+[[Swim Deeper (0:01)|Pool Deep][$Minutes += 1]]<br>
+[[Swim Shallower (0:01)|Pool Shallow][$Minutes += 1]]<br>

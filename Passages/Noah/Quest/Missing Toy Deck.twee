@@ -1,0 +1,89 @@
+:: Missing Toy Deck [nobr]
+
+<<set $Minutes += 15>>
+
+/* RIGHT LOCATION */
+<<if $QuestMissingToyLocation == 2>>
+	<<set $ActiveQuests.delete("Noah: Missing Toy")>>
+	<<set $ActiveQuests.push("Noah: Missing Toy Finish")>>
+	<<unset $QuestMissingToyLocation>>
+	<<for _i to 0; _i lt $QuestLog.length; _i++>>
+		<<if $QuestLog[_i].Name == "Noah: Missing Toy">>
+			<<set $QuestLog[_i].Objectives[0].State to 1>>
+			<<set $QuestLog[_i].Objectives.push({
+				Name: "Return the toy to <span style=\"color:DarkTurquoise\">Noah</span>",
+				State: 0,
+				Total: 1,
+			})>>
+			<<break>>
+		<</if>>
+	<</for>>
+	You walk down the stairs onto the grass and move to a small crawlspace that leads under the deck. It is mostly pitch black, with only a few strands of light getting through. It also looks extremely dirty. You take a deep breath, remembering that you are doing this for <span style="color:DarkTurquoise">Noah</span>, and get on your hands and knees, crawling underneath the deck.<br>
+	<br>
+	It is very dusty, and you find yourself having to cover your mouth to prevent coughing. You also think you feel a bug crawl up your leg at one point, but try not to think about it. You begin to try to feel around for the toy, touching a few fuzzy things that send chills down your spine, before you find something that feels like plastic. <span style="color:Green">Pulling it closer, you confirm that it is <span style="color:DarkTurquoise">Noah</span>’s toy!</span><br>
+	<br>
+	You let out a prideful cheer, though accidentally breathe in a bunch of dust, and begin to cough wildly. You decide to crawl out now before you meet any creepy little friends and celebrate once you are safe. You manage to turn yourself around, seeing the light emanating from the opening you crawled through. Suddenly, you hear a squeak to your left that makes you crawl even faster and basically fly out of the opening to the backyard. You quickly jump to your feet, shaking and brushing off anything that might have crawled onto you, before holding your prize up to the sky in success. <span style="color:Green">Now all you have to do is return the toy to <span style="color:DarkTurquoise">Noah</span> to get your reward!</span><br>
+	<<needChange "Hygiene" -20>>
+	<br>
+	[[Continue|PH Backyard]] 
+<<else>>
+	You walk down the stairs onto the grass and move to a small crawlspace that leads under the deck. It is mostly pitch black, with only a few strands of light shining through. As you are about to get down on your hands and knees, you notice a small bug crawling out of the crawl space and feel shivers down your spine. The things you do for your little brother.<br>
+	<br>
+	You get on your knees and crawl under the deck, finding yourself forced to cover your mouth to prevent coughing from the extreme amount of dust. You begin to search around, though the search is mostly just you blindly feeling around hoping to find a small plastic toy. <br>
+	<br>
+	You feel around when you suddenly find something smooth and cold! Your excitement is cut short, however, as you discover it is simply a metal rod used for support. <span style="color:Lightcoral">You sigh in disappointment and let go of the rob right as you feel a large, fuzzy creature with many legs crawl onto your hand!</span> You let out a panicked scream and begin to wave your arm around in an attempt to get it off. <br>
+	<br>
+	<span style="color:Lightcoral">As you do so, you accidentally hit your head hard against the floor of the deck, not only causing a bunch of dust and dirt to fall down but also a bunch of other, smaller bugs that begin to crawl all over your body! You can’t hold in your high-pitched screams as you begin to roll around and frantically look for the exit. It is like a nightmare as you crawl around in the darkness covered in insects screaming for help.</span> Suddenly, you feel a hand grab your leg and yank you out from under the deck. <br>
+	<br>
+	You see <span style="color:DarkTurquoise">Your Father</span> standing above you with a concerned look on his face, before you look down and, now illuminated by the sun, <span style="color:Lightcoral">finally notice just how covered you were in small black bugs!</span> Before you can react and continue screaming, you are suddenly blasted by the hose! <br>
+	<br>
+	<span style="color:LightSteelBlue">“What the heck were you doing under there <span style="color:DarkTurquoise">$Player.Name</span>!?”</span> <span style="color:DarkTurquoise">Your Father</span> asks as he drenches you with the hose until every bug was either washed away or drowned. He stops the hose for a second to give you a chance to breathe, before blasting you a few more times and having you stand up. You get up to your feet and begin to cough up both water and dust as <span style="color:DarkTurquoise">Your Father</span> looks at you annoyed. <span style="color:LightSteelBlue">“Strip. I can’t risk you bringing those things inside.”</span> You try to protest, but every time you do <span style="color:DarkTurquoise">Your Father</span> once again blasts you with a hose. <span style="color:LightSteelBlue">“I wasn’t asking. Do it, now.”</span><br>
+
+	<<storeClothing "Closet" "Naked" 1>>
+
+	<<set _ad to [
+		{
+			Name: "Dad",
+			State: {
+				Mouth: "Frown",
+				Eyes: "Narrow",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Arms: "Hide",
+				Blush: 2,
+				Mouth: "Sad",
+				Outfit: "Naked",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<<if $HomeDayNudity == 0>>
+		<span style="color:Pink">You feel completely humiliated as you have to strip down completely naked in your backyard in front of <span style="color:DarkTurquoise">Your Father</span>. You try to hide yourself, but <span style="color:DarkTurquoise">Your Father</span> has you spin around as he blasts you with the hose from all angles, making sure you are completely grime and bug-free. Once you are thoroughly drenched, <span style="color:DarkTurquoise">Your Father</span> walks up to you and begins to scold you.</span><br>
+		<br>
+		<span style="color:LightSteelBlue">“What were you thinking!? Don’t you know what could be down there? Did anything bite you? Lift up your arms, let me see.”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Your Father</span> forces you to raise your arms as he begins to inspect every inch of your nude body for bites. He checks your back, under your arms, and between your legs. If you weren’t embarrassed before, you sure were now.</span><br>
+		<br>
+		And he scolds you the entire time, warning you of what could have happened if something bit you or you cut yourself and it got infected. <span style="color:Pink">Getting scolded was bad enough, but getting scolded while you were dripping wet and butt-naked outside was even worse.</span> Eventually, <span style="color:DarkTurquoise">Your Father</span> finishes his inspection and grabs a towel to dry you off before letting you go inside. <br>
+		<<addMoodlet "Seen Naked" 5>>
+		<<set _arousalbs to []>>
+		<<set _arousalkink to ["Humiliated"]>>
+		<<arousalGain 15 _arousalbs _arousalkink>>
+		<br>
+		[[Continue|PH Backyard]] 
+	<<else>>
+		<span style="color:Pink">Despite not normally caring if <span style="color:DarkTurquoise">Your Father</span> sees you naked, having to strip down in your backyard where your brothers or anyone else could get a peek at you was slightly embarrassing. <span style="color:DarkTurquoise">Your Father</span> forcing you to spin around while he blasts you with a hose from all angles to make sure you are bug-free only adds to the humiliation.</span> Once you are thoroughly drenched, <span style="color:DarkTurquoise">Your Father</span> walks up to you and begins to scold you. <br>
+		<br>
+		<span style="color:LightSteelBlue">“What were you thinking!? Don’t you know what could be down there? Did anything bite you? Lift up your arms, let me see.”</span><span style="color:Pink"> <span style="color:DarkTurquoise">Your Father</span> forces you to raise your arms as he begins to inspect every inch of your nude body for bites. He checks your back, under your arms, and between your legs. If you weren’t embarrassed before, you sure were now.</span><br>
+		<br>
+		And he scolds you the entire time, warning you of what could have happened if something bit you or you cut yourself and it got infected. <span style="color:Pink">Getting scolded was bad enough, but getting scolded while you were dripping wet and butt-naked outside was even worse.</span> Eventually, <span style="color:DarkTurquoise">Your Father</span> finishes his inspection and grabs a towel to dry you off before letting you go inside. <br>
+		<<addMoodlet "Seen Naked" 2>>
+		<<set _arousalbs to []>>
+		<<set _arousalkink to ["Humiliated"]>>
+		<<arousalGain 15 _arousalbs _arousalkink>>
+		<br>
+		[[Continue|PH Backyard]] 
+	<</if>>
+<</if>>

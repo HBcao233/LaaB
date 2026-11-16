@@ -1,0 +1,39 @@
+:: BEN Playground Read With [nobr]
+
+<<set $Minutes += 20>>
+
+You take a seat next to <span style="color:DarkTurquoise">Ben</span> under the tree and ask if you can sit here and read next to him. He stutters a few words nervously before he nods and turns away. You pull out a book and the two of you read silently next to each other. While he seems to be enjoying your company, he is completely silent and seems nervous.<br>
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="choice">
+	<<link "Pretend not to know a word<br>">>
+		<<replace "#choice">>
+			You tap <span style="color:DarkTurquoise">Ben</span> on the shoulder and show him your book. You point to the longest word you can see and ask if he knows what that word is, because it is confusing you. He gives you the definition, causing you to respond by teasingly poking his side and calling him smart. You continue to poke and tease him, causing the quiet boy to turn bright red and squirm. By the end of it, he seems much more comfortable around you.<br>
+			<<socialChange "Ben" 3>>
+			<<needChange "Fun" 20>>
+
+			<br>
+			[[Continue|School Courtyard]]
+		<</replace>>
+	<</link>>
+	<<link "Peek at his book<br>">>
+		<<replace "#choice">>
+			Making sure <span style="color:DarkTurquoise">Ben</span> wasn’t looking towards you, you turn your head and peek at his book over your shoulders. "Geoffrey caressed his partner, leaning in and whispering in their ear-" Wait, was it a romance novel? You smirk at the thought of <span style="color:DarkTurquoise">Ben</span> being a hopeless romantic and return to your book before the quiet boy realizes you were looking and gets flustered.<br>
+			<<socialChange "Ben" 3>>
+			<<needChange "Fun" 20>>
+
+			<br>
+			[[Continue|School Courtyard]]
+		<</replace>>
+	<</link>>
+</div>
+	

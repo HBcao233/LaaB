@@ -1,0 +1,132 @@
+:: Rudy Caught Spying [nobr]
+
+/* Intro */
+
+While enjoying your time on the playground you spot a curious sight in the corner of your eye. <span style="color:DarkTurquoise">Carter</span> is in the distance, no doubt playing superhero as he always does, but crouched behind a tree peeking over at him with his sketchbook in hand is the artist <span style="color:DarkTurquoise">Rudy</span>, who, from what you could gather, is currently in the process of drawing <span style="color:DarkTurquoise">Carter</span>! <br>
+
+ <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+            },
+        },
+        {
+        Name: "OC Rudy",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+            Blush: 1,
+           }
+        },
+    ]>>
+<<ad _ad>>
+
+Despite his attempt at stealth, it is pretty obvious he is spying on <span style="color:DarkTurquoise">Carter</span>. Though <span style="color:DarkTurquoise">Carter</span>, oblivious as he is, probably wouldn’t notice <span style="color:DarkTurquoise">Rudy</span> even if he was holding a massive sign that read: <span style="color:LightSteelBlue">“I’m drawing you.”</span> <span style="color:Pink">It’s actually kind of cute how oblivious they both are.</span> <br>
+<br>
+
+
+<div id="choice">
+    /*Leave him be*/
+    <<link "Leave him be<br>">>
+    <<replace"#choice">>
+
+<span style="color:Pink">You decide to leave the little artist be. After all, more cute art of <span style="color:DarkTurquoise">Carter</span> is always a good thing. Maybe one day he’ll even let you see it!</span> So with one last look at the pair of boys, you turn around and go back to what you were doing, leaving them to their drawing. <br>
+    <br>
+    [[Continue|School Courtyard]] 
+    <</replace>>
+    <</link>>
+
+/*Walk up to him*/
+    <<link "Walk up to him<br>">>
+    <<replace"#choice">>
+
+    As quietly as you can, you sneak up behind <span style="color:DarkTurquoise">Rudy</span> as he is drawing, peeking over his shoulder to confirm that he is, indeed, drawing a portrait of <span style="color:DarkTurquoise">Carter</span> in the midst of play. <span style="color:Pink">The drawing is very cute, despite only containing the head and torso at the moment, though you are a bit surprised by <span style="color:DarkTurquoise">Carter</span>’s innocent, almost embarrassed, expression.</span> <br>
+    <br>
+    It is just as you are watching him begin to draw more of the body that the sun catches you just perfectly to cast a shadow over his page. <span style="color:DarkTurquoise">Rudy</span> makes a confused noise before turning around and, upon seeing you, jumps and lets out a blood-curdling scream! <br>
+    <br>
+    Gasping and falling onto his butt, the boy stumbles around, begging you not to hurt him. Then, after a brief silence only broken by your chuckling, <span style="color:DarkTurquoise">Rudy</span> opens his eyes to see you standing over him. Seems he mistook you as a monster for a second. <br>
+
+    <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                },
+            },
+            {
+            Name: "OC Rudy",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Frown",
+                Blush: 1,
+            }
+            },
+        ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“O- oh… Um… hi….”</span> <span style="color:DarkTurquoise">Rudy</span> says, <span style="color:Pink">clearly a bit embarrassed by his scream.</span> With an eyeroll and a smirk, you help the boy up to his feet, apologizing for scaring him. <span style="color:LightSteelBlue">“It’s fine.”</span> <span style="color:DarkTurquoise">Rudy</span> says, though his voice catches in his throat a little and he coughs a few times to clear it. <span style="color:LightSteelBlue">“It’s fine… I just didn’t expect anyone to be behind me… is all…”</span> You comment on his drawing, saying that it looks to be coming out very well! <span style="color:Pink">Though your comment causes his entire face to burn red.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“It’s not done!”</span> He says quickly, holding the sketchbook tightly against his chest, <span style="color:LightSteelBlue">“I’m still working on the…”</span> He looks down, still blushing, as you laugh. You weren’t expecting him to be so embarrassed by it, you already know he draws your classmates to practice and it’s not like you’ll tell <span style="color:DarkTurquoise">Carter</span> or anything; though, if you did, you’re pretty sure <span style="color:DarkTurquoise">Carter</span> would love it. <br>
+    <br>
+    Still, <span style="color:DarkTurquoise">Rudy</span> seems very embarrassed by this turn of events and continues to stare at the ground until you lighten the mood with a joke, causing him to crack a smile. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Sorry, I’m just… a bit nervous about my art…”</span> He says after taking a deep breath. <span style="color:LightSteelBlue">“But I can finish it later, did you want to hang out… or something?”</span> He asks, trying to calm his nerves. <span style="color:Pink">You chuckle how cute he is when he’s flustered and agree to hang out with the boy for a bit.</span> <br>
+
+    <<socialChange "Rudy" 3 1>>
+    <br>
+    [[Continue|School Courtyard]] 
+    <</replace>>
+    <</link>>
+
+/*Throw a rock at him*/
+    <<if $Player.Traits.includes("Evil")>>
+    <<link "<strong>[Evil]</strong> Throw a rock at him<br>">>
+    <<replace"#choice">>
+
+    <span style="color:LightGreen">Seeing the little twerp drawing people without their consent, an evil idea enters your mind. It’s time to teach this dork a lesson.</span> You glance around at the ground, finding a rock of perfect size, enough to hurt but not enough to leave a mark; you didn’t want him to run off crying to a teacher and getting you in trouble with obvious evidence. You toss the rock up and down, feeling the weight of it in your hand. <br>
+    <br>
+    Lining up the shot like a baseball pitcher, you aim directly for the back of the idiot’s head. Then, with as much strength as you can muster, you toss it and nail the loser! <span style="color:LightGreen">Direct hit! Instantly the dork cries out, dropping his sketchpad and crying out as he grips the back of his head. He leans forward and cringes and you think you even see the baby crying! You can’t help but laugh at him.</span> <br>
+
+    <<set _ad to [
+            {
+                Name: "Carter",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                },
+            },
+            {
+            Name: "OC Rudy",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Frown",
+                Eyes: "Sad",
+                Blush: 3,
+                Cry: 2,
+            }
+            },
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            }
+            },
+        ]>>
+    <<ad _ad>>
+
+    As <span style="color:DarkTurquoise">Rudy</span> is crying, seems you hit him harder than you thought, you yell out and point to <span style="color:DarkTurquoise">Rudy</span>, telling everyone that this little punk is spying on people and making creepy drawings! Instantly, all eyes turn to the unstealthy boy, including <span style="color:DarkTurquoise">Carter</span>, who just looks at him confused. <span style="color:Pink"> <span style="color:DarkTurquoise">Rudy</span> turns bright red, still visibly crying as he quickly grabs his things and runs off, hurt and embarrassed.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“Hey wait!”</span> <span style="color:DarkTurquoise">Carter</span> calls out as <span style="color:DarkTurquoise">Rudy</span> runs, seemingly genuinely worried for him. <span style="color:LightSteelBlue">“That wasn’t very nice!”</span> <span style="color:DarkTurquoise">Carter</span> turns to you angrily before trying to run after him. Whatever, he gets what he deserves for spying. <span style="color:LightGreen">Plus no one saw you nail that loser in the head AND every saw him crying like a baby. So win-win.</span> <br>
+
+    <<needChange "Fun" 20>>
+    <<socialChange "Rudy" -10 1>> 
+    <<socialChange "Carter" -3>> 
+    <br>
+    [[Continue|School Courtyard]] 
+    <</replace>>
+    <</link>>
+<</if>>
+</div>

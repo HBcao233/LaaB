@@ -1,0 +1,174 @@
+:: JACKSON Inspect School Playground [nobr]
+
+	<<include"JACKSON Avatar Everyday">>
+	<span style="color:DarkTurquoise">Jackson</span> hangs from the branch of a large tree by his arms, swinging back and forth. One of his shoes has come off and sits in the dirt below him, but he doesn’t even seem to notice.<br>
+	<br>
+	<<include"Jackson Base Talk Code">>
+	[[Chat With (0:10)|JACKSON Playground Chat With]] <span style="color:Green">+Jackson</span><br>
+	<<if $JacksonSocial > -50 or $JacksonSocialRank > 0>>
+		[[Climb Tree (0:20)|JACKSON Playground Climb Tree]] <span style="color:Green">+Jackson</span><br>
+	<</if>>
+
+	<<if $JacksonSocial >= 50 or $JacksonSocialRank > 0>>
+		[[Play With (0:20)|JACKSON Playground Play With]] <span style="color:Green">+Jackson</span><br>
+	<</if>>
+
+:: JACKSON Inspect School Playground Rain [nobr]
+
+	<<include"JACKSON Avatar Undies">>
+	<span style="color:DarkTurquoise">Jackson</span> hangs from one of the tree branches upside-down in the rain. <span style="color:Pink">To your surprise he is wearing nothing but his $JacksonUndies.Name!</span><br>
+	<br>
+
+	/* THIS WILL BE CHANGED ONCE NATURISM KINK STUFF ADDED */
+	<<if $PlayerUndies.Type != "None" && $NaturismSkill >= 3>>
+		[[Join in the Rain (0:15)|Jackson Playground Rain Join]]<br>
+	<</if>>
+	[[Chat with (0:10)|JACKSON Playground Rain Chat With]] <span style="color:Green">+Jackson</span><br>
+
+	<<include"Jackson Base Talk Code">>
+
+:: JACKSON Inspect School Lunch [nobr]
+
+	<<include"JACKSON Avatar Everyday">>
+	<span style="color:DarkTurquoise">Jackson</span> sits on his knees, tossing pieces of food into the air and trying to catch them in his mouth. Everyone around him cheers him on whenever he manages to catch one.<br>
+	<br>
+	<<if $FriendLunch != 1 and $LunchClass != 2>>
+		[[Eat Lunch With (0:15)|JACKSON Eat Lunch]] <span style="color:Green">+Social</span>
+		/* LUNCH QUALITY WHEN EATING WITH PERSON */
+		<<include "School Lunch Level Chooser">>
+	<</if>>
+	
+	<<include"Jackson Base Talk Code">>
+
+:: JACKSON Inspect School Waiting for Bus [nobr]
+
+	<<include"JACKSON Avatar Everyday">>
+	<span style="color:DarkTurquoise">Jackson</span> skips from one rock to another while waiting for the bus. He nearly trips a few times, but manages to keep his balance.<br>
+	<br>
+	<div id="HangOutSchool">
+		<<if $InActiveQuests.includes("Jackson: Hang Out Intro")>>
+			<<link"Ask if Jackson wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Jackson Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Jackson: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutSchool">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Uniform">>
+					<<set $Minutes += 10>>
+					<<goto "Jackson Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+	</div>
+	[[Leave|Middle School]] 
+
+:: JACKSON Inspect School Hallway [nobr]
+
+	<<include"JACKSON Avatar Everyday">>
+	<span style="color:DarkTurquoise">Jackson</span> walks down the hallway happily swinging his arms around.<br>
+	<br>
+	[[Give him a hug (0:02)|Jackson School Hug]]<br>
+	<<if !$DailyEvents.includes("Jackson School Bully")>>
+		[[Give Jackson a Wedgie (0:02)|Jackson School Hallway Wedgie]]
+		<<if $JacksonSocial < 20 && $JacksonSocialRank != 1>>
+			<span style="color:Red"> -Social</span><br>
+		<<else>>
+			<span style="color:Green"> +Social</span><br>
+		<</if>>
+	<<else>>
+		<span style="color:Grey">Give Jackson a Wedgie (0:02)</span><br>
+	<</if>>
+
+	<<include"Jackson Base Talk Code">>
+
+:: JACKSON Inspect English [nobr]
+
+	<<include"JACKSON Avatar Everyday">>
+	<span style="color:DarkTurquoise">Jackson</span> sits at his desk hitting his books like drums to a song he hums along to.<br>
+
+
+:: JACKSON Inspect History [nobr]
+
+	<<include"JACKSON Avatar Everyday">>
+	<span style="color:DarkTurquoise">Jackson</span> is attempting to do a handstand next to his desk to impress the other boys. <span style="color:Pink">His $JacksonTop.Type slides down, revealing his boyish chest and nipples.</span><br>
+
+:: JACKSON Inspect Science [nobr]
+
+	<<include"JACKSON Avatar Everyday">>
+	<span style="color:DarkTurquoise">Jackson</span> is attempting to stack the glass beakers on top of each other. At one point they nearly tumble to the ground and break, but he manages to catch them. He then puts them back to normal before the teacher sees.<br>
+
+:: JACKSON Inspect Math [nobr]
+
+	<<include"JACKSON Avatar Everyday">>
+	<span style="color:DarkTurquoise">Jackson</span> was told he had to sit on his hands until class starts to avoid getting himself into trouble. He bounces up and down, obviously anxious to do something.<br>
+
+:: JACKSON Inspect Art [nobr]
+
+	<<include"JACKSON Avatar Everyday">>
+	<span style="color:DarkTurquoise">Jackson</span> sets up some finger paint and a cardboard box. Instead of wearing a painter’s smock, he opts to take off his $JacksonTop.Type and wrap it around his leg, a loophole he found to not get in trouble since he was “technically still wearing it”. You doubt it’ll be long before he gets paint on his bare chest.<br>
+
+:: JACKSON Inspect Gym [nobr]
+
+	<<include"JACKSON Avatar Undies">>
+	<span style="color:DarkTurquoise">Jackson</span> jumps around on the benches, being silly and attempting to make some of the other boys laugh. <span style="color:Pink">The sight of him jumping around in nothing but his $JacksonUndies.Name was quite cute and he doesn’t seem to mind making a fool of himself if it makes other people laugh.</span> Despite everyone being in their underwear, something about being in the locker room makes it less intimate and embarrassing.<br>
+	<<if $SeenJacksonUndies < 1>>
+		<<set $SeenJacksonUndies += 1>>
+	<</if>>
+	
+:: JACKSON Inspect Gym Shower [nobr]
+
+	<<include"JACKSON Avatar Naked">>
+	<span style="color:DarkTurquoise">Jackson</span> stands facing his locker, using his towel to dry his hair. <span style="color:Pink">This has left his body completely exposed! His Big Butt is in clear view, attracting the looks of those around him. From the side, his Penis and Balls can easily be seen laying cutely between his legs. They are an average size for his age, but also have a childish nature to them. </span> The boy seems completely unfazed by being seen naked by his classmates. <br>
+	<<if $SeenJacksonNaked < 1>>
+		<<set $SeenJacksonNaked += 1>>
+	<</if>>
+
+:: JACKSON Inspect Empty Lot Naked [nobr]
+
+	<<if !$CompletedQuests.includes("Jackson: Empty Lot")>>
+		Peeking around a bush and glancing at the empty lot, you see the outline of someone, about your age, dancing and playing around in the lot. You hear whispered mumblings and laughter, but nothing you can make out. <br>
+	<br>
+		[[Get Closer|JACKSON Empty Lot Spy Unknown]]<br>
+
+	<<else>>
+	/* AVATAR DISPLAY */
+	<<set _ad to [
+		{
+			Name: "Jackson",
+			ShowZoom: true,
+			State: {
+				Mouth: "Happy",
+				Outfit: "Naked",
+			},
+		},
+	]>>
+	<<ad _ad>>
+	
+			<span style="color:pink">Peeking around a bush and glancing at the empty lot, you spot the ever-cute <span style="color:DarkTurquoise">Jackson</span> dancing and playing around in the lot. As expected, he was completely naked and his flaccid penis bounced around as he danced, making for a cute sight.</span> <br>
+		<br>
+				[[Offer to play with clothes on (0:30)|JACKSON Empty Lot Play Clothed]]<br>
+			<<if $PlayerUndies.Type != "None">>
+				[[Offer to Play in Underwear (0:30)|JACKSON Empty Lot Play Underwear]]<br>
+			<<else>>
+				<span style="color:red">Offer to Play in Underwear (You're not wearing any underwear!)</span><br>
+			<</if>>
+			<<if $NaturismSkill >= 2>>
+				[[Offer to Play Naked (0:30)|JACKSON Empty Lot Play Naked]]<br> 
+			<<else>>
+				<span style="color:red">Offer to Play Naked (You're not brave enough to strip here!)</span><br>
+			<</if>>
+		<<set $Minutes += 30>>
+	<</if>>

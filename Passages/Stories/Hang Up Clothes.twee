@@ -1,0 +1,23 @@
+:: Hang Up Clothes [nobr]
+	You take the basket of wet clothes and begin to hang them up in the backyard. You wish <span style="color:DarkTurquoise">Your Father</span> would just buy a dryer to make this easier. You briefly stop as you get to your underwear, slightly embarrassed to have them hanging out here in plain view, but eventually decide it’s not that big a deal since no one can see back here anyway.<br>
+<br>
+
+<<set $Minutes += 15>>
+
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+	<<if $QuestLog[_i].Name == "Weekly Chores">>
+		<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+			<<if $QuestLog[_i].Objectives[_o].Name == "Hang Up Clothes">>
+				<<set $QuestLog[_i].Objectives[_o].State to 1>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<break>>
+	<</if>>
+<</for>>
+
+<<set $ChoreEasyObj to 1>>
+<<include"Chore Quest Check">>
+	
+
+[[Continue|PH Backyard]] 

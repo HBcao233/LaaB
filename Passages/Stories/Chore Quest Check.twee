@@ -1,0 +1,45 @@
+:: Chore Quest Check [nobr]
+
+<<set _objDone to 0>>
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+	<<if $QuestLog[_i].Name == "Weekly Chores">>
+		<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+			<<if $QuestLog[_i].Objectives[_o].State == $QuestLog[_i].Objectives[_o].Total>>
+				<<set _objDone += 1>>
+				<<if _objDone == $QuestLog[_i].Objectives.length>>
+					<<set $QuestLog.deleteAt(_i)>>
+					<<set $CompletedQuests.push("Chores")>>
+					<<set $ActiveQuests.delete("Chores")>>
+					<<set $ActiveQuests.push("Chores Reward")>>
+					<<set $QuestLog.push(
+						{
+							Name: "Weekly Chores",
+							State: 0,
+							ID: "Jobs_R001",
+							Category: "Job",
+							Type: "Quest",
+							Icon: "Chore",
+							Tags: ["Father", "Job", "Quest", "Deadline"],
+							Description: "You have finished your chores! Talk to <span style=\"color:DarkTurquoise\">Your Father</span> to get your allowance! It would be best to ask him for it when he is not doing something, such as when he is relaxing in his Bedroom.",
+							Deadline: "Monday",
+							Objectives: [
+								{
+									Name: "Do Your Chores",
+									State: 1,
+									Total: 1,
+								},
+								{
+									Name: "Get Allowance from Your Father",
+									State: 0,
+									Total: 1,
+								},
+							],
+						},
+					)>>
+					<<break>>
+				<</if>>
+			<</if>>
+		<</for>>
+		<<break>>
+	<</if>>
+<</for>>

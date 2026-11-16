@@ -1,0 +1,74 @@
+:: Northend Jogging [nobr]
+
+/* BASIC TEXT */
+You decide to go for a run and begin to jog down the sidewalk along your street. 
+
+/* EVENT CHECK */
+<<set _random to random(1, 4)>>
+
+/* SETTING XP STUFF */
+<<set $SkillCheckType to "Athletics">>
+<<set $SkillCheckTime to 0.5>>
+<<if $AthleticsSkill < 5>>
+    <<set $SkillCheckDifficulty to $AthleticsSkill>>
+<<else>>
+    <<set $SkillCheckDifficulty to 4>>
+<</if>>
+<<set $SkillResults to "Pass">>
+
+/* SCENE EVENT */
+<<if _random < 4>>
+    <<set _random2 to random(1, 5)>>
+    <<if _random2 == 1>>
+As you are nearing the intersection, a fellow jogger rounds the corner. She looks to be college-aged and, as she sees you, gives you a pleasant smile and wave. You return the gesture as you both pass each other and continue on with your own exercises.
+    <<elseif _random2 == 2>>
+You notice a man walking his small dog along the street. You slow down slightly and give them both a friendly wave. The little dog barks happily and turns around to try and follow you, but is stopped by his leash. You chuckle and wave farewell to the dog as you face forward and continue your jog.
+    <<elseif _random2 == 3>>
+As you pass by the small park near the end of the street, you stop briefly to catch your breath and notice a group of elementary school boys playing tag. You watch them for a moment before quickly stretching and continuing your jog.
+    <<elseif _random2 == 4>>
+As you are jogging, you stumble and nearly trip as a stray cat suddenly jumps out in front of you. Thankfully, a nearby stop sign is able to break your fall. You turn around, maybe thinking to scold the cat, just to see it looking up at your with it’s bright, lamp-like eyes. You decide to leave the cute creature be as it dashes into a nearby bush and you continue your jog.
+    <<elseif _random2 == 5>>
+    <<if $LucasSocial >= 0 or $LucasSocialRank > 0>>
+As you pass by <span style="color:DarkTurquoise">Lucas</span>’ house, you see him near his mailbox. You both smile and wave as your eyes meet and you hear him call out <span style="color:LightSteelBlue">“Don’t work out too hard!”</span> As you pass by. You call back, saying that you’ll try.
+    <<else>>
+As you pass by <span style="color:DarkTurquoise">Lucas</span>’ house, you see him near his mailbox. He notices you as well and your eyes briefly meet before <span style="color:DarkTurquoise">Lucas</span> quickly grabs his mail and dashes back into his house. 
+    <</if>>
+    <</if>><br>
+/* NEED DECREASE */
+<<set $Minutes += 30>>
+<<if $ExerciseType == "No Sweat">>
+    <<needChange "Hygiene" -2>>
+    <<needChange "Energy" -4>>
+<<elseif $ExerciseType == "Paced">>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -2>>
+<<else>>
+    <<needChange "Hygiene" -5>>
+    <<needChange "Energy" -4>>
+<</if>>
+<<skillPoints "Athletics" 5>>
+<br>
+[[Continue|Northend]]
+
+/* RANDOM EVENT */
+<<else>>
+    
+<<set _Random to ["Northend Jogging Dog", "Northend Jogging Old Woman", "Northend Jogging Hose", "Northend Jogging Trips", "Northend Jogging Toddler Streak", "Northend Jogging Pleasant Surprise"]>>        
+    <<if !$Time.schoolday() && $Time.before(9)>>
+		<<set _Random.push("Northend Jogging Pleasant Surprise")>>
+    <</if>>
+
+	/* Shinju Scenes */
+	<<if $ToggleOCShinju == 1 && $CompletedQuests.includes("Shinju: Monster Boy") && $OCShinjuSocial > 25>>
+		<<set _Random.push("OC Shinju Running Meet Up")>>
+	<</if>>
+
+<<set _event to _Random.random()>>
+<<include _event>>
+
+<</if>>
+
+/* WET/TEMP CHECK */
+/* ROLLS TWICE DURING OUTDOOR ACTIVITY, MAY FIND BETTER SOLUTION LATER */
+<<include"Wet Control">>
+<<include"Wet Control">>

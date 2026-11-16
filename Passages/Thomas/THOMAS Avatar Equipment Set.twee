@@ -1,0 +1,251 @@
+:: THOMAS Avatar Equipment Set [nobr]
+
+<<set $AD.SkinColor to "Shell">>
+<<set $AD.Freckles to 1>>
+<<set $ADArmFreckles to 1>>
+<<set $ADShoulderFreckles to 1>>
+<<set $AD.HairStyle to "Shaggy2">>
+<<set $AD.HairColor to "Ginger">>
+<<set $AD.EyeColor to "Green">>
+<<set $AD.LeftEyeColor to "Green">>
+<<set $AD.RightEyeColor to "Green">>
+<<set $AD.PenisStyle to $ThomasCut>>
+<<set $AD.PenisSize to "Average">>
+<<set $AD.Balls to "Medium">>
+<<set $AD.Butt to "Cute">>
+
+	<<set $ADChestScar to 1>>
+	<<set $ADFaceScar to 1>>
+	<<set $ADLeftArmScar to 1>>
+	<<set $ADRightLegScar to 1>>
+
+    <<set $ADShoulderFreckles to 1>>
+    <<set $ADArmFreckles to 1>>
+
+<<set $ADMoles to {
+    CheekLeft: 0,
+    CheekRight: 0,
+    LipLeft: 0,
+    LipRight: 0,
+    PubicLeft: 0,
+    PubicRight: 0,
+}>>
+<<set $ADNoseHeavyFreckles to 0>>
+<<set $ADNoseLightFreckles to 0>>
+<<set $ADLeftSmallFreckles to 0>>
+<<set $ADRightSmallFreckles to 0>>
+
+<<set $ADUndies to $ThomasUndies>>
+<<set $ADBottoms to $ThomasBottoms>>
+<<set $ADTop to $ThomasTop>>
+<<set $ADOuter to $ThomasOuter>>
+<<set $ADSocks to $ThomasSocks>>
+<<set $ADShoes to $ThomasShoes>>
+<<set $ADShortsSag to 0>>
+
+<<if $ADMuscleToggle == 1>>
+	<<set $AD.Build to "Normal">>
+<<else>>
+	<<set $AD.Build to "Normal">>
+<</if>>
+
+<<if $ADPubicHairToggle == 1>>
+	<<set $AD.PubicHair to "Wisps">>
+<<else>>
+	<<set $AD.PubicHair to "None">>
+<</if>>
+
+/* DEFAULT SETTING */
+	<<set $ADHead to $None>>
+    <<set $ADFace to $None>>
+    <<set $ADMouth to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADUnder to $None>>
+    <<set $ADOver to $None>>
+    <<set $ADBack to $None>>
+    <<set $ADHands to $None>>
+    <<set $ADWaist to $None>>
+
+<<if $SchoolUniforms == 1 and $AD.Outfit == "Uniform">>
+    <<addClothing "AD" "Top" "School Dress Shirt" "Rolled">>
+    <<addClothing "AD" "Bottoms" "Slacks" "Black">>
+    <<addClothing "AD" "Neck" "School Tie" "School">>
+    <<addClothing "AD" "Socks" "School Socks" "Black">>
+    <<addClothing "AD" "Outer" "School Jacket" "Rolled">>
+    <<set $ADTopAlt to 1>>
+    <<set $ADNeckAlt to 1>>
+    <<set $ADOuterAlt to 1>>
+
+<</if>>
+
+<<if $AD.Outfit == "Naked">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Undies">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Towel">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Towel" "White">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym">>
+    <<addClothing "AD" "Top" "Gym Shirt" "School">>
+    <<addClothing "AD" "Bottoms" "Gym Shorts" "School">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym Swim">>
+	<<set $ADTop to $None>>
+    <<addClothing "AD" "Bottoms" "Trunks" "Purple">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+<</if>>
+
+/* Costumes */
+<<if $AD.Outfit == "Oni">>
+    <<set $AD.HairStyle to "Oni">>
+	<<set $ADTop to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $AD.SkinColor to "Red">>
+	<<set $ADChestScar to 0>>
+	<<set $ADFaceScar to 0>>
+	<<set $ADLeftArmScar to 0>>
+	<<set $ADRightLegScar to 0>>
+    <<set $ADEyeScar to 0>>    <<set $ADBottoms to {
+        Name: "Oni Skirt",
+        Type: "Bottoms",
+        Color: "Brown",
+        Slot: "Bottom",
+        Temp: 5,
+        Tags: ["Costume", "Unconventional"],
+        Durability: 10,
+        MaxDurability: 10,
+        Weight: 2,
+        Size: "Preteen",
+        Avatar: "Images/Avatar/Clothes/Oni/Oni Skirt.png",
+    }>>
+    <<set $ADHead to {
+        Name: "Oni Horns",
+        Type: "Head",
+        Color: "Brown",
+        Slot: "Bottom",
+        Temp: 5,
+        Tags: ["Costume", "Unconventional"],
+        Durability: 10,
+        MaxDurability: 10,
+        Weight: 2,
+        Size: "Preteen",
+        Avatar: "Images/Avatar/Clothes/Oni/Oni Horns.png",
+    }>>
+    <<set $ADNeck to {
+        Name: "Oni Collar",
+        Type: "Neck",
+        Color: "Brown",
+        Slot: "Bottom",
+        Temp: 5,
+        Tags: ["Costume", "Unconventional"],
+        Durability: 10,
+        MaxDurability: 10,
+        Weight: 2,
+        Size: "Preteen",
+        Avatar: "Images/Avatar/Clothes/Oni/Oni Collar.png",
+    }>>
+    <<set $ADWaist to {
+        Name: "Oni Bat",
+        Type: "Bat",
+        Color: "Brown",
+        Slot: "Waist",
+        Temp: 5,
+        Tags: ["Costume", "Unconventional"],
+        Durability: 10,
+        MaxDurability: 10,
+        Weight: 2,
+        Size: "Preteen",
+        Avatar: "Images/Avatar/Clothes/Oni/Oni Bat.png",
+    }>>
+    <<set $ADArms to {
+        Name: "Oni Arm Bracers",
+        Type: "Arms",
+        Color: "Brown",
+        Slot: "Arms",
+        Temp: 5,
+        Tags: ["Costume", "Unconventional"],
+        Durability: 10,
+        MaxDurability: 10,
+        Weight: 2,
+        Size: "Preteen",
+        Avatar: "Images/Avatar/Clothes/Oni/Oni Arm Bracers Default.png",
+    }>>
+    <<set $ADTop to {
+        Name: "Oni Arm Bandage",
+        Type: "Top",
+        Color: "Brown",
+        Slot: "Top",
+        Temp: 5,
+        Tags: ["Costume", "Unconventional"],
+        Durability: 10,
+        MaxDurability: 10,
+        Weight: 2,
+        Size: "Preteen",
+        Avatar: "Images/Avatar/Clothes/Oni/Oni Arm Bandage.png",
+    }>>
+    <<set $ADShoes to {
+        Name: "Oni Ankle Pads",
+        Type: "Shoes",
+        Color: "Brown",
+        Slot: "Shoes",
+        Temp: 5,
+        Tags: ["Costume", "Unconventional"],
+        Durability: 10,
+        MaxDurability: 10,
+        Weight: 2,
+        Size: "Preteen",
+        Avatar: "Images/Avatar/Clothes/Oni/Oni Ankle Pads.png",
+    }>>
+<</if>>
+
+    /* X-Ray Mode Test */
+    <<if $Xray == 1>>
+        <<set $ADHead to $None>>
+        <<set $ADFace to $None>>
+        <<set $ADMouth to $None>>
+        <<set $ADNeck to $None>>
+        <<set $ADUnder to $None>>
+        <<set $ADOver to $None>>
+        <<set $ADBack to $None>>
+        <<set $ADHands to $None>>
+        <<set $ADWaist to $None>>
+        <<set $ADTop to $None>>
+        <<set $ADBottoms to $None>>
+        <<set $ADNeck to $None>>
+        <<set $ADOuter to $None>>
+        <<set $ADSocks to $None>>
+        <<set $ADShoes to $None>>
+    <</if>>

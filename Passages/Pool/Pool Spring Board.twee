@@ -1,0 +1,107 @@
+:: Pool Spring Board [nobr]
+
+<<set $Minutes += 5>>
+
+/* OPENING */
+You step up to the spring board. What dive would you like to attempt?<br>
+<br>
+<<set $SwimStamina -= 10>>
+
+/* CANONBALL */
+<div id='choice'>
+    <<link "A Cannonball">>
+    <<replace"#choice">>
+Walking up to the very edge of the diving board, you begin to bounce up and down to gain height. Once, twice, three times until-! You jump up with all your strength!<br>
+<br>
+<<skillCheck "Swimming" 50>>
+
+    /* PASS */
+<<if _result == 1>>
+As you fly into the air, you tuck your knees into your chest and bend down, forming into a ball! <span style="color:lightgreen">Coming down, you hit the water at high speeds causing a massive SPLASH!</span> Once under the water, you uncurl your body and surface, taking in a deep breath before laughing at the ever exhilarating cannonball!<br>
+    <<skillPoints "Swimming" 2>>
+<br>
+[[Continue|Pool Deep]]
+
+    /* FAIL */
+<<else>>
+As you fly into the air, you tuck your knees into your chest and bend down, forming into a ball! However, your balance was slightly off and you find yourself rolling backwards in the air. Before you could compensate for it, SPLASH! You land in the water at high speeds.<br>
+<br>
+<span style="color:lightcoral">Instantly, you feel the pain of your $PlayerBottoms.Type going far up your ass due to your weird angle.</span> Instinctively, you let out a pained scream, but this only causes water to pour into your mouth. You quickly surface, coughing and spitting out the water, before quickly trying to fix the painful wedgie you now had. That could have gone better.<br>
+    <<skillPoints "Swimming" 1>>
+<br>
+<<addMoodlet "Wedgie" 3>>
+[[Continue|Pool Deep]]
+
+<</if>>
+    <</replace>>
+    <</link>>
+<<skillDiff "Swimming" 50>><br>
+
+/* SWAN DIVE */
+    <<link "A Swan Dive">>
+    <<replace"#choice">>
+Walking up to the very edge of the diving board, you begin to bounce up and down to gain height. Once, twice, three times until-! You jump up with all your strength!<br>
+<br>
+<<skillCheck "Swimming" 70>>
+
+    /* PASS */
+<<if _result == 1>>
+<span style="color:lightgreen">Jumping into the air, you hold your hands up above your head and lean forward, causing your body to rotate into an elegant and impressive swan dive.</span> You take one last breath before hitting the water, and enter with little noise or splash, sliding right in perfectly.<br>
+    <<skillPoints "Swimming" 2>>
+<br>
+[[Continue|Pool Deep]]
+
+    /* FAIL */
+<<else>>
+Jumping into the air, you hold your hands up above you head and lean forward, causing your body to rotate into an elegant and impressive swan dive. It all seems to be going well, <span style="color:lightcoral">until you hit the water and feel an all to familiar tug on your $PlayerBottoms.Type followed by an unpleasant ‘freedom’ on your lower half.</span><br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+			ShowZoom: true,
+            State: {
+                Mouth: "Frown",
+                Blush: 2,
+				PantsDown: true,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:pink">Trying to quickly surface, you feel your legs constrained and realize that your $PlayerBottoms.Type had been pulled down to your ankles as you entered the water!</span> You quickly reach down and yank them back up before anyone notices, and surface as you gasp for air, red in the face.<br>
+<<skillPoints "Swimming" 1>>
+<br>
+[[Continue|Pool Deep]]
+
+<</if>>
+    <</replace>>
+    <</link>>
+<<skillDiff "Swimming" 70>>
+
+/* FLIP */
+    <<link "Do a Flip">>
+    <<replace"#choice">>
+Walking up to the very edge of the diving board, you begin to bounce up and down to gain height. Once, twice, three times until-! You jump up with all your strength!<br>
+<br>
+<<skillCheck "Swimming" 80>>
+
+    /* PASS */
+<<if _result == 1>>
+<span style="color:lightgreen">As soon as you enter the air, you lean forward with incredible skill and begin to perform several flips in the air! One! Two! Three flips before you straighten out right as you enter the water!</span> To add yet another layer to your impressive display, you swim all the way down to the floor of the pool, flip around underwater, and kick off the ground to propel you to the surface of the water!<br>
+<<skillPoints "Swimming" 2>>
+<br>
+[[Continue|Pool Deep]]
+
+    /* FAIL */
+<<else>>
+As soon as you enter the air, you lean forward with incredible skill and begin to perform several flips in the air! One! Two! <span style="color:lightcoral">But you overestimate your distance from the water and splash down hard, belly first, part way through your third flip.</span> Instantly an intense stinging sensation travels throughout your body as your slowly sink down in the water, only surfacing when you are able to recover from a painful belly flop.<br>
+<<skillPoints "Swimming" 1>>
+<br>
+<<addMoodlet "Pained" 4>>
+[[Continue|Pool Deep]]
+
+<</if>>
+    <</replace>>
+    <</link>>
+<<skillDiff "Swimming" 80>>
+</div>

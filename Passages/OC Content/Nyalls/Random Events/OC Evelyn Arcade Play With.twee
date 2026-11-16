@@ -1,0 +1,88 @@
+:: OC Evelyn Arcade Play With [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+As you are browsing the games, you hear a familiar voice. <span style="Color: LightSteelBlue">“It’s not my fault you lost.”</span> You hear some growls and stuttering <span style="color:Yellow">before turning the corner to see an angry boy with a tear in his eyes stomping away from an arcade game where <span style="color:DarkTurquoise">Evelyn</span> sits shaking her head.</span> She sighs before continuing to play on her own. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Evelyn",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smirk",
+                Eyes: "Mad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You go up to her and ask what that was about. <span style="Color: LightSteelBlue">“Hm? Oh, that boy couldn’t accept that a girl beat his butt.”</span> She chuckles. You could see that, he did have the look of one whose pride had been shattered. <span style="Color: LightSteelBlue">“So, what about you? Do you want to challenge me or are you too scared you’ll get defeated by a girl too?”</span> She asks with a smirk. <span style="color:Yellow">You take her up on her challenge, stating you’ll beat her. She laughs as you sit down next to her and start the battle!</span> <br>
+<br>
+
+/* Video Game Skill in Future */
+<<set _random to random(1, 2)>>
+
+<<linkreplace"Continue">>
+    <<if _random == 1>>
+        The fight becomes a pretty big deal. You manage to beat her in the first round just fine, it wasn’t even that hard, but then she comes back with a scary second round, beating you almost just as easy. As the third round starts, you both lock in, as now everything is on the line! <br>
+        <br>
+        <span style="color:LightGreen">The fight comes down to the wire, both of you whittling away each other’s life until you are both only a hit away. Then, with all your skill and practice, you lunge forward towards her! Wham! You manage to strike first, beating her speed by less than a second, and thus win the game.</span>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Evelyn",
+                State: {
+                    Outfit: "Everyday",
+                    Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Beginner’s luck.”</span> <span style="color:DarkTurquoise">Evelyn</span> snorts. You laugh, asking if she wants to go another round. She agrees and the two of you game together for a bit. Despite you both winning and losing plenty of times after, you still feel satisfaction for beating her first. <span style="color:LightGreen">Then again, can you really call it satisfaction when you beat a little kid?</span> <br>
+        <<socialChange "Evelyn" 3 1>>
+        <<needChange "Fun" 10>>
+        <br>
+        [[Continue|Arcade]]
+    <<else>>
+        The fight becomes a pretty big deal. You manage to beat her in the first round just fine, it wasn’t even that hard, but then she comes back with a scary second round, beating you almost just as easy. As the third round starts, you both lock in, as now everything is on the line! <br>
+        <br>
+        <span style="color:LightCoral">She manages to beat you easily. You are sure she simply gave you the first round to give her false hope and as she smirks at you, you understand why that other boy’s pride was damaged so much.</span> <span style="Color: LightSteelBlue">“Such a shame! Maybe you should work on your skills, unless you want every little kid here to be able to beat you.”</span> She grins pridefully as you scowl at her, telling her you’ll beat her next time! <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "OC Evelyn",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        The two of you keep playing and while you manage to get a couple wins over her, she is still the clear dominate victor. <span style="color:LightGreen">By the time you leave, you still think she is a little annoying and a cocky winner, but did have fun.</span> <br>
+        <<socialChange "Evelyn" 3 1>>
+        <<needChange "Fun" 10>>
+        <br>
+        [[Continue|Arcade]]
+    <</if>>
+<</linkreplace>>

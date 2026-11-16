@@ -1,0 +1,42 @@
+:: Poker Strip Loser Continue [nobr]
+
+<br>
+
+<<run delete $PCStripClothe>>
+
+<<if $Poker.getActivePlayers().length >= 2>> /* Next round */
+    <<link "Next Round">>
+        <<set $Poker.stage to 0>>
+        <<set $Poker.step to 0>>
+        <<set $Poker.setNextRoundTurnIndex()>>
+        <<set $PokerShowNPCHands to $PokerShowNPCHandsPrevious>>
+        <<set $Poker.deck to $Poker.buildDeck()>>
+        <<run delete $PokerWinner>>
+        <<run delete $PokerLoser>>
+        <<run delete $PokerShowNPCHandsPrevious>>
+        <<run delete $PokerPieceStrippedName>>
+        <<set $PokerLoadPassage to "Poker Game">>
+        <<goto $Poker.containerPassage>>
+    <</link>>
+<<else>> /* End */
+    <div style="color: green;">
+    <<if $PokerWinner.playerId !== 'PC'>>
+        <<set $PokerGamesLost += 1>>
+        <span style="color:DarkTurquoise"><<=$PokerWinner.playerId>></span> has
+    <<else>>
+        <<set $PokerGamesWon += 1>>
+        <<if $PokerEquipmentLostCount === 0>>
+            <<set $PokerFlawlessVictory to true>>
+        <</if>>
+        You have
+    <</if>> won the game!
+    </div><br>
+    <<link "Finish Game">>
+        /*  <<include "Character Restore Clothes">> */
+        <<set $PokerShowNPCHands to $PokerShowNPCHandsPrevious>>
+        <<run delete $PokerShowNPCHandsPrevious>>
+        <<run delete $PokerPieceStrippedName>>
+        <<goto $Poker.afterGamePassage>>
+        <<set $PokerEquipmentLostCount to 0>>
+    <</link>>
+<</if>>

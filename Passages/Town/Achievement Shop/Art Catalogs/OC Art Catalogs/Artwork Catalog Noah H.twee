@@ -1,0 +1,51 @@
+:: Artwork Catalog Noah H [nobr]
+
+<span style="color:Azure"><big><strong>--Noah H Catalog--</strong></big></span><br>
+<br>
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+
+/* Character Art (Everyday) */
+    <<if $AchievementArt.includes("NoahH Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Noah H Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\NoahH\\NoahH.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Noah H Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("NoahH Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Noah H">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("NoahH Character Art Undies")>>
+        <strong><span style="color:lightgreen">Noah H Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\NoahH\\NoahH Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Noah H Character Art (Undies)</strong>
+        | 
+        <<if $NoahHSocial >= 100 or $NoahHSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("NoahH Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Noah H">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Noah H Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+<br>
+[[Back|Artwork Catalog]]

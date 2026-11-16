@@ -1,0 +1,108 @@
+:: Chase Birthday Party Intro [nobr]
+
+/* Intro */
+You and <span style="color:DarkTurquoise">Noah</span> walk towards the entrance to the arcade. From the outside you can already see a horde of young boys running around screaming and their parents either trying to keep them in check or nursing the headaches brought on by so many little boys in one place with a drink or two, but non-alcoholic drinks only work so well. It seems like this boy, <span style="color:DarkTurquoise">Chase</span>, invited every kid in his class. <span style="color:DarkTurquoise">Noah</span> stands next to you, holding the giftbag with a toy he bought for his friend in both hands. <span style="color:yellow">He is staring at the ground nervously, an uncomfortable look on his face. You ask him if everything is alright and he just shrugs.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smile",
+            Eyes: "Tired",
+        },
+    },
+    {
+        Name: "Noah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Frown",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Yeah, just nervous.”</span> <span style="color:DarkTurquoise">Noah</span> shrugs,  <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Chase</span> invited me because he’s really nice and cool, but I don’t know the kids here that well. I’m still the new kid.”</span> You smile, you didn’t think social anxiety formulated until you reached double-digits, <span style="color:pink">but <span style="color:DarkTurquoise">Noah</span> seems to be having an internal social crisis.</span> <span style="color:LightSteelBlue">“What if they don’t think I’m fun or that I’m weird or something and I don’t make any friends and I don’t get invited to anything ever again!?”</span> He looks up to you with a scared expression, seeking some sort of comfort from his big brother. <br>
+<br>
+
+<div id="choice">
+    <<link "You know they’ll love him<br>">>
+    <<replace"#choice">>
+        <span style="color:lightgreen">You smile and kneel down to <span style="color:DarkTurquoise">Noah</span>, ruffling his hair with your hand. You tell your little brother that you know they’ll love him, because he is like the funnest kid you know. <span style="color:DarkTurquoise">Chase</span> wouldn’t have invited him if he didn’t have a suspicion that <span style="color:DarkTurquoise">Noah</span> is cool, so all he has to do is be himself and they’ll love him!</span> <br>
+        <br>
+        <span style="color:pink"><span style="color:DarkTurquoise">Noah</span> can’t hide his smile as he looks down with slightly reddened checks.</span> <span style="color:LightSteelBlue">“You- you really think I’m cool?”</span> He asks with a cute smile. You nod, he’s the coolest… except when he tells on you, then he’s a little shit. <span style="color:LightSteelBlue">“That’s a naughty word!”</span> <span style="color:DarkTurquoise">Noah</span> says accusatorily, though giggling. You remind him that snitches aren’t cool and lead him inside. You seem to have raised his spirits as he walks in confidently. <br>
+        <br>
+        <<include"Chase Birthday Party Intro 2">>
+    <</replace>>
+    <</link>>
+    <<requiresAbility "Charm" 8 "Give him a pep talk<br>">>
+    <<replace"#choice">>
+        You cross your arms and shake your head, the <span style="color:DarkTurquoise">Noah</span> you know can make friends with just about anyone. You remind him of how many friends he had at his old school and how he can’t recall a single kid having a problem with him. Heck, even <span style="color:DarkTurquoise">Noah</span>’s teachers would go on and on about how social and friendly he is in class, something Dad would retell during the dinners post-Parent Teacher Conferences. You’re surprised <span style="color:DarkTurquoise">Noah</span> hasn’t already become the most popular kid in school. <br>
+        <br>
+        <span style="color:LightSteelBlue">“I- I’m not that cool…”</span> <span style="color:pink"><span style="color:DarkTurquoise">Noah</span> says softly, blushing slightly, but unable to hide his smile at you hyping him up.</span> <span style="color:LightSteelBlue">“But you’re right. I just gotta believe in myself and walk in there and have fun! They’ll see that I’m fun and everyone will want me to come to their birthday parties!”</span> He says happily. You pat him on the head, that’s the spirit, though he should try not to go overboard. <br>
+        <<socialChange "Noah" 3>>
+        <br>
+        <<include"Chase Birthday Party Intro 2">>
+    <</replace>>
+    <</requiresAbility>>
+    <<requiresTrait "Charismatic" "Give him a pep talk<br>">>
+	<<replace"#choice">>
+        You cross your arms and shake your head, the <span style="color:DarkTurquoise">Noah</span> you know can make friends with just about anyone. You remind him of how many friends he had at his old school and how he can’t recall a single kid having a problem with him. Heck, even <span style="color:DarkTurquoise">Noah</span>’s teachers would go on and on about how social and friendly he is in class, something Dad would retell during the dinners post-Parent Teacher Conferences. You’re surprised <span style="color:DarkTurquoise">Noah</span> hasn’t already become the most popular kid in school. <br>
+        <br>
+        <span style="color:LightSteelBlue">“I- I’m not that cool…”</span> <span style="color:pink"><span style="color:DarkTurquoise">Noah</span> says softly, blushing slightly, but unable to hide his smile at you hyping him up.</span> <span style="color:LightSteelBlue">“But you’re right. I just gotta believe in myself and walk in there and have fun! They’ll see that I’m fun and everyone will want me to come to their birthday parties!”</span> He says happily. You pat him on the head, that’s the spirit, though he should try not to go overboard. <br>
+        <<socialChange "Noah" 3>>
+        <br>
+        <<include"Chase Birthday Party Intro 2">>
+    <</replace>>
+    <</requiresTrait>>
+    <<requiresTrait "Nurturing" "You’re here if he needs you<br>">>
+	<<replace"#choice">>
+        You give him a gentle smile and lean down, hugging the boy. He just needs to go in there and be himself and you’re sure everything will go great. <span style="color:pink">And if he does start to feel afraid or overwhelmed, you’re here for him. You’ll use your own coolness to make sure everyone knows <span style="color:DarkTurquoise">Noah</span> is the coolest.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“I guess you are kinda cool.”</span> <span style="color:DarkTurquoise">Noah</span> says with a smile. <span style="color:LightSteelBlue">“A little bit.”</span> He holds his fingers together to emphasis the ‘little’ part. You chuckle and playfully shove him. With jokes like that, you’re sure he’ll do fine. <span style="color:lightgreen"><span style="color:DarkTurquoise">Noah</span> smiles, confident, and steps towards the arcade.</span> <span style="color:LightSteelBlue">“Thanks for coming with me <span style="color:DarkTurquoise">$NoahNickname</span>.”</span> You return his smile and follow him into arcade beside him. <br>
+        <<socialChange "Noah" 3>>
+        <br>
+        <<include"Chase Birthday Party Intro 2">>
+    <</replace>>
+    <</requiresTrait>>
+    <<requiresTrait "Bully" "You’ll give a wedgie to anyone who doesn’t like him<br>">>
+	<<replace"#choice">>
+        You scoff, you’re sure <span style="color:DarkTurquoise">Noah</span> will do fine. He just has to avoid tripping on his shoelaces, make sure his $NoahBottoms.Type don’t fall down while playing, and avoid any overly annoying screeching. <span style="color:DarkTurquoise">Noah</span> looks more nervous as you list all these possible things that he can do wrong, but lighten the mood by leaning down, whispering in his ear that, if anyone does give him trouble, to let you know. <span style="color:pink">You’re not above hanging second graders on the top of the playpen by their underwear if it comes to that.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“Nooo!”</span> <span style="color:DarkTurquoise">Noah</span> giggles, <span style="color:LightSteelBlue">“Don’t wedgie my friends!”</span> You laugh, making no promises, but at least agree to only use it as a last resort. <span style="color:pink">The image of his big brother wedging anyone who makes fun of him seems to calm his nerves, as he walks in with a smile and confidence he didn’t have before.</span> <br>
+        <<socialChange "Noah" 3>>
+        <br>
+        <<include"Chase Birthday Party Intro 2">>
+    <</replace>>
+    <</requiresTrait>>
+</div>
+
+:: Chase Birthday Party Intro 2 [nobr]
+
+Walking in, the noise of all the kids instantly fill your ears and you feel the slight tinge of a headache brewing, though it isn’t all bad. <span style="color:DarkTurquoise">Noah</span> seems to get nervous again upon seeing everyone but doesn’t have time to back out as a young boy a little shorter than him with dirty blonde hair runs up at near-Mach speeds. A party hat is dangling from his shoulder, his shirt looks inside out, and he is missing both shoes, though that one may at least be intentional since he just came from the play area. <br>
+<br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Noah</span>!”</span> He practically leaps at your brother, nearly sending them both tumbling to the ground. <span style="color:LightSteelBlue">“You made it! Isn’t this place the coolest? The play area is SOOO big and it’s even better than the games since you don’t have to use tokens, but the games are pretty cool too and we all get like a BUNCH of tokens. My dad has them, so we can get you some. Oh! Is this my present? Thanks, we can put it over here. Dad said I can’t open them until later, but I can already tell it’s great! Is this your brother? Hi! I’m <span style="color:DarkTurquoise">Chase</span>!”</span> The boy speaks as if he is running out of time and both you and <span style="color:DarkTurquoise">Noah</span> are briefly stunned by the barrage of words. <br>
+<br>
+<span style="color:LightSteelBlue">“Yeah.”</span> <span style="color:DarkTurquoise">Noah</span> says after the brief pause, <span style="color:LightSteelBlue">“His name is <span style="color:DarkTurquoise">$Player.Name</span>. Hope it’s okay that I brought him, my dad was busy. And you’re welcome and… thank you? I think?”</span> <span style="color:DarkTurquoise">Noah</span> looks at you with a hint of confusion, unsure if he missed anything to respond to. Before you can say anything, <span style="color:DarkTurquoise">Chase</span> grabs <span style="color:DarkTurquoise">Noah</span> by the arm and practically drags him over to the collection of tables the party is being hosted at. You follow behind and meet <span style="color:DarkTurquoise">Chase</span>’s dad, who looks a little overwhelmed, but is keeping himself together. <br>
+<br>
+He greets you both and thanks you for coming, putting <span style="color:DarkTurquoise">Noah</span>’s present with the others. He then lets you both know that they have a bunch of tokens if you want to play games and that they’ll have cake and presents in about an hour or two. Though, only you hear that last part as <span style="color:DarkTurquoise">Chase</span> seemingly gets bored of standing still and drags <span style="color:DarkTurquoise">Noah</span> away into the play place, leaving <span style="color:DarkTurquoise">Noah</span>’s shoes behind. His dad sighs, wondering out loud if it’s too late to get a sugar-free cake as you chuckle and pick up <span style="color:DarkTurquoise">Noah</span>’s shoes following behind the boys. <br>
+<<set $OCChaseSocial to 0>>
+<<set $OCChaseSocialRank to 0>>
+<<set $OCChaseBDayEvents to ["Chase Birthday Party Bathroom Help", "Chase Birthday Party Goofball Boys", "Chase Birthday Party Holding by the Undies", "Chase Birthday Party Pizza Mess", "Chase Birthday Party Play Place", "Chase Birthday Party Wiggle Butt"]>>
+<<set $OCChaseBDayEventsNum to 0>>
+<<set _event to $OCChaseBDayEvents.random()>>
+<br>
+<<link"Continue">>
+    <<goto _event>>
+<</link>>
+
+:: Chase Birthday Party Next Event [nobr]
+
+<<if $OCChaseBDayEventsNum >= 4>>
+    [[Continue|Chase Birthday Party Tired Boys End]]
+<<else>>
+    <<set _event to $OCChaseBDayEvents.random()>>
+    <<link"Continue">>
+        <<goto _event>>
+    <</link>>
+<</if>>

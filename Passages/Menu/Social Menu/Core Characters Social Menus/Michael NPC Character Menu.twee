@@ -1,0 +1,436 @@
+:: Michael NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Core Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Michael--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"Michael NPC Character Menu Biography">>
+</div>
+
+:: Michael NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Michael NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Michael NPC Character Menu Avatar Display">>
+
+<<if $MichaelSocial > 50>>
+    Michael Reyes is your friend and classmate. He has a reputation as a bully, and to be fair he is one, but you’ve been able to break past that to see the well-meaning, if not occasionally dickish, boy underneath. He has a small group of friends at his side at most times, though he seems to enjoy your company more, whether it is due to your personality or ability to occasionally keep up with him, you’re not sure. <br>
+    <br>
+<<elseif $MichaelSocial > -10>>
+    Michael Reyes is your classmate and the local bully of Preston. He has a reputation for picking on anyone smaller or weaker than him, or just anyone he finds annoying honestly, and constantly getting detention. Often flanked by a small group of goons at his beck and call, he uses them to intimidate and get his way with anyone he can’t handle on his own. <br>
+    <br>
+<<else>>
+    Michael Reyes, Preston’s local asshole bully, is a constant thorn in your side. You’ve often found yourself on the opposing side of his smug face and annoying voice. He likes to pick on and bully people he can’t control, constantly keeping a small group of goons at his side for anyone he’s too afraid to handle on his own. He is generally an overall jerk. <br>
+    <br>
+<</if>>
+
+<<if $CompletedQuests.includes("Michael: Little Bear")>>
+    A coincidence led to you helping Michael’s grandmother move some boxes around, which caught the normally cool and collected Michael off-guard. Despite his tough appearance, it seems Michael does have a kinder side when it comes to his grandmother, just don’t tell anyone that unless you want to get punched in the face. <br>
+    <br>
+<</if>>
+
+:: Michael NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Michael NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+<<include"Michael NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Michael Reyes <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> February 6th <br>
+<strong>Address:</strong> 
+    <<if $MichaelSocial >= 50>>
+        Wald Street <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> 
+    <<if $CompletedQuests.includes("Michael: Little Bear")>>
+        Doña Rosita (Grandmother)
+    <<else>>
+        ???
+    <</if>>
+    <br>
+<strong>Friends:</strong>
+    <<if $MichaelSocial >= 60>>
+        $Player.Name, His 4 Goons, ...
+    <<else>>
+        His 4 Goons, ...
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $MichaelSocialRank == 1>>
+        Close Friends
+    <<elseif $MichaelSocial > 70>>
+        Friends
+    <<elseif $MichaelSocial > 30>>
+        Possible Friends
+    <<elseif $MichaelSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $MichaelSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Bully, Athletic, Rebellious, Sneaky, N... /* No Spoilers :P */
+        </div>
+    <<elseif $MichaelSocial > 70>>
+        <div style="margin-left: 25px;">
+            Bully, Athletic, Rebellious, Sneaky, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [Math] > [History] > [Music] > [English] > [Science] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <div style="margin-left: 25px;">
+        Unknown
+    </div>
+<strong>Likes:</strong>
+    <<if $MichaelSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Action Movies, Bullying Others, Watching Wrestling
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $MichaelSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Adults, Detention, Rules, Do-Gooders
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $MichaelSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Sports, Watching Wrestling, Bullying Others
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $MichaelSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Home-Made Tacos, Spicy Food, Dragon Fruit Juice
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $MichaelSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Red & Black
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $MichaelSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Long-Sleeved Shirts, Neutral Colors, Freshly Washed
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $MichaelSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Plain-colored boxers
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $MichaelSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $MichaelCut == "Cut">>
+                A cut penis with a bit of pubic hair. It is decently large for his age.
+            <<else>>
+                An uncut penis with a bit of pubic hair. It is decently large for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $MichaelSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A firm, well-toned butt.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+
+:: Michael NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Michael NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Michael NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal Core Michael">>
+
+
+:: Michael NPC Character Menu Art [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Artwork]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Michael NPC Character Menu Avatar Display">>
+
+<<include"Journal Artwork Michael">>
+
+:: Michael NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Michael NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ 
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Michael NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "Michael",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $MichaelSocial >= 50 or $MichaelSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $MichaelSocial >= 100 or $MichaelSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: Michael NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "Michael",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $MichaelSocial >= 50 or $MichaelSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $MichaelSocial >= 100 or $MichaelSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

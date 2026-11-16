@@ -1,0 +1,39 @@
+:: Achievement Shop [nobr]
+
+
+<<if !$AchievementShopIntroDone>>
+    <<goto "Achievement Shop Intro">>
+<<else>>
+    <span style="color:Azure"><big><strong>--Achievement Shop--</strong></big></span><br>
+
+    You stand in the middle of the strange, rustic shop that sits conspicuously on the city’s boardwalk. The store is always empty, save for its shopkeeper, and you are pretty sure you are the only customer that ever comes in here. The entire room gives off a creepy, fantasy vibe, as strange items and jars full of oddities fill the shelves along with a strange scent that you can’t put your finger on. For some reason, you also seem to forget everything that happens here the instant you leave. <br>
+    <br>
+    Sitting at the counter is the strange young shopkeeper, known only as Orange. He looks about as young as your little brother, but has the speaking tendencies of an adult. He smiles at you patiently as you glance around at the various things sold here. <br>
+    <div style="position: relative">
+    <img src="Images\Special\Achievement Shop\Orange.png" style="position: relative; left: 0; top: 0" width="750vw">
+    </div>
+    <strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+    
+    <span style="color:Azure"><strong>-Catalogs-</strong></span><br>
+    [[Browse Artwork|Artwork Catalog]]<br>
+
+    <<if $Achievements.getAchievementScore() >= 73>>
+        <strong>100% Reward:</strong> [Warning: This mode is experimental and may lead to visual/clothing glitches. Only works on Core Cast currently.] <br>
+        X-Ray Mode: 
+        <<if $Xray == 1>>
+            <<link"=[On]=">>
+                <<set $Xray to 0>>
+                <<goto"Achievement Shop">>
+            <</link>>
+        <<else>>
+            <<link"=[Off]=">>
+                <<set $Xray to 1>>
+                <<goto"Achievement Shop">>
+            <</link>>
+        <</if>><br>
+    <</if>>
+
+    <br>
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Leave|Boardwalk]]
+<</if>>

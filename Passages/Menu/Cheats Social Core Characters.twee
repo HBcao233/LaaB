@@ -1,0 +1,523 @@
+:: Cheats Social Core Characters [nobr]
+
+<<set $CheatsSocial to "Core Characters">>
+
+<span style="color:Azure"><big><strong>--Family--</strong></big></span><br>
+
+<table style="border-collapse: separate; border-spacing: 15px 0;">
+    <tr>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $NoahSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $NoahSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $NoahSocial > -10 && $NoahSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $NoahSocial <= -10 && $NoahSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $NoahSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Noah1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $GabeSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $GabeSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $GabeSocial > -10 && $GabeSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $GabeSocial <= -10 && $GabeSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $GabeSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Default1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $DadSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $DadSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $DadSocial > -10 && $DadSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $DadSocial <= -10 && $DadSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $DadSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dad1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+            </span>
+        </th>
+    </tr>
+    <tr>
+        <th style="text-align: center;">
+            Noah
+        </th>
+        <th style="text-align: center;">
+            Gabe
+        </th>
+        <th style="text-align: center;">
+            Dad
+        </th>
+        <div style="text-align: center; margin-top: 8px;">
+</div>
+    </tr>
+    <tr>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $NoahSocial,
+                    value: Math.abs($NoahSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($NoahSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $GabeSocial,
+                    value: Math.abs($GabeSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($GabeSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $DadSocial,
+                    value: Math.abs($DadSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($DadSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+    </tr>
+    <th>
+        [[(--)|Cheats Menu][$NoahSocial -= 10]]
+        [[(-)|Cheats Menu][$NoahSocial -= 5]]
+        [[(+)|Cheats Menu][$NoahSocial += 5]]
+        [[(++)|Cheats Menu][$NoahSocial += 10]]
+    </th>
+    <th>
+        [[(--)|Cheats Menu][$GabeSocial -= 10]]
+        [[(-)|Cheats Menu][$GabeSocial -= 5]]
+        [[(+)|Cheats Menu][$GabeSocial += 5]]
+        [[(++)|Cheats Menu][$GabeSocial += 10]]
+    </th>
+    <th>
+        [[(--)|Cheats Menu][$DadSocial -= 10]]
+        [[(-)|Cheats Menu][$DadSocial -= 5]]
+        [[(+)|Cheats Menu][$DadSocial += 5]]
+        [[(++)|Cheats Menu][$DadSocial += 10]]
+    </th>
+    <tr>
+    <th style="text-align: center;">
+        [[Rank Up|Cheats Menu][$NoahSocialRank to 1]]
+    </th>
+    </tr>
+</table>
+
+<span style="color:Azure"><big><strong>--Classmates--</strong></big></span><br>
+
+<table style="border-collapse: separate; border-spacing: 15px 0;">
+    <tr>
+        <th>
+            <label>
+            <<link"">>
+                <<goto "Test">>
+            <</link>>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $LucasSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $LucasSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $LucasSocial > -10 && $LucasSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $LucasSocial <= -10 && $LucasSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $LucasSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <<if $LucasSocial < 0>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Lucas0.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Lucas1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <</if>>
+            </span>
+            </label>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $BenSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $BenSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $BenSocial > -10 && $BenSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $BenSocial <= -10 && $BenSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $BenSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <<if $BenSocial < 0>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Ben0.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Ben1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <</if>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $MichaelSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $MichaelSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $MichaelSocial > -10 && $MichaelSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $MichaelSocial <= -10 && $MichaelSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $MichaelSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <<if $MichaelSocial < 0>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Michael0.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Michael1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <</if>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $CarterSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $CarterSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $CarterSocial > -10 && $CarterSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $CarterSocial <= -10 && $CarterSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $CarterSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <<if $CarterSocial < 0>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Carter0.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Carter1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <</if>>
+            </span>
+        </th>
+    </tr>
+    <tr>
+        <th style="text-align: center;">
+            Lucas
+        </th>
+        <th style="text-align: center;">
+            Ben
+        </th>
+        <th style="text-align: center;">
+            Michael
+        </th>
+        <th style="text-align: center;">
+            Carter
+        </th>
+        <div style="text-align: center; margin-top: 8px;">
+    </div>
+    </tr>
+    <tr>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $LucasSocial,
+                    value: Math.abs($LucasSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($LucasSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $BenSocial,
+                    value: Math.abs($BenSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($BenSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $MichaelSocial,
+                    value: Math.abs($MichaelSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($MichaelSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $CarterSocial,
+                    value: Math.abs($CarterSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($CarterSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+    </tr>
+    <tr>
+        <th>
+        [[(--)|Cheats Menu][$LucasSocial -= 10]]
+        [[(-)|Cheats Menu][$LucasSocial -= 5]]
+        [[(+)|Cheats Menu][$LucasSocial += 5]]
+        [[(++)|Cheats Menu][$LucasSocial += 10]]
+        </th>
+         <th>
+        [[(--)|Cheats Menu][$BenSocial -= 10]]
+        [[(-)|Cheats Menu][$BenSocial -= 5]]
+        [[(+)|Cheats Menu][$BenSocial += 5]]
+        [[(++)|Cheats Menu][$BenSocial += 10]]
+        </th>
+         <th>
+        [[(--)|Cheats Menu][$MichaelSocial -= 10]]
+        [[(-)|Cheats Menu][$MichaelSocial -= 5]]
+        [[(+)|Cheats Menu][$MichaelSocial += 5]]
+        [[(++)|Cheats Menu][$MichaelSocial += 10]]
+        </th>
+         <th>
+        [[(--)|Cheats Menu][$CarterSocial -= 10]]
+        [[(-)|Cheats Menu][$CarterSocial -= 5]]
+        [[(+)|Cheats Menu][$CarterSocial += 5]]
+        [[(++)|Cheats Menu][$CarterSocial += 10]]
+        </th>
+        </tr>
+        <tr>
+        <th style="text-align: center;">
+        <<if $LucasSocialRank == 0>>
+        [[Rank Up|Cheats Menu][$LucasSocialRank to 1]]
+        <</if>>
+        </th>
+        <th style="text-align: center;">
+        /*[[Rank Up|Cheats Menu][$BenSocialRank to 1]]*/
+        </th>
+        <th style="text-align: center;">
+        /*[[Rank Up|Cheats Menu][$MichaelSocialRank to 1]]*/
+        </th>
+        <th style="text-align: center;">
+        <<if $CarterSocialRank == 0>>
+        [[Rank Up|Cheats Menu][$CarterSocialRank to 1]]
+        <</if>>
+        </th>
+        </tr>
+</table>
+
+
+<table style="border-collapse: separate; border-spacing: 15px 0;">
+    <tr>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $JacksonSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $JacksonSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $JacksonSocial > -10 && $JacksonSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $JacksonSocial <= -10 && $JacksonSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $JacksonSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <<if $JacksonSocial < 0>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Jackson0.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Jackson1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <</if>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $ThomasSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $ThomasSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $ThomasSocial > -10 && $ThomasSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $ThomasSocial <= -10 && $ThomasSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $ThomasSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <<if $ThomasSocial < 0>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Thomas0.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Thomas1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <</if>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $XavierSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $XavierSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $XavierSocial > -10 && $XavierSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $XavierSocial <= -10 && $XavierSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $XavierSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <<if $XavierSocial < 0>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Xavier0.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Xavier1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <</if>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative;">
+                <<if $FelixSocialRank == 1>>
+                     <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Pink.png`" style="width: 100px; height: 100px;">
+                <<elseif $FelixSocial >= 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Green.png`" style="width: 100px; height: 100px;">
+                <<elseif $FelixSocial > -10 && $FelixSocial < 50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Blue.png`" style="width: 100px; height: 100px;">
+                <<elseif $FelixSocial <= -10 && $FelixSocial > -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Red.png`" style="width: 100px; height: 100px;">
+                <<elseif $FelixSocial <= -50>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Dark Red.png`" style="width: 100px; height: 100px;">
+                <</if>>
+                <<if $FelixSocial < 0>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Felix0.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <<else>>
+                    <img @title="_npc" @alt="_npc" @src="`Images/Icons/Social/Felix1.png`" style="position: absolute; width: 100px; height: 100px;"> 
+                <</if>>
+            </span>
+        </th>
+    </tr>
+    <tr>
+        <th style="text-align: center;">
+            Jackson
+        </th>
+        <th style="text-align: center;">
+            Thomas
+        </th>
+        <th style="text-align: center;">
+            Xavier
+        </th>
+        <th style="text-align: center;">
+            Felix
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $JacksonSocial,
+                    value: Math.abs($JacksonSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($JacksonSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $ThomasSocial,
+                    value: Math.abs($ThomasSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($ThomasSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $XavierSocial,
+                    value: Math.abs($XavierSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($XavierSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $FelixSocial,
+                    value: Math.abs($FelixSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($FelixSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+    </tr>
+    <tr>
+    <th>
+        [[(--)|Cheats Menu][$JacksonSocial -= 10]]
+        [[(-)|Cheats Menu][$JacksonSocial -= 5]]
+        [[(+)|Cheats Menu][$JacksonSocial += 5]]
+        [[(++)|Cheats Menu][$JacksonSocial += 10]]
+    </th>
+    <th>
+        [[(--)|Cheats Menu][$ThomasSocial -= 10]]
+        [[(-)|Cheats Menu][$ThomasSocial -= 5]]
+        [[(+)|Cheats Menu][$ThomasSocial += 5]]
+        [[(++)|Cheats Menu][$ThomasSocial += 10]]
+    </th>
+    <th>
+        [[(--)|Cheats Menu][$XavierSocial -= 10]]
+        [[(-)|Cheats Menu][$XavierSocial -= 5]]
+        [[(+)|Cheats Menu][$XavierSocial += 5]]
+        [[(++)|Cheats Menu][$XavierSocial += 10]]
+    </th>
+    <th>
+        [[(--)|Cheats Menu][$FelixSocial -= 10]]
+        [[(-)|Cheats Menu][$FelixSocial -= 5]]
+        [[(+)|Cheats Menu][$FelixSocial += 5]]
+        [[(++)|Cheats Menu][$FelixSocial += 10]]
+    </th>
+    </tr>
+</table>
+
+        

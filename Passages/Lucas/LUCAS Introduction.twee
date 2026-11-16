@@ -1,0 +1,114 @@
+:: LUCAS Introduction [nobr]
+
+<<set $MetLucas to 1>>
+<<set $LucasSocial to 0>>
+
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Northend",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+
+As you walk out the front door and make your way to the street, you suddenly hear a rustling in the bushes and turn to see a pair of eyes watching you through the leaves. The owner of the eyes, surprised at being caught, jumps and falls backward.<br>
+<br>
+<span style="color:LightSteelBlue">“Ow,”</span> a young voice says. You hear some more rustling before a boy your age stands up from behind the bushes. <span style="color:LightSteelBlue">“Hello, sorry. You’re one of the kids that moved in last night, right? I was waiting for you- I mean… Not ‘waiting for you’ waiting for you. I mean, I was waiting for the bus, and I figured we looked the same age so you might be going to Preston too. So, I thought I may get the chance to introduce myself when you came out- hehe…”</span> The boy chuckles nervously, rubbing the back of his head and giving you a smile.<br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+The boy is thin, with Messy Blond Hair, Green Eyes, and Light Skin. His clothes are slightly disheveled, as if he had gotten dressed in a hurry and rushed out here. <span style="color:LightSteelBlue">"I'm sorry, let me start over. I’m <span style="color:DarkTurquoise">Lucas</span>, nice to meet you!”</span> The boy holds out his hand and looks at you with a hopeful smile.<br>
+<br>
+
+<div id=choice>
+	<<link "Point out his shirt is tucked into his underwear">>
+	<<replace"#choice">>
+<span style="color:Pink">You smile and point out that the boy’s shirt is tucked into his $LucasUndies.Type. <span style="color:DarkTurquoise">Lucas</span> turns bright red, spins around, and quickly fixes his clothing. You can’t help but chuckle as the flustered boy sighs loudly and begins muttering to himself.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Frown",
+			Blush: 2,
+			Arms: "Hide",
+
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Stupid! Way to make a dorky first impression, <span style="color:DarkTurquoise">Lucas</span>! Okay. Just remain calm. You can still save this if you…”</span> The boy pauses, realizing he is speaking out loud, <span style="color:LightSteelBlue">“don’t talk to yourself…”</span> The boy turns around with a nervous smile. <span style="color:LightSteelBlue">“Sorry, I swear I’m not crazy. Just… nervous?”</span> His defeated look turns hopeful as you laugh and take his hand, introducing yourself and telling him it’s okay if he’s a little weird, you like weird.<br>
+<br>
+<span style="color:DarkTurquoise">Lucas</span> is relieved that you managed to see past his awkwardness and the two of you have a pleasant conversation as you wait for the bus.<br>
+	<<set $LucasSocial to 25>>
+	<span style="color:Green">+Lucas</span><br>
+    <<set $Attractions.Lucas to 1>>
+    <br>
+    [[Ride Bus to School (0:20)|Bus Introduction]]
+
+	<</replace>>
+    <</link>>
+    [<span style="color:Lightgreen">Positive Relationship</span>/<span style="color:Lightgreen">Attraction</span>]<br>
+/* */
+
+	<<link "Shake his hand happily">>
+	<<replace"#choice">>
+You can’t help but laugh at the awkward boy’s attempt at a good first impression. <span style="color:DarkTurquoise">Lucas</span> seems unsure if your laughter is a good or bad sign until you take his hand and happily introduce yourself. Despite his earlier nervousness, once the ice is broken he seems to calm down and the two of you have a pleasant conversation as you wait for the bus.<br>
+	<<set $LucasSocial to 25>>
+	<span style="color:Green">+Lucas</span><br>
+    <<set $Attractions.Lucas to 0>>
+    <br>
+    [[Ride Bus to School (0:20)|Bus Introduction]]
+
+	<</replace>>
+    <</link>>
+    [<span style="color:Lightgreen">Positive Relationship</span>/<span style="color:lightcoral">No Attraction</span>]<br>
+/* */
+
+	<<link "Meanly tease him">>
+	<<replace"#choice">>
+You can’t help but laugh at the awkward boy’s attempt at a good first impression. You tell him that, while his eagerness is kind of cute, he should really tone it down because right now he is trying way too hard.<br>
+<br>
+<span style="color:LightSteelBlue">“O-oh… Sorry.”</span> <span style="color:DarkTurquoise">Lucas</span> says, dejected. You put your hand on the kid’s shoulder and tell him that, while he seems nice, the desperate reputation isn’t something you’re after and he’ll have to try a lot harder to be your friend. <span style="color:LightSteelBlue">You end the conversation by giving him a light pat on the rear</span> and stepping away to wait for the bus, a few feet from him.<br>
+	<<set $LucasSocial to -25>>
+	<span style="color:red">-Lucas</span><br>
+    <<set $Attractions.Lucas to 1>>
+    <br>
+    [[Ride Bus to School (0:20)|Bus Introduction]]
+
+	<</replace>>
+    <</link>>
+    [<span style="color:Lightcoral">Negative Relationship</span>/<span style="color:Lightgreen">Attraction</span>]<br>
+/* */
+
+	<<link "Reject him">>
+	<<replace"#choice">>
+You raise an eyebrow and frown at the boy, saying you are not looking for someone who is clearly so desperate for friends. You insult his haphazard appearance and overly smiley attitude before harshly turning away and standing a few feet from the dejected boy.<br>
+<br>
+<span style="color:LightSteelBlue">“Right… sorry.”</span> <span style="color:DarkTurquoise">Lucas</span> apologizes before sadly staring down at the ground and waiting for the bus in silence.<br>
+	<<set $LucasSocial to -25>>
+	<span style="color:red">-Lucas</span><br>
+    <<set $Attractions.Lucas to 0>>
+    <br>
+    [[Ride Bus to School (0:20)|Bus Introduction]]
+
+	<</replace>>
+    <</link>>
+    [<span style="color:Lightcoral">Negative Relationship</span>/<span style="color:Lightcoral">No Attraction</span>]<br>
+    
+    
+</div>

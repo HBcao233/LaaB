@@ -1,0 +1,24 @@
+:: Debug Requires Widget Test [nobr]
+
+<<set _here to passage()>>
+<<set _bak to $HiddenOptions>>
+<<set $HiddenOptions to 1>>
+
+<<set _yes to $Sense>>
+<<set _no to _yes + 1>>
+<<requiresAbility "Sense" _yes "Ability Met" _here>><</requiresAbility>>
+<<requiresAbility "Sense" _no "Ability Insufficient" _here>><</requiresAbility>>
+
+<<set _yes to $ExhibitionSkill>>
+<<set _no to _yes + 1>>
+<<requiresSkill "Exhibition" _yes "Skill Met" _here>><</requiresSkill>>
+<<requiresSkill "Exhibition" _no "Skill Insufficient" _here>><</requiresSkill>>
+
+<<set _yes to $Player.Traits[0]>>
+<<set _no to "FakeTrait">>
+<<requiresTrait _yes "Trait Possessed" _here>><</requiresTrait>>
+<<requiresTrait _no "Trait Absent" _here>><</requiresTrait>>
+
+<<set $HiddenOptions to _bak>>
+<br>
+<<return "Back">>

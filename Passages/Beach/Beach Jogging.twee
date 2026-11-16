@@ -1,0 +1,21 @@
+:: Beach Jogging [nobr]
+ 
+/* Weather Scenes */
+<<if ["Sprinking", "Raining", "Pouring", "Storm", "Thunderstorm"].includes($Weather)>>
+    <<set _Random to ["Beach Jogging Large Waves"]>>  
+<<else>>
+    /* Clear Sky Nighttime */
+    <<if $Time.after(7) && $Time.before(6)>>
+        <<set _Random to ["Beach Jogging Night Sky"]>> 
+    /* Daytime */
+    <<else>>
+        <<set _Random to ["Beach Jogging Kids Biking Past"]>> 
+    <</if>>
+<</if>>
+
+<<if $FearOcean == 1>>
+    <<set _Random.push("Beach Jogging Fear of Waves")>>
+<</if>>
+
+<<set _event to _Random.random()>>
+<<include _event>>

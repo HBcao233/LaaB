@@ -1,0 +1,316 @@
+:: LUCAS Swing With [nobr]
+
+<<set $Minutes += 20>>
+/* OPENING */
+
+	<<if $LucasSocial >= 0 or $LucasSocialRank >= 1>>
+	You walk over to <span style="color:DarkTurquoise">Lucas</span> and ask if you can join him. <span style="color:LightSteelBlue"> “Sure!”</span> He smiles, slowing himself down enough to talk as you take a seat on the swing next to him. <span style="color:LightSteelBlue"> “If you get really high and jump off at the right point, you can go super far. I bet you can’t jump further than me!”</span><br>
+<br>
+	
+	<<elseif $LucasSocial < 0>>
+	You walk over to <span style="color:DarkTurquoise">Lucas</span> and ask if you can join him. <span style="color:LightSteelBlue"> “Oh, okay.”</span> He smiles, though seems slightly unsure as you take a seat on the swing next to him. <span style="color:LightSteelBlue"> “Well, if you swing really high and jump off at the right point, you can go super far. So I was seeing how far I could go.”</span><br>
+<br>
+	
+	<</if>>
+	
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<div id=choice>
+	<<link "Swing Together ">>
+	<<replace"#choice">>
+		<<set $Random to random(1, 2)>>
+	/* WIN */
+		<<if $Random == 1>>
+	You both begin to swing and quickly gain height, though you’ve managed to gain much more than <span style="color:DarkTurquoise">Lucas</span>. <span style="color:LightSteelBlue">“Alright!”</span> <span style="color:DarkTurquoise">Lucas</span> yells out, <span style="color:LightSteelBlue">“We jump on three. Ready? One… two… three!”</span> You both jump off at the peak of your swings. You feel a surge of adrenaline rushing in your chest as you fly through the air, barely managing to land on your feet without falling. Taking a moment to catch your breath, you notice that you’ve gone about half a foot further than Lucas.<br>
+<br>
+<span style="color:LightSteelBlue">“No!”</span> <span style="color:DarkTurquoise">Lucas</span> over-dramatically falls to his knees. <span style="color:LightSteelBlue">“You’re pretty good <span style="color:DarkTurquoise">$LucasNickname</span>. But I bet I’ll beat you if we do it again!”</span> You both laugh as your run back to the swings to go again. You enjoy your time together.<br>
+<<socialChange "Lucas" 3>>
+<<needChange "Fun" 20>>
+<br>
+[[Continue|School Courtyard]]
+
+	/* LOSE */
+		<<elseif $Random == 2>>
+		You both begin to swing and quickly gain height, though <span style="color:DarkTurquoise">Lucas</span> seems to be gaining more than you. <span style="color:LightSteelBlue">“Alright!”</span> <span style="color:DarkTurquoise">Lucas</span> yells out, <span style="color:LightSteelBlue">“We jump on three. Ready? One… two… three!”</span> You both jump off at the peak of your swings. You feel a surge of adrenaline rushing in your chest as you fly through the air, barely managing to land on your feet without falling. Taking a moment to catch your breath, you look over and see that <span style="color:DarkTurquoise">Lucas</span> has landed about half a foot further than you.<br>
+<br>
+<span style="color:LightSteelBlue">“I won!”</span> <span style="color:DarkTurquoise">Lucas</span> cheers happily through deep breaths, <span style="color:LightSteelBlue">“I knew you couldn’t go further than me!”</span> You and Lucas both laugh as you run back to the swings to go again. You enjoy your time together.<br>
+<<socialChange "Lucas" 3>>
+<<needChange "Fun" 20>>
+<br>
+[[Continue|School Courtyard]]
+
+		<</if>>
+	
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Social</span><br>
+	
+	<<if $LucasSocial >= 0 and $LucasSwingBet != 1>>
+	<<link "Make it interesting ">>
+	<<replace"#choice">>
+	<<set $LucasSwingBet to 1>>
+	You smile, since <span style="color:DarkTurquoise">Lucas</span> seems so sure of himself you ask if you two should make it more interesting with a bet. <span style="color:LightSteelBlue"> “A bet?”</span> <span style="color:DarkTurquoise">Lucas</span> looks at you confused for a second then smiles, <span style="color:LightSteelBlue"> “Alright! What's the bet?”</span><br>
+<br>
+	
+	<div id=choice2>
+<<if $Money > 0>>
+	<<link "Bet: $1<br>">>
+	<<replace"#choice2">>
+	
+			<<set $Random to random(1, 2)>>
+			You pull out a dollar and say that the loser has to pay the winner. <span style="color:LightSteelBlue">“Alright!”</span> <span style="color:DarkTurquoise">Lucas</span> smiles in confidence, <span style="color:LightSteelBlue">“But when I win, I’m going to buy a candy bar with your dollar and you have to watch me eat it!”</span>
+	/* WIN */
+		<<if $Random == 1>>
+	You both begin to swing and quickly gain height, though you’ve managed to gain much more than <span style="color:DarkTurquoise">Lucas</span>. <span style="color:LightSteelBlue">“Alright!”</span> <span style="color:DarkTurquoise">Lucas</span> yells out, <span style="color:LightSteelBlue">“We jump on three. Ready? One… two… three!”</span> You both jump off at the peak of your swings. You feel a surge of adrenaline rushing in your chest as you fly through the air, barely managing to land on your feet without falling. <span style="color:Green">Taking a moment to catch you breath, you notice that you’ve gone about half a foot further than Lucas.</span><br>
+<br>
+<span style="color:LightSteelBlue">“No!”</span> <span style="color:DarkTurquoise">Lucas</span> overdramatically falls to his knees. <span style="color:LightSteelBlue">“You’re pretty good <span style="color:DarkTurquoise">$LucasNickname</span>. Here's your prize!”</span> He presents you with a folded up dollar from his pocket and you both run back to play on the swings some more.<br>
+<<set $Money += 1>>
+<<socialChange "Lucas" 3>>
+<<needChange "Fun" 20>>
+<br>
+[[Continue|School Courtyard]]
+
+	/* LOSE */
+		<<elseif $Random == 2>>
+		You both begin to swing and quickly gain height, though <span style="color:DarkTurquoise">Lucas</span> seems to be gaining more than you. <span style="color:LightSteelBlue">“Alright!”</span> <span style="color:DarkTurquoise">Lucas</span> yells out, <span style="color:LightSteelBlue">“We jump on three. Ready? One… two… three!”</span> You both jump off at the peak of your swings. You feel a surge of adrenaline rushing in your chest as you fly through the air, barely managing to land on your feet without falling. <span style="color:Red">Taking a moment to catch you breath, you look over and see that <span style="color:DarkTurquoise">Lucas</span> has landed about half a foot further than you.</span><br>
+<br>
+<span style="color:LightSteelBlue">“I won!”</span> <span style="color:DarkTurquoise">Lucas</span> cheers happily through deep breathes, <span style="color:LightSteelBlue">“I knew you couldn’t go further than me!”</span> You hand over a dollar and, as promised, you follow <span style="color:DarkTurquoise">Lucas</span> over to the vending machine and watch him get a candy bar. Though he decides to take pity on you, giving you half.<br>
+<<socialChange "Lucas" 3>>
+<<needChange "Fun" 20>>
+<<set $Money -= 1>>
+<br>
+[[Continue|School Courtyard]]
+	<</if>>
+	
+	<</replace>>
+	<</link>>
+<</if>>
+<<if $PlayerUndies.Name != "None">>
+	<<link "Bet: Winner gives loser a wedgie<br>">>
+	<<replace"#choice2">>
+	You smile, suggesting that the winner gets to give the loser a wedgie. <span style="color:DarkTurquoise">Lucas</span> giggles at the embarrassing bet. <span style="color:LightSteelBlue"> “Alright, but we’ll do it behind a tree so the other kids don’t see. Well I mean I'll give it to you behind a tree, cause there’s no way I’m going to loose to you!”</span><br>
+<br>
+
+				<<set $Random to random(1, 2)>>
+	/* WIN */
+		<<if $Random == 1>>
+	You both begin to swing and quickly gain height, though you’ve managed to gain much more than <span style="color:DarkTurquoise">Lucas</span>. <span style="color:LightSteelBlue">“Alright!”</span> <span style="color:DarkTurquoise">Lucas</span> yells out, <span style="color:LightSteelBlue">“We jump on three. Ready? One… two… three!”</span> You both jump off at the peak of your swings. You feel a surge of adrenaline rushing in your chest as you fly through the air, barely managing to land on your feet without falling. <span style="color:Green">Taking a moment to catch your breath, you notice that you’ve gone about half a foot further than Lucas.</span><br>
+<br>
+<span style="color:LightSteelBlue">“No!”</span> <span style="color:DarkTurquoise">Lucas</span> over-dramatically falls to his knees. <span style="color:LightSteelBlue">“You beat me.”</span> You notice him blushing as he chuckles nervously, <span style="color:LightSteelBlue">“I guess that means you get to give me a wedgie.”</span> You take <span style="color:DarkTurquoise">Lucas</span> behind a tree near the corner of the courtyard, far out of view of the other boys. Once he makes sure no one can see you two, he turns around, lifts his shirt, and bends over. <span style="color:Pink">You eye the waistband of his $LucasUndies.Name peeking out from his $LucasBottoms.Type.</span><br>
+<br>
+<span style="color:Pink">You feel his body shiver as you grab hold of his underwear. You then take a deep breath, before yanking them upwards with all your strength!</span> <span style="color:DarkTurquoise">Lucas</span> instantly lets out a pained scream as he is lifted off the ground, but he quickly covers his mouth to avoid drawing attention. You dangle him there until you feel his muffled giggles and groans may draw attention and lower him to the ground. He immediately sticks his hands in the front of his $LucasBottoms.Type to free his crotch from being squeezed as he continues his pained laughter.<br>
+<br>
+<span style="color:LightSteelBlue">"That hurt!"</span> You’d almost feel bad if he wasn’t saying that with a large smile, <span style="color:LightSteelBlue">“I felt like my penis was going to go inside of me!”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Lucas</span>  unbuttons his $LucasBottoms.Type and pulls them down in order to fix his underwear, giving you a clear view of the front of his $LucasUndies.Name.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+			Blush: 1,
+			PantsDown: true,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+Once he’s fixed his clothing, you both return to the swings and continue playing.<br>
+
+<<addMoodlet "Gave Wedgie" 4>>
+<<socialChange "Lucas" 3>>
+<<needChange "Fun" 20>>
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Humiliation", "Wedgier"]>>
+<<arousalGain 10 _arousalbs _arousalkink>>
+<br>
+[[Continue|School Courtyard]]
+
+	/* LOSE */
+		<<elseif $Random == 2>>
+		You both begin to swing and quickly gain height, though <span style="color:DarkTurquoise">Lucas</span> seems to be gaining more than you. <span style="color:LightSteelBlue">“Alright!”</span> <span style="color:DarkTurquoise">Lucas</span> yells out, <span style="color:LightSteelBlue">“We jump on three. Ready? One… two… three!”</span> You both jump off at the peak of your swings. You feel a surge of adrenaline rushing in your chest as you fly through the air, barely managing to land on your feet without falling. <span style="color:Red">Taking a moment to catch your breath, you look over and see that <span style="color:DarkTurquoise">Lucas</span> has landed about half a foot further than you.</span><br>
+<br>
+	<span style="color:LightSteelBlue">“I won!”</span> <span style="color:DarkTurquoise">Lucas</span> cheers happily through deep breaths, <span style="color:LightSteelBlue">“I knew you couldn’t go further than me!”</span> You sigh in frustration, but admit defeat. <span style="color:LightSteelBlue">“That means I get to give you a wedgie!”</span> <span style="color:DarkTurquoise">Lucas</span> doesn’t even try to hide his obvious excitement at this outcome. He leads you behind a tree in the corner of the courtyard, far away from any onlookers. He then has you turn around, lift your $PlayerTop.Type, and bend over. <span style="color:Pink">You shiver slightly as he grabs the waistband of your $PlayerUndies.Type and performs a few tiny pulls to test his grip.</span> <span style="color:LightSteelBlue">“Alright, I’ll do it on 3. One…!”</span> <span style="color:DarkTurquoise">Lucas</span> suddenly yanks up, catching you off guard and nearly causing you to fall forward. You let out a pained yelp as you feel your groin painfully squeezed. He isn’t strong enough to lift you off of the ground, but he does force you to your tippy toes. <br>
+<br>
+He continues to yank your $PlayerUndies.Type for about a minute before he lets them go, causing the waistband to snap against your back. <span style="color:Pink">He begins to laugh loudly as you attempt to pick the wedgie out of your butt, before realizing you’ll have to pull your $PlayerBottoms.Type down in order to fix your underwear, giving <span style="color:DarkTurquoise">Lucas</span> a clear view of your $PlayerUndies.Name.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+			Blush: 1,
+    	},	
+    },
+	{
+    Name: "Player",
+     State: {
+		Mouth: "Frown",
+		Blush: 2,
+		PantsDown: true,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“That was funny!”</span> <span style="color:DarkTurquoise">Lucas</span> face is bright red from laughing, <span style="color:LightSteelBlue">“Come on! You should practice more so you don’t lose so badly next time!”</span> He grabs your hand and you both run back to the swings.<br>
+<<addMoodlet "Wedgie" 3>>
+<<socialChange "Lucas" 3>>
+<<needChange "Fun" 20>>
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Wedgiee", "Humiliated"]>>
+<<arousalGain 10 _arousalbs _arousalkink>>
+<br>
+[[Continue|School Courtyard]]
+	<</if>>
+	
+	<</replace>>
+	<</link>>
+<</if>>
+
+
+	<<link "Bet: Loser flashes their penis<br>">>
+	<<replace"#choice2">>
+	You think for a moment and then smile. You motion for <span style="color:DarkTurquoise">Lucas</span> to come closer and whisper in his ear that the loser should have to show his penis to the winner. 
+	
+	<<if $LucasSocial < 75 and $LucasSocialRank <= 0>>
+	<span style="color:DarkTurquoise">Lucas</span> blushes and looks away, instinctively putting his hands in front of his crotch. <span style="color:LightSteelBlue">“I don’t… I don’t want to do that.”</span> <span style="color:Red"><span style="color:DarkTurquoise">Lucas</span> seems uncomfortable with the suggestion. If the two of you knew each other better, he may be more comfortable with the idea of exposing himself in front of you.</span><br>
+<br>
+Sensing the mood shift, you attempt to play it off as a joke and suggest you just swing together without making it a contest. Lucas agrees, but due to how uncomfortable the situation is you find yourselves swinging in an awkward silence.<br>
+<<socialChange "Lucas" -3>>
+<br>
+[[Continue|School Courtyard]]
+
+<<else>>
+	<span style="color:DarkTurquoise">Lucas</span> blushes and looks away, instinctively putting his hands in front of his crotch. <span style="color:LightSteelBlue">“But that’s naughty.”</span> <span style="color:Green">He can’t hide the shy smile that appears on his face.</span> <span style="color:LightSteelBlue">“Alright. But we can’t tell anyone or else we’d get in trouble.”</span> You nod in agreement, causing Lucas to giggle as you both sit back down on the swings.<br>
+<br>
+	
+					<<set $Random to random(1, 2)>>
+	/* WIN */
+		<<if $Random == 1>>
+	You both begin to swing and quickly gain height, though you’ve managed to gain much more than <span style="color:DarkTurquoise">Lucas</span>. <span style="color:LightSteelBlue">“Alright!”</span> <span style="color:DarkTurquoise">Lucas</span> yells out, <span style="color:LightSteelBlue">“We jump on three. Ready? One… two… three!”</span> You both jump off at the peak of your swings. You feel a surge of adrenaline rushing in your chest as you fly through the air, barely managing to land on your feet without falling. <span style="color:Green">Taking a moment to catch your breath, you notice that you’ve gone about half a foot further than Lucas.</span><br>
+<br>
+You remind <span style="color:DarkTurquoise">Lucas</span> of the bet, causing him to once again turn bright red. <span style="color:LightSteelBlue">“We can’t do it here or someone else may see!”</span> He points to a collection of trees in the corner of the courtyard, away from all the other boys. <span style="color:LightSteelBlue">“Over there.”</span> <span style="color:DarkTurquoise">Lucas</span> walks over slowly, causing you to pull him quicker by the arm. Once there, he grips the front of his $LucasBottoms.Type and attempts to psych himself up.<br>
+<br>
+<span style="color:LightSteelBlue">“It’s alright, we’re friends. Friends see each other’s ‘things’ all the time. It’s perfectly normal.”</span> He begins to laugh nervously, <span style="color:LightSteelBlue">“It just feels so weird doing it at school, what if someone walks by? Or a camera sees us? We could get in big trouble!”</span> You tell Lucas to take a deep breath and calm down.<br>
+<br>
+<span style="color:LightSteelBlue">“Alright alright!”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Lucas</span> unzips the front of his $LucasBottoms.Type and grabs hold of the front of his $LucasUndies.Name.</span> <span style="color:LightSteelBlue">“But only for a few seconds okay?”</span> <span style="color:Pink">He takes another deep breath before slowly pulling down the front of his underwear.</span><br>
+<br>
+<<if $LucasCut == "Uncut">>
+	<span style="color:Pink"><span style="color:DarkTurquoise">Lucas</span>’ Average Sized Penis sits flaccid before you. You lean in closer to get a better look. It looks smooth and cute and he doesn’t even have the faintest wisps of Pubic Hair, adding to his boyish appearance. It was uncut and he had a bit of extra foreskin poking off the tip.</span> 
+<<elseif $LucasCut == "Cut">>
+	<span style="color:Pink"><span style="color:DarkTurquoise">Lucas</span>’ Average Sized Penis sits flaccid before you. You lean in closer to get a better look. He was circumcised and the glans of his penis looked pink and sensitive, which added to his boyish appearance.</span>
+<</if>>
+
+<span style="color:LightSteelBlue">“Your breath tickles.”</span> Lucas whispers as he tightens his hands uncomfortably. <span style="color:Pink">You smirk and intentionally blow on his Penis, causing it to twitch and begin to stiffen.</span> <span style="color:DarkTurquoise">Lucas</span> let out an embarrassed yelp and quickly pulls his Briefs back up.<br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+		ShowZoom: true,
+		ShowZoomOnlyPenis: true,
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Frown",
+			Arms: "Hide",
+			Blush: 3,
+			PantsDown: true,
+    	},	
+		Clothes: {
+    		Undies: $None,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Don’t do that!”</span> He cries out as he quickly fixes his clothes. You can’t help but laugh and point out how he seemed to like it, causing <span style="color:DarkTurquoise">Lucas</span> to become flustered and argue back. After a few seconds, you both realize that you were in danger of drawing attention so decided to head back to the swings, still giggling at your lewd actions.<br>
+<<addMoodlet "Lewd Experience" 4>>
+<<addMoodlet "Wedgie" 3>>
+<<socialChange "Lucas" 3>>
+<<needChange "Fun" 20>>
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Humiliation", "Preteens"]>>
+<<arousalGain 15 _arousalbs _arousalkink>>
+<br>
+[[Continue|School Courtyard]]
+
+	/* LOSE */
+		<<elseif $Random == 2>>
+		You both begin to swing and quickly gain height, though <span style="color:DarkTurquoise">Lucas</span> seems to be gaining more than you. <span style="color:LightSteelBlue">“Alright!”</span> <span style="color:DarkTurquoise">Lucas</span> yells out, <span style="color:LightSteelBlue">“We jump on three. Ready? One… two… three!”</span> You both jump off at the peak of your swings. You feel a surge of adrenaline rushing in your chest as you fly through the air, barely managing to land on your feet without falling. <span style="color:Red">Taking a moment to catch your breath, you look over and see that <span style="color:DarkTurquoise">Lucas</span> has landed about half a foot further than you.</span><br>
+<br>
+<span style="color:LightSteelBlue">“I won.”</span> <span style="color:DarkTurquoise">Lucas</span> giggles, <span style="color:LightSteelBlue">“So you remember what that means, right?”</span> You nod. <span style="color:DarkTurquoise">Lucas</span> grabs you by the arm, leading to behind some trees in the corner of the courtyard. <span style="color:LightSteelBlue">“We’ll do it over here so no one else sees.”</span> <span style="color:DarkTurquoise">Lucas</span> giggles to himself the whole way, worrying about being seen and getting in trouble. Once you are firmly behind the tree and are sure no one else is watching, <span style="color:Pink">you grab the front of your $PlayerBottoms.Type and pull them down enough to expose your $Player.PenisSize Penis.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+			Blush: 3,
+    	},	
+    },
+	{
+    Name: "Player",
+	ShowZoom: true,
+	ShowZoomOnlyPenis: true,
+    State: {
+		Mouth: "Happy",
+		Blush: 2,
+		PantsDown: true,
+    	},	
+		Clothes: {
+    Undies: $None,
+    },
+    },
+]>>
+    <<ad _ad>>
+	
+<<if $Player.PenisSize == "Small" or $Player.PenisSize == "Tiny">>
+<span style="color:LightSteelBlue">“It’s so cute.”</span> <span style="color:DarkTurquoise">Lucas</span> smirks at the size of your boyhood. 
+
+<<elseif $Player.PenisSize == "Average">>
+<span style="color:LightSteelBlue">“It looks just like mine.”</span> <span style="color:DarkTurquoise">Lucas</span> examines your Penis. 
+
+<<else>>
+<span style="color:LightSteelBlue">“Wow, it’s so big.”</span> <span style="color:DarkTurquoise">Lucas</span> whispers. 
+
+<</if>>
+
+<span style="color:LightSteelBlue">“I know the grownups tell us we’re suppose to keep our privates… private.”</span> He leans in for a closer look. <span style="color:LightSteelBlue">“But it doesn’t feel that wrong, does it?”</span> <span style="color:Pink">He is close enough that you can feel his breath on your penis, tickling it and causing it to twitch.</span> <span style="color:LightSteelBlue">“It moved!”</span> <span style="color:DarkTurquoise">Lucas</span> laughs as you decide to recover yourself. As you fix your clothing, <span style="color:DarkTurquoise">Lucas</span> looks like he wants to ask you something, but stops himself and says the two of you should head back to the playground before anyone gets suspicious.<br>
+
+<<addMoodlet "Lewd Experience" 4>>
+<<addMoodlet "Wedgie" 3>>
+<<socialChange "Lucas" 3>>
+<<needChange "Fun" 20>>
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Humiliated", "Exhibitionism"]>>
+<<arousalGain 15 _arousalbs _arousalkink>>
+<br>
+[[Continue|School Courtyard]]
+	<</if>>
+	
+<</if>>
+	<</replace>>
+	<</link>>
+	
+	
+	/*SECOND DIV END */
+	</div>
+	
+	<</replace>>
+	<</link>>
+	<span style="color:Yellow">+Social?</span><br>
+	<</if>>
+
+/* FIRST DIV END */	
+</div>

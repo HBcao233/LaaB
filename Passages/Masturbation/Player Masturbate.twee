@@ -1,0 +1,108 @@
+:: Player Masturbate [nobr]
+
+<<if $MasturbationLocation != "School Showers">>
+	<<set $Minutes += 1>>
+	/* Need to rebalance
+	<<set $Player.Hygiene -= 1>>
+	<<set $Player.Energy -= 1>> */
+<</if>>
+
+<<set $TimeSpentMasturbating += 1>>
+
+
+/* TOP PARAGRAPH DESCRIPTION */
+	/* Used for descriptions of the actions taking place, during sex the enemy turn may also be displayed here. */
+<<include"Masturbation Action">><br>
+<br>
+
+/* SECOND PARAGRAPH ACTIONS */
+	/* Used for position and clothing description */
+   	<<include"Masturbation Position Description">>
+   	<<include"Masturbation Clothing Description">>
+   	<<include"Masturbation Lewd Description">>
+    
+<br>
+
+<br>
+
+<<set $AD.Outfit to "Everyday">>
+<<include"Player Avatar Mood">>
+	<<set $AD.Arms to "Normal">>
+    <<set $AD.Blush to 2>>
+    <<set $AD.Mouth to "Happy">>
+    <<set $AD.Eyes to "Normal">>
+<<include"Avatar Backgrounds">>
+<<include"Player Avatar Display Set">>
+<<include"Avatar Display">>
+	<img src="Images\Avatar\Body\Empty.png" 
+style="position: absolute; left: 0; top: 0">
+/* PENIS ZOOM DISPLAY (+160px) */
+<<if $ZoomsPlayer != 0>>
+	<div style="position: relative; left: 220px; top: 0px">
+		<<set $AD.Name to "Player">>
+		<<include"Penis Zoom Display">>
+			<div style="position: absolute; left: 133px; top: 0px">
+				<<include"Butt Zoom Display">>
+			</div>
+	</div>
+<</if>>
+<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+
+
+
+
+<br>
+
+
+/* OPTIONS */
+<<link "Clothing">>
+	<<set $MasturbationCategory to "Clothes">>
+    <<replace"#Display">>
+		<<include"Masturbation Clothing Options">>
+	<</replace>>
+<</link>>
+ - 
+<<link "Actions">>
+	<<set $MasturbationCategory to "Actions">>
+    <<replace"#Display">>
+		<<include"Masturbation Action Options">>
+	<</replace>>
+<</link>>
+ - 
+<<link "Positions">>
+	<<set $MasturbationCategory to "Positions">>
+    <<replace"#Display">>
+		<<include"Masturbation Position Options">>
+	<</replace>>
+<</link>>
+<br>
+
+<div id="Display">
+<<if $MasturbationCategory == "Actions">>
+	<<if $Player.Arousal < 100>>
+		<<include"Masturbation Action Options">>
+	<<else>>
+    <span style="color:Azure"><strong>--Actions--</strong></span><br>
+	<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+    	[[Climax!|Masturbation Climax]]<br>
+	<<else>>
+		<span class="greyed-out">(Can't climax while still wearing anything below the waist)</span><br>
+	<</if>>
+    <</if>>
+<<elseif $MasturbationCategory == "Positions">>
+	<<include"Masturbation Position Options">>
+<<else>>
+	<<include"Masturbation Clothing Options">>
+<</if>>	
+</div>
+
+
+<br>
+/* END */
+<<if $Player.Arousal >= 100>>
+	<span style="color:lightcoral">You can't stop now!</span><br>
+<<else>>
+	[[Stop Masturbating|End Masturbating]]<br>
+<</if>>
+
+<<include "Player Masturbate Strip Map">>

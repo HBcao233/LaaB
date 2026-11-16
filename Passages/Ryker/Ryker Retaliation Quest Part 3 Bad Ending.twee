@@ -1,0 +1,182 @@
+:: Ryker Retaliation Quest Part 3 Bad Ending [nobr]
+
+You turn nervously to the two police officers, who stand by the door. <span class="char-name">Officer Foley</span> goes to grab some gloves, <span class="alert-text">but <span class="char-name">Officer Barry</span> stops him.</span> <span class="dialogue-text">“Not a chance, <span class="char-name">Foley</span>.”</span> The large man smirks, <span class="dialogue-text">“This kid has been trouble since we picked him up. I’ll handle the search.”</span><br>
+<br>
+
+<span class="dialogue-text">“I don’t think that’s a good idea,”</span> <span class="char-name">Foley</span> replies, <span class="dialogue-text">“you tend to get a little rough-”</span><br>
+<br>
+
+<span class="dialogue-text">“Oh, can it, <span class="char-name">Foley</span>!”</span> <span class="char-name">Barry</span> complains, <span class="dialogue-text">“Don’t you have that mountain of paperwork to do anyway? I got this. Besides, you gotta agree that the kids been causing trouble.”</span> <span class="char-name">Foley</span> turns to you, giving you an apologetic look, before nodding. <span class="alert-text">You had caused trouble for them and now, as punishment, the only person here on your side is leaving. You gulp as the door is shut and locks behind him.</span><br>
+<br>
+
+<span class="dialogue-text">“Alright, punk, up against the wall!”</span> <span class="char-name">Barry</span> yells, but he doesn’t even wait for you to respond. <span class="alert-text">Instead, he grabs you by the shoulders and tosses you harshly against the wall. You cry out in pain and yell for him to leave you alone, but this just earns you a punch in the gut.</span> <span class="dialogue-text">“Shut up! You try to fight me or resist, and I will hurt you. I know how to do it without leaving a mark, got that? Oh, and don’t even think about claiming ‘police brutality’ or any of that bullshit. I know the laws and what I am and am not allowed to do. Plus, we got cameras in this room, so everyone will know that I treated you exactly like you deserve! Got that!?”</span> <span class="alert-text">He hits you again, causing you to fall to your knees.</span> <span class="dialogue-text">“Good, now let’s get this over with, I want to get out of here on time.”</span><br>
+
+<<set _ad to [{
+    Name: "Player",
+    State: {
+        Mouth: "Sad",
+        Eyes: "Mad",
+        Blush: 2,
+        Cry: 1,
+        Arms: "Bound",
+    },
+    Clothes: {
+        /* Only Bottoms and Undies */
+        Shoes: $None,
+        Socks: $None,
+        Outer: $None,
+        Under: $None,
+        Top: $None,
+        Over: $None,
+        Back: $None,
+        Hands: $None,
+        Head: $None,
+        Face: $None,
+        Mouth: $None,
+        Neck: $None,
+        Waist: $None,
+    },
+}]>>
+<<ad _ad>>
+
+<span class="alert-text">You are helpless as you are pushed facedown onto the floor and feel as <span class="char-name">Officer Barry</span> begins to force your clothes off one by one.</span> With each one, he inspects them in the air, shaking and patting them in search of any evidence of your wrong-doings. Finding nothing, <span class="pink-text">he growls before tossing them on the table and reaching down and pulling another article off your body. Slowly, your body is exposed and you are left shivering on the ground as he at last reaches for your $PlayerBottoms.Type and yanks them harshly off your body,</span> <span class="alert-text">pulling you into the air before letting you fall hard to the ground as they are removed.</span><br>
+
+<<set _ad to [{
+    Name: "Player",
+    State: {
+        Mouth: "Sad",
+        Eyes: "Sad",
+        Blush: 2,
+        Cry: 1,
+        Arms: "Bound",
+        Outfit: "Undies",
+    },
+    ShowZoom: $PlayerUndies.Name == "None",
+}]>>
+<<ad _ad>>
+
+<<if $PlayerUndies.Name == "None">> /* No Underwear */
+    <span class="pink-text">You crumble to the ground, now completely naked, and cringe on the freezing floor. Upon seeing you now fully exposed, <span class="char-name">Barry</span> lets out a loud chuckle.</span> <span class="dialogue-text">“What, do boys not wear underwear anymore? Fine by me, one less thing I have to check!”</span> He makes a show out of searching and shaking out your bottoms, <span class="pink-text">though his eyes are on you the entire time.</span> <span class="alert-text">You crawl to the corner of the room, unable to stop the tears from rolling down your cheeks, forced out of your eyes from pain and humiliation, and try your best to cover yourself with your hands.</span><br>
+    <br>
+
+    As he finishes checking your bottoms, once again finding nothing, he tosses them harshly against the table. <span class="dialogue-text">“Damn it, where are you hiding what you stole? You better tell me or else I swear to god I’ll-”</span> He stops, taking a deep breath to calm down. <span class="alert-text">You felt afraid, huddled in the corner completely naked with an angry cop standing over you. It’s all you can do to hold yourself back from weeping, knowing that verbally crying would only increase <span class="char-name">Barry</span>’s mocking. Your butt clenches and your legs shiver as the cold breeze in the small room does nothing to cure your feeling of utter embarrassment.</span><br>
+    <br>
+<<elseif $PlayerUndies.Tags.includes("Diaper")>>
+    <span class="alert-text">You hit the floor hard, the crinkling sound being a prelude to the moment you were dreading.</span> <span class="pink-text">Upon seeing you, lying on the floor in just your $PlayerUndies.Type, <span class="char-name">Officer Barry</span> breaks out laughing.</span> <span class="alert-text">He is laughing so hard he drops your bottoms, pointing and laughing as he exposes your secret.</span> <span class="dialogue-text">“You wear fucking $PlayerUndies.Type!? What a fucking joke!”</span> <span class="alert-text">His laughter stings like a knife in your pride,</span> <span class="dialogue-text">“You’re nothing but an oversized baby, no wonder you’re a little thief! I wish we woulda done this back in the park! I would have loved to parade your padded ass in front of everyone, bet that’ll teach you a lesson! What do you say, kid, shall I pass you around the station until you start crying?”</span><br>
+    <br>
+
+    <span class="char-name">Barry</span> steps forward, <span class="pink-text">placing his foot on the front of your $PlayerUndies.Type and squishing it around, causing uncomfortable pressure on your crotch.</span> <span class="dialogue-text">“You’re pathetic! A little baby trying to play some tough thief. Fuck, I love when criminals are revealed to be nothing but losers. Better hope you don’t wet yourself in here, or else I’ll make you lick it up, you hear?”</span> He returns to checking your bottoms, doing it quickly, <span class="alert-text">before he turns to you with an evil grin.</span> <span class="dialogue-text">“Time to check the baby’s diaper!”</span><br>
+    <br>
+
+    <span class="alert-text">You try to kick him away, but it is no use. He grabs your legs and yanks you closer before practically tearing your $PlayerUndies.Type off your body,</span> <span class="pink-text">leaving you completely naked in front of the officer as he briefly inspects your padded protection before tossing it onto the table in disgust.</span> <span class="alert-text">It’s all you can do to hold back your tears, knowing that crying would only increase <span class="char-name">Barry</span>’s mocking. Your butt clenches and your legs shiver as the cold breeze in the small room does nothing to cure your feeling of utter embarrassment.</span><br>
+    <br>
+<<else>> /* Normal Undies */
+    <span class="alert-text">You hit the floor hard, now in nothing but your $PlayerUndies.Name, and blush as you hear <span class="char-name">Officer Barry</span> begin to laugh loudly.</span> <span class="dialogue-text">“And there it is, the little thief stripped to nothing but his ridiculous fucking underwear. How does it feel, boy? This is what little thieves like you deserve!”</span> He stares at you with a menacing smile as he inspects your bottoms before tossing them on the table as well. His smile only grows as he steps forward and looms over you. <span class="dialogue-text">“And now for the final piece!”</span><br>
+    <br>
+
+    <span class="alert-text">You try to fight, to kick him away, but it just earns you a kick to the stomach that nearly makes you throw up.</span> <span class="pink-text"><span class="char-name">Barry</span> then grabs your legs, practically lifting you into the air once more, before reaching down and gripping your underwear. You are utterly helpless as he rips them off your body, leaving you naked and exposed. But <span class="char-name">Officer Barry</span> doesn’t let you go, instead, he breaks out into a loud belly laugh as he holds his naked victim by his leg and swings you around.</span> <span class="dialogue-text">“This is exactly how punks like you should look! Afraid and humiliated. I wish I could carry you around the station like this, give everyone a good laugh!”</span><br>
+    <br>
+
+    He then drops you to the ground once more and begins to inspect your underwear, trying to find some evidence of your crime, but he finds nothing. <span class="alert-text">His joy at your embarrassment turns to anger as he realizes he hasn’t found what he was looking for. You crawl to the corner of the room, unable to stop the tears from rolling down your cheeks, forced out of your eyes from pain and humiliation, and try your best to cover yourself with your hands. It’s all you can do to hold yourself back from weeping, knowing that audibly crying would only increase <span class="char-name">Barry</span>’s mocking. Your butt clenches and your legs shiver as the cold air in the small room does nothing to cure your feeling of utter embarrassment.</span><br>
+    <br>
+<</if>>
+
+[[Continue|Ryker Retaliation Quest Part 3 Bad Ending Continued]]
+
+:: Ryker Retaliation Quest Part 3 Bad Ending Continued [nobr]
+
+<span class="dialogue-text">“Where are you hiding them, boy!? You stash the goods somewhere? Pass them off to some buddy of yours?”</span> <span class="alert-text">He stands over you, his face filled with anger. You feel scared and exposed, overpowered as you are. You tell him you didn’t steal anything; it was all <span class="char-name">Ryker</span>; you beg him to let you go! But he just yells,</span> <span class="dialogue-text">“Liar! I know a punk when I see one, so you better tell me or else!”</span> <span class="alert-text">He picks you up and slams your freezing body against the wall. He looks you over,</span> <span class="pink-text">eyeing your privates for a moment, before smiling.</span> <span class="alert-text">You preferred it when he looked angry.</span><br>
+
+<<set _ad to [{
+    Name: "Player",
+    State: {
+        Mouth: "Sad",
+        Eyes: "Sad",
+        Blush: 3,
+        Cry: 2,
+        Arms: "Hide",
+        Outfit: "Naked",
+    },
+    ShowZoom: true,
+}]>>
+<<ad _ad>>
+
+<span class="dialogue-text">“Oh, I know one place I haven’t checked yet. You’re going to wish you told me where you hid them.”</span> He laughs as he begins to carry you over to the table. <span class="alert-text">You try to fight yourself free, even though you know it is pointless, but you have to try! He tosses you onto the table, painfully grabbing your arms and handcuffing them to a metal bar. This leaves you leaned over the table in an awkward and exposing position. It is only then that you begin to wonder… He wasn’t going to-!?</span><br>
+<br>
+
+<span class="alert-text">You kick and scream as he uses another pair of handcuffs to bind your legs to the legs of the table, leaving them spread apart and unable to move. You hear him laugh as he eyes your exposed ass, now completely vulnerable and defenseless to whatever he planned to do;</span> <span class="red-text">Open and bare for him.</span><br>
+<br>
+
+<span class="dialogue-text">“You better tell me where you hid them!”</span> He laughs as he puts on a pair of gloves. <span class="alert-text">You pull at the binds as hard as you can but are unable to budge them at all. You plead for him to stop; you didn’t steal anything! You didn’t do anything!</span> <span class="dialogue-text">“Well, I guess I’ll just have to be sure with a little cavity search. I’d say 'Don’t worry, it won’t hurt' but honestly, I hope it does. Maybe it’ll teach you a lesson.”</span><br>
+<br>
+
+<span class="pink-text">You feel his cold, gloved fingers touch the ring of your butthole, spreading it. Though, considering the position you are in, he doesn’t have to do much spreading.</span> <span class="alert-text">You scream as loud as you can, begging for someone to help you, as you feel him shove his fingers in your ass. He isn’t gentle. In fact, he certainly goes in as rough as he can, causing pain to shoot through your body as your ass is vandalized by his hands.</span><br>
+
+<<set $Player.Arousal to 60>>
+
+<<set _ad to [{
+    Name: "Player",
+    State: {
+        Mouth: "Sad",
+        Eyes: "Closed",
+        Blush: 3,
+        Cry: 2,
+        Arms: "Bound",
+        Outfit: "Naked",
+    },
+    ShowZoom: true,
+}]>>
+<<ad _ad>>
+
+<span class="dialogue-text">“Well, isn’t this a tight hole? Guess you didn’t shove anything up here, but I better be thorough just to be sure!”</span> <span class="alert-text">He continues to prod your ass, violating and hurting you, much to his pleasure. The worst part is you couldn’t even move in response to the pain, your arms and legs bound as they are in an uncomfortable position.</span><br>
+<br>
+
+<span class="alert-text">The ‘search’ goes on for what feels like an hour until he finally relents and removes his fingers from your ass, content that both nothing is there and that you’ve learned your lesson, whatever sick lesson that may be. You slump down as much as your binds will allow, covered in sweat and with a sore throat. But things aren’t over yet, as despite unhooking you from the table, he keeps the binds on your limbs, moving you to a chair placed in the center of the room.</span><br>
+<br>
+
+At this point, you are too exhausted to fight back, and can do nothing as he sits you down in the chair, cringing from pain as your bruised ass is planted on the seat. You manage to force out a questioning remark on what he is doing now <span class="alert-text">as he handcuffs your hands behind the chair.</span><br>
+<br>
+
+<span class="dialogue-text">“You may not have anything on you, but protocol dictates I can have your clothes checked for drugs or other illegal substances.”</span> He explains as he binds your legs to the chair as well, <span class="pink-text">leaving them spread apart.</span> <span class="dialogue-text">“But I can’t risk you escaping, so I’ll leave you here while I check them out. But don’t worry, I’ll make sure to leave someone in the next room to keep an eye on you, for your own safety.”</span> <span class="pink-text">He steps back, admiring his work, before glancing at the large mirror and chuckling.</span><br>
+
+<<set _ad to [{
+    Name: "Player",
+    State: {
+        Mouth: "Sad",
+        Eyes: "Sad",
+        Blush: 3,
+        Cry: 1,
+        Arms: "Bound",
+        Outfit: "Naked",
+    },
+    ShowZoom: true,
+}]>>
+<<ad _ad>>
+
+<span class="pink-text">It seems he wants to humiliate you one last time. You glance up at your reflection, with your hands bound behind your back and your legs spread apart. Your entire body, most importantly your slightly stiff $Player.PenisSize Penis and balls, is completely exposed. Anyone in the next room would be able to see everything, and you can’t do a thing about it or even know how many people are jeering at you.</span> You’d blush if you weren’t so defeated from the cavity search.<br>
+<br>
+
+<span class="pink-text"><span class="char-name">Officer Barry</span> takes your clothes and leaves you, naked and bound to the chair. Dry tears cover your cheeks as your ass pulsatedsin pain from the search.</span> The only thing that keeps you sane was the thought of getting <span class="char-name">Ryker</span> back for this, and you would get him back. You imagine all the ways you’d make him pay.<br>
+<<addMoodlet "Pained" 12>>
+<br>
+
+
+[[Continue|Ryker Retaliation Quest Part 3 Bad Ending Final][$Minute += 20]]
+
+:: Ryker Retaliation Quest Part 3 Bad Ending Final [nobr]
+
+<span class="alert-text">You are stuck there, naked and freezing, for what feels like hours. You suspect that <span class="char-name">Officer Barry</span> had turned the AC all the way up upon leaving, as you can’t stop your legs from shaking and</span> <span class="pink-text">your penis has shriveled to a small size, adding to your embarrassment.</span> By the time you finally hear the door being unlocked, you feel conflicted by your desire to finally be let out and your embarrassment at being seen in such a pathetic state.<br>
+<br>
+
+<span class="char-name">Officer Barry</span> walks in, carrying a plastic bag with your clothes in it. He looks grumpy and it doesn’t take you long to figure out why. <span class="dialogue-text">“The tests came back negative and while I think we should keep you here a few extra hours, just to be sure, my superiors disagree, and I’ve been ordered to discharge you.”</span> He tosses the bag of clothes on the ground in front of you and fumbles his keys as he moves to unlock your binds. <span class="dialogue-text">“But listen here, boy, you don’t fool me. I’ve got my eyes on you and the instant I catch you messing up, I’ll be on you faster than you will believe, and I’ll drag that pathetic ass back here and lock you up!”</span><br>
+<br>
+
+You fall to your hands and knees as your binds are released, your limbs stiff and sore from being bound to the chair for so long. <span class="pink-text">You quickly scramble to put on your clothes, more so to escape the cold than the embarrassment.</span> <span class="char-name">Barry</span> scoffs as he waits for you, continuing his tirade about how <span class="dialogue-text">“Punks like you are what’s wrong with this city, and I’m going to fix it one way or another.”</span> You try your best to ignore him and are grateful as you are finally led out of the police station back onto main street, free at last!<br>
+<<addMoodlet "Seen Naked" 3>>
+<br>
+
+<<set $CompletedQuests.push("Ryker: Retaliation")>>
+<<set $InActiveQuests.delete("Ryker: Retaliation")>>
+<<unset $QuestSusMeter>>
+
+[[Continue|Main Street]]

@@ -1,0 +1,252 @@
+:: LucasQuest Ryker Part 3 [nobr]
+
+/* Opening */
+As you enter your house, you begin to call for <span style="color:DarkTurquoise">Your Father</span> only to discover him sitting on the couch watching TV. His welcoming smile turns to a look of concern as he sees <span style="color:DarkTurquoise">Lucas</span>. He quickly gets up and helps you bring <span style="color:DarkTurquoise">Lucas</span> into the kitchen, sitting him down on a stool as he runs to get the first aid kit. 
+/* Slight difference based on Lucas Meet Family Quest */
+    /* Lucas has been in house before */
+    <<if $QuestLucasMeetFam.State == -1>>
+        /* None, he only mentions if it is his first time */
+        <br>
+
+    <<set _ad to [
+        {
+            Name: "Dad",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Everyday",
+				Mouth: "Smirk",
+				Eyes: "Sad",
+				Cry: 1,
+    		},	
+        },
+		{
+            Name: "Player",
+            State: {
+				Mouth: "Happy",
+				Eyes: "Sad",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+	
+    /* Lucas has not */
+    <<else>>
+<span style="color:DarkTurquoise">Lucas</span> glances around your house nervously, you realize it is the first time he’s been there. You wish it would have been under better circumstances. <br>
+
+    <<set _ad to [
+        {
+            Name: "Dad",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Everyday",
+				Mouth: "Smirk",
+				Eyes: "Sad",
+				Cry: 1,
+    		},	
+        },
+		{
+            Name: "Player",
+            State: {
+				Mouth: "Happy",
+				Eyes: "Sad",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Nice house.”</span> <span style="color:DarkTurquoise">Lucas</span> says shyly. <br>
+<br>
+    <</if>>
+/* Continued */
+<span style="color:DarkTurquoise">Your Father</span> returns and immediately gets to work cleaning the cut on <span style="color:DarkTurquoise">Lucas</span>’ cheek. He winces slightly as <span style="color:DarkTurquoise">Your Father</span> cleans it, but otherwise puts on a brave face. <span style="color:pink"><span style="color:DarkTurquoise">Your Father</span> was no doctor, but after years of raising three boys, he knew a thing or two about cuts and bruises.</span> Once he applies a bandage on his cheek, he moves on to examining <span style="color:DarkTurquoise">Lucas</span>’ ankle, removing his shoes and socks. It was bruised pretty bad, but otherwise looked fine. <span style="color:DarkTurquoise">Lucas</span> cringed whenever it was moved, but answered all of <span style="color:DarkTurquoise">Your Father</span>’s questions. <br>
+<br>
+<span style="color:LightSteelBlue">“The good news is, it isn’t broken or anything. Might be a little sprain, but I’d guess it’s just a nasty bruise. Should still probably have a doctor check it out though.”</span> <span style="color:DarkTurquoise">Your Father</span> stood up and stretched. <span style="color:LightSteelBlue">“The cut on your cheek is superficial. A.K.A. should heal up after a day or so.”</span> <br>
+<br>
+
+/* Slight difference based on Lucas Meet Family Quest */
+    /* Dad has met Lucas Mom */
+    <<if $QuestLucasMeetFam.State == -1>>
+<span style="color:LightSteelBlue">“Still, your mom will probably want to take you to the doctor’s.”</span> <span style="color:DarkTurquoise">Your Father</span> pulls out his phone. <span style="color:LightSteelBlue">“I’ll give her a call and let you know what happened.”</span> <br>
+<br>
+    /* He has not */
+    <<else>>
+<span style="color:LightSteelBlue">“Your parents may still want to take you to the doctor’s though.”</span> <span style="color:DarkTurquoise">Your Father</span> pulls out his phone. <span style="color:LightSteelBlue">“Do you know their number? I’ll give them a call.”</span> <br>
+<br>
+    <</if>>
+/* Continued */
+<span style="color:LightSteelBlue">“No!”</span> <span style="color:DarkTurquoise">Lucas</span> quickly called out. <span style="color:DarkTurquoise">Your Father</span> gave him a confused look. <span style="color:DarkTurquoise">Lucas</span> took a moment to regain his composure, then spoke. <span style="color:LightSteelBlue">“I mean, you said it wasn’t a big deal. I’ll tell my mom when she gets home. She’s really busy and I don’t want her to come running home over a bruised foot.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Right.”</span> <span style="color:DarkTurquoise">Your Father</span> eyed him curiously. <span style="color:LightSteelBlue">“So, what happened? How did you hurt yourself?”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“It was stupid.”</span> <span style="color:DarkTurquoise">Lucas</span> laughed, <span style="color:LightSteelBlue">“We were in the park playing, chasing each other around. You know, kid stuff.”</span> You and <span style="color:DarkTurquoise">Lucas</span> shared a quick glance, <span style="color:lightcoral">he was lying.</span> <span style="color:LightSteelBlue">“I wasn’t paying attention and tripped on the sidewalk. Bashed my ankle and cut my face.”</span> <span style="color:DarkTurquoise">Lucas</span> laughed nervously, rubbing the back of his head. <span style="color:LightSteelBlue">“It was really stupid of me. But trust me, I learned my lesson.”</span> <br>
+<br>
+<span style="color:lightcoral"><span style="color:DarkTurquoise">Your Father</span> wasn’t convinced.</span> He crossed his arms and tilted his head, the same thing he does whenever he is trying to get a confession out of you or <span style="color:DarkTurquoise">Noah</span>. <span style="color:DarkTurquoise">Lucas</span> gave a nervous smile, reaffirming his story. <br>
+
+    <<set _ad to [
+        {
+            Name: "Dad",
+            State: {
+                Mouth: "Frown",
+                Brows: "Suspicious",
+            },
+        },
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Everyday",
+				Blush: 1,
+    		},	
+			Clothes: {
+                Socks: $None,
+                Shoes: $None,
+        },
+        },
+		{
+            Name: "Player",
+            State: {
+				Blush: 1,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Is that right, <span style="color:DarkTurquoise">$Player.Name</span>?”</span> <span style="color:DarkTurquoise">Your Father</span> suddenly turned to you, giving you the look you knew all too well. Behind him, <span style="color:DarkTurquoise">Lucas</span> was shaking his head, mouthing the word <span style="color:lightcoral">‘no’</span>. <span style="color:yellow">He wanted you to lie as well.</span> For reasons you could only imagine, <span style="color:DarkTurquoise">Lucas</span> wanted to keep what happened with <span style="color:DarkTurquoise">Ryker</span> a secret. To be fair, <span style="color:DarkTurquoise">Your Father</span> would probably blow it out of proportion and would most certainly tell <span style="color:DarkTurquoise">Lucas’ Mother</span>. But at the same time, it may help. <br>
+<br>
+<div id=choice>
+/* Lie */
+	<<link "Lie & Agree with Lucas<br>">>
+	<<replace"#choice">>
+	<<set $CompletedQuests.push("Lucas: Ryker (Dad Lied)")>>
+You restate <span style="color:DarkTurquoise">Lucas</span>’ story. The two of you were playing at the park down the street when <span style="color:DarkTurquoise">Lucas</span> fell. You were worried about his ankle, so you brought him here. <span style="color:DarkTurquoise">Your Father</span> raises an eyebrow, turning to <span style="color:DarkTurquoise">Lucas</span> and then back to you. You both smiled, trying to reiterate that you were telling the truth. <br>
+<br>
+<span style="color:LightSteelBlue">“Alright then. Well, you really need to be more careful, both of you. Could have been a lot worse.”</span> <span style="color:DarkTurquoise">Your Father</span> sighed, cleaning up the first aid kit. You both could tell he didn’t fully believe your story, but he seemed to respect it enough to not question it further. As <span style="color:DarkTurquoise">Your Father</span> walks back to the bathroom to return the kit, <span style="color:DarkTurquoise">Lucas</span> lets out a sigh of relief and thanks you. <br>
+<br>
+<span style="color:LightSteelBlue">“Probably best to take him home for now though.”</span> <span style="color:DarkTurquoise">Your Father</span> calls from down the hall, <span style="color:LightSteelBlue">“Best he gets some rest and stays off that leg. Did you need help getting home, <span style="color:DarkTurquoise">Lucas</span>?”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“No, thank you.”</span> <span style="color:DarkTurquoise">Lucas</span> responds, <span style="color:LightSteelBlue">“If <span style="color:DarkTurquoise">$Player.Name</span> can get me to the door, I’ll be fine.”</span> <br>
+<br>
+You help <span style="color:DarkTurquoise">Lucas</span> down from the stool, the brief rest seeming to have at least a little effect on his recovery as he winced a little less as he stood up. Though <span style="color:DarkTurquoise">Lucas</span> still put his arm around you, still not wanting to stand completely on his injured ankle. As the two of you reach the front door, <span style="color:DarkTurquoise">Lucas</span> calls back once more to thank <span style="color:DarkTurquoise">Your Father</span>. <br>
+<br>
+<span style="color:LightSteelBlue">“Thanks again, <span style="color:DarkTurquoise">Mr. $Player.LastName</span>!”</span> He says loud enough to be heard, but not too loud to be yelling in your ear. <span style="color:DarkTurquoise">Your Father</span> calls back from the other room in response and the two of you leave. The walk is quiet until you nearly reach <span style="color:DarkTurquoise">Lucas</span>’ front door. <br>
+<br>
+<span style="color:LightSteelBlue">“Thanks for covering for me.”</span> He says frowning, <span style="color:LightSteelBlue">“I didn’t want you to have to lie to your dad, but it’s better he didn’t get involved. My mom can freak out about stuff like this and it’s best that I tell her. I’ll make it up to you.”</span> <span style="color:pink">He gives you a forced smile, obviously fighting to hide his pained expression.</span> <br>
+<br>
+You laugh in response, telling him it isn’t that big a deal and you were sure he had his reasons. Still, though, you were worried about him and what this <span style="color:DarkTurquoise">Ryker</span> kid may have done if you hadn’t shown up. <br>
+<br>
+<span style="color:LightSteelBlue">“Trust me.”</span> <span style="color:DarkTurquoise">Lucas</span> lets go of you as you reach his front door. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Ryker</span> is all talk. He may bruise, but he doesn’t bite. Once he realizes I’m not going to fall for his bait, he’ll move on to something else.”</span> <span style="color:DarkTurquoise">Lucas</span> opens his front door and limps inside, but turns back to you one last time before closing it. <br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Everyday",
+				Mouth: "Smirk",
+				Eyes: "Sad",
+				Blush: 1,
+    		},	
+        },
+		{
+            Name: "Player",
+            State: {
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Thanks <span style="color:DarkTurquoise">$LucasNickname</span>.”</span> <span style="color:pink">He blushes and gives you a cute smile.</span> <span style="color:LightSteelBlue">“It’s nice to have a friend like you again.”</span> <br>
+<<set $InActiveQuests.delete("Lucas: Ryker")>>
+<<set $CompletedQuests.push("Lucas: Ryker")>>
+<<set $Minutes += 20>>
+<<socialChange "Lucas" 5>>
+<span style="color:Gold">Quest: "Lucas: Ryker" Complete!</span><br>
+<br>
+[[Continue|PH Frontyard]] 
+
+    <</replace>>
+    <</link>>
+/* Truth */
+	<<link "Tell the truth about what happened<br>">>
+	<<replace"#choice">>
+	<<set $CompletedQuests.push("Lucas: Ryker (Dad Truth)")>>
+Feeling the pressure of <span style="color:DarkTurquoise">Your Father</span>’s glare or thinking it is what’s best for <span style="color:DarkTurquoise">Lucas</span>, you tell the truth and inform <span style="color:DarkTurquoise">Your Father</span> that it was another boy, three in fact, that did this to <span style="color:DarkTurquoise">Lucas</span>. <span style="color:DarkTurquoise">Your Father</span>’s eyes go wide, though he seemed to have been expecting something like this. <span style="color:DarkTurquoise">Lucas</span> gives you a look of betrayed sadness before <span style="color:DarkTurquoise">Your Father</span> spins around towards him. <br>
+<br>
+<span style="color:LightSteelBlue">“What!? Other boys did this to you?”</span> <span style="color:DarkTurquoise">Your Father</span> sounded concerned, quickly barraging <span style="color:DarkTurquoise">Lucas</span> with questions about who, where, what, how, and why. <br>
+<br>
+<span style="color:LightSteelBlue">“They’re just some punks from the public school.”</span> <span style="color:DarkTurquoise">Lucas</span> avoided eye contact with both of you. <span style="color:LightSteelBlue">“They’ve always hated us private school kids. It’s not anything new and it isn’t a big deal.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“If it isn’t a big deal, then why did <span style="color:DarkTurquoise">$Player.Name</span> have to basically carry you here?”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“He didn’t carry me-“</span> <span style="color:DarkTurquoise">Lucas</span> stops himself midsentence, trying to avoid raising his voice. <span style="color:DarkTurquoise">Your Father</span> pulls out his phone and begins to dial, causing <span style="color:DarkTurquoise">Lucas</span> to panic and quickly ask what he was doing. <br>
+<br>
+<span style="color:LightSteelBlue">“Calling your school, and probably the police after.”</span> <span style="color:DarkTurquoise">Your Father</span> begins searching through his contacts for <span style="color:DarkTurquoise">Headmaster Alistair</span>. <span style="color:LightSteelBlue">“I’m not going to sit here and let some delinquents beat up my son’s friend. They’re lucky it was <span style="color:DarkTurquoise">$Player.Name</span> who found you and not me, I would have whooped their asses so hard they’d need a doctor to reattach it!”</span> <span style="color:pink">You cannot help but smile, <span style="color:DarkTurquoise">Your Father</span> is nothing if not protective.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“No don’t!”</span> <span style="color:DarkTurquoise">Lucas</span> jumped to his feet, which prompted pain to shoot up his leg. He nearly fell to the ground but was caught by <span style="color:DarkTurquoise">Your Father</span> and placed back on the stool. <span style="color:LightSteelBlue">“If you do that, they’ll call my mom and she’ll freak out!”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“As she should!”</span> <span style="color:DarkTurquoise">Your Father</span> retorts, but he does stop short of dialing. <br>
+<br>
+<span style="color:LightSteelBlue">“She’s already stressed, and this will just make it worse! Please, don’t call anyone.”</span> <span style="color:DarkTurquoise">Lucas</span> pleads. <span style="color:LightSteelBlue">“I’m going to have to tell her when she gets home anyway, she’ll panic when she sees my ankle. But at least if I do it, I can keep her from doing something crazy.”</span> <span style="color:DarkTurquoise">Lucas</span> takes a deep breath, trying to calm down and explain as both you and <span style="color:DarkTurquoise">Your Father</span> seem confused. <br>
+<br>
+<span style="color:LightSteelBlue">“She’s like a mama bear.”</span> He gave a half-hearted smile. <span style="color:LightSteelBlue">“If someone calls her and says I was found beat up, she’s liable to start beating down doors with a baseball bat to find the kid who did it. That won’t be good for anyone.”</span> <span style="color:DarkTurquoise">Your Father</span> sighs, putting his phone back in his pocket. <br>
+<br>
+<span style="color:LightSteelBlue">“I can understand that, I’d do the same if you brought <span style="color:DarkTurquoise">$Player.Name</span> in.”</span> He pats you on the head. <span style="color:LightSteelBlue">“Alright, but you have to promise me you’ll tell your mother first thing when she gets home! I’ll check too.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I will, I promise!”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“And if I find out you lied, I’ll show you what I do to <span style="color:DarkTurquoise">$Player.Name</span> when he misbehaves.”</span> <span style="color:DarkTurquoise">Your Father</span> smirks. <span style="color:pink">You and <span style="color:DarkTurquoise">Lucas</span> share a look, you both know what he means.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Understood.”</span> <span style="color:DarkTurquoise">Lucas</span> nods, blushing at the thought. <br>
+<br>
+<span style="color:LightSteelBlue">“Alright then.”</span> <span style="color:DarkTurquoise">Your Father</span> places a hand on each of your shoulders. <span style="color:LightSteelBlue">“Best get <span style="color:DarkTurquoise">Lucas</span> home. He needs to rest and keep off that leg. Want any help?”</span> <br>
+<br>
+You and <span style="color:DarkTurquoise">Lucas</span> assure him that you’ll be fine as you help him off the stool and begin to lead him toward the door. <br>
+<br>
+<span style="color:LightSteelBlue">“Thanks again, <span style="color:DarkTurquoise">Mr. $Player.LastName</span>.”</span> <span style="color:DarkTurquoise">Lucas</span> says as you both exit. <br>
+<br>
+The walk back is filled with an awkward silence. <span style="color:DarkTurquoise">Lucas</span> looks downcast but relieved that <span style="color:DarkTurquoise">Your Father</span> agreed to let him tell his mother. You feel a bit bad about betraying <span style="color:DarkTurquoise">Lucas</span> and telling <span style="color:DarkTurquoise">Your Father</span> the truth and decide to apologize as you reach his front door. <br>
+<br>
+<span style="color:LightSteelBlue">“No need.”</span> <span style="color:DarkTurquoise">Lucas</span> responds, <span style="color:LightSteelBlue">“I shouldn’t have expected you to lie to your dad. I should be the one apologizing. Plus, I know you were only trying to help.”</span> You reiterate that, saying that you were worried about what <span style="color:DarkTurquoise">Ryker</span> may have done if you didn’t show up. <br>
+<br>
+<span style="color:LightSteelBlue">“Trust me.”</span> <span style="color:DarkTurquoise">Lucas</span> lets go of you as he opens his front door. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Ryker</span> is all talk. He may bruise, but he doesn’t bite. Once he realizes I’m not going to fall for his bait, he’ll move on to something else.”</span> <span style="color:DarkTurquoise">Lucas</span> limps inside, but turns back to you one last time before closing it. <br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+				Outfit: "Everyday",
+				Mouth: "Smirk",
+				Eyes: "Sad",
+				Blush: 1,
+    		},	
+        },
+		{
+            Name: "Player",
+            State: {
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Thanks <span style="color:DarkTurquoise">$LucasNickname</span>.”</span> <span style="color:pink">He blushes and gives you a cute smile.</span> <span style="color:LightSteelBlue">“It’s nice to have a friend like you again.”</span> <br>
+<<set $InActiveQuests.delete("Lucas: Ryker")>>
+<<set $CompletedQuests.push("Lucas: Ryker")>>
+<<set $Minutes += 20>>
+<<socialChange "Lucas" 3>>
+<span style="color:Gold">Quest: "Lucas: Ryker" Complete!</span><br>
+<br>
+[[Continue|PH Frontyard]] 
+
+    <</replace>>
+    <</link>>
+</div>

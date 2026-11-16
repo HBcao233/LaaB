@@ -1,0 +1,150 @@
+:: Lucas Hang Out Park Sit & Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You and <span style="color:DarkTurquoise">Lucas</span> sit down on a nearby bench to take a minute to catch your breath. You turn to <span style="color:DarkTurquoise">Lucas</span> and notice him sitting there a little awkwardly, swinging his legs and tapping his knees to try and fill the silence. <span style="Color: LightSteelBlue">“Sooo…”</span> <span style="color:DarkTurquoise">Lucas</span> says, <span style="Color: LightSteelBlue">“Did you want to chat about anything?”</span> You chuckle and try to think of a topic to talk about. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            Curious, you ask <span style="color:DarkTurquoise">Lucas</span> if he’s ever gotten detention and his immediate blush quickly cues you in and you laugh. <span style="Color: LightSteelBlue">“What? Who hasn’t!?”</span> <span style="color:DarkTurquoise">Lucas</span> responds with mild embarrassment. <span style="Color: LightSteelBlue">“We’ve all done some things we shouldn’t, especially when we-”</span> <span style="color:DarkTurquoise">Lucas</span> pauses, trailing off, <span style="Color: LightSteelBlue">“I’m just happy I haven’t gotten detention from <span style="color:DarkTurquoise">Mr. Randolph</span> yet. I don’t think my butt could take that.”</span> You both laugh and spend some time talking about your experiences in detention. <br>
+            <<socialChange "Lucas" 1>>
+            <span style="color:green">+Lucas Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Lucas Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Lucas Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Lucas</span> about how school’s going and he shrugs. <span style="Color: LightSteelBlue">“About the same as you, I’d imagine. That quiz <span style="color:DarkTurquoise">Mr. Randolph</span> gave us the other day was pretty tough, though we’ve had worse.”</span> <span style="color:DarkTurquoise">Lucas</span> shrugs once more as you recall the test left a lot of other kids on edge. Guess <span style="color:DarkTurquoise">Lucas</span> must be super smart to only see it as ‘pretty tough’. <span style="Color: LightSteelBlue">“I’m not that smart.”</span> <span style="color:DarkTurquoise">Lucas</span> laughs, playfully shoving you, <span style="Color: LightSteelBlue">“I just know how to pay attention in class. You should try it sometime.”</span> <br>
+            <<socialChange "Lucas" 1>>
+            <span style="color:green">+Lucas Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Lucas Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Lucas Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Lucas: Punishment Game")>>
+        <<link "Home life<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+                With a devious smirk, you ask <span style="color:DarkTurquoise">Lucas</span> how he gets punished at home. <span style="Color: LightSteelBlue">“Wha- what!?”</span> <span style="color:DarkTurquoise">Lucas</span> responds surprised, turning a bit red, <span style="Color: LightSteelBlue">“Wha- what do you mean punished?”</span> You say that you want to know how his mom punishes him when he misbehaves. Is it just a scolding, or something a bit more? <span style="color:DarkTurquoise">Lucas</span> blushes even more at this topic of conversation, so you try to share the embarrassment by admitting that <span style="color:DarkTurquoise">Your Father</span> isn’t afraid to spank your bare butt. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“I- I guess it’s the same for me.”</span> <span style="color:DarkTurquoise">Lucas</span> says with a nervous smile, <span style="Color: LightSteelBlue">“But it’s my mom, so it’s a lot more embarrassing.”</span> You ask if she just pulls his pants and underwear down to whoop his butt or if she makes him strip down in front of her and <span style="color:DarkTurquoise">Lucas</span> quickly changes the subject. <br>
+                <<socialChange "Lucas" 1>>
+                <span style="color:green">+Lucas Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Lucas Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Lucas Hang Out Park]]
+            <<else>>
+                You ask <span style="color:DarkTurquoise">Lucas</span> about how his home life has been recently and how things are going with his mother. <span style="Color: LightSteelBlue">“Fine, I guess. Or good?”</span> <span style="color:DarkTurquoise">Lucas</span> chuckles, seemingly unsure how to answer the question. <span style="Color: LightSteelBlue">“She’s been a bit more clingy since we had our talk about… all that stuff. But it’s been nice. Though she still won’t let me live down her catching us without… you know… clothes on. Every time I ask to hang out with you, she jokes about if I’ll be wearing pants or not!”</span> You both laugh and you add that if <span style="color:DarkTurquoise">Lucas</span> does want to hang out without pants, you’d be down. <span style="Color: LightSteelBlue">“Shut up!”</span> <span style="color:DarkTurquoise">Lucas</span> shoves you playfully. <br>
+                <<socialChange "Lucas" 1>>
+                <span style="color:green">+Lucas Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Lucas Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Lucas Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Lucas</span> if he’s played any new video games recently and he instantly perks up, obviously looking for any chance to talk about his gaming obsession. <span style="Color: LightSteelBlue">“Yeah! I’ve started this amazing game, Survey 22, it’s – like - the best thing ever!”</span> You laugh at his words, seeing it as playful hyperbole, but <span style="color:DarkTurquoise">Lucas</span> quickly reaffirms. <span style="Color: LightSteelBlue">“No, you don’t understand how tight this game is!”</span> With an amused smirk, you ask <span style="color:DarkTurquoise">Lucas</span> if he really just used the word ‘tight’? <br>
+            <<socialChange "Lucas" 1>>
+            <span style="color:green">+Lucas Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Lucas Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Lucas Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Lucas</span> what he’s been up to lately and you notice his face emote before he blushes slightly and turns away. <span style="Color: LightSteelBlue">“Nothing really. Just stuff.”</span> Curiosity piqued, you lean in and ask him what he’s hiding. <span style="color:DarkTurquoise">Lucas</span> nervously assures you it’s nothing, he’s just had a lazy week, but you can tell he is holding something back, so you get him to talk in the easiest way you know how. Tickling and underwear tugs. <br>
+            <br>
+            Eventually, the laughter he emits and the sight of you yanking his underwear up to any passerby gets him to finally relent. <span style="Color: LightSteelBlue">“I’ve… been working on trying to make a Cosmic Ranger costume.”</span> He says shyly. You chuckle, calling it cute, and ask him why he was so shy to tell you. <span style="Color: LightSteelBlue">“Because you’re not seeing it!”</span> <span style="color:DarkTurquoise">Lucas</span> points a finger at you, <span style="Color: LightSteelBlue">“At least not until I find some new material… The spandex mom got me is like what they use in the show but…”</span> You wiggle your fingers at him, threatening to attack once more unless he tells you. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Because it’s super tight and you can totally see my penis when I’m wearing it!”</span> He answers with an embarrassed smile, <span style="Color: LightSteelBlue">“And wearing underwear only makes it worse!”</span> You laugh at the visual; you HAVE to see him wearing it now. <br>
+            <<socialChange "Lucas" 1>>
+            <span style="color:green">+Lucas Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Lucas Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Lucas Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Lucas: Punishment Game")>>
+        <<link "Something Lewd<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+                Wanting to bring up a lewd conversation and possibly embarrass the boy, you ask <span style="color:DarkTurquoise">Lucas</span> a pretty personal question. When was the last time he masturbated. <span style="Color: LightSteelBlue">“What!?”</span> <span style="color:DarkTurquoise">Lucas</span> nearly chokes, turning bright red at your question. <span style="Color: LightSteelBlue">“Wh- why are you asking me that!?”</span> You laugh, saying your friends who have done stuff with each other. You just wanted to check in with your friend, make sure he’s doing alright. <span style="Color: LightSteelBlue">“Bu- but that’s still a weird question! Also, don’t talk about that out here!”</span> <br>
+                <br>
+                You teasingly smile at <span style="color:DarkTurquoise">Lucas</span>, trying to lighten the mood by regaling him with the tale of your own last masturbation, maybe even adding in a note about thinking of him while you did it. This causes <span style="color:DarkTurquoise">Lucas</span> to turn even redder and cover his face out of embarrassment. <span style="Color: LightSteelBlue">“Why are you telling me this!?”</span> You laugh, saying now he has to tell you, since it’s only fair. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“You’re such a perv!”</span> <span style="color:DarkTurquoise">Lucas</span> replies, before relenting, <span style="Color: LightSteelBlue">“Last night, I guess?”</span> Oh, so soon? You need details! <span style="color:DarkTurquoise">Lucas</span> grimaces at this demand, though you get the feeling he is a little excited by the taboo nature of this topic. <span style="Color: LightSteelBlue">“It was in the shower. I don’t know if it was because the water was warm or what, but I got hard and just did it. Wasn’t much too it.”</span> <span style="color:DarkTurquoise">Lucas</span> tries to drop the topic there, but you keep prodding for information, asking how it felt, how much he came, and what he was thinking about. <span style="color:DarkTurquoise">Lucas</span> refuses to elaborate. <br>
+                <<socialChange "Lucas" 1>>
+                <span style="color:green">+Lucas Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Lucas Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Lucas Hang Out Park]]
+            <<else>>
+                You ask <span style="color:DarkTurquoise">Lucas</span> if you can ask him a personal question and he turns to you, looking a bit worried, and nods. <span style="Color: LightSteelBlue">“Of course, like I said before, I’ll tell you anything.”</span> Perfect.  <span style="Color: Pink">You were wondering if there were any other times he got locked outside naked. <span style="Color: LightSteelBlue">“Wha- what!?”</span> <span style="color:DarkTurquoise">Lucas</span> turns red at the lewdness of the question.</span> <span style="Color: LightSteelBlue">“That’s not what I was talking about you pervert!”</span> You laugh, he already said he’d tell you anything. So, if he doesn’t answer, he’s a liar and not a true friend. <br>
+                <br>
+                You are kidding, obviously, and <span style="color:DarkTurquoise">Lucas</span> can tell.  <span style="Color: Pink">Though you get the idea he may enjoy the idea of sharing embarrassing stories with you.</span> <span style="Color: LightSteelBlue">“Fine! But you can’t tell anyone about this, alright?”</span> You nod, eagerly waiting the story. <span style="color:DarkTurquoise">Lucas</span> ensures no one is within earshot before starting. <span style="Color: LightSteelBlue">“It was back when I was with <span style="color:DarkTurquoise">Ryker</span>…”</span> He pauses briefly, still a little weird on talking about him, <span style="Color: LightSteelBlue">“We went camping in the woods with his dad back when we were like 8. It was fun, we did a bunch of stuff. We shared a tent and sleeping bag, since it was easier. Well, I woke up without any clothes on, not even underwear. Turns out <span style="color:DarkTurquoise">Ryker</span> thought it would be funny to hide my stuff, said he wouldn’t tell me where until we left the next day. So, I was stuck out in the woods without any clothes on.”</span> <span style="color:DarkTurquoise">Lucas</span> laughs,  <span style="Color: Pink">his tone and smile making you realize just how much he cherishes these memories.</span> <br>
+                <br>
+                <span style="Color: LightSteelBlue">“Of course, I was super embarrassed and wouldn’t come out of the tent until he dragged me out. We still had another night there and the thought of not having anything to wear all day was too much, I started crying.”</span> <span style="color:DarkTurquoise">Lucas</span>  <span style="Color: Pink">blushes a little, embarrassed about his childish response.</span> <span style="Color: LightSteelBlue">“Of course, his dad heard this and came out and started yelling at <span style="color:DarkTurquoise">Ryker</span>. Gave him the choice of getting his butt beat right there or giving up his clothes as well. Long story short, we both had to go hiking and fishing butt naked. Was super embarrassing, but thankfully nobody saw us. Plus, we were both embarrassed together, so it wasn’t so bad. Though sharing a sleeping bag was a little awkward that night. That was actually the first night we…”</span> <span style="Color: Pink"> <span style="color:DarkTurquoise">Lucas</span> pauses, suddenly remember where he was.</span> <span style="Color: LightSteelBlue">“So- sorry! Ye- yeah. That was pretty embarrassing, I guess.”</span> You give <span style="color:DarkTurquoise">Lucas</span> a hug, claiming you’d share a nude sleeping bag with him anytime. <span style="Color: LightSteelBlue">“Shut up.”</span> He laughs. <br>
+                <<socialChange "Lucas" 1>>
+                <span style="color:green">+Lucas Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Lucas Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Lucas Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+</div>

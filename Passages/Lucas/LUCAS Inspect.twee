@@ -1,0 +1,223 @@
+:: LUCAS Inspect Waiting for Bus [nobr]
+
+	<<include"LUCAS Avatar Everyday">>
+
+	<span style="color:DarkTurquoise">Lucas</span> stands at the sidewalk humming to himself while waiting for the school bus. 
+	<<set $LucasEquipment to "Everyday">>
+	
+	<<if $LucasSocial >= 0>>
+		He smiles and waves when he sees you walk up.<br>
+	<<else>>
+		He notices you walk over and stops humming and stares at the ground. <br>
+	<</if>>
+	<br>
+	[[Back|Northend]] 
+
+:: LUCAS Inspect School Waiting for Bus [nobr]
+
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> is leaning against the fence that surrounds the school, silently singing to himself as he waits for the bus.
+	<<if $LucasSocial >= 0>>
+		He smiles and waves when he sees you walk up.<br>
+	<<else>>
+		He notices you walk over and stops humming and stares at the ground. <br>
+	<</if>>
+	<br>
+	/* HANG OUT */
+	<<if $Time.Day != "Wednesday">>
+		<div id="HangOutSchool">
+		<<if $InActiveQuests.includes("Lucas: Hang Out Intro")>>
+			<<link"Ask if Lucas wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Lucas Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Lucas: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutSchool">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 25,
+					Comfort: 25,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Uniform">>
+					<<set $Minutes += 10>>
+					<<goto "Lucas Hang Out Go To Park">>
+				<</link>>
+				<<link"The Arcade (0:05)<br>">>
+					<<set $HangOutClothes to "Uniform">>
+					<<set $Minutes += 5>>
+					<<goto "Lucas Hang Out Arcade Intro">>
+				<</link>>
+				<<link"The Northend Playground (0:15)<br>">>
+					<<set $HangOutClothes to "Uniform">>
+					<<set $Minutes += 15>>
+					<<goto "Lucas Hang Out Northend Intro">>
+				<</link>>
+				<<link"The Mall (0:15)<br>">>
+					<<set $HangOutClothes to "Uniform">>
+					<<set $Minutes += 15>>
+					<<goto "Lucas Hang Out Mall Intro">>
+				<</link>>
+				<<if $CompletedQuests.includes("Lucas: First Visit")>>
+				<<link"Lucas' House (0:15)<br>">>
+					<<set $HangOutClothes to "Uniform">>
+					<<set $Minutes += 15>>
+					<<goto "Lucas Hang Out His House Intro">>
+				<</link>>
+				<</if>>
+				<br>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+	[[Leave|Middle School]] 
+
+:: LUCAS Inspect Northend Walking [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> is walking along the sidewalk. 
+	<<if $LucasSocial >= 0>>
+		He smiles and waves when he sees you walk up.<br>
+	<<else>>
+		He notices you walk over and stops humming and stares at the ground. <br>
+	<</if>>
+	<br>
+	[[Back|Northend]] 
+
+:: LUCAS Inspect School Playground [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> is on the swing, seeing how high he can go before jumping off. He tumbles a few times, but doesn’t seem hurt as he gets up laughing, running back to the swings.<br>
+	<br>
+	[[Chat With (0:10)|LUCAS Playground Chat With]] <span style="color:Green">+Lucas</span><br>
+	<<if $LucasSocial > -50 or $LucasSocialRank > 0>>
+		[[Swing with (0:20)|LUCAS Swing With]] <span style="color:Green">+Lucas</span><br>
+	<</if>>
+
+	<<if $LucasSocial >= 50 or $LucasSocialRank > 0>>
+		[[Push on swings (0:20)|LUCAS Push on swings]] <span style="color:Green">+Lucas</span><br>
+	<</if>>
+
+	<<if $CompletedQuests.includes("Lucas: First Visit")>>
+		[[Practice Acting (0:20)|Lucas Playground Practice Acting]]
+		<span style="color:Green">+Lucas</span>
+		<span style="color:Green">+Acting</span><br>
+		<br>
+	<</if>>
+
+	<<include"Lucas Base Talk Code">>
+
+:: LUCAS Inspect Drama Practice [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+    <span style="color:DarkTurquoise">Lucas</span> is on the stage with <span style="color:DarkTurquoise">Mr. Julien</span> going over some lines. Strangely, they aren't the lines from the play the Drama Class is currently practicing.<br>
+  
+:: LUCAS Inspect Cafeteria [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> sits at one of the lunch tables writing in a notebook. He seems laser focused on what he is writing and quietly mumbles to himself as he writes.<br>
+	<br>
+	[[Chat With (0:10)|LUCAS Cafeteria Chat With]] <span style="color:Green">+Lucas</span><br>
+
+	<<include"Lucas Base Talk Code">>
+
+:: LUCAS Inspect Math [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> sits at his desk ready for class.<br>
+
+:: LUCAS Inspect History [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> sits at his desk ready for class.<br>
+
+:: LUCAS Inspect Science [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> sits at his desk ready for class.<br>
+
+:: LUCAS Inspect English [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> sits at his desk ready for class.<br>
+
+:: LUCAS Inspect Drama [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> sits on the edge of the stage reading his script. He seems to be focusing pretty hard.<br>
+
+:: LUCAS Inspect Gym [nobr]
+	
+	<<include"LUCAS Avatar Undies">>
+	<span style="color:DarkTurquoise">Lucas</span> is in the middle of changing. <span style="color:Pink">He stands in front of his locker in nothing but his $LucasUndies.Name, with his clothes placed neatly on the bench behind him.</span> He hums happily, not caring if anyone sees his underwear. Despite everyone being in their underwear, something about being in the locker room makes it less intimate and embarrassing.<br>
+	<<if $SeenLucasUndies < 1>>
+		<<set $SeenLucasUndies += 1>>
+	<</if>>
+	
+:: LUCAS Inspect Gym Shower [nobr]
+	
+	<<include"LUCAS Avatar Towel">>
+	<span style="color:DarkTurquoise">Lucas</span> stands in front of his locker, wearing nothing but a white towel, which he grips tightly with one hand. You notice him shiver slightly as someone opens the door to the locker room, letting in a cold breeze. While he doesn’t seem embarrassed to be seen in a towel, he is cautious and tightly holds the towel to make sure it doesn’t slip.<br>
+
+:: LUCAS Inspect School Lunch [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> sits at the table eating his lunch. It is a slice of pizza and a salad.<br>
+	<br>
+	
+	<<if $FriendLunch != 1 and $LunchClass != 2>>
+		[[Eat Lunch With (0:15)|LUCAS Eat Lunch]] <span style="color:Green">+Social</span>
+		/* LUNCH QUALITY WHEN EATING WITH PERSON */
+		<<include "School Lunch Level Chooser">>
+	<</if>>
+
+	<<include"Lucas Base Talk Code">>
+
+:: LUCAS Inspect School Hallway [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+	<span style="color:DarkTurquoise">Lucas</span> walks down the hallway.<br>
+	<br>
+		[[Give him a hug (0:02)|Lucas School Hug]]<br>
+	<<if $LucasSchoolBully != 1>>
+		[[Pull His Pants Down|LUCAS School Pantsing]] <span style="color:Red"> -Social</span><br>
+	<</if>>
+	<<if !$DailyEvents.includes("Lucas School Bully")>>
+		[[Give Lucas a Wedgie (0:02)|Lucas School Hallway Wedgie]]
+		<<if $LucasSocial < 60 && $LucasSocialRank != 1>>
+			<span style="color:Red"> -Social</span><br>
+		<<else>>
+			<span style="color:Green"> +Social</span><br>
+		<</if>>
+	<<else>>
+		<span style="color:Grey">Give Lucas a Wedgie (0:02)</span><br>
+	<</if>>
+
+	<<include"Lucas Base Talk Code">>
+
+:: LUCAS Inspect Take Out Trash [nobr]
+	
+	<<include"LUCAS Avatar Everyday">>
+		You see <span style="color:DarkTurquoise">Lucas</span> lifting a large trash bag into garbage can. He seems to be struggling with it, even though it doesn’t look that heavy.<br>
+	<br>
+	<<if $LucasTrashChat != 1>>
+		[[Chat (0:10)|LUCAS Chat With]] <span style="color:Green">+Social</span><br>
+	<</if>>
+	[[Back|Northend]]
+
+:: LUCAS Inspect Take Out Trash PJ [nobr]
+	
+	<<include"LUCAS Avatar PJs">>
+		You see <span style="color:DarkTurquoise">Lucas</span> lifting a large trash bag into garbage can. He seems to be struggling with it, even though it doesn’t look that heavy.<br>
+	<br>
+	<<if $LucasTrashChat != 1>>
+		[[Chat (0:10)|LUCAS Chat With]] <span style="color:Green">+Social</span><br>
+	<</if>>
+	[[Back|Northend]]

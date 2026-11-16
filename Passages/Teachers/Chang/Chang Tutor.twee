@@ -1,0 +1,99 @@
+:: Chang Tutor [nobr]
+
+/* Intro */
+<<set $Minutes += 15>>
+You walk up to <span style="color:DarkTurquoise">Mr. Chang</span>’s desk, where he sits scrolling through his phone with a serious expression. You clear your throat to get his attention and the man jumps. <span style="Color: LightSteelBlue">“Ah! What are you-!? I’m not-!?”</span> He sees you standing there awkwardly and sighs. <span style="Color: LightSteelBlue">“Sorry, sorry. Still not sure about teacher etiquette during these break periods. Wha- what can I do for you?”</span> <span style="Color: Yellow">The teacher seems very nervous, more so than in normal class, though you guess you may have just caught him at a weird time.</span> You cut to the chase and ask him for help with the recent lessons, as you’ve been having some trouble understanding everything. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Chang",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Oh, of course. What do you need help with?”</span> You walk over to his side of the desk and pull out your worksheet, pointing out the areas you are struggling with. <span style="color:DarkTurquoise">Mr. Chang</span> does help you, <span style="Color: Yellow">though you notice he is very nervous in this one-on-one environment and can’t help but also notice his stutter and stiff posture.</span> Guess he’s still getting used to all this. Still, the more he talks about science and class work, the more normal he sounds. Normally people are more nervous speaking to crowds but seems he’s the opposite. <br>
+<br>
+When it is finished, <span style="color:DarkTurquoise">Mr. Chang</span> seems to sigh in relief. <span style="Color: LightSteelBlue">“Well, believe you understand it all now? Was… was there anything else?”</span> <span style="Color: LightGreen">You realize this may be a chance to get to know him better.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Ask about his family<br>">>
+    <<replace"#choice">>
+        <<if $ChangSocial < 30>>
+            You try to causally ask <span style="color:DarkTurquoise">Chang</span> about his family and homelife and the man instantly clams up. <span style="Color: LightSteelBlue">“W- why are you asking? That’s not really something a teacher and a student should be talking about, right? You- you should probably get going, I need to prepare for my next class, so-”</span> <span style="Color: Yellow">He seems very awkward about the personal conversation and quickly shoos you out of the room. Weird, guess he’s still awkward around you.</span> <br>
+            <<socialChange "Chang" 3>>
+            <<skillPoints "Science" 5>>
+            <br>
+            [[Continue|School Science Classroom]]
+        <<else>>
+            You try to causally ask <span style="color:DarkTurquoise">Chang</span> about his family and homelife, but the man quickly blushes as you ask. <span style="Color: LightSteelBlue">“Oh, umm… I live alone. My family lives on the other side of the country so, just me! Haha…”</span> He laughs nervously, seeming to find talking about this to a student a little awkward. <span style="Color: LightSteelBlue">“But it’s fine, I like living alone. It’s… quieter. Though it does get lonely sometimes, haha…”</span> You raise an eyebrow at his behavior, though nod along. Sometimes you wish you lived alone, since things can get pretty noisy with two brothers. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Yeah, I wish I grew up with a younger brother. Only child though… That’s me!”</span> He gives an awkward smile, leading to an even more awkward silence, before he gulps audibly. <span style="Color: LightSteelBlue">“Well, I better get back to my work. Yup, lots to do! I’ll see you in class!”</span> <span style="Color: Yellow"> <span style="color:DarkTurquoise">Mr. Chang</span> seems really weird today.</span> <br>
+            <<socialChange "Chang" 3>>
+            <<skillPoints "Science" 5>>
+            <br>
+            [[Continue|School Science Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his career<br>">>
+    <<replace"#choice">>
+        <<if $ChangSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Mr. Chang</span> why he decided to become a teacher and he blushes a bit, turning away and scratching his cheek nervously. <span style="Color: LightSteelBlue">“It’s, well… I guess I just enjoy teaching, is all. And science! It’s… hard to explain.”</span> He laughs a little before looking back to his desk, spotting a pile of papers in a rack and using it as an escape. <span style="Color: LightSteelBlue">“Sorry, but I should really get some grading done! Hope I helped you understand all that, but I should be getting back to work!”</span> <span style="Color: Yellow">Guess he finds talking to a student in a more personal setting awkward.</span> <br>
+            <<socialChange "Chang" 3>>
+            <<skillPoints "Science" 5>>
+            <br>
+            [[Continue|School Science Classroom]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Mr. Chang</span> why he decided to become a teacher and he blushes a bit, turning away and scratching his cheek nervously. <span style="Color: LightSteelBlue">“It’s, well… I guess I just really enjoyed my school journey. I know it isn’t for everyone, but it was some of the best years of my life. Plus, I really enjoy science, so it just sort of fell into place. Though I was a bit worried for a while, they were originally going to put me in a high school, but thankfully I was moved here last minute.”</span> <br>
+            <br>
+            You ask him why high school would have been so bad and he sighs. <span style="Color: LightSteelBlue">“High schoolers are… bigger and less mature, if you could believe that.”</span> You laugh, fully understanding. <span style="Color: LightGreen"> <span style="color:DarkTurquoise">Chang</span> smiles as you laugh at his unintended joke and you leave feeling you got to know him a bit better.</span> <br>
+            <<socialChange "Chang" 3>>
+            <<skillPoints "Science" 5>>
+            <br>
+            [[Continue|School Science Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his hobbies<br>">>
+    <<replace"#choice">>
+        <<if $ChangSocial < 30>>
+            You stretch your arms up and ask <span style="color:DarkTurquoise">Mr. Chang</span> what he likes to do outside of teaching. He doesn’t respond right away and you look down to see him staring straight ahead towards you. He blinks as you look at him and quickly leaps to his feet. <span style="Color: LightSteelBlue">“So- sorry! Bit tired, so didn’t hear you. But I should really get to work, you know. Lots of grading and prep work and… I’ll see you in class!”</span> <span style="Color: Yellow">As you are shooed out, you think that was a very awkward few seconds.</span> <br>
+            <<socialChange "Chang" 3>>
+            <<skillPoints "Science" 5>>
+            <br>
+            [[Continue|School Science Classroom]]
+        <<else>>
+            You stretch your arms up and ask <span style="color:DarkTurquoise">Mr. Chang</span> what he likes to do outside of teaching. He doesn’t respond right away, and you look down to see him staring straight ahead towards you. As soon as he sees you look at him, he turns away nervously. <span style="Color: LightSteelBlue">“So- sorry! What was that? What do I like to eat?”</span> You raise an eyebrow, feeling your cheeks burn for some reason, and repeat your question. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Oh, like hobbies. Haha.”</span> He thinks for a moment, turning his body completely away from you as he does, <span style="Color: LightSteelBlue">“I play a lot of online games. Bit childish I know, but it helps relax. I like to draw as well but-”</span> He pauses, quickly turning away again as he mentions his art. <span style="Color: LightSteelBlue">“Bu- but it isn’t really a topic for conversation with a student. Besides, I should be getting back to work so… I’ll see you in class!”</span> <span style="Color: Yellow">You wonder why he got so awkward all of a sudden?</span> <span style="Color: LightGreen">Oh well, at least you’ve learned a bit more about him.</span> <br>
+            <<socialChange "Chang" 3>>
+            <<skillPoints "Science" 5>>
+            <br>
+            [[Continue|School Science Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Nothing<br>">>
+    <<replace"#choice">>
+        You decide not to pry for any information and instead thank him for his help and leave. <span style="Color: LightSteelBlue">“A- any time!”</span> He replies, watching you as you leave. <span style="Color: Yellow">You wonder why he’s so shy?</span> <br>
+        <<socialChange "Chang" 3>>
+        <<skillPoints "Science" 5>>
+        <br>
+        [[Continue|School Science Classroom]]
+    <</replace>>
+    <</link>>
+</div>

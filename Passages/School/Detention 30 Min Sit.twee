@@ -1,0 +1,40 @@
+:: Detention 30 Min Sit [nobr]
+
+<span style="color:LightSteelBlue">“Oh, you’re in luck. Seems <span style="color:DarkTurquoise">Mr. Hart</span> is on duty today. Please head to his class.”</span> The secretary signs your detention slip and sends you on your way. <br>
+<br>
+<div id='choice'>
+	<<link "Continue<br>">>
+	<<replace"#choice">>
+You head into the English Classroom and see quite a few other boys sitting there. <span style="color:DarkTurquoise">Mr. Hart</span> is drowsily laying down at his seat reading.<br>
+
+<<set _ad to [
+	{
+		Name: "Hart",
+		State: {
+			Eyes: "Narrow",
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh, another one?”</span> He yawns, <span style="color:LightSteelBlue">“Take a seat. You are to write an essay about what you did wrong and how you will take steps to correct your behavior in the future. I’ll collect them in 30 minutes. No talking, no getting up without permission, or else I’ll double your detention time.”</span> You sit down and begin to write your essay.<br>
+<br>
+Time seems to go slower than you’ve ever seen it go, as every second feels like hours. You start by writing your essay, but quickly get bored and just sit there staring at the paper. It wasn’t just the writing and the boredom that was getting to you, but also the utter silence of the classroom. The only sound was the occasional ticking of the clock, the scribbling of pencils, and the sound of pages turning. It was maddening. Eventually, the silence was cut by loud snoring, as <span style="color:DarkTurquoise">Mr. Hart</span> had fallen asleep. Some of the boys tried to take this opportunity to escape, <span style="color:lightcoral">but right as they were halfway to the door, <span style="color:DarkTurquoise">Mr. Hart</span> suddenly sprung up like a zombie, scaring everyone half to death and glared at them. The two were berated, sent back to their seats, and told they’d be staying an extra 30 minutes.</span><br>
+<br>
+The sight of <span style="color:DarkTurquoise">Mr. Hart</span> coming back from the dead and dealing out a flurry of punishments was enough to scare you into finishing your essay and shutting up for the rest of detention. When it is finally over, you hand it to the teacher, who briefly glances over it, before you are set free.<br>
+	<<addMoodlet "Stress" 1>>
+	<<set $Minutes += 30>>
+	<<set $Detention to 0>>
+	<br>
+[[Finish Detention|School West Hallway]]
+
+	<</replace>>
+	<</link>>	
+</div>

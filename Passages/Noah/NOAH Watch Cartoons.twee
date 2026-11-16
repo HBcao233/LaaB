@@ -1,0 +1,70 @@
+:: NOAH Watch Cartoons [nobr]
+
+<<set $Minutes += 30>>
+	
+	/* Setting Outfit Variables */
+	<<set $AD.Outfit to "Everyday">>
+	<<include"Noah Outfit Set">>
+
+<<if $NoahSche.Location == "TV">>
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+	<<set $BueHands to "Hands">>
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<<elseif $NoahSche.Location == "TV PJ">>
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Pajamas">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+	<<set $BueHands to "Hands">>
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+
+<</if>>
+
+You sit down next to <span style="color:DarkTurquoise">Noah</span> and ask if you can watch TV with him. <span style="color:Pink">He nods and the two of you cuddle up on the floor and watch some cartoons.</span><br>
+
+<br>
+	
+<<set $Random to random(1, 4)>>
+
+<<if $Random == 1>>
+	<<include"NOAH Cartoons Jumpscare">>
+
+<<elseif $Random == 2>>
+	<<include"NOAH Cartoons Tickle Fight">>
+
+<<elseif $Random == 3>>
+	<<include"NOAH Cartoons Wedgie">>
+
+<<elseif $Random == 4>>
+	<<include"NOAH Cartoons Feet Asleep Pee">>
+	
+<</if>>

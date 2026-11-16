@@ -1,0 +1,58 @@
+:: Carter Hero's Weakness Intro [nobr]
+
+/* Intro */
+Science class is a pretty basic one, with it mainly being a review of the various formulas and procedures you have been learning recently. This leads to a rather uneventful and boring class that is only interrupted near the end when you feel an overexcited poke at your shoulder. <span style="Color: LightSteelBlue">“Hey! <span style="color:DarkTurquoise">$CarterNickname</span>!”</span> <span style="color:DarkTurquoise">Carter</span> whispers to you a little too loudly. Thankfully, <span style="color:DarkTurquoise">Mr. Chang</span> is just letting people clean up, so he isn’t really interrupting class. Not that <span style="color:DarkTurquoise">Carter</span> would ever THINK of talking during a lecture. You turn to your side and greet <span style="color:DarkTurquoise">Carter</span>, asking him what’s up. <br>
+
+    <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+                },
+            {
+                Name: "Carter",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“What are you doing after school?”</span> He asks with a smile. You shrug, giving your answer or lack there-of, and <span style="color:DarkTurquoise">Carter</span> smiles. <span style="Color: LightSteelBlue">“Well, I wanted to know if you wanted to come over to play and hang out? If you’re not busy. I’m just going to be bored at home by myself all afternoon.”</span> He pouts a little as you ask him why he is stuck at home by himself. <span style="Color: LightSteelBlue">“There’s this big, dumb thing going on in the city and dad has to help organize police security for it and mom is covering it for her program. <span style="color:DarkTurquoise">Callum</span> was originally going to stay home with me, we were going to play superheroes, but he got called in last minute to help his friends with stuff afterschool. It stinks.”</span> He sighs again, slopping down into his desk. <br>
+<br>
+Though the subject may be a bit touchy, <span style="Color: Yellow">you ask about <span style="color:DarkTurquoise">Connor</span> and he frowns and blows a raspberry.</span> <span style="Color: LightSteelBlue">“The good part about being home alone is I don’t have to deal with all… that.”</span> You can’t help but chuckle at the face he makes in reference to his twin. <span style="Color: Yellow">You still don’t know the situation between those two, you really haven’t even met his twin brother yet, though you’ve learned it is better not to ask.</span> You think for a moment before suggesting that you may turn up, if you find the chance. <br>
+<br>
+<span style="Color: LightSteelBlue">“Why can’t you give me a straight answer!?”</span> <span style="color:DarkTurquoise">Carter</span> sighs, slumping down somehow further in his chair, <span style="Color: LightSteelBlue">“Fine! I guess I’ll wallow in my loneliness hoping my FRIEND shows up to save me from dying of boredom.”</span> He can’t help but smile, sitting back up in his chair, <span style="Color: LightSteelBlue">“We can use the entire house in our games, since no one else will be there. It’ll be super fun! Oh! I also got something back from my dad I gotta show you, it’s super cool! If you do, come by my house between 3PM and 5PM!”</span> <br>
+<br>
+You and <span style="color:DarkTurquoise">Carter</span> continue to chat and talk during the brief rest period before class ends. <span style="color:DarkTurquoise">Carter</span> <span style="Color: LightGreen">seems very excited about having you over, so you try to remember to come by to not disappoint him.</span> <br>
+<<socialChange "Carter" 2>>
+<span style="Color: Gold">Quest Gained: "Carter: Hero's Weakness"</span><br>
+<<set $InActiveQuests.delete("Carter: Hero's Weakness")>>
+<<set $ActiveQuests.push("Carter: Hero's Weakness")>>
+<<set $QuestLog.push(
+	{
+		Name: "Carter: Hero's Weakness",
+		State: 1,
+		ID: "Carter_M003",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Carter",
+		Tags: ["Carter", "Character", "Quest", "Carter House"],
+		Description: "<span style=\"color:DarkTurquoise\">Carter</span> has invited you over to his house while he is home alone to keep him company. Go to his house After School between 3PM and 5PM.",
+		Objectives: [
+			{
+				Name: "Go to <span style=\"color:DarkTurquoise\">Carter</span>'s House after school.",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Carter",
+	Description: "<span style=\"color:DarkTurquoise\">Carter</span> has invited you over to his house while he is home alone to keep him company. Go to his house After School between 3PM and 5PM.",
+})>>
+<<include"Attend Science Finish">>

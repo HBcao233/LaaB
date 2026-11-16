@@ -1,0 +1,18 @@
+:: Player Bedroom Read Comic [nobr]
+
+<strong>-Choose a comic to read-</strong><br>
+<br>
+<<set _link to []>>
+<<for _i to 0; _i lt $ComicShelf.length; _i++>>
+    <<capture _i>>
+        <<set _link[_i] to "Read " + $ComicShelf[_i]>>
+        <strong>$ComicShelf[_i]</strong>
+        <<link "[Read]">>
+            <<run Dialog.close()>>
+            <<goto _link[_i]>>
+        <</link>>
+        <div style="text-indent: 2.5em;">
+        Descriptions in progress.
+        </div>
+    <</capture>>
+<</for>>

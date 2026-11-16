@@ -1,0 +1,158 @@
+:: Boy Barn Kids Underwear Boxer Briefs [nobr]
+<span style="color:Azure"><strong>-BoxerBriefs ($3)-</strong></span><br>
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday Outside">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADOver to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADWaist to $None>>
+    <<set $ADNeck to $None>>
+    <<if $ShopColor == "Beige">>
+    	<<set $ADUndies to $KidsBeigeBoxerBriefs>>
+	<<elseif $ShopColor == "Black">>
+    	<<set $ADUndies to $KidsBlackBoxerBriefs>>
+	<<elseif $ShopColor == "Blue">>
+    	<<set $ADUndies to $KidsBlueBoxerBriefs>>
+	<<elseif $ShopColor == "Brown">>
+    	<<set $ADUndies to $KidsBrownBoxerBriefs>>
+	<<elseif $ShopColor == "Gray">>
+    	<<set $ADUndies to $KidsGrayBoxerBriefs>>
+	<<elseif $ShopColor == "Green">>
+    	<<set $ADUndies to $KidsGreenBoxerBriefs>>
+	<<elseif $ShopColor == "Orange">>
+    	<<set $ADUndies to $KidsOrangeBoxerBriefs>>
+	<<elseif $ShopColor == "Pink">>
+    	<<set $ADUndies to $KidsPinkBoxerBriefs>>
+	<<elseif $ShopColor == "Purple">>
+    	<<set $ADUndies to $KidsPurpleBoxerBriefs>>
+	<<elseif $ShopColor == "Red">>
+    	<<set $ADUndies to $KidsRedBoxerBriefs>>
+	<<elseif $ShopColor == "Teal">>
+    	<<set $ADUndies to $KidsTealBoxerBriefs>>
+	<<elseif $ShopColor == "White">>
+    	<<set $ADUndies to $KidsWhiteBoxerBriefs>>
+	<<elseif $ShopColor == "Yellow">>
+    	<<set $ADUndies to $KidsYellowBoxerBriefs>>
+    <</if>>
+    
+<<include"Kid Avatar Display">>
+<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+<br>
+<<set _random to random(1, 6)>>
+<<if _random == 1>>
+    <span style="color:LightSteelBlue">“Trying these on in front of you is kinda embarrassing.”</span>
+<<elseif _random == 2>>
+    <span style="color:LightSteelBlue">“Why are you smiling at me like that?”</span>
+<<elseif _random == 3>>
+    <span style="color:LightSteelBlue">“These are kinda cool. And they fit nice.”</span>
+<<elseif _random == 4>>
+    <span style="color:LightSteelBlue">“So? How do I look?”</span>
+<<elseif _random == 5>>
+    <span style="color:LightSteelBlue">“Keep the door shut! I don’t want anyone to see me!”</span>
+<<elseif _random == 6>>
+    <span style="color:LightSteelBlue">“Do you think I look good in these?”</span>
+<</if>><br>
+<br>
+
+<strong>Boxer Briefs:</strong><br>
+	<<link [img["Images/Icons/Shop Icons/Colors/Beige.png"]]>>
+    	<<set $ShopColor to "Beige">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Black.png"]]>>
+    	<<set $ShopColor to "Black">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Blue.png"]]>>
+    	<<set $ShopColor to "Blue">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Brown.png"]]>>
+    	<<set $ShopColor to "Brown">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Gray.png"]]>>
+    	<<set $ShopColor to "Gray">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Green.png"]]>>
+    	<<set $ShopColor to "Green">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Orange.png"]]>>
+    	<<set $ShopColor to "Orange">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Pink.png"]]>>
+    	<<set $ShopColor to "Pink">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Purple.png"]]>>
+    	<<set $ShopColor to "Purple">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Red.png"]]>>
+    	<<set $ShopColor to "Red">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Teal.png"]]>>
+    	<<set $ShopColor to "Teal">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/White.png"]]>>
+    	<<set $ShopColor to "White">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+	<<link [img["Images/Icons/Shop Icons/Colors/Yellow.png"]]>>
+    	<<set $ShopColor to "Yellow">>
+        <<goto "Kids Boy Barn">>
+	<</link>>
+    <br>
+
+	/* PURCHASE */
+<<if $Money >= 3>>
+	<<link "Purchase ($3)">>
+    <<if $ShopColor == "Beige">>
+    	<<set $NoahInClosetUndies.push($KidsBeigeBoxerBriefs)>>
+	<<elseif $ShopColor == "Black">>
+    	<<set $NoahInClosetUndies.push($KidsBlackBoxerBriefs)>>
+	<<elseif $ShopColor == "Blue">>
+    	<<set $NoahInClosetUndies.push($KidsBlueBoxerBriefs)>>
+	<<elseif $ShopColor == "Brown">>
+    	<<set $NoahInClosetUndies.push($KidsBrownBoxerBriefs)>>
+	<<elseif $ShopColor == "Gray">>
+    	<<set $NoahInClosetUndies.push($KidsGrayBoxerBriefs)>>
+	<<elseif $ShopColor == "Green">>
+    	<<set $NoahInClosetUndies.push($KidsGreenBoxerBriefs)>>
+	<<elseif $ShopColor == "Orange">>
+    	<<set $NoahInClosetUndies.push($KidsOrangeBoxerBriefs)>>
+	<<elseif $ShopColor == "Pink">>
+    	<<set $NoahInClosetUndies.push($KidsPinkBoxerBriefs)>>
+	<<elseif $ShopColor == "Purple">>
+    	<<set $NoahInClosetUndies.push($KidsPurpleBoxerBriefs)>>
+	<<elseif $ShopColor == "Red">>
+    	<<set $NoahInClosetUndies.push($KidsRedBoxerBriefs)>>
+	<<elseif $ShopColor == "Teal">>
+    	<<set $NoahInClosetUndies.push($KidsTealBoxerBriefs)>>
+	<<elseif $ShopColor == "White">>
+    	<<set $NoahInClosetUndies.push($KidsWhiteBoxerBriefs)>>
+	<<elseif $ShopColor == "Yellow">>
+    	<<set $NoahInClosetUndies.push($KidsYellowBoxerBriefs)>>
+    <</if>>
+        <<set $Money -= 3>>
+        <<goto "Kids Boy Barn">>
+    <</link>>
+<<else>>
+	<span style="color:Lightcoral">Purchase ($3)</span>
+<</if>>

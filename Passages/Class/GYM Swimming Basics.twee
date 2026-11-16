@@ -1,0 +1,33 @@
+:: GYM Swimming Basics [nobr]
+
+Once you are all in your swimming trunks, <span style="color:DarkTurquoise">Coach Kohler</span> has you each line up by the edge of the pool. <span style="color:Pink">As you look down the line, you can’t get over how cute some of your classmates look in just their trunks, especially after they get wet and it clings to their bodies.</span> Your perverted thoughts are interrupted as <span style="color:DarkTurquoise">Coach Kohler</span> calls for everyone’s attention.<br>
+
+<<set _ad to [
+	{
+		Name: "Kohler",
+		State: {
+			Mouth: "Frown",
+			Brows: "Angry",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Listen up! Today we are going to go over swimming basics. Mainly run-of-the-mill strokes and exercises to make sure you all are swimming properly. You may think going over something so simple is a waste of time, but if I’ve learned anything in my 35 years, it's that the basics will save your life.”</span> The class is spent doing simple exercises and practicing the basic swimming strokes. While it is rather easy, it is not very exciting.<br>
+<br>
+
+	<<set $ClassEvent to random(1, 3)>>
+	
+	/* HELP BEN WITH SWIMMING */
+	<<if $ClassEvent == 1>>
+		<<include"GYM Swimming Help Ben">>
+		
+	/* RACING LUCAS */
+	<<elseif $ClassEvent == 2>>
+		<<include"GYM Swimming Race Lucas">>
+		
+	/* HOLD BREATH CONTEST */
+	<<elseif $ClassEvent == 3>>
+		<<include"GYM Swimming Hold Breath">>
+	
+	<</if>>

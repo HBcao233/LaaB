@@ -1,0 +1,40 @@
+:: School History Classroom [nobr]
+
+<<if $Wet > 1>>
+	<<include"History Wet">>
+<<elseif $PlayerShoes.Type == "None" or ($PlayerTop.Type == "None" and $PlayerUnder.Type == "None")>>
+	<<include"History Not Dressed">>
+<<else>>
+
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School History Classroom",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Classroom",
+}>>
+
+<span style="color:Azure"><big><strong>--History Classroom--</strong></big></span><br>
+You stand in <span style="color:DarkTurquoise">Mr. De León</span>’s History Classroom. The classroom looks very professional and neat, every book and pen organized without a single thing out of place. The walls are filled with pictures and quotes from famous historical people and <span style="color:DarkTurquoise">Mr. De León</span> has a bookcase behind his desk full of autobiographies and historical novels.<br>
+
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $HistoryIntro == 1>>
+    <<if $Time.between(6, 45, 7, 40) or $Time.between(11, 0, 11, 40) or $Time.between(15, 0, 16, 0)>>
+        [[Ask De Leon for help with History (0:15)|De Leon Tutor]] <span style="color:green">+History, +De Leon</span><br>
+    <</if>>
+<</if>>
+<<attendClass "History">>
+<br>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+[[Leave|School East Hallway][$Minutes += 1]]<br>
+
+<</if>>

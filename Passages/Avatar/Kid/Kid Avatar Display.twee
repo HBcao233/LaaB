@@ -1,0 +1,167 @@
+:: Kid Avatar Display [nobr]
+
+<div style="position: relative">
+
+/* LAYER BEHIND */
+	<<include"Kid Avatar Display Behind">>
+
+/* LAYER ARMS_BOUND */
+	<<if $AD.Arms == "Bound">>
+		<<include"Kid Avatar Display Arms Bound">>
+	<</if>>
+    
+/* LAYER SLEEVES_BOUND */
+	<<if $AD.Arms == "Bound">>
+    	<<include"Kid Avatar Display Sleeves Bound">>
+	<</if>>
+
+/* LAYER BODY */
+	<<include"Kid Avatar Display Body">>
+    
+/* LAYER ARMS_NORMAL */
+	<<if $AD.Arms == "Normal">>
+		<<include "Kid Avatar Display Arms Normal">>
+	<</if>>
+
+/* LAYER PUBIC HAIR */
+	<<include"Kid Avatar Display Pubic Hair">>
+
+/* LAYER EYES */
+	<<include"Kid Avatar Display Eyes">>
+
+/* LAYER MOUTH */
+	<<include"Kid Avatar Display Mouth">>
+
+/* LAYER BLUSH */
+	<<include"Kid Avatar Display Blush">>
+
+/* LAYER HAIR */
+	<<include"Kid Avatar Display Hair">>
+
+/* LAYER PENIS */
+	<<if $ADBottoms.Type == "None" and $ADUndies.Type == "None" and $AD.Hard != 1>>
+		<<include"Kid Avatar Display Penis">>
+	<</if>>
+	<<if $ADPantsDown == 1 and $ADUndies.Type == "None" and $AD.Hard != 1>>
+		<<include"Kid Avatar Display Penis">>
+	<</if>>
+
+/* LAYER UNDIES */
+	<<if $ADUndies.Type != "None">>
+		<<include"Kid Avatar Display Undies">>
+	<</if>>
+
+/* LAYER UNDER ACCESSORY */
+	<<include"Kid Avatar Display Under Accessory">>
+
+/* LAYER ITEM HOLDING BOTTOM */
+	<<include"Kid Avatar Display Item Holding Bottom">>
+
+/* LAYER UNDER TOP */
+	<<if $ADUnder.Type != "None">>
+		<<include"Kid Avatar Display Under Top">>
+	<</if>>
+
+/* LAYER HANDS */
+	<<if $ADHands.Type != "None">>
+		<<include"Kid Avatar Display Hands">>
+	<</if>>
+
+/* LAYER TOP TUCKED */
+	<<if $ADTop.Type != "None" and $TopTucked == 1>>
+		<<include"Kid Avatar Display Top">>
+	<</if>>
+	
+
+/* LAYER SOCKS */
+	<<if $ADSocks.Type != "None">>
+		<<include"Kid Avatar Display Socks">>
+	<</if>>
+
+/* LAYER SHOES */
+	<<if $ADShoes.Type != "None">>
+		<<include"Kid Avatar Display Shoes">>
+	<</if>>
+
+/* LAYER BOTTOMS */
+	<<if $ADBottoms.Type != "None">>
+		<<include"Kid Avatar Display Bottoms">>
+	<</if>>
+
+/* LAYER WAIST */
+	<<if $ADWaist.Type != "None">>
+		<<include"Kid Avatar Display Waist">>
+	<</if>>
+
+/* LAYER TOP */
+	<<if $ADTop.Type != "None" and $TopTucked != 1>>
+		<<include"Kid Avatar Display Top">>
+	<</if>>
+
+/* LAYER Neck */
+	<<if $ADNeck.Type != "None">>
+		<<include"Kid Avatar Display Neck">>
+	<</if>>
+
+/* LAYER TOP ACCESSORY */
+	/* PLACE HOLDER */
+    
+/* LAYER PENIS HARD */
+	<<if $ADBottoms.Type == "None" and $ADUndies.Type == "None" and $AD.Hard == 1>>
+		<<include"Kid Avatar Display Penis Hard">>
+	<</if>>
+	<<if $ADPantsDown == 1 and $ADUndies.Type == "None" and $AD.Hard == 1>>
+		<<include"Kid Avatar Display Penis">>
+	<</if>>
+    
+/* LAYER OVER */
+	<<if $ADOver.Type != "None">>
+		<<include"Kid Avatar Display Over">>
+	<</if>>
+    
+/* LAYER OVER ACCESSORY */
+	/* PLACE HOLDER */
+    
+/* LAYER OUTER */
+	<<if $ADOuter.Type != "None">>
+		<<include"Kid Avatar Display Outer">>
+	<</if>>
+    
+/* LAYER OUTER SLEEVES NORMAL */
+	<<if $ADOuter.Type != "None" and $AD.Arms == "Normal">>
+		<<include"Kid Avatar Display Outer Sleeves Normal">>
+	<</if>>
+    
+/* LAYER OUTER ACCESSORY */
+	/* PLACE HOLDER */
+    
+/* LAYER ARMS HIDE */
+	<<if $AD.Arms == "Hide" or $AD.Arms == "Sleep">>
+		<<include "Kid Avatar Display Arms Hide">>
+	<</if>>
+    
+/* LAYER SLEEVES HIDE */
+	<<if $AD.Arms == "Hide">>
+		<<include"Kid Avatar Display Outer Sleeves Hide">>
+	<</if>>
+    
+/* LAYER MOUTH ITEM */
+	<<if $ADMouth.Type != "None">>
+		<<include"Kid Avatar Display Mouth Item">>
+	<</if>>
+    
+/* LAYER FACE */
+	<<if $ADFace.Type != "None">>
+		<<include"Kid Avatar Display Face">>
+	<</if>>
+    
+/* LAYER HEAD */
+	<<if $ADHead.Type != "None">>
+		<<include"Kid Avatar Display Head">>
+	<</if>>
+
+<<include"Kid Avatar Display Special">>
+
+/* END LAYER */
+
+</div>

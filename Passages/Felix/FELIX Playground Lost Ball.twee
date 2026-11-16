@@ -1,0 +1,51 @@
+:: FELIX Playground Lost Ball [nobr]
+
+You are walking down the sidewalk near the soccer field when you hear a rustling from behind a bush. You investigate and are surprised to see the lower half of a boy sticking out of the bushes. Whoever they were, they were on their knees searching through the foliage for something. You walk up behind them and <span style="color:Pink">can’t help but notice their $FelixUndies.Name poking out of the back of their $FelixBottoms.Type, giving you a cute view.</span> You poke them in the butt with your foot, causing them to yelp and fall backwards out of the bush.<br>
+
+<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Happy",
+			Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+The mystery boy was <span style="color:DarkTurquoise">Felix</span>, who greets you with a smile as he stands up. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$FelixNickname</span>! You came at the perfect time! I kicked my ball into the bushes by mistake and can not find it anywhere I am looking! Please can you help me find it?”</span> The French boy gives you a hopeful smile.<br>
+<br>
+
+<div id=choice>
+	<<link "Agree to help">>
+	<<replace"#choice">>
+
+You nod and agree to help him. His smile widens and he points you towards another collection of bushes. <span style="color:LightSteelBlue">“Thank you very much! Come, you search over there and I will search over here.”</span> The two of you split up and begin searching the various foliage. At one point <span style="color:DarkTurquoise">Felix</span> begins to complain about the amount of bushes, claiming his $FelixTop.Type keeps getting caught on the branches.<br>
+<br>
+After a few minutes of searching, you locate the ball all the way in the back against the wall of the school. You grab it and toss it out. <span style="color:DarkTurquoise">Felix</span> is overjoyed and runs over and gives you a hug, though it is a little tight. <span style="color:LightSteelBlue">“Thank you very much! I was thinking I would be looking until the next class.”</span> He notices your awkward expression and quickly lets go and blushes. <br>
+<br>
+<span style="color:LightSteelBlue">“Sorry! Was that a bit too tight?”</span> You both laugh as you reassure the now panicked boy that it was fine. He thanks you again and runs back to keep playing soccer.<br>
+
+
+	<<addMoodlet "Stress" 1>>
+<<socialChange "Felix" 3>>
+[[Continue|School Courtyard]] 
+
+
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Felix</span><br>
+	
+	<<link "Refuse">>
+	<<replace"#choice">>
+You politely refuse, saying you have other things to do and would rather not crawl around in the bushes. <span style="color:DarkTurquoise">Felix</span> sighs, but says he understands and begins to crawl back into the bushes to search for his ball alone.<br>
+
+	<<addMoodlet "Stress" 0>>
+<<socialChange "Felix" -3>>
+[[Continue|School Courtyard]] 
+
+	<</replace>>
+	<</link>>
+	<span style="color:Red">-Felix</span><br>
+</div>

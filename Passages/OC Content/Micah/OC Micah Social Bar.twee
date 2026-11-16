@@ -1,0 +1,84 @@
+:: OC Micah Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCMicahSocialRank == -3>>
+	<<set $OCMicahRelationship to "Hated">>
+	<span style="color:DarkRed">Micah Hates you!</span>
+	<br>
+<<elseif $OCMicahSocialRank == -2>>
+	<<set $OCMicahRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Micah are Enemies.</span>
+	<br>
+<<elseif $OCMicahSocialRank == -1>>
+	<<set $OCMicahRelationship to "Very Disliked">>
+	<span style="color:Red">Micah really Dislikes you.</span>
+	<br>
+<<elseif $OCMicahSocialRank == 0 and $OCMicahSocial <= -50>>
+	<<set $OCMicahRelationship to "Disliked">>
+	<span style="color:Red">Micah Dislikes you. </span>
+	<br>
+<<elseif $OCMicahSocialRank == 0 and $OCMicahSocial < 50>>
+	<<set $OCMicahRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Micah are Acquaintances.</span>
+	<br>
+<<elseif $OCMicahSocialRank == 0 and $OCMicahSocial >= 50>>
+	<<set $OCMicahRelationship to "Liked">>
+	<span style="color:LightGreen">Micah Likes you.</span>
+	<br>
+<<elseif $OCMicahSocialRank == 1>>
+	<<set $OCMicahRelationship to "Friends">>
+	<span style="color:Green">You and Micah are Friends.</span>
+	<br>
+<<elseif $OCMicahSocialRank == 2>>
+	<<set $OCMicahRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Micah are Good Friends!</span>
+	<br>
+<<elseif $OCMicahSocialRank == 3>>
+	<<set $OCMicahRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Micah are Close Friends!</span>
+	<br>
+<<elseif $OCMicahSocialRank == 4>>
+	<<set $OCMicahRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Micah are Best Friends!</span>
+	<br>
+<<elseif $OCMicahSocialRank == 5>>
+	<<set $OCMicahRelationship to "Love">>
+	<span style="color:Pink">You and Micah Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCMicahSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCMicahSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCMicahSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCMicahSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCMicahSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCMicahSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCMicahSocial,
+			value: Math.abs($OCMicahSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCMicahSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCMicahSocial > 120>>
+	<<set $OCMicahSocial to 120>>
+<</if>>
+<<if $OCMicahSocial < -120>>
+	<<set $OCMicahSocial to -120>>
+<</if>>

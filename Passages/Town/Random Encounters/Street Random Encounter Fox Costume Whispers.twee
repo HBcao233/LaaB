@@ -1,0 +1,30 @@
+:: Street Random Encounter Fox Costume Whispers [nobr]
+
+/* Intro */
+
+As you walk along the sidewalk, murmuring to yourself without a care in the world, you spot a woman watering her flowers and give her a kind wave. She waves back, though you notice a curious expression on her face. <span style="Color: Yellow">Something of confusion mixed with mild amusement.</span> You double check that you are wearing pants and chalk it up to your imagination. That is, of course, until you begin to hear whispering from some ladies across the street.
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Frown",
+                Blush: 1,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Isn’t he a little old to be playing dress-up?”</span> One voice says, sounding a bit judgmental. <br>
+<br>
+<span style="color:LightSteelBlue">“I think it’s cute, let the kid be a kid.”</span> A kinder voice says. <br>
+<br>
+<span style="color:LightSteelBlue">“All I know is I wouldn’t let my kid walk around dressed like some sort of animal, it’s so strange!”</span> The first voice says again. With that, you understand the whispers and the strange looks. Dressed in your costume as you are, it probably is a little strange to those around town. Still, you pay it no mind and continue your walk around town. <br>
+<br>
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+ <<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+ <<else>>
+    [[Continue|Wald Street]]
+<</if>>

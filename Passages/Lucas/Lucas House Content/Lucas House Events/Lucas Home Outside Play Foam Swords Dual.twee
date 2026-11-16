@@ -1,0 +1,284 @@
+:: Lucas Home Outside Play Foam Swords Dual [nobr]
+
+<<set $Minutes += 20>>
+
+/* Opening */
+Looking for something to do, you and <span style="color:DarkTurquoise">Lucas</span> begin to go through the crate containing various outdoor toys. <span style="color:DarkTurquoise">Lucas</span> tells you that he has collected a bunch over the years, as his mom buys him a bunch to get him to play outdoors instead of watching TV inside, so he doesn’t really know what he all has. Tossing aside from balls and other oddities, you pull out some foam swords. <br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh yeah! These are always fun.”</span> <span style="color:DarkTurquoise">Lucas</span> takes one of the swords. The Form brand toys were mostly known for their dart guns, but they also had a large variety of foam-based melee weapons. <span style="color:DarkTurquoise">Lucas</span> swings the sword around a few times before aiming towards you. <span style="color:LightSteelBlue">“I challenge thee, <span style="color:DarkTurquoise">Sir <span style="color:DarkTurquoise"><span style="color:DarkTurquoise">$Player.Name</span></span>, to a duel! Let us see which one of us is more worthy to bring honor to our family!”</span> <br>
+<br>
+You smirk, picking up your own sword and accepting <span style="color:DarkTurquoise">Lucas</span>’ challenge. You both take up positions on opposite sides of the yard and bow to each other as the duel begins. You both play it safe at first, approaching each other slowly, when suddenly <span style="color:DarkTurquoise">Lucas</span> springs forward and strikes for your chest! You parry, knocking his sword away and slashing at the opening. Alas, <span style="color:DarkTurquoise">Lucas</span> manages to dodge back, just barely avoiding your strike. <br>
+<br>
+<span style="color:LightSteelBlue">“Not bad.”</span> <span style="color:DarkTurquoise">Lucas</span> scoffs, <span style="color:LightSteelBlue">“But you’ll need to be quicker than that to defeat me!”</span> He lunges forward once more and you ready yourself to block his attack. But it was a feint! He moves around your defense and slashes at your leg. <span style="color:lightcoral">You fall to one knee, just barely getting your sword up in time to block his killing strike! Your swords are locked as <span style="color:DarkTurquoise">Lucas</span> pushes harder and harder down upon you. You couldn’t escape, if you did not submit this would be the end for you!</span> <br>
+<br>
+
+<div id=choice>
+/* Bow and Submit to him */
+	<<link "Bow and Submit to him<br>">>
+	<<replace"#choice">>
+    
+        <<set _ad to [
+            {
+                Name: "Lucas",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+            },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Closed",
+                },	
+            },
+        ]>>
+            <<ad _ad>>
+
+        You yell out that you submit, dropping your sword and bowing down before Lucas. <span style="color:DarkTurquoise">Lucas</span> smiles, picks up your sword, and laughs menacingly over his victory. <span style="color:LightSteelBlue">“Naturally, you were a fool to accept my challenge!”</span> <span style="color:pink">He poses triumphantly, the humorous look of which causes you to snort.</span> <span style="color:LightSteelBlue">“As the victor, you will now be a slave to my house until you have regained your honor!”</span> <br>
+        <br>
+        You play along as <span style="color:DarkTurquoise">Lucas</span> makes you wander around the yard doing various ‘tasks’, which are mostly just moving stuff around back and forth. Every time he thought you were going too slow, you’d get a playful smack on the rear with the foam sword. Though, eventually he gets tired of ordering you around and you both decide to play something else. <br>
+            <<needChange "Fun" 10>>
+            <span style="color:green">+Lucas Fun</span><br>
+            <span style="color:red">-Lucas Energy</span><br>
+            <<needChange "Energy" -8>>
+            <<set $HangOutNeed.Fun += 10>>
+            <<set $HangOutNeed.Energy -= 10>>
+        <<socialChange "Lucas" 3>>
+            <br>
+        [[Continue|Lucas Home Backyard]]
+
+    <</replace>>
+    <</link>>
+/* Feign defeat and pull his pants down */
+	<<link "Feign defeat and pull his pants down<br>">>
+	<<replace"#choice">>
+        You had one option to avoid total defeat, though it was risky. You feign surrender, lowering your sword. <span style="color:DarkTurquoise">Lucas</span> scoffs loudly, proclaiming his victory, <span style="color:pink">but right when his guard is lowered you lunge forward, grip the side of his $LucasBottoms.Type, and yank them down to his ankles! <span style="color:DarkTurquoise">Lucas</span> yells out in surprise, but before he can react you push him backward onto the ground and point your sword right up against the front of his $LucasUndies.Name!</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Lucas",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Blush: 2,
+                    PantsDown: true,
+            },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                },	
+            },
+        ]>>
+            <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Eek!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Lucas</span> makes a strange noise as you apply light pressure to his groin with your sword.</span> <span style="color:LightSteelBlue">“That’s not fair!”</span> <span style="color:pink">He protests, though you respond by applying more pressure against his boyhood, gently poking his balls enough to cause him to slide back in the grass.</span> <span style="color:LightSteelBlue">“Okay, okay! I give up! You win!”</span> <br>
+        <br>
+
+        <<set _random to random(1, 2)>>
+        <<if $HangOutNeed.Comfort < 50 or $PlayerUndies.Type == "None">>
+            <<set _random to 1>>
+        <</if>>
+
+        <<if _random == 1>>
+            <span style="color:pink">You take a moment to savor your victory and the sight of a defenseless and pantless <span style="color:DarkTurquoise">Lucas</span>, before accepting his surrender and allowing him to stand up and fix his clothing.</span> <span style="color:LightSteelBlue">“I didn’t know you fought so dirty!”</span> <span style="color:DarkTurquoise">Lucas</span> laughed, though his cheeks were a bit flushed, <span style="color:LightSteelBlue">“I’ll remember that next time! I shan’t lose again!”</span> You both laugh as you walk back to the porch to decide on something else to do. <br>
+                <<needChange "Fun" 10>>
+                <span style="color:green">+Lucas Fun</span><br>
+                <span style="color:green">+Lucas Comfort</span><br>
+                <span style="color:red">-Lucas Energy</span><br>
+                <<needChange "Energy" -8>>
+                <<set $HangOutNeed.Fun += 10>>
+                <<set $HangOutNeed.Comfort += 5>>
+                <<set $HangOutNeed.Energy -= 10>>
+                <<socialChange "Lucas" 3>>
+                <br>
+            [[Continue|Lucas Home Backyard]]
+        <<else>>
+            <<include "Lucas Home Outside Play Foam Swords Dual Variant">>
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>
+
+:: Lucas Home Outside Play Foam Swords Dual Variant [nobr]
+
+/* Intro */
+<span style="color:Pink">You take a moment to savor your victory as <span style="color:DarkTurquoise">Lucas</span>, defeated and pantsless, fixes his clothing with an amused grin and slight blush.</span> <span style="color:LightSteelBlue">“You know you’re not subtle, right?”</span> He laughs, <span style="color:LightSteelBlue">“What is with you and trying to get my pants off, perv?”</span> You stick your tongue out at <span style="color:DarkTurquoise">Lucas</span> teasingly, <span style="color:LightGreen">since you know he loves your little antics, then come up with something a bit more exciting.</span> You ask <span style="color:DarkTurquoise">Lucas</span> if he wants to make the next round of sword fights a bit more interesting. <span style="color:LightSteelBlue">“Interesting?”</span> He gives you a suspicious look, <span style="color:LightSteelBlue">“What did you have in mind?”</span> <br>
+<br>
+You explain that the game is simple. You clash foam blades until one of you land a hit on the other. <span style="color:Pink">Getting hit means you lose a piece of clothing and the winner is the one who isn’t naked by the end.</span> <span style="color:DarkTurquoise">Lucas</span> blushes at your idea before laughing, <span style="color:LightSteelBlue">“Wow, do you just spend your time thinking of ways to get one of us to strip before you come over, or what?”</span> You chuckle, rubbing the back of your neck as you explain that it’s the simplest form of increasing punishment. Makes every loss count and makes each loss after worse. <span style="color:LightSteelBlue">“You don’t have to explain yourself, perv. Alright, it sounds fun enough. But don’t think I’m going to let you win just to not embarrass you! You’ll be in your birthday suit shortly!”</span> <br>
+<br>
+<<linkreplace"Continue">>
+    The battle is fierce, with you managing an early hit on <span style="color:DarkTurquoise">Lucas</span> that he proclaims is <span style="color:LightSteelBlue">“just luck”</span>. You’d like to think otherwise, but <span style="color:DarkTurquoise">Lucas</span> really comes at you with a flurry after that! Slash! <span style="color:Yellow">No more socks.</span> Swish! <span style="color:Yellow">Shirt in pieces!</span> Thrust! <span style="color:Yellow">Bottoms no more.</span> <span style="color:Pink">Within minutes you find yourself standing in your friend’s backyard in nothing but your underwear while he has barely lost a stitch!</span> <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Outfit: "Undies",
+                            Mouth: "Frown",
+                            Blush: 1,
+                        },
+                    },           
+                    {
+                        Name: "Lucas",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Smirk",
+                            Eyes: "Mad",
+                        },
+                        Clothes: {
+                            Socks: $None,
+                            Shoes: $None,
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Heh, nice $PlayerUndies.Name, dork.”</span> <span style="color:DarkTurquoise">Lucas</span> teases with a big smirk, <span style="color:LightSteelBlue">“Rethinking your challenge, or did you intend to lose on purpose?”</span> You blush, feeling pretty exposed, but try not to let his words get to you as you prepare yourself for the next round! <span style="color:LightGreen">There is no way you are going to lose this badly!</span> <br>
+    <br>
+    Your confidence pays off, as you manage to land a few more strikes on <span style="color:DarkTurquoise">Lucas</span>! At first, you suspect he may be letting you get hits on him, though this backfires if he was at first, as a few stumbles from him leave you both evenly matched. <span style="color:Pink">Two boys with foam swords, both in just their underwear. You both are blushing slightly, nervous about both being outside in your underwear and the prospective embarrassment that comes from another single loss. Stripping the last shred of dignity, not only exposing yourselves to each other, but to the elements of the outdoors as well! Sure, you were pretty much blocked from view in his backyard, but it is still embarrassing to think about!</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Outfit: "Undies",
+                    Mouth: "Frown",
+                    Blush: 2,
+                },
+            },           
+            {
+                Name: "Lucas",
+                State: {
+                    Outfit: "Undies",
+                    Mouth: "Frown",
+                    Blush: 2,
+                },
+            },
+        
+        ]>>
+        <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“There’s no way I’m losing!”</span> <span style="color:DarkTurquoise">Lucas</span> proclaims, though his bare legs shake a bit in the cool air. You both ready your swords, time seems to slow down as you eye each other for one final bout. Then, in a sudden blue, you both rush at each other! <br>
+    <br>
+    SLASH! <br>
+    <br>
+    <span style="color:Yellow">There is a moment of stillness in the air before you fall, defeated!</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                ShowZoom: true,
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Frown",
+                    Blush: 3,
+                },
+            },           
+            {
+                Name: "Lucas",
+                State: {
+                    Outfit: "Undies",
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                    Blush: 2,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Haha! I win!”</span> <span style="color:DarkTurquoise">Lucas</span> <span style="color:Pink">holds up your $PlayerUndies.Name in victory as you lie on the ground, naked and defeated. You blush as you feel the grass sway against your balls and the wind hit your bare backside. The humiliation of defeat is overwhelming, though you shout out that you won’t allow yourself to be defeated by some ranger-loving goober! Without warning, you tackle <span style="color:DarkTurquoise">Lucas</span> to the ground, determined to pry his underwear off to at least make him share in the defeat. <br>
+    <br>
+    The two of you are wrestling and rolling around in the grass for a moment before, in the most compromising position possible, you hear a sudden camera flash, and both freeze in place. In unison, you glance at the back door to see <span style="color:DarkTurquoise">Lucas</span>’ mother standing there, a look of utter amusement and confusion on her face. She looks like she is trying hard not to laugh, phone camera in her hand.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                ShowZoom: true,
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Frown",
+                    Blush: 3,
+                },
+            },           
+            {
+                Name: "Lucas",
+                ShowZoom: true,
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Frown",
+                    Blush: 3,
+                },
+            },           
+        ]>>
+        <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Oh, don’t mind me! It’s just so cute to see <span style="color:DarkTurquoise">Lucas</span> having fun with a friend! Even if I don’t really understand boys.”</span> She chuckles as you both become painfully aware of your current positioning. <span style="color:Pink">Your pelvis is hovering just above <span style="color:DarkTurquoise">Lucas</span>, your balls practically tickling his nose. Meanwhile, you had been in the process of yanking his underwear off, leaving one leg in the air, thus spreading his legs right towards the door. That camera no doubt captured EVERY inch of both of you. Plus, how long has she been there? You were so lost in your game, you didn’t even realize she was home.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“M- MOM!?”</span> <span style="color:DarkTurquoise">Lucas</span> quickly covers himself, rolling off of you and jumping to his feet. <span style="color:LightSteelBlue">“Wha-!? You can’t just take pictures of us like that! It’s- it’s invasive!”</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                ShowZoom: true,
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Frown",
+                    Blush: 3,
+                    Arms: "Hide",
+                },
+            },           
+            {
+                Name: "Lucas",
+                ShowZoom: true,
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Frown",
+                    Blush: 3,
+                    Arms: "Hide",
+                },
+            },           
+        ]>>
+        <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Oh, come on, I’ve seen you in funnier positions than that.”</span> <span style="color:DarkTurquoise">Selina</span> responds, making <span style="color:DarkTurquoise">Lucas</span> blush more, <span style="color:LightSteelBlue">“You’re kids, it’s cute. Not like I’m going to show anyone, outside of maybe <span style="color:DarkTurquoise">$Player.Name</span>’s dad. Besides, if you don’t want to be seen, maybe don’t have a nude wrestling match in the backyard? I don’t care what you boys do, as long as the neighbors can’t see, but don’t be surprised if I take a pic or two to capture the memory!”</span> <span style="color:Pink">Your blush deepens at the mention of <span style="color:DarkTurquoise">Your Father</span> seeing that, your mind already swirling with the teasing remarks he’ll say as <span style="color:DarkTurquoise">Lucas</span> rushes over demanding his mom delete that and any other pictures she took, though she laughs and holds the camera just out of reach, saying <span style="color:DarkTurquoise">Lucas</span> isn’t very intimidating in his birthday suit.</span> <br>
+    <br>
+    You both are eventually dressed once more, <span style="color:DarkTurquoise">Lucas</span>’ mom promising to delete it… as long as <span style="color:DarkTurquoise">Lucas</span> gets all his chores done. <span style="color:Pink">This leaves you both on edge, though you both can’t help but share a private laugh at the absolute absurdity of the situation.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“You’re a bad influence.”</span> <span style="color:DarkTurquoise">Lucas</span> laughs once the two of you are alone again, relaxing in the yard, <span style="color:LightSteelBlue">“We really gotta make sure mom isn’t home before doing stuff like that.”</span> <span style="color:Pink">You agree, though can’t help but wonder if she’d let you both see that picture, just out of curiosity.</span> <span style="color:LightSteelBlue">“Haha, yeah, no.”</span> <br>
+    <<needChange "Fun" 10>>
+    <span style="color:green">+Lucas Fun</span><br>
+    <span style="color:green">+Lucas Comfort</span><br>
+    <span style="color:red">-Lucas Energy</span><br>
+    <<needChange "Energy" -8>>
+    <<set $HangOutNeed.Fun += 10>>
+    <<set $HangOutNeed.Comfort += 5>>
+    <<set $HangOutNeed.Energy -= 10>>
+    <<socialChange "Lucas" 3>>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Humiliated"]>>
+    <<arousalGain 10 _arousalbs _arousalkink>>
+    <br>
+    [[Continue|Lucas Home Backyard]]
+<</linkreplace>>

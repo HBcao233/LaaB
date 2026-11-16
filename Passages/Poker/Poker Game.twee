@@ -1,0 +1,175 @@
+:: Poker Game [nobr]
+
+<<set $PokerCardsToSwap to []>>
+<<set $PokerLuckyWasSuccessful to false>>
+<<set $PokerCheaterWasSuccessful to false>>
+<<set $PokerNewCards = []>>
+
+<<include "Poker Debug">>
+
+<div id="poker-game">
+    <div class="poker-info">
+        <<include "Poker Info">>
+    </div>
+    <div class="poker-rival-container">
+        <<include "Poker Rivals">>
+    </div>
+    <div class="poker-player-hand">
+        <<include "Poker PC Hand">>
+    </div>
+    <div class="poker-actions">
+        <<include "Poker Actions">>
+    </div>
+</div>
+
+:: Poker Game Script [script]
+
+window.pokerSelectCard = (input) => {
+    const pokerCardsToSwap = State.getVar('$PokerCardsToSwap');
+    const existsInSwap = pokerCardsToSwap.includes(input);
+    
+    if (!existsInSwap) {
+        pokerCardsToSwap.push(input);
+    } else {
+        pokerCardsToSwap.splice(pokerCardsToSwap.indexOf(input), 1);
+    }
+
+    State.setVar('$PokerCardsToSwap', pokerCardsToSwap);
+
+    $.wiki('<<replace ".poker-actions">><<include "Poker Actions">><</replace>>');
+    $(`#poker-card-${input}`).toggleClass('poker-card-selected');
+};
+
+:: Poker Game Style [stylesheet]
+
+.poker-info {
+    height: 50px;
+}
+
+.poker-rival-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 54em;
+    height: 460px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.poker-rival-item {
+    height: 100%;
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.poker-rival-item > div {
+    width: 100%;
+}
+
+.poker-rival-avatar {
+    flex: 0 0 325px;
+}
+
+.poker-rival-hand {
+    flex: 0 0 50px;
+}
+
+.poker-rival-text {
+    flex: 1 1 auto;
+}
+
+
+.poker-rival-normal img {
+    top: 0 !important;
+}
+
+.poker-rival-kid img {
+    top: 0 !important;
+}
+
+.poker-rival-teen img {
+    top: -100px !important;
+}
+
+.poker-rival-avatar img {
+    left: 37px !important;
+}
+
+.poker-rival-hand .poker-card {
+    width: 32px;
+    height: 40px;
+    background-size: calc(32px * 53) 40px;
+    border-radius: 5px;
+    margin: 0 3px;
+}
+
+.poker-card {
+    box-sizing: border-box;
+    width: 130px;
+    height: 180px;
+    margin: 10px;
+    float: left;
+    background-color: white;
+    background-position-x: 0px;
+    background-position-y: center;
+    background-repeat: none;
+    background-position: middle center;
+    background-size: calc(130px * 53) 180px;
+    border: 1px #555555 solid;
+    border-radius: 10px;
+        -webkit-box-shadow: 2px 2px 3px 0px #000000;
+    box-shadow: 2px 2px 3px 0px #000000;
+}
+
+.poker-rival-hand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poker-player-hand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.poker-card-mini {
+    width: 32px;
+    height: 40px;
+    background-color: white;
+    margin: 0 3px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    user-select: none;
+}
+
+.poker-card-mini > div {
+    width: 100%;
+    height: 15px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.poker-card-red {
+    color: red;
+}
+
+.poker-card-black {
+    color: black;
+}
+
+.poker-card-selectable {
+    transition: transform 150ms linear;
+}
+
+.poker-card-selectable.poker-card-selected {
+    transform: translate(0, -25px);
+}

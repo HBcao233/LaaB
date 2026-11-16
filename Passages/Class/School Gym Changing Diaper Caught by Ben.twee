@@ -1,0 +1,151 @@
+:: School Gym Changing Diaper Caught by Ben [nobr]
+
+/* NEGATIVE RELATIONSHIP */
+<<if $BenSocial < 0 or $BenSocialRank < 0>>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Arms: "Hide",
+				Eyes: "Sad",
+				Blush: 3,
+				Mouth: "Sad",
+				PantsDown: true,
+			},
+		},
+		{
+			Name: "Ben",
+			State: {
+				Eyes: "Mad",
+				Blush: 2,
+				Mouth: "Sad",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:lightcoral">You hear the metal rings of the shower curtain get pulled back and in front of you stands the surprised face of <span style="color:DarkTurquoise">Ben</span>. The boy gets a full view of your $PlayerUndies.Type as you’re still trying to slide your bottoms on.</span> He stands there in shock which slowly morphs into indignant anger as he drops his own change of clothes. Frozen in place from being discovered, <span style="color:DarkTurquoise">Ben</span> speaks first. <br>
+<br>
+<span style="color:LightSteelBlue">“Y… You… you-“</span> He stammers in anger before finding his voice. <span style="color:LightSteelBlue">“You! How dare you pick on people when you wear $PlayerUndies.Type!”</span> <span style="color:lightcoral">Entering the stall with you he jabs his finger into your chest to accentuate his accusation.</span> The prodding is all you need to pull yourself out of your shocked stupor. <span style="color:LightSteelBlue">“I ought to tell everyone- WAH!”</span> He doesn’t get to finish his thought before you spring into action. <br>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Eyes: "Mad",
+				Blush: 3,
+				Mouth: "Sad",
+				PantsDown: true,
+			},
+		},
+		{
+			Name: "Ben",
+			ShowZoom: true,
+			State: {
+				Arms: "Hide",
+				Eyes: "Sad",
+				Cry: 1,
+				Blush: 3,
+				Mouth: "Sad",
+				Outfit: "Uniform",
+				PantsDown: 1,
+			},
+			Clothes: {
+				Undies: $None,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:Pink">Lunging forward you loop your fingers on both sides of the boy’s waist and grip his $BenBottoms.Type and $BenUndies.Name. With all your strength you pull them down, exposing the boy. Not stopping to stare, you grab him by the shoulders and turn him around. With an unkind boot to the booty, you eject Ben out into the locker room. He flails and falls forward onto the floor; screaming on the way down he scampers to stand again.</span> Drawing the curtain closed you quickly finish changing and bolt out before anyone comes around. <br>
+<br>
+By the time you reach the door, you see a crowd of heads from above the lockers gathering around the shower stall. <span style="color:lightcoral">Even if the dweeb tells anyone what he saw, they won’t listen to him over seeing the boy naked and humiliated. You’re safe… this time.</span> <br>
+	<<socialChange "Ben" -3>>
+	<<addMoodlet "Seen undies" 5>>
+	<<addMoodlet "Stress" 1>>
+<br>
+	<<include"Gym Get Dressed">>
+	[[Continue|School Locker Room]] 
+
+/* POSITIVE RELATIONSHIP */
+<<else>>
+    /* FIRST TIME */
+    <<if $NPCDiaperSeen.Ben != 1>>
+        <<set $NPCDiaperSeen.Ben to 1>>
+
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Arms: "Hide",
+					Eyes: "Sad",
+					Blush: 3,
+					Mouth: "Sad",
+					Outfit: "Uniform",
+					PantsDown: true,
+				},
+			},
+			{
+				Name: "Ben",
+				State: {
+					Blush: 2,
+					Mouth: "Sad",
+					Outfit: "Uniform",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+<span style="color:lightcoral">You hear the metal rings of the shower curtain get pulled back and in front of you stands the surprised face of <span style="color:DarkTurquoise">Ben</span>.</span> <span style="color:Pink">The boy gets a full view of your $PlayerUndies.Type as you’re still trying to slide your bottoms on. He stands there in shock, not knowing how to process what he is seeing.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Sorry, sorry, sorry! <span style="color:DarkTurquoise">$BenNickname</span>, I’m so sorry. I… I was looking for a stall of my own…”</span> <span style="color:Pink">The sorrys come out so quickly and <span style="color:DarkTurquoise">Ben</span>’s breath gets so ragged it actually pulls you out of your own fear.</span> Just like that the situation is flipped on its head. You can’t help but feel sorry for the way <span style="color:DarkTurquoise">Ben</span> is reacting to this discovery. <br>
+<br>
+<span style="color:Pink">Sliding your shorts on, you walk up and place a hand on his shoulder saying it’s okay, but please don’t tell anyone.</span> <span style="color:LightSteelBlue">“No… no I wouldn’t! Promise! I won’t tell anyone.”</span> <span style="color:DarkTurquoise">Ben</span> shuffles nervously, eyes darting back and forth between your face and your shorts. He’s still shaky, but he seems to be calming down. You ask him what’s wrong and if he needs the nurse. <br>
+<br>
+<span style="color:LightSteelBlue">“No- no I’m good. I’ll… uh… go find a different stall to change in. I’ll… I’ll see you in class <span style="color:DarkTurquoise">$BenNickname</span>.”</span> He doesn’t wait for you to respond before darting off. Weird. <br>
+	<<socialChange "Ben" 1>>
+	<<addMoodlet "Seen Undies" 5>>
+<br>
+	<<include"Gym Get Dressed">>
+	[[Continue|School Locker Room]] 
+
+
+    /* OTHER TIMES */
+    <<else>>
+
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Blush: 3,
+					Mouth: "Happy",
+					Outfit: "Uniform",
+					PantsDown: true,
+				},
+			},
+			{
+				Name: "Ben",
+				State: {
+					Blush: 2,
+					Mouth: "Happy",
+					Outfit: "Uniform",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+<br>
+<span style="color:lightcoral">You hear the metal rings of the shower curtain get pulled back and <span style="color:DarkTurquoise">Ben</span> sticks his head in.</span> Sighing in relief that it’s only him you resume changing. Everything is okay. <br>
+<br>
+<span style="color:LightSteelBlue">“Oh, it’s you.”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Ben</span> says as he watches you slide your bottoms up over your $PlayerUndies.Type.</span> <span style="color:LightSteelBlue">“You almost done in here? I still need to change.”</span> You raise an eyebrow at <span style="color:DarkTurquoise">Ben</span>, as there isn’t much space and there are certainly other free stalls. But with a shrug of your shoulders, you make room for him as you finish with your shirt. <br>
+<br>
+<span style="color:DarkTurquoise">Ben</span> squeezes past you and gets to work changing his clothes. Maybe it’s your imagination but he seems a lot more relaxed now that you agreed. You mentally shrug it off, considering it a good thing. <span style="color:Pink">The boy needs more confidence and if this is helping him get it, who are you to judge? Maybe wearing $PlayerUndies.Type today was a good thing after all.</span> You give <span style="color:DarkTurquoise">Ben</span> a smile and a signal you’re going. Leaving, you pack your stuff away and head to class. <br>
+	<<socialChange "Ben" 1>>
+<br>
+	<<include"Gym Get Dressed">>
+	[[Continue|School Locker Room]] 
+
+    <</if>>
+<</if>>

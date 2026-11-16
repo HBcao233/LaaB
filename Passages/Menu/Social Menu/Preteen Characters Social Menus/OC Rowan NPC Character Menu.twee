@@ -1,0 +1,354 @@
+:: OC Rowan NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Preteens Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Rowan Leighton--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"OC Rowan NPC Character Menu Biography">>
+</div>
+
+:: OC Rowan NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Rowan NPC Character Menu Avatar Display">>
+
+<<if $OCRowanSocial > 50>>
+
+<<elseif $OCRowanSocial > -10>>
+
+<<else>>
+
+    <br>
+<</if>>
+
+:: OC Rowan NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Rowan NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Rowan Leighton <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> <s>December 8th</s> <br>
+<strong>Address:</strong> 
+    <<if $OCRowanSocial >= 50>>
+        Unknown <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong>  Unknown <br>
+<strong>Friends:</strong>
+    <<if $OCRowanSocial >= 80>>
+        $Player.Name, Michael, Carter
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $OCRowanSocialRank == 1>>
+        Close Friends
+    <<elseif $OCRowanSocial > 80>>
+        Friends
+    <<elseif $OCRowanSocial > 30>>
+        Possible Friends
+    <<elseif $OCRowanSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $OCRowanSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Asthma, Lucky, Diplomatic, Sugar Crazed, Childish /* No Spoilers :P */
+        </div>
+    <<elseif $OCRowanSocial > 70>>
+        <div style="margin-left: 25px;">
+            Asthma, Lucky, Diplomatic, Sugar Crazed, Childish
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [History] > [Maths] > [Drama] > [Science] > [English] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <<if $OCRowanSocial >= 50>> 
+        <div style="margin-left: 25px;">(After School): Hangs out at Shopping District</div>
+        <<else>>
+    <div style="margin-left: 25px;">
+        Unknown
+    </div>
+    <</if>>
+<strong>Likes:</strong>
+    <<if $OCRowanSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Soda, Skateboarding, Arcades, Making friends, forget-me-not flowers
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $OCRowanSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Boring things, Pineapples, Losing something
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $OCRowanSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Skateboarding, Doing tricks, Charity
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $OCRowanSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Soda, Welsh rarebit
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $OCRowanSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Red, Blue
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $OCRowanSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Gloves, Long-sleeved shirts, Short-Sleeved Hoodies, Short-shorts
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $OCRowanSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Space Patterned briefs, Trains Patterned briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $OCRowanSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $OCRowanCut == "Cut">>
+                A cut penis. Tiny for his age.
+            <<else>>
+                An uncut penis. Tiny for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $OCRowanSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A cute and well-toned butt.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: OC Rowan NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Rowan NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal OC Rowan">>
+
+:: OC Rowan NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Rowan NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "OC Rowan",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCRowanSocial >= 50 or $OCRowanSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCRowanSocial >= 100 or $OCRowanSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: OC Rowan NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "OC Rowan",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCRowanSocial >= 50 or $OCRowanSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCRowanSocial >= 100 or $OCRowanSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

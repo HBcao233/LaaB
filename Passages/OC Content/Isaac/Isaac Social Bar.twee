@@ -1,0 +1,84 @@
+:: Isaac Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCIsaacSocialRank == -3>>
+	<<set $OCIsaacRelationship to "Hated">>
+	<span style="color:DarkRed">Isaac Hates you!</span>
+	<br>
+<<elseif $OCIsaacSocialRank == -2>>
+	<<set $OCIsaacRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Isaac are Enemies.</span>
+	<br>
+<<elseif $OCIsaacSocialRank == -1>>
+	<<set $OCIsaacRelationship to "Very Disliked">>
+	<span style="color:Red">Isaac really Dislikes you.</span>
+	<br>
+<<elseif $OCIsaacSocialRank == 0 and $OCIsaacSocial <= -50>>
+	<<set $OCIsaacRelationship to "Disliked">>
+	<span style="color:Red">Isaac Dislikes you. </span>
+	<br>
+<<elseif $OCIsaacSocialRank == 0 and $OCIsaacSocial < 50>>
+	<<set $OCIsaacRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Isaac are Acquaintances.</span>
+	<br>
+<<elseif $OCIsaacSocialRank == 0 and $OCIsaacSocial >= 50>>
+	<<set $OCIsaacRelationship to "Liked">>
+	<span style="color:LightGreen">Isaac Likes you.</span>
+	<br>
+<<elseif $OCIsaacSocialRank == 1>>
+	<<set $OCIsaacRelationship to "Friends">>
+	<span style="color:Green">You and Isaac are Friends.</span>
+	<br>
+<<elseif $OCIsaacSocialRank == 2>>
+	<<set $OCIsaacRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Isaac are Good Friends!</span>
+	<br>
+<<elseif $OCIsaacSocialRank == 3>>
+	<<set $OCIsaacRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Isaac are Close Friends!</span>
+	<br>
+<<elseif $OCIsaacSocialRank == 4>>
+	<<set $OCIsaacRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Isaac are Best Friends!</span>
+	<br>
+<<elseif $OCIsaacSocialRank == 5>>
+	<<set $OCIsaacRelationship to "Love">>
+	<span style="color:Pink">You and Isaac Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCIsaacSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCIsaacSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCIsaacSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCIsaacSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCIsaacSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCIsaacSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCIsaacSocial,
+			value: Math.abs($OCIsaacSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCIsaacSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCIsaacSocial > 120>>
+	<<set $OCIsaacSocial to 120>>
+<</if>>
+<<if $OCIsaacSocial < -120>>
+	<<set $OCIsaacSocial to -120>>
+<</if>>

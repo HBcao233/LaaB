@@ -1,0 +1,54 @@
+:: Poker Info [nobr]
+
+<<if $Poker.stage === 0>>
+    The strip poker game is starting!
+<<elseif $Poker.stage === 1>> /* Turns to swap cards */
+    <<set _player = $Poker.players[$Poker.currentTurnIndex]>>
+    <<set _isPC = _player.id === 'PC'>>
+
+    <<if $Poker.step === 0>> /* Selecting which cards to swap */
+        <<if _isPC>>
+            It's your turn. You try keep a neutral face as you think which cards to swap.
+        <<else>>
+            It's <span style="color:DarkTurquoise"><<=_player.id>></span>'s turn...
+        <</if>>
+    <<elseif $Poker.step === 1>> /* Cards were replaced */
+        <<set _numCardsToSwap to $PokerNewCards.length>>
+        <<set _cardsText = 'card' + (_numCardsToSwap > 1 ? 's' : '')>>
+        <<if _isPC>>
+            <<if _numCardsToSwap > 0>>
+                <<set _hand to Poker.handDisplay($PokerNewCards).split(' ')>>
+                You swap <<=_numCardsToSwap>> <<=_cardsText>> (new <<=_cardsText>>: <<=_hand>>)
+            <<else>>
+                You swap no cards.
+            <</if>>
+        <<else>>
+            <span style="color:DarkTurquoise"><<=_player.id>></span> decides to swap <<=_numCardsToSwap>> <<=_cardsText>>.
+        <</if>>
+        <br>
+        <<if $PokerLuckyWasSuccessful>>
+            <span style="color:green;">
+                <<=_isPC
+                    ? 'You were'
+                    : `<span style="color:DarkTurquoise">${_player.id}</span> was`>>
+                feeling lucky today~
+            </span>
+        <</if>>
+        <<if $PokerCheaterWasSuccessful>>
+            <span style="color:red;">
+                <<=_isPC
+                    ? 'You'
+                    : `<span style="color:DarkTurquoise">${_player.id}</span>`>>
+                did a move without anyone else noticing...
+            </span>
+        <</if>>
+    <</if>>
+<<elseif $Poker.stage === 2>> /* Picking winners and losers */
+    <span style="color: green;">
+        <<=$PokerWinner.playerId>> won!!! (<<=$PokerWinner.rankDesc>>)
+    </span>
+    <br>
+    <span style="color: red;">
+        <<=$PokerLoser.playerId>> lost... (<<=$PokerLoser.rankDesc>>)
+    </span>
+<</if>>

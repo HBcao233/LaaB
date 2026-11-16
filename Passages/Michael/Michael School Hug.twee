@@ -1,0 +1,51 @@
+:: Michael School Hug [nobr]
+
+<<set $Minutes += 2>>
+
+/* Normal Social */
+<<if $MichaelSocial < 50 or $MichaelSocialRank >= 1>>
+	<<set _ad to [
+		{
+			Name: "Michael",
+			State: {
+				Blush: 1,
+				Mouth: "Sad",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:pink">You walk up to <span style="color:DarkTurquoise">Michael</span> and, before he can say anything, give him a big hug. He freezes, caught completely off guard, before quickly shoving you off of him. He gives a confused expression that his goons all begin to laugh and mock him about his reaction. Normally, <span style="color:DarkTurquoise">Michael</span> would threaten to hit them for laughing at him, but it seems he is so taken aback by your hug that his brain was malfunctioning. Instead, he quickly walks off followed by his laughing friends. Seems the big bully of Preston wasn’t expecting that.</span> <br>
+
+/* High Social */
+<<else>>
+	<<set _ad to [
+		{
+			Name: "Michael",
+			State: {
+				Blush: 1,
+				Mouth: "Smirk",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:pink">You spot <span style="color:DarkTurquoise">Michael</span> and hold your hands out for a hug, to which he laughs and responds in turn, patting you twice on the back as he greets you.</span> As you hug, one of Michael’s goons coughs the word <span style="color:LightSteelBlue">“Gay!”</span> <br>
+	<br>
+
+	<span style="color:LightSteelBlue">“Hugging your bros isn’t gay.”</span> <span style="color:DarkTurquoise">Michael</span> smirks, <span style="color:LightSteelBlue">“If it was gay, I’d be doing this!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Michael</span> suddenly reaches down and squeezes your ass, causing everyone to burst out laughing as you push him away and playfully punch his arm.</span> <span style="color:LightSteelBlue">“It was just a demonstration! Ouch! Stop!”</span> He laughs as you hit him. <br>
+
+<</if>>
+/* End */
+<<socialChange "Michael" 1>>
+<br>
+
+<<if $Location.Name == "School South Hallway">>
+	[[Continue|School South Hallway]] 
+<<elseif $Location.Name == "School East Hallway">>
+	[[Continue|School East Hallway]]
+<<elseif $Location.Name == "School West Hallway">>
+	[[Continue|School West Hallway]]
+<</if>>

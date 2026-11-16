@@ -1,0 +1,44 @@
+:: Lucas Hang Out Northend Playground Spinwheel [nobr]
+
+<<set $Minutes += 20>>
+
+Your suggestion to play on the playground is met with enthusiasm by <span style="color:DarkTurquoise">Lucas</span>. He quickly runs up and jumps onto the playground spinner, gripping the railing with one hand as he kicks the ground to gain some speed. <br>
+<br>
+<span style="color:LightSteelBlue">“You know, I’ve been coming here for years and it’s never changed.”</span> He said as you hopped onto the other side of the wheel. <span style="color:LightSteelBlue">“Like, nothing ever gets old or rusty or broken. I mean, sometimes things break, but it’s always back to working order in a day or so.”</span> He shrugs, but smiles. <span style="color:LightSteelBlue">“No idea who fixes it though. Hardly see anyone other than kids and their parents over here.”</span> <br>
+<br>
+You shrug, calling it one of the mysteries of Opal City, then join <span style="color:DarkTurquoise">Lucas</span> in kicking to gain speed. This quickly becomes a contest between you two to see who can last on the wheel longer as you both increase the speed higher and higher. <span style="color:lightcoral">After about a minute of this, you are so dizzy that you feel as though your breakfast is going to make a return and nearly lose your grip.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: $HangOutClothes,
+			Mouth: "Happy",
+			Eyes: "Sad",
+			Blush: 2,
+			Cry: 1,
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Frown",
+			Eyes: "Sad",
+			Blush: 2,
+			Cry: 1,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+In the end, neither of you are sure who the winner is. You both fall off at nearly the same time. You run to a trashcan, feeling like you will throw up, but thankfully don’t, while <span style="color:DarkTurquoise">Lucas</span> has so much trouble standing he nearly falls headfirst into the recycling bin. You both agree to call it a draw and decide to take a long break on the grass while you recover. <br>
+
+    <<needChange "Fun" 5>>
+	<<needChange "Energy" -2>>
+    <span style="color:green">+Lucas Fun</span><br>
+    <<set $HangOutNeed.Fun += 15>>
+    <span style="color:red">-Lucas Energy</span><br>
+    <<set $HangOutNeed.Energy -= 10>>
+	<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Hang Out Northend]]

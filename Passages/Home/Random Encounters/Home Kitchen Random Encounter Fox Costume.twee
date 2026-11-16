@@ -1,0 +1,57 @@
+:: Home Kitchen Random Encounter Fox Costume [nobr]
+
+/* Intro */
+
+<<set $AD.Outfit to "Everyday">>
+<<include"Noah Outfit Set">>
+
+As you walk through the kitchen, you are suddenly stopped in place as <span style="color:DarkTurquoise">Your Father</span> pats you on the head! <span style="Color: LightSteelBlue">“Well, aren’t you a cute little kit.”</span> He laughs, patting you like a dog. You blush and chuckle slightly as you keep on walking. You open the fridge, not really looking for anything, and spot <span style="color:DarkTurquoise">Noah</span> glancing at you both with a confused expression.
+
+<<set _ad to [
+    {
+        Name: "Dad",
+        State: {
+            Mouth: "Smirk",
+            Brows: "Suspicious",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Noah",
+        State: {
+            Mouth: "Frown",
+            Outfit: "Everyday",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“What’s a kit?”</span> He asks <span style="color:DarkTurquoise">Your Father</span>. <br>
+<br>
+<span style="Color: LightSteelBlue">“It’s the name of a baby fox, like how baby dogs are called puppies.”</span> <span style="color:DarkTurquoise">Your Father</span> answers. <span style="color:DarkTurquoise">Noah</span> still seems confused for a second, until he notices the fox costume piece you are wearing and makes a long sound of understanding as he nods. <br>
+<br>
+<span style="Color: LightSteelBlue">“Ooooo, that’s cool! Daddy, can I be a baby fox too?”</span> He asks with a big smile. <br>
+<br>
+<<if $NoahWetting == 1>>
+/*-Noah wets the bed-*/
+    <span style="Color: LightSteelBlue">“Baby fox, baby dog,”</span> <span style="color:DarkTurquoise">Your Father</span> chuckles as he ruffles <span style="color:DarkTurquoise">Noah</span>’s hair, <span style="Color: LightSteelBlue">“You can be whatever baby animal you want, but you’ll always be my little baby boy!”</span> <span style="color:DarkTurquoise">Your Father</span> kisses <span style="color:DarkTurquoise">Noah</span> on the forehead. <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Haha, gross!”</span> <span style="color:DarkTurquoise">Noah</span> giggles, <span style="Color: LightSteelBlue">“No, I wanna be a big boy fox since I’m a big boy! Not a baby! I’m big and tough and fast!”</span> He says puffing out his chest. <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Uh-huh.”</span> <span style="color:DarkTurquoise">Your Father</span> smirks, <span style="Color: LightSteelBlue">“Is that why I have to put you in your ‘big boy diaper’ before bed every night?”</span> <span style="color:DarkTurquoise">Noah</span> turns bright red at the mention of his nighttime gear, indicating that he isn’t as much of a ‘big boy’ as he wants to be. While it would have been seen as mean if you or <span style="color:DarkTurquoise">Gabe</span> said that, <span style="color:DarkTurquoise">Your Father</span> then begins to tickle <span style="color:DarkTurquoise">Noah</span> to show that he’s just teasing him, even saying that he <span style="Color: LightSteelBlue">“loves that his big strong boy still needs me for stuff like that.”</span> <br>
+    <br>
+    [[Continue|PH Kitchen]]
+<<elseif $NoahWetting == 0>>
+/*-Noah does not wet the bed-*/
+    <span style="Color: LightSteelBlue">“Baby fox, baby dog,”</span> <span style="color:DarkTurquoise">Your Father</span> chuckles as he ruffles <span style="color:DarkTurquoise">Noah</span>’s hair, <span style="Color: LightSteelBlue">“You can be whatever baby animal you want as long as it doesn’t involve you going back into diapers. Potty training three boys was more than enough for me.”</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Haha,”</span> <span style="color:DarkTurquoise">Noah</span> giggles, <span style="Color: LightSteelBlue">“Foxes don’t wear diapers, Daddy!”</span> <br>
+    <br>
+    [[Continue|PH Kitchen]]
+
+    <</if>>

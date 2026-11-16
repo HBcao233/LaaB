@@ -1,0 +1,34 @@
+:: Lucas Hang Out First Time [nobr]
+
+Standing by the bus stop waiting with all the other kids is your classmate, <span style="color:DarkTurquoise">Lucas</span>. At this point, you would probably consider him a friend. He seems to like you, based on how upbeat he seems whenever you talk to him, and you’ve interacted with him enough to consider him more than just simple classmates. You smile, <span style="color:LightGreen">deciding to consider him your friend</span>, and walk up to <span style="color:DarkTurquoise">Lucas</span>. He seems bored, standing a bit away from everyone else kicking rocks around and staring at the ground. You often see him standing off by himself. Guess he’s not one for groups. You greet the boy and ask him how he’s doing, <span style="color:LightGreen">which causes him too instantly light up.</span>  <br>
+
+    <<set _ad to [
+        {
+            Name: "Lucas",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Oh, hey <span style="color:DarkTurquoise">$LucasNickname</span>!”</span> He smiles, before losing his balance slightly and stumbling a bit. He manages to catch himself, though he blushes and chuckles nervously. <span style="Color: LightSteelBlue">“S- sorry. Long day, ya know? H- how are you?”</span> You can’t help but smile at how nervous <span style="color:DarkTurquoise">Lucas</span> seems, guess he’s a little shy. You tell him that you were planning to skip the bus today and go hang out around town. If he’s not doing anything and doesn’t have any other plans, you’d love for him to join you. <span style="Color: LightSteelBlue">“J- J- join you?”</span> <span style="color:DarkTurquoise">Lucas</span> turns redder, <span style="Color: LightSteelBlue">“You- you want to hang out? With me? I don’t- Yes! I mean-”</span> He clears his throat, trying not to sound as desperate or excited as he obviously is. <span style="Color: LightSteelBlue">“Yes. I would- umm… I would love too! Where- where did you want to go? Arcade’s always fun, love me some video games, haha. Oh-! But we can go wherever you want, if you have a plan. I’m fine with anything… yeah!”</span> <br>
+<br>
+You call <span style="color:DarkTurquoise">Lucas</span> a dork, telling him he doesn’t have to act so nervous around you. <span style="color:LightGreen">You are friends now, after all. <span style="color:DarkTurquoise">Lucas</span> lights up at this but then quickly returns to compose himself. It’s adorable.</span> <span style="Color: LightSteelBlue">“Right! Friends. Of- of course! Sorry, just… like I said, long day. So, where- where did you want to go?”</span> <br>
+<<set $InActiveQuests.delete("Lucas: Hang Out Intro")>>
+<<set $CompletedQuests.push("Lucas: Hang Out Intro")>>
+<br>
+<span style="color:Yellow">Where to Hang Out?</span><br>
+<<link"The Park (0:10)<br>">>
+    <<set $HangOutClothes to "Uniform">>
+    <<set $Minutes += 10>>
+    <<goto "Lucas Hang Out Go To Park">>
+<</link>>

@@ -1,0 +1,54 @@
+:: OC Kalim Beach Napping Join Swimming [nobr]
+
+/* Intro */
+<<set $Minute += 15>>
+You ask <span style="color:DarkTurquoise">Kalim</span> if he wouldn’t mind you joining him for some swimming. He stops in his tracks and turns around, looking you up and down. <span style="Color: LightSteelBlue">“Sure, always good to swim with a buddy.”</span> He laughs, 
+
+<<set _check to 0>>
+
+/* Checking if Top has Swimwear or None */
+<<if $PlayerTop.Tags.includes("Swimwear") or $PlayerTop.Type == "None">>
+    <<set _check += 1>>
+<</if>>
+
+/* Ensuring PC not wearing anything non-swimable */
+<<if $PlayerSocks.Type == "None" && $PlayerShoes.Type == "None" && $PlayerOuter.Type == "None" && $PlayerUnder.Type == "None" && $PlayerOver.Type == "None" && $PlayerWaist.Type == "None" && $PlayerHead.Type == "None">>
+    <<set _check += 1>>
+<</if>>
+
+<<if _check == 2>>
+    <span style="Color: LightSteelBlue">“Come on!”</span> <span style="color:LightGreen">He grabs you by the hand and pulls you towards the water.</span> <br>
+<<else>>
+    <span style="Color: LightSteelBlue">“You’re not really dressed for the part though. Bottoms are alright, but you’ll need to take the rest of that off.”</span> He says, pointing to your various bits of clothing that wouldn’t be great to swim in. <span style="color:LightGreen">You agree and quickly strip down to just your bottoms, placing your clothes with <span style="color:DarkTurquoise">Kalim</span>’s towel before he grabs you by the arm and pull you towards the water.</span> <br>
+<</if>>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "OC Kalim",
+                State: {
+                    Outfit: "Speedo",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+<span style="color:Pink">You shiver a little as the water hits your feet; it’s colder than you were expecting.</span> <span style="color:DarkTurquoise">Kalim</span> notices this and chuckles, <span style="Color: LightSteelBlue">“The ocean is generally pretty cold most of the time. But it feels great once you dive in!”</span> As he says this, <span style="color:DarkTurquoise">Kalim</span> extends out his hands and falls backwards into the water right as a wave comes by, disappearing into the foamy waters. You stumble back, holding your hands out to not lose your balance. You begin to glance around once you realize he has vanished as the wave dispersed. You look all over, <span style="color:Yellow">when a finger suddenly pokes you in the back! The shock of which nearly causes you to tumble forward!</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Woah!”</span> <span style="color:DarkTurquoise">Kalim</span> laughs as he grabs the back of your bottoms to stop you from falling, <span style="Color: LightSteelBlue">“Sorry about that, wanted to give you a little scare.”</span> He laughs. You turn around to scold him <span style="color:Pink">but stop suddenly as you see how he looks. The sun is perfectly positioned to blanket light all over his wet skin. The surface shines as the sapphire scales on his shoulders seem to shimmer and glow. He looks like a sea god, coming to the surface to take you away to paradise. <br>
+<br>
+At least, that’s what comes to mind as you are left briefly speechless, only snapping back to reality with <span style="color:DarkTurquoise">Kalim</span>’s laughter and a strange tingling in your groin. <span style="Color: LightSteelBlue">“Hey, it’s rude to stare like that!”</span> <span style="color:DarkTurquoise">Kalim</span> smirks, leaning down and booping you on the nose, before glancing down at your sudden erection and rolling his eyes.</span> <span style="Color: LightSteelBlue">“You know, some people would find that rude. But I find it kind of endearing, you little perv.”</span> You blush a little as he runs off, but quickly smile and follow behind him. <br>
+<br>
+<span style="color:LightGreen">You spend the next few hours playfully swimming and splashing around with <span style="color:DarkTurquoise">Kalim</span> until you are too tired to continue. It’s pretty fun, despite his teasing, and you feel <span style="color:DarkTurquoise">Kalim</span> generally enjoys being around you. It’s nice having a cool older friend like him.</span> <br>
+<<socialChange "Kalim" 3 1>>
+<<skillPoints "Swimming" 5>>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|Beach]]<br>

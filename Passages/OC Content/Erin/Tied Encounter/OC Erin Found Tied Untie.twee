@@ -1,0 +1,313 @@
+:: OC Erin Found Tied Untie [nobr]
+
+<<set $Minutes += 5>>
+
+/* Clothed */
+<<if $ErinTied.Clothes == 2>>
+    Looking down at the helpless bound boy, you feel a sense of pity wash over you. You kneel down and reach for the binds on his legs; <span style="color:DarkTurquoise">Erin</span> jumps and nearly kicks at you upon feeling you touching his legs, but you manage to calm him down by telling him you’re here to help. <span style="color:lightgreen">He calms down and relaxes as you untie his legs then move to his arms.</span> <br>
+    <br>
+    Once his arms are free, he quickly moves to rip off his blindfold and seems surprised to see you standing in front of him. He then pulls the gag out of his mouth and tries to stand up, though loses his balance and nearly tumbles over. You suspect his legs may be asleep from being bound for so long. <br>
+    
+    <<set _ad to [
+        {
+            Name: "Player",
+        },
+        {
+            Name: "OC Erin",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    /* PC: Default
+    Erin: Uniform, Frown, Blush1 */
+    <span style="color:LightSteelBlue">“What are you doing here?”</span> <span style="color:DarkTurquoise">Erin</span> says, eyeing you suspiciously. You explain that you heard a noise and, when investigating it, discovered him bound like this. You couldn’t just leave him like that. <span style="color:LightSteelBlue">“Oh, ummm…”</span> <span style="color:DarkTurquoise">Erin</span> looks away, his cheeks flushing slightly. You figure he’s a little embarrassed to be discovered in such a position and ask if you two should report what happened to a teacher. <br>
+    <br>
+    <span style="color:LightSteelBlue">“No!”</span> <span style="color:DarkTurquoise">Erin</span> shouts suddenly, nearly causing you to jump, before he quickly turns away once more, blushing deeper. <span style="color:LightSteelBlue">“I mean… I don’t want those assholes to think they actually got to me. No need to tell anyone. Besides, I was about to break free before you found me anyway. So, I didn’t even really need your help and it would be stupid to go crying to some adult.”</span> <span style="color:pink"><span style="color:DarkTurquoise">Erin</span> puts his hands in his pockets and slouches forward, quickly trying to redisplay his edgy persona.</span> <br>
+    <br>
+    You find it a little weird that he doesn’t want to tell anyone, considering he was literally tossed in a room tied up. Despite what he said, you had a feeling he would have been trapped there all night if you hadn’t come to his aid. Then again, considering the note that was stuck to him, you can understand why he wouldn’t want to snitch again. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Anyway, I should get out of here.”</span> <span style="color:DarkTurquoise">Erin</span> turns to you, though looks away as your eyes meet, <span style="color:LightSteelBlue">“I’ll umm… Yeah.”</span> <span style="color:DarkTurquoise">Erin</span> quickly leaves without a goodbye or even a thank you. A little rude, but then again, based on what you’ve heard and seen about <span style="color:DarkTurquoise">Erin</span>, it makes sense. <br>
+    
+    <<unset $ErinTied>>
+    <<socialChange "Erin" 3 1>>
+    <<set $ActiveQuests.delete("Erin: Closet Bound")>>
+    <br>
+    [[Leave|School South Hallway]]
+
+/* Undies */
+<<elseif $ErinTied.Clothes == 1>>
+    <span style="color:pink">Looking down at the poor boy, who squirms on the ground in nothing but his underwear, bound and blind, you feel a sense of pity wash over you.</span> You decide to let him go, though not without some humiliating ramifications. After all, you don’t want him to know it was you who stripped him. So, you take his clothes and ditch them at the bottom of a trashcan before loudly opening the door, stomping away from <span style="color:DarkTurquoise">Erin</span>, and closing the door. You then turn and quietly watch. <br>
+    <<set _ad to [
+        {
+            Name: "OC Erin",
+            State: {
+                Outfit: "Undies",
+                Arms: "Bound",
+                Blush: 3,
+            },
+            Clothes: {
+                Face: {
+                    Name: "Blindfold",
+                    ID: "FaceBlind",
+                    Type: "Blindfold",
+                    Color: "White",
+                    Slot: "Face",
+                    Temp: 0,
+                    Tags: ["Blind"],
+                    Durability: 5,
+                    MaxDurability: 5,
+                    Weight: 1,
+                    Size: "Preteen",
+                    Icon: "Images/Equipment/Blindfold/White Blindfold.png",
+                    Avatar: "Images/Avatar/Clothes/Blindfold/White Blindfold.png",
+                    AvatarTorn: "None",
+                    AvatarDamaged: "None",
+                    Description: "A Blindfold.",
+                },
+                Mouth: {
+                    Name: "Gag",
+                    ID: "MouthGag",
+                    Type: "Gag",
+                    Color: "White",
+                    Slot: "Mouth",
+                    Temp: 0,
+                    Tags: ["Blind"],
+                    Durability: 5,
+                    MaxDurability: 5,
+                    Weight: 1,
+                    Size: "Preteen",
+                    Icon: "Images/Equipment/Gag/White Gag.png",
+                    Avatar: "Images/Avatar/Clothes/Gag/White Gag.png",
+                    AvatarTorn: "None",
+                    AvatarDamaged: "None",
+                    Description: "A Gag.",
+                },
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    /* Erin: Undies, Arms Bound, Blindfold, Gag, Blush3 */
+    <span style="color:DarkTurquoise">Erin</span> turns to face the door, silently listening to see if whoever had taken his clothes had truly left. Once he believes he is alone, you hear what you believe to be a muffled sigh before <span style="color:DarkTurquoise">Erin</span> rolls to his stomach and begins to tug and pull at his binds. <br>
+    <br>
+    <span style="color:pink">You silently watch the boy for a few minutes; clad in only his childish Teal Dino Briefs as he rolls on the ground and tries to break free of his binds. It is clear from watching that <span style="color:DarkTurquoise">Erin</span> has no chance of actually breaking free and if you hadn’t decided to free him, he’d be stuck here tied up in his undies all night long. As you imagine what that would be like you have to stifle a laugh.</span> <br>
+    <br>
+    Thinking it’s been enough time, you tiptoe quietly back to the door and slowly open it. <span style="color:DarkTurquoise">Erin</span> freezes, turning back to the door with a weird sound before attempting to pull his knees up to cover his underwear. You call out, asking if anyone is in here, before pretending to gasp upon seeing the exposed boy on the floor. You shut the door behind you and rush over, pulling off <span style="color:DarkTurquoise">Erin</span>’s blindfold and meeting his eyes. He looks at you in confusion, his cheeks bright red, before he begins to mumble what you can only suspect is a demand to take out the gag. <br>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "OC Erin",
+            State: {
+                Outfit: "Undies",
+                Arms: "Bound",
+                Blush: 3,
+                Mouth: "Frown",
+                Eyes: "Mad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    /* PC: Frown
+    Erin: Undies, Arms Bound, Blush3, Frown */
+    <span style="color:LightSteelBlue">“Bleh!”</span> <span style="color:DarkTurquoise">Erin</span> spits out the gag on the floor as you undo it. <span style="color:LightSteelBlue">“What are you doing here?”</span> He says with a hint of resentment. You raise an eyebrow and say that you were going to ask him that, <span style="color:pink">considering he’s the one tied up in the closet in nothing but his underwear. <span style="color:DarkTurquoise">Erin</span> blushes, as if he had forgotten his state of dress already, and lifts up his knees even higher.</span> <span style="color:LightSteelBlue">“Don’t look at me! Just hurry up and untie me!”</span> <br>
+    <br>
+    You cross your arms at his demands, stating that he wasn’t acting very nice to the person who just rescued him. <span style="color:pink">Plus, you can’t really untie him without seeing his cute little undies. <span style="color:DarkTurquoise">Erin</span> turns redder at your comment, turning away as he tries to stumble something out before relenting.</span> <span style="color:LightSteelBlue">“Fine! Just… please untie me.”</span> You nod, rolling <span style="color:DarkTurquoise">Erin</span> onto his back as you move to untie his legs. <span style="color:pink">You instruct him to spread his knees apart to make it easier, though in reality you just want him to fully expose his underwear to you.</span> <br>
+    <br>
+    <span style="color:pink">He looks very shy and embarrassed as he lays on his back, knees spread, with his body so exposed. You try to comfort the boy, telling him everything will be okay, but that just seems to make him feel even more humiliated. What also doesn’t help his embarrassment is how intentionally slow you go untying his legs. You even make him roll onto his stomach at one point, asking him to bend his knees to “loosen the binds” but in reality, you just want an excuse to get closer to his butt, which is covered by adorably colorful dinos. As his legs are untied and you move to his arms, you decide to tease the boy, commenting on how cute his underwear is in the guise of a compliment.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“They’re not mine!”</span> <span style="color:DarkTurquoise">Erin</span> says quickly, <span style="color:pink">stuttering out an embarrassed defense,</span> <span style="color:LightSteelBlue">“I don’t wear stuff like this, I wear boxers! Black boxers! With skulls and stuff on them.”</span> <span style="color:pink">You smirk, knowing from previous encounters that isn’t true.</span> <span style="color:LightSteelBlue">“The fuck heads who attacked me put me in these, probably taken from their own baby collection. They’re lucky I had a sprained ankle, or I would have wiped the floor with all of them and they’d be the ones tied up in here!”</span> <span style="color:DarkTurquoise">Erin</span> fabricates some story to preserve his dignity, <span style="color:pink">which just makes this situation all the more cute and pathetic.</span> <br>
+    <br>
+    <span style="color:pink">Once his limbs are free, <span style="color:DarkTurquoise">Erin</span> quickly jumps to his feet and covers his underwear with a nearby clipboard.</span> He then begins to glance around nervously. <span style="color:LightSteelBlue">“You- you didn’t happen to see any clothes in here when you came in… did you?”</span> You shake your head, causing <span style="color:DarkTurquoise">Erin</span> to gulp. <span style="color:LightSteelBlue">“Oh… well that’s fine. Thanks for your help, but I was about to break out before you came in anyway.”</span> You tilt your head and raise your eyebrows; you doubt that. <br>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Eyes: "Tired",
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "OC Erin",
+            State: {
+                Outfit: "Undies",
+                Blush: 3,
+                Arms: "Hide",
+                Eyes: "Mad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    /* PC: Tired, Frown
+    Erin: Undies, Blush3, Arms Hide */
+    <span style="color:LightSteelBlue">“I was!”</span> <span style="color:DarkTurquoise">Erin</span> says indignantly, before trying to regain his composure and ‘cool’ persona, <span style="color:pink">which is hard considering his lack of clothing.</span> <span style="color:LightSteelBlue">“Anyway, you can run off now. I’ll be fine from here. Once everyone is gone, I’ll run to the locker room for a change of clothes.”</span> You ask if he’s sure, but <span style="color:DarkTurquoise">Erin</span> insists that he doesn’t need any more of your help. He was acting a bit like a jerk, considering you just saved him, so you decide to just shrug and leave him there. <br>
+    <br>
+    <span style="color:pink">You’re not sure if his plan will actually work, and you doubt he’d make it all the way to the locker room without being seen by someone but figure it’s not your problem anymore.</span> <span style="color:lightgreen">You got the show you wanted and even did a good deed, well, at least did a good deed AFTER you stole his clothes. So, it should balance out.</span> <br>
+
+    <<unset $ErinTied>>
+    <<socialChange "Erin" 3 1>>
+    <<set $ActiveQuests.delete("Erin: Closet Bound")>>
+    <br>
+    [[Leave|School South Hallway]]
+
+/* Naked */
+<<else>>
+    <span style="color:pink">Looking down at the poor boy, who squirms on the ground completely naked, bound, and blind without a stitch of clothing to protect his dignity, you feel a sense of pity wash over you. You decide to let him go, though not without some humiliating ramifications. After all, you don’t want him to know it was you who stripped him butt-naked. So, you take his clothes and ditch them at the bottom of a trashcan while hiding his cute underwear in your backpack, figuring you may as well keep those.</span> You then loudly open the door, and stomp your feet to make it sound like you are leaving, before slamming the door shut. You then turn and quietly watch. <br>
+    
+    <<set _ad to [
+        {
+            Name: "OC Erin",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Arms: "Bound",
+                Blush: 3,
+            },
+            Clothes: {
+                Face: {
+                    Name: "Blindfold",
+                    ID: "FaceBlind",
+                    Type: "Blindfold",
+                    Color: "White",
+                    Slot: "Face",
+                    Temp: 0,
+                    Tags: ["Blind"],
+                    Durability: 5,
+                    MaxDurability: 5,
+                    Weight: 1,
+                    Size: "Preteen",
+                    Icon: "Images/Equipment/Blindfold/White Blindfold.png",
+                    Avatar: "Images/Avatar/Clothes/Blindfold/White Blindfold.png",
+                    AvatarTorn: "None",
+                    AvatarDamaged: "None",
+                    Description: "A Blindfold.",
+                },
+                Mouth: {
+                    Name: "Gag",
+                    ID: "MouthGag",
+                    Type: "Gag",
+                    Color: "White",
+                    Slot: "Mouth",
+                    Temp: 0,
+                    Tags: ["Blind"],
+                    Durability: 5,
+                    MaxDurability: 5,
+                    Weight: 1,
+                    Size: "Preteen",
+                    Icon: "Images/Equipment/Gag/White Gag.png",
+                    Avatar: "Images/Avatar/Clothes/Gag/White Gag.png",
+                    AvatarTorn: "None",
+                    AvatarDamaged: "None",
+                    Description: "A Gag.",
+                },
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:DarkTurquoise">Erin</span> turns to face the door, silently listening to see if whoever had taken his clothes has truly left. Once he believes he is alone, you hear what you believe to be a muffled sigh before <span style="color:DarkTurquoise">Erin</span> rolls onto his stomach and begins to tug and pull at his binds. <br>
+    <br>
+    <span style="color:pink">You silently watch the boy for a few minutes; completely naked on the ground as he rolls around and tries to break free of his binds. Believing he is alone; <span style="color:DarkTurquoise">Erin</span> makes no effort to cover himself or avoid overly revealing positions. At one point, he rolls onto his front and pulls his knees apart as hard as he can in an attempt to break free, unintentionally spreading his butt cheeks enough to give you a good look at his tight, pink hole. The entire display is quite the sight to see and, judging by his lack of progress, you figure <span style="color:DarkTurquoise">Erin</span> would be stuck here naked on the cold floor all night if you hadn’t decided to free him.</span> <br>
+    <br>
+    Thinking it’s been enough time; you tiptoe quietly back to the door and slowly open it. <span style="color:DarkTurquoise">Erin</span> freezes for a moment, before quickly rolling onto his back and pulling his knees up in a futile attempt to cover his exposed bits. You call out, asking if anyone is in here, before pretending to gasp upon seeing <span style="color:DarkTurquoise">Erin</span> on the floor. You quickly shut the door behind you and rush over, pulling off <span style="color:DarkTurquoise">Erin</span>’s blindfold and meeting his eyes. He looks at you in confusion, his cheeks bright red, before he begins to mumble what you can only guess is a demand to take out the gag. <br>
+    
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+        {
+            Name: "OC Erin",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Arms: "Bound",
+                Blush: 3,
+                Mouth: "Frown",
+                Eyes: "Mad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Bleh!”</span> <span style="color:DarkTurquoise">Erin</span> spits out the gag on the floor as you undo it. <span style="color:LightSteelBlue">“What are you doing here?”</span> He says with a hint of resentment. <span style="color:pink">You raise an eyebrow and say that you were going to ask him that, considering he’s the one tied up in the closet butt naked. <span style="color:DarkTurquoise">Erin</span> blushes as if he had forgotten that he was naked and lifts his knees up even higher.</span> <span style="color:LightSteelBlue">“Don’t look at me! Just hurry up and untie me!”</span> <br>
+    <br>
+    You cross your arms at his demands, stating that he wasn’t acting very nice to the person who just rescued him. <span style="color:pink">Plus, you can’t really untie him without seeing his naked bits, which, to be fair, you can still see right now despite his attempts to hide himself. <span style="color:DarkTurquoise">Erin</span> turns redder at your comment, realizing just how little he can do to cover himself bound as he is. He turns away for a moment before relenting.</span> <span style="color:LightSteelBlue">“Fi- fine! Just… please hurry and untie me…”</span> You nod, rolling <span style="color:DarkTurquoise">Erin</span> onto his back as you move to untie his legs. <span style="color:pink">You instruct him to spread his knees apart to make it easier to untie them, which he only does after some convincing. Though, in reality, you only make him do this so you can get an unobstructed close look at his privates, smiling as <span style="color:DarkTurquoise">Erin</span> turns away from you in embarrassment.</span> <br>
+    <br>
+    <span style="color:pink">He looks very shy and helpless lying on his back, knees spread, with his body completely exposed. You try to comfort the boy, saying everything will be okay, but that just seems to make him feel even worse. From this position, not only do you get a close-up look at his adorably tiny penis and balls, which you can’t help but stare at, but you also get to see his tight little hole, a boy’s most private spot. To be fair, you have already seen all of these plenty of times since you came in here, but somehow <span style="color:DarkTurquoise">Erin</span> knowing you can see them and witnessing his reaction makes it even better. The boy looks so embarrassed, you think he may start crying.</span> <br>
+    
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "OC Erin",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Arms: "Bound",
+                Blush: 3,
+                Mouth: "Frown",
+                Eyes: "Mad",
+                Hard: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    
+    <span style="color:pink">The longer you take, the more you realize something. <span style="color:DarkTurquoise">Erin</span>’s tiny little willy was becoming stiff! You can’t help but chuckle as you notice this,</span> causing <span style="color:DarkTurquoise">Erin</span> to angrily ask <span style="color:LightSteelBlue">“What are you laughing at!?”</span> <span style="color:pink">You apologize, pointing to his little penis and commenting on how you weren’t expecting him to get a boner. Realizing his erection, <span style="color:DarkTurquoise">Erin</span>’s entire face turns red.</span> <span style="color:LightSteelBlue">“I’m not hard!”</span> He yells, <span style="color:LightSteelBlue">“It’s only doing that because you are staring at it! You pervert!”</span> You laugh, stating that it isn’t a big deal. <span style="color:pink">Happens to boys randomly all the time. Plus, he should look at the bright side, since it doesn’t get much bigger when it’s hard, he doesn’t have to worry about getting an awkward boner in class, because no one would be able to tell.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“It gets bigger!”</span> <span style="color:DarkTurquoise">Erin</span> protests, <span style="color:LightSteelBlue">“It’s normally twice- no, three times this size! It just looks small because it’s so cold in here and the ground is cold and… I bet my dick is normally massive compared to yours!”</span> You roll your eyes at <span style="color:DarkTurquoise">Erin</span>’s desperate defense, <span style="color:pink">which honestly just makes him look cuter,</span> and tell him you’re not interested in a dick-measuring contest at the moment. <span style="color:LightSteelBlue">“Ye- yeah! Because you know you’d lose-“</span> <span style="color:DarkTurquoise">Erin</span> shuts up as you finally undo his legs, <span style="color:pink">allowing him to close them to cover his boner.</span> <br>
+    <br>
+    It takes a few more minutes for you to undo the binds on his arms, but once you do <span style="color:DarkTurquoise">Erin</span> quickly moves to a corner and covers himself with his hands. <span style="color:LightSteelBlue">“Ri- right…”</span> <span style="color:DarkTurquoise">Erin</span> looks around the room nervously, <span style="color:LightSteelBlue">“You- you didn’t happen to see any clothes when you came in… did you?”</span> You shake your head, causing <span style="color:DarkTurquoise">Erin</span> to gulp. <span style="color:LightSteelBlue">“Oh… well that’s fine. Thanks for your help, but I was about to break out before you came in anyway.”</span> You tilt your head and raise your eyebrows; you doubt that. <br>
+    
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "OC Erin",
+            ShowZoom: true,
+            ShowZoomOnlyButt: true,
+            State: {
+                Outfit: "Naked",
+                Arms: "Hide",
+                Blush: 3,
+                Mouth: "Frown",
+                Eyes: "Mad",
+                Hard: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    
+    <span style="color:LightSteelBlue">“I was!”</span> <span style="color:DarkTurquoise">Erin</span> says indignantly, before trying to regain his composure and ‘cool’ persona, which was hard considering his utter nakedness. <span style="color:LightSteelBlue">“Anyway, you can run off now. I’ll be fine from here. Once everyone is gone, I’ll run to the locker room for a change of clothes.”</span> You ask if he’s sure, but <span style="color:DarkTurquoise">Erin</span> insists that he doesn’t need any more of your help. He was acting a bit like a jerk, considering you just saved him, <span style="color:pink">so you decide to just shrug and leave him there naked in the cold, damp closet.</span> <br>
+    <br>
+    You’re not sure if his plan will actually work, and you doubt he’d make it all the way to the locker room without being seen by someone, but figure it’s not your problem anymore. <span style="color:pink">Though you can’t help but imagine the various teacher’s reactions upon seeing emo little <span style="color:DarkTurquoise">Erin</span> sneaking through the halls with his tiny little dick flopping about.</span> If only you could be a fly on the wall. Though you at least got the show you wanted and even did a good deed, well, at least did a good deed AFTER you stole his clothes. So, it should balance out. <br>
+
+    <<unset $ErinTied>>
+    <<socialChange "Erin" 3 1>>
+    <<set $ActiveQuests.delete("Erin: Closet Bound")>>
+    /* <<set $ClosetUndies.push($TealDinoBriefs)>> */
+    <<addClothing "Closet" "Undies" "Styled Briefs" "Teal Dino">>
+    <br>
+    [[Leave|School South Hallway]]
+
+<</if>>

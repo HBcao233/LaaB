@@ -1,0 +1,104 @@
+:: NOAH Equipment [nobr]
+
+<<if $NoahNewClothes != 1>>
+
+/* Setting New Clothes */
+	/* Undies */
+    <<if $NoahClosetUndies.length == 0>>
+        <<set $NoahDayUndies to $KidsOwlmanBriefs>>
+    <<else>>
+        <<set $NoahDayUndies to $NoahClosetUndies.random()>>
+    <</if>>
+	/* Socks */
+    <<if $NoahClosetSocks.length == 0>>
+        <<set $NoahSocks to $KidsWhiteSocks>>
+    <<else>>
+        <<set $NoahSocks to $NoahClosetSocks.random()>>
+    <</if>>
+	/* Outerwear */
+    <<if $NoahClosetOuter.length == 0>>
+        <<set $NoahOuter to $KidsBlueHoodie>>
+    <<else>>
+        <<set $NoahOuter to $NoahClosetOuter.random()>>
+    <</if>>
+	/* Shoes */
+	<<if $NoahClosetShoes.length == 0>>
+        <<set $NoahShoes to $KidsBlueSneakers>>
+    <<else>>
+        <<set $NoahShoes to $NoahClosetShoes.random()>>
+    <</if>>
+
+	/* Temp Check */
+		/* Temperature Not Finished Yet, so for now it will be random. Temp will be finished/changed in a Clothing Update. */
+		<<set _temprandom to random(1, 3)>>
+		/* Warm */
+	<<if _temprandom == 1>>
+		<<if $NoahClosetWarmTop.length == 0>>
+			<<set $NoahEverydayTop to $KidsOwlmanTShirt>>
+		<<else>>
+			<<set $NoahEverydayTop to $NoahClosetWarmTop.random()>>
+		<</if>>
+		<<if $NoahClosetWarmBottoms.length == 0>>
+			<<set $NoahEverydayBottoms to $KidsBlueShorts>>
+		<<else>>
+			<<set $NoahEverydayBottoms to $NoahClosetWarmBottoms.random()>>
+		<</if>>
+		/* Cold */
+	<<elseif _temprandom == 2>>
+		<<if $NoahClosetColdTop.length == 0>>
+			<<set $NoahEverydayTop to $KidsOwlmanTShirt>>
+		<<else>>
+			<<set $NoahEverydayTop to $NoahClosetColdTop.random()>>
+		<</if>>
+		<<if $NoahClosetColdBottoms.length == 0>>
+			<<set $NoahEverydayBottoms to $KidsBlueJeans>>
+		<<else>>
+			<<set $NoahEverydayBottoms to $NoahClosetColdBottoms.random()>>
+		<</if>>
+		/* Temperate */
+	<<else>>
+		<<set _random to random(1, 2)>>
+		<<if _random == 1>>
+			<<if $NoahClosetWarmTop.length == 0>>
+				<<set $NoahEverydayTop to $KidsOwlmanTShirt>>
+			<<else>>
+				<<set $NoahEverydayTop to $NoahClosetWarmTop.random()>>
+			<</if>>
+		<<else>>
+			<<if $NoahClosetColdTop.length == 0>>
+				<<set $NoahEverydayTop to $KidsOwlmanTShirt>>
+			<<else>>
+				<<set $NoahEverydayTop to $NoahClosetColdTop.random()>>
+			<</if>>
+		<</if>>
+			<<set _random to random(1, 2)>>
+		<<if _random == 1>>
+			<<if $NoahClosetWarmBottoms.length == 0>>
+				<<set $NoahEverydayBottoms to $KidsBlueShorts>>
+			<<else>>
+				<<set $NoahEverydayBottoms to $NoahClosetWarmBottoms.random()>>
+			<</if>>
+		<<else>>
+			<<if $NoahClosetColdBottoms.length == 0>>
+				<<set $NoahEverydayBottoms to $KidsBlueJeans>>
+			<<else>>
+				<<set $NoahEverydayBottoms to $NoahClosetColdBottoms.random()>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	/* PAJAMA SELECTION */
+	<<if $NoahPJRatio == -1>>
+		<<set _random to 0>>
+	<<elseif $NoahPJRatio == 1>>
+		<<set _random to 1>>
+	<<else>>
+		<<set _random to random(1, 2)>>
+	<</if>>
+	<<if _random == 1>>
+		<<set $NoahPJType to "None">>
+	<<else>>
+		<<set $NoahPJType to "Two">>
+	<</if>>
+
+<</if>>

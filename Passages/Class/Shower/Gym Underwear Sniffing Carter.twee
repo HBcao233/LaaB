@@ -1,0 +1,54 @@
+:: Gym Underwear Sniffing Carter [nobr]
+
+/* Written By: Poco */
+/* Intro */
+
+Perhaps against your better judgment you let your curiosity get the better of you. After all, it will just be a quick peek. As you slowly approach the open locker your eyes dart around the room to confirm that nobody can see you. <br>
+<br>
+The locker door makes a slight creak as you open it. You pause for a second to see if anyone heard it, but nobody comes. Inside the locker is a neatly folded school uniform. That’s not what piques your interest however, <span style="color:pink">as sitting on top of the uniform is a small pair of blue camo briefs.</span> You think for a moment before guessing who the owner is. <br>
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smirk",
+            Eye: "Tired",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+<<if $CarterSocial < 50>>
+/*Low Relationship with Carter*/
+	
+	They’re quite small and kid-like. That narrows it down to only a few people as most boys your age claim to have outgrown colorful briefs. After a bit more silent deliberation you guess that these undies belong to <span style="color:DarkTurquoise">Carter</span>! <br>
+
+<<else>>
+/*-High Relationship with Carter*/
+
+	You realize you’ve certainly seen these before, though to be fair, they were being worn by the boy last you saw them. You are quite sure that these undies belong to <span style="color:DarkTurquoise">Carter</span>! <br>
+<</if>>
+<br>
+<<linkreplace "Continue">>
+
+    <span style="color:pink">You look around the room once more before finally giving in and pressing the front of the undies under your nose. You slowly inhale, making sure to really savor the scent. You’re surprised to find that it’s almost sweet. You smell the nearly indescribable scent of a boy’s ball sweat as you’d expect from a pair of briefs that had been worn all day. You rub the briefs across your cheek as you imagine them tightly cradling <span style="color:DarkTurquoise">Carter</span>’s privates. This has the unintended side effect of almost instantly giving you an erection. <br>
+    <br>
+    After a few more moments you feel as if you can barely contain yourself any longer. You pull out your $Player.PenisSize penis and begin slowly rubbing the tip against the inside of <span style="color:DarkTurquoise">Carter</span>’s briefs. You bite your lip as waves of intense pleasure shoot across your entire body. The fabric is incredibly soft and stimulates you as you rub it up and down your shaft. You realize that once he puts these back on, <span style="color:DarkTurquoise">Carter</span>’s penis will indirectly touch yours. This thought sends you over the edge as you feel a tingling pressure building up in your penis and realize you’re close to orgasm.</span> <br>
+    <br>
+    <span style="color:LightCoral">At the worst possible time you hear multiple voices getting louder. You frantically toss the briefs back into <span style="color:DarkTurquoise"><span style="color:DarkTurquoise">Carter</span></span>’s locker and sprint back to your own. You face your locker and twist you legs in a way that you hope will disguise the raging erection that you’re currently praying will go away.</span> You look around and are relieved to find that nobody seems to know what you were up to only seconds before. You make a mental note to be far more cautious in the future. <br>
+    <<needChange "Fun" 5>>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Preteens"]>>
+    <<arousalGain 10 _arousalbs _arousalkink>>
+	/* GETTING DRESSED */
+	<<set $ClothSave to "Restore">>
+    <<if $GymClassType == "Gym">>
+		<<storeClothing "Restore" "Undies">>
+	<<else>>
+		<<storeClothing "Restore" "Naked">>
+    <</if>>
+	<<if $SaveUndies != null>>
+		<<set $PlayerUndies to $SaveUndies>>
+	<</if>>
+    <br>
+    [[Continue|School Locker Room]]
+<</linkreplace>>

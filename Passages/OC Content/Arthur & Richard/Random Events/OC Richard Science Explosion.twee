@@ -1,0 +1,117 @@
+:: OC Richard Science Explosion [nobr]
+
+
+/* Intro */
+For science class today, <span style="color:DarkTurquoise">Mr. Chang</span> decides to split you up into random pairs to perform an experiment. You get paired with the smart yet hyperactive <span style="color:DarkTurquoise">Richard</span> while his other half, <span style="color:DarkTurquoise">Arthur</span>, <span style="color:Pink">sadly sobs and nearly refuses to give him up to you for the class.</span> In the end, he only agrees because it’s you. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Richard",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy"
+        },
+    },
+]>>
+<<ad _ad>>
+
+The experiment has everyone mixing a series of chemicals in beakers according to some instructions in order to create some small, yet interesting, effects. Little puffs of smoke, changing colors, expanding foam. <span style="color:lightgreen">Overall, it’s a very fun and exciting class!</span> However, near the end of class, you notice <span style="color:DarkTurquoise">Richard</span> performing an extra experiment. <br>
+<br>
+You glance down at the instructions, none of them mention mixing the combination of chemicals <span style="color:DarkTurquoise">Richard</span> is currently pouring. Worried, you ask him if he knows what he’s doing. <span style="color:LightSteelBlue">“Of course!”</span> He assures you, <span style="color:LightSteelBlue">“I was reading ahead in the chemistry book, and it said you can get a cool light show if you mix these things together. At least I think it was these.”</span> <span style="color:DarkTurquoise">Richard</span> rubs his chin for a moment before shrugging. <br>
+<br>
+<span style="color:lightcoral">Now a bit scared, you take a step back</span> and remind <span style="color:DarkTurquoise">Richard</span> that <span style="color:DarkTurquoise">Mr. Chang</span> says never to mix two things together unless you are absolutely sure you know what’s going to happen. <span style="color:DarkTurquoise">Richard</span> tells you not to worry, he’s got this. <span style="color:lightcoral">You take another step back</span> as he mixes in the final chemical, <span style="color:yellow">causing a large amount of bubbling to come out of the beaker until…</span> <br>
+<br>
+<<linkreplace"Continue">>
+    <<set _random to random(1, 3)>>
+
+    /* Success */
+    <<if _random != 1>>
+        <span style="color:lightgreen">There is a bright flash of blue light! <span style="color:DarkTurquoise">Richard</span> holds up the beaker as a strange reaction causes a series of colorful lights to flicker inside the beaker. As if he was holding fireworks underwater, everyone’s attention turns to him as the class is filled with oooo’s and aaahhh’s. <span style="color:DarkTurquoise">Richard</span> proudly smiles as he shows off his creation.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“Wow! That’s so cool!”</span> <span style="color:DarkTurquoise">Carter</span> says excitedly. <br>
+        <br>
+        <span style="color:LightSteelBlue">“How did you do that?”</span> <span style="color:DarkTurquoise">Ben</span> asks quietly. <br>
+        <br>
+        <span style="color:LightSteelBlue">“Alright, alright.”</span> <span style="color:DarkTurquoise">Mr. Chang</span> laughs, <span style="color:LightSteelBlue">“Class is about to end, so everyone start cleaning up.”</span> The teacher walks over to you two and smiles. <span style="color:LightSteelBlue">“Looks like someone was reading ahead. That is quite the interesting reaction, isn’t it? Though I would ask that you refrain from mixing chemicals without instruction, alright boys?”</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Chang",
+                State: {
+                    Mouth: "Smile",
+                    Eyes: "Wide",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Richard",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Happy",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        You both nod, with <span style="color:DarkTurquoise">Richard</span> apologizing. He just wanted to see if it worked, since the pictures looked so cool in the book. <span style="color:DarkTurquoise">Mr. Chang</span> simply laughs, patting the boy on the head. <span style="color:lightgreen">He seems very happy that <span style="color:DarkTurquoise">Richard</span> is showing a keen interest in chemistry, though reminds him that the rules are there for a reason.</span> <br>
+        <<socialChange "Richard" 3 1>>
+        <br>
+        <<include"Attend Science Finish">>
+
+    /* Fail */
+    <<else>>
+        <span style="color:red">BOOM!</span> <span style="color:lightcoral">A large puff of black smoke explodes from the beaker and completely covers you both. Screams, shouting, and coughing fill the room as <span style="color:DarkTurquoise">Mr. Chang</span> rushes to open a window and blow the smoke out. When it finally clears, you and <span style="color:DarkTurquoise">Richard</span> are standing at the center covered in a thick layer of black soot.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“Whoops,”</span> <span style="color:DarkTurquoise">Richard</span> laughs nervously, <span style="color:LightSteelBlue">“I guess my calculations were a bit off…”</span> As you clear the soot from your eyes, you look over and spot that the explosion had destroyed the front of <span style="color:DarkTurquoise">Richard</span>’s pants. <span style="color:Pink">Before you can say anything, they give way and the pants slip down to <span style="color:DarkTurquoise">Richard</span>’s ankles, revealing his Red Star Briefs.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Chang",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Wide",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "OC Richard",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 3,
+                    PantsDown: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:Pink">There is a moment of pause as everyone realizes what they are seeing before laughter erupts in the room. <span style="color:DarkTurquoise">Richard</span> lets out an embarrassed scream and quickly yanks his shirt down to cover his underwear, turning bright red in the process. The boy panics, looking for something to cover himself with as tears well up in his eyes until <span style="color:DarkTurquoise">Arthur</span> sprints over carrying a towel and quickly covers his partner’s exposed underwear.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“Quit laughing, or I’ll give you something to laugh about!”</span> <span style="color:DarkTurquoise">Arthur</span> yells in defense of his partner as he and <span style="color:DarkTurquoise">Mr. Chang</span> hurry the tearful boy out of the room to the nurse’s office to get a new pair of pants. In the end, you are left to clean up the mess created by the explosion. <br>
+        <br>
+        When <span style="color:DarkTurquoise">Richard</span> finally does return, <span style="color:Pink">he is too embarrassed to say anything more than a quiet</span> <span style="color:LightSteelBlue">“Sorry.”</span> You give him a friendly smile to assure him that it’s alright. <span style="color:Pink">Besides, a little explosion is a small price to pay to get a glimpse at his cute undies.</span> <br>
+        <<socialChange "Richard" 3 1>>
+        <br>
+        <<include"Attend Science Finish">>
+
+    <</if>>
+<</linkreplace>>

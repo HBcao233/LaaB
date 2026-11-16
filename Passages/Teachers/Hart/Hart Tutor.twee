@@ -1,0 +1,93 @@
+:: Hart Tutor [nobr]
+
+/* Intro */
+<<set $Minutes += 15>>
+You walk into the English Classroom to find <span style="color:DarkTurquoise">Mr. Hart</span> snoring away loudly at his desk. You walk up to him and stand there awkwardly, unsure if you should wake him or not. After a minute, you decide to just do it and tap him lightly on the shoulder. <span style="Color: Yellow">With a flash, <span style="color:DarkTurquoise">Hart</span>’s eyes open and he reaches up and grips you by the wrist with both hands. You are almost knocked on your back, when <span style="color:DarkTurquoise">Hart</span> suddenly realizes that it was just one of his students and pauses.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "Hart",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“O- oh! Sorry about that!”</span> <span style="color:DarkTurquoise">Hart</span> releases his tight grip from your hand, <span style="Color: LightSteelBlue">“I get a little bit jumpy when I wake up from my naps. Hope I didn’t hurt you.”</span> You shake your head, though do grimace a little as you rub your slightly bruised wrist. <span style="Color: LightSteelBlue">“So, what did you need?”</span> You explain that you wanted some help with your recent writing assignments and <span style="color:DarkTurquoise">Hart</span> nods before yawning loudly. <span style="Color: LightSteelBlue">“Of course, show me what you got.”</span> <br>
+<br>
+Outside of his repeated yawning and appearing as though he’ll pass out at any moment, <span style="Color: LightGreen"> <span style="color:DarkTurquoise">Hart</span> does a pretty good job critiquing your work and you feel your writing has improved with his help.</span> Once the small tutoring session is done, he yawns and stretches his arms out, looking like he’s ready for another nap. <span style="Color: LightSteelBlue">“Was there anything else?”</span> <span style="Color: LightGreen">You begin to wonder if now may be a good time to get to know your teachers a little bit better.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Ask about his family<br>">>
+    <<replace"#choice">>
+        <<if $HartSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Hart</span> about his family, if he has any kids or if he’s married. He finishes yawning before answering, though he doesn’t lift his head up. <span style="Color: LightSteelBlue">“No, no… nothing like that. Far to busy for…”</span> he yawns again, <span style="Color: LightSteelBlue">“…for that.”</span> <span style="Color: Yellow">Before you can get any more details, he seems to pass out, snoring away once more.</span> <br>
+            <<socialChange "Hart" 3>>
+            <<skillPoints "English" 5>>
+            <br>
+            [[Continue|School English Classroom]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Hart</span> about his family, if he has any kids or if he’s married. He finishes yawning before answering, slightly lifting his head up. <span style="Color: LightSteelBlue">“No, nothing like that. Far too busy for stuff like that. Maybe someday. Big family but…”</span> he yawns again, <span style="Color: LightSteelBlue">“…they live in Canada.”</span> Before you can get anymore information, <span style="color:DarkTurquoise">Hart</span> seems to pass out again. <span style="Color: LightGreen">Oh well, at least you learned something.</span> <br>
+            <<socialChange "Hart" 3>>
+            <<skillPoints "English" 5>>
+            <br>
+            [[Continue|School English Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his career<br>">>
+    <<replace"#choice">>
+        <<if $HartSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Hart</span> about his career, and he yawns loudly before replying. <span style="Color: LightSteelBlue">“Yeah, pretty good… still a few more… good years left…”</span> He then seems to pass out as you are confused about his response. <span style="Color: Yellow">Does he plan to stop teaching soon?</span> <br>
+            <<socialChange "Hart" 3>>
+            <<skillPoints "English" 5>>
+            <br>
+            [[Continue|School English Classroom]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Hart</span> about his career, and he looks up at you with a confused expression. <span style="Color: LightSteelBlue">“My career…? Oh, you mean as a teacher. Yeah, it’s alright. Good pay, weekends and summer off, works out pretty well with what I like to do. Plus, good place to catch up on some…”</span> <span style="Color: Yellow">He falls asleep again, passed out right on his desk. You wonder what he meant by ‘what he does’?</span> <br>
+            <<socialChange "Hart" 3>>
+            <<skillPoints "English" 5>>
+            <br>
+            [[Continue|School English Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his hobbies<br>">>
+    <<replace"#choice">>
+        <<if $HartSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Mr. Hart</span> about what he likes to do outside of school and he yawns loudly before answering. <span style="Color: LightSteelBlue">“Oh, this and that. Hard to explain, maybe…”</span> he yawns again <span style="Color: LightSteelBlue">“…maybe another time. Really should get some work…”</span> <span style="Color: Yellow">He quickly begins to snore, passing out right there at his desk. Oh well, maybe another time you’ll get to learn more about him.</span> <br>
+            <<socialChange "Hart" 3>>
+            <<skillPoints "English" 5>>
+            <br>
+            [[Continue|School English Classroom]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Mr. Hart</span> about what he likes to do outside of school and he glances up. There is a bit of annoyance that his nap time is being taken away, but he also doesn’t seem to dislike talking to you, so he answers. <span style="Color: LightSteelBlue">“Pretty rigid schedule. Gym, mainly, then…”</span> He yawns again <span style="Color: LightSteelBlue">“…this and that. Practice and drills…”</span> before he can finish he passes out. You are a bit surprised by his answer, you didn’t expect him to be a gym rat. <span style="Color: Yellow">Though you wonder what he could be practicing? Maybe it’s what keeps him up all night and makes him so sleepy in class.</span> <br>
+            <<socialChange "Hart" 3>>
+            <<skillPoints "English" 5>>
+            <br>
+            [[Continue|School English Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Nothing<br>">>
+    <<replace"#choice">>
+        You shake your head, thanking him for his help as you pack up your things. He nods before lying his head down one more, waving his hands as he yawns out <span style="Color: LightSteelBlue">“Alright. See you in class…”</span> and seemingly passes out again right away. <span style="Color: Yellow">He should really get a better sleeping schedule.</span> <br>
+        <<socialChange "Hart" 3>>
+        <<skillPoints "English" 5>>
+        <br>
+        [[Continue|School English Classroom]]
+    <</replace>>
+    <</link>>
+</div>

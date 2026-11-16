@@ -1,0 +1,33 @@
+:: OC Bobby Farm Help Out Barn Cleaning the Barn [nobr]
+
+/* Intro */
+<<set $Minutes += 25>>
+You find <span style="color:DarkTurquoise">Bobby</span> sweeping and cleaning up the inside of the barn and greet him. <span style="Color: LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>. How are you?”</span> You take a seat on a haybale and chat with <span style="color:DarkTurquoise">Bobby</span> for a bit before realizing that the barn is a lot messier than normal and ask if he needs any help. <span style="Color: LightSteelBlue">“I won’t say no.”</span> He chuckles, <span style="Color: LightSteelBlue">“One of the horses got loose and knocked a bunch of stuff over. Dad chased her all throughout the place, so it’s a bit of a mess. I can’t pay you, but I’ll throw in some of the cookies I made last night. My mom’s secret recipe!”</span> <br>
+<br>
+<span style="color:LightGreen">You quickly agree.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+The work isn’t that hard, just takes a bit of time. But you spend most of said time chatting with <span style="color:DarkTurquoise">Bobby</span> and learning just how much he does on the farm. This place wouldn’t run without him! You feel a bit bad that he has to do so much work, but you can hear the pride in his voice. <span style="color:LightGreen">He loves working here and hopes to own the farm someday. It’s nice that he is so passionate about this, and you find yourself working harder just to impress him. <br>
+<br>
+The cookies are also amazing.</span> <br>
+<<socialChange "Bobby" 3 1>>
+<<needChange "Hunger" 10>>
+<br>
+[[Continue|OC Bobby Farm Local]]

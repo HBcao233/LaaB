@@ -1,0 +1,75 @@
+:: Shower Relaxing [nobr]
+
+<<storeClothing "Closet" "Naked" 1>>
+/* Intro */
+/* Checking if player is already considered Nude */
+<<if $PlayerBottoms.Type != "None" or $PlayerTop.Type != "None" or $Player.Undies != "None">>
+    You walk over and turn on the shower to a nice warm, but not hot, setting. Letting the steam fill the room, you slowly strip down naked and toss your clothes in the hamper. You then stretch out your arms above your head and roll your joints to pop them. You intend to have a long, relaxing shower. Once the water is hot enough and steam has fogged up the mirror, you slowly step into the shower. Your body cringes slightly from the heat, but then it causes your muscles to relax as you step fully inside. <br>
+    <br>
+    The feeling of the warm water hitting your bare body is pleasant and you lean your head back and close your eyes, taking in the relaxing moment. You plan to get to the actual cleaning yourself part soon, but just take a few minutes to just relax and enjoy the feeling of the warm water. <br>
+    <br>
+<<else>>
+    You walk over and turn on the shower to a nice warm, but not hot, setting. Letting the steam fill the room, you stretch your arms up above your head and roll your joints to pop them. The warm air on your nude body feels nice as you feel your muscles already beginning to relax. Once the water is hot enough and steam has fogged up the mirror, you slowly step into the shower. Your body cringes slightly from the heat, but then it quickly becomes a very nice feeling as you feel your limbs rest at your sides. <br>
+    <br>
+    The feeling of the warm water hitting your bare body is pleasant and you lean your head back and close your eyes, taking in the relaxing moment. You plan to get to the actual cleaning yourself part soon, but just take a few minutes to just relax and enjoy the feeling of the warm water. <br>
+    <br>
+<</if>>
+
+/* Default Post-Intro Avatar */
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You take your time washing yourself, instead letting your mind wander and enjoy the feeling of the warm droplets hitting your body. You’re not sure how much time passes but your fingers are positively shriveled by the time you finish and exit the shower. <span style="color:lightgreen">Despite this, you feel utterly relaxed and can’t wipe the smile off your face as you just as slowly dry off then wrap a towel around your waist, utterly content with life at the moment.</span> <br>
+<<addMoodlet "Stress" 0>>
+<<needChange "Hygiene" 100>>
+<<addClothing "PC" "Bottoms" "Towel" "White">>
+<<set $Player.Exposed to "Towel">>
+<br>
+[[Continue|PH Bathroom]]
+
+:: Bath Relaxing [nobr]
+
+<<storeClothing "Closet" "Naked" 1>>
+/* Intro */
+/* Checking if player is already considered Nude */
+<<if $PlayerBottoms.Type != "None" or $PlayerTop.Type != "None" or $Player.Undies != "None">>
+    You walk over to the bathtub and turn on the water, picking a nice warm, but not overly hot, temperature. As the tub fills and steam begins to fill the room, you slowly strip down naked and toss your clothes in the hamper. You then stretch your arms above your head and roll your joints to pop them. As a nice mist fills the room and the mirror fogs up, you slip one toe into the water to check its temperature. Perfect! With a smile, you slowly step in and slip under the water. <br>
+    <br>
+    The feeling of the warm water slowly enveloping your body from the bottom up causes you to moan in pleasure, the relaxing aura already clearing any strain and pain from your muscles as you slip down low enough to just have your nose and eyes poking out of the water. Your entire body is caressed by the warm blanket of the water as you close your eyes and take a deep breath, letting relaxation fully wash over you. <br>
+    <br>
+<<else>>
+    Though it would be even more relaxing had the bathroom a lock. You then stretch your arms above your head and roll your joints to pop them. As a nice mist fills the room and the mirror fogs up, you slip one toe into the water to check its temperature. Perfect! With a smile, you slowly step in and slip under the water. <br>
+    <br>
+    The feeling of the warm water slowly enveloping your body from the bottom up causes you to moan in pleasure, the relaxing aura already clearing any strain and pain from your muscles as you slip down low enough to just have your nose and eyes poking out of the water. Your entire body is caressed by the warm blanket of the water as you close your eyes and take a deep breath, letting relaxation fully wash over you. <br>
+    <br>
+<</if>>
+
+/* Default Post-Intro Avatar */
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You take your time washing yourself, instead letting your mind wander and enjoy the feeling of the warm water soaking your body. You’re not sure how much time passes but your fingers are positively shriveled by the time you stand up and exit the bath. <span style="color:lightgreen">Despite this, you feel utterly relaxed and can’t wipe the smile off your face as you just as slowly dry off then wrap a towel around your waist, utterly content with life at the moment.</span> <br>
+<<addMoodlet "Stress" 0>>
+<<needChange "Hygiene" 100>>
+<<addClothing "PC" "Bottoms" "Towel" "White">>
+<<set $Player.Exposed to "Towel">>
+<br>
+[[Continue|PH Bathroom]]

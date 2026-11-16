@@ -1,0 +1,81 @@
+:: Set Weather [nobr]
+
+<<set $Weather to either($ForecastToday.Table)>>
+
+/* how much to deduct per hour away from noon */
+<<set _hour_weight to 3>>
+/* roll within minimum range */
+<<set _rand_temp to random(1, 100 - _hour_weight * 12)>>
+/* add hour weight */
+<<set _rand_temp += (12 - Math.abs(12 - $Time.ts.getUTCHours())) * _hour_weight>>
+
+/* BASE TEMP BASED ON MONTH */
+<<if $Time.Month == "August">>
+	<<set _basetemp to 1>>
+<<elseif $Time.Month == "September">>
+	<<set _basetemp to 0>>
+<<else>>
+	<<set _basetemp to -1>>
+<</if>>
+
+/* Set to $ForecastToday.Name for these checks. */
+/* TEMP ADJUSTMENT BASED ON WEATHER */
+<<if $Weather == "Clear Skies">>
+	<<set _weathertemp to 2>>
+<<elseif $Weather == "Partly Cloudy">>
+	<<set _weathertemp to 0>>
+<<elseif $Weather == "Mostly Cloudy">>
+	<<set _weathertemp to -1>>
+<<elseif $Weather == "Overcast">>
+	<<set _weathertemp to -2>>
+<<elseif $Weather == "Sprinkling">>
+	<<set _weathertemp to 0>>
+<<elseif $Weather == "Raining">>
+	<<set _weathertemp to -1>>
+<<elseif $Weather == "Pouring">>
+	<<set _weathertemp to -1>>
+<<elseif $Weather == "Storm">>
+	<<set _weathertemp to -2>>
+<<elseif $Weather == "Thunderstorm">>
+	<<set _weathertemp to -1>>
+<<elseif $Weather == "Dry Storm">>
+	<<set _weathertemp to 0>>
+<<elseif $Weather == "Windy">>
+	<<set _weathertemp to -1>>
+<<elseif $Weather == "Extreme Winds">>
+	<<set _weathertemp to -1>>
+<<elseif $Weather == "Hail">>
+	<<set _weathertemp to -2>>
+/* SNOW GOES HERE */
+
+<</if>>
+
+/* Time of Day Temp Change */
+<<if $Time.ToD == "Morning">>
+	<<set _todtemp to 0>>
+<<elseif $Time.ToD == "Day">>
+	<<set _todtemp to 2>>
+<<elseif $Time.ToD == "Afternoon">>
+	<<set _todtemp to 1>>
+<<elseif $Time.ToD == "Night">>
+	<<set _todtemp to -2>>
+<</if>>
+
+/* Setting Temp based on all */
+<<set _temp to _basetemp + _weathertemp + _todtemp>>
+<<if _temp <= -8>>
+	<<set $Temp to "Freezing">>
+<<elseif _temp <= -5>>
+	<<set $Temp to "Cold">>
+<<elseif _temp <= -2>>
+	<<set $Temp to "Cool">>
+<<elseif _temp <= 1>>
+	<<set $Temp to "Temperate">>
+<<elseif _temp <= 4>>
+	<<set $Temp to "Warm">>
+<<elseif _temp <= 7>>
+	<<set $Temp to "Hot">>
+<<elseif _temp <= 10>>
+	<<set $Temp to "Scorching">>
+<</if>>
+

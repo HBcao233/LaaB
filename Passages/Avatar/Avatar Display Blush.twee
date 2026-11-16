@@ -1,0 +1,16 @@
+:: Avatar Display Blush [nobr]
+
+<<switch $AD.Blush>>
+<<case 1>>
+	<<set _blush to "Aroused">>
+<<case 2>>
+	<<set _blush to "Hard">>
+<<case 3>>
+	<<set _blush to "Painfully Hard">>
+<<default>>
+	<<set _blush to false>>
+<</switch>>
+
+<<if _blush>>
+	<img @src="`Images/Avatar/Face/Blush/${$AD.SkinColor}/${_blush}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>

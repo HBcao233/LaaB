@@ -1,0 +1,24 @@
+:: Vendor [nobr]
+
+<<if !$Vendor instanceof ConsumableVendor>>
+    <span class="greyed-out">Vending Machine not initialized</span>
+<<else>>
+    <<for _i range $Vendor.getInventory()>>
+        <<set _item = _i.item>>
+        <<set _price = _i.price>>
+        <<capture _item _price>>
+            <div class="vendor-item-icon-name">
+                [img[_item.getIcon()]]
+                <<if $Money >= _price>>
+                    [[`Buy ${_item.getName()} ($${_price})`|Buy Consumable][$BuyConsumableItem to _item; $BuyConsumablePrice to _price]]
+                <<else>>
+                    <span class="greyed-out">
+                        Buy <<=_item.getName()>> ($<<=_price>>) (Not enough money) 
+                    </span>
+                <</if>>
+            </div>
+            <<=_item.getDescription()>><br>
+            <br>
+        <</capture>>
+    <</for>>
+<</if>>

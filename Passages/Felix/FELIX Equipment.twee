@@ -1,0 +1,106 @@
+:: FELIX Equipment [nobr]
+
+/* UNDERWEAR SELECTION */
+<<set $FelixRandomUndies to random(1, 3)>>
+<<if $FelixRandomUndies == 1>>
+	<<addClothing "Temp" "Undies" "Briefs" "Orange">>
+	<<set $FelixUndies to _clothingtemp>>
+<<elseif $FelixRandomUndies == 2>>
+	<<addClothing "Temp" "Undies" "Briefs" "Yellow">>
+	<<set $FelixUndies to _clothingtemp>>
+<<elseif $FelixRandomUndies == 3>>
+	<<addClothing "Temp" "Undies" "Classmates" "Felix">>
+	<<set $FelixUndies to _clothingtemp>>
+<</if>>
+
+
+/* SHOES/SOCKS SELECTION */
+<<addClothing "Temp" "Shoes" "Classmates" "Felix">>
+<<set $FelixShoes to _clothingtemp>>
+<<addClothing "Temp" "Socks" "Classmates" "Felix">>
+<<set $FelixSocks to _clothingtemp>>
+
+/* PAJAMA SELECTION */
+<<set $FelixPJBottoms to "White Pajama Bottoms">>
+<<set $FelixPJBottoms to "Pajama Bottoms">>
+<<set $FelixPJTop to "White Pajama Shirt">>
+<<set $FelixPJTopType to "Pajama Shirt">>
+
+/* EVERYDAY SELECTION */
+<<if $NPCClothingSet == "Rain">>
+	<<set $FelixRandomTop to random(1, 2)>>
+	<<set $FelixRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Classmates" "Felix">>
+	<<set $FelixOuter to _clothingtemp>>
+	<<if $FelixRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "White">>
+		<<set $FelixTop to _clothingtemp>>
+	<<elseif $FelixRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "Purple">>
+		<<set $FelixTop to _clothingtemp>>
+	<</if>>
+	<<if $FelixRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Pants" "Blue">>
+		<<set $FelixBottoms to _clothingtemp>>
+	<<elseif $FelixRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Felix">>
+		<<set $FelixBottoms to _clothingtemp>>
+	<</if>>
+<<elseif $NPCClothingSet == "Temperate">>
+	<<set $FelixRandomTop to random(1, 2)>>
+	<<set $FelixRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Classmates" "Felix">>
+	<<set $FelixOuter to _clothingtemp>>
+	<<if $FelixRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "White">>
+		<<set $FelixTop to _clothingtemp>>
+	<<elseif $FelixRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "Blue">>
+		<<set $FelixTop to _clothingtemp>>
+	<</if>>
+	<<if $FelixRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Felix">>
+		<<set $FelixBottoms to _clothingtemp>>
+	<<elseif $FelixRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Felix">>
+		<<set $FelixBottoms to _clothingtemp>>
+	<</if>>
+<<elseif $NPCClothingSet == "Warm">>
+	<<set $FelixRandomTop to random(1, 2)>>
+	<<set $FelixRandomBottoms to random(1, 2)>>
+	<<set $FelixOuter to $None>>
+	<<if $FelixRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "White">>
+		<<set $FelixTop to _clothingtemp>>
+	<<elseif $FelixRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "Blue">>
+		<<set $FelixTop to _clothingtemp>>
+	<</if>>
+	<<if $FelixRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Felix">>
+		<<set $FelixBottoms to _clothingtemp>>
+	<<elseif $FelixRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Felix">>
+		<<set $FelixBottoms to _clothingtemp>>
+	<</if>>
+
+<<else>>
+	<<set $FelixRandomTop to random(1, 2)>>
+	<<set $FelixRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Classmates" "Felix">>
+	<<set $FelixOuter to _clothingtemp>>
+	<<if $FelixRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "White">>
+		<<set $FelixTop to _clothingtemp>>
+	<<elseif $FelixRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Polo Shirt" "Blue">>
+		<<set $FelixTop to _clothingtemp>>
+	<</if>>
+	<<if $FelixRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Pants" "Blue">>
+		<<set $FelixBottoms to _clothingtemp>>
+	<<elseif $FelixRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Felix">>
+		<<set $FelixBottoms to _clothingtemp>>
+	<</if>>
+<</if>>

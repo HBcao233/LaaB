@@ -1,0 +1,66 @@
+:: OC Kalim Intro [nobr]
+
+/* Intro */
+<<set $Minutes += 15>>
+The instant you open the door to the music classroom, <span style="color:LightGreen">your ears are filled with an enchanting melodic sound.</span> You can’t even make out what is making the sound, a voice, an instrument; <span style="color:BlueViolet">The music seems to move through you like water, relaxing your limbs and fogging your mind. You become relaxed at first, as if the song is a lullaby singing you off to sleep.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Eyes: "Tired",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+But as the song shifts, you begin to feel something else, another emotion. <span style="color:BlueViolet">You can’t quite place it, but it causes your eyes to blur and grow cold. Soon the only sensations you can feel are the melodic sounds and the feeling of your swaying body. You had no idea music could be so powerful!</span> <br>
+<br>
+Then it stops, like a door slamming and cutting off a cooling breeze. Your senses return and you realize your vision is blurry because of water. Were you crying? You wipe your eyes on your shirt and glance around the room. A few students here and there tinkering with their instruments, none reacting to the music as you had. It makes you feel a tad embarrassed. <br>
+<br>
+<span style="color:LightSteelBlue">“Oh, <span style="color:DarkTurquoise">$Player.Name</span>!”</span> <span style="color:DarkTurquoise">Mr. K</span> calls out upon seeing you, <span style="color:LightSteelBlue">“Glad you made it, come here.”</span> He waves you over to where he is sitting with an older boy. He has dark hair, honey-toned skin, and a very friendly smile. His demeanor is overall very welcoming, though he seems about the same age as your elder brother, <span style="color:DarkTurquoise">Gabe</span>. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Kalim</span>, this is the boy I was telling you about. The one interested in getting some lessons. <span style="color:DarkTurquoise">$Player.Name</span>, this is <span style="color:DarkTurquoise">Kalim Asim</span>. Technically a high school student, but likes to come by after class and help the youngins since he’s pretty rock and roll.”</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Kalim",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Hi there,”</span> <span style="color:DarkTurquoise">Kalim</span> reaches out and shakes your hand. You note how cold they are. <span style="color:LightSteelBlue">“As <span style="color:DarkTurquoise">Mr. K</span> said, I’m <span style="color:DarkTurquoise">Kalim</span>. Heard you are interested in some lessons?”</span> He looks you up and down with a friendly expression, his smile growing warmer. <span style="color:LightSteelBlue">“I tend to give tips and lessons here after class when I don’t have practice or too much homework. Feel free to stop by and ask for help whenever you see me. Though if you want some more private lessons away from school, I may be able to squeeze you in. Oh, for free, of course.”</span> He laughs, <span style="color:LightSteelBlue">“I wouldn’t be anywhere near where I am without the help of others, so I try to give back where I can.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Like I said, this kid is pretty rock and roll!”</span> <span style="color:DarkTurquoise">Mr. K</span> laughs, patting <span style="color:DarkTurquoise">Kalim</span> on the back. They seem to get along very well. <span style="color:Yellow">As he pats <span style="color:DarkTurquoise">Kalim</span>, however, you notice something strange underneath his shirt. Something blue and shiny. It looked like some sort of rash, but it is probably an undershirt or something.</span> Though you can’t help but note how <span style="color:DarkTurquoise">Kalim</span> quickly adjusts his shirt to hide it. <span style="color:LightSteelBlue">“Anyway, I’ll leave you two to your lesson. Let me know if you need anything.”</span> <br>
+<br>
+<span style="color:DarkTurquoise">Mr. K</span> walks away, leaving you two alone. You feel a tad caught off-guard, not expecting a personal lesson right away, though <span style="color:DarkTurquoise">Kalim</span>’s warm presence manages to calm you. As he begins talking and asking questions about what you want to learn, you consider asking about what you saw. Then again, you did just meet him and feel a tad nervous about sounding rude. <br>
+<br>
+So instead, you treat this as a normal lesson and get some tips from <span style="color:DarkTurquoise">Kalim</span>. <span style="color:LightGreen">The guy sure knows his stuff! By the end you find yourself much more confident than before and as <span style="color:DarkTurquoise">Kalim</span> bids farewell, you ponder coming back both to get some more lessons and to get to know this friendly, musically-talented boy better.</span> <br>
+<<set $CompletedQuests.push("Kalim: Introduction")>>
+<<set $ActiveQuests.delete("Kalim: Introduction")>>
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+    <<if $QuestLog[_i].Name == "Kalim: Introduction">>
+        <<set $QuestLog.deleteAt(_i)>>
+        <<break>>
+    <</if>>
+<</for>>
+<<set $Notifications.push({
+    Name: "Quest Completed!",
+    Icon: "Quests/Music",
+    Description: "You have met <span style=\"color:DarkTurquoise\">Kalim</span>. He helps teach music in the <span style=\"color:Teal\">Music Classroom</span> after school.",
+})>>
+<<set $OCKalimSocial to 0>>
+<<set $OCKalimSocialRank to 0>>
+<<socialChange "Kalim" 10 1>>
+<br>
+[[Continue|School Music Room]]

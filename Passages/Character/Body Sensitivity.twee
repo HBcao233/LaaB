@@ -1,0 +1,41 @@
+:: Body Sensitivity [nobr]
+
+<span style="color:Azure"><strong>--Body Sensitivity--</strong></span>
+<br><br>
+
+<<liveblock>>
+	<div class="kink-container">
+		<<for _bs range $PlayerBSOptions>>
+			<<set _bsName to _bs.Name>>
+			<<set _bsText to _bs.Text || _bsName>>
+			<<set _bsValue to $Player.BS[_bsName]>>
+			<<capture _bsName _bsText _bsValue>>
+				<div class="kink-item">
+					<div class="kink-item-icon">
+						<img @title="_bsName" @alt="_bsName" @src="`Images/Icons/Body Sensitivity/${_bsName}${_bsValue}.png`">
+						<span>_bsText</span>
+					</div>
+					<div class="kink-item-options">
+						<<set _valueIndex to 1>>
+						<<for _option range $PlayerBSValues>>
+							<<capture _option>>
+								<<if _option.Value === _bsValue>>
+									<span style="color: lightgreen;">[_option.Text]</span>
+								<<else>>
+									<<link `_option.Text`>>
+										<<set $Player.BS[_bsName] to _option.Value>>
+										<<update>>
+									<</link>>
+								<</if>>
+								<<if _valueIndex !== $PlayerBSValues.length>>
+									|
+								<</if>>
+								<<set _valueIndex++>>
+							<</capture>>
+						<</for>>
+					</div>
+				</div>
+			<</capture>>
+		<</for>>
+	</div>
+<</liveblock>>

@@ -1,0 +1,19 @@
+:: Gym Need Reduce [nobr]
+
+<<if $GymNeedReduce == "Easy">>
+	<<needChange "Energy" -4>>
+	<<needChange "Hygiene" -4>>
+
+<<elseif $GymNeedReduce == "Normal">>
+	<<needChange "Energy" -8>>
+	<<needChange "Hygiene" -8>>
+
+<<elseif $GymNeedReduce == "Extra">>
+	<<needChange "Energy" -12>>
+	<<needChange "Hygiene" -12>>
+
+<<elseif $GymNeedReduce == "Super">>
+	<<needChange "Energy" -16>>
+	<<needChange "Hygiene" -16>>
+
+<</if>>

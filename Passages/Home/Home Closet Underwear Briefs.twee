@@ -1,0 +1,19 @@
+:: Home Closet Underwear Briefs [nobr]
+
+<<for _i to 0; _i lt $ClosetUndies.length; _i++>>
+    <<capture _i>>
+<<link [img[$ClosetUndies[_i].Icon]]>>
+    <<if $PlayerUndies.Name == "None">>
+    	<<set $PlayerUndies to $ClosetUndies[_i]>>
+        <<set $ClosetUndies.deleteAt(_i)>>
+        <<goto "Home Closet">>
+	<<else>>
+    	<<set $ClosetUndies.push($PlayerUndies)>>
+    	<<set $PlayerUndies to $ClosetUndies[_i]>>
+        <<set $ClosetUndies.deleteAt(_i)>>
+        <<goto "Home Closet">>
+    <</if>>
+    <</link>><br>
+	<</capture>>
+
+<</for>>

@@ -1,0 +1,43 @@
+:: Carter School Hug [nobr]
+
+<<set $Minutes += 2>>
+	
+	<<set _ad to [
+		{
+			Name: "Carter",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+/* Normal Social */
+	<<if $CarterSocial < 50 or $CarterSocialRank >= 1>>
+	<span style="color:pink">You walk up to <span style="color:DarkTurquoise">Carter</span> and give him a hug. <span style="color:DarkTurquoise">Carter</span> is taken by surprise, but quickly hugs you back.</span> <br>
+	<br>
+
+	<span style="color:LightSteelBlue">“Thanks, <span style="color:DarkTurquoise">$CarterNickname</span>!”</span> He laughs, <span style="color:LightSteelBlue">“Always good to share a hug! A hero is always here to help cheer up those around him, whether by battling evil or by giving a hug!”</span> <span style="color:pink">You roll your eyes and smirk at his heroic demeanor. He may be a dork, but he was good at giving hugs.</span> <br>
+
+/* High Social */
+<<else>>
+	<span style="color:pink">You sneak up behind <span style="color:DarkTurquoise">Carter</span> and pick him up, pulling him into a big bear hug, and begin to spin him around.</span> <span style="color:LightSteelBlue">“H- hey!”</span> <span style="color:DarkTurquoise">Carter</span> cries out as he is grabbed and spun around. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$CarterNickname</span>! Stop!”</span> You laugh, claiming he is just too huggable as you spin him around like a toy while squeezing him tightly. <br>
+	<br>
+
+	<span style="color:pink">At one point while spinning him around, his loose-fitting bottoms nearly slip off of him. Sadly, <span style="color:DarkTurquoise">Carter</span> manages to grip onto them before they completely fly off his body, but not before you get a cute peek at his $CarterUndies.Type.</span> <br>
+	<br>
+
+	Eventually, you put him down and the dizzy boy nearly falls headfirst into a trashcan. Though you manage to catch him and hold him steady until he can regain his balance. <br>
+<</if>>
+
+<<socialChange "Carter" 1>>
+<br>
+
+<<if $Location.Name == "School South Hallway">>
+	[[Continue|School South Hallway]] 
+<<elseif $Location.Name == "School East Hallway">>
+	[[Continue|School East Hallway]]
+<<elseif $Location.Name == "School West Hallway">>
+	[[Continue|School West Hallway]]
+<</if>>

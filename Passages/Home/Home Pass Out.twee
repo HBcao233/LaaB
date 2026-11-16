@@ -1,0 +1,22 @@
+:: Home Pass Out [nobr]
+
+Your eyes hang, feeling heavy as you slowly move throughout your house. You feel light-headed and your feet feel exhausted. Without thinking, you sit down. Just for a moment, just to catch your breath. <span style="color:Lightcoral">But you are unable to stop yourself from passing out.</span><br>
+<br>
+<<set $Sleeping to 1>>
+<<set $Random to random(1, 1)>>
+<<if !$PlayerUndies.Tags.includes("Diaper") && $Bedwetter == 1>>
+	<<set $Random to random(1, 2)>>
+<</if>>
+<div id=choice>
+	<<link "Continue">>
+	<<replace"#choice">>
+    
+<<if $Random == 1>>
+	<<include"Home Pass Out Dad Bed">>
+<<else>>
+	<<include"Home Pass Out Dad Forced Diaper">>
+<</if>>
+
+	<</replace>>
+    <</link>>
+</div>

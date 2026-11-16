@@ -1,0 +1,383 @@
+:: Shopping Menu Widget [nobr widget]
+
+<<widget "shoppingMenu">>
+  <<set _shopName to _args[0]>>
+  <<set $storeName to _shopName>>
+
+  <<include "Shopping Menu Widget Variables">>
+
+  <<if _shopName == null || !Object.keys(_shopCatalog).contains(_shopName)>>
+    <<run throw new Error('Error in widget shoppingMenu: _shopName is invalid')>>    
+  <</if>>
+
+  /* Shopping Cart */
+  <<if $shopCart == null>>
+    <<set $shopCart to []>>
+  <</if>>
+
+  <<set _categories to _shopCatalog[_shopName].reduce(
+    function (acc, current)  {
+      if (!acc.contains(current.Category)) {
+        acc.push(current.Category);
+      }
+
+      return acc;
+    },
+    [],
+  )>>
+
+  <<set _tempTuckIn to $TopTucked>>
+
+  <div id="shop-menu-widge-container">
+    <span style="color:Azure"><strong>-Category-</strong></span>
+    <<if _categories.length > 1>>
+      <span style="color:Azure; margin-left: 40px;"><strong>-Type-</strong></span>
+    <</if>>
+    <br>
+
+    <<if _categories.length > 1>>
+      <<listbox "_selectedCategory">>
+        <<optionsfrom _categories>>
+      <</listbox>>
+    <<else>>
+      <<set _selectedCategory to _categories[0]>>
+    <</if>>
+
+    <<set _itemNames to _shopCatalog[_shopName].filter(item => item.Category === _selectedCategory).map(item => item.Name)>>
+
+    <<set _selectedItem to _shopCatalog[_shopName][0]>>
+    <<set _selectedColorId to _shopCatalog[_shopName][0].Colors[0]>>
+    <<set _selectedItemPrice to _shopCatalog[_shopName][0].Price>>
+    <<set _shopMenuToggleClothes to true>>
+    <<set _shopMenuToggleTuckIn to $TopTucked>>
+
+    <<liveblock>>
+      <div class="shop-item-name-container">
+        <<listbox "_selectedItemName" autoselect>>
+          <<optionsfrom _itemNames>>
+        <</listbox>>
+      </div><br><br>
+      <span style="color:Azure"><strong>-_selectedItemName ($<<=_selectedItemPrice>>)-</strong></span>
+
+      <<set _ShopADClothesNone = [
+        'Shoes',
+        'Socks',
+        'Outer',
+        'Under',
+        'Top',
+        'Over',
+        'OverAcc',
+        'Back',
+        'Hands',
+        'Head',
+        'Face',
+        'Mouth',
+        'Neck',
+        'Waist',
+        'Bottoms',
+        'Undies',
+      ]>>
+      <<set _ShopADClothes to {}>>
+
+      <<for _cl range _ShopADClothesNone>>
+        <<if !_shopMenuToggleClothes>>
+          <<set _ShopADClothes[_cl] to $None>>
+        <</if>>
+      <</for>>
+
+      <<set _ad to [
+        {
+          Name: "Player",
+          State: {
+            Mouth: "Happy",
+            TopTucked: _shopMenuToggleTuckIn,
+          },
+          Clothes: _ShopADClothes,
+        },
+      ]>>
+      <<set _selectedColor to shopMenuGetColorById(_selectedColorId).Name>>
+      <<set _colorException to shopMenuGetColorById(_selectedColorId).Icon>>
+      <<addClothing "Temp" _selectedItem.Slot _selectedItem.Type _selectedColor>>
+      <<set _ad[0].Clothes[_clothingtemp.Slot] to _clothingtemp>>
+      <<set $TopTucked to _shopMenuToggleTuckIn>>
+      <<ad _ad>>
+      <label class="pointer"><<checkbox "_shopMenuToggleClothes" false true autocheck>> Toggle Clothes</label><br><br>
+      <label class="pointer"><<checkbox "_shopMenuToggleTuckIn" 0 1 autocheck>> Tuck-in Top</label><br><br>
+      /* Open Vests/Jackets/Roll-Ups */
+      /* 
+      Code for Icon. Deprecated until I figure out how to display the Splashtoon icons without moving them into a single folder
+
+      <<if ["Designed Boxers", "Styled Briefs", "Designed Briefs", "Designed Pull Ups", "Costume"].includes(_selectedItem.Category)>>
+        <<print `[img[${_selectedItem.Name}|${'Images/Equipment/'+ _selectedItem.Type + '/' + _selectedItem.Type + ' ' + _selectedColor + ".png"}]]`>>
+      <<elseif _selectedItem.Type == "Splashtoon">>
+        <<print `<<link [img[${_shopColor.Name}|${'Images/Equipment/'+ _selectedItem.Type + ' ' + _colorException + '/' + _selectedItem.Type + ' ' + _colorException + ".png"}]]>>`>>
+        <<script>>
+          console.log("Working");
+        <</script>>
+      <</if>><br> */
+      /* 
+      Debug code
+
+      <<script>>
+        var tempTest = State.getVar('_selectedItem');
+        var tempCount = State.getVar('_i');
+        var test = shopMenuGetColorById(tempTest.Colors[tempCount]);
+        console.log(test.Name);
+      <</script>> */
+      <span style="color:Azure"><strong>-_clothingtemp.Name-</strong></span><br>
+      <span style="color:Azure"><strong>-Tags: _clothingtemp.Tags-</strong></span><br>
+      <span style="color:Azure"><strong>-Description: _clothingtemp.Description-</strong></span><br><br>
+      <div class="shop-menu-colors-container">
+      /* <<script>>
+          var tempTest = State.getVar('_selectedItem.Name');
+          console.log(tempTest);
+      <</script>> */
+      <<if _selectedItem.Category === "Costume">>
+        <<include "Shopping Menu Costume Icons">>
+      <<else>>
+        <<for _i to 0; _i lt _selectedItem.Colors.length; _i++>>
+          <<capture _i>>
+            <<set _slot to _selectedItem.Slot>>
+            <<set _name to _selectedItem.Type>>
+            <<set _shopColor = shopMenuGetColorById(_selectedItem.Colors[_i])>>
+            <<set _color to _shopColor.Name>>
+            <<include "Clothing Library Main">>
+            /* <<script>>
+              var tempTest = State.getVar('_color');
+              console.log(tempTest);
+
+              var testTemp = State.getVar('_clothingtemp');
+              console.log(testTemp);
+            <</script>> */
+            <<print `<<link [img[${_shopColor.Name}|${_clothingtemp.Icon}]]>>
+              <<set _selectedColorId to _selectedItem.Colors[_i]>>
+              <<update>>
+            <</link>>`>>
+          <</capture>>
+        <</for>>
+      <</if>>
+      <br>
+      <<if $Money >= _selectedItem.Price>>
+        <<link"Add to Cart (&#36;_selectedItem.Price)">>
+          <<set $shopCart.push({
+            Item: _selectedItem,
+            Color: _selectedColor,
+            Price: _selectedItem.Price
+          })>>
+          <<update>>
+        <</link>>
+        | 
+        <<link"Purchase & Wear (&#36;_selectedItem.Price)">>
+            <<set $Money -= _selectedItem.Price>>
+            <<print "<<if $Player" + _clothingtemp.Slot + ".Type != \"None\">><<set $Closet" + _clothingtemp.Slot + ".push($Player" + _clothingtemp.Slot + ")>><</if>>">>
+            <<addClothing "PC" _selectedItem.Slot _selectedItem.Type _selectedColor>>
+            <<if $storeName == "CoolCulture">>
+              <<goto "Mall Cool Culture">>
+            <<elseif $storeName == "BoyBarn">>
+              <<goto "Shopping District Boy Barn">>
+            <<elseif $storeName == "LeGarcon">>
+              <<goto "Shopping District Le Garcon">>
+            <<elseif $storeName == "EyeDoctor">>
+              <<goto "Mall Eye Doctor">>
+            <<elseif $storeName == "GirlyGrange">>
+              <<goto "Girly Grange">>
+            <<elseif $storeName == "KinkCouture">>
+              <<goto "Kink Couture">>
+            <</if>>
+            <<set $clothingBought to _selectedItem.Type>>
+            <<set $clothingColor to _selectedColor>>
+        <</link>>
+      <<else>>
+        <span style="color:Lightcoral">Add to Cart (&#36;_selectedItem.Price)</span>
+          | 
+        <span style="color:Lightcoral">Purchase & Wear (&#36;_selectedItem.Price)</span>
+      <</if>><br>
+
+      /*SHOPPING CART*/
+      <br><br>
+      <span style="color:Azure"><strong>-- Shopping Cart --</strong></span><br>
+      <<if $shopCart.length == 0>>
+        <span style="color:LightGray">Cart is empty.</span>
+      <<else>>
+        <<set _cartTotal to 0>>
+        <<for _cartIndex, _cartItem range $shopCart>>
+          <<set _cartTotal += _cartItem.Price>>
+          <span style="color:Azure">
+            <strong><<= _cartItem.Item.Name >></strong>
+          </span>
+          -
+          <<= _cartItem.Color>>
+          -
+          &#36;<<= _cartItem.Price>>
+          <<link " [Remove]">>
+            <<set $shopCart.deleteAt(_cartIndex)>>
+            <<update>>
+          <</link>>
+          <br>
+        <</for>>
+        <br>
+        <span style="color:Azure">
+          <strong>Total: &#36;<<= _cartTotal>></strong>
+        </span>
+        <br><br>
+        <<if $Money >= _cartTotal>>
+          <<link "Purchase All (&#36;_cartTotal)">>
+            <<for _cartItem range $shopCart>>
+              <<addClothing "Closet" _cartItem.Item.Slot _cartItem.Item.Type _cartItem.Color>>
+            <</for>>
+            <<set $Money -= _cartTotal>>
+            <<set $shopCart to []>>
+            <<update>>
+          <</link>>
+        <<else>>
+          <span style="color:Lightcoral">
+            Purchase All (&#36;_cartTotal)
+          </span>
+          <br>
+          <span style="color:Lightcoral">
+            Not enough money.
+          </span>
+        <</if>>
+        <br><br>
+        <<link "Clear Cart">>
+          <<set $shopCart to []>>
+          <<update>>
+        <</link>>
+      <</if>>
+      </div>
+    <</liveblock>>
+  </div>
+  <<if $storeName == "CoolCulture">>
+    <<link "Back">>
+      <<set $shopCart to []>>
+      <<set $TopTucked to _tempTuckIn>>
+      <<goto "Mall">>
+    <</link>>
+
+  <<elseif $storeName == "BoyBarn">>
+    <<link "Back">>
+      <<set $shopCart to []>>
+      <<set $TopTucked to _tempTuckIn>>
+      <<goto "Shopping District">>
+    <</link>>
+
+  <<elseif $storeName == "LeGarcon">>
+    <<link "Back">>
+      <<set $shopCart to []>>
+      <<set $TopTucked to _tempTuckIn>>
+      <<goto "Shopping District">>
+    <</link>>
+
+  <<elseif $storeName == "EyeDoctor">>
+    <<link "Back">>
+      <<set $shopCart to []>>
+      <<set $TopTucked to _tempTuckIn>>
+      <<goto "Mall">>
+    <</link>>
+
+  <<elseif $storeName == "GirlyGrange">>
+    <<link "Back">>
+      <<set $shopCart to []>>
+      <<set $TopTucked to _tempTuckIn>>
+      <<goto "Mall">>
+    <</link>>
+
+  <<elseif $storeName == "KinkCouture">>
+    <<link "Back">>
+      <<set $shopCart to []>>
+      <<set $TopTucked to _tempTuckIn>>
+      <<goto "Redlight District">>
+    <</link>>
+  <</if>>
+
+<</widget>>
+
+:: Shop Purchase Ending [nobr]
+
+/* Add green span with the item name that was purchased then reload passage instead of being a new file */
+<span style="Color: LightGreen"> $clothingColor $clothingBought Purchased Successfully!</span><br><br>
+/* [[Back|previous()]] */
+<<if $storeName == "CoolCulture">>
+  [[Back|Test Shopping Menu]]
+<<elseif $storeName == "BoyBarn">>
+  [[Back|Shopping District Boy Barn]]
+<<elseif $storeName == "LeGarcon">>
+  [[Back|Shopping District Le Garcon]]
+<<elseif $storeName == "EyeDoctor">>
+  [[Back|Mall Eye Doctor]]
+<<elseif $storeName == "GirlyGrange">>
+  [[Back|Mall Girly Grange]]
+<<elseif $storeName == "KinkCouture">>
+  [[Back|Redlight District Kink Couture]]
+<<else>>
+  [[Back|previous()]]
+<</if>>
+
+:: Shopping Menu Widget Script [script]
+
+window.shopMenuUpdateItems = () => {
+  var _shopCatalog = State.getVar('_shopCatalog');
+  var _shopName = State.getVar('_shopName');
+  var _selectedCategory = State.getVar('_selectedCategory');
+
+  State.setVar(
+    '_itemNames',
+    _shopCatalog[_shopName]
+      .filter(item => item.Category === _selectedCategory)
+      .map(item => item.Name),
+  );
+};
+
+window.shopMenuUpdateSelectedItem = () => {
+  var _shopCatalog = State.getVar('_shopCatalog');
+  var _shopName = State.getVar('_shopName');
+  var _selectedItemName = State.getVar('_selectedItemName');
+
+  State.setVar('_selectedItem', _shopCatalog[_shopName].find(item => item.Name === _selectedItemName));
+
+  var _selectedItem = State.getVar('_selectedItem');
+  State.setVar('_selectedColorId', _selectedItem.Colors[0]);
+  State.setVar('_selectedItemPrice', _selectedItem.Price);
+};
+
+window.shopMenuGetColorById = (id) => {
+  return State.getVar('_shopMenuColors').find(color => color.ID === id);
+};
+
+$(document).on(':passagedisplay', function () {
+  $('#shop-menu-widge-container').on('change', '#listbox--selectedcategory', function () {
+    shopMenuUpdateItems();
+    $(document).trigger(":liveupdate");
+
+    shopMenuUpdateSelectedItem();
+    $(document).trigger(":liveupdate");
+  });
+
+  $('#shop-menu-widge-container').on('change', '#listbox--selecteditemname', function () {
+    shopMenuUpdateSelectedItem();
+    $(document).trigger(":liveupdate");
+  });
+
+  $('#shop-menu-widge-container').on('change', '#checkbox--shopmenutoggleclothes', function () {
+    $(document).trigger(":liveupdate");
+  });
+
+  $('#shop-menu-widge-container').on('change', '#checkbox--shopmenutoggletuckin', function () {
+    $(document).trigger(":liveupdate");
+    var lala = State.getVar("_shopMenuToggleTuckIn");
+    console.log('lala', lala);
+  });
+});
+
+:: Shopping Menu Widget Stylesheet [stylesheet]
+
+.shop-menu-color-icon {
+  display: inline-block;
+}
+.shop-menu-colors-container {
+  width: 420px;
+}
+.shop-item-name-container {
+  display: inline-block;
+  margin-left: 5px;
+}

@@ -1,0 +1,242 @@
+:: Play in Room [nobr]
+
+<<set $Minutes += 30>>
+
+<<if random(1, 4) == 1 && $PBedroom.Messy != 3>>
+    <<set $PBedroom.Messy += 1>>
+    <<if random(1, 2) == 1>>
+        <<set $PBedroom.BedMessy to 1>>
+    <</if>>
+<</if>>
+
+<<if $Player.Traits.includes("Childish")>>
+    You happily open your toy box and begin to search for something to play with. There was so much fun to be had, you didn’t even know where to begin! To add to the enjoyment, you decide to pick something at random to play with. <br>
+    <br>
+<<elseif $Player.Traits.includes("Mature")>>
+    You walk over to the large box where you keep all your old toys and begin to rummage through. You were a bit too old for toys such as these, though <span style="color:DarkTurquoise">Your Father</span> insisted you keep them. But you guess they can provide some occasional enjoyment. <br>
+    <br>
+<<else>>
+    You walk over to the large box where you keep all your toys and pick something out. Some may say you are too old for toys, but those people would be wrong. The day you stop having fun with toys is a day you don’t want to see. <br>
+    <br>
+<</if>>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<set _Random to ["Play in Room Cars1", "Play in Room Cars2", "Play in Room Cards1", "Play in Room Cards2", "Play in Room Marbles1", "Play in Room Marbles2", "Play In Room Car Wars", "Play In Room Car Wars 2"]>>
+
+
+<<set _event to _Random.random()>>
+<<include _event>>
+
+:: Play in Room Cars1 [nobr]
+You pull out a handful of toy cars and smile. A few minutes later, you have built a large, winding racetrack throughout your room. Using books as ramps, socks as barriers, and some pencils to mark turns, you have created a large track where only the best racers will claim victory! Lining four cars up at the starting line, you announce to the imaginary crowd that this is the final match in a grand prix where the winner will take all. <br>
+<br>
+The four cars rev their engines, eager to begin as the countdown starts. Ready? Set? Go! And they’re off! The four cars speeding away at lightning speeds, neck to neck. One manages to pull ahead during the first turn, but not enough as the second car tries to speed ahead. Can he make it before the sharp turn? No! As he crashes and spins out into the barrier! <br>
+<br>
+Three racers left as we come onto the straightaway, with the two in the back finally putting full power to their engines, but first place has a lead! Coming up on the ramp, two of them slow down as the third takes it at full speed and goes flying! Unable to control his car in the air, he goes flying off the track into a pile of papers! Crash! <br>
+<br>
+Two racers left, one slightly ahead of the other as we come into the final turn! Who will win? Who will claim victory over the other!? It all comes down to this as they both hit the turn perfectly and… IT’S A PHOTO FINISH! The judges review the tape and, naturally, your favorite car wins! The crowd goes wild as the trophy is handed to the winner and a tow truck heads out to aid those who crashed. <br>
+<br>
+What an exciting race! <br>
+/* Play in Room Ending */
+<<if $Player.Traits.includes("Childish")>>
+    <<needChange "Fun" 30>>
+<<elseif $Player.Traits.includes("Mature")>>
+    <<needChange "Fun" 10>>
+<<else>>
+    <<needChange "Fun" 20>>
+<</if>>
+
+<br>
+[[Continue|Player Bedroom]]
+
+:: Play in Room Cars2 [nobr]
+You pull out a handful of toy cars and think for a moment. While you weren’t interested in a race, you do note that each of the cars have their own design and personality. So, you decide to use the cars as characters in a story, a CarPG, if you will. Telling a story of a group of cars at a school for racers. <br>
+<br>
+A blue, alien-looking car is the newest in school and is quickly made fun of for his strange appearance. Thankfully, he makes friends in a tiny red race car and a large black truck. Together, they form a racing team that can’t be beat! That is, until a group of evil bully cars attacks and damages his friends! <br>
+<br>
+The blue car won’t have it and challenges the leader of the evil cars, a dark gray and red car, to race down the treacherous Pillow Mountain! Known for its uneven and soft roads, this is a track that has claimed many lives in the past and requires the best handling to survive. <br>
+<br>
+The evil car agrees, thinking the blue car would give up and chicken out when the time came. However, in a heroic turn of events, it is the evil car that gives up partway through, too scared to finish the race. The blue car uses all his skill and determination to finish the race, earning the respect not only of his peers, but also of the evil cars who apologize for what they did. <br>
+<br>
+Maybe, in the sequel, the blue car and former evil car can become friendly rivals that will help each other reach new heights? Now that would be an exciting story! <br>
+/* Play in Room Ending */
+<<if $Player.Traits.includes("Childish")>>
+    <<needChange "Fun" 30>>
+<<elseif $Player.Traits.includes("Mature")>>
+    <<needChange "Fun" 10>>
+<<else>>
+    <<needChange "Fun" 20>>
+<</if>>
+<br>
+[[Continue|Player Bedroom]]
+
+:: Play in Room Cards1 [nobr]
+Near the bottom of the box, you find an old, battered deck of cards. Shrugging, you decide to play a game of solitaire. Cards are not the most exciting thing to play solo, but you find some enjoyment in it as you set up the game and begin. <br>
+<br>
+You start out doing decently well, though have to resist the urge to cheat as things begin to not go your way. Keeping things fair and cheat-free is pretty hard when you are both the only player and the referee. Though, as you come near the end, you are happy with yourself that you’ve managed to resist the temptation. <br>
+<br>
+While solitaire isn’t the most exciting game in the world and it truly reserved more so for bored days on the computer without internet access, you feel a sense of pride as you manage to win the game, quietly high-fiving yourself as you smile down at your success. <br>
+/* Play in Room Ending */
+<<if $Player.Traits.includes("Childish")>>
+    <<needChange "Fun" 30>>
+<<elseif $Player.Traits.includes("Mature")>>
+    <<needChange "Fun" 10>>
+<<else>>
+    <<needChange "Fun" 20>>
+<</if>>
+<br>
+[[Continue|Player Bedroom]]
+
+:: Play in Room Cards2 [nobr]
+You pull out an old deck of cards from the bottom of the toy box. While the box they are in has seen better days, a quick inspection shows that the cards themselves are in pretty good condition. Though exciting card games are hard to come by without at least one other player, so you decide to instead attempt to make a house of cards out of them. <br>
+<br>
+Having a carpeted floor helps, as the small strands aid in holding together the base of the house as you begin to construct. Man, this looks a lot easier on TV! The first layer is simple, but once you have to begin stacking cards on top of one another, things get tricky. Plus, a single slip of a card can cause the whole thing to collapse! While frustrating, you do still find enjoyment in watching the cards plop down and fall, as it was oddly satisfying. <br>
+<br>
+Eventually, you pivot your strategy to creating a more stable base, forming something more akin to a large circular card tent that you then build off of. Once that fails, you begin to make a small town of single-story card structures of different shapes and sizes. <br>
+<br>
+In the end, looking over your impressive town of cards, you then decide to pretend to be a monster as you destroy each of them one by one. You mimic the screams of the citizens as you destroy their homes and lay waste to the town. In the end, all that is left is a pile of cards and the silence of former civilization. <br>
+/* Play in Room Ending */
+<<if $Player.Traits.includes("Childish")>>
+    <<needChange "Fun" 30>>
+<<elseif $Player.Traits.includes("Mature")>>
+    <<needChange "Fun" 10>>
+<<else>>
+    <<needChange "Fun" 20>>
+<</if>>
+<br>
+[[Continue|Player Bedroom]]
+
+:: Play in Room Marbles1 [nobr]
+You pull a small bag out from the toy chest and open it up to find that it is full of marbles! Not the most exciting toy for someone your age, but <span style="color:DarkTurquoise">Your Father</span> swears by them. You recall him attempting to teach you all how to play marbles, which is a game where you try to flick them into a circle while flicking your enemies outside of the circle. <br>
+<br>
+But you don’t really remember the rules for the game, so instead just set up various marbles around the floor and enjoy flicking them into each other and watching where they fly. The sound of marble on marble is decently satisfying, with the clacks echoing throughout your room as you create more and more elaborate series of marbles that all bounce into each other from a single flick. <br>
+<br>
+In the end, your floor is full of colorful marbles. You stand up to admire the sight, realizing that, according to old cartoons, if you step on these you’d slip and, after a series of unlikely and unfortunate events, you’d hurt yourself in a hilarious fashion. You decide to clean up the marbles rather than risk it. <br>
+/* Play in Room Ending */
+<<if $Player.Traits.includes("Childish")>>
+    <<needChange "Fun" 30>>
+<<elseif $Player.Traits.includes("Mature")>>
+    <<needChange "Fun" 10>>
+<<else>>
+    <<needChange "Fun" 20>>
+<</if>>
+<br>
+[[Continue|Player Bedroom]]
+
+:: Play in Room Marbles2 [nobr]
+Inside the toy box, you find a bag full of various colors of marbles. Alright, but what to do with them? You glance around your room until you spot a collection of old boxes, books, and other various trash that gives you an idea. You spend the next 10 minutes creating a downward track that begins on your dresser, goes to your bed, then finally ends on the floor. You test it out with a single marble, watching it roll down the track in a simple yet exciting fashion. <br>
+<br>
+You smile as you set up the race, collecting a marble of each color and lining them up as you announce to the imaginary audience that an epic race was about to commence. You even give the marbles actual names and teams, as if they were real racers, and mentally pick which one you want to win. Once everything is ready, you begin the race and watch as the marbles all roll down the track. <br>
+<br>
+For something as simple as marbles rolling down a slope, it was extremely exciting! Watching the marbles bounce and overtake each other, staying neck and neck. You cheer as your favorite reaches the lead and would be on the edge of your seat, if you were sitting down, as the end comes so close with your marble just barely behind! <br>
+<br>
+In the end, your marble wins and you let out a loud cheer that almost makes it look like you were watching an actual sporting match. But this was far more exciting than any boring race on TV and the best part was, you could run the race as many times as you want! Maybe even make some sort of Grand Prix! <br>
+/* Play in Room Ending */
+<<if $Player.Traits.includes("Childish")>>
+    <<needChange "Fun" 30>>
+<<elseif $Player.Traits.includes("Mature")>>
+    <<needChange "Fun" 10>>
+<<else>>
+    <<needChange "Fun" 20>>
+<</if>>
+<br>
+[[Continue|Player Bedroom]]
+
+:: Play In Room Car Wars [nobr]
+
+/* Written by Pocodesu */
+
+/* Intro */
+
+
+You grab your bucket of toy cars and rummage through it, carefully lining up the ones that you decide to use on your desk. Even though you have so many, you generally always pick your old favorites. There’s the red boxy car with the peeling flame stickers on the sides, the sleek and modern looking blue car, and of course, the green and yellow race-car with the loose front tires and chipped spoiler. <br>
+<br>
+Suddenly, you find yourself in space. The blue and green cars are now spaceships on a routine mission to a planet suspected of lending aid to the evil empire. A large moon looms ever closer as they maneuver through the nearby asteroid field. You don’t know why, but you suddenly have a bad feeling about this… <br>
+<br>
+<span style="color:lightcoral">BAM!</span> <br>
+<br>
+You were right! A red ship had burst out from behind one of the asteroids and slammed into the blue ship, flipping it over in the process! This was bad. These ships were only capable of taking three hits! The green ship spins around and immediately engages in battle with the red ship. Luckily, the green ship had the upper hand this time and managed to flip the red. During this time, the blue ship managed to flip back over and attempted to attack the red as well. <br>
+<br>
+<span style="color:lightcoral">Unfortunately, he was unsuccessful and was flipped over by the red ship once again.</span> That was the last straw for the green ship. He knew he had to defeat the red and save the day! After another clash, the red was flipped by the green once again. The battle was close, but one more clash would decide it. There was only one option left. The double slam maneuver. It was risky, but there was no other choice. <br>
+<br>
+The green and blue ships lined up next to each other. They would have to time their attacks perfectly to hit the red ship at the same time. All three ships approached full speed and with a loud clash, slammed into each other. After the dust had settled, only the green ship was left standing. <br>
+<br>
+You stare solemnly at the flipped cars on your desk. You can barely believe it. Have the Car Wars truly begun? Only time will tell you think to yourself. <br>
+
+/* Play in Room Ending */
+<<if $Player.Traits.includes("Childish")>>
+    <<needChange "Fun" 30>>
+<<elseif $Player.Traits.includes("Mature")>>
+    <<needChange "Fun" 10>>
+<<else>>
+    <<needChange "Fun" 20>>
+<</if>>
+<br>
+[[Continue|Player Bedroom]]
+
+:: Play In Room Car Wars 2 [nobr]
+
+/* Written by: -AN */
+/* Intro */
+
+From the box you grab two toy cars, <span style="color:Yellow">one is a shiny gold four-door sedan,</span> while the other is a blue two-door race car bearing all sorts of sponsorship brands on its chassis. You imagine the gold car driver is trying to prove which car is the best. The blue race car driver is more than happy to accept this challenge, so you sit at your desk with both toy cars and race them around the desk with one in each hand. <br>
+<br>
+As you race them around, both cars take turns getting a leading position and the race seems to be tied without a clear winner. The draw makes you stop to ponder a new way to determine a winner. You quickly go back to your toy box and reach in and pull out two tall track ramps and return to the desk with them. You assemble and aim the tracks in such a way that each car will sit at the top of their respective ramp, and once both are pushed down, each car will collide into the other.  <br>
+ <br>
+With an excited grin you hold both cars at the top of their ramps then release each one down! Both cars go down at lightning speed and almost immediately smash into each other. The blue race car spins out but remains on all four wheels, but the poor gold car has flipped on its side. Blue wins!  <br>
+ <br>
+You reset both cars for the second round. As you release the cars, it’s almost as if time slows down and you see both cars careening into each other in slow motion. You watch as the gold car is sent into a roll from the impact, but miraculously lands back onto its wheels. Meanwhile, the blue race car reels from the crash and shoots right off your desk and lands upside down with its wheels still spinning rapidly Gold wins! <br>
+<br>
+<span style="color:LightGreen">With both cars securing 1 win each, it’s time for the final deciding round.</span> You can barely contain you excitement as you reset each car once again and prepare to release. You audibly count down from 3...  <br>
+ <br>
+As the count reaches 1 and you release both cars, time again seems to slow as you watch each car impact each other with a satisfying and resounding clatter!  <br>
+ <br>
+
+<<set _random to random(1, 3)>>
+<<if _random == 1>>
+/*Random result 1*/
+
+The gold car remains on all four wheels but zooms towards the edge of your desk! Miraculously, it manages to stop just short of falling off! Meanwhile the blue car was sent into a side roll, and you watch as it nearly lands back onto its wheels, but just doesn’t have enough momentum and stays upside down. <br>
+<br>
+Gold is the winner! <br>
+<br>
+<<elseif _random == 2>>
+/*Random result 2*/
+
+The blue car and gold car are both sent towards opposite ends of the desk! The blue car slows as it rolls towards the edge. Two of its wheels go over the edge leaving the car hanging precariously, but incredibly, the car does not tip over. Meanwhile the gold car just has too much momentum from the crash and falls off the desk landing upside down.  <br>
+ <br>
+Blue is the winner!  <br>
+ <br>
+
+<<elseif _random == 3>>
+/*Random result 3*/
+
+Both cars are sent barreling in different directions from the crash. You watch as the blue car comes towards you, and falls off the desk right into your lap! Meanwhile, the gold car flies straight off the desk catching spectacular air time before falling to the floor. <br>
+<br>
+<span style="color:LightGreen">You giggle at the amusing outcome and are content calling this one a draw!</span>  <br>
+<br>
+<</if>>
+
+<<linkreplace"Continue">>
+
+Satisfied and entertained with the result, you begin putting everything away, both cars seeming none the worse for wear.  <br>
+
+<<if $Player.Traits.includes("Childish")>>
+    <<needChange "Fun" 30>> <br>
+<<elseif $Player.Traits.includes("Mature")>>
+    <<needChange "Fun" 10>> <br>
+<<else>>
+    <<needChange "Fun" 20>> <br>
+<</if>>
+<br>
+[[Continue|Player Bedroom]]
+<</linkreplace>>

@@ -1,0 +1,20 @@
+:: Avatar Display Head [nobr]
+
+<<if $ADHead.Type != "None">>
+	<<if $ADHead.Tags.includes("Skin Color")>>
+		<<if $ADHead.Type == "Splashtoon Ears">>
+			<img @src="`Images/Avatar/Clothes/Splashtoon Ears/${$AD.SkinColor}.png`"
+			style="position: absolute; left: 0; top: 0">
+		<</if>>
+	<<else>>
+		<<if $ADHead.Avatar != "None">>
+			<img @src="$ADHead.Avatar" 
+		style="position: absolute; left: 0; top: 0">
+		<</if>>
+	<</if>>
+<</if>>
+
+/* Kitsune */
+<<if $AvatarKitsune == 1>>
+	<img @src="`Images/Avatar/Clothes/Fox Ears/${$AD.HairColor} Fox Ears.png`" style="position: absolute; left: 0; top: 0">
+<</if>>

@@ -1,0 +1,111 @@
+:: Bedroom Play Pretend Racecar Driver [nobr]
+
+/* Written by: LMonkey */
+/* Intro */
+
+<<set $Minutes += 30>>
+
+Sitting down at your desk you think about what to do to pass the time. Your mind wanders to the last time <span style="color:DarkTurquoise">Your Father</span> had the Racetona 600 on TV. Cars going around turning left on a track loop. It didn’t look like anything special but you remember the words <span style="color:DarkTurquoise">Your Father</span>  said to you.<br>
+
+<br>
+
+<span style="color:LightSteelBlue">“Just imagine you’re actually driving one of those things, kiddo.”</span> He told you. <span style="color:LightSteelBlue">“It’s not as easy as it looks.”</span> While you can’t drive one yourself you can get an idea. Turning around you grab a pillow off your bed and use it as a makeshift steering wheel.<br>
+
+/* Continue */
+
+<<set _random to random(1, 2)>>
+
+/*Normal - Finish the Race*/
+    <<if _random == 1>>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“The green flag has come down. The Racetona 600 is underway!”</span> <span style="color:DarkTurquoise">The Announcer</span> declares, their staticy voice blaring past the balled up fist over your mouth. <span style="color:Lightgreen">Starting from pole position, you’re a favorite to win today’s race. The gentle roll of your engine, your pursing lips, burst into a roar as you blow harder between your lips. Spit spurts out of your mouth as you make all the noises of an engine reaching race speed. You take your pillow, rapidly rocking it back and forth on your desk as you control your 3-ton death machine.“</span> <span style="color:LightSteelBlue">The racers are building up speed rounding the corner, <span style="color:DarkTurquoise">$Player.Name</span> is ahead of the pack holding the line. No one can pass him.”</span> You get up, holding the pillow between your hands as you pace around your room.<br>
+    <br>
+    The cars dissipate behind you as the race goes on, the circles you’ve trekked around your room marking each of the laps in the race.<br>
+    <br>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span> is in danger. Number 4 is coming up strong on him, drafting and getting that nose underneath. Can <span style="color:DarkTurquoise">$Player.Name</span> keep the lead?”</span> <span style="color:Lightgreen">You pick up speed around the room, driving that pillow for all its worth as you’re battling for the checkered flag finish.</span> It all comes down to this moment. One wrong move and you’re done for. You round the corner around your bed and<span style="color:DarkTurquoise">The Announcer</span> comes back in. <span style="color:LightSteelBlue">“Number 4 has slingshotted! He’s side-by-side with <span style="color:DarkTurquoise">$Player.Name</span>, but he won’t let the win go that easy.”</span> <span style="color:Lightgreen">You run with your shoulder up, pretending that your nemesis’s car is grinding side to side with you as you drag out the rest of the race.</span><br>
+    <br>
+    <span style="color:LightSteelBlue">“It’s gonna be close. It’s gonna be close.”</span> Your canned <span style="color:DarkTurquoise">Announcer</span> voice shouts in trepidation. You’re almost out of breath pacing so hard. <span style="color:Lightgreen">With a well-timed jerk of your pillow you elbow Number 4 to the wall right before crossing the white line.</span> <span style="color:LightSteelBlue">“He’s done it! He’s done it!”</span> <span style="color:DarkTurquoise">The Announcer</span> shouts in that radio-pitch, pretend voice. <span style="color:LightSteelBlue">“A 0.2 second finish. <span style="color:DarkTurquoise">$Player.Name</span> takes the cup!”</span> <span style="color:Lightgreen">He declares as you spin and fall back on your bed, waving the pillow like the race flag in triumph. A well earned victory and one for the record books!</span><br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You smile to yourself as you get back up, basking in your victory.<br>
+
+    <<if $Player.Traits.includes("Childish")>>
+        <<needChange "Fun" 30>>
+    <<elseif $Player.Traits.includes("Mature")>>
+        <<needChange "Fun" 10>>
+    <<else>>
+        <<needChange "Fun" 20>>
+    <</if>>
+
+    <br>
+
+    [[Continue|Player Bedroom]]
+
+/*Normal - Crash and Burn!*/
+    <<elseif _random == 2>>
+    You’re in the middle of the pack, not having placed well enough in the preliminary to start any further. That won’t stop you though. <span style="color:Lightgreen">With determination and grit all over your face you purse your lips and start spitting, the engine of your car is coming to life.</span><br>
+
+    <br>
+
+    <span style="color:LightSteelBlue">“The race is under way! Sun’s up today after two days of rain. Let’s see how our racers handle it.”</span> <span style="color:DarkTurquoise">The Announcer</span>’s voice bellows past your balled up fist over your mouth, simulating the canned radio effect. You take your pillow and gently rock it back and forth, gaining speed on the first lap. Cars are all around you as you set up the drag with the one in front. <span style="color:Lightgreen">Weaving your pillow back and forth you keep your attention on maximizing the drag, not letting your forward car get away from you. </span>It’s tough going as you pick the pillow up and zip around the room; jerking it left and right as you bob and weave through cars on all sides. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span> has taken it to the wall and is moving up.”</span><br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:Lightgreen">You pick up speed, jerking your pillow even more as you hold your right shoulder up, riding that pretend wall as you turn left and keep your position.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“Block, block block! They know they want around <span style="color:DarkTurquoise">$Player.Name</span>. They just can’t get it.”</span> <span style="color:DarkTurquoise">The Announcer</span>’s voice builds up. You focus on weaving, the cars vivid in your mind where they are. You’re so focused on blocking the car behind you that you don’t see the one in front tilt to your bumper. <br>
+    <br>
+    <span style="color:LightSteelBlue">“WOAH! OOOOH! <span style="color:DarkTurquoise">$Player.Name</span> gets turned by Number 16!”</span> <span style="color:Lightcoral">It all comes tumbling down as the crash ensues. You wobble back and forth as car after car hits you, hammering you into the wall. A chain reaction starts, taking everyone behind you in 3rd place out of the race.</span><span style="color:LightSteelBlue">“6, 18, 2, 24, 5…it’s a pile-up!”</span> <span style="color:Lightcoral">You dramatically dive into your bed, crashing and bouncing up and down. Each car rams into you in your mind, igniting a fire from the escaped fuel. The fake crowd roars in applause as they witness the only thing worth watching in these races. You jerk every part of your body as the number of cars start adding up. The damage to your car is significant, crunching the chassis of your car with each new impact, making you jut and jerk for each blow. By the time it’s all over you’re contorted, splayed out on your bed with your tongue hanging out, buried under your pillows and blankets: dead.</span><br>
+
+    <br>
+
+    <span style="color:LightSteelBlue">“Well. It’s all part of the sport. The racers knew what they signed up for.”</span> <span style="color:DarkTurquoise">The Announcer</span> comments, summing up their remarks on your premature demise and the millions of dollars of damage to the track and drivers. <span style="color:LightSteelBlue">“Next up on SportsTV, Curling. Stay tuned…”</span> The broadcast finishes with static fading out.<br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:Lightgreen">After catching your breath from all the excitement, you sit back up on your bed. A big smile forms on your face. You hop back up to your feet, satisfied and thinking about what to do next.</span><br>
+    
+    <<if $Player.Traits.includes("Childish")>>
+        <<needChange "Fun" 30>>
+    <<elseif $Player.Traits.includes("")>>
+        <<needChange "Fun" 10>>
+    <<else>>
+        <<needChange "Fun" 20>>
+    <</if>>
+    <br>
+    [[Continue|Player Bedroom]]
+<</if>>

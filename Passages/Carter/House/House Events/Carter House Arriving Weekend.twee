@@ -1,0 +1,89 @@
+:: Carter House Arriving Weekend [nobr]
+
+/* Intro */
+<<set $HangOutNeed to {
+    Energy: 100,
+    Fun: 20,
+    Comfort: 20,
+}>>
+You ring the doorbell to <span style="color:DarkTurquoise">Carter</span>’s house and a moment later his father opens the door, holding a plate that he is in the process of drying. <span style="Color: LightSteelBlue">“Oh, hello <span style="color:DarkTurquoise">$Player.Name</span>. Come on in.”</span> He greets you, inviting you inside. You walk inside and stand by the couch, asking if <span style="color:DarkTurquoise">Carter</span> is available. <span style="Color: LightSteelBlue">“Should be. Think he’s in his room, go on in.”</span> He answers as he walks back into the kitchen. You walk up to <span style="color:DarkTurquoise">Carter</span>’s door and open it. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+            Clothes: {
+                Bottoms: $None,
+                Shoes: $None,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Come on, Ultraman, you’re better than this guy!”</span> <span style="color:DarkTurquoise">Carter</span> mumbles to himself. <span style="Color: Pink">Your friend is lying on the floor in the middle of his room, face buried in a comic book as he reads. The entire sight is a bit curious, with his lower half on a beanbag while his head rests on the carpet, glancing up at the comic he holds with one hand. The most interesting part, however, is the fact that <span style="color:DarkTurquoise">Carter</span> isn’t wearing anything other than his shirt and his very visible $CarterUndies.Name. <br>
+<br>
+His top has drifted up his back due to his position and underwear is also slightly tugged down, giving you a peek at the top of his butt crack as he swings his legs about and continues reading.</span> You quietly close the door and walk up next to his bed, watching as the boy continues to read aloud and laugh to himself. <span style="Color: Pink">It’s honestly kind of adorable.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Dang it. I hate when they end on a cliffhanger!”</span> He sighs, closing the comic book and turning to his side when he suddenly sees you out of the corner of his eyes. <span style="Color: LightSteelBlue">“Ahhh!”</span> He screams in fear, rolling to his back and banging his head against one of his shelves. <span style="Color: LightSteelBlue">“Ouch… <span style="color:DarkTurquoise">$CarterNickname</span>? What are-!? When did you get here!?”</span> He quickly stands up, rubbing his head as he puts his comic down. <span style="Color: LightSteelBlue">“Could have said something! Scared me to death! Did my dad let you in?”</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Blush: 1,
+                Arms: "Hide",
+            },
+            Clothes: {
+                Bottoms: $None,
+                Shoes: $None,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:DarkTurquoise">Carter</span> seems to have forgiven you quickly and even seems excited at your presence, happy to be able to play with you, <span style="Color: Pink">until he reaches down to scratch his leg and has a sudden realization.</span> <span style="Color: LightSteelBlue">“Eh!?”</span> <span style="Color: Pink">He turns bright pink and quickly covers himself, glancing around for his shorts and quickly yanking them on.</span> <span style="Color: LightSteelBlue">“Why didn’t you say I was in my undies!?”</span> He asks, playfully hitting you as you laugh and say you didn’t want to make him uncomfortable. <span style="Color: LightSteelBlue">“You’re the worst…”</span> He puffs out his cheek and crosses his arms, feeling embarrassed. <br>
+<br>
+Though he gets over that quickly, too excited to be able to hang out to be mad. <span style="Color: LightSteelBlue">“Well, since you’re here… did you want to do something?”</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Go Somewhere<br>">>
+    <<replace "#choice">>
+        You ask <span style="color:DarkTurquoise">Carter</span> if he wants to go somewhere and hangout. He nods happily. <span style="Color: LightSteelBlue">“Let me ask Dad just to be sure, but he’ll probably be fine with it! Let me grab my stuff and I’ll met you outside.”</span> You nod and head to the front yard, waiting only a few minutes before <span style="color:DarkTurquoise">Carter</span> comes out with a pep in his step. <span style="Color: LightSteelBlue">“Dad said I’m good until dark! So, where did you want to go?”</span> <br>
+        <br>
+        
+        <<link"The Park (0:10)<br>">>
+            <<set $HangOutClothes to "Everyday">>
+            <<set $Minutes += 10>>
+            <<goto "Carter Hang Out Go To Park">>
+        <</link>>
+
+    <</replace>>
+    <</link>>
+	<<link "Hang Out Here<br>">>
+    <<replace "#choice">>
+        You ask <span style="color:DarkTurquoise">Carter</span> if it’s okay if the two of you hang out here. <span style="Color: LightSteelBlue">“Of course! Dad already let you in, so I’m sure he’d be fine with it. I’ll go ask him just in case, wait here!”</span> <span style="color:DarkTurquoise">Carter</span> runs off, leaving you alone in his room. You sit on the bed and glance around a little before he returns about 30 seconds later. <span style="Color: LightSteelBlue">“Dad said we’re good! What did you want to do?”</span> <br>
+        <br>
+        [[Continue|Carter House Carter Bedroom]]
+    <</replace>>
+    <</link>>
+</div>

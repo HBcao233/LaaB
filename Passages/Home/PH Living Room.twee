@@ -1,0 +1,145 @@
+:: PH Living Room [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Home Living Room",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Living Room",
+}>>
+
+<<if $PlayerBottoms.Type != "None" && $PlayerTop.Type != "None" && $PlayerShoes.Type != "None">>
+	<<set _dressed to 1>>
+<<else>>
+	<<set _dressed to 0>>
+<</if>>
+
+
+<<if $Player.Energy <= 5>>
+	<<include"Home Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Home Pee">>
+<<else>>
+
+<span style="color:Azure"><big><strong>--Living Room--</strong></big></span><br>
+
+<<if $Player.Exposed == "Naked">>
+<<include"PH Living Room Naked">>
+
+/* PUNISHED BY FATHER */
+<<elseif $Punishment > 0 and !$Time.schoolday()>>
+As you enter the living room you are suddenly stopped by <span style="color:DarkTurquoise">Your Father</span>.<br>
+<br>
+<span style="color:LightSteelBlue"> “<span style="color:DarkTurquoise">$Player.Name</span>? Could I speak to you in my room please?”</span> Judging by his disapproving tone, you get the feeling you’re in trouble.<br>
+<br>
+[[Continue|Father Punishment]]
+
+/* PUNISHED BY FATHER */
+<<elseif $Punishment > 0 and $Time.after(16)>>
+As you enter the living room you are suddenly stopped by <span style="color:DarkTurquoise">Your Father</span>.<br>
+<br>
+<span style="color:LightSteelBlue"> “<span style="color:DarkTurquoise">$Player.Name</span>? Could I speak to you in my room please?”</span> Judging by his disapproving tone, you get the feeling you’re in trouble.<br>
+<br>
+[[Continue|Father Punishment]]
+
+/* QUEST CHECKS */
+	/* Noah Booster Shot */
+	<<elseif $InActiveQuests.includes("Noah: Booster Shot") && ["Saturday", "Sunday"].includes($Time.Day) && $Time.between(10, 0, 18, 0)>>
+		<<include"Quest Booster Shot 1">>
+	/* Noah Stormy Night */
+	<<elseif $InActiveQuests.includes("Noah: Stormy Night") && ["Friday", "Saturday"].includes($Time.Day) && $Time.between(18, 0, 20, 0)>>
+		<<include"Quest Stormy Night 1">>
+	/* Gabe Bail Out */
+	<<elseif $InActiveQuests.includes("Gabe: Bail Out") && $Time.between(17,0,19,0)>>
+		<<include"Quest Gabe Bail Out 1">>
+	/* OC Meet The Millers */
+	<<elseif $InActiveQuests.includes("Millers: Meet the Millers") && $ToggleOCMiller == 1 && ["Day", "Afternoon"].includes($Time.ToD) && !$Time.schoolday() && $PlayerBottoms.Type != "None">>
+		<<include"OC Quest Meet The Millers 1">>
+	/* OC Quest Meet Evelyn */
+	<<elseif $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Sebastian") && $InActiveQuests.includes("Nyalls: Evelyn") && $Time.Day == "Friday" && $Time.between(15,0,19,0) && $PlayerBottoms.Type != "None">>
+		<<include"OC Evelyn Intro 1">>
+	/* Noah: Swimming Lessons */
+	<<elseif $InActiveQuests.includes("Noah: Swimming Lessons") && $Time.between(15, 20, 15, 40) && $Time.schoolday() && random(1, 4) === 1>>
+		<<include "Noah Quest Swimming Lessons 1">>
+
+	/* Noah Accident Quest */
+	<<elseif $InActiveQuests.includes("Noah: Accident") && $Time.between(15, 20, 15, 40)  && $Time.schoolday() && random(1, 4) === 1>>
+		<<include "Noah Quest Accident 1">>
+	/* Dad Shopping Quest */
+	<<elseif $InActiveQuests.includes("Dad: Dragged Shopping") && !$Time.schoolday() && $Time.between(10,0,17,0) && _dressed == 1 && $PlayerUndies.Type != "None">>
+		<<include"Shopping with Dad">>
+	<<elseif $InActiveQuests.includes("Ben: Track Meet Cute") && $Time.between(15, 0, 17, 0) && _dressed == 1>>
+		<<include"Ben Quest Track Meet Cute Intro">>
+	<<elseif $ToggleOCChase == 1 && $InActiveQuests.includes("Chase: Birthday Party") && $Time.between(16, 0, 19, 0)>>
+		<<include"OC Chase Pre-Intro">>
+<<else>>
+
+You stand in the living room. It has a large couch and a television set.
+<br>
+<br>
+/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Watch TV|Watch TV]]
+
+<<listbox "$Channel" autoselect>>
+	<<option "Cartoons (0:30)" "Cartoons">>
+	<<option "Movie (1:00)" "Movie">>
+	<<option "Cooking (0:30)" "Cooking">>
+	<<option "Weather (0:05)" "Weather">>
+<</listbox>>
+<span style="color:Green">+Fun</span><br>
+
+<<if $ActiveQuests.includes("Chores")>>
+	<<for _i to 0; _i lt $QuestLog.length; _i++>>
+		<<if $QuestLog[_i].Name == "Weekly Chores">>
+			<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+				<<if $QuestLog[_i].Objectives[_o].Name == "Vacuum" && $QuestLog[_i].Objectives[_o].State != $QuestLog[_i].Objectives[_o].Total>>
+					[[Vacuum (0:15)|Vacuum Living Room]]<br>
+					<<break>>
+				<</if>>
+			<</for>>
+			<<break>>
+		<</if>>
+	<</for>>
+<</if>>
+
+[[Relax (0:15)|PH Living Room][$Minutes += 15;$Player.Energy += 2]]<br>
+[[Wait (0:05)|PH Living Room][$Minutes += 5]]<br>
+<br>
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Hallway (0:01)|PH Hallway][$Minutes += 1]] <br>
+	[[Kitchen (0:01)|PH Kitchen][$Minutes += 1]] <br>
+	<<if $Player.Exposed == "Clothed">>
+		[[Front Yard (0:01)|PH Frontyard][$Minutes += 1]] <br>
+	<<else>>
+	<span style="color:Red">You're too embarrassed to go outside like this!</span><br>
+	<</if>>
+<</if>>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Big Room Marker.png" 
+style="position: absolute; left: 166px; top: 58px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="166,166,273,219" alt="Kitchen" onclick="$.wiki('<<goto[[PH Kitchen]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+<<if $Player.Exposed == "Clothed">>
+	<area shape="rect" coords="166,4,273,57" alt="Frontyard" onclick="$.wiki('<<goto[[PH Frontyard]]>><<set $Minutes += 1>>')" />
+<</if>>
+</map>
+
+<</if>>
+
+<</if>>

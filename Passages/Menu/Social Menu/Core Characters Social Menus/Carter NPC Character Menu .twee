@@ -1,0 +1,447 @@
+:: Carter NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Core Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Carter--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"Carter NPC Character Menu Biography">>
+</div>
+
+:: Carter NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Carter NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Carter NPC Character Menu Avatar Display">>
+
+<<if $CarterSocial > 50>>
+    Carter Kent is your friend and classmate at Preston. Carter is the type of person to always try his best to help others, no matter what the context. He has a heart of solid gold, though often takes on more than he can chew, leading to some interesting and often embarrassing situations. Still, he always tries his best and you admire that about him. His positive attitude and playful personality can be a bit infectious at times. <br>
+    <br>
+<<elseif $CarterSocial > -10>>
+    Carter Kent is your classmate and the do-gooder of Preston Academy. Very much on the short side, he makes up for it by always trying his best to help others. This both leads him to having a good relationship with most, but also the target of bullies or others who want to mess with him. Though he doesn’t seem to let that get to him, almost always wearing a smile on his face. He also seems cursed with incredible bad luck. <br>
+    <br>
+<<else>>
+    Carter Kent is your classmate, though he is more well-known as the clumsy do-gooder who is always falling flat on his face. He seems to mean well, but his constant positive attitude and inability to accept when he is incapable of something gets on a lot of people’s nerves. He’s also probably a snitch. <br>
+    <br>
+<</if>>
+
+<<if $CompletedQuests.includes("Carter: Park Clean Up")>>
+    Carter will often do charity work around town, helping out at local park clean ups and other events. He lives with his parents, a police detective and reporter, along with his two brothers, Callum and Connor. He seems to get along with his dad very well, probably getting his sense of justice from him, but seems a little awkward and embarrassed around his mom. <br>
+    <br>
+<</if>>
+
+:: Carter NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Carter NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Carter NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Carter Kent <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> April 18th <br>
+<strong>Address:</strong> 
+    <<if $CarterSocial >= 50>>
+        Wald Street <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong> 
+    <<if $CompletedQuests.includes("Carter: Park Clean Up")>>
+        Unnamed Father, Unnamed Mother, Callum (Older Brother), Connor (Twin Brother)
+    <<else>>
+        ???
+    <</if>>
+    <br>
+<strong>Friends:</strong>
+    <<if $CarterSocial >= 60>>
+        $Player.Name, ...
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $CarterSocialRank == 1>>
+        Close Friends
+    <<elseif $CarterSocial > 70>>
+        Friends
+    <<elseif $CarterSocial > 30>>
+        Possible Friends
+    <<elseif $CarterSocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $CarterSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Good, Friendly, Unlucky, Heroic, F... /* No Spoilers :P */
+        </div>
+    <<elseif $CarterSocial > 70>>
+        <div style="margin-left: 25px;">
+            Good, Friendly, Unlucky, Heroic, ...
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [History] > [Math] > [Drama] > [Science] > [English] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <div style="margin-left: 25px;">
+        Unknown
+    </div>
+<strong>Likes:</strong>
+    <<if $CarterSocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Kindness, Watching Wrestling, Comic Books, Ultraman
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $CarterSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Bullies, Villains, Embarrassing Himself
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $CarterSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Charity Work, Reading Comics, Watching Wrestling
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $CarterSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Pizza, Hamburgers, Candy
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $CarterSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Red, Blue, & Yellow
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $CarterSocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Ultraman-Themed Clothing, Shorts, Loose-Fitting
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $CarterSocial >= 50>>
+        <div style="margin-left: 25px;">
+            Cartoon and Graphic-print Briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $CarterSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $CarterCut == "Cut">>
+                A cut penis that looks tiny and cute. It is very small for his age.
+            <<else>>
+                An uncut penis that looks cute and pink. It is very small for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $CarterSocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A tiny yet soft-looking butt.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: Carter NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Carter NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Carter NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal Core Carter">>
+
+:: Carter NPC Character Menu Art [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Artwork]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Carter NPC Character Menu Avatar Display">>
+
+<<include"Journal Artwork Carter">>
+
+:: Carter NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Carter NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ 
+<<if $AchievementShopIntroDone == true>>
+    | 
+    <<link"[Artwork]">>
+        <<replace"#NPCMenu">>
+            <<include"Carter NPC Character Menu Art">>
+        <</replace>>
+    <</link>>
+<</if>>
+
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "Carter",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $CompletedQuests.includes("Carter: First Visit")>>
+    <<set _npcviewerOutfit.push("Swim")>>
+<</if>>
+<<if $CompletedQuests.includes("Carter: Hero Award")>>
+    <<set _npcviewerOutfit.push("Formal")>>
+<</if>>
+<<if $CarterSocial >= 50 or $CarterSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $CarterSocial >= 100 or $CarterSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: Carter NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "Carter",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $CompletedQuests.includes("Carter: First Visit")>>
+    <<set _npcviewerOutfit.push("Swim")>>
+<</if>>
+<<if $CompletedQuests.includes("Carter: Hero Award")>>
+    <<set _npcviewerOutfit.push("Formal")>>
+<</if>>
+<<if $CarterSocial >= 50 or $CarterSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Towel", "Undies")>>
+<</if>>
+<<if $CarterSocial >= 100 or $CarterSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

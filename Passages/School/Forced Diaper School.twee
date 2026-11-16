@@ -1,0 +1,64 @@
+:: Forced Diaper School [nobr]
+
+/* Intro */
+<span style="color:LightCoral">Your fingers twitch, your body cringes, and your eyes begin to water as you just can’t hold it anymore! Despite being in the middle of school, so close to a bathroom, you are unable to resist any longer and have no choice but to piss yourself right here in the open! Your body freezes as the warm fluid slowly begins to pool on your crotch and drip down your leg, like a stream of humiliation. Only a few people are around, but their attentions immediately fall to the dark spot on your bottoms and the yellow puddle forming at your feet. You feel so humiliated you may cry.</span> <br>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Frown",
+                Blush: 2,
+                Cry: 1,
+                Arms: "Hide",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Oh no, poor boy. Come here.”</span> <span style="color:Pink">You turn to see the school’s nurse, <span style="color:DarkTurquoise">Dr. Bertram</span>, hurry over and wrap his coat around you.</span> <span style="Color: LightSteelBlue">“Move along you kids, nothing to see here.”</span> He shoos off the other boys, some of them looking at you in concern while some snicker and smirk. You try to hide as much as you can with his coat and thank <span style="color:DarkTurquoise">Dr. Bertram</span> for his help. <span style="Color: LightSteelBlue">“No worries, come on. We can get you cleaned up in my office.”</span> <br>
+<br>
+He walks you to his office, sitting you down on one of the beds and pulling the curtain to give you some privacy. He instructs you to strip so he could try to give your clothes a good wash. He then hands you a wet washcloth, instructing you to try to clean yourself up while he’s gone. <span style="color:Pink">It’s more than a little embarrassing, wiping yourself clean with the rag, but it’s better than having to walk all the way to the school showers without clothes. And while the curtain does keep you covered, you can’t help but feel exposed standing in the nurse’s office like this.</span> <br>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+                Outfit: "Naked",
+				Mouth: "Frown",
+                Blush: 1,
+                Arms: "Hide",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Alright, I got your stuff.”</span> <span style="color:DarkTurquoise">Dr. Bertram</span> says as you hear him walk back into the office. <span style="Color: LightSteelBlue">“Should be all cleaned, though I do have some possibly bad news.”</span> He sticks a towel through the curtain, allowing you to cover yourself up before he walks in. <span style="Color: LightSteelBlue">“So, I have your clothes, but there is an issue. School policy is a bit strict on this stuff and while they normally wouldn’t push it, I think it’s better to play it safe. Since you had an accident, despite having access to the bathrooms, I’m going to need you to wear this the rest of the day.”</span> Dr. Bertram <span style="color:Pink">holds up a diaper, and you instantly feel your face turn bright red.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“I know you may not like it, but it’s school policy.”</span> He shrugs, <span style="Color: LightSteelBlue">“If you don’t put it on yourself, I’ll have to call <span style="color:DarkTurquoise">Coach Kohler</span> to do it for you, and neither one of us wants that. So just do me a favor and put it on. Best to just get it over with.”</span> <span style="color:Pink">He seems genuine in his apologetic nature, knowing you’ll probably find it embarrassing, though he also seems serious in his threat. You wouldn’t put it past this school to force <span style="color:DarkTurquoise">Kohler</span> to put it on you, so you are left with no other choice.</span> <br>
+<<storeClothing "Store" "Undies" 1>>
+<<if $PlayerUndies.Type != "None">>
+	<<set $ClosetUndies.push($PlayerUndies)>>
+<</if>>
+<<addClothing "PC" "Undies" "Diaper" "White">> 
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			State: {
+				Mouth: "Frown",
+                Blush: 2,
+                Arms: "Hide",
+			},
+		},
+	]>>
+	<<ad _ad>>
+/* PC: Diaper Only*/
+
+<span style="color:Pink">While <span style="color:DarkTurquoise">Dr. Bertram</span> has to confirm you put it on, which is embarrassing enough, he does quickly leave you to get dressed with some privacy.</span> Once you are finished and exit the curtain, he gives you a smile and thumbs up. <span style="Color: LightSteelBlue">“Try not to linger on about what happened, you’re not the only boy here who has the occasional accident. Just try to be careful in the future. Oh, and make sure your shirt doesn’t flutter up too much. I’d hate for your day to get worse if someone saw you wearing that. Let me know if you need anything else.”</span> <br>
+<br>
+<span style="color:Pink">His words are comforting, but do instill a new worry about your new padded underwear being spotted before you get a chance to change into something else.</span> <br>
+<<storeClothing "Restore" "Undies" 0>>
+<br>
+<<set $HadAccident to 0>>
+<<include"School Fail Location">>

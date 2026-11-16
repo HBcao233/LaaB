@@ -1,0 +1,70 @@
+:: NOAH Pretend Superheroes Crash Landing [nobr]
+	
+	/* Setting Outfit Variables */
+	<<if $NoahSche.Activity == "Playing in Room">>
+		<<set $AD.Outfit to "Everyday">>
+<<else>>
+		<<set $AD.Outfit to "Pajamas">>
+	<</if>>
+	<<include"Noah Outfit Set">>
+
+The two of you arrive at the airport following a report of an attack by the evil <span style="color:DarkTurquoise">Dr. Bue</span>, only to discover that he is already in the middle of his getaway, flying off in his jet! <span style="color:DarkTurquoise">Noah</span> has you both quickly jump into a helicopter in order to chase after him!<br>
+<br>
+As you are chasing after him, <span style="color:DarkTurquoise">Noah</span> describes that it was actually a trap and <span style="color:DarkTurquoise">Dr. Bue</span> fires a missile at you both that damages the helicopter! <span style="color:lightcoral"><span style="color:DarkTurquoise">Noah</span>  tries to regain control, but can’t and turns to you for help!</span><br>
+<br>
+
+
+<div id=choice1>
+	<<link "Pick up Noah and mimic a crash landing<br>">>
+	<<replace"#choice1">>
+	
+	You get a fun idea, quickly scooping <span style="color:DarkTurquoise">Noah</span> up in your arms and begin spinning around yelling that you are both going to crash! <span style="color:DarkTurquoise">Noah</span> begins giggling uncontrollably as he is spun around quicker and quicker! As you begin to tire, you hold <span style="color:DarkTurquoise">Noah</span> close and leap into the air onto his bed, mimicking a crash.<br>
+
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Closed">>
+<<set $AD.Cry to 1>>
+<<set $AD.Blush to 3>>
+<<set $AD.Mouth to "Happy">>
+<<if $NoahSche.Activity == "Playing in Room">>
+	<<set $AD.Outfit to "Everyday">>
+<<else>>
+	<<set $AD.Outfit to "Pajamas">>
+<</if>>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+<span style="color:DarkTurquoise">Noah</span> is too dizzy to stand up and the both of you lay on his bed laughing for a few minutes before he is able to regain his composure and finish the story, stating that the two heroes will be ready next time and finally be able to catch the villain!<br>
+<br>
+As the game ends, <span style="color:DarkTurquoise">Noah</span> runs up and gives you a hug, thanking you for playing with him.<br>
+<<socialChange "Noah" 3>>
+<<needChange "Fun" 20>>
+<br>
+	
+	[[Leave|PH Noah Bedroom]] 
+	
+	<</replace>>
+	<</link>>
+	
+	<<link "Attempt to fix the helicopter<br>">>
+	<<replace"#choice1">>
+Thinking quickly you pull out a gadget from your belt and tell <span style="color:DarkTurquoise">Noah</span> to keep it steady while you fix the engine. He does so, and not a moment later it is repaired enough for him to regain control and prevent you both from crashing into the ground. Unfortunately, the engine still slows down and it is soon prevalent that you will not be able to catch <span style="color:DarkTurquoise">Dr. Bue</span> and <span style="color:DarkTurquoise">Noah</span> decides to land the helicopter. He gives a quick speech about how you both will never give up in your quest for justice and that you’ll get him next time.<br>
+<br>
+As the game ends, <span style="color:DarkTurquoise">Noah</span> runs up and gives you a hug, thanking you for playing with him.<br>
+<<socialChange "Noah" 3>>
+<<needChange "Fun" 20>>
+<br>
+	
+	[[Leave|PH Noah Bedroom]] 
+	
+	<</replace>>
+	<</link>>
+</div>

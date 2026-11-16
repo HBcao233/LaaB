@@ -1,0 +1,40 @@
+:: Cheats Quests [nobr]
+
+<<link "[Core Characters]">>
+<<replace"#CheatsQuestsMenu">>
+	<<include"Cheats Quests Core Characters">>
+<</replace>>
+<</link>>
+|
+<<link "[Children]">>
+<<replace"#CheatsQuestsMenu">>
+	<<include"Cheats Quests Children">>
+<</replace>>
+<</link>>
+|
+<<link "[Preteens]">>
+<<replace"#CheatsQuestsMenu">>
+	<<include"Cheats Quests Preteens">>
+<</replace>>
+<</link>>
+|
+<<link "[Teens]">>
+<<replace"#CheatsQuestsMenu">>
+	<<include"Cheats Quests Teens">>
+<</replace>>
+<</link>>
+<br>
+
+<div id=CheatsQuestsMenu>
+	<<if $CheatsQuests == "Core Characters">>
+		<<include"Cheats Quests Core Characters">>
+	<<elseif $CheatsQuests == "Children">>
+		<<include"Cheats Quests Children">>
+	<<elseif $CheatsQuests == "Preteens">>
+		<<include"Cheats Quests Preteens">>
+	<<elseif $CheatsQuests == "Teens">>
+		<<include"Cheats Quests Teens">>
+	<<else>>
+		<<include"Cheats Quests Core Characters">>
+	<</if>>
+</div>

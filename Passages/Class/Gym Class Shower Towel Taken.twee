@@ -1,0 +1,119 @@
+:: Gym Class Shower Towel Taken [nobr]
+
+<<include "Bully Nickname Setup">>
+
+/* EVENT */
+You finish after a few moments and turn the water off before reaching out to grab your towel, but… <span style="color:Red">you don’t feel it!?</span> You peek your head out and see that the rack that you had hung your towel on was empty. Nothing on the floor or around your shower stall either. <span style="color:Red">You put your head back into the shower and come to the realization that someone had taken your towel!</span> You spend a moment contemplating what you are going to do when you hear <span style="color:DarkTurquoise">The Coach</span> call out for everyone to finish up.<br>
+<br>
+
+/* Checking for Rescue */
+<<set _TowelRescue to random(1, 4)>>
+<<if _TowelRescue != 1>>
+	<<set _rescue to 0>>
+<<else>>
+	<<set _rescue to 1>>
+<</if>>
+<<if _rescue == 1>>
+	<<if $LucasSocial >= 50 or $LucasSocialRank > 0>>
+		<<set _rescue to 2>>
+	<<else>>
+		<<set _rescue to 0>>
+	<</if>>
+<</if>>
+/* LUCAS */
+<<if _rescue == 2>>
+	<span style="color:Pink">As you are coming to the realization that you are going to have to walk back to your locker completely naked,</span> you hear a knocking on the shower wall. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$LucasNickname</span>?”</span> You hear the soft voice of <span style="color:DarkTurquoise">Lucas</span> whispering from the other side of the curtain. <span style="color:LightSteelBlue">“I saw that some of them took your towel to mess with you, I managed to sneak you another one.”</span> As he says this, he sticks his arm in and hands you a towel. <span style="color:Green">Your dignity was saved, this time. </span>You thank <span style="color:DarkTurquoise">Lucas</span> and quickly wrap the towel around your waist.<br>
+
+	<<set _ad to [
+		{
+			Name: "Lucas",
+			State: {
+				Blush: 2,
+				Mouth: "Happy",
+				Outfit: "Towel",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	You then exit the stall and give <span style="color:DarkTurquoise">Lucas</span> a hug before you both walk back to the lockers. On your way, you pass by a small group of boys who were hanging out between the showers and lockers, no doubt the culprits of the little prank waiting for you to have to come walking by stark naked. Your suspicions are confirmed even more when they scoff and frown upon seeing you with a towel, their prank ruined.<br>
+	<br>
+	You quickly reach your locker and are able to get dressed before anyone else makes an attempt to steal your towel.<br>
+	<<socialChange "Lucas" 3>>
+	<br>
+
+/* NO RESCUE */
+<<elseif _rescue == 0>>
+	Everyone else had already left the showers, so there was no one to help you and no towel to take. The closest towels would be in the locker room, where everyone in class was currently getting dressed! <span style="color:Pink">Realizing you had no other choice, you cover your penis with your hands, take a deep breath, and begin walking back to the lockers completely naked!</span><br>
+
+	<<set _ad to [
+		{
+			Name: "Player",
+			ShowZoom: true,
+			State: {
+				Arms: "Hide",
+				Eyes: "Sad",
+				Cry: 1,
+				Blush: 3,
+				Mouth: "Sad",
+				Outfit: "Naked"
+			}
+		}
+	]>>
+	<<ad _ad>>
+
+	<span style="color:Pink">You are immediately greeted by laughter from a small group of boys hanging out between the lockers and the showers. They were seemingly waiting for you to come out, confirming that they were most likely the culprits who took your towel. Their laughter and whistles attract the attention of a few more of the boys in the area, who all turn to you and begin to giggle and taunt you. You feel your face burning red and tears well up in your eyes as you are forced to push past them to get to your locker. You even feel a few hands squeeze your exposed rear as you walk by, causing you to squirm.</span><br>
+	<br>
+	/* Bully Nickname */
+	<<if ["Little Dick", "Horse Cock"].includes($BullyNickname)>>
+		<<set _setnickname to 0>>
+	<</if>>
+	<<if _setnickname == 1>>
+		<<if $Player.PenisSize == "Tiny" or $Player.PenisSize == "Small">>
+			<span style="color:pink">At one point, a boy suddenly shoves you to the ground, causing you to have to unhide yourself in or to prevent your crashing to the ground. As you quickly get back to your feet, everyone nearby starts to snicker and laugh as your penis is briefly exposed. You quickly cover yourself up again, but it is already too late.</span> <br>
+			<br>
+			<span style="color:LightSteelBlue">“Anybody got a fucking magnifying glass? I can’t even see his cock!”</span> <span style="color:pink">The boy laughs as he points and jeers at your exposed boyhood.</span> <span style="color:LightSteelBlue">“Don’t worry, <span style="color:DarkTurquoise">Little Dick</span>, I’m sure in a few years you’ll have something to work with. Until then, just take it up the ass to get off like a good little bitch.”</span> <br>
+			<br>
+			<span style="color:lightcoral">Having your bits exposed and discovered to be so small has earned you the nickname <span style="color:DarkTurquoise">Little Dick</span> around school. You’re sure everyone will soon learn of your nickname, and lack of size, as it spreads.</span> <br>
+			<br>
+			<<if $Nickname.Bully == 0>>
+				<span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Little Dick”</span> after seeing your less-than-average penis size. Nicknames can be edited in the Journal in your Bedroom.]</span> <br>
+				<br>
+			<</if>>
+			<<set $Nickname.Bully to 1>>
+			<<set $BullyNickname to "Little Dick">>
+		<<elseif $Player.PenisSize == "Gigantic">>
+			<span style="color:pink">At one point, a boy suddenly shoves you to the ground, causing you to have to unhide yourself in or to prevent your crashing to the ground. As you quickly get back to your feet, everyone nearby starts to snicker and laugh as your penis is briefly exposed. You quickly cover yourself up again, but it is already too late.</span> <br>
+			<br>
+			<span style="color:LightSteelBlue">“Fuck, the dude has a third arm! Guess his mom was part horse! What a freak!”</span> <span style="color:pink">The bully laughs and jeers,</span> <span style="color:LightSteelBlue">“Better watch out when <span style="color:DarkTurquoise">Horse Cock</span> comes running down the hallway, or else you might lose an eye!”</span> <br>
+			<br>
+			<span style="color:lightcoral">Having your bits exposed and discovered to be so massive has earned you the nickname <span style="color:DarkTurquoise">Horse Cock</span> around school. While you wouldn’t think having a large penis would be a bad thing, it seems the bullies have somehow turned it against you.</span> <br>
+			<br>
+			<<if $Nickname.Bully == 0>>
+				<span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Horse Cock”</span> after seeing your greater-than-average penis size. Nicknames can be edited in the Journal in your Bedroom.]</span> <br>
+				<br>
+			<</if>>
+			<<set $Nickname.Bully to 1>>
+			<<set $BullyNickname to "Horse Cock">>
+		<</if>>
+	<</if>>
+	<span style="color:Pink">By the time you finally reach your locker, you can feel the eyes of most of the locker room on your rear. It takes all your strength not to cry from embarrassment as you quickly get dressed and everyone’s attention turns away from you, as they are no longer being presented with a humiliating show.</span><br>
+	<br>
+	<<addMoodlet "Seen Naked" 10>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliation"]>>
+	<<arousalGain 25 _arousalbs _arousalkink>>
+<</if>>
+
+/* GETTING DRESSED */
+<<set $ClothSave to "Restore">>
+<<if $GymClassType == "Gym">>
+	<<storeClothing "Restore" "Undies">>
+<<else>>
+	<<storeClothing "Restore" "Naked">>
+<</if>>
+<<if $SaveUndies != null>>
+	<<set $PlayerUndies to $SaveUndies>>
+<</if>>
+	
+[[Continue|School Locker Room]] 

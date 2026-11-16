@@ -1,0 +1,38 @@
+:: Lunch [nobr]
+
+<<needChange "Hunger" 35>>
+<<set $Minutes += 15>>
+<<set $Meal to random(1, 3)>>
+
+<<if $Meal == 1>>
+	You enjoy a nice PB&J sandwich.<br>
+<<elseif $Meal == 2>>
+	You enjoy a nice ham sandwich.<br>
+<<elseif $Meal == 3>>
+	You enjoy some fruit, cheese, and crackers.<br>
+<</if>>
+<br>
+
+/* Gabe Random Events */
+<<if $GabeSche.Location == "Home Kitchen" and $GabeSocial < 0>>
+	<<set _randomevent to random(1, 4)>>
+	/* Gabe Mean Eating Random Event */
+	<<if _randomevent == 1>>
+As you are eating, you notice <span style="color:DarkTurquoise">Gabe</span> fill up a cup of water and place it on the table close to you before checking his phone and walking away. <span style="color:lightcoral">You don’t think much of it until <span style="color:DarkTurquoise">Gabe</span> returns and ‘accidentally’ knocks over the cup and spills water all over your crotch! It is cold and you quickly jump to your feet in surprise as the icy water hits your groin. It is little surprise as <span style="color:DarkTurquoise">Gabe</span> begins to laugh loudly at your misfortune.</span> <br>
+<br>
+/* If Diaper */
+<<if $PlayerUndies.Tags.includes("Diaper")>>
+<span style="color:LightSteelBlue">“Geez <span style="color:DarkTurquoise">$GabeNickname</span>, no wonder you have to wear a diaper all the time!”</span> He laughs as you grab a towel to dry off your crotch, <span style="color:LightSteelBlue">“But it looks like your such a big baby, you need some more absorbent pairs. I’ll talk with <span style="color:DarkTurquoise">Dad</span> about it, okay sport?”</span> He continues to laugh as he walks off. <br>
+<br>
+
+/* ELSE */
+<<else>>
+<span style="color:LightSteelBlue">“Geez <span style="color:DarkTurquoise">$GabeNickname</span>, you gotta learn to control that bladder of yours.”</span> He laughs as you grab a towel to dry off your crotch. <span style="color:LightSteelBlue">“Have any more accidents like this, and you might have to start wearing a diaper around the house!”</span> He continues to laugh as he walks off. <br>
+<br>
+
+<</if>>
+	<</if>>
+<</if>>
+
+[[Continue|PH Kitchen]] <br>
+<<set $Lunch to 1>>

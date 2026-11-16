@@ -1,0 +1,58 @@
+:: MICHAEL Eat Lunch [nobr]
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<<if $MichaelSocial > 50 or $MichaelSocialRank > 0>>
+	<<set _random to random(1, 4)>>
+	<<if _random == 1>>
+		<<include "Michael Eat Lunch Pudding Trade">>
+	<<else>>
+		You take a seat at the same table as <span style="color:DarkTurquoise">Michael</span> and his goons. You enjoy your time eating while chatting and making crude jokes.<br>
+
+		<<socialChange "Michael" 1>>
+		<br>
+
+		<<include "School Lunch">>
+		<<set $FriendLunch to 1>>
+	<</if>>
+<<elseif $MichaelSocial >= 10>>
+	You take a seat at the same table as <span style="color:DarkTurquoise">Michael</span> and his goons. You enjoy your time eating while chatting and making crude jokes.<br>
+	<<socialChange "Michael" 1>>
+	<br>
+
+	<<include "School Lunch">>
+	<<set $FriendLunch to 1>>
+<<elseif $MichaelSocial >= 0>>
+	<<set $Random to random(1, 4)>>
+	<<if $Random == 1>>
+		You take a seat at the same table as <span style="color:DarkTurquoise">Michael</span> and his goons. Despite them clearly being annoyed at your presence, they let you stay and even find themselves slightly enjoying your presence.<br>
+		<<socialChange "Michael" 1>>
+		<br>
+
+		<<include"School Lunch">>
+		<<set $FriendLunch to 1>>
+	<<else>>
+		You take a seat at the same table as <span style="color:DarkTurquoise">Michael</span> and his goons. <span style="color:Red">However, before you can start eating, one of them shoves you off the table to the floor, tossing your lunch to the ground as well.</span> They all laugh as you hurriedly run off with what remains of your food.<br>
+		<<addMoodlet "Stress" 1>>
+		<br>
+
+		<<include"School Lunch">>
+		<<set $FriendLunch to 1>>
+	<</if>>
+<<else>>
+	You take a seat at the same table as <span style="color:DarkTurquoise">Michael</span> and his goons. <span style="color:Red">However, before you can start eating, one of them shoves you off the table to the floor, tossing your lunch to the ground as well.</span> They all laugh as you hurriedly run off with what remains of your food.<br>
+	<<addMoodlet "Stress" 1>>
+	<br>
+
+	<<include "School Lunch">>
+	<<set $FriendLunch to 1>>
+<</if>>

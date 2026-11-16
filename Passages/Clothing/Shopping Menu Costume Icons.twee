@@ -1,0 +1,34 @@
+:: Shopping Menu Costume Icons [nobr]
+
+
+<<if ["Fox Ears", "Fox Tail"].includes(_selectedItem.Type)>>
+    <<for _i to 0; _i lt _selectedItem.Colors.length; _i++>>
+        <<capture _i>>
+            <<set _shopColor = shopMenuGetColorById(_selectedItem.Colors[_i])>>
+            <<print `<<link [img[${_shopColor.Name}|${'Images/Equipment/'+ _selectedItem.Type + '/' + shopMenuGetColorById(_selectedItem.Colors[_i]).Name + ' ' + _selectedItem.Type + ".png"}]]>>
+            <<set _selectedColorId to _selectedItem.Colors[_i]>>
+            <<update>>
+            <</link>>`>>
+        <</capture>>
+    <</for>>
+<<elseif _selectedItem.Name == "Splashtoon">>
+    <<for _i to 0; _i lt _selectedItem.Colors.length; _i++>>
+        <<capture _i>>
+            <<set _shopColor = shopMenuGetColorById(_selectedItem.Colors[_i])>>
+            <<print `<<link [img[${_shopColor.Name}|${'Images/Equipment/'+ _selectedItem.Type + ' ' + shopMenuGetColorById(_selectedItem.Colors[_i]).Icon + '/' + _selectedItem.Type + ' ' + shopMenuGetColorById(_selectedItem.Colors[_i]).Icon + ".png"}]]>>
+            <<set _selectedColorId to _selectedItem.Colors[_i]>>
+            <<update>>
+            <</link>>`>>
+        <</capture>>
+    <</for>>
+<<else>>
+    <<for _i to 0; _i lt _selectedItem.Colors.length; _i++>>
+        <<capture _i>>
+            <<set _shopColor = shopMenuGetColorById(_selectedItem.Colors[_i])>>
+            <<print `<<link [img[${_shopColor.Name}|${'Images/Equipment/'+ _selectedItem.Type + '/' + _selectedItem.Type + ' ' + shopMenuGetColorById(_selectedItem.Colors[_i]).Name + ".png"}]]>>
+            <<set _selectedColorId to _selectedItem.Colors[_i]>>
+            <<update>>
+            <</link>>`>>
+        <</capture>>
+    <</for>>
+<</if>>

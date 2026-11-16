@@ -1,0 +1,119 @@
+:: OC Kollin Job Board Meeting [nobr]
+
+/* Setting up random lines */
+<<set _randomlines to [
+    "...Kollin, the best private investigator in all of Opal City...",
+    "...so if you were nearby at the time then contact Kollin...",
+    "...any witnesses would be helpful. Here are my contact details: Kollin...",
+    "...drone/kite stuck in a tree that's about two houses tall...",
+    "...always looking for interesting stories we can publish in our newspaper...",
+    "...must have lost the ring somewhere in the park...",
+    "...HeLP!!1 my uncle is raeping me and i dont know how(crossed out) who to tell...",
+    "...and now he is blackmailing me by posting this nude picture (see attachment) of me all over the place...",
+    "...it's been over three days so we assume he might already be dead...",
+    "...and there was blood everywhere...",
+    "...and now I can't get it back out but I'm scared to tell my parents...",
+    "...but the key for the handcuffs didn't fit at all!!! so...",
+    "...corrupt. The police can't be trusted at all!...",
+    "...fluent German speaking skills required...",
+    "...haunted. There are weird noises coming out of the house every...",
+    "...and the pigeons keep shitting on...",
+    "...haven't seen him since a week. He is only 12 years old and...",
+    "...needs to be at least 8 inches long, otherwise don't even bother showing up...",
+    "...too shy. So I need you to covertly slip my phone number into his...",
+    "...been stolen. I have a few suspects but no evidence so far...",
+    "...- The Aristocrats (Everything but the last line has been ripped off so you lack the context. You wonder if this is some sort of joke.)"
+]>>
+
+/*(Kollin has NOT met PC)*/ 
+<<if $InActiveQuests.includes("Kollin: Boy in the Woods")>>
+
+    Entering the Opal City Community Center, you spot a boy with a strange streak of green hair out of the corner of your eye. He is standing by the job board near the entrance to the community center, going through the postings and taking some while putting up some of his own. <span style="color:LightGreen">All the while the boy is smiling and reading the postings with inquisitive glee.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "OC Kollin",
+            State: {
+                Mouth: "Happy", 
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You step aside to let a small group of women pass and when you turn back, the boy is looking down at his wristwatch. Without waiting another moment, the boy spins on his heels and runs out of the community center carrying a large handful of leaflets from the notice board. As he exits, his quickness causes a small green leaflet to fly off of him and land near you. You are about to call back for him when you realize it was just a green leaf that must have stuck to his clothing. You pick up the leaf and inspect it; it didn’t look like the leaves they have in the city park, <span style="color:Yellow">the boy must have picked it up from elsewhere.</span> <br>
+    <br>
+    Curious, you walk over to the job board and read some of the postings: <br>
+    <br>
+
+    <span style="color:LightSteelBlue">
+    "<<=_randomlines.pluck()>>"<br>
+    "<<=_randomlines.pluck()>>"<br>
+    "<<=_randomlines.pluck()>>"<br>
+    </span>
+    <br>
+
+    Interesting, but not the kind of jobs you’re looking for. You wonder if any of these were the ones that boy posted, but you can’t tell and figure most of them are just random postings. Still, a strange encounter and you wonder if you will see that boy next time you come to the community center. <br>
+    <br>
+    <<set $OCKollinJobBoard to 1>>
+    [[Continue|Community Center]] 
+
+/*(Kollin HAS met PC)*/
+<<elseif $CompletedQuests.includes("Kollin: Boy in the Woods")>> 
+
+    Entering the Opal City Community Center, you spot a familiar boy with a green streak in his hair. The private investigator you met in the woods, <span style="color:DarkTurquoise">Kollin</span>. <span style="color:LightGreen">He is standing at the notice board rubbing his chin with an inquisitive grin on his face.</span>It seems he is taking some of the postings while putting up a few of his own. <span style="color:Yellow">He seems very occupied and doesn’t even notice you.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "OC Kollin",
+        State: {
+            Mouth: "Happy", 
+        },
+    },
+]>>
+<<ad _ad>>
+
+<div id="choice">
+    <<link "Approach him<br>">>
+    <<replace "#choice">>
+        <span style="color:LightGreen">You walk up to <span style="color:DarkTurquoise">Kollin</span> and greet him. He turns around and glances in the direction of the greeting, before smiling upon seeing that it’s you.</span> The two of you chat for a moment and <span style="color:DarkTurquoise">Kollin</span> explains that he is putting up some postings about investigations he is currently on along with picking up some new ones. He already had a large handful, causing you to chuckle. You glance at the job board and read some of the remaining postings. <br>
+        <br>
+
+        <span style="color:LightSteelBlue">
+        "<<=_randomlines.pluck()>>"<br>
+        "<<=_randomlines.pluck()>>"<br>
+        "<<=_randomlines.pluck()>>"<br>
+        </span>
+        <br>
+
+        You tell <span style="color:DarkTurquoise">Kollin</span> that these aren’t the type of jobs you are looking for but wish him luck in whatever investigations he has ongoing. He thanks you before jokingly saying <span style="color:LightSteelBlue">“Well, at least I don’t have to worry about any competition.”</span> He then glances down as his smartwatch beeps, claiming he has to run. <br>
+        <br>
+        He waves goodbye before taking off on whatever adventure awaits him next. <span style="color:LightGreen">You can’t help but smile at the boy’s adventurous personality.</span> <br>
+        <<socialChange "Kollin" 3 1>>
+        <br>
+        <<set $OCKollinJobBoard to 1>>
+        [[Continue|Community Center]] 
+        <</replace>>
+        <</link>>
+
+    <<link "Ignore Him<br>">>
+    <<replace "#choice">>
+
+        He appears to be busy, so you decide to leave him alone. After a few minutes, he suddenly glances down at his wristwatch and rushes off out the door. Seeing as the board is now free, you decide to glance over at some of the notices:<br>
+        <br>
+
+        <span style="color:LightSteelBlue">
+        "<<=_randomlines.pluck()>>"<br>
+        "<<=_randomlines.pluck()>>"<br>
+        "<<=_randomlines.pluck()>>"<br>
+        </span>
+        <br>
+
+        Interesting, but not the kind of jobs you’re looking for. You wonder what postings <span style="color:DarkTurquoise">Kollin</span> took; knowing him, he took the strange and interesting ones that often pop up here. Regardless, you internally wish the boy luck in whatever job he picked up and wonder if you’ll see him next time you come to the community center.
+        <<set $OCKollinJobBoard to 1>>
+        <br>
+        [[Continue|Community Center]] 
+
+    <</replace>>
+    <</link>>
+</div>
+<</if>>

@@ -1,0 +1,507 @@
+:: Character Creation [nobr]
+
+<span style="color:Azure"><big><strong>--Character Creation--</strong></big></span><br>
+
+Before creating your boy, please enter your Boy’s name and select what Game Mode you would like to play.<br>
+
+<span style="color:Azure"><strong>--Basics--</strong></span><br>
+First Name: 
+<<textbox "$Player.Name" $Player.Name>>
+<br>
+Family Name:
+<<textbox "$Player.LastName" $Player.LastName>>
+<br>
+<br>
+
+<span style="color:Azure"><strong>--Game Mode--</strong></span><br>
+<div id='GameMode'>
+    <<include"CC Game Mode">>
+</div>
+<br>
+
+<span style="color:Azure"><strong>--Toggles--</strong></span><br>
+<strong><span style="color:lightcoral">Note:</span></strong> Certain NPCs and their Stories will involve certain Toggles, even if the Toggle is turned OFF. If they are turned off, scenes and moments involving those toggles will be minimal for the story. They will not be directly depicted and will be mentioned as little as possible.<br>
+<br>
+<div id='Toggles'>
+    <<include"CC Toggles">>
+</div>
+<br>
+/* Direct Link changed to a larger link to set certain settings. */
+<<link"Continue">>
+    <<if $GameMode == -1>>
+        <<set $CheatsMenu to 1>>
+        <<set $NeedDifficulty to 0>>
+        <<set $CCMenu to "Physical">>
+        <<set $CCBodyCat to "Body">>
+    <</if>>
+    <<goto"CC Main">>
+<</link>>
+
+:: CC Game Mode [nobr]
+
+/* IronBoy Mode */
+<<if $GameMode == 1>>
+    <span style="color:lightgreen"><strong>[Ironboy Mode]</strong></span>
+<<else>>
+    <<link "[Ironboy Mode]">>
+        <<set $GameMode to 1>>
+	    <<replace"#GameMode">>
+            <<include"CC Game Mode">>
+        <</replace>>
+    <</link>>
+<</if>>
+ - 
+/* Normal Mode */
+<<if $GameMode == 0>>
+    <span style="color:lightgreen"><strong>[Normal Mode]</strong></span>
+<<else>>
+    <<link "[Normal Mode]">>
+        <<set $GameMode to 0>>
+	    <<replace"#GameMode">>
+            <<include"CC Game Mode">>
+        <</replace>>
+    <</link>>
+<</if>>
+ - 
+/* Free Mode */
+<<if $GameMode == -1>>
+    <span style="color:lightgreen"><strong>[Free Mode]</strong></span>
+<<else>>
+    <<link "[Free Mode]">>
+        <<set $GameMode to -1>>
+	    <<replace"#GameMode">>
+            <<include"CC Game Mode">>
+        <</replace>>
+    <</link>>
+<</if>>
+<br>
+
+<<if $GameMode == 1>>
+    <span style="color:grey">[In Ironboy Mode, you cannot turn on Cheats and future hardcore features, such as curfews, will always be on. Some achievements will only be achievable in Ironboy mode.]</span>
+<<elseif $GameMode == 0>>
+    <span style="color:grey">[In Normal Mode, you can turn cheats on/off at will. (Though turning them on at all will disable achievements.) Certain Hardcore elements will be optional.]</span>
+<<elseif $GameMode == -1>>
+    <span style="color:grey">[In Free Mode, Cheats are always on and Needs do not decrease. Achievements cannot be earned and Hardcore elements are turned off.]</span>
+<</if>>
+<br>
+
+<strong><span style="color:lightcoral">Warning:</span></strong> You cannot change your Game Mode after you begin.<br>
+
+:: CC Toggles [nobr]
+
+/* BLADDER/DIAPERS */
+<strong>Bladder/Diapers:</strong><br>
+<<if $ToggleBladder == 1 and $ToggleDiapers == 1>>
+    <span style="color:lightgreen"><strong>[On]</strong></span>
+<<else>>
+    <<link"[On]">>
+        <<set $ToggleBladder to 1>>
+        <<set $ToggleDiapers to 1>>
+	    <<replace"#Toggles">>
+            <<include"CC Toggles">>
+        <</replace>>
+    <</link>>
+<</if>>
+ - 
+<<if $ToggleBladder == 1 and $ToggleDiapers == 0>>
+    <span style="color:lightgreen"><strong>[Bladder Only]</strong></span>
+<<else>>
+    <<link"[Bladder Only]">>
+        <<set $ToggleBladder to 1>>
+        <<set $ToggleDiapers to 0>>
+	    <<replace"#Toggles">>
+            <<include"CC Toggles">>
+        <</replace>>
+    <</link>>
+<</if>>
+ - 
+<<if $ToggleBladder == 0 and $ToggleDiapers == 1>>
+    <span style="color:lightgreen"><strong>[Diaper Humiliation Only]</strong></span>
+<<else>>
+    <<link"[Diaper Humiliation Only]">>
+        <<set $ToggleBladder to 0>>
+            <<set $ToggleWatersports to 0>>
+        <<set $ToggleDiapers to 1>>
+	    <<replace"#Toggles">>
+            <<include"CC Toggles">>
+        <</replace>>
+    <</link>>
+<</if>>
+ - 
+<<if $ToggleBladder == 0 and $ToggleDiapers == 0>>
+    <span style="color:lightgreen"><strong>[Off]</strong></span>
+<<else>>
+    <<link"[Off]">>
+        <<set $ToggleBladder to 0>>
+            <<set $ToggleWatersports to 0>>
+        <<set $ToggleDiapers to 0>>
+	    <<replace"#Toggles">>
+            <<include"CC Toggles">>
+        <</replace>>
+    <</link>>
+<</if>><br>
+    /* DESCRIPTION */
+<<if $ToggleBladder == 1 and $ToggleDiapers == 1>>
+    <span style="color:grey">[The Bladder Need will be ENABLED and the Player CAN be forced to wear a Diaper for Humiliation Purposes.]</span>
+<<elseif $ToggleBladder == 1 and $ToggleDiapers == 0>>
+    <span style="color:grey">[The Bladder Need will be ENABLED, but the Player CANNOT be forced to wear a Diaper for Humiliation Purposes.]</span>
+<<elseif $ToggleBladder == 0 and $ToggleDiapers == 1>>
+    <span style="color:grey">[The Bladder Need will be DISABLED, but the Player still CAN be forced to wear Diapers solely for Humiliation.]</span>
+<<elseif $ToggleBladder == 0 and $ToggleDiapers == 0>>
+    <span style="color:grey">[The Bladder Need will be DISABLED and the Player CANNOT be forced to wear Diapers.]</span>
+<</if>><br>
+
+    /* WATERSPORTS */
+<<if $ToggleBladder == 1>>
+<strong>Watersports:</strong><br>
+    <<if $ToggleWatersports == 1>>
+    <span style="color:lightgreen"><strong>[On]</strong></span>
+    <<else>>
+        <<link"[On]">>
+            <<set $ToggleWatersports to 1>>
+            <<replace"#Toggles">>
+                <<include"CC Toggles">>
+            <</replace>>
+        <</link>>
+    <</if>>
+     - 
+    <<if $ToggleWatersports == 0>>
+    <span style="color:lightgreen"><strong>[Off]</strong></span>
+    <<else>>
+        <<link"[Off]">>
+            <<set $ToggleWatersports to 0>>
+            <<replace"#Toggles">>
+                <<include"CC Toggles">>
+            <</replace>>
+        <</link>>
+    <</if>><br>
+    /* DESCRIPTIONS */
+    <<if $ToggleWatersports == 1>>
+    <span style="color:grey">[Urine MAY be mentioned in scenes and occasionally in a ‘Sexual’ way.]</span>
+    <<else>>
+    <span style="color:grey">[Urine will only be mentioned in regard to the Bladder Need and NEVER in a ‘Sexual’ way.]</span>
+    <</if>><br>
+<</if>>
+
+/* NON-CON */
+<strong>Non-Con:</strong><br>
+    <<if $ToggleNonCon == 1>>
+    <span style="color:lightgreen"><strong>[On]</strong></span>
+    <<else>>
+        <<link"[On]">>
+            <<set $ToggleNonCon to 1>>
+            <<replace"#Toggles">>
+                <<include"CC Toggles">>
+            <</replace>>
+        <</link>>
+    <</if>>
+     - 
+    <<if $ToggleNonCon == 0>>
+    <span style="color:lightgreen"><strong>[Off]</strong></span>
+    <<else>>
+        <<link"[Off]">>
+            <<set $ToggleNonCon to 0>>
+            <<replace"#Toggles">>
+                <<include"CC Toggles">>
+            <</replace>>
+        <</link>>
+    <</if>><br>
+    /* DESCRIPTIONS */
+    <<if $ToggleNonCon == 1>>
+    <span style="color:grey">[The Player MAY find themselves or others in Non-Consenting Sexual and Aggressive situations outside of their control including Rape.]</span>
+    <<else>>
+    <span style="color:grey">[The Player will NEVER find themselves in real Non-Consenting Sexual Situations, outside of possible consenting and pretend Role Play with friends.]</span>
+    <</if>><br>
+
+/* SUPERNATURAL */
+<strong>Supernatural/Fantasy Content:</strong><br>
+    <<if $ToggleSupernat == 1>>
+    <span style="color:lightgreen"><strong>[Possibility of Real]</strong></span>
+    <<else>>
+        <<link"[Possibility of Real]">>
+            <<set $ToggleSupernat to 1>>
+            <<replace"#Toggles">>
+                <<include"CC Toggles">>
+            <</replace>>
+        <</link>>
+    <</if>>
+     - 
+    <<if $ToggleSupernat == 0>>
+    <span style="color:lightgreen"><strong>[Only Imagined]</strong></span>
+    <<else>>
+        <<link"[Only Imagined]">>
+            <<set $ToggleSupernat to 0>>
+            <<replace"#Toggles">>
+                <<include"CC Toggles">>
+            <</replace>>
+        <</link>>
+    <</if>><br>
+    /* DESCRIPTIONS */
+    <<if $ToggleSupernat == 1>>
+    <span style="color:grey">[Supernatural and Fantasy elements MAY be present in the game.]</span>
+    <<else>>
+    <span style="color:grey">[Supernatural and Fantasy elements will simply be the over-active imagination of the Player Character’s.]</span>
+    <</if>><br>
+    
+
+/* INJURIES TO MINORS */
+<strong>Injuries to Minors:</strong><br>
+    <<if $ToggleInjuries == 1>>
+    <span style="color:lightgreen"><strong>[Full]</strong></span>
+    <<else>>
+        <<link"[Full]">>
+            <<set $ToggleInjuries to 1>>
+            <<replace"#Toggles">>
+                <<include"CC Toggles">>
+            <</replace>>
+        <</link>>
+    <</if>>
+     - 
+    <<if $ToggleInjuries == 0>>
+    <span style="color:lightgreen"><strong>[Minimal]</strong></span>
+    <<else>>
+        <<link"[Minimal]">>
+            <<set $ToggleInjuries to 0>>
+            <<replace"#Toggles">>
+                <<include"CC Toggles">>
+            <</replace>>
+        <</link>>
+    <</if>><br>
+    /* DESCRIPTIONS */
+    <<if $ToggleInjuries == 1>>
+    <span style="color:grey">[Injuries and violence inflicted to minors MAY occur and may appear on the Player Avatar.]</span>
+    <<else>>
+    <span style="color:grey">[Injuries and violence inflicted to minors will be minimal and NEVER appear on the Player Avatar.]</span>
+    <</if>><br>
+    
+
+/* SPANKING */
+<strong>Spanking:</strong><br>
+    <<if $ToggleSpanking == 1>>
+    <span style="color:lightgreen"><strong>[Full]</strong></span>
+    <<else>>
+        <<link"[Full]">>
+            <<set $ToggleSpanking to 1>>
+            <<replace"#Toggles">>
+                <<include"CC Toggles">>
+            <</replace>>
+        <</link>>
+    <</if>>
+     - 
+    <<if $ToggleSpanking == 0>>
+    <span style="color:lightgreen"><strong>[Mentions Only]</strong></span>
+    <<else>>
+        <<link"[Mentions Only]">>
+            <<set $ToggleSpanking to 0>>
+            <<replace"#Toggles">>
+                <<include"CC Toggles">>
+            <</replace>>
+        <</link>>
+    <</if>><br>
+    /* DESCRIPTIONS */
+    <<if $ToggleSpanking == 1>>
+    <span style="color:grey">[Spanking MAY occur to the PC or other Characters. It will be depicted both in-scene and in the special “Spanking” interactive event.]</span>
+    <<else>>
+    <span style="color:grey">[When Spanking occurs, they will be briefly mentioned and NEVER part of a special interactive event.]</span>
+    <</if>><br>
+
+/* Chastity */
+<strong>Chastity/Cages:</strong><br>
+<<if $ToggleChastity == 1>>
+    <span style="color:lightgreen"><strong>[On]</strong></span>
+<<else>>
+    <<link"[On]">>
+        <<set $ToggleChastity to 1>>
+        <<replace "#Toggles">>
+            <<include "CC Toggles">>
+        <</replace>>
+    <</link>>
+<</if>>
+    - 
+<<if $ToggleChastity == 0>>
+    <span style="color:lightgreen"><strong>[Off]</strong></span>
+<<else>>
+    <<link"[Off]">>
+        <<set $ToggleChastity to 0>>
+        <<replace "#Toggles">>
+            <<include "CC Toggles">>
+        <</replace>>
+    <</link>>
+<</if>><br>
+/* DESCRIPTIONS */
+<<if $ToggleChastity == 1>>
+    <span style="color:grey">[You will see Chastity/Cage content (i.e. Cock Cages/Chastity belts) in events, sprites and art.]</span>
+<<else>>
+    <span style="color:grey">[Events containing Chastity/Cage content will not happen.]</span>
+<</if>><br>
+
+<strong>Avatar Sizes:</strong><br>
+<<if $ToggleAvatarSizes == 1>>
+    <span style="color:lightgreen"><strong>[On]</strong></span>
+<<else>>
+    <<link"[On]">>
+        <<set $ToggleAvatarSizes to 1>>
+        <<replace"#Toggles">>
+            <<include"CC Toggles">>
+        <</replace>>
+    <</link>>
+<</if>>
+-
+<<if $ToggleAvatarSizes == 0>>
+    <span style="color:lightgreen"><strong>[Off]</strong></span>
+<<else>>
+    <<link"[Off]">>
+        <<set $ToggleAvatarSizes to 0>>
+        <<replace"#Toggles">>
+            <<include"CC Toggles">>
+        <</replace>>
+    <</link>>
+<</if>><br>
+/* DESCRIPTIONS */
+<<if $ToggleAvatarSizes == 1>>
+<span style="color:grey">[Avatars of the main NPCs will show in varying sizes that correspond to their height]</span>
+<<else>>
+<span style="color:grey">[All NPC Avatars will show with the same size, only visual]</span>
+<</if>><br>
+
+<strong>Lewd Female Content:</strong><br>
+<<if $ToggleGirlContent == 1>>
+    <span style="color:lightgreen"><strong>[On]</strong></span>
+<<else>>
+    <<link"[On]">>
+        <<set $ToggleGirlContent to 1>>
+        <<replace"#Toggles">>
+            <<include"CC Toggles">>
+        <</replace>>
+    <</link>>
+<</if>>
+-
+<<if $ToggleGirlContent == 0>>
+    <span style="color:lightgreen"><strong>[Off]</strong></span>
+<<else>>
+    <<link"[Off]">>
+        <<set $ToggleGirlContent to 0>>
+        <<replace"#Toggles">>
+            <<include"CC Toggles">>
+        <</replace>>
+    <</link>>
+<</if>><br>
+/* DESCRIPTIONS */
+<<if $ToggleGirlContent == 1>>
+<span style="color:grey">[Lewd content involving female characters will appear and your boy may show attraction to female characters.]</span>
+<<else>>
+<span style="color:grey">[Female characters will only appear in non-lewd roles or as supporting characters. Your boy will show no attraction to female characters.]</span>
+<</if>><br>
+
+<br>    
+<br>
+<span style="color:Azure"><strong>--Fan-Character Toggles--</strong></span><br>
+<strong><span style="color:lightcoral">Note:</span></strong> The following toggles are for events containing Supporter-Created characters from the Rainbow Fanbox Tier. All characters are designed to fit into the world without breaking immersion and add to the experience. All OC Toggles are [On] by default. Content Toggles will override OC Toggles and they will still not appear if their content heavily features aspects that are Toggled Off.<br>
+<br>
+
+<<set _ocs = $OCCharacters.filter(oc => oc.Deprecated === false)>>
+<<set _deprecatedOcs = $OCCharacters.filter(oc => oc.Deprecated === true)>>
+
+<<set _showOcs = false>>
+<<set _showDeprecatedOcs = false>>
+
+<<button "Turn off all OCs">>
+    <<for _oc range _ocs>>
+        <<run State.setVar(_oc.Variable, 0)>>
+        <<update>>
+    <</for>>
+<</button>>
+<<button "Turn on all OCs">>
+    <<for _oc range _ocs>>
+        <<run State.setVar(_oc.Variable, 1)>>
+        <<update>>
+    <</for>>
+<</button>><br>
+<br>
+
+<<liveblock>>
+    <<if _showOcs>>
+        <<link "[Hide OC Toggles]">>
+            <<set _showOcs = false>>
+            <<update>>
+        <</link>><br><br>
+        <<for _oc range _ocs>>
+            <<capture _oc>>
+                <strong><<=_oc.Name>>:</strong><br>
+                <<if State.getVar(_oc.Variable) == 1>>
+                    <span style="color:lightgreen"><strong>[On]</strong></span>
+                <<else>>
+                    <<link "[On]">>
+                        <<run State.setVar(_oc.Variable, 1)>>
+                        <<update>>
+                    <</link>>
+                <</if>>
+                - 
+                <<if State.getVar(_oc.Variable) == 0>>
+                    <span style="color:lightgreen"><strong>[Off]</strong></span>
+                <<else>>
+                    <<link "[Off]">>
+                        <<run State.setVar(_oc.Variable, 0)>>
+                        <<update>>
+                    <</link>>
+                <</if>><br>
+                <span class="greyed-out">
+                    <strong>Content Warning</strong>: <<=_oc.ContentWarning>>
+                </span><br>
+                <span class="greyed-out">
+                    <strong>Contents</strong>: <<=_oc.Contents>>
+                </span><br>
+                <br>
+            <</capture>>
+        <</for>>
+    <<else>>
+        <<link "[Show OC Toggles]">>
+            <<set _showOcs = true>>
+            <<update>>
+        <</link>><br><br>
+    <</if>>
+
+    <<if _showDeprecatedOcs>>
+        <<link "[Hide deprecated OCs]">>
+            <<set _showDeprecatedOcs = false>>
+            <<update>>
+        <</link>>
+        <<include "Deprecated OCs Help">>
+        <br><br>
+        <<for _oc range _deprecatedOcs>>
+            <<capture _oc>>
+                <strong><<=_oc.Name>>:</strong><br>
+                <<if State.getVar(_oc.Variable) == 1>>
+                    <span style="color:lightgreen"><strong>[On]</strong></span>
+                <<else>>
+                    <<link "[On]">>
+                        <<run State.setVar(_oc.Variable, 1)>>
+                        <<update>>
+                    <</link>>
+                <</if>>
+                - 
+                <<if State.getVar(_oc.Variable) == 0>>
+                    <span style="color:lightgreen"><strong>[Off]</strong></span>
+                <<else>>
+                    <<link "[Off]">>
+                        <<run State.setVar(_oc.Variable, 0)>>
+                        <<update>>
+                    <</link>>
+                <</if>><br>
+                <span class="greyed-out">
+                    <strong>Content Warning</strong>: <<=_oc.ContentWarning>>
+                </span><br>
+                <span class="greyed-out">
+                    <strong>Contents</strong>: <<=_oc.Contents>>
+                </span><br>
+                <br>
+            <</capture>>
+        <</for>>
+    <<else>>
+        <<link "[Show deprecated OCs]">>
+            <<set _showDeprecatedOcs = true>>
+            <<update>>
+        <</link>>
+        <<include "Deprecated OCs Help">>
+    <</if>>
+<</liveblock>>

@@ -1,0 +1,937 @@
+:: Mood Menu [nobr]
+
+/* New Mood Menu */
+<br>
+/* Mood Display */
+<strong>
+<<print "<span style=\"color:" + _moodcolor[_moodcolorvalue] + "\">You are " + $Player.Mood + "</span>">><br>
+</strong>
+
+<<if $Debug>>
+	Happy: $PlayerMood.Happy<br>
+	Sad: $PlayerMood.Sad<br>
+	Neutral: $PlayerMood.Neutral<br>
+	Tired: $PlayerMood.Tired<br>
+	Uncomfortable: $PlayerMood.Uncomfortable<br>
+	Hyper: $PlayerMood.Hyper<br>
+	Horny: $PlayerMood.Horny<br>
+	Bored: $PlayerMood.Bored<br>
+	Mad: $PlayerMood.Mad<br>
+	Embarrassed: $PlayerMood.Embarrassed<br>
+	Scared: $PlayerMood.Scared<br>
+<</if>>
+
+/* Tried to do this with a for loop, but the coloring of the text couldn't let me. */
+/* Happy */
+<span style="color:Green">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Happy">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining) 
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+/* Sad */
+<span style="color:Blue">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Sad">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining)
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+/* Neutral */
+<span style="color:White">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Neutral">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining)
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+/* Tired */
+<span style="color:Orange">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Tired">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining)
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+/* Uncomfortable */
+<span style="color:Orange">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Uncomfortable">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining)
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+/* Hyper */
+<span style="color:Teal">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Hyper">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining)
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+/* Horny */
+<span style="color:Pink">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Horny">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining)
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+/* Bored */
+<span style="color:lightgrey">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Bored">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining)
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+/* Mad */
+<span style="color:Red">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Mad">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining)
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+/* Embarrassed */
+<span style="color:Yellow">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Embarrassed">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining)
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+/* Scared */
+<span style="color:Purple">
+<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+	<<capture _i>>
+		<<if $Player.Moodlets[_i].Type == "Scared">>
+			<img @src="`Images/Icons/Moodlets/${$Player.Moodlets[_i].Icon}.png`">
+			<strong>$Player.Moodlets[_i].Name:</strong> $Player.Moodlets[_i].Description
+			<<if $Player.Moodlets[_i].MoodletType == "Decay">>
+				($Player.Moodlets[_i].Value Hours Remaining)
+			<</if>>
+			<<if $Player.Moodlets[_i].MoodletType == "Level">>
+				(<strong>Level:</strong> $Player.Moodlets[_i].Value)
+			<</if>>
+			<<include"Mood Menu Values">>
+			<br>
+		<</if>>
+	<</capture>>
+<</for>>
+</span>
+
+:: Mood Menu Values [nobr]
+
+(
+<<if $Player.Moodlets[_i].Values.Happy>>
+	<<if $Player.Moodlets[_i].Values.Happy > 0>>
+		<span style="color:Green">
+		+$Player.Moodlets[_i].Values.Happy <strong>Happy</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Happy > 0>>
+		<span style="color:Green">
+		$Player.Moodlets[_i].Values.Happy <strong>Happy</strong>
+		</span>
+	<</if>>
+<</if>>
+<<if $Player.Moodlets[_i].Values.Sad>>
+	<<if $Player.Moodlets[_i].Values.Sad > 0>>
+		<span style="color:Blue">
+		+$Player.Moodlets[_i].Values.Sad <strong>Sad</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Sad > 0>>
+		<span style="color:Blue">
+		$Player.Moodlets[_i].Values.Sad <strong>Sad</strong>
+		</span>
+	<</if>>
+<</if>>
+<<if $Player.Moodlets[_i].Values.Neutral>>
+	<<if $Player.Moodlets[_i].Values.Neutral > 0>>
+		<span style="color:White">
+		+$Player.Moodlets[_i].Values.Neutral <strong>Neutral</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Neutral > 0>>
+		<span style="color:White">
+		$Player.Moodlets[_i].Values.Neutral <strong>Neutral</strong>
+		</span>
+	<</if>>
+<</if>>
+<<if $Player.Moodlets[_i].Values.Tired>>
+	<<if $Player.Moodlets[_i].Values.Tired > 0>>
+		<span style="color:Orange">
+		+$Player.Moodlets[_i].Values.Tired <strong>Tired</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Tired > 0>>
+		<span style="color:Orange">
+		$Player.Moodlets[_i].Values.Tired <strong>Tired</strong>
+		</span>
+	<</if>>
+<</if>>
+<<if $Player.Moodlets[_i].Values.Uncomfortable>>
+	<<if $Player.Moodlets[_i].Values.Uncomfortable > 0>>
+		<span style="color:Orange">
+		+$Player.Moodlets[_i].Values.Uncomfortable <strong>Uncomfortable</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Uncomfortable > 0>>
+		<span style="color:Orange">
+		$Player.Moodlets[_i].Values.Uncomfortable <strong>Uncomfortable</strong>
+		</span>
+	<</if>>
+<</if>>
+<<if $Player.Moodlets[_i].Values.Hyper>>
+	<<if $Player.Moodlets[_i].Values.Hyper > 0>>
+		<span style="color:Teal">
+		+$Player.Moodlets[_i].Values.Hyper <strong>Hyper</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Hyper > 0>>
+		<span style="color:Teal">
+		$Player.Moodlets[_i].Values.Hyper <strong>Hyper</strong>
+		</span>
+	<</if>>
+<</if>>
+<<if $Player.Moodlets[_i].Values.Horny>>
+	<<if $Player.Moodlets[_i].Values.Horny > 0>>
+		<span style="color:Pink">
+		+$Player.Moodlets[_i].Values.Horny <strong>Horny</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Horny > 0>>
+		<span style="color:Pink">
+		$Player.Moodlets[_i].Values.Horny <strong>Horny</strong>
+		</span>
+	<</if>>
+<</if>>
+<<if $Player.Moodlets[_i].Values.Bored>>
+	<<if $Player.Moodlets[_i].Values.Bored > 0>>
+		<span style="color:Grey">
+		+$Player.Moodlets[_i].Values.Bored <strong>Bored</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Bored > 0>>
+		<span style="color:Grey">
+		$Player.Moodlets[_i].Values.Bored <strong>Bored</strong>
+		</span>
+	<</if>>
+<</if>>
+<<if $Player.Moodlets[_i].Values.Mad>>
+	<<if $Player.Moodlets[_i].Values.Mad > 0>>
+		<span style="color:Red">
+		+$Player.Moodlets[_i].Values.Mad <strong>Mad</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Mad > 0>>
+		<span style="color:Red">
+		$Player.Moodlets[_i].Values.Mad <strong>Mad</strong>
+		</span>
+	<</if>>
+<</if>>
+<<if $Player.Moodlets[_i].Values.Embarrassed>>
+	<<if $Player.Moodlets[_i].Values.Embarrassed > 0>>
+		<span style="color:Yellow">
+		+$Player.Moodlets[_i].Values.Embarrassed <strong>Embarrassed</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Embarrassed > 0>>
+		<span style="color:Yellow">
+		$Player.Moodlets[_i].Values.Embarrassed <strong>Embarrassed</strong>
+		</span>
+	<</if>>
+<</if>>
+<<if $Player.Moodlets[_i].Values.Scared>>
+	<<if $Player.Moodlets[_i].Values.Scared > 0>>
+		<span style="color:Purple">
+		+$Player.Moodlets[_i].Values.Scared <strong>Scared</strong>
+		</span>
+	<<elseif $Player.Moodlets[_i].Values.Scared > 0>>
+		<span style="color:Purple">
+		$Player.Moodlets[_i].Values.Scared <strong>Scared</strong>
+		</span>
+	<</if>>
+<</if>>
+)
+
+:: Mood Menu Old [nobr]
+
+/* Old */
+
+<span style="color:Green"><big><strong>--Positive--</strong></big></span><br>
+							/* CAFFEINE BUZZ +5 */
+
+	<<if $Caffeine == 1>>
+		<span title="Caffeine Buzz">
+		<img src="Images\Icons\Moodlets\Caffeine Buzz.png" alt="Caffeine Buzz">
+		</span>
+		<span style="color:Green">
+		<strong>Caffeine Buzz [+5]:</strong> Coffee may not taste the best, but it sure makes you feel energized! ($CaffeineHours Hours until crash!)</span><br>
+	<</if>>
+							/* CLEAN +5 */
+
+	<<if $CleanMoodlet == 1>>
+		<span title="Clean">
+		<img src="Images\Icons\Moodlets\Clean.png" alt="Clean">
+		</span>
+		<span style="color:Green">
+		<strong>Clean [+5]:</strong> You feel clean.</span><br>
+	<</if>>
+							/* DELICIOUS +5 */
+
+	<<if $Delicious == 1>>
+		<span title="Delicious">
+		<img src="Images\Icons\Moodlets\Delicious.png" alt="Delicious">
+		</span>
+		<span style="color:Green">
+		<strong>Delicious [+5]:</strong> The food was amazing! You feel full and satisfied. ($DeliciousHours Hours Remaining)</span><br>
+	<</if>>
+							/* ENTERTAINED +5 */
+
+	<<if $EntertainedMoodlet == 1>>
+		<span title="Entertained">
+		<img src="Images\Icons\Moodlets\Entertained.png" alt="Entertained">
+		</span>
+		<span style="color:Green">
+		<strong>Entertained [+5]:</strong> You feel entertained.</span><br>
+	<</if>>
+							/* EXCITING NUDITY +5 */
+
+	<<if $NakedMoodlet == 3>>
+		<span title="Exciting Nudity">
+		<img src="Images\Icons\Moodlets\Exciting Nudity.png" alt="Exciting Nudity">
+		</span>
+		<span style="color:Green">
+		<strong>Exciting Nudity [+5]:</strong> You are sneaking around in a public place, completely naked! It is scary, but also exciting!</span><br>
+	<</if>>
+							/* FRESH AIR +5 */
+
+	<<if $IndoorOutdoorTrait == 2>>
+		<span title="Fresh Air">
+		<img src="Images\Icons\Moodlets\Fresh Air.png" alt="Fresh Air">
+		</span>
+		<span style="color:Green">
+		<strong>Fresh Air [+5]:</strong> Sunshine! Fresh air! Nothing beats the beauty of the great outdoors!</span><br>
+	<</if>>
+							/* GAVE WEDGIE +5 */
+
+	<<if $GaveWedgie == 1>>
+		<span title="Gave Wedgie">
+		<img src="Images\Icons\Moodlets\Gave Wedgie.png" alt="Gave Wedgie">
+		</span>
+		<span style="color:Green">
+		<strong>Gave Wedgie [+5]:</strong> You gave another person a Wedgie, making you feel in control!. ($GaveWedgieHours Hours Remaining)</span><br>
+	<</if>>
+							/* GOOD DREAM +5 */
+
+	<<if $GoodDream == 1>>
+		<span title="Good Dream">
+		<img src="Images\Icons\Moodlets\Good Dream.png" alt="Good Dream">
+		</span>
+		<span style="color:Green">
+		<strong>Good Dream [+5]:</strong> Your mind is still full of memories of your nice dream. ($GoodDreamHours Hours Remaining)</span><br>
+	<</if>>
+							/* GOOD SHOW +5 */
+
+	<<if $GoodShow == 1>>
+		<span title="Good Show">
+		<img src="Images\Icons\Moodlets\Good Show.png" alt="Good Show">
+		</span>
+		<span style="color:Green">
+		<strong>Good Show [+5]:</strong> You watched a pretty good show. ($GoodShowHours Hours Remaining)</span><br>
+	<</if>>
+							/* GOOD WANK +5 */
+
+	<<if $GoodWank == 1>>
+		<span title="Good Wank">
+		<img src="Images\Icons\Moodlets\Good Wank.png" alt="Good Wank">
+		</span>
+		<span style="color:Green">
+		<strong>Good Wank [+5]:</strong> You had a good wank. ($GoodWankHours Hours Remaining)</span><br>
+	<</if>>
+							/* GREAT MOVIE +5 */
+
+	<<if $GreatMovie == 1>>
+		<span title="Great Movie">
+		<img src="Images\Icons\Moodlets\Great Movie.png" alt="Great Movie">
+		</span>
+		<span style="color:Green">
+		<strong>Great Movie [+5]:</strong> The acting, the sets, the ending! The movie was an overall treat! ($GreatMovieHours Hours Remaining)</span><br>
+	<</if>>
+							/* KISSED +5 */
+
+	<<if $Kissed == 1>>
+		<span title="Kissed">
+		<img src="Images\Icons\Moodlets\Kissed.png" alt="Kissed">
+		</span>
+		<span style="color:Green">
+		<strong>Kissed [+5]:</strong> You shared a kiss with someone you care about. ($KissedHours hours remaining)</span><br>
+	<</if>>
+							/* LEWD EXPERIENCE +5 */
+
+	<<if $LewdExperience == 1>>
+		<span title="Lewd Experience">
+		<img src="Images\Icons\Moodlets\Lewd Experience.png" alt="Lewd Experience">
+		</span>
+		<span style="color:Green">
+		<strong>Lewd Experience [+5]:</strong> You did something lewd with another boy. How can something so wrong feel so right? ($LewdExperienceHours hours remaining)</span><br>
+	<</if>>
+							/* Minty Fresh +5 */
+
+	<<if $MintyFresh == 1>>
+		<span title="Minty Fresh">
+		<img src="Images\Icons\Moodlets\Minty Fresh.png" alt="Minty Fresh">
+		</span>
+		<span style="color:Green">
+		<strong>Minty Fresh [+5]:</strong> Your mouth feels fresh and clean with a minty taste. ($MintyFreshHours Hours Remaining)</span><br>
+	<</if>>
+							/* PLEASANT BREEZE +5 */
+
+	<<if $CommandoTrait == 1>>
+		<span title="Pleasant Breeze">
+		<img src="Images\Icons\Moodlets\Pleasant Breeze.png" alt="Pleasant Breeze">
+		</span>
+		<span style="color:Green">
+		<strong>Pleasant Breeze [+5]:</strong> You feel a pleasant breeze on your groin that tickles you playfully.</span><br>
+	<</if>>
+							/* PLEASURABLE BURN +5 */
+
+	<<if $Spanked == 1 and $Player.Traits.includes("Slap Happy")>>
+		<span title="Pleasurable Burn">
+		<img src="Images\Icons\Moodlets\Pleasurable Burn.png" alt="Pleasurable Burn">
+		</span>
+		<span style="color:Green">
+		<strong>Pleasurable Burn [+5]:</strong> Your recently spanked butt burns with a pleasurable sensation. ($SpankedHours Hours Remaining)</span><br>
+	<</if>>
+							/* REFRESHING +5 */
+
+	<<if $Refreshing == 1>>
+		<span title="Refreshing">
+		<img src="Images\Icons\Moodlets\Refreshing.png" alt="Refreshing">
+		</span>
+		<span style="color:Green">
+		<strong>Refreshing [+5]:</strong> You feel Refreshed.</span><br>
+	<</if>>
+							/* RELAXED +5 */
+
+	<<if $Relaxed == 1>>
+		<span title="Relaxed">
+		<img src="Images\Icons\Moodlets\Relaxed.png" alt="Relaxed">
+		</span>
+		<span style="color:Green">
+		<strong>Relaxed [+5]:</strong> You feel Relaxed.</span><br>
+	<</if>>
+							/* SAFE & SECURE +5 */
+
+	<<if $IndoorOutdoorTrait == 1>>
+		<span title="Safe & Secure">
+		<img src="Images\Icons\Moodlets\Safe & Secure.png" alt="Safe & Secure">
+		</span>
+		<span style="color:Green">
+		<strong>Safe & Secure [+5]:</strong> There is something about being inside, safe from the dangers and chaos of the world, that makes you feel secure.</span><br>
+	<</if>>
+							/* TIGHT SQUEEZE +5 */
+
+	<<if $Wedgie == 1 and $Player.Traits.includes("Wedgie Fiend")>>
+		<span title="Tight Squeeze">
+		<img src="Images\Icons\Moodlets\Tight Squeeze.png" alt="Tight Squeeze">
+		</span>
+		<span style="color:Green">
+		<strong>Tight Squeeze [+5]:</strong> You can still feel the overwhelming tightness on your privates from that last wedgie. ($WedgieHours Hours Remaining)</span><br>
+	<</if>>
+							/* WELL FED +5 */
+
+	<<if $WellFedMoodlet == 1>>
+		<span title="Well Fed">
+		<img src="Images\Icons\Moodlets\Well Fed.png" alt="Well Fed">
+		</span>
+		<span style="color:Green">
+		<strong>Well Fed [+5]:</strong> You feel Well Fed from your last meal.</span><br>
+	<</if>>
+							/* WELL RESTED +5 */
+
+	<<if $WellRestedMoodlet == 1>>
+		<span title="Well Rested">
+		<img src="Images\Icons\Moodlets\Well Rested.png" alt="Well Rested">
+		</span>
+		<span style="color:Green">
+		<strong>Well Rested [+5]:</strong> You feel Well Rested.</span><br>
+	<</if>>
+
+	<<if $GoodDeed == 1>>
+		<span title="Good Deed">
+		<img src="Images\Icons\Moodlets\Good Deed.png" alt="Good Deed">
+		</span>
+		<span style="color:Green">
+		<strong>Good Deed [+5]:</strong> You did a good deed and feel equally good about it. ($GoodDeedHours Hours Remaining)</span><br>
+	<</if>>
+	
+	
+<br>
+<span style="color:Yellow"><big><strong>--Neutral--</strong></big></span><br>
+	
+							/* AROUNSED */
+<<if $Hard == 1>>
+		<span title="Aroused">
+		<img src="Images\Icons\Moodlets\Aroused.png" alt="Uncomfortably Cold">
+		</span>
+		<span style="color:Yellow">
+		<strong>Aroused:</strong> You feel a tingling sensation in your groin.</span><br>
+	<</if>>
+							/* DAMP */
+<<if $Wet == 1>>
+		<span title="Damp">
+		<img src="Images\Icons\Moodlets\Damp.png" alt="Damp">
+		</span>
+		<span style="color:Yellow">
+		<strong>Damp [-10]:</strong> Your clothes feel damp and a bit heavier than normal. Due to the water that resides within them.</span><br>
+	<</if>>
+
+							/* NAKED SAFE */
+	<<if $NakedMoodlet == 2>>
+		<span title="Naked">
+		<img src="Images\Icons\Moodlets\NakedN.png" alt="Naked">
+		</span>
+		<span style="color:Yellow">
+		<strong>Naked:</strong> You're naked, but you're in a safe place so its fine.</span><br>
+	<</if>>
+
+							/* TOWEL SAFE */
+	<<if $TowelMoodlet == 1>>
+		<span title="Towel">
+		<img src="Images\Icons\Moodlets\Towel.png" alt="Towel">
+		</span>
+		<span style="color:Yellow">
+		<strong>In Towel:</strong> The only thing protecting your dignity is a White Towel you have wrapped around your waist.</span><br>
+	<</if>>
+
+							/* UNDERWEAR SAFE */
+	<<if $UndiesMoodlet == 2>>
+		<span title="Underwear">
+		<img src="Images\Icons\Moodlets\UndiesN.png" alt="Underwear">
+		</span>
+		<span style="color:Yellow">
+		<strong>In Underwear:</strong> You’re in your underwear, but you're in a safe place so its fine.</span><br>
+	<</if>>
+
+<br>
+<span style="color:Red"><big><strong>--Negative--</strong></big></span><br>
+	
+							/* Raped -20 */
+<<if $Raped == 1>>
+		<span title="Raped">
+		<img src="Images\Icons\Moodlets\Raped.png" alt="Raped">
+		</span>
+		<span style="color:DarkRed">
+		<strong>Raped [-20]:</strong> You were violated and abused in a way you can't describe. ($RapedHours hours remaining)</span><br>
+	<</if>>
+
+							/* ABOUT TO BURST -10 */
+<<if $HoldingItInMoodlet == 2>>
+		<span title="About to Burst">
+		<img src="Images\Icons\Moodlets\About to Burst.png" alt="Hard">
+		</span>
+		<span style="color:Red">
+		<strong>About to Burst[-5]:</strong> Your bladder is about to explode!</span><br>
+	<</if>>
+						
+							/* DYING OF BOREDOM -10 */
+<<if $BoredMoodlet == 2>>
+		<span title="Dying of Boredom">
+		<img src="Images\Icons\Moodlets\Dying of Boredom.png" alt="Dirty">
+		</span>
+		<span style="color:Red">
+		<strong>Dying of Boredom [-10]:</strong> You are in desperate need of entertainment.</span><br>
+	<</if>>
+
+							/* EXHAUSTED -10 */
+		<<if $ExhaustedMoodlet == 1>>
+		<span title="Exhausted">
+		<img src="Images\Icons\Moodlets\Exhausted.png" alt="Exhausted">
+		</span>
+		<span style="color:DarkRed">
+		<strong>Exhausted [-10]:</strong> You feel like you’re on the verge of passing out!</span><br>
+	<</if>>
+							/* FILTHY -10 */
+		<<if $FilthyMoodlet == 1>>
+		<span title="Filthy">
+		<img src="Images\Icons\Moodlets\Filthy.png" alt="Filthy">
+		</span>
+		<span style="color:DarkRed">
+		<strong>Filthy [$HygieneNegative]:</strong> You can barely stand your own stench!</span><br>
+	<</if>>
+							/* Naked -10 */
+		<<if $NakedMoodlet == 1>>
+		<span title="Naked">
+		<img src="Images\Icons\Moodlets\Naked.png" alt="Naked">
+		</span>
+		<span style="color:DarkRed">
+		<strong>Naked [-10]:</strong> You’re Naked in public! Your face burns a bright red as you try to cover your privates!</span><br>
+	<</if>>
+							/* NIGHTMARE -10 */
+		<<if $Nightmare == 1>>
+		<span title="Nightmare">
+		<img src="Images\Icons\Moodlets\Nightmare.png" alt="Nightmare">
+		</span>
+		<span style="color:DarkRed">
+		<strong>Nightmare [-10]:</strong> You can't get that scary nightmare out of your head! ($NightmareHours hours remaining)</span><br>
+	<</if>>
+	
+							/* PAINFULLY HORNY -10 */
+<<if $Hard == 3>>
+		<span title="Painfully Horny">
+		<img src="Images\Icons\Moodlets\Painfully Horny.png" alt="Hard">
+		</span>
+		<span style="color:DarkRed">
+		<strong>Painfully Horny [-10]:</strong> Your penis throbs and twitches in desire. Your body begs for release.</span><br>
+	<</if>>
+	
+							/* REALLY STRESSED -10 */
+<<if $Stress >= 4>>
+		<span title="Really Stressed">
+		<img src="Images\Icons\Moodlets\Really Stressed.png" alt="Really Stressed">
+		</span>
+		<span style="color:DarkRed">
+		<strong>Really Stressed [$StressEffect]:</strong> You feel really stressed out!</span><br>
+	<</if>>
+							/* SEEN NAKED -10 */
+		<<if $SeenNaked == 1>>
+		<span title="Seen Naked">
+		<img src="Images\Icons\Moodlets\Seen Naked.png" alt="Seen Naked">
+		</span>
+		<span style="color:DarkRed">
+		<strong>Seen Naked [-10]:</strong> Someone saw you naked! Your exposed body will forever be engraved in their memory. You can hardly contain your embarrassment. ($SeenNakedHours Hours Remaining)</span><br>
+	<</if>>
+							/* SOAKED -20 */
+<<if $Wet == 3>>
+		<span title="Soaked">
+		<img src="Images\Icons\Moodlets\Soaked.png" alt="Soaked">
+		</span>
+		<span style="color:Red">
+		<strong>Soaked [-20]:</strong> You are soaked from head to toe, leaving a river of water behind you.</span><br>
+	<</if>>
+							/* STARVING -10 */
+		<<if $StarvingMoodlet == 1>>
+		<span title="Starving">
+		<img src="Images\Icons\Moodlets\Starving.png" alt="Starving">
+		</span>
+		<span style="color:DarkRed">
+		<strong>Starving [-10]:</strong> You feel like you haven’t eaten in ages!</span><br>
+	<</if>>
+							/* WET -10 */
+<<if $Wet == 2>>
+		<span title="Wet">
+		<img src="Images\Icons\Moodlets\Wet.png" alt="Wet">
+		</span>
+		<span style="color:Red">
+		<strong>Wet [-10]:</strong> You and your clothes are soaking wet! You can dry off in a bathroom.</span><br>
+	<</if>>
+	
+							/* VERY HOT -10 */
+<<if $Hot == 2>>
+		<span title="Very Hot">
+		<img src="Images\Icons\Moodlets\Very Hot.png" alt="Very Hot">
+		</span>
+		<span style="color:Red">
+		<strong>Very Hot [-10]:</strong> You are sweating buckets! You feel a strong desire to remove some clothes.</span><br>
+	<</if>>
+	
+							/* VERY COLD -10 */
+<<if $Cold == 2>>
+		<span title="Very Cold">
+		<img src="Images\Icons\Moodlets\Very Cold.png" alt="Very Cold">
+		</span>
+		<span style="color:Red">
+		<strong>Very Cold [-10]:</strong> You are freezing! You should really bundle up.</span><br>
+	<</if>>
+					/* NEGATIVE FIVE */	
+	
+							/* BAD DREAM -5 */
+<<if $BadDream == 1>>
+		<span title="Bad Dream">
+		<img src="Images\Icons\Moodlets\Bad Dream.png" alt="Bad Dream">
+		</span>
+		<span style="color:Red">
+		<strong>Bad Dream [-5]:</strong> You are still remembering your bad dream. ($BadDreamHours hours remaining)</span><br>
+	<</if>>
+						
+							/* BORED -5 */
+<<if $BoredMoodlet == 1>>
+		<span title="Bored">
+		<img src="Images\Icons\Moodlets\Bored.png" alt="Dirty">
+		</span>
+		<span style="color:Red">
+		<strong>Bored [-5]:</strong> You are feeling Bored.</span><br>
+	<</if>>
+						
+							/* CAFFEINE CRASH -5 */
+<<if $Caffeine == 2>>
+		<span title="Caffeine Crash">
+		<img src="Images\Icons\Moodlets\Caffeine Crash.png" alt="Caffeine Crash">
+		</span>
+		<span style="color:Red">
+		<strong>Caffeine Crash [-5]:</strong> You’re not feeling too hot. The caffeine made you feel energized for a while, but now you feel exhausted! ($CaffeineHours Hours Remaining.)</span><br>
+	<</if>>
+						
+							/* Dirty -5 */
+<<if $DirtyMoodlet == 1>>
+		<span title="Dirty">
+		<img src="Images\Icons\Moodlets\Dirty.png" alt="Dirty">
+		</span>
+		<span style="color:Red">
+		<strong>Dirty [$HygieneNegative]:</strong> You could use a bath.</span><br>
+	<</if>>
+						
+	
+							/* Grossed Out -5 */
+<<if $GrossedOut == 1>>
+		<span title="Grossed Out">
+		<img src="Images\Icons\Moodlets\Grossed Out.png" alt="Hard">
+		</span>
+		<span style="color:Red">
+		<strong>Grossed Out [-5]:</strong> Your memory is filled with something disgusting.</span><br>
+	<</if>>
+	
+							/* HARD -5 */
+<<if $Hard == 2>>
+		<span title="Hard">
+		<img src="Images\Icons\Moodlets\Hard.png" alt="Hard">
+		</span>
+		<span style="color:Red">
+		<strong>Hard [-5]:</strong> Your penis is hard and sensitive. You wonder if anybody can notice.</span><br>
+	<</if>>
+	
+							/* HOLDING IT IN -5 */
+<<if $HoldingItInMoodlet == 1>>
+		<span title="Holding It In">
+		<img src="Images\Icons\Moodlets\Holding It In.png" alt="Hard">
+		</span>
+		<span style="color:Red">
+		<strong>Holding It In [-5]:</strong> Your bladder is starting to feel full.</span><br>
+	<</if>>
+							/* HUNGRY -5 */
+<<if $HungryMoodlet == 1>>
+		<span title="Hungry">
+		<img src="Images\Icons\Moodlets\Hungry.png" alt="Hungry">
+		</span>
+		<span style="color:Red">
+		<strong>Hungry [-5]:</strong> You feel quite Hungry.</span><br>
+	<</if>>
+							/* NO SHOES -5 */
+<<if $NoShoesMoodlet == 1>>
+		<span title="No Shoes">
+		<img src="Images\Icons\Moodlets\No Shoes.png" alt="No Shoes">
+		</span>
+		<span style="color:Red">
+		<strong>No Shoes [-5]:</strong> Your feet hurt from walking around outside without any shoes on.</span><br>
+	<</if>>
+	
+							/* PAINED -5 */
+<<if $Pained == 1>>
+		<span title="Pained">
+		<img src="Images\Icons\Moodlets\Pained.png" alt="Pained">
+		</span>
+		<span style="color:Red">
+		<strong>Pained [-5]:</strong> You are hurt! It will go away with time or medicine. ($PainedHours Hours Remaining)</span><br>
+	<</if>>
+						
+							/* SCARY MOVIE -5 */
+<<if $ScaryMovie == 1>>
+		<span title="Scary Movie">
+		<img src="Images\Icons\Moodlets\Scary Movie.png" alt="Scary Movie">
+		</span>
+		<span style="color:Red">
+		<strong>Scary Movie [-5]:</strong> That movie sure was scary. Good thing monsters aren’t real… right? ($ScaryMovieHours Hours Remaining)</span><br>
+	<</if>>
+	
+							/* SEEN IN UNDERWEAR -5 */
+<<if $SeenUndies == 1>>
+		<span title="Seen in underwear">
+		<img src="Images\Icons\Moodlets\Seen Undies.png" alt="Tired">
+		</span>
+		<span style="color:Red">
+		<strong>Seen in Underwear [-5]:</strong> Someone saw you in your underwear! ($SeenUndiesHours Hours Remaining) </span><br>
+	<</if>>
+	
+							/* SPANKED -5 */
+<<if $Spanked == 1 and $Player.Traits.includes("Slap Happy")>>
+
+<<elseif $Spanked == 1>>
+		<span title="Spanked">
+		<img src="Images\Icons\Moodlets\Spanked.png" alt="Spanked">
+		</span>
+		<span style="color:Red">
+		<strong>Spanked [-5]:</strong> Your red ass is sore from being spanked. You don’t know which is worse, the pain or the humiliation. ($SpankedHours Hours Remaining) </span><br>
+	<</if>>
+	
+							/* STRESSED -5 */
+<<if $Stress >= 1 and $Stress < 4>>
+		<span title="Stressed">
+		<img src="Images\Icons\Moodlets\Stressed.png" alt="Stressed">
+		</span>
+		<span style="color:Red">
+		<strong>Stressed [$StressEffect]:</strong> You feel stressed out.</span><br>
+	<</if>>
+	
+							/* TIRED -5 */
+<<if $TiredMoodlet == 1>>
+		<span title="Tired">
+		<img src="Images\Icons\Moodlets\Tired.png" alt="Tired">
+		</span>
+		<span style="color:Red">
+		<strong>Tired [-5]:</strong> You are beginning to feel sleepy.</span><br>
+	<</if>>
+	
+							/* UNCOMFORABLY HOT -5 */
+<<if $Hot == 1>>
+		<span title="Uncomfortably Hot">
+		<img src="Images\Icons\Moodlets\Uncomfortably Hot.png" alt="Uncomfortably Hot">
+		</span>
+		<span style="color:Red">
+		<strong>Uncomfortably Hot [-5]:</strong> You feel quite hot, you should put on cooler clothes.</span><br>
+	<</if>>
+	
+							/* UNCOMFORABLY COLD -5 */
+<<if $Cold == 1>>
+		<span title="Uncomfortably Cold">
+		<img src="Images\Icons\Moodlets\Uncomfortably Cold.png" alt="Uncomfortably Cold">
+		</span>
+		<span style="color:Red">
+		<strong>Uncomfortably Cold [-5]:</strong> You feel quite cold, you should put on warmer clothes.</span><br>
+	<</if>>
+							/* UNDERWEAR EXPOSED -5 */
+<<if $UndiesMoodlet == 1>>
+		<span title="Underwear Exposed">
+		<img src="Images\Icons\Moodlets\Undies.png" alt="Underwear Exposed">
+		</span>
+		<span style="color:Red">
+		<strong>Underwear Exposed [-5]:</strong> You blush as you find yourself in a public setting with your $PlayerUndies.Type Exposed!</span><br>
+	<</if>>
+	
+							/* UNPLEASANTLY CONSTRAINED -5 */
+<<if $CommandoTrait == -1>>
+		<span title="Unpleasantly Constrained">
+		<img src="Images\Icons\Moodlets\Unpleasantly Constrained.png" alt="Unpleasantly Constrained">
+		</span>
+		<span style="color:Red">
+		<strong>Unpleasantly Constrained [-5]:</strong> Your underwear feels so tight upon your groin. It begs for freedom!</span><br>
+	<</if>>
+	
+							/* WEDGIE -5 */
+<<if $Wedgie == 1 and $Player.Traits.includes("Wedgie Fiend")>>
+
+<<elseif $Wedgie == 1>>
+		<span title="Wedgie">
+		<img src="Images\Icons\Moodlets\Wedgie.png" alt="Wedgie">
+		</span>
+		<span style="color:Red">
+		<strong>Wedgie [-5]:</strong> You received a Wedgie! You can still feel your underwear being yanked. ($WedgieHours Hours Remaining) </span><br>
+	<</if>>
+
+
+
+<br>

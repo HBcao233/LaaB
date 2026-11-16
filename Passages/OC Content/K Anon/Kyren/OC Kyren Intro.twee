@@ -1,0 +1,351 @@
+:: OC Kyren Intro [nobr]
+
+/* Intro */
+You are walking down the hallway filled with boys of various ages from your own grade to those above you <span style="Color: Yellow">when you hear a cry of distress</span>. While a common occurrence in a hallway full of rowdy, entertainment-starved boys, something about this cry catches your attention. <span style="Color: Pink">You peek around the corner and spot a boy being lifted by his ankles and dropped headfirst into a trashcan by some older kids whose laughter echoes throughout the hallway.</span><br>
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+Most of the other boys watching either laugh, gossip, or try to at least avoid the bully’s attention. You spot one of the third-year teachers walking by in a hurry with a cup of coffee, but he doesn’t even give the scene a glance as he speeds by to whatever else requires his attention. <span style="Color: Yellow">After all, the kid is just being stuffed into a trashcan, it’s not like he’s in any real danger.</span><br>
+<br>
+The bullies laugh and chuckle loudly as the poor boy kicks his legs around in an attempt to free himself, but it is obvious he’ll be stuck there until he either manages to tip the trashcan over or someone comes to his aid, which is fairly unlikely unless he has a friend in the crowd watching. Eventually, the bullies grow bored of the sight and walk off laughing, leaving the helpless lad stuck. <br>
+<br>
+The victim fruitlessly kicks and thrashes about, unable to free himself. Most of the crowd has dispersed, but a few continue to watch the entertainment. <span style="Color: Yellow">You have no idea who this kid is, but you’re sure he’d appreciate the help. Then again, it appears that he is extremely unpopular, so helping him would most certainly tank your reputation.</span><br>
+<br>
+
+<div id="Choice">
+    /* Help him */
+    <<link "Help him<br>">>
+    <<replace"#Choice">>
+        The boy continues to kick and flail about, drawing laughter and giggles from the crowd of watching boys. Though the display is only so funny for so long, as one by one the crowd begins to disperse and go about their day. Once the boy’s struggle is nothing more than a passing amusement and you are sure that there won’t be too many witnesses, you run over to attempt to help the boy. <br>
+        <br>
+        You grab the boy’s ankles to try and pull him out, though this just causes him to panic and begin to flail uncooperatively. You inform him that you are trying to help. The boy freezes for a moment, as if processing your words, before letting his legs relax. You grab both of his legs and pull with all your might! <br>
+        <br>
+        <span style="Color: LightCoral">It isn’t easy; The boy had been shoved completely into the trashcan and had no room to move his arms, meaning it was just your strength attempting to free him.</span> In the end, you had to resign yourself to tilting the trashcan over and dragging him out in a heap. <span style="Color: Pink">As you get his upper body out, his shirt is pulled up and you spy his adorably pale belly.</span> Seems the boy doesn’t go outside much. <span style="Color: LightGreen">Once the boy is finally freed and pulls an old lunch bag off his head, he takes in a deep breath of clean air.</span><br>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "OC Kyren",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 3,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        /* PC: Frown
+        Kyren: Uniform, Frown, Blush3 */
+        The boy stares right at you for a second before quickly glancing away and turning bright red. You inspect the boy curiously, unsure if you’ve ever seen him in school before. He has slick messy black hair whose fringe comes down and covers one of his eyes. The one eye you can see has dark bags under it, as if the boy had been up all night. Though the most curious part about the boy is the small yellow dots that line his hair, probably being supposed to look like a starry night sky. <br>
+        <br>
+        The boy takes a deep breath and then opens his mouth a few times, apparently looking for the right words – or any words, before finally speaking. <span style="Color: LightSteelBlue">“Tha- thank you…”</span> His voice is a little horse and unsteady, <span style="Color: LightSteelBlue ">“I’m <span style="Color: DarkTurquoise">Kyren</span>”</span>, he swallows <span style="Color: LightSteelBlue">“W- we have some classes together actually, but I don’t think you noticed me before. I’m usually pretty quiet and sit in the back, that way people sometimes leave me alone…”</span> You think for a moment. You’re sure you’d notice a boy with yellow dots in their hair like Kyren, but truly do not recall him. There are plenty of kids in your class that you don’t know, but it is a little embarrassing to admit you don’t remember someone you technically spend every weekday with. <br>
+        <br>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "OC Kyren",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 3,
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        /* PC: Frown
+        Kyren: Uniform, Mad, Blush3, Frown */
+        <span style="Color: LightSteelBlue">“I didn’t expect anyone to actually help me, but I’m glad you did.”</span> He says, rubbing his arm nervously, <span style="Color: LightSteelBlue">“I’ve had my eyes on you for a while so- I MEAN-! I’ve noticed you for a while and you look nicer than – Ah! SEEM – not look - nicer… than most of the other boys… I mean, of course it’s not like you don’t look nice!… Ehh”</span> The boy speaks with a panicked tone, constantly correcting himself. <span style="Color: Pink">Every time he does, he turns redder and redder.</span><br>
+        <br>
+        You chuckle at the boy, asking why he is so nervous? The boy tries to respond, his lower lip quivering as he stutters <span style="Color: LightSteelBlue">“I’m sorry, I’m not used to talking this much.”</span> and quickly takes off running down the hallway! You call out to him, but he quickly turns the corner and disappears from view…<br>
+        <br>
+        What a weird kid. <br>
+        <<set $CompletedQuests.push("Kyren: Introduction")>>
+        <<set $InActiveQuests.delete("Kyren: Introduction")>>
+        <<set $OCKyrenSocial to 0>>
+        <<set $OCKyrenSocialRank to 0>>
+        <<socialChange "Kyren" 15 1>>
+        <<set $SchoolRep -= 10>>
+        <span style="Color: Red">-Reputation</span><br>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    <</replace>>
+    <</link>>
+    /* Ignore him & walk away */
+    <<link "Ignore him & walk away<br>">>
+    <<replace"#Choice">>
+        You decide it’s best to not get involved. After all, the kid isn’t in any real danger, or the teachers would step in. This is just the common hazing that comes with middle school. Who are you to stand in the way of tradition? Besides, maybe he did something to deserve this. Or maybe you are just thinking better him than you. <br>
+        <br>
+        Whatever your reasoning may be, you turn away from the distressed boy and continue walking down the hallway, leaving him to whatever destiny has in store. <br>
+        <<set $ActiveQuests.push("Kyren: Introduction")>>
+        <<set $InActiveQuests.delete("Kyren: Introduction")>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    <</replace>>
+    <</link>>
+    /* Stick around & laugh */
+    <<link "Stick around & laugh<br>">>
+    <<replace"#Choice">>
+        You decide it is not your place to get involved, at least not in helping the boy. But you got to admit, the scene is kind of hilarious! You let out a chuckle as the helpless lad kicks and struggles about, trying despite how obvious it is that he has no hope of freeing himself. <span style="Color: LightGreen">Watching such a pathetic display puts a smile on your face and fills your heart with the type of joy you can only get from watching the suffering of others.</span><br>
+        <<set $ActiveQuests.push("Kyren: Introduction")>>
+        <<set $InActiveQuests.delete("Kyren: Introduction")>>
+        <<needChange "Fun" 3>>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Humiliation"]>>
+        <<arousalGain 5 _arousalbs _arousalkink>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    <</replace>>
+    <</link>>
+    /* Smack his butt */
+    <<link "Smack his butt<br>">>
+    <<replace"#Choice">>
+        The way the boy was placed into the trashcan leaves his backside facing you. <span style="Color: Pink">His bottoms-covered butt wiggling about as his shirt droops down due to his inverted nature. This peeks out the waistband of his underwear, Black Boxerbriefs, you’d guess. Cute yet mature, you wonder who this boy could be?</span><br>
+        <br>
+        Though that isn’t your goal. No, your goal in this moment is to take that struggling, wiggling butt of his and give it something to remember. You stand behind the trapped boy and hold your hand flat and high, making it obvious to those still watching what you plan to do. A few smirk, some snicker, the rest keep neutral expressions, though keep watching with interest. You pull your hand back as far as it can, winding it up, until…<br>
+        <br>
+        <span style="Color: Pink">SMACK! <br>
+        <br>
+        You hit his butt as hard as you can! The sound of palm hitting pants echoes throughout the hallway followed by the pained cry of the trapped boy.</span> Laughter finishes the trio of sounds, as all those watching break out into giggles and chuckles at the boy’s misfortune. Said boy bends up his legs, trying to shield his rear from another strike with his feet, unsure if you were only coming in for the one or if others would follow your lead. <span style="Color: Pink">This method wouldn’t at all be effective, but it was cute to watch.</span><br>
+        <br>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Eyes: "Mad",
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        /* PC: Smirk, Mad */
+        Alas, you only have one smack in you and walk away as the poor lad continues to struggle and wiggle fruitlessly to escape his embarrassing, vulnerable predicament. <span style="Color: Pink">What a fun situation to come across, and not be a victim of yourself.</span><br>
+        <<set $ActiveQuests.push("Kyren: Introduction")>>
+        <<set $InActiveQuests.delete("Kyren: Introduction")>>
+        <<needChange "Fun" 4>>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Humiliation", "Spanker"]>>
+        <<arousalGain 10 _arousalbs _arousalkink>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    <</replace>>
+    <</link>>
+    /* Smack his nuts */
+    <<link "Smack his nuts<br>">>
+    <<replace"#Choice">>
+        The way the boy was placed into the trashcan leaves his backside facing you. His bottoms-covered butt wiggling about as his shirt droops down due to his inverted nature. <span style="Color: Pink">This peeks out the waistband of his underwear, Black Boxerbriefs, you’d guess. Cute yet mature, you wonder who this boy could be?</span><br>
+        <br>
+        Though that isn’t your goal. No, your goal is something much more devious. Something that breaks the very code of manhood between two boys. <span style="Color: Pink">For with his legs apart as they are, you spy a perfect target right between his legs. Lower than his wiggling cheeks and so much more vulnerable. You smirk to the crowd, placing your hand right next to his balls before winding your hand up into the air, making it clear to all watching what your target is.</span><br>
+        <br>
+        A few boys snicker or chuckle, some gasp and blush, other smirk but hold their own groins as they feel phantom pain from what you’re about to do. You give the crowd one last chance to watch the struggling, flailing boy. He won’t be moving much when you’re done with him. Then, with all the wind up and force you can muster, you strike. <br>
+        <br>
+        <span style="Color: Pink">SMACK!
+        The sound seems to echo throughout all the halls in the building. Nearly every boy watching groans out in shared pain as they see the victim’s balls so painfully impacted.</span> You even feel your own knees buckle a little from how hard you hit him. Strangely, the boy in the trashcan doesn’t cry out or make any noise. Instead, he freezes in place with his legs out-stretched for what feels like a solid minute before crumbling down in a heap inside the trashcan. <br>
+        <br>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Eyes: "Mad",
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        /* PC: Smirk, Mad */
+        You have literally knocked all the fight out of the poor lad, now fully inside the bin. You begin to hear what you can only imagine is crying as the lad, probably feeling some of the worst pain he’s ever felt, begins to sob and cry from within the garbage. <br>
+        <br>
+        Though only some laugh, most still cringe from the sound of your impact. Some are entertained and most are happy it wasn’t them, but it is clear that such an impact to his most sacred place has drawn the sympathy of a few of those watching. Yet despite this, no one helps the boy and most decide to just walk away, leaving him to his pain. You follow suit, taking one last glance at the bin before walking away as the crying fades into the distance. <br>
+        <<set $ActiveQuests.push("Kyren: Introduction")>>
+        <<set $InActiveQuests.delete("Kyren: Introduction")>>
+        <<needChange "Fun" 4>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    <</replace>>
+    <</link>>
+    /* Pull his pants down */
+    <<link "Pull his pants down<br>">>
+    <<replace"#Choice">>
+        The way the boy was placed into the trashcan leaves his backside facing you. His bottoms-covered butt wiggling about as his shirt droops down due to his inverted nature. <span style="Color: Pink">This peeks out the waistband of his underwear, Black Boxerbriefs, you’d guess. Cute yet mature, you wonder who this boy could be?</span><br>
+        <br>
+        The only way to find out the boy’s identity would be to pull him out, but that wouldn’t be very fun. No, instead maybe you could learn about the boy another way. <span style="Color: Pink">With a devious smirk you walk up to the boy and eye the bit of underwear peeking out. What better way to learn about a boy than through his choice of underwear? And what better way to learn through their underwear than to get a full, unobstructed view?<br>
+        <br>
+        You reach out and grip the side of his bottoms and, before the boy or anyone watching can realize what you are doing, you rip them down, or in this case up, his legs all the way to his ankles! The crowd gasps, before breaking out laughing as the boy’s underwear-clad backside is fully exposed to everyone! It is indeed Black Boxerbriefs. You spy a crusty white stain that stands out on the black fabric and smirk, what a dirty boy.</span><br>
+        <br>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Eyes: "Mad",
+                    Mouth: "Smirk",
+                },
+            },
+            {
+                Name: "OC Kyren",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 3,
+                    Mouth: "Frown",
+                    Arms: "Bound",
+                },
+                Clothes: {
+                    Bottoms: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        /* PC: Smirk, Mad
+        Kyren: Uniform, Blush3, Frown, Arms Bound, No Bottoms */
+        You continue to pull his bottoms completely off his body as the boy helplessly kicks in your direction, trying to fight you off. <span style="Color: Pink">But it is pointless as you easily manage to pull off the rest of his bottoms and toss them aside, leaving the boy’s legs completely exposed. Laughter fills the halls as the boy is no doubt bright red inside the trashcan. You step forward and peek at your prize, the victim’s pale legs indicating that he didn’t get outside much.</span><br>
+        <br>
+        You stare down at him for a moment before you decide to hide his bottoms in another trashcan and leave him to his fate. You don’t want to be around in case he snitches to a teacher, but the idea of him struggling to find his bottoms before class starts is almost enough to make you stay. <span style="Color: Pink">Alas, you’ll have to leave that sight in your imagination for now.</span><br>
+        <<set $ActiveQuests.push("Kyren: Introduction")>>
+        <<set $InActiveQuests.delete("Kyren: Introduction")>>
+        <<needChange "Fun" 6>>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Humiliation"]>>
+        <<arousalGain 10 _arousalbs _arousalkink>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    <</replace>>
+    <</link>>
+    /* Pull his pants & underwear down */
+    <<requiresTrait "Bully" "Pull his pants & underwear down">>
+    <<replace"#Choice">>
+        The way the boy is placed into the trashcan leaves his backside facing you. His bottoms-covered butt wiggling about as his shirt droops down due to his inverted nature. <span style="Color: Pink">This peeks out the waistband of his underwear, Black Boxerbriefs, you’d guess. Cute yet mature, you wonder who this boy could be?</span><br>
+        <br>
+        The only way to find out the boy’s identity would be to pull him out, but that wouldn’t be very fun. No, instead maybe you could learn about the boy another way. <span style="Color: Pink">With a devious smirk you walk up to the boy and eye the bit of underwear peeking out. What better way to learn about a boy than through his choice of underwear? And what better way to learn through their underwear than to get a full, unobstructed view? <br>
+        <br>
+        You reach out and grip the side of his bottoms and, before the boy or anyone watching can realize what you are doing, you rip them down, or in this case up, his legs all the way to his ankles! The crowd gasps, before breaking out laughing as the boys underwear-clad backside is fully exposed to everyone! It is indeed Black Boxerbriefs. You spy a crusty white stain that stands out on the black fabric and smirk, what a dirty boy.</span><br>
+        <br>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Eyes: "Mad",
+                    Mouth: "Smirk",
+                },
+            },
+            {
+                Name: "OC Kyren",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 3,
+                    Mouth: "Frown",
+                    Arms: "Bound",
+                },
+                Clothes: {
+                    Bottoms: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        /* PC: Smirk, Mad
+        Kyren: Uniform, Blush3, Frown, Arms Bound, No Bottoms */
+        You continue to pull his bottoms completely off his body as the boy helplessly kicks in your direction, trying to fight you off. <span style="Color: Pink">But it is pointless as you easily manage to pull off the rest of his bottoms and toss them aside, leaving the boy’s legs completely exposed. Laughter fills the halls as the boy is no doubt bright red inside the trashcan. You step forward and peek at your prize, the victim’s pale legs indicating that he didn’t get outside much.</span><br>
+        <br>
+        <span style="Color: Pink">Then you get an idea only a perverted boy who likes to bully his peers would get. The boy is already stuck without his pants, why not remove his last shred of dignity as well? With an evil smile, you reach out and grip the sides of the poor boy’s underwear. His body tenses up and begins to struggle, but doing so only causes his gripped underwear to slip off faster. Once he realizes this, he stops struggling and resorts to a different tactic.</span><br>
+        <br>
+        <span style="Color: LightSteelBlue">“Wait no! Please don’t!”</span> His muffled, panicked voice begs from within the trashcan, <span style="Color: LightSteelBlue">“Ple- please! Just leave me alone!”</span> He continues to beg and plead, a pointless endeavor since you are in complete control. Trying to fight you off would have been better, because at least then he’d have a chance at success, however small it may have been. <span style="Color: Pink">With dark glee, you slowly begin to pull his underwear up and off his body.</span><br>
+        <br>
+        <span style="Color: Pink">The first thing revealed is the top of his butt, somehow paler than his legs and shines in the fluorescent light of the hallway. His cheeks were like two perfectly smooth snowballs. Then you feel his penis pop out. While not directed directly at you, you peer your head over to peek and spy an adorably cute penis with bits of pubic hair above. You let out a snort at the sight, which the boy must hear as he attempts to close his legs to hide his small boyhood from you.</span><br>
+        <br>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Eyes: "Mad",
+                    Mouth: "Smirk",
+                },
+            },
+            {
+                Name: "OC Kyren",
+                ShowZoom: true,
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 3,
+                    Mouth: "Frown",
+                    Arms: "Bound",
+                    Cry: 1,
+                },
+                Clothes: {
+                    Bottoms: $None,
+                    Undies: $None,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        /* PC: Smirk, Mad
+        Kyren: Uniform, Blush3, Frown, Arms Bound, No Bottoms/Undies, Zooms */
+        <span style="Color: Pink">Alas, there is nothing he can do as you continue to pull his underwear off his body. His balls are equally cute, tight yet jiggling about as he struggled. Then, as you pull his underwear up to his knees, you spot the boy’s most secret prize. His tiny, pink, tight butthole. Laid bare before you completely exposed and vulnerable. With his sticky, cum-stained underwear completely removed, every bit of the boy’s most private and sensitive parts are fully exposed for you and everyone in the hallway to see. <br>
+        <br>
+        The laughter starts right away, the hallway erupting as teasing remarks and comments about the boy’s genitals erupt. From comments on its small size to how pale he is to even some suggestions of what you should do to him next. Despite the boy’s identity being a secret to you, you just know he is dying of embarrassment from inside that trashcan. It’s a thought that you can’t help but smile about. The sound of electronic shutters going off clues you in to some boys with phones taking photos of the poor boy’s exposed state, his most private parts forever immortalized in their handheld devices. You’re certain these photos would spread far and wide.</span><br>
+        <br>
+        You consider going further, maybe slapping his white rear to turn it red or finding something to shove in that tight butthole of his, but someone calls out that a teacher is coming and the crowd quickly begins to disperse. <span style="Color: Pink">You toss his pants and underwear into a nearby trashcan, can’t make it too easy for him to find, before fleeing yourself. You take one moment to glance back at the boy’s white butt and balls thrashing about before disappearing into the crowd.</span><br>
+        <<set $ActiveQuests.push("Kyren: Introduction")>>
+        <<set $InActiveQuests.delete("Kyren: Introduction")>>
+        <<needChange "Fun" 10>>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Humiliation"]>>
+        <<arousalGain 10 _arousalbs _arousalkink>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    <</replace>>
+    <</requiresTrait>>
+</div>

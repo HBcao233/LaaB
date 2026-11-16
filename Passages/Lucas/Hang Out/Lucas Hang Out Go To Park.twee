@@ -1,0 +1,39 @@
+:: Lucas Hang Out Go To Park [nobr]
+
+/* Intro */
+You ask <span style="color:DarkTurquoise">Lucas</span> if he would like to go to the park and he happily nods. <span style="Color: LightSteelBlue">“Sure thing, it’s really nice this time of year, as long as it isn’t too crowded. I like to head there after school sometimes and just take a little walk or do my homework on the benches if the weather is nice enough.”</span> <span style="color:DarkTurquoise">Lucas</span> pauses, blushing and rubbing the back of his head. <span style="Color: LightSteelBlue">“Though I guess that may be a little dorky and not really your idea of fun.”</span><br>
+
+<<set _ad to [
+	{
+		Name: "Lucas",
+		State: {
+            Outfit: $HangOutClothes,
+			Mouth: "Happy",
+            Blush: 1,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="choice">
+	<<link "Lucas is a little dorky<br>">>
+    <<replace"#choice">>
+        <span style="color:LightGreen">You smirk at <span style="color:DarkTurquoise">Lucas</span> and tell him he’s right, he is a little dorky. But then again, you kind of like that about him. <span style="color:DarkTurquoise">Lucas</span> smiles at this and runs up to catch up with you.</span> <span style="Color: LightSteelBlue">“Yeah, yeah. We can play on the playground too, if you want. It’s pretty nice. I’m down for whatever.”</span> You both continue chatting and walking until you reach the city park.<br>
+        <br>
+        [[Continue|Lucas Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "That’s not dorky<br>">>
+    <<replace"#choice">>
+        <span style="color:LightGreen">You tell <span style="color:DarkTurquoise">Lucas</span> that isn’t dorky, it even sounds pretty relaxing.</span> Dorky would be something like going all the way to the park just to sit on his butt and play video games on a handheld. <span style="color:Pink"> <span style="color:DarkTurquoise">Lucas</span> blushes at that and laughs nervously,</span> <span style="Color: LightSteelBlue">“Yeah, that would be…”</span> He clears his throat before rushing to catch up. <span style="Color: LightSteelBlue">“But, yeah, we can do whatever. Playground, walk and talks, whatever.”</span> You both continue chatting and walking until you reach the city park.<br>
+        <br>
+        [[Continue|Lucas Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

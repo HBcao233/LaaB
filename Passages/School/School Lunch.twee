@@ -1,0 +1,43 @@
+:: School Lunch [nobr]
+
+/* FREE */
+<<if $SchoolLunchLevel == 0>>
+	You enjoy the school's free Lunch. It's nothing special.<br>
+	<<needChange "Hunger" 20>>
+/* STANDARD */
+<<elseif $SchoolLunchLevel == 1>>
+	<<set $Money -= 2>>
+	You enjoy the school's standard Lunch. It tastes pretty good!<br>
+	<<needChange "Hunger" 35>>
+/* PREMIUM */
+<<else>>
+	<<set $Money -= 4>>
+	<<addMoodlet "Delicious" 6>>
+	You enjoy the school's premium Lunch. It tastes delicious!<br>
+	<<needChange "Hunger" 35>>
+<</if>>
+
+<<set $Minutes += 15>>
+<<set $LunchClass to 1>>
+<br>
+
+[[Continue|School Cafeteria]] <br>
+
+:: School Lunch Level Chooser [nobr]
+
+<<if $Money >= 4>>
+	<<listbox "$SchoolLunchLevel" autoselect>>
+		<<option "Free Lunch" 0>>
+		<<option "Standard Lunch ($2)" 1>>
+		<<option "Premium Lunch ($4)" 2>>
+	<</listbox>><br>
+<<elseif $Money >= 2>>
+	<<listbox "$SchoolLunchLevel" autoselect>>
+		<<option "Free Lunch" 0>>
+		<<option "Standard Lunch ($2)" 1>>
+	<</listbox>><br>
+<<else>>
+	<<listbox "$SchoolLunchLevel" autoselect>>
+		<<option "Free Lunch" 0>>
+	<</listbox>><br>
+<</if>>

@@ -1,0 +1,147 @@
+:: Felix Hang Out Park Swing Leap [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+<span style="Color: LightSteelBlue">“Hey, follow me!”</span> <span style="color:DarkTurquoise">Felix</span> shouts as he grabs you by the arms and pulls you over to the swing set. He jumps onto it and immediately begins to swing, kicking his feet off the ground to get incredible height. You sit down and swing next to him, chuckling at the look of determination on his face that reminds you of your little brother. <span style="Color: LightSteelBlue">“Bet I can make it to the grass!”</span> <span style="color:DarkTurquoise">Felix</span> proclaims as he goes higher and higher. <span style="Color: LightGreen">You realize he means to jump off at its height!</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Felix",
+		State: {
+            Outfit: $HangOutClothes,
+			Mouth: "Happy",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You roll your eyes, doubting he’ll be able to make that distance, it’s like 15 feet. But your doubts just seem to egg <span style="color:DarkTurquoise">Felix</span> on more as he goes higher and higher <span style="Color: LightGreen">until he reaches the peak of the arc and leaps off dramatically!</span> <br>
+<br>
+<span style="color:DarkTurquoise">Felix</span> soars through the sky, flying like a bird, <span style="Color: Yellow">before gravity catches up with him and he is yanked back down to the earth. While <span style="color:DarkTurquoise">Felix</span> doesn’t make it to the grass, he does make it further than you expected, landing only a few feet away from his goal before crumbling down and crashing backwards into the sand.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Aaahahaha…”</span> <span style="color:DarkTurquoise">Felix</span> does a mixture of a pained groan and a laugh. <span style="Color: LightSteelBlue">“Aahhh… yup!”</span> He says something in French that you imagine is a curse based on the context as he chuckles in a heap on the ground. <span style="Color: LightGreen">It seems it didn’t go according to plan, but he is at least in good spirits. Now, it is time to decide if you follow his lead or not.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Follow his lead<br>">>
+    <<replace "#choice">>
+        You can’t let <span style="color:DarkTurquoise">Felix</span> one up you, so you gain your own speed and height before jumping off as well, aiming for the same impossible goal. <span style="Color: Yellow">The ending is about the same as well. Falling short of the grass, hitting the sand at a strange angle and crumbling down right next to <span style="color:DarkTurquoise">Felix</span>, pained laughter included.</span> The next few minutes has both of you lying there, groaning in soreness while also chuckling at the amusing conclusion. <br>
+        
+        <<set _ad to [
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Smirk",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“I’d say we give it another go, but I think I bruised my ribs.”</span> He laughs, sitting up and groaning, <span style="Color: LightSteelBlue">“Maybe we aim for something easier, yeah?”</span> He reaches down and helps you up. <span style="Color: LightGreen">You both agree to a more relaxing swing for now, leaving the daredevil antics to those without bruises.</span> <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Felix" 3>>
+        <<addMoodlet "Pained" 3>>
+        <span style="color:green">+Felix Fun</span><br>
+        <<set $HangOutNeed.Fun += 15>>
+        <span style="color:Red">-Felix Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <span style="color:green">+Felix Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 10>>
+        <br>
+        [[Continue|Felix Hang Out Park]]
+    <</replace>>
+    <</link>>
+    <<link "Call him an idiot<br>">>
+    <<replace "#choice">>
+        <span style="Color: Pink">You roll your eyes, smirking as you call him an idiot.</span> <span style="Color: LightSteelBlue">“Better an idiot than a coward!”</span> <span style="color:DarkTurquoise">Felix</span> replies, sticking his tongue out at you. Though you add that it is better to be a coward than injured. <span style="Color: LightSteelBlue">“I am not injured! I am being very-”</span> <span style="color:DarkTurquoise">Felix</span> tries to stand up but quickly crumbles back to the ground. <span style="Color: LightSteelBlue">“Ow, haha. Think I may have bruised my ankle, just a little...”</span> He laughs nervously as you walk over and help him up. <br>
+        
+        <<set _ad to [
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightGreen">Thankfully, it isn’t a serious injury or anything, just a small bruise that <span style="color:DarkTurquoise">Felix</span> quickly manages to walk off.</span> <span style="Color: LightSteelBlue">“This is nothing. I three times broken my leg while playing soccer. Well, two were playing soccer, one was practicing by the river back home and I slipped.”</span> He laughs as you tell him he needs to be more careful. <span style="Color: LightSteelBlue">“No, that’s why you are here to take care of me.”</span> <span style="Color: LightGreen">He laughs, putting his arm around you as you both hobble back to the swings for a more relaxing time.</span> <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Felix" 3>>
+        <span style="color:green">+Felix Fun</span><br>
+        <<set $HangOutNeed.Fun += 15>>
+        <span style="color:Red">-Felix Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <span style="color:green">+Felix Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 5>>
+        <br>
+        [[Continue|Felix Hang Out Park]]
+    <</replace>>
+    <</link>>
+    <<requiresTrait "Daredevil" "Tackle Felix from the sky">>
+	<<replace"#choice">>
+        <span style="Color: LightGreen">You smirk deviously as you see your target. Not the grass like <span style="color:DarkTurquoise">Felix</span>, not even the sand before it. No, your target is the daring little French boy currently lying in the sand.</span> You’re going to tackle him from the sky, prove your dominance! And he can do nothing about it! <br>
+        <br>
+        So, you kick off the ground, gaining speed and height at incredible proportions until you reach the absolute peek of the swing and leap off! <span style="color:DarkTurquoise">Felix</span> watches from the ground with amusement as you fly, eclipsing the sun. <span style="Color: LightGreen">He realizes a second too late what your goal is and tries to roll out of the way, but alas, he is helpless as you crash on top of him in a tackle that is equally painful for both of you.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Tired",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Offt!”</span> <span style="color:DarkTurquoise">Felix</span> gasps as you land on top of him and then roll off from the momentum. He swears in French as he clutches his stomach <span style="Color: Pink">before adding in an interesting English word. <span style="Color: LightSteelBlue">“Ahh… b- bitch…!”</span> The sound of him swearing in English with his thick accent is hilarious as you break out laughing. He quickly joins you, both of you lying in a heap on the ground, laughter mixed with pain.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“N- next time I’m kneeing you in the stomach!”</span> He laughs as he rolls onto his knees, trying to stand up. <span style="Color: LightSteelBlue">“You - what’s the word - maniac!”</span> <span style="color:DarkTurquoise">Felix</span> <span style="Color: Pink">crawls over to you and, instead of helping you up, flops down on top of you as you both just take a second to recover before getting up. Seems <span style="color:DarkTurquoise">Felix</span> appreciates a bit of daredevilry.</span> <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Felix" 3>>
+        <<addMoodlet "Pained" 3>>
+        <span style="color:green">+Felix Fun</span><br>
+        <<set $HangOutNeed.Fun += 15>>
+        <span style="color:Red">-Felix Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <span style="color:green">+Felix Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 15>>
+        <br>
+        [[Continue|Felix Hang Out Park]]
+    <</replace>>
+    <</requiresTrait>>
+</div>

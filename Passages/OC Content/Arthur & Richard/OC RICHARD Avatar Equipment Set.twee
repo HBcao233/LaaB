@@ -1,0 +1,212 @@
+:: OC RICHARD Avatar Equipment Set [nobr]
+
+<<set $AD.SkinColor to "Beige">>
+<<set $AD.Freckles to 0>>
+<<set $ADArmFreckles to 0>>
+<<set $ADShoulderFreckles to 0>>
+<<set $AD.HairStyle to "Special">>
+<<set $AD.HairColor to "Black">>
+<<set $AD.EyeColor to "Hazel">>
+<<set $AD.LeftEyeColor to "Hazel">>
+<<set $AD.RightEyeColor to "Hazel">>
+<<set $AD.PenisStyle to "Uncut">>
+<<set $AD.PenisSize to "Average">>
+<<set $AD.Balls to "Medium">>
+<<set $AD.Butt to "Cute">>
+
+	<<set $ADChestScar to 0>>
+	<<set $ADFaceScar to 0>>
+	<<set $ADLeftArmScar to 0>>
+	<<set $ADRightLegScar to 0>>
+    <<set $ADEyeScar to 0>>
+    <<set $ADShoulderFreckles to 0>>
+    <<set $ADArmFreckles to 0>>
+
+<<set $ADUndies to ({
+	Name: "Red Star Briefs",
+    ID: "UnBrReSt",
+    Type: "Briefs",
+    Color: "Red",
+    Slot: "Undies",
+    Temp: 0,
+    Tags: ["Sleepwear"],
+    Durability: 5,
+    MaxDurability: 5,
+    Weight: 1,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Styled Briefs/Red Star Briefs.png",
+    Avatar: "Images/Avatar/Clothes/Styled Briefs/Red Star Briefs.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "Cute and tight while leaving little to the imagination. Perfect for any little boy.",
+    	})>>
+<<addClothing "AD" "Bottoms" "Star Chain Shorts" "Black">>
+<<set $ADTop to $None>>
+<<addClothing "AD" "Under" "Star Muscle Tank" "White">>
+<<addClothing "AD" "Outer" "Star Hoodie" "Red">>
+<<addClothing "AD" "Hands" "Star Wristband" "Red">>
+<<set $ADSocks to $None>>
+<<set $ADShoes to $None>>
+
+<<set $ADShortsSag to 0>>
+
+<<if $ADMuscleToggle == 1>>
+	<<set $AD.Build to "Normal">>
+<<else>>
+	<<set $AD.Build to "Normal">>
+<</if>>
+
+<<if $ADPubicHairToggle == 1>>
+	<<set $AD.PubicHair to "None">>
+<<else>>
+	<<set $AD.PubicHair to "None">>
+<</if>>
+
+/* DEFAULT SETTING */
+	<<set $ADHead to $None>>
+    <<addClothing "AD" "Face" "Square Glasses" "Purple">>
+    <<set $ADMouth to $None>>
+    <<addClothing "AD" "Neck" "Jeweled Locket" "Amethyst">>
+    <<set $ADOver to $None>>
+    <<set $ADBack to $None>>
+    <<set $ADWaist to $None>>
+
+<<if $CompletedQuests.includes("Arthur & Richard: Hat Quest")>>
+	<<set $ADHead to {
+        Name: "Monster Hat",
+        Type: "Monster Hat",
+        Color: "Black",
+        Slot: "Head",
+        Temp: 0,
+        Tags: ["Costume"],
+        Durability: 10,
+        MaxDurability: 10,
+        Weight: 2,
+        Size: "Preteen",
+        Icon: "Images/Equipment/Classmates/Arthur Monster Hat.png",
+        Avatar: "Images/Avatar/Clothes/Classmates/OC/Arthur Monster Hat.png",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        Description: "A monster hat.",
+    }>>
+<</if>>
+
+<<if $SchoolUniforms == 1 and $AD.Outfit == "Uniform">>
+    <<addClothing "AD" "Top" "School Dress Shirt" "Rolled">>
+    <<set $ADTopAlt to 1>>
+    <<addClothing "AD" "Bottoms" "Dress Shorts" "Black">>
+    <<addClothing "AD" "Neck" "School Tie" "School">>
+    <<set $ADNeckAlt to 1>>
+    <<set $ADOuter to $None>>
+    <<addClothing "AD" "Socks" "School Socks" "Black">>
+    <<addClothing "AD" "Shoes" "Tennis Shoes" "Red">>
+    <<set $ADHands to $None>>
+<<elseif $AD.Outfit == "Uniform">>
+    <<set $ADShoes to {
+        Name: "Brown Sandals",
+        ID: "ShSnBr",
+        Type: "Sandals",
+        Color: "Brown",
+        Slot: "Shoes",
+        Temp: 0,
+        Tags: ["None"],
+        Durability: 10,
+        MaxDurability: 10,
+        Weight: 3,
+        Size: "Preteen",
+        Icon: "Images/Equipment/Strapped Sandals/Brown Strapped Sandals.png",
+        Avatar: "Images/Avatar/Clothes/Strapped Sandals/Brown Strapped Sandals.png",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        Description: "An open footwear that protects the bottom of your feet while allowing the rest to feel the open air.",
+    }>>
+    <<set $ADHands to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Pajamas">>
+	<<set $ADTop to $None>>
+    <<set $ADUnder to $None>>
+	<<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADHands to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Naked">>
+	<<set $ADHead to $None>>
+	<<set $ADTop to $None>>
+    <<set $ADUnder to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADHands to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Undies">>
+	<<set $ADTop to $None>>
+    <<set $ADUnder to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADHands to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Towel">>
+	<<set $ADHead to $None>>
+	<<set $ADTop to $None>>
+    <<set $ADUnder to $None>>
+    <<addClothing "AD" "Bottoms" "Towel" "White">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADUnder to $None>>
+    <<set $ADHands to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym">>
+	<<set $ADHead to $None>>
+    <<set $ADUnder to $None>>
+    <<addClothing "AD" "Top" "Gym Shirt" "School">>
+    <<addClothing "AD" "Bottoms" "Gym Shorts" "School">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADUnder to $None>>
+    <<set $ADHands to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Gym Swim">>
+	<<set $ADHead to $None>>
+	<<set $ADTop to $None>>
+    <<set $ADUnder to $None>>
+    <<addClothing "AD" "Bottoms" "Trunks" "Purple">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADUnder to $None>>
+    <<set $ADHands to $None>>
+<</if>>
+
+<<if $AD.Outfit == "Swimwear">>
+	<<set $ADHead to $None>>
+	<<set $ADTop to $None>>
+    <<set $ADUnder to $None>>
+    <<addClothing "AD" "Bottoms" "Trunks" "Black">>
+    <<set $ADNeck to $None>>
+    <<set $ADOuter to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+    <<set $ADUndies to $None>>
+    <<set $ADFace to $None>>
+    <<set $ADHands to $None>>
+<</if>>

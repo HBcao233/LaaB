@@ -1,0 +1,68 @@
+:: Pool Swim Senior Body Example [nobr]
+
+/* OPENING */
+You are swimming along, happily enjoying yourself, when you notice some commotion by the Senior Swim Class. There seems to be some confusion over the exercises they were performing, but you try not to pay too much attention. The instructor seems to be at a bit of a lose, until he noticed you swimming nearby and called out. <br>
+<br>
+<span style="color:LightSteelBlue">“Hey, kid! Could you come over here, just for a second please?”</span> You try your hardest to ignore him, pretending you have water in your ears, but with everyone looking towards you, and being the only other person in the pool, you eventually relent and swim over. <span style="color:LightSteelBlue">“Could you help me out for just a second? Things would go a lot easier if I could show them what I'm talking about. Thanks!”</span> <span style="color:pink">Without even waiting for you to agree, the instructor suddenly puts his arms around your waist and lifts you up partially out of the water and holds you facing the seniors.</span> 
+
+    /* IF TOP */
+    <<if $PlayerTop.Type != "None">>
+<span style="color:pink">He then lifts your $PlayerTop.Type up over your head, revealing your chest!</span>
+    <</if>><br>
+<br>
+<span style="color:LightSteelBlue">“Alright, so just move your arms like you are doing a normal stroke.”</span> He instructs, <span style="color:LightSteelBlue">“You all see how the muscles on his chest move? That's what we're exercising out here.”</span> You blush, feeling like a fresh fish at the market with everyone watching you. He has you mimic a few different strokes and water exercises, explaining and pointing out the motion in your body, mainly around your chest and stomach area. While already embarrassing, you couldn’t help but overhear the whispering of a group of three elderly ladies near the front, who were eyeing you a bit too intensely. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Blush: 2,
+			},
+			Clothes: {
+        		Top: $None,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+/* SKINNY */
+<<if $Player.Build == "Skinny">>
+<span style="color:LightSteelBlue">“Oh, how cute, he’s like a little doll!”</span> One lady whispered, <span style="color:LightSteelBlue">“And look at that cute little belly button! I just want to hug him!”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“He’s much cuter than my grandson,”</span> Another added, <span style="color:LightSteelBlue">“I wish I could have him around to help with housework!”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“If he was my grandson, I’d have his parents send him over every time he misbehaves.”</span> A third one giggled, <span style="color:LightSteelBlue">“Make him clean the house in nothing but a tiny apron. That way I can spank that bare little tooshie as he goes!”</span> <br>
+<br>
+
+/* HUSKY */
+<<elseif $Player.Build == "Husky">>
+<span style="color:LightSteelBlue">“Would you look at the chub on that one!”</span> One lady whispered, pointing to your belly, <span style="color:LightSteelBlue">“I swear kids nowadays eat way too many sweets, I’d never let my children get like that.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I think it’s kind of cute,”</span> Another giggles, <span style="color:LightSteelBlue">“I just want to hug and squeeze him! Make him my little squishy pillow!”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“Yes, but he won’t get any girls looking like that, poor kid.”</span> The third sighs. <br>
+<br>
+
+/* MUSCLED */
+<<else>>
+<span style="color:LightSteelBlue">“Would you look at the body on that one!”</span> One lady whispers, <span style="color:LightSteelBlue">“I swear if I was a couple decades younger!”</span> She gives her friends a flirty look. <br>
+<br>
+<span style="color:LightSteelBlue">“Oh please,”</span> Another laughs, <span style="color:LightSteelBlue">“He’s practically a baby, probably doesn’t even know how to use it.”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I wouldn’t mind this class if we had him as an assistant every time!”</span> A third added, obviously looking towards your crotch. <br>
+<br>
+
+<</if>>
+/* END */
+<span style="color:pink">No one else seems to hear their comments, or at least they pretend not to, and you begin to feel even more embarrassed and your cheeks turns a bright pink, prompting more comments from the three ladies.</span> Thankfully, you are let down not long later and quickly swim away, though notice the trio of elders watching you as you go. <br>
+<<needChange "Fun" 5>>
+<br>
+<<if $PoolLocation == "Very Deep">>
+    [[Continue|Pool Very Deep]]
+<<elseif $PoolLocation == "Deep">>
+    [[Continue|Pool Deep]]
+<<elseif $PoolLocation == "Part Shallow">>
+    [[Continue|Pool Part Shallow]]
+<<elseif $PoolLocation == "Shallow">>
+    [[Continue|Pool Shallow]]
+<</if>>

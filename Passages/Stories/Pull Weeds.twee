@@ -1,0 +1,38 @@
+:: Pull Weeds [nobr] 
+
+You look over the weeds growing on the side of the house and sigh in annoyance, realizing it is probably going to take an hour. You push on the yard gloves and get to work. 
+
+<<set $RandomEvent to random(1, 4)>>
+
+		/* NORMAL */
+	<<if $RandomEvent > 2>>
+	It is very tiring, but you manage to clear the weeds out, though the knowledge that they’ll be back soon slightly annoys you.<br>
+	<<needChange "Energy" -5>>
+
+		/* NEGATIVE */
+	<<else>>
+		<span style="color:Red">But pulling the weeds is much harder than you were expecting, the roots having firmly planted themselves into the ground. </span> Though you manage to get it done, you feel very frustrated by the end of it. <br>
+	<<needChange "Energy" -5>>
+	<<addMoodlet "Stress" 1>>
+	
+	<</if>>
+
+
+
+<<set $Minutes += 60>>
+
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+	<<if $QuestLog[_i].Name == "Weekly Chores">>
+		<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+			<<if $QuestLog[_i].Objectives[_o].Name == "Pull Weeds">>
+				<<set $QuestLog[_i].Objectives[_o].State to 1>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<break>>
+	<</if>>
+<</for>>
+
+<<include"Chore Quest Check">>
+<br>
+[[Continue|PH Backyard]] 

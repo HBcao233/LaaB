@@ -1,0 +1,114 @@
+:: NOAH Pretend Superheroes [nobr]
+	
+	/* Setting Outfit Variables */
+	<<if $NoahSche.Activity == "Playing in Room">>
+		<<set $AD.Outfit to "Everyday">>
+<<else>>
+		<<set $AD.Outfit to "Pajamas">>
+	<</if>>
+	<<include"Noah Outfit Set">>
+
+He decides he wants to play pretend superheros. He is the heroic and strong <span style="color:DarkTurquoise">Owlman</span> while you are his noble and funny sidekick, <span style="color:DarkTurquoise">Sparrow</span>. He explains that the two of you have to battle the evil <span style="color:DarkTurquoise">Dr. Bue</span>, obviously played by his stuffed bear, and stop him from committing evil deeds!<br>
+
+<<if $NoahSche.Activity == "Playing in Room">>
+
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Normal">>
+<<set $AD.Cry to 0>>
+<<set $AD.Blush to 0>>
+<<set $AD.Mouth to "Happy">>
+<<set $AD.Outfit to "Everyday">>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES
+	<<set $AD.BackID to "BaCaBk">>
+	<<set $AD.TopUndies to "Owlman">> */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+<span style="color:DarkTurquoise">Noah</span> puts a pair of his Black Owlman Briefs over his $NoahBottoms.Name and ties a small blanket around his neck to act as a cape. <span style="color:Pink">He looks silly, but also incredibly cute as he shows off his heroic poses.</span><br>
+<br>
+
+<<elseif $NoahPJType == "Two">>
+
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Normal">>
+<<set $AD.Cry to 0>>
+<<set $AD.Blush to 0>>
+<<set $AD.Mouth to "Happy">>
+<<set $AD.Outfit to "Pajamas">>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES
+	<<set $AD.BackID to "BaCaBk">>
+	<<set $AD.TopUndies to "Owlman">> */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+<span style="color:DarkTurquoise">Noah</span> puts a pair of his Black Owlman Briefs over his $ADBottoms.Type and ties a small blanket around his neck to act as a cape. <span style="color:Pink">He looks silly, but also incredibly cute as he shows off his heroic poses.</span><br>
+<br>
+
+<<elseif $NoahPJType == "None">>
+
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Normal">>
+<<set $AD.Cry to 0>>
+<<set $AD.Blush to 0>>
+<<set $AD.Mouth to "Happy">>
+<<set $AD.Outfit to "Pajamas">>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES
+	<<set $AD.BackID to "BaCaBk">> */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+<span style="color:DarkTurquoise">Noah</span> ties a small blanket around his neck to act as a cape. <span style="color:Pink">You can’t help but giggle as your little brother shows off his heroic poses in nothing but his $NoahUndies.Name. He looks very silly, but also incredibly cute.</span><br>
+<br>
+<</if>>
+	<<set $Minutes += 30>>
+
+<div id=choice>
+	<<link "Continue">>
+	<<replace"#choice">>
+	
+	<<set $RandomEvent to random(1, 4)>>
+	
+/* BELT LOST */
+	<<if $RandomEvent == 1>>
+		<<include"NOAH Pretend Superheroes Belt Lost">>
+/* CRASH LANDING */
+	<<elseif $RandomEvent == 2>>
+		<<include"NOAH Pretend Superheroes Crash Landing">>
+/* MIND CONTROL */
+	<<elseif $RandomEvent == 3>>
+		<<include"NOAH Pretend Superheroes Mind Control">>
+/* NOAH CAPTURED */
+	<<elseif $RandomEvent == 4>>
+		<<include"NOAH Pretend Superheroes Noah Captured">>
+
+	<</if>>
+	
+	
+	<</replace>>
+	<</link>>
+</div>

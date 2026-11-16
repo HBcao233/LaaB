@@ -1,0 +1,55 @@
+:: CC Physical Hair [nobr]
+
+<<if $CCBodyCat == "Hair Style">>
+<span style="color:Azure"><strong>Hair Style: $Player.HairStyle</strong></span><br>
+
+<strong>Flip Hair: </strong>
+<<if $PlayerHairFlip == 1>>
+    <<link"[Yes]">>
+        <<set $PlayerHairFlip to 0>>
+	    <<replace"#CC">>
+		    <<include"CC Physical">>
+	    <</replace>>
+    <</link>>
+<<else>>
+    <<link"[No]">>
+        <<set $PlayerHairFlip to 1>>
+	    <<replace"#CC">>
+		    <<include"CC Physical">>
+	    <</replace>>
+    <</link>>
+<</if>>
+<br>
+
+<<for _i to 0; _i lt $HairStyleOptions.length; _i++>>
+<<set _path = "Images\\Icons\\Shop Icons\\Hair Player\\" + $HairStyleOptions[_i] + "\\" + $Player.HairColor + ".png">>
+<<capture _i>>
+   <span @title="$HairStyleOptions[_i]">
+   <<link [img[_path]]>>
+        <<set $Player.HairStyle to $HairStyleOptions[_i]>>
+	    <<replace"#CC">>
+		    <<include"CC Physical">>
+	    <</replace>>
+    <</link>>
+    </span>
+<</capture>>
+<</for>>
+
+<<else>>
+<span style="color:Azure"><strong>Hair Color: $Player.HairColor</strong></span><br>
+<<for _i to 0; _i lt $HairColorOptions.length; _i++>>
+<<set _path = "Images\\Icons\\Shop Icons\\Hair Player\\" + $Player.HairStyle + "\\" + $HairColorOptions[_i] + ".png">>
+<<capture _i>>
+   <span @title="$HairColorOptions[_i]">
+   <<link [img[_path]]>>
+        <<set $Player.HairColor to $HairColorOptions[_i]>>
+	    <<replace"#CC">>
+		    <<include"CC Physical">>
+	    <</replace>>
+    <</link>>
+    </span>
+<</capture>>
+<</for>>
+
+<</if>>
+<br>

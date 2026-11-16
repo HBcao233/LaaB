@@ -1,0 +1,141 @@
+:: History Class Sleep [nobr]
+
+<<include "Bully Nickname Setup">>
+
+/* Writen by: BruMa */
+/* Intro */
+
+<span style="color:lightcoral">As you sit through <span style="color:DarkTurquoise">Mr. De León</span>’s class you find it increasingly harder and harder to keep your eyes open and the sound of his voice starts to become a blur in the background.</span> You slouch on the desk resting your head on your arms, giving your eyes a chance to rest for a bit. <br>
+<br>
+You try tapping your finger on the desk or even just moving your closed eyes around under the lids, but eventually your body seems to grow slower and slower and the sound of <span style="color:DarkTurquoise">Mr. De León</span>’s voice completely melts into the background turning into white noise. <span style="color:yellow">You’re out cold.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Eyes: "Closed",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<linkreplace "Continue">>
+    <<set _random to random(1,2)>>
+        /*Success*/
+        <<if _random == 1>>
+            The next thing you know, a loud and strident noise fills your ears, making you jolt up from your desk. It’s just the school bell ringing. You look around the room trying to look awake as everyone is getting up from their desks and heading out of the room as <span style="color:DarkTurquoise">Mr. De León</span> starts organizing his stuff for next class. <span style="color:lightgreen">It seems he either didn’t discover your inconspicuous nap, or at the very least didn’t seem to mind your resting.</span> <br>
+            <<set _ad to [
+                {
+                    Name: "De Leon",
+                    State: {
+                        Mouth: "Smile",
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+            You smile as you quickly collect your stuff into your backpack before preparing to join everyone else outside. <br>  
+            <<needChange "Energy" 10>> 
+            <br>
+            <<include"Attend History Finish">>
+            /*+Energy*/
+        /*Fail*/
+        <<elseif _random == 2>>
+            As your eye resting turns into a small nap, you start to dream about playing outside in the courtyard. You start to hear some odd whispers in your dreams, but you can’t make up what they mean. You then start to feel some strange touching sensation on your hip area. <span style="color:lightcoral">The next thing you know you are suddenly burst out of your dream when you feel a pair of hands slam into your shoulders.</span> <br>
+            <<set _ad to [
+                {
+                    Name: "De Leon",
+                    State: {
+                        Mouth: "Frown",
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                        Blush: 1,
+                        PantsDown: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+            You suddenly jolt up to your feet with a yelp, the sound of your chair being thrown back and you bumping into your head scares some of the other students around you, as every head in the classroom soon turns your way, even <span style="color:DarkTurquoise">Mr. De León</span> looks back at you with a concerned look. <br>
+            <br>
+            /* Diaper */
+            <<if $PlayerUndies.Tags.includes("Diaper")>>
+                <span style="color:pink">Just when things don’t seem like they could be even more embarrassing, you feel a chilly breeze on your legs. As you look down, you see your $PlayerBottoms.Name have not jumped up along with you, leaving your standing with your $PlayerUndies.name exposed to everyone in class! <br>
+                <br>
+                <span style="color:LightSteelBlue">“Wait- is that-?”</span> You hear a boy behind you snicker, feeling your face heat up as your padded protection is exposed to everyone.</span> <span style="color:lightcoral">Sabotage!</span> <br>
+                <br>
+                /* Bully Nickname */
+                <<if ["Diaper Boy"].includes($BullyNickname)>>
+                    <<set _setnickname to 0>>
+                <</if>>
+                <<if _setnickname == 1>>
+                    <span style="color:LightSteelBlue">“Awww, is the little <span style="color:DarkTurquoise">Diaper Boy</span> going to cry?”</span> The boy laughs, <span style="color:LightSteelBlue">“He probably fucking wet himself too. Don’t worry, <span style="color:DarkTurquoise">Diaper Boy</span>, I’m sure if you ask really nicely, someone will change you. What a fucking loser.”</span> <span style="color:lightcoral">The laughter and jeers continue as you feel your social status plummeting. Having been seen like this, you get the feeling you’ll be known throughout the school as <span style="color:DarkTurquoise">Diaper Boy</span>.</span><br>
+                    <br>
+                    <<if $Nickname.Bully == 0>>
+                        <span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Diaper Boy”</span>, due to being seen to wear diapers or other padded protection. Nicknames can be edited in the Journal in your Bedroom.]</span><br>
+                    <</if>>
+                    <br>
+					<<set $Nickname.Bully to 1>>
+					<<set $BullyNickname to "Diaper Boy">>
+                <</if>>
+            /*If wearing Undies*/
+            <<elseif $PlayerUndies.Type != "None">>
+                <<addMoodlet "Seen Undies" 6>>
+                Just when things didn’t look like they could be more embarrassing, you feel a chilly breeze on your legs <span style="color:lightcoral">as you look down to see your $PlayerBottoms.Name have not jumped up along with you, <span style="color:pink">leaving you standing in your $PlayerUndies.Name in front of everyone in class.</span> <br>
+                <br>
+                Sabotage!</span> <br>
+            /*If not wearing Undies*/
+            <<elseif $PlayerUndies.Type == "None">>
+                <<addMoodlet "Seen Naked" 6>>
+                Just when things didn’t look like they could be more embarrassing, you feel a chilly breeze on your lower parts <span style="color:lightcoral">as you look down to see your $PlayerBottoms.Name have not jumped up along with you, <span style="color:pink">leaving you standing with your pecker out in front of everyone in class.</span> <br>
+                <br>
+                Sabotage!</span> <br>
+                /* Bully Nickname */
+                <<if ["Little Dick", "Horse Cock"].includes($BullyNickname)>>
+                    <<set _setnickname to 0>>
+                <</if>>
+                <<if _setnickname == 1>>
+                    <<if $Player.PenisSize == "Tiny" or $Player.PenisSize == "Small">>
+                        <span style="color:LightSteelBlue">“Anybody got a fucking magnifying glass? I can’t even see his cock!”</span> <span style="color:pink">The boy laughs as he points and jeers at your exposed boyhood.</span> <span style="color:LightSteelBlue">“Don’t worry, <span style="color:DarkTurquoise">Little Dick</span>, I’m sure in a few years you’ll have something to work with. Until then, just take it up the ass to get off like a good little bitch.”</span> <br>
+                        <br>
+                        <span style="color:pink">Having your bits exposed and discovered to be so small has earned you the nickname <span style="color:DarkTurquoise">Little Dick</span> around school.</span> <span style="color:lightcoral">You’re sure everyone will soon learn of your nickname, and lack of size, as it spreads.</span> <br>
+                        <br>
+                        <<if $Nickname.Bully == 0>>
+                            <span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Little Dick”</span> after seeing your less-than-average penis size. Nicknames can be edited in the Journal in your Bedroom.]</span> <br>
+                            <br>
+                        <</if>>
+                        <<set $Nickname.Bully to 1>>
+                        <<set $BullyNickname to "Little Dick">>
+                    <<elseif $Player.PenisSize == "Gigantic">>
+                        <span style="color:LightSteelBlue">“Fuck, the dude has a third arm! Guess his mom was part horse! What a freak!”</span> The bully laughs and jeers, “Better watch out when <span style="color:DarkTurquoise">Horse Cock</span> comes running down the hallway, or else you might lose an eye!” <br>
+                        <br>
+                        <span style="color:pink">Having your bits exposed and discovered to be so massive has earned you the nickname <span style="color:DarkTurquoise">Horse Cock</span> around school.</span> <span style="color:lightcoral">While you wouldn’t think having a large penis would be a bad thing, it seems the bullies have somehow turned it against you.</span> <br>
+                        <br>
+                        <<if $Nickname.Bully == 0>>
+                            <span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Horse Cock”</span> after seeing your greater-than-average penis size. Nicknames can be edited in the Journal in your Bedroom.]</span> <br>
+                            <br>
+                        <</if>>
+                        <<set $Nickname.Bully to 1>>
+                        <<set $BullyNickname to "Horse Cock">>
+                    <</if>>
+                <</if>>
+            <</if>>
+            <br>
+            <<linkreplace "Continue">>
+                <span style="color:lightcoral">Everyone starts laughing at you as you try your best to cover your yourself, still standing with your $PlayerBottoms.Name at your ankles.</span> <span style="color:DarkTurquoise">Mr. De León</span> only sighs and tells you to fix that and sit back down as he was just getting to the good part of his lesson. <br>
+                <br>
+                You quickly pull your $PlayerBottoms.Name up and sit again on your chair, slowly sinking into it trying to hide yourself from this embarrassment. <span style="color:lightcoral">You notice the boys sitting next to you snickering, they were probably the ones who undo your bottoms while you were asleep and then startled you awake. You just blush as you try and vanish under your desk for the rest of the class.</span> <br>
+                <<needChange "Energy" 5>> 
+                <br>
+                <<include"Attend History Finish">>
+            <</linkreplace>>
+        <</if>>
+    <</linkreplace>>

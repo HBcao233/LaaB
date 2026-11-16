@@ -1,0 +1,95 @@
+:: De Leon Tutor [nobr]
+
+/* Intro */
+<<set $Minutes += 15>>
+You walk up to <span style="color:DarkTurquoise">Mr. De Leon</span>’s desk, who seems to be stitching up one of his various historical costumes, and ask him some questions about the recent lectures. <span style="Color: LightGreen">He immediately pops up with a smile.</span> <span style="Color: LightSteelBlue">“Of course! You know, this topic is a favorite of mine. Why, I even once-”</span> <span style="color:DarkTurquoise">De Leon</span> goes on a bit of a ramble, very passionate about history. You almost forget the original reason why you walked in the first place, but he quickly changes topics to your original questions. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "De Leon",
+            State: {
+            },
+                Mouth: "Happy",
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:DarkTurquoise">Mr. De Leon</span> may be a little eccentric when it comes to his lectures, especially in a one-on-one setting, but it is clear he enjoys regaling you with the stories and history of the world. Though even he can’t make the most boring parts of history entertaining. You are sure to take notes for you to go over later, in order to help you with upcoming work. <span style="Color: LightGreen">By the time the extra lecture has come to an end, you actually feel like you understand the topic.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Anymore questions? You know, if you want to expand your knowledge further, I have some great novels that take place in this time period.”</span> He laughs. <span style="Color: LightGreen">You turn down the books for now, though think this may be a good time to get to know your teacher a bit better.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Ask about his family<br>">>
+    <<replace"#choice">>
+        <<if $DeLeonSocial < 30>>
+            You take the chance to ask <span style="color:DarkTurquoise">Mr. De Leon</span> about his family. Is he married? <span style="Color: LightSteelBlue">“Haha, such a personal question. Unfortunately, this is a professional setting so I best relent.”</span> He laughs it off, though you catch a little awkwardness in his eyes as he quickly leads you out of the room. <span style="Color: Yellow">Maybe if he knew you a bit better, he’d explain.</span> <br>
+            <<socialChange "DeLeon" 3>>
+            <<skillPoints "History" 5>>
+            <br>
+            [[Continue|School History Classroom]]
+        <<else>>
+            You take the chance to ask <span style="color:DarkTurquoise">Mr. De Leon</span> about his family. Is he married? <span style="Color: LightSteelBlue">“Haha… such a… personal question.”</span> He quickly goes from his confident self to a more awkward, almost nervous persona. <span style="Color: LightSteelBlue">“Adult life is… complicated. I was married, back in my home country, but… well, that life was not for me. But you are a boy, no need to worry about that! If you have any more questions, feel free to ask. But I should be returning to my work!”</span> <span style="Color: LightGreen">You nod, having learned something interesting about your teacher, but decide not to push for now.</span> <br>
+            <<socialChange "DeLeon" 3>>
+            <<skillPoints "History" 5>>
+            <br>
+            [[Continue|School History Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his career<br>">>
+    <<replace"#choice">>
+        <<if $DeLeonSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Mr. De Leon</span> why he decided to become a teacher and the atmosphere becomes a little awkward. <span style="Color: LightSteelBlue">“Why? Oh, that’s… a long story, and I’ve already rambled enough. I should be getting back to work, but maybe another time!”</span> <span style="color:DarkTurquoise">De Leon</span> is quick to hurry you out of his room, not wanting to discuss such a topic. <span style="Color: Yellow">Maybe if you got to know him a bit better, he’d open up a little.</span> <br>
+            <<socialChange "DeLeon" 3>>
+            <<skillPoints "History" 5>>
+            <br>
+            [[Continue|School History Classroom]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Mr. De Leon</span> why he decided to become a teacher and the atmosphere becomes a little awkward. <span style="Color: LightSteelBlue">“Why? Oh, that’s… complicated. I grew up in Spain, Zaragoza to be specific. Originally went to school for archaeology, but, well, life had a different plan!”</span> He laughs, a little uncomfortable, <span style="Color: LightSteelBlue">“But this is not the topic for students and teachers. You should be running along, I have much work to get done!”</span> He quickly shoos you away. <span style="Color: LightGreen">Despite his awkwardness, you feel closer to him than you did before.</span> <br>
+            <<socialChange "DeLeon" 3>>
+            <<skillPoints "History" 5>>
+            <br>
+            [[Continue|School History Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his hobbies<br>">>
+    <<replace"#choice">>
+        <<if $DeLeonSocial < 30>>
+            You glance back at the costume being repaired on his desk and ask <span style="color:DarkTurquoise">Mr. De Leon</span> about his hobbies. Does he make all his own costumes or-? <span style="Color: LightSteelBlue">“Why, yes! Well, mostly. I have ordered some online, but I mostly prefer to design them myself. They fit me better that way. It is something I have done since I was a child, though thankfully I am much better at it than before.”</span> He chuckles to himself, as if recalling some memory. <span style="Color: LightSteelBlue">“But alas, I have too much work to be done to chit-chat. Run along now, enjoy your free time.”</span> <br>
+            <<socialChange "DeLeon" 3>>
+            <<skillPoints "History" 5>>
+            <br>
+            [[Continue|School History Classroom]]
+        <<else>>
+            You glance back at the costume being repaired on his desk and ask <span style="color:DarkTurquoise">Mr. De Leon</span> about his hobbies. Does he make all his own costumes or-? <span style="Color: LightSteelBlue">“Why, yes! Well, mostly. I have ordered some online, but I mostly prefer to design them myself. They fit me better that way. It is something I have done since I was a child, though thankfully I am much better at it than before.”</span> He laughs, <span style="Color: LightSteelBlue">“I once made some costumes for some childhood friends, we were putting on a little show for our parents. Well, my stitching wasn’t the best back then and we ended up showing off a BIT more than we had planned.”</span> <br>
+            <br>
+            You laugh at the story, only imagining what could have occurred. <span style="Color: LightSteelBlue">“But I probably shouldn’t be telling you about that, since I am your teacher. Run along now, I really should get back to it! Those stitches won’t stitch themselves!”</span> <span style="Color: LightGreen">He laughs as he returns to his desk.</span> <br>
+            <<socialChange "DeLeon" 3>>
+            <<skillPoints "History" 5>>
+            <br>
+            [[Continue|School History Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Nothing<br>">>
+    <<replace"#choice">>
+        You say goodbye and thank him for helping you, <span style="Color: LightGreen">walking out feeling you know History and <span style="color:DarkTurquoise">Mr. De Leon</span> a bit better.</span> <br>
+        <<socialChange "DeLeon" 3>>
+        <<skillPoints "History" 5>>
+        <br>
+        [[Continue|School History Classroom]]
+    <</replace>>
+    <</link>>
+</div>

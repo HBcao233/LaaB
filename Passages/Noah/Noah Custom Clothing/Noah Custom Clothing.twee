@@ -1,0 +1,189 @@
+:: Noah Custom Clothing [nobr]
+<span style="color:Azure"><big><strong>--Customizing Noah's Current Clothing--</strong></big></span>
+<br>
+<<if $NoahCustomCat == "Everyday">>
+    <span style="color:Green">--Everyday--</span>
+<<else>>
+<<link"-Everyday-">>
+    <<set $NoahCustomCat to "Everyday">>
+    <<goto "Noah Custom Clothing">>
+<</link>>
+<</if>>
+ | 
+ <<if $NoahCustomCat == "Outside">>
+    <span style="color:Green">--Outside--</span>
+<<else>>
+<<link"-Outside-">>
+    <<set $NoahCustomCat to "Outside">>
+    <<goto "Noah Custom Clothing">>
+<</link>>
+<</if>>
+ | 
+ <<if $NoahCustomCat == "Undies">>
+    <span style="color:Green">--Underwear--</span>
+<<else>>
+<<link"-Underwear-">>
+    <<set $NoahCustomCat to "Undies">>
+    <<goto "Noah Custom Clothing">>
+<</link>>
+<</if>>
+<br>
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+<<if $NoahCustomCat == "Everyday">>
+	<<set $AD.Outfit to "Everyday">>
+<<elseif $NoahCustomCat == "Outside">>
+    <<set $AD.Outfit to "Everyday Outside">>
+<<elseif $NoahCustomCat == "Undies">>
+    <<set $AD.Outfit to "Undies">>
+<</if>>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+/* [When Customizing Current, it takes from all inventories.] */
+<<if $NoahCustomCat == "Everyday">>
+    /* Tops */
+    <strong>Tops:</strong><br>
+    <<for _i to 0; _i lt $NoahClosetWarmTop.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetWarmTop[_i].Icon]]">>
+                <<set $NoahEverydayTop to $NoahClosetWarmTop[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahClosetColdTop.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetColdTop[_i].Icon]]">>
+                <<set $NoahEverydayTop to $NoahClosetColdTop[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahInClosetTop.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahInClosetTop[_i].Icon]]">>
+                <<set $NoahEverydayTop to $NoahInClosetTop[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>><br>
+        /* Bottoms */
+    <strong>Bottoms:</strong><br>
+    <<for _i to 0; _i lt $NoahClosetWarmBottoms.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetWarmBottoms[_i].Icon]]">>
+                <<set $NoahEverydayBottoms to $NoahClosetWarmBottoms[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahClosetColdBottoms.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetColdBottoms[_i].Icon]]">>
+                <<set $NoahEverydayBottoms to $NoahClosetColdBottoms[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahInClosetBottoms.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahInClosetBottoms[_i].Icon]]">>
+                <<set $NoahEverydayBottoms to $NoahInClosetBottoms[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>><br>
+        /* Socks */
+    <strong>Socks:</strong><br>
+    <<for _i to 0; _i lt $NoahClosetSocks.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetSocks[_i].Icon]]">>
+                <<set $NoahSocks to $NoahClosetSocks[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahInClosetSocks.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahInClosetSocks[_i].Icon]]">>
+                <<set $NoahSocks to $NoahInClosetSocks[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>><br>
+
+<<elseif $NoahCustomCat == "Outside">>
+    /* Outer */
+    <strong>Outer:</strong><br>
+    <<for _i to 0; _i lt $NoahClosetOuter.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetOuter[_i].Icon]]">>
+                <<set $NoahOuter to $NoahClosetOuter[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahInClosetOuter.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahInClosetOuter[_i].Icon]]">>
+                <<set $NoahOuter to $NoahInClosetOuter[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>><br>
+        /* Shoes */
+    <strong>Shoes:</strong><br>
+    <<for _i to 0; _i lt $NoahClosetShoes.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetShoes[_i].Icon]]">>
+                <<set $NoahShoes to $NoahClosetShoes[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahInClosetShoes.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahInClosetShoes[_i].Icon]]">>
+                <<set $NoahShoes to $NoahInClosetShoes[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>><br>
+
+<<elseif $NoahCustomCat == "Undies">>
+        /* Undies */
+    <strong>Undies:</strong><br>
+    <<for _i to 0; _i lt $NoahClosetUndies.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahClosetUndies[_i].Icon]]">>
+                <<set $NoahDayUndies to $NoahClosetUndies[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>>
+    <<for _i to 0; _i lt $NoahInClosetUndies.length; _i++>>
+        <<capture _i>>
+            <<link "[img[$NoahInClosetUndies[_i].Icon]]">>
+                <<set $NoahDayUndies to $NoahInClosetUndies[_i]>>
+                <<goto "Noah Custom Clothing">>
+            <</link>>
+        <</capture>>
+    <</for>><br>
+<</if>>
+
+
+<br>
+[[Exit|PH Noah Bedroom]]

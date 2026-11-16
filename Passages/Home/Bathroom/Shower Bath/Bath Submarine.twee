@@ -1,0 +1,253 @@
+:: Bath Submarine [nobr]
+
+/* Intro */
+/* Checking if player is already considered Nude */
+<<if $PlayerBottoms.Type != "None" or $PlayerTop.Type != "None" or $Player.Undies != "None">>
+    Soap, water, rinse, you are finishing up your bath which has gone as good as you could have hoped. You begin to drain the tub and step out, stretching happily as you reach for a towel – wait a second!? You glance over to find the cupboard where you keep the towels completely empty! You blush and silently curse whichever one of your brothers had used the last one without restocking. <br>
+    <br>
+<<else>>
+    You walk over to the bath and turn on the water to begin filling the tub, ensuring that the knobs are in the perfect spot that isn’t too hot nor too cold while keeping in mind that the water will cool slightly as it sits. The mastery of the perfect bath is a skill you have worked on for many years now. Already naked, you await the water the reach optimal levels. Then, it is time for a nice soak! <br>
+    <br>
+<</if>>
+
+/* Default Post-Intro Avatar */
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Outfit: "Naked",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+As you are relaxing in the bath, you spot a toy submarine out of the corner of your eyes. It is one of <span style="color:DarkTurquoise">Noah</span>’s bath toys that he must have accidentally left here. Smiling to yourself, you pick it up and decide to have a bit of fun with it yourself. Pretending to be its captain, you grab the plastic toy and take a deep breath, covering your nose as you and the submarine dive into the tub. You imagine yourself descending into the depths of the ocean. <br>
+<br>
+
+/* Written by: BruMa */
+As you get close to the ocean floor, the light from the surface seems to progressively grow dimmer and dimmer, until it’s very hard to tell what’s in front of you as you cruise near the sandy floor. You turn the submarine’s headlights on, the bright beam of light scares the marine life in front of you, but it gives way to your exploration into the depths. <br>
+<br>
+
+You cruise amid the reeds. Traversing through the underwater jungle makes you feel like a real adventurer. 
+
+<<skillCheck "Swimming" 20>>
+    /*If Success at First Check*/
+    <<if _result == 1>>
+    In hindsight, the choice of your path may have been a poor decision though, as your propellers entangle with the algae, forcing you to stop the engine to give them a chance to loosen up around the rotor’s blades. You slowly fire the motor back up again, shooting the reeds off the thruster. <br>
+    <br>
+    <<linkreplace"Continue">>
+        <<include"Home Bath Submarine2">>
+    <</linkreplace>>
+
+/*-Else-*/
+    <<elseif _result == 0>>
+    <br>
+    <br>
+    <span style="color:LightCoral">...It’s what you’d like to say, but you start feeling out of air already.</span> Forced to resurface for a big gasp of air, you decide that this should probably be your cue to finish up here before <span style="color:DarkTurquoise">Your Father</span> gets mad at you for taking so long in the bath. <br>
+
+    <<set _ad to [
+            {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Happy",
+            },
+            },
+        ]>>
+    <<ad _ad>>
+
+    <<addMoodlet "Stress" 0>>
+    <<needChange "Fun" 5>>
+    <<needChange "Hygiene" 100>>
+	<<addClothing "PC" "Bottoms" "Towel" "White">>
+	<<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Hallway]]
+<</if>>
+
+:: Home Bath Submarine2 [nobr]
+
+    <<skillCheck "Swimming" 30>>
+/*-If Success at Second Check-*/
+<<if _result == 1>>
+
+    You continue on your expedition as it leads you towards a coral reef. You glide over it as hundreds, no, thousands of fish swarm around the submarine blocking your view. <br>
+    <br>
+    You proceed slowly and carefully, trying not to run over them, but as they wave and turn as they swim your headlights hit their scales and they reflect it in pretty gleams and hues, making it feel like you were watching a firework show underwater, but they eventually disperse as you leave the coral reef. <br>
+    <br>
+
+    <<linkreplace"Continue">>
+        <<include"Home Bath Submarine3">>
+    <</linkreplace>>
+
+<<elseif _result == 0>>
+    /*-Else-*/
+    You continue on your expedition until <span style="color:LightCoral">you start feeling your breath catching up to you.</span> You resurface again for a sweet breath of fresh air. This is probably a good time to finish everything before <span style="color:DarkTurquoise">Your Father</span> gets mad at you for taking so long in the tub. <br>
+
+    <<set _ad to [
+            {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Happy",
+            },
+            },
+        ]>>
+    <<ad _ad>>
+
+    <<addMoodlet "Stress" 0>>
+    <<needChange "Fun" 5>>
+    <<needChange "Hygiene" 100>>
+	<<addClothing "PC" "Bottoms" "Towel" "White">>
+	<<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Hallway]]
+<</if>>
+
+:: Home Bath Submarine3 [nobr]
+
+<<skillCheck "Swimming" 70>>
+<<if _result == 1>>
+/*If Success at Third Check*/
+
+    You patrol near huge rocks and cliffs, the marine life inhabiting them doesn’t seem to be bothered by your presence as you approach them to get a closer look. Small, colorful fish swim happily around the many crevices they call their homes, as the exterior surface gives room to starfish and funny plant-looking things that seem to be some sort of animal based on how they’re move around slinking their bodies. <br>
+    <br>
+    As you look around for anything else that might be interesting you get close to a big rock to analyze if its home to anything, but something starts to move and shift as you approach it, you can only understand what it is once it starts to quickly lose its orange rock-like pigmentation. A huge squid that was resting on the rock now floats in front of you, you try approaching it slowly but it propels itself away as it shoots a thick cloud of ink that covers your submarine’s observation window. <br>
+    <br>
+    <<linkreplace"Continue">>
+        <<include"Home Bath Submarine4">>
+    <</linkreplace>>
+
+/*Else*/
+<<elseif _result == 0>>
+
+    Having fun exploring the deep sea of your imagination <span style="color:LightCoral">you forget that you’re getting short on breath,</span> forcing you to quickly resurface, taking a deep breath of fresh air. As fun as your adventure was, it’s probably time to leave the tub already, otherwise <span style="color:DarkTurquoise">Your Father</span> may get mad at you if you stay there for too long. <br>
+
+    <<set _ad to [
+            {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Happy",
+            },
+            },
+        ]>>
+    <<ad _ad>>
+
+    <<addMoodlet "Stress" 0>>
+    <<needChange "Fun" 5>>
+    <<needChange "Hygiene" 100>>
+	<<addClothing "PC" "Bottoms" "Towel" "White">>
+	<<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Hallway]]
+<</if>>
+
+:: Home Bath Submarine4 [nobr]
+
+<<skillCheck "Swimming" 90>>
+/*If Success at Fourth Check*/
+<<if _result == 1>>
+
+    You turn on your wipers as you make the final trek of your journey.
+
+    <<set _random to random(1, 2)>>
+    <<if _random == 1>>
+        /*Variant 1 (Monster)*/
+        The ground beneath you sinks lower and lower as you venture into a deeper part of the ocean, the scenery around you grows barer, and you can finally see it in the distance, your final destination, the huge crater, it descends into the dark unknown vastness of the ocean. <br>
+        <br>
+        You sense an echoing quake as you approach it, something has awakened. You slow down, preparing to turn around as it’s too dangerous to proceed, that’s when you see it emerge from the darkness. <span style="color:LightCoral">Gigantic tentacles sprout from the dark, you sense another quake as the beast roars.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>?”</span> <br>
+        <br>
+        You try and turn around, but the tentacles quickly dart your way and wrap around your submarine making a banging noise.<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>”</span> <span style="color:LightCoral">You feel the beast start to drag the submarine into the crater,</span> you turn your engine on max speed trying to fight against it, but you can’t, all you can do now is... <br>
+        <br>
+        <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>!”</span> <br>
+        <br>
+        You suddenly snap back from your imaginary adventure as you hear someone calling your name. You resurface to see <span style="color:DarkTurquoise">Your Father</span> at the door of the bathroom, <span style="color:LightSteelBlue">“Hurry up, you’ve been there for almost half an hour already.”</span> You apologize and quickly finish with your bath. <br>
+
+        <<set _ad to [
+                {
+                Name: "Player",
+                ShowZoom: true,
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Happy",
+                },
+                },
+            ]>>
+        <<ad _ad>>
+
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 5>>
+        <<needChange "Hygiene" 100>>
+        <<addClothing "PC" "Bottoms" "Towel" "White">>
+        <<set $Player.Exposed to "Towel">>
+        <br>
+        [[Continue|PH Hallway]]
+     
+    <<elseif _random == 2>>
+    /*-Variant 2 (Treasure)-*/
+        The ground beneath you seems to sink lower and lower as you venture into a deeper part of the ocean, you soon see your final destination in front of you. <span style="color:LightGreen">An ancient mariner shipwrecked on a pinnacle over a large chasm; you wonder what tressures it may hold.</span> You approach it slowly as you are able to peek inside through the cracks, something inside seems to be reflecting your lights. <br>
+        <br>
+        Upon closer inspection you have no doubt about it, it’s gold. You try to get closer to get a better view, but it’s not like you could fit a submarine inside of that boat. You decide to anchor yourself on the column the ship rests on, but as you do so, <span style="color:LightCoral">you feel a quake coming from the pillar, and as sand and debris start to float up you realize that the whole thing is about to go down.</span>  <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>?”</span> You start up the engine again as the column breaks and falters, slowly descending into the depths of the ocean. With another quake, the ship breaks in two as glittering coins spew out of it, and the whole thing starts to go down into the abyss. <br>
+        <br>
+        <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>”</span> <br>
+        <br>
+        The rotors struggle to spin fast enough to fight back the gravity pulling you deeper, but eventually you start to gain traction against it and pull yourself back up. You try to move away as fast as you can as the ship and its treasure disappear into the darkness. <br>
+        <br>
+        <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>!”</span> <br>
+        <br>
+        You quickly snap out of your imaginary adventure to realize someone’s been calling your name. You resurface and see <span style="color:DarkTurquoise">Your Father</span> at the door of the bathroom, <span style="color:LightSteelBlue">“Hurry up, you’ve been there for over half an hour already.”</span> You apologize and quickly finish your bath. <br>
+
+        <<set _ad to [
+                {
+                Name: "Player",
+                ShowZoom: true,
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Happy",
+                },
+                },
+            ]>>
+        <<ad _ad>>
+
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 5>>
+        <<needChange "Hygiene" 100>>
+        <<addClothing "PC" "Bottoms" "Towel" "White">>
+        <<set $Player.Exposed to "Towel">>
+        <br>
+        [[Continue|PH Hallway]]
+    <</if>>
+
+/*-Else-*/
+<<elseif _result == 0>>
+
+    <span style="color:LightCoral">Feeling a bit out of breath already,</span> you decide that this is a perfect time to call your adventure. You resurface for a sweet breath of fresh air and decide that it’s probably time to finish up already. You hear a knock at the door as <span style="color:DarkTurquoise">Your Father</span> calls for your name. <span style="color:LightSteelBlue">“Don’t take too long in there, you’ve been there for over half an hour.”</span> You tell him you’ll be done soon and hurry to finish before he has to call you again. <br>
+
+    <<set _ad to [
+            {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Happy",
+            },
+            },
+        ]>>
+    <<ad _ad>>
+
+    <<addMoodlet "Stress" 0>>
+    <<needChange "Fun" 5>>
+    <<needChange "Hygiene" 100>>
+	<<addClothing "PC" "Bottoms" "Towel" "White">>
+	<<set $Player.Exposed to "Towel">>
+    <br>
+    [[Continue|PH Hallway]]
+<</if>>

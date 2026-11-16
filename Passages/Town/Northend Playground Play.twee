@@ -1,0 +1,64 @@
+:: Northend Playground Play [nobr]
+
+	<<if $Time.after(6) and $Time.before(20)>>
+		<<set $RandomEvent to random(1, 2)>>
+	<<else>>
+		<<if $ScaryMovie == 1>>
+			<<set $RandomEvent to 3>>
+		<<else>>
+			<<set $RandomEvent to 1>>
+		<</if>>
+	<</if>>
+	
+	<<if $Weather == "Rain" or $Weather == "Storm">>
+		<<set $RandomEvent to 1>>
+	<</if>>
+	
+	<<if $RandomEvent == 1>>
+		You are by yourself, but enjoy your time relaxing on the swings.<br>
+        <<addMoodlet "Stress" 0>>
+		<<set $Minutes += 20>>
+		<br>
+		[[Continue|Neighborhood Playground]] 
+		
+	<<elseif $RandomEvent == 2>>
+		<<set _Random to ["Northend Push Boy Swings", "Northend Collecting Bugs", "Northend Playground Slide", "Northend Playground Wild Horse"]>>
+
+		/* Nyalls Content */
+		<<if $ToggleOCSebastian == 1 and $CompletedQuests.includes("Nyalls: Oliver")>>
+			<<set _Random.push("OC Oliver Northend Basketball")>>
+		<</if>>
+		<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Evelyn")>>
+			<<set _Random.push("OC Evelyn Play with Little Boy")>>
+		<</if>>
+		<<if $ToggleOCRaymond == 1 && $InActiveQuests.includes("Raymond: The Kidds")>>
+			<<set _Random.push("OC Alex Alan Intro")>>
+		<</if>>
+				
+		<<set _event to _Random.random()>>
+		<<include _event>>
+		
+	/* PARANOID EVENT */
+	<<elseif $RandomEvent == 3>>
+			<<set $RandomEvent2 to random(1, 2)>>
+			
+		/* NO PARANOID EVENT */
+		<<if $RandomEvent2 == 1>>
+		You are by yourself, but enjoy your time relaxing on the swings.<br>
+        <<addMoodlet "Stress" 0>>
+		<<set $Minutes += 20>>
+		<br>
+		[[Continue|Neighborhood Playground]] 
+			
+		/* MONSTER IN THE BUSHES */
+		<<elseif $RandomEvent2 == 2>>
+			<<include"Northend Monster in the Bushes">>
+		<</if>>
+	
+	<</if>>
+		
+
+/* WET/TEMP CHECK */
+/* ROLLS TWICE DURING OUTDOOR ACTIVITY, MAY FIND BETTER SOLUTION LATER */
+<<include"Wet Control">>
+<<include"Wet Control">>

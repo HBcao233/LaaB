@@ -1,0 +1,149 @@
+:: Watch Classmates Basketball Game [nobr]
+
+/* Written by: Rudy */
+/* Intro */
+
+<<include"GNPC Generate">>
+<<set $Minutes += 30>>
+
+After lunch, you decided to stroll around the school’s playground before taking a seat on the bench facing the basketball court. Standing inside the court, five boys are looking for another player and walk over upon spotting you, asking if you’d like to join. <br>
+<br>
+<div id=Choice>
+    /*=Decline=*/
+	<<link "Decline<br>">>
+	<<replace"#Choice">>
+
+
+You politely decline the boy’s invitation as basketball doesn’t seem that appealing right now. The group walk away disappointed and proceed to search around for another player. After a few minutes, they return with a new member in their circle, finding their missing final player. As soon as the match starts, the boys start running around, drippling and passing as they score points. <span style="color:Pink">A little over the five-minute mark, the boys begin to get sweaty and begin to strip off their damp shirts.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Mouth: "Smirk",
+            Eyes: "Mad",
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id=Choice2>
+    /*=Check the boys out=*/
+	<<link "Check the boys out<br>">>
+	<<replace"#Choice">>
+
+
+<span style="color:Pink">As soon as the first boy takes off his shirt, you instantly start focusing on his body as lewd thoughts fill your mind.
+He had a firm build with a beautiful tan color, his eyes were a brilliant blue and his hair a pretty blonde. You instantly begin to drool as your imagination takes you on a trip further down the boys clothes until they’re completely off. When you snap out of your lewd fantasy, you realize that other boys had also taken off their shirts. Being so focused on the boys playing makes it quite impossible not to pop a boner, which is exactly what happens, and you turn bright red as you’re so exposed on the playground with a huge boner while watching at the boys playing shirtless.</span> <br>
+</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Mouth: "Frown",
+            Eyes: "Sad",
+			Blush: 3,
+            Arms: "Hide",
+            Hard: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:Pink">As if this is not embarrassing enough, the game ends and the crowd of shirtless, sweaty boys begin to walk in your direct to take a rest! Being spotted with such a huge boner would be the end of you and the only thing you could do is sprint to the bathroom to try and fix it.</span> <br>
+
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Voyeurism"]>>
+<<arousalGain 10 _arousalbs _arousalkink>>
+[[Continue|School Restrooms]] 
+<</replace>>
+<</link>>
+
+/*Pay attention to the match*/
+<<link "Pay attention to the match<br>">>
+	<<replace"#Choice2">>
+
+
+Watching the boys having so much fun piques your interest as you decide to pay close attention to them playing to learn a thing or two. Maybe you’ll join them next time they need another player. <br>
+
+<<skillPoints "Athletics" 3>>
+[[Continue|School Courtyard]] 
+
+<</replace>>
+<</link>>
+</div>
+<</replace>>
+<</link>>
+
+/*=Accept=*/
+	<<link "Accept">>
+	<<replace"#Choice">>
+
+You agree, telling the boys that you are looking for a way to kill time anyway and playing seems like the most fun way. Standing up, you walk over to the court as you are put on the team that is down a player. <br>
+<br>
+As soon as the game starts, you get in position and start running after the ball that was in the possession of the other team. <span style="color:Pink">The boy has astonishing blue eyes and amazing golden colored hair, which briefly distracts you as he dashes past your defenses! After only a few minutes of playing in the hot sun, everyone else decides to take off their shirts as it would get them all sweaty. </span> <span style="color:Yellow">The game resumes, the scores neck and neck, as the enemy holding the ball starts quickly drippling it between his hands from one side to the other, trying to dash past you once more!</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Mouth: "Happy",
+            Eyes: "Tired",
+		},
+	},
+]>>
+<<ad _ad>>
+
+	<<skillCheck "Athletics" 70>>
+
+<<if _result == 1>>
+/*Skill Check Successful*/
+
+<span style="color:LightGreen">You’ve managed to get the ball our of his hand as he tries to go around you. Quickly spinning around towards the enemies post, you toss the ball with all your might and score a three-pointer!</span> Your team cheers as this is the winning play. Shirtless and panting. everyone agrees that this was the right time to stop and rest as getting back to class sweating and panting might not be the best idea. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Mouth: "Happy",
+            Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:Green">-Reputation</span>
+<<set $SchoolRep += 5>><br>
+<<skillPoints "Athletics" 5>>
+[[Continue|School Courtyard]] 
+
+<<else>>
+/*-Skill Check Failure-*/
+
+<span style="color:LightCoral">You try your best to stop him from running around you but fail as you are too focused on the boy’s shirtless chest and pretty eyes, causing you to trip on your own feet and tumble to the ground in a heap on your butt. Your rearend string and, briefly as you sit there, it becomes painfully obvious that you are aroused. You quickly cover it with your hands as the enemy team cheers out as they score the winning point.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Mouth: "Frown",
+            Eyes: "Sad",
+			Blush: 3,
+            Arms: "Bound",
+            Cry: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:Red">-Reputation</span>
+<<set $SchoolRep -= 5>><br>
+<<addMoodlet "Pained" 5>>
+<<addMoodlet "Embarrassed" 5>>
+[[Continue|School Courtyard]] 
+<</if>>
+<</replace>>
+<</link>>
+</div>

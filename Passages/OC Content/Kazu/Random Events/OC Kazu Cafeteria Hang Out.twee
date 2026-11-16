@@ -1,0 +1,88 @@
+:: OC Kazu Cafeteria Hang Out [nobr]
+
+/* Intro */
+<<set $Minutes += 15>>
+You spot <span style="color:DarkTurquoise">Kazu</span> sitting in the far corner of the cafeteria. He has his earbuds in and nods along to his music as he writes in his notebook. You briefly wonder if he is doing homework, though since he seems to be enjoying himself, you figured that can’t possibly be it. So, you walk over and wave to get his attention. <span style="color:DarkTurquoise">Kazu</span> sees you and smirks, taking one earbud out. <span style="Color: LightSteelBlue">“Sup dude? What, don’t want to go play with any of your other little friends?”</span> <br>
+
+    <<set _ad to [
+	{
+		Name: "OC Kazu",
+		State: {
+            Outfit: "Uniform",
+			Mouth: "Smirk",
+            Eyes: "Mad",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+            Eyes: "Tired",
+		    },
+	    },
+    ]>>
+    <<ad _ad>>
+
+You roll your eyes and sit down, telling <span style="color:DarkTurquoise">Kazu</span> that you figured you’d hang out with him, since he looks so sad and lonely. <span style="Color: LightSteelBlue">“Fuck you.”</span> <span style="color:DarkTurquoise">Kazu</span> laughs, <span style="Color: LightSteelBlue">“I just wanted to work on some writing. It’s quieter in here than outside. Less bitches screaming and running around, you know?”</span> <span style="Color: Yellow">He pushes his notebook over to you, inviting you to read it.</span> <span style="Color: LightSteelBlue">“And it’s not that lame stories we read in Hart’s class. This is real shit. Horror and suspense, that’s what we should be reading!”</span> <br>
+<br>
+
+<<if $Player.Traits.includes("Coward")>>
+    [Coward] <span style="Color: Yellow">As you begin to read, you quickly realize that he wasn’t kidding.</span> The story is very unnerving and eerily realistic in some parts. The way he uses words to describe a character’s reactions to the gentle humming of the young girl with the machete walking down the hallway with maggots visibly under the skin of her neck causes your heart to race! <span style="Color: LightCoral">Then, right as she peeks her cat-like eyes through the doorway, you jump!</span> <br>
+    
+    <<set _ad to [
+	{
+		Name: "OC Kazu",
+		State: {
+            Outfit: "Uniform",
+			Mouth: "Smirk",
+            Eyes: "Tired",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Frown",
+            Blush: 1,
+		    },
+	    },
+    ]>>
+    <<ad _ad>>
+
+    <span style="Color: LightSteelBlue">“Haha! Damn, you are a little scaredy cat.”</span> <span style="color:DarkTurquoise">Kazu</span> laughs as you blush at your reaction. You admit that you don’t handle horror well. <span style="Color: LightSteelBlue">“I can see that, surprised you didn’t wet yourself!”</span> He laughs, playfully shoving you. <span style="Color: LightSteelBlue">“I should get you to read my stuff more often. Love seeing the fear in your eyes! Oh, I have this one part earlier where a girl gets her fingernails-”</span> <span style="Color: Pink">You quickly cover your ears and ask him to stop before you actually do wet yourself.</span> <br>
+    <br>
+<<else>>
+    As you begin to read, you quickly realize that he wasn’t kidding. The story is rather unnerving and scarily realistic in parts. It’s about a small village in Japan haunted by a curse that turns people into murderous monsters. This section has a girl wielding a machete who takes a classroom hostage due to alien mind-control or maggots in her blood, the exact cause isn’t clear. <span style="Color: LightGreen">But even this single chapter is very interesting and leaves you with all sorts of questions about what is really going on.</span> <br>
+
+    <<set _ad to [
+	{
+		Name: "OC Kazu",
+		State: {
+            Outfit: "Uniform",
+			Mouth: "Smirk",
+            Eyes: "Mad",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Happy",
+		    },
+	    },
+    ]>>
+    <<ad _ad>>
+
+    <span style="Color: LightSteelBlue">“Good, right?”</span> <span style="color:DarkTurquoise">Kazu</span> smirks, seeing your enjoyment in your face, <span style="Color: LightSteelBlue">“Took some inspiration from old stories I heard back home, but outside of that it’s all a 100% <span style="color:DarkTurquoise">Kazu</span> original! And this isn’t even the scariest part! Earlier, I wrote this gnarly scene where another girl gets her fingernails-”</span> <span style="Color: Yellow">You decide to stop him there.</span> <br>
+    <br>
+<</if>>
+
+<span style="Color: LightSteelBlue">“Fine, fine.”</span> He laughs. <span style="Color: LightSteelBlue">“But if you liked this chapter, you should read my other stuff sometime. I don’t normally let other people read it, but the look on your face was priceless! Oh, maybe I can model a character after you in the next one!”</span> <span style="color:DarkTurquoise">Kazu</span> goes on to describe this character, which has your exact name and appearance, along with what will happen to the character in the story. <span style="Color: Pink">It is a mixture of utterly humiliating and utterly terrifying that leave you a little unnerved, but <span style="color:DarkTurquoise">Kazu</span> claims he is just joking. Mostly.</span> <br>
+
+<<if $OCKazuSocial > 40>>
+	<br>
+    You ask him about the inspiration to the story and he shrugs. <span style="Color: LightSteelBlue">“Like I said, just the type of stuff I like. A lot of the stories are based off folktales and stuff from back in Japan.”</span> He sighs, taking a moment to lean back and relax. You ask him if he misses Japan and he shrugs again. <span style="Color: LightSteelBlue">“Sometimes. It’s… different here. But I guess it’s not all bad. But I like writing about stuff that reminds me of home.”</span> He sighs once more and smirks, getting back to work as you watch him. <span style="Color: Yellow">Judging by his expression, he misses his home even more than he’s letting on.</span> <br>
+<</if>>
+
+<<socialChange "Kazu" 3 1>>
+<<needChange "Fun" 10>>
+<br>
+[[Continue|School Cafeteria]]

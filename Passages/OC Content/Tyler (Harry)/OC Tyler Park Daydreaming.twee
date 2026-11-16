@@ -1,0 +1,32 @@
+:: OC Tyler Park Daydreaming [nobr]
+
+/* Intro */
+You are walking along the pond in the city park <span style="color:LightGreen">when you spot a familiar facemask-wearing boy lazily lying under a try.</span> <span style="color:DarkTurquoise">Tyler</span>, the boy you had helped when he was being bullied by <span style="color:DarkTurquoise">Michael</span>. At first, you think the boy may be napping, which would be a bit dangerous in such a public place, but then you notice his feet swaying about on the ground. <span style="color:Pink">He stares up at the sky, not asleep, but daydreaming with his head in the clouds. It is a cute sight.</span> 
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Tyler",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+/* PC: Smile
+OC Tyler: Everyday, Smile, Blush1 */
+You walk up to the boy and greet him.  He jumps slightly upon seeing you, <span style="color:Pink">the reds of his cheeks matching his facemask.</span> <span style="color:LightSteelBlue">“H-hi! Umm.. how- how are you?”</span> He is still as nervous as ever, though seems pretty happy to see you. You ask to sit beside him and he nods, both of you now looking up into the clouds. <span style="color:LightGreen">It takes a minute for him to build up the courage to say anything, but once he does the two of you enjoy a conversation about recent dreams and games. <span style="color:DarkTurquoise">Tyler</span> seems to love stories of adventures, heroes, and daring battles. He can be pretty passionate when his shyness isn’t taking over.</span> <br>
+<<socialChange "Tyler" 3 1>>
+<<addMoodlet "Stress" 0>>
+<<needChange "Fun" 25>>
+<<set $Minutes += 20>>
+<br>
+[[Continue|Park]] 

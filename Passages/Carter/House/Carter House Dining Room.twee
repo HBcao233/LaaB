@@ -1,0 +1,65 @@
+:: Carter House Dining Room [nobr]
+
+<<set $Location to {
+    Name: "Carter's Dining Room",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Dining Room",
+}>>
+<span style="color:Azure"><big><strong>--Carter's Dining Room--</strong></big></span><br>
+
+<<if $Time.after(19, 0)>>
+    <<if $HangOutNeed.Fun >= 50>>
+        <<include"Carter House Leaving Late High Fun">>
+    <<else>>
+        <<include"Carter House Leaving Late Low Fun">>
+    <</if>>
+<<else>>
+
+    You stand in the dining room of <span style="color:DarkTurquoise">Carter</span>’s house. A long table that can seat at least 8 people fills most of the space, surrounded by blue chairs on a green rug. It gives the entire room a colorful, outdoorsy vibe. A large cabinet filled with fancy plates and glassware sits along the northern wall. You also spy a locked glass case with what appears to be alcohol there.<br>
+    <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+
+    <strong>Carter: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+
+    <br>
+
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Living Room (0:01)|Carter House Living Room][$Minutes += 1]] <br>
+    [[Kitchen (0:01)|Carter House Kitchen][$Minutes += 1]] <br>
+
+    <br>
+
+    <br>
+    <div style="position: relative">
+    <img src="Images\NPC Homes\Carter House\Carter House Map.png" alt="Carter House Base" usemap="#CarterHouse">
+        <img src="Images\Player House\Player House Room Marker.png" 
+    style="position: absolute; left: 108px; top: 108px"  alt="Carter House" usemap="#CarterHouse">
+    </div>
+    <map name="CarterHouse">
+        <area shape="rect" coords="166,54,215,161" alt="Living Room" onclick="$.wiki('<<goto[[Carter House Living Room]]>><<set $Minutes += 1>>')" />
+        <area shape="rect" coords="54,108,107,161" alt="Kitchen" onclick="$.wiki('<<goto[[Carter House Kitchen]]>><<set $Minutes += 1>>')" />
+    </map>
+
+<</if>>

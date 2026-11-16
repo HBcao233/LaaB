@@ -1,0 +1,64 @@
+:: Take Out Trash [nobr]
+
+<<set $Minutes += 5>>
+
+You begrudgingly grab the large garbage bag in the Kitchen and head towards the front door. It is extremely heavy, and you are barely able to hold it above the ground as you waddle outside towards the garbage can in the front yard. <br>
+<br>
+
+<<for _i to 0; _i lt $QuestLog.length; _i++>>
+	<<if $QuestLog[_i].Name == "Weekly Chores">>
+		<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+			<<if $QuestLog[_i].Objectives[_o].Name == "Take out Trash">>
+				<<set $QuestLog[_i].Objectives[_o].State to 1>>
+				<<break>>
+			<</if>>
+		<</for>>
+		<<break>>
+	<</if>>
+<</for>>
+<<set $ChoreEasyObj to 1>>
+<<include"Chore Quest Check">>
+
+				/* CHECKS IF EXPOSED */
+			/* EXPOSED UNDIES */
+<<if $Player.Exposed == "Undies" or $Player.Exposed == "Diaper">>
+You lift with all your might and finally manage to get the bag into the garbage can. It is only after you let out a sigh of relief that you come to an embarrassing realization: <span style="color:Red">You’re in your underwear! You turn bright red and quickly cover your $PlayerUndies.Name with your hands.</span> Looking around for cover, you quickly dive behind a nearby bush and peek out to see if anyone saw you while silently cursing yourself for being so stupid.<br>
+<br>
+[[Continue|PH Frontyard]]
+			/* EXPOSED TOWEL */
+<<elseif $Player.Exposed == "Towel">>
+You lift with all your might and finally manage to get the bag into the garbage can. As you breathe a sigh of relief, you come to an embarrassing realization: <span style="color:Red">You’re still wearing only a towel!</span> 
+<<set $RandomEvent to random(1, 2)>>
+<<if $RandomEvent == 1>>
+			/* SAFE */
+ You quickly grip the towel tightly and blush. While embarrassing, it’s not too uncommon to see someone run outside quickly in nothing but a towel. Never-the-less, you still sprint back inside to the safety of your house before you find yourself in a more embarrassing situation.<br>
+ <br>
+ [[Continue|PH Living Room]] <br>
+ 			/* TOWEL RIPPED OFF */
+ <<elseif $RandomEvent == 2>>
+ As if on cue with your realization, a car comes speeding down the road, causing a strong gust of wind that <span style="color:Red">rips off your towel and sends it flying down the road! You let out a quiet scream as you suddenly find yourself in the middle of the sidewalk completely naked!</span> You quickly cover your $Player.PenisSize Penis with your hands and search desperately for cover, diving into an nearby bush.<br>
+ <br>
+ <<set $PlayerBottoms to $None>>
+[[Continue|PH Frontyard]] 
+ 
+ <</if>>
+ 
+ <<else>>
+ <<set $RandomEvent2 to random(1, 4)>>
+/* NORMAL */
+<<if $RandomEvent2 > 1>>
+You lift with all your might and finally manage to get the bag into the garbage can. You let out a sigh of relief, briefly smelling yourself to make sure the scent doesn’t linger.<br>
+<br>
+[[Continue|PH Frontyard]] 
+
+
+/* NEGATIVE */
+<<elseif $RandomEvent2 == 1>>
+As you are lifting the bag into garbage can, <span style="color:Red">you hear a tearing sound and the bag rips open, dumping trash all over you.</span> You curse as you throw the now useless trash bag away and begin to pick up the trash by hand. It takes an extra ten minutes and you feel in need of a shower, but the job is done.<br>
+<<set $Minutes += 5>>
+<<needChange "Hygiene" -20>>
+<br>
+[[Continue|PH Frontyard]] 
+<</if>>
+
+<</if>>

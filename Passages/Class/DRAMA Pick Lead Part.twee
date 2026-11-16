@@ -1,0 +1,100 @@
+:: DRAMA Pick Lead Part [nobr]
+
+<span style="color:DarkTurquoise">Mr. Julien</span> is dividing the class into groups of 3 and giving them each a scene to rehearse and memorize for 30 minutes before performing it for him. Ironically, you are paired with <span style="color:DarkTurquoise">Lucas</span> and <span style="color:DarkTurquoise">Carter</span>. You are handed the scripts and told to pick who plays what role.<br>
+<br>
+Despite being a 3-person scene, it is closer to a solo since the lead is given the most to do and will easily outshine the others. Whoever plays the lead will easily look the best in front of <span style="color:DarkTurquoise">Mr. Julien</span> and gain the most favor with him.<br>
+
+<<set _ad to [
+	{
+		Name: "Lucas",
+		State: {
+			Outfit: "Uniform",
+			Mouth: "Smile",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Outfit: "Uniform",
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Carter",
+		State: {
+			Outfit: "Uniform",
+			Mouth: "Smile",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id=Choice>
+/* PLAYER LEADS */
+<<link "You play the lead<br>">>
+<<replace"#Choice">>
+You decide to take the lead and hand the other two boys the supporting parts. They don’t seem to mind and enjoy falling into their roles. The three of you have fun practicing and when the times comes for you all to perform the scene, you blow it out of the park! <span style="color:DarkTurquoise">Mr. Julien</span> seems rather impressed with your ability to lead.<br>
+	<<set $PlayerDramaFaithChange to "Increase">>
+	<<set $LucasDramaFaithChange to "None">>
+	<<set $CarterDramaFaithChange to "None">>
+	<<include"Drama Faith Change">>
+	<br>
+	<<include"Attend Drama Finish">>
+
+<</replace>>
+<</link>>
+
+/* LUCAS LEADS */
+<<link "Lucas plays the lead<br>">>
+<<replace"#Choice">>
+
+<<set _ad to [
+	{
+		Name: "Lucas",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You decide to give <span style="color:DarkTurquoise">Lucas</span> the lead part and take one of the minor roles yourself. He seems a bit nervous to have so much responsibility, but you and <span style="color:DarkTurquoise">Carter</span> encourage him. The three of you have fun practicing and when the time comes for you all to perform the scene, <span style="color:DarkTurquoise">Mr. Julien</span> seems very impressed with <span style="color:DarkTurquoise">Lucas</span>' physical acting and ability to hold attention.<br>
+	<<set $PlayerDramaFaithChange to "None">>
+	<<set $LucasDramaFaithChange to "Increase">>
+	<<set $CarterDramaFaithChange to "None">>
+	<<include"Drama Faith Change">>
+	<br>
+	<<include"Attend Drama Finish">>
+
+<</replace>>
+<</link>>
+
+/* CARTER LEADS */
+
+<<link "Carter plays the lead<br>">>
+<<replace"#Choice">>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+You decide to give <span style="color:DarkTurquoise">Carter</span> the lead part and take one of the minor parts for yourself. He falls into the role like a natural and gives good, if a bit over-the-top, performances during practice, much to <span style="color:DarkTurquoise">Lucas</span> and your amusement. When the time comes to perform the scene <span style="color:DarkTurquoise">Mr. Julien</span> seems to enjoy the imaginative boy’s over-dramatic line delivery.<br>
+	<<set $PlayerDramaFaithChange to "None">>
+	<<set $LucasDramaFaithChange to "None">>
+	<<set $CarterDramaFaithChange to "Increase">>
+	<<include"Drama Faith Change">>
+	<br>
+	<<include"Attend Drama Finish">>
+
+<</replace>>
+<</link>>
+
+</div>

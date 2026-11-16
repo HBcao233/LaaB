@@ -1,0 +1,74 @@
+:: Beach Hang Out Watching the Waves [nobr]
+
+/* Written by: -AN */
+/* Intro */
+
+<<set $Minutes += 30>>
+
+Amidst the bustle of the beach at such a busy time, you decide to simply kick back on a bench, enjoying the comfortable sun, and the nice open view of the beach and the ocean. There’s no shortage of things to look at, <span style="Color: Yellow">but you find yourself drawn to all the activity in the water</span>. From your seat, you can see plenty of kids and adults treading the water, occasionally riding the gentler waves up and down. <br>
+<br>
+
+/* Ocean Fear */
+<<if $FearOcean == 1>>
+    Further beyond the distance of most swimmers, you’re able to see much more powerful waves swelling up, and then crashing down into massive splashes of foamy water. It’s almost terrifying how far out you can see some of them building, and eventually reaching the shoreline. The waves are just an unceasing element that continually beat down upon the beach, and as turbulent as some of the waves can be, people seem to love it. <br>
+    <br>
+    You’re not certain of the exact physics behind how ocean waves are created, but even with your aversion to the ocean, there’s still something fascinating about how the ocean seems like a living, breathing organism — and it can switch from calm to violent at a moment’s notice. <span style="Color: Yellow">While you doubt you’d want to be as far out as some swimmers out there,</span> <span style="Color: LightGreen">you’re comfortable enough here, respecting its power and spectacle at a distance.</span><br>
+    <br>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Eyes: "Sad",
+                Mouth: "Eyes",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+        /* PC: Everyday, Sad Eyes, Happy Mouth*/
+    <span style="Color: Yellow">As you continue observing the more distant waves, you squint and see several surfers paddling further out, attempting to ride the many powerful waves. </span> Not all the surfers are successful, and you see quite a few falling during their attempts to ride particularly large waves. It’s an intimidating situation to imagine yourself in, but you can’t help but admire their bravery. The most talented surfers seem to effortlessly skate on the surface of the most volatile waves, <span style="Color: LightGreen"> and you momentarily forget your fears watching them tame the ocean.</span><br>
+    <br>
+    <span style="Color: Yellow">You watch as a particularly daring surfer rides within the barrel of a massive wave long enough until the wave seems to cover him from view.</span> After a few moments it looks like the wave swallowed him, <span style="Color: LightStyle">but in a phenomenal display of skill, you see the same surfer emerging from the end of the barrel still maintaining his balance on his board.</span><br>
+    <br>
+    <span style="Color: LightGreen">You’re flabbergasted, absolutely impressed with the talent and courage to be able to pull off something so bold.</span> Perhaps because you doubt you’d ever be able to do something so scary, you find the sight so enthralling that you can’t seem to look away now. You quickly begin losing track of time as you watch the surfers conquer the waves with incredible proficiency. <br>
+    <br>
+<<else>>
+    Further in the distance you’re able to see impressive waves building momentum, then crashing down into huge splashes of foamy water. It’s a dazzling spectacle, and you find yourself awed not only with how large they can get, but even at how much power remains once the waves reach the shoreline. You’re not really sure how ocean waves work, but you can’t help but feel like the ocean is a living thing, and the waves of water are almost like giant breaths of air battering shores around the world. <br>
+    <br>
+    Despite the turbulence, you see some particularly daring swimmers venturing past the shallower waters to ride some larger waves. <span style="Color: LightGreen">You find yourself thrilled watching the ocean carry them up and down, like a water roller coaster. There’s no doubt it’d be a challenging task for a novice swimmer, but you bet being able to feel the ocean’s strength lifting you would be an exciting experience.</span><br>
+    <br>
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+        /* PC: Everyday, Happy Mouth*/
+    <span style="Color: Yellow">As you continue observing the waves, in the distance you spot some surfers paddling much further out.</span> Even from here, you can clearly see them attempting to ride out the largest waves, though many aren’t successful and find themselves swallowed by the waves. Despite the failures, they remain persistent and quickly mount their boards and make continuous attempts. <br>
+    <br>
+    The most talented surfers practically dance across the waves, providing an impressive show that keeps you engaged. Whenever you see a surfer riding a particularly large wave, you can’t help imagine yourself riding across the surface, feeling the salty spray against your face. <span style="Color: Yellow">In a particularly daring display, you see a surfer riding within the barrel of a massive wave until he disappears from view.</span> After a few moments you figure he must have been swallowed by a wave, <span style="Color: LightGreen">but then you see the same surfer emerge from the end of the barrel still maintaining his balance.</span>
+    <br>
+    <br>
+    <span style="Color: LightGreen">You’re left awestruck by the incredible display of skill, excitedly imagining how exhilarating it must have been to be inside such a large wave. These people have such talent and command of their boards, that they seem like they’ve tamed the ocean.</span> Even just witnessing such a cool thing feels like an enjoyable privilege. You feel mesmerized, and time quickly passes as your eyes remain glued on the surfers while they continue to ride along the many waves. <br>
+    <br>
+<</if>>
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smirk",
+        },
+    },
+]>>
+<<ad _ad>>
+    /* PC: Everyday, Smirk Mouth*/
+You were so lost in the sights that you’re unsure how much time you spent watching, <span style="LightGreen">but you’re definitely feeling thoroughly entertained from the experience.</span> You stand from the bench and quickly stretch before finally continuing on your way. <br>
+<br>
+<<needChange "Fun" 6>>
+<br>
+[[Continue|Beach]]

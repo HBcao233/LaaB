@@ -1,0 +1,89 @@
+:: School Playground Random Boner [nobr]
+
+/* Opening */
+You are enjoying yourself, playing in the jungle gym and just having fun like only a kid can. You run up to the slide but find yourself waiting in line behind another boy as he positions himself to go down. At first, you are annoyed, <span style="color:Pink">until you spot the familiar waistband of tighty whities poking out the back of his bottoms as he sits down.</span> <br>
+<br>
+<span style="color:Pink">Instantly, your mind undresses the lad and you imagine him sitting there in just his briefs. The tight curves around his butt, the subtleness of his bulge telling you all you need to know about his package, and the slight transparency of it all combined into an adorable image. It also helped that the boy was kind of cute, the perfect boy for such underwear, and he had no idea how much your mind was lewding him.</span> <br>
+<br>
+<span style="color:Pink">As the boy finally goes down the slide and you ready yourself to go down as well, you feel a slight pressure in your $PlayerBottoms.Name.</span> <span style="color:lightcoral">You look down and blush as you realize you have a very obvious boner!</span> You quickly cover it and look around, you were alone for the time being, but that kid and his friend looked like they were going to head back up! You had to get rid of it, fast! <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+			Blush: 1,
+			Arms: "Hide",
+        },
+    },
+]>>
+<<ad _ad>>
+
+You try to think of things to get it to go down; Dead puppies, your grandmother, homework! <span style="color:lightcoral">Ahhh! Why was nothing working!? You panic and quickly slide down before anyone can spot you and run over toward one of the nearby trashcans for cover.</span> You try to think of a solution, <span style="color:Pink">the last thing you needed was everyone in class seeing your boner and making fun of you for it!</span> <br>
+<br>
+
+<div id=choice>
+/* Run to Bathroom */
+	<<link "Run to bathroom<br>">>
+	<<replace"#choice">>
+
+ <<set $Location to {
+    Name: "School Restroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "School Restroom",
+}>>
+
+<span style="color:Pink">Your options were limited, you had to get rid of it, and the fastest way was to-!</span> You glance back and forth, making sure no one is watching, before sprinting towards the school building. The bathroom was your only hope, from inside there you could deal with this in relative safety. Sure, your running full sprint covering your crotch towards the bathroom was a funny sight, but you’d rather get laughed at for nearly pissing yourself than having a boner at an all boy’s school. <br>
+<br>
+You rush into the bathroom, thankfully it’s empty and enter the nearest stall. You don’t think anyone saw your boner and with any luck, you’ll be able to deal with it before anyone does. <span style="color:Pink">Now, for the easy part.</span> <br>
+<br>
+
+
+	<<set $MasturbationLocation to "School Bathroom">>
+	<<set $MasturbationPosition to "Standing">>
+	<<set $MasturbationAction to "None">>
+    <<set $MasturbationPublic to 1>>
+	<<set $Player.Arousal to 60>>
+    <<include"Character Save Clothes">>
+    [[Continue|Player Masturbate]]
+
+    <</replace>>
+    <</link>>
+/* Find a hidden spot */
+	<<link "Find a hidden spot<br>">>
+	<<replace"#choice">>
+<span style="color:Pink">You gulp as a thought enters your head. There are plenty of places to hide out here, hell, the corners of the courtyard were nearly completely surrounded by bushes and trees! If you went back there, you’d be able to ‘take care of it’ before anyone could even notice!</span> <br>
+<br>
+<<if $Player.Kinks.Exhibitionism == 1>>
+    But, then again, doing something like that out here in the open, where anyone could see you, was nerve-wracking. But, somehow, <span style="color:Pink">that also made it exciting! The thought of masturbating in such a public place, surrounded by your classmates. Your heart is beating so fast just at the thought.</span> <br>
+    <br>
+<</if>>
+You glance around to make sure no one is watching you, before sprinting towards the bushes. You wanted to make sure you got as far away as you can! <span style="color:Pink">Despite the excitement of getting caught, you didn’t actually want to risk it. Once you are far enough into the bush and find a good hiding spot, you kneel down and prepare yourself.</span> <br>
+<br>
+	<<set $MasturbationLocation to "School Courtyard">>
+	<<set $MasturbationPosition to "Kneeling">>
+	<<set $MasturbationAction to "None">>
+    <<set $MasturbationPublic to 1>>
+	<<set $Player.Arousal to 60>>
+    <<include"Character Save Clothes">>
+    [[Continue|Player Masturbate]]
+
+    <</replace>>
+    <</link>>
+/* Wait for it to go away */
+	<<link "Sit down until it goes away<br>">>
+	<<replace"#choice">>
+Masturbating at school, whether out in the open or in the ‘safety’ of the bathroom is never a good idea. You push the horny thoughts from your mind and come up with a better solution. You quickly move over to a nearby bench and sit down, putting your hands in your lap to conveniently cover your erection. <span style="color:Pink">If anyone asks, you were just resting your legs a bit, though, in reality, you were waiting for your boner to go away.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 20>>
+        <<set $Player.Arousal to 0>>
+		<<set $Player.SexualFrustration += 25>>
+		<br>
+		[[Continue|School Courtyard]] 
+
+    <</replace>>
+    <</link>>
+</div>

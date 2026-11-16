@@ -1,0 +1,70 @@
+:: Ben Hang Out Park [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Ben Park Hang Out",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Park",
+}>>
+
+/* End Late Check */
+<<if $Time.after(20)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<goto "Ben Hang Out End Late Low Fun">>
+    <<else>>
+        <<goto "Ben Hang Out End Late High Fun">>
+    <</if>>
+<<else>>
+    <span style="color:Azure"><big><strong>--Opal City Park--</strong></big></span><br>
+
+    <<set _ad to [
+        {
+            Name: "Ben",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+
+    <strong><span style="color:DarkTurquoise">Ben</span>: </strong>
+    <<include"NPC Hang Out Modifiers">><br>
+    <br>
+
+    You and <span style="color:DarkTurquoise">Ben</span> stand in the city park. It is a fairly large patch of greenery in the center of the city that, despite being a popular spot, always has plenty of open space for activities. The park has a lot of sidewalk trails that curve around throughout the entire park. There is also a small lake near one corner along with quite a few open fields that can be used for all sorts of things. Along one corner is also a fenced-in playground that has a lot more attractions than the one at your school. <br>
+    <br>
+    <span style="color:LightSteelBlue">“So, ummm... Wha- what did you want to do?”</span> <span style="color:DarkTurquoise">Ben</span> asks with a nervous smile, <span style="color:LightSteelBlue">“We can do whatever you want...”</span><br>
+    <br>
+    <span style="color:Azure"><strong>-Talk-</strong></span><br>
+    <<include"Ben Base Talk Code">>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<link"Play on Playground (0:20)">>
+        <<set _events to ["Ben Hang Out Park Playground Basic", "Ben Hang Out Park Playground Beetle"]>>
+        <<set _event to _events.random()>>
+        <<goto _event>>
+    <</link>>
+    <span style="color:green">+Fun</span><br>
+    [[Sit & Chat (0:10)|Ben Hang Out Park Sit & Chat]] <span style="color:green">+Energy</span><br>
+    <br>
+
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    <<link"Leave for today<br>">>
+        <<if $HangOutNeed.Fun < 50>>
+            <<goto "Ben Hang Out End Early Low Fun">>
+        <<else>>
+            <<goto "Ben Hang Out End Early High Fun">>
+        <</if>>
+    <</link>>
+
+<</if>>

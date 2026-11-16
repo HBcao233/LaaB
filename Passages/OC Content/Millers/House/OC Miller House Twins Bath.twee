@@ -1,0 +1,76 @@
+:: OC Miller House Twins Bath [nobr]
+
+<<if $OCKaydenBabysit.Active == 1>>
+    <<if $OCKaydenBabysit.State == "PreDin" && $Time.after(18)>>
+        <<goto"Millers Babysitting Dinner">>
+    <<elseif $OCKaydenBabysit.State == "PostDin" && $Time.after(19, 30)>>
+        <<goto"Millers Babysitting Bath Time">>
+    <<elseif $OCKaydenBabysit.State == "Bath" && $Time.after(20)>>
+        <<goto"Millers Babysitting Bath Time Bath Done">>
+    <<elseif $OCKaydenBabysit.State == "Sleep" && $Time.after(21)>>
+        <<goto"Millers Babysitting Ending">>
+    <</if>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--The Twin's Bathroom--</strong></big></span><br>
+<<set $Location to {
+	Name: "The Twin's Bathroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Bathroom",
+}>>
+
+You’re standing in the twins' bathroom. Despite the appearance of their bedroom, the bathroom is spotless and organized, except for <span style="color:DarkTurquoise">Jayden</span> and <span style="color:DarkTurquoise">Kayden</span>’s toothbrushes lying on the counter, and the dirty clothes bin is overfilled. <br>
+<br>
+
+<<if $OCKaydenBabysit.Active == 1 && ["PreDin", "PostDin"].includes($OCKaydenBabysit.State)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<set _mouth to "Frown">>
+        <<set _eyes to "Sad">>
+    <<else>>
+        <<set _mouth to "Happy">>
+        <<set _eyes to "Normal">>
+    <</if>>
+    <<set _ad to [
+        {
+            Name: "OC Kayden",
+            State: {
+                Outfit: "Everyday",
+                Mouth: _mouth,
+                Eyes: _eyes,
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+    <strong>Kayden: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    [[Pee (0:02)|OC Miller Pee]] <span style="color:Green">-Bladder</span><br>
+    
+<</if>>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[The Twin's Bedroom (0:01)|OC Miller House Twins Room][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+/* House Map */
+<div style="position: relative">
+	<img src="Images\NPC Homes\Miller House\Miller House.png" 
+style="position: absolute; left: 0; top: 0"  alt="Miller Map" usemap="#MillerHouse">
+	<img src="Images\NPC Homes\Miller House\Room Marker.png" 
+style="position: absolute; left: 270px; top: 216px"  alt="Miller Map" usemap="#MillerHouse">
+</div>
+
+<map name="MillerHouse">
+    <area shape="rect" coords="216,216,269,269" alt="Twins Room" onclick="$.wiki('<<goto[[OC Miller House Twins Room]]>><<set $Minutes += 1>>')" />
+</map>

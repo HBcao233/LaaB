@@ -1,0 +1,32 @@
+:: Artwork Catalog Millers [nobr]
+
+<span style="color:Azure"><big><strong>--Millers Catalog--</strong></big></span><br>
+<br>
+
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+<strong>-Isaiah-</strong><br>
+<strong>-Kayden and Jayden-</strong><br>
+/*Twins Lemonade */
+    <<if $AchievementArt.includes("Twins Lemonade")>>
+        <strong><span style="color:lightgreen">Twins Lemonade</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Millers\\Twins Lemonade.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Twins Lemonade</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Twins Lemonade")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Millers">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+
+<br>
+[[Back|Artwork Catalog]]

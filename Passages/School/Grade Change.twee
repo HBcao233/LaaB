@@ -1,0 +1,120 @@
+:: Grade Change [nobr]
+
+/* MATH */
+	<<if $GradeChange == "Math">>
+		<<if $GradeChangeType == "Increase">>
+			<<if $Player.Traits.includes("Genius")>>
+				<<set $MathGrade += 4>>
+			<<else>>
+				<<set $MathGrade += 2>>
+			<</if>>
+			<span style="color:Green">+Your Math Grade has improved.</span><br>
+		<<elseif $GradeChangeType == "Decrease">>
+		<<if $Late == 1>>
+			<<set $MathGrade -= 4>>
+		<<else>>
+			<<set $MathGrade -= 2>>
+		<</if>>
+		<span style="color:Red">-Your Math Grade has suffered.</span><br>
+		<<elseif $GradeChangeType == "Missed">>
+			<<set $MathGrade -= 5>>
+		<span style="color:Red">-Your Math Grade has suffered greatly!</span><br>
+		<</if>>
+		
+/* HISTORY */
+	<<elseif $GradeChange == "History">>
+		<<if $GradeChangeType == "Increase">>
+			<<if $Player.Traits.includes("Genius")>>
+				<<set $HistoryGrade += 4>>
+			<<else>>
+				<<set $HistoryGrade += 2>>
+			<</if>>
+			<span style="color:Green">+Your History Grade has improved.</span><br>
+		<<elseif $GradeChangeType == "Decrease">>
+		<<if $Late == 1>>
+			<<set $HistoryGrade -= 4>>
+		<<else>>
+			<<set $HistoryGrade -= 2>>
+		<</if>>
+		<span style="color:Red">-Your History Grade has suffered.</span><br>
+		<<elseif $GradeChangeType == "Missed">>
+			<<set $HistoryGrade -= 5>>
+		<span style="color:Red">-Your History Grade has suffered greatly!</span><br>
+		<</if>>
+		
+/* SCIENCE */
+	<<elseif $GradeChange == "Science">>
+		<<if $GradeChangeType == "Increase">>
+			<<if $Player.Traits.includes("Genius")>>
+				<<set $ScienceGrade += 4>>
+			<<else>>
+				<<set $ScienceGrade += 2>>
+			<</if>>
+			<span style="color:Green">+Your Science Grade has improved.</span><br>
+		<<elseif $GradeChangeType == "Decrease">>
+		<<if $Late == 1>>
+			<<set $ScienceGrade -= 4>>
+		<<else>>
+			<<set $ScienceGrade -= 2>>
+		<</if>>
+		<span style="color:Red">-Your Science Grade has suffered.</span><br>
+		<<elseif $GradeChangeType == "Missed">>
+			<<set $ScienceGrade -= 5>>
+		<span style="color:Red">-Your Science Grade has suffered greatly!</span><br>
+		<</if>>
+		
+/* English */
+	<<elseif $GradeChange == "English">>
+		<<if $GradeChangeType == "Increase">>
+			<<if $Player.Traits.includes("Bookworm")>>
+				<<set $EnglishGrade += 4>>
+			<<elseif $Player.Traits.includes("Genius")>>
+				<<set $EnglishGrade += 4>>
+			<<else>>
+				<<set $EnglishGrade += 2>>
+			<</if>>
+			<span style="color:Green">+Your English Grade has improved.</span><br>
+		<<elseif $GradeChangeType == "Decrease">>
+		<<if $Late == 1>>
+			<<set $EnglishGrade -= 4>>
+		<<else>>
+			<<set $EnglishGrade -= 2>>
+		<</if>>
+		<span style="color:Red">-Your English Grade has suffered.</span><br>
+		<<elseif $GradeChangeType == "Missed">>
+			<<set $EnglishGrade -= 5>>
+		<span style="color:Red">-Your English Grade has suffered greatly!</span><br>
+	
+		<</if>>
+		
+<</if>>
+
+/* RESETTING MAX */
+<<if $MathGrade > 100>>
+	<<set $MathGrade to 100>>
+<</if>>
+<<if $MathGrade < 0>>
+	<<set $MathGrade to 0>>
+<</if>>
+
+<<if $HistoryGrade > 100>>
+	<<set $HistoryGrade to 100>>
+<</if>>
+<<if $HistoryGrade < 0>>
+	<<set $HistoryGrade to 0>>
+<</if>>
+
+<<if $ScienceGrade > 100>>
+	<<set $ScienceGrade to 100>>
+<</if>>
+<<if $ScienceGrade < 0>>
+	<<set $ScienceGrade to 0>>
+<</if>>
+
+<<if $EnglishGrade > 100>>
+	<<set $EnglishGrade to 100>>
+<</if>>
+<<if $EnglishGrade < 0>>
+	<<set $EnglishGrade to 0>>
+<</if>>
+

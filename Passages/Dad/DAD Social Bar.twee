@@ -1,0 +1,84 @@
+:: DAD Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $DadSocialRank == -3>>
+	<<set $DadRelationship to "Hated">>
+	<span style="color:DarkRed">Your Father Hates you!</span>
+	<br>
+<<elseif $DadSocialRank == -2>>
+	<<set $DadRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Your Father are Enemies.</span>
+	<br>
+<<elseif $DadSocialRank == -1>>
+	<<set $DadRelationship to "Very Disliked">>
+	<span style="color:Red">Your Father really Dislikes you.</span>
+	<br>
+<<elseif $DadSocialRank == 0 and $DadSocial <= -50>>
+	<<set $DadRelationship to "Disliked">>
+	<span style="color:Red">Your Father Dislikes you. </span>
+	<br>
+<<elseif $DadSocialRank == 0 and $DadSocial < 50>>
+	<<set $DadRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Your Father are Acquaintances.</span>
+	<br>
+<<elseif $DadSocialRank == 0 and $DadSocial >= 50>>
+	<<set $DadRelationship to "Liked">>
+	<span style="color:LightGreen">Your Father Likes you.</span>
+	<br>
+<<elseif $DadSocialRank == 1>>
+	<<set $DadRelationship to "Friends">>
+	<span style="color:Green">You and Your Father are Friends.</span>
+	<br>
+<<elseif $DadSocialRank == 2>>
+	<<set $DadRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Your Father are Good Friends!</span>
+	<br>
+<<elseif $DadSocialRank == 3>>
+	<<set $DadRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Your Father are Close Friends!</span>
+	<br>
+<<elseif $DadSocialRank == 4>>
+	<<set $DadRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Your Father are Best Friends!</span>
+	<br>
+<<elseif $DadSocialRank == 5>>
+	<<set $DadRelationship to "Love">>
+	<span style="color:Pink">You and Your Father Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $DadSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $DadSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $DadSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $DadSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $DadSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $DadSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $DadSocial,
+			value: Math.abs($DadSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($DadSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $DadSocial > 120>>
+	<<set $DadSocial to 120>>
+<</if>>
+<<if $DadSocial < -120>>
+	<<set $DadSocial to -120>>
+<</if>>

@@ -1,0 +1,368 @@
+:: OC Luca Sweet Treat Addiction [nobr]
+
+/* Intro */
+You are swinging on the swing set, enjoying the cool breeze and the view, when something catches your eye. A splash of yellow hidden behind the bushes and trees. <span style="color:yellow">Someone is curled up in the fetal position all by themselves. You quickly become worried, wondering if something happened or if they are hurt. You stop swinging and quickly rush over.</span> <br>
+<br>
+You hurry to where you saw them, jumping over small bushes and dashing past trees far out of sight of everyone else when you spot him. <span style="color:yellow">The boy is <span style="color:DarkTurquoise">Luca</span>, your sugar-crazed friend, he is curled up into a ball under a tree swaying back and forth. Upon seeing you, he jumps to his feet and runs over.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Blush: 1,
+        },
+    },
+    {
+        Name: "OC Luca",
+        State: {
+            Outfit: "Uniform",
+            Blush: 1,
+            Mouth: "Smile",
+            Eyes: "Sad",
+        },
+    },
+]>>
+<<ad _ad>>
+/* PC: Frown, Blush1
+OC Luca: Uniform, Blush1, Smile, Sad Eyes */
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>! You’ve got to help me, please! I’ll do anything!”</span> He gets on his knees in front of you, looking at you with wild eyes. Worried, you ask him what’s wrong. <span style="color:LightSteelBlue">“I’m dying! I don’t think I’ll make it to the end of the day! Please! I need you! You’re such a good friend, one who will always help those in need!”</span> <span style="color:pink">You realize very quickly what this is about and sigh. Seeing your reaction, <span style="color:DarkTurquoise">Luca</span> chuckles nervously and looks down blushing.</span> <span style="color:LightSteelBlue">“Mom made me have eggs and toast for breakfast without even a donut on the side! And last night she burnt the dessert! I’m going over 12 hours without an ounce of sugar! Please! I just need a dollar, just to get something to hold me over! Please, I’ll do anything!”</span> <br>
+<br>
+You shake your head and sigh as the boy grips your bottoms on his knees, begging and pleading. <span style="color:yellow">At this point, <span style="color:DarkTurquoise">Luca</span>’s sugar obsession is more of an addiction. He should really cut back, it would probably do him some good. Then again, it is just candy and plenty of kids his age gets obsessed over it. Plus, if you have the dollar to spare, there could be something in it for you.</span> <br>
+<br>
+
+<div id="choice">
+    <<if $Money >= 1>>
+        <<link "($1) He'll do anything?<br>">>
+        <<replace"#choice">>
+            With a raised eyebrow and spark in your brain, you ask him if he’s really willing to do anything. Hope comes to <span style="color:DarkTurquoise">Luca</span>’s eye as he grips you tighter. <span style="color:LightSteelBlue">“Anything! Homework, chores, even jump up and down and call myself a fish! Just enough to buy a candy bar or cookie or-!“</span>  <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },
+                },
+                {
+                    Name: "OC Luca",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Smile",
+                        Blush: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+            /* PC: Smirk, Tired
+            OC Luca: Uniform, Smile, Blush1 */
+            You agree to give him a dollar, pretending to be doing him a big favor, <span style="color:pink">but secretly smirk as you tell him he has to do something for you in return. After all, he has to earn it. Really prove how much he wants the sweets.</span> <span style="color:LightSteelBlue">“Of course! Anything!”</span> He smiles widely crawling towards you. The boy really is addicted to sweets to a concerning degree, but in this case, it works out in your favor. <br>
+            <br>
+            <div id="choice2">
+                <<link "Do a funny dance<br>">>
+                <<replace"#choice2">>
+                    Despite his desperation, you don’t actually want to humiliate the boy. <span style="color:lightgreen">Just make him earn it. So, you tell him to entertain you with a funny dance.</span> <span style="color:DarkTurquoise">Luca</span> leaps to his feet eagerly. <span style="color:LightSteelBlue">“Of course!”</span> He then begins to perform a high-energy dance that looks like what you’ve imagine an octopus would look like if it ended up on dry land. <span style="color:lightgreen">It is, honestly, impressive how uncoordinated the boy is.</span> <br>
+                    <br>
+                    <span style="color:pink">Eventually, he gets a little too into it and loses his balance, tumbles to the ground, and ends up partially in a bush with flushed cheeks.</span> <span style="color:LightSteelBlue">“Whoops, haha. Was- was that enough?”</span> You roll your eyes at the boy and help him up, pulling out and giving him a dollar. <span style="color:lightgreen">He looks at it like it’s made of solid gold and smiles so wide you fear his face may get stuck that way.</span> <br>
+
+                    <<set _ad to [
+                        {
+                            Name: "Player",
+                            State: {
+                                Mouth: "Smile",
+                            },
+                        },
+                        {
+                            Name: "OC Luca",
+                            State: {
+                                Outfit: "Uniform",
+                                Mouth: "Smirk",
+                                Blush: 1,
+                            },
+                        },
+                    ]>>
+                    <<ad _ad>>
+                    /* PC: Smile
+                    OC Luca: Uniform, Smirk, Blush1 */
+                    <span style="color:LightSteelBlue">“Thank you, thank you, thank you!”</span> He jumps into your arms and gives you a big spinning hug, nearly sending you flying to the ground, <span style="color:LightSteelBlue">“You’re, like, the best friend EVER! You ever need anything, anything at all, I’m you guy! Thank you soooo much! Aaaahh!”</span> <span style="color:lightgreen">The boy squeaks cutely before sprinting off to get himself a tasty treat.</span> <br>
+                    <br>
+                    <span style="color:lightgreen">You had no idea someone could be so desperate for sugar.</span> <br>
+                    <span style="color:Red">-$1</span><br>
+                    <<set $Money -= 1>>
+                    <<socialChange "Luca" 5 1>>
+                    <<addMoodlet "Stress" 0>>
+                    <<needChange "Fun" 20>>
+                    <br>
+                    [[Continue|School Courtyard]] 
+                <</replace>>
+                <</link>>
+                <<if $ToggleDiapers != 0>>
+                    <<link "Tell you an embarrassing secret<br>">>
+                    <<replace"#choice2">>
+                        You smile deviously and tell <span style="color:DarkTurquoise">Luca</span> you will give him the dollar in exchange for some information. <span style="color:DarkTurquoise">Luca</span> looks at you curiously, tilting his head. <span style="color:LightSteelBlue">“Information? Like, homework answers? I mean, I can give you what I have but I’m not sure if-“</span> You cover his mouth with your hands. <span style="color:pink">You don’t want homework questions. You want something a bit more… personal.</span> <span style="color:DarkTurquoise">Luca</span> blushes at this, nervously asking <span style="color:LightSteelBlue">“Wha- what do you want to know?”</span> <br>
+
+                        <<set _ad to [
+                            {
+                                Name: "Player",
+                                State: {
+                                    Mouth: "Smirk",
+                                    Eyes: "Tired",
+                                },
+                            },
+                            {
+                                Name: "OC Luca",
+                                State: {
+                                    Outfit: "Uniform",
+                                    Mouth: "Frown",
+                                    Blush: 2,
+                                },
+                            },
+                        ]>>
+                        <<ad _ad>>
+                        /* PC: Smirk, Tired
+                        OC Luca: Uniform, Frown, Blush2 */
+                        It's simple. <span style="color:pink">In exchange for this dollar, you want to know an embarrassing secret about <span style="color:DarkTurquoise">Luca</span>. Something that your mere knowledge of can make him blush. <span style="color:DarkTurquoise">Luca</span> does just that, blush, taking a step back as he fidgets with his fingers.</span> <span style="color:LightSteelBlue">“Something like-? I mean, I don’t have anything like- Why would-?”</span> He says nervously, eyes locked on the dollar in your hand. He looks uncomfortable, unable to tell which is worse. Going without candy or telling you whatever secret he has in mind. <br>
+                        <br>
+                        <span style="color:LightSteelBlue">“Fine! I’ll do it!”</span> He finally says, unable to resist the chance to get some sugar, <span style="color:LightSteelBlue">“But promise me you won’t tell anyone!”</span> You smile and agree, <span style="color:pink">as long as you can bring it up when alone to tease him about whatever this is.</span> <span style="color:LightSteelBlue">“F- fine!”</span> He takes a deep breath, bright red, <span style="color:LightSteelBlue">“I… I…”</span> He gulps, <span style="color:LightSteelBlue">“I have to wear diapers to bed.”</span> <span style="color:pink">He looks away embarrassed as you raise an eyebrow at his confession,</span> <span style="color:LightSteelBlue">“Not because I’m a baby, or anything. It’s because- Well, it’s a new thing. I- I’m still getting used to them. I forgot to put them on one night and…”</span> He pauses, it seems this topic makes him uncomfortable, but he is desperate enough to tell you. <span style="color:LightSteelBlue">“Now my mom makes me put them on after dinner. Have to wear them until bedtime so I don’t forget.”</span> <br>
+
+                        <<set _ad to [
+                            {
+                                Name: "Player",
+                                State: {
+                                    Mouth: "Smirk",
+                                    Eyes: "Tired",
+                                },
+                            },
+                            {
+                                Name: "OC Luca",
+                                State: {
+                                    Outfit: "Uniform",
+                                    Mouth: "Frown",
+                                    Blush: 3,
+                                },
+                            },
+                        ]>>
+                        <<ad _ad>>
+                        /* PC: Smirk, Tired
+                        OC Luca: Uniform, Frown, Blush3 */
+                        <span style="color:pink">The boy is utterly embarrassed to reveal this to you. You might even feel a little bad, maybe expecting something a little less personal. To comfort the boy, you put your hand on his shoulder and give him a reassuring smile.</span> You hand him the dollar and he smiles widely. <span style="color:LightSteelBlue">“Tha- thank you!”</span> <span style="color:pink">You promise to keep this a secret for now… as long as you can see him wearing them sometime.</span> <br>
+                        <br>
+                        <span style="color:pink">This causes the boy to blush, mumbling out an embarrassed response until he pauses and thinks for a moment. He then smiles shyly.</span> <span style="color:LightSteelBlue">“I’ll… I’ll show them to you. But, it’ll cost you a bag of candy!”</span> He sticks his tongue out at you and runs off as you roll your eyes and laugh. <span style="color:pink">He got over his embarrassment pretty quick. In fact, you get the feeling he was being serious. Since you already know his secret now, it seems he’d be willing to humiliate himself further in exchange for sweets.</span> <br>
+                        <br>
+                        <span style="color:pink">You wonder what limits the boy does have, if he even has any?</span> <br>
+                        <span style="color:Red">-$1</span><br>
+                        <<set $Money -= 1>>
+                        <<socialChange "Luca" 5 1>>
+                        <<addMoodlet "Stress" 0>>
+                        <<needChange "Fun" 20>>
+                        <<set _arousalbs to []>>
+			            <<set _arousalkink to ["Humiliation", "Diapers"]>>
+			            <<arousalGain 15 _arousalbs _arousalkink>>
+                        <br>
+                        [[Continue|School Courtyard]] 
+                    <</replace>>
+                    <</link>>
+                <</if>>
+                <<link "Let you give him a wedgie<br>">>
+                <<replace"#choice2">>
+                    <span style="color:pink">You smile deviously as you tell <span style="color:DarkTurquoise">Luca</span> you only want one thing. One tiny, little thing for him to do for you to give him this dollar.</span> Your wording worries the boy as he takes a step back nervously, asking <span style="color:LightSteelBlue">“Wha- what?”</span> <span style="color:pink">You lean in close and tell him you want to give him a wedgie. <span style="color:DarkTurquoise">Luca</span> raises an eyebrow at this before laughing.</span> <br>
+
+                    <<set _ad to [
+                        {
+                            Name: "Player",
+                            State: {
+                                Mouth: "Smile",
+                            },
+                        },
+                        {
+                            Name: "OC Luca",
+                            State: {
+                                Outfit: "Uniform",
+                                Mouth: "Smirk",
+                                Eyes: "Tired",
+                                Blush: 1,
+                            },
+                        },
+                    ]>>
+                    <<ad _ad>>
+                    /* PC: Smile
+                    OC Luca: Uniform, Smirk, Tired, Blush1 */
+                    <span style="color:LightSteelBlue">“Oh! Is that all? Haha.”</span> He laughs as you frown, <span style="color:pink">asking him if he likes getting wedgies or something.</span> <span style="color:LightSteelBlue">“No, it’s just, I thought you were going to make me do something really bad. You think I haven’t let someone wedgie me for a candy bar before?”</span> You scowl, feeling insulted. You take back your offer and turn around with your arms crossed. <span style="color:DarkTurquoise">Luca</span>’s eyes widen at this as he quickly begins to plead and apologize. <span style="color:LightSteelBlue">“No, I’m sorry! It’s a good price! So embarrassing! Pull as hard as you can, as much as you want! Just, please-!”</span>  <br>
+                    <br>
+                    You roll your eyes and laugh, the boy sure is desperate. Fine. <span style="color:pink">One wedgie for one dollar, but you’re going to make sure he earns it.</span> <span style="color:LightSteelBlue">“That’s fair.”</span> He sighs in relief. With the task set, <span style="color:DarkTurquoise">Luca</span> turns around and lifts up his shirt. <span style="color:pink">You step behind him and pull some of his underwear out of his bottoms. The waistband of his briefs are bright teal, and you spy dinosaurs already poking out. You comment on his cute choice of undies teasingly.</span> <br>
+                    <br>
+                    <span style="color:LightSteelBlue">“I think they’re pretty cool!”</span> <span style="color:pink">He chuckles, blushing slightly, <span style="color:LightSteelBlue">“I’m just lucky I didn’t forget to…”</span> He pauses, turning redder, <span style="color:LightSteelBlue">“I mean… yeah! Haha…”</span> You glare at him suspiciously, before suddenly pulling up with all your might!</span> <span style="color:LightSteelBlue">“Ayyyee~!”</span> <span style="color:DarkTurquoise">Luca</span> tumbles forward as you lift as hard as you can, not even giving the boy a chance to get ready. <span style="color:pink">He laughs and cries out as you lift him completely off the ground.</span> <span style="color:LightSteelBlue">“Jees, you’re really – ahhh – putting your back into it. Huh?”</span> <br>
+
+                    <<set _ad to [
+                        {
+                            Name: "Player",
+                            State: {
+                                Mouth: "Smirk",
+                                Eyes: "Tired",
+                            },
+                        },
+                        {
+                            Name: "OC Luca",
+                            State: {
+                                Outfit: "Uniform",
+                                Mouth: "Smirk",
+                                Blush: 3,
+                                Eyes: "Closed",
+                                Cry: 1,
+                                Arms: "Hide",
+                            },
+                        },
+                    ]>>
+                    <<ad _ad>>
+                    /* PC: Smirk, Tired
+                    OC Luca: Uniform, Smirk, Blush2, Eyes Closed, Cry1, Blush3, Arms Hide */
+                    <span style="color:pink">You are wediging <span style="color:DarkTurquoise">Luca</span> for a solid few minutes, stretching his underwear as far as it can go. The boy even starts to look a little bored by the end, nearly drifting off as he dangles. So, you decide to wake him up a little by suddenly letting go, causing both his waistband to snap against his back and him to faceplant into the grass.</span> <span style="color:LightSteelBlue">“Owwww,”</span> He groans, <span style="color:LightSteelBlue">“That’s fair.”</span> <br>
+                    <br>
+                    <span style="color:DarkTurquoise">Luca</span> stands up and fixes his wedgie before turning to you with a happy smile. <span style="color:LightSteelBlue">“One dollar please!”</span> He says, holding his hand out. <span style="color:pink">You hand it over, watching as the boy happily runs off laughing, bidding farewell and thanking you. That didn’t seem too bad for him, though you had fun.</span> <br>
+                    <span style="color:Red">-$1</span><br>
+                    <<set $Money -= 1>>
+                    <<socialChange "Luca" 5 1>>
+                    <<addMoodlet "Stress" 0>>
+                    <<needChange "Fun" 20>>
+                    <<set _arousalbs to []>>
+                    <<set _arousalkink to ["Humiliation", "Wedgier"]>>
+                    <<arousalGain 15 _arousalbs _arousalkink>>
+                    <br>
+                    [[Continue|School Courtyard]] 
+                <</replace>>
+                <</link>>
+                <<link "Flash his penis<br>">>
+                <<replace"#choice2">>
+                    <span style="color:pink">You smile deviously as you tell <span style="color:DarkTurquoise">Luca</span> you only want one thing. One tiny, little thing for him to do for you to give him this dollar.</span> Your wording worries the boy as he takes a step back nervously, asking <span style="color:LightSteelBlue">“Wha- what?”</span> <span style="color:pink">You lean in close and tell him that you want him to flash you his penis. And not just a little flash either. You want full balls and shaft for at least a minute! <span style="color:DarkTurquoise">Luca</span> blushes at this, smiling nervously as he rubs the back of his head.</span> <br>
+
+                    <<set _ad to [
+                        {
+                            Name: "Player",
+                            State: {
+                                Mouth: "Smirk",
+                                Eyes: "Tired",
+                            },
+                        },
+                        {
+                            Name: "OC Luca",
+                            State: {
+                                Outfit: "Uniform",
+                                Mouth: "Smile",
+                                Blush: 1,
+                            },
+                        },
+                    ]>>
+                    <<ad _ad>>
+                    /* PC: Smirk, Tired
+                    OC Luca: Uniform, Smile, Blush */
+                    <span style="color:LightSteelBlue">“Oh, haha. That’s not too bad. Guess it’s not a big deal if you see my thingie, since we’re both boys, but it is a little embarrassing. Though it also isn’t the most embarrassing thing I’ve ever done for some sugar.”</span> <span style="color:pink">You cross your arms and smirk, asking him to give you some ideas, but the boy quickly blushes and holds out his hands.</span> <span style="color:LightSteelBlue">“No way! You already gave me your price! I am not going to get into THAT! It was SOOO embarrassing!”</span> <span style="color:pink">You smile as you imagine what it could have been, giving your thoughts out loud. Streaking through the park? Going to class in his underwear? <span style="color:DarkTurquoise">Luca</span> turns redder as you lay out your ideas, thankful you didn’t pick those. You laugh, claiming you’re not that mean… at least not this time.</span> <br>
+
+                    <<set _ad to [
+                        {
+                            Name: "Player",
+                            State: {
+                                Mouth: "Smirk",
+                                Eyes: "Tired",
+                            },
+                        },
+                        {
+                            Name: "OC Luca",
+                            State: {
+                                Outfit: "Uniform",
+                                Mouth: "Smile",
+                                Blush: 2,
+                                PantsDown: true,
+                            },
+                        },
+                    ]>>
+                    <<ad _ad>>
+                    /* PC: Smirk, Tired
+                    OC Luca: Uniform, Smile, Blush2, PantsDown */
+                    So, with your challenge set <span style="color:DarkTurquoise">Luca</span> stands before you ready to expose himself for the measly price of one dollar. <span style="color:pink">He smiles, a little bit nervous with a slight flush of pink on his cheeks. Undoing his bottoms, he pulls them down to just below his knee. This reveals the boy’s Teal Dinosaur Briefs, a cute and kiddie underwear that you coo at teasingly.</span> <span style="color:LightSteelBlue">“Shut up!”</span> <span style="color:DarkTurquoise">Luca</span> laughs, <span style="color:LightSteelBlue">“You’re just jealous ‘cause my underwear is sick!”</span> As he readies to expose himself fully, you remind him of your conditions. Full balls, full shaft, at least a minute. <span style="color:LightSteelBlue">“Yeah, yeah.”</span> <span style="color:pink">He smirks, gripping the front of his waistband and tugging them down to his bottoms.</span> <br>
+
+                    <<set _ad to [
+                        {
+                            Name: "Player",
+                            State: {
+                                Mouth: "Smirk",
+                                Eyes: "Tired",
+                                Blush: 1,
+                            },
+                        },
+                        {
+                            Name: "OC Luca",
+                            ShowZoom: true,
+                            State: {
+                                Outfit: "Uniform",
+                                PantsDown: true,
+                                Mouth: "Smile",
+                                Blush: 3,
+                            },
+                            Clothes: {
+                                Undies: $None,
+                            },
+                        },
+                    ]>>
+                    <<ad _ad>>
+                    /* PC: Smirk, Tired, Blush1
+                    OC Luca: Uniform, PantsDown, No Undies, Zooms, Smile, Blush3 */
+                    <span style="color:pink">He stands there with his legs as apart as they can be and his hips thrust a little forward, ensuring you can get a good look as he blushes with a shy smile. His penis is, as expected, small. Like a little sausage without a hint of puberty. He may not even be able to squirt yet. His balls look to be an average size, which only makes his small penis appear smaller, and dangle tightly to his groin. Guess it must be cold today. All in all, it’s a good looking, albeit common, little boy’s penis. Still, the fact that you get to see this for the price of only a dollar is nice.</span> <br>
+                    <br>
+                    <span style="color:LightSteelBlue">“Are you done yet?”</span> <span style="color:DarkTurquoise">Luca</span> says after about a minute of you staring, <span style="color:LightSteelBlue">“It’s cold out here!”</span> You laugh, <span style="color:pink">blowing cold air towards his cock until he squeals and quickly covers up.</span> <span style="color:LightSteelBlue">“Aaahhhh! You jerk! That’s cold!”</span> <span style="color:pink">You giggle as the boy covers himself up, fixing his underwear and shorts before starting to playfully kick you. The cute back and forth goes on for a moment before you both calm down and <span style="color:DarkTurquoise">Luca</span> begins to look at you with pleading eyes.</span> <br>
+                    <br>
+                    <span style="color:LightSteelBlue">“Sooooo, since you seemed to have liked what you saw, can I has dollar?”</span> He says in an adorable goofy voice. <span style="color:pink">You smile and relent, handing him the bill. <span style="color:DarkTurquoise">Luca</span> takes it excitedly, giving you a big hug afterwards.</span> <span style="color:LightSteelBlue">“Thanks! You’re the best! Maybe next time I’ll show you my butt, since you like that sort of stuff.”</span> He teases as he runs off to buy his treat. <br>
+                    <br>
+                    <span style="color:pink">You can’t help but wonder what other things he’d let you see in exchange for sweets.</span> <br>
+                    <span style="color:Red">-$1</span><br>
+                    <<set $Money -= 1>>
+                    <<socialChange "Luca" 5 1>>
+                    <<addMoodlet "Stress" 0>>
+                    <<needChange "Fun" 20>>
+                    <<set _arousalbs to []>>
+                    <<set _arousalkink to ["Preteens", "Voyeurism"]>>
+                    <<arousalGain 20 _arousalbs _arousalkink>>
+                    <br>
+                    [[Continue|School Courtyard]] 
+                <</replace>>
+                <</link>>
+            </div>
+        <</replace>>
+        <</link>>
+        <</if>>
+    <<link "Refuse<br>">>
+    <<replace"#choice">>
+        You reach down and put your hands on <span style="color:DarkTurquoise">Luca</span>’s shoulders, telling him that he really needs to take better care of himself. If he’s this desperate for candy, then he really should cut back. <span style="color:DarkTurquoise">Luca</span> looks at you with wild eyes, <span style="color:LightSteelBlue">“No, you don’t understand, I-“</span> He says before sighing and falling back to his knees. <span style="color:LightSteelBlue">“You’re right. I have some coins at home, should be enough to get something after school. A few more hours won’t hurt. I guess…”</span>  <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Eyes: "Tired",
+                    Mouth: "Smile",
+                },
+            },
+            {
+                Name: "OC Luca",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 1,
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        /* PC: Tired, Smile
+        OC Luca: Uniform, Blush1, Frown, Sad Eyes */
+        He looks up to you with a nervous smile, <span style="color:LightSteelBlue">“Sorry about that. Thanks for looking out for me. I’ll try to cut back, seriously. It’s just sweets are… they’re just so good!”</span> <span style="color:pink">He sobs as you carrying him off to get some water. This boy is just too much sometimes.</span> <br>
+        <span style="color:Red">-$1</span><br>
+        <<set $Money -= 1>>
+        <<socialChange "Luca" 1 1>>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 20>>
+        <br>
+        [[Continue|School Courtyard]] 
+    <</replace>>
+    <</link>>
+</div>

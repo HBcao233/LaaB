@@ -1,0 +1,206 @@
+:: DRAMA Pulley System Wedgie [nobr]
+
+				/* OPENING */
+<span style="color:DarkTurquoise">Mr. Julien</span> has you all line up on the stage and reveals a strange rope pulley system on either side. <span style="color:LightSteelBlue">"This is a rig, or more accurately a flight rig. Today we will be practicing using this rig to achieve a flight-like effect.”</span> <span style="color:DarkTurquoise">Mr. Julien</span> has one of the boys come up and he demonstrates how to properly attach the rig.<br>
+<br>
+<span style="color:LightSteelBlue">“While this can be a very fun experience, it is also dangerous, so make sure to take it seriously! I’m going to pair you up, one of you will wear the rig and the other will attach it. Once I call your name, the rigger will use one of these cranks to lift their partner into the sky! Any questions?”</span> Some of the more nervous boys questioned if having a class of preteens being charged with attaching this rig was wise, but <span style="color:DarkTurquoise">Mr. Julien</span> assured them it was fine and they do it every year.<br>
+<br>
+
+				/* RANDOM PARTNER SELECTOR */
+		<<set $RandomPartner to random(1, 2)>>
+		
+				/* LUCAS */
+	<<if $RandomPartner == 1>>
+	You are partnered with <span style="color:DarkTurquoise">Lucas</span> and perform rock, paper, scissors to decide who gets to fly. <span style="color:DarkTurquoise">Lucas</span> wins and you begin to attach the rig onto him.<br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+	},
+	{
+		Name: "Lucas",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+Due to the young age of the performers, the harness was extra secure and went around not only the waist and shoulders, but also between the boy’s legs right next to his groin. <span style="color:DarkTurquoise">Lucas</span> was instructed to stand perfectly still with his legs spread and his arms out as you applied the harness. <span style="color:Pink">As you were attaching it, you may have lightly caressed his groin, not that the excited boy would have noticed.</span> <br>
+<br>
+As you are attaching the harness to the pulley system, you realize that one of the three ropes, which normally attached to the harness just above his butt, could find a different home. <span style="color:Pink">The boy’s $LucasUndies.Name were within easy reach after all, and it would be even more entertaining.</span><br>
+<br>
+<div id=Choice>
+					/* LUCAS PROPERLY ATTATCHED */
+	<<link "Attach it properly">>
+	<<replace"#Choice">>
+	
+	Deciding against lifting the friendly boy in the air by his Briefs, you attach the ropes properly and stand ready as <span style="color:DarkTurquoise">Mr. Julien</span> gives you a countdown. 3… 2… 1! You begin to crank the lever and slowly <span style="color:DarkTurquoise">Lucas</span> is raised into the air.<br>
+<br>
+The boy is taken aback at first, nearly falling forwards, but is instructed on how to keep his balance. He does well for a while as you lift him nearly 8 feet into the air, before he stumbles and falls backwards, leaving him hanging upside down. The class gets a slight laugh while the poor boy spins uncontrollably. You quickly lower <span style="color:DarkTurquoise">Lucas</span> down before he throws up. The entire class has a fun time, though most aren’t very good at keeping their balance.<br>
+
+	<<set $PlayerDramaFaithChange to "Increase">>
+	<<set $LucasDramaFaithChange to "Increase">>
+	<<set $CarterDramaFaithChange to "None">>
+	<<include"Drama Faith Change">>
+	
+	<<include"Attend Drama Finish">>
+	<</replace>>
+	<</link>>
+	<br>
+	
+					/* LUCAS ROPE WEDGIE */
+	<<link "Attach it to his underwear">>
+	<<replace"#Choice">>
+	
+	You smile as you discreetly attach the final rope to the back of <span style="color:DarkTurquoise">Lucas</span>’ Briefs and try to contain your laughter as you walk over to the lever and give <span style="color:DarkTurquoise">Mr. Julien</span> a thumbs up. He gives you a countdown. 3… 2… 1! You begin to crank the lever as fast as you can! <span style="color:Pink">It doesn’t take long for <span style="color:DarkTurquoise">Lucas</span> to notice something is off as he suddenly feels a squeezing sensation on his groins and is quickly hoisted up into the air by his underwear!</span><br>
+
+<<set _ad to [
+	{
+		Name: "Julien",
+		State: {
+			Mouth: "Frown",
+			Brows: "Angry",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Smirk",
+			Eyes: "Mad",
+		},
+	},
+	{
+		Name: "Lucas",
+		State: {
+			Arms: "Hide",
+			Eyes: "Sad",
+			Cry: 1,
+			Blush: 2,
+			Mouth: "Sad",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+The whole class begins to laugh as they view <span style="color:DarkTurquoise">Lucas</span> dangling in the air, painfully holding his groin as he begs to be let down. <span style="color:DarkTurquoise">Mr. Julien</span> yells for you to lower him, <span style="color:Pink">but you pretend the lever is jammed, quickly lowering and raising the boy, bouncing him up and down.</span><br>
+<br>
+<span style="color:Pink">After nearly a minute of <span style="color:DarkTurquoise">Lucas</span> helplessly dangling 8 feet in the air almost entirely by his underwear</span>, the teacher runs over and pushes you aside in order to lower him. <span style="color:DarkTurquoise">Mr. Julien</span> then scowls at you. You try to play it off as an accident, but he isn’t buying it.<br>
+<br>
+<span style="color:LightSteelBlue">“If you are going to play around with the theater equipment instead of following directions, then you can instead play around in detention!</span>” <span style="color:DarkTurquoise">Mr. Julien</span> drags you off by the ear and forces you to sit on your hands in the corner for the rest of the class.<br>
+	<<addMoodlet "Gave Wedgie" 5>>
+	<<socialChange "Lucas" -3>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Wedgier", "Humiliation"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+	<<set $Detention += 10>>
+	<<set $PlayerDramaFaithChange to "Decrease">>
+	<<set $LucasDramaFaithChange to "None">>
+	<<set $CarterDramaFaithChange to "None">>
+	<<include"Drama Faith Change">>
+	
+	<<include"Attend Drama Finish">>
+	<</replace>>
+	<</link>>
+	<br>
+</div>
+	
+				/* CARTER */
+	<<elseif $RandomPartner == 2>>
+
+You are partnered with <span style="color:DarkTurquoise">Carter</span>, who is so excited by the prospect of flying like a superhero that you agree to let him be the one to wear it. The giddy boy happily stands with his legs spread apart and his arms out as you attach the harness to him.<br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+	},
+	{
+		Name: "Carter",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+Due to the young age of the performers, the harness was extra secure and went not only around the waist and shoulders, but also between the boy’s legs, right next to his groin. <span style="color:Pink">As you are attaching the harness, you take your time and “accidentally” brush up against the boy’s crotch multiple times, though he doesn’t seem to notice.</span><br>
+<br>
+As you are attaching the harness to the pulley system, just needing the third rope that goes on the harness right above his butt, <span style="color:Pink">you notice his $CarterUndies.Name poking out of his $CarterBottoms.Type, practically begging to be utilized.</span> <br>
+<br>
+
+
+<div id=Choice>
+					/* CARTER PROPERLY ATTATCHED */
+	<<link "Attach it properly">>
+	<<replace"#Choice">>
+	
+You decide it may be a bit mean to lift the heroic boy in the air by his Briefs and decide to let him fly normally, attaching the ropes properly, though you leave his underwear sticking out for your own amusement. You stand ready as <span style="color:DarkTurquoise">Mr. Julien</span> gives you a countdown. 3… 2… 1! You begin to crank the lever and slowly <span style="color:DarkTurquoise">Carter</span> is lifted into the air. He does a few heroic poses as he is raised up, surprisingly able to keep his balance much better than some of the other boys. <span style="color:DarkTurquoise">Mr. Julien</span> also seems impressed, applauding the boy and even using him to demonstrate how the ropes can be moved to simulate flying or high jumps during a performance. Overall, it is a fun time.<br>
+
+	<<set $PlayerDramaFaithChange to "Increase">>
+	<<set $LucasDramaFaithChange to "None">>
+	<<set $CarterDramaFaithChange to "Increase">>
+	<<include"Drama Faith Change">>
+	
+	<<include"Attend Drama Finish">>
+	<</replace>>
+	<</link>>
+	<br>
+	
+					/* CARTER ROPE WEDGIE */
+	<<link "Attach it to his underwear">>
+	<<replace"#Choice">>
+	
+<span style="color:Pink">You smile and stealthfully attach the rope to <span style="color:DarkTurquoise">Carter</span>’s exposed $CarterUndies.Type and silently giggle as you imagine what it’ll look like.</span> You run over to the lever and tell <span style="color:DarkTurquoise">Mr. Julien</span> that you are ready. He gives you a countdown. 3… 2… 1! You begin to crank with all your might! The small, heroic boy is extremely light, so you find it easy to quickly lift him up before he has time to react to the tightening of his groin.<br>
+
+<<set _ad to [
+	{
+		Name: "Julien",
+		State: {
+			Mouth: "Frown",
+			Brows: "Angry",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Smirk",
+			Eyes: "Mad",
+		},
+	},
+	{
+		Name: "Carter",
+		State: {
+			Arms: "Hide",
+			Eyes: "Sad",
+			Cry: 1,
+			Blush: 2,
+			Mouth: "Sad",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+Everyone begins to laugh and <span style="color:DarkTurquoise">Mr. Julien</span> yells for you to lower him. You do so, though very slowly as everyone takes in the spectacle. <span style="color:Pink">As he is nearly halfway down, <span style="color:DarkTurquoise">Carter</span> looses his balance and flips upside down, which wouldn’t be so bad if his $CarterUndies.Type weren’t being pulled up, showing off his Cute Bare Ass to everyone in the class!</span><br>
+<br>
+Once he is finally lowered back down to the stage, the teary-eyed boy quickly fixes his clothing and another boy rushes over to help release him from the harness. As you are still giggling away, you suddenly feel a painful yank on your ear as <span style="color:DarkTurquoise">Mr. Julien</span> pulls you off the stage. <span style="color:LightSteelBlue">“Fancy yourself a clown, boy? Perhaps I should string you up in your birthday suit, see if some humiliation would teach you, hmmm!?”</span> The teacher forces you to sit on your hands in a corner and gives you a detention slip.<br>
+
+	<<addMoodlet "Gave Wedgie" 5>>
+	<<socialChange "Carter" -3>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Wedgier", "Humiliation"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+	<<set $Detention += 10>>
+	<<set $PlayerDramaFaithChange to "Decrease">>
+	<<set $LucasDramaFaithChange to "Decrease">>
+	<<set $CarterDramaFaithChange to "None">>
+	<<include"Drama Faith Change">>
+	
+	<<include"Attend Drama Finish">>
+	<</replace>>
+	<</link>>
+	<br>
+</div>
+	
+	<</if>>

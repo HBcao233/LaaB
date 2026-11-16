@@ -1,0 +1,137 @@
+:: Dinner [nobr]
+
+<<set $Minutes += 15>>
+
+<<if !$Time.after(19)>>
+
+	<<if $ActiveQuests.includes("Carter: Hero Award Dinner") && random(1, 2) == 1>>
+		<<include"Carter Hero Award Interlude Dinner">>
+	<<else>>
+		<<set $Meal to random(1, 3)>>
+
+		<<if $Meal == 1>>
+			You enjoy a nice grilled cheese.<br>
+		<<elseif $Meal == 2>>
+			You enjoy a nice plate of meatloaf and mashed potatoes.<br>
+		<<elseif $Meal == 3>>
+			You enjoy a nice plate of spaghetti.<br>
+		<</if>>
+		<<needChange "Hunger" 35>>
+		<br>
+
+		/* Gabe Random Events */
+		<<if $GabeSche.Location == "Home Kitchen" and $GabeSocial < 0>>
+			<<set _randomevent to random(1, 4)>>
+			/* Gabe Mean Eating Random Event */
+			<<if _randomevent == 1>>
+				As you are eating, you notice <span style="color:DarkTurquoise">Gabe</span> fill up a cup of water and place it on the table close to you before checking his phone and walking away. <span style="color:lightcoral">You don’t think much of it until <span style="color:DarkTurquoise">Gabe</span> returns and ‘accidentally’ knocks over the cup and spills water all over your crotch! It is cold and you quickly jump to your feet in surprise as the icy water hits your groin. It is little surprise as <span style="color:DarkTurquoise">Gabe</span> begins to laugh loudly at your misfortune.</span> <br>
+				<br>
+			/* If Diaper */
+			<<if $PlayerUndies.Tags.includes("Diaper")>>
+				<span style="color:LightSteelBlue">“Geez <span style="color:DarkTurquoise">$GabeNickname</span>, no wonder you have to wear a diaper all the time!”</span> He laughs as you grab a towel to dry off your crotch, <span style="color:LightSteelBlue">“But it looks like your such a big baby, you need some more absorbent pairs. I’ll talk with <span style="color:DarkTurquoise">Dad</span> about it, okay sport?”</span> He continues to laugh as he walks off. <br>
+				<br>
+			/* ELSE */
+			<<else>>
+				<span style="color:LightSteelBlue">“Geez <span style="color:DarkTurquoise">$GabeNickname</span>, you gotta learn to control that bladder of yours.”</span> He laughs as you grab a towel to dry off your crotch. <span style="color:LightSteelBlue">“Have any more accidents like this, and you might have to start wearing a diaper around the house!”</span> He continues to laugh as he walks off. <br>
+				<br>
+			<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+<<else>>
+	/* Notes written by: Zexion */
+	Walking into the kitchen, your stomach grumbles as you think about how you could eat a whole family combo meal by yourself. Opening the fridge to find your grub, you search top to bottom when you spy the familiar food container for leftovers. As you take it out, you see a brightly colored sticky note with a message written on it. Taking it off your chow, you read the message written on it. <br>
+	<br>
+	<<set _note to random(1, 6)>>
+	<<if _note == 1>>
+		<span style="color:LightSteelBlue">“I know you’re getting to the age where you’re out all the time but remember to eat. -Love <span style="color:DarkTurquoise">Dad</span>”</span> <br>
+		<br>
+		<span style="color:Pink">Feeling your face heat up you appreciate the effort <span style="color:DarkTurquoise">Your Father</span> made but gosh darn why does a parent’s love feel so embarrassing sometimes.</span> Putting the note to the side you decide to enjoy your meal for now. Minutes later and satisfied you pat your now stuffed belly before your eyes go back to the note. Maybe it wouldn’t be too bad to save it maybe in the back of your underwear drawer where <span style="color:DarkTurquoise">Your Dad</span> won’t see that you save it. <br>
+		<<needChange "Hunger" 35>>
+
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Blush: 1,
+					Mouth: "Happy",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+	<<elseif _note == 2>>
+		<span style="color:LightSteelBlue">“You keep skipping meals and <span style="color:DarkTurquoise">Noah</span> will be the big brother soon -Love <span style="color:DarkTurquoise">Dad</span>”</span><br>
+		<br>
+		Grumbling, you think <span style="color:DarkTurquoise">Noah</span> will have a few good years before he’s your size though you pause thinking of an elementary age <span style="color:DarkTurquoise">Noah</span> towering over you while you’re still the same size you are now. You push that thought away and decide maybe you should eat all your meals just in case. After eating you decide to save that sticky note <span style="color:DarkTurquoise">Dad</span> took the time to make. Hopefully no snooping older brothers or overly affectionate dads will find it. <br>
+		<<needChange "Hunger" 35>>
+		
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Blush: 1,
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+	<<elseif _note == 3>>
+		<span style="color:LightSteelBlue">“Remember to eat otherwise you won’t grow although that would mean you would always be my baby boy. -Love <span style="color:DarkTurquoise">Dad</span>”</span> <br>
+		<br>
+		<span style="color:Pink">Blushing you can’t help but be embarrassed that <span style="color:DarkTurquoise">Your Dad</span> still sees you like that but maybe that’s a parent thing.</span> Wanting to move on from the embarrassment you heat up your food in the microwave. As you wait you think on keeping the embarring but loving note from <span style="color:DarkTurquoise">Dad</span>. Just then the microwave goes off signaling the end of such thoughts and you get ready to eat. <br>
+		<<needChange "Hunger" 35>>
+		<br>
+	<<elseif _note == 4>>
+		<span style="color:LightSteelBlue">“For my little boy. -From <span style="color:DarkTurquoise">Dad</span>”</span>
+		<span style="color:Pink">You blush grumbling how no matter what <span style="color:DarkTurquoise">Your Dad</span> still treats you like a little kid.</span> Grumpily you eat your food thinking how you’re not a baby anymore, but <span style="color:DarkTurquoise">Dad</span> still showers you in affection like you are. You save the note but decide to hide it away in your room. <br>
+		<<needChange "Hunger" 35>>
+
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Blush: 1,
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+	<<elseif _note == 5 && $PlayerBottoms.Type != "None">>
+		<span style="color:LightSteelBlue">“Don’t be skipping meals otherwise you will need a belt to prevent your bottoms from falling off – Lots of love <span style="color:DarkTurquoise">Dad</span>”</span> <br>
+		<br>
+		<span style="color:Pink">You blush and feeling a little self-conscious you check your bottoms to see if they are a little loose.</span> They still fit the same as usual and breathe a sigh of relief but think maybe it wouldn’t be too much trouble eating with the family. As you enjoy your meal you palm the sticky note to keep deciding even if embarrassing it was still a symbol of affection from <span style="color:DarkTurquoise">Your Dad</span> and don’t want to throw it away. <br>
+		<<needChange "Hunger" 35>>
+		
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Mouth: "Happy",
+					Blush: 2,
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+	<<else>>
+		<span style="color:LightSteelBlue">“I had to fight Gabe off from eating your food. -From <span style="color:DarkTurquoise">Dad</span>”</span> <br>
+		<br>
+		You huff knowing your brother would try and eat your food with you not there either from greed or just to mess with you. The note crumples up in your hand as it clenches and all you can think of is <span style="color:DarkTurquoise">Gabe</span>’s stupid face and the mocking words he would say when you discover he ate your food. You probably can’t always rely on <span style="color:DarkTurquoise">Dad</span> preventing your older brother from taking your food when you’re not here, so maybe it would be a good idea to eat with the family. <br>
+		<<needChange "Hunger" 35>>
+
+		<<set _ad to [
+			{
+				Name: "Player",
+				State: {
+					Eyes: "Mad",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+	<</if>>
+<</if>>
+
+[[Continue|PH Kitchen]] <br>
+<<set $Dinner to 1>>

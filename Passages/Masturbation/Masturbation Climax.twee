@@ -1,0 +1,85 @@
+:: Masturbation Climax [nobr]
+
+/* LOCATION CHECK */
+	/* HOME BEDROOM */
+<<if $MasturbationLocation == "Home Bedroom">>
+	/* STANDING */
+    <<if $MasturbationPosition == "Standing">>
+		<<if $CanCum != 0>>
+			<<set _Random to ["Masturbation Climax Bedroom Standing Normal"]>>
+		<<else>>
+			<<set _Random to ["Masturbation Dry Climax Bedroom Standing Normal"]>>
+		<</if>>
+        
+	/* KNEELING */
+    <<elseif $MasturbationPosition == "Kneeling">>
+		<<if $CanCum != 0>>
+			<<set _Random to ["Masturbation Climax Bedroom Kneeling Normal"]>>
+		<<else>>
+			<<set _Random to ["Masturbation Dry Climax Bedroom Kneeling Normal"]>>
+		<</if>>
+    
+    /* LAYING ON BED */
+    <<elseif $MasturbationPosition == "Laying Bed">>
+		<<if $CanCum != 0>>
+			<<set _Random to ["Masturbation Climax Bedroom Laying Bed Normal", "Masturbation Climax Bedroom Laying Bed Mouth"]>>
+		<<else>>
+			<<set _Random to ["Masturbation Dry Climax Bedroom Laying Bed Normal"]>>
+		<</if>>
+    
+    /* HANDS AND KNEES BED */
+    <<elseif $MasturbationPosition == "Hands and Knees Bed">>
+		<<if $CanCum != 0>>
+			<<set _Random to ["Masturbation Climax Bedroom Hands Knees Normal", "Masturbation Climax Bedroom Hands Knees Gabe Caught"]>>
+		<<else>>
+			<<set _Random to ["Masturbation Dry Climax Bedroom Hands Knees Normal", "Masturbation Dry Climax Hands Knees Gabe Caught"]>>
+		<</if>>
+    
+    <</if>>
+
+	/* SCHOOL BATHROOM */
+<<elseif $MasturbationLocation == "School Bathroom">>
+	<<if $MasturbationPosition == "Standing">>
+		<<if $CanCum != 0>>
+    		<<set _Random to ["Masturbation Climax School Bathroom Normal", "Masturbation Climax School Bathroom Randolph Caught Scene"]>>
+		<<else>>
+			<<set _Random to ["Masturbation Dry Climax School Bathroom Normal", "Masturbation Dry Climax School Bathroom Randolph Caught Scene"]>>
+		<</if>>
+    <</if>>
+
+	/* PARK BATHROOM */
+<<elseif $MasturbationLocation == "Park Bathroom">>
+	<<if $MasturbationPosition == "Standing">>
+		<<if $CanCum != 0>>
+    		<<set _Random to ["Masturbation Climax Park Bathroom Brothers"]>>
+		<<else>>
+			<<set _Random to ["Masturbation Dry Climax Park Bathroom Shirtless Lad"]>>
+		<</if>>
+    <</if>>
+
+	/* School Showers */
+<<elseif $MasturbationLocation == "School Showers">>
+	<<if $CanCum != 0>>
+		<<set _Random to ["Masturbation Climax School Showers Slip on Semen", "Masturbation Climax School Showers Michael Scare", "Masturbation Climax School Showers Kohler Catch"]>>
+	<<else>>
+		<<set _Random to ["Masturbation Dry Climax School Showers Jackson Sneak", "Masturbation Climax School Showers Kohler Catch"]>>
+	<</if>>
+
+	/* School Courtyard */
+<<elseif $MasturbationLocation == "School Courtyard">>
+		<<if $CanCum != 0>>
+    		<<set _Random to ["Masturbation Climax School Courtyard Normal", "Masturbation Climax School Courtyard Pens", "Masturbation Climax School Courtyard Teacher Caught"]>>
+			<<if $XavierSocial >= 50 or $XavierSocial <= -50>>
+				<<set _Random.push("Masturbation Climax School Courtyard Xavier Catch")>>
+			<</if>>
+		<<else>>
+			<<set _Random to ["Masturbation Climax School Courtyard Normal", "Masturbation Climax School Courtyard Pens"]>>
+			<<if $XavierSocial >= 50 or $XavierSocial <= -50>>
+				<<set _Random.push("Masturbation Climax School Courtyard Xavier Catch")>>
+			<</if>>
+    <</if>>
+    
+<</if>>
+
+<<set _event to _Random.random()>>
+<<include _event>>

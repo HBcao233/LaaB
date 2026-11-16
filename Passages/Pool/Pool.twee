@@ -1,0 +1,73 @@
+:: Pool [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Pool",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Town",
+}>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Pool--</strong></big></span><br>
+You stand outside the City Pool. Despite the close proximity of the beach, the pool is often favored by many due to it being only open to locals and being temperature controlled. They also teach swimming classes here and have slides and hot tubs, making it a nice relaxing place for the whole family. There is a small sitting area where an employee sits and directs people to the one of two gendered locker rooms before they can head in. There is a sign on the wall that says <span style="color:LightSteelBlue">“Pool Clothes Only!”</span><br>
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Enter the Locker Room|Pool Locker Room]]<br>
+<<if $ActiveQuests.includes("Noah: Swimming Lessons") && ["Saturday", "Sunday"].includes($Time.Day) && $Time.between(6, 0, 9, 0)>>
+	[[Teach Noah to Swim (2:00)|Noah Quest Swimming Lessons 3]]<br>
+<</if>>
+<br>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Main Street.png">
+	[[Main Street (0:10)|Main Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Community Center.png">
+	[[Community Center (0:10)|Community Center][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Entertainment District.png">
+	[[Entertainment District (0:10)|Entertainment District][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Main Street.png">
+	[[Main Street (0:05)|Main Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Community Center.png">
+	[[Community Center (0:05)|Community Center][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Entertainment District.png">
+	[[Entertainment District (0:05)|Entertainment District][$Minutes += $TravelTime]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 374px; top: 81px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="300,81,353,134" alt="Main Street" onclick="$.wiki('<<goto[[Main Street]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="448,81,501,134" alt="Community Center" onclick="$.wiki('<<goto[[Community Center]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="374,155,427,208" alt="Entertainment District" onclick="$.wiki('<<goto[[Entertainment District]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

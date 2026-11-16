@@ -1,0 +1,57 @@
+:: Quest Lucas Home Comfort Intro [nobr]
+
+<span style="color:lightcoral">Despite all the fun you and <span style="color:DarkTurquoise">Lucas</span> seem to be having, you can’t shake the feeling that he seems upset about something.</span> Ever since you first came to his house, he seems like he is expecting something bad to happen and is overly nervous as you walk around his house. Perhaps he was uncomfortable with you here? But that can’t be it, he invited you here and was so excited when you showed up. Realizing you had to get to the bottom of this in order to make <span style="color:DarkTurquoise">Lucas</span> more comfortable, you plop down next to him on his bed. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“So what did you want to do next?”</span> <span style="color:DarkTurquoise">Lucas</span> asks, though once again you can hear the tiniest bit of nervousness in his voice. You give him a concerned look, asking him is something is wrong. <span style="color:LightSteelBlue">“Wrong? Why would anything be wrong?”</span> <br>
+<br>
+You point out how he seems to be super nervous and anxious about something, questioning if you are doing something wrong to make him uncomfortable. <br>
+<br>
+<span style="color:LightSteelBlue">“No! You’re fine.”</span> He says quickly, <span style="color:LightSteelBlue">“I’m fine too, really. It’s just-“</span> He looks off to the side, <span style="color:LightSteelBlue">“Really, it’s nothing. Just a bit nervous, you know?”</span> <br>
+<br>
+You weren’t buying it, but it seems you’d have to make <span style="color:DarkTurquoise">Lucas</span> more comfortable in order to get him to spill the beans on what’s upsetting him. <br>
+<span style="color:Gold">Quest Started: "[Lucas] The Price of Fame".</span><br>
+<<set $ActiveQuests.push("Lucas: The Price of Fame")>>
+<<set $InActiveQuests.delete("Lucas: The Price of Fame")>>
+<<set $QuestLog.push(
+	{
+		Name: "Lucas: The Price of Fame",
+		State: 1,
+		ID: "Lucas_M003",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Lucas",
+		Tags: ["Lucas", "Character", "Quest", "Lucas' House"],
+		Description: "Something seems to be upsetting <span style=\"color:DarkTurquoise\">Lucas</span>, but he is too nervous to talk to you about it. Maybe if he was more <span style=\"color:Teal\">Comfortable</span>, he’d be willing to share with you.",
+		Objectives: [
+			{
+				Name: "Raise <span style=\"color:DarkTurquoise\">Lucas</span>' Comfort & talk to him in his bedroom.",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Lucas",
+	Description: "Something seems to be upsetting <span style=\"color:DarkTurquoise\">Lucas</span>, but he is too nervous to talk to you about it. Maybe if he was more <span style=\"color:Teal\">Comfortable</span>, he’d be willing to share with you.",
+})>>
+<br>
+[[Continue|Lucas Home Bedroom]]

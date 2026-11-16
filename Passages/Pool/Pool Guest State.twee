@@ -1,0 +1,32 @@
+:: Pool Guest State [nobr]
+
+/* SETS THE CURRENT GUEST STATE OF THE PULL */
+/* SOME EVENTS AND DECRIPTIONS LOOK TO THIS */
+/* MEANT TO GIVE A REALISTIC AND VARIED FEEL TO WHO IS CURRENTLY SWIMMING */
+
+/* SCHOOL/WEEK DAY */
+<<if $Time.schoolday()>>
+    <<if $Time.before(12) and $Time.after(6)>>
+        /* MAINLY SENIORS AND OLDER FOLK */
+        <<set $PoolState to "Senior Swim">>
+    <<elseif $Time.between(15,0,18,0)>>
+        /* MAINLY SCHOOl-AGED, MOSTLY AROUND PC'S AGE */
+        <<set $PoolState to "After School">>
+    <<else>>
+        /* PRETTY MUCH EMPTY */
+        <<set $PoolState to "Empty">>
+    <</if>>
+/* WEEKENDS/NO SCHOOL */
+<<else>>
+    <<if $Time.before(11) and $Time.after(6)>>
+        /* MOSTLY YOUNGER KIDS AND TODDLERS */
+        /* ALSO USED FOR FUTURE JOB */
+        <<set $PoolState to "Swim Class">>
+    <<elseif $Time.after(11) and $Time.before(16)>>
+        /* MOSTLY FAMILIES AND PEOPLE OF ALL AGES */
+        <<set $PoolState to "Families">>
+    <<else>>
+        /* MOSTLY HIGH SCHOOLS CHILLING AFTER EVERYONE LEAVES */
+        <<set $PoolState to "Teenagers">>
+    <</if>>
+<</if>>

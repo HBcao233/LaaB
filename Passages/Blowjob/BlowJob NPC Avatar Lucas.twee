@@ -1,0 +1,66 @@
+:: BlowJob NPC Avatar Lucas [nobr]
+
+<<set _outfit to "Naked">>
+<<set _eyes to "Normal">>
+<<set _cry to 0>>
+<<set _mouth to "Happy">>
+<<set _blush to 3>>
+<<set _pantsDown to false>>
+<<set _hard to 1>>
+<<set _clothes to {}>>
+
+<<if $NPCComfort < 25>>
+	<<set _eyes to "Sad">>
+	<<set _cry to 2>>
+	<<set _mouth to "Sad">>
+<<elseif $NPCComfort < 50>>
+	<<set _eyes to "Sad">>
+	<<set _cry to 1>>
+	<<set _mouth to "Normal">>
+<<elseif $NPCComfort < 75>>
+	<<set _eyes to "Normal">>
+	<<set _cry to 0>>
+	<<set _mouth to "Happy">>
+<</if>>
+
+<<if $NPCArousal < 25>>
+	<<set _blush to 1>>
+	<<set _hard to 0>>
+<<elseif $NPCArousal < 50>>
+	<<set _blush to 2>>
+	<<set _hard to 0>>
+<<elseif $NPCArousal < 75>>
+	<<set _blush to 2>>
+	<<set _hard to 1>>
+<<else>>
+	<<set _eyes to "Closed">>
+<</if>>
+
+<<if $SexTypePosition == "Bottom" && $SexLocation == "Lucas Bedroom">>
+	<<set _outfit to "Everyday">>
+<<elseif $SexTypePosition == "Top" && $SexLocation == "School Restroom">>
+	<<set _outfit to "Uniform">>
+	<<set _pantsDown to true>>
+<</if>>
+
+<<if $SexTypePosition == "Top" && $SexLocation == "School Restroom">>
+	<<set _clothes.Undies = $None>>
+<</if>>
+
+<<set _ad to [
+	{
+		Name: "Lucas",
+		State: {
+			Outfit: _outfit,
+			Eyes: _eyes,
+			Cry: _cry,
+			Mouth: _mouth,
+			Blush: _blush,
+			PantsDown: _pantsDown,
+			Hard: _hard,
+		},
+		Clothes: _clothes,
+		ShowZoom: true,
+	},
+]>>
+<<ad _ad>>

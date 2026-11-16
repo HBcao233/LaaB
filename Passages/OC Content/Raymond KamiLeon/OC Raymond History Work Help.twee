@@ -1,0 +1,61 @@
+:: OC Raymond History Work Help [nobr]
+
+/* Intro */
+History class goes as History class does. A lecture, some visuals, the reading of a passage or two from the textbook, finished with some worksheets to go over what we’ve talked about and hopefully hammer it home in your oh-so-moldable brain. Overall, a pretty easy class. At least, for you. <span style="color:Yellow">As when you turn to your left you see the familiar rainbow-haired <span style="color:DarkTurquoise">Raymond</span> looking like he’s struggling a bit. He’s gripping his head, tapping his pencil, and overall looking like he is having a very hard time. </span>
+
+        <<set _ad to [
+            {
+                Name: "OC Raymond",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+Since working together quietly isn’t technically against the rules, as some small groups have already formed, you lean over to the boy and ask him how he’s doing. <span style="Color: LightSteelBlue">“Terribly!”</span> He says with quiet frustration. <span style="Color: LightSteelBlue">“I can do stories, but this-”</span> He motions to the worksheet, <span style="Color: LightSteelBlue">“I don’t remember a thing! To be fair, when he mentioned the Indian Trade Routes, I started thinking about this really cool trading sim game I played a few months back and…”</span> He sighs, slamming his head on his desk, <span style="Color: LightSteelBlue">“next thing I know, he was handing out the work sheets.”</span> <br>
+<br>
+You smile and pat the boy on the shoulder. Seems he got lost in the clouds during the lecture and is now struggling to remember details he didn’t pay attention to. Poor lad. <span style="color:Yellow">You could help him, considering you are confident you understand the material yourself. Then again, you could also just let him copy off you. Technically cheating, but would get the job done a lot easier. You could also just ignore him.</span> <br>
+<br>
+<div id="choice">
+	<<link "<strong>[History]</strong> Try to help him">>
+	<<replace "#choice">>
+        <<skillCheck "History" 60>>
+        <<if _result == 1>>
+            You spend the next few minutes re-going over the events that <span style="color:DarkTurquoise">Mr. De Leon</span> laid out. <span style="color:DarkTurquoise">Raymond</span> has some trouble paying attention, but you are able to frame it more as a story of daring and economic adventure and <span style="color:LightGreen">he seems to understand in the end, at least enough to finish the worksheet.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Thanks a bunch!”</span> He says happily, <span style="Color: LightSteelBlue">“You’re a real lifesaver!”</span> <br>
+            <<socialChange "Raymond" 3 1>>
+            <<skillPoints "History" 3>>
+            <<include"Attend History Finish">>
+        <<else>>
+            You try your best to explain what <span style="color:DarkTurquoise">Mr. De Leon</span> laid out, but <span style="color:DarkTurquoise">Raymond</span> has a lot of trouble following. <span style="color:LightCoral">The kid seems to get very tired from your boring explanation and you also trip over your words a lot. In the end, you’re pretty sure the poor boy is even more confused.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Sorry, I don’t think this is working.”</span> He stares down at his paper before resting his head on the desk. <span style="Color: LightSteelBlue">“I’m sure one bad grade won’t kill me. Thanks anyway.”</span> <br>
+            <<socialChange "Raymond" 1 1>>
+            <<skillPoints "History" 1>>
+            <<include"Attend History Finish">>
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<skillDiff "History" 60>><br>
+	<<link "Let him cheat<br>">>
+	<<replace "#choice">>
+        Ensuring that the teacher isn’t looking in your direction, you slip your worksheet over to Raymand and give him a wink. The boy looks down at your paper for a minute in confusion, before realizing what you are doing and quickly blushes. <span style="Color: LightSteelBlue">“You want me to-?”</span> He glances up towards <span style="color:DarkTurquoise">Mr. De Leon</span>, who is currently helping another student, <span style="Color: LightSteelBlue">“Are you sure?”</span> You nod, whispering for him to hurry. <br>
+        <br>
+        Though he seems a little guilty to be cheating, he hurriedly copies down your answers, trying to change a little to not make it obvious. It only takes him a few minutes and he gets it done without anyone else seeming to notice. <span style="color:LightGreen">He then quickly hands your paper back to you and gives you a wink back. He seems very grateful, if not still a little guilty.</span> <br>
+        <<socialChange "Raymond" 2 1>>
+        <<include"Attend History Finish">>
+    <</replace>>
+    <</link>>
+	<<link "Ignore him<br>">>
+	<<replace "#choice">>
+        You decide that it is probably best to let him figure it out himself, for one reason or another. After all, how will he learn to pay attention if he doesn’t suffer the consequences of his actions? <span style="color:Yellow">Besides, one bad grade won’t kill him.</span> <br>
+        <br>
+        <span style="color:DarkTurquoise">Raymond</span> continues to struggle for a bit before eventually just writing down random answers. When <span style="color:DarkTurquoise">Mr. De Leon</span> comes around and collects the worksheets, he gives <span style="color:DarkTurquoise">Raymond</span> a very confused look when he answered <span style="Color: LightSteelBlue">“1776”</span> as the date the Silk Road was founded. <span style="color:Yellow">Poor kid may have some extra homework tonight.</span> <br>
+        <<include"Attend History Finish">>
+    <</replace>>
+    <</link>>
+</div>

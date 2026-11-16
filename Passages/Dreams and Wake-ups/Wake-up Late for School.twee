@@ -1,0 +1,51 @@
+:: Wake-up Late for School [nobr]
+
+Your dreams and comfort are suddenly ripped away from you, replaced with a bitterly cold chill that forces you awake. Standing above you was <span style="color:DarkTurquoise">Your Father</span>, smiling as he had just yanked your blanket off of you. 
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+    <span style="color:pink">Realizing you were naked, you quickly cover yourself with a pillow and yell at <span style="color:DarkTurquoise">Your Father</span> to get out.</span> <br>
+    
+    <<set _ad to [
+        {
+            Name: "Dad",
+            State: {
+                Mouth: "Smirk",
+                Brows: "Suspicious",
+            },
+        },
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Mouth: "Frown",
+                Arms: "Hide",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<<else>>
+    You groan loudly, complaining about him waking you up. <br>
+
+    <<set _ad to [
+        {
+            Name: "Dad",
+            State: {
+                Mouth: "Smirk",
+                Brows: "Suspicious",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Eyes: "Tired",
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<</if>>
+<span style="color:LightSteelBlue">“I wouldn’t have to wake you up if you remembered to set your alarm. Come on, get up or you’ll be late for school.”</span> He tries to pull you off the bed, but you hold on tight. <span style="color:LightSteelBlue">“I am not above pouring a cup of ice water on you.”</span> He smirks. You knew he wasn’t kidding, so you quickly jumped to your feet and began to get ready for school.<br>
+<br>
+[[Continue|Player Bedroom]]<br>

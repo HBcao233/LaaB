@@ -1,0 +1,42 @@
+:: CARTER Playground Chat With [nobr]
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			State: "Uniform",
+		},
+	},
+]>>
+
+<<set $Minutes += 10>>
+
+/* OPENING */
+You stop <span style="color:DarkTurquoise">Carter</span> at the bottom of the slide and begin to chat with him as he climbs back up to the top.
+<<set $RandomTopic to random(1, 3)>>
+
+/* TOPIC ONE */
+<<if $RandomTopic == 1>>
+	<span style="color:DarkTurquoise">Carter</span> goes on and on about super heroes. Owlman, Ultraman, and everything in between. The boy is extremely knowleadgeable and passionate about the topic, hoping to one day be a super hero himself.<br>
+
+/* TOPIC TWO */
+<<elseif $RandomTopic == 2>>
+	<span style="color:DarkTurquoise">Carter</span> talks about some of the charity work he does on the weekends. From spending time with the elderly to helping out at a daycare. It surprises you how genuine his desire to help others is.<br>
+
+/* TOPIC THREE */
+<<elseif $RandomTopic == 3>>
+	In telling you about some of the stories he’d played out at home, <span style="color:DarkTurquoise">Carter</span> mentions some names that you don’t recognize. In pressing for information about them, he embarrassingly reveals that they are his stuffed animals. He admits that he is a bit old for them, but they work great as characters in his stories.<br>
+<</if>>
+
+/* SOCIAL POINTS GAIN */
+<<if $CarterDailyChat != 1>>
+	<<socialChange "Carter" 3>>
+	<<set $CarterDailyChat to 1>>
+<<else>>
+	<<socialChange "Carter" 1>>
+	<<set $CarterDailyChat to 1>>
+<</if>>
+<br>
+
+[[Continue|School Courtyard]] 

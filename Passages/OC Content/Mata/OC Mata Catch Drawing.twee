@@ -1,0 +1,74 @@
+:: OC Mata Catch Drawing [nobr]
+
+/* Intro */
+You are walking through one of the many large grassy fields in the school courtyard, and one of the few that aren’t occupied by a game of soccer or a collection of boys doing one thing or another, and just take a deep breath. Sometimes you forget just how calm and relaxing nature can be. You continue walking until you spot a curious sight in the distance. 
+
+<<if $ToggleSuperNat == 1>>
+    <span style="color:BlueViolet">You see a flash of purple, atop a boy’s head and along his waist. The sight is so shocking that you do a double take, but when you look back, it is just <span style="color:DarkTurquoise">Mata</span> sitting under a tree doodling away. You must be seeing things. You are pretty tired.</span> <br>
+    <br>
+<<else>>
+    <span style="color:LightGreen">You spot the shy Japanese boy <span style="color:DarkTurquoise">Mata</span> sitting under a tree, appearing to happily doodle away on his notebook enjoying the peace and quiet.</span> <br>
+    <br>
+<</if>>
+
+<<if $OCMataSocial > 40>>
+    You walk over and call out to the boy. He jumps a little upon hearing the noise but calms down once he sees it is you. You walk over and plop down next to him, asking him how he is doing and glancing at his drawing. <span style="color:LightGreen">The boy looks a little nervous, but doesn’t try to hide his art.</span>
+    
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 1,
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="Color: LightSteelBlue">“I am doing very good, thank you.”</span> He says in an overly formal way, <span style="Color: LightSteelBlue">“How are you doing?”</span> You laugh, telling him you are doing fine and ask him what he is drawing. <span style="Color: LightSteelBlue">“Oh! It is a… comic. It not very good, I am sorry.”</span> You see what does appear to be a page of a comic, or more accurately, a roughly drawn but impressive manga page. <span style="color:LightGreen">You recognize the Japanese style and little details. While it is obviously a work in progress, you can’t help but compliment the work!</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Oh, no no.”</span> <span style="color:DarkTurquoise">Mata</span> says a little embarrassed, covering his face. <span style="Color: LightSteelBlue">“It is no good, I am still learning. But thank you very much.”</span> He gives you a shy smile, obviously not used to the compliments. You decide to sit there and watch him draw for a while, asking him questions and commenting on the interesting techniques he uses. <span style="color:LightGreen">Despite his hesitation, the boy sure does know his stuff!</span> <br>
+    <<socialChange "Mata" 3 1>>
+    <<addMoodlet "Stress" 0>>
+    <<needChange "Fun" 20>>
+    <br>
+    [[Continue|School Courtyard]] 
+<<else>>
+    You walk over and call out to the boy. He jumps upon hearing the noise, dropping his pencil and nearly dropping his notebook. He looks over at you and blushes deeply, quickly slamming his notebook down to hide his drawing. <span style="Color: LightSteelBlue">“Oh, h- hello there! H- how are you doing today?”</span> He says in an overly formal but very nervous tone. You laugh, telling the boy he doesn’t have to be worried. You’re not going to bite him or something. 
+    
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Uniform",
+                    Blush: 1,
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="Color: LightSteelBlue">“What!?”</span> <span style="color:Yellow">Your phrase seems to have confused the boy, who now looks worried as if you ARE going to bite him.</span> You sigh and try to explain that you mean him no harm in a more straightforward way. Once he understands that you are not out for his flesh, he calms down. <br>
+    <br>
+    You ask him what he is drawing, but he just shrugs in response, keeping his notebook hidden. <span style="Color: LightSteelBlue">“It is nothing. Just doodles that I am doing. It is not interesting!”</span> You get the feeling that is a lie but figured that <span style="color:DarkTurquoise">Mata</span> doesn’t know you all that well yet and it would be rude to push. So, you decide to change the subject and ask him about how he is adjusting and about his hobbies outside of school. <br>
+    <br>
+    <span style="color:LightGreen">This seems to calm the boy down a little and the two of you enjoy your short chat. He still seems very nervous but is opening up to you slowly. You may make a friend out of him yet!</span> <br>
+    <<socialChange "Mata" 3 1>>
+    <<addMoodlet "Stress" 0>>
+    <<needChange "Fun" 20>>
+    <br>
+    [[Continue|School Courtyard]] 
+<</if>>

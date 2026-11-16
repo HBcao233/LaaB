@@ -1,0 +1,293 @@
+:: Bathroom Pose in Mirror [nobr]
+
+/* Written by: Rudy */
+/* Intro */
+
+<<set $Minutes += 10>>
+<<include"Noah Outfit Set">>
+
+While in the bathroom, you look at the mirror and jokingly strike a pose. While you can see your body in its goofy position in the mirror, it feels incomplete as there is clothing in the way! You smirk as an idea comes to mind, quickly ensuring the door is closed. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+            Mouth: "Smirk",
+            Eyes: "Mad",
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<<linkreplace "Continue">>
+/*=Undress=*/
+
+<<if $PlayerUndies.Type != "None" and $PlayerBottoms.Type != "None">>
+/*IF Wearing Undies*/
+    <span style="color:pink">You quickly strip to your undies and flex to the mirror but it still feels like something is in the way of seeing your body in its full silly glory! You chuckle and blush as the thought of looking at yourself naked in the mirror, which feels a little embarrassing even when long, but you strip butt naked anyway.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Naked",
+                Mouth: "Smirk",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+	
+<<elseif $PlayerUndies.Type == "None" and $PlayerBottoms.Type != "None">>
+/*No Undies*/
+    <span style="color:pink">You remember that you’re not wearing undies today and blush while you remove your bottoms. Standing in the bathroom butt naked excites you and makes your heart beat faster. But that doesn’t stop you.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Naked",
+                Mouth: "Smirk",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <</if>>
+    <br>
+
+<<if $Player.Traits.includes("BodyAnxiety")>>
+/*-Body Anxiety trait-*/
+<span style="color:LightCoral">Looking in the mirror makes you nervous as you can fully see your own weird body. You were never satisfied with it and seeing directly at it in the mirror makes it worse. You feel strange, embarrassed even alone, and begin to hear self-conscious thoughts fill your head. You quickly cover yourself as a reflex caused by these thoughts, manage to calm your nerves as you remember you’re alone.</span> This situation ends with you giggling about covering yourself when alone. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Naked",
+                Eyes: "Sad",
+                Mouth: "Frown",
+                Blush: 3,
+                Cry: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<<else>>
+
+/*-No Body Anxiety Trait-*/
+<span style="color:pink">You start flexing and posing nude in front of the mirror. You feel powerful and strong, seeing all of your muscles, or lack there of, as you pose in your birthday suit. You put your hands on your hips like a hero and smirk at yourself in the mirror, but your mind quickly brought to you the idea of being naked in front of everyone, causing you to blush at the sight of you so proudly showing off your young body. In the end, you giggle as your own red face looks funny.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Naked",
+                Blush: 3,
+                Arms: "Bound",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<</if>>
+<<set _random to random(1, 2)>>
+<<if _random == 1>>
+    <<set _random to random(1, 3)>>
+    <<if _random == 1>>
+
+    /*-Caught by Gabe-*/
+    <<if $Player.PenisSize == "Tiny" or $Player.PenisSize == "Small" or $Player.PenisSize == "Average">>
+    <span style="color:pink">You are flexing in front of the mirror when suddenly the door you thought was locked opens and <span style="color:DarkTurquoise">Gabe</span> walks in. As soon as you spot him you reach down to cover your bits and try to grab your clothes. Sadly, your bottoms are closer to <span style="color:DarkTurquoise">Gabe</span>, and he yanks them away first. <span style="color:DarkTurquoise">Gabe</span> then smirks while looking at you before bursting into laughter.</span> <span style="color:LightSteelBlue">“You look great like that, <span style="color:DarkTurquoise">$GabeNickname</span>. This fits you and your little thingy there. Nothing wrong with checking yourself every now and then; not that you have much to check on though.”</span> <span style="color:LightCoral">He then storms off laughing and tosses your bottoms inside your room, forcing you to run after them.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Outfit: "Naked",
+                        Mouth: "Frown",
+                        Eyes: "Sad",
+                        Blush: 3,
+                        Arms: "Hide",
+                    },
+                },
+                {
+                    Name: "Gabe",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Happy",
+                        Eyes: "Mad",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <<addMoodlet "Seen Naked" 3>>
+        <<socialChange "Gabe" -3>> <br>
+        <<needChange "Fun" 10>>
+
+        [[Continue|PH Bathroom]]
+
+        <<elseif $Player.PenisSize == "Large" or $Player.PenisSize == "Gigantic">>
+        /*-Large/Gigantic Penis-*/
+
+    /*-Shy-*/ 
+        <<if $Player.Traits.includes("Shy")>>
+
+        <span style="color:pink">You are flexing in front of the mirror when suddenly the door you thought was locked opens and <span style="color:DarkTurquoise">Gabe</span> walks in. As soon as you realize that you start to cover yourself and you spin around.</span> <span style="color:LightCoral">Your mind seems to stop working as the embarrassment takes control and your face turns bright red.</span> It doesn't take long for <span style="color:DarkTurquoise">Gabe</span> to realize what is happening and he smirks before laughing <span style="color:LightSteelBlue">“Now, would you look at that. Lil’ <span style="color:DarkTurquoise">$Player.Name</span> is interested in his own body. Isn’t it too early for you? Even though you’re kinda packing. Maybe we should show that thing off around town?”</span> <br>
+
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Outfit: "Naked",
+                        Mouth: "Frown",
+                        Eyes: "Sad",
+                        Blush: 3,
+                        Arms: "Hide",
+                    },
+                },
+                {
+                    Name: "Gabe",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Smirk",
+                        Eyes: "Mad",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <<addMoodlet "Seen Naked" 3>>
+        <<socialChange "Gabe" -3>> <br>
+        <<needChange "Fun" 10>>
+        [[Continue|PH Bathroom]]
+
+        <<else>>
+        /*-Not Shy-*/
+        <span style="color:pink">You are flexing in front of the mirror when suddenly the door you thought was locked opens and <span style="color:DarkTurquoise">Gabe</span> walks in. As soon as you realize that you start to cover yourself and reach for your clothes.</span> <span style="color:DarkTurquoise">Gabe</span> freezes looking at you and realizes that your penis looks nearly as big as his even with the age difference. <span style="color:LightSteelBlue">“What the hell? When the fuck did your cock get so big? I mean, it’s not that big… pretty small actually…”</span> You smirk at <span style="color:DarkTurquoise">Gabe</span> and tell him you’ll soon be bigger and that he must deal with it while you flash him your penis. <span style="color:DarkTurquoise">Gabe</span> then proceeds to get his phone and take a picture of it. <span style="color:LightSteelBlue">“Say that again, and this gets posted on your school’s website.”</span>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Outfit: "Naked",
+                        Mouth: "Smirk",
+                        Eyes: "Mad",
+                        Blush: 2,
+                        Arms: "Hide",
+                    },
+                },
+                {
+                    Name: "Gabe",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Frown",
+                        Eyes: "Mad",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <<socialChange "Gabe" -3>> <br>
+        <<needChange "Fun" 10>>
+        [[Continue|PH Bathroom]]
+
+        <</if>>
+        <</if>>
+    <<elseif _random == 2>>
+    /*-Caught by Noah-*/
+
+<<if $NoahSocialRank >= 1>>
+/*-Noah’s Quest Done-*/
+<span style="color:pink">You are posing like a hero in front of the mirror and giggle at how silly you look when, to your surprise, the bathroom door opens. You turn around and spot <span style="color:DarkTurquoise">Noah</span> standing in the doorway, staring at your butt as he giggles, <span style="color:LightSteelBlue">“Haha, Nice butt!”</span>. You blush at his comment on your butt and think about getting revenge on him which made you realize he was at the exact height to stare at your butt and that means it is the same height as your penis. With a quick movement, you shove <span style="color:DarkTurquoise">Noah</span>’s face to your penis saying that he deserves it for messing around.</span> <span style="color:DarkTurquoise">Noah</span> laughs <span style="color:LightSteelBlue">“Ewwww, that’s gross <span style="color:DarkTurquoise">$NoahNickname</span>.”</span> He then runs off giggling, wiping his face with his clothing. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                    Blush: 2,
+                },
+            },
+            {
+                Name: "Noah",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Happy",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <<socialChange "Noah" 3>>
+    <<needChange "Fun" 10>>
+    [[Continue|PH Bathroom]]
+
+    /*-Noah’s Quest not done-*/
+    <<else>>
+
+    You are posing in front of the mirror and admiring your own body when the bathroom door opens. <span style="color:LightCoral">When you look at the door, you see <span style="color:DarkTurquoise">Noah</span> red as a tomato, covering his eyes and apologizing as he runs off and leaves the door open. You quickly close the door and run to your clothes to avoid getting caught again.</span> <span style="color:pink">You can't hold off your giggles as this situation, although embarrassing, is quite funny. <span style="color:DarkTurquoise">Noah</span> is somehow always more embarrassed than you when he walks in on you naked.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                    Blush: 3,
+                    Arms: "Hide",
+                },
+            },
+            {
+                Name: "Noah",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                    Cry: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <<addMoodlet "Seen Naked" 3>>
+    <<needChange "Fun" 10>>
+    [[Continue|PH Bathroom]]
+    <</if>>
+
+    <<elseif _random == 3>>
+    /*-Caught by Dad-*/
+    <span style="color:pink">While posing in front of the mirror, you giggle at how silly you look and decide to change your pose into one that looks more like a grown-up. You then flex your biceps like a strongman when you suddenly realize the door is open!</span> <span style="color:LightCoral"> <span style="color:DarkTurquoise">Your Dad</span> is standing there looking at you flexing your biceps in your birthday suit. He can’t hide his chuckles as your face turns completely red and you run to your clothes while dying of embarrassment.</span> <span style="color:LightSteelBlue">“Now would you look at that? I know you are a curious boy, but this is on a whole different level.”</span> <span style="color:DarkTurquoise">Your Dad</span> teases before shutting the door, leaving you to your embarrassment. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                    Blush: 3,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <<addMoodlet "Seen Naked" 3>>
+    <<needChange "Fun" 10>>
+    [[Continue|PH Bathroom]]
+    <</if>>
+<<else>>
+    <<needChange "Fun" 10>>
+    [[Continue|PH Bathroom]]
+<</if>>
+<</linkreplace>>
+

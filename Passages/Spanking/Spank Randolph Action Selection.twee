@@ -1,0 +1,45 @@
+:: Spank Randolph Action Selection [nobr]
+
+	/* PRE-SPANKING */
+<<if $SpankingStart == 0>>
+/* STRIPS PLAYER COMPLETELY */
+<<if $SpankClothing == "None">>
+	<<if $PlayerBottoms.Type != "None">>
+		<<set $NPCSpankAction to "Remove Bottoms">>
+	<<elseif $PlayerUndies.Type != "None" and $PlayerBottoms.Type == "None">>
+		<<set $NPCSpankAction to "Remove Undies">>
+	
+/* NO MORE CLOTHING */ 
+<<elseif $PlayerUndies.Type == "None" and $PlayerBottoms.Type == "None">>
+	<<set $SpankingStart to 1>>
+
+	<</if>>
+<</if>>
+<</if>>
+
+<<if $SpankingStart == 1>>
+
+	/* HARD SPANK */
+	<<if $SpankAnger >= 75>>
+		<<set $NPCSpankAction to "Hard Spank">>
+		<<set $SpankNumber -= 1>>
+		<<set $SpankPain += 10>>
+		<<set $SpankMarks += 3>>
+	
+	/* MEDIUM SPANK */
+	<<elseif $SpankAnger >= 50>>
+		<<set $NPCSpankAction to "Medium Spank">>
+		<<set $SpankNumber -= 1>>
+		<<set $SpankPain += 5>>
+		<<set $SpankMarks += 2>>
+	
+	/* SOFT SPANK */
+	<<else>>
+		<<set $NPCSpankAction to "Soft Spank">>
+		<<set $SpankNumber -= 1>>
+		<<set $SpankPain += 2>>
+		<<set $SpankMarks += 1>>
+
+
+	<</if>>
+<</if>>

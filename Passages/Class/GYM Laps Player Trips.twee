@@ -1,0 +1,61 @@
+:: GYM Laps Player Trips [nobr]
+
+/* RAINNING */
+<<if $Weather == "Rain" or $Weather == "Storm">>
+
+<<set $RandomChance to random(1, 3)>>
+
+/* NO NEGATIVE EVENT */
+<<if $RandomChance != 3>>
+	You are mindlessly running the laps, staying in the middle of the pack, <span style="color:Red">when your ankle suddenly buckles!</span> You lose your balance and tumble painfully to the ground. A few boys giggle and chuckle as they run past you, while a few stop or slow down to make sure you’re alright.<br>
+
+/* PANTS SLIDE DOWN */
+<<else>>
+
+<<if $PlayerUndies.Type != "None">>
+	You are mindlessly running the laps, staying in the middle of the pack, <span style="color:Red">when your ankle suddenly buckles!</span> You lose your balance and tumble forward, slidding painfully across the ground. <span style="color:Pink">To make matters worse, your $PlayerBottoms.Type are pulled down to your knees as you slide forward, exposing the back of your $PlayerUndies.Name!</span> The boys that pass you can’t help but laugh at the sight as you quickly pull them back up.<br>
+<<set $SchoolRep -= 2>>
+<span style="color:Red">-Reputation</span><br>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+	<<addMoodlet "Seen Undies" 4>>
+
+<<else>>
+	You are mindlessly running the laps, staying in the middle of the pack, <span style="color:Red">when your ankle suddenly buckles!</span> You lose your balance and tumble forward, sliding painfully across the ground. <span style="color:Pink">To make matters worse, your $PlayerBottoms.Type are pulled down to your knees as you slide forward, exposing your bare butt!</span> The boys that pass you can’t help but laugh at the sight as you quickly pull them back up.<br>
+<<set $SchoolRep -= 5>>
+<span style="color:Red">-Reputation</span><br>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 30 _arousalbs _arousalkink>>
+	<<addMoodlet "Seen Naked" 5>>
+
+<</if>>
+
+<</if>>
+
+<br>
+<span style="color:LightSteelBlue">“Enough gawking!”</span> <span style="color:DarkTurquoise">Coach Kohler</span> yells out. <span style="color:LightSteelBlue">“You can’t let a little tumble stop you. On your feet!”</span> Everyone continues their laps as you quickly stand up and make sure you are alright. Thankfully, only your pride is injured as you continue running only slightly pained.<br>
+	<<addMoodlet "Pained" 6>>
+		<<set $GymNeedReduce to "Extra">>
+		<<include"Gym Need Reduce">>
+
+	<<include"Attend Gym Finish">>
+
+
+/* NOT RAINNING */
+<<else>>
+You are mindlessly running the laps, staying in the middle of the pack, <span style="color:Red">when your ankle suddenly buckles!</span> You lose your balance and tumble painfully to the ground. To make matters worse, you roll directly into some mud, covering your shirt. A few boys giggle and chuckle as they run past you, while a few stop or slow down to make sure you’re alright.<br>
+<br>
+<span style="color:LightSteelBlue">“Enough gawking!”</span> <span style="color:DarkTurquoise">Coach Kohler</span> yells out. <span style="color:LightSteelBlue">“You can’t let a little tumble stop you. On your feet!”</span> Everyone continues their laps as you quickly stand up and make sure you are alright. Thankfully, only your pride is injured as you continue running only slightly pained.<br>
+<br>
+As you are passing by <span style="color:DarkTurquoise">Coach Kohler</span>, he stops you. <span style="color:LightSteelBlue">“Did you have to fall in the mud? Your shirt is covered!”</span> <span style="color:Pink">Before you can react, he begins to take off your $PlayerTop.Type, leaving your chest and belly exposed!</span> <span style="color:LightSteelBlue">“Leave this here and finish your laps, can’t have you running around caked in mud!”</span> You try to protest but are quickly sent on your way, now topless.<br>
+	<<set $PlayerTop to $None>>
+	<<addMoodlet "Pained" 6>>
+		<<set $GymNeedReduce to "Extra">>
+		<<include"Gym Need Reduce">>
+	<<needChange "Hygiene" -4>>
+	<<include"Attend Gym Finish">>
+
+
+<</if>>

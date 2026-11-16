@@ -1,0 +1,100 @@
+:: Randolph Tutor [nobr]
+
+/* Intro */
+<<set $Minutes += 15>>
+You walk up to <span style="color:DarkTurquoise">Mr. Randolph</span>, who seems to be in the middle of grading some papers and nervously stand there until he is finished. <span style="Color: Yellow">Despite not actively yelling at you, <span style="color:DarkTurquoise">Randolph</span>’s presence still causes a lump to appear in your throat, as if he can explode at any minute.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“What is it, <span style="color:DarkTurquoise">Mr. $Player.LastName</span>?”</span> He asks, glancing up at you. You gulp nervously, asking if maybe he could help you with some concepts you didn’t understand in the recent class. Though you quickly add that you can do it another time if he’s too busy. <span style="Color: LightSteelBlue">“Of course. Which topic are you struggling with?”</span> You are taken aback by his casual response, quickly pulling out some worksheets and asking questions. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "Randolph",
+            State: {
+            },
+        },
+    ]>>
+    <<ad _ad>>
+/* PC: Frown, Blush1
+Randolph: Everyday, Neutral */
+
+<span style="color:DarkTurquoise">Mr. Randolph</span> seems very patient with you as he reexplains the concepts and points out where you are going wrong. Despite his normal harsh demeanor in class, he seems much calmer in one-on-one situations, or maybe he just respects that you are paying attention and asking for help. <span style="Color: LightGreen">By the end, you not only feel you’ve learned something, but also feel like you understand your math teacher a bit more.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Anything else?”</span> He asks, sitting back down to grade his papers. <span style="Color: LightGreen">You feel this may be a good chance to get him to open up more about himself.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Ask about his family<br>">>
+    <<replace"#choice">>
+        <<if $RandolphSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Randolph</span> how things have been in his personal life and family. <span style="Color: Yellow">He glances up at you with a raised eyebrow, and you feel a shiver run down your spine.</span> <span style="Color: LightSteelBlue">“I have no problem helping you with your math, but I am not one for small talk. Run along now. Go enjoy yourself before your free time is over.”</span> You nod, quickly leaving. <span style="Color: Yellow">Guess you’ll have to make him more comfortable around you before he’ll share anything.</span> <br>
+            <<socialChange "Randolph" 3>>
+            <<skillPoints "Math" 5>>
+            <br>
+            [[Continue|School Math Classroom]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Randolph</span> about how things have been in his personal life and family. He glances up at you with a raised eyebrow, and you feel a shiver run down your spine. You are about to take back the question when he sighs. <span style="Color: LightSteelBlue">“I don’t normally like talking about my personal life at work, but I suppose you may be able to help me out. Do you know what kids like these days? Like, 2nd graders?”</span> You are surprised by the question and ask him what he means. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“I’m trying to buy a gift for my grandson, since he aced his last test. But I went to the store and am sadly at a loss. Toys these days are just so… colorful. And they all make so much noise!”</span> He sighs once more, <span style="Color: LightSteelBlue">“Any ideas for what a 2nd grade boy would like that is quiet?”</span> You smile, thinking for a moment before giving some answers. <span style="Color: LightGreen">Over the course of the conversation, you feel a friendly bond growing between you two and even hear him chuckle, though it doesn’t last. Once the conversation is over <span style="color:DarkTurquoise">Randolph</span> tells you to run along so he can finish grading, but he seems grateful for your help.</span> <br>
+            <<socialChange "Randolph" 3>>
+            <<skillPoints "Math" 5>>
+            <br>
+            [[Continue|School Math Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his career<br>">>
+    <<replace"#choice">>
+        <<if $RandolphSocial < 30>>
+            You ask <span style="color:DarkTurquoise">Randolph</span> about why he became a teacher and he raises an eyebrow at you. <span style="Color: LightSteelBlue">“It’s the job I choose, not much more to it than that. I understand math and it pays the bills and buys my grandson shoes.”</span> That is all <span style="color:DarkTurquoise">Randolph</span> says before things go quiet. You stand there awkwardly for a second before <span style="color:DarkTurquoise">Randolph</span> adds <span style="Color: LightSteelBlue">“Run along now, I need to finish grading these.”</span> You nod, quickly leaving. <span style="Color: Yellow">Guess you’ll have to get him more comfortable around you before he’d share anything.</span> <br>
+            <<socialChange "Randolph" 3>>
+            <<skillPoints "Math" 5>>
+            <br>
+            [[Continue|School Math Classroom]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Randolph</span> about why he became a teacher and he raises an eyebrow at you. You notice him glance downward for a second, as if pondering something, before sighing. <span style="Color: LightSteelBlue">“Is it too hard to believe I enjoy teaching? Despite you brats sometimes pushing me over the edge, I do enjoy my job. It would be easier if more kids paid attention, but…”</span> He gives something that almost sounds like a chuckle, <span style="Color: LightSteelBlue">“Well, I didn’t expect this job to be easy. But enough chit-chat, run off and enjoy the rest of your free time. I have papers to grade.”</span> <span style="Color: LightGreen">You smile, feeling you understand <span style="color:DarkTurquoise">Randolph</span> a little bit more before leaving.</span> <br>
+            <<socialChange "Randolph" 3>>
+            <<skillPoints "Math" 5>>
+            <br>
+            [[Continue|School Math Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Ask about his hobbies<br>">>
+    <<replace"#choice">>
+        <<if $RandolphSocial < 30>>
+            Swinging your body nervously, you ask <span style="color:DarkTurquoise">Randolph</span> what he likes to do for fun. He gives you a confused look. <span style="Color: LightSteelBlue">“This isn’t a social meeting, <span style="color:DarkTurquoise">$Player.Name</span>, I have work to do. If you don’t need anymore help, go back out and enjoy your free time.”</span> You nod, quickly leaving. <span style="Color: Yellow">Guess you’ll have to make him more comfortable around you before he’ll share anything.</span> <br>
+            <<socialChange "Randolph" 3>>
+            <<skillPoints "Math" 5>>
+            <br>
+            [[Continue|School Math Classroom]]
+        <<else>>
+            Swinging your body nervously, you ask <span style="color:DarkTurquoise">Randolph</span> what he likes to do for fun. He gives you a confused look. <span style="Color: LightSteelBlue">“My students don’t normally ask about my hobbies.”</span> You blush nervously, but <span style="color:DarkTurquoise">Randolph</span> just shrugs, <span style="Color: LightSteelBlue">“I read a lot. Always been a hobby. I actually helped start a book club for adults at the community center; too many people prefer movies nowadays.”</span> You can’t help but chuckle a little at his response, saying you didn’t expect that from your math teacher. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Well, I don’t exactly want to do math in my spare time.”</span> He gives you a smirk, <span style="Color: LightSteelBlue">“Ironically, your English Teacher, Mr. Hart, is too busy with his ‘extracurricular activities’ to join. People tend to separate work and free time as adults, especially since we tend to have very little of the latter.”</span> <span style="Color: LightGreen">You nod, happy to have learned a bit about your teacher, but before you can ask for more details, he sends you off so he can get back to his grading.</span> <br>
+            <<socialChange "Randolph" 3>>
+            <<skillPoints "Math" 5>>
+            <br>
+            [[Continue|School Math Classroom]]
+        <</if>>
+    <</replace>>
+    <</link>>
+
+    <<link "Nothing<br>">>
+    <<replace"#choice">>
+        You shake your head, thanking him for helping you. <span style="Color: LightSteelBlue">“Anytime. Always feel free to ask for help, it’s our job as teachers.”</span> <span style="Color: LightGreen">As you walk out, you almost feel like <span style="color:DarkTurquoise">Randolph</span> is actually a cool teacher.</span> You then hear muffled shouting about <span style="Color: LightSteelBlue">“stupid kids can’t even do division!”</span> as he grades a particularly bad test. <br>
+        <<socialChange "Randolph" 3>>
+        <<skillPoints "Math" 5>>
+        <br>
+        [[Continue|School Math Classroom]]
+    <</replace>>
+    <</link>>
+</div>

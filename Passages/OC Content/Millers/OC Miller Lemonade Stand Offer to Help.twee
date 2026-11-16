@@ -1,0 +1,64 @@
+:: OC Miller Lemonade Stand Offer to Help [nobr]
+
+<<set $Minutes += 30>>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Kayden">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC KAYDEN Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* SECOND LAYER */
+	<<set $AD.Name to "Jayden">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC JAYDEN Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: absolute; left: 125px; top: 0px">
+	<<include"Kid Avatar Display">>
+</div>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">“Sure, we can always use more hands.”</span> <span style="color:DarkTurquoise">Kayden</span> says in response to your offer of help, motioning you to get behind the table. Stepping behind the stand, you proclaim that you are ready to serve some lemonade! <br>
+<br>
+
+<<linkreplace "Continue">>
+	/* Code to select which event is added. */
+    <<set _Random to [
+		"OC Miller Help Lemonade Jay Another Batch",
+		"OC Miller Help Lemonade Which is better",
+		"OC Miller Help Lemonade Squeeze",
+	]>>
+
+    <<if $CarterSocial > 0 and $OCZaySocial > 0>>
+		<<set _Random.push("OC Miller Help Lemonade Carter")>>
+	<</if>>
+    <<if $FelixSocial > 0 and $OCZaySocial > 0>>
+		<<set _Random.push("OC Miller Help Lemonade Felix")>>
+	<</if>>
+	<<if $InActiveQuests.includes("Millers: Dog Escape")>>
+		<<set _Random.push("OC Miller Help Lemonade Dog Escape")>>
+	<</if>>
+	<<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Oliver") && $InActiveQuests.includes("Millers: Oliver Meets Twins")>>
+		<<set _Random.push("OC Oliver Meets Miller Twins")>>
+	<</if>>
+
+    <<set _event to _Random.random()>>
+    <<include _event>>
+<</linkreplace>>

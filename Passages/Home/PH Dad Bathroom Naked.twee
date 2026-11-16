@@ -1,0 +1,67 @@
+:: PH Dad Bathroom Naked [nobr]
+
+<<if $_setTowel == 1>>
+	<<addClothing "PC" "Bottoms" "Towel" "White">>
+	<<set $_setTowel to 0>>
+<</if>>
+/* SETTING STATE */
+<<if $Time.before(22) and $Time.after(6)>>
+	<<if $HomeDayNudity == 0>>
+		<<set $StreakState to "Day_Embarrassed">>
+	<<elseif $HomeDayNudity == 1>>
+		<<set $StreakState to "Day_Shy">>
+	<<elseif $HomeDayNudity == 2>>
+		<<set $StreakState to "Day_Fine">>
+	<</if>>
+<<else>>
+	<<if $HomeNightNudity == 0>>
+		<<set $StreakState to "Night_Embarrassed">>
+	<<elseif $HomeNightNudity == 1>>
+		<<set $StreakState to "Night_Shy">>
+	<<elseif $HomeNightNudity == 2>>
+		<<set $StreakState to "Night_Fine">>
+	<</if>>
+<</if>>
+
+/* BASE TEXT BASED ON STATUS */
+
+<<if $StreakState == "Day_Embarrassed">>
+<span style="color:pink">You stand in <span style="color:DarkTurquoise">Your Father</span>’s bathroom. Despite normally feeling fine about being naked in a bathroom, this was <span style="color:DarkTurquoise">Your Father</span>’s bathroom, which was very far from the safety of your bedroom. Thankfully, there were some towels hanging on the rack that you could use to keep your dignity.</span>
+<<elseif $StreakState == "Day_Shy">>
+<span style="color:pink">You stand in <span style="color:DarkTurquoise">Your Father</span>’s bathroom, completely naked. Being in a bathroom naked wasn’t so bad, since it was a very private place you were used to exposing yourself in. Still, this bathroom was still a bit unfamiliar to you and you felt a bit shy about being so exposed here.</span>
+<<elseif $StreakState == "Day_Fine">>
+You stand in <span style="color:DarkTurquoise">Your Father</span>’s bathroom. It is larger than you and your brother’s and is much more organized. It has new, bright silver appliances that <span style="color:DarkTurquoise">Your Father</span> had put in before you moved. It also looks very clean.
+<<elseif $StreakState == "Night_Embarrassed">>
+<span style="color:pink">You stand in <span style="color:DarkTurquoise">Your Father</span>’s bathroom. Despite normally feeling fine about being naked in a bathroom, this was <span style="color:DarkTurquoise">Your Father</span>’s bathroom, which was very far from the safety of your bedroom. Thankfully, there were some towels hanging on the rack that you could use to keep your dignity.</span>
+<<elseif $StreakState == "Night_Shy">>
+<span style="color:pink">You stand in <span style="color:DarkTurquoise">Your Father</span>’s bathroom, completely naked. Being in a bathroom naked wasn’t so bad, since it was a very private place you were used to exposing yourself to. Still, this bathroom was still a bit unfamiliar to you and you felt a bit shy about being so exposed here.</span>
+<<elseif $StreakState == "Night_Fine">>
+You stand in <span style="color:DarkTurquoise">Your Father</span>’s bathroom. It is larger than you and your brother’s and is much more organized. It has new, bright silver appliances that <span style="color:DarkTurquoise">Your Father</span> had put in before you moved. It also looks very clean.
+<</if>>
+<br>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $ChoreHard == "Mop" and $MopDadBath == 0>>
+	[[Mop Dad's Bathroom (0:10)|Mop Dad Bath]]<br>
+<</if>>
+[[Put on towel|PH Dad Bath][$_setTowel to "1";$Player.Exposed to "Towel"]]<br>
+
+<br>
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Your Father's Bedroom (0:01)|PH Dad Bedroom][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Room Marker.png" 
+style="position: absolute; left: 58px; top: 4px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="58,58,111,111" alt="Dad Bedroom" onclick="$.wiki('<<goto[[PH Dad Bedroom]]>><<set $Minutes += 1>>')" />
+</map>

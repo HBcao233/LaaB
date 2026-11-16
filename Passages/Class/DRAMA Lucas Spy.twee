@@ -1,0 +1,104 @@
+:: DRAMA Lucas Spy [nobr]
+
+<span style="color:DarkTurquoise">Mr. Julien</span> has decided to do a dry run of the entire first act of the play, costumes and all! Everyone in the class is a bit nervous, especially since he decided to ‘make it fun’ by having everyone pull the part they will be playing out of a hat. Most of the boys were frantically going over their part or still getting into costume. <br>
+<br>
+
+<span style="color:LightSteelBlue">“Where is our other lead?”</span> <span style="color:DarkTurquoise">Mr. Julien</span> called out as he prepped the first scene, <span style="color:LightSteelBlue">“It was… <span style="color:DarkTurquoise">Mr. Taylor</span>. Has anyone seen <span style="color:DarkTurquoise">Mr. Taylor</span>?”</span> Everyone looks around for him until one boy calls out that <span style="color:DarkTurquoise">Lucas</span> was still changing into his costume. <span style="color:LightSteelBlue">“I see. <span style="color:DarkTurquoise">Mr. $Player.LastName</span>, would you please go and check on the boy please, make sure he is not having trouble getting into costume.”</span> <br>
+<br>
+
+You nod and quickly run to the backroom where the changing shacks were. Sure enough, <span style="color:DarkTurquoise">Lucas</span> was still in the process of changing. <span style="color:LightSteelBlue">“I’ll be just a minute!”</span> He calls out, hearing the commotion from the stage, <span style="color:LightSteelBlue">“The costume I grabbed was too small, had to get a bigger size. Tell them I’ll be out as soon as I can!”</span> You go to return to the stage, <span style="color:Pink">but right as you turn around you notice that the curtain of the changing shack is slightly displaced, giving you the briefest peek at the backside of a pair of $LucasUndies.Name.</span> <br>
+<br>
+
+<div id="Choice">
+	<<link "Sneak a peek">>
+		<<replace "#Choice">>
+
+			<<set _ad to [
+				{
+					Name: "Lucas",
+					State: {
+						Mouth: "Sad",
+						Outfit: "Undies",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			A naughty grin forms on your face as you sneakily tiptoe over to the curtain and squat down. <span style="color:Pink">You open the curtain just enough to peek through and are greeted by the adorable sight of <span style="color:DarkTurquoise">Lucas</span> standing there in nothing but his $LucasUndies.Type!</span> He looks slightly distressed, complaining that his new costume was too large. <span style="color:Pink">You hear him use the childish version of a curse as he tries to put the trousers on, but loses his balance and falls backward directly into you!</span> <br>
+			<br>
+
+			/* FRIENDS */
+			<<if $LucasSocial > 0>>
+				<span style="color:Pink"><span style="color:DarkTurquoise">Lucas</span>’ underwear-clad butt squishes directly against your face as you both tumble to the floor! <span style="color:DarkTurquoise">Lucas</span> must have realized he landed on someone, as he quickly sits up, covers his underwear with the costume, and apologies blushing.</span> <br>
+				<br>
+				<span style="color:LightSteelBlue">“I’m sorry-!”</span> He pauses upon seeing it was you, making less of an effort to hide himself. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$LucasNickname</span>? Sorry about that, I-“</span> He pauses again, but this time he eyes you suspiciously and smiles, <span style="color:LightSteelBlue">“Wait a second, were you spying on me changing?”</span> <span style="color:Pink">You laugh nervously, blushing yourself at being caught.</span> <br>
+
+				<<set _ad to [
+					{
+						Name: "Lucas",
+						State: {
+							Blush: 1,
+							Mouth: "Happy",
+							Outfit: "Undies",
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				<span style="color:LightSteelBlue">“You little weirdo!”</span> He shoves you playfully as you both stand up. <span style="color:LightSteelBlue">“Maybe I’ll tell <span style="color:DarkTurquoise">Mr. Julien</span> that we have a little peeping tom in our class!”</span> <span style="color:Pink">You apologize teasingly, stating that you just couldn’t resist his cute undies.</span> You share a laugh before <span style="color:DarkTurquoise">Lucas</span> remembers that everyone is waiting on him and returns to the changing shack, shutting the curtains tight. <br>
+				<<set $PlayerDramaFaithChange to "Increase">>
+				<<set $LucasDramaFaithChange to "Increase">>
+				<<set $CarterDramaFaithChange to "Increase">>
+
+				<<include"Drama Faith Change">>
+				<br>
+
+				<<include"Attend Drama Finish">>
+			/* NOT FRIENDS */
+			<<else>>
+				<span style="color:Pink"><span style="color:DarkTurquoise">Lucas</span>’ underwear-clad butt squishes directly against your face as you both tumble to the floor! <span style="color:DarkTurquoise">Lucas</span> must have realized he landed on someone, as he quickly sits up, covers his underwear with the costume, and apologies blushing.</span> <br>
+
+				<<set _ad to [
+					{
+						Name: "Lucas",
+						State: {
+							Arms: "Hide",
+							Blush: 2,
+							Mouth: "Sad",
+							Outfit: "Undies",
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				<span style="color:LightSteelBlue">“I’m sorry-!”</span> He pauses upon seeing it was you and hides himself even more, <span style="color:LightSteelBlue">“Wait- were you-?”</span> <span style="color:Pink">He turns an even brighter shade of red and jumps back. He seems to have realized what you were doing, but doesn’t say anything.</span> Instead, he jumps back into the changing shack, gripping the curtains tightly closed until he hears you leave. <br>
+				<br>
+
+				Thankfully, it seems <span style="color:DarkTurquoise">Lucas</span> was so embarrassed that he probably wouldn’t tell on you for spying on him. You return to the stage, the images of a flustered <span style="color:DarkTurquoise">Lucas</span> still in your mind, and tell <span style="color:DarkTurquoise">Mr. Julien</span> that he’ll be out in just a minute. <br>
+
+				<<set $PlayerDramaFaithChange to "Increase">>
+				<<set $LucasDramaFaithChange to "Increase">>
+				<<set $CarterDramaFaithChange to "Increase">>
+
+				<<include"Drama Faith Change">>
+				<br>
+
+				<<include"Attend Drama Finish">>
+			<</if>>
+		<</replace>>
+	<</link>><br>
+	<<link "Return to the stage">>
+		<<replace "#Choice">>
+			You return to the stage, informing <span style="color:DarkTurquoise">Mr. Julien</span> of <span style="color:DarkTurquoise">Lucas</span>’ problem and that he will be out in just a second. The other boys are thankful for the extra minute to memorize their lines. A few minutes later, <span style="color:DarkTurquoise">Lucas</span> emerges from the back, in a costume that looks a little too big, and the rehearsal goes smoothly. Well, as smoothly as it could with only half the cast remembering their lines. <br>
+
+			<<set $PlayerDramaFaithChange to "Increase">>
+			<<set $LucasDramaFaithChange to "Increase">>
+			<<set $CarterDramaFaithChange to "Increase">>
+
+			<<include"Drama Faith Change">>
+			<br>
+
+			<<include"Attend Drama Finish">>
+		<</replace>>
+	<</link>>
+</div>

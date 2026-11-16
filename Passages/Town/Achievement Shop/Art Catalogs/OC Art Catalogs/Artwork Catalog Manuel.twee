@@ -1,0 +1,53 @@
+:: Artwork Catalog Manuel [nobr]
+
+<span style="color:Azure"><big><strong>--Manuel Catalog--</strong></big></span><br>
+<br>
+
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+/*Manuel Character Art (Everyday) */
+    <<if $AchievementArt.includes("Manuel Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Manuel Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Manuel\\Manuel.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Manuel Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Manuel Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Manuel">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Dev Sticker Set */
+    <<if $AchievementArt.includes("Manuel Sticker Set")>>  
+        <strong><span style="color:lightgreen">Chibi Manuel Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Manuel\\Chibi Manuel.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Manuel (Cat) Sticker</span></strong> 
+        |  
+        <<apsart "Images\\Special\\Buyable\\OC\\Manuel\\Chibi Manuel (Cat).png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Chibi Manuel (Cat-Unhooded) Sticker</span></strong> 
+        |  
+        <<apsart "Images\\Special\\Buyable\\OC\\Manuel\\Chibi Manuel (Cat-Unhooded).png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Manuel Sticker Set</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Manuel Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Manuel">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+<br>
+[[Back|Artwork Catalog]]

@@ -1,0 +1,56 @@
+:: Lucas School Hug Judo Throw [nobr]
+
+/* Intro */
+You spy <span style="color:DarkTurquoise">Lucas</span> walking down the hallway, idly thinking away and not paying attention to his surroundings. This is something that you cannot let stand as you slowly begin to approach him from behind. You smile as your silent footsteps inch you closer and closer until, with a leap, <span style="color:Pink">you grab onto <span style="color:DarkTurquoise">Lucas</span> from behind and pull him into a big hug.</span> You chuckle as you feel the boy’s body tense up and are about to say something when, <span style="color:Yellow">suddenly, you find yourself lifted off the ground!</span> <br>
+<br>
+<span style="color:LightCoral">WHAM!</span> <br>
+<br>
+<span style="color:LightCoral">You are flipped right over <span style="color:DarkTurquoise">Lucas</span> and onto the floor, hitting it hard on your back.</span> You groan as <span style="color:DarkTurquoise">Lucas</span>, realizing it was just you, turns bright red and panics. <span style="Color: LightSteelBlue">“Oh no, oh no! Are you okay!?”</span> He quickly reaches down to help you up, dusting off your shirt in a panic. <span style="Color: LightSteelBlue">“I’m sorry, I just reacted-!”</span> You chuckle, groaning slightly, and ask him why his first reaction was to judo throw you into the ground. <span style="color:DarkTurquoise">Lucas</span> sighs as other students give you both strange looks, confused about what just happened. 
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+                Cry: 1,
+            },
+        },
+        {
+            Name: "Lucas",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Frown",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<<if !$CompletedQuests.includes("Shinju: Monster Boy")>>
+    <span style="Color: LightSteelBlue">“Sorry…”</span> He scratches his cheek nervously, <span style="Color: LightSteelBlue">“After everything that happened with  <span style="color:DarkTurquoise">Ryker</span> and finally telling my mom about it, she signed me up for some self-defense classes, just to be safe. It’s all swimming around in my head and I just moved without thinking… sorry…”</span> You tell him it’s fine, it only hurt a little, but maybe he should think a little before flipping someone onto the ground. <span style="Color: LightSteelBlue">“Yeah, fair enough.”</span> He says with an embarrassed smile. <br>
+
+    <<socialChange "Lucas" 1>>
+    <<addMoodlet "Pained" 3>>
+    <br>
+<<if $Location.Name == "School South Hallway">>
+		[[Continue|School South Hallway]] 
+	<<elseif $Location.Name == "School East Hallway">>
+		[[Continue|School East Hallway]]
+	<<else>>
+		[[Continue|School West Hallway]]
+	<</if>>
+<<else>>
+    <span style="Color: LightSteelBlue">“Sorry…”</span> He scratches his cheek nervously, <span style="Color: LightSteelBlue">“After everything that happened with <span style="color:DarkTurquoise">Ryker</span> and finally telling my mom about it, not even mentioning <span style="color:DarkTurquoise">Shinju</span> trying to ambush me every day in and out of school, she signed me up for some self-defense classes, just to be safe. It’s all swimming around in my head and I just moved without thinking… sorry…”</span> You tell him it’s fine, it only hurt a little, but maybe he should think a little before flipping someone onto the ground. <span style="Color: LightSteelBlue">“Yeah, fair enough.”</span> He says with an embarrassed smile. <br>
+
+    <<socialChange "Lucas" 1>>
+    <<addMoodlet "Pained" 3>>
+<br>
+	<<if $Location.Name == "School South Hallway">>
+		[[Continue|School South Hallway]] 
+	<<elseif $Location.Name == "School East Hallway">>
+		[[Continue|School East Hallway]]
+	<<else>>
+		[[Continue|School West Hallway]]
+	<</if>>
+<</if>>

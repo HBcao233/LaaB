@@ -1,0 +1,108 @@
+:: Carter Hang Out Park Sit & Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+As you and <span style="color:DarkTurquoise">Carter</span> walk down the sidewalk, you spot the bench and take the chance to sit down. <span style="Color: LightSteelBlue">“Oh? Feeling tired? That’s alright, we can sit for a bit!”</span> <span style="color:DarkTurquoise">Carter</span> sits down next to you, legs swinging back and forth. <span style="Color: LightSteelBlue">“You know, public seating like this is very important. Especially for the young and elderly. I’m glad Opal City’s park has so many benches!”</span> <span style="color:DarkTurquoise">Carter</span> says with a smile. He is too cute. <br>
+
+<<set _ad to [
+    {
+        Name: "Carter",
+        State: {
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Carter</span> a question that has been lingering in your mind. Has he ever gotten detention. <span style="Color: LightSteelBlue">“Detention?”</span> <span style="color:DarkTurquoise">Carter</span> repeats it like it’s a naughty word, blushing. <span style="Color: LightSteelBlue">“I- I mean… A couple times, but not because I want to do anything bad!”</span> He admits. You laugh, finding it kind of funny that the definition of goodness has gotten in trouble enough at school to get detention. <span style="Color: LightSteelBlue">“Like I said, it wasn’t my fault! Sometimes… sometimes when you try to do the right thing, you accidentally do the wrong thing…”</span> He chuckles nervously. <br>
+            <<socialChange "Carter" 1>>
+            <span style="color:green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Carter Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Carter Hang Out Park]]
+        <<else>>
+            You ask him how school’s going and he sighs. <span style="Color: LightSteelBlue">“We get sooo much homework! I know it’s important and helps us learn, but it really eats into my time! How can I help everyone who needs help when I have to do multiplication tables and fractions!?”</span> <span style="color:DarkTurquoise">Carter</span> says that last word like it’s a swear, <span style="Color: LightSteelBlue">“The teachers, just don’t understand how busy we are at our age!”</span> <br>
+            <<socialChange "Carter" 1>>
+            <span style="color:green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Carter Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Carter Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Carter: Park Clean Up")>>
+        <<link "Home life<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+                You ask <span style="color:DarkTurquoise">Carter</span> how things are at home and he shrugs. <span style="Color: LightSteelBlue">“Fine. Dad’s thinking about doing a barbeque this weekend, which will be fun! Oh, and Callum has been showing me this new trick on his skateboard and-”</span> You listen to his stories happily but can’t help but notice that his mentions of home begin and ends with his father and older brother, despite you meeting other members of his family. <br>
+                <<socialChange "Carter" 1>>
+                <span style="color:green">+Carter Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Carter Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Carter Hang Out Park]]
+            <<else>>
+                You ask him about his home life and he sighs. <span style="Color: LightSteelBlue">“It’s good, but I babysat my cousins last weekend. They’re nice and fun and all, but they can be a handful!”</span> You laugh, wondering just how much trouble they can be. <span style="Color: LightSteelBlue">“Trust me! The three of them are devious little creatures! If they put their minds to heroics, they’d be an unstoppable team. Sadly, they are closer to villains most of the time.”</span> <br>
+                <<socialChange "Carter" 1>>
+                <span style="color:green">+Carter Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Carter Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Carter Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Carter</span> what he’s been into recently and he quickly mentions <span style="Color: LightSteelBlue">“I got a new Ultraman comic! Well, it’s not a ‘new’ comic as in newly released, but it is new to me. It’s actually SUPER old, kind of? It’s like a reprint of older comics in a big collection. Dad got it for me since I aced my last test!”</span> <span style="color:DarkTurquoise">Carter</span> says with a proudful smile, <span style="Color: LightSteelBlue">“It even has his story from Awesome Comics #1! That’s his first ever story! My dream is to one day own an original copy of that, but I doubt it.”</span> He laughs, <span style="Color: LightSteelBlue">“That’s like, crazy expensive.”</span> <br>
+            <<socialChange "Carter" 1>>
+            <span style="color:green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Carter Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Carter Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Carter</span> what he’s been up to recently and he ponders for a moment before replying. <span style="Color: LightSteelBlue">“The other day I helped out at the community center. It was nice! They were having this cool movie event, they do that a lot for the younger kids, and they needed help keeping things calm. It wasn’t too hard and the movie was pretty interesting too. Plus, they bought pizza for everyone!”</span> Based on <span style="color:DarkTurquoise">Carter</span>’s smile, you’d wager the pizza was his favorite part. <br>
+            <<socialChange "Carter" 1>>
+            <span style="color:green">+Carter Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Carter Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Carter Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

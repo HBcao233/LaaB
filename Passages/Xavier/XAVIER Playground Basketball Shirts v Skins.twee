@@ -1,0 +1,243 @@
+:: XAVIER Playground Basketball Shirts v Skins [nobr]
+
+<<set $Minutes += 20>>
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+			Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+/* OPENING */
+As the group is hanging out, <span style="color:DarkTurquoise">Xavier</span> yawns, expressing his boredom, and suggests the group play a little game of basketball. Unsurprisingly, everyone is quick to agree and praise the idea. To avoid the fight that would break out about who’d be on <span style="color:DarkTurquoise">Xavier</span>’s team, he suggests drawing straws to decide who will be shirts and who will be skins. <span style="color:DarkTurquoise">Xavier</span> will take whichever one is last, meaning everyone is waiting with bated breath to see whose team he’ll be on. <br>
+<br>
+<<set _random1 to random(1, 3)>>
+
+<div id=continue>
+	<<link "Continue">>
+	<<replace"#continue">>
+
+/* BASIC OUTCOME */
+<<if _random1 == 1>>
+You pull shirts and are pleased to see that <span style="color:DarkTurquoise">Xavier</span> has drawn the same. There is some collective groaning and other sounds of disappointment as the other team removes their shirts and everyone positions themselves on the field. <span style="color:DarkTurquoise">Xavier</span> gives you a pat on the shoulder as the game begins, but otherwise you find yourselves on opposite sides of the court for most of the game. <br>
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+			Eyes: "Tired",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+Unsurprisingly, your team wins. Though you have a very high suspicion that the other team threw, wanting <span style="color:DarkTurquoise">Xavier</span> to be happy with his victory. Still, it was a fun time all around. <br>
+    <<socialChange "Xavier" 3>>
+    <<needChange "Fun" 20>>
+    <<set $AthleticsXP += 2>>
+    <span style="color:Green">+Athletics XP</span><br>
+    <br>
+    [[Continue|School Courtyard]] 
+
+/* COMPLIMENT AND PANTSING */
+<<elseif _random1 == 2>>
+You draw skins, though are disappointed when <span style="color:DarkTurquoise">Xavier</span> is placed on the shirts team. Most of your team shares your displeasure and you have a sinking feeling that they’ll throw the game to prevent <span style="color:DarkTurquoise">Xavier</span> losing. Thinking about it, that is probably what <span style="color:DarkTurquoise">Xavier</span> is expecting will happen. You figure it may be wise to play against the mold and try to win. <br>
+
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+			Eyes: "Tired",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+			},
+        Clothes: {
+            Top: $None,
+            Outer: $None,
+            Over: $None,
+            Under: $None,
+            Neck: $None,
+        },
+    },
+]>>
+<<ad _ad>>
+
+This has the effect you want, as it is soon clear that the only two people trying are <span style="color:DarkTurquoise">Xavier</span> and yourself. He seems pleased as you both are, for a while at least, seemingly evenly matched. Blocking each other shorts and intercepting passes. Despite your best efforts though, it is clear the rest of your team wants <span style="color:DarkTurquoise">Xavier</span> to win and does everything they can to slip you up. At one point, as you are about to shoot a shot that may win your team the game, <span style="color:lightcoral">a friendly player ‘trips’ and yanks your $PlayerBottoms.Type down to your ankles!</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+			Eyes: "Tired",
+        },
+    },
+    {
+        Name: "Player",
+		ShowZoom: $PlayerUndies.Type == "None",
+        State: {
+            Mouth: "Happy",
+			PantsDown: 1,
+			Blush: 2,
+			Arms: "Hide",
+			},
+        Clothes: {
+            Top: $None,
+            Outer: $None,
+            Over: $None,
+            Under: $None,
+            Neck: $None,
+        },
+    },
+]>>
+<<ad _ad>>
+
+    /* UNDIES */
+    <<if $PlayerUndies.Type != "None">>
+<span style="color:LightSteelBlue">“Nice $PlayerUndies.Type <span style="color:DarkTurquoise">$BullyNickname</span>!”</span> One boy near <span style="color:DarkTurquoise">Xavier</span> calls out. <span style="color:pink">You turn bright red, dropping the ball to quickly pull up your bottoms and cover yourself. Laughter erupts from the crowd of players who seem overjoyed at your embarrassment.</span> While not laughing himself, <span style="color:DarkTurquoise">Xavier</span> does give an amused smirk before deciding to call it a draw. Despite the embarrassment, you do feel closer to <span style="color:DarkTurquoise">Xavier</span>. <br>
+    <<socialChange "Xavier" 3>>
+    <<needChange "Fun" 20>>
+    <<set $AthleticsXP += 2>>
+    <span style="color:Green">+Athletics XP</span><br>
+    <<addMoodlet "Seen Undies" 3>>
+    <br>
+    [[Continue|School Courtyard]] 
+<br>
+
+    /* NUDE */
+    <<else>>
+<span style="color:pink">The silence that follows your exposure seems endless, before it is broken by a chorus of laughter from nearly all the players. You nearly trip over yourself trying to pull your bottoms back up, but not before everyone gets a clear look at your boyish bits.</span> While not laughing himself, <span style="color:DarkTurquoise">Xavier</span> does give an amused smirk before deciding to call it a draw. Despite the embarrassment, you do feel closer to <span style="color:DarkTurquoise">Xavier</span>. <br>
+    <<socialChange "Xavier" 3>>
+    <<needChange "Fun" 20>>
+    <<set $AthleticsXP += 2>>
+    <span style="color:Green">+Athletics XP</span><br>
+    <<addMoodlet "Seen Naked" 3>>
+    <br>
+    [[Continue|School Courtyard]] 
+<br>
+
+    <</if>>
+
+/* XAVIER PULLS BOTTOMS UP */
+<<elseif _random1 == 3>>
+You draw skins and are happy to see that <span style="color:DarkTurquoise">Xavier</span> has drawn them as well. The other team is a bit disappointed by this, but some of the boys seem happy enough as they watch <span style="color:DarkTurquoise">Xavier</span> remove his shirt, revealing his well-defined chest. Compared to everyone else on his team, <span style="color:DarkTurquoise">Xavier</span> was on another level. A symbol of bodily perfection amongst an awkward crowd of shirtless, preteen boys, some with their boyish plump tummies or so thin their ribs were showing. <br>
+
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+			Eyes: "Tired",
+		},
+        Clothes: {
+            Top: $None,
+            Outer: $None,
+            Over: $None,
+            Under: $None,
+            Neck: $None,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+			},
+        Clothes: {
+            Top: $None,
+            Outer: $None,
+            Over: $None,
+            Under: $None,
+            Neck: $None,
+        },
+    },
+]>>
+<<ad _ad>>
+
+As the game begins, it is clear that most of the other boys are trying their best to ensure <span style="color:DarkTurquoise">Xavier</span> wins and looks good, even the enemy team. Giving him all the balls, letting him intercept, always passing to him. Compared to the others, you actually try. This seems to work in your favor, as <span style="color:DarkTurquoise">Xavier</span> takes notice and the two of you are soon tag-teaming goals. As the final point is achieved, the game ends with a 12-0 total. Despite the weak opposition, you had fun. <br>
+<br>
+As the game comes to an end and many of the other boys are high-fiving <span style="color:DarkTurquoise">Xavier</span>, you are surprised to see him walking over towards you. <span style="color:pink">But instead of giving you a high-five, he grips the sides of your $PlayerBottoms.Type and yanks them back up to their proper height.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+			Eyes: "Tired",
+		},
+        Clothes: {
+            Top: $None,
+            Outer: $None,
+            Over: $None,
+            Under: $None,
+            Neck: $None,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+			Blush: 2,
+			},
+        Clothes: {
+            Top: $None,
+            Outer: $None,
+            Over: $None,
+            Under: $None,
+            Neck: $None,
+        },
+    },
+]>>
+<<ad _ad>>
+
+    /* UNDIES */
+    <<if $PlayerUndies.Type != "None">>
+<span style="color:LightSteelBlue">“Your $PlayerBottoms.Type were sagging. As cute as your $PlayerUndies.Name are, I didn’t think you wanted everyone to see them.”</span> <span style="color:pink"><span style="color:DarkTurquoise">Xavier</span> laughs as you blush, fixing your bottoms yourself having been unaware that they were falling.</span> <span style="color:LightSteelBlue">“Not a bad game though, we should play again sometime. Maybe on opposing teams, to see who is better?”</span> He gives you a smirk of which you can’t determine the intention of before patting you on the shoulder and turning away back to his crowd of followers. <br>
+    <<socialChange "Xavier" 3>>
+    <<needChange "Fun" 20>>
+    <<set $AthleticsXP += 2>>
+    <span style="color:Green">+Athletics XP</span><br>
+    <br>
+    [[Continue|School Courtyard]] 
+<br>
+
+    /* NUDE */
+    <<else>>
+<span style="color:LightSteelBlue">“Your $PlayerBottoms.Type were sagging. As cute as your butt is, I didn’t think you wanted everyone to see it.”</span> <span style="color:pink"><span style="color:DarkTurquoise">Xavier</span> laughs as you blush, fixing your bottoms yourself having been unaware that they were falling.</span> <span style="color:LightSteelBlue">“Not a bad game though, we should play again sometime. Maybe on opposing teams, to see who is better?”</span> He gives you a smirk of which you can’t determine the intention of before patting you on the shoulder and turning away back to his crowd of followers. <br>
+    <<socialChange "Xavier" 3>>
+    <<needChange "Fun" 20>>
+    <<set $AthleticsXP += 2>>
+    <span style="color:Green">+Athletics XP</span><br>
+    <br>
+    [[Continue|School Courtyard]] 
+<br>
+    <</if>>
+
+<</if>>
+
+<</replace>>
+<</link>>
+</div>

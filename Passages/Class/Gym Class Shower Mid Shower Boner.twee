@@ -1,0 +1,76 @@
+:: Gym Class Shower Mid Shower Boner [nobr]
+
+/* Opening */
+<span style="color:pink">You stand there for a moment, stretching, completely naked and vulnerable with only a thin curtain protecting your dignity from the class of boys who were all, also, butt naked in a shower stall.</span> As these thoughts force their way into your mind, you turn the water on to a nice warm temperature. Not too hot, but warm enough to relax your body. <br>
+<br>
+<span style="color:lightgreen">The warm water feels nice after a hard gym session, you would already feel your tired muscles recovering. You spin around slowly, making sure every part of your body gets hit with the warm, refreshing spray of water.</span> Eventually, you stop and decide to actually wash yourself, and take a step towards the head of the shower and reach for the body wash. <br>
+<br>
+<span style="color:pink">A cold pressure on the tip of your penis sends a pleasurable shockwave that causes a shiver to run up your spine. You nearly slip backward from the sensation and blush as you look down. Your penis was fully erect, having become so without you realizing, and had rubbed up against the cold wall.</span> <br>
+	<<set _arousalbs to ["Tip", "Shaft"]>>
+	<<set _arousalkink to []>>
+	<<arousalGain 25 _arousalbs _arousalkink>>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        ShowZoom: true,
+        State: {
+            Blush: 2,
+            Outfit: "Naked",
+            Hard: 1
+        }
+    }
+]>>
+<<ad _ad>>
+
+    /* Tiny/Small */
+    <<if $Player.PenisSize == "Tiny" or $Player.PenisSize == "Small">>
+    <span style="color:pink">Now was not a good time to have a boner. Sure, even erect, your little prick didn’t stand out much. But, with how immature pre-teen boys are, even the slightest lump being noticed on the front of your towel would lead to humorous teasing from the entire locker room.</span> <br>
+    <br>
+    /* Other */
+    <<else>>
+    <span style="color:pink">Now was not a good time to have a boner. The small towel you had to cover yourself up with wouldn’t hide your raging erection and, with how immature pre-teen boys are, the instant anyone noticed it the entire locker room would know!</span> <br>
+    <br>
+    <</if>>
+
+/* Continued */
+You had to get rid of it. The best way would be to blast yourself with cold water, as unpleasant as that would be, it would work fast enough to save you some humiliation. <span style="color:pink">But, then again, there was a second option. You could… ‘deal with it’… Sure, <span style="color:DarkTurquoise">Coach Kohler</span> had said that doing that in the showers was ‘frowned upon’ and you were technically surrounded by your classmates, but then again, what they don’t know won’t hurt them.</span> <br>
+<br>
+
+<div id="choice">
+    /* Masturbate */
+	<<link "Masturbate">>
+        <<replace"#choice">>
+            <span style="color:pink">You smirk, turning the water on high to mask any sound you may make, and lean against the cold shower wall. Moving your hand down to your throbbing boyhood, you begin to pleasure yourself in a way only you can.</span> <br>
+            <br>
+
+            <<set $MasturbationLocation to "School Showers">>
+            <<set $MasturbationPosition to "Against Wall">>
+            <<set $MasturbationAction to "None">>
+            <<set $MasturbationCategory to "Actions">>
+            <<set $MasturbationPublic to 1>>
+
+            [[Continue|Player Masturbate]]
+        <</replace>>
+    <</link>><br>
+
+    /* Use Cold Water */
+	<<link "Use cold water">>
+        <<replace"#choice">>
+            Deciding against masturbating in such a public setting, you brace yourself as you turn the water all the way to cold. A small scream escapes your lips as the icy water blasts you harshly and your boner quickly retreats. When you finally turn the water off, you are shivering and your cheeks are slightly red, but the deed is done, and you are not hard anymore. <br>
+            <br>
+            /* GETTING DRESSED */
+            <<set $ClothSave to "Restore">>
+            <<if $GymClassType == "Gym">>
+                <<storeClothing "Restore" "Undies">>
+            <<else>>
+                <<storeClothing "Restore" "Naked">>
+            <</if>>
+            <<if $SaveUndies != null>>
+                <<set $PlayerUndies to $SaveUndies>>
+            <</if>>
+            
+            [[Continue|School Locker Room]] 
+        <</replace>>
+    <</link>>
+</div>

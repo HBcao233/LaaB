@@ -1,0 +1,42 @@
+:: School Restrooms Exposed [nobr]
+
+	/* HALLWAY BUSY */
+<<set $Random to random(1, 10)>>
+<<if $Random < 4>>
+	<<set $SchoolExposedBusy to "Busy">>
+<<elseif $Random < 7>>
+	<<set $SchoolExposedBusy to "Mild">>
+<<elseif $Random < 10>>
+	<<set $SchoolExposedBusy to "Few">>
+<<elseif $Random == 10>>
+	<<set $SchoolExposedBusy to "Empty">>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Restroom--</strong></big></span><br>
+<<if $Player.Exposed =="Naked">>
+<span style="color:Red"> You find yourself completely naked and hiding in a stall of your school’s restroom.</span> Thankfully, the restroom is empty, <span style="color:Pink">but you know you have no other choice then to head out with only your hands as cover for your $Player.PenisSize Penis.</span><br>
+<br>
+<<elseif $Player.Exposed == "Undies" or $Player.Exposed == "Diaper">>
+<span style="color:Red"> You find yourself in nothing but your $PlayerUndies.Name and hiding in a stall of your school’s restroom.</span> Thankfully, the restroom is empty, <span style="color:Pink">but you know you have no other choice then to head out.</span><br>
+<br>
+<</if>>
+
+/*
+Based on what you can hear, the school hallways seem: 
+<<if $SchoolExposedBusy == "Busy">>
+	<span style="color:DarkRed">Packed full of people, everyone will see you!</span>
+<<elseif $SchoolExposedBusy == "Mild">>
+	<span style="color:Red">To have quiet a few people in them! You doubt you'd be able to move unseen.</span>
+<<elseif $SchoolExposedBusy == "Few">>
+	<span style="color:Yellow">Only have a few people, you may be able to move without being seen.</span>
+<<elseif $SchoolExposedBusy == "Empty">>
+	<span style="color:Green">Silent, you're pretty sure no one is out there that will see you.</span>
+<</if>>
+*/
+
+You can choose to wait if you have time, or try your luck in the hallway.<br>
+
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Wait (0:03)|School Restrooms][$Minutes += 3]]<br>
+[[Leave|School South Hallway][$Minutes += 1]]<br>

@@ -1,0 +1,96 @@
+:: School Gym Changing Diaper Caught by Michael [nobr]
+
+<<include "Bully Nickname Setup">>
+
+/* OPENING */
+    /* NEGATIVE */
+    /* ONLY NEGATIVE AT THE MOMENT, SO NO SOCIAL CHECK */
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Arms: "Hide",
+			Eyes: "Sad",
+			Blush: 3,
+			Mouth: "Sad",
+			Outfit: "Uniform",
+			PantsDown: true,
+		},
+	},
+	{
+		Name: "Michael",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Smirk",
+			Outfit: "Undies",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Well, what do we have here?”</span> <span style="color:lightcoral">You hear the last voice you ever want to hear in this moment. There was no warning, you didn’t even hear the shower curtain move. But standing there in front of you is <span style="color:DarkTurquoise">Michael</span>, staring directly at your $PlayerUndies.Name on display just over the shorts you were pulling up.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“My, my, my. Seems the school made a mistake admitting you, <span style="color:DarkTurquoise">$BullyNickname</span>. Hmm, what to do?”</span> <span style="color:lightcoral">He enters while holding his arms up in an ‘I don’t know’ type gesture. The tone in his voice and that fiery intensity in his eyes suggest overwise however. You’re frozen in place with your bottoms halfway on as <span style="color:DarkTurquoise">Michael</span> casually circles around behind you. Seemingly graceful in the confined space, he didn’t even bump into you. With a rough yank and a foot placed between your legs, he grounds your bottoms to the floor.</span> <br>
+	/* Bully Nickname */
+	<<if ["Diaper Boy"].includes($BullyNickname)>>
+		<<set _setnickname to 0>>
+	<</if>>
+	<<if _setnickname == 1>>
+		<span style="color:LightSteelBlue">“It fucking suits you, always knew you were a big baby!”</span> <span style="color:pink"><span style="color:DarkTurquoise">Michael</span> laughs hysterically, utterly amazed that you are wearing such undergarments.</span> <span style="color:LightSteelBlue">“Oh, I gotta make sure everyone hears about this! How's the name <span style="color:DarkTurquoise">Diaper Boy</span> sound? Hope you like it, because that's all anyone's going to know you as, loser!”</span> <br>
+		<br>
+		<span style="color:lightcoral">As <span style="color:DarkTurquoise">Michael</span> laughs and jeers, you can’t help but feel your social status plummeting. Having been seen like this, you get the feeling you’ll be known throughout the school as <span style="color:DarkTurquoise">Diaper Boy</span>.</span> <br>
+		<br>
+		<<if $Nickname.Bully == 0>>
+			<span style="color:Gray">[Bullies around school now know you as <span style="color:DarkTurquoise">“Diaper Boy”</span>, due to being seen to wear diapers or other padded protection. Nicknames can be edited in the Journal in your Bedroom.]</span> <br>
+			<br>
+		<</if>>
+		<<set $Nickname.Bully to 1>>
+		<<set $BullyNickname to "Diaper Boy">>
+	<</if>>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		State: {
+			Arms: "Bound",
+			Eyes: "Sad",
+			Cry: 1,
+			Blush: 3,
+			Mouth: "Sad",
+			Outfit: "Uniform",
+		},
+	},
+	{
+		Name: "Michael",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Happy",
+			Outfit: "Undies",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Come with me, <span style="color:DarkTurquoise">$BullyNickname</span>.”</span> <span style="color:lightcoral">As you turn around to protest at <span style="color:DarkTurquoise">Michael</span>, you are cut off by a forceful shove that leaves your bottoms on the stall floor.</span> <span style="color:LightSteelBlue">“Let’s go for a walk.”</span> The excitement is palpable in <span style="color:DarkTurquoise">Michael</span>’s words. <span style="color:lightcoral">Digging your heels in, you try to stop him from pushing you but the boy yanks one of your arms painfully behind your back and continues to drive you forward. Before long, you’re escorted out of the stall into the locker room.</span> <br>
+<br>
+
+/* SETTING RANDOM OUTCOME */
+<<set _random to random(1, 3)>>
+<div id=Choice2>
+	<<link "Continue">>
+	<<replace"#Choice2">>
+
+		/* Saved by Kohler */
+		<<if _random == 1>>
+			<<include"School Gym Changing Diaper Michael Saved by Kohler">>
+		/* LOCKER SPECTACLE */
+		<<elseif _random == 2>>
+			<<include"School Gym Changing Diaper Michael Locker Spectacle">>
+		/* HALLWAY, FOUND BY CHANG */
+		<<elseif _random == 3>>
+			<<include"School Gym Changing Diaper Michael Hallway Chang">>
+		<</if>>
+    <</replace>>
+    <</link>>
+</div>

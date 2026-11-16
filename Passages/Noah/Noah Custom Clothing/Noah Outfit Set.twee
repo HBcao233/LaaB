@@ -1,0 +1,24 @@
+:: Noah Outfit Set [nobr]
+
+/* Settings Noah's Outfit Variables based on the outfit set */
+
+<<if $AD.Outfit == "Everyday">>
+    <<set $NoahUndies to $NoahDayUndies>>
+    <<set $NoahTop to $NoahEverydayTop>>
+    <<set $NoahBottoms to $NoahEverydayBottoms>>
+<<elseif $AD.Outfit == "Everyday Outside">>
+    <<set $NoahUndies to $NoahDayUndies>>
+    <<set $NoahTop to $NoahEverydayTop>>
+    <<set $NoahBottoms to $NoahEverydayBottoms>>
+<<elseif $AD.Outfit == "Pajamas">>
+    <<set $NoahUndies to $NoahDayUndies>>
+    <<set $NoahTop to $NoahPJTop>>
+    <<set $NoahBottoms to $NoahPJBottoms>>
+    
+    <<if $NoahWetting == 1>>
+        <<set $NoahUndies to $KidsWhiteDiaper>>
+    <<else>>
+        <<set $NoahUndies to $NoahDayUndies>>
+    <</if>>
+    
+<</if>>

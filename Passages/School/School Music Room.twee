@@ -1,0 +1,37 @@
+:: School Music Room [nobr]
+
+/* Intro Check */
+<<if $MusicIntro != 1 && $Time.between(7, 0, 16, 0)>>
+    <<include "Music Class Non-Elective Intro">>
+<<else>>
+    /* LOCATION */
+    <<set $Location to {
+        Name: "School Music Room",
+        Indoors: 1,
+        Safe: 0,
+        Nudity: 0,
+        Public: 1,
+        Environment: "School Music Room",
+    }>>
+
+    <span style="color:Azure"><big><strong>--Music Room--</strong></big></span><br>
+    Music Room. Work in Progress<br>
+    <br>
+
+                    /* NPC SEEN */
+    <<include "NPC Inspect">>
+    <br>
+
+    /* At the moment, this action will only be around if the quest can trigger. In the future is will have other events tied to it and the intro will be a part of it. */
+    <<if $ToggleOCKalim == 1 && $InActiveQuests.includes("Kalim: Introduction") && $Time.between(10, 0, 12, 0)>>
+        [[Practice Music (0:10)|OC Kalim Pre-Intro]]<br>
+    <<elseif $ToggleOCKalim == 1 && $ActiveQuests.includes("Kalim: Introduction") && $Time.between(15, 0, 17, 0)>>
+        [[Meet the Music Tutor (0:15)|OC Kalim Intro]]<br>
+    <<elseif $ToggleOCKalim == 1 && $CompletedQuests.includes("Kalim: Introduction") && $Time.between(15, 0, 17, 0)>>
+        [[Practice Music with Kalim (0:30)|OC Kalim Music Lessons]]<br>
+    <</if>>
+
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+        [[West Hallway (0:01)|School West Hallway][$Minutes += 1]] <br>
+    <br>
+<</if>>

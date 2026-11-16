@@ -1,0 +1,120 @@
+:: Werewolf Attack in Woods [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+You are wandering the woods in the dead of night, taking in the sights and sounds that come with the absent sun, <span style="Color: LightCoral">when you hear the sound of a twig breaking in the distance. This causes you to suddenly get a sense of foreboding as the words of that creature, the werewolf, enter your mind. He had warned you against exploring the woods this late at night, since your scent is so enticing to him.</span> <br>
+<br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+Maybe you didn’t take him seriously or maybe you wanted to see what would happen, but as the hair stands up on the back of your neck, one thing becomes very clear: <span style="Color: LightCoral">You are being hunted.</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Try to run">>
+    <<replace"#choice">>
+        You feel adrenaline pump into your body as you take off running in the opposite direction! You figure you just have to escape the woods and you’ll be fine <span style="Color: Yellow">but find the shadowed trees and moonlight path begin to spin as you run, the darkness mixing it all together as you try to remember which way you came in from.</span> <br>
+        <br>
+        <span style="Color: LightCoral">Then you start to hear the sound of something following you. Something large, primal, and hungry.</span> <br>
+        <br>
+        <<skillCheck "Athletics" 80>>
+        <<if _result == 1>>
+            You turn left, right, and whichever way you think will lead you to safety. All the while, the sound gets closer and closer <span style="Color: LightGreen">until you see the streetlights peeking out through the trees and run as fast as you can towards them, diving out of the woods onto the sidewalk. You quickly turn back, seeing two piercing red eyes staring at you from the tree line.</span> <br>
+            <br>
+            <span style="Color: Yellow">There is a soft growl before the eyes retreat back into the darkness. You’ve escaped, for now.</span> <br>
+            <<needChange "Fun" 10>>
+            <<addMoodlet "Feeling Weird" 12>>
+            <br>
+            [[Continue|Wald Street]]
+        <<else>>
+            You turn left, right, and whichever way you think will lead you to safety, <span style="Color: LightCoral">but everywhere you go just seems the same as the last! All the while, the sound gets closer and closer until you can practically hear them nipping at your heels! You scream out for help, but the sound barely escapes as the shadowy figure pounces on top of you and your voice is muffled!</span> <br>
+            <br>
+            <<include"Werewolf Attack in Woods 2">>
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<skillDiff "Athletics" 80>>
+	<<link "Wait<br>">>
+    <<replace"#choice">>
+        <span style="Color: Yellow">But you have no fear, or perhaps you were expecting this. So, you stand there, feeling the adrenaline growing and filling your body. Everything tells you to run, to try and escape as the sound gets closer and closer, but you don’t move. Some part of you, maybe large or small, wants to get caught. Wants to see what will happen.</span> <br>
+        <br>
+        You get your wish as a shadow leaps out from behind the bushes and tackles you to the ground. In an instant, any chance of escape or even screaming for help is dashed away. <span style="Color: Yellow">You got exactly what you wanted.</span> <br>
+        <br>
+        <<include"Werewolf Attack in Woods 2">>
+    <</replace>>
+    <</link>>
+</div>
+
+:: Werewolf Attack in Woods 2 [nobr]
+
+/* Intro */
+<span style="Color: LightSteelBlue">“I warned you, child.”</span> <span style="Color: LightCoral">The menacing voice whispers in your ear, causing a shiver of primal fear to run up your spine,</span> <span style="Color: LightSteelBlue">“What happens next is solely your own fault, do not blame me for your foolish actions.”</span> <span style="Color: Pink">The creature holds you down with ease as it begins to yank off your clothing, tossing it aside like food wrappers. Its strength is more than anything you’ve felt before and you quickly realize there is no hope of escape as you are left pinned on the ground, completely naked and helpless as the creature growls softly. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Blush: 2,
+                Cry: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Mmmmm…”</span> The shadow of the creature’s cock is shown in the moonlight, large and erect, your heartbeat quickens at that sight alone as your body struggles by instinct against the werewolf’s immense strength. <span style="Color: LightSteelBlue">“Your scent is so strong. Normally, I would not wish to breed with something so… small. But I cannot resist!”</span> The creature flips you on to your back, exposing your boyish parts as it takes a second to inspect its plaything.</span> <br>
+<br>
+This also gives you a good look at your attacker. <span style="Color: BlueViolet">The werewolf is massive, larger than <span style="color:DarkTurquoise">Your Father</span> by a solid foot or two. Its entire body is covered in thick, short black fur. Its face is that of a wolf, yet three times as terrifying with its razor-sharp fangs and glowing red eyes. The sight alone would send even the bravest man running and screaming, but it leaves you completely stunned, your only solace is that he said he wouldn’t eat you.</span> <br>
+<br>
+<span style="Color: Pink">But then your eyes fall to what it WILL use against you. It’s penis, rock hard and throbbing, is massive. You couldn’t put a scale to it, other than knowing that if it were on a normal person, they could easily make a career out of it alone. It was human-like, the skin and foreskin covered in a very thin layer of fur, while the tip was bright red and already dripping with precum. Your entire body trembled at the mere sight of it.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Eyes: "Closed",
+                Blush: 3,
+                Cry: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+
+<<if $Player.PenisSize == "Tiny">>
+    <span style="Color: LightSteelBlue">“You are hardly even a cub.”</span> <span style="Color: Pink">The werewolf scoffs, reaching down and nuzzling your pathetic cock with its muzzle.</span> <span style="Color: LightSteelBlue">“Normally, I wouldn’t deal with one as small and pathetic as you, but your scent is too strong to resist. Do not fight, human. You have no longer have say in this matter.”</span> <br>
+    <br>
+<<elseif $Player.PenisSize == "Small">>
+    <span style="Color: LightSteelBlue">“Pathetic.”</span> <span style="Color: Pink">The werewolf scoffs, reaching down and nuzzling your small cock with its muzzle.</span> <span style="Color: LightSteelBlue">“Normally, one of your size would be regulated simply as pleasure stock, too small to breed properly with females. Simply existing to service the alpha. I wonder if human customs are similar?”</span> <br>
+    <br>
+<<elseif $Player.PenisSize == "Average">>
+    <span style="Color: LightSteelBlue">“I have used humans for pleasure before, but normally only larger ones who dare to hunt in my woods.”</span> <span style="Color: Pink">The werewolf scoffs, reaching down and nuzzling your cock with its muzzle.</span> <span style="Color: LightSteelBlue">“But I have heard from others that it is the young who are more sought after. Tighter and with cuter cries. Let us see if that is true.”</span> <br>
+    <br>
+<<elseif $Player.PenisSize == "Large">>
+    <span style="Color: LightSteelBlue">“Not a bad size for such weak stock.”</span> <span style="Color: Pink">The werewolf scoffs, reaching down and nuzzling your large cock with its muzzle.</span> <span style="Color: LightSteelBlue">“If you were one of my kind, you would be a breeder with one like that. Alas, you are just human, meaning you are only worthy as stock for pleasure.”</span> <br>
+    <br>
+<<else>>
+    <span style="Color: LightSteelBlue">“You are well sized, human.”</span> <span style="Color: Pink">The werewolf scoffs, reaching down and nuzzling your own massive cock with its muzzle.</span> <span style="Color: LightSteelBlue">“If you were one of my kind, you could perhaps become an alpha, but as a human you are nothing but stock. I will enjoy making one of your size beg and cry.”</span> <br>
+    <br>
+<</if>>
+
+<<set _random to random(1, 2)>>
+<<if _random == 1>>
+    [[Continue|Werewolf Attack in Woods Blow]]
+<<else>>
+    [[Continue|Werewolf Attack in Woods Bone]]
+<</if>>

@@ -1,0 +1,106 @@
+:: OC Mata Intro [nobr]
+
+/* Intro */
+As you stand outside your house you take in the crisp autumn air. The smell of distant rain and fallen leaves, an earthy scene that only comes when summer gives way to fall. One of the bright sides of the school year starting is the colorful sights and smells that come with the season. It is as you are standing there, taking it all in, that you spy an unfamiliar truck parked down the street. A moving van. <br>
+<br>
+The truck looks almost comically large compared to the modest two-story home it is parked in front of. Movers hustle in and out, carrying cardboard boxes marked with strange symbols. You recognize them as Japanese text, which causes you to raise an eyebrow and take a step closer as the rush about. Then, a boy walking out of the house catches your eye. <br>
+
+<<set _ad to [
+    {
+        Name: "OC Mata",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Frown",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<if ['Average', 'Tall'].includes($Player.Height)>>
+    He looks around your age, if not a little shorter, and is dressed in a perfectly clean black polo shirt tucked into dark denim jeans. His black hair is combed meticulously, with not a single strange out of place. He carries himself stiffly, like he is trying very hard to be perfect. Though he also looks a little lost, like someone who memorized a script but forgot what scene they’re in. <br>
+<<else>>
+    He looks around your age and is dressed in a perfectly clean black polo shirt tucked into dark denim jeans. His black hair is combed meticulously, with not a single strange out of place. He carries himself stiffly, like he is trying very hard to be perfect. Though he also looks a little lost, like someone who memorized a script but forgot what scene they’re in. <br>
+<</if>>
+<br>
+Though you are a bit aways, the boy seems to spot you and you both, for a moment, just stare at each other. His dark brown eyes flicker with cautious uncertainty, before he quickly looks down, adjusting the strap of the backpack slung over his shoulder. You blink as well, turning away to not make it look like you are creepily staring at him, though keep glancing at the scene as you pretend you are doing something else. <br>
+<br>
+A strange sound catches your attention. A woman – his mother, probably – calls something out to him sharpy. You don’t recognize the word, but figure it is Japanese. He answers back with a quick, deferential, <span style="Color: LightSteelBlue">“Hai, okaasan!”</span> before setting his backpack down neatly on the curb. You then hear his parents begin to argue in rapid, clipped Japanese. You can’t make anything out but guess by their movements that they are arguing about which box goes where and what not. <span style="Color: Yellow">The boy stands awkwardly at the edge of the lawn, shoulders tight, as he tries to not get in the way.</span><br>
+<br>
+
+<div id="Choice">
+/* Approach him and say hello */
+	<<link "Approach him and say hello<br>">>
+	<<replace"#Choice">>
+        You jog down towards his house, careful not to seem too eager, and stop a few feet away from the boy. From up close, he looks even more polished – and even more uncomfortable. You greet the boy, giving him a small smile, and ask if he’s just moving in. <br>
+        <br>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Everyday",
+                    Blush: 2,
+                    Mouth: "Frown",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        /* Mata: Everyday, Frown, Blush2
+        PC: Smile */
+        The boy blinks, visibly startled that you addressed him directly, then, remembering his manners, bows quickly from the waist. It is a deep, formal bow that looks strange on the suburban sidewalk. <span style="Color: LightSteelBlue">“Yes, I am <span style="Color: DarkTurquoise">Mata Takashi</span>.”</span> He replies, his accent light but noticeable, <span style="Color: LightSteelBlue">“Please… be good to me.”</span> His English is careful, the words practiced, but there’s a stiffness to them, like he’s afraid of saying the wrong thing. You also realized he must have memorized that phrase, maybe something taught to him in class or by his parents. <br>
+        <br>
+        You give him a curious look, the greeting a bit strange to your western ears, but continue smiling. Before you can respond properly, he straightens up, clutching the strap of his backpack again like it’s a lifeline. <span style="Color: LightSteelBlue">“I just move from Tokyo,”</span> he says, <span style="Color: LightSteelBlue">“My father has…”</span> He pauses, thinking, <span style="Color: LightSteelBlue">“business work.”</span> You can tell he is nervous, not sure how friendly you’re going to be. Maybe he’s used to being the outsider or is expecting to be ignored. <br>
+        <br>
+        You chuckle, telling the boy he doesn’t have to be so formal. He blushes and looks at the ground nervously. The boy is clearly very shy, so in order to try and break the ice you ask him if he’s into video games or anime or anything like that. <span style="Color: LightGreen">The mention of these causes the boy to quickly perk up</span>, but before he can speak you hear his mom calling for him once again, shouting things out in Japanese and motioning him to come inside. He says something back before starting to walk inside, turning back to you briefly. <br>
+        <br>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Mata",
+                State: {
+                    Outfit: "Everyday",
+                    Blush: 1,
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        /* Mata: Everyday, Smile, Blush1
+        PC: Smile */
+        <span style="Color: LightSteelBlue">“Maybe I see you later?”</span> He says with a smile. You nod and his smile grows wider, waving as he runs inside. “Goodbye! Thank you!” You wave back as the boy disappears into the house. <span style="Color: LightGreen">What a cute kid, even if he is very shy. You figure you’ll see him around since he seems to be moving into the same street as you.</span><br>
+        <<set $OCMataSocial to 0>>
+        <<set $OCMataSocialRank to 0>>
+        <<set $CompletedQuests.push("Mata: Introduction")>>
+        <<set $InActiveQuests.delete("Mata: Introduction")>>
+        <<socialChange "Mata" 10 1>>
+        <br>
+        [[Continue|Northend]]
+    <</replace>>
+    <</link>>
+
+/* Just watch */
+	<<link "Just watch<br>">>
+	<<replace"#Choice">>
+        You linger from your side of the street, not wanting to come off as weird or nosy. You watch as the boy bows sharply to his parents after a quick, stern conversation, then slowly drags his backpack up to the front steps of the house. For a moment, you are pretty sure he glances over his shoulder at you. He probably thinks you are judging him or something with how long you’ve been standing there. <br>
+        <br>
+        You feel a little awkward, wondering if you should wave or get his attention in some way. You turn around for a moment, trying to work up the nerve, <span style="Color: LightCoral">however when you finally do turn around and lift up your hand, the boy has vanished from the yard.</span> Shame. You sigh and kick a rock. Maybe you’ll see him again and get another chance. <br>
+        <<set $OCMataSocial to 0>>
+        <<set $OCMataSocialRank to 0>>
+        <<set $CompletedQuests.push("Mata: Introduction")>>
+        <<set $InActiveQuests.delete("Mata: Introduction")>>
+        <br>
+        [[Continue|Northend]]
+    <</replace>>
+    <</link>>
+</div>

@@ -1,0 +1,45 @@
+:: Wake-up Accident [nobr]
+
+<<if $PlayerUndies.Tags.includes("Diaper")>>
+    You awaken to a warm, heavy feeling on your groin. You feel the front of your diaper and sigh in disappointment as you confirm that it is indeed wet. You quickly get up, dispose of the used undergarment, and confirm that there were no leaks. You may have wet the bed, but at least you were protected.<br>
+    <<addMoodlet "Full Diaper" 1>>
+<<elseif $Bedwetter == 1>>
+    <span style="color:lightcoral">You awaken to a warm, heavy feeling on your groin. You reach down to feel your sheets and sigh in disappointment as you confirm that you have indeed wet the bed again.</span> Your sheets and blanket are soaked, and the smell of urine fills the room. You are left with no choice other than to swallow your pride and inform <span style="color:DarkTurquoise">Your Father</span> of what happened so he could help you clean up.<br>
+    <br>
+    You head into <span style="color:DarkTurquoise">Your Father</span>'s room, dreading having to own up to your accident. You find him in the process of getting ready for his day, which means your interrupting his routine. But it's already too late to exit as he has noticed you. <br>
+    
+    <<set _ad to [
+        {
+            Name: "Dad",
+            State: {
+                Brows: "Suspicious",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 2,
+                Eyes: "Sad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    
+    <span style="color:LightSteelBlue">"Hey <span style="color:DarkTurquoise">$Player.Name</span>, what's up?"</span> He asks you. <br>
+    <br>
+    You inform <span style="color:DarkTurquoise">Your Father</span> of the accident, feeling your cheeks burning with shame. He lets out a big sigh in response. <br>
+    <br>
+    <span style="color:LightSteelBlue">"I've told you, you need to make sure you're wearing your night time attire."</span> He says, dodging around actually mentioning the ‘night time attire’ by its name. He then goes on to scold you for not being more careful, including mentioning not drinking anything at night. <br>
+    <br>
+
+    <<set $Player.Hygiene to 0>>
+<<else>>
+    You awaken to a warm, heavy feeling on your groin. You reach down to feel your sheets and sigh in disappointment as you confirm that you have indeed wet the bed again. Your sheets and blanket are soaked, and the smell of urine fills the room. You are left with no choice other than to swallow your pride and inform <span style="color:DarkTurquoise">Your Father</span> of what happened so he could help you clean up.<br>
+    <<set $Wet to 3>>
+    <<set $Player.Hygiene to 0>>
+<</if>>
+
+<br>
+
+[[Continue|Player Bedroom][$HadAccident to 0]]

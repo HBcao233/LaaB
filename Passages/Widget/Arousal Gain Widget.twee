@@ -1,0 +1,89 @@
+:: Arousal Gain Widget [widget nobr]
+
+/* This is a widget that adds arousal based on factors.
+To call this widget, using the following:
+<<set _arousalbs to ["Body Parts"]>>
+<<set _arousalkink to ["Kinks"]>>
+<<arousalGain 15 _arousalbs _arousalkink>>
+
+    Base: Is the base value the arousal gain is. Generall this is 1, 5, or 10, depending on what the actions is.
+    Body Parts: This is a list of body parts that are affected, this will generall be around 1-2.
+    Kinks: This is the kinks that are in affect.
+
+First, the moodlet sets the base value.
+
+Second, checks which of the Body Parts are not 0 in PC's sensitivity, and adds them all together.
+Then it multiplies that by the base value to to get the Body Sensitivity Gain.
+
+Third, it does the same but for the Kinks.
+
+Finally, it adds the two sides of the gains together to determine how much Arousal the PC gains.
+
+*/
+
+<<widget "arousalGain">>
+    <<set _base to _args[0]>>
+    <<set _bodyParts to _args[1]>>
+    <<set _kinks to _args[2]>>
+    <<set _bodyPartsValue to 0>>
+    <<set _kinkValue to 0>>
+
+    /* Checking Body Parts Values */
+    <<if _bodyParts.length != 0>>
+        <<for _i to 0; _i lt _bodyParts.length; _i++>>
+            <<capture _i>>
+                <<set _bs to _bodyParts[_i]>>
+                <<if $Player.BS[_bs] != 0>>
+                    <<set _bodyPartsValue += $Player.BS[_bs]>>
+                <</if>>
+            <</capture>>
+        <</for>>
+    <</if>>
+    /* Setting Body Part Arousal Gain */
+    <<set _bsGain to _base * _bodyPartsValue>>
+
+    /* Checking Kink Values */
+    <<if _kinks.length != 0>>
+        <<for _i to 0; _i lt _kinks.length; _i++>>
+            <<capture _i>>
+                <<set _kinkname to _kinks[_i]>>
+                <<if $Player.Kinks[_kinkname] != 0>>
+                    <<set _kinkValue += $Player.Kinks[_kinkname]>>
+                <</if>>
+            <</capture>>
+        <</for>>
+    <</if>>
+    /* Setting Body Part Arousal Gain */
+    <<set _kinkGain to _base * _kinkValue>>
+
+    /* Setting Final Gain Value */
+    <<set _arousalGain to _bsGain + _kinkGain>>
+
+    /* Horny Bonus */
+    <<if $Player.Mood == "Horny">>
+        <<set _arousalGain += _base * 2>>
+    <</if>>
+
+    /* Lustful Trait Bonus */
+    <<if $Player.Traits.includes("Lustful")>>
+        <<set _arousalGain += 5>>
+    <</if>>
+
+    <<if _arousalGain != 0>>
+        <<needChange "Arousal" _arousalGain>>
+        <<set $Player.SexualFrustration += _arousalGain>>
+
+        <<if $Debug == 1>>
+            <strong>-Arousal Gain Debug Info-</strong><br>
+            Base Value: _base<br>
+            Body Parts: _bodyParts<br>
+            Body Part Value: _bodyPartsValue<br>
+            Body Part Arousal Gain will be: _base * _bodyPartsValue = _bsGain<br>
+            Kinks: _kinks<br>
+            Kink Value: _kinkValue<br>
+            Kink Arousal Gain will be: _base * _kinkValue = _kinkGain<br>
+            Total Arousal Gain: _bsGain + _kinkGain = _arousalGain<br>
+        <</if>>
+    <</if>>
+
+<</widget>>

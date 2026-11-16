@@ -1,0 +1,36 @@
+:: Pool Shallow [nobr]
+
+<<include"Pool Guest State">>
+<<set $PoolLocation to "Shallow">>
+
+<span style="color:Azure"><big><strong>--City Pool [Shallow End]--</strong></big></span><br>
+
+/* BASIC DESCRIPTION */
+You are currently standing in the shallow end of the pool. The water is fairly low, only going up to your waist. 
+/* STATE DESCRIPTION */
+<<if $PoolState == "Senior Swim">>
+This area of the pool is pretty empty, with all the seniors in the deeper end exercising with their strange water aerobics.
+<<elseif $PoolState == "After School">>
+There are quite a few younger kids in the shallow end of the pool. Most of which being the ones who can’t swim, noted by their life jackets and floaties, and some who just enjoy playing and splashing around the shallow end.
+<<elseif $PoolState == "Families">>
+While mostly relegated to parents with their toddlers and very young kids, some older children splash around in the shallow end, mostly playing with their younger siblings.
+<<elseif $PoolState == "Teenagers">>
+While most teenagers prefer the deeper end or the hot tubs, you do notice a couple relaxing near the stairs letting the water rush over them like waves on a beach.
+<<elseif $PoolState == "Swim Class">>
+While a few toddlers practice in the shallow end, getting used to the water, most of the young boys and trainees are nearby in the only partially shallow end, which is still pretty deep at their height. Some of the older or more advanced students are practicing in the deeper end, though with lifeguards assisting them.
+<<else>>
+The shallow end, like the rest of the pool, is currently empty.
+<</if>><br>
+<br>
+
+/* SWIM STAMINA */
+<<include"Swim Stamina">>
+
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Splash Around (0:10)|Pool Splash Around]] <span style="color:lightgreen">+Fun</span><br>
+[[Rest (0:10)|Pool Rest]] <span style="color:lightgreen">+Stamina</span><br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+[[Swim Deeper (0:01)|Pool Part Shallow][$Minutes += 1]]<br>
+[[Exit the Pool (0:01)|Pool Outside][$Minutes += 1]]<br>

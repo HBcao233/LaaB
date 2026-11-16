@@ -1,0 +1,122 @@
+:: Community Center Daily Jobs [nobr]
+
+/* SETTING THE JOB ARRAY */
+
+<<set _ccjobs to [
+  {
+    Name: "Mow Lawn in Northend",
+    Type: "Mow Lawn",
+    Location: "Northend",
+    Pay: random(5, 15),
+    Description: "My sons decided that they're ‘too busy’ to do their chores, so I decided that their allowance will now cover the cost of hiring someone else to do it. They just don’t know it yet.",
+  },
+  {
+    Name: "Mow Lawn in Dellwood",
+    Type: "Mow Lawn",
+    Location: "Dellwood",
+    Pay: random(5, 15),
+    Description: "One side of my yard is growing much quicker than the other half, willing to pay someone to correct this. Both sides must be equal to receive payment. I will check! Serious inquiries only.",
+  },
+  {
+    Name: "Mow Lawn in Wald",
+    Type: "Mow Lawn",
+    Location: "Wald",
+    Pay: random(5, 15),
+    Description: "The H.O.A. has been breathing down my neck to get my grass down, but I just don’t have the time. I’m willing to pay a couple dollars to get them off my back. Thanks in advance!",
+  },
+  {
+    Name: "Fix Fence in Northend",
+    Type: "Fix Fence",
+    Location: "Northend",
+    Pay: random(15, 25),
+    Description: "Some idiot backed up into my fence and drove off without telling me. Jokes on them, I got their plates on video. While I wait for the police report to go through, I need someone to fix up the fence before my in-laws get into town next weekend.",
+  },
+  {
+    Name: "Fix Fence in Dellwood",
+    Type: "Fix Fence",
+    Location: "Dellwood",
+    Pay: random(15, 25),
+    Description: "My poor fence has seen better days, but I’m a bit too old to be going out there with a hammer and a bunch of nails. Would appreciate if someone could come down and help an old man out.",
+  },
+  {
+    Name: "Fix Fence in Wald",
+    Type: "Fix Fence",
+    Location: "Wald",
+    Pay: random(15, 25),
+    Description: "That H.O.A. be having a field day! Apparently, my fence is an ‘eye-sore’ and ‘unsafe’. If it’s so bad, why don’t they get off their asses and fix it, huh!? Anyway, I gotta couple bucks if anyone could help me out here.",
+  },
+  {
+    Name: "Pull Weeds in Northend",
+    Type: "Pull Weeds",
+    Location: "Northend",
+    Pay: random(5, 10),
+    Description: "My yard has seen better days. This weather recently has caused the weeds to grow like, well weeds. Wondering if someone could come over and help clear them out for me. Willing to pay!",
+  },
+  {
+    Name: "Pull Weeds in Dellwood",
+    Type: "Pull Weeds",
+    Location: "Dellwood",
+    Pay: random(5, 10),
+    Description: "Looking for a young boy, preferred age between 10-13, looking to make some money. No girls, as they are not strong enough. Need some weeds pulled, tough ones. Due to how physical it may be, I’d recommend short or loose-fitting clothing. You may also go without a shirt, if you want. I will be watching to make sure it is done right.",
+  },
+  {
+    Name: "Pull Weeds in Wald",
+    Type: "Pull Weeds",
+    Location: "Wald",
+    Pay: random(5, 10),
+    Description: "The H.O.A. seems to have people peering over my fence into my backyard, which I feel is a violation of my rights as a homeowner. How else would they know the weeds in my backyard are “too high”. Willing to pay if anyone could come out and pull them up for me, before they start installing cameras to ‘keep an eye on me’.",
+  },
+  {
+    Name: "Clean Gutters in Northend",
+    Type: "Clean Gutters",
+    Location: "Northend",
+    Pay: random(5, 20),
+    Description: "The trees in my yard have absolutely been clogging up my gutters. I’m worried the next batch of rain will cause mold or water damage. If someone more young and fit then I could come help out and clear them, I’d be very grateful.",
+  },
+  {
+    Name: "Clean Gutters in Dellwood",
+    Type: "Clean Gutters",
+    Location: "Dellwood",
+    Pay: random(5, 20),
+    Description: "A lot of trash has been filling my gutters in recent weeks due to this awful weather and my doctor has recommended that I don’t climb ladders. Annoying, but what are you going to do? If someone could come over and clear them out for me, I’m willing to pay.",
+  },
+  {
+    Name: "Clean Gutters in Wald",
+    Type: "Clean Gutters",
+    Location: "Wald",
+    Pay: random(5, 20),
+    Description: "H.O.A. Notice: “Dear Resident, it has come to our attention that your gutters are clogged with leaves and other debris. This is a formal warning to get them cleared, you have one-week to comply before a fine will be issued. Have a nice day!” If I could swear on this board I would, anybody willing to help a guy out and clear them?",
+  },
+]>>
+
+<<run _ccjobs.shuffle()>>
+
+/* Emmet's Special Oddjob */
+<<if $ToggleOCEmmet == 1 && $InActiveQuests.includes("Emmet: Introduction") && !$Time.schoolday()>>
+  <<set _ccjobs.push(
+    {
+      Name: "Looking for Research Assistant",
+      Type: "Emmet Intro",
+      Location: "City Park",
+      Pay: 25,
+      Description: "Do you have a desire to bring about the future? The leading inventor of Opal City, Emmet Wadley, is looking for an assistant to test his latest invention! If interested, meet me at the City Park on Saturday or Sunday during the day. Together, we will bring about the future! P.S. I will also pay you.",
+    }
+  )>>
+<</if>>
+/* Leo: Modeling */
+<<if $ToggleOCEmmet == 1 && $InActiveQuests.includes("Leo: Modeling") && !$Time.schoolday()>>
+  <<set _ccjobs.push(
+    {
+      Name: "Boybarn Modeling Job",
+      Type: "Leo Quest",
+      Location: "Entertainment District",
+      Pay: 25,
+      Description: "Models wanting for upcoming Boy Barn ad! Go to Entertainment District between 6AM and 6PM! (Description WIP).",
+    }
+  )>>
+<</if>>
+
+<<set $CCJobBoard to []>>
+<<for _i = 1; _i <= 3 and random(1, _i) == 1; _i++>>
+    <<run $CCJobBoard.push(_ccjobs.pop())>>
+<</for>>

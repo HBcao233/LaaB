@@ -1,0 +1,74 @@
+:: MICHAEL Math Cheating [nobr]
+
+As soon as class starts, <span style="color:DarkTurquoise">Mr. Randolph</span> surprises you all with a pop quiz. The class groans in unison, but <span style="color:DarkTurquoise">Mr. Randolph</span> explains that in life you have to always be prepared when the unexpected comes. He hands out the quiz and tells everyone to complete it in complete silence. He watches the class like a hawk for the first few minutes, but eventually returns to his desk to grade some homework.<br>
+
+<<set _ad to [
+	{
+		Name: "Michael",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+The quiz is relatively easy, and you find yourself working through it at a quick pace, though some of the other boys appear to be struggling. In the corner of your eye, you catch <span style="color:DarkTurquoise">Michael</span> glancing at your paper and copying answers down. Seems <span style="color:DarkTurquoise">Michael</span> hasn’t been studying.<br>
+<br>
+
+<div id="choice">
+	<<link "Help him cheat<br>">>
+		<<replace "#choice">>
+			You turn slightly, meeting his eyes, and give him a wink. You darken your answers to make them more visible and stealthfully move your quiz towards the edge of your desk to give him a better view. He gives you an appreciative smile and quickly begins to copy the answers over.<br>
+
+			<<set _ad to [
+				{
+					Name: "Michael",
+					State: {
+						Outfit: "Uniform",
+						Eyes: "Mad",
+						Mouth: "Happy",	
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			<span style="color:Green">Thankfully, <span style="color:DarkTurquoise">Mr. Randolph</span> didn’t seem to notice.</span> He did give you both a heart attack when he suddenly stood up from his desk, but this was simply to collect something from the printer. For now, you’ve both gotten away with some little mischief and you’re sure <span style="color:DarkTurquoise">Michael</span> will be grateful. <br>
+			<<socialChange "Michael" 3>>
+			<br>
+
+			<<include "Attend Math Finish">>
+		<</replace>>
+	<</link>>
+	<<link "Ignore him<br>">>
+		<<replace "#choice">>
+			You decide the best course of action here is to pretend you didn’t notice and finish your quiz. <span style="color:DarkTurquoise">Mr. Randolph</span>, finishing with his grading, begins to walk around the room and watch as everyone does their test, forcing <span style="color:DarkTurquoise">Michael</span> to finish the rest on his own. You’re not sure how much he managed to copy, but at least no one noticed.<br>
+			<br>
+
+			<<include "Attend Math Finish">>
+		<</replace>>
+	<</link>>
+
+	<<link "Hide your answers">>
+		<<replace "#choice">>
+			You decide to not let <span style="color:DarkTurquoise">Michael</span> cheat off of you and position your arm to hide your answers. <span style="color:DarkTurquoise">Michael</span> curses at you under his breath, but can’t do anything else as <span style="color:DarkTurquoise">Mr. Randolph</span> yells out for him to stop whispering.<br>
+
+			<<set _ad to [
+				{
+					Name: "Michael",
+					State: {
+						Outfit: "Uniform",
+						Eyes: "Mad",
+						Mouth: "Sad",	
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			After the quizzes are collected, <span style="color:DarkTurquoise">Michael</span> leans over and whispers that you should <span style="color:LightSteelBlue"> “Watch your back.”</span> Seems he is angry with you.<br>
+			<<socialChange "Michael" -3>>
+			<br>
+
+			<<include "Attend Math Finish">>
+		<</replace>>
+	<</link>>
+</div>

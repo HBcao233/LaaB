@@ -1,0 +1,126 @@
+:: Clothing Shop Widget [nobr widget]
+
+/* This is a widget for the clothing shops in the game.
+
+They are called like so:
+    <<clothingShop "Slot" "Clothing.Name" "Color[Array]" "Cost">>
+
+    Slot: This is the slot the clothing item holds. EX: Undies, Bottoms, etc.
+    Clothing.Name: This is the name of the clothing item. The same one that appears in the Clothing Library.
+    Color: This is an array of colors the clothing item comes in.
+    Cost: This is the cost of the item.
+
+    _normalcolors list the colors that have default Color Icons. If a color listed in does not fall into the list, it will look to the same slot in the _shopicons array that is set in the shop when an item includes non-normal colors.
+
+    As normal, it will set the _args to variables that are easier to handle and look at.
+    Then, it will display the name of the item, the type, along with the cost.
+        [Note: IF the Name of the Item doesn't make sense, we can add checks here to apply another name as needed.]
+    It will then do Avatar Display. This will just show the current mood, so no need for AD Widget, and will remove all non-underwear clothing to allow the Player to get a good look at the items.
+        [Note: Idea to add a button to toggle other clothes on and off. Not a major deal atm, but could be a neat thing to add.]
+    Folowing that, it will then display color buttons for every color in the _colors array.
+ */
+
+
+<<widget"clothingShop">>
+	<<set _normalcolors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow", "Blue Denim", "Dark Denim", "Denim", "Khaki", "Light Denim", "Medium Denim", "Warm Khaki"]>>
+    <<set _slot to _args[0]>>
+    <<set _name to _args[1]>>
+    <<set _colors to _args[2]>>
+    <<set _cost to _args[3]>>
+    /* Title */
+    <span style="color:Azure"><strong>-_name (&#36;_cost)-</strong></span><br>
+    /* Avatar Display */
+    <<include"Player Avatar Mood">>
+    <<include"Player Avatar Display Set">>
+    <<if $ADToggle != null>>
+        <<if _slot != "Head">>
+            <<set $ADHead to $None>>
+        <</if>>
+        <<if _slot != "Outer">>
+            <<set $ADOuter to $None>>
+        <</if>>
+        <<if _slot != "Over">>
+            <<set $ADOver to $None>>
+        <</if>>
+        <<if _slot != "OverAcc">>
+            <<set $ADOverAcc to $None>>
+        <</if>>
+        <<if _slot != "Top">>
+            <<set $ADTop to $None>>
+        <</if>>
+        <<if _slot != "Neck">>
+            <<set $ADNeck to $None>>
+        <</if>>
+        <<if _slot != "Hands">>
+            <<set $ADHands to $None>>
+        <</if>>
+        <<if _slot != "Under">>
+            <<set $ADUnder to $None>>
+        <</if>>
+        <<if _slot != "Waist">>
+            <<set $ADWaist to $None>>
+        <</if>>
+        <<if _slot != "Bottoms">>
+            <<set $ADBottoms to $None>>
+        <</if>>
+        <<if _slot != "Shoes">>
+            <<set $ADShoes to $None>>
+        <</if>>
+    <</if>>
+    /* Setting Item for Viewsing */
+    <<addClothing "AD" _slot _name $ShopColor>>
+    /* AD */
+    <<include"Avatar Display">>
+    <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+    <br>
+    /* Clothing Toggle */
+    <<if $ADToggle == 1>>
+        <<link"[Toggle Clothes Off]">>
+            <<unset $ADToggle>>
+            <<goto _returnlink>>
+        <</link>>
+    <<else>>
+        <<link"[Toggle Clothes On]">>
+            <<set $ADToggle to true>>
+            <<goto _returnlink>>
+        <</link>>
+    <</if>><br>
+    /* Color Buttons */
+    <<for _i to 0; _i lt _colors.length; _i++>>
+	    <<capture _i>>
+            <<if _normalcolors.includes(_colors[_i])>>
+                <<print "<<link [img[\"Images/Icons/Shop Icons/Colors/" + _colors[_i] + ".png\"]]>><<set $ShopColor to \"" + _colors[_i] + "\">><<goto \"" + _returnlink + "\">><</link>>">>
+            <<else>>
+                <<print "<<link [img[\"Images/Icons/Shop Icons/Colors/" + $ShopIcons[_i] + ".png\"]]>><<set $ShopColor to \"" + _colors[_i] + "\">><<goto \"" + _returnlink + "\">><</link>>">>
+            <</if>>
+            <<if _i == 13 or _i == 27>>
+                <br>
+            <</if>>
+        <</capture>>
+    <</for>>
+    <br>
+    <<if $Money >= _cost>>
+        <<link"Purchase (&#36;_cost)">>
+            <<set $Money -= _cost>>
+            <<addClothing "Closet" _slot _name $ShopColor>>
+            <<goto _returnlink>>
+        <</link>>
+         | 
+        <<link"Purchase & Wear (&#36;_cost)">>
+            <<set $Money -= _cost>>
+            <<script>>
+                var tempTest = State.getVar("_clothingtemp")
+                console.log(tempTest)
+            <</script>>
+            <<print "<<if $Player" + _clothingtemp.slot + ".Type != \"None\">><<set $Closet" + _clothingtemp.slot + ".push($Player" + _clothingtemp.slot + ")>><</if>>">>  
+            <<addClothing "PC" _slot _name $ShopColor>>
+            <<goto _returnlink>>
+        <</link>>
+    <<else>>
+        <span style="color:Lightcoral">Purchase (&#36;_cost)</span>
+         | 
+        <span style="color:Lightcoral">Purchase & Wear (&#36;_cost)</span>
+    <</if>>
+
+
+<</widget>>

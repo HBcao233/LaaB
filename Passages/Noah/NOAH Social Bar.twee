@@ -1,0 +1,84 @@
+:: NOAH Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $NoahSocialRank == -3>>
+	<<set $NoahRelationship to "Hated">>
+	<span style="color:DarkRed">Noah Hates you!</span>
+	<br>
+<<elseif $NoahSocialRank == -2>>
+	<<set $NoahRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Noah are Enemies.</span>
+	<br>
+<<elseif $NoahSocialRank == -1>>
+	<<set $NoahRelationship to "Very Disliked">>
+	<span style="color:Red">Noah really Dislikes you.</span>
+	<br>
+<<elseif $NoahSocialRank == 0 and $NoahSocial <= -50>>
+	<<set $NoahRelationship to "Disliked">>
+	<span style="color:Red">Noah Dislikes you. </span>
+	<br>
+<<elseif $NoahSocialRank == 0 and $NoahSocial < 50>>
+	<<set $NoahRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Noah are Acquaintances.</span>
+	<br>
+<<elseif $NoahSocialRank == 0 and $NoahSocial >= 50>>
+	<<set $NoahRelationship to "Liked">>
+	<span style="color:LightGreen">Noah Likes you.</span>
+	<br>
+<<elseif $NoahSocialRank == 1>>
+	<<set $NoahRelationship to "Friends">>
+	<span style="color:Green">You and Noah are Friends.</span>
+	<br>
+<<elseif $NoahSocialRank == 2>>
+	<<set $NoahRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Noah are Good Friends!</span>
+	<br>
+<<elseif $NoahSocialRank == 3>>
+	<<set $NoahRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Noah are Close Friends!</span>
+	<br>
+<<elseif $NoahSocialRank == 4>>
+	<<set $NoahRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Noah are Best Friends!</span>
+	<br>
+<<elseif $NoahSocialRank == 5>>
+	<<set $NoahRelationship to "Love">>
+	<span style="color:Pink">You and Noah Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $NoahSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $NoahSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $NoahSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $NoahSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $NoahSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $NoahSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $NoahSocial,
+			value: Math.abs($NoahSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($NoahSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $NoahSocial > 120>>
+	<<set $NoahSocial to 120>>
+<</if>>
+<<if $NoahSocial < -120>>
+	<<set $NoahSocial to -120>>
+<</if>>

@@ -1,0 +1,236 @@
+:: Weather Init [nobr]
+
+<<set _sunny to {
+	Name: "Sunny",
+	Table: [
+		"Clear Skies",
+	],
+}>>
+<<set _partly_cloudy to {
+	Name: "Partly Cloudy",
+	Table: [
+		"Clear Skies",
+		"Partly Cloudy",
+		"Partly Cloudy",
+		"Mostly Cloudy",
+	],
+}>>
+<<set _mostly_cloudy to {
+	Name: "Mostly Cloudy",
+	Table: [
+		"Partly Cloudy",
+		"Mostly Cloudy",
+		"Mostly Cloudy",
+		"Overcast",
+	],
+}>>
+<<set _overcast to {
+	Name: "Overcast",
+	Table: [
+		"Overcast",
+		"Overcast",
+		"Mostly Cloudy",
+		"Overcast",
+		"Sprinkling",
+	],
+}>>
+<<set _chance_at_rain to {
+	Name: "Chance at Rain",
+	Table: [
+		"Overcast",
+		"Overcast",
+		"Mostly Cloudy",
+		"Overcast",
+		"Sprinkling",
+		"Sprinkling",
+		"Raining",
+	],
+}>>
+<<set _scattered_showers to {
+	Name: "Scattered Showers",
+	Table: [
+		"Overcast",
+		"Overcast",
+		"Sprinkling",
+		"Raining",
+	],
+}>>
+<<set _rainy to {
+	Name: "Rainy",
+	Table: [
+		"Sprinkling",
+		"Raining",
+		"Raining",
+		"Pouring",
+	],
+}>>
+<<set _heavy_rain to {
+	Name: "Heavy Rain",
+	Table: [
+		"Raining",
+		"Raining",
+		"Pouring",
+		"Pouring",
+	],
+}>>
+<<set _stormy to {
+	Name: "Stormy",
+	Table: [
+		"Pouring",
+		"Storm",
+		"Storm",
+		"Extreme Winds",
+	],
+}>>
+<<set _thunderstorm to {
+	Name: "Thunderstorm",
+	Table: [
+		"Storm",
+		"Thunderstorm",
+		"Thunderstorm",
+		"Extreme Winds",
+	],
+}>>
+<<set _dry_storm to {
+	Name: "Dry Storm",
+	Table: [
+		"Overcast",
+		"Overcast",
+		"Dry Storm",
+		"Dry Storm",
+	],
+}>>
+<<set _windy to {
+	Name: "Windy",
+	Table: [
+		"Windy",
+		"Windy",
+		"Partly Cloudy",
+		"Clear Skies",
+	],
+}>>
+<<set _extreme_winds to {
+	Name: "Extreme Winds",
+	Table: [
+		"Pouring",
+		"Storm",
+		"Storm",
+		"Extreme Winds",
+	],
+}>>
+<<set _hail to {
+	Name: "Hail",
+	Table: [
+		"Overcast",
+		"Hail",
+		"Hail",
+		"Raining",
+	],
+}>>
+<<set _chance_of_snow to {
+	Name: "Chance of Snow",
+	Table: [
+		"Overcast",
+		"Overcast",
+		"Light Snow",
+		"Light Snow",
+		"Snowing",
+	],
+}>>
+<<set _light_snow to {
+	Name: "Light Snow",
+	Table: [
+		"Overcast",
+		"Light Snow",
+		"Light Snow",
+		"Light Snow",
+		"Snowing",
+	],
+}>>
+<<set _snowing to {
+	Name: "Snowing",
+	Table: [
+		"Light Snow",
+		"Snowing",
+		"Snowing",
+		"Heavy Snow",
+	],
+}>>
+<<set _heavy_snow to {
+	Name: "Heavy Snow",
+	Table: [
+		"Snowing",
+		"Snowing",
+		"Heavy Snow",
+		"Heavy Snow",
+	],
+}>>
+<<set _blizzard to {
+	Name: "Blizzard",
+	Table: [
+		"Heavy Snow",
+		"Heavy Snow",
+		"Blizzard",
+		"Blizzard",
+	],
+}>>
+<<set _heat_wave to {
+	Name: "Heat Wave",
+	Table: [
+		"Clear Skies",
+		"Clear Skies",
+		"Clear Skies",
+		"Clear Skies",
+	],
+}>>
+<<set _cold_snap to {
+	Name: "Cold Snap",
+	Table: [
+		"Overcast",
+		"Overcast",
+		"Overcast",
+		"Overcast",
+	],
+}>>
+
+<<set $WeatherMonths to {
+	"August": [
+		_sunny,
+		_sunny,
+		_sunny,
+		_partly_cloudy,
+		_mostly_cloudy,
+		_overcast,
+		_overcast,
+		_scattered_showers,
+		_rainy,
+		_windy,
+	],
+	"September": [
+		_sunny,
+		_mostly_cloudy,
+		_chance_at_rain,
+		_chance_at_rain,
+		_overcast,
+		_overcast,
+		_scattered_showers,
+		_rainy,
+		_rainy,
+		_windy,
+	],
+	"October": [
+		_mostly_cloudy,
+		_chance_at_rain,
+		_overcast,
+		_overcast,
+		_overcast,
+		_scattered_showers,
+		_rainy,
+		_rainy,
+		_windy,
+		_windy,
+	],
+}>>
+
+<<set $ForecastTomorrow to $WeatherMonths[$Time.Month][0]>>
+<<include"Weather Control">>

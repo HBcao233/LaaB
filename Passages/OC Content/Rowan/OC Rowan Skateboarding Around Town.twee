@@ -1,0 +1,111 @@
+:: OC Rowan Skateboarding Around Town [nobr]
+
+/* Intro */
+You are walking down the street idly, not really looking at or thinking about anything in particular. Just the passive musings of a boy simply trying to get from point A to point B. Everything is normal and, for lack of a better word, boring. That is until you suddenly hear a voice shout up from behind you. <span style="Color:LightSteelBlue">“Oi watch ou’!”</span> <span style="Color: LightCoral">You turn around to see your classmate, <span style="color:DarkTurquoise">Rowan</span>, speeding directly towards you on a skateboard he has very clearly lost control of.</span><br>
+<br>
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Blush: 1,
+            Mouth: "Frown",
+        },
+    },
+    {
+        Name: "OC Rowan",
+        State: {
+            Outfit: "Everyday",
+            Blush: 2,
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+/* PC: Frown, Blush1
+Rowan: Everyday, Frown, Blush2 */
+<<skillCheck "Athletics" 70>>
+<div id="choice">
+    <<link "Continue">>
+    <<replace"#choice">>
+        /* Pass */
+        <<if _result == 1>>
+            <span style="LightGreen">Thankfully, you are quick enough on your feet to simply step aside and dodge the out of control boy</span>, who speeds past you as the boy panicky tries to come to a stop. He manages it two houses past you, <span style="Color: LightCoral">though partially crashes into a bush</span>. You run over to make sure he is okay as the boy sits up laughing. <br>
+            <br>
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Eyes: "Tired",
+                        Mouth: "Smirk",
+                    },
+                },
+                {
+                    Name: "OC Rowan",
+                    State: {
+                        Outfit: "Everyday",
+                        Blush: 2,
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+            /* PC: Smirk, Tired
+            Rowan: Everyday, Smile, Blush2 */
+            <span style="Color: LightSteelBlue">“See now, this’s exactly why we wear elbow pads, innit!”</span> He laughs as you help him up, <span style="Color: LightSteelBlue">“Sorreh, yeah? I was leggin’ it a bit too quick an’ din’t spot yeh ’til the last sec, like. Guess I should prolly keep me eyes open better when I’m hoppin’ on, innit?”</span> The boy rubs the back of his head and blushes slightly, a bit embarrassed. You tell him it’s alright, but he should be a little more careful. Some of the older folk here wouldn’t hesitate to pull him over their knee if he crashed into them. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Noted!”</span> <span style="color:DarkTurquoise">Rowan</span> replies, picking up his board. <span style="Color: LightSteelBlue">“Sorreh again, mate! Catch yeh later, <span style="DarkTurquoise">$Player.Name</span>!”</span> <span style="color:DarkTurquoise">Rowan</span> hops on his board and waves, speeding off into the distance. <span style="Color: LightGreen">You chuckle at the sight, you are pretty sure you’re not the last person he’ll almost crash into today.</span><br>
+            <<socialChange "Rowan" 2 1>>
+            <br>
+            <<if $Location.Name == "Northend">>
+                [[Continue|Northend]]
+            <<elseif $Location.Name == "Dellwood Street">>
+                [[Continue|Dellwood Street]]
+            <<elseif $Location.Name == "Wald Street">>
+                [[Continue|Wald Street]]
+            <</if>>
+        /* Fail */
+        <<else>>
+            <span style="Color: LightCoral">You panic, glancing left and right knowing that you should dive out of the way, but are too panicked and wait until the last second to leap into the grass.</span> <span style="color:DarkTurquoise">Rowan</span>, for what it’s worth, tries his best to dodge you and ends up losing even more control, <span style="Color: LightCoral">spinning out and crashing headfirst into a nearby bush.</span><br>
+            <br>
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Blush: 1,
+                        Mouth: "Frown",
+                    },
+                },
+                {
+                    Name: "OC Rowan",
+                    State: {
+                        Outfit: "Everyday",
+                        Blush: 2,
+                        Eyes: "Sad",
+                        Mouth: "Smirk",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+            /* PC: Frown, Blush1
+            Rowan: Everyday, Blush2, Smirk, Sad Eyes */
+            <span style="Color: LightSteelBlue">“I’m good! Jus’ winded.”</span> You hear him call out, only his bottom half peeking out of the bush, <span style="Color: LightSteelBlue">“Yup, elbow pads, ow, an’ helmets! C’mon, give a hand, will ya?”</span> You run over and grab the boy’s ankles, trying to pull him out. As you do, <span style="Color:Pink">you can’t help but notice that his shorts had been tugged slightly by the branches of the bush, revealing to you the full back of his underwear. <span style="color:DarkTurquoise">Rowan</span> is wearing adorably cute space-themed briefs that hug his cute butt tightly.</span> <span style="Color: LightSteelBlue">“Heh... you gonna pull or jus’ stand there starin’, huh?”</span> <span style="color:DarkTurquoise">Rowan</span> asks as you realize you’ve been staring a bit too long. <br>
+            <br>
+            It takes some effort, but you manage to pull <span style="color:DarkTurquoise">Rowan</span> out of the grip of the bush. His shorts do nearly fall as he stands up, but alas he manages to catch and fix them. You wonder if he realized how exposed his underwear was, but he doesn’t mention it. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Thanks! An’, uh, sorreh ‘bout tha’, was goin’ a bit too fast, like, din’t see yeh ‘til the last sec. Guess I gotta watch meself more when I’m boardin’, yeah?”</span> The boy rubs the back of his head and blushes slightly, a bit embarrassed. You tell him it’s alright, but he should be a little more careful. Some of the older folk here wouldn’t hesitate to pull him over their knee if he crashed into them. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Noted!”</span> <span style="color:DarkTurquoise">Rowan</span> replies, picking up his board. <span style="Color: LightSteelBlue">“Sorreh again, mate! Catch yeh later, <span style="DarkTurquoise">$Player.Name</span>!”</span> <span style="color:DarkTurquoise">Rowan</span> hops on his board and waves, speeding off into the distance. You chuckle at the sight; you are pretty sure you’re not the last person he’ll almost crash into today. <br>
+            <<socialChange "Rowan" 2 1>>
+            <br>
+            <<if $Location.Name == "Northend">>
+                [[Continue|Northend]]
+            <<elseif $Location.Name == "Dellwood Street">>
+                [[Continue|Dellwood Street]]
+            <<elseif $Location.Name == "Wald Street">>
+                [[Continue|Wald Street]]
+            <</if>>
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<skillDiff "Athletics" 70>><br>
+</div>

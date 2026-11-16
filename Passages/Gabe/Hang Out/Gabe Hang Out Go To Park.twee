@@ -1,0 +1,49 @@
+:: Gabe Hang Out Go To Park [nobr]
+
+/* Intro */
+You ask <span style="color:DarkTurquoise">Gabe</span> if he wants to go to the park with you and he gives an amused smirk. <span style="Color: LightSteelBlue">“Sure thing, just don’t expect me to run around giggling like your little friends.”</span> He leaves, messing up your hair. <span style="Color: LightSteelBlue">“You know, I had a girl ask me out on a date to the park the other day.”</span> <span style="color:DarkTurquoise">Gabe</span> says with a smirk. <span style="Color: LightSteelBlue">“But she wasn’t my type. Bit too nerdy, you know? But her glasses were cute on her though.”</span> <span style="color:LightGreen"> <span style="color:DarkTurquoise">Gabe</span> smiles, proud of his ability to pick up girls without trying, as you roll your eyes.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+            Outfit: $HangOutClothes,
+			Mouth: "Smirk",
+            Eyes: "Mad",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="choice">
+	<<link "Praise Gabe<br>">>
+    <<replace"#choice">>
+        You praise <span style="color:DarkTurquoise">Gabe</span> for his datability, saying that and good looks must run in the family. <span style="color:LightGreen">You’re sure by your age you’ll be getting just as many dates as him or more.</span> 
+        <<if $BedWetter == 1>>
+            <span style="Color: LightSteelBlue">“Oh, I’m sure, though maybe work on not pissing the bed every night before inviting a girl over, hm?”</span>
+        <<elseif $Player.Traits.includes("Childish")>>
+            <span style="Color: LightSteelBlue">“Oh, I’m sure. Though maybe you should put your toys and stuffed animals away before inviting any girls over, hm?”</span>
+        <<elseif $Player.Height == "Short" or $Player.Height == "Shorter">>
+            <span style="Color: LightSteelBlue">“Oh, I’m sure. Grow a few more inches, in a few places, and MAYBE you’ll start attracting girls.”</span>
+        <<else>>
+            <span style="Color: LightSteelBlue">“Oh, I’m sure. Though I get the feeling girls won’t be the main thing you’ll be attracting.”</span>
+        <</if>>
+        <span style="color:LightGreen">You blush at <span style="color:DarkTurquoise">Gabe</span>’s words, playfully hitting him as he runs ahead laughing.</span> <br>
+        <br>
+        [[Continue|Gabe Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "Tease him<br>">>
+    <<replace"#choice">>
+        You sarcastically praise <span style="color:DarkTurquoise">Gabe</span>, saying that you bet he gets ALL the girls in his class. <span style="color:DarkTurquoise">Gabe</span> almost takes your compliment… <span style="color:LightGreen">until he remembers the <span style="Color: LightSteelBlue">“all boys school”</span> thing.</span> <span style="Color: LightSteelBlue">“You little shit.”</span> <span style="color:DarkTurquoise">Gabe</span> says, picking you up and throwing you over his shoulder. <span style="Color: LightSteelBlue">“Just for that, you’re going into the pond.”</span> <span style="color:LightGreen">You laugh and cry out as he carries you just short of the park’s pond, only a few feet shy of an uncomfortable dip. Would have been worth it, even if he did actually do it. Thankfully, it was just a threat.</span> <br>
+        <br>
+        [[Continue|Gabe Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

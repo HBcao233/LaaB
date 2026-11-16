@@ -1,0 +1,154 @@
+:: Thomas Hang Out Park Massage [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+You and <span style="color:DarkTurquoise">Thomas</span> decide to sit under a tree to relax and chat for a bit. The shade and distance from other being a plus for the boy as he sits and stretches his arms into the air, yawning. <span style="Color: LightSteelBlue">“At least things aren’t as crazy here as they were. The park and beach are packed with tourists during the summer. It’s super annoying – Ack!”</span> <span style="color:DarkTurquoise">Thomas</span> <span style="Color: Yellow">groans, grimacing as he rubs his shoulder in pain.</span> <span style="Color: LightSteelBlue">“Damn it!”</span> He curses as you ask him what’s wrong. <span style="Color: LightSteelBlue">“Nothing, just passed out in an awkward position last night. Shoulder’s been killing me all day. I’ll live, but it’s super annoying.”</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Thomas",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Frown",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+        
+<span style="Color: Yellow">As he groans and rubs his shoulder, you wonder if there is any way you could help him out.</span> <br>
+<br>
+<div id="choice">
+    <<link "Offer to help<br>">>
+    <<replace "#choice">>
+        You ask if there is anyway you could make him feel better. Maybe get him some ice or rub his shoulders or-? <span style="Color: LightSteelBlue">“No thanks.”</span> <span style="color:DarkTurquoise">Thomas</span> replies, <span style="Color: LightSteelBlue">“Just needs time to sort itself out. It’s not bad enough to warrant any of that.”</span> <span style="color:DarkTurquoise">Thomas</span> pauses, <span style="Color:LightGreen">thinking to himself before giving you a half-smile,</span> <span style="Color: LightSteelBlue">“Thanks though. For offering, I mean…”</span> <span style="Color: Pink"> <span style="color:DarkTurquoise">Thomas</span> coughs nervously, the pain in his shoulder now replaced by the slight awkwardness he feels anytime you offer to help.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Thomas",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightGreen">You laugh, lightening the mood by asking how exactly he fell asleep to hurt his shoulder. The way he gets embarrassed when you ask just makes you want to know even more and you playfully tease him for answers, though don’t get any. Still, he seems to be feeling better from your presence alone.</span> <br>
+        <<needChange "Fun" 10>>
+        <<socialChange "Thomas" 3>>
+        <span style="color:green">+Thomas Fun</span><br>
+        <<set $HangOutNeed.Fun += 15>>
+        <span style="color:green">+Thomas Energy</span><br>
+        <<set $HangOutNeed.Energy += 10>>
+        <br>
+        [[Continue|Thomas Hang Out Park]]
+    <</replace>>
+    <</link>>
+    <<link "Distract him<br>">>
+    <<replace "#choice">>
+        You figure distracting him may be the best thing you can do and end up telling him a funny <span style="color:DarkTurquoise">Noah</span> story. About how, as soon as <span style="color:DarkTurquoise">Noah</span> could walk, he would find the strangest places to fall asleep in. Upside down on the couch, facedown in the yard, he’s even passed out mid-dinner before. It always leads to a cute sight and has become something of a reoccurring joke in your family. Despite it all, he never seems to wake up sore. <br>
+
+        <<set _ad to [
+            {
+                Name: "Thomas",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“The luck of the young.”</span> <span style="color:DarkTurquoise">Thomas</span> <span style="Color: LightGreen">smiles as you recount the story, seemingly enjoying as you talk about your little brother.</span> <span style="Color: LightSteelBlue">“My little brother is kind of similar. He can fall asleep anyway, as long as someone is holding him. He’s a bit of a cuddler so-”</span> <span style="color:DarkTurquoise">Thomas</span> <span style="Color: Pink">suddenly pauses, blushing a little.</span> <span style="Color: LightSteelBlue">“Ye- yeah, anyway. Wish I could sleep like that without feeling sore.”</span> <span style="Color: LightGreen">You and <span style="color:DarkTurquoise">Thomas</span> continue to chat as you share stories of your family. Despite being a bit flustered when talking about his own, he seems to enjoy hearing about your family dynamic.</span> <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Thomas" 3>>
+        <span style="color:green">+Thomas Fun</span><br>
+        <<set $HangOutNeed.Fun += 15>>
+        <span style="color:green">+Thomas Energy</span><br>
+        <<set $HangOutNeed.Energy += 10>>
+        <span style="color:green">+Thomas Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 10>>
+        <br>
+        [[Continue|Thomas Hang Out Park]]
+    <</replace>>
+    <</link>>
+    <<requiresTrait "Nurturing" "Massage his shoulders">>
+	<<replace"#choice">>
+        <span style="Color: LightGreen">As <span style="color:DarkTurquoise">Thomas</span> stretches, you scooch up behind him and place your hands on his shoulders. <span style="color:DarkTurquoise">Thomas</span> instantly tenses up, reaching back and grabbing your wrist.</span> <span style="Color: LightSteelBlue">“What are you doing!?”</span> He says with a mix of confusion and accusation. <span style="Color: LightGreen">You laugh, telling him to relax. You’ve helped your family when they’ve felt sore before and know just the way to make him feel better.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Thomas",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Hold on, you don’t need to-!”</span> <span style="color:DarkTurquoise">Thomas</span> starts to protest and pull away, <span style="Color: Pink">but stops and groans as you begin to apply pressure into his shoulder. It hurts at first, but then it starts to feel pretty good and <span style="color:DarkTurquoise">Thomas</span> exhales. <span style="Color: LightSteelBlue">“A-ahh… That’s not half bad…”</span> <span style="color:DarkTurquoise">Thomas</span> blushes a little, still tense but no longer pulling away. You smile and continue to massage his sore muscles, putting in extra pressure until his body relaxes a little. <br>
+        <br>
+        His breathing becomes calmer, almost like he’s sleeping, but his occasional movements and finger twitches let you know he’s still awake. Still, he doesn’t resist and lets you continue to massage his shoulders until the pain is gone and he sighs loudly as he leans back against the tree.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Thomas",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    Eyes: "Tired",
+                    Blush: 1,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“You know, you should really ask before you do that.”</span> He says after taking a deep breath, <span style="Color: LightSteelBlue">“But… it wasn’t terrible. I can see, uhh… why your family would like that.”</span> <span style="color:DarkTurquoise">Thomas</span> adjusts himself a little bit <span style="Color: Pink">before suddenly tensing up against and quickly turning away from you.</span> <span style="Color: LightSteelBlue">“But, umm… thanks. I’m good now, so…”</span> He coughs, acting very strangely as he quickly stands up and begins to walk towards the fountain. <span style="Color: LightSteelBlue">“Let’s grab a drink. Then we can do, you know, whatever.”</span> You raise an eyebrow as <span style="color:DarkTurquoise">Thomas</span> walks away quickly before following behind him. <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Thomas" 3>>
+        <span style="color:green">+Thomas Fun</span><br>
+        <<set $HangOutNeed.Fun += 15>>
+        <span style="color:green">+Thomas Energy</span><br>
+        <<set $HangOutNeed.Energy += 10>>
+        <span style="color:green">+Thomas Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 15>>
+        <br>
+        [[Continue|Thomas Hang Out Park]]
+    <</replace>>
+    <</requiresTrait>>
+</div>

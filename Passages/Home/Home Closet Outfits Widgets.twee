@@ -1,0 +1,93 @@
+:: Home Closet Outfits Widgets [widget]
+<<nobr>>
+
+<<widget "applyOutfit">>
+<<storeClothing "Closet" "Naked" 1>>
+<<set _outfit to _args[0]>>
+<<set _match_field to _args[1]>>
+<<for _slot range $ClothingCategories>>
+    <<set _outfit_item to _outfit[_slot] ?? $None>>
+    <<if _outfit_item.Type == "None">>
+        <<continue>>
+    <</if>>
+    <<set _match to -1>>
+    <<for _i, _inventory_item range $PlayerInventoryClothes>>
+        <<if _inventory_item[_match_field] == _outfit_item[_match_field]>>
+            <<set _match to _i>>
+            <<break>>
+        <</if>>
+    <</for>>
+    <<if _match > -1>>
+        <<run State.setVar(`$Player${_slot}`, $PlayerInventoryClothes[_match])>>
+        <<run $PlayerInventoryClothes.deleteAt(_match)>>
+    <<else>>
+        <<set _drawer to State.getVar(`$Closet${_slot}`)>>
+        <<for _i, _drawer_item range _drawer>>
+            <<if _drawer_item[_match_field] == _outfit_item[_match_field]>>
+                <<set _match to _i>>
+                <<break>>
+            <</if>>
+        <</for>>
+        <<if _match > -1>>
+            <<run State.setVar(`$Player${_slot}`, _drawer[_match])>>
+            <<run _drawer.deleteAt(_match)>>
+        <</if>>
+    <</if>>
+<</for>>
+<</widget>>
+
+<<widget "saveOutfit">>
+<<set _outfit to {}>>
+<<set _is_naked to true>>
+<<for _slot range $ClothingCategories>>
+    <<set _outfit[_slot] to State.getVar(`$Player${_slot}`)>>
+    <<if _outfit[_slot].Type != "None">>
+        <<set _is_naked to false>>
+    <</if>>
+<</for>>
+<<if !_is_naked>>
+    <<run $ClosetOutfits.push(_outfit)>>
+<</if>>
+<</widget>>
+
+<<widget "applyEventOutfit">>
+<<set _outfit to $EventOutfits[_args[0]]>>
+<<storeClothing "Store" "Naked" 1>>
+<<for _slot range $ClothingCategories>>
+    <<run State.setVar(`$Player${_slot}`, _outfit[_slot] ?? $None)>>
+<</for>>
+<</widget>>
+
+<<widget "unapplyEventOutfit">>
+<<for _slot range $ClothingCategories>>
+    <<run State.setVar(`$Player${_slot}`, $None)>>
+<</for>>
+<<storeClothing "Restore" "Naked">>
+<</widget>>
+
+<<widget "saveEventOutfit">>
+<<set _outfit_name to _args[0]>>
+<<set _outfit to {}>>
+<<for _slot range $ClothingCategories>>
+    <<set _outfit[_slot] to State.getVar(`$Player${_slot}`)>>
+<</for>>
+<<set _validator to $EventOutfits[_outfit_name].Validator>>
+<<set _fail to _validator(_outfit)>>
+<<if _fail == "">>
+    <<set _outfit.Validator to _validator>>
+    <<set $EventOutfits[_outfit_name] to _outfit>>
+<<else>>
+    <<set $EventOutfitFail to _fail>>
+<</if>>
+<</widget>>
+
+<<widget "displayOutfit">>
+<<set _outfit to _args[0]>>
+<<for _slot range $ClothingCategories>>
+    <<if _outfit[_slot] != null and _outfit[_slot].Type != "None">>
+        <img @src="_outfit[_slot].Icon">
+    <</if>>
+<</for>>
+<</widget>>
+
+<</nobr>>

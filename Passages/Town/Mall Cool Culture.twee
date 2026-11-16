@@ -1,0 +1,92 @@
+:: Mall Cool Culture [nobr]
+
+<<set $Location to {
+    Name: "Cool Culture",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Mall",
+}>>
+<<set _returnlink to "Mall Cool Culture">>
+
+<span style="color:Azure"><big><strong>--Cool Culture--</strong></big></span><br>
+A small store in the mall that makes the most of its space, with clothing and other pop culture items filling the walls. There is not a lot of room to move around, but it’s worth it to have so many interesting and cool looking items. Due to its small size, there is only one changing room near the back.<br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<<shoppingMenu "CoolCulture">>
+
+/*Keeping old code for now as backup measure */
+/* <span style="color:Azure"><strong>-Categories-</strong></span><br>
+<<link"Underwear">>
+	<<set $ShopSlot to "Undies">>
+	<<set $ShopItem to "Styled Briefs">>
+	<<set $ShopColors to ["Green Camo", "Red Camo", "Blue Camo", "Blue Ultraman", "Red Ultraman", "Owlman", "Rainbow", "Spaceship", "Blue Rocket", "Cloud", "Arachnid Kid", "Captain Patriot", "Titanium Man", "Grass Monster", "Fire Monster", "Water Monster", "Space Force Command", "Space Force Operations", "Space Force Science", "Star", "Teal Dino", "Hard Candy", "Skull", "Splashtoon", "Paw Print", "Red Ranger", "Mouse", "PopArt", "Diagonal Color", "Vertical Rainbow", "Blue Ranger Face", "Organic", "Sunset", "Burger Deluxe", "Vintage Sunny", ]>>
+	<<set $ShopIcons to ["Forest Green", "Red", "Blue", "Subdued Blue", "Subdued Red", "Yellow", "Rainbow", "Red", "Blue", "White", "Red", "Subdued Red", "Yellow", "Forest Green", "Red", "Blue", "Subdued Red", "Subdued Yellow", "Subdued Blue", "Subdued Teal", "Teal", "Purple", "Pink", "Orange", "White", "Red", "Yellow", "Red", "Purple", "Rainbow", "Blue", "Green", "Orange", "Red", "Purple", "Orange", ]>>
+	<<set $ShopColor to "Green Camo">>
+	<<set $ShopCost to 4>>
+	<<goto "Mall Cool Culture">>
+<</link>>
+ - 
+<<link"Bottoms">>
+	<<set $ShopSlot to "Bottoms">>
+	<<set $ShopItem to "Ripped Jeans">>
+	<<set $ShopColors to ["Blue Denim", "Dark Denim", "Denim", "Khaki", "Light Denim", "Medium Denim", "Warm Khaki"]>>
+	<<set $ShopColor to "Dark Denim">>
+	<<set $ShopCost to 6>>
+	<<goto "Mall Cool Culture">>
+<</link>>
+ - 
+<<link"Tops">>
+	<<set $ShopSlot to "Top">>
+	<<set $ShopItem to "Designed Shirt">>
+	<<set $ShopColors to ["Blue Ultraman", "Red Ultraman", "White Ultraman", "Green Camo", "Black Drakenball", "Black Ultraman"]>>
+	<<set $ShopIcons to ["Blue", "Red", "White", "Forest Green", "Black", "Gray"]>>
+	<<set $ShopColor to "Blue Ultraman">>
+	<<set $ShopCost to 5>>
+	<<goto "Mall Cool Culture">>
+<</link>>
+ - 
+<<link"Outer">>
+	<<set $ShopSlot to "Outer">>
+	<<set $ShopItem to "Neon Jacket">>
+	<<set $ShopColors to ["Beige", "Subdued Beige", "Black", "Blue", "Subdued Blue", "Brown", "Subdued Brown", "Bubblegum Pink", "Subdued Bubblegum Pink", "Forest Green", "Subdued Forest Green", "Gray", "Hot Pink", "Subdued Hot Pink", "Olive Green", "Subdued Olive Green", "Orange", "Subdued Orange", "Purple", "Subdued Purple", "Red", "Subdued Red", "Teal", "Subdued Teal", "White", "Subdued White", "Yellow", "Subdued Yellow"]>>
+	<<set $ShopColor to "Red">>
+	<<set $ShopCost to 8>>
+	<<goto "Mall Cool Culture">>
+<</link>>
+ - 
+<<link"Costumes">>
+	<<set $ShopSlot to "Costume">>
+	<<set _clothingslot to "Back">>
+	<<set $ShopItem to "Fox Tail">>
+	<<set $ShopColors to ["Auburn", "Black", "Blonde", "Blue", "Brown", "Charcoal", "Dark Blue", "Dark Brown", "Dirty Blonde", "Ginger", "Gray", "Green", "Light Brown", "Lime", "Pink", "Purple", "Red", "Strawberry Blonde", "Teal", "White"]>>
+	<<set $ShopIcons to ["Auburn", "Black", "Blonde", "Blue", "Brown", "Charcoal", "Dark Blue", "Dark Brown", "Dirty Blonde", "Ginger", "Gray", "Green", "Light Brown", "Lime", "Pink", "Purple", "Red", "Strawberry Blonde", "Teal", "White"]>>
+	<<set $ShopColor to "Brown">>
+	<<set $ShopCost to 5>>
+	<<goto "Mall Cool Culture">>
+<</link>>
+<br>
+
+<<if $ShopSlot == "Undies">>
+	<<include"Cool Culture Underwear">>
+<<elseif $ShopSlot == "Bottoms">>
+	<<include"Cool Culture Bottoms">>
+<<elseif $ShopSlot == "Top">>
+	<<include"Cool Culture Tops">>
+<<elseif $ShopSlot == "Outer">>
+	<<include"Cool Culture Outer">>
+<<elseif $ShopSlot == "Costume">>
+	<<include"Cool Culture Costume">>
+
+<</if>>
+
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Mall.png">
+	[[Mall (0:10)|Mall][$Minutes += 10]]<br> */

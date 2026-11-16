@@ -1,0 +1,124 @@
+:: School Class Tracking [nobr]
+
+	/* SCHOOL CLASS TRACKING */
+	<<if $Time.schoolday()>>
+		/* MATH */
+		<<if $MathClass == 0 and $Time.after(9)>>
+			<span style="color:Red">You have missed Math Class! Your Father has been notified!</span><br>
+					<<set $GradeChange to "Math">>
+					<<set $GradeChangeType to "Missed">>
+					<<include"Grade Change">>
+					<<set $MathClass to 1>>
+					<<set $MissedClass += 1>>
+					<<set $Punishment += 10>>
+		<</if>>
+		/* HISTORY */
+		<<if $HistoryClass == 0 and $Time.after(10)>>
+			<span style="color:Red">You have missed History Class! Your Father has been notified!</span><br>
+					<<set $GradeChange to "History">>
+					<<set $GradeChangeType to "Missed">>
+					<<include"Grade Change">>
+					<<set $HistoryClass to 1>>
+					<<set $MissedClass += 1>>
+					<<set $Punishment += 10>>
+		<</if>>
+		/* SCIENCE */
+		<<if $ScienceClass == 0 and $Time.after(13)>>
+			<span style="color:Red">You have missed Science Class! Your Father has been notified!</span><br>
+					<<set $GradeChange to "Science">>
+					<<set $GradeChangeType to "Missed">>
+					<<include"Grade Change">>
+					<<set $ScienceClass to 1>>
+					<<set $MissedClass += 1>>
+					<<set $Punishment += 10>>
+		<</if>>
+		/* ENGLISH */
+		<<if $EnglishClass == 0 and $Time.after(14)>>
+			<span style="color:Red">You have missed English Class! Your Father has been notified!</span><br>
+					<<set $GradeChange to "English">>
+					<<set $GradeChangeType to "Missed">>
+					<<include"Grade Change">>
+					<<set $EnglishClass to 1>>
+					<<set $MissedClass += 1>>
+					<<set $Punishment += 10>>
+		<</if>>
+		/* DRAMA */
+		<<if $DramaClass == 0 and $Time.after(11)>>
+			<span style="color:Red">You have missed Drama Class! Your Father has been notified!</span><br>
+					<<set $MissedClass += 1>>
+					<<set $Punishment += 10>>
+					<<set $DramaClass to 1>>
+		<</if>>
+		/* GYM */
+		<<if $GymClass == 0 and $Time.after(15)>>
+			<span style="color:Red">You have missed Gym Class! Your Father has been notified!</span><br>
+					<<set $MissedClass += 1>>
+					<<set $Punishment += 10>>
+					<<set $GymClass to 1>>
+		<</if>>
+<</if>>
+		/* HOMEWORK */
+	<<if $Time.schoolday()>>
+		<<if $Homework == 0>>
+			<<if $Time.after(14)>>
+				<<set $Homework to 1>>
+					<span style="color:Yellow">You have been given homework for the night!</span>
+			<</if>>
+		<</if>>
+	<</if>>
+
+		/* SCHOOL ALERT SYSTEM */
+		
+<<if $Time.schoolday()>>
+	/* BUS */
+	<<if $Time.between(7, 20, 7,30)>>
+		<<if $RideBusToSchool != 1>>
+			<span style="color:Teal">The school bus is outside.</span>
+		<<else>>
+			<span style="color:Teal">You have Math Class at 8 AM.</span>
+		<</if>>
+	/* MORNING CLASSES */
+	<<elseif $Time.between(7, 30, 8, 30)>>
+		<span style="color:Teal">You have Math Class at 8 AM.</span>
+	<<elseif $Time.between(8, 30, 9, 30)>>
+		<span style="color:Teal">You have History Class at 9 AM.</span>
+	<<elseif $Time.between(9, 30, 10, 50)>>
+		<span style="color:Teal">You have Drama Class at 10 AM.</span>
+	/* LUNCH */
+	<<elseif $Time.between(10, 50, 11, 30)>>
+		<span style="color:Teal">You have Lunch until Noon.</span>
+	/* AFTERNOON CLASSES */
+	<<elseif $Time.between(11, 30, 12, 30)>>
+		<span style="color:Teal">You have Science Class at 12 PM.</span>
+	<<elseif $Time.between(12, 30, 13, 30)>>
+		<span style="color:Teal">You have English Class at 1 PM.</span>
+	<<elseif $Time.between(13, 30, 15, 0)>>
+		<span style="color:Teal">You have Gym Class at 2 PM.</span>
+	<<elseif $Time.after(15)>>
+		<span style="color:Teal">School is out for the day.</span>
+	/* SETTING HOMEWORK */
+		<<if $Homework == 0>>
+			<<set $Homework to 1>>
+		<</if>>
+
+	<</if>>
+<</if>>
+
+/* MEAL TIMES AT HOME */
+<<if $CC == 1>>
+
+<<if $Time.between(6, 0, 8, 0)>>
+	<<if $Breakfast != 1>>
+	<span style="color:Teal">Breakfast is being served.</span>
+	<</if>>
+<<elseif $Time.between(11, 0, 12, 0)>>
+	<<if $Lunch != 1 and !$Time.schoolday()>>
+	<span style="color:Teal">Lunch is being served.</span>
+	<</if>>
+<<elseif $Time.between(17, 0, 18, 0)>>
+	<<if $Dinner != 1>>
+	<span style="color:Teal">Dinner is being served.</span>
+	<</if>>
+<</if>>
+
+<</if>>

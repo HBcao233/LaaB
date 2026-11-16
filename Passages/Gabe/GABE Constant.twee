@@ -1,0 +1,9 @@
+:: GABE Constant [nobr]
+
+
+/* CHANGING CLOTHES */
+	<<if $GabeNewClothes != 1 and $Time.after(19)>>
+		<<include"GABE Equipment">>
+		<<set $GabeNewClothes to 1>>
+		<<set $GabeStrippedSleeping to 0>>
+	<</if>>

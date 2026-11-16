@@ -1,0 +1,152 @@
+:: Math Class Do Homework [nobr]
+
+/* Written by: Dicey 1+1= window */
+/* Intro */
+
+As <span style="color:DarkTurquoise">Mr. Randolph</span> starts going over some math problems on the board, <span style="color:lightcoral">a sinking realization hits you—you didn’t finish your homework!</span> <br>
+<BR>
+It’s due at the end of class. Panic flares in your chest, but you keep your face neutral. Moving quickly but quietly, you snag your homework, trying not to draw any attention. <span style="color:Yellow">You quickly think of a way to sneakily do your homework while there’s still time.</span> <br>
+<br>
+<<linkreplace"Continue">>
+    <<set _random1 to random(1, 2)>>
+    <<if _random1 == 1>>
+        <span style="color:DarkTurquoise">Mr. Randolph</span> just keeps going on and on about something. Every time he turns his back to the class, you scramble to get your homework done. It’s a bunch of math problems, <span style="color:lightcoral">but trying to finish it while half-listening to the lesson is a struggle.</span> <br>
+        <br>
+        After a while of scrambling and listening. Time blurs together, and before you know it, <span style="color:DarkTurquoise">Mr. Randolph</span> starts making his way around the room, collecting homework. <span style="color:lightcoral">Panic sets in as you rush to finish the last few problems.</span> <br>
+        <br>
+        Just as you scrawl down the final answer, he’s already grabbing the paper from the kid next to you. Your heart pounds. <span style="color:lightcoral">When he stops at your desk, he gives you a look—one of those looks that makes every second stretch into eternity.</span> <br>
+        <br>
+        <span style="color:Red">Does he know? Will he call you out?</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 3,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightGreen">But then—he moves on. You barely hold in a sigh of relief. And right on cue, the bell rings. Your heart’s still hammering, adrenaline buzzing through you. You actually got away with it.</span> <br>
+        <br>
+        <<include"Attend Math Finish">>
+    <<elseif _random1 == 2>>
+        /*-Fail*/
+        Carefully, you hunch over your desk, scribbling down answers between glances at the board. A few close calls make your heart leap into your throat, but you keep going, nearly done— Until the room goes silent. <br>
+        <br>
+        You blink, looking up to find everyone staring at you. <br>
+        <br>
+        And then <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Mr. $Player.LastName</span>.”</span> The voice is sharp. <br>
+        <br>
+        <span style="color:lightcoral">Your stomach knots as you slowly turn your head. <span style="color:DarkTurquoise">Mr. Randolph</span> is watching you, his eyes like a hawk locking onto its prey. His fingers drum against the board, a slow, measured rhythm that makes your pulse spike.</span> <br>
+        
+        <span style="color:LightSteelBlue">“Since you seem so very busy,”</span> he says, his tone dripping with anger, <span style="color:LightSteelBlue">“why don’t you come up here and demonstrate what we just discussed?”</span> You freeze. The weight of the classroom’s silence presses down on you. <br>
+        <br>
+        <span style="color:LightSteelBlue">“Now, <span style="color:DarkTurquoise">Mr. $Player.LastName</span>.”</span> He taps the board <br>
+
+        <<set _ad to [
+            {
+                Name: "Randolph",
+                State: {
+                    Mouth: "Frown",
+                    Brows: "Angry",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Sad",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:lightcoral">You push back your chair, feeling like you’re walking to your doom. You feel the tension, every step to the board dragging. You can feel the class watching, whispering.You stare at the problem. It might as well be written in another language.</span> <br>
+        <br>
+        <span style="color:DarkTurquoise">Mr. Randolph</span> <span style="color:lightcoral">taps his knuckles against the board, impatient.</span> <span style="color:LightSteelBlue">“Any day now.”</span> <br>
+        <br>
+        <<set _random2 to random(1, 2)>>
+        <<if _random2 == 1>>
+            /*=Hard Math Check=*/
+            /*[Pass]*/
+            <span style="color:lightcoral">Your mind scrambles. You weren’t listening. You have no idea how to do this.</span> You shake the thought and push yourself to do this. <br>
+            <br>
+            You squeeze the chalk in your sweaty palm and force yourself to think. You run through every formula you can remember, every possible way to solve it. Then, out of nowhere, something clicks. A half-remembered problem from a past test just feels right. <br>
+            <br>
+            <span style="color:lightcoral">You don’t know if it’s actual knowledge, intuition, or sheer dumb luck, but you go for it. When you finish, the silence stretches unbearably. You turn to face <span style="color:DarkTurquoise">Mr. Randolph</span>. His gaze is unreadable.</span> Then— <span style="color:lightGreen">A slow nod. Barely there.</span> <br>
+            <br>
+            But his eyes narrow. <span style="color:LightSteelBlue">“Sit.”</span> <br>
+            <br>
+            You don’t need to be told twice. You bolt back to your seat, pulse still racing. <span style="color:DarkTurquoise">Mr. Randolph</span> doesn’t look at you as he continues the lesson—but you know he’s aware of you. <br>
+
+            Still, somehow, you manage to finish your homework before he collects it. <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Happy",
+                        Blush: 2,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:lightgreen">When you hand it over, he lingers for just a second, his sharp eyes scanning you like he’s daring you to slip up. But he moves on. <br>
+            <br>
+            You let out a shaky breath, your hands still trembling.</span> <br>
+            <<addMoodlet "Stress" 1>>
+            <br>
+            <<include"Attend Math Finish">>
+        <<elseif _random2 == 2>>
+            /*[Fail]*/
+            You grasp at whatever scraps of knowledge you can. Anything. You try a formula—your best guess—but the second the chalk leaves the board, the class collectively tenses. <span style="color:lightcoral">It’s wrong.</span>  <br>
+            <br>
+            The silence is deafening. <br>
+            <br>
+            <span style="color:LightSteelBlue">“Are you even paying attention in my class?”</span> <span style="color:lightcoral">The words stab you.</span> <br>
+            <br>
+            <span style="color:DarkTurquoise">Mr. Randolph</span> <span style="color:lightcoral">steps forward, his expression darkening.</span> <span style="color:LightSteelBlue">“Instead of finishing your homework while I’m teaching, maybe you should actually listen for once.”</span>
+
+            <<set _ad to [
+            {
+                Name: "Randolph",
+                State: {
+                    Mouth: "Frown",
+                    Brows: "Angry",
+                },
+            },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                        Cry: 2,
+                        Blush: 3,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            Your face burns. You feel helpless. <br>
+            <br>
+            His voice rises. <span style="color:LightSteelBlue">“Pathetic. If you can’t focus, then maybe detention will teach you how.”</span> <span style="color:lightcoral">He grabs a slip from his desk, scribbles furiously, then slams it onto the desk. <br>
+            <br>
+            <span style="color:LightSteelBlue">“Detention. After school. And don’t bother turning in that homework.”</span> He glares. <span style="color:LightSteelBlue">“I don’t accept work done in my class instead of listening.”</span> <br>
+            <br>
+            As you trudge back to your seat, every step feels heavier than the last. The whispers sting your ears. You don’t even look at anyone as you drop into your chair, slumping low, wishing—hoping—you could just disappear into it. <br>
+            <br>
+            <span style="color:DarkTurquoise">Mr. Randolph</span> continues the lesson, but his glares still burn into you.</span> <br>
+            <<set $Detention += 10>>
+            <<addMoodlet "Stress" 1>>
+            <br>
+            <<include"Attend Math Finish">>
+        <</if>>
+    <</if>>
+<</linkreplace>>
+
+
+

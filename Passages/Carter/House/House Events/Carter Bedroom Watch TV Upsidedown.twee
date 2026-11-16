@@ -1,0 +1,74 @@
+:: Carter Bedroom Watch TV Upsidedown [nobr]
+
+/* INtro */
+<<set $Minutes += 30>>
+You and <span style="color:DarkTurquoise">Carter</span> are lazily lounging about while watching cartoons on his TV. <span style="color:Pink">You are spread across both of his beanbags in a rather contorted position as <span style="color:DarkTurquoise">Carter</span> lies on his bed and hangs upside down with a half-amused look on his face, looking very much like your little brother when he gets consumed by a cartoon. It is rather adorable, especially with his shirt fluttering down to reveal his belly and waist, his $CarterUndies.Type peeking out just a bit.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Carter",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Happy",
+                    },	
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                    },	
+                },
+            ]>>
+            <<ad _ad>>
+
+<div id="choice">
+    <<link "Watch the show<br>">>
+    <<replace "#choice">>
+        You turn back to the show to continue watching, allowing yourself to become absorbed in the flashing colorful pictures just like <span style="color:DarkTurquoise">Carter</span> was. <span style="color:LightGreen">It is rather hypnotizing and by the time the episode ends and you both blink back to reality, you don’t know how long it’s been!</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Fun episode.”</span> <span style="color:DarkTurquoise">Carter</span> says as he sits up, looking just as out of it as you are. <br>
+        <span style="color:Green">+Carter Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Carter" 1>>
+        <br>
+        [[Continue|Carter House Carter Bedroom]]
+    <</replace>>
+    <</link>>
+    <<link "Watch Carter<br>">>
+    <<replace "#choice">>
+        You decide that the real show is <span style="color:DarkTurquoise">Carter</span> and watch him with a smirk as the episode continues. <span style="color:Pink">This causes you to notice a few cute little quirks about the boy. He’ll occasionally mouth the words he’s hearing, seemingly at random, and afterwards will often just keep his mouth open, watching with it agape. He also seems to breath from his mouth more than normal, sometimes taking in a long breath and holding it for a second before exhaling. <br>
+        <br>
+        Whenever music plays, you spot his feet swaying back and forth to the beat. You can’t imagine <span style="color:DarkTurquoise">Carter</span> is doing any of this consciously, though it is remarkably cute and very similar to what your little brother does. You can’t help but smile at this, which quickly turns to a laugh as <span style="color:DarkTurquoise">Carter</span> notices you staring and turns red.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Carter",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Frown",
+                        Blush: 2,
+                    },	
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },	
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Wha- why are you staring at me?”</span> He asks. You just shrug, but continue to do it. <span style="color:Pink">This causes <span style="color:DarkTurquoise">Carter</span> to quickly become self-concious as he adjusts his shirt and continues to watch, now stiff as a board.</span> <br>
+        <span style="color:green">+Carter Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 5>>
+        <span style="color:Green">+Carter Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <<needChange "Fun" 10>>
+        <<socialChange "Carter" 1>>
+        <br>
+        [[Continue|Carter House Carter Bedroom]]
+    <</replace>>
+    <</link>>
+</div>

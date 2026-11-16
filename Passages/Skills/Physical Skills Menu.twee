@@ -1,0 +1,117 @@
+:: Physical Skills Menu [nobr]
+
+<<set _skills to ["Athletics", "Swimming"]>>
+
+
+<span style="color:Azure"><strong><big>--Physical Skills--</big></strong></span><br>
+
+<<for _i to 0; _i lt _skills.length; _i++>>
+	<<capture _i>>
+		<<set _skillname to _skills[_i]>>
+		<img @src="`Images/Icons/Skill/${_skillname}.png`">
+		<strong>_skills[_i]</strong> (Rank: $Skill[_skillname].Rank)<br>
+		<div style="text-indent: 3em;">
+			SP: $Skill[_skillname].SP | Max: $Skill[_skillname].MaxSP | Total: $Skill[_skillname].TotalSP<br>
+		</div>
+	<</capture>>
+<</for>>
+
+
+/* Old Code
+<<set _schoolSkillsBars = [
+	{
+		group: 'School Skills',
+		skills: [
+			{
+				name: 'English',
+				learned: $EnglishLearned,
+				lvl: $EnglishSkill,
+				bar: {
+					text: `${$EnglishXP}%`,
+					value: $EnglishXP,
+					color: getSkillBarColor($EnglishXP),
+					showText: true,
+				},
+			},
+			{
+				name: 'History',
+				learned: $HistoryLearned,
+				lvl: $HistorySkill,
+				bar: {
+					text: `${$HistoryXP}%`,
+					value: $HistoryXP,
+					color: getSkillBarColor($HistoryXP),
+					showText: true,
+				},
+			},
+			{
+				name: 'Math',
+				learned: $MathLearned,
+				lvl: $MathSkill,
+				bar: {
+					text: `${$MathXP}%`,
+					value: $MathXP,
+					color: getSkillBarColor($MathXP),
+					showText: true,
+				},
+			},
+			{
+				name: 'Science',
+				learned: $ScienceLearned,
+				lvl: $ScienceSkill,
+				bar: {
+					text: `${$ScienceXP}%`,
+					value: $ScienceXP,
+					color: getSkillBarColor($ScienceXP),
+					showText: true,
+				},
+			},
+		],
+	},
+	{
+		group: 'Physical Skills',
+		skills: [
+			{
+				name: 'Athletics',
+				learned: $AthleticsLearned,
+				lvl: $AthleticsSkill,
+				bar: {
+					text: `${$AthleticsXP}%`,
+					value: $AthleticsXP,
+					color: getSkillBarColor($AthleticsXP),
+					showText: true,
+				},
+			},
+			{
+				name: 'Swimming',
+				learned: $SwimmingLearned,
+				lvl: $SwimmingSkill,
+				bar: {
+					text: `${$SwimmingXP}%`,
+					value: $SwimmingXP,
+					color: getSkillBarColor($SwimmingXP),
+					showText: true,
+				},
+			},
+		],
+	},
+]>>
+
+<<for _group range _schoolSkillsBars>>
+	<span style="color:Azure"><strong><big>--<<=_group.group>>--</big></strong></span><br>
+	<<for _skill range _group.skills>>
+		<strong><<=_skill.name>></strong><br>
+		<<if _skill.learned == 1>>
+			<div class="skill-bar-group">
+				<span>LVL.<<=_skill.lvl>></span>
+				<div class="skill-bar-gauge">
+					<<progressbar _skill.bar>>
+				</div>
+			</div>
+		<<else>>
+			You have not learned this skill!<br>
+		<</if>>
+	<</for>>
+	<br>
+<</for>>
+*/

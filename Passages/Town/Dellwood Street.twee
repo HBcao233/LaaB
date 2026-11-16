@@ -1,0 +1,121 @@
+:: Dellwood Street [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Dellwood Street",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+
+<<set _random to random(1, 10)>>
+<<set _randomevent to random(1, 50)>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+/* Kollin Preview */
+<<elseif $ToggleOCKollin == 1 && $InActiveQuests.includes("Kollin: Boy in the Woods") && !$CompletedQuests.includes("Kollin: Preview") && $Time.between(15,0,19,0) && _random == 10>>
+	<<include"OC Kollin Stranger">>
+
+/* Random Event Code */
+<<elseif _randomevent == 1>>
+	<<set _randomeventpassage to {
+			"Street Random Encounter Icecream Truck": 10,
+			"Street Random Encounters Stray Cat": 10,
+			"Street Random Encounter Car Speeding By": 10,
+	}>>
+	<<if $ToggleOCRowan == 1 && $CompletedQuests.includes("Rowan: Introduction")>>
+		<<set _randomeventpassage["OC Rowan Skateboarding Around Town"] = 10>>
+	<</if>>
+	<<if $ToggleOCMicah == 1 && $InActiveQuests.includes("Micah: Introduction") && $Time.between(6, 0, 20, 0)>>
+		<<set _randomeventpassage["OC Micah Intro"] = 50>>
+	<</if>>
+	<<if $ToggleOCErin == 1 && $CompletedQuests.includes("Erin: Introduction") && $Time.between(6, 0, 20, 0) && $Money >= 2>>
+		<<set _randomeventpassage["OC Erin Ice Cream Emo"] = 10>>
+	<</if>>
+	<<set _event to _randomeventpassage.random()>>
+	<<include _event>>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Dellwood Street--</strong></big></span><br>
+You stand at the corner of Dellwood Street. The street was full of fancy, newer houses that were all at least two stories. Large stone or brick walls completely obscured the backyards while the fronts were covered by smaller, wooden fences. Trees were placed along the sidewalk in an organized fashion, giving the neighborhood a pretentious look. Near the end of the street sit some empty lots, still undeveloped in their relatively new neighborhood. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+
+<<if $MillerLemonLocation == "Dellwood" and $Time.between(7,0,15,0)>>
+	You notice [[Jayden & Kayden|OC Miller Lemonade Stand]] at a lemonade stand.
+<</if>>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+	/* RANDOM JOBS */
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+	<<capture _i>>
+		<<if $RandomJobList[_i].Location == "Dellwood">>
+			<<if $RandomJobList[_i].Type == "Mow Lawn">>
+				[[Job: Mow Lawn (1:00)|Random Job Mow Lawn]]<br>
+			<<elseif $RandomJobList[_i].Type == "Fix Fence">>
+				[[Job: Fix Fence (2:00)|Random Job Fix Fence]]<br>
+			<<elseif $RandomJobList[_i].Type == "Pull Weeds">>
+				[[Job: Pull Weeds (0:30)|Random Job Pull Weeds]]<br>
+			<<elseif $RandomJobList[_i].Type == "Clean Gutters">>
+				[[Job: Clean Gutters (1:00)|Random Job Clean Gutters]]<br>
+			<</if>>
+		<</if>>
+	<</capture>>
+<</for>>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+[[Empty Lot (0:01)|Dellwood Empty Lot][$Minutes += 1]]<br>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Player Neighborhood.png">
+	[[Northend (0:10)|Player Neighborhood][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Gated Neighborhood.png">
+	[[Avendale (0:10)|Avendale][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:10)|Shopping District][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Player Neighborhood.png">
+	[[Northend (0:05)|Player Neighborhood][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Gated Neighborhood.png">
+	[[Avendale (0:05)|Avendale][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:05)|Shopping District][$Minutes += $TravelTime]]<br>
+	<</if>>
+<</if>>
+<br>
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 152px; top: 7px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="226,81,279,134" alt="Shopping District" onclick="$.wiki('<<goto[[Shopping District]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="300,7,353,60" alt="Player Neighborhood" onclick="$.wiki('<<goto[[Player Neighborhood]]>><<set $Minutes += $TravelTime>>')" />
+<area shape="rect" coords="78,7,131,60" alt="Gated Neighborhood" onclick="$.wiki('<<goto[[Avendale]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

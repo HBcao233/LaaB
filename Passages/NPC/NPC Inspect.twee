@@ -1,0 +1,18 @@
+:: NPC Inspect [nobr]
+
+<<set _npc_present to []>>
+<<for _npc range NPC.all()>>
+    <<if _npc.Location == $Location.Name>>
+       <<run _npc_present.push(_npc)>>
+    <</if>>
+<</for>>
+
+<span style="color:Azure"><strong>-NPC-</strong></span><br>
+<<if _npc_present.length>>
+    <<for _npc range _npc_present>>
+        <<set _pti to `${_npc.ID} Seen ${$Location.Name}`>>
+        <<include _pti>> 
+    <</for>>
+<<else>>
+    Nobody here.<br>
+<</if>>

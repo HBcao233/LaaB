@@ -1,0 +1,208 @@
+:: Exposed Tracking [nobr]
+
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type != "None">>
+	<<if $PlayerUndies.Tags.includes("Diaper")>>
+		<<set $Player.Exposed to "Diaper">>
+	<<else>>
+		<<set $Player.Exposed to "Undies">>
+	<</if>>
+    
+<<elseif $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+	<<set $Player.Exposed to "Naked">>
+
+<<elseif $PlayerBottoms.Type == "Towel">>
+	<<set $Player.Exposed to "Towel">>
+    
+<<else>>
+	<<set $Player.Exposed to "Clothed">>
+    
+<</if>>
+
+/* MOODLETS */
+
+/* Clothed, so No Moodlet */
+<<if $Player.Exposed == "Clothed" && $MoodState.Exposure != 0>>
+	<<set $MoodState.Exposure to 0>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Exposure">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+
+/* Undies [Safe] */
+<<elseif $Player.Exposed == "Undies" && $MoodState.Exposure != 1 && $Location.Safe == 1>>
+	<<set $MoodState.Exposure to 1>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Exposure">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+			ID: "Exposure",
+			Name: "In Underwear",
+			MoodletType: "State",
+			Value: 1,
+			Type: "Neutral",
+			Description: "You are in your underwear.",
+			Icon: "Underwear Safe",
+			Values: {
+			}
+	})>>
+
+/* Undies [Unsafe] */
+<<elseif $Player.Exposed == "Undies" && $MoodState.Exposure != -1 && $Location.Safe == 0>>
+	<<set $MoodState.Exposure to -1>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Exposure">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+			ID: "Exposure",
+			Name: "In Underwear",
+			MoodletType: "State",
+			Value: -1,
+			Type: "Embarrassed",
+			Description: "You feel embarrassed being in your underwear in such a public place!",
+			Icon: "Underwear Unsafe",
+			Values: {
+				Embarrassed: 15,
+			}
+	})>>
+
+/* Diaper [Safe] */
+<<elseif $Player.Exposed == "Diaper" && $MoodState.Exposure != 4 && $Location.Safe == 1>>
+	<<set $MoodState.Exposure to 4>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Exposure">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+			ID: "Exposure",
+			Name: "In Diaper",
+			MoodletType: "State",
+			Value: 1,
+			Type: "Neutral",
+			Description: "Your diaper is exposed. Even though you are in a safe place, it is still a little embarrassing to be seen like this.",
+			Icon: "Diaper Safe",
+			Values: {
+				Embarrassed: 5,
+			}
+	})>>
+
+/* Diaper [Unsafe] */
+<<elseif $Player.Exposed == "Diaper" && $MoodState.Exposure != -4 && $Location.Safe == 0>>
+	<<set $MoodState.Exposure to -4>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Exposure">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+			ID: "Exposure",
+			Name: "In Diaper",
+			MoodletType: "State",
+			Value: -1,
+			Type: "Embarrassed",
+			Description: "You are in a public place with your diaper exposed! Anyone can see it, it may be less embarrassing if you were naked!",
+			Icon: "Diaper Unsafe",
+			Values: {
+				Embarrassed: 30,
+			}
+	})>>
+
+/* Towel [Safe] */
+<<elseif $Player.Exposed == "Towel" && $MoodState.Exposure != 2 && $Location.Safe == 1>>
+	<<set $MoodState.Exposure to 2>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Exposure">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+			ID: "Exposure",
+			Name: "In Towel",
+			MoodletType: "State",
+			Value: 2,
+			Type: "Neutral",
+			Description: "Your bits are covered by a loose towel.",
+			Icon: "Towel Safe",
+			Values: {
+			}
+	})>>
+
+/* Towel [Unsafe] */
+<<elseif $Player.Exposed == "Towel" && $MoodState.Exposure != -2 && $Location.Safe == 0>>
+	<<set $MoodState.Exposure to -2>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Exposure">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+			ID: "Exposure",
+			Name: "In Towel",
+			MoodletType: "State",
+			Value: -2,
+			Type: "Embarrassed",
+			Description: "You are in a public place with only a towel to cover yourself with.",
+			Icon: "Towel Unsafe",
+			Values: {
+				Embarrassed: 10,
+			}
+	})>>
+
+/* Naked [Safe] */
+<<elseif $Player.Exposed == "Naked" && $MoodState.Exposure != 3 && $Location.Nudity == 1>>
+	<<set $MoodState.Exposure to 3>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Exposure">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+			ID: "Exposure",
+			Name: "Naked",
+			MoodletType: "State",
+			Value: 3,
+			Type: "Neutral",
+			Description: "You are completely naked, but in a safe space.",
+			Icon: "Naked Safe",
+			Values: {
+				Horny: 5,
+			}
+	})>>
+
+/* Naked [Unsafe] */
+<<elseif $Player.Exposed == "Naked" && $MoodState.Exposure != -3 && $Location.Nudity == 0>>
+	<<set $MoodState.Exposure to -3>>
+	<<for _i to 0; _i lt $Player.Moodlets.length; _i++>>
+		<<if $Player.Moodlets[_i].ID == "Exposure">>
+			<<set $Player.Moodlets.deleteAt(_i)>>
+			<<break>>
+		<</if>>
+	<</for>>
+	<<set $Player.Moodlets.push({
+			ID: "Exposure",
+			Name: "Naked",
+			MoodletType: "State",
+			Value: -3,
+			Type: "Embarrassed",
+			Description: "You are completely naked in a public place! How humiliating!",
+			Icon: "Naked Unsafe",
+			Values: {
+				Embarrassed: 30,
+			}
+	})>>
+
+<</if>>
+

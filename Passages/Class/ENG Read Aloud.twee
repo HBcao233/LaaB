@@ -1,0 +1,28 @@
+:: ENG Read Aloud [nobr]
+
+<span style="color:DarkTurquoise">Mr. Hart</span> tiredly sits at his desk, head down, reading aloud a chapter from the book the class is currently reading. He reads slowly, yawning every couple sentences, making all the boys antsy to go faster. The entire class has nearly passed out from boredom when a high pitched ding rings from <span style="color:DarkTurquoise">Mr. Hart</span>’s computer. He pauses and looks over, mumbling something to himself before addressing the class.<br>
+
+<<set _ad to [
+	{
+		Name: "Hart",
+		State: {
+			Eyes: "Narrow",
+			Mouth: "Frown",
+		},
+	},
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">”The headmaster needs me to send him over some files, so I want one of you to continue to reading aloud while the rest of the class follows along. <span style="color:DarkTurquoise">$Player.Name</span>, please continue where I left off and stand so everyone can hear you.”</span> You blush and stumble to your feet, all eyes on you. <span style="color:Green">Though you are nervous, you read in a concise and quick pace, much to the joy of everyone else.</span> Soon, everyone is once again engrossed in the story and <span style="color:DarkTurquoise">Mr. Hart</span> decides to let you continue reading aloud until the class is over. When the bell rings, a few students whisper words of appreciation in saving them from their boredom.<br>
+<<set $SchoolRep += 10>>
+<span style="color:Green">+Reputation</span><br>
+<br>
+<<set _EventPassFail to "Pass">>
+<<include"Attend English Finish">>
+

@@ -1,0 +1,81 @@
+:: Player Avatar Mood [nobr]
+
+/* Mouth */
+<<if ["Happy", "Hyper"].includes($Player.Mood)>>
+	<<set $AD.Mouth to "Happy">>
+<<elseif ["Sad", "Tired", "Uncomfortable", "Bored", "Mad", "Embarrassed", "Scared"].includes($Player.Mood)>>
+	<<set $AD.Mouth to "Sad">>
+<<elseif ["Neutral"].includes($Player.Mood)>>
+	<<set $AD.Mouth to "Default">>
+<<elseif ["Horny"].includes($Player.Mood)>>
+	<<set $AD.Mouth to "Smirk">>
+<</if>>
+
+/* Eyes */
+<<if ["Happy", "Neutral", "Uncomfortable", "Hyper"].includes($Player.Mood)>>
+	<<set $AD.Eyes to "Normal">>
+<<elseif ["Sad", "Embarrassed", "Scared"].includes($Player.Mood)>>
+	<<set $AD.Eyes to "Sad">>
+<<elseif ["Tired", "Horny", "Bored"].includes($Player.Mood)>>
+	<<set $AD.Eyes to "Tired">>
+<<elseif ["Mad"].includes($Player.Mood)>>
+	<<set $AD.Eyes to "Mad">>
+<</if>>
+
+/* Cry */
+<<if ["Sad", "Scared"].includes($Player.Mood)>>
+	<<set $AD.Cry to 1>>
+<<else>>
+	<<set $AD.Cry to 0>>
+<</if>>
+
+/* Blush */
+<<if ["Horny", "Scared"].includes($Player.Mood)>>
+	<<set $AD.Blush to 1>>
+<<elseif ["Embarrassed"].includes($Player.Mood)>>
+	<<set $AD.Blush to 2>>
+<<else>>
+	<<set $AD.Blush to 0>>
+<</if>>
+
+/* PENIS HARD */
+<<if $Player.Arousal >= 50 or $Player.Mood == "Horny">>
+	<<set $AD.Hard to 1>>
+<<else>>
+	<<set $AD.Hard to 0>>
+<</if>>
+
+
+/* EXPOSED */
+<<if $Player.Exposed == "Undies" && $Location.Safe == 0>>
+	<<set $AD.Arms to "Hide">>
+    <<set $AD.Blush to 2>>
+    <<set $AD.Mouth to "Sad">>
+    <<set $AD.Eyes to "Sad">>
+<<else>>
+	<<set $AD.Arms to "Normal">>
+<</if>>
+
+<<if $Player.Exposed == "Diaper" && $Location.Safe == 0>>
+	<<set $AD.Arms to "Hide">>
+    <<set $AD.Blush to 3>>
+    <<set $AD.Mouth to "Sad">>
+    <<set $AD.Eyes to "Sad">>
+<<else>>
+	<<set $AD.Arms to "Normal">>
+<</if>>
+
+<<if $Player.Exposed == "Naked" && $Location.Nudity == 0>>
+	<<set $AD.Arms to "Hide">>
+    <<set $AD.Blush to 2>>
+    <<set $AD.Mouth to "Sad">>
+    <<set $AD.Eyes to "Sad">>
+<<else>>
+	<<set $AD.Arms to "Normal">>
+<</if>>
+
+<<if $Location.Name == "Lucas's Bedroom" && $PlayerBottoms.Type == "None" && $PlayerUndies.Type == "None">>
+	<<set $AD.Arms to "Hide">>
+    <<set $AD.Blush to 2>>
+    <<set $AD.Mouth to "Smirk">>
+<</if>>

@@ -1,0 +1,78 @@
+:: OC Manuel Arcade Racing [nobr]
+
+<<set $Minutes += 20>>
+<<set $Money -= 1>>
+
+/* Intro */
+You are walking around the arcade when you spot a familiar boy playing a racing game. <span style="color:DarkTurquoise">Manuel</span>, <span style="color:pink">the boy being forced to wear a cock cage as punishment from his parents. You can’t help but smirk that that was the first thing your mind went to upon seeing him. It left quite the first impression.</span> Still, he is a nice enough kid, despite that, so you go up and greet him. <br>
+
+<<set _ad to [
+    {
+        Name: "OC Manuel",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh, hello <span style="color:DarkTurquoise">$Player.Name</span>.”</span> He only looks to you briefly, focusing on his race. You wait for him to finish before exchanging pleasantries and asking if he’d mind you joining. Certainly, he’d be more interested in racing someone else rather than A.I.s. <span style="color:LightSteelBlue">“Sure thing,”</span> he chuckles, <span style="color:LightSteelBlue">“but I should warn you, I’m pretty good. So, don’t get too upset if you lose, ‘kay?”</span> He sticks his tongue out at you, prompting you to chuckle. You sit down in the racing machine next to him and you both insert a coin to begin a race. <br>
+<br>
+
+<<set _random to random(1, 4)>>
+
+/* Outcome 1 */
+<<if _random > 1>>
+    It ends up being a pretty close race. <span style="color:DarkTurquoise">Manuel</span> wasn’t kidding about his skills; judging by his familiarity with the tracks, he has played this racing game quite a few times. Still, you are able to give him a run for his money as the two of you battle it out and occasionally ‘accidentally’ bump into each other. <br>
+    <br>
+    Ironically, neither of you are the victor of the race. You both spent so much time messing with each other, you allowed one of the A.I.s to get first place. <span style="color:DarkTurquoise">Manuel</span> claims that, since he came in second, he is the true winner of the contest while you defend that, since neither of them came in first, it’s a draw. <br>
+    <br>
+    <span style="color:lightgreen">In the end, you decide to agree to disagree and laugh it off.</span> <br>
+    <<needChange "Fun" 20>>
+    <<socialChange "Manuel" 3 1>>
+    <br>
+    [[Continue|Arcade]]
+
+
+/* Outcome 2 */
+<<else>>
+    The race is going rather well, with you both neck and neck battling for victory, until <span style="color:DarkTurquoise">Manuel</span> begins to lose focus. He stops paying attention on some turns and even takes his hands off the wheel for some moments. <span style="color:pink">Curious, you glance over and spot him adjusting his crotch, or more accurately, the cage around it.</span> <br>
+    <br>
+    You blush, looking away until the race is over. <span style="color:DarkTurquoise">Manuel</span> comes a few places behind you and nervously chuckles that he must be off his game. <span style="color:pink">Despite the awkwardness, you can’t help but ask him if wearing that ‘thing’ is uncomfortable.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "OC Manuel",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Blush: 2,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“I don’t-“</span> <span style="color:DarkTurquoise">Manuel</span> blushes, he must have forgotten you knew about his cage for a moment there. <span style="color:LightSteelBlue">“Ye- yeah, it is. It gets really tight whenever I get aroused, but since I’ve been in it so long without release, everything makes me feel aroused!”</span> <span style="color:DarkTurquoise">Manuel</span> sighs loudly, laying his head on the steering wheel. <span style="color:LightSteelBlue">“But my mom won’t let me take it off since she knows I’m just going to jack off as soon as I can, but can she blame me!? It’s been months…”</span> <br>
+    <br>
+    You pat the poor boy on the head, telling him that that’s pretty rough. <span style="color:pink">Maybe if he’s extra good she’ll give him some time off, or maybe he’ll find another way to ‘relieve himself’.</span> <span style="color:LightSteelBlue">“I doubt it…”</span> <span style="color:DarkTurquoise">Manuel</span> sighs, before opening his eyes and briefly glancing at you. <span style="color:LightSteelBlue">“Well, I mean, there is this one thing…”</span> You raise an eyebrow, causing <span style="color:DarkTurquoise">Manuel</span> to suddenly turn bright red. <span style="color:LightSteelBlue">“No- nothing! Nevermind! Anyway, I better get going. I have lots of homework I need to do!”</span> <br>
+    <br>
+    Without another word, <span style="color:DarkTurquoise">Manuel</span> runs off. <span style="color:pink">You’d wager that something popped into his head that he was too embarrassed to say and, considering how horny he always is, you can imagine why.</span> All you can do is laugh, hoping that one day the poor boy finds a way to free himself. You can hardly imagine being in his situation. <br>
+    <<needChange "Fun" 20>>
+    <<socialChange "Manuel" 3 1>>
+    <br>
+    [[Continue|Arcade]]
+
+<</if>>

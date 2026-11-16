@@ -1,0 +1,82 @@
+:: School Dry Off [nobr]
+
+<<set $Minutes += 3>>
+
+<<if $PlayerUndies.Name == "None">>
+	Making sure no one else is in the bathroom and waiting until the hallway outside sounds empty, you quickly strip off all your wet clothes and attempt to quickly dry them off with the paper towels. <span style="color:Pink">Despite being alone, you feel extremely embarrassed to be naked in the school bathroom, where anyone could walk in and see you in such a state. </span><br>
+<br>
+<<else>>
+	Making sure no one else is in the bathroom and waiting until the hallway outside sounds empty, you quickly strip off all your wet clothes and attempt to quickly dry them off with the paper towels. <span style="color:Pink">Despite being alone, you feel extremely embarrassed to be in nothing but your $PlayerUndies.Name in the school bathroom, where anyone could walk in and see you in such a state. </span><br>
+    <br>
+<</if>>
+
+<<set $Wet to 0>>
+<<set $Wetness to 0>>
+<<storeClothing "Store" "Undies" 1>>
+
+<<set $RandomEvent to random(1, 10)>>
+
+			/* NO EVENT */
+	<<if $RandomEvent != 10>>
+	
+	Thankfully, you are able to get your clothes dry enough after only a few minutes and redress yourself before anyone can see you.<br>
+	<br>
+<<storeClothing "Restore" "Undies">>
+		[[Continue|School Restrooms]] 
+			/* PEOPLE WALK IN */
+	<<else>>
+		As you are drying your clothes, the paper towel dispenser suddenly runs out. You curse your luck as you walk over to the other side of the bathroom to retrieve more. <span style="color:Yellow">Suddenly, you hear two voices approaching the bathroom!</span> You freeze, glancing towards your clothes on the far counter. You could run over to them, but with how close the voices are they’d certainly see you. You could also hide in one of the stalls, but there is no way the boys would miss your clothes on the counter and who knows what would happen to them.<br>
+<br>
+	<div id='choice'>
+	/* RUN TO CLOTHES */
+		<<link "Run to Clothes<br>">>
+		<<replace"#choice">>
+		<<if $PlayerUndies.Name != "None">>
+		You quickly rush to your clothes, reaching them right as two boys enter the restroom. <span style="color:Pink">They freeze upon seeing you standing there in your underwear, using your pile of clothes to cover yourself.</span> They both burst out laughing as you quickly back up into one of the stalls. <br>
+<br>
+<span style="color:LightSteelBlue">”Fuck man, the others are never going to believe this!”</span> You hear one of them laughing as you quickly get dressed.<br>
+	<<addMoodlet "Seen Undies" 3>>
+<<else>>
+		You quickly rush to your clothes, reaching them right as two boys enter the restroom. <span style="color:Pink">They freeze upon seeing you standing there completely naked, using your pile of clothes to cover your crotch.</span> They both burst out laughing as you quickly back up into one of the stalls. <br>
+<br>
+<span style="color:LightSteelBlue">”Fuck man, the others are never going to believe this!”</span> You hear one of them laughing as you quickly get dressed.<br>
+	<<addMoodlet "Seen Naked" 3>>
+
+<</if>>
+<<set $SchoolRep -= 10>>
+	<<set $Player.Arousal += $HumiliatedArousal>>
+<span style="color:Red">-Reputation</span><br>
+<br>
+<<storeClothing "Restore" "Undies">>
+		[[Continue|School Restrooms][$Player.Exposed to "Clothed"]] 
+
+		
+		
+		<</replace>>
+		<</link>>
+	
+	
+	/* HIDE IN STALL */
+		<<link "Hide in Stall">>
+		<<replace"#choice">>
+		
+		Deciding you’d rather not been seen in such a state, you quickly dive into one of the stalls and lock the door. You hear the boys enter, when their talking suddenly ceases, no doubt at the sight of the pile of clothes. Your heart pounds as you hear one of them begin to move the clothes around.<br>
+<br>
+<span style="color:LightSteelBlue">”What the hell are these doing here?”</span> You hear him say as he drops the clothes back on the counter, <span style="color:LightSteelBlue">”You don’t think someone’s running around naked do you?”</span><br>
+<br>
+<span style="color:LightSteelBlue">”Imagine!”</span> You hear the other laugh, <span style="color:LightSteelBlue">”Doubt it though. They’re a little wet, someone probably changed and left them to dry. Not really a smart idea, since anybody could just steal them.”</span><br>
+<br>
+<span style="color:LightSteelBlue">”I guess we should take them to the lost and found in the main office.”</span> The boys quickly gather up your clothes. 
+<<if $PlayerUndies.Name != "None">>
+You want to say something, but find yourself unable to speak out of embarrassment until it’s too late. <span style="color:Red">You now find yourself in the school bathroom in nothing but your $PlayerUndies.Type! You know where your clothes are, but you’ll have to walk through the hallway in your underwear to retrieve them.<br></span>
+<<else>>
+You want to say something, but find yourself unable to speak out of embarrassment until it’s too late. <span style="color:Red">You now find yourself in the school bathroom completely naked! You know where your clothes are, but you’ll have to walk through the hallway completely exposed in order to retrieve them.<br></span>
+<</if>>
+<br>
+<<set $SchoolLostFoundClothes to 1>>
+[[Continue|School Restrooms]] 
+		
+		<</replace>>
+		<</link>>
+	</div>
+	<</if>>

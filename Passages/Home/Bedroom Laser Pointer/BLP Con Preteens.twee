@@ -1,0 +1,723 @@
+:: BLP Con Preteens [nobr]
+
+/* Intro */
+<<if $LaserPointer.Exposed == "Naked">>
+    <<include"BLP Con Preteens Nude Recorded">>
+<<else>>
+    You are walking down the hallway when you hear some snickering behind you. <span style="Color: Yellow">You stop in your tracks and turn around to spot</span> 
+
+    <<set _random to random(1, 3)>>
+
+    <<if _random == 1>>
+        <span style="Color: Yellow">a pair of friends laughing as they glance down at a phone and then up to you. They are obviously laughing at you, not at all trying to hide it, though you can’t be sure why. Despite this, something in your gut tells you it’s not something good.</span> <br>
+        <br>
+    <<elseif _random == 2>>
+        <span style="Color: Yellow">A small group of friends huddled around a phone, laughing as they watch something before looking up at you and laughing even louder. One boy points to the phone and then to you, obviously comparing you to whatever it is they find so funny. Something gives you a bad feeling as they continue, not at all worried about you noticing them.</span> <br>
+        <br>
+    <<else>>
+        <span style="Color: Yellow">That a large group of about 10 boys, mostly upper classmen, are all huddled around in a pack, glancing down at a collection of phones laughing. They then look up at you with smirks, holding up the phone to compare you to whatever it is that you’re watching. You get a very uneasy feeling at whatever it is that is making them laugh so much.</span> <br>
+        <br>
+    <</if>>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    You think about turning back around, but their laughter just grows as soon as you look away, as if they are taunting you, daring you to approach them. <span style="Color: Yellow">Still, you can’t shake the feeling that you won’t like what they have to say. Then again, not doing anything won’t help either. You are sure that, whatever you do, this is going to affect your reputation.</span> <br>
+    <br>
+    <div id="choice">
+        <<link "Ignore them and walk away<br>">>
+        <<replace"#choice">>
+            It takes some willpower to not march over and ask them what the heck is so funny, but you take a deep breath and keep walking. They continue laughing as you do so, trying hard to get your attention or just finding whatever it is THAT amusing. <span style="Color: Yellow">You managed to avoid whatever confrontation that would have been but feel this isn’t the last you’ve heard of them.</span> <br>
+            <br>
+            <<if $LaserPointer.Days > 0>>
+                <<set $LaserPointer.Days -= 1>>
+            <</if>>
+            <<set $LaserPointer.Preteens to 1>>
+            <<addMoodlet "Stress" 2>>
+            <<set _arousalbs to []>>
+            <<set _arousalkink to ["Humiliated"]>>
+            <<arousalGain 10 _arousalbs _arousalkink>>
+            <<set $SchoolRep -= 10>>
+            <span style="color:Red">-Reputation</span><br>
+            <br>
+            <<if $Location.Name == "School South Hallway">>
+                [[Continue|School South Hallway]] 
+            <<elseif $Location.Name == "School East Hallway">>
+                [[Continue|School East Hallway]]
+            <<elseif $Location.Name == "School West Hallway">>
+                [[Continue|School West Hallway]]
+            <</if>>
+        <</replace>>
+        <</link>>
+        <<link "Confront Them<br>">>
+        <<replace"#choice">>
+            You march up to the boys, a bit red in the face, and demand to know what they find so funny. <span style="Color: Yellow">The boys look at you and immediately start laughing again, making your anger only grow.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Yo! It totally is him!”</span> One of them say, pointing down at the phone, <span style="Color: LightSteelBlue">“Didn’t know we had such a show-off here in school!”</span> 
+            <<if $LaserPointer.Exposed == "Clothed">>
+                The boy flips his phone over to show you a strange blurry video. The first few seconds are hard to make out, a window on a dark night. <span style="Color: Yellow">But then the camera zooms in and you are shocked to see you! The video is of you in your bedroom! You walk around for a moment, doing whatever, until a red dot appears on you and you glance in the direction of the camera in confusion. Then the moment hits you, that strange event the other night where you had seen someone on a nearby roof with that laser pointer!</span> <br>
+                <br>
+                You instantly turn bright red at the realization, causing all the boys to break out laughing. <span style="Color: LightSteelBlue">“Dude! I knew it was you!”</span> The kid with the phone says, chuckling loud enough to attract the attention of others in the hallway. <span style="Color: LightSteelBlue">“They’re calling you laser pointer boy. Your reaction is becoming a meme online! How’s it feel to be famous?”</span> <br>
+                <br>
+                <span style="Color: Yellow">You are burning with indignation, feeling utterly violated at being filmed in the safety of your own bedroom by these… these perverts! You let your feelings be known, scolding and berating the boys in anger as you threaten to go to a teacher or the police or-</span> <br>
+                <br>
+                <span style="Color: LightSteelBlue">“Yo, bro! Chill, chill!”</span> The guy holds up his hands innocently, though keeps smirking, <span style="Color: LightSteelBlue">“I didn’t record nothing, my friend just sent me the video today, man. Chill.”</span> Everyone seems to share the same excuse, not one taking credit for the filming, claiming some unknown friend just sent it to them. Realizing you have no real way to prove it was them, and figuring the video was harmless overall since it’s just you walking around your bedroom, you decide to drop it. Still, you give the boys another warning about filming people like that. Not everyone will be as forgiving as you. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“Yeah, sure. Whatever, laser pointer boy!”</span> The boys all laugh as they walk away, <span style="Color: Yellow">leaving you standing there with your cheeks still red and still feeling a bit violated. You can’t believe something like that happened, but it’s best to just try and move past it for now.</span> <br>
+                <<if $LaserPointer.Days > 0>>
+                    <<set $LaserPointer.Days -= 1>>
+                <</if>>
+                <<set $LaserPointer.Preteens to 1>>
+                <<addMoodlet "Stress" 2>>
+                <<set _arousalbs to []>>
+                <<set _arousalkink to ["Humiliated"]>>
+                <<arousalGain 10 _arousalbs _arousalkink>>
+                <<set $SchoolRep -= 4>>
+		        <span style="color:Red">-Reputation</span><br>
+                <br>
+                <<if $Location.Name == "School South Hallway">>
+                    [[Continue|School South Hallway]] 
+                <<elseif $Location.Name == "School East Hallway">>
+                    [[Continue|School East Hallway]]
+                <<elseif $Location.Name == "School West Hallway">>
+                    [[Continue|School West Hallway]]
+                <</if>>
+            /* Towel/Undies Recorded */
+            <<elseif $LaserPointer.Exposed == "Undies" or $LaserPointer.Exposed == "Towel">>
+                /* Towel Recorded */
+                <<if $LaserPointer.Exposed == "Towel">>
+                    The boy flips his phone over to show you a strange blurry video. The first few seconds are hard to make out, seemingly just of a faraway window in the dark. <span style="Color: Pink">But then the camera zooms in and you see a low-quality figure in the window; it looks like it’s a boy. As the video comes into focus, you realize the boy is wearing just a towel! A rather lewd video, why on earth would they…?</span> <br>
+                    <br>
+                    <span style="Color: LightCoral">Wait a second! You gasp out and turn bright red as you realize the video isn’t just of a random boy in nothing but a towel, but of you in nothing but a towel!</span> Your realization seemingly amuses the boys, as they all break out laughing in unison. <span style="Color: LightSteelBlue">“I knew it was you! Didn’t recognize you with clothes on, dork!”</span> <br>
+                    <br>
+                /* Undies Recored */
+                <<else>>
+                    The boy flips his phone over to show you a strange blurry video. The first few seconds are hard to make out, seemingly just of a faraway window in the dark. But then the camera zooms in and you see a low-quality figure in the window; it looks like it’s a boy. <span style="Color: Pink">As the video comes into focus, you realize the boy is mostly nude, outside of his underwear! A rather lewd video, why on earth would they…?</span> <br>
+                    <br>
+                    <span style="Color: LightCoral">Wait a second! You gasp out and turn bright red as you realize the video isn’t just of a random boy in his underwear, but you in your underwear!</span> Your realization seemingly amuses the boys, as they all break out laughing in unison. <span style="Color: LightSteelBlue">“I knew it was you! Didn’t recognize you without your cute little undies, dork!”</span> <br>
+                    <br>
+                <</if>>
+            /* Towel/Undies Continued */
+
+                        <<set _ad to [
+                            {
+                                Name: "Player",
+                                State: {
+                                    Mouth: "Frown",
+                                    Blush: 2,
+                                    Eyes: "Mad",
+                                },
+                            },
+                        ]>>
+                        <<ad _ad>>
+
+                You try to snatch the phone away, but he pulls it back. You stumble out words vomit, asking them how on earth they got that video. <span style="Color: LightSteelBlue">“Oh, you know. Friend of a friend, and all that. He had to delete it since his mom was going to check his phone but didn’t want it to go to waste.”</span> He looks down at you with a smirk, obviously enjoying the intense embarrassment you’re feeling after realizing that incident with the laser point was filmed! <span style="Color: LightCoral">You, expected to be in the safety of your bedroom, were filmed basically without clothes!</span> <br>
+                <br>
+                This had to be illegal or at least against school rules. You threaten to tell a teacher or the police or- <span style="Color: LightSteelBlue">“Yeah, and I’ll just send it in a few group chats then delete it. Think I’d show you if I’d actually have a chance at getting into trouble?”</span> <span style="Color: LightCoral">They laugh as the boy presses play again, replaying the video as he holds it in the air above you.</span> <br>
+                <br>
+                You watch the video nervously, gulping at how exposed you are. <span style="Color: LightCoral">Despite the start of the video being blurry and hard to make out, it is very clearly you, easily identifiable once it focuses. Anyone who knows you, or even seen you in the halls, would recognize you instantly!</span> <br>
+                <br>
+                <span style="Color: LightSteelBlue">“Here’s what’s going to happen.”</span> The kid smiles, suddenly having power over you, <span style="Color: LightSteelBlue">“Twenty bucks and I’ll delete the video and you can save whatever lame ass reputation you have. Otherwise, expect half the school to see it by the end of the week.”</span> <span style="Color: LightCoral">He smiles deviously, replaying the video again to put emphasis on his threat.</span> <br>
+                <br>
+            /* Pay Him */
+            <div id='choice'>
+                <<if $Money >= 25>>
+                    <<link "Pay him (-$25)<br>">>
+                    <<replace"#choice">>
+                        You quickly reach into your pocket and pull out twenty dollars, handing it to the boy as you beg him to please just delete the video. The boys laugh as they take it, some of them making fun of you for being <span style="Color: LightSteelBlue">“too easy”</span>. The one with the video counts out the money slowly, keeping the video playing in plain view the entire time, before he confirms it is $20. <br>
+                        <br>
+                        <span style="Color: LightSteelBlue">“Well, I’m a man of my word.”</span> He says, reaching out and very openly deleting the video. You let out a sigh of relief, fearing what would have happened if that video spread around, but then the boy adds <span style="Color: LightSteelBlue">“There, video deleted. Shame I already sent it to half my class.”</span> Your heart stops as you look up in shock. He promised to delete the video! <span style="Color: LightSteelBlue">“And I did. Not my fault I already sent it out. Maybe next time, get the terms of the deal clear before giving people money.”</span>
+
+                            <<set _ad to [
+                                {
+                                    Name: "Player",
+                                    State: {
+                                        Mouth: "Frown",
+                                        Eyes: "Sad",
+                                        Blush: 2,
+                                        Cry: 1,
+                                    },
+                                },
+                            ]>>
+                            <<ad _ad>>
+
+                        <span style="Color: LightCoral">The boy then harshly shoves you against the wall as they walk past, laughing as another boy pulls up the video on his phone and they watch it again. You have a sinking feeling that video will be spread around the entire school!</span> <br>
+                        <<if $LaserPointer.Days > 0>>
+                            <<set $LaserPointer.Days -= 1>>
+                        <</if>>
+                        <<set $LaserPointer.Preteens to 1>>
+                        <<addMoodlet "Stress" 2>>
+                        <<set _arousalbs to []>>
+                        <<set _arousalkink to ["Humiliated"]>>
+                        <<arousalGain 10 _arousalbs _arousalkink>>
+                        <<set $SchoolRep -= 4>>
+                        <span style="color:Red">-Reputation</span><br>
+                        <<set $Monday -= 25>>
+                        <span style="color:Red">-$25</span><br>
+                        <br>
+                        <<if $Location.Name == "School South Hallway">>
+                            [[Continue|School South Hallway]] 
+                        <<elseif $Location.Name == "School East Hallway">>
+                            [[Continue|School East Hallway]]
+                        <<elseif $Location.Name == "School West Hallway">>
+                            [[Continue|School West Hallway]]
+                        <</if>>
+                        <br>
+                    <</replace>>
+                    <</link>>
+                <</if>>
+            </div>
+            /* Beg */
+                <<link "Beg<br>">>
+                <<replace"#choice">>
+                    <span style="Color: LightCoral">Your voice trembles as you tell the boys you don’t have that sort of money! You start to beg for them to delete that, already fearing what would happen if it spread around to everyone you know! But despite your pleas, the boys just laugh.</span> <span style="Color: LightSteelBlue">“Can’t help you if you don’t pay up.”</span> The kid laughs, opening a group chat and attaching the video to a message, about to hit send when you drop to your knees, saying you’ll do anything if they just delete that video. <br>
+                    <br>
+                    <span style="Color: LightSteelBlue">“Alright.”</span> The kid smiles, <span style="Color: LightSteelBlue">“Kiss my shoes. Show everyone here what a pathetic bitch you are and I’ll delete the video.”</span> <span style="Color: LightCoral">You gulp at his demand, looking around the hallway where many have gathered and stopped, seeing the commotion. The act is utterly humiliating, but you don’t see any other choice as you slowly get on your hands and knees and crawl over to the older boy’s shoes.</span> <br>
+
+                            <<set _ad to [
+                                {
+                                    Name: "Player",
+                                    State: {
+                                        Mouth: "Frown",
+                                        Eyes: "Sad",
+                                        Blush: 2,
+                                        Cry: 1,
+                                    },
+                                },
+                            ]>>
+                            <<ad _ad>>
+
+                    <span style="Color: LightSteelBlue">“And make it a wet one too, so you can taste it. If I don’t see any markings, it doesn’t count.”</span> He almost seems to cackle, seemingly enveloped by the sudden power he has over you. <span style="Color: LightCoral">You look up at him once more with pleading eyes before lowering your mouth to his shoes and kissing them, demeaning yourself on a whole new level. A few of the spectators gasp, some chuckle, and some whisper unknown things to each other. <br>
+                    <br>
+                    You make sure to kiss it long enough to leave a mark, not wanting to give him any reason to make you do it again. Once finished, you look up at him with a pleading face, no doubt looking utterly pathetic to all your classmates. The boy stares down at you with an evil smirk before shrugging.</span> <br>
+                    <br>
+                    <span style="Color: LightSteelBlue">“Well, I’m a man of my word.”</span> He says, reaching out and very openly deleting the video. You let out a sigh of relief, fearing what would have happened if that video spread around, but then the boy adds <span style="Color: LightSteelBlue">“There, video deleted. Shame I already sent it to half my class.”</span> Your heart stops as you look up in shock. He promised to delete the video! <span style="Color: LightSteelBlue">“And I did. Not my fault I already sent it out. I could give you some names if you want to go around kissing their shoes as well, bitch.”</span> <br>
+                    <br>
+                    <span style="Color: LightCoral">The boy then harshly kicks you to the side, knocking you into a locker as they walk past, laughing as another boy pulls up the video on his phone and they watch it again. You have a sinking feeling that video will be spread around the entire school!</span> <br>
+                    <<if $LaserPointer.Days > 0>>
+                        <<set $LaserPointer.Days -= 1>>
+                    <</if>>
+                    <<set $LaserPointer.Preteens to 1>>
+                    <<addMoodlet "Stress" 2>>
+                    <<set _arousalbs to []>>
+                    <<set _arousalkink to ["Humiliated"]>>
+                    <<arousalGain 10 _arousalbs _arousalkink>>
+                    <<set $SchoolRep -= 10>>
+                    <span style="color:Red">-Reputation</span><br>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<elseif $Location.Name == "School West Hallway">>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                    <br>
+                <</replace>>
+                <</link>>
+            /* Refuse */
+                <<link "Refuse<br>">>
+                <<replace"#choice">>
+                    <span style="Color: LightCoral">You flat out refuse to be extorted like that! You tell the boy, in no uncertain terms, that there is absolutely no way you will allow yourself to be blackmailed like that!</span> The boy blinks twice at you, seemingly a bit surprised you didn’t crack, before shrugging and quickly adding the video to a message and hitting send in a group chat. <span style="Color: LightCoral">You instantly feel a shiver down your spine as you watch him do so, realizing your pride may have just cost you your reputation.</span> <br>
+
+                            <<set _ad to [
+                                {
+                                    Name: "Player",
+                                    State: {
+                                        Mouth: "Frown",
+                                        Eyes: "Mad",
+                                        Blush: 2,
+                                        Cry: 1,
+                                    },
+                                },
+                            ]>>
+                            <<ad _ad>>
+
+                    <span style="Color: LightSteelBlue">“Have it your way, laser pointer boy.”</span> He laughs as you hear some of the nearby crowd get notifications on their phones. Just how big was that group chat!? The boy and then harshly shoves you to the side, nearly sending you colliding with a nearby trashcan, as they walk by laughing, continuing to watch the video. <span style="Color: LightCoral">You have a sinking feeling that video will be spread around the entire school!</span> <br>
+                    <<if $LaserPointer.Days > 0>>
+                        <<set $LaserPointer.Days -= 1>>
+                    <</if>>
+                    <<set $LaserPointer.Preteens to 1>>
+                    <<addMoodlet "Stress" 2>>
+                    <<set _arousalbs to []>>
+                    <<set _arousalkink to ["Humiliated"]>>
+                    <<arousalGain 10 _arousalbs _arousalkink>>
+                    <<set $SchoolRep -= 10>>
+                    <span style="color:Red">-Reputation</span><br>
+                    <br>
+                    <<if $Location.Name == "School South Hallway">>
+                        [[Continue|School South Hallway]] 
+                    <<elseif $Location.Name == "School East Hallway">>
+                        [[Continue|School East Hallway]]
+                    <<elseif $Location.Name == "School West Hallway">>
+                        [[Continue|School West Hallway]]
+                    <</if>>
+                    <br>
+                <</replace>>
+                <</link>>
+                <</if>>
+        <</replace>>
+        <</link>>
+    </div>
+<</if>>
+
+:: BLP Con Preteens Nude Recorded [nobr]
+
+/* Intro */
+<span style="Color: Yellow">You are walking down the mostly empty hallway when you hear a collection of ominous snickering from ahead of you.</span> You glance up to see a group of about 5-6 boys from one of the other grades gathered around the water fountains. One of them looks up and, upon seeing you, points at you and then the phone they are all huddled around, causing the entire group to burst out laughing in unison. <span style="Color: Yellow">You give them a strange look, though quickly stop in your tracks as you get a bad feeling in your gut.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Fucking look at him!”</span> You hear one of the boys laugh out in a hushed tone, pointing back down to the phone and making an unsettling gesture with his hand. What on earth could they be watching and what does it have to do with you? You think about asking them, <span style="Color: Yellow">but the bad feeling just grows and grows until you decide it may be a good idea to turn around and go the long way.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Hey! Wait up, bitch!”</span> <span style="Color: LightCoral">Before you can escape, one of the boys runs up behind you and grabs you by your collar, yanking you back so harshly that you choke and gag. The boy tosses you in the middle of the group, causing you to slam against the fountain painfully.</span> <span style="Color: LightSteelBlue">“What? Too famous to sign autographs or take a picture. You online stars are all the same.”</span> The way he says that unnerves you as you ask him what he’s talking about. <br>
+<br>
+<span style="Color: LightSteelBlue">“Oh? I thought you’d know, laser pointer boy!”</span> The boy holding the phone says as he turns it around and you jump and turn bright red at what you see! <span style="Color: LightCoral">There is a video on his phone of you in your bedroom butt naked! You are standing there, staring out the window at the camera in confusion before the realization hits and you quickly cover yourself as a red dot moves around your body. You then remember when this happened, when that laser point was shining through your window from a nearby roof. That was filmed!?</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Why you acting so shy all of a sudden, slut? You know you liked it!”</span> The kid with the phone laughed, <span style="Color: LightSteelBlue">“I bet you jacked off after closing the curtain at the idea that someone saw you naked. Don’t try to deny it!”</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Yeah, I heard $BullyNickname here loves looking at his classmates in their underwear in gym class. Probably spies on them when they’re showering too. What a fucking fag!”</span> Another boy laughs. <span style="Color: LightCoral">Quickly realizing the situation was getting bad and feeling very vulnerable from the video, you try to push past them and run but are harshly shoved back against the wall.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Fucking bitch cheats his way into school and the only thing he can think of is sucking his classmates dick and letting everyone see him naked, isn’t that right?”</span> The first boy looks down at you with amused disgust, <span style="Color: LightSteelBlue">“He probably likes getting filmed like that. How much you bet the perv is going to jack off at the thought of everyone seeing him naked? What a freak!”</span> All the boys start to laugh as you feel your eyes starting to burn from humiliation. <br>
+<br>
+<span style="Color: LightSteelBlue">“How about this, bitch. Prove us right. Strip and jack off right here in front of us like the fag you are. Either that, or I upload this video my friend sent me online with your full name and address. Let everyone in the world know where they can find the laser pointer faggot.”</span> The boy demands as you look up at him in shock. <span style="Color: LightCoral">Is this actually happening!? They can’t mean it, right? <br>
+<br>
+But as they all look down at you with evil smiles, you realize they’re very serious. And this isn’t just about the video, you get the feeling these boys hate you for how you got into this school. This isn’t something they are just going to let go of…</span> <br>
+<br>
+
+<div id='choice'>
+    <<link "Agree<br>">>
+    <<replace"#choice">>
+        <<include"BLP Con Preteens Nude Agree">>
+    <</replace>>
+    <</link>>
+    <<link "Refuse<br>">>
+    <<replace"#choice">>
+        <<include"BLP Con Preteens Nude Refuse">>
+    <</replace>>
+    <</link>>
+    <<link "[Athletics] Try to run">>
+    <<replace"#choice">>
+        <<include"BLP Con Preteens Skill Check">>
+    <</replace>>
+    <</link>>
+    <<skillDiff "Athletics" 90>>
+</div>
+
+/* Agree, Refuse, Skill Check Options Here */
+
+:: BLP Con Preteens Nude Agree [nobr]
+
+/* Intro */
+<span style="Color: LightCoral">You feel your heart condense like it’s being squeezed and all the breath in your lungs leave your body as the demand of these boys, your peers, linger in the air. They are blackmailing you, forcing you to strip and pleasure yourself right in front of them like some toy for their amusement.</span> They mostly at least a year or two older than you, but even if that wasn’t the case, there are so many and you are here, alone and cornered. <span style="Color: LightCoral">You feel your body tremble as you realize you have no choice.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Eyes: "Sad",
+                Blush: 2,
+                Cry: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Look, he’s fucking doing it!”</span> One of the boys laugh and mock you <span style="Color: Pink">as you slowly begin to strip, exposing your chest and upper half to the boys.</span> <span style="Color: LightSteelBlue">“What a fucking fag! How much you want to bet he’s getting hard just from the idea of exposing himself in front of us?”</span> <span style="Color: LightCoral">The boy’s laughter is echoed by all those around him, their faces turning to shadows with menacing smiles that devour the joy they receive from every once of humiliation you feel.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Undies",
+                Mouth: "Frown",
+                Eyes: "Sad",
+                Blush: 2,
+                Cry: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<<if $PlayerUndies.Type == "None">>
+    <span style="Color: LightSteelBlue">“The loser isn’t even wearing any underwear! I knew he fucking wanted this!”</span> <span style="Color: Pink">The boys laugh as you remove your bottoms, revealing the rest of your shivering cold body due to your lack of underwear,</span> <span style="Color: LightSteelBlue">“How did they even let some sick pervert like this into the school? He should be on some registry or something!”</span> <br>
+    <br>
+<<elseif $PlayerUndies.Tags.includes("Diaper")>>
+    <span style="Color: LightSteelBlue">“Oh, my fucking god!”</span> <span style="Color: Pink">The boys all break out laughing as they see the padded underwear you are wearing, this reveal being the best moments of their lives.</span> <span style="Color: LightSteelBlue">“He’s wearing a fucking diaper! So, he’s a fucking baby and a fag! Fuck, that makes too much sense. Wonder if he’s pissed himself out of fear yet?”</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“He probably doesn’t even need it, he probably just wears it to get off and fill it with cum.”</span> Another boy suggests, <span style="Color: LightSteelBlue">“Figures the perverted freak would be into that!”</span> You feel your entire identity be dismantled by their words. <span style="Color: LightCoral">Somehow, being called a freak who does this for some sick enjoyment is worse than being a diaper-pissing baby. You have no choice but to remove even that as they all watch and laugh.</span> <br>
+    <br>
+<<elseif $PlayerUndies.Type == "Boxers">>
+    <span style="Color: LightSteelBlue">“What? The little pervert trying to be big by wearing big boy undies?”</span> <span style="Color: Pink">One boy laughs, grabbing the front of your boxers and yanking you forward,</span> <span style="Color: LightSteelBlue">“Listen here, fucker, you are nothing but a pathetic pervert, and you should start dressing like it. Boxers are for real men, not pathetic fags like you!”</span> <br>
+    <br>
+    <span style="Color: LightCoral">Without warning, the boy grips your underwear through the fly and waist and yanks you up into the air harshly with such force you gasp. Then – RIP – your underwear is completely ripped off of you in pieces as you crash back to the ground in a nude, pathetic heap.</span> <span style="Color: LightSteelBlue">“There we go, much better!”</span> The boy crumbles up the remnants of your underwear and tosses it at you. <br>
+    <br>
+<<else>>
+    <span style="Color: LightSteelBlue">“Oh! What cute little undies, fag!”</span> <span style="Color: LightCoral">One boy says before harshly kicking you in the stomach, sending you flying back against the wall. You slump down, gagging and coughing from the kick as you can’t stop the tears from rolling down your cheeks. <span style="Color: LightSteelBlue">“And now he’s fucking crying! What’s wrong, bitch, did you not like getting kicked? Too bad!”</span> They all laugh as you are forced to stand and remove your underwear.</span> <br>
+    <br>
+<</if>>
+
+<<include"BLP Con Preteens Agree/Refuse Reused">>
+
+<span style="Color: LightCoral">You are harshly dropped to the ground in a heap, your exposed body slapping against the cold floor with a painful smack. You groan in pain and look up, seeing the group of boys looming over you like a group of hungry wolves, all smirking and glaring with hunger and desire to see you reduced even further.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Alright, get up.”</span> The lead boy kicks you, <span style="Color: LightSteelBlue">“You know the drill. You are going to jack off right here like the little fag you are, or we’re going to send this video to everyone in school and comment your full name and address and whatever else we can think of! That way people can see what a pathetic loser like you looks like in person.”</span> <span style="Color: LightCoral">Your heart aches at the threat, not only of having everyone see that video of you naked, but to have your entire identity revealed online is another nightmare entirely. You’ve be completely exposed in more ways than one. You have no choice.</span> <br>
+<br>
+You start to stand up, but one of the boys stop you, <span style="Color: LightSteelBlue">“No, I want you to kneel. I think that suits you more.”</span> So, you kneel down on your knees, legs spread apart to ensure your boyhood is exposed to the group. <span style="Color: Pihk">They all chuckle and murmur as you reach down and grip your cock in your hand, feeling a tingle shot up your spine. You’re really doing this in front of all these people, forced to showcase something so lewd and personal.</span> <br>
+<br>
+
+<<linkreplace"Jack off">>
+    <span style="Color: Pihk">Slowly and with a shaky breath, you begin to rub the length of your member with your hands, squeezing both from a desire to get this over as fast as possible along with the shame you feel for being shown off like this. You squeeze your eyes shut as your breathing quickens, trying to imagine that you are alone to hold back the shame, but the snickering and gasps of the crowd of boys watching you breaks the illusion, constantly pulling you back to the reality of your situation.</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Fuck! He’s really doing it!”</span> One boy laughs. <br>
+    <br>
+    <span style="Color: LightSteelBlue">“I can’t fucking believe it!”</span> <span style="Color: LightCoral">Another can’t contain his grin as you begin to hearing clicking and shuttering sounds from the boys that you try not to focus on, hoping it’s just your imagination.</span> <br>
+    <br>
+    <span style="Color: Pihk">You’re panting at this point, feeling a pressure building in your chest. Despite every part of you burning with embarrassment, the feeling of traitorous excitement building as he inches closer and closer to climax. You can’t stop the tiny whimper from escaping your lips and burn even hotter as you hear the boy’s reaction.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Eyes: "Closed",
+                Blush: 3,
+                Cry: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    /* Hard */
+
+    <span style="Color: LightSteelBlue">“Fuck, he’s really doing it!”</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Think he’ll shoot? I bet he’s dry.”</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Did you hear that fucking noise he made? Surprised he hasn’t came already!”</span> <br>
+    <br>
+    But the pressure was already building more and more with every stroke as you felt a tear roll down your cheek, both from the intense feeling and the shame of it all. You couldn’t decide if you wanted to just let it out to get it over with, or hold on as long as possible to delay the evitable chorus of laughter that will come when you finish. <span style="Color: Pihk">But it isn’t long before that choice is taken out of your hand and you unleash, orgasming right there in front of them all.</span> <br>
+    <br>
+    <<if $CanCum == 1>>
+        <span style="Color: Pihk">You gasp out, your body tensing up, as your penis shoots out a blast of semen that the boys in front of you only narrowly dodge, just getting some on their shoes. Some gasp, some laugh, some are grossed out and try to wipe their shoes on each other. You breathing slows as the exhaustion overtakes you, your penis now just dribbling out a pathetic trinkle of semen. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Fuck, didn’t actually think he could shoot.”</span> A boy laughs, looking down at the pool of semen with a partially amused, partially disgusted face.</span> <span style="Color: LightSteelBlue">“He came a lot, bet he loved that. Freak.”</span> <br>
+        <br>
+    <<else>>
+        <span style="Color: Pihk">You gasp out, your body tensing up, as your penis begins to shake and tremble violently, having a dry, pathetic orgasm right in front of all of them. You gasp out, fingers and toes squeezing tightly as you are overwhelmed by the feeling. It takes a second for the boys to realize you are climaxing, since they half expected to see you shoot, but when they realize you can’t it seems to make the moment all the better to them. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Oh, my fucking- He’s fucking dry! Damn, I knew he was pathetic, but he’s still basically a baby!”</span> The boys break out laughing, leaving you a red-faced tear mess on the floor,</span> <span style="Color: LightSteelBlue">“Is he even in the right school? Probably should be in elementary. Can’t believe he’s still dry at his age!”</span> <br>
+        <br>
+    <</if>>
+    <span style="Color: LightCoral">The laughter is overwhelming as tears continue to flow. You feel absolutely humiliated, left as a toy for the upperclassmen’s entertainment. If that wasn’t bad enough, as you are lying in a heap unable to move as your body recovers, you see some of the boys bend down and grab your clothes, laughing as they toss them around all corners of the hallway. Your bottoms land in the trash as one of your shoe’s slaps against the top of the lockers.</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Pleasure doing business with you, fag.”</span> The lead boy says, holding up his phone with the previous video of you on it, <span style="Color: LightSteelBlue">“Don’t worry, I won’t share it… well, I won’t share it to anyone else. Already posted it around a bit before we saw you, but it’s your own fault for being such a slut.”</span> He laughs, turning around as the boys all scatter, adding one final metaphorical punch to the gut by shouting out <span style="Color: LightSteelBlue">“Teacher! Someone’s streaking in the hallway!”</span> as they run off. <br>
+    <br>
+    <span style="Color: LightCoral">You are still on the ground in a heap when a teacher you aren’t familiar with comes out and looks down at you with an annoyed and grossed-out look. He seems to be able to piece together that you didn’t do this by choice but still seems rather annoyed. He helps you up and grabs some of your clothes, though mainly just points them out so you can grab them, limping to them nude and utterly embarrassed. Then when you are dressed, he makes you clean up the mess on the floor, not asking what it is but seemingly able to piece it together.</span> <br>
+    <br>
+    You can’t help but notice a few students passing by in the halls as you do this, giving you strange, red-faced glances that worry you, they may have seen the entire thing. <span style="Color: LightCoral">You were so surrounded, you have no idea just how many people saw you, or who they were…</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Regardless of why, the state I found you in is completely unacceptable.”</span> <span style="Color: LightCoral">He starts to scold you, seemingly not caring that this was forced upon you.</span> You are too exhausted and humiliated to argue. <span style="Color: LightSteelBlue">“Next time, call for a teacher or something. We can’t have this sort of… activity happening in the hallways. You’ll have to serve a detention for it. Think more about how you’ll respond next time.”</span> <br>
+    <br>
+    You look down at the detention slip in disbelief as the teacher sends you away, so overcome with emotion that you rush to the bathroom to cry. None of this is remotely fair. <span style="Color: LightCoral">You’re being punished after being blackmailed and abused by those older kids? It doesn’t make any sense! The worst part is, you know there is nothing you can do, and feel so powerless because of it.</span> <br>
+    <<if $LaserPointer.Days > 0>>
+        <<set $LaserPointer.Days -= 1>>
+    <</if>>
+    <<set $LaserPointer.Preteens to 1>>
+    <<addMoodlet "Stress" 5>>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Humiliated"]>>
+    <<arousalGain 20 _arousalbs _arousalkink>>
+    <<set $SchoolRep -= 15>>
+    <span style="color:Red">-Reputation</span><br>
+    <br>
+    <<if $Location.Name == "School South Hallway">>
+        [[Continue|School South Hallway]] 
+    <<elseif $Location.Name == "School East Hallway">>
+        [[Continue|School East Hallway]]
+    <<elseif $Location.Name == "School West Hallway">>
+        [[Continue|School West Hallway]]
+    <</if>>
+    <br>
+<</linkreplace>>
+
+:: BLP Con Preteens Agree/Refuse Reused [nobr]
+
+/* Intro */
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            ShowZoom: true,
+            State: {
+                Outfit: "Naked",
+                Mouth: "Frown",
+                Eyes: "Sad",
+                Blush: 3,
+                Cry: 1,
+                Arms: "Bound",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+Now naked on the ground before the group, you try your best to hide yourself despite knowing what’s coming. The largest boy suddenly reaches down and grabs you by your wrists, lifting you harshly in the air with such for you cry out, feeling as though your hands are about to be ripped off. He then holds you there, body completely exposed to the group like a piece of meat solely displayed for their cruel amusement. <br>
+<br>
+
+<<if $Player.Arousal >= 50>>
+    <span style="Color: LightSteelBlue">“I knew he was fucking into it!”</span> One laughs as they see your erection, your own body now turning against you to publicly shame you. You want the ground to swallow you up so you can die, but you don’t even get that mercy as you feel a sharp, unimaginable pain as one of the boys grabs your erection and tugs it like a rope, causing you to cry out in pain. <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Hey, it’s almost like the horn on a truck.”</span> The boy mocks, tugging your erection again just to cause you to cry out in pain. <span style="Color: LightSteelBlue">“Fuck, imagine how much he’d scream if we tied it to our bike and rode around the city. You’d like that, wouldn’t you, bitch?”</span> <br>
+    <br>
+<<elseif $Player.PenisSize == "Tiny">>
+    <span style="Color: LightSteelBlue">“Fuck, it looks even smaller in person!”</span> One laughs as they all see your pathetic excuse of a penis fully revealed before them, ripping away the last shred of dignity like a bandage. <span style="Color: LightSteelBlue">“I thought it just looked small on camera, but no, you really just have a little fucking nub!”</span> <br>
+    <br>
+    All the boys shove past each other, having to lean in close to even see your penis, <span style="Color: LightSteelBlue">“Can he even jack that thing off? It doesn’t even have any length!”</span> You can’t help the tears welling up as they all take turns comparing your penis to something utterly tiny and useless. <br>
+    <br>
+<<elseif $Player.PenisSize == "Small">>
+    <span style="Color: LightSteelBlue">“Fucking look at his cock, was a loser!”</span> One laughs as they all see your small, childish penis flop in the air as you are held aloft, fully exposed as every ounce of dignity is ripped away, <span style="Color: LightSteelBlue">“But it suits you, I bet. You probably liked getting fucked in the ass, so no point at having a big cock!”</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Looks even smaller than it did on the video. How much you wanna bet the freak puts ice on it to keep it nice and small? He probably loves that!”</span> All the boys laugh as you feel your entire body heat up from their mocking as tears begin to flow freely from your eyes. <br>
+    <br>
+<<elseif $Player.PenisSize == "Average">>
+    <span style="Color: LightSteelBlue">“How’s it feel, bitch? Bet fags like you love getting your dick exposed in front of other boys. Fucking disgusting.”</span> One laughs as he sees your penis lying exposed before him. He leans in and makes a sound of disgust, as if your very presence is enough to turn his stomach. <br>
+    <br>
+    <span style="Color: LightSteelBlue">“This is probably the best day of his life, though doubt he has much to compare it to.”</span> Another adds, <span style="Color: LightSteelBlue">“He probably sits in that bedroom all day naked and jerking off since no one else wants to be around him, not even his own family. Makes sense, I can hardly stand being near him.”</span> The boys all seem to enjoy demeaning you to nothing more than a pathetic insect in their grasp. <br>
+    <br>
+<<elseif $Player.PenisSize == "Large">>
+    <span style="Color: LightSteelBlue">“My sister said that it’s always the fags that have the biggest cocks, guess she was right.”</span> One boy laughs as he sees your penis, <span style="Color: LightSteelBlue">“Guess the video wasn’t edited. Shame, I bet you never use it. Fuckers like you always like getting it in the ass. But I guess you get to use it today, big guy.”</span> He taps you on the shoulder condescendingly, his words stinging just as bad as the chill on your exposed body. <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Maybe after we can duct tape an icepack to his crotch?”</span> One boy suggests, <span style="Color: LightSteelBlue">“Make it more fitting to his reputation. Then again, the only way to do that would be to turn him into dirt, since that’s all he is.”</span> Their childish mockery causes your entire body to burn with humiliation as they continue with more jabs until they are ready for the real show. <br>
+    <br>
+<<else>>
+    <span style="Color: LightSteelBlue">“Well, would you look at that? The fag actually has something between his legs.”</span> One laughs as the group sees your penis, <span style="Color: LightSteelBlue">“And here I thought the video was edited to make a fag like you look big, but I guess it’s true! Every dog has its day, I guess.”</span> The boy scoffs before flicking the head of your penis, causing you to yelp. <br>
+    <br>
+    <span style="Color: LightSteelBlue">“I guess that rules out it being fake.”</span> Another laughs, <span style="Color: LightSteelBlue">“Though maybe we should double check. Why don’t we see who can make him cry the loudest by pulling on it?”</span> Their suggestion causes your face to distort into one of fear, the thought of all the boys yanking on your sensitive member causing your legs to tremble. <span style="Color: LightSteelBlue">“If only. Don’t want his crying to make a teacher come, yet.”</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“How much you wanna bet that he spends all his time sucking his own dick in his bedroom when he thinks no ones looking?”</span> One particularly crude boy laughs, <span style="Color: LightSteelBlue">“And he even cums in his own mouth and swallows. He probably loves it.”</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Ugh. I did not need that mental image in my head, even if it is probably true!”</span> Another laughs, <span style="Color: LightSteelBlue">“Maybe we’ll need to give you a demonstration sometime, since you seem like you’ll get a kick out of it!”</span> <br>
+    <br>
+<</if>>
+
+:: BLP Con Preteens Nude Refuse [nobr]
+
+/* Intro */
+<span style="Color: LightCoral">Red faced and with your eyes starting to tear up from the sheer audacity of their demand, you jump to your feet and tell them there is no way in hell you are going to strip and jack off for them!</span> They’re just perverted freaks trying to take advantage of the situation so they can see some kid- <br>
+<br>
+WHACK! <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Eyes: "Sad",
+                Blush: 2,
+                Cry: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightCoral">You cough up your words as the lead boy punches you right in the stomach, causing you to keel over and collapse back to the ground, nearly coughing up your breakfast.</span> <span style="Color: LightSteelBlue">“Who you calling perverts, you fucking freak!”</span> He shouts, <span style="Color: LightCoral">kicking you in the chest so hard you gasp out for air.</span> <span style="Color: LightSteelBlue">“Kid struts his stuff on camera like some slut and somehow we’re the perverts, fucking nerve…”</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“If he doesn’t want to accept what he is, why don’t we help him out?”</span> Another boy laughs, <span style="Color: LightCoral">gripping you by the hair and yanking you up,</span> <span style="Color: LightSteelBlue">“Hey, still got that rope from your camping trip? I have an idea.”</span> You can only tremble in fear as they all share a look of absolute glee at what they have in store for you. <span style="Color: LightCoral">You try to fight back and break free, but another kick, this time to your groin, leaves you completely broken on the ground as the boys descend upon you, yanking off your clothes one by one.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Undies",
+                Mouth: "Frown",
+                Eyes: "Closed",
+                Blush: 2,
+                Cry: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<<include"BLP Con Preteens Nude Refuse/Failure Reused">>
+
+<<include"BLP Con Preteens Agree/Refuse Reused">>
+
+
+:: BLP Con Preteens Nude Refuse/Failure Reused [nobr]
+
+/* Intro */
+<<if $PlayerUndies.Type == "None">>
+    <span style="Color: LightSteelBlue">“No underwear? Damn, has hoping we could shove that shit down his throat.”</span> <span style="Color: Pink">One laughs as he notices your lack of undergarments,</span> <span style="Color: LightSteelBlue">“Makes sense though, the freak probably loves the idea of his cock getting exposed. Can’t believe they let someone like you in here.”</span> <br>
+    <br>
+<<elseif $PlayerUndies.Tags.includes("Diaper")>>
+    <span style="Color: LightSteelBlue">“Oh, my fucking god!”</span> <span style="Color: Pink">The boys all break out laughing as your padded underwear is exposed, them all stepping back to get a good look at your pathetic frame in the padding.</span> <span style="Color: LightSteelBlue">“He is a kinky freak! Wears a diaper to school? Probably doesn’t even need it, just loves pissing himself in front of people. Fucking hell, even happier we get to kick your ass now. Maybe you’ll learn your place!”</span> <span style="Color: Pink">With great force, the boy reaches down and grips your diaper, ripping if completely off your body in one, harsh yank.</span> <br>
+    <br>
+<<else>>
+    <span style="Color: LightSteelBlue">“Oh, how cute. Did your daddy buy these $PlayerUndies.Name? What a fucking dork!”</span> <span style="Color: Pink">The boys all laugh as one lies you out flat, your underwear on full display to your tormentors. <span style="Color: LightSteelBlue">“Too bad, you’ll have to tell your daddy you lost these because you’re a fucking slut!”</span> The boy reaches down and practically rips your underwear off of you, leaving you a shivering exposed mess on the floor.</span> <br>
+    <br>
+<</if>>
+
+<<linkreplace"Continue">>
+    <span style="Color: LightCoral">Now naked and completely vulnerable, you are harshly shoved to the ground below the water fountain. Two of the boys grab your hands and lift them above your head. You see the rope and hear them laughing about tying you here, leaving you exposed and helpless, but there is nothing you can do. Your body is bruised and battered, unable to move or make a sound as tears roll down your face. <br>
+    <br>
+    Your hands are tied around the pipes of the fountain above your head, leaving you trapped there with your bits exposed, unable to do anything as the boys all stand around you in triumph.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                ShowZoom: true,
+                State: {
+                    Outfit: "Naked",
+                    Mouth: "Frown",
+                    Eyes: "Closed",
+                    Blush: 2,
+                    Cry: 2,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="Color: LightSteelBlue">“Check it out everyone! I’m here at Preston Middle School where I found our friend, the Laser Pointer Boy!”</span> <span style="Color: LightCoral">The lead boy turns the camera of his phone on, pointing it at you as he records your face and battered and bruised body.</span> <span style="Color: LightSteelBlue">“Turns out his real name is <span style="color:DarkTurquoise">$Player.Name $Player.LastName</span>, pretty lame right? He’s a real fag too, he begged us to do this to him for like five bucks. Anyway, he said he wanted us to make a video to let you know that he loves being abused and bullied. So, if you see him on the street, give him a kick in the nuts or steal his pants. He loves it and has given everyone permission to use him as their punching bag.”</span> <br>
+    <br>
+    He smiles wildly turning and locking eyes with you, <span style="Color: LightSteelBlue">“He also said that if he tells ANYONE about this, I can make a follow-up video with his home address as punishment. So, I guess we’ll have to see if that happens.”</span> <span style="Color: LightCoral">He ends the video by zooming n on your crotch before kicking it again, leaving your balls and penis red and bruised, the impact nearly making your throw up as you lie there unable to move, overcome by pain and humiliation.</span> <br>
+    <br>
+    The boys eventually leave you, though you’re not sure how long as your mind starts to glaze over. You hear the shutters of phone cameras go off for a while before they are gone. You see a few more students pass by, looking at you with pity, confusion, or amusement. Not a single teacher comes out, so you wonder if class may be in session now? <br>
+    <br>
+    It isn’t until a while later, you’re not sure how long, when your arms finally fall, undone by their restraints. You look up to see the school’s janitor standing over you. <span style="Color: LightCoral">Your vision is still a bit blurry, so you can’t tell if he’s smiling with sick amusement or frowning in annoyance as he tosses your clothes on you. They’re wet and smell like trash, most likely having ended up in the garbage can.</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“I don’t care what type of games and pranks you boys play with each other! Hurry up and get dressed.”</span> The janitor barks, not at all sounding sympathetic to your plight, <span style="Color: LightSteelBlue">“I need to clean the fountain. If you’re still there in five minutes, you’ll regret it. I can technically give detention. Hurry it up!”</span> <br>
+    <br>
+    <span style="Color: LightCoral">The man barks at you as you try to get dressed, still aching in pain and feeling lightheaded from the boy’s attack. Unlike the other teachers, the janitor doesn’t have an ounce of pity for you, he even seems to be enjoying watching you struggle as he shouts and berates you.</span> When you are finally dressed, you manage to drag yourself to the bathroom, making another few minutes to recover before you are finally able to move properly again. <br>
+    <<if $LaserPointer.Days > 0>>
+        <<set $LaserPointer.Days -= 1>>
+    <</if>>
+    <<set $LaserPointer.Preteens to 1>>
+    <<addMoodlet "Stress" 5>>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Humiliated"]>>
+    <<arousalGain 25 _arousalbs _arousalkink>>
+    <<set $SchoolRep -= 20>>
+    <span style="color:Red">-Reputation</span><br>
+    <<set $Minutes += 25>>
+    <<addMoodlet "Pained" 24>>
+    <br>
+    <<if $Location.Name == "School South Hallway">>
+        [[Continue|School South Hallway]] 
+    <<elseif $Location.Name == "School East Hallway">>
+        [[Continue|School East Hallway]]
+    <<elseif $Location.Name == "School West Hallway">>
+        [[Continue|School West Hallway]]
+    <</if>>
+    <br>
+<</linkreplace>>
+
+:: BLP Con Preteens Skill Check [nobr]
+
+/* Intro */
+You suddenly snap up, jumping towards the boy holding the phone and snatching it away! The kid gasps, nearly falling back as you take off running! You are working off pure adrenaline, your fight or flight kicking in with only one goal in mind. <span style="Color: Yellow">You have to get rid of this phone and the incriminating footage on it before ANYONE else sees it. You hear yelling and cursing behind you, but keep running as fast as you can until…</span> <br>
+<br>
+<<skillCheck "Athletics" 90>>
+
+/* Pass */
+<<if _result == 1>>
+    <span style="Color: LightGreen">SLAM! <br>
+    <br>
+    You hear someone fall behind you, turning back just in time to see the boy whose phone you grabbed groan on the ground, having slipped as he tried to grab you. You act fast, running as you try to unlock the phone and, when that fails, smash it against the corner and toss it into a nearby trashcan, hoping that you’ve either destroyed it enough or that they won’t find.</span> You then dive into a nearby classroom, crouching down low as you hear the kids run by shouting. <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    Eyes: "Mad",
+                    Blush: 1,
+                    Cry: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    You stay there for a few minutes, heart beating so quickly in your chest you feel it may burst. After enough time has passed, you peek your head out, seeing no sign of the boys, and peer into the trashcan. <span style="Color: LightGreen">The phone is still there, now in two pieces. You take care to ensure it is buried deep before finding a familiar teacher to tell them some other boys were trying to mess with you.</span> <br>
+    <br>
+    You don’t give details, too worried about that, but give him enough so that he offers to walk you to your next class and keep an eye on things. If those boys see you again, they are not going to hold back, but since they no longer have that evidence against you, you can try to plan and prepare for whatever they do, getting some teachers on your side. <br>
+    <br>
+    <span style="Color: LightGreen">For now, all you can hope is that they drop it once they realize the phone is gone.</span> <br>
+    <<if $LaserPointer.Days > 0>>
+        <<set $LaserPointer.Days -= 1>>
+    <</if>>
+    <<set $LaserPointer.Preteens to 1>>
+    <<addMoodlet "Stress" 5>>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Humiliated"]>>
+    <<arousalGain 20 _arousalbs _arousalkink>>
+    <<set $SchoolRep -= 15>>
+    <span style="color:Red">-Reputation</span><br>
+    <<skillPoints "Athletics" 3>>
+    <br>
+    <<if $Location.Name == "School South Hallway">>
+        [[Continue|School South Hallway]] 
+    <<elseif $Location.Name == "School East Hallway">>
+        [[Continue|School East Hallway]]
+    <<elseif $Location.Name == "School West Hallway">>
+        [[Continue|School West Hallway]]
+    <</if>>
+    <br>
+
+/* Fail */
+<<else>>
+    <span style="Color: LightCoral">WHAM! <br>
+    <br>
+    Someone grabs you by your shirt so suddenly your collar nearly chokes you as you are grounded to a halt! The phone goes flying from your hand, hitting the ground hard and sliding across the floor! You follow soon after dragged onto your back by one of the boys, handled roughly as your head slams against the ground.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 2,
+                    Cry: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+            
+    <span style="Color: LightSteelBlue">“Fighting bitch! You better not have cracked my phone!”</span> The boy runs over and bits it up, sighing in relief before spitting. <span style="Color: LightSteelBlue">“Fucking lucky. Or, well, not so much. We were going to let you off with just some little fun, but since you want to be a bitch about it, why don’t we have some real fun?”</span> <span style="Color: LightCoral">He walks over and grabs you by your collar and wrist, tossing you back harshly against the water fountain. <br>
+    <br>
+    WHACK!</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Closed",
+                    Blush: 2,
+                    Cry: 2,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="Color: LightCoral">Then one of the boys kick you in the stomach as you try to stand, nearly coughing up your breakfast as you collapse to the ground, surrounded by the group of smirking boys.</span> <span style="Color: LightSteelBlue">“Why don’t we teach you your place, runt?”</span> One laughs as he kicks your hand as you try to reach out to pull yourself up. <span style="Color: LightSteelBlue">“Hey, do you still have the rope from the camping trip in your bag? I have a great idea.”</span> <span style="Color: LightCoral">You can only tremble and gasp in fear as they all share a look of absolute glee at what they have in store for you. You try to fight back and break free, but another kick, this time to your groin, leaves you completely broken on the ground as the boys descend upon you, yanking off your clothes one by one.</span> <br>
+    <br>
+    <<include"BLP Con Preteens Nude Refuse/Failure Reused">>
+<</if>>

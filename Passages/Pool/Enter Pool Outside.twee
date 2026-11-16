@@ -1,0 +1,48 @@
+:: Enter Pool Outside [nobr]
+
+/* CHECKING THAT THE PLAYER IS DRESSED PROPERLY */
+
+<<if $PlayerShoes.Type != "None" or $PlayerSocks.Type != "None">>
+    <<set _poolenter to -1>>
+<<elseif $PlayerOuter.Type != "None" or $PlayerOver.Type != "None">>
+    <<set _poolenter to -2>>
+<<else>>
+    <<if $PlayerBottoms.Tags.includes("Swimwear") or $PlayerBottoms.Type == "None">>
+        <<set _poolenter to 1>>
+    <<else>>
+        <<set _poolenter to -3>>
+    <</if>>
+<</if>>
+
+/* WEARING SHOES OR SOCKS */
+<<if _poolenter == -1>>
+As soon as you reach the exit to the pool, a hand suddenly swings out and blocks the doorway, nearly smacking you in the process. One of the high schooler lifeguards step out, wearing his tight red trunks and a pair of goggles around his neck. He raises his eyebrow at you, then motions down to your feet.<br>
+<br>
+<span style="color:LightSteelBlue">“No shoes or socks allowed in the pool, can’t you read the sign? You can store them in one of the lockers.”</span> He grabs you by the shoulders and turns you around, pushing you back into the locker room.<br>
+<br>
+[[Go Back|Pool Locker Room]]
+
+/* WEARING HOODIE OR OUTERWEAR */
+<<elseif _poolenter == -2>>
+As soon as you reach the exit to the pool, a hand suddenly swings out and blocks the doorway, nearly smacking you in the process. One of the high schooler lifeguards step out, wearing his tight red trunks and a pair of goggles around his neck. He raises his eyebrow at you, looking you up and down.<br>
+<br>
+<span style="color:LightSteelBlue">“The pool doesn’t care if you wear shirts, we know some boys are shy.”</span> He smirks, <span style="color:LightSteelBlue">“But jackets and other things are not allowed, just basic shirts. Go take it off.”</span> He grabs you by the shoulders and turns you around, pushing you back into the locker room.<br>
+<br>
+[[Go Back|Pool Locker Room]]
+
+/* NOT WEARING SWIMMING BOTTOMS */
+<<elseif _poolenter == -3>>
+As soon as you reach the exit to the pool, a hand suddenly swings out and blocks the doorway, nearly smacking you in the process. One of the high schooler lifeguards step out, wearing his tight red trunks and a pair of goggles around his neck. He raises his eyebrow and looks at what you are wearing.<br>
+<br>
+<span style="color:LightSteelBlue">“You need to be wearing trunks or something,”</span> He points to your $PlayerBottoms.Type, <span style="color:LightSteelBlue">“Shorts are fine too, if you don’t have trunks. But we can’t have that in the pool, it’ll dirty the place up.”</span><br>
+<br>
+[[Go Back|Pool Locker Room]]
+
+/* PROPERLY DRESSED */
+<<elseif _poolenter == 1>>
+As you are about to leave, you notice one of the teen-aged lifeguards standing by the exit in his tight red trunks and goggles. He stops you are you are about to exit and looks you up and down. <span style="color:LightSteelBlue">“You’re dressed properly, but if you could run through the showers on your way out, just to get any dirt or anything off of you, we don’t want to be dirtying the pool.”</span> He gives you a smile and a pat on the head, pointing you towards the showers near the exit.<br>
+<<needChange "Hygiene" 15>>
+<br>
+[[Enter Pool|Pool Outside]]
+
+<</if>>

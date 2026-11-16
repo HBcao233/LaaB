@@ -1,0 +1,53 @@
+:: School Science Classroom [nobr]
+
+<<if $Wet > 1>>
+	<<include"Science Wet">>
+<<elseif $PlayerShoes.Type == "None" or ($PlayerTop.Type == "None" and $PlayerUnder.Type == "None")>>
+	<<include"Science Not Dressed">>
+<<else>>
+
+
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Science Classroom",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Classroom",
+}>>
+
+<span style="color:Azure"><big><strong>--Science Classroom--</strong></big></span><br>
+You stand in <span style="color:DarkTurquoise">Mr. Chang</span>’s Science Classroom. Instead of normal desks, this room has a collection of metal tables with a built-in sink where two to three students can sit. The back of the classroom has many locked cabinets and cases where <span style="color:DarkTurquoise">Mr. Chang</span> keeps the more dangerous tools and chemicals, along with a small chemical shower. The walls host a collection of movie and comic book posters, some of which are signed and framed.
+/* Quest Specific Info */
+<<if $ActiveQuests.includes("Lucas: Boning the Neighbor")>>
+<span style="color:Gold">[!]</span>You think you see some Lube in one of the locked cabinets!
+<</if>>
+<br>
+
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $EnglishIntro == 1>>
+    <<if $Time.between(6, 45, 7, 40) or $Time.between(11, 0, 11, 40) or $Time.between(15, 0, 16, 0)>>
+        [[Ask Chang for help with Science (0:15)|Chang Tutor]] <span style="color:green">+Science, +Chang</span><br>
+    <</if>>
+<</if>>
+<<attendClass "Science">>
+<<if $ActiveQuests.includes("Lucas: Boning the Neighbor")>>
+    <<if $Time.between(14, 50, 17, 0)>>
+        [[Try to Steal the Lube (0:10)|Lucas Sex Quest Get Lube Steal Science]]<br>
+    <<else>>
+        <span style="color:Red">It's too risky to try and steal Lube during school hours.</span><br>
+    <</if>>
+<</if>>
+<br>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[South Hallway (0:01)|School South Hallway][$Minutes += 1]] <br>
+<br>
+
+<</if>>

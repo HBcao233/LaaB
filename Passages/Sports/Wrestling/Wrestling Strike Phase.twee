@@ -1,0 +1,125 @@
+:: Wrestling Strike Phase [nobr]
+
+/* Variables are set here for wrestling. Normally these will be set when the match begins. */
+<<if $Wrestling == null>>
+    <<set $Wrestling to {
+        Phase: "Strike",
+        Opponent: {
+            Name: "Random",
+            Strength: 5,
+            /* Size is used to determine the age-group of the opponent, which mainly will only affect the scenes that play as bigger/smaller people will mostly be shown via their strength. -1 means Kid, 0 means Preteen, 1 means Teen, 2 means Adult. */
+            Size: 0,
+        },
+        PlayerAction: "None",
+        OpponentAction: "None",
+        /* Strength is set here rather than just using the variable due to the fact that it can change based on how the match goes. */
+        PlayerStrength: $Strength,
+        /* Advantage is used for the Mat Phase. 1 means Player, -1 means Opponent, 0 means Neither. */
+        Advantage: 0,
+    }>>
+<</if>>
+
+Opponent: $Wrestling.Opponent.Name<br>
+Opponent Strength: $Wrestling.Opponent.Strength<br>
+Player Strength: $Wrestling.PlayerStrength<br>
+Opponent Action: $Wrestling.OpponentAction<br>
+Player Action: $Wrestling.PlayerAction<br>
+<br>
+
+The first phase of Wrestling is the "Strike Phase". During this phase, both players will pick from one of the following options: Grapple, Slam, Strike, & Throw. It is a bit like a game of rock, paper, scissors. <br>
+<br>
+The order works as such: Grapple > Slam > Trip > Throw > Grapple<br>
+For this test, the A.I. will randomly select one of the options.<br>
+<br>
+Descriptions will be something like this: "You and the other boy squat down, circling the ring as you both wait for an opening."<br>
+<br>
+<strong>-Actions-</strong><br>
+<<link"Attempt to <strong>Grapple</strong> him<br>">>
+    <<set $Wrestling.PlayerAction to "Grapple">>
+    <<include"Wrestling Strike Phase Opponent Move Select">>
+    <<include"Wrestling Strike Phase Results">>
+<</link>>
+
+<<link"Try to <strong>Slam</strong> him to the ground<br>">>
+    <<set $Wrestling.PlayerAction to "Slam">>
+    <<include"Wrestling Strike Phase Opponent Move Select">>
+    <<include"Wrestling Strike Phase Results">>
+<</link>>
+
+<<link"Throw a <strong>Strike</strong> at him<br>">>
+    <<set $Wrestling.PlayerAction to "Trip">>
+    <<include"Wrestling Strike Phase Opponent Move Select">>
+    <<include"Wrestling Strike Phase Results">>
+<</link>>
+
+<<link"Try to <strong>Throw</strong> him off balance<br>">>
+    <<set $Wrestling.PlayerAction to "Throw">>
+    <<include"Wrestling Strike Phase Opponent Move Select">>
+    <<include"Wrestling Strike Phase Results">>
+<</link>>
+
+:: Wrestling Strike Phase Opponent Move Select [nobr]
+
+/* This is where the opponent will select their move during the Strike Phase. Normally, the opponent name will be looked at to decide what they do based on their personality. However, for this test the opponent will randomly select from all 4 moves equally and will have no special powers. */
+
+<<set _randommove to ["Trip", "Grapple", "Slam", "Throw"]>>
+<<set $Wrestling.OpponentAction to _randommove.random()>>
+
+:: Wrestling Strike Phase Results [nobr]
+
+/* This is the area that will decide the results and where the game will move to based on what each character selects. See below for possible outcomes:
+a. If one player is the victor, they move onto the Mat Phase with the Victor in the Advantage Position. 
+b. If there is a tie, say Player 1 picks Grapple and Player 2 picks Trip, then neither gets the advantage and the Strike Phase is repeated.
+c. If both players pick the same option, then we move to the Lock-Up Phase.*/
+/* First we will check if they picked the same option. */
+<<if $Wrestling.PlayerAction == $Wrestling.OpponentAction>>
+    <<set $Wrestling.Phase to "Lock-Up">>
+
+/* If both did not select the same action, we will then check results based off what the PC chose. */
+<<elseif $Wrestling.PlayerAction == "Grapple">>
+    <<if $Wrestling.OpponentAction == "Slam">>
+        <<set $Wrestling.Advantage to 1>>
+        <<set $Wrestling.Phase to "Mat">>
+    <<elseif $Wrestling.OpponentAction == "Throw">>
+        <<set $Wrestling.Advantage to -1>>
+        <<set $Wrestling.Phase to "Mat">>
+    <<elseif $Wrestling.OpponentAction == "Trip">>
+        <<set $Wrestling.Advantage to 0>>
+        <<set $Wrestling.Phase to "Tie">>
+    <</if>>
+<<elseif $Wrestling.PlayerAction == "Slam">>
+    <<if $Wrestling.OpponentAction == "Trip">>
+        <<set $Wrestling.Advantage to 1>>
+        <<set $Wrestling.Phase to "Mat">>
+    <<elseif $Wrestling.OpponentAction == "Grapple">>
+        <<set $Wrestling.Advantage to -1>>
+        <<set $Wrestling.Phase to "Mat">>
+    <<elseif $Wrestling.OpponentAction == "Throw">>
+        <<set $Wrestling.Advantage to 0>>
+        <<set $Wrestling.Phase to "Tie">>
+    <</if>>
+<<elseif $Wrestling.PlayerAction == "Trip">>
+    <<if $Wrestling.OpponentAction == "Throw">>
+        <<set $Wrestling.Advantage to 1>>
+        <<set $Wrestling.Phase to "Mat">>
+    <<elseif $Wrestling.OpponentAction == "Slam">>
+        <<set $Wrestling.Advantage to -1>>
+        <<set $Wrestling.Phase to "Mat">>
+    <<elseif $Wrestling.OpponentAction == "Grapple">>
+        <<set $Wrestling.Advantage to 0>>
+        <<set $Wrestling.Phase to "Tie">>
+    <</if>>
+<<elseif $Wrestling.PlayerAction == "Throw">>
+    <<if $Wrestling.OpponentAction == "Grapple">>
+        <<set $Wrestling.Advantage to 1>>
+        <<set $Wrestling.Phase to "Mat">>
+    <<elseif $Wrestling.OpponentAction == "Trip">>
+        <<set $Wrestling.Advantage to -1>>
+        <<set $Wrestling.Phase to "Mat">>
+    <<elseif $Wrestling.OpponentAction == "Slam">>
+        <<set $Wrestling.Advantage to 0>>
+        <<set $Wrestling.Phase to "Tie">>
+    <</if>>
+<</if>>
+
+<<goto "Wrestling Main">>

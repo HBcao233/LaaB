@@ -1,0 +1,122 @@
+:: PH Backyard [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Home Backyard",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Backyard",
+}>>
+	/* ATTITUDE BASED SETTING */
+	<<if $BackyardUndies == 1 or $BackyardUndies == 2>>
+		<<set $Location.Safe to 1>>
+	<</if>>
+<<if $Time.before(22) and $Time.after(6)>>
+	
+<<else>>
+	<<if $BackyardNudeNight == 1 or $BackyardNudeNight == 2>>
+		<<set $Location.Nudity to 1>>
+	<</if>>
+<</if>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Home Pass Out">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Backyard--</strong></big></span><br>
+<<if $Player.Exposed == "Undies" or $Player.Exposed == "Naked" or $Player.Exposed == "Diaper">>
+	<<include"PH Backyard Exposed">>
+
+<<else>>
+You stand in your backyard on the wooden deck. A short set of stairs lead down to a large grassy yard with a single tree and a shed. 
+<<if $Time.ToD == "Morning">>
+	The sun creeps over the hills in the distance, illuminating the yard in a warm orange hue.
+<<elseif $Time.ToD == "Day">>
+	It is sunny and bright out.
+<<elseif $Time.ToD == "Afternoon">>
+	The sky darkens as the end of the day grows near.
+<<elseif $Time.ToD == "Night">>
+	It is pitch black outside, you can only see thanks to the porchlight.
+<</if>><br>
+
+
+<br>
+<<if $Player.Exposed == "Clothed">>
+				/* NPC SEEN */
+	<<include "NPC Inspect">>
+	<br>
+	<br>
+	
+	<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Practice Soccer (0:20)|Home Practice Soccer]] <span style="color:Green">+Athletics</span><br>
+
+<<if $ActiveQuests.includes("Chores")>>
+	<<for _i to 0; _i lt $QuestLog.length; _i++>>
+		<<if $QuestLog[_i].Name == "Weekly Chores">>
+			<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+				<<if $QuestLog[_i].Objectives[_o].Name == "Pull Weeds" && $QuestLog[_i].Objectives[_o].State != $QuestLog[_i].Objectives[_o].Total>>
+					[[Pull Weeds (1:00)|Pull Weeds]] <span style="color:Red">-Energy</span><br>
+					<<break>>
+				<<elseif $QuestLog[_i].Objectives[_o].Name == "Hang Up Clothes" && $QuestLog[_i].Objectives[_o].State != $QuestLog[_i].Objectives[_o].Total>>
+					<<if $Weather != "Rain" and $Weather != "Storm">>
+						[[Hang up clothes (0:15)|Hang Up Clothes]]<br>
+					<<else>>
+						<span style="color:Red">Hang up clothes (You can't dry clothes in the rain!)</span><br>
+					<</if>>
+				<</if>>
+			<</for>>
+			<<break>>
+		<</if>>
+	<</for>>
+<</if>>
+
+
+<<if $MetLucas == 1>>
+	[[Spy on Lucas (0:05)|LUCAS Spying Through Window]]<br>
+<</if>>
+[[Hang Out (0:05)|PH Backyard][$Minutes += 5]]<br>
+
+/* QUESTS */
+<<if $ActiveQuests.includes("Noah: Missing Toy")>>
+	<<if $Time.after(5) and $Time.before(21)>>
+		[[Search for Noah's Toy|QUEST Search For Toy]]<br>
+	<<else>>
+		<span style="color:Gray">[It's too dark to search for Noah's Toy]</span><br>
+	<</if>>
+<</if>>
+
+	/*
+[[Ranked Skill Test]]<br>
+	*/
+<<elseif $Player.Exposed == "Towel">>
+	<span style="color:Yellow">You blush as you stand outside in a towel.</span><br>
+<</if>>
+
+<br>
+<</if>>
+
+
+<br>
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Kitchen (0:01)|PH Kitchen][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Big Room Marker.png" 
+style="position: absolute; left: 166px; top: 220px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="166,166,273,219" alt="Kitchen" onclick="$.wiki('<<goto[[PH Kitchen]]>><<set $Minutes += 1>>')" />
+</map>
+
+<</if>>

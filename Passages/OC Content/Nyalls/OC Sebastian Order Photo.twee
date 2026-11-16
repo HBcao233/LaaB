@@ -1,0 +1,69 @@
+:: OC Sebastian Order Photo [nobr]
+
+/* Temp Photo Update */
+<<if $ToggleOCBirdy == 1 && $SebPhotoUpdate == 1>>
+    <<set $OCSebPhotoCute.push("Birdy Pond", "Birdy Overalls")>>
+    <<set $OCSebPhotoEmbarrassing.push("Birdy Shower")>>
+    <<set $SebPhotoUpdate to 0>>
+    <<if $ToggleGirlContent == 1>>
+        <<set $OCSebPhotoCute.push("Birdy Lea Pond", "Birdy Lea Soaked")>>
+    <</if>>
+<</if>>
+
+Inside a box in the corner is a small piece of paper with the prices for Sebastian’s Photos written on it: <br>
+General Cute Moment: $25<br>
+General Embarrassing Moment: $25<br>
+Special Photo: $30<br>
+<br>
+It also has instructions to leave a note inside the box of your order along with the money, then wait 2-4 days for it to be delivered. <br>
+<br>
+<<if $OCSebPlayerPhotos>>
+    [[View Photos|OC Seb View Photos]]<br>
+    <br>
+<</if>>
+
+<<if $OCSebPhotoTime == -1>>
+<<if $OCSebPhotoCute.length > 0>>
+    <<if $Money >= 25>>
+        [[Order a 'Cute' Photo ($25)|OC Seb Order Photo][$OCSebOrderType to "Cute"]]<br>
+    <<else>>
+        <span style="color:Red">Order a 'Cute' Photo ($25)</span><br>
+    <</if>>
+<<else>>
+    <span style="color:lightcoral">There are no more 'Cute' photos to order.</span> <br>
+<</if>>
+<<if $OCSebPhotoEmbarrassing.length > 0>>
+    <<if $Money >= 25>>
+        [[Order an 'Embarrassing' Photo ($25)|OC Seb Order Photo][$OCSebOrderType to "Embarrassing"]]<br>
+    <<else>>
+        <span style="color:Red">Order a 'Embarrassing' Photo ($25)</span><br>
+    <</if>>
+<<else>>
+    <span style="color:lightcoral">There are no more 'Embarrassing' photos to order.</span> <br>
+<</if>>
+<<if $OCSebPhotoSpecial.length > 0>>
+    <<if $Money >= 30>>
+        [[Order a 'Special' Photo ($30)|OC Seb Order Photo][$OCSebOrderType to "Special"]]<br>
+    <<else>>
+        <span style="color:Red">Order a 'Special' Photo ($30)</span><br>
+    <</if>>
+<<else>>
+    <span style="color:lightcoral">There are no more 'Special' photos to order.</span> <br>
+<</if>>
+
+<<elseif $OCSebPhotoTime == 0>>
+    /* PICKING UP PHOTO */
+    [[Pick up your Photo|OC Seb Pickup Photo]]<br>
+<<elseif $OCSebPhotoTime > 0>>
+    /* WAITING ON PHOTO */
+    Your order from <span style="color:DarkTurquoise">Sebastian</span> is still being collected. <br>
+    <<if $OCSebPhotoTime == 1>>
+<span style="color:green">You'd wager it should be done soon!</span><br>
+    <<elseif $OCSebPhotoTime == 2>>
+<span style="color:lightgreen">Can't be more than a few days now.</span><br>
+    <<else>>
+<span style="color:yellow">You have your doubts he's even started it.</span><br>
+    <</if>>
+<</if>>
+<br>
+[[Back|School Storage Closet]]

@@ -1,0 +1,72 @@
+:: OC Mason Intro [nobr]
+
+/* Intro */
+You step onto the bus to find it decently crowded. There are a few empty spaces here and there, but all of your friends are already sitting with someone chatting or jammed into a street with strangers. Strange how the bus seems too full in this moment when normally it isn’t that bad. It is as you are walking down the aisle deciding on a seat that the bus starts moving <span style="color:LightCoral">and you suddenly lose your balance, falling face-first and sprawled out on the lap of a nearby boy sitting alone.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Blush: 1,
+        },
+    },
+    {
+        Name: "OC Mason",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+
+/* PC Wearing Underwear */
+<<if $PlayerUndies.Type != "None">>
+    <span style="color:LightSteelBlue">“Woah!”</span> The boy calls out as you land on his lap, <span style="color:LightSteelBlue">“Careful now, don’t want one of us to get hurt. Though, must admit, the view is pretty good.”</span> <span style="color:Pink">He chuckles as you feel a hand tug on the waistband of your $PlayerUndies.Name! You quickly blush and stand up, realizing the fall had caused your top to fly up, revealing your underwear to the boy.</span> The boy chuckles as you turn to him, but you are suddenly taken aback by his appearance. <br>
+    <br>
+/* Else */
+<<else>>
+    <span style="color:LightSteelBlue">“Woah!”</span> The boy calls out as you land on his lap, <span style="color:LightSteelBlue">“Careful now, don’t want one of us to get hurt. Huh, no underwear. Bold choice at this school!”</span> <span style="color:Pink">He chuckles as you feel a hand tug on the waist of your $PlayerBottoms.Type, exposing part of your butt!</span> You quickly blush and stand up, tugging your bottoms up as you turn to the boy to scold him, but are suddenly taken aback by his appearance. <br>
+    <br>
+<</if>>
+
+The boy is dressed normally enough, but his face and head catch you off-guard. He has a dark outline around his eyes, as if he is wearing some sort of mask, though it had to be so thin and formfitting because it looks so natural. His ears are also strange, pointing straight out like triangles from the side of his face. <span style="color:Yellow">The boy looks like some sort of alien!</span> You completely forget what you were going to say to the boy and instead comment on his face. <br>
+<br>
+<span style="color:LightSteelBlue">“Oh, this?”</span> The boy chuckles, <span style="color:LightSteelBlue">“Do you like it? It’s a cosplay I’ve been working on. I’m a Squidling! It’s from my favorite video game, Splashtoon! Best part? It’s TECHNICALLY not against the dress code, so they can’t make me take it off!”</span> The boy chuckles slightly deviously, obviously proud to get one over on the school. <span style="color:LightSteelBlue">“I’m <span style="color:DarkTurquoise">Mason</span>! You’re that new kid right, <span style="color:DarkTurquoise">$Player.Name</span> or something?”</span> <br>
+<br>
+You shake the boy’s hand and introduce yourself, still a bit confused by his appearance. The boy gives you some weird vibes, not even mentioning his strange dress. As the boys in the seat in front of you begin to roughhouse and play around, you catch him peeking over the seek and smirking at something. It takes you looking over yourself to realize <span style="color:Pink">he is spying on the peeks of their underwear from their shorts! <span style="color:DarkTurquoise">Mason</span> spots you catching his glances and quickly turns away, blushing.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smirk",
+            Eyes: "Tired",
+        },
+    },
+    {
+        Name: "OC Mason",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“So, uhhhhh… How do you like the school so far?”</span> He says, feeling slightly embarrassed and trying to distract you. You give him a knowing smirk before chatting with the boy the rest of the bus ride. He may be weird, <span style="color:LightSteelBlue">but it is clear you both have something in common.</span> <br>
+<<set $CompletedQuests.push("Mason: The Underwear-Loving Squid")>>
+<<set $InActiveQuests.delete("Mason: The Underwear-Loving Squid")>>
+<<set $OCMasonSocial to 0>>
+<<set $OCMasonSocialRank to 0>>
+<<socialChange "Mason" 10 1>>
+<br>
+/* GET OFF BUS */
+		<<if $BusRide == "Home">>
+			[[Get off bus|Northend]]
+		<<else>>
+			[[Get off bus|Middle School]]
+		<</if>>

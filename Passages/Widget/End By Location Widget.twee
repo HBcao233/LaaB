@@ -1,0 +1,78 @@
+:: End By Location [widget nobr]
+
+/* This is a widget you can call to apply end code to a scene that will take the PC to a location based off their location prior to starting the scene.
+It can be called like so <<endByLocation>> 
+There is no argments to call, since it uses the current $Location variable, however, if need by we can add a conditoinal argument that will end it in a new locatino, though at that point is seems pointless since we can just end it at the listed location. But somethig to keep in mind if the need arrises.*/
+
+/* Note: We could set it to go to the passage that is the same as $Location.Name, however, some passages do not share their location name, so we are doing this instead. But we should think about streamlining Location.Name to be the same as the passage name. */
+
+<<widget "endByLocation">>
+
+    /* School Based Locations */
+    <<if $Location.Name == "School South Hallway">>
+        [[Continue|School South Hallway]] 
+    <<elseif $Location.Name == "School East Hallway">>
+        [[Continue|School East Hallway]]
+    <<elseif $Location.Name == "School West Hallway">>
+        [[Continue|School West Hallway]]
+    <<elseif $Location.Name == "School Courtyard">>
+        [[Continue|School Courtyard]]
+    <<elseif $Location.Name == "School Cafeteria">>
+        [[Continue|School Cafeteria]]
+    <<elseif $Location.Name == "Home Hallway">>
+        [[Continue|PH Hallway]]
+    <<elseif $Location.Name == "Home Kitchen">>
+        [[Continue|PH Kitchen]]
+    <<elseif $Location.Name == "Home Living Room">>
+        [[Continue|PH Living Room]]
+    <<elseif $Location.Name == "Home Backyard">>
+        [[Continue|PH Backyard]]
+    <<elseif $Location.Name == "Dad Bedroom">>
+        [[Continue|PH Dad Bedroom]]
+    <<elseif $Location.Name == "Gabe Bedroom">>
+        [[Continue|PH Gabe Bedroom]]
+
+    /* Town */
+    <<elseif $Location.Name == "Park">>
+        [[Continue|Park]]
+    <<elseif $Location.Name == "Northend Playground">>
+        [[Continue|Neighborhood Playground]]
+    <<elseif $Location.Name == "Northend">>
+        [[Continue|Northend]]
+
+    /* Hang Out Locations */
+    <<elseif $Location.Name == "Lucas Park Hang Out">>
+        [[Continue|Lucas Hang Out Park]]
+    <<elseif $Location.Name == "Lucas Arcade Hang Out">>
+        [[Continue|Lucas Hang Out Arcade]]
+    <<elseif $Location.Name == "Lucas Northend Hang Out">>
+        [[Continue|Lucas Hang Out Northend]]
+    <<elseif $Location.Name == "Lucas Mall Hang Out">>
+        [[Continue|Lucas Hang Out Mall]]
+    <<elseif $Location.Name == "Ben Park Hang Out">>
+        [[Continue|Ben Hang Out Park]]
+    <<elseif $Location.Name == "Carter Park Hang Out">>
+        [[Continue|Carter Hang Out Park]]
+    <<elseif $Location.Name == "Carter Arcade Hang Out">>
+        [[Continue|Carter Hang Out Arcade]]
+    <<elseif $Location.Name == "Carter Mall Hang Out">>
+        [[Continue|Carter Hang Out Mall]]
+    <<elseif $Location.Name == "Michael Park Hang Out">>
+        [[Continue|Michael Hang Out Park]]
+    <<elseif $Location.Name == "Jackson Park Hang Out">>
+        [[Continue|Jackson Hang Out Park]]
+    <<elseif $Location.Name == "Thomas Park Hang Out">>
+        [[Continue|Thomas Hang Out Park]]
+    <<elseif $Location.Name == "Xavier Park Hang Out">>
+        [[Continue|Xavier Hang Out Park]]
+    <<elseif $Location.Name == "Felix Park Hang Out">>
+        [[Continue|Felix Hang Out Park]]
+
+    /* Else Fails */
+    <<else>>
+        <span style="color:red">[<strong>Error</strong>: Unable to bring you to your last location. Report this error and click one of the links below closest to your original location. Current Location: $Location.Name]</span><br>
+        [[Player's Bedroom|Player Bedroom]]<br>
+        [[School South Hallway|School South Hallway]] <br>
+    <</if>>
+
+<</widget>>

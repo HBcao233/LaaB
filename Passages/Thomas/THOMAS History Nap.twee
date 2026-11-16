@@ -1,0 +1,64 @@
+:: THOMAS History Nap [nobr]
+
+<span style="color:DarkTurquoise">Mr. De León</span> is giving a lecture about ancient pottery. While not the most interesting topic, he is able to keep the class’s attention, or most of the class at least. You can’t help but notice that <span style="color:DarkTurquoise">Thomas</span> had fallen asleep at his desk. <span style="color:DarkTurquoise">Mr. De León</span> hadn’t noticed yet, so you could wake him.<br>
+
+<<set _ad to [
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+            Eyes: "Closed",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<div id=choice>
+	<<link "Wake him up">>
+	<<replace"#choice">>
+
+Waiting for <span style="color:DarkTurquoise">Mr. De León</span>’s back to be turned, you quickly lean over and poke <span style="color:DarkTurquoise">Thomas</span> a few times in the arm. It seems to have been enough, as the tired boy opens his eyes and, upon realizing where he was, straightens up and acts like he’s been paying attention the whole time as <span style="color:DarkTurquoise">Mr. De León</span> walks by his desk. He gives you a thankful nod and begins rubbing his eyes once he’s in the clear.<br>
+
+<<set _ad to [
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Happy",
+            Eyes: "Tired",
+        },
+    },
+]>>
+<<ad _ad>>
+<<socialChange "Thomas" 3>>
+<<include"Attend History Finish">>
+
+	<</replace>>
+	<</link>>
+	<span style="color:Green">+Thomas</span><br>
+	
+	<<link "Leave him be<br>">>
+	<<replace"#choice">>
+
+You do nothing and a few moments later <span style="color:DarkTurquoise">Mr. De León</span> walks by <span style="color:DarkTurquoise">Thomas</span>’s desk and notices the sleeping boy. He stops his lecture, quietly grabs a textbook, and holds it above the desk. He does a little countdown before dropping it loudly. <span style="color:DarkTurquoise">Thomas</span> is so surprised by the sudden noise that he falls out of his chair onto the floor, letting out a high-pitched scream. An short burst of laughter erupts from the class.<br>
+
+<<set _ad to [
+    {
+        Name: "Thomas",
+        State: {
+            Outfit: "Uniform",
+			Mouth: "Sad",
+			Blush: 3,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue"> “<span style="color:DarkTurquoise">Mr. Byrne</span>, thank you for joining us.”</span> <span style="color:DarkTurquoise">Mr. De León</span> helps the now red-faced boy up. <span style="color:LightSteelBlue"> “Please do try to stay awake during class.”</span> <span style="color:DarkTurquoise">Thomas</span> apologizes and returns to his seat as <span style="color:DarkTurquoise">Mr. De León</span> continues his lesson.<br>
+<br>
+<<include"Attend History Finish">>
+
+
+	<</replace>>
+	<</link>>
+</div>

@@ -1,0 +1,118 @@
+:: Main Street [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Main Street",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Town",
+}>>
+
+/* Quest Checks */
+<<if $JacksonQuestMusuem != -1>>
+	<<if $Time.schoolday() && $Time.between(15, 0, 18, 0)>>
+		<<set _jacksonmusuem to 1>>
+	<<elseif !$Time.schoolday() && $Time.between(8, 0, 18, 0)>>
+		<<set _jacksonmusuem to 1>>
+	<<else>>
+		<<set _jacksonmusuem to 0>>
+	<</if>>
+<</if>>
+
+/* Quest Specific Random Encounter */
+<<if $Time.between(7, 0, 18, 0)>>
+	<<set _randomencounter to random(1, 6)>>
+<</if>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+/* Quest-Specific Random Encounters */
+<<elseif _randomencounter == 1 && $InActiveQuests.includes("Carter: Mom (Main Street)")>>
+	<<include"Carter Story Event Mom on Main Street">>
+<<elseif _randomencounter == 1 && _jacksonmusuem == 1 && $InActiveQuests.includes("Jackson: Sibling Dynamics")>>
+	<<include"Jackson Sibling Dynamics">>
+<<elseif _randomencounter == 1 && !$Time.schoolday() && $ToggleOCEnkys == 1 && $InActiveQuests.includes("Enkys: Cat Shelter")>>
+	<<include"OC Enkys Cat Shelter Intro">>
+<<else>>
+
+<span style="color:Azure"><big><strong>--Main Street--</strong></big></span><br>
+You walk down the sidewalk of Main Street. It is a large and fairly fancy street that moves through the center of Opal City and is filled with all the important buildings of the town. The Mayor’s Office, Police Station, Local TV Station, and other impressive buildings line the streets. Due to its importance, it is cleaned regularly and watched closely by law enforcement. 
+<<if $Time.ToD == "Morning">>
+	Despite the early morning, the side of the road is filled with parks cars as people open up shop for the day.
+<<elseif $Time.ToD == "Day">>
+	The sidewalk is full of people as everyone goes about their day.
+<<elseif $Time.ToD == "Afternoon">>
+	The roads have started to clear, but many people still wander the sidewalks.
+<<elseif $Time.ToD == "Night">>
+	The streets are mainly empty, save for a few police officers and late night workers. The street is illuminated by many street lamps.
+<</if>><br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $ActiveQuests.includes("Lucas: New Member of the Family") && $Time.between(14,0,16,0)>>
+	[[Meet Lucas and his mother (0:45)|Lucas Cat Quest 1]]<br>
+<</if>>
+<<if $ActiveQuests.includes("Carter: Hero Award 2") && $Time.between(17,0,18,30)>>
+	[[Attend the Hero Awards (2:00)|Carter Hero Award Part 1]]<br>
+<</if>>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[City Library|City Library]]<br>
+	
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:10)|Shopping District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Pool.png">
+	[[Pool (0:10)|Pool][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Park.png">
+	[[Park (0:10)|Park][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:05)|Shopping District][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Pool.png">
+	[[Pool (0:05)|Pool][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Park.png">
+	[[Park (0:05)|Park][$Minutes += $TravelTime]]<br>
+	<</if>>
+<</if>>
+<br>
+
+<br>
+<div style="position: relative">
+
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 300px; top: 81px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="226,81,279,134" alt="Shopping District" onclick="$.wiki('<<goto[[Shopping District]]>><<set $Minutes += $TravelTime>>')" />
+
+<area shape="rect" coords="374,81,427,134" alt="Pool" onclick="$.wiki('<<goto[[Pool]]>><<set $Minutes += $TravelTime>>')" />
+
+<area shape="rect" coords="300,155,353,208" alt="Park" onclick="$.wiki('<<goto[[Park]]>><<set $Minutes += $TravelTime>>')" />
+
+</map>
+
+<</if>>

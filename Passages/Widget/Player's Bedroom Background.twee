@@ -1,0 +1,426 @@
+:: Player's Bedroom Background [nobr]
+
+/* Time of Day */
+<<if $Time.before(7, 0) or $Time.after(20, 0)>>
+    <<set _PBedroomToD to "Night">>
+<<else>>
+    <<set _PBedroomToD to "Day">>
+    <<set _light to 1>>
+<</if>>
+
+
+<div style="position: relative">
+
+/* Background */
+<img @src="`Images/Player Bedroom/Window/${_PBedroomToD}.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+/* Walls */
+<img @src="`Images/Player Bedroom/Walls/${$PBedroom.Walls}.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+<img src="Images\Player Bedroom\Window\Window.png" style="position: absolute; left: 0; top: 0; height: 600px">
+/* Floor */
+<img @src="`Images/Player Bedroom/Floor/${$PBedroom.Floor}.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+/* Curtains */
+<img src="Images\Player Bedroom\Curtains\Rod.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<<if _PBedroomToD == "Day" or $PBedroom.Lights == 1>>
+    <img src="Images\Player Bedroom\Curtains\Shadow.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+<<if $PBedroom.Curtains != "None">>
+    <img @src="`Images/Player Bedroom/Curtains/${$PBedroom.Curtains}.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+
+/* Desk */
+<<if _PBedroomToD == "Day" or $PBedroom.Lights == 1>>
+    <img src="Images\Player Bedroom\Desk\Shadow.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+<img src="Images\Player Bedroom\Desk\Desk.png" style="position: absolute; left: 0; top: 0; height: 600px">
+
+/* Desk Item */
+<<if _PBedroomToD == "Day" or $PBedroom.Lights == 1>>
+    <img src="Images\Player Bedroom\Desk\Desk Lamp\Shadow.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+<img @src="`Images/Player Bedroom/Desk/Desk Lamp/${$PBedroom.DeskLamp}.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+<img src="Images\Player Bedroom\Desk\Clutter\Pencils.png" style="position: absolute; left: 0; top: 0; height: 600px">
+/* Desk Chair */
+<<if _PBedroomToD == "Day" or $PBedroom.Lights == 1>>
+    <img src="Images\Player Bedroom\Desk\Desk Chair\Shadow.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+<img @src="`Images/Player Bedroom/Desk/Desk Chair/${$PBedroom.DeskChair}.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+
+/* Left Wall */
+<<if $PBedroom.LeftWall == "Shelf">>
+    <<if _PBedroomToD == "Day" or $PBedroom.Lights == 1>>
+        <img src="Images\Player Bedroom\Left Wall\Shelf Shadow.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <</if>>
+    <img src="Images\Player Bedroom\Left Wall\Shelf.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <<if $PBedroom.LeftShelfItem == "Books">>
+        <img src="Images\Player Bedroom\Left Wall\Shelf Books.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <</if>>
+<</if>>
+
+/* Right Wall */
+<<if $PBedroom.RightWall == "Shelf">>
+    <<if _PBedroomToD == "Day" or $PBedroom.Lights == 1>>
+        <img src="Images\Player Bedroom\Right Wall\Shelf Shadow.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <</if>>
+    <img src="Images\Player Bedroom\Right Wall\Shelf.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <<if $PBedroom.RightShelfItem == "Ranger Figures">>
+        <<if _PBedroomToD == "Day">>
+            <img src="Images\Player Bedroom\Right Wall\Ranger Figures Shadow_Red.png" style="position: absolute; left: 0; top: 0; height: 600px">
+        <</if>>
+        <img src="Images\Player Bedroom\Right Wall\Shelf Ranger Figure_Red.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <</if>>
+<</if>>
+
+/* Bed */
+<<if _PBedroomToD == "Day" or $PBedroom.Lights == 1>>
+    <img src="Images\Player Bedroom\Bed\Shadow.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+<<if $PBedroom.BedMessy == 0>>
+    <img @src="`Images/Player Bedroom/Bed/${$PBedroom.Bed}.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+<<else>>
+    <img @src="`Images/Player Bedroom/Bed/${$PBedroom.Bed} Messy.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+
+/*Bedside */
+<<if _PBedroomToD == "Day" or $PBedroom.Lights == 1>>
+    <img src="Images\Player Bedroom\Bedside\Shadow.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+<<if $PBedroom.Messy >= 2>>
+    <img src="Images\Player Bedroom\Bedside\Bedside Table Messy.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<<else>>
+    <img src="Images\Player Bedroom\Bedside\Bedside Table.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+
+/* Bedside Item */
+<<if _PBedroomToD == "Day" or $PBedroom.Lights == 1>>
+    <img src="Images\Player Bedroom\Bedside\Lamp\Shadow.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+<img @src="`Images/Player Bedroom/Bedside/Lamp/${$PBedroom.BedsideLamp}.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+
+/* Toybox */
+<<if _PBedroomToD == "Day" or $PBedroom.Lights == 1>>
+    <img src="Images\Player Bedroom\Toybox\Shadow.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+<<if $PBedroom.Messy == 0>>
+    <img @src="`Images/Player Bedroom/Toybox/${$PBedroom.Toybox}.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+<<else>>
+    <img @src="`Images/Player Bedroom/Toybox/${$PBedroom.Toybox} Messy ${$PBedroom.Messy}.png`" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+
+/* Messy */
+<<if $PBedroom.Messy == 1>>
+    <img src="Images\Player Bedroom\Clutter\Ball.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Cars.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Pencils.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Clothes 1.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Lego 1.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<<elseif $PBedroom.Messy == 2>>
+    <img src="Images\Player Bedroom\Clutter\Ball.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Cars.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Pencils.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Socks.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Clothes 2.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Lego 2.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Paper 1.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<<elseif $PBedroom.Messy == 3>>
+    <img src="Images\Player Bedroom\Clutter\Ball.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Cars.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Pencils.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Socks.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Clothes 3.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Lego 2.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Paper 2.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Clutter\Soldiers.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+
+/* Light */
+<<if _PBedroomToD == "Day">>
+    <img src="Images\Player Bedroom\Lights\Light Rays.png" style="position: absolute; left: 0; top: 0; height: 600px">
+    <img src="Images\Player Bedroom\Lights\Floor Light.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<<elseif $PBedroom.Lights != 1>>
+    <img src="Images\Player Bedroom\Lights\Night Tint.png" style="position: absolute; left: 0; top: 0; height: 600px">
+<</if>>
+
+/* Empty */
+<img src="Images\Player Bedroom\Empty.png" style="position: abslute; left: 0; top: 0; height: 600px">
+
+</div>
+
+
+:: Player's Bedroom Background Edit [nobr]
+
+<div id="PBedroomEdit">
+    <<include"Player's Bedroom Background Edit Div">>
+</div>
+
+<br>
+[[Back|Player Bedroom]]<br>
+
+:: Player's Bedroom Background Edit Div [nobr]
+
+<<include"Player's Bedroom Background">>
+
+<<set _walloptions to ["Beige", "Black", "Blue", "Brown", "Green", "Grey", "Light Brown", "Lime", "Orange", "Pink", "Purple", "Red", "Teal", "White", "Yellow"]>>
+<<set _flooroptiont to ["Beige", "Black", "Blue", "Brown", "Green", "Grey", "Mint", "Pink", "Purple", "Red", "Teal", "White", "Wood Brown", "Wood Black", "Wood White", "Wood Beige"]>>
+<<set _timeofdayoptions to ["Day", "Night"]>>
+<<set _curtainoptions to ["Beige", "Black", "Blue", "Brown", "Green", "Grey", "Light Brown", "Lime", "Orange", "Pink", "Purple", "Red", "Teal", "White", "Yellow", "None"]>>
+<<set _leftwalloptios to ["Shelf", "None"]>>
+<<set _leftshelfoptions to ["Books", "None"]>>
+<<set _rightwalloptios to ["Shelf", "None"]>>
+<<set _rightshelfoptions to ["Ranger Figures", "None"]>>
+<<set _bedoptions to ["Beige", "Black", "Blue", "Brown", "Green", "Grey", "Light Brown", "Lime", "Orange", "Pink", "Purple", "Red", "Teal", "White", "Yellow"]>>
+<<set _bedsidelamp to ["Beige", "Black", "Blue", "Brown", "Green", "Grey", "Light Brown", "Lime", "Orange", "Pink", "Purple", "Red", "Teal", "White", "Yellow"]>>
+<<set _desklamp to ["Beige", "Black", "Blue", "Brown", "Green", "Grey", "Light Brown", "Lime", "Orange", "Pink", "Purple", "Red", "Teal", "White", "Yellow"]>>
+<<set _deskchair to ["Beige", "Black", "Blue", "Brown", "Green", "Grey", "Light Brown", "Lime", "Orange", "Pink", "Purple", "Red", "Teal", "White", "Yellow"]>>
+<<set _toyboxoptions to ["Toybox", "Letters"]>>
+<<set _bedmessyoptions to [0, 1]>>
+<<set _messyoptions to [0, 1, 2, 3]>>
+<<set _lightoptions to [0, 1]>>
+
+<strong>Lights</strong>: $PBedroom.Lights<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _lightoptions.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.Lights == _lightoptions[_i]>>
+                <span style="color:Lightgreen">[_lightoptions[_i]]</span>
+            <<else>>
+                <<link _lightoptions[_i]>>
+                    <<set $PBedroom.Lights to _lightoptions[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+</div>
+
+<strong>Walls</strong>: $PBedroom.Walls<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _walloptions.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.Walls == _walloptions[_i]>>
+                <span style="color:Lightgreen">[_walloptions[_i]]</span>
+            <<else>>
+                <<link _walloptions[_i]>>
+                    <<set $PBedroom.Walls to _walloptions[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+</div>
+
+<strong>Floor</strong>: $PBedroom.Floor<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _flooroptiont.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.Floor == _flooroptiont[_i]>>
+                <span style="color:Lightgreen">[_flooroptiont[_i]]</span>
+            <<else>>
+                <<link _flooroptiont[_i]>>
+                    <<set $PBedroom.Floor to _flooroptiont[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+</div>
+
+<strong>Curtains</strong>: $PBedroom.Curtains<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _curtainoptions.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.Curtains == _curtainoptions[_i]>>
+                <span style="color:Lightgreen">[_curtainoptions[_i]]</span>
+            <<else>>
+                <<link _curtainoptions[_i]>>
+                    <<set $PBedroom.Curtains to _curtainoptions[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+</div>
+
+<strong>Left Wall</strong>: $PBedroom.LeftWall<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _leftwalloptios.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.LeftWall == _leftwalloptios[_i]>>
+                <span style="color:Lightgreen">[_leftwalloptios[_i]]</span>
+            <<else>>
+                <<link _leftwalloptios[_i]>>
+                    <<set $PBedroom.LeftWall to _leftwalloptios[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+    <<if $PBedroom.LeftWall == "Shelf">>
+        <strong>Left Shelf Item</strong>: $PBedroom.LeftShelfItem<br>
+        <div style="margin-left: 30px;">
+            <<for _i to 0; _i lt _leftshelfoptions.length; _i++>>
+                <<capture _i>>
+                    <<if $PBedroom.LeftShelfItem == _leftshelfoptions[_i]>>
+                        <span style="color:Lightgreen">[_leftshelfoptions[_i]]</span>
+                    <<else>>
+                        <<link _leftshelfoptions[_i]>>
+                            <<set $PBedroom.LeftShelfItem to _leftshelfoptions[_i]>>
+                            <<replace "#PBedroomEdit">>
+                                <<include"Player's Bedroom Background Edit Div">>
+                            <</replace>>
+                        <</link>>
+                    <</if>>
+                    | 
+                <</capture>>
+            <</for>><br>
+        </div>
+    <</if>>
+</div>
+
+<strong>Right Wall</strong>: $PBedroom.RightWall<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _rightwalloptios.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.RightWall == _rightwalloptios[_i]>>
+                <span style="color:Lightgreen">[_rightwalloptios[_i]]</span>
+            <<else>>
+                <<link _rightwalloptios[_i]>>
+                    <<set $PBedroom.RightWall to _rightwalloptios[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+    <<if $PBedroom.RightWall == "Shelf">>
+        <strong>Right Shelf Item</strong>: $PBedroom.RightShelfItem<br>
+        <div style="margin-left: 30px;">
+            <<for _i to 0; _i lt _rightshelfoptions.length; _i++>>
+                <<capture _i>>
+                    <<if $PBedroom.RightShelfItem == _rightshelfoptions[_i]>>
+                        <span style="color:Lightgreen">[_rightshelfoptions[_i]]</span>
+                    <<else>>
+                        <<link _rightshelfoptions[_i]>>
+                            <<set $PBedroom.RightShelfItem to _rightshelfoptions[_i]>>
+                            <<replace "#PBedroomEdit">>
+                                <<include"Player's Bedroom Background Edit Div">>
+                            <</replace>>
+                        <</link>>
+                    <</if>>
+                    | 
+                <</capture>>
+            <</for>><br>
+        </div>
+    <</if>>
+</div>
+
+<strong>Bed</strong>: $PBedroom.Bed<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _bedoptions.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.Bed == _bedoptions[_i]>>
+                <span style="color:Lightgreen">[_bedoptions[_i]]</span>
+            <<else>>
+                <<link _bedoptions[_i]>>
+                    <<set $PBedroom.Bed to _bedoptions[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+</div>
+
+<strong>Bedside Lamp</strong>: $PBedroom.BedsideLamp<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _bedsidelamp.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.BedsideLamp == _bedsidelamp[_i]>>
+                <span style="color:Lightgreen">[_bedsidelamp[_i]]</span>
+            <<else>>
+                <<link _bedsidelamp[_i]>>
+                    <<set $PBedroom.BedsideLamp to _bedsidelamp[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+</div>
+
+<strong>Desk Lamp</strong>: $PBedroom.DeskLamp<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _desklamp.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.DeskLamp == _desklamp[_i]>>
+                <span style="color:Lightgreen">[_desklamp[_i]]</span>
+            <<else>>
+                <<link _desklamp[_i]>>
+                    <<set $PBedroom.DeskLamp to _desklamp[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+</div>
+
+<strong>Desk Chair</strong>: $PBedroom.DeskChair<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _deskchair.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.DeskChair == _deskchair[_i]>>
+                <span style="color:Lightgreen">[_deskchair[_i]]</span>
+            <<else>>
+                <<link _deskchair[_i]>>
+                    <<set $PBedroom.DeskChair to _deskchair[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+</div>
+
+<strong>Center Room</strong>: $PBedroom.Toybox<br>
+<div style="margin-left: 30px;">
+    <<for _i to 0; _i lt _toyboxoptions.length; _i++>>
+        <<capture _i>>
+            <<if $PBedroom.Toybox == _toyboxoptions[_i]>>
+                <span style="color:Lightgreen">[_toyboxoptions[_i]]</span>
+            <<else>>
+                <<link _toyboxoptions[_i]>>
+                    <<set $PBedroom.Toybox to _toyboxoptions[_i]>>
+                    <<replace "#PBedroomEdit">>
+                        <<include"Player's Bedroom Background Edit Div">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>><br>
+</div>

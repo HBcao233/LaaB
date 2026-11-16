@@ -1,0 +1,123 @@
+:: Artwork Catalog Xavier [nobr]
+
+<span style="color:Azure"><big><strong>--Xavier Taylor Catalog--</strong></big></span><br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Xavier Richards</span>, the richest and most stuck-up boy in town. You wouldn’t believe the things that boy gets up to!”</span> <span style="color:DarkTurquoise">Orange</span> laughs as he pulls out <span style="color:DarkTurquoise">Xavier</span>’s binder, <span style="color:LightSteelBlue">“I’d be careful if you try to befriend him. He has certain… requirements, if you catch my meaning. Though maybe you’re into that, I know I am! He may be hard to befriend, but it’ll be worth it if you are looking for something more… interesting.”</span> <span style="color:DarkTurquoise">Orange</span> chuckles as he places down a list of available art in front of you. <br>
+<br>
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+/* Character Art (Everyday) */
+    <<if $AchievementArt.includes("Xavier Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Xavier Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Xavier\\Xavier.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Xavier Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Xavier Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Xavier">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("Xavier Character Art Undies")>>
+        <strong><span style="color:lightgreen">Xavier Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Xavier\\Xavier Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Xavier Character Art (Undies)</strong>
+        | 
+        <<if $XavierSocial >= 100 or $XavierSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Xavier Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Xavier">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Xavier Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Michael Xavier Compare */
+    <<if $AchievementArt.includes("Michael Xavier Compare")>>
+        <strong><span style="color:lightgreen">Michael Xavier Compare</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Michael Xavier Compare.png" "SolanderDraws" "https://baraag.net/@SolanderDraws">>
+    <<else>>
+        <strong>Michael Xavier Compare</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Michael Xavier Compare")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Michael">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Felix Xavier Dream */
+    <<if $AchievementArt.includes("Felix Xavier Dream")>>
+        <strong><span style="color:lightgreen">Felix Xavier Dream</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Felix Xavier Dream.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Felix Xavier Dream</strong>
+        | 
+        <<if $XavierSocial >= 100 or $XavierSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Felix Xavier Dream")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Felix">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Xavier Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+    
+/* Xavier Sticker Set */
+    <<if $AchievementArt.includes("Xavier Sticker Set")>>
+        <strong><span style="color:lightgreen">Xavier Scary Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Scary Xavier.png" "Rayray" "https://rayrayart.fanbox.cc">>
+        <strong><span style="color:lightgreen">Chibi Xavier Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Chibi Xavier.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Xavier Fish Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Xavier Fish.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Xavier Sticker Set</strong>
+        | 
+        <<if $XavierSocial >= 100 or $XavierSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Xavier Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Xavier">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Xavier Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+
+<br>
+[[Back|Artwork Catalog]]

@@ -1,0 +1,100 @@
+:: BEN Equipment [nobr]
+
+/* Resetting not always used */
+<<set $BenOver to $None>>
+
+/* UNDERWEAR SELECTION */
+<<addClothing "Temp" "Undies" "Briefs" "White">>
+<<set $BenUndies to _clothingtemp>>
+	
+/* SHOES/SOCKS SELECTION */
+<<addClothing "Temp" "Shoes" "Classmates" "Ben">>
+<<set $BenShoes to _clothingtemp>>
+<<addClothing "Temp" "Socks" "Classmates" "Ben">>
+<<set $BenSocks to _clothingtemp>>
+		
+/* PAJAMA SELECTION */
+		
+	
+/* EVERYDAY SELECTION */
+<<if $NPCClothingSet == "Rain">>
+	<<set $BenRandomTop to random(1, 2)>>
+	<<set $BenRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Hoodie" "White">>
+	<<set $BenOuter to _clothingtemp>>
+	<<if $BenRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Dress Shirt" "White">>
+		<<set $BenTop to _clothingtemp>>
+		<<addClothing "Temp" "Over" "Classmates" "Ben">>
+		<<set $BenOver to _clothingtemp>>
+	<<elseif $BenRandomTop == 2>>
+		<<addClothing "Temp" "Top" "T-Shirt" "White">>
+		<<set $BenTop to _clothingtemp>>
+	<</if>>
+	<<if $BenRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Ben">>
+		<<set $BenBottoms to _clothingtemp>>
+	<<elseif $BenRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Jeans" "Dark Denim">>
+		<<set $BenBottoms to _clothingtemp>>
+	<</if>>
+<<elseif $NPCClothingSet == "Temperate">>
+	<<set $BenRandomTop to random(1, 2)>>
+	<<set $BenRandomBottoms to random(1, 2)>>
+	<<set $BenOuter to $None>>
+	<<if $BenRandomTop == 1>>
+		<<addClothing "Temp" "Top" "Dress Shirt" "White">>
+		<<set $BenTop to _clothingtemp>>
+		<<addClothing "Temp" "Over" "Classmates" "Ben">>
+		<<set $BenOver to _clothingtemp>>
+	<<elseif $BenRandomTop == 2>>
+		<<addClothing "Temp" "Top" "T-Shirt" "White">>
+		<<set $BenTop to _clothingtemp>>
+	<</if>>
+	<<if $BenRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Ben">>
+		<<set $BenBottoms to _clothingtemp>>
+	<<elseif $BenRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Jeans" "Dark Denim">>
+		<<set $BenBottoms to _clothingtemp>>
+	<</if>>
+<<elseif $NPCClothingSet == "Warm">>
+	<<set $BenRandomTop to random(1, 2)>>
+	<<set $BenRandomBottoms to random(1, 2)>>
+	<<set $BenOuter to $None>>
+	<<if $BenRandomTop == 1>>
+		<<addClothing "Temp" "Top" "T-Shirt" "White">>
+		<<set $BenTop to _clothingtemp>>
+	<<elseif $BenRandomTop == 2>>
+		<<addClothing "Temp" "Top" "T-Shirt" "Gray">>
+		<<set $BenTop to _clothingtemp>>
+	<</if>>
+	<<if $BenRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Ben">>
+		<<set $BenBottoms to _clothingtemp>>
+	<<elseif $BenRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Classmates" "Ben">>
+		<<set $BenBottoms to _clothingtemp>>
+	<</if>>
+<<else>>
+	<<set $BenRandomTop to random(1, 2)>>
+	<<set $BenRandomBottoms to random(1, 2)>>
+	<<addClothing "Temp" "Outer" "Hoodie" "White">>
+	<<set $BenOuter to _clothingtemp>>
+	<<if $BenRandomTop == 1>>
+		<<addClothing "Temp" "Top" "T-Shirt" "White">>
+		<<set $BenTop to _clothingtemp>>
+	<<elseif $BenRandomTop == 2>>
+		<<addClothing "Temp" "Top" "Long-Sleeved Shirt" "White">>
+		<<set $BenTop to _clothingtemp>>
+		<<addClothing "Temp" "Over" "Classmates" "Ben">>
+		<<set $BenOver to _clothingtemp>>
+	<</if>>
+	<<if $BenRandomBottoms == 1>>
+		<<addClothing "Temp" "Bottoms" "Jeans" "Dark Denim">>
+		<<set $BenBottoms to _clothingtemp>>
+	<<elseif $BenRandomBottoms == 2>>
+		<<addClothing "Temp" "Bottoms" "Jeans" "Blue Denim">>
+		<<set $BenBottoms to _clothingtemp>>
+	<</if>>
+<</if>>

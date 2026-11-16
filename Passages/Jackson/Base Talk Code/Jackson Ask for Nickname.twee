@@ -1,0 +1,17 @@
+:: Jackson Ask for Nickname [nobr]
+
+/* This is the scene that appears when the PC asks to be called by a nickname. */
+<span style="Color: LightSteelBlue"><span style="Color: LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>!”</span> <span style="color:DarkTurquoise">Jackson</span> greets you with a hug, <span style="Color: LightSteelBlue"><span style="Color: LightSteelBlue">“I was just about to head by the cafeteria for a second, I heard someone saw a squirrel! Did you wanna come?”</span> You chuckle as <span style="color:DarkTurquoise">Jackson</span> speaks at a million miles an hour, telling him you’re here for another reason and ask him if he wouldn’t mind calling you by a nickname. Your real name is fine, and all, but since you are friends you’d rather if he called you by something else. <span style="Color: LightSteelBlue"><span style="Color: LightSteelBlue">“A nickname? Sure! My mom has a nickname for me, but she says I’m not allowed to swear.”</span> Despite him laughing, you are not sure if he is serious or not. <br>
+<br>
+<div id=choice>
+<<textbox "$JacksonNickname" $JacksonNickname>><br>
+<br>
+	<<link "Continue">>
+	<<replace"#choice">>
+        <<set $Nickname.Jackson to 1>>
+        <span style="Color: LightSteelBlue"><span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$JacksonNickname</span>?”</span> <span style="color:DarkTurquoise">Jackson</span> pauses for a moment, repeating the name a few times as he thinks. <span style="Color: LightSteelBlue"><span style="Color: LightSteelBlue">“Hmmm, I think that works. You look like a <span style="color:DarkTurquoise">$JacksonNickname</span>! Maybe I should have a nickname, well a nickname I can say without getting in trouble. It’s weird that she’d call me something but get mad when I say it. You’d think she’d-”</span> <span style="color:DarkTurquoise">Jackson</span> goes on his ramble for a minute, before something else distracts him and he runs off. What a funny kid. <br>
+        <br>
+        <<endByLocation>>
+    <</replace>>
+    <</link>>
+</div>

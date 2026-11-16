@@ -1,0 +1,59 @@
+:: Carter Hang Out Park Play On Playground Swings [nobr]
+
+You ask <span style="color:DarkTurquoise">Carter</span> what he wants to do on the playground, and he suggests the swings. <span style="color:LightSteelBlue">“If you go high enough, it feels like you are flying!”</span> You both joyfully walk over to the playground; However, you find that only one swing is available. <span style="color:DarkTurquoise">Carter</span> is disappointed and suggests doing something else, but you decide that the two of you can just take turns until another one is freed up.<br>
+
+<<set _ad to [
+    {
+        Name: "Carter",
+        State: {
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“You can go first if you want.”</span> <span style="color:DarkTurquoise">Carter</span> offers, but you insist he goes first, since he is so excited to play on the swing. <span style="color:LightSteelBlue">“I'm not excited!”</span> <span style="color:DarkTurquoise">Carter</span> blushes, <span style="color:LightSteelBlue">“I just thought it would be fun, we don't have to-”</span> <span style="color:pink">You tell <span style="color:DarkTurquoise">Carter</span> to shut it and push him onto the swing. The prideful lad is a bit hesitant to allow you to push him on the swing, not wanting to look like a little kid, but eventually relents, and the two of you work together to get <span style="color:DarkTurquoise">Carter</span> as high as possible!</span><br>
+<br>
+
+<span style="color:LightSteelBlue">“I can see the school from here!”</span> <span style="color:DarkTurquoise">Carter</span> laughs, gaining incredible height with every swing. But eventually, the insane height begins to have a negative side effect as <span style="color:DarkTurquoise">Carter</span> calls out. <span style="color:LightSteelBlue">“Okay, let's slow down and stop so you can have a turn, I'm starting to feel a little sick!”</span> <span style="color:DarkTurquoise">Carter</span> begins to use his feet to slow himself down and stumbles around a bit as he stands up. <span style="color:LightSteelBlue">“Uuugggghhh, my head feels dizzy.”</span> <span style="color:DarkTurquoise">Carter</span> stumbles towards you and you try to catch him, but he falls a bit short and lands at your feet. <span style="color:pink">But he still reaches out to grab you, instead gripping your $PlayerBottoms.Type and accidentally yank them down to your ankles!</span><br>
+<br>
+
+<<set _ad to [
+    {
+        Name: "Carter",
+        State: {
+            Blush: 3,
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Blush: 2,
+            Mouth: "Sad",
+            PantsDown: true,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<<if $PlayerUndies.Type != "None">> /* Undies */
+    <span style="color:pink">You stand there stunned as <span style="color:DarkTurquoise">Carter</span> sits back up and rubs his nose directly against your crotch! As his vision comes back into view and he realizes that his face was pressed against your $PlayerUndies.Name, he quickly turns bright red and falls backward.</span> <span style="color:LightSteelBlue">“Ahh! I'm sorry, I didn't mean-!”</span> As the kids on the nearby swings begin to giggle, you quickly fix your clothing as <span style="color:DarkTurquoise">Carter</span> continues to apologize profusely.<br>
+<<else>> /* Nude */
+    <span style="color:pink">You stand there stunned as <span style="color:DarkTurquoise">Carter</span> sits back up and rubs his nose directly against your privates! As his vision comes back into view and he realizes that his face was pressed against your $Player.PenisSize Penis and balls, he quickly turns bright red and falls backward.</span> <span style="color:LightSteelBlue">“Ahh! I'm sorry, I didn't mean-!”</span> As the kids on the nearby swings begin to giggle, you quickly fix your clothing as <span style="color:DarkTurquoise">Carter</span> continues to apologize profusely.<br>
+<</if>>
+<<needChange "Fun" 20>>
+<span style="color:green">+Carter Fun</span><br>
+<<set $HangOutNeed.Fun += 15>>
+<span style="color:red">-Carter Energy</span><br>
+<<set $HangOutNeed.Energy -= 15>>
+<<socialChange "Carter" 3>>
+<br>
+[[Continue|Carter Hang Out Park]]

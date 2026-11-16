@@ -1,0 +1,163 @@
+:: OC Miller Help Lemonade Which is better [nobr]
+
+Upon helping a customer, you turn to find <span style="color:DarkTurquoise">Jayden</span> and <span style="color:DarkTurquoise">Kayden</span> in the midst of a heated debate. <span style="color:LightSteelBlue">“Mine is better because sour is fun, it’s like a roller-coaster!”</span> <span style="color:DarkTurquoise">Jayden</span> asserts, his eyes gleaming with the confidence of someone who believes in the excitement of his sour lemonade. <br>
+<br>
+<span style="color:LightSteelBlue">“Sweet is always better,”</span> <span style="color:DarkTurquoise">Kayden</span> argues, <span style="color:LightSteelBlue">“it’s like a hug everyone needs.”</span> The two boys continue to bicker back and forth until <span style="color:DarkTurquoise">Jayden</span> turns to you. <br>
+<br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>, tell him that sour lemonade is the best!”</span> <br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Kayden">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Mad">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Sad">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC KAYDEN Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* SECOND LAYER */
+	<<set $AD.Name to "Jayden">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Mad">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Sad">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC JAYDEN Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: absolute; left: 125px; top: 0px">
+	<<include"Kid Avatar Display">>
+</div>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">“No, tell <span style="color:DarkTurquoise">Jayden</span> that sweet lemonade is the best!”</span> <span style="color:yellow">Both boys were staring at you eagerly, waiting for your answer.</span> <br>
+<br>
+<div id=choice1>
+
+/* Sour is better */
+	<<link "Sour is better<br>">>
+	<<replace"#choice1">>
+        You announce that sour lemonade is the best, after all, lemons are sour by nature. <span style="color:pink">Upon hearing your response, <span style="color:DarkTurquoise">Jayden</span> beams with pride.</span> <span style="color:LightSteelBlue">“Yeah, <span style="color:DarkTurquoise">Kayden</span>, nobody likes your crappy lemonade.”</span> He says, puffing out his chest. <br>
+        
+    /* AVATAR DISPLAY */
+        <<set $AD.Name to "Kayden">>
+        <<set $AD.Arms to "Normal">>
+        <<set $AD.Eyes to "Sad">>
+        <<set $AD.Cry to 0>>
+        <<set $AD.Blush to 0>>
+        <<set $AD.Mouth to "Sad">>
+        <<set $AD.Outfit to "Everyday">>
+        <<set $AD.Hard to 0>>
+            <<include"OC KAYDEN Avatar Equipment Set">>
+    /* VARIABLE OVERRIDES */
+            /* */
+    <div style="position: relative">
+        <<include"Kid Avatar Display">>
+    /* SECOND LAYER */
+        <<set $AD.Name to "Jayden">>
+        <<set $AD.Arms to "Normal">>
+        <<set $AD.Eyes to "Tired">>
+        <<set $AD.Cry to 0>>
+        <<set $AD.Blush to 0>>
+        <<set $AD.Mouth to "Smirk">>
+        <<set $AD.Outfit to "Everyday">>
+        <<set $AD.Hard to 0>>
+            <<include"OC JAYDEN Avatar Equipment Set">>
+    /* VARIABLE OVERRIDES */
+            /* */
+    <div style="position: absolute; left: 125px; top: 0px">
+        <<include"Kid Avatar Display">>
+    </div>
+    /* END LAYER */
+        <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+    </div>
+
+        <span style="color:LightSteelBlue">“Oh… okay.”</span> <span style="color:DarkTurquoise">Kayden</span> smiles softly, <span style="color:LightSteelBlue">“Maybe I’m just weird.”</span> <span style="color:lightcoral">You notice his smile slowly fades in disappointment.</span> You try to lighten the mood, but it’s clear <span style="color:DarkTurquoise">Kayden</span> was upset with your choice and <span style="color:DarkTurquoise">Jayden</span> only made it worse with his constant bragging. <span style="color:pink">Though they both seem to return to their goofy selves after a few minutes.</span> <br>
+        <<needChange "Fun" 10>>
+        <<socialChange "Jayden" 3 1>>
+        <br>
+            /* LEAVING CODE */
+        <<if $MillerLemonLocation == "Northend">>
+            [[Continue|Northend]]
+        <<elseif $MillerLemonLocation == "Dellwood">>
+            [[Continue|Dellwood Street]]
+        <<elseif $MillerLemonLocation == "Wald">>
+            [[Continue|Wald Street]]
+        <<else>>
+            [[Continue|Park]]
+        <</if>>
+
+    <</replace>>
+    <</link>>
+/* Sweet is better */
+	<<link "Sweet is better<br>">>
+	<<replace"#choice1">>
+        You say you’d prefer sweet over sour. <span style="color:LightSteelBlue">“Really!?”</span> <span style="color:pink"><span style="color:DarkTurquoise">Kayden</span>’s face lights up with a mix of relief and joy.</span> <span style="color:lightcoral">But <span style="color:DarkTurquoise">Jayden</span> just scoffs.</span> <br>
+
+        /* AVATAR DISPLAY */
+            <<set $AD.Name to "Kayden">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Happy">>
+            <<set $AD.Outfit to "Everyday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC KAYDEN Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+        <div style="position: relative">
+            <<include"Kid Avatar Display">>
+        /* SECOND LAYER */
+            <<set $AD.Name to "Jayden">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Mad">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Sad">>
+            <<set $AD.Outfit to "Everyday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC JAYDEN Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+        <div style="position: absolute; left: 125px; top: 0px">
+            <<include"Kid Avatar Display">>
+        </div>
+        /* END LAYER */
+            <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+        </div>
+
+        <span style="color:LightSteelBlue">“Ya’ll some weirdos.”</span> Despite his nonchalence, you could tell he was slightly upset, even if he tried to hide the corners of his mouth twitching with a shrug. <span style="color:DarkTurquoise">Jayden</span> mopes around for a little bit, <span style="color:pink">before returning to his goofy, energetic self not long after.</span> <br>
+        <<needChange "Fun" 10>>
+        <<socialChange "Kayden" 3 1>>
+        <br>
+        
+        <<include "OC Millers Lemonade Leave Link">>
+    <</replace>>
+    <</link>>
+/* Both are good */
+	<<link "Both are good<br>">>
+	<<replace"#choice1">>
+        Not wanting to upset either twin, or simply not having an opinion on the matter, you inform them that you think both sour and sweet are equally as good and are unable to choose. While you hope this has appeased both, <span style="color:lightcoral">you find that your diplomatic response doesn’t have the intended effect. <span style="color:DarkTurquoise">Jayden</span>’s face falls, his eyes narrowing in frustration, while <span style="color:DarkTurquoise">Kayden</span> crosses his arms, his disappointment barely being masked.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“So, you’re just not going to pick a side?”</span> <span style="color:DarkTurquoise">Jayden</span> asks, his voice accusatory. <span style="color:DarkTurquoise">Kayden</span> nods in agreement, clearly upset that you haven’t declared a definitive winner. <br>
+        <br>
+        <span style="color:lightcoral">The air grows tense as you realize your attempt to keep the peace has inadvertently sparked their ire. They both turn away, muttering about needing a ‘real’ opinion, their unity momentarily broken by the competition.</span> <br>
+        <<needChange "Fun" 10>>
+        <<socialChange "Kayden" -1 1>>
+        <<socialChange "Jayden" -1 1>>
+        <br>
+        
+        <<include "OC Millers Lemonade Leave Link">>
+    <</replace>>
+    <</link>>
+</div>

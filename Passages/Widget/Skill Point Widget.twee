@@ -1,0 +1,31 @@
+:: Skill Points Widget [nobr widget]
+
+/*
+This is a widget for adding Skill Points to the player.
+It is used like so:
+<<skillPoints "Skill" amount>>
+Skill is the name of the skill, such as Athletics.
+Amount is the amount being added. */
+
+
+<<widget "skillPoints">>
+
+    <<set _skill to _args[0]>>
+    <<set _amount to _args[1]>>
+
+    /* Adding to existing SP */
+
+    <<set $Skill[_skill].SP += _amount>>
+    <<set $Skill[_skill].TotalSP += _amount>>
+    <span style="display: inline-flex; align-items: center;">
+        <img @src="`Images/Icons/Skill/${_skill}.png`">
+        <span style="color:Green">+_amount 
+        <strong>_skill SP</strong>!</span>
+        <<if $Skill[_skill].SP >= $Skill[_skill].MaxSP>>
+            <<set $Skill[_skill].SP to $Skill[_skill].MaxSP>>
+        <span style="color:Red"> (Max <strong>_skill SP Reached</strong>!)</span>
+        <</if>>
+    </span>
+    <br>
+
+<</widget>>

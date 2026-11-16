@@ -1,0 +1,94 @@
+:: OC Birdy Park Butterflies [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+You walk down the path of the park, taking in the scenery of foliage and nature when a flutter of color flaps across your face. A butterfly, blue in color, dances in front of you a moment before trailing off. You chuckle, eyes following it, as you suddenly spy a whole gang of butterflies all flapping around a small grove of flowers where the young <span style="color:DarkTurquoise">Birdy</span> stands hopping around catching them. <br>
+
+    <<set _ad to [
+        {
+            Name: "OC Birdy",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+He isn’t keeping or hurting the creatures. Simply catching them in his hands and examining them. They also don’t seem to mind, fluttering up to tickle his nose before continuing to flap around him. <span style="color:Pink">It reminds you of a scene of a prince from one of those animated movies. It is hard not to find it wholesome.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Ask to join in<br>">>
+    <<replace "#choice">>
+        You walk up and greet the boy, your sudden presence causing the flutter of butterflies to briefly fly higher, unsure of your presence. <span style="color:DarkTurquoise">Birdy</span> chuckles before turning to you. <span style="color:LightSteelBlue">“Hey! Aren’t they pretty? I saw them dancing around the flowers and came over to take a look. I think they like me.”</span> He giggles happily. You agree, asking if <span style="color:DarkTurquoise">Birdy</span> wouldn’t mind some company hanging out with his fluttery friends. He happily agrees. <span style="color:LightSteelBlue">“Yeah! Just be careful not to hurt them, okay?”</span> <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Happy",
+                        },
+                    },
+                    {
+                        Name: "OC Birdy",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Happy",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+        <span style="color:LightGreen">You and <span style="color:DarkTurquoise">Birdy</span> dance around without a care in the world as you play with the winged creatures. You get some strange looks, but it is mostly women cooing at how cute you both look. You have to admit, the choice of activity is pretty adorable.</span> <br>
+        <<addMoodlet "Stress" 0>>
+	    <<needChange "Fun" 20>>
+        <<socialChange "Birdy" 3 1>>
+        <br>
+        [[Continue|Park]] 
+    <</replace>>
+    <</link>>
+    <<link "Make fun of him<br>">>
+    <<replace "#choice">>
+        <span style="color:Yellow">With a smirk, you call out to <span style="color:DarkTurquoise">Birdy</span>, teasingly remarking that you almost thought he was a girl with how he’s acting. <span style="color:DarkTurquoise">Birdy</span> frowns at this, blushing.</span> The butterflies seem to fly higher, disapproving of your teasing remarks. <span style="color:Yellow">You walk closer to him and audibly question if his choice of activity isn’t more than a little girly?</span> <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smirk",
+                            Eyes: "Mad",
+                        },
+                    },
+                    {
+                        Name: "OC Birdy",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Frown",
+                            Blush: 1,
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“It’s… it’s not girly…”</span> <span style="color:DarkTurquoise">Birdy</span> replies shyly, staring down at his shoes, <span style="color:LightSteelBlue">“They’re just cute and colorful and…”</span> Girly, you bluntly add. It’s okay if <span style="color:DarkTurquoise">Birdy</span> wants to act like a girl, but maybe he should dress like one if he’s going to act the park. You playfully tug at his overalls, asking if maybe he could get a skirt or something. <span style="color:Yellow">This causes <span style="color:DarkTurquoise">Birdy</span> to turn bright red, leaping back from you. You laugh as the boy runs off, not wanting any trouble with you. What a dork.</span> <br>
+        <<addMoodlet "Stress" 0>>
+	    <<needChange "Fun" 25>>
+        <<socialChange "Birdy" -5 1>>
+        <br>
+        [[Continue|Park]] 
+    <</replace>>
+    <</link>>
+    <<link "Watch him<br>">>
+    <<replace "#choice">>
+        You decide to just watch <span style="color:DarkTurquoise">Birdy</span> play, finding the young boy’s cute and cheerful energy enduring. The young lad jumps and hopes around, capturing the butterflies before releasing them and giggle like a little boy as they flap around him. <span style="color:LightGreen">It is extremely cute. And you’re not the only one that thinks so. You notice some women and older girls walking by commenting out loud on how cute the boy looks, one older lady even taking a picture of the sight. <span style="color:DarkTurquoise">Birdy</span> has no idea his little frolicking has become such a popular thing to watch. <br>
+        <br>
+        You figure it is best not to tell him, he’d probably be super embarrassed.</span> <br>
+        <<addMoodlet "Stress" 0>>
+	    <<needChange "Fun" 20>>
+        <br>
+        [[Continue|Park]] 
+    <</replace>>
+    <</link>>
+</div>

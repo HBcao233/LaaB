@@ -1,0 +1,93 @@
+:: CC Confirm 2 [nobr]
+
+	<<include"NOAH Equipment">>
+	/* Setting Outfit Variables */
+	<<set $AD.Outfit to "Pajamas">>
+	<<include"Noah Outfit Set">>
+
+/* AVATAR DISPLAY */
+	<<include"Player Avatar Display Set">>
+	<<set $AD.Name to "Noah">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Closed">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Sad">>
+	<<set $AD.Outfit to "Pajamas">>
+	<<set $AD.Hard to 0>>
+		<<include"NOAH Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+	<<set $BueHands to "Hands">>
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+As you walked into the hallway, you turn to see your brothers just coming out as well. Leaning against his bedroom door is your little brother <span style="color:DarkTurquoise">Noah</span>. He is a few years younger than you and is rather short for his age. He has messy $Noah.HairColor Hair and $Noah.EyeColor Eyes. He is leaning against the door frame with his eyes closed, looking like he has fallen asleep, and is hugging his stuffed blue bear <span style="color:DarkTurquoise">Bue</span>. He has had that bear since he was a baby and practically carried it everywhere outside of school.
+<<if $NoahPJType == "None">>
+<span style="color:Pink">He is wearing nothing but a pair of $NoahUndies.Name, which leave little to the imagination.</span>
+<<else>>
+He is wearing his Pajamas.
+<</if>><br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Gabe">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Tired">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Normal">>
+	<<set $AD.Outfit to "Pajama">>
+	<<set $AD.Hard to 0>>
+		<<include"GABE Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Teen Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\EmptyTeen.png" style="position: an; left: 0; top: 0">
+</div>
+
+Further down the hallway is your older brother <span style="color:DarkTurquoise">Gabriel</span>, who is yawning loudly as he walked into the hallway complaining about being awoken. He is tall and muscular, has Short $Gabe.HairColor Hair, and $Gabe.EyeColor Eyes. Despite having a bad habit of picking on you and <span style="color:DarkTurquoise">Noah</span>, he is generally seen as a good kid and will often help <span style="color:DarkTurquoise">Your Father</span> around the house. He is wearing nothing but a pair of $GabeUndies.Name.<br>
+<br>
+<span style="color:LightSteelBlue">“Come on, wake up everyone! Vacation's over!”</span> <span style="color:DarkTurquoise">Your Father</span> laughs, but is only met by tired groans in response, <span style="color:LightSteelBlue">“I know these past few months have been crazy, but you’ll like it here. Trust me. I grew up in this town, I went through each of your schools. I played at the park, explored the forest, hung out at the beach. You’ll love it.”</span> <span style="color:DarkTurquoise">Your Father</span> sighs at each of your once again exhausted responses, <span style="color:LightSteelBlue">“Plus, with the hoops we had to go through to get you all enrolled, you don’t really have much of a choice.”</span><br>
+<br>
+<span style="color:DarkTurquoise">Your Father</span> pulls out a piece of paper and quickly informs each of you when school starts and when your buses will be here. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$DadNickname</span>, your first class starts at 8:00, but make sure you head to the office before then so you can get your schedule. Oh, and your bus will be on the street between 7:00 and 7:30, so make sure you don’t miss it! I can’t take any of you if you miss the bus, so you’ll have to walk.”</span> He stops for a moment as <span style="color:DarkTurquoise">Noah</span> nearly falls over due to falling asleep, thankfully being caught in time by <span style="color:DarkTurquoise">Your Father</span>.<br>
+
+<<set _ad to [
+	{
+		Name: "Dad",
+		State: {
+			Mouth: "Smirk",
+		},
+	},
+	{
+		Name: "Gabe",
+		State: {
+			Outfit: "Pajama",
+			Eyes: "Tired",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Outfit: "Towel",
+			Mouth: "Frown",
+		},
+	},
+	{
+		Name: "Noah",
+		State: {
+			Outfit: "Pajamas",
+			Eyes: "Closed",
+			BueHands: "Hands",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“You all stayed up way too late unpacking.”</span> He laughs, rolling his eyes, <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$DadNickname</span>, hop in the shower. I’ll have breakfast ready by the time you come out.”</span><br>
+<br>
+[[Continue|Opening Shower]]

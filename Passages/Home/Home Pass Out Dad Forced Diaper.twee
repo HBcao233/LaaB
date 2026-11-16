@@ -1,0 +1,71 @@
+:: Home Pass Out Dad Forced Diaper [nobr]
+
+/* Written by: -AN */
+/* Intro */
+
+<<set $Minutes += 120>>
+
+<span style="Color: Yellow">You suddenly feel yourself partially awoken the sensation of something touching your body.</span> <span style="Color: LightCoral">The sensation alarms you, but you’re too tired to move your limbs, and unable able to keep your eyes open past a hazy squint. You try to speak, but all that comes out are incoherent murmurs.</span><br>
+<br>
+<span style="Color: LightSteelBlue">“Shhh..”</span> <span style="Color: LightGreen">You hear from a strangely familiar voice. <span style="Color: LightSteelBlue">“Looks like you overdid yourself. Just relax, I’ll take care of everything.”</span> You feel yourself being lifted upwards into a warm embrace that eases you.</span> A few moments later, you feel you’re being carried somewhere.<br>
+<br>
+The sensation of being carried suddenly stops, and you next feel your body being gently placed on a soft surface. <span style="Color: Yellow">You hear footsteps moving away from you and some rustling noises, then the steps seem to come back towards you.</span> The feeling of hands moving over and manipulating different parts of your body follow — you’re almost entirely relaxed and offer no resistance to the motions.<br>
+<br>
+/* Not Wearing Underwear Addition */
+<<if $PlayerUndies.Type == "None">>
+    <span style="Color: LightSteelBlue">“I wish you didn’t have this habit, it’s not clean.”</span> <span style="Color: Yellow">You hear in a slightly annoyed tone. </span>
+<</if>>
+
+<span style="Color: LightCoral">As the hands continue to work over parts of you, you strangely begin feeling a bit chilly.</span> Again you hear footsteps moving away from you and some rustling, <span style="Color: Yellow">but this time you hear what sounds like a bag being crinkled before the steps come back towards you.</span><span style="Color: LightSteelBlue">“Just making sure you don’t have any accidents.”</span> the voice speaks again. <span style="Color: Yellow">The hands continue working over your body, and you hear that crinkly sound again while they do so.</span> Several moments later, the sensation of being touched and moved stops. You feel warmer and snugger than before, like you’ve been wrapped up in something.<br>
+<br>
+<span style="Color: LightSteelBlue">“All done.”</span> You hear the voice say. <span style="Color: LightSteelBlue">“Do your best to take it easy from now on.”</span> <span style="Color:LightGreen">You feel something warm, and slightly moist peck against your forehead.</span> <span style="Color: LightSteelBlue">“I love you, <span style="Color: DarkTurquoise">$DadNickname</span>. You’ll always be my little boy.”</span><br>
+<br>
+You hear footsteps moving away from you followed by the sound of a door being shut. The comforting warmth and silence relaxes you so much that you feel your awareness gradually fading to nothing once more.<br>
+<br>
+<<linkreplace "Continue">>
+    <<storeClothing "Closet" "Naked" 1>>
+    <<addClothing "PC" "Undies" "Pull Ups" "Teal">> 
+
+    /*=Continued= (Clothing script stuff here: Remove ALL clothing and accessories players were wearing and store them in the closet UNLESS the clothing was a TOP or BOTTOM that is marked with the SLEEPWEAR trait. Delete worn towels to avoid storing in closet?
+
+    If the top or bottom slot are not occupied by existing sleepwear clothes, take random clothing item from player’s closet with sleepwear trait and replace it in that worn slot, else, remain nude in that slot if player doesn’t own such an item.
+
+    Replace the player’s underwear or lack of with a Diaper or Pull Ups, dependent on chosen nighttime protection. [End of clothing stuff] ) */
+
+    You slowly open your eyes and see that you’re in your bedroom tucked in your bed. You yawn, drowsily wiping your eyes as you sit up and try to get your bearings. You remember passing out, then you remember being carried, a voice, and feeling parts of you moved around.. 
+    <br><br>
+    It takes a few moments to clear your groggy mind, but you realize it must have been <span style="Color: DarkTurquoise">Your Father</span> — <span style="Color: LightGreen">he likely found you unconscious and brought you here.</span> You smile to yourself feeling grateful that he looked out for you, <span style="Color: Yellow">but the contentment is replaced with confusion when you realize something feels different on you..</span>
+    <br><br>
+    <<if $PlayerBottoms.Type == "None">>
+        <span style="Color: Yellow">Tracking the feeling, you peel off the sheets covering your legs..</span> <span style="Color: LightCoral">you immediately blush upon seeing the $PlayerUndies.Type you’re wearing! You definitely weren’t wearing this when you passed out— <span style="Color: DarkTurquoise">Your Father</span> must have put you in them while he was prepping you for bed!</span><br>
+        <br>
+    <<else>>
+        <span style="Color: Yellow">Tracking the feeling, you peel off the sheets covering your legs and cautiously pull open your $PlayerBottoms.Type..</span> <span style="Color: LightCoral">you blush brightly upon seeing the $PlayerUndies.Type you’re wearing!
+        You definitely weren’t wearing this when you passed out —  <span style="Color: DarkTurquoise">Your Father</span> must have put you in them while he was prepping you for bed!</span><br>
+        <br>
+    <</if>>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Sad",
+                Blush: 1,
+                Arms: "Hide",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You rise to your feet with mixed feelings. You’re still grateful that <span style="color:DarkTurquoise">Your Father</span> found you and brought you to bed, <span style="Color: LightCoral">but you feel embarrassed at the realization he saw you naked while he changed your clothes, and put you into the $PlayerUndies.Type you have on now. The fact that he did so to prevent you having any bed-wetting accidents further adds to the embarrassing feelings.</span><br>
+    <br>
+
+    <<needChange "Energy" 25>>
+    <<addMoodlet "Seen Naked" 3>>
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Diaper"]>>
+    <<arousalGain 10 _arousalbs _arousalkink>>
+    <br>
+    [[Continue|Player Bedroom]]
+<</linkreplace>>

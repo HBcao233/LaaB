@@ -1,0 +1,96 @@
+:: Random Job Clean Gutters [nobr]
+
+/* SETTING THE JOBS PAY AND REMOVING THE JOB */
+<<if $Location.Name == "Northend">>
+    <<set _joblocation to "Northend">>
+<<elseif $Location.Name == "Wald Street">>
+    <<set _joblocation to "Wald">>
+<<elseif $Location.Name == "Dellwood Street">>
+    <<set _joblocation to "Dellwood">>
+<</if>>
+
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+	<<capture _i>>
+        <<if $RandomJobList[_i].Location == _joblocation and $RandomJobList[_i].Type == "Clean Gutters">>
+            <<set _jobpay to $RandomJobList[_i].Pay>>
+            <<set _jobname to $RandomJobList[_i].Name>>
+            <<set $RandomJobList.deleteAt(_i)>>
+        <</if>>
+    <</capture>>
+<</for>>
+
+/* DECIDING IF RANDOM EVENT */
+<<set _random to random(1, 4)>>
+<<if $LucasSocial >= 50 or $LucasSocialRank > 0>>
+    <<set _friendsocial to true>>
+<</if>>
+
+/* RANDOM EVENT */
+<<if _random == 1>>
+    <<include"Random Job Clean Gutters Ladder Wedgie">>
+/* Friend Event */
+<<elseif _random == 2 && _friendsocial>>
+    <<include"Random Job Clean Gutter Lucas Helps">>
+    /* NO RANDOM EVENT/GENERIC */
+<<else>>
+<<set _random2 to random(1, 2)>>
+
+/* EASY, BUT GROSS */
+<<if _random2 == 1>>
+Knocking on the listed address, your client answers the door and drowsily fetches a ladder and some rubber gloves from their back garden. <span style="color:LightSteelBlue">“Just scoop out and clear any blockage.”</span> They say through a long yawn, <span style="color:LightSteelBlue">“I’ve been up all night, so you’ll be on your own. Just knock again when you’re done.”</span> A baby’s cry from inside the house causes the client to sigh loudly and return inside. Seems like a new parent was having some trouble. <br>
+<br>
+The ladder is a bit large, but nothing you can’t handle. Positioning it along the roof, you begin the process of climbing up, clearing the gutter, climbing back down, and moving the ladder. While not hard, the repetitive nature of it causes your knees and ankles to feel sore after only a few rounds. The mess of sludge, leaves, and various tiny dead things doesn’t help, as you nearly gag a few times while clearing it. It’s times like these that you are grateful that clearing your own house’s gutters is normally <span style="color:DarkTurquoise">Gabe</span>’s job. <br>
+<br>
+<span style="color:lightgreen">Thankfully, the job only takes you about an hour to accomplish and you don’t run into any complications.</span> You go to knock on the door, feeling slightly bad if you were waking up your client or their newborn, but notice them feeding their baby through the partially open window. They seem to be doing better, though still ragged and exhausted, and graciously thank you for your work and pay you, bidding you farewell as they attempt once more to put their baby to sleep. <br>
+<<needChange "Energy" -3>>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<br>
+
+/* BIG BEETLE */
+<<elseif _random2 == 2>>
+    <<if $FearBugs != 1>>
+The client was waiting for you in their garage, seemingly working on their car. Upon explaining that you were there for the job, he pulls out a ladder and sets it up along one of the walls for you. <span style="color:LightSteelBlue">“Here are some gloves. Make sure you scoop it all into a garbage bag, the wife will kill me if you mess up her garden.”</span> You nod, set up the bag near the bottom of the ladder, and get to work clearing the gutters. <br>
+<br>
+It is as you are nearly finished an hour later, clearing the final corner of the gutter, <span style="color:lightcoral">that a massive black beetle speeds out of the gunk and crawls directly on your hand!</span> You jump at its sudden appearance, shaking your arm wildly and sending the creature falling to the grass below. You let out a large exhale, the creature starling you for a moment, before laughing it off and finishing your work. Once down, the client briefly inspects your work before helping you clean up and paying you the promised amount. <br>
+<<needChange "Energy" -3>>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<br>
+
+    /* BUG FEAR */
+    <<else>>
+The client was waiting for you in their garage, seemingly working on their car. Upon explaining that you were there for the job, he pulls out a ladder and sets it up along one of the walls for you. <span style="color:LightSteelBlue">“Here are some gloves. Make sure you scoop it all into a garbage bag, the wife will kill me if you mess up her garden.”</span> You nod, set up the bag near the bottom of the ladder, and get to work clearing the gutters. <br>
+<br>
+It is as you are nearly finished an hour later, clearing the final corner of the gutter, <span style="color:red">that a massive black beetle speeds out of the gunk and crawls directly on your hand! You let out a girlish scream and begin to flail your hand wildly. You get the bug off of you, but also lose your balance and are unable to stop yourself from tumbling backwards off the ladder.</span> The good news is you fall into a rather soft bush, the bad news is that it is quite a thorny bush. You painfully crawl out of the bush to find your clothes slightly torn and tiny cuts and scrapes all over your arms and legs. <br>
+<br>
+You limp over to your client to inform him that you’ve finished. He gives you a wide-eyed look, opening his mouth to ask what happened, before thinking better of it and paying you for your work and letting you go. You walk away, in pain though thankful you didn’t hurt yourself more. <br>
+<<needChange "Energy" -3>>
+<span style="color:green">+&dollar;_jobpay</span><br>
+<<set $Money += _jobpay>>
+<<addMoodlet "Pained" 4>>
+<br>
+
+    <</if>>
+<</if>>
+
+        /* IF HOT */
+        <<if $Temp == "Warm" or $Temp == "Hot" or $Temp == "Scorching">>
+<span style="color:lightcoral">It is as you finish and head back to the sidewalk that the long hours spent in the sun and heat hits you, as you realize you are sweating profusely and are desperately thirsty. <br></span>
+<<needChange "Hygiene" -10>>
+<br>
+        <</if>>
+
+/* GENERIC TIME PASS */
+    <<set $Minutes += 60>>
+    <<set $OddJobsCount += 1>>
+/* RETURN CODE */
+<<if $Location.Name == "Northend">>
+    [[Continue|Northend]]
+<<elseif $Location.Name == "Wald Street">>
+    [[Continue|Wald Street]]
+<<elseif $Location.Name == "Dellwood Street">>
+    [[Continue|Dellwood Street]]
+<</if>>
+
+<</if>>

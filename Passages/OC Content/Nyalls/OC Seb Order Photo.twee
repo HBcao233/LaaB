@@ -1,0 +1,14 @@
+:: OC Seb Order Photo [nobr]
+
+You write down your desired order and place it, along with the payment, into a small bag before placing it inside the box. Only thing to do now is wait. <br>
+<br>
+/* Code for getting the photo will not be until it is picked up, to avoid an extra step. */
+
+<<set $OCSebPhotoTime to random(2, 4)>>
+<<if $OCSebOrderType == "Embarrassing" or $OCSebOrderType == "Cute">>
+    <<set $Money -= 25>>
+<<elseif $OCSebOrderType == "Special">>
+<<set $Money -= 30>>
+<</if>>
+
+[[Continue|OC Sebastian Order Photo]]

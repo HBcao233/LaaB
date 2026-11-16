@@ -1,0 +1,51 @@
+:: Poker Avatar Widget [widget]
+
+<<nobr>>
+
+<<widget "pokeravatar">>
+    <<set _player to _args[0]>>
+    <<set _isKid = ["Noah"].includes(_player.id)>> /* TODO: Add other kid characters later */
+    <<set _isTeen = ["Gabe"].includes(_player.id)>> /* TODO: Add other teen characters later */
+
+    <<if typeof _player !== 'object'
+        || _player == null
+        || !_player.hasOwnProperty('id')
+        || !_player.hasOwnProperty('hand')
+        || !_player.hasOwnProperty('pokerTrait')
+        || !_player.hasOwnProperty('state')
+        || !_player.hasOwnProperty('clothes')
+    >>
+        <<run throw new Error('Widget pokeravatar error: _player (first parameter) is invalid')>>
+    <</if>>
+
+    <div @class="`${_isKid ? 'poker-rival-kid' : (_isTeen ? 'poker-rival-teen' : 'poker-rival-normal')}`">
+
+        <<set _clothes to {}>>
+
+        <<for _clothe range Object.keys(_player.clothes)>>
+            <<if _player.clothes[_clothe] === 0>>
+                <<set _clothes[_clothe] = $None>>
+            <</if>>
+        <</for>>
+
+        <<set _ad to [
+            {
+                Name: _player.id,
+                State: {
+                    Arms: $Poker.shouldPlayerCover(_player.id) ? 'Hide' : _player.state.Arms,
+                    Eyes: _player.state.Eyes,
+                    Cry: _player.state.Cry,
+                    Blush: _player.state.Blush,
+                    Mouth: _player.state.Mouth,
+                    Outfit: _player.state.Outfit,
+                    Shoes: _player.state.Shoes,
+                    Hard: _player.state.Hard,
+                },
+                Clothes: _clothes,
+            },
+        ]>>
+        <<ad _ad>>
+    </div>
+<</widget>>
+
+<</nobr>>

@@ -1,0 +1,96 @@
+:: Noah Cuddle TV [nobr]
+	
+/* Setting Outfit Variables */
+<<if $NoahSche.Activity == "Watching Cartoons">>
+    <<set $AD.Outfit to "Everyday">>
+<<else>>
+    <<set $AD.Outfit to "Pajamas">>
+<</if>>
+<<include"Noah Outfit Set">>
+
+<<set $Minutes += 30>>
+
+You spot <span style="color:DarkTurquoise">Noah</span> lying on the floor watching cartoons, cutely swinging his feet and swaying his body back and forth idly. He is doing the one thing all boys love to do while watching TV, chilling and relaxing. <span style="color:Pink">You decide to join him, but instead of just lying next to him, you slowly lay on top of the boy.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Noah",
+        State: {
+            Blush: 1,
+            Mouth: "Happy",
+            Outfit: $NoahSche.Activity == "Watching Cartoons" ? "Everyday" : "Pajamas",
+            BueHands: "Hands",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Hey!”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Noah</span> giggles as your body holds him down and you wrap your arms around him, using him as a warm, cute pillow.</span> You don’t put all your weight on him, as you don’t want to crush the poor lad, but use enough of it to ensure <span style="color:DarkTurquoise">Noah</span> isn’t leaving anytime soon. Not that he seems to care, as he happily enjoys the snuggle time with his big brother.<br>
+<br>
+
+<<linkreplace"Continue">>
+    <<set _Random to 1>>
+    <<if $NoahSocialRank >= 1>>
+        <<set _Random to random(1, 2)>>
+    <</if>>
+
+    /* Default Option */
+    <<if _Random == 1>>
+    You are enjoying your time with your younger brother as the cartoon episode comes to an end and a long series of commercials begins to play. <span style="color:DarkTurquoise">Noah</span> soon begins to fidget, indicating he wants to get up, but you continue to lie on top of him, refusing him even when he voices his desire.<br>
+    <br>
+    <span style="color:LightSteelBlue">“Lemme up!”</span> He laughs, trying to shove you off of him. <span style="color:Pink">Instead, you grip him tighter and roll onto your back, lifting <span style="color:DarkTurquoise">Noah</span> into the air as he begins to laugh and try to wiggle free. You continue to roll around on the floor, holding your little brother hostage until, eventually, you grow tired enough to finally release him.</span><br>
+    <<needChange "Fun" 20>>
+    <<socialChange "Noah" 3>>
+    <br>
+    [[Continue|PH Living Room]]
+
+    /* Lewder Option */
+    <<else>>
+    <span style="color:Pink">Then the humping starts. It is slow at first, barely noticeable. Your body perhaps moving on its own as you slowly grind your groin against your brother’s buttocks. But as it grows more apparent and longer, Noah makes a few small giggling noises.</span><br>
+    <br>
+    <span style="color:LightSteelBlue">“Stop!”</span> He whispers, trying not to laugh, <span style="color:LightSteelBlue">“What if someone sees?”</span> You hush the boy and tell him no one will notice if he stays quiet. <span style="color:Pink"><span style="color:DarkTurquoise">Noah</span> covers his mouth to stifle a laugh as he goes back to watching TV, though isn’t paying as much attention to it. As your ever-hardening cock grinds against his cute little rear.</span><br>
+    <<set _arousalbs to ["Tip"]>>
+    <<set _arousalkink to ["Kids"]>>
+    <<arousalGain 10 _arousalbs _arousalkink>>
+    <br>
+    <span style="color:Pink"><span style="color:DarkTurquoise">Noah</span>, for his part, is all for this <span style="color:LightSteelBlue">“naughty playtime”</span> as he moves his butt up and down to assist, almost humping the floor in his own right. You bite your lip as you worry you might climax,</span> however, before you get the chance, a voice calls out from the distance.<br>
+    <br>
+    <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Noah</span>! I thought I told you to put your dirty clothes in the basket!”</span> <span style="color:DarkTurquoise">Your Father</span> calls out. <span style="color:DarkTurquoise">Noah</span> pops up instantly, leaping to his feet and knocking you off of him.<br>
+
+    <<set $Player.Arousal += 50>>
+    <<set _ad to [
+        {
+            Name: "Noah",
+            State: {
+                Blush: 2,
+                Mouth: "Happy",
+                Outfit: $NoahSche.Activity == "Watching Cartoons" ? "Everyday" : "Pajamas",
+                BueHands: "Hands",
+                Hard: 1,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                Blush: 2,
+                Hard: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Sorry, <span style="color:DarkTurquoise">Daddy</span>! I’ll do it right now!”</span> Before <span style="color:DarkTurquoise">Noah</span> runs off to his room to avoid a spanking, <span style="color:Pink">you can’t help but spot his adorable little hard-on poking out of the front of his crotch. Seems he was enjoying it as much as you.</span><br>
+    <<needChange "Fun" 20>>
+    <<socialChange "Noah" 3>>
+    <br>
+    [[Continue|PH Living Room]]
+
+    <</if>>
+<</linkreplace>>

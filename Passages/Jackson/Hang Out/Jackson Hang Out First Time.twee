@@ -1,0 +1,35 @@
+:: Jackson Hang Out First Time [nobr]
+
+/* Intro */
+As you walk towards the bus pick-up area, you search around for any signs of your wild and energetic friend <span style="color:DarkTurquoise">Jackson</span>. You swear you just saw him here a second ago? Where could he have- <span style="Color: LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$JacksonNickname</span>!”</span> <span style="Color: LightCoral">You let out a yelp of surprise and nearly jump out of your shoes as <span style="color:DarkTurquoise">Jackson</span>, having been in a tree, leaps onto the ground directly behind you.</span> The boy’s climbing ability mixed with his inexplicable stealth is a combo you’re still having trouble getting used to. <span style="Color: LightSteelBlue">“What’s wrong? Oh, did you find a spider or something? Let me see!”</span> <span style="color:DarkTurquoise">Jackson</span> peers over your shoulder as you explain that he just startled you. <span style="Color: LightSteelBlue">“Oh, haha. Yeah, I was in the tree.”</span> He points back to the tree with his thumb. <br>
+
+    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You try to explain to <span style="color:DarkTurquoise">Jackson</span> that leaping out of trees suddenly at people will naturally lead them to being startled, but he doesn’t get the hint. <span style="Color: LightSteelBlue">“Haha, yeah. It’s fun to scare people around Halloween like that, since it’s the spooky season. But I got in trouble one time when my brother was little, well more little, and I scared him without even trying and he wet his pants and-” Oh? Did you wet your pants? The teachers’ always have extra pants that we can-</span> You put both hands on <span style="color:DarkTurquoise">Jackson</span>’s shoulders, getting him to be silent long enough for you to explain that you did not, in fact, pee yourself. You were just a little startled, that’s all. <br>
+<br>
+<span style="Color: LightSteelBlue">“Oh, okay. That’s good, peeing yourself is never fun.”</span> He nods in a matter-of-fact way. You roll your eyes and smile, <span style="color:DarkTurquoise">Jackson</span> is too much to handle sometimes, but he sure is entertaining. Taking the chance before he goes off on another ramble, you ask the boy if he wants to hang out today. Go somewhere and play or do whatever. <span style="Color: LightSteelBlue">“Ooooo! Yeah! Let’s go to the park! We can climb trees or play tag or feed the ducks – as long as the groundskeeper doesn’t see us. He got mad since I was giving some ducks my leftover cheesepuffs last time. Oh! We should go to the beach and go swimming… wait, no. They got mad the last time I did that since I didn’t bring any trunks. Maybe the lake in the forest or-”</span> <span style="color:DarkTurquoise">Jackson</span> <span style="Color: LightGreen">continues rambling as you take him by the hand and begin to walk away, heading to your planned destination.</span> <br>
+<<set $InActiveQuests.delete("Jackson: Hang Out Intro")>>
+<<set $CompletedQuests.push("Jackson: Hang Out Intro")>>
+<br>
+<span style="color:Yellow">Where to Hang Out?</span><br>
+<<link"The Park (0:10)<br>">>
+    <<set $HangOutClothes to "Uniform">>
+    <<set $Minutes += 10>>
+    <<goto "Jackson Hang Out Go To Park">>
+<</link>>

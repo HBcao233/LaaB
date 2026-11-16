@@ -1,0 +1,15 @@
+:: Player Bedroom Scrounge Shoes [nobr]
+<<if $StarterShoes == 1>>
+    <<addClothing "Temp" "Shoes" "Sneakers" "Blue">> 
+    <<set _found to _clothingtemp>>
+<<elseif $StarterShoes == 2>>
+    <<addClothing "Temp" "Shoes" "Sneakers" "Red">> 
+    <<set _found to _clothingtemp>>
+<<elseif $StarterShoes == 3>>
+    <<addClothing "Temp" "Shoes" "Tennis Shoes" "Black">> 
+    <<set _found to _clothingtemp>>
+<</if>>
+You look through the back of your closet to try to find some old shoes, and you find something!<br>
+[img[_found.Icon]]<br>
+
+[[Continue|Player Bedroom][$PlayerShoes to _found]]

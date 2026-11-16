@@ -1,0 +1,29 @@
+:: LUCAS Push on swings [nobr]
+
+You walk up behind <span class="char-name">Lucas</span> on the swings and place your hands on his shoulders. He jumps, but lets out a sigh of relief upon seeing it was just you.<br>
+
+<<set _ad to [{
+	Name: "Lucas",
+	State: {
+		Outfit: "Uniform",
+		Mouth: "Happy",
+	},
+}]>>
+<<ad _ad>>
+
+<<if $CompletedQuests.includes("Lucas: Punishment Game") && random(1, 4) == 1>>
+	<<include "Lucas BJ At School">>
+<<else>>
+	<span class="dialogue-text">“You’ve got to stop sneaking up on me!”</span> He laughs, <span class="dialogue-text">“Do you want to swing?”</span> He points to the empty swing next to him, but you just give him a slight push on the back and say you’d rather push him on the swings. He smiles and you begin to push him harder, the two of you managing to get <span class="char-name">Lucas</span> to an incredible height!<br>
+	<br>
+
+	The young boy cannot help but laugh as his heart races from the sensation of swinging so high. <span class="pink-text">His $LucasTop.Type is displaced by the wind, giving you a cute look at the $LucasUndies.Name that pop out the back of his $LucasBottoms.Type. At one point when you push him, you slide your hands down his back just enough to displace his $LucasUndies.Type slightly, enough to give you a view of the boy’s butt.</span> <span class="char-name">Lucas</span> is so caught up in swinging that he doesn’t even seem to notice.<br>
+	<br>
+
+	Eventually, he calls out that he wants to try and jump off. Letting his height drop a little bit, he leaps off the swings and lands further than he had before, though also tumbled into the dirt due to his speed. You run over to make sure he is alright, but find him laughing loudly on the ground. He thanks you for pushing him on the swings before you both run back and play some more.<br>
+	<<socialChange "Lucas" 3>>
+	<<set $Minutes += 20>>
+	<br>
+
+	[[Continue|School Courtyard]]
+<</if>>

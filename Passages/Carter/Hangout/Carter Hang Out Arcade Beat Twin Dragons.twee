@@ -1,0 +1,113 @@
+:: Carter Hang Out Arcade Beat Twin Dragons [nobr]
+
+<<set $Minutes += 20>>
+
+/* Opening */
+You ask <span style="color:DarkTurquoise">Carter</span> to pick a game, to which he smiles widely, grabs your arm, and drags you over to a black old-fashioned arcade machine featuring two men dressed in red and blue karate outfits with the title <span style="color:LightSteelBlue">“Twin Dragons”</span> proudly displayed between them in bright yellow letters. <br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Ta-da!”</span> <span style="color:DarkTurquoise">Carter</span> showcases the game with his hands, as if he were presenting a reward, <span style="color:LightSteelBlue">“This is one of the best games in the entire arcade. It’s my brother’s favorite so we always play it. Best part is two players can play for the price of one!”</span> <span style="color:DarkTurquoise">Carter</span> happily inserts a coin into the machine, causing it to light up with explosions, kicks, and gunfire. A bit violent, but it did trigger all the parts of your little boy brain that made you excited. <span style="color:LightSteelBlue">“You can be player one since I’m so used to being player two. Come on!”</span> <br>
+<br>
+
+You grab the joystick next to <span style="color:DarkTurquoise">Carter</span> and the two of you begin your Twin Dragon adventure! <br>
+<br>
+The game sees two brothers trained in the ancient Chinese art of karate being sent by the military to deal with a terrorist organization in the Midwest, which you didn’t know was full of jungles and mountains. You have a wide range of weapons and abilities to choose from, though  a majority of them are different types of guns. You pick a few that look good and start the game. <br>
+<br>
+
+Interestingly enough, <span style="color:DarkTurquoise">Carter</span> chooses only melee weapons and abilities. When you ask him if those are the best, he just laughs nervously. <span style="color:LightSteelBlue">“Not really. I mean, they are pretty good, but not the best. I’m just really bad at aiming in this game.”</span> To show off his lack of skills, the two of you switch characters for the first part of the round and you are amazed at just how bad <span style="color:DarkTurquoise">Carter</span> is at aiming. It was almost as if some invisible force decided that he would never hit his target, it was actually kind of amazing. <br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Blush: 1,
+			Mouth: "Happy",
+			Outfit: $HangOutClothes,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Eyes: "Tired",
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+Switching back allows you both to begin to progress through the levels at a decent speed. Your flurry of bullets combined with <span style="color:DarkTurquoise">Carter</span>’s slashes and punches are a decent combo, at least in the first few levels. However, as you get further <span style="color:DarkTurquoise">Carter</span> begins to take more and more damage from the front line of gun-wielding enemies. A full melee build really had its disadvantages when up against firearms. <br>
+<br>
+
+/* Continue */
+<div id="choice">
+	<<link "Continue<br>">>
+		<<replace"#choice">>
+
+			/* Low Dex */
+			<<if $Dexterity < 6>>
+				<span style="color:DarkTurquoise">Carter</span> goes down in a dramatic fashion as he kills a guy who was holding a grenade. The boy slumps forward in defeat as he watches the horde of enemies approach you. <span style="color:lightcoral">Without <span style="color:DarkTurquoise">Carter</span> to distract them and take all the damage, you are a sitting duck as you are surrounded and killed in quick succession.</span> <br>
+				<br>
+				You both sigh as the game flashes defeat and asks for more quarters to try again. <span style="color:LightSteelBlue">“Dang it!”</span> <span style="color:DarkTurquoise">Carter</span> lightly kicks the machine, <span style="color:LightSteelBlue">“I swear, the game gets unfair after level 5! How the heck are we supposed to deal with that many guys!”</span> Despite being upset, <span style="color:DarkTurquoise">Carter</span> is quick to cheer up and begin pondering the excitement the next game will bring. <br>
+				<<needChange "Fun" 15>>
+				<span style="color:green">+Carter Fun</span><br>
+				<<set $HangOutNeed.Fun += 10>>
+				<<socialChange "Carter" 3>>
+				<br>
+				[[Continue|Carter Hang Out Arcade]]
+
+			/* High Dex */
+			<<else>>
+				<span style="color:DarkTurquoise">Carter</span> goes down in a dramatic fashion as he kills a guy who was holding a grenade. <span style="color:DarkTurquoise">Carter</span> slumps forward in defeat as he watches the horde of enemies approach you. <span style="color:lightgreen">But you are ready with a grenade of your own and blow up about a dozen in a single blast! This causes <span style="color:DarkTurquoise">Carter</span> to prop up with unexpected excitement as he begins to cheer you on as you begin to defeat the horde on your own.</span> <br>
+				<br>
+
+				You still lose, this game was designed to eat your quarters, but you lasted longer than either of you expected and racked up a pretty good score! While initially excited, upon seeing your scores side-by-side, <span style="color:DarkTurquoise">Carter</span> pouts and slumps down as the game ends. <br>
+
+				<<set _ad to [
+					{
+						Name: "Carter",
+						State: {
+							Eyes: "Tired",
+							Mouth: "Sad",
+							Outfit: $HangOutClothes,
+						},
+					},
+					{
+						Name: "Player",
+						State: {
+							Eyes: "Tired",
+							Mouth: "Smirk",
+						},
+					},
+				]>>
+				<<ad _ad>>
+
+				<span style="color:LightSteelBlue">“Man! I’ve been playing this game since I was a toddler and you’re already better than me! No fair.”</span> <span style="color:DarkTurquoise">Carter</span> sighs and lays his head on the machine. You laugh, pat him on the back, and reassure him that you just got lucky. <br>
+				<<needChange "Fun" 20>>
+				<span style="color:green">+Carter Fun</span><br>
+				<<set $HangOutNeed.Fun += 10>>
+				<span style="color:green">+Carter Comfort</span><br>
+				<<set $HangOutNeed.Comfort += 5>>
+				<<socialChange "Carter" 3>>
+				<br>
+
+				[[Continue|Carter Hang Out Arcade]]
+			<</if>>
+		<</replace>>
+	<</link>>
+</div>

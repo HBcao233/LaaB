@@ -1,0 +1,8 @@
+:: NOAH Constant [nobr]
+
+/* CHANGING CLOTHES */
+	<<if $NoahNewClothes != 1 and $Time.after(20)>>
+		<<include"NOAH Equipment">>
+		<<set $NoahNewClothes to 1>>
+		<<set $NoahStrippedSleeping to 0>>
+	<</if>>

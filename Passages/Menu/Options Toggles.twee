@@ -1,0 +1,107 @@
+:: Options Toggles [nobr]
+
+<span style="font-weight: bold;">--Toggles--</span><br>
+
+<span style="color: lightcoral; font-weight: bold;">Note:</span> Certain NPCs and their Stories will involve certain Toggles, even if the Toggle is turned OFF. If they are turned off, scenes and moments involving those toggles will be minimal for the story. They will not be directly depicted and will be mentioned as little as possible.<br><br>
+
+<div class="options-toggles-item">
+    <label class="options-toggles-label">
+        <<checkbox "$ToggleBladder" 0 1 autocheck>> Bladder
+    </label>
+</div>
+<div class="options-toggles-item">
+    <label class="options-toggles-label">
+        <<checkbox "$ToggleDiapers" 0 1 autocheck>> Diapers
+    </label>
+</div>
+<div class="options-toggles-item">
+    <label class="options-toggles-label">
+        <<checkbox "$ToggleWatersports" 0 1 autocheck>> Watersports
+    </label>
+</div>
+<div class="options-toggles-item">
+    <label class="options-toggles-label">
+        <<checkbox "$ToggleNonCon" 0 1 autocheck>> Non-Con
+    </label>
+</div>
+<div class="options-toggles-item">
+    <label class="options-toggles-label">
+        <<checkbox "$ToggleSupernat" 0 1 autocheck>> Supernatural/Fantasy Content
+    </label>
+</div>
+<div class="options-toggles-item">
+    <label class="options-toggles-label">
+        <<checkbox "$ToggleInjuries" 0 1 autocheck>> Injuries to Minors
+    </label>
+</div>
+<div class="options-toggles-item">
+    <label class="options-toggles-label">
+        <<checkbox "$ToggleSpanking" 0 1 autocheck>> Spanking
+    </label>
+</div>
+<div class="options-toggles-item">
+    <label class="options-toggles-label">
+        <<checkbox "$ToggleChastity" 0 1 autocheck>> Chastity
+    </label>
+</div>
+<div class="options-toggles-item">
+    <label class="options-toggles-label">
+        <<checkbox "$ToggleAvatarSizes" 0 1 autocheck>> Avatar Sizes
+    </label>
+</div>
+<div class="options-toggles-item">
+    <label class="options-toggles-label">
+        <<checkbox "$ToggleGirlContent" 0 1 autocheck>> Lewd Female Content
+    </label>
+</div>
+<br><br>
+<span style="font-weight: bold;">--Fan-Character Toggles--</span><br>
+
+<span style="color: lightcoral; font-weight: bold;">Note:</span> The following toggles are for events containing Supporter-Created characters from the Rainbow Fanbox Tier. All characters are designed to fit into the world without breaking immersion and add to the experience.<br><br>
+
+<<set _ocs = $OCCharacters.filter(oc => oc.Deprecated === false)>>
+<<set _deprecatedOcs = $OCCharacters.filter(oc => oc.Deprecated === true)>>
+
+<<button "Turn off all OCs">>
+    <<for _oc range _ocs>>
+        <<run State.setVar(_oc.Variable, 0)>>
+        <<update>>
+    <</for>>
+<</button>>
+<<button "Turn on all OCs">>
+    <<for _oc range _ocs>>
+        <<run State.setVar(_oc.Variable, 1)>>
+        <<update>>
+    <</for>>
+<</button>><br>
+<br>
+
+<<for _oc range $OCCharacters>>
+    <<capture _oc>>
+        <div class="options-toggles-item">
+            <label class="options-toggles-label pointer">
+                <<set _variable to `${_oc.Variable}`>>
+                <<checkbox _variable 0 1 autocheck>>&nbsp;<<=_oc.Name>>
+                <<if _oc.Deprecated>>
+                    <span class="greyed-out">
+                        (Deprecated)
+                        <<include "Deprecated OCs Help">>
+                    </span>
+                <</if>>
+            </label>
+        </div>
+    <</capture>>
+<</for>>
+
+<br><br>
+<<link "Apply">>
+    <<set _passage to passage()>>
+    <<goto _passage>>
+    <<run Dialog.close()>>
+<</link>>
+
+:: Options Toggles Style [stylesheet]
+
+.options-toggles-label {
+    cursor: pointer;
+}

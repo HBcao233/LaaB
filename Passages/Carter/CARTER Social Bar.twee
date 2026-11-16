@@ -1,0 +1,84 @@
+:: CARTER Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $CarterSocialRank == -3>>
+	<<set $CarterRelationship to "Hated">>
+	<span style="color:DarkRed">Carter Hates you!</span>
+	<br>
+<<elseif $CarterSocialRank == -2>>
+	<<set $CarterRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Carter are Enemies.</span>
+	<br>
+<<elseif $CarterSocialRank == -1>>
+	<<set $CarterRelationship to "Very Disliked">>
+	<span style="color:Red">Carter really Dislikes you.</span>
+	<br>
+<<elseif $CarterSocialRank == 0 and $CarterSocial <= -50>>
+	<<set $CarterRelationship to "Disliked">>
+	<span style="color:Red">Carter Dislikes you. </span>
+	<br>
+<<elseif $CarterSocialRank == 0 and $CarterSocial < 50>>
+	<<set $CarterRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Carter are Acquaintances.</span>
+	<br>
+<<elseif $CarterSocialRank == 0 and $CarterSocial >= 50>>
+	<<set $CarterRelationship to "Liked">>
+	<span style="color:LightGreen">Carter Likes you.</span>
+	<br>
+<<elseif $CarterSocialRank == 1>>
+	<<set $CarterRelationship to "Friends">>
+	<span style="color:Green">You and Carter are Friends.</span>
+	<br>
+<<elseif $CarterSocialRank == 2>>
+	<<set $CarterRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Carter are Good Friends!</span>
+	<br>
+<<elseif $CarterSocialRank == 3>>
+	<<set $CarterRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Carter are Close Friends!</span>
+	<br>
+<<elseif $CarterSocialRank == 4>>
+	<<set $CarterRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Carter are Best Friends!</span>
+	<br>
+<<elseif $CarterSocialRank == 5>>
+	<<set $CarterRelationship to "Love">>
+	<span style="color:Pink">You and Carter Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $CarterSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $CarterSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $CarterSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $CarterSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $CarterSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $CarterSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $CarterSocial,
+			value: Math.abs($CarterSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($CarterSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $CarterSocial > 120>>
+	<<set $CarterSocial to 120>>
+<</if>>
+<<if $CarterSocial < -120>>
+	<<set $CarterSocial to -120>>
+<</if>>

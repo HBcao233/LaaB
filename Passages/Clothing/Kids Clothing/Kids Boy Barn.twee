@@ -1,0 +1,53 @@
+:: Kids Boy Barn
+<<nobr>>
+
+<<set $Location to {
+    Name: "Boy Barn",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Shopping District",
+}>>
+
+<span style="color:Azure"><big><strong>--Boy Barn Kids' Section--</strong></big></span><br>
+You and <span style="color:DarkTurquoise">Noah</span> stand in the middle of “Boy Barn”, which is the go-to Boy’s Clothing Store in Opal City. You both are in the kid section of the store, looking at various clothes of your little brother’s size. He seems excited to be getting some new threads.<br>
+<br>
+
+<span style="color:Azure"><strong>-Categories-</strong></span><br>
+
+
+[[Tops|Kids Boy Barn][$ClothingCategory to "Tops";$ClothingType to "T-Shirts";$ShopColor to "White"]]
+ - 
+[[Outer|Kids Boy Barn][$ClothingCategory to "Outer";$ClothingType to "Hoodies";$ShopColor to "White"]]
+  - 
+[[Underwear|Kids Boy Barn][$ClothingCategory to "Underwear";$ClothingType to "Briefs";$ShopColor to "White"]]
+<br>
+[[Bottoms|Kids Boy Barn][$ClothingCategory to "Bottoms";$ClothingType to "Shorts";$ShopColor to "White"]]
+  - 
+[[Socks|Kids Boy Barn][$ClothingCategory to "Socks";$ClothingType to "Socks";$ShopColor to "White"]]
+- 
+[[Shoes|Kids Boy Barn][$ClothingCategory to "Shoes";$ClothingType to "Sneakers";$ShopColor to "White"]]
+<br>
+
+<<if $ClothingCategory == "Underwear">>
+	<<include"Boy Barn Kids Underwear">>
+<<elseif $ClothingCategory == "Bottoms">>
+	<<include"Boy Barn Kids Bottoms">>
+<<elseif $ClothingCategory == "Tops">>
+	<<include"Boy Barn Kids Tops">>
+<<elseif $ClothingCategory == "Socks">>
+	<<include"Boy Barn Kids Socks">>
+<<elseif $ClothingCategory == "Shoes">>
+	<<include"Boy Barn Kids Shoes">>
+<<elseif $ClothingCategory == "Outer">>
+	<<include"Boy Barn Kids Outer">>
+<</if>>
+
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Head Home (0:20)|PH Living Room][$Minutes += 20]]<br>
+<br>
+
+<</nobr>>

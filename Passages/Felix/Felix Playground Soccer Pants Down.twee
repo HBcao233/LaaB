@@ -1,0 +1,162 @@
+:: Felix Playground Soccer Pants Down [nobr]
+
+You ask <span class="char-name">Felix</span> if you can join his game of soccer, to which he gladly agrees. <span class="dialogue-text">“Of course! Our team is down a member, so join in! Though, I’m worth at least 3 players, so it may be a little unfair.”</span> <span class="char-name">Felix</span> smirks, his cute pretend ‘over-optimism’ shining through. <span class="green-text">You nod in agreement, telling <span class="char-name">Felix</span> you’ll show him who’s worth 3 players!</span><br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+            Eyes: "Mad",
+        },
+    },
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Smirk",
+            Eyes: "Mad",
+        },
+    },
+]>>
+<<ad _ad>>
+
+And it does feel a little unfair, with you and <span class="char-name">Felix</span> on the same team. The kid is a monster on the pitch and runs circles around the other kids. But he is also a team player, setting up shots for you and your other teammates and celebrating more than anyone when your team scores a goal. Despite his skill, it is hard to hate the optimistic lad.<br>
+<br>
+
+The rest of your team is, to put it nicely, lacking. It seems that, in the interest of team balance, most of the ‘weaker’ soccer players were put on your team. So, despite <span class="char-name">Felix</span>’s obvious skill, the score is tied, with both teams one point away from victory. <span class="char-name">Felix</span>, ever the loyal friend, steals the ball from the enemy and gathers nearly everyone’s attention before passing it to you, leaving you open to score! Only a single enemy is on your tail, but you didn’t worry about him as you race toward the goal ready to shoot-!<br>
+<br>
+
+Then your pursuer trips, an untied shoelace being his downfall. Normally, this would be a cause of celebration for your team as you are now in the clear to hit the goal. However, this is not the case, because as the boy falls, <span class="alert-text">he reaches out to break his fall and inadvertently grabs your $PlayerBottoms.Type, yanking them to the ground!</span><br>
+
+<<set _ad to [{
+    Name: "Player",
+    State: {
+        Outfit: "Uniform",
+        Mouth: "Sad",
+        Blush: 2,
+        PantsDown: 1,
+    },
+    ShowZoom: $PlayerUndies.Type == "None",
+}]>>
+<<ad _ad>>
+
+    <<set _arousalbs to []>>
+    <<set _arousalkink to ["Humiliated"]>>
+    <<arousalGain 15 _arousalbs _arousalkink>>
+
+<<if $PlayerUndies.Type != "None">>
+    <<addMoodlet "Seen Undies" 3>>
+    <span class="pink-text">Instantly, your underwear is exposed! With all eyes already on you, you instantly feel the piercing gaze of your classmates on your $PlayerUndies.Type and feel your cheeks turn bright red!</span>
+<<else>>
+    <<addMoodlet "Seen Naked" 3>>
+    <span class="pink-text">Instantly, your butt is exposed! With all eyes already on you, you instantly feel the piercing gaze of your classmates on your $Player.PenisSize Penis and feel your cheeks turn bright red!</span>
+<</if>>
+
+<span class="alert-text">The laughter starts instantly. How could they not, witnessing this unlikely yet hilarious turn of events.</span> You feel time slow down, whether from the adrenaline or the embarrassment. You realize that the goal is open, you could easily make the shot as the goalie is laughing at your exposed body. <span class="yellow-text">All you’d have to do is hop out of your bottoms and run a little bit more to make the shot. It would be extra embarrassing and easily let more people see you, but you’d win the game.</span><br>
+<br>
+
+<div id="choice1">
+    <<link "Stop & Pull up your bottoms">>
+        <<replace "#choice1">>
+            <span class="pink-text">You stop in your tracks, nearly tumbling over, as you quickly reach down and yank up your $PlayerBottoms.Type, the laughter echoing in your ears. Both the enemy goalie and half the opposing team are on the ground laughing so hard they’re crying. Both your embarrassment and the extreme anticlimactic-ness of it all is too much for them.</span><br>
+            <br>
+
+            <span class="char-name">Felix</span>, ever focusing on the game, takes this chance to collect the discarded ball and score a shot that wins your team the game! Your team cheers, crediting your amazing ‘distraction’ for the victory, a few boys even asking you to <span class="dialogue-text">“Show them how to do that trick!”</span> <span class="pink-text">It was all playful teasing though, despite how embarrassed you feel.</span><br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Happy",
+                        Eyes: "Sad",
+                        Blush: 3,
+                    },
+                },
+                {
+                    Name: "Felix",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Smirk",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span class="dialogue-text">“That was unfortunate,”</span> <span class="char-name">Felix</span> laughs after jumping onto you to celebrate the victory, <span class="dialogue-text">“You should have kept going, who cares what everyone saw? If I stopped to pull up my soccer shorts every time they fell down, I wouldn’t have won half the games I had!”</span> You join in on the laughter and celebration as you ponder if what <span class="char-name">Felix</span> was saying is the truth, <span class="pink-text">wondering how often his own bottoms had fallen off mid-game.</span><br>
+
+            <<needChange "Fun" 20>>
+            <<socialChange "Felix" 3>>
+            <br>
+
+            [[Continue|School Courtyard]]
+        <</replace>>
+    <</link>><br>
+    <<link "Make the shot!">>
+        <<replace "#choice1">>
+            <span class="pink-text">You push back the embarrassing humiliation you are feeling and drown out the laughter with your own thoughts of victory as you hop out of your $PlayerBottoms.Type and dribble the ball towards the goal, ready to take the winning shot.</span><br>
+            <br>
+
+            <<if $PlayerUndies.Type != "None">>
+                <span class="pink-text">Admittedly, as cool as you feel, you probably don't look cool running down the pitch with your $PlayerUndies.Name exposed to everyone. They really stand out and you feel many more eyes from around the playground turn and laugh as you rush across the field.</span> But you don't let that get to you as you aim your shot and fire!<br>
+                <br>
+            <<else>>
+                <span class="pink-text">Admittedly, as cool as you feel, you probably don't look cool running down the pitch with your penis flopping in the wind and your butt bouncing up and down in clear view. They really stand out and you feel many more eyes from around the playground turn and laugh as you were basically streaking down the field.</span> But you don't let that get to you as you aim your shot and fire!<br>
+                <br>
+            <</if>>
+
+            <<set _ad to [{
+                Name: "Player",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Sad",
+                    Eyes: "Mad",
+                    Blush: 3,
+                },
+                Clothes: {
+                    Bottoms: $None,
+                },
+                ShowZoom: $PlayerUndies.Type == "None",
+            }]>>
+            <<ad _ad>>
+
+            <span class="green-text">You hit the ball with all your might, blasting it into the air as it curves towards the goal. The laughing goalie realizes what is happening too late to stop it as the ball crashes into the back of the net. GOAL! You and the rest of your team let out a cheer! You jump in the air in celebration,</span> <span class="pink-text">before remembering your state of undress as you quickly hold your top down in an attempt to cover yourself.</span><br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Sad",
+                        Blush: 3,
+                        Arms: "Hide",
+                    },
+                    Clothes: {
+                        Bottoms: $None,
+                    },
+                },
+                {
+                    Name: "Felix",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Smirk",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span class="char-name">Felix</span> rushes over cheering, carrying your $PlayerBottoms.Type in his hands. <span class="dialogue-text">“That was fantastic! Real winners don’t let anything stop them, not even losing their pants!”</span> <span class="char-name">Felix</span> laughs, handing you your bottoms. <span class="pink-text">Your entire team cheers as you put them back on. You are still blushing, but it is clear their teasing is in good fun.</span><br>
+            <br>
+
+            The only problem is, that was so cool everyone will probably be talking about it for weeks to come. This is not the type of fame and popularity you’d usually want, but it could be worse.<br>
+
+            <<needChange "Fun" 20>>
+            <<socialChange "Felix" 3>>
+            <br>
+
+            [[Continue|School Courtyard]]
+        <</replace>>
+    <</link>>
+</div>

@@ -1,0 +1,153 @@
+:: Chase Birthday Party Play Place [nobr]
+
+/* Intro */
+<<set $OCChaseBDayEventsNum += 1>>
+<<set $OCChaseBDayEvents.delete("Chase Birthday Party Play Place")>>
+<<set $Minutes += 60>>
+
+Being surrounded in a play area by a horde of second grade boys is about what you imagined, cute but very loud, as everyone runs around, screams, and laughs. Despite the ear-piercing, you do find yourself laughing along with them and even feel younger yourself as you chase the kids around and play with them. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "Noah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "OC Chase",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smile",
+        },
+    },
+]>>
+<<ad _ad>>
+
+At one point, <span style="color:DarkTurquoise">Noah</span>, <span style="color:DarkTurquoise">Chase</span>, and some other of the young lads drag you to the top of the play place to a large, swiveling slide that descends into the ball pit. The boys are slowly shoving each other down the slide to see who can be the last one standing, you are very easily able to defend yourself from the horde, until just you, <span style="color:DarkTurquoise">Noah</span>, and <span style="color:DarkTurquoise">Chase</span> are left. The boys share a look and, deciding that they can’t allow you to win, <span style="color:lightcoral">attempt to drag you down with them!</span> They leap onto your legs and begin to pull. Even with the two of them, they aren’t that strong, and you are considering just letting yourself be pulled down for the sake of it <span style="color:yellow">when <span style="color:DarkTurquoise">Chase</span> gets a devious idea!</span> <br>
+<br>
+
+/* Diapers */
+<<if $PlayerUndies.Tags.includes("Diaper")>>
+    <span style="color:lightcoral">He releases your leg and instead reaches up and grips your $PlayerBottoms.Type!</span> <span style="color:pink">You gasp but can’t grab them in time as <span style="color:DarkTurquoise">Chase</span>’s bodyweight drags your bottoms down to your knees, exposing your $PlayerUndies.Name to both boys! <span style="color:DarkTurquoise">Noah</span> gasps and blushes, realizing you’re wearing your padded underwear as <span style="color:DarkTurquoise">Chase</span> begins to giggle relentlessly.</span> <span style="color:LightSteelBlue">“I see London, I see France! I see your underpants!”</span> He laughs, not even clocking the fact that you are wearing such embarrassing underwear. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                PantsDown: true,
+                Blush: 2
+            },
+        },
+        {
+            Name: "Noah",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "OC Chase",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smile",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:lightcoral"><span style="color:DarkTurquoise">Noah</span>, thinking fast, releases you and grabs onto <span style="color:DarkTurquoise">Chase</span>’s legs in order to drag him down.</span> While he nearly takes your bottoms with him, which would have been extremely embarrassing, he loses his grip, and they both slide down into the ball pit. This gives you the chance to pull up your bottoms and conserve some of your dignity. The bright side being that, inside the play place, only those two managed to see you. <span style="color:pink">Though a tad embarrassed, you can’t help but chuckle at how ruthless the boy was in trying to drag you down. What a little shit. A cute little shit, but one none-the-less.</span> <br>
+    <<socialChange "Noah" 3>>
+    <<socialChange "Chase" 3 1>>
+    <<needChange "Fun" 5>>
+    <<addMoodlet "Seen Undies" 3>>
+    <br>
+    <<include"Chase Birthday Party Next Event">>
+/* Normal Undies */
+<<elseif $PlayerUndies.Type != "None">>
+    <span style="color:lightcoral">He releases your legs and instead reaches up and grips your $PlayerBottoms.Type!</span> <span style="color:pink">You gasp but can’t grip them in time as Chase’s bodyweight drags your bottoms down to your knees, exposing your $PlayerUndies.Name to both boys! Immediately, both of the little shits begin to giggle relentlessly, teasingly chanting</span> <span style="color:LightSteelBlue">“I see London, I see France, I see your underpants!”</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                PantsDown: true,
+                Blush: 2
+            },
+        },
+        {
+            Name: "Noah",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smirk",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "OC Chase",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smile",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:pink"><span style="color:DarkTurquoise">Noah</span> seems to decide to join <span style="color:DarkTurquoise">Chase</span> in embarrassing you as well, gripping onto your bottoms and begins to pull, dragging them down to your ankles! You panic as it seems the boys are determined to rip your bottoms off as they descend into the ball pit. You get the sinking feeling that, if they manage to get away with your bottoms, you’ll have to chase them throughout the arcade in order to get them back.</span> Not wanting it to come to that, you instead allow yourself to be dragged down the slide, hoping you are going fast enough to avoid being seen, and dive into the ball pit. <br>
+    <br>
+    The boys release their grip as you all descend into the ball pit, and you quickly fix your clothing before they get anymore ideas. <span style="color:pink">Other than a plastic ball somehow ending up in your underwear, you surface and climb out, dignity intact. You also make a mental note to get revenge on those two little shits later.</span> <br>
+    <<socialChange "Noah" 3>>
+    <<socialChange "Chase" 3 1>>
+    <<needChange "Fun" 5>>
+    <<addMoodlet "Seen Undies" 3>>
+    <br>
+    <<include"Chase Birthday Party Next Event">>
+/* No Underwear */
+<<else>>
+    <span style="color:lightcoral">He releases your legs and instead reaches up and grips your $PlayerBottoms.Type!</span> <span style="color:pink">You gasp but can’t grip them in time as <span style="color:DarkTurquoise">Chase</span>’s bodyweight drags your bottoms down to your knees, exposing your $Player.PenisSize bits to both boys! <span style="color:DarkTurquoise">Noah</span> gasps and turns bright red upon seeing your nudity, covering his eyes and releasing your leg, he slides down and disappears into the ball pit. <span style="color:DarkTurquoise">Chase</span>, meanwhile, begins to giggle relentlessly.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                PantsDown: true,
+                Blush: 2
+            },
+        },
+        {
+            Name: "Noah",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "OC Chase",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Smile",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Wiener, wiener!”</span> He laughs loudly, <span style="color:LightSteelBlue">“I see your wiener!”</span> <span style="color:pink">You blush and try to shake the boy off, but his grip is so tight all this manages to do is cause your penis to shake and jiggle about, which just makes him laugh more and more.</span> Thankfully, as you begin to worry about an adult hearing him and coming to investigate, you finally manage to shake him off as he slips down the slide. <span style="color:pink">You quickly fix your clothing before going down yourself, making a mental note to keep your grip on your bottoms next time you’re around the cute little shit.</span> <br>
+    <<socialChange "Noah" 3>>
+    <<socialChange "Chase" 3 1>>
+    <<needChange "Fun" 5>>
+    <<addMoodlet "Seen Naked" 3>>
+    <br>
+    <<include"Chase Birthday Party Next Event">>
+<</if>>

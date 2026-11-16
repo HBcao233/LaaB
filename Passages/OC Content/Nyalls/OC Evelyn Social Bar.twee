@@ -1,0 +1,84 @@
+:: OC Evelyn Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCEvelynSocialRank == -3>>
+	<<set $OCEvelynRelationship to "Hated">>
+	<span style="color:DarkRed">Evelyn Hates you!</span>
+	<br>
+<<elseif $OCEvelynSocialRank == -2>>
+	<<set $OCEvelynRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Evelyn are Enemies.</span>
+	<br>
+<<elseif $OCEvelynSocialRank == -1>>
+	<<set $OCEvelynRelationship to "Very Disliked">>
+	<span style="color:Red">Evelyn really Dislikes you.</span>
+	<br>
+<<elseif $OCEvelynSocialRank == 0 and $OCEvelynSocial <= -50>>
+	<<set $OCEvelynRelationship to "Disliked">>
+	<span style="color:Red">Evelyn Dislikes you. </span>
+	<br>
+<<elseif $OCEvelynSocialRank == 0 and $OCEvelynSocial < 50>>
+	<<set $OCEvelynRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Evelyn are Acquaintances.</span>
+	<br>
+<<elseif $OCEvelynSocialRank == 0 and $OCEvelynSocial >= 50>>
+	<<set $OCEvelynRelationship to "Liked">>
+	<span style="color:LightGreen">Evelyn Likes you.</span>
+	<br>
+<<elseif $OCEvelynSocialRank == 1>>
+	<<set $OCEvelynRelationship to "Friends">>
+	<span style="color:Green">You and Evelyn are Friends.</span>
+	<br>
+<<elseif $OCEvelynSocialRank == 2>>
+	<<set $OCEvelynRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Evelyn are Good Friends!</span>
+	<br>
+<<elseif $OCEvelynSocialRank == 3>>
+	<<set $OCEvelynRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Evelyn are Close Friends!</span>
+	<br>
+<<elseif $OCEvelynSocialRank == 4>>
+	<<set $OCEvelynRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Evelyn are Best Friends!</span>
+	<br>
+<<elseif $OCEvelynSocialRank == 5>>
+	<<set $OCEvelynRelationship to "Love">>
+	<span style="color:Pink">You and Evelyn Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCEvelynSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCEvelynSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCEvelynSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCEvelynSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCEvelynSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCEvelynSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCEvelynSocial,
+			value: Math.abs($OCEvelynSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCEvelynSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCEvelynSocial > 120>>
+	<<set $OCEvelynSocial to 120>>
+<</if>>
+<<if $OCEvelynSocial < -120>>
+	<<set $OCEvelynSocial to -120>>
+<</if>>

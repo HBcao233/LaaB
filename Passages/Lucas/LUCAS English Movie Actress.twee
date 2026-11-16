@@ -1,0 +1,47 @@
+:: LUCAS English Movie Actress [nobr]
+
+	<<if $CompletedQuests.includes("Lucas: First Visit")>>
+<span style="color:DarkTurquoise">Mr. Hart</span> decides to let you all take it easy today, deciding to put on a few scenes from an old movie adaptation of the book you are all currently reading. It is about 15 years old, but still beats sitting in class and reading all day. As the movie starts, you instantly recognize the face of <span style="color:DarkTurquoise">Selina Taylor</span>, <span style="color:DarkTurquoise">Lucas</span>’ mother. You turn to him instinctively, seeing him sinking down in his chair in embarrassment. A few other kids glance his way as well. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Smirk",
+			Eyes: "Tired",
+			Blush: 1,
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Smirk",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:DarkTurquoise">Lucas</span>’ eyes meet yours and you give him a reassuring smile. He smiles back and silently sighs, sinking down further and pulling his collar up as high as possible to hide his face. <span style="color:pink">You can’t help but chuckle at how cute he looks when he’s embarrassed.</span> <br>
+<br>
+
+	<<else>>
+<span style="color:DarkTurquoise">Mr. Hart</span> decides to let you all take it easy today, deciding to put on a few scenes from an old movie adaptation of the book you are all currently reading. It is about 15 years old, but still beats sitting in class and reading all day. The movie stars a woman who seems oddly familiar to you and you spend most of the film trying to remember where you’ve seen her before when it suddenly hits you, she was a famous actress in a lot of the old movies you’ve watched with <span style="color:DarkTurquoise">Your Father</span>! You couldn’t remember her name, since you never pay attention to that stuff, but you wonder if <span style="color:DarkTurquoise">Your Father</span> has seen this movie before.<br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Frown",
+			Eyes: "Tired",
+			Blush: 1,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+You hear a quiet sigh from next to you and look over, seeing <span style="color:DarkTurquoise">Lucas</span> looking away from the movie with an uncomfortable look on his face. He looks up a few times, but you notice that whenever the actress is on screen, he looks away. You wonder if he is feeling sick, or perhaps if he has a crush on the actress?<br>
+<br>
+<</if>>
+<<include"Attend English Finish">>

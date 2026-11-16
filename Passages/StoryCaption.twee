@@ -1,0 +1,67 @@
+:: StoryCaption [nobr]
+
+/*
+<<if $CC == 1>>
+
+<big>--Equipment--</big><br>
+
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type != "None">>
+	<span style="color:Yellow">Your $PlayerUndies.Type are exposed!<br></span>
+	
+<<elseif $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+	<<if $PlayerTop.Type == "None">>
+	<span style="color:Red">You're completely naked! Your $Player.PenisSize Penis is exposed!<br></span>
+		<<elseif $PlayerTop.Type != "None">>
+		<span style="color:Red">Your $Player.PenisSize Penis is exposed!<br></span>
+		<</if>>
+<<elseif $PlayerBottoms.Type == "Towel">>
+		<<if $PlayerUndies.Type != "None">>
+	<span style="color:Yellow">Your have a Towel wrapped around your waist.<br></span>
+		<<else>>
+		<span style="color:Yellow">You are wearing nothing but a towel!<br></span>
+		<</if>>
+<<else>>
+
+<</if>>
+
+<<include"Equipment Icon Display">>
+
+
+
+<br>
+
+<</if>>
+*/
+
+/* DETENTION */
+<<include"Detention">>
+
+/*
+<br>
+Noah: $Noah
+<br>
+Gabe: $Gabe
+<br>
+Dad: $Dad
+<br>
+Lucas: $Lucas
+<br>
+Ben: $Ben
+<br>
+Michael: $Michael
+<br>
+Carter: $Carter
+<br>
+Jackson: $Jackson
+<br>
+Thomas: $Thomas
+<br>
+Xavier: $Xavier
+<br>
+Felix: $Felix
+<br>
+*/
+<<if $Debug == 1>>
+	Arousal: $Player.Arousal<br>
+	Sexual Frustration: $Player.SexualFrustration<br>
+<</if>>

@@ -1,0 +1,181 @@
+:: OC Richard Volley Ball [nobr]
+
+/* Intro */
+For today’s gym class, <span style="color:DarkTurquoise">Coach Kohler</span> decides that everyone is going to participate in some games of volleyball. The class is split up into multiple teams of 4 as a round-robin tournament begins. The only person on your team that you know is <span style="color:DarkTurquoise">Richard</span>, <span style="color:Pink">who is sadly looking off towards his partner <span style="color:DarkTurquoise">Arthur</span>, who was put on another team.</span> Still, once the match starts, he tries to keep his head in the game and, despite his obvious clumsiness, is doing pretty well. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Outfit: "Gym",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Richard",
+        State: {
+            Outfit: "Gym",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+An opening appears as the ball flies towards you, you call out to Richard to get ready and hit the ball into the air, setting it up for him. <span style="color:DarkTurquoise">Richard</span> stumbles to where the ball is headed, ready to hit it up as hard as he can towards the other team. <span style="color:yellow">Time seems to slow as <span style="color:DarkTurquoise">Richard</span> stares up at the ball, waiting to get his timing perfect when…</span> <br>
+<br>
+
+<<linkreplace"Continue">>
+<<set _random to random(1, 3)>>
+
+/* Outcome 1 */
+<<if _random == 1>>
+    <span style="color:lightcoral">SMACK! The ball comes down faster than expected and hits him directly in the face. <span style="color:DarkTurquoise">Richard</span> falls to his back as blood begins to fall from his nose.</span> Your team cringes, you yell out an apology, and <span style="color:DarkTurquoise">Coach Kohler</span> blows his whistle to pause the matches. But before even <span style="color:DarkTurquoise">Kohler</span> is there, <span style="color:DarkTurquoise">Arthur</span> is at his boy’s side, helping him up and panickily asking if he’s okay. <br>
+    
+    <<set _ad to [
+        {
+            Name: "Kohler",
+            State: {
+                Mouth: "Frown",
+                Brows: "Angry",
+            },
+        },
+        {
+            Name: "OC Richard",
+            State: {
+                Eyes: "Tired",
+                Blush: 1,
+                Outfit: "Gym",
+            },
+        },
+        {
+            Name: "OC Arthur",
+            State: {
+                Outfit: "Gym",
+                Mouth: "Frown",
+                Eyes: "Sad",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            }
+        }
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Can you see? Does it hurt!? How many fingers am I holding up!?!?”</span> <span style="color:DarkTurquoise">Arthur</span> panickily questions his partner. <br>
+    <br>
+    <span style="color:LightSteelBlue">“I’m fine, really…”</span> <span style="color:DarkTurquoise">Richard</span> pauses looking at <span style="color:DarkTurquoise">Arthur</span> with a dumb smile as his head spins slightly, <span style="color:LightSteelBlue">“Though why are there three of you? Not that I’m complaining.”</span> <span style="color:DarkTurquoise">Arthur</span> cries loudly, lifting <span style="color:DarkTurquoise">Richard</span> up as <span style="color:DarkTurquoise">Kohler</span> rushes over with a towel for his nose. At this point, <span style="color:DarkTurquoise">Coach Kohler</span> has more trouble calming down <span style="color:DarkTurquoise">Arthur</span> than helping <span style="color:DarkTurquoise">Richard</span>. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Just calm down, he’s fine.”</span> <span style="color:DarkTurquoise">Kohler</span> yells in response to <span style="color:DarkTurquoise">Arthur</span>’s panicking. <span style="color:LightSteelBlue">“The impact probably just rattled him a little. Come on, let’s get him to the nurse. Everyone else, sit down and shut up until I get back, if I hear of any trouble while I’m gone-“</span> Once <span style="color:DarkTurquoise">Kohler</span> has successfully threatened the class to be good, he and <span style="color:DarkTurquoise">Arthur</span> help the injured <span style="color:DarkTurquoise">Richard</span> to <span style="color:DarkTurquoise">Dr. Bertrum</span>’s office. <br>
+    <br>
+    When he returns, he assures everyone that <span style="color:DarkTurquoise">Richard</span> is fine, he just needs to sit down for a little bit. <br>
+    <<socialChange "Arthur" 3 1>>
+    <<socialChange "Richard" 3 1>>
+    <br>
+    <<include"Attend Gym Finish">>
+
+/* Outcome 2 */
+<<elseif _random == 2>>
+    <span style="color:lightgreen"><span style="color:DarkTurquoise">Richard</span> hits the ball perfectly! It flies through the air, right into the enemy’s weak spot!</span> There is a cheer from your team and a cry to <span style="color:LightSteelBlue">“catch it”</span> from the enemy, but your attention is on <span style="color:DarkTurquoise">Richard</span>, who, after hitting the ball, had lost his balance and was stumbling backward! While the rest of the team is focused on the ball flying through the air, you rush to <span style="color:DarkTurquoise">Richard</span> to try and catch him! <br>
+    <br>
+    He spins around as he falls, trying to catch himself, but isn’t expecting you to be there as he reaches out, <span style="color:Pink">accidentally gripping your shorts! <span style="color:DarkTurquoise">Richard</span> manages to stop himself from landing face-first on the ground, but he also rips your bottoms down to your ankles!</span> <br>
+    
+    <<if $PlayerUndies.Type != "None">>
+        <<set _ad to [
+            {
+                Name: "OC Richard",
+                State: {
+                    Outfit: "Gym",
+                    Mouth: "Frown",
+                    Blush: 2,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 2,
+                    PantsDown: true,
+                },
+            },
+        ]>>
+    <<else>>
+        <<set _ad to [
+            {
+                Name: "OC Richard",
+                State: {
+                    Outfit: "Gym",
+                    Mouth: "Frown",
+                    Blush: 2,
+                },
+            },
+            {
+                Name: "Player",
+                ShowZoom: true,
+                State: {
+                    Mouth: "Frown",
+                    Blush: 2,
+                    PantsDown: true,
+                },
+            },
+        ]>>
+    <</if>>
+    <<ad _ad>>
+
+    <<if $PlayerUndies.Type == "None">>
+        <span style="color:Pink">As <span style="color:DarkTurquoise">Richard</span> glances upwards, he comes face to face with your $Player.PenisSize Penis only a few inches from his face!</span> 
+    <<else>>
+        <span style="color:Pink">As <span style="color:DarkTurquoise">Richard</span> glances upwards, he comes face to face with the front of your $PlayerUndies.Name only a few inches from his face!</span> 
+    <</if>>
+
+    <span style="color:Pink">In unison, you both turn bright red and let out an embarrassed scream. <span style="color:DarkTurquoise">Richard</span> quickly jumps back, apologizing and covering his eyes as you quickly yank your bottoms back up.</span> Right as you get them back up, <span style="color:lightgreen">there is a loud cheer from your team as <span style="color:DarkTurquoise">Richard</span>’s shot scores your team the winning point!</span> <br>
+    <br> 
+    Your team runs over, lifting you both into the air to celebrate. The good news is that no one saw that, everyone just assuming your red faces were from being lifted in victory. While no real harm was done, <span style="color:DarkTurquoise">Richard</span> is far too embarrassed to say anything to you after the class is over. <span style="color:Pink">You’re also pretty sure he told <span style="color:DarkTurquoise">Arthur</span> what happened, as he gives you a knowing smirk as you all walk back to the locker room.</span> <br>
+    <<socialChange "Arthur" 3 1>>
+    <<socialChange "Richard" 3 1>>
+    <br>
+    <<include"Attend Gym Finish">>
+
+/* Outcome 3 */
+<<else>>
+    <span style="color:lightgreen"><span style="color:DarkTurquoise">Richard</span> hits the ball perfectly! It flies through the air, right into the enemy’s weak spot! There is a cheer from your team and a cry to <span style="color:LightSteelBlue">“catch it”</span> from the enemy.</span> You and <span style="color:DarkTurquoise">Richard</span> both watch in anticipation as the ball soars through the air. In fact, you feel a silence fall over the entire class, as it seems your game was so close that everyone’s attention had turned to it. <br>
+    <br>
+    One enemy team member dives for the ball, trying to stop it from hitting the ground, but falls just short. <span style="color:lightgreen">Cheers erupt, not only from your team, but the spectators as well! Your team runs towards you both, celebrating as they lift <span style="color:DarkTurquoise">Richard</span> into the air and hail him the hero. Ever humble, <span style="color:DarkTurquoise">Richard</span> is sure to acknowledge your contributions to the victory as well.</span> <br>
+    
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Richard",
+            State: {
+                Mouth: "Happy",
+                Blush: 1,
+                Outfit: "Gym",
+            },
+        },
+        {
+            Name: "OC Arthur",
+            State: {
+                Mouth: "Happy",
+                Blush: 1,
+                Eyes: "Tired",
+                Outfit: "Gym",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:Pink">In the background, <span style="color:DarkTurquoise">Arthur</span> can be seen jumping with joy and declaring <span style="color:LightSteelBlue">“That’s my man!”</span> as he celebrates his partner’s victory. Unfortunately, he also seems to forget he was in the middle of his own match and gets nailed in the head by a volleyball. Though he seems alright.</span> <br>
+    <<socialChange "Arthur" 3 1>>
+    <<socialChange "Richard" 3 1>>
+    <br>
+    <<include"Attend Gym Finish">>
+
+<</if>>
+<</linkreplace>>

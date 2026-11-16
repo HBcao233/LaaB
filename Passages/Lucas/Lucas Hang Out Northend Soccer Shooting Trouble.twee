@@ -1,0 +1,43 @@
+:: Lucas Hang Out Northend Soccer Shooting Trouble [nobr]
+
+<<set $Minutes += 20>>
+
+You suggest a soccer match between the two of you, but then realize that you don't have a ball. You say you could run home and get yours and bring it over. <br>
+<br>
+<span style="color:LightSteelBlue">“No need.”</span> <span style="color:DarkTurquoise">Lucas</span> smiles, grabbing your hand. He drags you over to the side of the bathroom that faces the large soccer field. There, you see a small metal container that is full of a random assortment of balls and other outdoor toys. They looked a bit old, but you were still surprised that they were just sitting here. <br>
+<br>
+<span style="color:LightSteelBlue">“Yeah, someone bought a whole bunch of balls for the playground a few years back. No idea who. Honestly, I’m just glad no one has stolen them or something.”</span> <span style="color:DarkTurquoise">Lucas</span> has to dig to get a soccer ball, which is a little dirty and old, but he holds it with a smile that almost makes it seem like it were a brand new ball. <br>
+<br>
+Since two people were not enough for a proper ‘game’, you both decide to take shots at the goal as the other person tries to defend. It was pretty fun, though <span style="color:DarkTurquoise">Lucas</span>, who could perform a myriad of complex movements on stage in drama class, seemed to have two left feet when it came to soccer and nearly fell over multiple times while trying to kick it. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: $HangOutClothes,
+			Mouth: "Happy",
+			Eyes: "Sad",
+			Blush: 1,
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Smirk",
+			Eyes: "Tired",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+He is a bit better on defense, though still not as quick as you normally see him. <span style="color:pink">In fact, a dive to knock away a ball you aimed at the corner was so sudden and long, that he almost lost his $LucasBottoms.Type as he slid along the grass.</span> Sadly, however, he managed to keep them on. <br>
+
+    <<needChange "Fun" 5>>
+	<<needChange "Energy" -2>>
+    <span style="color:green">+Lucas Fun</span><br>
+    <<set $HangOutNeed.Fun += 15>>
+    <span style="color:red">-Lucas Energy</span><br>
+    <<set $HangOutNeed.Energy -= 10>>
+	<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Hang Out Northend]]

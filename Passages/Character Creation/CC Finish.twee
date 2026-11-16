@@ -1,0 +1,504 @@
+:: CC Finish [nobr]
+
+<<unset $nickname>>
+
+<<set _SchoolTie to {
+	Name: "School Tie",
+    Type: "School Tie",
+    Color: "Purple",
+    Slot: "Neck",
+    Temp: 0,
+    Tags: ["Uniform"],
+    Durability: 5,
+    MaxDurability: 5,
+    Weight: 1,
+    Size: "Preteen",
+    Icon: "Images/Equipment/School Tie/Preston Tie.png",
+    Avatar: "Images/Avatar/Clothes/School Tie/Preston Tie.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarAlt: "Images/Avatar/Clothes/School Tie/Preston Tie Undone.png",
+    Description: "A Preston Academy school tie. While not a required part of the uniform, it is highly recommended.",
+}>>
+
+<<set _SchoolDressShirt to {
+    Name: "School Dress Shirt",
+    Type: "Dress Shirt",
+    Color: "White",
+    Slot: "Top",
+    Temp: 10,
+    Tags: ["Uniform", "Sleeves"],
+    Durability: 15,
+    MaxDurability: 15,
+    Weight: 3,
+    Size: "Preteen",
+    Icon: "Images/Equipment/School Dress Shirt/Preston Dress Shirt.png",
+    Avatar: "Images/Avatar/Clothes/School Dress Shirt/Preston Dress Shirt Buttoned.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "Images/Avatar/Clothes/School Dress Shirt/Preston Dress Shirt Sleeves Default.png",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBound: "Images/Avatar/Clothes/School Dress Shirt/Preston Dress Shirt Sleeves.png",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "Images/Equipment/School Dress Shirt/Preston Dress Shirt Unbuttoned.png",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "The school uniform of Preston Academy.",
+}>>
+
+<<set _SchoolJacket to {
+    Name: "Preston Jacket",
+    Type: "Jacket",
+    Color: "Black",
+    Slot: "Outer",
+    Temp: 10,
+    Tags: ["Sleeves", "Uniform"],
+    Durability: 15,
+    MaxDurability: 15,
+    Weight: 3,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Preston School Jacket/Preston Suit Jacket.png",
+    Avatar: "Images/Avatar/Clothes/Preston School Jacket/Preston Suit Jacket Buttoned.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "Images/Avatar/Clothes/Preston School Jacket/Preston Suit Jacket Sleeves Default.png",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBase: "Images/Avatar/Clothes/Preston School Jacket/Preston Suit Jacket Sleeves Default.png",
+    AvatarSleeveBaseTorn: "None",
+    AvatarSleeveBaseDamaged: "None",
+    AvatarSleeveBound: "Images/Avatar/Clothes/Preston School Jacket/Preston Suit Jacket Sleeves.png",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "Images/Avatar/Clothes/Preston School Jacket/Preston Suit Jacket Unbuttoned.png",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    AvatarAltBase: "None",
+    AvatarAltBaseTorn: "None",
+    AvatarAltBaseDamaged: "None",
+    Description: "A jacket with the Preston Academy logo on it.",
+}>>
+
+<<set _DressShorts to {
+	Name: "Black Dress Shorts",
+    Type: "Dress Shorts",
+    Color: "Black",
+    Slot: "Bottoms",
+    Temp: 5,
+    Tags: ["Formal", "Uniform"],
+    Durability: 10,
+    MaxDurability: 10,
+    Weight: 2,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Dress Shorts/Black Dress Shorts.png",
+    Avatar: "Images/Avatar/Clothes/Dress Shorts/Black Dress Shorts.png",
+    AvatarSleeve: "None",
+    AvatarSleeveBound: "None",
+    SagAvatar: "None",
+    PulledDownAvatar: "Images/Avatar/Clothes/Pants Down/Black Jeans Down.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "When you want to be fancy and formal, but still want to show off your legs.",
+}>>
+
+<<set _BlackSocks to {
+	Name: "Black Socks",
+    Type: "Socks",
+    Color: "Black",
+    Slot: "Socks",
+    Temp: 0,
+    Tags: ["None"],
+    Durability: 5,
+    MaxDurability: 5,
+    Weight: 1,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Socks/Black Socks.png",
+    Avatar: "Images/Avatar/Clothes/Socks/Black Socks.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "A pair of warm, comfy socks.",
+}>>
+
+<<set _DressShoes to {
+	Name: "Black Loafers",
+    Type: "Loafers",
+    Color: "Black",
+    Slot: "Shoes",
+    Temp: 0,
+    Tags: ["Formal"],
+    Durability: 10,
+    MaxDurability: 10,
+    Weight: 3,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Dress Shoes/Loafers/Black Loafers.png",
+    Avatar: "Images/Avatar/Clothes/Dress Shoes/Loafers/Black Loafers.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "Fancy shoes that shine and wouldn’t be out of place on a young actor.",
+}>>
+
+<<set _PajamaShirt to {
+	Name: "Blue Pajama Shirt",
+    Type: "Pajama Shirt",
+    Color: "Blue",
+    Slot: "Top",
+    Temp: 10,
+    Tags: ["Sleepwear", "Sleeves"],
+    Durability: 15,
+    MaxDurability: 15,
+    Weight: 3,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Pajama Shirt/Blue Pajama.png",
+    Avatar: "Images/Avatar/Clothes/Pajama Shirt/Blue Pajama Shirt.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarSleeve: "Images/Avatar/Clothes/Pajama Shirt/Blue Pajama Shirt Sleeves Default.png",
+    AvatarSleeveTorn: "None",
+    AvatarSleeveDamaged: "None",
+    AvatarSleeveBound: "Images/Avatar/Clothes/Pajama Shirt/Blue Pajama Shirt Sleeves.png",
+    AvatarSleeveBoundTorn: "None",
+    AvatarSleeveBoundDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "A shirt made for sleeping in. They are extra comfy, extra warm, and extra loose. True perfection.",
+}>>
+
+<<set _PajamaPants to {
+	Name: "Blue Pajama Bottoms",
+    Type: "Pajama Bottoms",
+    Color: "Blue",
+    Slot: "Bottoms",
+    Temp: 10,
+    Tags: ["Sleepwear"],
+    Durability: 15,
+    MaxDurability: 15,
+    Weight: 3,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Pajama Pants/Blue Pajamas.png",
+    Avatar: "Images/Avatar/Clothes/Pajama Pants/Blue Pajama Pants.png",
+    AvatarSleeve: "None",
+    AvatarSleeveBound: "None",
+    SagAvatar: "None",
+    PulledDownAvatar: "Images/Avatar/Clothes/Pants Down/Blue Pants Down.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "Pants made for sleeping in. They are extra comfy, extra warm, and extra loose. True perfection.",
+}>>
+
+<<set _Trunks to {
+	Name: "Blue Trunks",
+    Type: "Trunks",
+    Color: "Blue",
+    Slot: "Bottoms",
+    Temp: 5,
+    Tags: ["Swimwear"],
+    Durability: 10,
+    MaxDurability: 10,
+    Weight: 2,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Trunks/Blue Trunks.png",
+    Avatar: "Images/Avatar/Clothes/Trunks/Blue Trunks.png",
+    AvatarSleeve: "None",
+    AvatarSleeveBound: "None",
+    SagAvatar: "Images/Avatar/Clothes/Saggy Trunks/Blue Saggy Trunks.png",
+    PulledDownAvatar: "Images/Avatar/Clothes/Pants Down/Blue Pants Down.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    AvatarAlt: "None",
+    AvatarAltTorn: "None",
+    AvatarAltDamaged: "None",
+    Description: "The classic swimwear for boys everywhere. Perfectly designed to only occasionally slip off from the waves.",
+}>>
+
+<<if $StarterUndies == 1>>
+    <<set _outfit_undies to {
+        Name: "White Briefs",
+        Type: "Briefs",
+        Color: "White",
+        Slot: "Undies",
+        Temp: 0,
+        Tags: ["Sleepwear"],
+        Durability: 5,
+        MaxDurability: 5,
+        Weight: 1,
+        Size: "Preteen",
+        Icon: "Images/Equipment/Briefs/White Briefs.png",
+        Avatar: "Images/Avatar/Clothes/Briefs/White Briefs.png",
+        AvatarTorn: "None",
+        AvatarDamaged: "None",
+        Description: "Cute and tight while leaving little to the imagination. Perfect for any little boy.",
+    }>>
+<<elseif $StarterUndies == 2>>
+    <<set _outfit_undies to {
+	Name: "Black Boxers",
+    Type: "Boxers",
+    Color: "Black",
+    Slot: "Undies",
+    Temp: 0,
+    Tags: ["Sleepwear"],
+    Durability: 5,
+    MaxDurability: 5,
+    Weight: 1,
+    Size: "Preteen",
+    Icon: "Images/Equipment/Boxers/Black Boxers.png",
+    Avatar: "Images/Avatar/Clothes/Boxers/Black Boxers.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "They're like shorts, but even shorter and more loose. Just be careful to not let anything slip out.",
+    	}>>
+<<elseif $StarterUndies == 3>>
+    <<set _outfit_undies to {
+	Name: "White Boxer Briefs",
+    Type: "Boxer Briefs",
+    Color: "White",
+    Slot: "Undies",
+    Temp: 0,
+    Tags: ["Sleepwear"],
+    Durability: 5,
+    MaxDurability: 5,
+    Weight: 1,
+    Size: "Preteen",
+    Icon: "Images/Equipment/BoxerBriefs/White BB.png",
+    Avatar: "Images/Avatar/Clothes/Boxer Briefs/White Boxer Briefs.png",
+    AvatarTorn: "None",
+    AvatarDamaged: "None",
+    Description: "For boys who like the freedom of boxers and the security of briefs, all wrapped up in one cute little passage.",
+    	}>>
+<</if>>
+	<<include"CC Clothes Confirm">>
+
+<<if $SchoolUniforms == 1>>
+    <<addClothing "Closet" "Top" "School Dress Shirt" "School">>
+    <<addClothing "Closet" "Top" "School Dress Shirt" "School">>
+    <<addClothing "Closet" "Bottoms" "Slacks" "Black">>
+    <<addClothing "Closet" "Bottoms" "Dress Shorts" "Black">>
+    <<addClothing "Closet" "Bottoms" "Dress Shorts" "Black">>
+    <<addClothing "Closet" "Shoes" "Loafers" "Black">>
+    <<addClothing "Closet" "Shoes" "Loafers" "Black">>
+    <<addClothing "Closet" "Socks" "Socks" "Black">>
+    <<addClothing "Closet" "Socks" "Socks" "Black">>
+    <<addClothing "Closet" "Outer" "School Jacket" "School">>
+    <<addClothing "Closet" "Outer" "School Jacket" "School">>
+    <<addClothing "Closet" "Neck" "School Tie" "School">>
+    <<addClothing "Closet" "Neck" "School Tie" "School">>
+    
+    <<set $ClosetOutfits.push(
+    {
+        "Head": $None,
+        "Face": $None,
+        "Mouth": $None,
+        "Neck": _SchoolTie,
+        "Under": $None,
+        "Top": _SchoolDressShirt,
+        "Over": $None,
+        "Outer": _SchoolJacket,
+        "Back": $None,
+        "Hands": $None,
+        "Bottoms": _DressShorts,
+        "Waist": $None,
+        "Undies": _outfit_undies,
+        "Socks": _BlackSocks,
+        "Shoes": _DressShoes,
+    })>>
+    
+<<else>>
+    <<addClothing "Closet" "Bottoms" "Jeans" "Blue Denim">>
+    <<addClothing "Closet" "Top" "T-Shirt" "White">>
+    <<addClothing "Closet" "Shoes" "Sneakers" "Blue">>
+<</if>>
+
+<<addClothing "Closet" "Bottoms" "Trunks" "Blue">>
+
+<<set $ClosetOutfits.push(
+    {
+        "Head": $None,
+        "Face": $None,
+        "Mouth": $None,
+        "Neck": $None,
+        "Under": $None,
+        "Top": _PajamaShirt,
+        "Over": $None,
+        "Outer": $None,
+        "Back": $None,
+        "Hands": $None,
+        "Bottoms": _PajamaPants,
+        "Waist": $None,
+        "Undies": _outfit_undies,
+        "Socks": $None,
+        "Shoes": $None,
+    }
+)>>
+
+<<set $DefaultEventOutfits to {
+    "Swim":
+    {
+        "Bottoms": _Trunks,
+        "Validator": (outfit) => {
+            for (const slot of $ClothingCategories) {
+                if (["Top", "Bottoms"].contains(slot)) {
+                    continue;
+                }
+                const item = outfit[slot] ?? $None;
+                if (!(item.Type == "None" || item.Tags.contains("Swimwear"))) {
+                    return slot;
+                }
+            }
+            if ((outfit["Top"] ?? $None).Tags.contains("Sleeves")) {
+                return "Top";
+            }
+            if (!(outfit["Bottoms"] ?? $None).Tags.contains("Swimwear")) {
+                SugarCube.State.setVar("$EventOutfitFail", "Bottoms");
+                return "Bottoms";
+            }
+
+            return "";
+        }
+    }
+}>>
+
+<<set $EventOutfits to clone($DefaultEventOutfits)>>
+
+/* NOAH and Gabe Setting */
+<<set $Noah.Hair to "Boyish">>
+<<if $NoahAppearance == 1>>
+    <<set $Noah.HairColor to $Player.HairColor>>
+    <<set $Noah.SkinColor to $Player.SkinColor>>
+    <<set $Noah.EyeColor to $Player.LeftEyeColor>>
+    <<set $Noah.PenisStyle to $Player.PenisStyle>>
+    <<set $Gabe.PenisStyle to $Player.PenisStyle>>
+<</if>>
+<<if $GabeAppearance == 1>>
+    <<set $Gabe.SkinColor to $Player.SkinColor>>
+<</if>>
+<<if $DadAppearance == 1>>
+    <<set $Dad.HairColor to $Player.HairColor>>
+    <<set $Dad.SkinColor to $Player.SkinColor>>
+<</if>>
+<<set $Gabe.HairColor to "Black">>
+<<set $Gabe.EyeColor to "Green">>
+<<set $Noah.Freckles to $Player.Freckles>>
+<<set $Dad.EyeColor to "Green">>
+
+<<set $NoahSocial to 0>>
+<<set $GabeSocial to 0>>
+<<set $DadSocial to 0>>
+
+/* Teacher Social */
+<<set $AlistairSocial to 0>>
+<<set $RandolphSocial to 0>>
+<<set $DeLeonSocial to 0>>
+<<set $JulienSocial to 0>>
+<<set $ChangSocial to 0>>
+<<set $HartSocial to 0>>
+<<set $KohlerSocial to 0>>
+
+/* DEBUG MODE */
+<<if $Player.LastName == "Debug">>
+    <<set $Debug to 1>>
+<</if>>
+
+/* VARIABLE TOGGLE */
+<<include"Weather Control">>
+<<set $Player.Arousal to 0>>
+
+/* Starting Routes */
+
+/* Setting skills based on traits */
+<<if $Player.Traits.includes("Athletic")>>
+    <<set $AthleticsSkill to 2>>
+    <<set $AthleticsLearned to 1>>
+<</if>>
+<<if $Player.Traits.includes("Bookworm")>>
+    <<set $EnglishSkill to 2>>
+    <<set $EnglishLearned to 1>>
+<</if>>
+<<if $Player.Traits.includes("Genius")>>
+    <<set $MathSkill to 2>>
+    <<set $MathLearned to 1>>
+    <<set $ScienceSkill to 2>>
+    <<set $ScienceLearned to 1>>
+<</if>>
+
+/* Nickname Inits */
+<<set $NoahNickname to $NoahNickname ?? $Player.Name>>
+<<set $GabeNickname to $GabeNickname ?? $Player.Name>>
+<<set $DadNickname to $DadNickname ?? $Player.Name>>
+<<set $LucasNickname to $Player.Name>>
+<<set $BenNickname to $Player.Name>>
+<<set $MichaelNickname to $Player.Name>>
+<<set $CarterNickname to $Player.Name>>
+<<set $JacksonNickname to $Player.Name>>
+<<set $ThomasNickname to $Player.Name>>
+<<set $XavierNickname to $Player.Name>>
+<<set $FelixNickname to $Player.Name>>
+<<set $BullyNickname to $Player.Name>>
+/* Controls whether or not a Nickname has been set for the first time. */
+<<set $Nickname to {
+    Bully: 0,
+    Lucas: 0,
+    Ben: 0,
+    Michael: 0,
+    Carter: 0,
+    Jackson: 0,
+    Thomas: 0,
+    Xavier: 0,
+    Felix: 0,
+}>>
+
+/* Moodlet Sets */
+<<set $CC to 1>>
+
+/* DAILIES */
+/* Initial Dailies */
+<<set $CompletedQuests.push("Chores")>>
+<<include"Daily Events">>
+<<include"Update Schedules">>
+
+<<if $Debug>>
+Debug mode is enabled. Would you like to skip the introduction?<br><br>
+[[Play Intro|CC Confirm]]<br>
+<<link "Skip Intro" "Player Bedroom">>
+<<set $BusIntroduction to 1>>
+<<set _classmates to [
+        "Lucas",
+        "Ben",
+        "Michael",
+        "Carter",
+        "Jackson",
+        "Thomas",
+        "Xavier",
+        "Felix",
+]>>
+<<for _classmate range _classmates>>
+    <<run State.setVar(`$Met${_classmate}`, 1)>>
+    <<run State.setVar(`$${_classmate}Social`, 0)>>
+<</for>>
+<<set $MetAlistair to 1>>
+<<set _classes to [
+    "Math",
+    "History",
+    "Drama",
+    "Science",
+    "English",
+    "Gym",
+]>>
+<<for _class range _classes>>
+    <<run State.setVar(`$${_class}Intro`, 1)>>
+<</for>>
+<<set $DramaFaithPlayer to 0>>
+<<set $DramaFaithLucas to 21>>
+<<set $DramaFaithCarter to 0>>
+<</link>><br>
+
+<<else>>
+<<include"CC Confirm">>
+<</if>>

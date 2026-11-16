@@ -1,0 +1,133 @@
+:: OC Kazu Xavier Showdown [nobr]
+
+/* Intro */
+You are walking down the hallway when you hear some mummering and gasping. You look ahead to find a crowd of boys circling something. <span style="Color: LightCoral">Judging by the noises and commotion, you wager there is a fight going on!</span> You manage to push past the crowd to see who sits at the center, surprised to find <span style="color:DarkTurquoise">Xavier</span> and <span style="color:DarkTurquoise">Kazu</span> standing a foot apart from each other. <span style="color:DarkTurquoise">Kazu</span> looks pissed, scowling at <span style="color:DarkTurquoise">Xavier</span>, who, as always, is smirking with an aura of pride. <br>
+
+    <<set _ad to [
+        {
+            Name: "Xavier",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "OC Kazu",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Frown",
+                Eyes: "Mad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Yeah? Why don’t you say that again to my face, little man!”</span> <span style="color:DarkTurquoise">Kazu</span> growls, <span style="Color: LightCoral">grabbing <span style="color:DarkTurquoise">Xavier</span> by the collar and slamming him into one of the lockers as the crowd gasps.</span> <span style="Color: LightSteelBlue">“You think you’re all that, eh? Got some fancy connections just because your daddy has money? Keep it up and I’ll show you what MY connections can do.”</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Trust me, <span style="color:DarkTurquoise">Kazu</span>, that’s a game you do not want to start.”</span> <span style="color:DarkTurquoise">Xavier</span> <span style="Color: LightCoral">replies coldly, keeping his head tilted back so he stares down his nose at <span style="color:DarkTurquoise">Kazu</span>, something the infuriates the rougher boy as he balls up his fist, looking like he is about to punch <span style="color:DarkTurquoise">Xavier</span> right in the face, when a teacher calls out.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Xavier",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Kohler",
+            State: {
+                Outfit: "Everyday",
+                Brows: "Angry",
+            },
+        },
+        {
+            Name: "OC Kazu",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Frown",
+                Eyes: "Mad",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Enough! Break it up, everyone, now!”</span> It’s Kohler, stomping through the crowd, tossing boys left and right as he breaks up the fight. <span style="color:DarkTurquoise">Kazu</span> curses, releasing <span style="color:DarkTurquoise">Xavier</span> and backing up, not finding it worth getting a suspension over. By the time <span style="color:DarkTurquoise">Kohler</span> makes it to the center, both boys have backed away from each other, <span style="color:DarkTurquoise">Xavier</span> surrounded by his goons as <span style="color:DarkTurquoise">Kazu</span> sticks his hands in his pockets and glares at him. <span style="Color: LightSteelBlue">“Everyone, move along now! Or your ass is grass! Go! Now!”</span> <span style="Color: Yellow"><span style="color:DarkTurquoise">Kohler</span> threatens as the pack breaks up, both boys going in opposite directions.</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Check on Xavier<br>">>
+	<<replace"#choice">>
+        You walk over to <span style="color:DarkTurquoise">Xavier</span>, surrounded by his goons who all badmouth <span style="color:DarkTurquoise">Kazu</span> in various ways as they walk away. <span style="color:DarkTurquoise">Xavier</span>, for his part, just seems rather amused by the whole thing. You ask if he’s alright, worried by how harshly <span style="color:DarkTurquoise">Kazu</span> shoved him. <span style="color:DarkTurquoise">Xavier</span> <span style="Color: Yellow">just laughs at the question.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Xavier",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“I’m fine, <span style="color:DarkTurquoise">Kazu</span> couldn’t do anything to hurt me.”</span> He replies, <span style="Color: LightSteelBlue">“He’s just a hothead who thinks he has more power than he does. Nothing to worry about. He’ll bark and blow hot air, but in the end that’s all he’ll do. He knows he can’t afford to get in too much trouble here.”</span> <span style="color:DarkTurquoise">Xavier</span> <span style="Color: Yellow">seems rather confident in his words, though you do feel he may be underestimating <span style="color:DarkTurquoise">Kazu</span> a bit. Still, it seems like you can drop it for now.</span> <br>
+        <<socialChange "Xavier" 5>>
+        <<set $InActiveQuests.delete("Kazu: Xavier Showdown")>>
+        <<set $CompletedQuests.push("Kazu: Xavier Showdown")>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    <</replace>>
+    <</link>>
+	<<link "Check on Kazu<br>">>
+	<<replace"#choice">>
+        You run after <span style="color:DarkTurquoise">Kazu</span>, who walks off with his hands in his pockets and his eyes glaring ahead. You ask him if he’s alright and he scoffs loudly. <span style="Color: LightSteelBlue">“Please, that brat’s nothing but talking money. He looked like he was about to piss himself when I shoved him against the locker! <span style="color:DarkTurquoise">Xavier</span>’s nothing but a little bitch!”</span> <span style="Color: Yellow"> <span style="color:DarkTurquoise">Kazu</span> replies loudly, obviously upset but trying to play the encounter off as nothing.</span> <span style="Color: LightSteelBlue">“I just needed to show him his place, is all. Mark my words, one day he’ll learn I mean business, and it’ll be FAR too late for him by then.”</span> <br>
+        
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Frown",
+                    },
+                },
+                {
+                    Name: "OC Kazu",
+                    State: {
+                        Outfit: "Uniform",
+                        Mouth: "Smirk",
+                        Eyes: "Mad",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+            
+        <span style="color:DarkTurquoise">Kazu</span> laughs, so sure that <span style="color:DarkTurquoise">Xavier</span> is nothing to him. <span style="Color: Yellow">You want to support him, but you also know enough about <span style="color:DarkTurquoise">Xavier</span> to know he isn’t one to let something like this go. You tell him just be careful.</span> <span style="color:DarkTurquoise">Kazu</span> scoffs once more at this and walks off, muttering to himself about how <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Xavier</span> should be the one watching his back.”</span> <br>
+        <<socialChange "Kazu" 5 1>>
+        <<set $InActiveQuests.delete("Kazu: Xavier Showdown")>>
+        <<set $CompletedQuests.push("Kazu: Xavier Showdown")>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+            [[Continue|School South Hallway]] 
+        <<elseif $Location.Name == "School East Hallway">>
+            [[Continue|School East Hallway]]
+        <<else>>
+            [[Continue|School West Hallway]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

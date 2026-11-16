@@ -1,0 +1,69 @@
+:: NOAH Join Coloring [nobr]
+
+<<set $Minutes += 20>>
+	
+	/* Setting Outfit Variables */
+	<<set $AD.Outfit to "Everyday">>
+	<<include"Noah Outfit Set">>
+
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Normal">>
+<<set $AD.Cry to 0>>
+<<set $AD.Blush to 0>>
+<<set $AD.Mouth to "Happy">>
+<<set $NPCHurt to 0>>
+<<set $AD.Outfit to "Everyday">>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+
+You sit down next to <span style="color:DarkTurquoise">Noah</span> and ask if you could join him. He happily agrees and gives you some of his paper. <span style="color:DarkTurquoise">Noah</span> seems to be coloring a bunch of sketches that he’s made, though most are superhero related. Noah has collected a large amount of coloring tools, from crayons and markers to paints. Interestingly enough, most of it <span style="color:DarkTurquoise">Noah</span> bought himself. <span style="color:DarkTurquoise">Your Father</span> believes in teaching you all to manage money and <span style="color:DarkTurquoise">Noah</span> seems to have nailed it. <br>
+<br>
+Eventually, <span style="color:DarkTurquoise">Noah</span> gets out his watercolors and begins to paint one of his pictures. <span style="color:Pink">You get a cheeky idea and, while he isn’t looking, put some of it on your finger and boop him on the nose.</span> <span style="color:LightSteelBlue">“Hey!”</span> <span style="color:DarkTurquoise">Noah</span> laughs as he tries to wipe it off, though just ends up smearing it. <span style="color:LightSteelBlue">“You butt!”</span> <span style="color:DarkTurquoise">Noah</span> flicks some paint at you, hitting you in the face. <span style="color:Pink">This leads to a small little paint fight as the two of you try to hit each other, which leads to your both covering not only yourselves, but also the kitchen counter.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“What do you two think you are doing?”</span> <span style="color:DarkTurquoise">Your Father</span> yells out. You both freeze and fear and slowly turn to him, who was looking at you two in annoyance. <span style="color:LightSteelBlue">“He started it!”</span> <span style="color:DarkTurquoise">Noah</span> yells, ratting you out. You try to defend yourself, but <span style="color:DarkTurquoise">Your Father</span> puts a stop to it. He has you both wash the paint off you in the sink, takes your paint-stained clothes, and order you both to clean this place up. <br>
+
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Noah">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Normal">>
+<<set $AD.Cry to 0>>
+<<set $AD.Blush to 0>>
+<<set $AD.Mouth to "Happy">>
+<<set $NPCHurt to 0>>
+<<set $AD.Outfit to "Everyday">>
+<<set $AD.Hard to 0>>
+	<<include"NOAH Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	<<set $ADTop to $None>>
+	<<set $ADOuter to $None>>
+	
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+</div>
+<<if $PlayerTop.Type != "None">>
+	<<set $ClosetTop.push($PlayerTop)>>
+	<<set $PlayerTop to $None>>
+<</if>>
+<<if $PlayerOuter.Type != "None">>
+	<<set $ClosetOuter.push($PlayerOuter)>>
+	<<set $PlayerOuter to $None>>
+<</if>>
+
+<span style="color:LightSteelBlue">“If its not spotless in 15 minutes, I’m going to spank you both. Got that?”</span> You both apologize and promise to clean everything up. <span style="color:Pink">Despite you both being sad about getting scolded, neither of you can help giggle at each other once he is gone, playfully poking each other as you clean.</span> Thankfully, you get it clean in time and are saved a spanking, for now. <br>
+<<socialChange "Noah" 3>>
+<<needChange "Fun" 20>>
+<br>
+
+
+[[Continue|PH Kitchen]] 

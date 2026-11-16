@@ -1,0 +1,54 @@
+:: LUCAS Math Untied Shoes [nobr]
+
+	You are sitting in Math Class, listening to one of <span style="color:DarkTurquoise">Mr. Randolph</span>’s lectures, when your eyes begin to wander the room. You look at <span style="color:DarkTurquoise">Lucas</span> in the desk next to you and notice that his shoes had become untied. Right then, you hear <span style="color:DarkTurquoise">Mr. Randolph</span> ask Lucas to come up in solve an equation.<br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<div id=choice>
+	<<link "Warn Lucas">>
+	<<replace"#choice">>
+	
+		Before he can stand up you quickly get <span style="color:DarkTurquoise">Lucas</span>’ attention and warn him that his shoes are untied. He thanks you and quickly ties them before walking to the front of the class. The question was simple enough and he manages to solve it without trouble. As he returns to his desk he gives you a smile and a thumbs up.<br>	
+	<<socialChange "Lucas" 1>>
+		<br>
+		<<include"Attend Math Finish">>
+		
+	<</replace>>
+	<</link>>
+	
+	<br>
+	
+	<<link "Ignore it<br>">>
+	<<replace"#choice">>
+		You don’t say anything and watch as <span style="color:DarkTurquoise">Lucas</span> trips after only a few steps, crashing into another desk and slamming his wrist against a chair. <span style="color:DarkTurquoise">Mr. Randolph</span> quickly runs over to <span style="color:DarkTurquoise">Lucas</span> who now lays on the floor, holding his wrist and trying not to cry, and helps him up. <span style="color:DarkTurquoise">Mr. Randolph</span> begins to lecture him about his shoelaces, but stops when he realizes <span style="color:DarkTurquoise">Lucas</span> is on the verge of tears and sends him to the nurse.<br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Frown",
+			Eyes: "Sad",
+			Blush: 2,
+			Cry: 2,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+		<span style="color:DarkTurquoise">Mr. Randolph</span> has somebody else solve the equation and the rest of the class continues as normal. <span style="color:DarkTurquoise">Lucas</span> returns about 20 minutes later with red, puffy eyes, but seems otherwise fine.<br>
+		<br>
+		<<include"Attend Math Finish">>
+		
+	<</replace>>
+	<</link>>
+</div>

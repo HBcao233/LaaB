@@ -1,0 +1,47 @@
+:: Xavier School Hug [nobr]
+
+<<set $Minutes += 2>>
+	
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Outfit: "Uniform",
+			Eyes: "Tired",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+/* Normal Social */
+<<if $XavierSocial < 50 or $XavierSocialRank >= 1>>
+You walk up to <span style="color:DarkTurquoise">Xavier</span> with your arms outstretched and ask for a hug, but are quickly blocked by two of Xavier’s followers who form a wall separating you two. <span style="color:lightcoral">They don’t seem to like the idea of you getting to hug <span style="color:DarkTurquoise">Xavier</span> and quickly shoo you away.</span> All the while <span style="color:DarkTurquoise">Xavier</span> just shrugs and laughs at the situation. Seems you’ll have to grow your relationship a bit more before he allows that. <br>
+
+/* High Social */
+<<else>>
+You walk up to <span style="color:DarkTurquoise">Xavier</span> with your arms outstretched and ask for a hug, but are quickly blocked by two of Xavier’s followers who form a wall separating you two. They don’t seem to like the idea of you getting to hug <span style="color:DarkTurquoise">Xavier</span> and attempt to shoo you away. But before they can, <span style="color:DarkTurquoise">Xavier</span> calls out to stop them. <br>
+<br>
+<span style="color:LightSteelBlue">“Now now, no need for that.”</span> <span style="color:DarkTurquoise">Xavier</span> steps forward, parting the wall of his followers. <span style="color:LightSteelBlue">“We’re all friends here. And a hug between friends is always nice.”</span> <span style="color:pink">They all watch glaring at you as you and <span style="color:DarkTurquoise">Xavier</span> hug warmly.</span> But the hug turns a bit strange as you feel his hand wander out of sight of everyone else. <br>
+<br>
+    /* Undies */
+    <<if $PlayerUndies.Type != "None">>
+<span style="color:pink">You blush as <span style="color:DarkTurquoise">Xavier</span>’s hand finds its way to the waistband of the back of your $PlayerUndies.Name. He lightly tugs them and chuckles softly, whispering in your ear. <span style="color:LightSteelBlue">“Aw, how cute. I’ll have to get you to show them off to me sometime. In a more private location.”</span> He gives them one final tug before releasing them and ending the hug, leaving you blushing as he gives you a wink and walks away.</span> <br>
+
+    /* No Undies */
+    <<else>>
+<span style="color:pink">You blush as <span style="color:DarkTurquoise">Xavier</span>’s hand finds its way to the back of your $PlayerBottoms.Type and slips inside, finding your bare ass. He chuckles softly and whispers in your ear. <span style="color:LightSteelBlue">“No underwear? Well, someone is a little naughty. Maybe I’ll have to punish you later.”</span> He smirks before ending the hug, leaving you blushing as he gives you a wink and walks away.</span> <br>
+
+    <</if>>
+
+<</if>>
+/* End */
+<<socialChange "Xavier" 1>>
+<br>
+	<<if $Location.Name == "School South Hallway">>
+		[[Continue|School South Hallway]] 
+	<<elseif $Location.Name == "School East Hallway">>
+		[[Continue|School East Hallway]]
+	<<elseif $Location.Name == "School West Hallway">>
+		[[Continue|School West Hallway]]
+	<</if>>

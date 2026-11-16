@@ -1,0 +1,39 @@
+:: Ben Hang Out Go To Park [nobr]
+
+/* Intro */
+You ask <span style="color:DarkTurquoise">Ben</span> if he wants to hang out at the park and he agrees, <span style="color:Yellow">though you notice a touch of nervousness in his voice and question it.</span> <span style="Color: LightSteelBlue">“N- no, it’s fine. Really.”</span> He says, scratching his cheek, <span style="Color: LightSteelBlue">“I’m just more of an indoor kid, if that wasn’t obvious. If I stay outside too long, I’m liable to get sunburnt or get all sweaty and gross or…”</span> <span style="color:DarkTurquoise">Ben</span> pauses and turns bright red, <span style="Color: LightSteelBlue">“S- sorry! I don’t mean I don’t want to hang out with you or anything! The park will be great! More than great!”</span> <span style="color:Yellow">Now <span style="color:DarkTurquoise">Ben</span> seems more worried that he soured your opinion of him by stating his preference for indoor activities.</span><br>
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+            Outfit: $HangOutClothes,
+			Mouth: "Frown",
+            Blush: 1,
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Mouth: "Smirk",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="choice">
+	<<link "You’ll show him how to have fun outside<br>">>
+    <<replace"#choice">>
+        You laugh and put your arm on his shoulders to reassure him, telling <span style="color:DarkTurquoise">Ben</span> that you’ll show him just how fun playing outside can be. <span style="color:LightGreen">By the time you’re done, <span style="color:DarkTurquoise">Ben</span> won’t want to go back inside.</span> <span style="Color: LightSteelBlue">“Oh…”</span> <span style="color:DarkTurquoise">Ben</span> replies nervously, <span style="Color: LightSteelBlue">“P… perfect! Haha…”</span> He laughs nervously as you lead him towards the park. Though, despite his nerves, he does seem excited to hang out with you, no matter the location.<br>
+        <br>
+        [[Continue|Ben Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "You won’t do anything too crazy<br>">>
+    <<replace"#choice">>
+        You smile and put your arm on his shoulder, telling him that you won’t do anything too crazy or exhausting. <span style="Color: LightSteelBlue">“Thank goodness.”</span> <span style="color:DarkTurquoise">Ben</span> sighs in relief, <span style="Color: LightSteelBlue">“I can barely survive gym class. It’s not like I don’t enjoy having fun, it’s just… I know my strengths – or lack thereof. But… I- I’ll try not to be such a buzzkill.”</span> <span style="color:LightGreen">He gives you a hopeful smile as the two of you walk towards the park.</span> <br>
+        <br>
+        [[Continue|Ben Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

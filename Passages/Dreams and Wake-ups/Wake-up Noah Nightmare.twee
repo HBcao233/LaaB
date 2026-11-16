@@ -1,0 +1,95 @@
+:: Wake-up Noah Nightmare [nobr]
+
+	Not long into the night you are suddenly stirred from your sleep by a light knocking on your door. You glance over and see <span style="color:DarkTurquoise">Noah</span> peeking his head inside, 
+	
+<<if $NoahPJType == "Two">>
+	he is wearing his pajamas.
+<<elseif $NoahPJType == "Onesie">>
+	he is wearing his pajamas. 
+<<elseif $NoahPJType == "None">>
+	he is only wearing his $NoahUndies.Name 
+<</if>>
+
+and hugs <span style="color:DarkTurquoise">Bue</span> tightly in his hands.<br>
+
+<<set _ad to [
+	{
+		Name: "Noah",
+		State: {
+			Eyes: "Sad",
+			Cry: 1,
+			Blush: 2,
+			Mouth: "Sad",
+			Outfit: "Pajamas",
+			BueHands: "Hands",
+		},
+	},
+]>>
+<<ad _ad>>
+
+
+<span style="color:LightSteelBlue">”I- I’m sorry.”</span> As he gets closer you notice tears welling up in his eyes. <span style="color:LightSteelBlue">”I had a nightmare and daddy’s door is locked… I’m sorry.”</span> He stands there fidgeting and staring at the ground.<br>
+<br>
+<div id=choice>
+	<<link "Let him sleep with you<br>">>
+	<<replace"#choice">>
+	
+	You sigh and tell him he can sleep with you tonight. He smiles and walks over as he wipes his tears away. 
+	
+	<<if $Player.Exposed == "Naked">>
+		It is only as he is about to hop into your bed that you remember <span style="color:Pink">you are completely naked under your blankets</span>. You blush as he hops in and cuddles up next to you. Thankfully, he doesn’t seem to notice.<br>
+	<<else>>	
+		 <span style="color:DarkTurquoise">Noah</span> slides under your blanket and cuddles up close to you.<br>
+	<</if>>
+	
+	<<set _ad to [
+		{
+			Name: "Noah",
+			State: {
+				Eyes: "Sad",
+				Cry: 1,
+				Blush: 2,
+				Mouth: "Happy",
+				Outfit: "Pajamas",
+				BueHands: "Hands"
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:LightSteelBlue">”Thanks <span style="color:DarkTurquoise">$NoahNickname</span>.”</span> He says before falling asleep hugging you. By the time you wake up in the morning, he seemingly has returned to his room.<br>
+	<br>
+	<<socialChange "Noah" 3>>
+	<br>
+		[[Continue|Player Bedroom]] <br>
+	<</replace>>
+	<</link>>
+	
+	<<link "Tell him to grow up<br>">>
+	<<replace"#choice">>
+	
+	You sigh audibly and tell <span style="color:DarkTurquoise">Noah</span> that he’s going to grow up and stop being afraid of nightmares. <span style="color:DarkTurquoise">Your Father</span> probably locked his door because he got tired of <span style="color:DarkTurquoise">Noah</span> coming in crying every other night. So he has to stop being such a baby and go back to sleep, the monsters aren’t real.<br>
+
+	<<set _ad to [
+		{
+			Name: "Noah",
+			State: {
+				Eyes: "Sad",
+				Cry: 2,
+				Blush: 2,
+				Mouth: "Sad",
+				Outfit: "Pajamas",
+				BueHands: "Hands",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:LightSteelBlue">”I’m sorry…”</span> He sniffles as he begins to sob and slowly backs out of your room, giving you one last glance right before shutting your door and returning to his room. Once he is gone, you return to sleep.<br>
+	<<socialChange "Noah" -3>></span>
+	<br>
+		[[Continue|Player Bedroom]] <br>
+	<</replace>>
+	<</link>>
+
+</div>

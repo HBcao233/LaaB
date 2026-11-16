@@ -1,0 +1,201 @@
+:: OC Evelyn Play with Little Boy [nobr]
+
+
+<<set $Minutes += 20>>
+<<include"Avatar Display Init">>
+
+/* Intro */
+As you are enjoying your time on the swing, you spot two young kids kicking the ball around in the soccer goal. One little boy, dressed in a green shirt with a dinosaur on it, is struggling as he kicks the ball towards the goal. Despite this, however, he miraculously makes the shot every time and would playfully celebrates afterward. <br>
+<br>
+The other kid, a slightly older black-haired boy in shorts, defends the goal vigilantly, though upon further inspection it becomes clear that he is letting the other boy win. Figuring joining them may be more fun than swinging by yourself, you approach them. <span style="color:yellow">You are then taken by surprise as the black-haired boy, who isn’t actually a boy at all, turns to you with an unfriendly glare. It is the tomboy, <span style="color:DarkTurquoise">Evelyn</span>.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "OC Evelyn",
+        State: {
+            Eyes: "Mad",
+            Mouth: "Sad",
+            Outfit: "Everyday",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“What are YOU doing here?”</span> she asks, crossing her arms as she eyes you suspiciously. You turn to the other boy, who is chasing after the ball to collect it and ask if he is her brother’s friend or something. <span style="color:LightSteelBlue">“Not everything I do revolves around my brother, doofus. He’s my neighbor’s kid. His dad asked if I could play with his son for a bit while he ran to the store.”</span> She turns away from you, indicating that the conversation is over in her eyes, however you then ask if you can join. <br>
+<br>
+<span style="color:LightSteelBlue">“What!? No- I mean, that’s not up to me. So scram before I-“</span> But before she can finish, she is interrupted by the little boy as he runs up to you both. <br>
+<br>
+<span style="color:LightSteelBlue">“Oh? Is this your friend?”</span> He looks at you curiously before smiling, <span style="color:LightSteelBlue">“Hey, wanna play ball with us? We can take turns kicking it into the goal!”</span> <span style="color:lightgreen">You smirk, agreeing to the invitation as <span style="color:DarkTurquoise">Evelyn</span>’s eye twitches in annoyance. Seems she didn’t have much of a choice now.</span> <br>
+<br>
+It is decided that you would all take turns being the goalie while the other two took shots. <span style="color:DarkTurquoise">Evelyn</span>, despite looking weak and slow when the boy was kicking, would catch almost all of your shots. When it was your turn to defend, she kicked the balls with utmost precision with enough force to take your head off. <br>
+<br>
+Finally, it was the boy’s turn to be goalie. He easily stopped <span style="color:DarkTurquoise">Evelyn</span>’s simple, weak kicks. She seems to enjoy the kid’s happy and enthusiastic celebrations. <span style="color:yellow">But now, it was your turn, and you had to decide if you were going to be as kind to the boy as she was.</span> <br>
+<br>
+
+<div id="choice1">
+/* Play normally */
+	<<link "Play normally<br>">>
+	<<replace"#choice1">>
+        <<include"OC Evelyn Play with Little Boy Play Normally">>
+    <</replace>>
+    <</link>>
+
+/* Let him win */
+	<<link "Let him win<br>">>
+	<<replace"#choice1">>
+        <<include"OC Evelyn Play with Little Boy Let him win">>
+    <</replace>>
+    <</link>>
+</div>
+
+:: OC Evelyn Play with Little Boy Play Normally [nobr]
+
+/* Intro */
+<<set _random to random(1, 2)>>
+
+/* Outcome 1 */
+<<if _random == 1>>
+    You decide not to spare the lad, kicking as hard and fast as you can. He can’t keep up, diving left and right with all his power, but still being too slow to block your shots. Before long, the boy was completely out of breath and fell to the grass to rest, lying on his back. <span style="color:lightgreen">Despite being utterly destroyed by you, however, he seems to be enjoying himself.</span> <br>
+    <<set _ad to [
+        {
+            Name: "OC Evelyn",
+            State: {
+                Mouth: "Happy",
+                Outfit: "Everyday",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“You could go a bit easier on him, he’s a little kid and you’re kicking like you’re trying to kill him.”</span> <span style="color:DarkTurquoise">Evelyn</span> says angrily, before sighing, <span style="color:LightSteelBlue">“But I guess he is having fun.”</span> <span style="color:lightgreen">The three of you continued to play around for a while longer until it was eventually time for <span style="color:DarkTurquoise">Evelyn</span> to take him home.</span> <br>
+    <<needChange "Fun" 10>>
+    <<socialChange "Evelyn" 3 1>>
+    <br>
+    [[Continue|Neighborhood Playground]]
+
+/* Outcome 2 */
+<<else>>
+    You decided not to spare the lad, kicking as hard and fast as you could. He couldn’t keep up, diving left and right with all his power, but still being too slow to dodge your shots. Despite this, the boy is still trying his hardest to keep up, almost seeming to enjoy himself, <span style="color:lightcoral">until your speed got the best of him and he trips, falling hard to the ground! <br>
+    <br>
+    The kid rolls and collides with the goalpost, stopping on his head with his shirt covering his face and his superhero underwear poking out. You both quickly run over to the boy, who begins crying as he rubs his bruised head. You try to help the boy up, but are quickly shoved away by <span style="color:DarkTurquoise">Evelyn</span>.</span> <br>
+    <br>
+    Thankfully, she manages to calm the boy down, praising and smiling at him. She was like a big sister and despite claiming that he was just a neighbor kid, she seems to know him well enough to easily be able to soothe him. After he is feeling better, you finally work up the courage to apologize to him. <br>
+    <br>
+    <span style="color:LightSteelBlue">“That’s okay. I forgive you.”</span> The kid says with a smile, though <span style="color:DarkTurquoise">Evelyn</span> glares at you angrily. Not long later <span style="color:DarkTurquoise">Evelyn</span> sends the boy to collect his ball and, once he is out of earshot, turns around and begins to berate you. <br>
+    
+    <<set _ad to [
+        {
+            Name: "OC Evelyn",
+            State: {
+                Eyes: "Mad",
+                Mouth: "Frown",
+                Outfit: "Everyday",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“What is wrong with you?”</span> <span style="color:lightcoral">She says, poking you hard in the stomach,</span> <span style="color:LightSteelBlue">“He is a little kid and you were kicking so hard you could have killed him! He hurt himself just trying to block your kicks, what would have happened if you hit him!?”</span> <span style="color:lightcoral">You try to explain your actions, but it is clear that she doesn’t want to hear it.</span> Finally, the little boy returns and the scolding from the young girl ends as she takes the boy back home. <br>
+    <<needChange "Fun" 10>>
+    <<socialChange "Evelyn" -3 1>>
+    <br>
+    [[Continue|Neighborhood Playground]]
+
+<</if>>
+
+:: OC Evelyn Play with Little Boy Let him win [nobr]
+
+/* Intro */
+<<set _random to random(1, 2)>>
+
+/* Girl Toggle */
+<<if $ToggleGirlContent != 1>>
+    <<set _random to 1>>
+<</if>>
+
+/* Outcome 1 */
+<<if _random == 1>>
+    <span style="color:lightgreen">You decide to follow <span style="color:DarkTurquoise">Evelyn</span>’s lead and kick the ball poorly or with little force, though you still have to try hard enough to make it not obvious to the little boy that you are letting him win. <span style="color:DarkTurquoise">Evelyn</span> notices what you are doing and gives an approving smile, which still feels a little threatening,</span> coming from her. Despite having some difficulty, <span style="color:pink">the boy still manages to win with ease and jumps in the air happily as he is declared the victor!</span> Ecstatic, the boy runs towards you both, <span style="color:lightcoral">when he suddenly trips.</span> <br>
+    
+    <<set _ad to [
+        {
+            Name: "OC Evelyn",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    Thankfully, <span style="color:DarkTurquoise">Evelyn</span> manages to catch the boy. <span style="color:LightSteelBlue">“Are you alright?”</span> She asks, though the boy seems fine, as he once again declares that he won. <span style="color:DarkTurquoise">Evelyn</span> just chuckles before patting the boy on the head and smiling. <br>
+    <br>
+    Not long later, <span style="color:DarkTurquoise">Evelyn</span> tells the boy it’s time to head home. He pouts but does as he’s told, collecting his ball and bidding you farewell as the two of them walk home. <br>
+    <<needChange "Fun" 10>>
+    <<socialChange "Evelyn" 3 1>>
+    <br>
+    [[Continue|Neighborhood Playground]]
+
+/* Outcome 2 */
+<<else>>
+    <span style="color:lightgreen">You decide to follow <span style="color:DarkTurquoise">Evelyn</span>’s lead and kick the ball poorly or with little force, though you still have to try hard enough to make it not obvious to the little boy that you are letting him win. <span style="color:DarkTurquoise">Evelyn</span> notices what you are doing and gives an approving smile, which still feels a little threatening, coming from her.</span> Despite having some difficulty, <span style="color:pink">the boy still manages to win with ease and jumps in the air happily as he is declared the victor!</span> Ecstatic, the boy runs towards you both, <span style="color:lightcoral">when he suddenly trips.</span> <br>
+        <<set _ad to [
+        {
+            Name: "OC Evelyn",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Blush: 2,
+                PantsDown: true,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    /* Not setting until added */
+    /* Avatars: Evelyn: Blush2, Frown, Pants Down
+    PC: Blush2, Frown */
+    <span style="color:pink">Fortunately, he manages to catch himself on <span style="color:DarkTurquoise">Evelyn</span>, unfortunately, the part he grabs happens to be <span style="color:DarkTurquoise">Evelyn</span>’s shorts, pulling them down to her knees! You both blush as you get a glimpse of her white and pink striped panties, though you quickly look away right after.</span> Despite her embarrassment, <span style="color:DarkTurquoise">Evelyn</span> quickly helps the boy up before pulling up her shorts. <br>
+    <br>
+    <span style="color:LightSteelBlue">“I- I’m sorry!”</span> The boy apologized, embarrassed. But <span style="color:DarkTurquoise">Evelyn</span> responded with a hug. <br>
+    <br>
+    <span style="color:LightSteelBlue">“Shh, it’s okay. I’m just glad you weren’t hurt.”</span> <span style="color:DarkTurquoise">Evelyn</span> gives the boy a smile before tickling the boy until he laughs. Once he was back to his happy self and sure that <span style="color:DarkTurquoise">Evelyn</span> wasn’t mad at him, he runs off to fetch the ball so you can continue playing. <span style="color:pink">Once he was out of earshot, <span style="color:DarkTurquoise">Evelyn</span> suddenly turns to you threateningly.</span> <span style="color:LightSteelBlue">“Not. One. Word. To anyone! Got that!?”</span> She says, pointing her finger at you accusingly. <br>
+    <br>
+    A bit scared of the elementary school girl, you promise not to tell anyone what happened. You are sure that, if you did, she would make you regret it. Not long later, <span style="color:DarkTurquoise">Evelyn</span> tells the boy it’s time to head home. He pouts, but does as he’s told, collecting his ball and bidding you farewell as the two of them walk home. <br>
+    <<needChange "Fun" 10>>
+    <<socialChange "Evelyn" 3 1>>
+    <br>
+    [[Continue|Neighborhood Playground]]
+
+<</if>>

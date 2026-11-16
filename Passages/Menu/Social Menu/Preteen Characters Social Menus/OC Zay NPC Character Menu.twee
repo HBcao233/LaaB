@@ -1,0 +1,356 @@
+:: OC Zay NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Preteens Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Isaiah Miller--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"OC Zay NPC Character Menu Biography">>
+</div>
+
+:: OC Zay NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Zay NPC Character Menu Avatar Display">>
+
+<<if $OCZaySocial > 50>>
+
+<<elseif $OCZaySocial > -10>>
+
+<<else>>
+
+    <br>
+<</if>>
+
+:: OC Zay NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Zay NPC Character Menu Avatar Display">>
+
+<strong>Full Name:</strong> Isaiah Miller <br>
+<strong>Alias:</Strong> Za Za (Family), Zay (Friends) <br>
+<strong>Grade:</strong> 6th <br>
+<strong>Birthday:</strong> March 26th <br>
+<strong>Address:</strong> 
+    <<if $OCZaySocial >= 50>>
+        Avendale <br>
+    <<else>>
+        Unknown <br>
+    <</if>>
+<strong>Family:</strong>  Hakeem (Father), Jaydan (Little brother), Kayden (Little Brother) <br>
+<strong>Friends:</strong>
+    <<if $OCZaySocial >= 80>>
+        $Player.Name, Michael, Jackson, Ben, Carter, Manuel, Shinju, James, ...
+    <<else>>
+        Unknown
+    <</if>>
+    <br>
+<strong>Relationship to $Player.Name:</strong>
+    <<if $OCZaySocialRank == 1>>
+        Close Friends
+    <<elseif $OCZaySocial > 80>>
+        Friends
+    <<elseif $OCZaySocial > 30>>
+        Possible Friends
+    <<elseif $OCZaySocial > -10>>
+        Neutral
+    <<else>>
+        Dislikes
+    <</if>>
+    <br>
+<strong>Traits:</strong>
+    <<if $OCZaySocialRank == 1>>
+        <div style="margin-left: 25px;">
+            Athletic, Charismatic, Genius, Nerd, Virtuoso /* No Spoilers :P */
+        </div>
+    <<elseif $OCZaySocial > 70>>
+        <div style="margin-left: 25px;">
+            Athletic, Charismatic, Genius, Nerd, Virtuoso
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Class Schedule:</strong>
+    <div style="margin-left: 25px;">
+        [Math] > [History] > [Music] > [Science] > [English] > [Gym]
+    </div>
+<strong>Life Schedule:</strong>
+    <<if $OCZaySocial >= 50>> 
+        <div style="margin-left: 25px;">Mondays, Tuesdays and Sometimes Fridays (After School): Home</div>
+        <div style="margin-left: 25px;">Wednesdays, Thursdays and Sometimes Fridays (After School): MMA Training </div>
+        <<else>>
+    <div style="margin-left: 25px;">
+        Unknown
+    </div>
+    <</if>>
+<strong>Likes:</strong>
+    <<if $OCZaySocial >= 50>> 
+        <div style="margin-left: 25px;">
+            Pro Wrestling, playing guitar, Playing drums, Computers
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Dislikes:</strong>
+    <<if $OCZaySocial >= 50>>
+        <div style="margin-left: 25px;">
+            Acting, Bullying, Xavier, HIS MOTHER
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Hobbies:</strong>
+    <<if $OCZaySocial >= 50>>
+        <div style="margin-left: 25px;">
+            Making Music / Singing, Fighting, Gaming
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Food:</strong>
+    <<if $OCZaySocial >= 50>>
+        <div style="margin-left: 25px;">
+            Pepperoni Pizza, Burgers, Milkshakes
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Favorite Color:</strong>
+    <<if $OCZaySocial >= 50>>
+        <div style="margin-left: 25px;">
+            Red
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Fears:</strong>
+    <<if $OCZaySocialRank == 1>>
+        <div style="margin-left: 25px;">
+            /* No Spoilers */
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Clothing Preference:</strong><br>
+    <div style="margin-left: 25px;">
+        Comfortable, Sporty, and Form-Fitting
+    </div>
+<strong>Underwear Preference:</strong>
+    <<if $OCZaySocial >= 50>>
+        <div style="margin-left: 25px;">
+            Briefs
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Penis:</strong>
+    <<if $OCZaySocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            <<if $OCZayCut == "Cut">>
+                A cut penis. Average for his age.
+            <<else>>
+                An uncut penis. Average for his age.
+            <</if>>
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Butt:</strong>
+    <<if $OCZaySocial >= 50>>
+        <br>
+        <div style="margin-left: 25px;">
+            A cute and well-toned butt.
+        </div>
+    <<else>>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div>
+    <</if>>
+<strong>Cum:</strong>
+    <div style="margin-left: 25px;">
+        Unknown /* No Spoilers */
+    </div>
+<strong>Favorite Kinks:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Ons:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Turn Offs:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sensitivities:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Secrets:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Sexuality:</strong>
+        <div style="margin-left: 25px;">
+            Unknown
+        </div> /* No spoilers, stop peeking :P */
+<strong>Lewd Memories:</strong><br>
+
+:: OC Zay NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"OC Zay NPC Character Menu Avatar Display">>
+
+<<include"Quest Journal OC Millers">>
+
+:: OC Zay NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"OC Zay NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "OC Zay",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms:  "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Mad", "Sad", "Tired", "Left Wink", "Right Wink", "Closed"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCZaySocial >= 50 or $OCZaySocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCZaySocial >= 100 or $OCZaySocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer">>
+</div>
+<br>
+
+:: OC Zay NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "OC Zay",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday", "Uniform", "Gym", "Gym Swim"]>>
+<<set _npcviewerHard to [0]>>
+<<if $OCZaySocial >= 50 or $OCZaySocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $OCZaySocial >= 100 or $OCZaySocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer">>
+</div>
+<br>

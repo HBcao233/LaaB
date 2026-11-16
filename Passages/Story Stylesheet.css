@@ -1,0 +1,272 @@
+:root {
+  --ad-shorter-width: 204px;
+  --ad-short-width: 212px;
+  --ad-tall-width: 232px;
+  --ad-shorter-top: 21px;
+  --ad-short-top: 11px;
+  --ad-tall-top: -15px;
+  --ad-shorter-left: calc(50% - (var(--ad-shorter-width) / 2));
+  --ad-short-left: calc(50% - (var(--ad-short-width) / 2));
+  --ad-tall-left: calc(50% - (var(--ad-tall-width) / 2));
+}
+
+.hidden {
+	display: none;
+}
+
+.red a {
+  color: lightcoral;
+}
+
+.green a {
+  color: lightgreen;
+}
+
+.pink a {
+  color: pink;
+}
+
+.coral a {
+  color: lightcoral;
+}
+
+img {
+  image-rendering: pixelated;
+}
+
+.iconimg img {
+	width: 54px;
+}
+
+.trait-icon {
+  display: inline-block;
+  width: 41px;
+  height: 41px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.trait-icon-highlight {
+  border: 1px solid red;
+}
+
+.hangout-needs-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 475px;
+}
+
+.hangout-need-bar {
+    display: inline-block;
+    flex: 0 0 150px;
+}
+
+.vendor-item-icon-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.vendor-item-icon-name > img {
+  margin-right: 10px;
+}
+
+#ui-dialog-body.Quest.Menu {
+  overflow-y: auto;
+  height: 500px;
+}
+
+#ui-dialog-body.Options.Menu {
+  height: 870px;
+}
+
+#ui-dialog-body.Skill.Menu {
+  height: 590px;
+}
+
+#ui-dialog-body .tabs-content {
+  width: calc(100% - 2em);
+}
+
+#ui-dialog:has(#ui-dialog-body.Social.Menu) {
+  width: 400px;
+}
+
+.social-bar-group {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.social-bar-group > img {
+  margin-right: 10px;
+}
+
+.social-bar-gauge {
+  width: 100px;
+  display: inline-block;
+}
+
+.avatar-height-shorter img {
+  width: var(--ad-shorter-width);
+  height: auto;
+  top: var(--ad-shorter-top) !important;
+}
+
+.avatar-height-short img {
+  width: var(--ad-short-width);
+  height: auto;
+  top: var(--ad-short-top) !important;
+}
+
+/* Do not apply height modifications to story banner avatar when tall */
+/* Because the top clips out of the background with some haircuts */
+div:not(#story-banner) > .avatar-height-tall img {
+  width: var(--ad-tall-width);
+  height: auto;
+  top: var(--ad-tall-top) !important;
+}
+
+#story-banner > .avatar-height-shorter img {
+  left: var(--ad-shorter-left) !important;
+}
+
+#story-banner > .avatar-height-short img {
+  left: var(--ad-short-left) !important;
+}
+
+#story-banner > .avatar-height-tall img {
+  left: var(--ad-tall-left) !important;
+}
+
+#story-banner .avatar-night {
+  filter: brightness(67%) grayscale(33%);
+}
+
+.kink-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 10px;
+  width: 500px;
+}
+
+.kink-item-icon {
+  display: flex;
+  flex: auto 1;
+  align-items: center;
+  gap: 5px;
+}
+
+.greyed-out {
+  color: grey;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pink-text {
+  color: pink;
+}
+
+.green-text {
+  color: green;
+}
+
+.alert-text {
+  color: lightcoral;
+}
+
+.red-text {
+  color: red;
+}
+
+.char-name {
+  color: DarkTurquoise;
+}
+
+.dialogue-text {
+  color: LightSteelBlue;
+}
+
+.yellow-text {
+  color: yellow;
+}
+
+.italic {
+  font-style: italic;
+}
+
+#ui-bar .passage[data-passage="Sidebar Top"] {
+  pointer-events: auto;
+}
+
+#ui-bar .passage[data-passage="Sidebar Top"] img {
+  pointer-events: none;
+}
+
+#ui-bar .passage[data-passage="Sidebar Top"] img [title],
+#ui-bar .passage[data-passage="Sidebar Top"] .tooltip,
+#ui-bar .passage[data-passage="Sidebar Top"] .icon {
+  pointer-events: auto;
+}
+
+/* Traits */
+
+.traits-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 340px auto;
+}
+
+.traits-info-container {
+    padding-left: 20px;
+    padding-top: 28px;
+}
+
+.traits-pc-owned {
+    text-align: center;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 5px;
+}
+
+.traits-added {
+    padding-top: 5px;
+}
+
+.traits-info-header {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.traits-info-header > img {
+    margin-right: 10px;
+}
+
+.traits-info-desc {
+    padding-top: 10px;
+}
+
+.traits-action {
+    padding-top: 10px;
+}
+
+.traits-maxxed {
+    padding-top: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    .traits-container {
+        grid-template-columns: auto;
+    }
+}

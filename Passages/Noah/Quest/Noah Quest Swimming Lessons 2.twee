@@ -1,0 +1,88 @@
+:: Noah Quest Swimming Lessons 2 [nobr]
+
+<<set $Minutes += 15>>
+
+<span class="dialogue-text">“Oh! I know!”</span> <span class="green-text"><span class="char-name">Noah</span> suddenly perks up, an idea springing to mind.</span> He turns towards you, placing both hands on your leg. <span class="dialogue-text">“You’re pretty good at swimming, right? Like you can float and swim fast and stuff?”</span> You nod, already seeing where this is going, <span class="dialogue-text">“How about you take me to the pool early on the weekends when hardly anyone else is there and teach me? Pretty please! I promise I’ll pick it up super-fast and do whatever you say!”</span> <span class="pink-text"><span class="char-name">Noah</span> begins to beg, lowering his face down to your legs and shaking his lower half back and forth in an attempt to mimic a dog.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+    },
+    {
+        Name: "Noah",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+But you weren’t sure, you’d never taught anyone to swim before and you’d have to give up one of your precious weekend mornings. It would be easier if <span class="char-name">Noah</span> took a class or just come clean about-<br>
+<br>
+
+<span class="dialogue-text">“PLEASSSEEEE!”</span> <span class="char-name">Noah</span> begged, <span class="dialogue-text">“I’ll do anything! I’ll do your chores and clean your room and suck your peepee whenever you want!”</span> <span class="pink-text">You blush at that last one, glancing towards the front door to ensure none of your family members walked in and heard it.</span> While those things would normally be enough for you to help your brother, you could tell he was desperate and are curious just how far you could push him. <span class="yellow-text">So, you pretend to think long and hard, unsure, and make it seem like a big deal, just to see what else he offers.</span><br>
+<br>
+
+<span class="dialogue-text">“How about this! If you teach me AND I kick that stupid Levi’s butt in the race, I’ll be your slave for an ENTIRE day when Daddy and Gabe aren’t home.”</span> <span class="pink-text">Your eyes perk up at this offer, which <span class="char-name">Noah</span> notices as he smiles.</span> <span class="dialogue-text">“You can make me do all your chores and make you food.”</span> <span class="char-name">Noah</span> smirks, knowing you well enough to know what you really would want him to do, <span class="dialogue-text">“And you can take away ALL my clothes, so I have to do them naked. And you can spank me or give me wedgies or make me suck your thingy as much as you want, and I won’t tell Daddy or anyone!”</span><br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+            Blush: 1,
+        },
+    },
+    {
+        Name: "Noah",
+        State: {
+            Mouth: "Smirk",
+            Eyes: "Tired",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span class="pink-text">Your eyes widen, <span class="char-name">Noah</span> was truly desperate. He was offering himself up to you on a silver platter. You imagine a day full of lewding your younger brother. Making him walk around and serve you naked, being able to redden his rear or hang him by his undies at will, with no chance of repercussions. A full day with <span class="char-name">Noah</span> as your personal slave, all for the price of teaching him to swim.</span> Though, you also note that his victory in the race was a condition for this reward, meaning you’d have to make sure you trained him well.<br>
+<br>
+
+You smile and agree, telling <span class="char-name">Noah</span> that he can’t back out no matter what you make him do, and he has to do whatever you say while you teach him.<br>
+<br>
+
+<span class="dialogue-text">“I’m not taking my trunks off at the public pool.”</span> <span class="char-name">Noah</span> adds as a condition, seeing right where your mind was going. You sigh but agree. You wouldn’t need to embarrass him at the pool anyway, <span class="pink-text">there would be plenty of that when you got your reward.</span><br>
+<br>
+
+<span style="color: gold;">Quest Acquired: <span class="dialogue-text">“Noah: Swimming Lessons”</span>!</span><br>
+<span class="greyed-out">Visit the City Pool on the weekends between 6am and 9am to continue this Quest.</span><br>
+<span class="greyed-out">Note: You can set your Event Outfits in your Closet. Event Outfits are what you change into when you are required to change during an event, for example, when you change to swim.</span><br>
+<br>
+
+<<set $InActiveQuests.delete("Noah: Swimming Lessons")>>
+<<set $ActiveQuests.push("Noah: Swimming Lessons")>>
+<<set $QuestLog.push(
+    {
+        Name: "Noah: Swimming Lessons",
+        State: 1,
+        ID: "Noah_S002",
+        Category: "Skill",
+        Type: "Quest",
+        Icon: "Noah",
+        Tags: ["Noah", "Skill", "Quest", "Pool"],
+        Description: "<span style=\"color:DarkTurquoise\">Noah</span> has asked you to help him learn how to swim. You should take him to the city pool early on the weekend so he can learn discreetly.",
+        Objectives: [
+            {
+                Name: "Visit the City Pool on the Weekend between 6AM and 9AM",
+                State: 0,
+                Total: 1,
+            },
+        ],
+    },
+)>>
+<<set $Notifications.push({
+    Name: "Quest Acquired!",
+    Icon: "Quests/Noah",
+    Description: "You have agreed to help <span style=\"color:DarkTurquoise\">Noah</span> learn how to swim. Visit the <span style=\"color:Teal\">City Pool</span> on the Weekends between 6AM and 9AM to continue this Quest.",
+})>>
+
+[[Continue|PH Living Room]]

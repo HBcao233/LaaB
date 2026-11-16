@@ -1,0 +1,85 @@
+:: Achievement Shop Entrance [nobr]
+
+You walk up to the the abandoned shop. You notice a sign hanging from the door that reads:<br>
+<br>
+
+<<if $CheatsMenu == 1>>
+    <span style="color:LightSteelBlue">“To be torn down. Previous owners left out of sadness upon learning that Cheats were enabled.”</span><br>
+    <br>
+
+    [[Leave|Boardwalk]]
+<<else>>
+    <span style="color:LightSteelBlue">“The catalog will reveal itself only to those who have Achieved something in life.”</span><br>
+    <br>
+
+    <<if $AchievementShopOpen>>
+        [[See what's in store|Achievement Shop]]
+    <<else>>
+        <span class="greyed-out">You need to have gained 3 AP (Achievement Points) or more to access the shop...</span><br>
+        Current AP: <<=$Achievements.getAchievementScore()>><br>
+    <</if>>
+    <br>
+    [[Leave|Boardwalk]]<br>
+    
+    <<if $Debug == 1>>
+        <br>
+        This is the Debug Control for the Achievement Shop. <strong>Warning: Do not use unless you know what you are doing!</strong><br>
+        <<link"Refresh">>
+            <<goto"Achievement Shop Entrance">>
+        <</link>><br>
+        <<link"Set Money to $100+">>
+            <<set $Money to 101>>
+            <<goto"Achievement Shop Entrance">>
+        <</link>><br>
+        <<link"Set Money to $1000+">>
+            <<set $Money to 1001>>
+            <<goto"Achievement Shop Entrance">>
+        <</link>><br>
+        <<link"Max Out Family Socials">>
+            <<set $NoahSocial to 120>>
+            <<set $GabeSocial to 120>>
+            <<set $DadSocial to 120>>
+            <<goto"Achievement Shop Entrance">>
+        <</link>><br>
+        <<link"Max Out Classmate Socials">>
+            <<set $LucasSocial to 120>>
+            <<set $BenSocial to 120>>
+            <<set $MichaelSocial to 120>>
+            <<set $CarterSocial to 120>>
+            <<set $JacksonSocial to 120>>
+            <<set $XavierSocial to 120>>
+            <<set $ThomasSocial to 120>>
+            <<set $FelixSocial to 120>>
+            <<goto"Achievement Shop Entrance">>
+        <</link>><br>
+        <<link"Reach Lucas Rank 1">>
+            <<set $LucasSocialRank to 1>>
+            <<goto"Achievement Shop Entrance">>
+        <</link>><br>
+        <<link"Complete Carter Quest">>
+            <<set $CompletedQuests.push("Carter: Park Clean Up")>>
+            <<goto"Achievement Shop Entrance">>
+        <</link>><br>
+        <<link"Complete Thomas Quest">>
+            <<set $CompletedQuests.push("Thomas: Out Sick")>>
+            <<goto"Achievement Shop Entrance">>
+        <</link>><br>
+        <<link"Complete Noah Quest">>
+            <<set $NoahSocialRank to 1>>
+            <<goto"Achievement Shop Entrance">>
+        <</link>><br>
+        <<link"Random Achievements">>
+            <<set $OddJobsCount to 30>>
+            <<set $SpankedByDad to true>>
+            <<set $SpankedByGabe to true>>
+            <<set $SpankedByRandolph to true>>
+            <<set $EnglishGrade to 100>>
+            <<set $MathGrade to 100>>
+            <<set $ScienceGrade to 100>>
+            <<set $HistoryGrade to 100>>
+            <<set $Bike to 1>>
+            <<goto"Achievement Shop Entrance">>
+        <</link>><br>
+    <</if>> 
+
+<</if>>

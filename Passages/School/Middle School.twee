@@ -1,0 +1,171 @@
+:: Middle School [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Middle School",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School",
+}>>
+
+/* Random Encounter Check */
+<<set _randomencounter to random(1, 50)>>
+
+/* Random Encounter Event Set-Up */
+<<set _reevents to []>>
+/* Only OC Encounters, so set to not work if OCs turned off. */
+<<if $CompletedQuests.includes("Enkys: Introduction") && $ToggleOCEnkys == 1 && $Time.before(8, 30)>>
+	<<set _reevents.push("OC Enkys Seen Getting Ready")>>
+<</if>>
+<<if $ToggleOCKade == 1 && $CompletedQuests.includes("Kade: Introduction") && $Time.between(14,30,15,30)>>
+	<<set _reevents.push("OC Kade School Pick Up Encounter")>>
+<</if>>
+/* Ensuring there are Events to play */
+<<if _reevents.length == 0>>
+	<<set _randomencounter to 50>>
+<</if>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+/* Quest Triggers */
+<<elseif $InActiveQuests.includes("Xavier: Collections") && $Time.schoolday() && $Time.after(14, 0)>>
+	<<include"Xavier Collections Quest 1">>
+<<elseif $ToggleOCKazu == 1 && $InActiveQuests.includes("Kazu: Unexpected Friendship") && $Time.schoolday() && $Time.after(14, 0)>>
+	<<include"OC Kazu Unexpected Friends with Felix">>
+<<elseif $InActiveQuests.includes("Carter: Connor") && $Time.schoolday() && $Time.between(7,19,7,41)>>
+	<<include"Carter Connor Intro">>
+	
+	/* Random Encounters */
+<<elseif _randomencounter == 1>>
+	<<set _event to _reevents.random()>> 
+	<<include _event>>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Preston Boys' Academy Middle School--</strong></big></span><br>
+You stand at the front gate of the <span style="color:Teal">Preston Boys' Academy</span>, a prestigious school that has an Elementary, Middle, and High School building. They each have a great reputation for their academic and extracurricular activities. You stand in front of the Middle School building, where you are currently a student. 
+<<if $Time.schoolday()>>
+	<<if $Time.ToD == "Morning">>
+		The school is busy as many students and teachers arrive for the day.
+	<<elseif $Time.ToD == "Day">>
+		Many students and staff wander around the school grounds.
+	<<elseif $Time.ToD == "Afternoon">>
+		The school is mainly empty save for a few students and staff lingering.
+	<<elseif $Time.ToD == "Night">>
+		All the lights of the school are out and the gate is locked.
+	<</if>>
+<<else>>
+	The school is empty on the weekends.
+<</if>><br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+
+/* BUS RIDE HOME */
+<<if $Time.between(15,0,15,30) && $Time.schoolday()>>
+	[[Ride Bus Home (0:20)|Bus Ride School][$BusRide to "Home"]]<br>
+	<<if $ActiveQuests.includes("Carter: Hero Award")>>
+		<span style="color:Gold">[!]</span>[[Ride Bus to Carter's House (0:20)|Carter Hero Award Intro Part 3 Bus]]<br>
+	<</if>>
+<</if>>
+
+/* NOT DRESSED PROPERLY */
+<<if $PlayerShoes.Type == "None">>
+	<<if $Time.schoolday() and $Time.before(17)>>
+		[[Enter School|School Not Dressed Proper]]<br>
+	<<else>>
+	<span style="color:lightcoral">The school's gates are locked.</span><br>
+	<</if>>
+<<elseif $PlayerTop.Type == "None" && $PlayerUnder.Type == "None" && $PlayerOuter.Type == "None" && $PlayerOver.Type == "None">>
+	<<if $Time.schoolday() and $Time.before(17)>>
+		[[Enter School|School Not Dressed Proper]]<br>
+	<<else>>
+	<span style="color:lightcoral">The school's gates are locked.</span><br>
+	<</if>>
+/* UNIFORMS */
+<<elseif $SchoolUniforms == 1>>
+    <<if !$PlayerBottoms.Tags.includes("Uniform") or !$PlayerTop.Tags.includes("Uniform") or $PlayerShoes.Type == "None">>
+		<<if $Time.schoolday() and $Time.before(17)>>
+			[[Enter School|School Not Dressed Proper]]<br>
+		<<else>>
+			<span style="color:lightcoral">The school's gates are locked.</span><br>
+		<</if>>
+	<<else>>
+		<<if $Time.schoolday() and $Time.before(17)>>
+			[[Enter School|School South Hallway]]<br>
+		<<else>>
+			<span style="color:lightcoral">The school's gates are locked.</span><br>
+		<</if>>
+	<</if>>
+
+/* WEEKEND SCHOOL LOCKED */
+<<elseif !$Time.schoolday()>>
+<span style="color:lightcoral">The school's gates are locked.</span><br>
+
+<<elseif $Time.schoolday() and $Time.after(17)>>
+	<span style="color:lightcoral">The school's gates are locked.</span><br>
+
+<<elseif $Time.schoolday() and $Time.before(5)>>
+	<span style="color:lightcoral">The school's gates are locked.</span><br>
+	
+/* ENTER SCHOOL */
+<<else>>
+[[Enter School|School South Hallway]]<br>
+<</if>>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+	<img src="Images\World Map\Individual Icons\Community Center.png">
+	[[Community Center (0:10)|Community Center][$Minutes += $TravelTime]]<br><img src="Images\World Map\Individual Icons\Entertainment District.png">
+	[[Entertainment District (0:10)|Entertainment District][$Minutes += $TravelTime]]<br><img src="Images\World Map\Individual Icons\Elementary School.png">
+	[[Elementary School (0:10)|Elementary School][$Minutes += $TravelTime]]<br>
+	<<else>>
+	<img src="Images\World Map\Individual Icons\Community Center.png">
+	[[Community Center (0:05)|Community Center][$Minutes += $TravelTime]]<br><img src="Images\World Map\Individual Icons\Entertainment District.png">
+	[[Entertainment District (0:05)|Entertainment District][$Minutes += $TravelTime]]<br><img src="Images\World Map\Individual Icons\Elementary School.png">
+	[[Elementary School (0:05)|Elementary School][$Minutes += $TravelTime]]<br>
+	<</if>>
+<</if>>
+<br>
+
+<div style="position: relative">
+
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 448px; top: 155px" alt="Town Map" usemap="#Enter">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="448,81,501,134" alt="Community Center" onclick="$.wiki('<<goto[[Community Center]]>><<set $Minutes += $TravelTime>>')" />
+
+<area shape="rect" coords="374,155,427,208" alt="Entertainment District" onclick="$.wiki('<<goto[[Entertainment District]]>><<set $Minutes += $TravelTime>>')" />
+
+<area shape="rect" coords="448,229,501,282" alt="Elementary School" onclick="$.wiki('<<goto[[Elementary School]]>><<set $Minutes += $TravelTime>>')" />
+
+
+</map>
+
+<<if $Time.schoolday() and $Time.before(17)>>
+<map name="Enter">
+<area shape="rect" coords="0,0,53,53" alt="Player Neighborhood" onclick="$.wiki('<<goto[[School South Hallway]]>>')" />
+</map>
+<</if>>
+<</if>>

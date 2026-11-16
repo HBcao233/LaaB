@@ -1,0 +1,313 @@
+:: GABE Inspect Sleeping [nobr]
+
+	<<include"Gabe Avatar Sleeping">>
+	You peak over at your elder brother <span style="color:DarkTurquoise">Gabe</span>, who is currently passed out in his bed. 
+	<<if $GabeStrippedSleeping != 1>>
+		He has no blanket and is currently only wearing a pair of $GabeUndies.Name, giving you a clear look at his muscled body. <span style="color:Pink">You can’t help but blush as your eyes are drawn to the slight boner poking up from his boxers.</span> 
+	<<elseif $GabeStrippedSleeping == 1>>
+		<span style="color:Pink">He is completely naked, his Large Erect Penis standing straight up, exposed and defenseless.</span>
+	<</if>><br>
+	<br>
+	<<if $GabeStrippedSleeping != 1>>
+		[[Remove his boxers (0:05)|GABE Remove Boxers Sleeping]]<br>
+	<<elseif $GabeStrippedSleeping == 1>>
+		<<link "Do something naughty (0:10)">>
+			<<set _random to ["GABE Grip Sleeping Penis", "Gabe Sleep Grip Penis"]>>
+			<<set _event to _random.random()>>
+			<<goto _event>>
+		<</link>><br>
+		[[Put his penis in your mouth (0:10)|GABE Suck Sleeping]]<br>
+		[[Smell his Underwear (0:10)|GABE Smell Worn Undies]]<br>
+	<</if>>
+
+	
+:: GABE Inspect Hallway PJ [nobr]
+
+	<<include"Gabe Avatar PJs">>
+	<span style="color:DarkTurquoise">Gabe</span> walks down the hallway in nothing but a pair of $GabeUndies.Name. He yawns tiredly and scratches his stomach.<br>
+	<br>
+	[[Give him a hug (0:02)|Gabe Hug]]<br>
+
+:: GABE Inspect Hallway Towel [nobr]
+
+	<<include"Gabe Avatar Towel">>
+	<span style="color:DarkTurquoise">Gabe</span> walks down the hallway wearing nothing but a towel that is loosely tied around his waist. His body is still wet and his hair drips as he walks by.<br>
+	<br>
+	[[Give him a hug (0:02)|Gabe Hug]]<br>
+	[[Pull off his towel|GABE Towel Pull Off]]<br>
+	[[Compliment him|GABE Towel Flirt]] <span style="color:Green">+Gabe</span><br>
+
+:: GABE Inspect Hallway [nobr]
+
+	<<set $GabeNoShoes to 1>>
+	<<include"Gabe Avatar Everyday">>
+	<span style="color:DarkTurquoise">Gabe</span> walks down the hallway. He seems tired, yawning and stretching his arms out as he passes by. <br>
+	<br>
+	[[Give him a hug (0:02)|Gabe Hug]]<br>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite 2")>>
+		<<if $PlayerUndies.Type != "None" or $PlayerBottoms.Type != "None">>
+			<<set $GabeBroLocal to "Hallway">>
+			[[Ask Gabe about Brochella|OC Zach Brochella Ask Gabe]]<br>
+		<</if>>
+	<</if>>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Gabe: Hang Out Intro")>>
+			<<link"Ask if Gabe wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Gabe Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Gabe: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Gabe Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: GABE Inspect Breakfast [nobr]
+
+	<<include"Gabe Avatar PJs">>
+	<span style="color:DarkTurquoise">Gabe</span> sits at the nook eating breakfast, tiredly struggling to keep his eyes open. He is wearing nothing but a pair of $GabeUndies.Name and <span style="color:Pink">you can’t help but notice a slight morning stiffy poking up.</span><br>
+	<br>
+	<<if $Breakfast != 1>>
+		[[Eat With (0:15)|GABE Eat With][$EatWith to "Breakfast"]]<br>
+	<</if>>
+
+:: GABE Inspect Dinner [nobr]
+
+	<<set $GabeNoShoes to 1>>
+	<<include"Gabe Avatar Everyday">>
+	<span style="color:DarkTurquoise">Gabe</span> sits at the nook eating dinner, or at least he would be was he not so distracted by his phone. Every time he starts to eat, a chime or ding from his phone sends him back to it.<br>
+	<br>
+	<<if $Dinner != 1>>
+		[[Eat With (0:15)|GABE Eat With][$EatWith to "Dinner"]]<br>
+	<</if>>
+
+:: GABE Inspect Lunch [nobr]
+
+	<<set $GabeNoShoes to 1>>
+	<<include"Gabe Avatar Everyday">>
+	<span style="color:DarkTurquoise">Gabe</span> sits at the nook eating lunch, or at least he would be was he not so distracted by his phone. Every time he starts to eat, a chime or ding from his phone sends him back to it.<br>
+	<br>
+	<<if $Lunch != 1>>
+		[[Eat With (0:15)|GABE Eat With][$EatWith to "Lunch"]]<br>
+	<</if>>
+
+:: GABE Inspect Showering [nobr]
+
+	<<if $GabeSocial >= 50 || $GabeSocialRank > 0>>
+		<<include "GABE Shower Asks You To Join">>
+	<<else>>
+		You enter the bathroom and are immediately greeted by a blast of hot steam. You wonder how your brother can even survive in water hot enough to produce this much steam! You look over and see <span style="color:DarkTurquoise">Gabe</span> in the shower. The curtain is drawn, but you can still see a blurry outline of him, <span style="color:Pink">including what appears to be the outline of a raging hard erection!</span><br>
+
+		[[Leave|PH Hallway]]
+	<</if>>
+
+:: GABE Inspect Changing [nobr]
+
+	<<include"Gabe Avatar Naked">>
+	As you walk in you freeze in shock as you are greeted by the sight <span style="color:Pink">Gabe’s Firm ass as he bends over to pick up his clothes. Having heard you enter, he turns around, giving you further view of his body as his Large Penis with Short Black Pubic Hair comes into view, dangling flacid between his legs.</span> <br>
+	<br>
+	<span style="color:LightSteelBlue">”What did I tell you about coming in my room!?”</span> He says angrily. He walks up to you, grabs you by the shoulder, and begins to push you backwards out of his room; <span style="color:Pink">unintentionally holding your face a few inches from his exposed cock!</span><br>
+	<<set $SeenGabeNaked += 1>>
+	
+:: GABE Inspect Porn Room [nobr]
+
+	You get on your hands and knees and peek underneath the door. You see who you believe is <span style="color:DarkTurquoise">Gabe</span>, or at least his lower legs, sitting at his computer desk. Strangely, his $GabeUndies.Name are pulled down around his ankles and he seems to be thrusting violently. You blush and jump back to your feet upon realizing what he is doing.<br>
+	[[Leave|PH Hallway]]
+
+:: GABE Inspect Lifting [nobr]
+
+	<<set $GabeNoShirt to 1>>
+	<<set $GabeNoShoes to 1>>
+	<<include"Gabe Avatar Everyday">>
+	<span style="color:DarkTurquoise">Gabe</span> sits at his workout bench lifting large weights. You can hear his heavy breathing as he alternates between hands. He has his earbuds in, listening to loud music as he works out, and thus hasn’t seemed to have noticed you enter.<br>
+	<br>
+	<<if $GabeSocial > -50 or $GabeSocialRank > 0>>
+		[[Ask to lift weights (0:25)|GABE Lift Weights With]]<br>
+	<</if>>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite 2")>>
+		<<if $PlayerUndies.Type != "None" or $PlayerBottoms.Type != "None">>
+			<<set $GabeBroLocal to "Bedroom">>
+			[[Ask Gabe about Brochella|OC Zach Brochella Ask Gabe]]<br>
+		<</if>>
+	<</if>>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Gabe: Hang Out Intro")>>
+			<<link"Ask if Gabe wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Gabe Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Gabe: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Gabe Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: GABE Inspect Computer Games [nobr]
+
+	<<set $GabeNoShoes to 1>>
+	<<include"Gabe Avatar Everyday">>
+	<span style="color:DarkTurquoise">Gabe</span> sits at his computer playing online games with his friends. He quickly switches from laughing to swearing depending on how well he is doing. He notices you out of the corner of his eye and frowns. <span style="color:LightSteelBlue">“You know you’re not allowed in here without my permission. Get out before I decide to use you as a footstool.”</span> <br>
+	<br>
+	[[Ask to watch (0:20)|GABE Watch Computer Games]]<br>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite 2")>>
+		<<if $PlayerUndies.Type != "None" or $PlayerBottoms.Type != "None">>
+			<<set $GabeBroLocal to "Bedroom">>
+			[[Ask Gabe about Brochella|OC Zach Brochella Ask Gabe]]<br>
+		<</if>>
+	<</if>>
+
+:: GABE Inspect Computer Games PJ [nobr]
+
+	<<include"Gabe Avatar PJs">>
+	<span style="color:DarkTurquoise">Gabe</span> sits at his computer playing online games with his friends. He quickly switches from laughing to swearing depending on how well he is doing. He notices you out of the corner of his eye and frowns. <span style="color:LightSteelBlue">“You know you’re not allowed in here without my permission. Get out before I decide to hang you on my wall by your underwear.” </span> <br>
+	<br>
+	[[Ask to watch (0:20)|GABE Watch Computer Games]]<br>
+
+:: GABE Inspect Texting Kitchen [nobr]
+
+	<<set $GabeNoShoes to 1>>
+	<<include"Gabe Avatar Everyday">>
+	<span style="color:DarkTurquoise">Gabe</span> lays down on the bench of the nook, texting and watching videos on his phone. You don’t recognize what he’s watching, but he seems to be enjoying it.<br>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Gabe: Hang Out Intro")>>
+			<<link"Ask if Gabe wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Gabe Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Gabe: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Gabe Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: GABE Inspect TV [nobr]
+
+	<<set $GabeNoShoes to 1>>
+	<<include"Gabe Avatar Everyday">>
+	<span style="color:DarkTurquoise">Gabe</span> lays splayed on the couch watching TV. While he looks uninterested in what he is watching, he doesn’t look away, implying he at least tolerates the show.<br>
+	<br>
+	<<if $GabeSocial >= 50 or $GabeSocialRank > 0>>
+		[[Cuddle & Watch TV (0:30)|Gabe Cuddle TV]]<br>
+	<</if>>
+	[[Watch TV With (0:30)|GABE Watch TV]]<br>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite 2")>>
+		<<if $PlayerUndies.Type != "None" or $PlayerBottoms.Type != "None">>
+			<<set $GabeBroLocal to "TV">>
+			[[Ask Gabe about Brochella|OC Zach Brochella Ask Gabe]]<br>
+		<</if>>
+	<</if>>
+	<<if $PlayerBottoms.Type != "None" && $PlayerBottoms.Type != "Towel">>
+		<div id="HangOutHome">
+		<<if $InActiveQuests.includes("Gabe: Hang Out Intro")>>
+			<<link"Ask if Gabe wants to Hang Out">>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<goto "Gabe Hang Out First Time">>
+			<</link>><br>
+		<<elseif $CompletedQuests.includes("Gabe: Hang Out Intro")>>
+			<<link"Want to hang out?">>
+			<<replace"#HangOutHome">>
+				<span style="color:Yellow">Where?</span><br>
+				<<set $HangOutNeed to {
+					Energy: 100,
+					Fun: 20,
+					Comfort: 20,
+				}>>
+				<<link"The Park (0:10)<br>">>
+					<<set $HangOutClothes to "Everyday">>
+					<<set $Minutes += 10>>
+					<<goto "Gabe Hang Out Go To Park">>
+				<</link>>
+			<</replace>>
+			<</link>>
+		<</if>>
+		</div>
+	<</if>>
+
+:: GABE Inspect TV PJ [nobr]
+
+	<<include"Gabe Avatar PJs">>
+	<span style="color:DarkTurquoise">Gabe</span> lays splayed on the couch watching TV in nothing but his $GabeUndies.Name. While he looks uninterested in what he is watching, he doesn’t look away, implying he at least tolerates the show.<br>
+	<br>
+	<<if $GabeSocial >= 50 or $GabeSocialRank > 0>>
+		[[Cuddle & Watch TV (0:30)|Gabe Cuddle TV]]<br>
+	<</if>>
+	[[Watch TV With (0:30)|GABE Watch TV]]<br>
+
+:: GABE Inspect Texting Bedroom PJ [nobr]
+
+	<<include"Gabe Avatar PJs">>
+	<span style="color:DarkTurquoise">Gabe</span> lays on his stomach across his bed, texting away on his phone. He is wearing nothing but a pair of $GabeUndies.Name, giving you a good look at his body. He is facing away from you, and thus hasn’t noticed you yet. <span style="color:Pink">You, on the other hand, can’t help but notice a glimpse of his balls peeking out from his boxers!</span><br>
+	
+:: GABE Inspect Homework Computer [nobr]
+
+	<<set $GabeNoShoes to 1>>
+	<<include"Gabe Avatar Everyday">>
+	<span style="color:DarkTurquoise">Gabe</span> sits at his computer desk doing homework. He seems to be frustrated, either from the difficulty of the assignment or the sheer desire to be doing anything else. He notices you, raising an eyebrow, but doesn’t immediately demand that you leave like he normally does.<br>
+	<br>
+	<<if $ActiveQuests.includes("Zach: Brochella Lite 2")>>
+		<<if $PlayerUndies.Type != "None" or $PlayerBottoms.Type != "None">>
+			<<set $GabeBroLocal to "Bedroom">>
+			[[Ask Gabe about Brochella|OC Zach Brochella Ask Gabe]]<br>
+		<</if>>
+	<</if>>

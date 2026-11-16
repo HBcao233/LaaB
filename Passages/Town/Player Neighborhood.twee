@@ -1,0 +1,108 @@
+:: Player Neighborhood [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Northend",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+
+<<set _randomevent to random(1, 50)>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+	/* Random Event Code */
+<<elseif _randomevent == 1>>
+	<<set _randomeventpassage to {
+			"Street Random Encounter Icecream Truck": 10,
+			"Street Random Encounters Stray Cat": 10,
+			"Street Random Encounter Car Speeding By": 10,
+	}>>
+	<<set _event to _randomeventpassage.random()>>
+	<<include _event>>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Northend--</strong></big></span><br>
+You stand on the sidewalk in your neighborhood. It is full of many single and two-story middle-class houses. A majority of the houses have a well-kept, grassy front lawn with a path leading to the front door. Large bushes act as a sort of fence, though they do little to obscure the front yards. There is also a small playground on the corner of the street. 
+<<if $Time.ToD == "Morning">>
+	The street is mainly empty, however, many lights begin coming on in the houses as people get ready for their day. A few people mow their lawns.
+<<elseif $Time.ToD == "Day">>
+	Quite a few people walk the street, jogging, walking their dogs, or taking relaxing strolls. Cars also drive by heading into town. Many of the houses have their curtains or windows open, giving you glimpses into their homes.
+<<elseif $Time.ToD == "Afternoon">>
+	Many cars pass by as people begin to return home at the end of their day. There are a few groups of people, chatting with neighbors in their front yard. 
+<<elseif $Time.ToD == "Night">>
+	The street is quiet, outside of the occasional car or dog barking. The road and sidewalks are illuminated by the various street lights.
+<</if>><br>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+[[Enter Northend|Northend]] <br>
+
+[[Wait (0:05)|Player Neighborhood][$Minutes += 5]]<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+	<<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Other Neighborhood.png">
+	[[Wald Street (0:10)|Wald Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Two Story Neighborhood.png">
+	[[Dellwood Street (0:10)|Dellwood Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:10)|Shopping District][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Other Neighborhood.png">
+	[[Wald Street (0:05)|Wald Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Two Story Neighborhood.png">
+	[[Dellwood Street (0:05)|Dellwood Street][$Minutes += $TravelTime]]<br>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:05)|Shopping District][$Minutes += $TravelTime]]<br>
+	<</if>>
+<</if>>
+<br>
+
+<div style="position: relative">
+
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 300px; top: 7px" alt="Town Map" usemap="#Enter">
+
+<<include"World Map Quest Marker Tracker">>
+
+</div>
+
+/*
+<br>
+<img src="Images\Outdoor Maps\Neighborhood Map.png" alt="Neighborhood Map" usemap="#Town">
+*/
+<map name="Town">
+<area shape="rect" coords="152,7,205,60" alt="2Story Neighborhood" onclick="$.wiki('<<goto[[Dellwood Street]]>><<set $Minutes += $TravelTime>>')" />
+
+<area shape="rect" coords="374,7,427,60" alt="Other Neighborhood" onclick="$.wiki('<<goto[[Wald Street]]>><<set $Minutes += $TravelTime>>')" />
+
+<area shape="rect" coords="226,81,279,134" alt="Shopping District" onclick="$.wiki('<<goto[[Shopping District]]>><<set $Minutes += $TravelTime>>')" />
+
+</map>
+
+<map name="Enter">
+<area shape="rect" coords="0,0,53,53" alt="Player Neighborhood" onclick="$.wiki('<<goto[[Northend]]>>')" />
+</map>
+
+<</if>>

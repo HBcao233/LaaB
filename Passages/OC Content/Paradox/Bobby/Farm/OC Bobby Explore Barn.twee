@@ -1,0 +1,126 @@
+:: OC Bobby Explore Barn 1 [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You explore around a while, ending up at the large chicken coop. The massive amount of chickens wandering around and clucking is a little off-putting. <span style="Color: Yellow">Despite their small size, if they were to escape and suddenly develop a taste for human flesh, you’re pretty sure they overpower you without much effort.</span> Then again, that may just be your young mind putting pieces together that don’t really fit. You laugh, leaning on the fence and staring down at the birds as a few rush towards you, probably expecting you to feed them. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You can’t get over how many chickens there are though. There has to be tons and they take care of all of them! How do they do that? And that’s just this one animal, they have tons of animals on this farm, all needing different care and food and shelter. It makes your head spin just thinking about all that must come with running a farm! <span style="Color: LightGreen">Really makes you appreciate how much work <span style="color:DarkTurquoise">Bobby</span> puts into it and why they need help every now and then.</span> <br>
+<br>
+<div id="choice">
+    <<link "Watch the chickens<br>">>
+    <<replace"#choice">>
+        You decide to just relax there for a few minutes and watch the chickens as they go about their lives. Clucking, pecking at the ground searching for a snack, and how their heads tilt quickly as they look around. <span style="Color: LightGreen">It’s pretty cool to see so many chickens in their natural state like this!</span> <br>
+        <<needChange "Fun" 10>>
+        <<addMoodlet "Stress" 0>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <</replace>>
+    <</link>>
+    <<requiresTrait "Childish" "Mimic the chickensv<br>">>
+    <<replace"#choice">>
+        Bending your arms together as if they were wings, you bend down low and begin to cluck and bob your head, mimicking the chicken’s movement. A few of them turn in your direction, tilting their own heads in confusion as you copy their movements. You cluck back at them, so this just seems to scare most of them off. <span style="Color: LightGreen">You have to laugh at the silliness of the movement, though enjoy yourself pretending to be a chicken for a few minutes.</span> <br>
+        <<needChange "Fun" 10>>
+        <<addMoodlet "Stress" 0>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <</replace>>
+    <</requiresTrait>>
+</div>
+
+:: OC Bobby Explore Barn 2 [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You walk into the barn where the horses are kept and begin to walk past each of their stalls, careful to keep away from the creatures since their large mouths have a habit of snapping at your hair. <span style="Color: LightGreen">Still, they are beautiful creatures and seem very well-cared for.</span> The thing that surprises you the most is that the stalls don’t stink that much. You imagine, based on what you’ve seen or read, that they’d smell, even just a little bit, but the barn is pretty well cleaned, and all of the horses seem very well groomed. <span style="color:DarkTurquoise">Bobby</span> <span style="Color: LightGreen">and his family must care deeply about the horses.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You step closer to the friendliest looking one, reading out your hand slowly to pet its mane. It allows you, neighing as you do so and causing you to smile. You wonder what it would be like to ride a horse like this. To get on the saddle and just ride off into the sunset like they do in the movies. <span style="Color: LightGreen">That would be so cool!</span> <br>
+<br>
+
+<<if $Player.Traits.includes("Neat")>>
+    [Neat] <span style="Color: Yellow">But then you hear something that sounds like a bunch of pebbles hitting the ground and piece together that the horse has just pooped. Though you don’t see it, the mere thought is enough to gross you out as you decide to leave the horse be and keep exploring.</span> <br>
+    <br>
+<</if>>
+
+<<needChange "Fun" 10>>
+<<addMoodlet "Stress" 0>>
+<br>
+[[Continue|OC Bobby Farm Local]]
+
+
+:: OC Bobby Explore Barn 3 [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You decide to wander around the barn to see all that it has to offer. Sure, you know of the animal pens and the stables where the horses are kept, but you wonder what sort of interesting treasures you could find just by wandering around. So, you begin to explore! <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+The first thing you notice is a barn owl, you wonder if this is how they get their name, nesting in the rafters. It seems to be asleep, barely visible from down here. Then you see an old tractor that looks like it is from over 30 years ago, retro and rusted. Parts of it have been taken out and it seems they may be trying to fix it, though you doubt it’ll run anytime soon. <br>
+<br>
+
+<<if [$Player.Traits.includes("Unlucky") or $Player.Traits.includes("Clumsy")] && random(1, 2) == 1>>
+    <span style="Color: LightCoral">But then you step on the end of a rack, just like in the cartoons, and nail yourself in the nose! You yelp, stumbling back as you check to make sure you’re not bleeding, but then stumble again, this time backwards.</span> <span style="Color: Pink">Your bottoms also get caught on a farming tool, yanking themselves completely off your body as you fall into a pile of hay! <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Eyes: "Tired",
+                Blush: 1,
+            },
+            Clothes: {
+                Bottoms: $None,
+        },
+        },
+    ]>>
+    <<ad _ad>>
+
+    You sigh, standing up with your lower half now exposed. Just your luck.</span> Maybe you shouldn’t be standing so close to farming equipment if you’re in such danger of tripping over everything. You quickly retrieve your bottoms before someone sees you and exit the barn. Despite the annoying outcome, <span style="Color: Pink">you do think it was pretty funny looking back.</span> <br>
+    <<needChange "Fun" 10>>
+    <<addMoodlet "Stress" 0>>
+    <br>
+    [[Continue|OC Bobby Farm Local]]
+<<elseif $Player.Traits.includes("Outdoorsy") && random(1, 2) == 1>>
+    In the corner of the barn, you spot some riding supplies and instantly dash over. <span style="Color: LightGreen">Pristine saddles, a cowboy hat, and big leather boots! You are giddy at the sight, wondering what it would be like to ride a horse through the great outdoors. You wonder if you could ever convince <span style="color:DarkTurquoise">Bobby</span> to take you camping and let you ride one of the horses to your campsite to live like real a cowboy! That would be so awesome!</span> <br>
+    <<needChange "Fun" 10>>
+    <<addMoodlet "Stress" 0>>
+    <br>
+    [[Continue|OC Bobby Farm Local]]
+<<else>>
+    Something strange catches your eyes, <span style="Color: Yellow">a small doll seeming sewn out of hay.</span> It looks ancient, older than even Your Father, and you’re so scared to touch it since it seems like it would fall to pieces! Still, your attention is caught on the doll, but creepy and kind of wholesome. <br>
+    <br>
+    You wonder if it belonged to someone in <span style="color:DarkTurquoise">Bobby</span>’s family, maybe his grandmother, and how long it’s been stuck in here in this dark corner. It really makes you think about the memories everything in this old barn must contain and just how long it’s been here. You remember <span style="color:DarkTurquoise">Bobby</span> mentioning that the farms predate the town, but seeing this old doll really cements that. <span style="Color: LightGreen">It’s kind of cool, like a connection to the past!</span> <br>
+    <<needChange "Fun" 10>>
+    <<addMoodlet "Stress" 0>>
+    <br>
+    [[Continue|OC Bobby Farm Local]]
+<</if>>

@@ -1,0 +1,102 @@
+:: Test [nobr]
+
+/* 
+<img @src="`Images/Icons/Needs/Test.png`" style="width: 45px; height: 45px;">
+
+<img @src="`Images/Icons/Needs/Test.png`" style="width: 90px; height: 90px;">
+
+<<socialChange "Lucas" 5>>
+<<socialChange "Ben" 5>>
+<<socialChange "Michael" 5>>
+<<socialChange "Carter" 5>>
+<<socialChange "Jackson" 5>>
+<<socialChange "Thomas" 5>>
+<<socialChange "Xavier" 5>>
+<<socialChange "Felix" 5>>
+<<socialChange "Noah" 5>>
+<<socialChange "Gabe" 5>>
+<<socialChange "Dad" 5>>
+
+<br>
+--Strip Store Clothing Test--<br>
+<<set _Random to {
+"Event 1": 10,
+"Event 2": 10,
+}>>
+<<set _Random["Event 3"] = 10>>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+<<= _Random.random()>><br>
+
+
+<<link"Strip Character">>
+    <<stripCharacter "Naked">>
+    <<goto"Test">>
+<</link>><br>
+<<link"Add Clothes to Closet">>
+    <<storeClothing "Closet" "Naked" 1>>
+    <<goto"Test">>
+<</link>><br>
+<<link"Store Clothing">>
+    <<storeClothing "Store" "Naked" 1>>
+    <<goto"Test">>
+<</link>><br>
+<<link"Restore Clothing">>
+    <<storeClothing "Restore" "Naked">>
+    <<goto"Test">>
+<</link>><br>
+<<link"Store Clothing wo/ Undies">>
+    <<storeClothing "Store" "Undies" 1>>
+    <<goto"Test">>
+<</link>><br>
+<<link"Restore Clothing wo/ Undies">>
+    <<storeClothing "Restore" "Undies">>
+    <<goto"Test">>
+<</link>><br>
+
+Athletic Skill Points Before: $Skill.Athletics.SP<br>
+Athletic Total Skill Points Before: $Skill.Athletics.TotalSP<br>
+<<skillPoints "Athletics" 10>>
+Athletic Skill Points After: $Skill.Athletics.SP<br>
+Athletic Total Skill Points After: $Skill.Athletics.TotalSP<br>
+
+<<skillDiff "Athletics" 50>>
+
+<<link"Add Pained">>
+    <<addMoodlet "Pained" 5>>
+    <<goto"Test">>
+<</link>><br>
+<<link"Add Stress">>
+    <<addMoodlet "Stress" 1>>
+    <<goto"Test">>
+<</link>><br>
+    <<addMoodlet "Stress" 1>>
+<<set _arousalGainBS to ["Butt", "Shaft"]>>
+<<set _arousalGainKink to ["Spankee"]>>
+<<arousalGain 5 _arousalGainBS _arousalGainKink>>
+---<br>
+<<set _skilltypes to ["Gym"]>>
+<<skillCheck "Athletics" 50>>
+---<br>
+<<skillCheck "Athletics" 50 _skilltypes>> */
+<br>
+
+<<addClothing "Closet" "Undies" "Briefs" "Green">>
+
+<br>
+[[Back to Bedroom|Player Bedroom]]<br>
+
+
+<img @src="`Images/Icons/Dev/Beege.png`" style="width: 90px; height: 90px;"><br>
+<img @src="`Images/Icons/Dev/Monta.png`" style="width: 90px; height: 90px;"><br>
+<img @src="`Images/Icons/Dev/Oni.png`" style="width: 90px; height: 90px;"><br>
+<img @src="`Images/Icons/Dev/Ron.png`" style="width: 90px; height: 90px;"><br>

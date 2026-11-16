@@ -1,0 +1,26 @@
+:: DAD Help Cook Dinner [nobr]
+
+You walk up to <span style="color:DarkTurquoise">Your Father</span> and ask if you could help him cook dinner.<br>
+
+<<set _ad to [
+    {
+        Name: "Dad",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Sure thing! You know, I may not be a world class chef, but I still have a couple things I can teach you!”</span> He pats you on the back and points towards to pantry, <span style="color:LightSteelBlue">“If you can grab me the ingredients as I list them out that would be perfect.”</span> You help <span style="color:DarkTurquoise">Your Father</span> prepare dinner, happily grabbing him things from the pantry and fridge as he explains his cooking process to you. He may not be the best cook, but you do learn a lot.<br>
+<<skillPoints "Cooking" 5>>
+<<set $Minutes += 25>>
+<<socialChange "Dad" 3>>
+<br>
+[[Continue|PH Kitchen]]

@@ -1,0 +1,86 @@
+:: PassageReady {"position":"525,1150","size":"100,100"}
+/* Needs Cheats */
+<<if $CheatsEnergy == 1>><<set $Player.Energy to 5>><</if>>
+<<if $CheatsEnergy == 2>><<set $Player.Energy to 50>><</if>>
+<<if $CheatsEnergy == 3>><<set $Player.Energy to 100>><</if>>
+
+<<if $CheatsHunger == 1>><<set $Player.Hunger to 0>><</if>>
+<<if $CheatsHunger == 2>><<set $Player.Hunger to 50>><</if>>
+<<if $CheatsHunger == 3>><<set $Player.Hunger to 100>><</if>>
+
+<<if $CheatsHygiene == 1>><<set $Player.Hygiene to 0>><</if>>
+<<if $CheatsHygiene == 2>><<set $Player.Hygiene to 50>><</if>>
+<<if $CheatsHygiene == 3>><<set $Player.Hygiene to 100>><</if>>
+
+<<if $CheatsFun == 1>><<set $Player.Fun to 0>><</if>>
+<<if $CheatsFun == 2>><<set $Player.Fun to 50>><</if>>
+<<if $CheatsFun == 3>><<set $Player.Fun to 100>><</if>>
+
+<<if $CheatsBladder == 1>><<set $Player.Bladder to 10>><</if>>
+<<if $CheatsBladder == 2>><<set $Player.Bladder to 50>><</if>>
+<<if $CheatsBladder == 3>><<set $Player.Bladder to 100>><</if>>
+
+<<if $CheatsArousal == 1>><<set $Player.Arousal to 0>><</if>>
+<<if $CheatsArousal == 2>><<set $Player.Arousal to 65>><</if>>
+<<if $CheatsArousal == 3>><<set $Player.Arousal to 130>><</if>>
+
+/* pre render tasks */
+
+<<if $DoNoahStatInit>>
+    <<include "Equipment Stat Init">>
+    <<include "Noah Equipment Init">>
+    <<include "NOAH Equipment">>
+    <<set $DoNoahStatInit to false>>
+<</if>>
+
+<<if $DoEquipmentStatInit>>
+    <<include "Equipment Stat Init">>
+    /* This will reload and update all NPC clothing */
+    <<include "NOAH Equipment">>
+    <<include "GABE Equipment">>
+    <<include "LUCAS Equipment">>
+    <<include "BEN Equipment">>
+    <<include "CARTER Equipment">>
+    <<include "MICHAEL Equipment">>
+    <<include "JACKSON Equipment">>
+    <<include "THOMAS Equipment">>
+    <<include "XAVIER Equipment">>
+    <<include "FELIX Equipment">>
+    <<include "DAD Equipment">>
+    <<set $DoEquipmentStatInit to false>>
+<</if>>
+
+<<if $DoConsumableInit>>
+    <<include "Consumable Init">>
+    <<set $DoConsumableInit to false>>
+<</if>>
+
+<<if $DoAchievementsInit>>
+    <<include "Achievements Init">>
+    <<set $DoAchievementsInit to false>>
+<</if>>
+
+<<if $DoAvatarDisplayInit>>
+    <<include "Avatar Display Init">>
+    <<set $DoAvatarDisplayInit to false>>
+<</if>>
+
+<<if $DoOCCharactersInit>>
+    <<include "OC Characters Init">>
+    <<set $DoOCCharactersInit to false>>
+<</if>>
+
+<<if $DoTraitsInit>>
+    <<include "Traits Init">>
+    <<set $DoTraitsInit to false>>
+<</if>>
+
+<<if $SeenNotifications>>
+    <<set $Notifications to []>>
+    <<unset $SeenNotifications>>
+<</if>>
+
+<<if $QuestVerUpdate>>
+    <<include"Quest Version Update">>
+    <<unset $QuestVerUpdate>>
+<</if>>

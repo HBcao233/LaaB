@@ -1,0 +1,94 @@
+:: OC Miller House Isaiah Room [nobr]
+
+<<if $OCKaydenBabysit.Active == 1>>
+    <<if $OCKaydenBabysit.State == "PreDin" && $Time.after(18)>>
+        <<goto"Millers Babysitting Dinner">>
+    <<elseif $OCKaydenBabysit.State == "PostDin" && $Time.after(19, 30)>>
+        <<goto"Millers Babysitting Bath Time">>
+    <<elseif $OCKaydenBabysit.State == "Bath" && $Time.after(20)>>
+        <<goto"Millers Babysitting Bath Time Bath Done">>
+    <<elseif $OCKaydenBabysit.State == "Sleep" && $Time.after(21)>>
+        <<goto"Millers Babysitting Ending">>
+    <</if>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Isaiah's Bedroom--</strong></big></span><br>
+<<set $Location to {
+	Name: "Isaiah's Bedroom",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+
+You are standing in the middle of <span style="color:DarkTurquoise">Isaiah</span>'s room. It is a bit bigger than yours, has orange and beige colored walls with white shag carpets by his computer desk, and under the bed with his bed in the corner on the opposite wall. There is a large window showing the beautiful backyard on the back wall. In the middle of the room is a mini couch facing a medium-sized TV on the wall, which almost reminds you of a small living room. <br>
+<br>
+
+<<if $OCKaydenBabysit.Active == 1 && ["PreDin", "PostDin"].includes($OCKaydenBabysit.State)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<set _mouth to "Frown">>
+        <<set _eyes to "Sad">>
+    <<else>>
+        <<set _mouth to "Happy">>
+        <<set _eyes to "Normal">>
+    <</if>>
+    <<set _ad to [
+        {
+            Name: "OC Kayden",
+            State: {
+                Outfit: "Everyday",
+                Mouth: _mouth,
+                Eyes: _eyes,
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+    <strong>Kayden: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+<<elseif $OCKaydenBabysit.Active == 1>>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<link"Play his video games (0:10)">>
+        <<set $Minutes += 10>>
+        <<goto "Millers Babysitting Isaiah Video Games">>
+    <</link>><br>
+    <<link"Snoop through his computer (0:10)">>
+        <<set $Minutes += 10>>
+        <<goto "Millers Babysitting Isaiah Computer">>
+    <</link>><br>
+    <<link"Snoop through his desk (0:10)">>
+        <<set $Minutes += 10>>
+        <<goto "Millers Babysitting Isaiah Desk">>
+    <</link>><br>
+    <<link"Sniff His Undies (0:05)">>
+        <<set $Minutes += 5>>
+        <<goto "Millers Babysitting Isaiah Closet">>
+    <</link>><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Isaiah's Bathroom (0:01)|OC Miller House Isaiah Bath][$Minutes += 1]] <br>
+	[[Hallway (0:01)|OC Miller House Hallway][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+/* House Map */
+<div style="position: relative">
+	<img src="Images\NPC Homes\Miller House\Miller House.png" 
+style="position: absolute; left: 0; top: 0"  alt="Miller Map" usemap="#MillerHouse">
+	<img src="Images\NPC Homes\Miller House\Room Marker.png" 
+style="position: absolute; left: 270px; top: 108px"  alt="Miller Map" usemap="#MillerHouse">
+</div>
+
+<map name="MillerHouse">
+    <area shape="rect" coords="216,108,269,161" alt="Isaiah Bath" onclick="$.wiki('<<goto[[OC Miller House Isaiah Bath]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="58,162,319,215" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="162,216,215,269" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+</map>

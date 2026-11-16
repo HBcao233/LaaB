@@ -1,0 +1,86 @@
+:: OC Kollin Intro 2 [nobr]
+
+<span style="color:LightSteelBlue">“No problem! Glad I could be of help!”</span> The boy smiles as he puts his things back in his bag and you catch a glimpse of all the ourdoorsy gear he has in it. You wonder if he would ever get worried about being lost in the forest. As you try to clean off your clothes, you can't help but notice that the boy's clothes had small holes and cuts all over despite looking almost new, as indicated by their vibrant colors. Someone who runs around the muddy forest like this surely can't afford to rarely wash their clothes, can they?<br>
+                            
+            /* AVATAR DISPLAY */
+            <<set $AD.Name to "Kollin">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Happy">>
+            <<set $AD.Outfit to "Everday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC KOLLIN Avatar Equipment Set">>
+            /* VARIABLE OVERRIDES */
+        <div style="position: relative">
+            <<include"Avatar Display">>
+            /* AVATAR DISPLAY */
+            <<set $AD.Name to "Player">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Happy">>
+            <<set $AD.Outfit to "Everday">>
+            <<set $AD.Hard to 0>>
+                <<include"Player Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+                <div style="position: absolute; left: 125px; top: 0px">
+            <<include"Avatar Display">>
+        </div>
+            /* EMPTY LAYER TO END AVATARS */
+            <img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+        </div>
+
+<span style="color:LightSteelBlue">“My name's Schäfer <span style="color:DarkTurquoise">Kollin</span>! You can just call me Kollin though.”</span> The boy proclaims, handing you a business card, <span style="color:LightSteelBlue">“The best private investigator in all of Opal City.”</span> You read the card, which echoed his claims and had what you could only guess was a radio frequency in place of a phone number, which matched the walkie-talkie on the strap of his bag. <span style="color:LightSteelBlue">“No offense, but you look a bit lost. Most experienced hikers don't accidentally walk into trouble like that. I know these woods like the back of my hand, so I could show you the way back to civilization, if you'd like.”</span><br>
+<br>
+
+<div id="choice">
+    <<link "Accept">>
+        <<replace "#choice">>
+            You agree that following <span style="color:DarkTurquoise">Kollin</span>'s lead would probably be the best course of action and tell him to lead the way. As you walk, the two of you chat and you learn that <span style="color:DarkTurquoise">Kollin</span> attends the public school, rather than Preston, which explains why you never crossed paths with him before or noticed him. He also talks about his investigative business and claims to have a blog where he posts info on all his investigations. You ask if he was in the forest investigating anything, but he shakes his head.<br>
+            <br>
+
+            <span style="color:LightSteelBlue">“No, I'm between investigations right now, I was just surveying.”</span> Despite leading you in seemingly random directions, he walks with confidence, and you soon find yourself exiting out onto the familiar Dellwood street. <span style="color:LightSteelBlue">“Ta-da!”</span> He smiles as the two of you exit the woods, <span style="color:LightSteelBlue">“It's as easy as that. Anyway, I guess I'll see you around. Remember, if you ever have a mystery to solve or an investigation to investigate, you know who to call!”</span> You laugh and thank the boy as his watch beeps. <span style="color:LightSteelBlue">"Perfect timing!"</span> He proclaims before bidding you farewell and running off.<br>
+            <<socialChange "Kollin" 5 1>>
+            <<set $CompletedQuests.push("Kollin: Boy in the Woods")>>
+            <<set $InActiveQuests.delete("Kollin: Boy in the Woods")>>
+            <<needChange "Fun" 15>>
+            <br>
+            [[Continue|Dellwood Street]]
+        <</replace>>
+    <</link>><br>
+    <<link "Refuse">>
+        <<replace "#choice">>
+            You refuse, stating that you know the way out and don't need any help. <span style="color:LightSteelBlue">“Of course. Well, do you mind if I keep you company, at least?”</span> You shrug and begin walking as <span style="color:DarkTurquoise">Kollin</span> follows you as you try to find your way out of the forest. As you walk, the two of you chat and you learn that <span style="color:DarkTurquoise">Kollin</span> attends the public school, rather than Preston, which explains why you never crossed paths with him before or noticed him. He also talks about his investigation business and claims to have a blog where he posts info on all his investigations. You ask if he was in the forest investigating anything, but he shakes his head.<br>
+            <br>
+
+            <span style="color:LightSteelBlue">“No, I'm between investigations right now, I was just surveying.”</span><br>
+            <br>
+
+            <<if $Sense < 6>>
+                <span style="color:DarkTurquoise">Kollin</span> stops, glancing around at your surroundings before chuckling. <span style="color:LightSteelBlue">“I think you may be a little lost, my friend. We are right back to where we started.”</span> You don't believe him, but as you glance around as well you realize this part of the forest does look a little familiar. As you wander around, wondering how you walked in a circle, your foot gets stuck in a small hole and you trip, face-planting into the dirt. <span style="color:DarkTurquoise">Kollin</span> quickly comes over and helps you up, smiling as he asks if he <span style="color:LightSteelBlue">“could take the lead for a while?”</span><br>
+                <br>
+
+                Your pride bruised as much as your knees, you agree and begin to follow <span style="color:DarkTurquoise">Kollin</span> out of the forest. Despite leading you in seemingly random directions, he walks with confidence, and you soon find yourself exiting out onto the familiar Wald Street. <span style="color:LightSteelBlue">“Ta-da!”</span> He smiles as the two of you exit the woods, <span style="color:LightSteelBlue">“It's as easy as that. Anyway, I guess I'll see you around. Remember, if you ever have a mystery to solve or an investigation to investigate, you know who to call!”</span> You laugh and thank the boy as his watch beeps. <span style="color:LightSteelBlue">"Perfect timing!"</span> He proclaims before bidding you farewell and running off.<br>
+                <<socialChange "Kollin" 3 1>>
+                <<set $CompletedQuests.push("Kollin: Boy in the Woods")>>
+                <<set $InActiveQuests.delete("Kollin: Boy in the Woods")>>
+                <<needChange "Fun" 15>>
+                <br>
+                [[Continue|Wald Street]]
+
+            <<else>>
+                <span style="color:DarkTurquoise">Kollin</span> says right as you exit the endless maze of trees and find yourself just outside of Northend! You smile in pride and tell <span style="color:DarkTurquoise">Kollin</span> that you knew the way out the entire time, you just got a little lost. <span style="color:LightSteelBlue">“Very impressive!”</span> He claps, <span style="color:LightSteelBlue">“Well, I suppose I will see you around. Remember, if you ever have a mystery to solve or an investigation to investigate, you know who to call!”</span> You laugh and thank the boy as his watch beeps. <span style="color:LightSteelBlue">"Perfect timing!"</span> He proclaims before bidding you farewell and running off.<br>
+                <<socialChange "Kollin" 3 1>>
+                <<set $CompletedQuests.push("Kollin: Boy in the Woods")>>
+                <<set $InActiveQuests.delete("Kollin: Boy in the Woods")>>
+                <<needChange "Fun" 15>>
+                <br>
+                [[Continue|Northend]]
+            <</if>>
+        <</replace>>
+    <</link>>
+</div>

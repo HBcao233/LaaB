@@ -1,0 +1,181 @@
+:: OC JQ Intro [nobr]
+
+<<set $OCJQSocial to 0>>
+<<set $OCJQSocialRank to 0>>
+<<set $Money -= 1>>
+
+As you are wandering around the arcade, trying to decide what game to play next or if you should head home for the day, <span style="color:lightcoral">you are suddenly bumped into by another boy.</span><br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "JQ">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Mad">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Sad">>
+    <<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC JQ Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">“Hey! Watch where you are going, punk!”</span> <span style="color:lightcoral">The boy shoves you to the ground roughly, crossing his arms as he stands over you,</span> <span style="color:LightSteelBlue">“Do that again and I'll make you regret it! Don't you know who I am?”</span> Annoyed, but otherwise uninjured, you inform the boy that you do not, in fact, know who he is. <span style="color:LightSteelBlue">“My friends call me <span style="color:DarkTurquoise">JQ</span>, aka, <span style="color:DarkTurquoise">Lil'JQuartz</span>. THE <span style="color:DarkTurquoise">Lil'JQuartz</span> that has the highest score in every Zonic game in this place and WILL always have the highest score. So next time, try to show a little respect so you don't get hurt!”</span><br>
+<br>
+
+You give a raised eyebrow, unsure if this kid is being serious or not. But, based on his expression, he was being 100% serious. The kid was full of himself, but at least he didn't have a crowd of goons or followers at his disposal. In fact, compared to the normal kids you have to deal with, he didn't seem like too much of a threat.<br>
+<br>
+
+<div id="choice">
+    <<link "Just walk away">>
+        <<replace "#choice">>
+            Despite this kid not seeming like much of a threat, you didn't want to risk getting involved with him. So, you don't respond to his taunts and instead turn around and walk away. The kid scoffs and calls you a coward, but he seems to be letting you go without any trouble. <span style="color:pink">At least, it seemed like it, until he quickly sneaks up behind you with the stealth of a fox and yanks down your $PlayerBottoms.Type!</span><br>
+
+            /* AVATAR DISPLAY */
+            <<set $AD.Name to "JQ">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Mad">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Smirk">>
+            <<set $AD.Outfit to "Everday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC JQ Avatar Equipment Set">>
+            /* VARIABLE OVERRIDES */
+        <div style="position: relative">
+            <<include"Avatar Display">>
+            /* AVATAR DISPLAY */
+            <<set $AD.Name to "Player">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 2>>
+            <<set $AD.Mouth to "Sad">>
+            <<set $AD.Outfit to "Uniform">>
+            <<set $AD.Hard to 0>>
+                <<include"Player Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+                <<set $ADPantsDown to 1>>
+                <div style="position: absolute; left: 125px; top: 0px">
+            <<include"Avatar Display">>
+        </div>
+            /* EMPTY LAYER TO END AVATARS */
+            <img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+        </div>
+
+            <span style="color:pink">
+            <<if $PlayerUndies.Type != "None">>
+                <span style="color:LightSteelBlue">“Nice underwear, dork!”</span> The kid laughs loudly, drawing the attention of everyone around to your exposing situation. Laughter breaks out as you quickly pull up your bottoms and run off, leaving <span style="color:DarkTurquoise">JQ</span> laughing and taunting you as you flee.<br>
+                <<addMoodlet "Seen Naked" 5>>
+            <<else>>
+                <span style="color:LightSteelBlue">“Nice wiener, dork!”</span> The kid laughs loudly, drawing the attention of everyone around to your exposing situation. Laughter breaks out as you quickly pull up your bottoms and run off, leaving JQ laughing and taunting you as you flee.<br>
+                <<addMoodlet "Seen Undies" 5>>
+            <</if>>
+            </span>
+            <<needChange "Fun" 10>>
+            <<set $CompletedQuests.push("JQ: Introduction")>>
+            <<set $InActiveQuests.delete("JQ: Introduction")>>
+            <<socialChange "JQ" -3 1>>
+            <br>
+            <br>
+            [[Continue|Arcade]]
+        <</replace>>
+    <</link>><br>
+    <<requiresAbility "Charm" 7 "Sweet talk him">>
+        <<replace "#choice">>
+            You apologize profusely for getting in his way, you had no idea this was THE <span style="color:DarkTurquoise">Lil'JQuartz</span>. You had seen the name during your time playing Zonic 3: Nuckles Squared, and had no idea it was him! Though, you really should of, considering the boy's amazing Zonic T-Shirt! You wish you had something like that.<br>
+
+            /* AVATAR DISPLAY */
+            <<set $AD.Name to "JQ">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Mad">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 1>>
+            <<set $AD.Mouth to "Smirk">>
+            <<set $AD.Outfit to "Everday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC JQ Avatar Equipment Set">>
+            /* VARIABLE OVERRIDES */
+        <div style="position: relative">
+            <<include"Avatar Display">>
+            /* AVATAR DISPLAY */
+            <<set $AD.Name to "Player">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Tired">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Happy">>
+            <<set $AD.Outfit to "Uniform">>
+            <<set $AD.Hard to 0>>
+                <<include"Player Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+                <div style="position: absolute; left: 125px; top: 0px">
+            <<include"Avatar Display">>
+        </div>
+            /* EMPTY LAYER TO END AVATARS */
+            <img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+        </div>
+
+            <span style="color:LightSteelBlue">“Oh, well, I suppose it is alright then.”</span> <span style="color:lightgreen">He blushes, it seems your sweet talking was having a great effect on the boy,</span> <span style="color:LightSteelBlue">“As long as you know who is in charge, I suppose I'll let you go, this time. But you must watch where you are going, never know when someone such as myself will come by!”</span> You promise to keep an eye out and continue to praise him as you walk away. <span style="color:lightgreen">The kid played right into your hand, allowing you to escape without any more trouble.</span><br>
+
+            <<needChange "Fun" 10>>
+            <<set $CompletedQuests.push("JQ: Introduction")>>
+            <<set $InActiveQuests.delete("JQ: Introduction")>>
+            <<socialChange "JQ" 3 1>>
+            <br>
+            [[Continue|Arcade]]
+        <</replace>>
+    <</requiresAbility>>
+    <<requiresAbility "Strength" 7 "Shove him back">>
+        <<replace "#choice">>
+            Unthreatened and tired of this kid talking, you stand up to him and roughly shove him back, giving him a taste of his own medicine. <span style="color:lightgreen">You take the kid completely by surprise, who was not expecting you to fight back, falls back and slams into a nearby arcade machine, hitting his elbow.</span> He immediately cries out in pain, gripping his elbow as he hunches over with tears forming in his eyes.<br>
+
+            /* AVATAR DISPLAY */
+            <<set $AD.Name to "JQ">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Mad">>
+            <<set $AD.Cry to 2>>
+            <<set $AD.Blush to 2>>
+            <<set $AD.Mouth to "Sad">>
+            <<set $AD.Outfit to "Everday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC JQ Avatar Equipment Set">>
+            /* VARIABLE OVERRIDES */
+        <div style="position: relative">
+            <<include"Avatar Display">>
+            /* AVATAR DISPLAY */
+            <<set $AD.Name to "Player">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Tired">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Smirk">>
+            <<set $AD.Outfit to "Uniform">>
+            <<set $AD.Hard to 0>>
+                <<include"Player Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+                <div style="position: absolute; left: 125px; top: 0px">
+            <<include"Avatar Display">>
+        </div>
+            /* EMPTY LAYER TO END AVATARS */
+            <img src="Images\Avatar\Body\Empty.png" style="position: static; left: 0; top: 0">
+        </div>
+
+            <span style="color:LightSteelBlue">“What the freak, man! You trying to kill me or something? Dang it, that freaking hurts!”</span> The boy berates you in an oddly kid-friendly way as he continues to groan in pain as he grips his slightly bruised elbow. Baffled, you tell the kid that he should learn to take what he dishes out. <span style="color:LightSteelBlue">“Whatever man! You didn't have to take it that far! Next time, I'll make sure you regret being such a jerk!”</span> <span style="color:pink">The kid runs off, fighting off tears, as you are left there completely confused.</span><br>
+
+            <<needChange "Fun" 13>>
+            <<set $CompletedQuests.push("JQ: Introduction")>>
+            <<set $InActiveQuests.delete("JQ: Introduction")>>
+            <<socialChange "JQ" -5 1>>
+            <br>
+            [[Continue|Arcade]]
+        <</replace>>
+    <</requiresAbility>>
+</div>

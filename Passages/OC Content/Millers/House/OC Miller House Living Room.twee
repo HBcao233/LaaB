@@ -1,0 +1,89 @@
+:: OC Miller House Living Room [nobr]
+
+<<if $OCKaydenBabysit.Active == 1>>
+    <<if $OCKaydenBabysit.State == "PreDin" && $Time.after(18)>>
+        <<goto"Millers Babysitting Dinner">>
+    <<elseif $OCKaydenBabysit.State == "PostDin" && $Time.after(19, 30)>>
+        <<goto"Millers Babysitting Bath Time">>
+    <<elseif $OCKaydenBabysit.State == "Bath" && $Time.after(20)>>
+        <<goto"Millers Babysitting Bath Time Bath Done">>
+    <<elseif $OCKaydenBabysit.State == "Sleep" && $Time.after(21)>>
+        <<goto"Millers Babysitting Ending">>
+    <</if>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Living Room--</strong></big></span><br>
+<<set $Location to {
+	Name: "Miller Living Room",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Living Room",
+}>>
+
+You find yourself in a spacious area that combines the living room, dining room, and kitchen, with an entire back wall lined with large windows and two massive sliding doors—one in the living room and another in the kitchen. The living room features decorations of plants and photographs. One wall showcases a large TV accompanied by a stunning sound system. In the center of the room, a big, plush light brown L-shaped couch contrasts with a white loveseat positioned in front of the expansive window. <br>
+<br>
+
+<<if $OCKaydenBabysit.Active == 1 && ["PreDin", "PostDin"].includes($OCKaydenBabysit.State)>>
+    <<if $HangOutNeed.Fun < 50>>
+        <<set _mouth to "Frown">>
+        <<set _eyes to "Sad">>
+    <<else>>
+        <<set _mouth to "Happy">>
+        <<set _eyes to "Normal">>
+    <</if>>
+    <<set _ad to [
+        {
+            Name: "OC Kayden",
+            State: {
+                Outfit: "Everyday",
+                Mouth: _mouth,
+                Eyes: _eyes,
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+    <strong>Kayden: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<link"Watch TV with Kayden (0:20)">>
+        <<set $Minutes += 20>>
+        <<goto "Millers Babysitting Living Room Watch TV">>
+    <</link>><br>
+    <<link"Read with Kayden (0:20)">>
+        <<set $Minutes += 20>>
+        <<goto "Millers Babysitting Living Room Read With">>
+    <</link>><br>
+    
+<</if>>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Backyard (0:01)|OC Miller House Backyard][$Minutes += 1]] <br>
+	[[Kitchen (0:01)|OC Miller House Kitchen][$Minutes += 1]] <br>
+	[[Hallway (0:01)|OC Miller House Hallway][$Minutes += 1]] <br>
+<</if>>
+<br>
+
+/* House Map */
+<div style="position: relative">
+	<img src="Images\NPC Homes\Miller House\Miller House.png" 
+style="position: absolute; left: 0; top: 0"  alt="Miller Map" usemap="#MillerHouse">
+	<img src="Images\NPC Homes\Miller House\Tall Room Marker.png" 
+style="position: absolute; left: 162px; top: 54px"  alt="Miller Map" usemap="#MillerHouse">
+</div>
+
+<map name="MillerHouse">
+    <area shape="rect" coords="108,0,215,53" alt="Backyard" onclick="$.wiki('<<goto[[OC Miller House Backyard]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="108,54,164,161" alt="Kitchen" onclick="$.wiki('<<goto[[OC Miller House Kitchen]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="58,162,319,215" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="162,216,215,269" alt="Hallway" onclick="$.wiki('<<goto[[OC Miller House Hallway]]>><<set $Minutes += 1>>')" />
+
+</map>

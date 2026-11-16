@@ -1,0 +1,317 @@
+:: BEN Inspect School Playground [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> is sitting under a tree by himself reading a book. He seems to be engrossed in whatever he is reading, visually emoting as he mouths the words.<br>
+<br>
+
+[[Chat With (0:10)|BEN Playground Chat With]] <span style="color:Green">+Ben</span><br>
+<<if $BenSocial > -50 or $BenSocialRank > 0>>
+	[[Read With (0:20)|BEN Playground Read With]] <span style="color:Green">+Ben</span><br>
+<</if>>
+<<if $BenSocial >= 50 or $BenSocialRank > 0>>
+	[[Drag over to the swings (0:20)|BEN Playground Drag to swings]] <span style="color:Green">+Ben</span><br>
+<</if>>
+
+<<include "Ben Base Talk Code">>
+
+:: BEN Inspect School Lunch [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> sits at a table near the far end of the cafeteria eating by himself. He stares down at his food as he eats, avoiding making eye contact with any of the other boys.<br>
+<br>
+
+<<if $FriendLunch != 1 and $LunchClass != 2>>
+	[[Eat Lunch With (0:15)|BEN Eat Lunch]] <span style="color:Green">+Social</span>
+	/* LUNCH QUALITY WHEN EATING WITH PERSON */
+	<<include "School Lunch Level Chooser">>
+<</if>>
+
+<<include "Ben Base Talk Code">>
+
+:: BEN Inspect Cafeteria [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> sits at one of the far tables by himself, silently reading a book. He seems to be enjoying it, visually emoting as he mouths the words.<br>
+<br>
+[[Chat With (0:10)|BEN Cafeteria Chat With]] <span style="color:Green">+Ben</span><br>
+
+<<include "Ben Base Talk Code">>
+
+:: BEN Inspect School Waiting for Bus [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> stands a bit away from the main group of boys waiting for the bus. He seems to not want to draw attention to himself.<br>
+<br>
+<div id="HangOutSchool">
+	<<if $InActiveQuests.includes("Ben: Hang Out Intro")>>
+		<<link"Ask if Ben wants to Hang Out">>
+		<<set $HangOutNeed to {
+			Energy: 100,
+			Fun: 20,
+			Comfort: 20,
+		}>>
+		<<goto "Ben Hang Out First Time">>
+		<</link>><br>
+	<<elseif $CompletedQuests.includes("Ben: Hang Out Intro")>>
+		<<link"Want to hang out?">>
+		<<replace"#HangOutSchool">>
+			<span style="color:Yellow">Where?</span><br>
+			<<set $HangOutNeed to {
+				Energy: 100,
+				Fun: 20,
+				Comfort: 20,
+			}>>
+			<<link"The Park (0:10)<br>">>
+				<<set $HangOutClothes to "Uniform">>
+				<<set $Minutes += 10>>
+				<<goto "Ben Hang Out Go To Park">>
+			<</link>>
+		<</replace>>
+		<</link>>
+	<</if>>
+</div>
+
+[[Leave|Middle School]] 
+
+:: BEN Inspect Shopping District Walking [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> walks down the sidewalk in the shopping district.<br>
+<br>
+
+[[Leave|Shopping District]] 
+
+:: BEN Inspect Dellwood Street Walking [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> walks along the sidewalk.<br>
+<br>
+
+[[Leave|Dellwood Street]] 
+
+:: BEN Inspect School Hallway [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> walks down the hallway gripping the straps of his backpack.<br>
+<br>
+
+[[Give him a hug (0:02)|Ben School Hug]]<br>
+<<if !$DailyEvents.includes("Ben School Bully")>>
+	[[Give Ben a Wedgie (0:02)|Ben School Hallway Wedgie]]
+	<<if $BenSocial < 20 && $BenSocialRank != 1>>
+		<span style="color:Red"> -Social</span><br>
+	<<else>>
+		<span style="color:Green"> +Social</span><br>
+	<</if>>
+<<else>>
+	<span style="color:Grey">Give Ben a Wedgie (0:02)</span><br>
+<</if>>
+
+<<include "Ben Base Talk Code">>
+
+:: BEN Inspect English [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> sits at his desk near the front of the class getting ready to take notes, rummaging through his backpack for a pencil.<br>
+
+:: BEN Inspect History [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> is sitting at his desk near the front of the class, flipping through his history book as he waits for class to begin.<br>
+
+:: BEN Inspect Science [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> sits at his desk near the front of the class, worryingly looking for his notes. Thinking he may have lost them, he lets out a sigh of relief as he finally locates them at the bottom of his backpack.<br>
+
+:: BEN Inspect Math [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> sits at his desk near the front patiently waiting for class to begin. His desk is organized and clean.<br>
+
+:: BEN Inspect Computer Class [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> sits at his computer.<br>
+
+:: BEN Inspect Gym [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Undies",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> is changing inside one of the shower stalls, still shy about being seen in his underwear in front of others. <span style="color:Pink">You peek inside and see <span style="color:DarkTurquoise">Ben</span> facing away from you in nothing but his $BenUndies.Name as he finishes getting dressed.</span> You are careful not to make any noise as you eye his underwear-clad rear. Despite everyone being in their underwear, something about being in the locker room makes it less intimate and embarrassing, except for <span style="color:DarkTurquoise">Ben</span> it would seem.<br>
+
+<<if $SeenBenUndies < 1>>
+	<<set $SeenBenUndies += 1>>
+<</if>>
+
+:: BEN Inspect Gym Shower [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Towel",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> stands near his locker, surrounded by two larger boys. <span style="color:Pink">They are teasing him, holding a pair of his Tighty Whities in the air and flailing them around as they laugh and taunt him.</span> The embarrassed boy simply looks down blushing, probably just thankful they aren’t taking it a step further and are letting him keep his towel. <br>
+
+:: BEN Inspect School Drying Clothes [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+			Eyes: "Sad",
+			Mouth: "Sad",
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> is standing near the sinks trying to use the paper towels to dry his drenched clothes. He seems to be upset and it having quite a bit of trouble.<br>
+
+<br>
+[[Hide & Spy on Him (0:15)|BEN Spy School Bathroom]]<br>
+[[Walk in Loudly (0:15)|BEN School Bathroom Enter Loudly]]<br>
+	
+:: BEN Inspect Reading to Kids Library [nobr]
+
+<<set _ad to [
+	{
+		Name: "Ben",
+		State: {
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:DarkTurquoise">Ben</span> sits surrounded by little kids as young as 4. He is reading a story to them and seems to be having a good time.
+<br>
+
+<<if $BenSocial > 0 or $BenSocialRank > 0>>
+	[[Walk up to him (0:30)|Ben City Library Watch Read to Kids]]<br>
+<</if>>
+
+[[Back|City Library]]

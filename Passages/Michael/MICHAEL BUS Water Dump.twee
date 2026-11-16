@@ -1,0 +1,48 @@
+:: MICHAEL BUS Water Dump [nobr]
+
+<<if $MichaelSocial >= 10>>
+	You are sitting on the bus gazing passively out the window and listening to the idle chatter of the other boys when you suddenly hear snickering behind you. You suddenly feel a few cold drops of water hit your back, causing your body to instantly tense up as you quickly stand. You turn around and see <span style="color:DarkTurquoise">Michael</span> smirking with a water bottle in his hand.<br>
+
+	<<set _ad to [
+		{
+			Name: "Michael",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:LightSteelBlue"> “Chill <span style="color:DarkTurquoise">$MichaelNickname</span>, just wanted to make sure you were awake.”</span> <span style="color:DarkTurquoise">Michael</span> moves forward, sitting next to you, and takes a drink from the water bottle. <span style="color:LightSteelBlue">“I was going to pour this on <span style="color:DarkTurquoise">Ben</span>'s crotch, but he’s sitting too close to the bus driver. If I get another detention my mom is going to beat my ass.”</span> You and <span style="color:DarkTurquoise">Michael</span> enjoy a nice ride together as you make jokes.<br>
+	<<socialChange "Michael" 1>>
+
+<<else>>
+	You are sitting on the bus gazing passively out the window and listening to the idle chatter of the other boys when you suddenly hear snickering behind you. <span style="color:Red">Before you can act, freezing cold water is suddenly poured down the back of your $PlayerTop.Type, soaking into all your clothes!</span> You yell out in surprise and discomfort, quickly standing up as the cold causes you to forcibly shake. Sitting in the seat behind you, you see <span style="color:DarkTurquoise">Michael</span> and one of his goons laughing hysterically as they wave around now empty water bottles.<br>
+
+	<<set _ad to [
+		{
+			Name: "Michael",
+			State: {
+				Mouth: "Happy",
+				Eyes: "Mad",
+				Outfit: "Uniform",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	<span style="color:LightSteelBlue"> “What’s wrong <span style="color:DarkTurquoise">$BullyNickname</span>? Had a little accident?”</span> <span style="color:DarkTurquoise">Michael </span>taunts.<br>
+	<br>
+	<span style="color:LightSteelBlue"> “Yeah, looks like you peed out of your butt!”</span> His goon adds as they both continue to laugh, drawing attention to your situation. You move seats to get away from them, your backside now completely soaked.<br>
+	<<socialChange "Michael" -3>>
+	<<set $Wet to 2>>
+	<<addMoodlet "Stress" 1>>
+<</if>>
+<br>
+/* GET OFF BUS */
+<<if $BusRide == "Home">>
+	[[Get off bus|Northend]]
+<<else>>
+	[[Get off bus|Middle School]]
+<</if>>

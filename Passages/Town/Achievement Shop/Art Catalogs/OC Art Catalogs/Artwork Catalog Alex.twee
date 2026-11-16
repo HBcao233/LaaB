@@ -1,0 +1,29 @@
+:: Artwork Catalog Alex [nobr]
+
+<span style="color:Azure"><big><strong>--Alex Catalog--</strong></big></span><br>
+<br>
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+
+/* Intro Event Picture */
+    <<if $AchievementArt.includes("Alex Intro Event")>>
+        <strong><span style="color:lightgreen">Alex Intro Event</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\OC\\Alex\\Alex Spank.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Alex Intro Event</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Alex Intro Event")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Alex">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+<br>
+[[Back|Artwork Catalog]]

@@ -1,0 +1,22 @@
+:: Math Skill Level Up [nobr]
+
+<<if $MathLearned != 1>>
+	<span style="color:gold">You learned the Math Skill! This skill will determine your class grade. As your understanding of Math grows, you will eventually be able to help other kids with their schoolwork and can even become a tutor. But for now, you are just starting your journey in the academic world!</span><br>
+	<<set $MathLearned to 1>>
+<</if>>
+
+<<if $MathXP >= 100>>
+	<<set $MathXP to 0>>
+	<<set $MathSkill += 1>>
+		<<if $MathSkill > 10>>
+			<<set $MathSkill to 10>>
+		<</if>>
+	
+	<<if $MathSkill == 2>>
+		<span style="color:gold">You have reached Math Level 2! As you begin to understand the building blocks of the universe, you grow more confident in your own scholarly abilities. You can now help younger kids, like <span style="color:DarkTurquoise">Noah</span>, with their homework.</span><br>
+	<</if>>
+	
+	<<if $MathSkill == 3>>
+		<span style="color:gold">You have reached Math Level 3! You’ve become quite the wiz when it comes to fractions, division, and multiplication. The Community Center is always looking for tutors to help those who have a harder time and it’s a good way to improve your reputation with the town. You can Tutor at the Community Center between 10 AM and 5 PM.</span><br>
+	<</if>>
+<</if>>

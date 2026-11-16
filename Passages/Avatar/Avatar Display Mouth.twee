@@ -1,0 +1,48 @@
+:: Avatar Display Mouth [nobr]
+
+<<switch $AD.Mouth>>
+<<case "Happy">>
+	<<set _mouth to "Smile">>
+<<case "Normal">>
+	<<set _mouth to "Neutral">>
+<<case "Sad">>
+	<<set _mouth to "Frown">>
+<<case "Smirk">>
+	<<set _mouth to "Smirk">>
+<<default>>
+	/* shouldn't happen, but who knows! */
+	<<set _mouth to false>>
+<</switch>>
+
+<<if _mouth>>
+	<img @src="`Images/Avatar/Face/Mouth/${$AD.SkinColor}/${_mouth}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+/* Moles */
+<<if $ADMoles.CheekLeft == 1>>
+	<img @src="`Images/Avatar/Face/Moles/Cheek Mole/Left/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+<<if $ADMoles.CheekRight == 1>>
+	<img @src="`Images/Avatar/Face/Moles/Cheek Mole/Right/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+<<if $ADMoles.LipLeft == 1>>
+	<img @src="`Images/Avatar/Face/Moles/Lip Mole/Left/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+<<if $ADMoles.LipRight == 1>>
+	<img @src="`Images/Avatar/Face/Moles/Lip Mole/Right/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+<<if $ADMoles.PubicLeft == 1>>
+	<img @src="`Images/Avatar/Face/Moles/Pubic Mole/Left/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+<<if $ADMoles.PubicRight == 1>>
+	<img @src="`Images/Avatar/Face/Moles/Pubic Mole/Right/${$AD.SkinColor}.png`" style="position: absolute; left: 0; top: 0">
+<</if>>
+
+<<set $ADMoles to {
+    CheekLeft: 0,
+    CheekRight: 0,
+    LipLeft: 0,
+    LipRight: 0,
+    PubicLeft: 0,
+    PubicRight: 0,
+}>>

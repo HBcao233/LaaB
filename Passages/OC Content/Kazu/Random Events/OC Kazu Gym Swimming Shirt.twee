@@ -1,0 +1,143 @@
+:: OC Kazu Gym Swimming Shirt [nobr]
+
+/* Note: This one checks the Quest Completed variable to determine if this scene has been seen before, however, it does not count as a quest. */
+
+/* Intro */
+<<if $CompletedQuests.includes("Kazu: Gym Swimming Shirt")>>
+    /* Post High Social Variant */
+    <span style="color:Yellow">The worst part of swimming class is the chlorine-filled water getting into your eye, but the second worst part is the pre-swimming stretches and warm-ups.</span> <span style="color:DarkTurquoise">Kohler</span> is very serious about this, so every day before you even get into the water he is running everyone through stretches, warm-up exercises, and safety reminders <span style="color:Yellow">that leave you exhausted both mentally and physically before the class has even started!</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                },
+            },
+            {
+                Name: "OC Kazu",
+                State: {
+                    Outfit: "Gym Swim",
+                    Mouth: "Frown",
+                    Eyes: "Tired",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    Then your eyes fall on <span style="color:DarkTurquoise">Kazu</span>, who looks as miserable as ever in his damp shirt. Some kids would probably wish they could wear a shirt in this class, but <span style="color:DarkTurquoise">Kazu</span> just looks like being forced to wear one ruins his entire day. Seeing as you are probably the only one to understand the reasoning and care enough to want to cheer him up, you slip on over and begin to chat with the boy as everyone is taking a breather. <br>
+    <br>
+    <span style="color:LightGreen"><span style="color:DarkTurquoise">Kazu</span> enjoys your company, teasing and joking with you until class starts.</span> As he hops into the pool, you think you briefly see some sort of splash of color on his lower back as his shirt is displaces. <span style="color:DarkTurquoise">Kazu</span> quickly fixes his shirt, not wanting to get into trouble, so you can’t be sure what exactly you see. <span style="color:LightGreen">Regardless of all that, <span style="color:DarkTurquoise">Kazu</span> seems to be in a better mood since you talked to him. You’ve made swimming class much more bearable for him and he clearly appreciates it, even if he’ll never admit it.</span> <br>
+    <<socialChange "Kazu" 3 1>>
+    <<set $GymNeedReduce to "Normal">>
+    <<include"Gym Need Reduce">>
+    <br>
+    <<include"Attend Gym Finish">>
+<<else>>
+    <span style="color:Yellow">The worst part of swimming class is the chlorine-filled water getting into your eye, but the second worst part is the pre-swimming stretches and warm-ups.</span> <span style="color:DarkTurquoise">Kohler</span> is very serious about this, so every day before you even get into the water he is running everyone through stretches, warm-up exercises, and safety reminders <span style="color:Yellow">that leave you exhausted both mentally and physically before the class has even started!</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "OC Kazu",
+                State: {
+                    Outfit: "Gym Swim",
+                    Mouth: "Frown",
+                    Eyes: "Tired",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    You are taking a minute to catch your breath when something catches your eye. <span style="color:DarkTurquoise">Kazu</span>, or more accurately the shirt he is wearing along with his trunks. Come to think of it, <span style="color:DarkTurquoise">Kazu</span> always seems to wear a swimming shirt during class. You’ve never thought much of it before, passing it off as just one of the many quirks of the school, <span style="color:Yellow">but now that you think about it,</span> it is pretty weird. No one else has to or even choose to wear a shirt. <br>
+    <br>
+    He also seems to be rather more disinterested than usual, looking like he’s had a bit of a shitty day. Or maybe he just hates swimming, you can’t really tell as he half-asses all the stretches and exercises, <span style="color:Yellow">looking like he wants to be anywhere but here.</span> <br>
+    <br>
+    <div id="choice">
+        <<link "Ask him about it<br>">>
+        <<replace"#choice">>
+            <<if $OCKazuSocial < 40>>
+                As everyone takes a breather before the real class begins, you slip over towards <span style="color:DarkTurquoise">Kazu</span> and cough to get his attention. <span style="color:Yellow">He turns to you with a raised eyebrow, looking mildly annoyed at your presence.</span> Asking is a bit awkward, considering you don’t know him super well, but you eventually blurt out the question of why he’s wearing a shirt. Doesn’t it make it hard to swim or feel a little awkward at least? <br>
+
+                    <<set _ad to [
+                        {
+                            Name: "Player",
+                            State: {
+                                Mouth: "Frown",
+                                Blush: 1,
+                            },
+                        },
+                        {
+                            Name: "OC Kazu",
+                            State: {
+                                Outfit: "Gym Swim",
+                                Mouth: "Frown",
+                                Eyes: "Mad",
+                                Blush: 1,
+                            },
+                        },
+                    ]>>
+                    <<ad _ad>>
+
+
+                <span style="color:LightSteelBlue">“Fuck off!”</span> <span style="color:DarkTurquoise">Kazu</span> <span style="color:LightCoral">says sharply, taking a step towards you in a threatening manner that causes you to stumble back. Judging by his harsh expression and response, you’d guess this isn’t something he’d want to talk about with you.</span> Taking the hint, you hold your hands up in surrender and back up, not wanting to cause any trouble. <span style="color:DarkTurquoise">Kazu</span> scoffs as you do this, walking to the other side of the class as everyone is ordered into the pool. <span style="color:LightCoral">He then very intentionally avoids you for the rest of class. Harsh.</span> <br>
+                <<socialChange "Kazu" -2 1>>
+                <<set $GymNeedReduce to "Normal">>
+                <<include"Gym Need Reduce">>
+                <br>
+                <<include"Attend Gym Finish">>
+            <<else>>
+                As everyone takes a breather before the real class begins, you slip over towards <span style="color:DarkTurquoise">Kazu</span> and cough to get his attention. <span style="color:LightGreen">He turns to you with a raised eyebrow and a mildly amused look, his spirits slightly lifted by your presence.</span> <span style="color:LightSteelBlue">“What do you want, nerd?”</span> He asks teasingly. Despite considering him a friend, it is still a little awkward to ask such a thing and it takes you a second to get the question out. Why is he wearing a shirt? Doesn’t it make it hard to swim or feel a little awkward at least? <br>
+
+                    <<set _ad to [
+                        {
+                            Name: "Player",
+                            State: {
+                                Mouth: "Frown",
+                            },
+                        },
+                        {
+                            Name: "OC Kazu",
+                            State: {
+                                Outfit: "Gym Swim",
+                                Mouth: "Frown",
+                                Eyes: "Tired",
+                            },
+                        },
+                    ]>>
+                    <<ad _ad>>
+                
+                <span style="color:LightSteelBlue">“It’s super awkward.”</span> He chuckles, <span style="color:LightSteelBlue">“Fucking hate it, annoying as hell, but don’t have much of a choice. School said it was this or – well – the alternative is a lot worse.”</span> You tilt your head, asking what he means, <span style="color:Pink">and are surprised to find <span style="color:DarkTurquoise">Kazu</span> blush a little, turning away as he scratches his cheek.</span> <span style="color:LightSteelBlue">“It’s a little embarrassing to explain, but I guess it’s fine as long as you don’t go blabbering about it.”</span> <span style="color:DarkTurquoise">Kazu</span> glances over to <span style="color:DarkTurquoise">Kohler</span>, making sure he isn’t in earshot as he explains in a hushed tone. <br>
+                <br>
+                <span style="color:LightSteelBlue">“I have a tattoo on my back. Not like a small one either, a big boy.”</span> He chuckles, <span style="color:LightSteelBlue">“It’s this whole family thing back in Japan. Bit strange for someone my age, but it’s whatever. Removing it would be a bitch and not something I’d really want to do, so this was the only other solution. Teachers don’t want me showing it off, encouraging others. Not that any of these bitches could handle getting one, that shit isn’t a tickle.”</span> <span style="color:DarkTurquoise">Kazu</span> laughs as you can’t help but ask the question burning in your mind, can you see it? <br>
+                <br>
+                <span style="color:LightSteelBlue">“Haha, what a cute way to ask me to take my clothes off.”</span> He teases, <span style="color:LightSteelBlue">“I wouldn’t mind, but the teachers would blow their lid if they saw me showing it off. Maybe another time though, in a more private setting.”</span> He winks at you, causing you to laugh and roll your eyes. <br>
+                <br>
+                You don’t fully understand why someone as young as <span style="color:DarkTurquoise">Kazu</span> would have a back tattoo or why it would even be that big of a deal. Maybe it’s really big or graphic or something? Your curiosity to see it is strong but accept now is not the time. Regardless of all that, <span style="color:DarkTurquoise">Kazu</span> seems to be in a better mood since you talked to him. <span style="color:LightGreen">You’ve made swimming class much more bearable for him and he clearly appreciates it, even if he’ll never admit it.</span> <br>
+                <<set $CompletedQuests.push("Kazu: Gym Swimming Shirt")>>
+                <<socialChange "Kazu" 5 1>>
+                <<set $GymNeedReduce to "Normal">>
+                <<include"Gym Need Reduce">>
+                <br>
+                <<include"Attend Gym Finish">>
+            <</if>>
+        <</replace>>
+        <</link>>
+        <<link "Just focus on the class<br>">>
+        <<replace"#choice">>
+            You decide to leave <span style="color:DarkTurquoise">Kazu</span> alone, it is none of your business and you figure it isn’t a big deal anyway, since no one else seems to have spoken up about it. <span style="color:Yellow">Still, now that you’ve noticed it, you can’t get it out of your head how strange it is.</span> <br>
+            <<set $GymNeedReduce to "Normal">>
+            <<include"Gym Need Reduce">>
+            <br>
+            <<include"Attend Gym Finish">>
+        <</replace>>
+        <</link>>
+    </div>
+<</if>>

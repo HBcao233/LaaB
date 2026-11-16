@@ -1,0 +1,75 @@
+:: OC Kade Library [nobr]
+
+/* Intro */
+You are walking around the library trying to think of what you want to do. Your eyes fall to the computers, the endless collection of books of every type and genre, and even the comfortable looking seats perfect for napping, if you can get away with it. But it is then that your eyes fall on something even more interesting. <span style="color:Yellow"><span style="color:DarkTurquoise">Kade</span>, the boy you saw training after school in the gym.</span> <br>
+
+<<if $OCKadeSocial > 10>>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Kade",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+    <span style="color:LightGreen">You get along with <span style="color:DarkTurquoise">Kade</span>, despite his shy personality. So, you’re sure he’d be happy to have some company, so you walk over and greet him.</span> He looks up at you with a smile, <span style="color:LightSteelBlue">“Oh, hello <span style="color:DarkTurquoise">$Player.Name</span>. How are you?”</span> You sit down next to him and exchange pleasantries, asking about his book and how things are going. <span style="color:LightGreen">It is only a little conversation, but <span style="color:DarkTurquoise">Kade</span> seems happy by the end of it, and you feel you’ve grown closer to him.</span> <br>
+    <<socialChange "Kade" 3 1>>
+    <<addMoodlet "Stress" 0>>
+    <<needChange "Fun" 10>>
+    <br>
+    [[Continue|School Library]]
+<<else>>
+    <br>
+    <span style="color:Yellow">Based on your earlier interactions, you know that <span style="color:DarkTurquoise">Kade</span> isn’t very fond of you.</span> Most of this is your own fault, though you could use this as a chance to get to know him better and maybe even improve your relationship! <span style="color:Yellow">Though that’ll take some work and you do have to ponder if that’s even something you want.</span> <br>
+    <br>
+    <div id="choice1">
+        <<link "Go talk to him<br>">>
+        <<replace"#choice1">>
+            You walk up to <span style="color:DarkTurquoise">Kade</span> and greet him. <span style="color:Yellow">The boy jumps at your appearance, nearly dropping his book as he glances up at you nervously. The boy doesn’t say anything, looking up at you with a mix of discomfort and mistrust.</span> You can’t blame him, though try to make idle conversation about what he’s reading and how things are going. <span style="color:DarkTurquoise">Kade</span> doesn’t offer much more than some single word responses, but it’s a start. <br>
+
+                <<set _ad to [
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Happy",
+                        },
+                    },
+                    {
+                        Name: "OC Kade",
+                        State: {
+                            Outfit: "Uniform",
+                            Mouth: "Frown",
+                        },
+                    },
+                ]>>
+                <<ad _ad>>
+
+            In the end, while you don’t think you’re close to being friends with him, he does seem to be a little more comfortable around you. <span style="color:LightGreen">If you keep this up, he may even start to enjoy your company.</span> <br>
+            <<socialChange "Kade" 3 1>>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 10>>
+            <br>
+            [[Continue|School Library]]
+        <</replace>>
+        <</link>>
+        <<link "Just hang out by yourself<br>">>
+        <<replace"#choice1">>
+            You choose to ignore the boy, either because you don’t want to bother him or don’t want to bother befriending him. <span style="color:LightGreen">Either way, you enjoy the next little bit hanging out and relaxing in the library on your own.</span> <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 10>>
+            <br>
+            [[Continue|School Library]]
+        <</replace>>
+        <</link>>
+    </div>
+<</if>>

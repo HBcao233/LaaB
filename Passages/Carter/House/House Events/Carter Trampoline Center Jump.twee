@@ -1,0 +1,66 @@
+:: Carter Trampoline Center Jump [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+<span style="Color: LightSteelBlue">“I have an idea!”</span> <span style="color:DarkTurquoise">Carter</span> says as the two of you are playfully jumping around on his trampoline in your swimwear. <span style="Color: LightSteelBlue">“It’s a thing my brother and I do sometimes. One of up lie in the middle and the other person jumps really hard next to them! It sends them FLYING in the air! They go like super high!”</span> He suggests excitedly, though you question if the two of you will be able to pull that off, considering your strength isn’t equal to his brother. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Carter",
+        State: {
+            Outfit: "Swim",
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“I’m sure we can do it!”</span> <span style="color:DarkTurquoise">Carter</span> replies, <span style="Color: LightSteelBlue">“Trust me, we’re stronger than you think! Did you want to jump or lie down in the middle?”</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Jump<br>">>
+    <<replace "#choice">>
+        You decide to do the jumping, either because you think <span style="color:DarkTurquoise">Carter</span>’s small body will allow him to fly higher or trust your own strength more than his. Plus, <span style="Color: LightGreen">you’re pretty sure <span style="color:DarkTurquoise">Carter</span> enjoys being the flier more than the jumper. He lies down with a smile, hands covering his crotch either to keep them out of the way or because he’s worried you may accidentally jump on top of them.</span> <br>
+        <br>
+        You begin to hop gently up and down next to him, trying to gain momentum and speed before jumping with all your strength! Your first jump sends <span style="color:DarkTurquoise">Carter</span> just below your knees, causing you both to laugh. <span style="Color: Pink">The second jump sends him a bit higher, about halfway up your body as he flails his arms and legs about playfully.</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“You’re good at this!”</span> He laughs as you come down for another, even stronger jump. This one sends him not only higher, but flips the boy onto his stomach unintentionally. <span style="Color: LightSteelBlue">“W- woah!”</span> He is cause off guard by the flip, but you don’t let up and continue to bounce the boy up and down, leaving him a dizzy, laughing mess by the end of it. <span style="Color: LightSteelBlue">“I- I think I need to lie down a second!”</span> He laughs, head spinning as he sits up. <br>
+        <span style="color:green">+Carter Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 5>>
+        <span style="color:Red">-Carter Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <span style="color:Green">+Carter Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <<needChange "Fun" 10>>
+        <<socialChange "Carter" 1>>
+        <br>
+        [[Continue|Carter House Backyard Swim]]
+    <</replace>>
+    <</link>>
+	<<link "Lie down<br>">>
+    <<replace "#choice">>
+        You ask if you could do the lying down, wanting to see what it’s like to fly yourself, as <span style="color:DarkTurquoise">Carter</span> nods. <span style="Color: LightSteelBlue">“I normally can’t send my brother that high, but that’s because he’s much bigger. I’m sure I’ll be able to launch you super high!”</span> He proclaims happily as you lie down. <span style="Color: LightSteelBlue">“Keep your arms on your stomach. Trust me, it’s really easily to accidentally step on them when jumping and it hurts A LOT!”</span> You nod, taking his word for it as you follow his instructions. Then with one last smile, <span style="color:DarkTurquoise">Carter</span> begins to bounce up and down next to you. <br>
+        <br>
+        At first, you don’t really gain any height and instead just move up and down with the movement of the trampoline. <span style="Color: LightGreen">It’s still pretty exciting to feel your body moving like that and you actually feel a jolt in your stomach when a strong hump sends you a few inches up.</span> <span style="Color: LightSteelBlue">“We’re getting there!”</span> <span style="color:DarkTurquoise">Carter</span> laughs, your expression revealing the sudden rush you feel. <br>
+        <br>
+        <span style="Color: LightGreen">A few more strong jumps later and you are being lifted about a foot or more with every jump, <span style="color:DarkTurquoise">Carter</span> timing his own hops as you come down to keep the momentum going. Eventually, your arms and legs flail about as you get particularly high off a strong jump, the force nearly sending you flipping over onto your face.</span> <br>
+        <br>
+        <span style="color:DarkTurquoise">Carter</span> <span style="Color: Pink">then slips, falling on top of you as the momentum sends you both bouncing up and down for a while until you come to a stop in a giggling mess.</span> <span style="Color: LightSteelBlue">“Whoops, sorry.”</span> He laughs, <span style="Color: LightSteelBlue">“We should get my brother to bounce us like that sometime. He can get me so high! It’s like flying!”</span> You agree, thinking that would be very fun. He asks if you want to continue, though you decide to just lie there and catch your breath for a minute. <br>
+        <span style="color:Red">-Carter Energy</span><br>
+        <<set $HangOutNeed.Energy -= 10>>
+        <span style="color:Green">+Carter Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <<needChange "Fun" 10>>
+        <<socialChange "Carter" 1>>
+        <br>
+        [[Continue|Carter House Backyard Swim]]
+    <</replace>>
+    <</link>>
+</div>

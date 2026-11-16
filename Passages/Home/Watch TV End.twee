@@ -1,0 +1,19 @@
+:: Watch TV End [nobr]
+
+<<if $Channel == "Cartoons">>
+	<<set $Minutes += 30>>
+	<<include "Cartoons">>
+
+<<elseif $Channel == "Movie">>
+	<<set $Minutes += 60>>
+	<<include "Movies">>
+
+<<elseif $Channel == "Cooking">>
+	<<set $Minutes += 30>>
+	<<include "Cooking Channel">>
+
+<<elseif $Channel == "Weather">>
+	<<set $Minutes += 5>>
+	<<include "Weather Channel">>
+<</if>>
+<br>

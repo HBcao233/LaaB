@@ -1,0 +1,55 @@
+:: Shopping District Hair Salon [nobr]
+
+<<set $Location to {
+    Name: "Hair Salon",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Shopping District",
+}>>
+<span style="color:Azure"><big><strong>--Hair Salon--</strong></big></span><br>
+You stand in a small hair salon built on the Shopping District Plaza. Despite its small size, it has room for 6 people to be worked on at once and a comfortable-looking sitting area for waiting customers. There are a few stylists available and the receptionist glances at you wondering if you needed any help.<br>
+<br>
+
+/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<strong>Old Hair:</strong>
+/* Variable to store path to file based on current hair as it doesn't work in img tag */
+ <<set _hairlink to "Images\\Icons\\Shop Icons\\Hair Player\\" + $Player.HairStyle + "\\" + $Player.HairColor + ".png">>
+[img[_hairlink]]
+
+<strong>New Hair:</strong>
+<<set _hairlinknew to "Images\\Icons\\Shop Icons\\Hair Player\\" + $HairStyleNew + "\\" + $HairColorNew + ".png">>
+[img[_hairlinknew]]
+<br>
+
+<span style="color:Azure"><strong>-Styles-</strong></span><br>
+
+<<for _i to 0; _i lt $HairStyleOptions.length; _i++>>
+<<set _path = "Images\\Icons\\Shop Icons\\Hair Player\\" + $HairStyleOptions[_i] + "\\" + $HairColorNew + ".png">>
+<<capture _i>>[img[_path][Shopping District Hair Salon][$HairStyleNew to $HairStyleOptions[_i] ]]<</capture>>
+<</for>>
+<br>
+
+<span style="color:Azure"><strong>-Colors-</strong></span><br>
+<<for _i to 0; _i lt $HairColorOptions.length; _i++>>
+<<set _path = "Images\\Icons\\Shop Icons\\Hair Player\\" + $HairStyleNew + "\\" + $HairColorOptions[_i] + ".png">>
+<<capture _i>>[img[_path][Shopping District Hair Salon][$HairColorNew to $HairColorOptions[_i] ]]<</capture>>
+<</for>>
+<br>
+
+ 
+<br>
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $Money >= 5 and ($HairStyleNew != $Player.HairStyle or $HairColorNew != $Player.HairColor)>>
+    [[Get Your Hair Styled ($5 0:20)|Shopping District Hair Salon][$Player.HairColor to $HairColorNew; $Player.HairStyle to $HairStyleNew; $Minutes += 20; $Money -= 5]]<br>
+<<else>>
+    <span style="color:lightcoral">Get Your Hair Styled ($5 0:20)</span><br>
+<</if>>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Shopping District.png">
+	[[Shopping District (0:01)|Shopping District][$Minutes += 1]]<br>

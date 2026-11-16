@@ -1,0 +1,66 @@
+:: Snowpaw Intro [nobr]
+
+/* Intro */
+<span style="color:DarkTurquoise">Mr. Hart</span> looks miserable, more miserable than usual. The bags under his eyes look twice as big as normal and you can’t help but notice the bandage on his nose and the icepack on his shoulder. He looks like he got beat up or mugged on the street. It is of little surprise that, when class finally starts, his groaning voice explains that he’s in no condition to teach and decides that today will be a free day. Everyone is to pair up and read to themselves. <br>
+<br>
+<span style="color:LightSteelBlue">“And if you finish the chapter and can be quiet, feel free to chat amongst yourselves or whatever you kids do. Just do it quietly…”</span> He says before resting his head on his desk and downing a pile of what you assume are painkillers. Everyone murmurs happily as they pair up and you are deciding who you should group with when someone suddenly grabs your arm. <br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+
+        },
+    },
+    {
+        Name: "Jackson",
+        State: {
+            Mouth: "Happy",
+            Outfit: "Uniform",
+        },
+    },
+]>>
+<<ad _ad>>
+
+
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$JacksonNickname</span>! <span style="color:DarkTurquoise">$JacksonNickname</span>!”</span> <span style="color:DarkTurquoise">Jackson</span> had grabbed you and was happily bouncing up and down; seems he wanted to pair up. <span style="color:LightSteelBlue">“I’ve got something SUPER COOL to show you, come on!”</span> <span style="color:DarkTurquoise">Jackson</span> practically drags you to the corner of the classroom and you are almost worried he’s going to do something crazy, <span style="color:Pink">like pull his pants down,</span> but instead he begins to fish in his bag. <br>
+<br>
+You try to explain that you are supposed to read the chapter first before chatting, but <span style="color:DarkTurquoise">Jackson</span> seems far too excited to be willing to wait. <span style="color:LightSteelBlue">“We can read after, you gotta see this!”</span> <span style="color:DarkTurquoise">Jackson</span> finally finds what he is looking for and pulls out two small slips of paper. He hands one to you with a big smile and you read what is printed on it. <br>
+<br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Lenny</span>’s Wild West Show! Come experience the thrills, excitement, and skill the Wild West has to offer! Admits one.”</span> You tilt your head at it and ask <span style="color:DarkTurquoise">Jackson</span> what this is. <br>
+<br>
+<span style="color:LightSteelBlue">“It’s a ticket to THE <span style="color:DarkTurquoise">Lenny</span>’s Wild West Show! They have gun fights and horse riding, and reenactments and-!”</span> <span style="color:DarkTurquoise">Jackson</span> goes off on a short tangent about the Wild West show, clearly showing his enthusiasm before he is shooshed by one of the groups near you. <span style="color:LightSteelBlue">“Sorry, hehe.”</span> <span style="color:DarkTurquoise">Jackson</span> laughs. <span style="color:LightSteelBlue">“But my mom helped organize this whole thing and promised me two tickets if I agreed to wear some dumb suit to some fancy pants dinner with the mayor. It sucked and was SO boring, but it was all worth it because now I have these! I’m so excited!”</span> <br>
+<br>
+<span style="color:DarkTurquoise">Jackson</span> is practically jumping up and down, overjoyed at the mere thought of attending this show. <span style="color:LightSteelBlue">“I was going to go with my little brother <span style="color:DarkTurquoise">Theo</span>, but he gets anxious around loud noises and turned me down. Was thinking I’d have to go by myself, but then I remembered I have a super cool and awesome buddy named <span style="color:DarkTurquoise">$JacksonNickname</span> who I just know wouldn’t make me go all by myself!”</span> <span style="color:Pink">As <span style="color:DarkTurquoise">Jackson</span> speaks, he nestles his head into your neck, looking up at you with puppy dog eyes that remind you of your little brother.</span> <br>
+<br>
+You chuckle, saying that all he has to do is ask. <span style="color:LightGreen">You’d love to go to this Wild West show with him, it’d be fun.</span> <span style="color:DarkTurquoise">Jackson</span> happily squeals, before being shushed again. <span style="color:LightSteelBlue">“Thanks! I knew you couldn’t resist!”</span> He gives you a hug that is a little too tight, <span style="color:LightSteelBlue">“It’s Friday after school, around 4PM at the community center. If you get there between 3:30 and 5:00 I should be around. Dang it, I’m so excited!”</span> <span style="color:DarkTurquoise">Jackson</span> is bouncing with joy, and you spend the next 20 minutes trying to calm him down long enough to read the chapter that was assigned. <br>
+
+<span style="color:Gold">Quest Acquired: “Lenny’s Wild West Show!”</span> <br>
+<<set $ActiveQuests.push("Snowpaw: Lenny's Wild West Show")>>
+<<set $InActiveQuests.delete("Snowpaw: Lenny's Wild West Show")>>
+<<set $QuestLog.push(
+	{
+		Name: "Snowpaw: Lenny's Wild West Show",
+		State: 1,
+		ID: "OCSnowpaw_M001",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Jackson",
+		Tags: ["Jackson", "Character", "Quest", "Community Center"],
+		Description: "<span style=\"color:DarkTurquoise\">Jackson</span> has invited you to attend <span style=\"color:Teal\">Lenny’s Wild West</span> show with him at the <span style=\"color:Teal\">Community Center</span>. It’s <span style=\"color:Teal\">Friday</span> after school around <span style=\"color:Teal\">4PM</span>. You wonder what sort of show it will be.",
+		Objectives: [
+			{
+				Name: "Attend the show with <span style=\"color:DarkTurquoise\">Jackson</span>",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Jackson",
+	Description: "<span style=\"color:DarkTurquoise\">Jackson</span> has invited you to attend <span style=\"color:Teal\">Lenny’s Wild West</span> show with him at the <span style=\"color:Teal\">Community Center</span>. It’s <span style=\"color:Teal\">Friday</span> after school around <span style=\"color:Teal\">4PM</span>. You wonder what sort of show it will be.",
+})>>
+<br>
+<<include"Attend English Finish">>

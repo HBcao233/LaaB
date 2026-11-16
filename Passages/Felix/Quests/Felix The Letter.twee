@@ -1,0 +1,84 @@
+:: Felix The Letter [nobr]
+
+/* Intro */
+You hear shouting and narrowly step out of the way as a kid runs by in a panic being chased by upperclassmen. It is not an uncommon sight at this school, especially when there aren’t any teachers patrolling the halls. Oh well, you are just thankful it isn’t you being chased. You round the corner towards your destination when you spot your friend <span style="color:DarkTurquoise">Felix</span> up ahead. <span style="color:Yellow">You are about to call out to greet him when you notice a curious look on his face.</span>
+
+<<set _ad to [
+    {
+        Name: "Felix",
+        State: {
+            Outfit: "Uniform",
+            Mouth: "Frown",
+            Eyes: "Tired",
+        },
+    },
+
+]>>
+<<ad _ad>>
+
+<span style="color:Yellow"> <span style="color:DarkTurquoise">Felix</span> is reading some papers with a frown. His eyes read along the lines to the bottom of page before he switches to the last page. He sighs upon reading it, looking down and staring at the words. Guess whatever is on them must not have been the best news.</span> Another one of <span style="color:DarkTurquoise">Felix</span>’s friends calls out to him, telling him to come on before they’re late. <br>
+<br>
+<span style="color:LightSteelBlue">“Alright, I’m coming.”</span> <span style="color:DarkTurquoise">Felix</span> replies back, stuffing the papers into his bag and hurrying off after his friends. <span style="color:Yellow">However, as he jogs away, you notice one of the pieces of paper slip out and flutter to the ground in your direction.</span> You bend down and pick it up, realizing that it is a handwritten letter! Sadly, it is in French, so you have no idea what it says. This must be the last page, as it is only two sentences at the top and signed by someone called <span style="color:LightSteelBlue">“A”</span>. <span style="color:Yellow">Your curiosity is piqued.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Call out to Felix and return it to him<br>">>
+    <<replace"#choice">>
+        You call out to your friend, waving the paper around and telling him he dropped something. <span style="color:DarkTurquoise">Felix</span> stops in his tracks, spins around, and blushes slightly upon seeing what you are holding. He quickly glances at his bag and stuffs the rest of the papers deeper so they don’t slip out before sprinting over and taking the paper from you. <br>
+        <br>
+        <span style="color:LightSteelBlue">“Dang, sorry about that. Thanks for looking out for me.”</span> <span style="color:DarkTurquoise">Felix</span> says with a smile that has a hint of nervousness. You ease his nerves by telling him you didn’t read it, mainly since you can’t speak French, but it looked important since it is handwritten. <span style="color:LightSteelBlue">“Yeah…”</span> <span style="color:DarkTurquoise">Felix</span> replies, rubbing the back of his head. He looks a bit unsure if he should say anything before sighing. <span style="color:LightSteelBlue">“It is a letter from back home. It’s from… well, it makes me feel a little homesick is all. Not that you will be getting rid of me that easily.”</span> He chuckles, punching you in the arm, <span style="color:Yellow">though still seems a little uncomfortable.</span>
+
+        <<set _ad to [
+            {
+                Name: "Felix",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Happy",
+                    Eyes: "Tired",
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Thanks again, I have got to hurry though. See you later!”</span> He gives you a wave before running off. You wave in return as he vanishes around the corner. <span style="color:Yellow">Being a little homesick would explain his expression, but you get the feeling there is a little more to it than just that.</span> <br>
+        <<socialChange "Felix" 5>>
+        <<set $CompletedQuests.push("Felix: The Letter")>>
+        <<set $InActiveQuests.delete("Felix: The Letter")>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    <</replace>>
+    <</link>>
+    <<link "Take it to the library to translate it<br>">>
+    <<replace"#choice">>
+        While you feel a little bad about snooping in what is probably a private letter, your curiosity is too strong and you pocket the letter and quickly head to the library. You don’t have a lot of time but figure you should be able to quickly type this into the library’s computer to translate it to get an idea of what the letter is about. If it turns out to be important, you can give it to him later and claim you found it and guessed it was his because of the French. It’s not like you are reading the full letter, <span style="color:Yellow">so there should be no harm in just a little peek.</span> <br>
+        <br>
+        It takes a bit longer than you thought to get it all typed it out, since a lot of the letter have fancy like squiggles and stuff, but once it looks good you hit translate and read out the message: <span style="color:LightSteelBlue">“…then don’t even bother coming back. Remember, you’re the one who left. Don’t write back. ~A.”</span> <span style="color:LightCoral">You instantly feel a pit in your stomach and a wave of guilt travel up your spine. This may be a bit more personal than you were expecting.</span> <br>
+        <br>
+        You quickly close the browser window, not wanting anyone else to peek over your shoulder and get a look at the letter. You stare down at the paper and realize that <span style="color:DarkTurquoise">Felix</span>’s expression from reading it makes sense. Though who’s this A. person? And why are they so upset at <span style="color:DarkTurquoise">Felix</span>? Seems kind of selfish for someone to get upset over him doing a foreign exchange program, especially to a school like Preston. Different thoughts and theories fill your brain before you decide not to ponder on it too much. <br>
+        <br>
+        Whatever is going on in this letter, it’s none of your business. <span style="color:Yellow">Though you can’t help but wonder and feel a little bad for your friend.</span> You decide to stash the letter away for now and try to find a way to give it back to <span style="color:DarkTurquoise">Felix</span> without him realizing you had it. <br>
+        <<set $CompletedQuests.push("Felix: The Letter")>>
+        <<set $InActiveQuests.delete("Felix: The Letter")>>
+        <br>
+        <<if $Location.Name == "School South Hallway">>
+		    [[Continue|School South Hallway]] 
+	    <<elseif $Location.Name == "School East Hallway">>
+		    [[Continue|School East Hallway]]
+	    <<else>>
+		    [[Continue|School West Hallway]]
+	    <</if>>
+    <</replace>>
+    <</link>>
+</div>

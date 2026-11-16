@@ -1,0 +1,22 @@
+:: Gabe Avatar Sleeping [nobr]
+	/* AVATAR DISPLAY */
+<<set $AD.Name to "Gabe">>
+<<set $AD.Arms to "Normal">>
+<<set $AD.Eyes to "Closed">>
+<<set $AD.Cry to 0>>
+<<set $AD.Blush to 1>>
+<<set $AD.Mouth to "Happy">>
+<<if $GabeStrippedSleeping != 1>>
+	<<set $AD.Outfit to "Pajama">>
+<<elseif $GabeStrippedSleeping == 1>>
+	<<set $AD.Outfit to "Naked">>
+<</if>>
+<<set $AD.Hard to 1>>
+	<<include"GABE Avatar Equipment Set">>
+	/* VARIABLE OVERRIDES */
+	
+<div style="position: relative">
+	<<include"Teen Avatar Display">>
+	/* EMPTY LAYER TO END AVATARS */
+	<img src="Images\Avatar\Body\EmptyTeen.png" style="position: static; left: 0; top: 0">
+</div>

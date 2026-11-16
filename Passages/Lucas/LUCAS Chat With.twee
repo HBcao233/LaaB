@@ -1,0 +1,88 @@
+:: LUCAS Chat With [nobr]
+
+<<set $Minutes += 10>>
+<<if $LucasSche.Activity == "Take Out Trash">>
+	
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+	<<set $LucasTrashChat to 1>>
+	You call out to <span style="color:DarkTurquoise">Lucas</span>, who turns to you smiling. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$LucasNickname</span>! Hey, what’s up?”</span> You spend a few minutes talking with <span style="color:DarkTurquoise">Lucas</span> before he heads back inside.<br>
+	<<socialChange "Lucas" 1>>
+<br>
+[[Continue|Northend]] 
+
+<<elseif $LucasSche.Activity == "Take Out Trash PJ">>
+	
+	<<set $RandomEvent to random(1, 2)>>
+	<<set $SeenLucasPJs to 1>>
+	<<if $RandomEvent != 1>>
+	
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Pajamas",
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+	
+	<span style="color:DarkTurquoise">Lucas</span> screams and jumps at your voice, but sighs in relief once he realizes it was just you. <span style="color:LightSteelBlue"> “Sorry!”</span> He says blushing, <span style="color:LightSteelBlue"> “I hate coming out here at night. I thought you were a creep or something.”</span> You spend a few minutes talking before <span style="color:DarkTurquoise">Lucas</span> heads back inside.<br>
+	<<socialChange "Lucas" 1>>
+<br>
+[[Continue|Northend]]
+
+
+	<<else>>
+	
+	<<set $LucasTrashChat to 1>>
+	
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Pajamas",
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+
+	<span style="color:DarkTurquoise">Lucas</span> jumps at your voice, setting off an unfortunate series of events as he drops the bag of trash on his foot, loses his balance, stumbles backwards, and finally falls into the dirt and mud. <span style="color:LightSteelBlue"> “<span style="color:DarkTurquoise">$LucasNickname</span>!? You scared me!”</span> <span style="color:DarkTurquoise">Lucas</span> complains as you help him up and apologize while trying to contain your laughter. His Green Pajama Pants are completely covered in mud.<br>
+<br>
+<span style="color:LightSteelBlue"> “It’s not your fault.”</span> <span style="color:DarkTurquoise">Lucas</span> sighs as he tries to wipe the mud off, <span style="color:LightSteelBlue"> “I hate coming out here at night, the streets are so dark I keep thinking some creep is going to jump out at me.”</span> You talk for a moment while you help Lucas clean up the trash, then part ways. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Undies",
+			Mouth: "Frown",
+			Blush: 2,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+As you are walking back to your house, you hear <span style="color:DarkTurquoise">Lucas' Mother</span> complaining about him getting dirty and saying he can’t come inside covered in mud. <span style="color:Pink">You peek back over the fence to see <span style="color:DarkTurquoise">Lucas</span> having to strip off his Pajama Pants, leaving him standing on his porch in nothing but his $LucasUndies.Type, as his mother makes him clean the rest of the mud off him with a towel before he is allowed inside.</span><br>
+<<set _arousalbs to []>>
+<<set _arousalkink to ["Voyeurism"]>>
+<<arousalGain 15 _arousalbs _arousalkink>>
+	<<socialChange "Lucas" 3>>
+<br>
+[[Continue|Northend]]
+
+	
+	<</if>>
+
+
+<</if>>

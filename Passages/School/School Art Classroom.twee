@@ -1,0 +1,32 @@
+:: School Art Classroom [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Art Classroom",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Art Classroom",
+}>>
+
+/* Random Event Chance */
+<<set _randomevent to random(1, 100)>>
+
+<span style="color:Azure"><big><strong>--Art Classroom--</strong></big></span><br>
+<<if $ToggleOCRudy == 1 && $InActiveQuests.includes("Rudy: Introduction") && ($Time.between(10,50,11,45)) && _randomevent >= 75>>
+    <<goto"Rudy Intro">>
+<<elseif $ToggleOCRudy == 1 && $CompletedQuests.includes("Rudy: Introduction") && $Time.between(10,50,11,45)>>
+    [[Hang out with Rudy (0:15)|Rudy Hang Out in Art Room]]<br>
+<</if>>
+Art Room. Work in Progress<br>
+<br>
+
+                /* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[West Hallway (0:01)|School West Hallway][$Minutes += 1]] <br>
+<br>
+

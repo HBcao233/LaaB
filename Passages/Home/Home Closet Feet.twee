@@ -1,0 +1,89 @@
+:: Home Closet Feet [nobr]
+
+<<if $HomeClosetCategory2 != "Socks">>
+	<<link "Socks">>
+		<<set $HomeClosetCategory2 to "Socks">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Socks]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "Shoes">>
+	<<link "Shoes">>
+		<<set $HomeClosetCategory2 to "Shoes">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Shoes]</strong>
+<</if>><br>
+
+<<if $HomeClosetCategory2 == "Socks">>
+/* SOCKS */
+<<if $PlayerSocks.Type != "None">>
+	<span style="color:Azure"><strong><big>--Socks--</big></strong></span><br>
+    [img[$PlayerSocks.Icon]] <strong><big>$PlayerSocks.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerSocks.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerSocks.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerSocks.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerSocks.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerSocks.Durability/$PlayerSocks.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerSocks.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerSocks.Description<br>
+    </div>
+<</if>>
+
+<<elseif $HomeClosetCategory2 == "Shoes">>
+/* SHOES */
+<<if $PlayerShoes.Type != "None">>
+	<span style="color:Azure"><strong><big>--Shoes--</big></strong></span><br>
+    [img[$PlayerShoes.Icon]] <strong><big>$PlayerShoes.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerShoes.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerShoes.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerShoes.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerShoes.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerShoes.Durability/$PlayerShoes.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerShoes.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerShoes.Description<br>
+    </div>
+<</if>>
+
+<</if>>
+
+<br>
+<span style="color:Azure"><strong><big>--Closet--</big></strong></span><br>
+
+<<closet2 $HomeClosetCategory2>>
+
+
+<br><<include "Home Closet Inventory">>
+

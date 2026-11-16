@@ -1,0 +1,75 @@
+:: High School [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "High School",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Town",
+}>>
+
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Preston Boys' Academy High School--</strong></big></span><br>
+You stand near the entrance to the High School. While the Middle and Elementary Schools are built to be more contemporary, the Preston Boys'  Academy’s High School is a massively impressive structure. Containing many large buildings all connected by covered pathways, even including a small stadium, it puts even some colleges to shame. The school is designed to tailor to the educational needs of each student, offering courses that prepare them for whatever career they plan to study going forward. <br>
+<br>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+<<if $ToggleOCBobby == 1 && $ActiveQuests.includes("Bobby: Farm Intro") && $Time.between(4, 0, 7, 0) && !$Time.schoolday()>>
+	[[Walk to the Farms (1:00)|OC Bobby Intro 2 Walked]]<br>
+	<<if $Money >=5 >>
+		[[Take a bus to the Farm Area (0:10)|OC Bobby Intro 2 Bus]]<br>
+	<<else>>
+		<span style="color:Red">Take a bus to the Farm Area (0:30)</span><br>
+	<</if>>
+<<elseif $Bike == 1>>
+	[[Ride Bike to Farm (0:30)|Farm Bike To Farm]]<br>
+<<else>>
+	[[Walk to the Farm (1:00)|Farm Walk To Farm]]<br>
+<</if>>
+
+/* CITY BUS */
+<<if $Money >= 3>>
+[[Take the City Bus ($3 0:10)|Take the City Bus][$CityBusStart to "Northend"]]<br>
+<<else>>
+<span style="color:lightcoral">Take the City Bus ($3 0:10)</span><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+    <<if $Bike != 1>>
+<img src="Images\World Map\Individual Icons\Community Center.png">
+	[[Community Center (0:10)|Community Center][$Minutes += $TravelTime]]<br>
+	<<else>>
+<img src="Images\World Map\Individual Icons\Community Center.png">
+	[[Community Center (0:05)|Community Center][$Minutes += $TravelTime]]<br>
+	<</if>>
+<</if>>
+<br>
+
+
+<div style="position: relative">
+<img src="Images\World Map\Town Map.png" 
+style="position: absolute; left: 0; top: 0" alt="Town Map" usemap="#Town">
+<img src="Images\World Map\Here.png" 
+style="position: absolute; left: 522px; top: 81px" alt="Town Map">
+<<include"World Map Quest Marker Tracker">>
+</div>
+
+<map name="Town">
+<area shape="rect" coords="448,81,501,134" alt="Community Center" onclick="$.wiki('<<goto[[Community Center]]>><<set $Minutes += $TravelTime>>')" />
+</map>
+
+<</if>>

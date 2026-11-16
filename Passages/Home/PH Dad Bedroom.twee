@@ -1,0 +1,85 @@
+:: PH Dad Bedroom [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Dad Bedroom",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Bedroom",
+}>>
+
+<<if $ActiveQuests.includes("Chores Reward")>>
+	<<for _i to 0; _i lt $QuestLog.length; _i++>>
+		<<if $QuestLog[_i].Name == "Weekly Chores">>
+			<<for _o to 0; _o lt $QuestLog[_i].Objectives.length; _o++>>
+				<<if $QuestLog[_i].Objectives[_o].Name == "Get Allowance from Your Father" && $QuestLog[_i].Objectives[_o].State != $QuestLog[_i].Objectives[_o].Total>>
+					<<set _ChoreQuest to 2>>
+					<<set $ActiveQuests.delete("Chores Reward")>>
+					<<set $QuestLog.deleteAt(_i)>>
+					<<break>>
+				<</if>>
+			<</for>>
+			<<break>>
+		<</if>>
+	<</for>>
+<</if>>
+
+<span style="color:Azure"><big><strong>--Dad's Bedroom--</strong></big></span><br>
+<<if $Player.Exposed == "Naked">>
+	<<include"PH Dad Bedroom Naked">>
+<<else>>
+
+/* This is a relic of the old time. We will add to Dad Base Talk Code later. */
+<<if _ChoreQuest == 2>>
+	You have finished all your chores. <span style="color:DarkTurquoise">Your Father</span> thanks you and gives you your allowance.<br>
+	<span style="color:Green">+You've gained $20!</span><br>
+	<<set $Money += 20>>
+
+	<br>
+	[[Continue|PH Dad Bedroom]] 
+
+	
+<<else>>
+	You stand in <span style="color:DarkTurquoise">Your Father</span>’s bedroom. It has a large king sized bed in the center of the room, a desk with a fancy dual monitor computer set-up, and a large bookcase. He has a few family photos on his desk, one of which includes your late mother. Everything is very clean and well-kept, showing how much he takes care of this things.<br>
+	<br>
+	/* NPC SEEN */
+	<<include "NPC Inspect">>
+	<br>
+	<<if $DadSche.Location != "Dad Bedroom">>
+		<span style="color:Azure"><strong>-Actions-</strong></span><br>
+		[[Go through his dresser|Dad Dresser]]<br>
+	<</if>>
+
+<</if>>
+<br>
+
+<br>
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Hallway (0:01)|PH Hallway][$Minutes += 1]] <br>
+	
+	<<if $DadSche.Activity != "Work Computer" and $DadSche.Activity != "Sleeping">>
+	[[Your Father's Bathroom (0:01)|PH Dad Bath][$Minutes += 1]] <br>
+	<</if>>
+<</if>>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Room Marker.png" 
+style="position: absolute; left: 58px; top: 58px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<<if $DadSche.Activity == "Work Computer">>
+<<else>>
+<area shape="rect" coords="58,4,111,57" alt="Dads Bathroom" onclick="$.wiki('<<goto[[PH Dad Bath]]>><<set $Minutes += 1>>')" />
+<</if>>
+
+<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+</map>
+<</if>>

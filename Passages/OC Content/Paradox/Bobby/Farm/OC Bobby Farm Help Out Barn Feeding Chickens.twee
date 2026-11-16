@@ -1,0 +1,92 @@
+:: OC Bobby Farm Help Out Barn Feeding Chickens [nobr]
+
+/* Intro */
+<<set $Minutes += 25>>
+You spy <span style="color:DarkTurquoise">Bobby</span> carrying a large bag of feed over towards the chicken coop and wave to him. <span style="Color: LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>! Fancy meeting you here!”</span> He laughs, hauling the bag over his shoulder, <span style="Color: LightSteelBlue">“Mind if we walk and talk? This bag is pretty heavy.”</span> You follow <span style="color:DarkTurquoise">Bobby</span> along, spotting a symbol of corn on the bag, and curiously ask him what he is doing. Is he planting corn or something? <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "OC Bobby",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Nah, this is feed for the chickens. It’s the girl’s feeding time.”</span> He explains, <span style="Color: LightSteelBlue">“We can’t keep the bag near their coop, or else they’ll break free and down the whole bag in an hour. Gluttonous little birds!”</span> He laughs as you arrive, plopping the bag down and opening it. All the chickens immediately run over to the edge of the fence, <span style="color:Yellow">jumping and clucking so loudly you can hardly hear yourself think.</span> <br>
+<br>
+Though a bit nervous about the chickens, you ask if you could help him out in any way. <span style="Color: LightSteelBlue">“Oh? Sure thing. I got to spread the feed around pretty well or else they’ll start fighting over it.”</span> You’d think he is exaggerating, if you couldn’t see the chickens already getting a bit too rowdy just at the thought of food. <span style="Color: LightSteelBlue">“If you could spread some on the other side, they should scatter a bit and make things a bit calmer. Here.”</span> <br>
+<br>
+<span style="color:DarkTurquoise">Bobby</span> hands you a small bucket filled with the feed and points you over to the other edge. <span style="color:Yellow">You spy some of the chickens following you as you walk over there. You get the suspicious feeling they see you as the easier prey due to your smaller size.</span> <br>
+<br>
+
+<<skillCheck "Athletics" 60>>
+
+<<linkreplace"Continue">>
+    <<if _result == 1>>
+        And they do try to knock you over, leaping and clucking at your feet as you enter the coop. <span style="color:LightGreen">Thankfully for you, they seem more focused on getting food than escaping, since you struggle to shut the gate. But you manage to out-maneuver every attempt they make to knock you onto your butt and make sure to spread the seed in a wide area to avoid them crowding you.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                },
+            },
+            {
+                Name: "OC Bobby",
+                State: {
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        In the end, all the chickens are happy and fed and you manage to exit the coop without much trouble. <span style="Color: LightSteelBlue">“Good work!”</span> <span style="color:DarkTurquoise">Bobby</span> says with a smile, <span style="Color: LightSteelBlue">“I was a bit worried they’d knock you over or something. But you did great!”</span> <span style="color:LightGreen">He laughs as he pats you on the head and takes the bucket away. You feel pretty proud of your work.</span> <br>
+        <<socialChange "Bobby" 3 1>>
+        <<skillPoints "Athletics" 10>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <<else>>
+        And you’re right. <span style="color:LightCoral">The instant you step into the coop and close the gate behind you, one of the smaller chickens leaps at your face! You cry out in fear, dropping the bucket, and panicking as the chicken somehow lands in your $PlayerTop.Type and begins to panic and flap around! You cry out even louder and fall to the ground in the pile of feed as all the chickens surround you, desperate to get at the food.</span> <br>
+        <br>
+        You are lying in the fetal position for a few minutes surrounded by clucking and pinching beaks until <span style="color:DarkTurquoise">Bobby</span> manages to scoop you up in his arms. <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                    Cry: 1,
+                },
+            },
+            {
+                Name: "OC Bobby",
+                State: {
+                    Outfit: "Everyday",
+                    Mouth: "Happy",
+                    Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“You alright?”</span> He asks with a reassuring smile, <span style="Color: LightSteelBlue">“No need to be scared. They don’t bite hard or anything, they’ll just jerks sometimes.”</span> He laughs, placing you down on the other side of the fence and dusting off your bottoms. <span style="Color: LightSteelBlue">“There, good as new! Hope the girls didn’t scare you too badly.”</span> <br>
+        <br>
+        <span style="color:LightGreen">You chuckle, saying you’re fine. Which is true, as the only thing wounded is your pride.</span> <br>
+        <<socialChange "Bobby" 3 1>>
+        <<skillPoints "Athletics" 5>>
+        <<needChange "Hygiene" -15>>
+        <br>
+        [[Continue|OC Bobby Farm Local]]
+    <</if>>
+<</linkreplace>>

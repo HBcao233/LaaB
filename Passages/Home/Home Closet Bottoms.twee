@@ -1,0 +1,98 @@
+:: Home Closet Bottoms [nobr]
+
+<<if $HomeClosetCategory2 != "Bottoms">>
+	<<link "Bottoms">>
+		<<set $HomeClosetCategory2 to "Bottoms">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Bottoms]</strong>
+<</if>>
+	<strong> | </strong>
+
+<<if $HomeClosetCategory2 != "Waist">>
+	<<link "Waist">>
+		<<set $HomeClosetCategory2 to "Waist">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Waist]</strong>
+<</if>><br>
+
+<<if $HomeClosetCategory2 == "Bottoms">>
+/* BOTTOMS */
+<<if $PlayerBottoms.Type != "None">>
+	<span style="color:Azure"><strong><big>--Bottoms--</big></strong></span><br>
+    [img[$PlayerBottoms.Icon]] <strong><big>$PlayerBottoms.Name</big></strong><br>
+    <<if $PlayerBottoms.SagAvatar != "None">>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Options:</strong></span> 
+        <<if $PantsSag != 1>>
+        	[[Sag|Home Closet][$PantsSag to 1]]
+        <<else>>
+        	[[Unsag|Home Closet][$PantsSag to 0]]
+        <</if>>
+        <br>
+    </div>
+    <</if>>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerBottoms.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerBottoms.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerBottoms.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerBottoms.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerBottoms.Durability/$PlayerBottoms.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerBottoms.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerBottoms.Description<br>
+    </div>
+<</if>>
+
+<<elseif $HomeClosetCategory2 == "Waist">>
+/* WAIST */
+<<if $PlayerWaist.Type != "None">>
+	<span style="color:Azure"><strong><big>--Waist--</big></strong></span><br>
+    [img[$PlayerWaist.Icon]] <strong><big>$PlayerWaist.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerWaist.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerWaist.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerWaist.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerWaist.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerWaist.Durability/$PlayerWaist.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerWaist.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerWaist.Description<br>
+    </div>
+<</if>>
+
+<</if>>
+
+<br>
+<span style="color:Azure"><strong><big>--Closet--</big></strong></span><br>
+
+<<closet2 $HomeClosetCategory2>>
+
+<br><<include "Home Closet Inventory">>

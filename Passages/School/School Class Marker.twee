@@ -1,0 +1,32 @@
+:: School Class Marker {"position":"1200,2950","size":"100,100"}
+<<if $Time.schoolday()>>
+	/* BUS */
+	<<if $Time.between(7, 0, 7, 30)>>
+		<<if $RideBusToSchool != 1>>
+			
+		<<else>>
+			<img src="Images\School Map\Class Markers\Math.gif" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+		<</if>>
+	/* MORNING CLASSES */
+	<<elseif $Time.between(7, 30, 8, 30)>>
+		<img src="Images\School Map\Class Markers\Math.gif" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<<elseif $Time.between(8, 30, 9, 30)>>
+		<img src="Images\School Map\Class Markers\History.gif" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<<elseif $Time.between(9, 30, 10, 30)>>
+		<img src="Images\School Map\Class Markers\Drama.gif" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	/* AFTERNOON CLASSES */
+	<<elseif $Time.between(11, 30, 12, 30)>>
+		<img src="Images\School Map\Class Markers\Science.gif" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<<elseif $Time.between(12, 30, 13, 30)>>
+		<img src="Images\School Map\Class Markers\English.gif" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<<elseif $Time.between(13, 30, 14, 30)>>
+		<img src="Images\School Map\Class Markers\Gym.gif" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#School">
+	<</if>>
+<</if>>

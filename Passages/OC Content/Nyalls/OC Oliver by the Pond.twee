@@ -1,0 +1,182 @@
+:: OC Oliver by the Pond [nobr]
+
+/* Opening */
+<<set $Minutes += 20>>
+As you are going on a peaceful walk in the park, you notice a familiar little gray-haired boy kneeling by the pond looking at the frogs. Watching him for a few minutes, you realize it was <span style="color:DarkTurquoise">Noah</span>’s friend <span style="color:DarkTurquoise">Oliver</span>. You walk up to him, slowly, at first you were just going to say hello, but then again it could be funny to give him a little startle. <span style="color:yellow">What’s the worst that could happen?</span> <br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Oliver">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC OLIVER Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+
+<div id=choice1>
+/* Say Hello */
+	<<link "Say hello<br>">>
+	<<replace"#choice1">>
+        You walk up and say hello, but even this is enough to startle the shy boy, <span style="color:lightcoral">as he jumps from your sudden appearance and slips, falling towards the water!</span> <span style="color:lightcoral">You think fast and quickly grab his arm, pulling him up just in time to save him from an unexpected plunge.</span> <br>
+        <br>
+        Panting and looking like his heart was beating 100 times per second, <span style="color:DarkTurquoise">Oliver</span> glances up at you, noticing you were still holding his hands, and quickly jerks away. <span style="color:pink">It takes him a second to put the pieces together on what occurred, but once he does he looks down shyly.</span> <br>
+
+        /* AVATAR DISPLAY */
+            <<set $AD.Name to "Player">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Happy">>
+            <<set $AD.Outfit to "Everyday">>
+            <<set $AD.Hard to 0>>
+            <<include"Player Avatar Display Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+        <div style="position: relative">
+            <<include"Avatar Display">>
+        /* SECOND LAYER */
+            <<set $AD.Name to "Oliver">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 1>>
+            <<set $AD.Mouth to "Sad">>
+            <<set $AD.Outfit to "Everyday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC OLIVER Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+        <div style="position: absolute; left: 125px; top: 0px">
+            <<include"Kid Avatar Display">>
+        </div>
+        /* END LAYER */
+            <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+        </div>
+
+        <span style="color:LightSteelBlue">“Th- thank you.”</span> He whispers, blushing slightly. You apologize for startling him, saying you forgot how jumpy he is. <span style="color:LightSteelBlue">“I- I see…”</span> He responds quietly. You try to strike up a conversation with him, asking him about school or what he’s doing at the park, but his shyness makes it difficult to keep one going. <br>
+        <br>
+        After a while of idle chit-chat, <span style="color:DarkTurquoise">Oliver</span> finally says <span style="color:LightSteelBlue">“I- I have to go now.”</span> He thanks you once more before running off. Nice kid, but you wish he would talk more. <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Oliver" 3 1>>
+        <br>
+        [[Continue|Park]]
+
+    <</replace>>
+    <</link>>
+/* Scare him */
+	<<link "Scare him<br>">>
+	<<replace"#choice1">>
+        Quietly creeping up behind the small boy, you jump up and yell boo! <span style="color:DarkTurquoise">Oliver</span> jumps in fright, <span style="color:lightcoral">letting out a small scream, as he slips, unable to keep his balance, and falls into the pond!</span> The pond was only about a foot deep, meaning the boy was safe and unharmed, other than being soaking wet. <span style="color:pink">The look of his confused and dazed expression was too much, as you break out laughing.</span> <br>
+
+        /* AVATAR DISPLAY */
+            <<set $AD.Name to "Player">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Tired">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Smirk">>
+            <<set $AD.Outfit to "Everyday">>
+            <<set $AD.Hard to 0>>
+            <<include"Player Avatar Display Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+        <div style="position: relative">
+            <<include"Avatar Display">>
+        /* SECOND LAYER */
+            <<set $AD.Name to "Oliver">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Sad">>
+            <<set $AD.Cry to 1>>
+            <<set $AD.Blush to 2>>
+            <<set $AD.Mouth to "Sad">>
+            <<set $AD.Outfit to "Everyday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC OLIVER Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+        <div style="position: absolute; left: 125px; top: 0px">
+            <<include"Kid Avatar Display">>
+        </div>
+        /* END LAYER */
+            <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+        </div>
+
+        Trying to hold in your laughter, you bend down and offer him some help up, asking if he’s okay. <span style="color:DarkTurquoise">Oliver</span> responds by giving you a dirty look, his face bright red with tears welling in his eyes. <span style="color:lightcoral">Angry, he splashes you heavy with the water, causing you to fall back as your clothes are soaked.</span> You cough up water, claiming that was fair retaliation for you scaring him, and move to help the boy out, only to find him gone. <br>
+        <br>
+/* Selecting Random */
+<<set _Random to random(1, 2)>>
+<<if !$CompletedQuests.includes("Nyalls: Evelyn")>>
+    <<set _Random to 1>>
+<</if>>
+<<if _Random == 1>>
+    Spotting a trail of water, you figured the boy ran away. He looked upset, but that’s just because he couldn’t take a joke. It’s just a little water, not like it’ll hurt him or anything. Sighing, you stand up and try to wave your clothes dry before walking away. <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Oliver" -3 1>>
+        <<set $Wet to 2>>
+        <br>
+        [[Continue|Park]]
+
+<<else>>
+    <span style="color:lightcoral">Before you can even look around to try to find the boy, you are suddenly shoved harshly from behind and fall face-first into the pond with a thud as you smack against the waterbed! You quickly come up, gasping for air, but are kicked once more and fall again into the water.</span> <br>
+
+        /* AVATAR DISPLAY */
+            <<set $AD.Name to "Player">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Normal">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 2>>
+            <<set $AD.Mouth to "Sad">>
+            <<set $AD.Outfit to "Everyday">>
+            <<set $AD.Hard to 0>>
+            <<include"Player Avatar Display Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+        <div style="position: relative">
+            <<include"Avatar Display">>
+        /* SECOND LAYER */
+            <<set $AD.Name to "Evelyn">>
+            <<set $AD.Arms to "Normal">>
+            <<set $AD.Eyes to "Mad">>
+            <<set $AD.Cry to 0>>
+            <<set $AD.Blush to 0>>
+            <<set $AD.Mouth to "Sad">>
+            <<set $AD.Outfit to "Everyday">>
+            <<set $AD.Hard to 0>>
+                <<include"OC EVELYN Avatar Equipment Set">>
+        /* VARIABLE OVERRIDES */
+                /* */
+        <div style="position: absolute; left: 125px; top: 0px">
+            <<include"Kid Avatar Display">>
+        </div>
+        /* END LAYER */
+            <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+        </div>
+
+    Quickly rolling around to escape your attacker, <span style="color:lightcoral">you come up just in time to come face to face with your angry attacker.</span> <span style="color:LightSteelBlue">“How’s the water, you bully!”</span> <span style="color:lightcoral">You hear a familiar high-pitched voice and spot a young, dark-haired kid standing at the edge of the pond.</span> You stand up, angrily shouting at the kid, before the run off yelling <span style="color:LightSteelBlue">“If I catch you doing that to <span style="color:DarkTurquoise">Oliver</span> again, I’ll kick you lower next time!”</span> <br>
+    <br>
+    When you finally manage to exit the pond and clear the water from your eyes, both kids are gone, and you are left soaking wet and soar. <span style="color:lightcoral">Some kids can’t take a joke.</span> <br>
+    <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Oliver" -3 1>>
+        <<socialChange "Evelyn" -3 1>>
+        <<set $Wet to 2>>
+        <<addMoodlet "Pained" 6>>
+        <br>
+        [[Continue|Park]]
+
+<</if>>
+
+    <</replace>>
+    <</link>>
+</div>

@@ -1,0 +1,41 @@
+:: Gym Class Shower Jackson Shampoo [nobr]
+
+As you are washing your hair and zoning out, <span style="color:Red">you are suddenly jumped scared by someone tapping on your shoulder!</span> <span style="color:Pink">You scream, slipping and sliding on the wet floor and only barely catching yourself as you quickly cover your crotch and turn around. <span style="color:DarkTurquoise">Jackson</span> is standing there, completely naked and dripping wet. You can’t help your eyes glancing down towards his penis, which sits flaccid between his legs.</span><br>
+
+<<set _ad to [
+	{
+		Name: "Jackson",
+		ShowZoom: true,
+		State: {
+			Mouth: "Happy",
+			Outfit: "Naked",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Do you have any shampoo? My shower is out and I like how the shampoo here smells better than what my dad buys.”</span> He asks, not even acknowledging the fact that he just gave you a mini heart attack. <span style="color:Pink">He sees that you are blushing bright red and covering yourself and gives you a confused look.</span> <span style="color:LightSteelBlue">“Why are you hiding your wiener? I’m a boy too, see!”</span> 
+<<if $JacksonCut == "Uncut">>
+<span style="color:Pink"><span style="color:DarkTurquoise">Jackson</span> thrusts his pelvis forward and grabs his penis, pointing it up at you and even pulls back his foreskin enough to give you a peek at his bright red tip.</span> The kid really wasn’t shy about his body.<br>
+<<elseif $JacksonCut == "Cut">>
+<span style="color:Pink"><span style="color:DarkTurquoise">Jackson</span> thrusts his pelvis forward and grabs his penis, pointing it up at you and even wiggles it around while making funny noises.</span> The kid really wasn’t shy about his body.<br>
+<</if>>
+<br>
+Feeling slightly embarrassed as you both stand there naked with water washing over you, you point to the shampoo on the shelf and say he can take it. He thanks you with a big smile and walks over and grabs it. As he is about to leave, <span style="color:Pink">he suddenly turns back to you and pokes your side with the tip of his penis, making a ‘boop’ noise, before running off giggling.</span> You stand there, blushing and confused, as you quickly finish your shower and get dressed.<br>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated", "Exhibitionism"]>>
+	<<arousalGain 10 _arousalbs _arousalkink>>
+	<<addMoodlet "Seen Naked" 2>>
+
+	/* GETTING DRESSED */
+	<<set $ClothSave to "Restore">>
+    <<if $GymClassType == "Gym">>
+		<<storeClothing "Restore" "Undies">>
+	<<else>>
+		<<storeClothing "Restore" "Naked">>
+    <</if>>
+	<<if $SaveUndies != null>>
+		<<set $PlayerUndies to $SaveUndies>>
+	<</if>>
+		
+		[[Continue|School Locker Room]] 

@@ -1,0 +1,30 @@
+:: JACKSON Avatar Naked [nobr]
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Jackson">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Normal">>
+	<<set $AD.Outfit to "Naked">>
+	<<set $AD.Hard to 0>>
+		<<include"JACKSON Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* PENIS ZOOM DISPLAY (+160px) */
+<<if $ZoomsNPC != 0>>
+	<div style="position: absolute; left: 160px; top: 0px">
+			<<include"JACKSON Avatar Equipment Set">>
+	<<set $AD.Hard to 0>>
+			<<include"Penis Zoom Display">>
+			<div style="position: absolute; left: 133px; top: 0px">
+				<<include"Butt Zoom Display">>
+			</div>
+	</div>
+<</if>>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>

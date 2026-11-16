@@ -1,0 +1,67 @@
+:: Arcade Racing Game 2 [nobr]
+
+/* Written by: Winters */
+<<set $Minutes += 20>>
+Walking through the arcade, your senses are flooded with the colors, lights, and sounds of various arcade machines as they invite you to spend your money for the chance to achieve a fleeting moment of high-score glory. The squeals of delights of kids are in competition with the shouts of frustration from others. <br>
+<br>
+One particularly large game, called <span style="Color: LightSteelBlue">“Neon Gauntlet”</span>, earns your attention. The game cabinet is black with art on the side that depicts helmeted racers on futuristic bikes in a tight race on a road of pure light. Large speakers and a powerful subwoofer in the front of the cabinet belt out a thumping techno soundtrack that makes the entire cabinet vibrate. True to its name, the cabinet is accented by strips of neon lights that pulse and shift in color to match the music. <br>
+<br>
+Inside are four full-sized, molded plastic bikes. Three of the bikes are occupied by boys around your age that are engaged in a tight race. The bikes are sleek, with an angular and futuristic design. A high-gloss finish catches the light from the neon lights, and there's a prominent "Neon Gauntlet" logo emblazoned on the side in a sharp, stylized font. The seat and handlebars are angled that you can lean into, just like a real racer. You have a strong desire to ride one. <br>
+<br>
+Seeing that the race has finished and a new one is about to start, you put in a few tokens and slide onto the last bike. The main screen changes as a new race is about to begin. Shots of a treacherous racetrack carved from pure light that go through and over a city lined with futuristic skyscrapers are revealed before settling on the starting line. The screen shows four avatars on futuristic bikes lined up, before splitting into individual viewpoints for each player. Hand tightening around the throttle, you lean in as the race begins. <br>
+<br>
+/* VIDEO GAME SKILL CHECK */
+/* As we don't currently have the skill, it will be set to random. */
+<<set _random to random(1, 2)>>
+
+<<if _random == 1>>
+    The moment the horn is blared, you twist on the throttle as hard as you can. Your avatar goes shooting forward onto the racetrack. The neon city lights blur into streaks of vibrant color as you weave through a labyrinth of glowing skyscrapers and jump massive chasms. The other racers are all close to you as they try to pull ahead, or push you off the course. The thumping techno music seems to be in sync with the beating of your racing heart as the intensity increases. <br>
+    <br>
+    You press your body even closer onto the bike, as if this will aid you in going faster. The screen flashes with points and notifications, but you focus solely on the road. The final part of the course is coming up, and you have two others ahead of you. <span style="Color: Yellow">It’s risky, but you go for the inside of the track. The risk of falling off the course is high, but it is your only chance.</span> You bank hard on the bike as you go to a 45 degree angle and cut inside. You can almost feel the wind on your face and the G-force pulling on your body as you drift around the hairpin turn. <br>
+    <br>
+    <span style="Color: LightGreen">You’re able to precisely complete the maneuver, and you hear at least one boy exclaim in awe. Once you’re through the turn, you snap the bike back and twist the throttle hard while hitting the nitrous boost for that final push to the finish line.</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">Your vision tunnels as all you see is the road and that finish line. The loud noises and shouts that fill the arcade fade as you only hear the hum of the bike. It’s as if you’re actually riding a real bike. This quickly dissipates as a large notification of you coming in first flashes on the screen. It takes a moment for you to realize that you won, and you let go of the throttle.</span> Your hand is a bit shaky from gripping the handle so hard. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+    
+    Raising yourself upright on the bike, you start to realize how sweaty you’ve gotten from the race. <span style="Color: LightGreen">The other boys are all staring at you, before they smile and give you an approving nod. They all seem impressed with what you did.</span> The boys then get off their bikes to find another game to play. You stay on the bike for a moment as you watch the screen with your player avatar holding a trophy. <span style="Color: LightGreen">It may seem silly to some, but you feel proud of yourself. Smiling, you also get off the bike to find another game.</span> <br>
+    
+    <<needChange "Fun" 10>>
+    <br>
+    [[Continue|Arcade]]
+
+<<else>>
+    The moment the horn is blared, you twist what you think is the throttle as hard as you can. It turns out it is not the throttle, but something the label identifies as a clutch, whatever that is. <span style="Color: LightCoral">Your bike stalls out as the other races streak ahead of you. Eventually you’re able to find the throttle and start moving, but you struggle to keep out. The course is also hard to navigate with the bike and as you fall off the course several times.</span> Several valuable seconds are lost each time you fall off. <br>
+    <br>
+    You start to get use to driving the bike and are able to stay on the course. You even start to catch up when the boy next to you banks hard on his bike. <span style="Color: Pink">The bikes are close enough that his body pushes against yours when he does this. The sudden warmth and contact of his body distracts you, and next thing you know you’ve fallen off the course again</span>. <br>
+    <br>
+    By the time you’re brought back onto the course, a notification flashes on the screen informing you that the race is over. The other boys have easily taken the top spots in the race. The screen also flashes everyone’s’ scores, and one boy laughs as he reads your score. He looks over at you. <br>
+    <br>
+    <span style="Color: LightSteelBlue">“You know you must use the gas to move forward? You got to twist your wrist around the throttle,”</span> he says as he makes a gesture of twisting an invisible shaft. He laughs again before getting off the bike to find another game. <span style="Color: LightCoral">Your face burns a little in embarrassment at being called out for playing so poorly.</span> <br>
+    
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Blush: 1,
+                },
+            },
+        ]>>
+    <<ad _ad>>
+
+    The boy next to you that pressed up against the race looks over at you and rolls his eyes. <span style="Color: LightSteelBlue">“Don’t mind him,”</span> he says. <span style="Color: LightSteelBlue">“He spends so much money on this game that he’ll never be able to afford college. You shouldn’t feel bad about that attempt. You’ll get better when you get use to the controls.”</span> He gives you a smile before getting up himself to find another game. <span style="Color: LightGreen">Feeling a bit better about yourself, you get off the bike to find another game. While it was challenging, it was still fun.</span> <br>
+    
+<<needChange "Fun" 10>>
+<br>
+[[Continue|Arcade]]
+<</if>>

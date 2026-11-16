@@ -1,0 +1,43 @@
+:: Home Pee [nobr]
+
+<<set _random to random(1, 4)>>
+
+<<if $ToggleDiapers != 1 or $PlayerUndies.Tags.includes("Diaper")>>
+	<<set _random to 1>>
+<</if>>
+
+<<if _random == 4>>
+	<<set _random2 to random(1, 2)>>
+	<<if _random2 == 1>>
+		<<include"Forced Diaper Dad">>
+	<<else>>
+		<<include"Forced Diaper Gabe">>
+	<</if>>
+<<else>>
+	<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+	<span style="color:Lightcoral">As you feel as if you are about to burst, you hold your hands against your crotch as tightly as possible, as if it would stop the coming flow. But as your eyes began to water and the warm fluid began to fill your hands and run down your leg, you realize that you have wet yourself. Look on the bright side though, at least your clothes aren't wet. </span><br>
+	<br>
+		<<set $Player.Hygiene to 0>>
+	<<elseif $PlayerUndies.Tags.includes("Diaper")>>
+		<<if $FullDiaper == 1>>
+	<span style="color:Lightcoral">Unable to hold it in anymore, you are forced to release your hold on your bladder. Unfortunately, even though you are wearing a $PlayerUndies.Type, you very quickly begin to feel it leaking and dripping down your leg! Your protection was already full to the brim and as the fluid leaked out, it became very clear that you had wet yourself! </span> <br>
+	<br>
+		<<set $Player.Hygiene to 0>>
+		<<set $Wet to 2>>
+
+		<<else>>
+	<span style="color:Lightcoral">Unable to hold it in anymore, you are forced to release your hold on your bladder. As you pee yourself, you find yourself grateful to be wearing $PlayerUndies.Type, as it seems to absorb most of the fluid and you can’t even tell you’ve had an accident from the outside. Though your diaper begins to feel full and uncomfortable; You should probably change it soon. </span> <br>
+		<<addMoodlet "Full Diaper" 1>>
+	<br>
+		<</if>>
+	<<else>>
+	<span style="color:Lightcoral">You can’t hold it in anymore and your eyes begin to water as your bladder relieves itself. Your face goes red as the warm fluid envelopes your clothing and you wet yourself. You’re wet, embarrassed, and stink. But on the bright side, no one saw it.</span><br>
+	<br>
+		<<set $Player.Hygiene to 0>>
+		<<set $Wet to 2>>
+	<</if>>
+
+	<<set $HadAccident to 0>>
+	<<include"Home Fail Location">>
+
+<</if>>

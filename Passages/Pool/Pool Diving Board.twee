@@ -1,0 +1,143 @@
+:: Pool Diving Board [nobr]
+
+<<set $Minutes += 10>>
+
+<<set $SwimStamina -= 10>>
+
+/* OPENING */
+You stand at the bottom of the dauntingly tall diving board. From this angle, it seems to go up for miles past the clouds and deep into the atmosphere. 
+    /* LOW SENSE */
+<<if $Sense <= 4>>
+You gulp, gripping the ladder, only to realize that you hands were shaking. You let go, taking a deep breath to calm yourself,  before you begin to ascend. Climbing it doesn’t make it seem any shorter; Seemingly taking minutes to reach the top. <span style="color:lightcoral">When you finally reach the peak, you feel your legs shake and your butt clench as you stare down at the tiny pool below you.</span>
+    /* MID SENSE */
+<<elseif $Sense == 5 or $Sense == 6>>
+You take a deep breath, grip the ladder, and begin to climb the towering diving board. You have to stop yourself from looking down, but it does get easier the more you climb. That is, of course, until you reach the top and have no choice but to look down. The pool looks like a tiny L from this distance. Looking out over the pool walls, you can even make out your school and the roof of your house, at least you think that’s your house.
+    /* HIGH SENSE */
+<<elseif $Sense > 6>>
+You smile, almost excited by the height, and begin to climb with purpose. It only takes you a few seconds to reach the top. You take in the view, breathing in deeply the fresh air that comes with being so high up.
+<</if>><br>
+<br>
+
+/* EVENT */
+/* FEAR */
+    /* CLIMB DOWN */
+<<if $FearHeights == 1>>
+    /* OPENING */
+<span style="color:lightcoral">As you glance down, your vision suddenly becomes blurry. You freeze as the distance between you and the ground seems to extend further and further. Your legs begin to feel like jelly, as you quickly fall to your knees and grip the edges of the diving board in a panic.</span><br>
+<br>
+    /* EMPTY */
+<<if $PoolState == "Senior Swim">>
+You have no other choice, as your stomach begins to turn, and you slowly crawl backward towards the ladder heading back to the safety of the ground. By the time you reach the ground your hands are red and sore, having been gripping the ladder so tightly. As you turn and walk away from the ladder, you briefly glimpse the Seniors, who had stopped their exercise and were watching you, and feel your cheeks redden.<br>
+<br>
+You hear murmurings like <span style="color:LightSteelBlue">“Oh poor baby”</span> and <span style="color:LightSteelBlue">“He’s a bit too little to be trying that.”</span> Which make just make your cheeks turn even more red.<br>
+<br>
+[[Continue|Pool Very Deep]]
+    /* SENIOR */
+<<elseif $PoolState == "Empty">>
+You have no other choice, as your stomach begins to turn, and you slowly crawl backward towards the ladder heading back to the safety of the ground. By the time you reach the ground your hands are red and sore, having been gripping the ladder so tightly.<br>
+<br>
+[[Continue|Pool Outside]]
+
+    /* AFTER SCHOOL, TEEN, FAMILIES */
+<<elseif $PoolState == "After School" or $PoolState == "Teen" or $PoolState == "Families">>
+You have no other choice, as your stomach begins to turn, and you slowly crawl backward towards the ladder heading back to the safety of the ground. <span style="color:pink">The jeering and giggles start almost immediately. It seems the attention of most of the pool had turned to you as soon as you had begun your climb, and now they were all watching you chicken out and return to the bottom.</span> Though you suppose it could be worse.<br>
+<br>
+[[Continue|Pool Outside]]
+
+    /* SWIM CLASS */
+<<else>>
+You have no other choice, as your stomach begins to turn, and you slowly crawl backward towards the ladder heading back to the safety of the ground. <span style="color:lightcoral">You already felt embarrassed for having chicken out upon reaching the top, but the murmuring from the students of the swim class only add to the humiliation.</span><br>
+<br>
+<span style="color:LightSteelBlue">“Ah, I thought he was going to do it!”</span> Says one small boy disappointedly.<br>
+<br>
+<span style="color:LightSteelBlue">“Nah, he’s too much of a chicken!”</span> Another one laughed, <span style="color:LightSteelBlue">“He’s probably wet himself!”</span> This prompts a chorus of laughter from many of the small boys, and even some instructors, which only reddened your cheeks further.<br>
+<br>
+[[Continue|Pool Outside]]
+<</if>>
+
+/* LOW SENSE */
+<<elseif $Sense <= 3>>
+    <<set _random to random(1, 2)>>
+        <<if $PoolState == "Swim Class" or $PoolState == "Senior Swim" or $PoolState == "Empty">>
+            <<set _random to 2>>
+        <</if>>
+You inch towards the edge, glancing over the looming distance between you and the water. <span style="color:lightcoral">It seems… a lot further of a drop from up here.</span> You gulp, starting to feel a little dizzy, and move to jump. Or at least, you think about moving. Try to move. Your body was frozen in fear as your butt clenched tighter than you thought was possible. <br>
+<br>
+    /* PUSHED */
+<<if _random == 1>>
+You back up, slowly, as your head begins to spin, and the distance seems to grow larger and larger. Sliding your feet across the board, you decide that the humiliation of climbing back down is better than jumping. You are nearly there, when suddenly, <span style="color:lightcoral">you feel a hand press against your back! Before you can react, you are suddenly sent tumbling forward. You try your hardest to stay on the diving board, but the momentum is too much as you tumble off the edge towards the waiting below! You let out a scream as your heart enters your throat and you fall!</span> <br>
+<br>
+<<include"Pool Diving Board Fail">>
+
+    /* CLIMB DOWN */
+    <<elseif _random == 2>>
+    /* EMPTY */
+<<if $PoolState == "Seniors Swim">>
+You have no other choice, as your stomach begins to turn, and you slowly crawl backward towards the ladder heading back to the safety of the ground. By the time you reach the ground your hands are red and sore, having been gripping the ladder so tightly. As you turn and walk away from the ladder, you briefly glimpse the Seniors, who had stopped their exercise and were watching you, and feel your cheeks redden.<br>
+<br>
+You hear murmurings like <span style="color:LightSteelBlue">“Oh poor baby”</span> and <span style="color:LightSteelBlue">“He’s a bit too little to be trying that.”</span> Which make just make your cheeks turn even more red.<br>
+<br>
+[[Continue|Pool Outside]]
+    /* SENIOR */
+<<elseif $PoolState == "Empty">>
+You have no other choice, as your stomach begins to turn, and you slowly crawl backward towards the ladder heading back to the safety of the ground. By the time you reach the ground your hands are red and sore, having been gripping the ladder so tightly.<br>
+<br>
+[[Continue|Pool Outside]]
+
+    /* AFTER SCHOOL, TEEN, FAMILIES */
+<<elseif $PoolState == "After School" or $PoolState == "Teen" or $PoolState == "Families">>
+You have no other choice, as your stomach begins to turn, and you slowly crawl backward towards the ladder heading back to the safety of the ground. The jeering and giggles start almost immediately. It seems the attention of most of the pool had turned to you as soon as you had begun your climb, and now they were all watching you chicken out and return to the bottom. Though you suppose it could be worse.<br>
+<br>
+[[Continue|Pool Outside]]
+
+    /* SWIM CLASS */
+<<elseif $PoolState == "Swim Class">>
+You have no other choice, as your stomach begins to turn, and you slowly crawl backward towards the ladder heading back to the safety of the ground. You already felt embarrassed for having chicken out upon reaching the top, but the murmuring from the students of the swim class only add to the humiliation.<br>
+<br>
+<span style="color:LightSteelBlue">“Ah, I thought he was going to do it!”</span> Says one small boy disappointedly.<br>
+<br>
+<span style="color:LightSteelBlue">“Nah, he’s too much of a chicken!”</span> Another one laughed, <span style="color:LightSteelBlue">“He’s probably wet himself!”</span> This prompts a chorus of laughter from many of the small boys, and even some instructors, which only reddened your cheeks further.<br>
+<br>
+[[Continue|Pool Outside]]
+<</if>>
+<</if>>
+
+/* MID SENSE */
+<<elseif $Sense > 3 and $Sense < 7>>
+<<skillCheck "Swimming" 70>>
+
+    /* PASS */
+<<if _result == 1>>
+You take another deep breath, focusing on what you know. They wouldn’t install this if it was dangerous, you’ve seen people jump from this high with no problem. <span style="color:lightgreen">You could do this, you were brave, you were the best swimmer in the whole world!</span> <br>
+<br>
+With your confidence boosted, you back up, take a small running start, and dive off the edge! Fear immediately refills you, but it is soon replaced by a surging excitement. You feel weightless, as the dive seems to move in slow motion. You feel as if you are flying, even though the water is hurdling towards you. <span style="color:lightgreen">It is, exhilarating.</span> <br>
+<br>
+Though your well of courage seems to dry up right as you reach the water, you briefly panic, expecting a sharp pain, but enter the water perfectly. Your momentum slows and all the noise of the world becomes muffled. You open your eyes; You didn’t even realize you had closed them. You were about halfway down in the deepest part of the pool, floating. It is only as your stomach begins to hurt that you realize that you hadn’t breathed since you jumped, and quickly move to surface, gasping for air. <br>
+<br>
+<<if $PoolState != "Empty">>
+As you surface, you hear a small about of cheering from your audience, obviously impressed by your dive and that you didn’t chicken out. <span style="color:lightgreen">You feel a well of pride, only slightly diminished by your coughing and gagging, and quickly move to the edge of the pool to catch your breath.</span> <br>
+    <<skillPoints "Swimming" 2>>
+<br>
+<</if>>
+[[Continue|Pool Deep]]
+
+    /* FAIL */
+<<else>>
+You take another deep breath, focusing on what you know. They wouldn’t install this if it was dangerous, you’ve seen people jump from this high with no problem. <span style="color:lightgreen">You could do this, you were brave, you were the best swimmer in the whole world!</span> <br>
+<br>
+You step back to get a small running start, and rush towards the edge to dive! Your boost of confidence didn’t last long enough. <span style="color:lightcoral">Right before you reached the edge, all your fear and anxiety surges back. Your legs freeze mid-run, desperate to abort, but the rest of your body can’t stop. Carried by the momentum, you fall off the dive board in less of a ‘dive’ and more of a ‘tumble’.</span><br>
+<br>
+<<include"Pool Diving Board Fail">>
+<</if>>
+
+/* HIGH SENSE */
+<<elseif $Sense > 6>>
+    /* PASS NO PROBLEM */
+<span style="color:lightgreen">You take a deep breath and smile, this wasn’t your first time diving. You knew what to do, you knew there was nothing to fear.</span> You take a step back, get a bit of a running start, and leap off the end! performing an impressive series of flips, you move into a swan dive and enter the water perfectly! You surface a moment later, the thrill of falling still causing your heart to beat rapidly. You smirk, wiping the water from your eyes, and swim over towards the edge of the pool.<br>
+<<if $PoolState != "Empty">>
+As you surface, you hear a small about of cheering from your audience, obviously impressed by your dive. <span style="color:lightgreen">You feel a well of pride, giving your audience a prideful look that would have looked a bit silly, if you even just preformed one of the best dives they’ve seen recently.</span> <br>
+<</if>>
+    <<skillPoints "Swimming" 3>>
+<br>
+[[Continue|Pool Deep]]
+<</if>>

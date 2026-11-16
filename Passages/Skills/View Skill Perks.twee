@@ -1,0 +1,187 @@
+:: View Skill Perks [nobr]
+
+<<if $Skill.Perks.includes("Swim Endurance Bonus") and !$SwimEnduranceBonusApplied>>
+    <<set $Endurance += 1>>
+    <<set $SwimEnduranceBonusApplied = true>>
+<</if>>
+
+/* We will set perks based off of Skill. */
+
+/* Athletics */
+<<if $CurrentSkill == "Athletics">>
+    /* Default Perks */
+    <<set _perks to [
+        "Gym Class Bonus",
+        "Jogging",
+    ]>>
+    <<set _lockedperks to []>>
+    /* Locked Perks */
+    <<if $Skill.Perks.includes("Jogging")>>
+        <<set _perks.push("Jogging II")>>
+    <<else>>
+        <<set _lockedperks.push("Jogging II")>>
+    <</if>>
+/* Swimming */
+<<elseif $CurrentSkill == "Swimming">>
+    /* Default Perks */
+    <<set _perks to [
+        "Swim Class Bonus",
+        "Swim Endurance Bonus",
+    ]>>
+    <<set _lockedperks to []>>
+    /* Locked Perks */
+    <<if $NoahSocialRank > 0>>
+        <<set _perks.push("Noah: Swimming Lessons")>>
+    <<else>>
+        <<set _lockedperks.push("Noah: Swimming Lessons")>>
+    <</if>>
+/* English */
+<<elseif $CurrentSkill == "English">>
+    /* Default Perks */
+    <<set _perks to [
+        "English Class Bonus",
+        "Library Browse"
+    ]>>
+    <<set _lockedperks to []>>
+    /* Locked Perks */
+/* Math */
+<<elseif $CurrentSkill == "Math">>
+    /* Default Perks */
+    <<set _perks to [
+        "Math Class Bonus",
+        "Helping Kids with Homework"
+    ]>>
+    <<set _lockedperks to []>>
+    /* Locked Perks */
+    <<if $Skill.Perks.includes("Helping Kids with Homework")>>
+        <<set _perks.push("Tutoring")>>
+    <<else>>
+        <<set _lockedperks.push("Tutoring")>>
+    <</if>>
+/* Science */
+<<elseif $CurrentSkill == "Science">>
+    /* Default Perks */
+    <<set _perks to [
+        "Science Class Bonus",
+        "Faster Homework",
+        "Skill Check Difficulty Display"
+    ]>>
+    <<set _lockedperks to []>>
+    /* Locked Perks */
+/* History */
+<<elseif $CurrentSkill == "History">>
+    /* Default Perks */
+    <<set _perks to [
+        "History Class Bonus",
+    ]>>
+    <<set _lockedperks to []>>
+    /* Locked Perks */
+<</if>>
+
+
+<<link"Owned Perks">>
+    <<replace"#Skill">>
+    <<set $page to "Owned">>
+        <<include"Owned Skill Perks">>
+    <</replace>>
+<</link>>
+ | 
+<<link"Unlocked Perks">>
+    <<set $page to "Unlocked">>
+    <<replace"#Skill">>
+        <<include"Unlocked Skill Perks">>
+    <</replace>>
+<</link>>
+ | 
+<<link"Locked Perks">>
+    <<set $page to "Locked">>
+    <<replace"#Skill">>
+        <<include"Locked Skill Perks">>
+    <</replace>>
+<</link>>
+<br>
+
+<div id='Skill' style="margin-top: 15px;">
+    <<if $page == "Locked">>
+        <<include"Locked Skill Perks">>
+    <<elseif $page == "Unlocked">>
+        <<include"Unlocked Skill Perks">>
+    <<else>>
+        <<include"Owned Skill Perks">>
+    <</if>>
+</div>
+
+
+[[Back|Skill Journal]]
+
+:: Owned Skill Perks [nobr]
+
+<span style="color:Azure"><strong><big>--Owned $CurrentSkill Perks--</big></strong></span><br>
+
+<<for _i to 0; _i lt _perks.length; _i++>>
+    <<capture _i>>
+        <<set _perkname to _perks[_i]>>
+        <<if $Skill.Perks.includes(_perkname)>>
+            <<include"Perk Library">>
+               <span style="color:lightblue"> <strong>$Perk.Name</strong></span> ($Perk.Cost SP)<br>
+                <div style="text-indent: 3em;">
+                    $Perk.Description
+                </div>
+                <div style="text-indent: 3em;">
+                    <span style="color:green"><strong>Owned!</strong></span>
+                </div>
+        <</if>>
+    <</capture>>
+<</for>>
+
+:: Unlocked Skill Perks [nobr]
+
+<span style="color:Azure"><strong><big>--Unlocked $CurrentSkill Perks--</big></strong></span><br>
+
+<<for _i to 0; _i lt _perks.length; _i++>>
+    <<capture _i>>
+        <<set _perkname to _perks[_i]>>
+        <<if !$Skill.Perks.includes(_perkname)>>
+            <<include"Perk Library">>
+               <span style="color:lightblue"> <strong>$Perk.Name</strong></span> ($Perk.Cost SP)<br>
+                <div style="text-indent: 3em;">
+                    $Perk.Description
+                </div>
+                <div style="text-indent: 3em;">
+                    <<if $Skill.Perks.includes($Perk.Name)>>
+                        <span style="color:green"><strong>Owned!</strong></span>
+                    <<else>>
+                        <<if $Skill[$Perk.Skill].SP >= $Perk.Cost>>
+                            <<link"Purchase ($Perk.Cost SP)">>
+                                <<set $Skill.Perks.push(_perks[_i])>>
+                                <<set $Skill[$Perk.Skill].SP -= $Perk.Cost>>
+                                <<goto"View Skill Perks">>
+                            <</link>>
+                        <<else>>
+                            <span style="color:Red"><strong>Purchase ($Perk.Cost SP)</strong></span>
+                        <</if>>
+                    <</if>>
+                </div>
+        <</if>>
+    <</capture>>
+<</for>>
+
+:: Locked Skill Perks [nobr]
+
+<span style="color:Azure"><strong><big>--Locked $CurrentSkill Perks--</big></strong></span><br>
+
+<<for _i to 0; _i lt _lockedperks.length; _i++>>
+    <<capture _i>>
+        <<set _perkname to _lockedperks[_i]>>
+        <<if !$Skill.Perks.includes(_perkname)>>
+            <<include"Perk Library">>
+               <span style="color:lightblue"> <strong>$Perk.Name</strong></span> ($Perk.Cost SP)<br>
+                <div style="text-indent: 3em;">
+                    $Perk.Description
+                </div>
+                <div style="text-indent: 3em;">
+                Requirements: $Perk.Requirements
+                </div>
+        <</if>>
+    <</capture>>
+<</for>>

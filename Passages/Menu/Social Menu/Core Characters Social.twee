@@ -1,0 +1,550 @@
+:: Core Characters Social [nobr]
+
+<span style="color:lightgreen">[Core Characters]</span>
+ | 
+<<link"[Children]">>
+	<<replace"#SocialMenu">>
+        <<include"Child Characters Social">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Preteens]">>
+	<<replace"#SocialMenu">>
+        <<include"Preteens Characters Social">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Teens]">>
+	<<replace"#SocialMenu">>
+        <<include"Teens Characters Social">>
+    <</replace>>
+<</link>>
+ | 
+ <<link"[Adults]">>
+	<<replace"#SocialMenu">>
+        <<include"Adult Characters Social">>
+    <</replace>>
+<</link>>
+ | 
+<br>
+
+<span style="color:Azure"><big><strong>--Family--</strong></big></span><br>
+
+<table style="border-collapse: separate; border-spacing: 15px 0;">
+    <tr>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $NoahSocialRank == 1>>
+                     <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $NoahSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $NoahSocial > -10 && $NoahSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $NoahSocial <= -10 && $NoahSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $NoahSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <img @src="`Images/Icons/Social/Noah1.png`" style="position:absolute; width:100px; height:100px;">
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Noah NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $GabeSocialRank == 1>>
+                     <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $GabeSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $GabeSocial > -10 && $GabeSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $GabeSocial <= -10 && $GabeSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $GabeSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <img @src="`Images/Icons/Social/Default1.png`" style="position:absolute; width:100px; height:100px;">
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Gabe NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $DadSocialRank == 1>>
+                    <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $DadSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $DadSocial > -10 && $DadSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $DadSocial <= -10 && $DadSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $DadSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <img @src="`Images/Icons/Social/Dad1.png`" style="position:absolute; width:100px; height:100px;">
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Dad NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+            </span>
+        </th>
+    </tr>
+    <tr>
+        <th style="text-align: center;">
+            <<link"Noah">>
+                <<replace"#SocialMenu">>
+                    <<include"Noah NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+        <th style="text-align: center;">
+            <<link"Gabe">>
+                <<replace"#SocialMenu">>
+                    <<include"Gabe NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+        <th style="text-align: center;">
+            <<link"Dad">>
+                <<replace"#SocialMenu">>
+                    <<include"Dad NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $NoahSocial,
+                    value: Math.abs($NoahSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($NoahSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $GabeSocial,
+                    value: Math.abs($GabeSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($GabeSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $DadSocial,
+                    value: Math.abs($DadSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($DadSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+    </tr>
+</table>
+<br>
+
+<span style="color:Azure"><big><strong>--Classmates--</strong></big></span><br>
+
+<table style="border-collapse: separate; border-spacing: 15px 0;">
+    <tr>
+        <th>
+            <label>
+            <<link"">>
+                <<goto "Test">>
+            <</link>>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $LucasSocialRank == 1>>
+                    <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $LucasSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $LucasSocial > -10 && $LucasSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $LucasSocial <= -10 && $LucasSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $LucasSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <<if $LucasSocial < 0>>
+                    <img @src="`Images/Icons/Social/Lucas0.png`" style="position:absolute; width:100px; height:100px;">
+                <<else>>
+                    <img @src="`Images/Icons/Social/Lucas1.png`" style="position:absolute; width:100px; height:100px;">
+                <</if>>
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Lucas NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+            </span>
+            </label>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $BenSocialRank == 1>>
+                    <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $BenSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $BenSocial > -10 && $BenSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $BenSocial <= -10 && $BenSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $BenSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <<if $BenSocial < 0>>
+                    <img @src="`Images/Icons/Social/Ben0.png`" style="position:absolute; width:100px; height:100px;">
+                <<else>>
+                    <img @src="`Images/Icons/Social/Ben1.png`" style="position:absolute; width:100px; height:100px;">
+                <</if>>
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Ben NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $MichaelSocialRank == 1>>
+                    <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $MichaelSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $MichaelSocial > -10 && $MichaelSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $MichaelSocial <= -10 && $MichaelSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $MichaelSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <<if $MichaelSocial < 0>>
+                    <img @src="`Images/Icons/Social/Michael0.png`" style="position:absolute; width:100px; height:100px;"> 
+                <<else>>
+                    <img @src="`Images/Icons/Social/Michael1.png`" style="position:absolute; width:100px; height:100px;"> 
+                <</if>>
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Michael NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $CarterSocialRank == 1>>
+                     <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $CarterSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $CarterSocial > -10 && $CarterSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $CarterSocial <= -10 && $CarterSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $CarterSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <<if $CarterSocial < 0>>
+                    <img @src="`Images/Icons/Social/Carter0.png`" style="position:absolute; width:100px; height:100px;"> 
+                <<else>>
+                    <img @src="`Images/Icons/Social/Carter1.png`" style="position:absolute; width:100px; height:100px;"> 
+                <</if>>
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Carter NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+            </span>
+        </th>
+    </tr>
+    <tr>
+        <th style="text-align: center;">
+            <<link"Lucas">>
+                <<replace"#SocialMenu">>
+                    <<include"Lucas NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+            <th style="text-align: center;">
+            <<link"Ben">>
+                <<replace"#SocialMenu">>
+                    <<include"Ben NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+            <th style="text-align: center;">
+            <<link"Michael">>
+                <<replace"#SocialMenu">>
+                    <<include"Michael NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+            <th style="text-align: center;">
+            <<link"Carter">>
+                <<replace"#SocialMenu">>
+                    <<include"Carter NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $LucasSocial,
+                    value: Math.abs($LucasSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($LucasSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $BenSocial,
+                    value: Math.abs($BenSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($BenSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $MichaelSocial,
+                    value: Math.abs($MichaelSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($MichaelSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $CarterSocial,
+                    value: Math.abs($CarterSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($CarterSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+    </tr>
+</table>
+
+<table style="border-collapse: separate; border-spacing: 15px 0;">
+    <tr>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $JacksonSocialRank == 1>>
+                    <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $JacksonSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $JacksonSocial > -10 && $JacksonSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $JacksonSocial <= -10 && $JacksonSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $JacksonSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <<if $JacksonSocial < 0>>
+                    <img @src="`Images/Icons/Social/Jackson0.png`" style="position:absolute; width:100px; height:100px;">
+                <<else>>
+                    <img @src="`Images/Icons/Social/Jackson1.png`" style="position:absolute; width:100px; height:100px;">
+                <</if>>
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Jackson NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $ThomasSocialRank == 1>>
+                    <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $ThomasSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $ThomasSocial > -10 && $ThomasSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $ThomasSocial <= -10 && $ThomasSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $ThomasSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <<if $ThomasSocial < 0>>
+                    <img @src="`Images/Icons/Social/Thomas0.png`" style="position:absolute; width:100px; height:100px;">
+                <<else>>
+                    <img @src="`Images/Icons/Social/Thomas1.png`" style="position:absolute; width:100px; height:100px;">
+                <</if>>
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Thomas NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $XavierSocialRank == 1>>
+                    <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $XavierSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $XavierSocial > -10 && $XavierSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $XavierSocial <= -10 && $XavierSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $XavierSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <<if $XavierSocial < 0>>
+                    <img @src="`Images/Icons/Social/Xavier0.png`" style="position:absolute; width:100px; height:100px;">
+                <<else>>
+                    <img @src="`Images/Icons/Social/Xavier1.png`" style="position:absolute; width:100px; height:100px;">
+                <</if>>
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Xavier NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+            </span>
+        </th>
+        <th>
+            <span style="display: inline-flex; align-items: center; position: relative; width:100px; height:100px;">
+                <<if $FelixSocialRank == 1>>
+                     <img @src="`Images/Icons/Social/Pink.png`" style="width:100px; height:100px;">
+                <<elseif $FelixSocial >= 50>>
+                    <img @src="`Images/Icons/Social/Green.png`" style="width:100px; height:100px;">
+                <<elseif $FelixSocial > -10 && $FelixSocial < 50>>
+                    <img @src="`Images/Icons/Social/Blue.png`" style="width:100px; height:100px;">
+                <<elseif $FelixSocial <= -10 && $FelixSocial > -50>>
+                    <img @src="`Images/Icons/Social/Red.png`" style="width:100px; height:100px;">
+                <<elseif $FelixSocial <= -50>>
+                    <img @src="`Images/Icons/Social/Dark Red.png`" style="width:100px; height:100px;">
+                <</if>>
+                <<if $FelixSocial < 0>>
+                    <img @src="`Images/Icons/Social/Felix0.png`" style="position:absolute; width:100px; height:100px;"> 
+                <<else>>
+                    <img @src="`Images/Icons/Social/Felix1.png`" style="position:absolute; width:100px; height:100px;"> 
+                <</if>>
+                <<link '<span style="position:absolute; inset:0; width:100px; height:100px; display:block; cursor:pointer; z-index:10;"></span>'>>
+                    <<replace "#SocialMenu">>
+                        <<include "Felix NPC Character Menu">>
+                    <</replace>>
+                <</link>>
+
+            </span>
+        </th>
+    </tr>
+    <tr>
+        <th style="text-align: center;">
+            <<link"Jackson">>
+                <<replace"#SocialMenu">>
+                    <<include"Jackson NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+        <th style="text-align: center;">
+            <<link"Thomas">>
+                <<replace"#SocialMenu">>
+                    <<include"Thomas NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+        <th style="text-align: center;">
+            <<link"Xavier">>
+                <<replace"#SocialMenu">>
+                    <<include"Xavier NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+        <th style="text-align: center;">
+            <<link"Felix">>
+                <<replace"#SocialMenu">>
+                    <<include"Felix NPC Character Menu">>
+                <</replace>>
+            <</link>>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $JacksonSocial,
+                    value: Math.abs($JacksonSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($JacksonSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $ThomasSocial,
+                    value: Math.abs($ThomasSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($ThomasSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $XavierSocial,
+                    value: Math.abs($XavierSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($XavierSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+        <th>
+            <div class="social-bar-gauge">
+                <<set _data = clone({
+                    text: $FelixSocial,
+                    value: Math.abs($FelixSocial),
+                    max: 100,
+                    min: 0,
+                    color: getSocialBarColor($FelixSocial),
+                    showText: true,
+                })>>
+                <<progressbar _data>>
+	        </div>
+        </th>
+    </tr>
+</table>

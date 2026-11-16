@@ -1,0 +1,102 @@
+:: Detention Mop Gym [nobr]
+
+/* OPENING */
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Coach Kohler</span>.”</span> The secretary smirks, <span style="color:LightSteelBlue">“Good luck.”</span> They sign your detention slip and send you to the locker room to meet with <span style="color:DarkTurquoise">The Coach</span>.<br>
+<br>
+	
+ You walk into the locker room to discover you are the only student there and <span style="color:DarkTurquoise">Coach Kohler</span> has already planned how you will be spending your detention, holding a mop and bucket.<br>
+<br>
+
+<div id='choice'>
+	<<link "Continue<br>">>
+	<<replace"#choice">>
+
+<span style="color:LightSteelBlue">“You’re lucky the gym floors need mopping.”</span> He laughs, tossing you the bucket, <span style="color:LightSteelBlue">“I was originally going to have you run laps for an hour. Now hurry up!”</span> Not only do you have to carry the bucket, but <span style="color:DarkTurquoise">Coach Kohler</span> makes you fill it up completely. <span style="color:lightcoral">It is extremely heavy and every time you slow down or spill a little, <span style="color:DarkTurquoise">Coach Kohler</span> smacks you hard on the butt with the mop.</span> Once you finally are able to get it inside, he has you put it down in the center of the gym and tosses you the mop, saying you are not allowed to leave until it is completely spotless.<br>
+
+<<set _ad to [
+	{
+		Name: "Kohler",
+		State: {
+			Mouth: "Frown",
+			Brows: "Angry",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Blush: 1,
+			Mouth: "Frown",
+		},
+	},
+]>>
+<<ad _ad>>
+
+As you start you suddenly notice that <span style="color:DarkTurquoise">Coach Kohler</span> wasn’t going to leave you to it, instead standing a few feet away from you staring. <span style="color:lightcoral">He kept telling you to either go faster or straighten up your back or that you missed a stop. Occasionally, he would blow his whistle without warning, startling you.</span> The constant beratement kept you on edge and made the chore drag on even longer.<br>
+<br>
+
+
+/* RANDOM CHECK */
+	<<set $Random to random(1, 2)>>
+
+/* NO SPILL */
+<<if $Random == 1>>
+It takes over 45 minutes, but after a lot of hard work and endless berating, you finally finish mopping the gym. <span style="color:DarkTurquoise">Coach Kohler</span> makes you stand there as he inspects your work, even though he watched you mop the entire time, and takes his sweet time doing so. Once he’s realized he can’t call you out on anything, he gives you the go-ahead to leave and you run out, thankful that it is over.<br>
+	<<addMoodlet "Stress" 1>>
+	<<set $Minutes += 50>>
+	<<set $Detention to 0>>
+	<br>
+[[Finish Detention|School East Hallway]]
+
+/* SPILL BUCKET */
+<<elseif $Random == 2>>
+The constant berating makes you nervous and fumbles the mop a few times, only adding to the reprimanding. <span style="color:lightcoral">Suddenly, you step onto the still wet floor and slip, falling directly against the bucket and spilling part of it all over yourself!</span> You quickly get back up and realize that your $PlayerBottoms.Name are completely soaked!<br>
+<br>
+<span style="color:LightSteelBlue">“Damn it, boy.”</span> <span style="color:DarkTurquoise">Coach Kohler</span> curses, <span style="color:LightSteelBlue">“How clumsy can you be!? You’re going to get sick walking around in those, give them here and I’ll put them in the school’s dryer while you finish up.”</span> 
+
+	/* UNDIES */
+<<if $PlayerUndies.Type != "None">>
+You attempt to protest, but <span style="color:DarkTurquoise">Coach Kohler</span> grabs your arm and says you don’t have a choice. <span style="color:Pink">He forcefully pulls down your $PlayerBottoms.Type and makes you step out of them, leaving you standing in the middle of the gym shyly pulling your $PlayerTop.Type down in order to cover your $PlayerUndies.Type.</span><br>
+<br>
+<span style="color:LightSteelBlue">“I see you change everyday kid. Now stop hiding yourself and get back to mopping. If I come back and you’re not mopping I’ll make you run laps in front of the school like this.”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Coach Kohler</span> stands there until you continue mopping, before walking off to dry your $PlayerBottoms.Type.</span><br>
+<br>
+<span style="color:Pink">You are forced to continue cleaning for what feels like hours in the middle of the large gym with your $PlayerUndies.Name on full display. Even though you were alone, being in the middle of such a large, empty space without any way to cover yourself felt humiliating. The occasional shadow appearing in the windows on the doors didn’t help, as you wonder if another student or teacher was watching you.</span><br>
+<br>
+Eventually, <span style="color:DarkTurquoise">Coach Kohler</span> comes back with your $PlayerBottoms.Type <span style="color:Pink">but refuses to give them back to you until you’ve finished.</span> He said it was a great motivator for you to work faster, which was true. <span style="color:DarkTurquoise">Coach Kohler</span> watches you the entire time, continuing to berate you. When you finally finish, <span style="color:DarkTurquoise">Coach Kohler</span> slowly inspects your work before finally returning your clothing and allowing you to leave, thankful that the humiliation was over.<br>
+	<<addMoodlet "Stress" 1>>
+	<<set $Minutes += 50>>
+	<<set $Detention to 0>>
+	<<addMoodlet "Seen Undies" 7>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 15 _arousalbs _arousalkink>>
+	<br>
+[[Finish Detention|School East Hallway]]
+
+
+
+	/* NAKED */
+<<elseif $PlayerUndies.Type == "None">>
+You attempt to protest, shyly informing <span style="color:DarkTurquoise">Coach Kohler</span> that you are not wearing any underwear. <span style="color:Pink">But he doesn’t care and instead forcefully pulls down your $PlayerBottoms.Type and makes you step out of them, leaving you standing in the middle of the gym shyly pulling your $PlayerTop.Type down in order to cover your $Player.PenisSize Penis.</span><br>
+<br>
+<span style="color:LightSteelBlue">“Please, boys your age don’t have much to hide down there. Now get your tiny prick out of your hands and get back to work! If I come back and you’re touching yourself instead of mopping, I’ll make you run laps in front of the school like this.”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Coach Kohler</span> doesn’t leave until you uncover yourself and continue mopping, making sure you use two hands to do it right while also giving you no way to cover your exposed body.</span><br>
+<br>
+<span style="color:Pink">You are forced to continue mopping for what feels like hours in the middle of the large gym with your Penis and Butt on full display. Even though you were alone, being in the middle of such a large, empty space without any way to cover yourself felt humiliating. The occasional shadow appearing in the windows on the doors didn’t help, as you wonder if another student or teacher was watching you.</span><br>
+<br>
+Eventually, <span style="color:DarkTurquoise">Coach Kohler</span> comes back with your $PlayerBottoms.Type <span style="color:Pink">but refuses to give them back to you until you’ve finished.</span> He said it was a great motivator for you to work faster, which was true. <span style="color:DarkTurquoise">Coach Kohler</span> watches you the entire time, continuing to berate you. <span style="color:Pink">Being naked from the waist down made it even worse; It made you feel small and helpless.</span> When you finally finish, <span style="color:DarkTurquoise">Coach Kohler</span> slowly inspects your work before returning your clothing and allowing you to leave, thankful that the humiliation was over.<br>
+	<<addMoodlet "Stress" 1>>
+	<<set $Minutes += 50>>
+	<<set $Detention to 0>>
+	<<addMoodlet "Seen Naked" 7>>
+	<<set _arousalbs to []>>
+	<<set _arousalkink to ["Humiliated"]>>
+	<<arousalGain 25 _arousalbs _arousalkink>>
+	<br>
+[[Finish Detention|School East Hallway]]
+
+
+<</if>>
+
+<</if>>
+	<</replace>>
+	<</link>>	
+</div>

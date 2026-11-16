@@ -1,0 +1,96 @@
+:: Ranked Skill Checks [nobr]
+
+/* WHAT SKILL? */
+<<if $SkillCheckType == "Athletics">>
+	<<set $SkillCheckDifficulty to $SkillCheckDifficulty - $AthleticsSkill>>
+<<elseif $SkillCheckType == "Math">>
+	<<set $SkillCheckDifficulty to $SkillCheckDifficulty - $MathSkill>>
+<<elseif $SkillCheckType == "History">>
+	<<set $SkillCheckDifficulty to $SkillCheckDifficulty - $HistorySkill>>
+<<elseif $SkillCheckType == "Science">>
+	<<set $SkillCheckDifficulty to $SkillCheckDifficulty - $ScienceSkill>>
+<<elseif $SkillCheckType == "English">>
+	<<set $SkillCheckDifficulty to $SkillCheckDifficulty - $EnglishSkill>>
+<<elseif $SkillCheckType == "Swimming">>
+	<<set $SkillCheckDifficulty to $SkillCheckDifficulty - $SwimmingSkill>>
+<<elseif $SkillCheckType == "Acting">>
+	<<set $SkillCheckDifficulty to $SkillCheckDifficulty - $ActingSkill>>
+<<elseif $SkillCheckType == "Cooking">>
+	<<set $SkillCheckDifficulty to $SkillCheckDifficulty - $CookingSkill>>
+<</if>>
+
+/* SETTING CHECK GOAL BASED ON SKILL DIFFICULTY */
+<<if $SkillCheckDifficulty == 0>>
+	<<set $SkillGoal to 50>>
+<<elseif $SkillCheckDifficulty == 1>>
+	<<set $SkillGoal to 65>>
+<<elseif $SkillCheckDifficulty == 2>>
+	<<set $SkillGoal to 80>>
+<<elseif $SkillCheckDifficulty == 3>>
+	<<set $SkillGoal to 95>>
+<<elseif $SkillCheckDifficulty == 4>>
+	<<set $SkillGoal to 100>>
+<<elseif $SkillCheckDifficulty == -1>>
+	<<set $SkillGoal to 40>>
+<<elseif $SkillCheckDifficulty == -2>>
+	<<set $SkillGoal to 30>>
+<<elseif $SkillCheckDifficulty == -3>>
+	<<set $SkillGoal to 20>>
+<<elseif $SkillCheckDifficulty == -4>>
+	<<set $SkillGoal to 10>>
+<<elseif $SkillCheckDifficulty >= 5>>
+	<<set $SkillGoal to 110>>
+<<elseif $SkillCheckDifficulty <= -5>>
+	<<set $SkillGoal to 0>>
+<</if>>
+
+
+/* ROLLING THE SKILL CHECK */
+<<set $SkillCheckRoll to random(1, 100)>>
+<<set $SkillCheckRoll += $MoodSkill>>
+
+/* SCHOOL FINAL */
+<<if $SchoolFinal == 1>>
+	<<if $SkillCheckType == "Math">>
+		<<set $SkillCheckRoll += $MathStudyFinal + $MathStudyFinal>>
+	<<elseif $SkillCheckType == "History">>
+		<<set $SkillCheckRoll += $HistoryStudyFinal + $HistoryStudyFinal>>
+	<<elseif $SkillCheckType == "Science">>
+		<<set $SkillCheckRoll += $ScienceStudyFinal + $ScienceStudyFinal>>
+	<<elseif $SkillCheckType == "English">>
+		<<set $SkillCheckRoll += $EnglishStudyFinal + $EnglishStudyFinal>>
+	<</if>>
+	<<set $SchoolFinal to 0>>
+<</if>>
+
+/* CHECKING RESULT OF THE ROLL */
+<<set $SkillRank to $SkillCheckRoll - $SkillGoal>>
+	<<if $SkillRank >= 0>>
+		<<if $SkillRank <= 25>>
+			<<set $SkillResults to "Close Pass">>
+		<<elseif $SkillRank <= 50>>
+			<<set $SkillResults to "Pass">>
+		<<else>>
+			<<set $SkillResults to "Major Pass">>
+		<</if>>
+	<<elseif $SkillRank < 0>>
+		<<if $SkillRank >= -25>>
+			<<set $SkillResults to "Close Fail">>
+		<<elseif $SkillRank >= -50>>
+			<<set $SkillResults to "Fail">>
+		<<else>>
+			<<set $SkillResults to "Major Fail">>
+		<</if>>
+	<</if>>
+
+
+<<if $Debug == 1>>
+	<span style="color:Grey">This is the debug display for testing skill checks to make sure it is all working properly. Debug mode can be turned off by not using the Debug Player Name.</span><br>
+	Skill Testing: $SkillCheckType<br>
+	Skill Check Difficulty: $SkillCheckDifficulty<br>
+	Skill Check Goal: $SkillGoal<br>
+	Skill Roll:$SkillCheckRoll<br>
+	Mood Modifier: $MoodSkill<br>
+	Skill Rank Difference: $SkillRank<br>
+	Skill Result: $SkillResults<br>
+<</if>>

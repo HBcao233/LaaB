@@ -1,0 +1,236 @@
+:: Achievements Init [nobr]
+
+/* IMPORTANT: */
+/* When adding variables here, do it like this: */
+/* <<set $Variable to $Variable || *default value*>> */
+/* Because we might re run this file when adding new achievements and we don't want to overwrite these variables. Doing it this way will make it so if the variable already exists, it won't be overwriten */
+
+<<set $AchievementShopIntroDone to $AchievementShopIntroDone || false>>
+<<set $AchievementShopOpen to $AchievementShopOpen || false>>
+<<set $OddJobsCount to $OddJobsCount || 0>>
+<<set $SpankedByDad to $SpankedByDad || false>>
+<<set $SpankedByGabe to $SpankedByGabe || false>>
+<<set $SpankedByRandolph to $SpankedByRandolph || false>>
+
+<<set $AchivementNoah = $AchivementNoah || 0>>
+<<set $AchivementBike = $AchivementBike || 0>>
+
+<<set $PokerGamesWon to $PokerGamesWon || 0>>
+<<set $PokerGamesLost to $PokerGamesLost || 0>>
+<<set $PokerEquipmentLostCount to $PokerEquipmentLostCount || 0>>
+<<set $PokerFlawlessVictory to $PokerFlawlessVictory || false>>
+<<set $PokerEquipmentLostCount to $PokerEquipmentLostCount || 0>>
+
+/* When adding new achievements, add a new object to this array. Remember that Condition must return a boolean (true or false, like what you put inside an <<if>> statement). Then you just set vars.DoAchievementsInit = true; in saves.js */
+/* "Granted" is not needed as it will be false by default, I only added them to the first two because those were achievements that already existed before the achievement system */
+<<set $AchievementList = [
+    {
+        Name: 'Bestest Brother Ever!',
+        Desc: 'Finish Noah\'s "Stormy Night" quest',
+        Score: 3,
+        Condition: () => $NoahSocialRank > 0,
+        Granted: $AchivementNoah == 1,
+    },
+    {
+        Name: 'A Boy\'s First Bike!',
+        Desc: 'Buy your first bike',
+        Score: 1,
+        Condition: () => $Bike == 1,
+        Granted: $AchivementBike == 1,
+    },
+    {
+        Name: 'Boy Next Door',
+        Desc: 'Finish Lucas\' Questline',
+        Score: 3,
+        Condition: () => $LucasSocialRank > 0,
+    },
+    {
+        Name: 'Your First Friend',
+        Desc: 'Reach Social 50 with 1 classmate',
+        Score: 1,
+        Condition: () => getClassmatesSocialCount(50) >= 1,
+    },
+    {
+        Name: 'Friend Group',
+        Desc: 'Reach Social 50 with 4 classmates',
+        Score: 1,
+        Condition: () => getClassmatesSocialCount(50) >= 4,
+    },
+    {
+        Name: 'Mister Popular',
+        Desc: 'Reach Social 50 with all 8 classmates',
+        Score: 2,
+        Condition: () => getClassmatesSocialCount(50) >= 8,
+    },
+    {
+        Name: 'A True Friend',
+        Desc: 'Reach Social 100 with 1 classmates',
+        Score: 1,
+        Condition: () => getClassmatesSocialCount(100) >= 1,
+    },
+    {
+        Name: 'Social Butterfly',
+        Desc: 'Reach Social 100 with 4 classmates',
+        Score: 1,
+        Condition: () => getClassmatesSocialCount(100) >= 4,
+    },
+    {
+        Name: 'Best Friend to All',
+        Desc: 'Reach Social 100 with all 8 classmates',
+        Score: 2,
+        Condition: () => getClassmatesSocialCount(100) >= 8,
+    },
+    {
+        Name: 'Family Matters',
+        Desc: 'Reach Social 50 with all Family Members',
+        Score: 1,
+        Condition: () => getFamilySocialCount(50) >= 3,
+    },
+    {
+        Name: 'Family Comes First',
+        Desc: 'Reach Social 100 with all Family Members',
+        Score: 2,
+        Condition: () => getFamilySocialCount(100) >= 3,
+    },
+    {
+        Name: 'Rolling in it',
+        Desc: 'Have a total of $100',
+        Score: 1,
+        Condition: () => $Money >= 100,
+    },
+    {
+        Name: 'Young & Wealthy',
+        Desc: 'Have a total of $1,000',
+        Score: 2,
+        Condition: () => $Money >= 1000,
+    },
+    {
+        Name: 'Prodigy',
+        Desc: 'Have As in the 4 main classes',
+        Score: 1,
+        Condition: () => getGradeCount(93) >= 4,
+    },
+    {
+        Name: 'Odd Jobber',
+        Desc: 'Complete a total of 25 Odd-Jobs',
+        Score: 1,
+        Condition: () => $OddJobsCount >= 25,
+    },
+    {
+        Name: 'One Down, Many To Go',
+        Desc: 'Finish the first month of the game',
+        Score: 1,
+        Condition: () => $Time.daysSinceStart() >= 23,
+    },
+    {
+        Name: 'Town\'s Paddle',
+        Desc: 'Get spanked by all 3 spankers',
+        Score: 1,
+        Condition: () => $SpankedByDad && $SpankedByGabe && $SpankedByRandolph,
+    },
+    {
+        Name: 'Read \'Em & Weep',
+        Desc: 'Win a game of Strip Poker',
+        Score: 1,
+        Condition: () => $PokerGamesWon > 0,
+    },
+    {
+        Name: 'Nothing Left To Bet',
+        Desc: 'Lose a game of Strip Poker',
+        Score: 1,
+        Condition: () => $PokerGamesLost > 0,
+    },
+    {
+        Name: 'Gambler',
+        Desc: 'Play 10 games of Strip Poker',
+        Score: 2,
+        Condition: () => ($PokerGamesWon + $PokerGamesLost) >= 10,
+    },
+    {
+        Name: 'The House Always Win',
+        Desc: 'Win a game of Strip Poker without losing a single piece of equipment',
+        Score: 3,
+        Condition: () => $PokerFlawlessVictory,
+    },
+]>>
+
+<<set _addAllAchievements = false>>
+
+/* Initialize Achievement Inventory */
+<<if $Achievements == null>>
+    <<set $Achievements = new AchievementInventory()>>
+    <<set _addAllAchievements = true>>
+<</if>>
+
+/* Add missing achievements from list */
+<<for _ach range $AchievementList>>
+    <<if _addAllAchievements || $Achievements.getAchievementByName(_ach.Name) == null>>
+        <<run $Achievements.addAchievement(
+            new Achievement(
+                _ach.Name,
+                _ach.Desc,
+                _ach.Score,
+                _ach.Granted || false,
+            ),
+        )>>
+    <</if>>
+<</for>>
+
+:: Achievement Init Script [script]
+
+window.getClassmatesSocialCount = scoreToCheck => {
+    let count = 0;
+    const scores = [
+        State.getVar('$CarterSocial'),
+        State.getVar('$BenSocial'),
+        State.getVar('$LucasSocial'),
+        State.getVar('$JacksonSocial'),
+        State.getVar('$FelixSocial'),
+        State.getVar('$ThomasSocial'),
+        State.getVar('$MichaelSocial'),
+        State.getVar('$XavierSocial'),
+    ];
+
+    for (const score of scores) {
+        if (score >= scoreToCheck) {
+            count++;
+        }
+    }
+
+    return count;
+};
+
+window.getFamilySocialCount = scoreToCheck => {
+    let count = 0;
+    const scores = [
+        State.getVar('$NoahSocial'),
+        State.getVar('$GabeSocial'),
+        State.getVar('$DadSocial'),
+    ];
+
+    for (const score of scores) {
+        if (score >= scoreToCheck) {
+            count++;
+        }
+    }
+
+    return count;
+};
+
+window.getGradeCount = scoreToCheck => {
+    let count = 0;
+    const scores = [
+        State.getVar('$MathGrade'),
+        State.getVar('$HistoryGrade'),
+        State.getVar('$ScienceGrade'),
+        State.getVar('$EnglishGrade'),
+    ];
+
+    for (const score of scores) {
+        if (score >= scoreToCheck) {
+            count++;
+        }
+    }
+
+    return count;
+};

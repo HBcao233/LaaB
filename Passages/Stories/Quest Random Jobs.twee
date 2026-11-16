@@ -1,0 +1,18 @@
+:: Quest Random Jobs [nobr]
+
+<<if $RandomJobList.length > 0>>
+    <span style="color:Azure"><big><strong>--Odd Jobs--</strong></big></span><br>
+<</if>>
+
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+   <<capture _i>>
+    <span style="color:Azure"><strong>--$RandomJobList[_i].Name--</strong></span><br>
+    <span style="color:Lightsteelblue">"$RandomJobList[_i].Description"</span><br>
+    <strong>Deadline:</strong> Today<br>
+    <strong>Pay:</strong> &dollar;$RandomJobList[_i].Pay<br>
+    <strong>Objectives:</strong><br>
+    <div style="text-indent: 2em;">
+        $RandomJobList[_i].Type in <span style="color:Teal">$RandomJobList[_i].Location</span>: (0/1)
+    </div><br>
+<</capture>>
+<</for>>

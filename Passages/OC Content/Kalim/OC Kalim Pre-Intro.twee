@@ -1,0 +1,53 @@
+:: OC Kalim Pre-Intro [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You are in the Music Room practicing with a guitar and <span style="color:LightCoral">for some reason are just struggling. The cords hurt and rub awkwardly against your fingers, the thing seems to constantly fall out of tune, and the ‘music’ you are making sounds more like a dying animal than something anyone would WANT to listen to. You sigh loudly in frustration.</span> <br>
+<br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Eyes: "Mad",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“I know that sound.”</span> <span style="color:DarkTurquoise">Mr. K</span> laughs, walking over to you. <span style="color:LightSteelBlue">“I think you’ve got some real talent kid, but frustration is every artist’s greatest enemy. Well, that and music critics.”</span> He laughs at his own joke. A bit confused, you ask him what he means. You don’t feel all that talented with the music you’re making today. <span style="color:LightSteelBlue">“Everybody has days like that. You make one little mistake and it fogs up your brain. Next thing you know, you’re making another and then another! Every mistake clouds your brain and the more foggy, the more mistakes, little dude.”</span> <br>
+<br>
+<span style="color:DarkTurquoise">Mr. K</span> pats you on the shoulder, <span style="color:LightSteelBlue">“You know, if you really are interested in honing that talent of yours, I may know someone who can help. I have a student, little older than you, that can play almost anything; Kid’s a real maestro. But he likes to hang here after class, enjoys chilling with some simple tunes or tutoring some of his juniors. Sure he’ll be interested in giving you a lesson or two. And even if you don’t want that, would be worth it to hear him play. Kid’s got something special I haven’t seen since, well, I was back in school.”</span> <span style="color:DarkTurquoise">Mr. K</span> laughs again, finding himself hilarious. <br>
+<br>
+You ponder the offer. <span style="color:Yellow">Getting some lessons from this upper classmen may be a pretty good idea. Plus, it may be neat to meet an older Preston student. You consider coming by after school.</span> <br>
+<<set $ActiveQuests.push("Kalim: Introduction")>>
+<<set $InActiveQuests.delete("Kalim: Introduction")>>
+<<set $ActiveQuests.delete("Kalim: Introduction Tease")>>
+<<set $QuestLog.push(
+	{
+		Name: "Kalim: Introduction",
+		State: 1,
+		ID: "Kalim_M001",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Music",
+		Tags: ["Kalim", "Character", "Quest", "School"],
+		Description: "<span style=\"color:DarkTurquoise\">Mr. K</span> has let you know about an older boy who comes by and helps teach music after school.",
+		Objectives: [
+			{
+				Name: "Go to Music Class after school",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Music",
+	Description: "<span style=\"color:DarkTurquoise\">Mr. K</span> has let you know about an older boy who comes by and helps teach music after school.",
+})>>
+<br>
+[[Continue|School Music Room]] 

@@ -1,0 +1,140 @@
+:: CC Physical Body [nobr]
+
+<span style="color:Azure"><strong>--Body--</strong></span><br>
+
+/* BODY SKIN COLOR */
+<strong>Skin Color: $Player.SkinColor</strong><br>
+<div style="text-indent: 2.5em;">
+	<<for _i to 0; _i lt $SkinColorOptions.length; _i++>>
+		<<capture _i>>
+			<<set _path to "Images\\Icons\\Shop Icons\\Colors\\Skin " + $SkinColorOptions[_i] + ".png">>
+			<span @title="$SkinColorOptions[_i]">
+			<<link[img[_path]]>>
+				<<set $Player.SkinColor to $SkinColorOptions[_i]>>
+				<<replace"#CC">>
+					<<include"CC Physical">>
+				<</replace>>
+			<</link>>
+			</span>
+		<</capture>>
+	<</for>>
+</div>
+<br>
+
+/* BODY BUILD */
+<strong>Build: </strong><br>
+<div style="text-indent: 2.5em;">
+	<<if $Player.Build != "Skinny">>
+		<<link"Skinny">>
+			<<set $Player.Build to "Skinny">>
+			<<replace"#CC">>
+				<<include"CC Physical">>
+			<</replace>>
+		<</link>>
+	<<else>>
+		<span style="color:lightgreen">[Skinny]</span>
+	<</if>>
+	| 
+	<<if $Player.Build != "Husky">>
+		<<link"Husky">>
+			<<set $Player.Build to "Husky">>
+			<<replace"#CC">>
+				<<include"CC Physical">>
+			<</replace>>
+		<</link>>
+	<<else>>
+		<span style="color:lightgreen">[Husky]</span>
+	<</if>>
+	| 
+	<<if $Player.Build != "Muscular">>
+		<<link"Muscular">>
+			<<set $Player.Build to "Muscular">>
+			<<replace"#CC">>
+				<<include"CC Physical">>
+			<</replace>>
+		<</link>>
+	<<else>>
+		<span style="color:lightgreen">[Muscular]</span>
+	<</if>>
+	| 
+	<<if $Player.Build != "Muscular 2">>
+		<<link"Muscular 2">>
+			<<set $Player.Build to "Muscular 2">>
+			<<replace"#CC">>
+				<<include"CC Physical">>
+			<</replace>>
+		<</link>>
+	<<else>>
+		<span style="color:lightgreen">[Muscular 2]</span>
+	<</if>>
+		| 
+	<<if $Player.Build != "Muscular 3">>
+		<<link"Muscular 3">>
+			<<set $Player.Build to "Muscular 3">>
+			<<replace"#CC">>
+				<<include"CC Physical">>
+			<</replace>>
+		<</link>>
+	<<else>>
+		<span style="color:lightgreen">[Muscular 3]</span>
+	<</if>>
+		| 
+	<<if $Player.Build != "Muscular 4">>
+		<<link"Muscular 4">>
+			<<set $Player.Build to "Muscular 4">>
+			<<replace"#CC">>
+				<<include"CC Physical">>
+			<</replace>>
+		<</link>>
+	<<else>>
+		<span style="color:lightgreen">[Muscular 4]</span>
+	<</if>>
+		| 
+	<<if $Player.Build != "Muscular 5">>
+		<<link"Muscular 5">>
+			<<set $Player.Build to "Muscular 5">>
+			<<replace"#CC">>
+				<<include"CC Physical">>
+			<</replace>>
+		<</link>>
+	<<else>>
+		<span style="color:lightgreen">[Muscular 5]</span>
+	<</if>>
+		| 
+	<<if $Player.Build != "Muscular 6">>
+		<<link"Muscular 6">>
+			<<set $Player.Build to "Muscular 6">>
+			<<replace"#CC">>
+				<<include"CC Physical">>
+			<</replace>>
+		<</link>>
+	<<else>>
+		<span style="color:lightgreen">[Muscular 6]</span>
+	<</if>>
+</div>
+<br>
+
+/* BODY Height */
+<strong>Height: </strong><br>
+<div style="text-indent: 2.5em;">
+	<<set _heightIndex to 0>>
+	<<for _height range $CharacterHeightOptions>>
+		<<capture _height>>
+			<<set _heightLabel = _height.charAt(0).toUpperCase() + _height.slice(1)>>
+			<<if $Player.Height != _height>>
+				<<link _heightLabel>>
+					<<set $Player.Height to _height>>
+					<<replace"#CC">>
+						<<include"CC Physical">>
+					<</replace>>
+				<</link>>
+			<<else>>
+				<span style="color:lightgreen">[<<=_heightLabel>>]</span>
+			<</if>>
+			<<set _heightIndex += 1>>
+			<<if _heightIndex < $CharacterHeightOptions.length>>
+			| 
+			<</if>>
+		<</capture>>
+	<</for>>
+</div>

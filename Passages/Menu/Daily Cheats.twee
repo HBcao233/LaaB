@@ -1,0 +1,23 @@
+:: Daily Cheats
+<<silently>>
+
+<<if $CheatsHomework == 1>>
+    <<set $Homework to 2>>
+    <<set $MathGrade +=1>>
+    <<set $HistoryGrade +=1>>
+    <<set $ScienceGrade +=1>>
+    <<set $EnglishGrade +=1>>
+<</if>>
+
+<<for $SkillCheckType range ["Math", "History", "English", "Science"]>>
+    <<if State.getVar(`$Cheats${$SkillCheckType}`)>>
+        <<set $SkillCheckDifficulty to $SchoolSkillLevel - 1>>
+        <<set $SkillCheckTime to 0.5>>
+        <<set $SkillTrainBook to 1>>
+        <<include"Skill Checks">>
+        <<include"Skill EXP Gain">>
+        <<include"Study Bonus">>
+    <</if>>
+<</for>>
+
+<</silently>>

@@ -1,0 +1,26 @@
+:: NPC Tracking Home [nobr]
+
+<<include"Noah NPC Tracking Home">>
+<<include"Gabe NPC Tracking Home">>
+<<include"Dad NPC Tracking Home">>
+
+/* FOOD ICON TRACKING */
+<<if $Time.between(6,0,8,0)>>
+	<<if $Breakfast != 1>>
+        <img src="Images\Player House\Food Marker.gif" 
+style="position: absolute; left: 0; top: 0"  alt="Food Here" usemap="#PlayerHouse">
+	<</if>>
+<<elseif $Time.between(11,0,13,0)>>
+	<<if $Lunch != 1>>
+        <img src="Images\Player House\Food Marker.gif" 
+style="position: absolute; left: 0; top: 0"  alt="Food Here" usemap="#PlayerHouse">
+	<</if>>
+<<elseif $Time.between(17,0,19,0)>>
+	<<if $Dinner != 1>>
+        <img src="Images\Player House\Food Marker.gif" 
+style="position: absolute; left: 0; top: 0"  alt="Food Here" usemap="#PlayerHouse">
+	<</if>>
+<<elseif $Time.after(19) and $Dinner != 1>>
+        <img src="Images\Player House\Food Marker.gif" 
+style="position: absolute; left: 0; top: 0"  alt="Food Here" usemap="#PlayerHouse">
+<</if>>

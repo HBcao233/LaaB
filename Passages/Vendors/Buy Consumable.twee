@@ -1,0 +1,15 @@
+:: Buy Consumable [nobr]
+
+<<set _item to $BuyConsumableItem>>
+<<set _price to $BuyConsumablePrice>>
+
+<<if $Money >= _price>>
+    <<set $Money -= _price>>
+    <<run $PlayerInventoryConsumables.addItem(_item)>>
+    You bought <<=_item.getName()>>!
+<<else>>
+    Not enough money. (Got $<<=$Money>>, need $<<=_price>>)
+<</if>>
+
+<br><br>
+[[Go Back|previous()]]

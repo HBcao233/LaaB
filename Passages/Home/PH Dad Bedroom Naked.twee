@@ -1,0 +1,134 @@
+:: PH Dad Bedroom Naked [nobr]
+
+/* SETTING STATE */
+<<if $Time.before(22) and $Time.after(6)>>
+	<<if $HomeDayNudity == 0>>
+		<<set $StreakState to "Day_Embarrassed">>
+	<<elseif $HomeDayNudity == 1>>
+		<<set $StreakState to "Day_Shy">>
+		<<set $Location.Nudity to 1>>
+	<<elseif $HomeDayNudity == 2>>
+		<<set $StreakState to "Day_Fine">>
+		<<set $Location.Nudity to 1>>
+	<</if>>
+<<else>>
+	<<if $HomeNightNudity == 0>>
+		<<set $StreakState to "Night_Embarrassed">>
+	<<elseif $HomeNightNudity == 1>>
+		<<set $StreakState to "Night_Shy">>
+		<<set $Location.Nudity to 1>>
+	<<elseif $HomeNightNudity == 2>>
+		<<set $StreakState to "Night_Fine">>
+		<<set $Location.Nudity to 1>>
+	<</if>>
+<</if>>
+
+<<if $DadSche.Activity == "Work Computer">>
+	<<include "Dad Seen Dad Bedroom">>
+	
+<<elseif $ChoreQuest == 2>>
+	You have finished all your chores. <span style="color:DarkTurquoise">Your Father</span> thanks you and gives you your allowance.<br>
+	<span style="color:Green">+You've gained $20!</span><br>
+	<<set $Money += 20>>
+	<<set $ChoreQuest to 3>>
+	[[Continue|PH Dad Bedroom]]
+
+	
+<<else>>
+
+/* BASE TEXT BASED ON STATUS */
+
+<<if $StreakState == "Day_Embarrassed">>
+<span style="color:pink">You stand in <span style="color:DarkTurquoise">Your Father</span>’s bedroom, completely naked. It felt humiliating, since normally when you were forced to be in here naked, you were about to receive a spanking or some other form of punishment. Because of this, you felt your butt cheeks tense up in anticipation. <br>
+<br>
+</span>
+<<elseif $StreakState == "Day_Shy">>
+<span style="color:pink">You stand in <span style="color:DarkTurquoise">Your Father</span>’s bedroom, completely naked. Despite the privacy and comfort of the room, you feel extremely embarrassed to be standing there so exposed, as if you were about to receive some sort of punishment. Regardless, you resolve to not cover yourself up or attempt to flee from whatever may await you. <br>
+<br>
+</span>
+<<elseif $StreakState == "Day_Fine">>
+You stand in <span style="color:DarkTurquoise">Your Father</span>’s bedroom, completely naked. It has a large, king-sized bed in the center of the room, a desk with a fancy dual-monitor computer set-up, and a large bookcase. He has a few family photos on his desk, including on of your late mother. Everything was neat and tidy, outside of the naked little boy standing in the middle of the room. <br>
+<br>
+<<elseif $StreakState == "Night_Embarrassed">>
+<span style="color:pink">You stand in <span style="color:DarkTurquoise">Your Father</span>’s bedroom, completely naked. It felt humiliating, since normally when you were forced to be in here naked, you were about to receive a spanking or some other form of punishment. Because of this, you felt your butt cheeks tense up in anticipation. <br>
+<br>
+</span>
+<<elseif $StreakState == "Night_Shy">>
+<span style="color:pink">You stand in <span style="color:DarkTurquoise">Your Father</span>’s bedroom, completely naked. Despite the privacy and comfort of the room, you feel extremely embarrassed to be standing there so exposed, as if you were about to receive some sort of punishment. Regardless, you resolve to not cover yourself up or attempt to flee from whatever may await you. <br>
+<br>
+</span>
+<<elseif $StreakState == "Night_Fine">>
+You stand in <span style="color:DarkTurquoise">Your Father</span>’s bedroom, completely naked. It has a large, king-sized bed in the center of the room, a desk with a fancy dual-monitor computer set-up, and a large bookcase. He has a few family photos on his desk, including on of your late mother. Everything was neat and tidy, outside of the naked little boy standing in the middle of the room. <br>
+<br>
+<</if>>
+
+
+/* NPC INTERACTIONS */
+	/* FINE */
+	<<if $StreakState == "Day_Fine" or $StreakState == "Night_Fine">>
+		<<if $DadSche.Location == "Dad Bedroom">>
+			<<include "NPC Inspect">>
+		<</if>>
+	<</if>>
+/* DAD */
+<<if $DadSche.Location == "Dad Bedroom" and $DadSche.Activity != "Sleeping">>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+<span style="color:pink"><span style="color:DarkTurquoise">Your Father</span> looks at you with a mixture of confusion and amusement as you stand near his door, completely naked and shyly covering yourself. <span style="color:LightSteelBlue">“Did you need something?”</span> You freeze, unable to remember why you even came in here naked. After a long moment of silence, you quickly turn around and exit the room. <span style="color:DarkTurquoise">Your Father</span> laughs as you do so, rolling his eyes and sighing to himself.</span> <span style="color:LightSteelBlue">“He is one weird kid.”</span> 
+	/* SHY */
+		<<elseif $StreakState == "Day_Shy" or $StreakState == "Night_Shy">>
+<span style="color:pink">[[Your Father|DAD Inspect Watching Film]] looks at you with a mixture of confusion and amusement as you stand near his door completely naked. <span style="color:LightSteelBlue">“Did you need something? Why are you naked?”</span> You chuckle in embarrassment, rubbing the back of your head as you inform <span style="color:DarkTurquoise">Your Father</span> that you are trying to be more confident in your body.</span> <span style="color:LightSteelBlue">“You do you kid.”</span> <span style="color:DarkTurquoise">Your Father</span> rolls his eyes with a smirk, <span style="color:LightSteelBlue">“Just don’t do anything weird or inappropriate in front of your brother.”</span> 
+	<</if>>
+
+/* SLEEPING */
+<<elseif $DadSche.Location == "Dad Bedroom">>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+<span style="color:pink">The sound of [[Your Father|DAD Inspect Sleeping]]’s quiet breathing made you even more nervous, as if he would wake up any moment and discover your nude form.</span> 
+	/* SHY */
+		<<elseif $StreakState == "Day_Shy" or $StreakState == "Night_Shy">>
+<span style="color:pink">The only sound in the room was that of [[Your Father|DAD Inspect Sleeping]]’s quiet breathing. You couldn’t help but fear that he would wake up at any moment and discover you.</span> 
+		<</if>>
+/* ALONE */
+<<else>>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+			Thankfully, there is currently no one here to see you in such an exposed state.
+	/* SHY */
+		<<elseif $StreakState == "Day_Shy" or $StreakState == "Night_Shy">>
+			For better or worse, no one is currently here.
+	<</if>><br>
+	<br>
+	<span style="color:Azure"><strong>-Actions-</strong></span><br>
+		[[Go through his dresser|Dad Dresser]]<br>
+<</if>>
+<</if>><br>
+<br>
+
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Hallway (0:01)|PH Hallway][$Minutes += 1]] <br>
+	
+	<<if $DadSche.Activity != "Work Computer" and $DadSche.Activity != "Sleeping">>
+	[[Your Father's Bathroom (0:01)|PH Dad Bath][$Minutes += 1]] <br>
+	<</if>>
+<</if>>
+<br>
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Room Marker.png" 
+style="position: absolute; left: 58px; top: 58px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<<if $DadSche.Activity == "Work Computer">>
+<<else>>
+<area shape="rect" coords="58,4,111,57" alt="Dads Bathroom" onclick="$.wiki('<<goto[[PH Dad Bath]]>><<set $Minutes += 1>>')" />
+<</if>>
+
+<area shape="rect" coords="58,112,197,165" alt="Hallway" onclick="$.wiki('<<goto[[PH Hallway]]>><<set $Minutes += 1>>')" />
+</map>

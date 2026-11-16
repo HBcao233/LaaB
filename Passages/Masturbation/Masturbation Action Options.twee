@@ -1,0 +1,100 @@
+:: Masturbation Action Options [nobr]
+
+/* ACTIONS */
+<span style="color:Azure"><strong>--Actions--</strong></span><br>
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+	<<link"Rub Penis Slowly">>
+        <<set $MasturbationAction to "Rub Penis Slowly">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+	<<link"Rub Penis Furiously">>
+        <<set $MasturbationAction to "Rub Penis Furiously">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+	<<link"Fondle Balls">>
+        <<set $MasturbationAction to "Fondle Balls">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+	<<link"Finger Slowly">>
+        <<set $MasturbationAction to "Finger Slowly">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+	<<link"Finger Furiously">>
+        <<set $MasturbationAction to "Finger Furiously">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+	<<link"Spank Yourself">>
+        <<set $MasturbationAction to "Spank Yourself">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+<</if>>
+<<if $PlayerUndies.Type != "None">>
+	<<link"Give Yourself a Wedgie">>
+        <<set $MasturbationAction to "Give Wedgie">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+<</if>>
+<<if $PlayerTop.Type == "None">>
+	<<link"Pinch Nipples">>
+        <<set $MasturbationAction to "Pinch Nipples">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+<</if>>
+
+/* BEDROOM BASED */
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+	<<if $MasturbationLocation == "Home Bedroom">>
+    <<if $MasturbationPosition == "Standing">>
+	<<link"Hump Wall">>
+        <<set $MasturbationAction to "Hump Wall">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+	<<elseif $MasturbationPosition == "Kneeling" or $MasturbationPosition == "Laying on Bed" or $MasturbationPosition == "Hands and Knees">>
+	<<link"Hump Pillow">>
+        <<set $MasturbationAction to "Hump Pillow">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+    <</if>>
+    <</if>>
+    <<if $MasturbationLocation == "Home Bedroom" and $MasturbationPosition == "Kneeling">>
+	<<link"Hump Mattress">>
+        <<set $MasturbationAction to "Hump Mattress">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+    <</if>>
+<</if>>
+<<if $PlayerUndies.Type != "None" and $MasturbationLocation == "Home Bedroom" and $MasturbationPosition == "Standing">>
+	<<link"Hook Underwear on Doorknob">>
+        <<set $MasturbationAction to "Hook Underwear on Doorknob">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+	<<link"Hook Underwear on Bedframe">>
+        <<set $MasturbationAction to "Hook Underwear on Bedframe">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+<</if>>
+<<if $MasturbationLocation == "Home Bedroom" and ($Player.Bladder < 80 or $HadAccident) and $ToggleWatersports == 1>>
+    <<link"Piss self">>
+        <<set $MasturbationAction to "Piss Self">>
+        <<goto "Player Masturbate">>
+    <</link>>
+<</if>>
+
+/* School Shower Based */
+<<if $MasturbationLocation == "School Showers">>
+	<<link"Put Showerhead on Penis">>
+        <<set $MasturbationAction to "Showerhead">>
+        <<goto "Player Masturbate">>
+    <</link>><br>
+
+<</if>>
+
+/* School Courtyard Based */
+<<if $PlayerBottoms.Type == "None" and $PlayerUndies.Type == "None">>
+    <<if $MasturbationLocation == "School Courtyard">>
+        <<link"Brush Penis Against Bush">>
+            <<set $MasturbationAction to "Brush Against Leaves">>
+            <<goto "Player Masturbate">>
+        <</link>><br>
+    <</if>>
+<</if>>

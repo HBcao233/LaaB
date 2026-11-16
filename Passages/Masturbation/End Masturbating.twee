@@ -1,0 +1,32 @@
+:: End Masturbating [nobr]
+<<set $SexPlayerAction to "None">>
+
+You quickly clean up your mess and redress yourself as you finish.<br>
+<br>
+
+/* CLOTH RESTORING */
+<<if $MasturbationLocation == "Home Bedroom">>
+	<<storeClothing "Restore" "Naked">>
+	[[Continue|Player Bedroom]]
+<<elseif $MasturbationLocation == "School Bathroom">>
+	<<storeClothing "Restore" "Naked">>
+	[[Continue|School Restrooms]]
+<<elseif $MasturbationLocation == "Park Bathroom">>
+	<<storeClothing "Restore" "Naked">>
+	[[Continue|Park Restrooms]]
+<<elseif $MasturbationLocation == "School Showers">>
+	/* GETTING DRESSED */
+	<<set $ClothSave to "Restore">>
+	<<if $GymClassType == "Gym">>
+		<<storeClothing "Restore" "Undies">>
+	<<else>>
+		<<storeClothing "Restore" "Naked">>
+	<</if>>
+	<<if $SaveUndies != null>>
+		<<set $PlayerUndies to $SaveUndies>>
+	<</if>>
+	[[Continue|School Locker Room]] 
+<<elseif $MasturbationLocation == "School Courtyard">>
+	<<storeClothing "Restore" "Naked">>
+	[[Continue|School Courtyard]] 
+<</if>>

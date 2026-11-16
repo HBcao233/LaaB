@@ -1,0 +1,170 @@
+:: Julien NPC Character Menu [nobr]
+
+<<link"[<--]">>
+    <<replace"#SocialMenu">>
+        <<include"Adult Characters Social">>
+    <</replace>>
+<</link>><br>
+
+<span style="color:Azure"><big><strong>--Julien--</strong></big></span><br>
+
+<div id="NPCMenu">
+	<<include"Julien NPC Character Menu Biography">>
+</div>
+
+:: Julien NPC Character Menu Biography [nobr]
+
+<span style="color:lightgreen">[Biography]</span>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Julien NPC Character Menu Avatar Display">>
+
+<<if $JulienSocial > 50>>
+
+<<elseif $JulienSocial > -10>>
+
+<<else>>
+
+    <br>
+<</if>>
+
+:: Julien NPC Character Menu Information [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Information]</span>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Julien NPC Character Menu Avatar Display">>
+
+:: Julien NPC Character Menu Quests [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<span style="color:lightgreen">[Quests]</span>
+ | 
+<<link"[Model Viewer]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Model Viewer">>
+    <</replace>>
+<</link>>
+
+<<include"Julien NPC Character Menu Avatar Display">>
+
+/*<<include"Quest Journal Julien">>*/
+
+:: Julien NPC Character Menu Model Viewer [nobr]
+
+<<link"[Biography]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Biography">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Information]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Information">>
+    <</replace>>
+<</link>>
+ | 
+<<link"[Quests]">>
+    <<replace"#NPCMenu">>
+        <<include"Julien NPC Character Menu Quests">>
+    <</replace>>
+<</link>>
+ | 
+ <span style="color:lightgreen">[Model Viewer]</span>
+
+    <<set $NPCViewer to {
+        Name: "Julien",
+        Outfit: "Everyday",
+        Mouth: "Happy",
+        Eyes: "Normal",
+        Blush: 0,
+        Cry: 0,
+        Arms: "Normal",
+        Brows: "Normal",
+    }>>
+
+<<set _npcviewerOutfit to ["Everyday"]>>
+<<set _npcviewerMouth to ["Happy", "Normal", "Sad", "Smirk"]>>
+<<set _npcviewerEyes to ["Normal", "Narrow", "Wide", "Closed"]>>
+<<set _npcviewerBrows to ["Normal", "Suspicious", "Angry", "Shocked"]>>
+<<set _npcviewerBlush to [0, 1, 2, 3]>>
+<<set _npcviewerCry to [0, 1, 2]>>
+<<set _npcviewerArms to ["Normal", "Bound", "Hide"]>>
+<<set _npcviewerHard to [0]>>
+<<if $JulienSocial >= 50 or $JulienSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $JulienSocial >= 100 or $JulienSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Model Viewer Adults">>
+</div>
+<br>
+
+:: Julien NPC Character Menu Avatar Display [nobr]
+
+<<set $NPCViewer to {
+    Name: "Julien",
+    Outfit: "Everyday",
+}>>
+
+<<set _npcviewerOutfit to ["Everyday"]>>
+<<set _npcviewerHard to [0]>>
+<<if $JulienSocial >= 50 or $JulienSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Undies")>>
+<</if>>
+<<if $JulienSocial >= 100 or $JulienSocialRank > 0>>
+    <<set _npcviewerOutfit.push("Naked")>>
+    <<set _npcviewerHard.push(1)>>
+<</if>>
+<div id='AvatarViewer'>
+    <<include"Social NPC Viewer Adults">>
+</div>
+<br>

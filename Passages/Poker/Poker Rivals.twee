@@ -1,0 +1,23 @@
+:: Poker Rivals [nobr]
+
+<<for _player range $Poker.getRivals()>>
+    <div class="poker-rival-item">
+        <div class="poker-rival-avatar">
+            <<pokeravatar _player>>
+        </div>
+        <div class="poker-rival-hand">
+            <<=$Poker.handDisplayImage(_player.hand, !$PokerShowNPCHands, true)>>
+        </div>
+        <div @class="`poker-rival-text poker-rival-text-${_player.id}`">
+            /* 
+                TODO: Add any reactions here by using, for example:
+
+                <<replace ".poker-rival-text-Noah">>
+                    Don't look at my t- thing... uwu
+                <</replace>>
+
+                You can use that replace macro in any passages within the Poker folder
+             */
+        </div>
+    </div>
+<</for>>

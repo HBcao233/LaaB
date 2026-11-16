@@ -1,0 +1,172 @@
+:: Attend Math [nobr]
+
+/* Setting the Difficulty Bonus of School Checks */
+<<include"School Skill Level">>
+
+/* TEACHER INTRODUCTION */
+<<if $MathIntro != 1>>
+	<<include"Randolph Intro">>
+	<<include"Attend Math Finish">>
+<<else>> 
+		
+/* CLASS EVENT SELECTOR */
+	/* The normal class style has every event have an even chance. */
+	<<if $ClassStyle == "Normal" or $ClassStyle == "Late">>
+		<<set _random to {
+			"Math Question": 10,
+			"Math Good Class": 10,
+			"MATH Surprise Question": 10,
+			"MATH Student Falls Asleep": 10,
+			"LUCAS Math Untied Shoes": 10,
+			"MICHAEL Math Cheating": 10,
+			"XAVIER Math Ultimatum": 10,
+			"FELIX Math Group Grading": 10,
+			"FELIX Math Gets Harassed": 10,
+			"MICHAEL Math Steal Homework": 10,
+			"MICHAEL Math Ruler Spanking": 10,
+			"MATH Choose Partner": 10,
+		}>>
+		/* OC Events */
+		/* Millers */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay Math Cough Blamed"] = 10>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard Math Richard Smart"] = 10>>
+		<</if>>
+		/* Noah H Events */
+		<<if $ToggleOCNoahH == 1 && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator Math 1"] = 10>>
+			<<set _random["OC Noah Vibrator Math 2"] = 10>>
+		<</if>>
+
+	/* The Pay Attention Style decreases ones that involve NPC interaction and punishment for PC. */
+	<<elseif $ClassStyle == "Attention">>
+		<<set _random to {
+			"Math Question": 20,
+			"Math Good Class": 25,
+			"MATH Surprise Question": 10,
+			"MATH Student Falls Asleep": 5,
+			"LUCAS Math Untied Shoes": 5,
+			"MICHAEL Math Cheating": 5,
+			"XAVIER Math Ultimatum": 5,
+			"FELIX Math Group Grading": 5,
+			"FELIX Math Gets Harassed": 5,
+			"MICHAEL Math Steal Homework": 1,
+			"MICHAEL Math Ruler Spanking": 1,
+			"MATH Choose Partner": 5,
+		}>>
+		/* OC Events */
+		/* Millers */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay Math Cough Blamed"] = 5>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard Math Richard Smart"] = 5>>
+		<</if>>
+		/* Noah H Events */
+		<<if $ToggleOCNoahH == 1 && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator Math 1"] = 5>>
+			<<set _random["OC Noah Vibrator Math 2"] = 5>>
+		<</if>>
+
+	/* The Socialize Style increases chance for NPC interacts. NPC specific are set to 5, onces that have chance to increase social are set to 10. */
+	<<elseif $ClassStyle == "Socialize">>
+		<<set _random to {
+			"Math Question": 1,
+			"Math Good Class": 1,
+			"MATH Surprise Question": 1,
+			"MATH Student Falls Asleep": 5,
+			"LUCAS Math Untied Shoes": 10,
+			"MICHAEL Math Cheating": 10,
+			"XAVIER Math Ultimatum": 5,
+			"FELIX Math Group Grading": 10,
+			"FELIX Math Gets Harassed": 5,
+			"MICHAEL Math Steal Homework": 15,
+			"MICHAEL Math Ruler Spanking": 5,
+			"MATH Choose Partner": 15,
+		}>>
+		/* OC Events */
+		/* Millers */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay Math Cough Blamed"] = 5>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard Math Richard Smart"] = 10>>
+		<</if>>
+		/* Noah H Events */
+		<<if $ToggleOCNoahH == 1 && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator Math 1"] = 10>>
+			<<set _random["OC Noah Vibrator Math 2"] = 10>>
+		<</if>>
+
+	/* The Goof Off Style increases social interactions as well, removing most class events. The main bonus is it also provides extra +Fun. */
+	/* In the future there will be secial events here that lead to detention. */
+	<<elseif $ClassStyle == "Goof">>
+		<<set _random to {
+			"MATH Surprise Question": 5,
+			"MATH Student Falls Asleep": 5,
+			"LUCAS Math Untied Shoes": 10,
+			"MICHAEL Math Cheating": 15,
+			"XAVIER Math Ultimatum": 10,
+			"FELIX Math Group Grading": 10,
+			"FELIX Math Gets Harassed": 10,
+			"MICHAEL Math Steal Homework": 15,
+			"MICHAEL Math Ruler Spanking": 15,
+			"MATH Choose Partner": 15,
+		}>>
+		/* OC Events */
+		/* Millers */
+		<<if $ToggleOCMiller == 1 && $CompletedQuests.includes("Millers: Meet the Millers")>>
+			<<set _random["Zay Math Cough Blamed"] = 10>>
+		<</if>>
+		/* Arthur and Richard */
+		<<if $ToggleOCArthurRichard == 1 && $CompletedQuests.includes("Arthur & Richard: Introduction")>>
+			<<set _random["OC Arthur Richard Math Richard Smart"] = 10>>
+		<</if>>
+		/* Noah H Events */
+		<<if $ToggleOCNoahH == 1 && $CompletedQuests.includes("Noah H: Vibration")>>
+			<<set _random["OC Noah Vibrator Math 1"] = 10>>
+			<<set _random["OC Noah Vibrator Math 2"] = 10>>
+		<</if>>
+
+	/* The Homework Style allows to PC to finish their homework in Math Class. It will have it's own special events in the future, but for no will only allow the Surprise Question and Question Events */
+	<<elseif $ClassStyle == "Homework">>
+		<<set _random to {
+			"Math Class Do Homework": 5,
+		}>>
+
+	/* The Nap Style allows to PC sleep during class. It will have it's own special events in the future, but for no will only allow the Surprise Question and Question Events */
+	<<elseif $ClassStyle == "Nap">>
+		<<set _random to {
+			"Math Class Sleep": 5,
+		}>>
+		
+	<</if>>
+
+	/* Quest Hint Tiggers */
+	<<if $InActiveQuests.includes("Lucas: Boning the Neighbor") && $Time.Day != "Wednesday">>
+		<<set _random["Lucas Sex Quest Hint Math"] = 100>>
+	<</if>>
+	/* Quest-Specific Events */
+	<<if $ToggleOCKazu == 1 && $InActiveQuests.includes("Kazu: The Deliquent")>>
+		<<set _random["OC Kazu Intro"] = 50>>
+	<</if>>
+
+	<<set _event to _random.random()>>
+
+	/* Quest Forced Events */
+	<<if $InActiveQuests.includes("Lucas: Punishment Game")>>
+		<<set _event to "Lucas Quest PG Get">>
+	<<elseif $ToggleOCMiller == 1 and $ActiveQuests.includes("Millers: Trouble in Paradise")>>
+		<<set _event to "OC Millers Trouble in Paradise 2">>
+	<<elseif $ToggleOCMata == 1 && $InActiveQuests.includes("Mata: The New Kid At School")>>
+		<<set _event to "OC Mata The New Kid At School">>
+	<</if>>
+
+	<<include _event>>
+        
+<</if>>

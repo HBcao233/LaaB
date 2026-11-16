@@ -1,0 +1,206 @@
+:: Social NPC Model Viewer [nobr]
+
+<<if $NpcKids.includes($NPCViewer.Name) or $NpcTeens.includes($NPCViewer.Name) or $NPCViewer.Outfit != "Naked">>
+    <<set _Zoom to false>>    
+<<else>>
+    <<set _Zoom to true>>
+<</if>>
+
+<<if $NPCViewer.Name == "OC Manuel", "OC Enkys", "Dad">>
+<<set _Zoom to false>>    
+<</if>>
+
+<<if $NPCViewer.Name != "Noah">>
+    <<set _buehands to "None">>
+<<else>>
+    <<if _buehands == "Hide" && $NPCViewer.Arms != "Hide">>
+        <<set _buehands to "None">>
+    <<elseif _buehands == "Sleep" && $NPCViewer.Arms != "Sleep">>
+        <<set _buehands to "None">>
+    <<elseif _buehands == "Hands" && $NPCViewer.Arms != "Normal">>
+        <<set _buehands to "None">>
+    <</if>>
+<</if>>
+
+<<set _ad to [
+    {
+        Name: $NPCViewer.Name,
+        ShowZoom: _Zoom,
+        State: {
+            Outfit: $NPCViewer.Outfit,
+            Mouth: $NPCViewer.Mouth,
+            Eyes: $NPCViewer.Eyes,
+            Blush: $NPCViewer.Blush,
+            Cry: $NPCViewer.Cry,
+            Arms: $NPCViewer.Arms,
+            Hard: $NPCViewer.Hard,
+            BueHands: _buehands,
+        }
+    }
+]>>
+<<ad _ad>>
+
+<strong>Outfit:</strong><br>
+<<for _i to 0; _i lt _npcviewerOutfit.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Outfit == _npcviewerOutfit[_i]>>
+            <span style="color:Green">[_npcviewerOutfit[_i]]</span>
+        <<else>>
+            <<link _npcviewerOutfit[_i]>>
+                <<set $NPCViewer.Outfit to _npcviewerOutfit[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Social NPC Model Viewer">>
+                <</replace>>
+            <</link>>
+        <</if>>
+         | 
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Mouth:</strong><br>
+<<for _i to 0; _i lt _npcviewerMouth.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Mouth == _npcviewerMouth[_i]>>
+            <span style="color:Green">[_npcviewerMouth[_i]]</span>
+        <<else>>
+            <<link _npcviewerMouth[_i]>>
+                <<set $NPCViewer.Mouth to _npcviewerMouth[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Social NPC Model Viewer">>
+                <</replace>>
+            <</link>>
+        <</if>>
+         | 
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Eyes:</strong><br>
+<<for _i to 0; _i lt _npcviewerEyes.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Eyes == _npcviewerEyes[_i]>>
+            <span style="color:Green">[_npcviewerEyes[_i]]</span>
+        <<else>>
+            <<link _npcviewerEyes[_i]>>
+                <<set $NPCViewer.Eyes to _npcviewerEyes[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Social NPC Model Viewer">>
+                <</replace>>
+            <</link>>
+        <</if>>
+         | 
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Blush:</strong><br>
+<<for _i to 0; _i lt _npcviewerBlush.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Blush == _npcviewerBlush[_i]>>
+            <span style="color:Green">[_npcviewerBlush[_i]]</span>
+        <<else>>
+            <<link _npcviewerBlush[_i]>>
+                <<set $NPCViewer.Blush to _npcviewerBlush[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Social NPC Model Viewer">>
+                <</replace>>
+            <</link>>
+        <</if>>
+         | 
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Cry:</strong><br>
+<<for _i to 0; _i lt _npcviewerCry.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Cry == _npcviewerCry[_i]>>
+            <span style="color:Green">[_npcviewerCry[_i]]</span>
+        <<else>>
+            <<link _npcviewerCry[_i]>>
+                <<set $NPCViewer.Cry to _npcviewerCry[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Social NPC Model Viewer">>
+                <</replace>>
+            <</link>>
+        <</if>>
+         | 
+    <</capture>>
+<</for>>
+<br>
+
+<strong>Arms:</strong><br>
+<<for _i to 0; _i lt _npcviewerArms.length; _i++>>
+    <<capture _i>>
+        <<set _length += 1>>
+        <<if $NPCViewer.Arms == _npcviewerArms[_i]>>
+            <span style="color:Green">[_npcviewerArms[_i]]</span>
+        <<else>>
+            <<link _npcviewerArms[_i]>>
+                <<set $NPCViewer.Arms to _npcviewerArms[_i]>>
+                <<replace"#AvatarViewer">>
+                    <<include"Social NPC Model Viewer">>
+                <</replace>>
+            <</link>>
+        <</if>>
+         | 
+    <</capture>>
+<</for>>
+<br>
+
+<<if !$NPCViewer.Hard>>
+	<<set $NPCViewer.Hard = 0>>
+<</if>>
+
+<<if _npcviewerHard.length > 1 && $NPCViewer.Outfit == "Naked">>
+    <strong>Hard:</strong><br>
+    <<for _i to 0; _i lt _npcviewerHard.length; _i++>>
+        <<capture _i>>
+            <<set _length += 1>>
+            <<if $NPCViewer.Hard == _npcviewerHard[_i]>>
+                <span style="color:Green">[_npcviewerHard[_i]]</span>
+            <<else>>
+                <<link _npcviewerHard[_i]>>
+                    <<set $NPCViewer.Hard to _npcviewerHard[_i]>>
+                    <<replace"#AvatarViewer">>
+                        <<include"Social NPC Model Viewer">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+             | 
+        <</capture>>
+    <</for>>
+<</if>>
+
+<<if $NPCViewer.Name == "Noah">>
+    <strong>Bue:</strong><br>
+    <<for _i to 0; _i lt _npcviewerbuehands.length; _i++>>
+        <<capture _i>>
+            <<set _length += 1>>
+            <<if _buehands == _npcviewerbuehands[_i]>>
+                <span style="color:Green">[_npcviewerbuehands[_i]]</span>
+            <<else>>
+                <<link _npcviewerbuehands[_i]>>
+                    <<set _buehands to _npcviewerbuehands[_i]>>
+                    <<if _buehands == "Hide">>
+                        <<set $NPCViewer.Arms to "Hide">>
+                    <<elseif _buehands == "Sleep">>
+                        <<set $NPCViewer.Arms to "Sleep">>
+                    <</if>>
+                    <<replace"#AvatarViewer">>
+                        <<include"Social NPC Model Viewer">>
+                    <</replace>>
+                <</link>>
+            <</if>>
+            | 
+        <</capture>>
+    <</for>>
+    <br>
+
+<</if>>

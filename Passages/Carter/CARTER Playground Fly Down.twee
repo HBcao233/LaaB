@@ -1,0 +1,62 @@
+:: CARTER Playground Fly Down  [nobr]
+
+You are enjoying yourself, climbing up the rope ladder and going down the slide, when you notice <span style="color:DarkTurquoise">Carter</span> atop the jungle gym as well.<br>
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Oh, hello <span style="color:DarkTurquoise">$CarterNickname</span>!”</span> He gives you a cute smile, <span style="color:LightSteelBlue">“I hope your day is going well!”</span> As you chat, <span style="color:DarkTurquoise">Carter</span> stretches his arms up above his head, lifting his $CarterTop.Type enough to reveal to you <span style="color:Pink">that the fly of his $CarterBottoms.Type was down, revealing the front of his Briefs!</span> <span style="color:DarkTurquoise">Carter</span> seems completely oblivious to this and you wonder how long it had been like that.<br>
+<br>
+
+<div id="choice">
+	<<link "Inform him ">>
+		<<replace "#choice">>
+			You lean in close to <span style="color:DarkTurquoise">Carter</span> and whisper in his ear that his fly is down. He instantly turns red, looks down to confirm it, and quickly turns around and zips up his $CarterBottoms.Type. He then turns back around, chuckling nervously while still blushing.<br>
+
+			<<set _ad to [
+				{
+					Name: "Carter",
+					State: {
+						Arms: "Hide",
+						Blush: 2,
+						Mouth: "Sad",
+						Outfit: "Uniform",
+					},
+				},
+			]>>
+			<<ad _ad>>
+
+			<span style="color:LightSteelBlue">“Thanks <span style="color:DarkTurquoise">$CarterNickname</span>! Guess I was a bit too excited to play when I got done using the bathroom.”</span> He laughs and gives you a thumbs up before jumping down the slide.<br>
+
+			<span style="color:Green">-Stress</span><br>
+			<<addMoodlet "Stress" 0>>
+			<<socialChange "Carter" 3>>
+			<br>
+
+			[[Continue|School Courtyard]]
+		<</replace>>
+	<</link>>
+	<span style="color:Green">+Carter</span><br>
+	
+	<<link "Leave it be ">>
+		<<replace "#choice">>
+			You take a mental picture of the unaware boy before telling him you’ll see him later and parting ways. <span style="color:DarkTurquoise">Carter</span> then jumps down the slide, unaware of his tiny embarrassment. You chuckle to yourself and go back to playing.<br>
+			
+			<<addMoodlet "Stress" 0>>
+			<<set _arousalbs to []>>
+			<<set _arousalkink to ["Humiliation"]>>
+			<<arousalGain 10 _arousalbs _arousalkink>>
+			<br>
+
+			[[Continue|School Courtyard]]
+		<</replace>>
+	<</link>>
+</div>

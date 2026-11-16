@@ -1,0 +1,35 @@
+:: Character Achievements [nobr]
+
+<br>
+
+<span class="bold">Earned achievements:</span> <<=$Achievements.getAchievementGrantedCount()>>/<<=$Achievements.getAchievementTotalCount()>>
+
+<br><br>
+
+<ul>
+	<<for _achievement range $Achievements.getGrantedAchievements()>>
+		<li>
+			<span class="bold"><<=_achievement.getName()>></span>: <<=_achievement.getDescription()>> <span @style="`color: ${getAchievementColorByLevel(_achievement.getLevel())}`;">(<<=ACHIEVEMENTS_LEVEL_SCORE_MAPPER[_achievement.getLevel()]>> points)</span>
+		</li>
+	<</for>>
+</ul>
+
+<br>
+
+<span class="bold">Achievement Points (Earned)</span>: <<=$Achievements.getAchievementScore()>><br>
+<span class="bold">Achievement Points (Used)</span>: <<=$Achievements.getUsedPoints()>><br>
+<span class="bold">Achievement Points (Remaining)</span>: <<=$Achievements.getRemainingPoints()>><br>
+
+:: Character Achievements Script [script]
+
+window.getAchievementColorByLevel = level => {
+	if (level === 3) {
+		return '#FFD700'; // gold
+	}
+
+	if (level === 2) {
+		return '#C0C0C0'; // silver
+	}
+
+	return '#CD7F32'; // bronze
+};

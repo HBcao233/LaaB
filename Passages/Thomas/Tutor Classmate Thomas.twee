@@ -1,0 +1,159 @@
+:: Tutor Classmate Thomas [nobr]
+
+/*Intro*/
+
+<span style="color:LightSteelBlue">“You’re good in history, right?”</span> She asks, despite already having your grades up on her screen. <span style="color:LightSteelBlue">“We have a student, same school as you, who’s been struggling in that class. Poor boy, he’s smart and would have no trouble understanding the material, if he took the time to learn it. But he has to work to support his family, plus he is always falling asleep in class, so his grades have been failing.”</span> As she speaks, you think you may have an idea who she is talking about. <br>
+<br>
+<span style="color:LightSteelBlue">“The headmaster instructed him to come here a few times a week, just to practice and study for tests to try and get his grade up. Though he isn’t…”</span> She gives you a nervous smirk, <span style="color:LightSteelBlue">“the most receptive to tutors. But if you can try, that’d be great! Maybe he’ll be happier with someone his own age, as he just ignores all our older tutors.”</span> Agreeing, she points you toward a table in the back of the room and you walk over wondering if you’d find who you are expecting. <br>
+<br>
+
+<<if $ThomasSocial < -10 or $ThomasSocialRank < 0>>
+    /*-Low Social-*/
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Mad",
+                Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    Sitting at the table with his head down idly drawing on some scrap pieces of paper, is the familiar orange-haired bad boy, <span style="color:DarkTurquoise">Thomas</span>. A bit nervous, you clear your throat and greet the boy. Instantly, <span style="color:DarkTurquoise">Thomas</span> stops what he’s doing and sits up to look at you. <span style="color:lightcoral">He glares at you for a moment, frowning, before quickly shoving all his papers into his bag and walking away. You stand there awkwardly as Melanie tries to stop him, but he leaves without saying a single word to either of you.</span> <br>
+    <br>
+    <span style="color:LightSteelBlue">“Dang it.”</span> She sighs, <span style="color:LightSteelBlue">“Well, thanks for trying, I guess. Let’s find you someone else to try and help.”</span> You stare at the door <span style="color:DarkTurquoise">Thomas</span> left through for a moment before following Melanie and being assigned another kid to help. <span style="color:lightcoral">It seems <span style="color:DarkTurquoise">Thomas</span> was not interested in spending any time with you, whether it would help his grade or not.</span> <br>
+
+    <br>
+    <<socialChange "Thomas" -1>>
+    [[Continue|Community Center]]
+    /*[+HistoryXP]*/
+
+/*-Medium Social-*/
+<<elseif $ThomasSocial < 20 && $ThomasSocial > -10>>
+
+    Sitting at the table with his head down idly drawing on some scrap pieces of paper, is the familiar orange-haired bad boy, <span style="color:DarkTurquoise">Thomas</span>. A bit nervous, you clear your throat and greet the boy. Instantly, <span style="color:DarkTurquoise">Thomas</span> stops what he’s doing and sits up to look at you. He frowns upon locking eyes with you, glancing down at his papers and putting one hand on them. <span style="color:LightGreen">You can see him considering leaving, though the fact that he questions it at least for a moment is hopeful.</span> So, you sit down across from him, asking him if he’d like to practice on the flashcards. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“No.”</span> He responds quickly and quietly, <span style="color:LightSteelBlue">“Just… mark which ones of these are wrong and I’ll fix them.”</span> He pushes a practice worksheet toward you that he already filled out. You agree, however, as you try to explain what he got wrong in his first incorrect answer, he stops you. <span style="color:LightSteelBlue">“Just mark them wrong, I’ll go through the book and fix them. I don’t need you to explain it.”</span> You pause for a moment, trying to explain that you are here to help him understand the material, <span style="color:lightcoral">but <span style="color:DarkTurquoise">Thomas</span> doesn’t respond, continuing to sit there silently.</span> <br>
+    <br>
+    So, you do what he asks, marking his incorrect answers before handing the worksheet back to him. You then try to work along with him as he goes through to fix his answers, but he doesn’t engage or respond to you at all. You can tell by his facial expressions that you were making him uncomfortable. So, instead of trying to explain to him what the right answer is, you simply tell him the page number where he can find it in his textbook. <br>
+    <br>
+    It isn’t the most helpful tutoring you can give, but it seems to be the only help <span style="color:DarkTurquoise">Thomas</span> would accept. Once he’s fixed all his answers, <span style="color:DarkTurquoise">Thomas</span> hands the sheet back to you and you happily explain that they were now all correct, congratulating him. But <span style="color:DarkTurquoise">Thomas</span> doesn’t respond, simply collecting all his papers and tossing them into his bag. As he stands up, he pauses for a moment, and you hear him quietly mutter <span style="color:LightSteelBlue">“Thanks”</span> under his breath before quickly walking away. <br>
+    <br>
+    <span style="color:LightGreen">Well, at least you helped him somewhat.</span> <br>
+
+    <<socialChange "Thomas" 1>>
+    [[Continue|Community Center]]
+    <br>
+    /*[+HistoryXP]*/
+
+/*-High Social-*/
+<<else>>
+
+    Sitting at the table with his head down idly drawing on some scrap pieces of paper, is the familiar orange-haired bad boy, <span style="color:DarkTurquoise">Thomas</span>. A bit nervous, you clear your throat and greet the boy. Instantly, <span style="color:DarkTurquoise">Thomas</span> stops what he’s doing and sits up to look at you. He frowns upon locking eyes with you, glancing down at his papers and putting one hand on them. <span style="color:LightGreen">You know him well enough to know he is considering leaving, but he hesitates.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Hey… <span style="color:DarkTurquoise">$ThomasNickname</span>…”</span> He finally says, sighing as he sits down. Seems he decided to stick it out. You smile and sit down, greeting him once more. You sit down across from him and ask how he’d like you to help him. You have flashcards if he wants to go over those. <span style="color:LightSteelBlue">“No, I don’t need…”</span> He pauses, rubbing his fingers together. After a brief silence, he pulls out a paper and hands it to you. <br>
+    <br>
+    You look it over and quickly recognize it as a recent history test your class took. <span style="color:DarkTurquoise">Thomas</span> didn’t do so well, scoring below a 20%, and you notice a message written on the top to talk to the teacher after class. <span style="color:LightSteelBlue">“They’re letting me make up the test. But…”</span> He curses under his breath, <span style="color:LightSteelBlue">“I have trouble staying awake in that class and don’t remember any of this. I tried going through the textbook, but I… I don’t even know where to look.”</span> You know <span style="color:DarkTurquoise">Thomas</span> well enough to know he has trouble asking for help, but you understand what he needed. <br>
+    <br>
+    So, without a word, you quickly pull out your own textbook and quickly go to the part that explains the first question he got wrong. You then spin the book around towards him and point to the passage, saying that he should copy it down to make sure he memorizes it. <span style="color:LightGreen">Blushing slightly, he nods before doing so.</span> <br>
+    <br>
+    <span style="color:DarkTurquoise">Thomas</span> doesn’t like hand-outs and if you just told him the answers, he’d get upset. You know that. So, you try your best to point him in the right direction and let him come across the exact answer himself. But, by at least showing him where to find the correct answer and giving him tips on how to memorize it, you prevent the boy from getting frustrated. <span style="color:LightGreen">Though he doesn’t say anything, you can tell <span style="color:DarkTurquoise">Thomas</span> appreciates this by the way he seems to relax.</span> <br>
+    <br>
+    You continue this until he’s gone over every question he got wrong. Then, to test how well he absorbed the information, you take away the book and his notes and quiz him. He gets nearly every question right, which isn’t surprising since he was just studying them, but it does seem to boost his confidence a bit. Unlike other kids here, it wasn’t a lack of motivation or effort that was holding <span style="color:DarkTurquoise">Thomas</span> back, but simply the inability of his body to handle as much as he is taking on. You want to say something, tell him he should try to sleep more to prevent passing out in class, but you know he wouldn’t take it the right way. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:LightSteelBlue">“Sorry you got stuck tutoring me.”</span> <span style="color:DarkTurquoise">Thomas</span> says, rubbing the back of his head. You laugh in response, saying that you enjoy helping out other students and are glad it was him. <span style="color:LightSteelBlue">“Well, thanks anyway.”</span> He gives you a small smile, <span style="color:LightSteelBlue">“You know, you’re a pretty good teacher.”</span> You shrug, claiming that you just pointed him in the right direction, not really doing any teaching. <span style="color:LightSteelBlue">“Well, then at least you’re a good friend.”</span> He replies. <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Thomas",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Mad",
+                Blush: 2,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+    <span style="color:Pink">Though as you hear this, you glance up at him with a smile, causing <span style="color:DarkTurquoise">Thomas</span> to quickly blush and frown. <span style="color:LightSteelBlue">“Wha- what are you smiling at!? Shut up, or I’ll-!”</span> <span style="color:DarkTurquoise">Thomas</span> quickly gets flustered, shoving his things into his backpack as he covers his face with his hood. You try to wish him good luck on his makeup test, but he just tells you to shut up again as he runs off.</span> <br>
+    <br>
+    <span style="color:LightGreen">You know that he appreciated the help, despite his weird way of showing it.</span> <br>
+
+    <<socialChange "Thomas" 2>>
+    [[Continue|Community Center]] 
+    <br>
+    /*[+HistoryXP]*/
+<</if>>

@@ -1,0 +1,81 @@
+:: OC Sebastian City Park Lost Photo [nobr]
+
+As you are walking through the park, you spot a familiar figure with long black hair sitting on a bench near a bush in the distance. He was holding what appeared to be a book or album, browsing through it while occasionally smirking and chuckling. As <span style="color:DarkTurquoise">Sebastian</span> stands up and walks away, <span style="color:yellow">you spot a piece of paper slip out and fall to the ground without him noticing.</span><br>
+<<set $Minutes += 20>>
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Sebastian">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC SEBASTIAN Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+
+<div id="choice">
+    <<link "Investigate the dropped photo">>
+        <<replace "#choice">>
+            You walk up to the fallen paper as <span style="color:DarkTurquoise">Sebastian</span> walks out of sight, it was definitely a photograph, one of <span style="color:DarkTurquoise">Sebastian</span>’s many photos. <span style="color:pink">You pick it up excitedly, it could be anything! Judging by <span style="color:DarkTurquoise">Sebastian</span>’s normal selection of photos, it could be one of your classmates naked or in a delicate moment. As you feel your heart beating faster in anticipation, you flip the photo over to see...</span><br>
+            <br>
+
+            <span style="color:yellow">Just a picture of a squirrel?</span> What the heck? Is this some kind of trick or a joke? As you are pondering the photo, looking for some hidden meaning, <span style="color:lightcoral">you are suddenly scared half to death as a voice whispers in your ear.</span> <span style="color:LightSteelBlue">“Isn’t that a pretty squirrel?”</span> You jump, letting out a scream, as you see <span style="color:DarkTurquoise">Sebastian</span> standing behind you, smirking over your shoulder.<br>
+
+            /* AVATAR DISPLAY */
+                <<set $AD.Name to "Sebastian">>
+                <<set $AD.Arms to "Normal">>
+                <<set $AD.Eyes to "Tired">>
+                <<set $AD.Cry to 0>>
+                <<set $AD.Blush to 0>>
+                <<set $AD.Mouth to "Smirk">>
+                <<set $AD.Outfit to "Everyday">>
+                <<set $AD.Hard to 0>>
+                    <<include"OC SEBASTIAN Avatar Equipment Set">>
+            /* VARIABLE OVERRIDES */
+                    /* */
+            <div style="position: relative">
+                <<include"Avatar Display">>
+            /* SECOND LAYER */
+                <<set $AD.Name to "Player">>
+                <<set $AD.Arms to "Normal">>
+                <<set $AD.Eyes to "Normal">>
+                <<set $AD.Cry to 0>>
+                <<set $AD.Blush to 1>>
+                <<set $AD.Mouth to "Sad">>
+                <<set $AD.Outfit to "Everyday">>
+                <<set $AD.Hard to 0>>
+                <<include"Player Avatar Display Set">>
+            /* VARIABLE OVERRIDES */
+                    /* */
+            <div style="position: absolute; left: 125px; top: 0px">
+                <<include"Avatar Display">>
+            </div>
+            /* END LAYER */
+                <img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+            </div>
+
+            <span style="color:LightSteelBlue">“What? Did you think it was going to be some ‘different’ photo?”</span> He asks, glaring down at you, <span style="color:LightSteelBlue">“You did look kind of excited. What were you hoping it would be?”</span> You blush at his accusation as <span style="color:DarkTurquoise">Sebastian</span> takes the photo from you and places it back in his album. <span style="color:LightSteelBlue">“I don’t just take ‘those’ kinds of photos, you know? I also take normal nature photos.”</span> <span style="color:DarkTurquoise">Sebastian</span> laughs as he walks away.<br>
+	        <<addMoodlet "Stress" 1>>
+            <br>
+            [[Continue|Park]]
+        <</replace>>
+    <</link>><br>
+    <<link "Ignore the Photo">>
+        <<replace "#choice">>
+            You may not know much about <span style="color:DarkTurquoise">Sebastian</span>, but you knew enough to know that checking out that photo wasn’t worth it. It was probably some kind of trick, so he could catch you sneaking a peek. <span style="color:pink">Or worse, it was a photo of you he wanted to discreetly show that he had taken.</span> <span style="color:lightgreen">Regardless, not worth it.</span><br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 20>>
+            <br>
+            [[Continue|Park]]
+        <</replace>>
+    <</link>>
+</div>

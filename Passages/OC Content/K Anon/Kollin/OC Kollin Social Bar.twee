@@ -1,0 +1,84 @@
+:: OC Kollin Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCKollinSocialRank == -3>>
+	<<set $OCKollinRelationship to "Hated">>
+	<span style="color:DarkRed">Kollin Hates you!</span>
+	<br>
+<<elseif $OCKollinSocialRank == -2>>
+	<<set $OCKollinRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Kollin are Enemies.</span>
+	<br>
+<<elseif $OCKollinSocialRank == -1>>
+	<<set $OCKollinRelationship to "Very Disliked">>
+	<span style="color:Red">Kollin really Dislikes you.</span>
+	<br>
+<<elseif $OCKollinSocialRank == 0 and $OCKollinSocial <= -50>>
+	<<set $OCKollinRelationship to "Disliked">>
+	<span style="color:Red">Kollin Dislikes you. </span>
+	<br>
+<<elseif $OCKollinSocialRank == 0 and $OCKollinSocial < 50>>
+	<<set $OCKollinRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Kollin are Acquaintances.</span>
+	<br>
+<<elseif $OCKollinSocialRank == 0 and $OCKollinSocial >= 50>>
+	<<set $OCKollinRelationship to "Liked">>
+	<span style="color:LightGreen">Kollin Likes you.</span>
+	<br>
+<<elseif $OCKollinSocialRank == 1>>
+	<<set $OCKollinRelationship to "Friends">>
+	<span style="color:Green">You and Kollin are Friends.</span>
+	<br>
+<<elseif $OCKollinSocialRank == 2>>
+	<<set $OCKollinRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Kollin are Good Friends!</span>
+	<br>
+<<elseif $OCKollinSocialRank == 3>>
+	<<set $OCKollinRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Kollin are Close Friends!</span>
+	<br>
+<<elseif $OCKollinSocialRank == 4>>
+	<<set $OCKollinRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Kollin are Best Friends!</span>
+	<br>
+<<elseif $OCKollinSocialRank == 5>>
+	<<set $OCKollinRelationship to "Love">>
+	<span style="color:Pink">You and Kollin Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCKollinSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCKollinSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCKollinSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCKollinSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCKollinSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCKollinSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCKollinSocial,
+			value: Math.abs($OCKollinSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCKollinSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCKollinSocial > 120>>
+	<<set $OCKollinSocial to 120>>
+<</if>>
+<<if $OCKollinSocial < -120>>
+	<<set $OCKollinSocial to -120>>
+<</if>>

@@ -1,0 +1,84 @@
+:: OC Kyren Social Bar [nobr]
+
+/* SOCIAL LEVELS */
+<<if $OCKyrenSocialRank == -3>>
+	<<set $OCKyrenRelationship to "Hated">>
+	<span style="color:DarkRed">Kyren Hates you!</span>
+	<br>
+<<elseif $OCKyrenSocialRank == -2>>
+	<<set $OCKyrenRelationship to "Enemies">>
+	<span style="color:DarkRed">You and Kyren are Enemies.</span>
+	<br>
+<<elseif $OCKyrenSocialRank == -1>>
+	<<set $OCKyrenRelationship to "Very Disliked">>
+	<span style="color:Red">Kyren really Dislikes you.</span>
+	<br>
+<<elseif $OCKyrenSocialRank == 0 and $OCKyrenSocial <= -50>>
+	<<set $OCKyrenRelationship to "Disliked">>
+	<span style="color:Red">Kyren Dislikes you. </span>
+	<br>
+<<elseif $OCKyrenSocialRank == 0 and $OCKyrenSocial < 50>>
+	<<set $OCKyrenRelationship to "Acquaintances">>
+	<span style="color:Yellow">You and Kyren are Acquaintances.</span>
+	<br>
+<<elseif $OCKyrenSocialRank == 0 and $OCKyrenSocial >= 50>>
+	<<set $OCKyrenRelationship to "Liked">>
+	<span style="color:LightGreen">Kyren Likes you.</span>
+	<br>
+<<elseif $OCKyrenSocialRank == 1>>
+	<<set $OCKyrenRelationship to "Friends">>
+	<span style="color:Green">You and Kyren are Friends.</span>
+	<br>
+<<elseif $OCKyrenSocialRank == 2>>
+	<<set $OCKyrenRelationship to "Good Friends">>
+	<span style="color:DarkGreen">You and Kyren are Good Friends!</span>
+	<br>
+<<elseif $OCKyrenSocialRank == 3>>
+	<<set $OCKyrenRelationship to "Close Friends">>
+	<span style="color:DarkGreen">You and Kyren are Close Friends!</span>
+	<br>
+<<elseif $OCKyrenSocialRank == 4>>
+	<<set $OCKyrenRelationship to "Best Friends">>
+	<span style="color:Cyan">You and Kyren are Best Friends!</span>
+	<br>
+<<elseif $OCKyrenSocialRank == 5>>
+	<<set $OCKyrenRelationship to "Love">>
+	<span style="color:Pink">You and Kyren Love each other!</span>
+	<br>
+<</if>>
+
+<div class="social-bar-group">
+	<<if $OCKyrenSocialRank == 0>>
+		<img src="Images\UI\Social\SocialRank0.png" width="35" alt="Rank0">
+	<<elseif $OCKyrenSocialRank == 1>>
+		<img src="Images\UI\Social\SocialRank1.png" width="35"  alt="Rank1">
+	<<elseif $OCKyrenSocialRank == 2>>
+		<img src="Images\UI\Social\SocialRank2.png" width="70"  alt="Rank1">
+	<<elseif $OCKyrenSocialRank == 3>>
+		<img src="Images\UI\Social\SocialRank3.png" width="105"  alt="Rank1">
+	<<elseif $OCKyrenSocialRank == 4>>
+		<img src="Images\UI\Social\SocialRank4.png" width="140"  alt="Rank1">
+	<<elseif $OCKyrenSocialRank == 5>>
+		<img src="Images\UI\Social\SocialRank5.png" width="175"  alt="Rank1">
+	<</if>>
+
+	/* SOCIAL GAUGE */
+	<div class="social-bar-gauge">
+		<<set _data = clone({
+			text: $OCKyrenSocial,
+			value: Math.abs($OCKyrenSocial),
+			max: 100,
+			min: 0,
+			color: getSocialBarColor($OCKyrenSocial),
+			showText: true,
+		})>>
+		<<progressbar _data>>
+	</div>
+</div>
+/* MAX MIN */
+<<if $OCKyrenSocial > 120>>
+	<<set $OCKyrenSocial to 120>>
+<</if>>
+<<if $OCKyrenSocial < -120>>
+	<<set $OCKyrenSocial to -120>>
+<</if>>

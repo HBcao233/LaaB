@@ -1,0 +1,87 @@
+:: Spanking [nobr]
+
+<<set $ArmsBound to 1>>
+
+/* PLAYER ACTION */
+<<include"Spank Player Action">>
+<<include"Spank Player Pain">>
+<<include"Spank Player Position">>
+
+<br>
+<br>
+<<include"Spank NPC Action Selector">>
+<<include"Spank NPC Action">><br>
+<br>
+
+/* AVATAR DISPLAY */
+	<<include"Player Avatar Display Set">>
+	<<set $AD.Name to "Player">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 2>>
+	<<set $AD.Mouth to "Sad">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+	<<include"Player Avatar Mood">>
+	<<include"Player Avatar Display Set">>
+	<<set $AD.Arms to "Bound">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Avatar Display">>
+	/* PENIS ZOOM DISPLAY (+160px) */
+<<if $PlayerUndies.Type == "None" and $PlayerBottoms.Type == "None">>
+	<<if $ZoomsPlayer != 0>>
+		<div style="position: absolute; left: 160px; top: 0px">
+				<<include"Player Avatar Display Set">>
+				<<include"Penis Zoom Display">>
+				<div style="position: absolute; left: 133px; top: 0px">
+					<<include"Butt Zoom Display">>
+				</div>
+		</div>
+	<</if>>
+<</if>>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+
+<<if $Debug == 1>>
+Spank Clothing: $SpankClothing<br>
+Number of Spanks: $SpankNumber<br>
+Spanker Anger: $SpankAnger<br>
+Spank Pain: $SpankPain<br>
+Location: $SpankLocation<br>
+Spanker: $Spanker<br>
+Spanking Started?: $SpankingStart<br>
+Position: $SpankPosition<br>
+Spank Marks: $SpankMarks<br>
+<</if>>
+
+/* Actions */
+<span style="color:Azure"><big><strong>--Actions--</strong></big></span><br>
+
+<<if $SpankingStart == 0>>
+	[[Wait|Spanking][$SpankPlayerAction to "None"]]<br>
+	[[Plead|Spanking][$SpankPlayerAction to "Plead"]]<br>
+<<elseif $SpankNumber <= 0>>
+	<<if $SpankLocation == "School Math Classroom">>
+		[[Finish|Detention Spank Ending][$ArmsBound to 0]]<br>
+	<<elseif $SpankLocation == "Father Bedroom">>
+		[[Finish|Punishment Spank Ending][$ArmsBound to 0]]<br>
+	<<elseif $SpankLocation == "Gabe Bedroom">>
+		[[Finish|Spank Gabe Sneak Ending][$ArmsBound to 0]]<br>
+	<</if>>
+<<else>>
+	<<if $SpankPain >= 80>>
+		<span style="color:Red">You cry uncontrollably!</span><br>
+		[[Cry|Spanking][$SpankPlayerAction to "Cry"]]<br>
+	<<else>>
+		[[Cry|Spanking][$SpankPlayerAction to "Cry"]]<br>
+		[[Take It|Spanking][$SpankPlayerAction to "Take It"]]<br>
+		[[Clench|Spanking][$SpankPlayerAction to "Clench"]]<br>
+		[[Plead|Spanking][$SpankPlayerAction to "Plead"]]<br>
+	<</if>>
+<</if>>
+
+<<run State.setVar(`SpankedBy${$Spanker}`, true)>>

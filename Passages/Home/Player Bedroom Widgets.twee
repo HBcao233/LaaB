@@ -1,0 +1,19 @@
+:: Player Bedroom Widgets [widget]
+<<nobr>>
+<<widget "scroungeCloset">>
+<<set _slot to _args[0]>>
+<<set _player_item to State.getVar(`$Player${_slot}`)>>
+<<set _drawer to State.getVar(`$Closet${_slot}`)>>
+<<if _player_item.Type == "None" and _drawer.length == 0>>
+    <<if _slot.endsWith("s")>>
+        <<set _article to "some">>
+    <<else>>
+        <<set _article to "a">>
+    <</if>>
+    <<set _passage to `Player Bedroom Scrounge ${_slot}`>>
+    <<link "Scrounge for _article _slot (0:05)" _passage>>
+        <<set $Minutes += 5>>
+    <</link>><br>
+<</if>>
+<</widget>>
+<</nobr>>

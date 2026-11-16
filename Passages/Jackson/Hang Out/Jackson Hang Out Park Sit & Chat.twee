@@ -1,0 +1,110 @@
+:: Jackson Hang Out Park Sit & Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+You sit down on the bench to catch your breath, but find <span style="color:DarkTurquoise">Jackson</span> wants to do anything but. He sits down next to you but quickly leans back so much that he is upside down and giggling to himself at seeing the world from this angle. You smile at this and ask him what he’s doing. <span style="Color: LightSteelBlue">“I dunno.”</span> is his only response as he continues to glance around upside down and giggle to himself. What an interesting boy. <br>
+
+<<set _ad to [
+    {
+        Name: "Jackson",
+        State: {
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask him how his classes are going and he blows a raspberry. <span style="Color: LightSteelBlue">“Class is boring! Just numbers, words, numbers, and more numbers!”</span> He sits up suddenly, getting dizzy from it, before turning to you with a frown. <span style="Color: LightSteelBlue">“Come on, let’s go do something! Talking about numbers is making me sleepy and I HATE being sleepy!”</span> <span style="color:DarkTurquoise">Jackson</span> grabs you by the hands and pulls you to your feet. <br>
+            <<socialChange "Jackson" 1>>
+            <span style="color:green">+Jackson Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Jackson Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Jackson Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Jackson</span> how school has been treating him. <span style="Color: LightSteelBlue">“Oh, the other day I tried to climb that tree near the side of the cafeteria, you know the one? Well, I thought it I climbed it I could jump from the branch to the roof to see what sort of stuff is up there.”</span> You smile as he continues with the story, wondering where this adventure led. <span style="Color: LightSteelBlue">“But <span style="color:DarkTurquoise">Mr. Randolph</span> found me as I was about to do it and made me get down. He is so boring!”</span> <span style="color:DarkTurquoise">Jackson</span> pouts. <br>
+            <<socialChange "Jackson" 1>>
+            <span style="color:green">+Jackson Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Jackson Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Jackson Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Jackson: Sibling Dynamics")>>
+        <<link "Home life<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+                You ask <span style="color:DarkTurquoise">Jackson</span> how things are at home and he instantly starts to pout. <span style="Color: LightSteelBlue">“Dumb! I got grounded last weekend just because I was trying to have fun! Like, I didn’t even do anything bad!”</span> You doubt that, but ask to hear what happened. <span style="Color: LightSteelBlue">“My little brother and I were playing outside all day, running around and stuff, but he got tired and wanted to nap on the hammock. I thought it was boring, but whatever. But after he was asleep, I noticed he was sweating and his forehead was all red and hot! So, I helped him out since he was obviously too hot!”</span> You can see where this is going. <br>
+                <br>
+                <span style="Color: LightSteelBlue">“But when he woke up, he got all embarrassed and cried and called for mom! I tried to tell him it was fine, we have tall fences even if he’s embarrassed for some reason. But he got all mad and stuff and I got grounded. It was dumb, I was just trying to help him not get a fever!”</span> You pat <span style="color:DarkTurquoise">Jackson</span> on the back, internally laughing at the series of events. <br>
+                <<socialChange "Jackson" 1>>
+                <span style="color:green">+Jackson Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Jackson Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Jackson Hang Out Park]]
+            <<else>>
+                You ask <span style="color:DarkTurquoise">Jackson</span> how things are at home and he lights up. <span style="Color: LightSteelBlue">“Great! Dad and I are working on building this super cool toy! It’s like science but not boring; at least dad says it’s science, but I think it’s just a toy.”</span> You ask him to describe said toy and <span style="color:DarkTurquoise">Jackson</span> quickly goes into a hard-to-understand rant. <span style="Color: LightSteelBlue">“Well, it’s like this little cardboard thing but it is like a spider, and it crawls and walks around and is all creepy and stuff and we have to put the wires together and-”</span> You are able to piece together that they put together a science kit for a cardboard spider. But hearing <span style="color:DarkTurquoise">Jackson</span> try to describe it makes your head hurt. <br>
+                <<socialChange "Jackson" 1>>
+                <span style="color:green">+Jackson Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Jackson Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Jackson Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+            You ask <span style="color:DarkTurquoise">Jackson</span> what he’s been into recently. <span style="Color: LightSteelBlue">“Into? I guess I found a cool hole at the playground the other day but wasn’t big enough to go into really.”</span> You rephrase, meaning what fun things or activities he has been doing recently. <span style="Color: LightSteelBlue">“Oh! Digging holes.”</span> He says bluntly, <span style="Color: LightSteelBlue">“It’s super fun.”</span> You nod. The answer makes sense from him. <br>
+            <<socialChange "Jackson" 1>>
+            <span style="color:green">+Jackson Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Jackson Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Jackson Hang Out Park]]
+        <<else>>
+            You ask <span style="color:DarkTurquoise">Jackson</span> what sorts of things has been keeping his attention recently. <span style="Color: LightSteelBlue">“My little brother joined scouts, but he’s kind of scared of camping, so we’ve been doing camping stuff to get him prepared! I showed him how to tie a knot and build a tent. I was gonna show him how to start a campfire, but mom threated to give me up for adoption if I did that.”</span> <br>
+            <<socialChange "Jackson" 1>>
+            <span style="color:green">+Jackson Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Jackson Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Jackson Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

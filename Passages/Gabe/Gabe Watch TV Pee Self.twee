@@ -1,0 +1,123 @@
+:: Gabe Watch TV Pee Self [nobr]
+
+
+<<include "Watch TV End">>
+
+As you are watching TV, you spot your elder brother <span class="char-name">Gabe</span> plop down on the couch near you. He glances at what’s on the TV for a moment with disinterest <span class="alert-text">before reaching for the remote!</span> <span class="green-text">Swiftly, you dive towards it and take hold before he can, holding it tight.</span><br>
+
+<<set _ad to [
+    {
+        Name: "Player",
+        State: {
+            Eyes: "Mad",
+            Mouth: "Sad",
+        },
+    },
+    {
+        Name: "Gabe",
+        State: {
+            Eyes: "Tired",
+            Mouth: "Smirk",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span class="dialogue-text">“Cute. Give me the remote, now.”</span> <span class="char-name">Gabe</span> demands, holding his hand out. You shake your head and scooch away, claiming that you were here first and, therefore, get to choose what’s on TV. <span class="dialogue-text">“Well, I was born first. So, give it here, or else.”</span> You refuse again, backing up even more, determined to hold the remote tightly. <span class="dialogue-text">“Fine then, have it your way.”</span><br>
+<br>
+
+<<if $PlayerTop.Type != "None">>
+    <span class="alert-text">Gabe leaps at you, pinning you to the couch as he reaches up your $PlayerTop.Type and begins to mercilessly tickle your sides and armpits!</span>
+<<else>>
+    <span class="alert-text">Gabe leaps at you, pinning you to the couch as he reaches for your exposed sides and armpits and begins to mercilessly tickle you!</span>
+<</if>>
+
+You begin to laugh and squirm, demanding he get off of you, all while continuing to hold the remote tightly. Gabe just smirks, claiming he will only stop if you give him the remote. But you were determined to watch your show, trying to call for help through the laughter.<br>
+<br>
+
+<<set _random to random(1, 4)>>
+
+<<if _random === 4 && $ToggleBladder == 1 && $Player.Bladder < 75 && $ToggleWatersports == 1 && $Player.Exposed != "Naked">>
+    You last longer than either of you thought, as you begin to believe that <span class="char-name">Gabe</span> will tire out before you. Despite the tears, exhaustion, and pain that comes from laughing for so long, you were determined to win! <span class="alert-text">That is, until, you feel a pressure begin to build up in your groin. Through your laughter, you cry out to <span class="char-name">Gabe</span> to stop, you were going to wet yourself!</span><br>
+    <br>
+
+    <span class="dialogue-text">“Nice try,”</span> <span class="char-name">Gabe</span> laughs, speeding up his tickling as he feels you breaking, <span class="dialogue-text">“But, like I said, there is only one way I will stop.”</span> When your pleading and begging falls on deaf ears, you try your best to hold out. You weren’t going to give up! Not even if you... <span class="red-text">uh-oh.</span><br>
+    <br>
+
+    <<linkreplace "Continue">>
+        <span class="alert-text">Pssssssssss...</span><br>
+        <br>
+
+        <<if !$PlayerUndies.Tags.includes("Diaper")>>
+            <span class="alert-text">The sound breaks through your laughter as you and <span class="char-name">Gabe</span> both freeze, both of your eyes moving toward your crotch as a dark spot begins to grow on your clothing. You feel tears well up as you come to the embarrassing realization that you just peed yourself.</span><br>
+            <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Eyes: "Sad",
+                        Mouth: "Sad",
+                        Blush: 3,
+                        Cry: 1,
+                        Arms: "Hide",
+                    },
+                },
+                {
+                    Name: "Gabe",
+                    State: {
+                        Eyes: "Tired",
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span class="char-name">Gabe</span> immediately breaks out laughing. <span class="dialogue-text">“Fuck! I didn’t think you were serious!”</span> He falls back laughing as hard as he can, <span class="pink-text">you feel tears begin to fall and your cheeks go red as he mocks you.</span> <span class="dialogue-text">“You better hope none of it got on the couch, or Dad will put you back in diapers! That would be great, little baby <span class="char-name">$GabeNickname</span> in diapers like he belongs!”</span><br>
+            <br>
+
+            <span class="alert-text">Humiliated and trying hard to hold back the tears, you quickly jump to your feet and run to the bathroom, all the while <span class="char-name">Gabe</span> continues to make fun of you, proud in both his victory of the remote and his ability to humiliate you.</span><br>
+            <br>
+
+            Once in the bathroom, you sob as you take off and discard your wet clothes, wrapping a towel around your waist. <span class="alert-text">You curse at <span class="char-name">Gabe</span> under your breath, he’s such a jerk.</span><br>
+
+            <<if $PlayerBottoms.Type != "None">>
+                <<set $ClosetBottoms.push(clone($PlayerBottoms))>>
+		        <<addClothing "PC" "Bottoms" "Towel" "White">>
+            <</if>>
+            <<if $PlayerWaist.Type != "None">>
+                <<set $ClosetWaist.push(clone($PlayerWaist))>>
+                <<set $PlayerWaist to $None>>
+            <</if>>
+            <<if $PlayerUndies.Type != "None">>
+                <<set $ClosetUndies.push(clone($PlayerUndies))>>
+                <<set $PlayerUndies to $None>>
+            <</if>>
+
+            <<set $Player.Bladder to 100>>
+            <<needChange "Hygiene" -50>>
+
+        <<else>> /* Diaper */
+            Gabe immediately breaks out laughing. <span class="dialogue-text">“Fuck! I didn’t think you were serious!”</span> He falls back laughing as hard as he can, <span class="pink-text">you feel tears begin to fall and your cheeks go red as he mocks you.</span> <span class="dialogue-text">“Guess it’s a good thing little baby <span class="char-name">$GabeNickname</span> wears diapers, huh? Else you would have pissed all over Dad’s couch. God, you’re such a loser! Maybe I should tell <span class="char-name">Dad</span> you had an accident, maybe he’ll make you go to school in them from now on.”</span><br>
+            <br>
+
+            <span class="alert-text">Humiliated and trying hard to hold back the tears, you quickly jump to your feet and run to the bathroom, all the while Gabe continues to make fun of you, proud in both his victory of the remote and his ability to humiliate you.</span><br>
+            <br>
+
+            Once in the bathroom, you sob as you take off and discard your wet $PlayerUndies.Type. For better or worse, <span class="char-name">Your Father</span> keeps spares under the sink. You feel humiliated at how blatantly <span class="char-name">Gabe</span> pointed out your need to wear them, revealing in your embarrassment. <span class="alert-text">You curse at <span class="char-name">Gabe</span> under your breath, he’s such a jerk.</span><br>
+
+            <<socialChange "Gabe" -3>>
+        <</if>>
+
+        <br>
+
+        [[Continue|PH Bathroom]]
+
+    <</linkreplace>>
+<<else>>
+    Sadly, your determination is not enough as the tickling becomes too much. You are out of breath, on the verge of passing out, and tears are rolling down your cheeks as the giggling becomes painful. <span class="alert-text">Regrettably, you relent and release the remote, allowing <span class="char-name">Gabe</span> to take it and quickly change the channel, smirking as he claims victory.</span> But at this point, you are too exhausted to care.<br>
+    <<socialChange "Gabe" -1>>
+    <br>
+
+    [[Continue|PH Living Room]]
+<</if>>

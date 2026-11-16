@@ -1,0 +1,175 @@
+:: Northend [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Northend",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Neighborhood",
+}>>
+
+<<set _random to random(1, 10)>>
+<<set _randomevent to random(1, 10)>>
+
+<<if $Player.Energy <= 5>>
+	<<include"Town Pass Out">>
+<<elseif $HadAccident>>
+	<<include"Town Pee">>
+
+/* Kollin Preview */
+<<elseif $ToggleOCKollin == 1 && $InActiveQuests.includes("Kollin: Boy in the Woods") && !$CompletedQuests.includes("Kollin: Preview") && $Time.between(15,0,19,0) && _random == 10>>
+	<<include"OC Kollin Stranger">>
+
+/* Ion Intro */
+<<elseif $ToggleOCIon == 1 && $InActiveQuests.includes("Ion: Mysterious Creature") && $Time.between(21,0,23,0) && _random >= 9 && $ToggleSupernat == 1>>
+	<<include"OC Ion Intro">>
+
+<<elseif !$Time.schoolday() && $Time.between(7,0,12,0) && $InActiveQuests.includes("Don: Introduction") && $ToggleOCDon == 1>>
+	<<include"OC Don Intro">>
+
+/* Random Event Code */
+<<elseif _randomevent == 1>>
+	<<set _randomeventpassage to {
+			"Street Random Encounter Icecream Truck": 10,
+			"Street Random Encounters Stray Cat": 10,
+			"Street Random Encounter Car Speeding By": 10,
+	}>>
+	<<if $PlayerHead.Tags.includes("Fox Costume") or $PlayerWaist.Tags.includes("Fox Costume")>>
+		<<set _randomeventpassage["Street Random Encounter Fox Costume Whispers"] = 10>>
+		<<set _randomeventpassage["Street Random Encounter Fox Costume Happy Child"] = 10>>
+	<</if>>
+	<<if $ToggleOCRowan == 1 && $CompletedQuests.includes("Rowan: Introduction")>>
+		<<set _randomeventpassage["OC Rowan Skateboarding Around Town"] = 10>>
+	<</if>>
+	<<if $ToggleOCMicah == 1 && $InActiveQuests.includes("Micah: Introduction") && $Time.between(6, 0, 20, 0)>>
+		<<set _randomeventpassage["OC Micah Intro"] = 50>>
+	<</if>>
+	<<if $ToggleOCMata == 1 && $InActiveQuests.includes("Mata: Introduction") && !$Time.schoolday() && $Time.between(6, 0, 20, 0)>>
+		<<set _randomeventpassage["OC Mata Intro"] = 50>>
+	<</if>>
+	<<if $ToggleOCErin == 1 && $CompletedQuests.includes("Erin: Introduction") && $Time.between(6, 0, 20, 0) && $Money >= 2>>
+		<<set _randomeventpassage["OC Erin Ice Cream Emo"] = 10>>
+	<</if>>
+	<<set _event to _randomeventpassage.random()>>
+	<<include _event>>
+
+<<else>>
+
+<span style="color:Azure"><big><strong>--Northend--</strong></big></span><br>
+You stand on the sidewalk in your neighborhood. It is full of many single and two-story middle-class houses. A majority of the houses have a well-kept, grassy front lawn with a path leading to the front door. Large bushes act as a sort of fence, though they do little to obscure the front yards. There is also a small playground on the corner of the street. 
+<<if $Time.ToD == "Morning">>
+	The street is mainly empty, however, many lights begin coming on in the houses as people get ready for their day. A few people mow their lawns.
+<<elseif $Time.ToD == "Day">>
+	Quite a few people walk the street, jogging, walking their dogs, or taking relaxing strolls. Cars also drive by heading into town. Many of the houses have their curtains or windows open, giving you glimpses into their homes.
+<<elseif $Time.ToD == "Afternoon">>
+	Many cars pass by as people begin to return home at the end of their day. There are a few groups of people, chatting with neighbors in their front yard. 
+<<elseif $Time.ToD == "Night">>
+	The street is quiet, outside of the occasional car or dog barking. The road and sidewalks are illuminated by the various street lights.
+<</if>><br>
+<br>
+<<if $InActiveQuests.includes("Lucas: Ryker") and ["Day", "Afternoon"].contains($Time.ToD)>>
+	<span style="color:gold">You hear some commotion in the park nearby.</span><br>
+	<br>
+<</if>>
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<<if $MillerLemonLocation == "Northend" and $Time.between(7,0,15,0)>>
+	You notice [[Jayden & Kayden|OC Miller Lemonade Stand]] at a lemonade stand.
+<</if>><br>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $Time.schoolday()>>
+	<<if $Time.between(7,0,7,30)>>
+		[[Ride Bus to School (0:20)|Bus Ride School][$BusRide to "School"]]<br>
+	<</if>>
+<</if>>
+
+/* RANDOM JOBS */
+<<for _i to 0; _i lt $RandomJobList.length; _i++>>
+	<<capture _i>>
+		<<if $RandomJobList[_i].Location == "Northend">>
+			<<if $RandomJobList[_i].Type == "Mow Lawn">>
+				[[Job: Mow Lawn (1:00)|Random Job Mow Lawn]]<br>
+			<<elseif $RandomJobList[_i].Type == "Fix Fence">>
+				[[Job: Fix Fence (2:00)|Random Job Fix Fence]]<br>
+			<<elseif $RandomJobList[_i].Type == "Pull Weeds">>
+				[[Job: Pull Weeds (0:30)|Random Job Pull Weeds]]<br>
+			<<elseif $RandomJobList[_i].Type == "Clean Gutters">>
+				[[Job: Clean Gutters (1:00)|Random Job Clean Gutters]]<br>
+			<</if>>
+		<</if>>
+	<</capture>>
+<</for>>
+<<if $Skill.Perks.includes("Jogging")>>
+	[[Go Jogging (0:30)|Northend Jogging]]
+	<<if $Skill.Perks.includes("Jogging") && !$Skill.Perks.includes("Jogging II")>>
+		<<listbox "$ExerciseType">>
+			<<option "Normal" "Normal">>
+		<</listbox>>
+	<<elseif $Skill.Perks.includes("Jogging II")>>
+		<<listbox "$ExerciseType">>
+			<<option "Normal" "Normal">>
+			<<option "No Sweat" "No Sweat" `$ExerciseType is "No Sweat" ? "selected" : ""`>>
+			<<option "Paced" "Paced" `$ExerciseType is "Paced" ? "selected" : ""`>>
+		<</listbox>>
+	<</if>>
+    <br>
+<</if>>
+<<if $Bike == 1>>
+	[[Ride around on Bike (0:20)|Town Ride Around on Bike]] <span style="color:Green">+Fun/Athletics</span><br>
+<</if>>
+
+[[Wait (0:05)|Northend][$Minutes += 5]]<br>
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+<img src="Images\World Map\Individual Icons\Player Neighborhood.png">
+[[Your House (0:01)|PH Frontyard][$Minutes += 1]] <br>
+<img src="Images\World Map\Individual Icons\Park.png">
+[[Small Playground (0:01)|Neighborhood Playground][$Minutes += 1]]<br>
+<img src="Images\World Map\Individual Icons\Other Neighborhood.png">
+<<if $CompletedQuests.includes("Lucas: First Visit") or $ActiveQuests.includes("Lucas: First Visit")>>
+	[[Lucas' House (0:01)|Lucas Frontyard][$Minutes += 1]]<br>
+<</if>>
+
+/* BIKE TRAVEL */
+<<if $Bike == 1>>
+	
+<</if>>
+
+[[Exit to World Map|Player Neighborhood]]
+<br>
+
+<div style="position: relative">
+
+<img src="Images\World Map\Northend\Northend Street.png" 
+style="position: absolute; left: 0; top: 0" alt="Northend Map" usemap="#Northend">
+
+<img src="Images\World Map\Northend\Northend Street.gif" 
+style="position: absolute; left: 0; top: 0" alt="Northend Map" usemap="#Northend">
+
+<<if $CompletedQuests.includes("Lucas: First Visit") or $ActiveQuests.includes("Lucas: First Visit")>>
+<img src="Images\World Map\Northend\Northend Street Lucas.gif" 
+style="position: absolute; left: 0; top: 0" alt="Northend Map" usemap="#Northend">
+<</if>>
+
+<img src="Images\World Map\Northend\Northend Exit.png" 
+style="position: absolute; left: 0; top: 0"  alt="Exit" usemap="#Northend">
+
+</div>
+
+<map name="Northend">
+<area shape="rect" coords="331,224,438,381" alt="Player House" onclick="$.wiki('<<goto[[PH Frontyard]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="711,74,782,314" alt="Northend Playground" onclick="$.wiki('<<goto[[Neighborhood Playground]]>><<set $Minutes += 1>>')" />
+	<area shape="rect" coords="6,174,55,223" alt="Exit" onclick="$.wiki('<<goto[[Player Neighborhood]]>>')" />
+<<if $CompletedQuests.includes("Lucas: First Visit") or $ActiveQuests.includes("Lucas: First Visit")>>
+	<area shape="rect" coords="223,224,330,381" alt="Player House" onclick="$.wiki('<<goto[[Lucas Frontyard]]>><<set $Minutes += 1>>')" />
+<</if>>
+</map>
+
+<</if>>

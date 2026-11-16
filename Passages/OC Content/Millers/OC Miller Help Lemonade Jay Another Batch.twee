@@ -1,0 +1,40 @@
+:: OC Miller Help Lemonade Jay Another Batch [nobr]
+
+After serving many customers, things begin to slow down, and you begin to relax until you feel something poking your back. Turning around, you see <span style="color:DarkTurquoise">Jayden</span> holding a measuring cup in his hand. <span style="color:LightSteelBlue">“Hey, <span style="color:DarkTurquoise">$Player.Name</span>, can you help me make some more lemonade?”</span> He asks, pushing the cup towards you. You agree, taking the measuring cup from him as <span style="color:DarkTurquoise">Jayden</span> steps up onto a wooden stool and begins to guide you through making his signature sour lemonade. You follow the boy’s instructions as best you can, realizing that kids aren’t always the best at giving instructions, and manage to make two pitchers of the stuff. <br>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Jayden">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Everyday">>
+	<<set $AD.Hard to 0>>
+		<<include"OC JAYDEN Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */
+<div style="position: relative">
+	<<include"Kid Avatar Display">>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">“Great! I think we have more than enough now.”</span> <span style="color:DarkTurquoise">Jayden</span> says with a smile, <span style="color:LightSteelBlue">“Now to taste it, to make sure it’s good enough for our customers.”</span> Picking up a wooden spoon, <span style="color:DarkTurquoise">Jayden</span> takes a big sip. <br>
+<br>
+<<linkreplace "Continue">>
+    <<set _random to random(1, 2)>>
+    <<if _random == 1>>
+        As if the lemonade has charged up the boy, <span style="color:DarkTurquoise">Jayden</span> begins to jump up and down, nearly falling off the stool. <span style="color:LightSteelBlue">“Dang, <span style="color:DarkTurquoise">$Player.Name</span>, you sure know how to make some good lemonade! I had no idea I was such a good teacher!”</span> You laugh as <span style="color:DarkTurquoise">Jayden</span> gives you the cheesiest smile you’ve ever seen. Rolling your eyes, you tell him to help get some cups ready. <br>
+        <<needChange "Fun" 10>>
+        <<socialChange "Jayden" 3 1>>
+        <br>
+    <<else>>
+        After a long sip, <span style="color:DarkTurquoise">Jayden</span> frowns and shakes his head. <span style="color:LightSteelBlue">“It’s nowhere near sour enough, <span style="color:DarkTurquoise">$Player.Name</span>! But don’t worry, I can fix it!”</span> <span style="color:DarkTurquoise">Jayden</span> picks up a bottle of lemon juice, pouring it evenly into both pitchers before mixing it thoroughly. Taking another big sip, <span style="color:DarkTurquoise">Jayden</span>’s face contorts in goofy ways before he smiles happily, <span style="color:LightSteelBlue">“Wow! Now that’s some good lemonade! Good job, <span style="color:DarkTurquoise">$Player.Name</span>.”</span> He pats you on the back. <br>
+        <<needChange "Fun" 10>>
+        <<socialChange "Jayden" 1 1>>
+        <br>
+    <</if>>
+
+    <<include "OC Millers Lemonade Leave Link">>
+<</linkreplace>>

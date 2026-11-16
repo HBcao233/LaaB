@@ -1,0 +1,229 @@
+:: Missing Toy Shed [nobr]
+
+<<set $Minutes += 15>>
+
+/* RIGHT LOCATION */
+<<if $QuestMissingToyLocation == 3>>
+	<<set $ActiveQuests.delete("Noah: Missing Toy")>>
+	<<set $ActiveQuests.push("Noah: Missing Toy Finish")>>
+	<<unset $QuestMissingToyLocation>>
+	<<for _i to 0; _i lt $QuestLog.length; _i++>>
+		<<if $QuestLog[_i].Name == "Noah: Missing Toy">>
+			<<set $QuestLog[_i].Objectives[0].State to 1>>
+			<<set $QuestLog[_i].Objectives.push({
+				Name: "Return the toy to <span style=\"color:DarkTurquoise\">Noah</span>",
+				State: 0,
+				Total: 1,
+			})>>
+			<<break>>
+		<</if>>
+	<</for>>
+	You walk up to the shed and open the door. It was nearly brand new, though didn’t have any lights in it which made it nearly pitch black if not for the few small windows built into the top of the walls. <span style="color:DarkTurquoise">Your Father</span> mostly used it for storage of random things, such as some furniture or boxes containing stuff that wouldn’t fit into the house. It was also fairly sizable, at least when it wasn’t full of junk. You wonder if <span style="color:DarkTurquoise">Your Father</span> would ever consider letting you use it because with some work it could become an interesting clubhouse.<br>
+	<br>
+	You begin to rummage through some of the boxes on top. If the toy was in here, it would have been placed here recently. While you don’t find the toy you are looking for, you do find some of <span style="color:DarkTurquoise">Gabe</span>’s old toys that you only barely remember. You also find some of <span style="color:DarkTurquoise">Your Mother</span>’s old things. <span style="color:lightgreen">After a few minutes, you finally see <span style="color:DarkTurquoise">Noah</span>’s Owlman Figure in a box atop an old wooden desk!</span><br>
+	<br>
+	Your prey in sight, you carefully pull a chair over to climb onto the desk, making sure it is sturdy enough to hold your weight before standing up and reaching for the toy. However, right as you grab it a rat suddenly jumps out from the box and scares you half to death! <span style="color:lightcoral">You lose your balance, and tumble backward!</span><br>
+	<br>
+	<<set _random to random(1, 3)>>
+
+	/* PAINED */
+	<<if _random == 1>>
+		You try to catch yourself but can’t find anything to grab as you fall backward off the desk and onto the floor. Thankfully, the only thing you hit is the ground, somehow managing to dodge the piles of stuff that fill the shed. <span style="color:lightcoral">Unfortunately, you don't land without injury as your bruise both your elbows and get some small cuts on your forearms.</span> Otherwise, you are fine enough to stand and don’t think anything is broken.<br>
+		<br>
+		You sigh, remembering you are doing this for your little brother, and painfully pick yourself up. You look up and see that rat that had startled you, crawling through the open window. You silently curse at it as you pick up the toy and walk out of the shed. <span style="color:Green">Now to finish your mission and return the toy!</span><br>
+		<<addMoodlet "Pained" 8>>
+		<span style="color:Red">+Pained</span><br>
+		<br>
+		[[Continue|PH Backyard]] 
+	/* CLOTHES TORN */
+	<<elseif _random == 2>>
+		You try to catch yourself, but just end up changing the direction you are falling towards a pile of boxes. You feel your $PlayerBottoms.Name catch on something, briefly stopping you. <span style="color:lightcoral">But this joy only lasts for a moment as your weight is too much for them to handle and you hear a loud <span style="color:Red">RIP!</span> Followed by you tumbling painfully to the ground!</span><br>
+		<br>
+		You groan as you lay on the ground, your elbows bruised and your arms slightly cut. <span style="color:Pink">What’s worse, your $PlayerBottoms.Type have been completely torn off! You manage to stand up and find them hanging from the stack of boxes, destroyed beyond repair, and let out a deep sigh. You now had to walk back inside without your $PlayerBottoms.Type, but at least you were in the relative safety of your own backyard.</span> <span style="color:Green">Now to return the toy to <span style="color:DarkTurquoise">Noah</span>, after you cover yourself.</span><br>
+		<<addMoodlet "Pained" 8>>
+		<<set $PlayerBottoms to $None>>
+		<span style="color:Red">+Pained</span><br>
+		<br>
+		[[Continue|PH Backyard]] 
+	/* WET */
+	<<elseif _random == 3>>
+		You try to catch yourself, reaching out and grabbing one of the stacks of boxes. <span style="color:lightcoral">Unfortunately, the stack isn’t sturdy enough to hold your weight and you still fall backward while also pulling the stack on top of you!</span> Thankfully, the boxes aren’t that heavy and the only injury you receive is some bruises and a few cuts. <span style="color:lightcoral">But your luck isn’t perfect, as you move the boxes you discover that one of them must have collected some rainwater, at least you hope it is water, as you are now completely soaked in a slightly foul-smelling liquid.</span><br>
+		<br>
+		You silently curse as you stand up and pick up <span style="color:DarkTurquoise">Noah</span>’s toy. You hope he is appreciative of your efforts and keeps better track of his things. <span style="color:Green">Now, all you have to do is return the toy to your brother, though you may want to shower first.</span><br>
+		<<needChange "Hygiene" -35>>
+		<<set $Wet to 2>>
+		<br>
+		[[Continue|PH Backyard]] 
+	<</if>>
+
+<<else>>
+	You walk up to the shed and open the door. It was nearly brand new, though didn’t have any lights in it which made it nearly pitch black if not for the few small windows built into the top of the walls. <span style="color:DarkTurquoise">Your Father</span> mostly used it for storage of random things, such as some furniture or boxes containing stuff that wouldn’t fit into the house. It was also fairly sizable, at least when it wasn’t full of junk. You wonder if <span style="color:DarkTurquoise">Your Father</span> would ever consider letting you use it because with some work it could become an interesting clubhouse.<br>
+	<br>
+	As you begin to rummage through some of the boxes on top, you suddenly hear a loud creak from the door. You freeze, turning towards the shed door, and stare at it in fear, your heart racing. Silence. You let out a sigh of relief and laugh at your over-imagination <span style="color:Lightcoral">when suddenly the door slams shut! You let out a high-pitched scream at the loud noise and are plunged into near-total darkness. You stand up and race towards the door, nearly tripping over some boxes since you can’t see, only to find it blocked from the other side!</span> <br>
+	<br>
+	As you bang on the door and call for help, you hear the distinct sound of your elder brother laughing on the other side. <span style="color:LightSteelBlue">“What? Are you afraid of the dark?”</span> <span style="color:DarkTurquoise">Gabe</span> teases, <span style="color:LightSteelBlue">“I’d be more worried about all the rats and bugs in there if I were you!”</span> As he says that, you think you hear the sound of rummaging behind you. Was it just your imagination, or was something actually in there with you? <br>
+	<br>
+	You begin to beg for <span style="color:DarkTurquoise">Gabe</span> to open the door, as you hear more strange sounds behind you. <span style="color:LightSteelBlue">“Oh, I’ll let you out. But only if you take off all your clothes.”</span> You blush, asking why he wants you to do that. <span style="color:LightSteelBlue">“Um, because it’s hilarious? Plus, it’ll serve as a reminder of who’s in charge.”</span> Your brother laughs again, seemingly loving the idea of embarrassing you. <span style="color:LightCoral">Suddenly, you feel something scurry across your leg and let out another high-pitched scream.</span> <br>
+	<br>
+	<span style="color:LightSteelBlue">“I mean you can stay in there all night for all I care, I’ll just tell dad you’re at a friend’s.”</span> <span style="color:DarkTurquoise">Gabe</span> makes very audible footsteps, implying he is slowly walking away with your chance at freedom. Was this your only way out? You remember the windows in the shed, but they were small and high up. Would you be able to fit through them? <br>
+	<br>
+	<div id=choice1>
+		<<link "Agree & Strip<br>">>
+		<<replace"#choice1">>
+			Realizing a brief bit of humiliation was worth not having to spend the night in the dark, creepy shed. You call out to your brother and agree to do what he says if he unblocks the door. <span style="color:DarkTurquoise">Gabe</span> comes back, moves what was blocking the door, then opens it a crack. <span style="color:Pink">He demands that you hand him each piece of clothing as you take them off and, once you are completely naked, he’ll open the door. You make him promise not to lock you in there once you’re nude, though you still feel nervous that he’ll go back on his word.</span> <br>
+			<<storeClothing "Closet" "Naked" 1>>
+			<<set _ad to [
+				{
+					Name: "Player",
+					State: {
+						Outfit: "Naked",
+						Mouth: "Frown",
+						Blush: 2,
+						Arms: "Hide",
+					},	
+				},
+			]>>
+			<<ad _ad>>
+
+			<span style="color:Pink">You strip down completely and, after briefly wondering how you keep getting yourself into situations like this, hand your clothes over to <span style="color:DarkTurquoise">Gabe</span>. He pokes his head through the crack to make sure you are fully exposed and can’t help but laugh at the scene.</span> <span style="color:DarkTurquoise">Gabe</span> then says you are free to go and steps away from the door. <br>
+			<br>
+			Not trusting that he won’t try to pull something, you rush out the door as fast as you can towards the house, <span style="color:Pink">but <span style="color:DarkTurquoise">Gabe</span> was expecting this as he suddenly grabs you and holds you in front of him with your arms pinned behind your back. <span style="color:LightSteelBlue">“What’s the rush?”</span> He laughs as he holds you with your exposed $Player.PenisSize Penis facing the, thankfully empty, backyard. <span style="color:LightSteelBlue">“Don’t you want to spend some quality time with your big brother?”</span></span> You curse at <span style="color:DarkTurquoise">Gabe</span> as you struggle to free yourself. <br>
+
+			<<set _ad to [
+				{
+					Name: "Player",
+					State: {
+						Outfit: "Naked",
+						Mouth: "Frown",
+						Blush: 2,
+						Arms: "Bound",
+					},	
+				},
+			]>>
+			<<ad _ad>>
+			
+			<<if $Player.Arousal < 60>>
+				<span style="color:LightSteelBlue">“Language! Sounds like this naughty boy needs to be punished!”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Gabe</span> suddenly grips your flaccid penis with his free hand and begins to painfully squeeze it, causing you to squeal. <span style="color:LightSteelBlue">“You better apologize, or I may toss you back in there.”</span> You try to say you are sorry for cursing, but it is difficult through the pain of having your privates squeezed.</span> <br>
+				<br>
+				<span style="color:LightSteelBlue">“Fine, I guess I’ll let you go. Since you’re really sorry!”</span> <span style="color:DarkTurquoise">Gabe</span> finally releases you, allowing you to sprint inside as he continues laughing from the backyard. <br>
+				<<addMoodlet "Pained" 6>>
+				<<needChange "Energy" -4>>
+				<span style="color:Red">+Pained</span><br>
+				<br>
+				<<set $GabeSeenNaked += 1>>
+				<<addMoodlet "Seen Naked" 5>>
+				<<set _arousalbs to []>>
+				<<set _arousalkink to ["Humiliated"]>>
+				<<arousalGain 15 _arousalbs _arousalkink>>
+				[[Continue|PH Kitchen]] 
+			<<else>>
+				<span style="color:LightSteelBlue">“Well, lookie here!”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Gabe</span> says, seeing your erect dick standing proud and exposed, <span style="color:LightSteelBlue">“I guess someone’s having a good time. Let your big brother help you out.”</span> <span style="color:DarkTurquoise">Gabe</span> grips your hard-on tightly, causing you to involuntary moan as a wave of pleasure surges throughout your body.</span> <span style="color:LightSteelBlue">“Does the little perv need help wanking one out here in the open?”</span> <br>
+				<br>
+				<span style="color:Pink">Your brother begins to jack off your cock, causing you to squirm and moan as you are pulled closer to climax. Once he started fondling you, you became pudding in his arms and were unable to muster the strength to resist. He kept going, bringing you directly to the edge, before suddenly stopping and holding you still as your body reacts to the denial of final stimulation.</span> <br>
+				<br>
+				<span style="color:LightSteelBlue">“What? You thought I was actually going to fully jack you off?”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Gabe</span> laughs as your sensitive penis twitches, desperate for release.</span> <span style="color:LightSteelBlue">“You are a little perv, aren’t you?”</span> He continues to hold you there until your body calms down. Once freed, you quickly run inside. <br>
+				<<addMoodlet "Pained" 6>>
+				<<needChange "Energy" -4>>
+				<span style="color:Red">+Pained</span><br>
+				<br>
+				<<set $GabeSeenNaked += 1>>
+				<<addMoodlet "Seen Naked" 5>>
+				<<set $Player.Arousal += 80>>
+				<<set $Player.SexualFrustration += 40>>
+				[[Continue|PH Kitchen]] 
+			<</if>>
+		<</replace>>
+		<</link>>
+		
+		<<link "Attempt to Climb Out the Window">>
+		<<replace"#choice1">>
+			<<skillCheck "Athletics" 70>>
+			You smile at your cleverness in avoiding <span style="color:DarkTurquoise">Gabe</span>’s attempt at humiliating you and begin to move stuff over so you can reach the window. It takes some effort to move it all and you nearly knock a stack of boxes over, but you eventually make something that is tall and sturdy enough to climb. <br><br>
+
+			<<if _result == 1>>
+				As you carefully begin to ascend the makeshift tower a box tumbles down, nearly causing you to fall. <span style="color:Green">Thankfully, your stack stays standing and you open the window and carefully begin to climb through.</span> It is not the most elegant-looking escape, considering how small the window is and that you had to go in headfirst, but you manage to slip through and out without crashing painfully to the ground. <br>
+				<br>
+				As you sneak around, you glance over and see <span style="color:DarkTurquoise">Gabe</span> standing near the shed playing on his phone. Seems he thought you would give in and agree to his plan. Jokes on him, as you tip-toe back inside. <br>
+				<<needChange "Energy" -4>>
+				<br>
+				[[Continue|PH Backyard]] 
+			<<else>>
+				As you are nearing the top of the makeshift tower, you hear a crunch from near the bottom. Realizing your stack was about to collapse, you panic and dive through the small window! The boxes collapse in a loud and messy display of poor construction. Thankfully, you managed to partially get through the window. <span style="color:Lightcoral">Unfortunately, with nothing to support your weight you now find yourself stuck in the window with your arms and head sticking out one side and the rest of your body on the other.</span> <br>
+
+				<<set _ad to [
+					{
+						Name: "Player",
+						State: {
+							Mouth: "Frown",
+							Eyes: "Sad",
+							Blush: 2,
+							Cry: 1,
+							Arms: "Bound",
+						},	
+					},
+				]>>
+				<<ad _ad>>
+
+				<span style="color:DarkTurquoise">Gabe</span> quickly unblocks the door and runs in, worried you may be hurt, but as he sees your situation he can do nothing but laugh. You kick your feet in an attempt to free yourself, but find that you are completely stuck. <br>
+				<br>
+				<span style="color:LightSteelBlue">“Oh, this is too good!”</span> <span style="color:DarkTurquoise">Gabe</span> laughs, <span style="color:Pink">followed by the all-too-familiar sound of his camera taking a picture.</span> You call out for him to help you. <span style="color:LightSteelBlue">“Calm down <span style="color:DarkTurquoise">$GabeNickname</span>, just give me a second.”</span> He continues laughing as you hear him move some of the fallen boxes and stand on the desk near the window. Luckily, he can reach you without having to make a stack himself. <br>
+				<br>
+				<span style="color:LightSteelBlue">“You really should have just taken my offer, you’d be in a much better position than you are now.”</span> You once again demand that <span style="color:DarkTurquoise">Gabe</span> help you, accidentally letting a curse slip out in your anger. <span style="color:LightSteelBlue">“Hey now! Is that how you treat someone who you want to help you?”</span> You quickly realize your mistake and apologize, but it is too late. <span style="color:LightSteelBlue">“I think I should leave you here for a little bit, think about your actions that led you here. In fact, I know just how to make sure you learn from this experience!”</span> <br>
+				<br>
+				<span style="color:Pink">Suddenly, you feel <span style="color:DarkTurquoise">Gabe</span>’s hands on your waist as he pulls down your $PlayerBottoms.Name! He proceeds to completely expose your bottom half, leaving your Butt and $Player.PenisSize Penis exposed! <span style="color:LightSteelBlue">“Now this is a view!”</span> Gabe laughs, once again taking a picture.</span> <br>
+
+				<<if $PlayerBottoms.Type != "None">>
+					<<set $ClosetBottoms.push($PlayerBottoms)>>
+				<</if>>
+				<<if $PlayerWaist.Type != "None">>
+					<<set $ClosetWaist.push($PlayerWaist)>>
+				<</if>>
+				<<if $PlayerUndies.Type != "None">>
+					<<set $ClosetUndies.push($PlayerUndies)>>
+				<</if>>
+				<<if $PlayerSocks.Type != "None">>
+					<<set $ClosetSocks.push($PlayerSocks)>>
+				<</if>>
+				<<if $PlayerShoes.Type != "None">>
+					<<set $ClosetShoes.push($PlayerShoes)>>
+				<</if>>
+
+				<<set $PlayerBottoms to $None>>
+				<<set $PlayerUndies to $None>>
+				<<set $PlayerSocks to $None>>
+				<<set $PlayerShoes to $None>>
+
+				<<set _ad to [
+					{
+						Name: "Player",
+						State: {
+							Mouth: "Frown",
+							Eyes: "Sad",
+							Blush: 2,
+							Cry: 1,
+							Arms: "Bound",
+						},	
+					},
+				]>>
+				<<ad _ad>>
+
+				<span style="color:Pink">You begin to beg to be released, but are silenced as you feel <span style="color:DarkTurquoise">Gabe</span> stick his finger inside your anus! <span style="color:LightSteelBlue">“I knew that would shut you up.”</span> <span style="color:DarkTurquoise">Gabe</span> continues to probe around inside you, sending strange shockwaves up your spine. <span style="color:LightSteelBlue">“I’ll tell you what, I’ll come back in a few hours and if you give me a REALLY GOOD apology, I might let you out.”</span> <span style="color:DarkTurquoise">Gabe</span> removes his finger from inside you and hops off the desk.</span> Once you recover, you try to call him back, but soon see him on the outside of the shed holding your clothes with a large grin on his face as he walks back inside. <br>
+				<br>
+				You are stuck for what feels like hours, though it is actually only a few minutes, as your own weight causes your chest to become sore. Though through much effort, you manage to get your footing enough to push yourself through the other side and land in the grass. It hurts a little, but you are just glad you managed to free yourself before <span style="color:DarkTurquoise">Gabe</span> came back. <br>
+				<<addMoodlet "Pained" 6>>
+				<<needChange "Energy" -4>>
+				<span style="color:Red">+Pained</span><br>
+				<br>
+				<<addMoodlet "Seen Naked" 5>>
+				<<set _arousalbs to []>>
+				<<set _arousalkink to ["Humiliated"]>>
+				<<arousalGain 15 _arousalbs _arousalkink>>
+				<<set $Player.Exposed to "Naked">>
+				[[Continue|PH Backyard]]
+			<</if>>
+		<</replace>>
+		<</link>>
+		<<skillDiff "Athletics" 70>>
+		<br>
+	</div>
+<</if>>

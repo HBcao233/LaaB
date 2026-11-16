@@ -1,0 +1,155 @@
+:: Dad Hang Out Park Playground Basic [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+As you and <span style="color:DarkTurquoise">Your Father</span> walk along the edge of the playground, he turns to you and asks <span style="Color: LightSteelBlue">“So, <span style="color:DarkTurquoise">$DadNickname</span>, what do you want to do? Could push you on the swings if you want, but no worries if you’re too big for that.”</span> He laughs, ruffling your hair. You think for a moment before suggesting going down the big slide, <span style="color:yellow">pointing to the 3-floor high tower that houses the long, intimidating slide.</span> <span style="Color: LightSteelBlue">“Oh? Yeah, that is quite the slide! Sure thing!”</span> <br>
+
+    <<set _ad to [
+        {
+        Name: "Dad",
+        State: {
+            Outfit: $HangOutClothes,
+            Mouth: "Happy",
+            },
+        },
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You both walk over there, climbing up the tower. <span style="color:DarkTurquoise">Your Father</span> struggles getting up a little, it not being meant for someone his size. <span style="color:lightgreen">He first tries climbing the rope ladder but quickly gets tangled up and switches to the more sturdy metal one on the other side. You watch with amusement as <span style="color:DarkTurquoise">Your Dad</span> crouches down and maneuvers up to the top.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“If I ever need a reminder of how old I’m getting-“</span> He laughs but pauses upon reaching the top and looking down. <span style="Color: LightSteelBlue">“Wow, it’s… uh, it’s a lot taller than it looks, isn’t it?”</span> <span style="color:yellow">You notice a dash of uncertainty appear on his face, though upon seeing you watching him, <span style="color:DarkTurquoise">Your Father</span> quickly puts on a guise of confidence.</span> <span style="Color: LightSteelBlue">“Though no need to be scared, bub. These things are perfectly safe. Designed by experts… I’m sure.”</span> <br>
+<br>
+
+<div id="choice">
+    <<if $FearHeights == 1>>
+        <<link "<strong>[Fear]</strong>That's a long way down...<br>">>
+        <<replace"#choice">>
+            <span style="color:lightcoral">As you glance down, you feel an even deeper fear that you can’t hide as expertly as <span style="color:DarkTurquoise">Your Father</span>. You take a step away from the edge, gripping the railing tightly as your vision begins to spin and your legs feel wobbly. Your head spins and your stomach turns as you suddenly start to feel three times higher than you were a second ago. You realize this was a bad idea, you should really get back down.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$DadNickname</span>.”</span> <span style="color:DarkTurquoise">Your Father</span>’s voice snaps you out of it. <span style="color:Pink">He grabs your hand and smiles, seeing the fear in your eyes.</span> <span style="Color: LightSteelBlue">“You’re okay. Guess it runs in the family, huh? Don’t worry, I’ve got you.”</span> <span style="color:Pink">He rubs your head gently, calming you, though you still feel a little nervous and quietly ask if the two of you can go down the slide together.</span> <span style="Color: LightSteelBlue">“Of course. I was going to ask the same thing. I need my brave boy with me.”</span> He chuckles. <br>
+            
+            <<set _ad to [
+                {
+                Name: "Dad",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    Eyes: "Sad",
+                    },
+                },
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    Blush: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            He sits down on top of the slide and pulls you over, <span style="color:Pink">sitting you on his lap as he wraps his arms around you tightly.</span> You both then glance down nervously, the slide somehow stretching further the longer you look at it. You hear <span style="color:DarkTurquoise">Your Father</span> take a deep breath and you do the same. <br>
+            <br>
+            <span style="Color: LightSteelBlue">“You ready?”</span> He asks. You nod and with a gentle push, you begin to slide down in his arms! The speed is fast and the drop sends your heart into your throat. You both scream out, firstly in fear, but then in excitement as the adrenaline hits your veins! You make it to the bottom, sliding all the way to the end of the slide’s long tail. <span style="color:lightgreen">At this point you are both laughing, the ride exciting. You don’t know why you were so afraid!</span> <br>
+            <br>
+            Though when <span style="color:DarkTurquoise">Your Father</span> asks if you want to go again, you decide against it and instead suggest something a bit closer to the ground. <span style="color:Pink">He seems grateful you didn’t take him up on that offer.</span> <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 15>>
+            <<socialChange "Dad" 3>>
+            <span style="color:green">+Dad Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+            <span style="color:red">-Dad Energy</span><br>
+            <<set $HangOutNeed.Energy -= 10>>
+            <span style="color:green">+Dad Comfort</span><br>
+            <<set $HangOutNeed.Comfort += 10>>
+            <br>
+            [[Continue|Dad Hang Out Park]]
+        <</replace>>
+        <</link>>
+    <<else>>
+        <<link "Pretend to be scared and ask to go down together<br>">>
+        <<replace"#choice">>
+            <span style="color:Pink">Sensing <span style="color:DarkTurquoise">Your Father</span>’s own fear and not wanting to make him feel bad, you take a little step closer to him and grab him by the hand. You mention that it is a little scary, being so high up, and ask if maybe he wants to go down the slide with you. He turns to you in surprise and then smiles. He can see what you are doing and appreciates it.</span> <br>
+            
+            <<set _ad to [
+                {
+                Name: "Dad",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    Brows: "Suspicious",
+                    },
+                },
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    Blush: 1,
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="Color: LightSteelBlue">“Sure thing! I’m sure if we go down together, neither of us will need to be scared.”</span> He walks over to the slide and sits down before pulling you over and sitting you down on his lap. <span style="color:Pink">It is a little embarrassing to be going down the slide with <span style="color:DarkTurquoise">Your Father</span> at your age,</span> <span style="color:lightgreen">but since you don’t see anyone you know, you don’t mind. Plus, the smile on his face makes it worth it.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Ready?”</span> He asks. You nod and with a gentle push, you begin to slide down in his arms. <span style="color:lightgreen">You cry out in excitement, laughing at the adrenaline rush of the drop as <span style="color:DarkTurquoise">Your Dad</span>’s scream sounds a bit more fearful, despite his best efforts to look brave. Once you reach the bottom, you are laughing away as <span style="color:DarkTurquoise">Your Father</span> stands up with a deep breath.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“That was – whew – not as bad as I thought.”</span> He laughs, <span style="Color: LightSteelBlue">“Hope it wasn’t too scary for you?”</span> You shake your head, giving <span style="color:DarkTurquoise">Your Father</span> a hug and thanking him for going down with you. He seems very happy by this and smiles widely. Though when he asks, a little nervously, if you want to go down again, you decide on something a bit closer to the ground. <span style="color:lightgreen">Much to his relief.</span> <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 15>>
+            <<socialChange "Dad" 3>>
+            <span style="color:green">+Dad Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+            <span style="color:red">-Dad Energy</span><br>
+            <<set $HangOutNeed.Energy -= 10>>
+            <span style="color:green">+Dad Comfort</span><br>
+            <<set $HangOutNeed.Comfort += 10>>
+            <br>
+            [[Continue|Dad Hang Out Park]]
+        <</replace>>
+        <</link>>
+        <<link "Tease Your Father<br>">>
+        <<replace"#choice">>
+            <span style="color:lightgreen">With a smirk, you ask <span style="color:DarkTurquoise">Your Father</span> if he’s afraid.</span> He blushes a little before chuckling nervously, <span style="Color: LightSteelBlue">“Maybe a little. I’m not ashamed to admit it. Heights aren’t really my thing.”</span> You are surprised he admitted it so easily and teasingly call him a chicken. <span style="color:DarkTurquoise">Your Father</span> takes the joke well and laughs it off. <span style="Color: LightSteelBlue">“Okay, okay. Maybe I’m a bit of a chicken. Everyone has their fears, but I think I can get through it with my sweet, brave boy by my side. Mind going down the slide with your old man?”</span> <br>
+            
+            <<set _ad to [
+                {
+                Name: "Dad",
+                State: {
+                    Outfit: $HangOutClothes,
+                    Mouth: "Happy",
+                    Blush: 1,
+                    },
+                },
+                {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+            <span style="color:lightgreen">Despite the embarrassment, you can’t turn him down and agree.</span> <span style="color:Pink"><span style="color:DarkTurquoise">Your Father</span> walks over to the edge of the slide before motioning you to sit on his lap. You blush a little as you do, even more so when he wraps his arms around you tightly but decide to just accept the wholesome moment since you don’t see anyone you know nearby. Plus, it makes <span style="color:DarkTurquoise">Your Dad</span> happy.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Ready?”</span> He asks. You nod and with a gentle push, you begin to slide down in his arms. <span style="color:lightgreen">You cry out in excitement, laughing at the adrenaline rush of the drop as <span style="color:DarkTurquoise">Your Dad</span>’s scream sounds a bit more fearful, despite his best efforts to look brave. Once you reach the bottom, you are laughing away as <span style="color:DarkTurquoise">Your Father</span> stands up with a deep breath.</span> <br>
+            <br>
+            <span style="Color: LightSteelBlue">“Whew! Alright, that wasn’t so bad!”</span> He tries to laugh it off, though is a little red in the face, <span style="Color: LightSteelBlue">“Just don’t ask me to go on a roller coaster with you. This is exciting enough for me.”</span> You laugh, patting <span style="color:DarkTurquoise">Your Dad</span> on the back, putting yourself in the father role and saying how proud you are of him conquering his fear. <span style="color:lightgreen">He smirks at this, pulling you in for a noogy and laughs,</span> <span style="Color: LightSteelBlue">“Yeah, yeah. Just remember I’m not the one who cried his first time without a nightlight!”</span> <br>
+            <<addMoodlet "Stress" 0>>
+            <<needChange "Fun" 15>>
+            <<socialChange "Dad" 3>>
+            <span style="color:green">+Dad Fun</span><br>
+            <<set $HangOutNeed.Fun += 10>>
+            <span style="color:red">-Dad Energy</span><br>
+            <<set $HangOutNeed.Energy -= 10>>
+            <br>
+            [[Continue|Dad Hang Out Park]]
+        <</replace>>
+        <</link>>
+    <</if>>
+</div>

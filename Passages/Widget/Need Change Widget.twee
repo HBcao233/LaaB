@@ -1,0 +1,71 @@
+:: Need Chagne Widget  [widget nobr]
+
+/* A widget used to change the need motifiers of the PC during a scene while also displaying the need change text. 
+
+To use, do the following:
+<<needChange "Need" Amount>>
+
+"Need" should be a string of one of the following needs:
+    -Energy
+    -Hunger
+    -Fun
+    -Hygiene
+    -Bladder
+    -Arousal
+
+Amount should be an the number changed. If it is reducing the need make this a negative number.
+
+Note: Hunger will display -Hunger in green for increase and +Hunger in red for decreasing. This is simply due to it making more sense for the player. Bladder does the same.
+
+Note: Arousal changes won't have text display and normal gameplay. This Widget should only be used for Arousal Changes that are a set number. For normal arousal changes, use the arousal widget.
+
+*/
+
+<<widget "needChange">>
+    <<set _need to _args[0]>>
+    <<set _amount to _args[1]>>
+    
+    /* Checking if moodlet changes add moodlet  */
+    /* Over Eaten will appear if PC eats while having above 90% of their hunger full prior to eating. */
+    /* Light Eater gets it at 75%. Glutton Doens't at all. */
+    <<if _need == "Hunger">>
+        <<if $Player.Traits.includes("LightEater") && $Player.Hunger >= 80>>
+            <<addMoodlet "Over Eaten" 5>>
+        <<elseif !$Player.Traits.includes("Glutton") && $Player.Hunger >= 90>>
+            <<addMoodlet "Over Eaten" 5>>
+        <</if>>
+        /* Bonus to +Hunger from Light Eater */
+        <<if $Player.Traits.includes("LightEater")>>
+            <<set _amount += 15>>
+        <</if>>
+    <</if>>
+
+
+    <<set $Player[_need] += _amount>>
+
+    <span style="display: inline-flex; align-items: center;">
+        <img @title="_need" @alt="_kinkName" @src="`Images/Icons/Needs/${_need}.png`">
+        <<if _amount > 0>>
+            <<if _need == "Hunger" or _need == "Bladder">>
+                <span style="color:Green">-_need</span>
+            <<elseif _need == "Arousal">>
+                <span style="color:Pink">+_need</span>
+            <<else>>
+                <span style="color:Green">+_need</span>
+            <</if>>
+        <<else>>
+            <<if _need == "Hunger" or _need == "Bladder">>
+                <span style="color:red">+_need</span>
+            <<else>>
+                <span style="color:red">-_need</span>
+            <</if>>
+        <</if>>
+
+        <<if $Debug == 1>>
+            [_amount]
+        <</if>>
+    </span>
+
+
+    <br>
+<</widget>>

@@ -1,0 +1,36 @@
+:: School Library [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Library",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "School Library",
+}>>
+
+
+<span style="color:Azure"><big><strong>--School Library--</strong></big></span><br>
+You stand in the large Preston School Library. It has seemingly endless rows of dark wood bookcases, each carefully organized, along with multiple areas with tables for studying and some computer stations. The bookcases were so tall that you’d need a ladder to reach the top shelf and you could probably easily hide amongst them. You can study here during school hours, but be careful not to stay past closing!<br>
+<br>
+
+                /* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $ActiveQuests.includes("Rudy: Introduction") && ($Time.between(10,50,11,45))>>
+    [[Rudy is here (0:05)|Rudy Intro 2]]<br>
+<</if>>
+
+[[Hang out in library (0:15)|School Library Hang Out]] <span style="color:Green">+Fun</span><br>
+[[Study Math (0:20)|School Library Study][$SkillCheckType to "Math"]] <span style="color:Green">+Math</span><br>
+[[Study History (0:20)|School Library Study][$SkillCheckType to "History"]] <span style="color:Green">+History</span><br>
+[[Study Science (0:20)|School Library Study][$SkillCheckType to "Science"]] <span style="color:Green">+Science</span><br>
+[[Study English (0:20)|School Library Study][$SkillCheckType to "English"]] <span style="color:Green">+English</span><br>
+
+<br>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[South Hallway (0:01)|School South Hallway][$Minutes += 1]] <br>
+<br>

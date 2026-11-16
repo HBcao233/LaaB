@@ -1,0 +1,213 @@
+:: Artwork Catalog Michael [nobr]
+
+<span style="color:Azure"><big><strong>--Michael Reyes Catalog--</strong></big></span><br>
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Michael Reyes</span>, Preston’s own local bully. He has provided me with many embarrassing situations for the other boys of that school, though I’ve seen plenty of instances where he gets to experience it from the other side.”</span> <span style="color:DarkTurquoise">Orange</span> smirks, recalling various naughty memories before he snaps back to reality, <span style="color:LightSteelBlue">“Despite his role as a bully, he isn’t all bad. He could even be a pretty good friend to you, if you don’t mind all the teasing. Though, in my opinion, that’s a perk!”</span> <span style="color:DarkTurquoise">Orange</span> winks as he places down a list of available art in front of you. <br>
+<br>
+
+<strong>Current AP:</strong> <<=$Achievements.getRemainingPoints()>><br>
+<br>
+<span style="color:Azure"><strong>-Artwork (1AP)-</strong></span><br>
+/* Character Art (Everyday) */
+    <<if $AchievementArt.includes("Michael Character Art Everyday")>>
+        <strong><span style="color:lightgreen">Michael Character Art (Everyday)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Michael\\Michael.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Michael Character Art (Everyday)</strong>
+        | 
+        <<if $Achievements.getRemainingPoints() >= 1>>
+            <<link"[Buy]<br>">>
+                <<set $AchievementArt.push("Michael Character Art Everyday")>>
+                <<run $Achievements.usePoints(1)>>
+                <<goto"Artwork Catalog Michael">>
+            <</link>>
+        <<else>>
+            <span style="color:lightcoral">[Can't Afford]</span><br>
+        <</if>>
+    <</if>>
+/* Character Art (Undies) */
+    <<if $AchievementArt.includes("Michael Character Art Undies")>>
+        <strong><span style="color:lightgreen">Michael Character Art (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Character Art\\Michael\\Michael Undies.png" "Rayray" "https://rayrayart.fanbox.cc">>
+    <<else>>
+        <strong>Michael Character Art (Undies)</strong>
+        | 
+        <<if $MichaelSocial >= 100 or $MichaelSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Michael Character Art Undies")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Michael">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Michael Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Michael Shower (Towel) */
+    <<if $AchievementArt.includes("Michael Shower (Towel)")>>
+        <strong><span style="color:lightgreen">Michael Shower (Towel)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Michael Shower (Towel).png" "BubblegumBupkis" "https://baraag.net/@BubblegumBupkis">>
+    <<else>>
+        <strong>Michael Shower (Towel)</strong>
+        | 
+        <<if $MichaelSocial >= 100 or $MichaelSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Michael Shower (Towel)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Michael">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Michael Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Michael Shower (Naked) */
+    <<if $AchievementArt.includes("Michael Shower (Naked)")>>
+        <strong><span style="color:lightgreen">Michael Shower (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Michael Shower (Naked).png" "BubblegumBupkis" "https://baraag.net/@BubblegumBupkis">>
+    <<else>>
+        <strong>Michael Shower (Naked)</strong>
+        | 
+        <<if $MichaelSocial >= 100 or $MichaelSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Michael Shower (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Michael">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Michael Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+/* Michael Xavier Compare */
+    <<if $AchievementArt.includes("Michael Xavier Compare")>>
+        <strong><span style="color:lightgreen">Michael Xavier Compare</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Michael Xavier Compare.png" "SolanderDraws" "https://baraag.net/@SolanderDraws">>
+    <<else>>
+        <strong>Michael Xavier Compare</strong>
+        | 
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Michael Xavier Compare")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Michael">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+    <</if>>
+/* Michael Childhood Photo */
+    <<if $AchievementArt.includes("Michael Childhood Photo")>>
+        <strong><span style="color:lightgreen">Michael Childhood Photo</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Michael Childhood Photo.png" "Hyo!" "https://x.com/HYOJINXSHI">>
+    <<else>>
+        <strong>Michael Childhood Photo</strong>
+        | 
+        <<if $CompletedQuests.includes("Michael: Little Bear")>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Michael Childhood Photo")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Michael">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Requires Quest Completion)]</span><br>
+        <</if>>
+    <</if>>
+    /* Michael Childhood Photo (Undies) */
+    <<if $AchievementArt.includes("Michael Childhood Photo (Undies)")>>
+        <strong><span style="color:lightgreen">Michael Childhood Photo (Undies)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Michael Childhood Photo (Undies).png" "Hyo!" "https://x.com/HYOJINXSHI">>
+    <<else>>
+        <strong>Michael Childhood Photo (Undies)</strong>
+        | 
+        <<if $CompletedQuests.includes("Michael: Little Bear")>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Michael Childhood Photo (Undies)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Michael">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Requires Quest Completion)]</span><br>
+        <</if>>
+    <</if>>
+/* Michael Childhood Photo (Naked) */
+    <<if $AchievementArt.includes("Michael Childhood Photo (Naked)")>>
+        <strong><span style="color:lightgreen">Michael Childhood Photo (Naked)</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Michael Childhood Photo (Naked).png" "Hyo!" "https://x.com/HYOJINXSHI">>
+    <<else>>
+        <strong>Michael Childhood Photo (Naked)</strong>
+        | 
+        <<if $CompletedQuests.includes("Michael: Little Bear")>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Michael Childhood Photo (Naked)")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Michael">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Requires Quest Completion)]</span><br>
+        <</if>>
+    <</if>>
+
+/* Michael Sticker Set */
+    <<if $AchievementArt.includes("Michael Sticker Set")>>
+        <strong><span style="color:lightgreen">Michael Flustered Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Flustered Michael.png" "Rayray" "https://rayrayart.fanbox.cc">>
+        <strong><span style="color:lightgreen">Chibi Michael Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Chibi Michael.png" "Beege" "https://baraag.net/@Beege">>
+        <strong><span style="color:lightgreen">Michael Taco Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Michael Taco.png" "Beege" "https://baraag.net/@Beege">>
+                <strong><span style="color:lightgreen">Michael Stolen Undies Sticker</span></strong>
+        | 
+        <<apsart "Images\\Special\\Buyable\\Michael Stolen Undies.png" "Beege" "https://baraag.net/@Beege">>
+    <<else>>
+        <strong>Michael Sticker Set</strong>
+        | 
+        <<if $MichaelSocial >= 100 or $MichaelSocialRank > 0>>
+            <<if $Achievements.getRemainingPoints() >= 1>>
+                <<link"[Buy]<br>">>
+                    <<set $AchievementArt.push("Michael Sticker Set")>>
+                    <<run $Achievements.usePoints(1)>>
+                    <<goto"Artwork Catalog Michael">>
+                <</link>>
+            <<else>>
+                <span style="color:lightcoral">[Can't Afford]</span><br>
+            <</if>>
+        <<else>>
+            <span style="color:lightcoral">[LOCKED (Max Michael Social Rank 0)]</span><br>
+        <</if>>
+    <</if>>
+
+
+<br>
+[[Back|Artwork Catalog]]

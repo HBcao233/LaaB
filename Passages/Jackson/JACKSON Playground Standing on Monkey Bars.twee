@@ -1,0 +1,65 @@
+:: JACKSON Playground Standing on Monkey Bars [nobr]
+
+You are hanging out near the monkey bars when <span style="color:DarkTurquoise">Jackson</span> comes running over. <span style="color:LightSteelBlue">“Hey! I bet you I can stand on the top of the monkey bars without falling!”</span> Without even giving you a chance to respond the hyperactive boy begins climbing. You watch as the thin boy struggles to lift his body over the bars, though being a climbing expert, he eventually manages to get on top of it.<br>
+
+    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+    		},	
+        },
+		{
+            Name: "Player",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Alright, now just gotta-“</span> <span style="color:DarkTurquoise">Jackson</span> slowly attempts to stand up, his legs shaking ever so slightly. It quickly becomes clear to you that the boy is going to fall the instant he tries to stand up.<br>
+<br>
+
+<div id=choice>
+	<<link "Attempt to catch him">>
+	<<replace"#choice">>
+
+You quickly run under <span style="color:DarkTurquoise">Jackson</span> right as he finally pushes himself up. As you predicted, his foot quickly slips off the bars and he tumbles backwards. While you were in the right spot to catch him, you weren’t ready for the speed at which he fell and you end up more so breaking his fall as you both tumble to the ground.<br>
+
+    <<set _ad to [
+        {
+            Name: "Jackson",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+				Blush: 1,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+Thankfully, the pain is minor for the both of you, with <span style="color:DarkTurquoise">Jackson</span> beginning to laugh. <span style="color:LightSteelBlue">“I guess you won the bet! What were we betting for again?”</span> You both stand up and dust the dirt off your clothes, <span style="color:LightSteelBlue">“Next time, I should do it without shoes, these things make climbing so hard!”</span> <span style="color:DarkTurquoise">Jackson</span> is about to start climbing again, when a teacher calls over for him to stop. You can’t help but smirk as the wild boy is made to sit down for a few minutes as punishment.<br>
+<<socialChange "Jackson" 3>>
+<<addMoodlet "Stress" 1>>
+[[Continue|School Courtyard]] 
+
+
+	<</replace>>
+	<</link>>
+	<br>
+	
+	<<link "Watch him fall<br>">>
+	<<replace"#choice">>
+You take a step back, to make sure you’ll be out of the crash zone, and watch as <span style="color:DarkTurquoise">Jackson</span> finally pushes himself up to his feet. As you predicted, his foot then slips off the bar and the boy tumbles backwards, crashing hard into the sand below. He lays there for a moment before sitting up and revealing a nasty cut on his elbow.<br>
+<br>
+<span style="color:LightSteelBlue">“Ow…”</span> The boy’s eyes teared up slightly, <span style="color:LightSteelBlue">“I guess I still need a bit more practice to do that, hehe. Stupid shoes always making me slip!”</span> The boy examined the bleeding wound on his elbow and sighed, <span style="color:LightSteelBlue">“Mom's gonna kill me. You think if I pretend it hurts a bunch, she'll feel bad and won’t spank me?”</span> You give the strange boy a shrug and he runs off to the nurse to get a bandage. <br>
+<<addMoodlet "Stress" 0>>
+<br>
+[[Continue|School Courtyard]] 
+
+	<</replace>>
+	<</link>>
+</div>

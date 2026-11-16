@@ -1,0 +1,17 @@
+:: Ben Ask for Nickname [nobr]
+
+/* This is the scene that appears when the PC asks to be called by a nickname. */
+    <span style="Color: LightSteelBlue">“Oh, hello!”</span> <span style="color:DarkTurquoise">Ben</span> smiles upon seeing you, giving you a friendly wave. <span style="Color: LightSteelBlue">“Did you need something?”</span> You ask <span style="color:DarkTurquoise">Ben</span> if he wouldn’t mind calling you by a nickname. Your real name is fine, and all, but since you are friends you’d rather if he called you by something else. <span style="Color: LightSteelBlue">“Of course!”</span> <span style="color:DarkTurquoise">Ben</span> replies with a nod, <span style="Color: LightSteelBlue">“I use a nickname too, as you know. It does feel a little weird when people call me <span style="color:DarkTurquoise">Benjamin</span>, almost like I’m in trouble or something, so I get it. What would you like me to call you?”</span> <br>
+    <br>
+<div id="choice">
+<<textbox "$BenNickname" $BenNickname>><br>
+<br>
+	<<link "Continue">>
+	<<replace "#choice">>
+        <<set $Nickname.Ben to 1>>
+        <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$BenNickname</span>. It’s nice.”</span> He smiles, blushing slightly, <span style="Color: LightSteelBlue">“Apologies in advance if it takes me a second to get used to it, but I’ll try my best!”</span> <br>
+        <br>
+        <<endByLocation>>
+    <</replace>>
+    <</link>>
+</div>

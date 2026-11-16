@@ -1,0 +1,66 @@
+:: Lucas Frontyard [nobr]
+
+<<set $Location to {
+    Name: "Lucas Frontyard",
+    Indoors: 0,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Front Yard",
+}>>
+<span style="color:Azure"><big><strong>--Lucas' Front Yard--</strong></big></span><br>
+
+You stand in the front yard of <span style="color:DarkTurquoise">Lucas</span>’ house. From the outside, it looks much like yours, but the shape is a bit different and numerous potted plots full of flowers fill the front porch.
+
+<<if $Time.ToD == "Morning">>
+	The sun creeps over the hills in the distance, illuminating the yard in a warm orange hue.
+<<elseif $Time.ToD == "Day">>
+	It is sunny and bright out.
+<<elseif $Time.ToD == "Afternoon">>
+	The sky darkens as the end of the day grows near.
+<<elseif $Time.ToD == "Night">>
+	It is pitch black outside, you can only see thanks to the porchlight.
+<</if>><br>
+
+				/* NPC SEEN */
+<<if $Lucas == "Take Out Trash PJ" or $Lucas == "Take Out Trash">>
+	<<include"LUCAS Seen">>
+<</if>><br>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<set $HangOutNeed to {
+	Energy: 100,
+	Fun: 25,
+	Comfort: 25,
+}>>
+<<if $Time.Day != "Wednesday">>
+<<if $Time.schoolday() == 1 and $Time.between(14,0,19,0)>>
+	<<if $ActiveQuests.includes("Lucas: First Visit")>>
+		[[Knock on the door|LucasQuest First Visit I]]<br>
+	<<elseif $CompletedQuests.includes("Lucas: First Visit")>>
+		[[Knock on the door|Lucas Home Visit]]<br>
+	<</if>>
+<<elseif $Time.schoolday() == 0 and $Time.between(8,0,19,0)>>
+	<<if $ActiveQuests.includes("Lucas: First Visit")>>
+		[[Knock on the door|LucasQuest First Visit I]]<br>
+	<<elseif $CompletedQuests.includes("Lucas: First Visit")>>
+		[[Knock on the door|Lucas Home Visit]]<br>
+	<</if>>
+<<elseif $CompletedQuests.includes("Lucas: First Visit")>>
+	<span style="color:Lightcoral">Lucas isn't avaliable to hang out right now.</span><br>
+<</if>>
+<<else>>
+	<span style="color:Lightcoral">Lucas isn't avaliable to hang out today.</span><br>
+<</if>>
+
+[[Exit to Neighborhood|Northend]]<br>
+<br>
+<div style="position: relative">
+<img src="Images\NPC Homes\Lucas House\Lucas House Map.png" alt="Lucas House Base" usemap="#LucasHouse">
+	<img src="Images\Player House\Player House Big Room Marker.png" 
+style="position: absolute; left: 170px; top: 8px"  alt="School Map" usemap="#LucasHouse">
+</div>
+<map name="LucasHouse">
+
+</map>

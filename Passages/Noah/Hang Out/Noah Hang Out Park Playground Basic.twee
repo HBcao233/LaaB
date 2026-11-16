@@ -1,0 +1,133 @@
+:: Noah Hang Out Park Playground Basic [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+<span style="color:DarkTurquoise">Noah</span> holds your hand as you near the playground. Not because he needs to or is afraid of getting lost or separated. <span style="color:lightgreen">No, he holds your hand because he finds it funny when you swing it absurdly in overdramatic ways. Even now he giggles as you both walk with your arms swinging in nearly a full circle. It’s one of the simple joys in life.</span> <br>
+
+    <<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+            },
+        },
+        {
+        Name: "Noah",
+        State: {
+            Outfit: $HangOutClothes,
+            Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Oh, oh, oh! Let’s go on the big slide!”</span> <span style="color:DarkTurquoise">Noah</span> suddenly begins to bounce, pointing to the very tall slide separate from the jungle gym connected simply to a large tower at one corner of the playground. Your little brother pulls you over there excitedly, happily pointing out that <span style="Color: LightSteelBlue">“there’s no line! Aren’t we lucky?”</span> <span style="color:yellow">Though once <span style="color:DarkTurquoise">Noah</span> gets to it, he looks up nervously clutching the ladder up the tower.</span> <span style="Color: LightSteelBlue">“Ma- maybe we should go down together? You know, since it’ll be funner that way.”</span> You smirk at <span style="color:DarkTurquoise">Noah</span> and nod, following him up. <br>
+<br>
+The view from the top of the tower is nice, having an extra floor over the jungle gym and allowing you to see nearly the entire park. Due to this and its overall shape, you’ve heard this particular part of the park referred to as the 'watch tower'. Pretty fitting name. <br>
+
+    <<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+            },
+        },
+        {
+        Name: "Noah",
+        State: {
+            Outfit: $HangOutClothes,
+            Mouth: "Frown",
+            Blush: 1,
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+But you don’t have long to admire the view, as <span style="color:DarkTurquoise">Noah</span> takes a seat atop the big slide, a long straight slide that goes down to a little sandy pit, <span style="color:yellow">and clutches the railing nervously as he motions for you to come over.</span> <span style="color:Pink">You smile and sit down behind him, finding your brother’s fear of the slide cute. You put your legs on either side of him, you comforting presence enough to get <span style="color:DarkTurquoise">Noah</span> to release the railings.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“Okay. Ready?”</span> He looks up at you with a nervous smile. <br>
+<br>
+
+<div id="choice">
+	<<link "Slide down with Noah<br>">>
+    <<replace"#choice">>
+        <span style="color:Pink">You wrap your arms around your little brother, holding him tightly to calm his nerves, before gently nudging yourself forwards, the long drop ahead causing even your heart to beat a bit faster. You feel <span style="color:DarkTurquoise">Noah</span>’s grip tighten, scared, but without his smile leaving his face. Then, as you pass the precipice, you both begin to rocket down the slide at high speeds!</span> <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Aaaahhhh~!”</span> <span style="color:DarkTurquoise">Noah</span>’s cute girlish scream fills your ears as the whipping wind hits your face! It only lasts a second or two, but the incredible speed and angle at which you drop makes you feel like your life just flashed before your eyes. You are also surprised when you come to a gentle stop at the bottom, the slide’s long tail ensuring riders don’t go flying off at high speeds, unlike some other slides you’ve been on. <br>
+        
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+                },
+            },
+            {
+            Name: "Noah",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Happy",
+                Blush: 1,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“That was so fun!”</span> <span style="color:lightgreen"><span style="color:DarkTurquoise">Noah</span> says as you both break out laughing upon reaching the bottom. <span style="Color: LightSteelBlue">“I felt my heartbeat in my butt!”</span> He giggles, jumping to his feet and pulling you up quickly as well.</span> <span style="Color: LightSteelBlue">“We gotta do it again! Come on!”</span> <br>
+        <br>
+        You are then dragged back to the top of the tower and made to slide down about half a dozen more times before your brother tires of the rush. But at least he seems very happy. <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Noah" 3>>
+        <span style="color:green">+Noah Fun</span><br>
+        <<set $HangOutNeed.Fun += 10>>
+        <span style="color:red">-Noah Energy</span><br>
+        <<set $HangOutNeed.Energy -= 5>>
+        <span style="color:green">+Noah Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 10>>
+        <br>
+        [[Continue|Noah Hang Out Park]]
+    <</replace>>
+    <</link>>
+	<<link "Push him down by himself<br>">>
+    <<replace"#choice">>
+        <span style="color:lightgreen">Your reasoning is your own. Maybe this is a devious idea meant to mess with your little brother. Maybe you want him to face his fears and show him there is nothing to be afraid of. Maybe you just want to see what happens by doing this. Regardless of your reason, you lessen your grip on your brother and gently shove him down just enough to slip down the massive slide on his own.</span> <br>
+        
+        <<set _ad to [
+            {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Mad",
+                },
+            },
+            {
+            Name: "Noah",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Frown",
+                Blush: 2,
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$NoahNickname</span>! No-!”</span> <span style="color:DarkTurquoise">Noah</span> turns, a look a betrayal only a brother could give on his face, before he descends down! <span style="color:DarkTurquoise">Noah</span> instantly covers his eyes out of fear, letting out a girlish scream. You glance down to see him make it in one piece, the worst thing that happened to him is his hair being whipped around by the wind. <br>
+        <br>
+        As you slide down after him and laugh about it not being so bad, <span style="color:DarkTurquoise">Noah</span> punches you in the arm. <span style="Color: LightSteelBlue">“That was mean!”</span> He says with a pouty expression and puffed-out cheeks. You laugh and apologize, saying you wanted to help him be brave enough to go down on his own. You ask him how it was and <span style="color:DarkTurquoise">Noah</span> shrugs. <span style="Color: LightSteelBlue">“I don’t know… my eyes were shut the whole time!”</span> <span style="color:lightgreen">You do notice a smile sneak its way onto his face though.</span> <br>
+        <br>
+        You ask him if he wants to go again, but <span style="color:DarkTurquoise">Noah</span>’s eyes quickly widen. <span style="Color: LightSteelBlue">“No way! You’ll just push me down again! Let’s go play on the swings.”</span> <span style="color:lightgreen"><span style="color:DarkTurquoise">Noah</span> drags you over, seemingly forgiving your actions.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 15>>
+        <<socialChange "Noah" 1>>
+        <span style="color:green">+Noah Fun</span><br>
+        <<set $HangOutNeed.Fun += 5>>
+        <span style="color:red">-Noah Energy</span><br>
+        <<set $HangOutNeed.Energy -= 5>>
+        <span style="color:red">-Noah Comfort</span><br>
+        <<set $HangOutNeed.Comfort -= 5>>
+        <br>
+        [[Continue|Noah Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

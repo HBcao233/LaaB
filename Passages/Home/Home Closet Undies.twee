@@ -1,0 +1,49 @@
+:: Home Closet Undies [nobr]
+
+<<if $HomeClosetCategory2 != "Undies">>
+	<<link "Undies">>
+		<<set $HomeClosetCategory2 to "Undies">>
+    	<<goto "Home Closet">>
+	<</link>>
+<<else>>
+	<strong>[Undies]</strong>
+<</if>>
+
+<br>
+<<if $HomeClosetCategory2 == "Undies">>
+/* UNDIES */
+<<if $PlayerUndies.Type != "None">>
+	<span style="color:Azure"><strong><big>--Underwear--</big></strong></span><br>
+    [img[$PlayerUndies.Icon]] <strong><big>$PlayerUndies.Name</big></strong><br>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Type:</strong></span> $PlayerUndies.Type<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Color:</strong></span> $PlayerUndies.Color<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Traits:</strong></span> $PlayerUndies.Tags<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Temp:</strong></span> 
+$PlayerUndies.Temp<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Durability:</strong></span> $PlayerUndies.Durability/$PlayerUndies.MaxDurability<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Weight:</strong></span> $PlayerUndies.Weight<br>
+    </div>
+    <div style="text-indent: 3em;">
+    	<span style="color:Azure"><strong>Description:</strong></span> $PlayerUndies.Description<br>
+    </div>
+<</if>>
+
+<</if>>
+<br>
+
+<span style="color:Azure"><strong><big>--Closet--</big></strong></span><br>
+
+<<closet2 $HomeClosetCategory2>>
+
+<br><<include "Home Closet Inventory">>

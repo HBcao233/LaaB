@@ -1,0 +1,165 @@
+:: Teen Avatar Display [nobr]
+
+<<if $AD.Outfit == "Undies">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+<<elseif $AD.Outfit == "Naked">>
+	<<set $ADTop to $None>>
+    <<set $ADBottoms to $None>>
+    <<set $ADSocks to $None>>
+    <<set $ADShoes to $None>>
+	<<set $ADUndies to $None>>
+<</if>>
+
+<div style="position: relative">
+
+
+/* LAYER BEHIND */
+	<<include"Teen Avatar Display Behind">>
+
+/* LAYER ARMS_BOUND */
+
+/* LAYER SLEEVES_BOUND */
+
+/* LAYER BODY */
+	<<include"Teen Avatar Display Body">>
+    
+/* LAYER ARMS_NORMAL */
+	<<if $AD.Arms == "Normal">>
+		<<include "Teen Avatar Display Arms Normal">>
+	<</if>>
+
+/* LAYER PUBIC HAIR */
+	<<include"Teen Avatar Display Pubic Hair">>
+
+/* LAYER EYES */
+	<<include"Teen Avatar Display Eyes">>
+
+/* LAYER MOUTH */
+	<<include"Teen Avatar Display Mouth">>
+
+/* LAYER BLUSH */
+/* BROKEN WILL FIX IN PATCH
+	<<include"Teen Avatar Display Blush">>
+ */
+/* LAYER HAIR */
+	<<include"Teen Avatar Display Hair">>
+
+/* LAYER PENIS */
+	<<if $ADBottoms.Type == "None" and $ADUndies.Type == "None" and $AD.Hard != 1>>
+		<<include"Teen Avatar Display Penis">>
+	<</if>>
+
+/* LAYER UNDIES */
+	<<if $ADUndies.Type != "None">>
+		<<include"Teen Avatar Display Undies">>
+	<</if>>
+
+/* LAYER UNDER ACCESSORY */
+	<<include"Teen Avatar Display Under Accessory">>
+
+/* LAYER ITEM HOLDING BOTTOM */
+	<<include"Teen Avatar Display Item Holding Bottom">>
+
+/* LAYER UNDER TOP */
+	<<if $ADUnder.Type != "None">>
+		<<include"Teen Avatar Display Under Top">>
+	<</if>>
+
+/* LAYER HANDS */
+	<<if $ADHands.Type != "None">>
+		<<include"Teen Avatar Display Hands">>
+	<</if>>
+
+/* LAYER TOP TUCKED */
+	<<if $ADTop.Type != "None" and $TopTucked == 1>>
+		<<include"Teen Avatar Display Top">>
+	<</if>>
+	
+
+/* LAYER SOCKS */
+	<<if $ADSocks.Type != "None">>
+		<<include"Teen Avatar Display Socks">>
+	<</if>>
+
+/* LAYER SHOES */
+	<<if $ADShoes.Type != "None">>
+		<<include"Teen Avatar Display Shoes">>
+	<</if>>
+
+/* LAYER BOTTOMS */
+	<<if $ADBottoms.Type != "None">>
+		<<include"Teen Avatar Display Bottoms">>
+	<</if>>
+
+/* LAYER WAIST */
+	<<if $ADWaist.Type != "None">>
+		<<include"Teen Avatar Display Waist">>
+	<</if>>
+
+/* LAYER TOP */
+	<<if $ADTop.Type != "None" and $TopTucked != 1>>
+		<<include"Teen Avatar Display Top">>
+	<</if>>
+
+/* LAYER Neck */
+	<<if $ADNeck.Type != "None">>
+		<<include"Teen Avatar Display Neck">>
+	<</if>>
+
+/* LAYER TOP ACCESSORY */
+	/* PLACE HOLDER */
+    
+/* LAYER PENIS HARD */
+	<<if $ADBottoms.Type == "None" and $ADUndies.Type == "None" and $AD.Hard == 1>>
+		<<include"Teen Avatar Display Penis Hard">>
+	<</if>>
+    
+/* LAYER OVER */
+	<<if $ADOver.Type != "None">>
+		<<include"Teen Avatar Display Over">>
+	<</if>>
+    
+/* LAYER OVER ACCESSORY */
+	/* PLACE HOLDER */
+    
+/* LAYER OUTER */
+	<<if $ADOuter.Type != "None">>
+		<<include"Teen Avatar Display Outer">>
+	<</if>>
+    
+/* LAYER OUTER SLEEVES NORMAL */
+	<<if $ADOuter.Type != "None">>
+		<<include"Teen Avatar Display Outer Sleeves Normal">>
+	<</if>>
+    
+/* LAYER OUTER ACCESSORY */
+	/* PLACE HOLDER */
+    
+/* LAYER ARMS HIDE */
+	<<if $AD.Arms == "Hide">>
+		<<include "Teen Avatar Display Arms Hide">>
+	<</if>>
+    
+/* LAYER SLEEVES HIDE */
+	/* PLACE HOLDER */
+    
+/* LAYER MOUTH ITEM */
+	<<if $ADMouth.Type != "None">>
+		<<include"Teen Avatar Display Mouth Item">>
+	<</if>>
+    
+/* LAYER FACE */
+	<<if $ADFace.Type != "None">>
+		<<include"Teen Avatar Display Face">>
+	<</if>>
+    
+/* LAYER HEAD */
+	<<if $ADHead.Type != "None">>
+		<<include"Teen Avatar Display Head">>
+	<</if>>
+/* END LAYER */
+
+</div>

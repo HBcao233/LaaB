@@ -1,0 +1,44 @@
+:: PH Frontyard Exposed [nobr]
+						/* WHAT EXPOSED */
+<<if $Player.Exposed == "Undies" or $Player.Exposed == "Diaper">>
+	<span style="color:Red">You have found yourself in your Front Lawn in your $PlayerUndies.Name and are now hiding in one of the bushes that separate the houses! </span>
+<<elseif $Player.Exposed == "Naked">>
+	<span style="color:Red">You have found yourself in your Front Lawn completely naked and are now desperately hiding in one of the bushes that separate the houses!</span> <span style="color:Pink">The wind causes the leaves to sway, tickling your Butt and groin, only adding to your humiliation. </span>
+<</if>>
+
+						/* WHAT TIME OF DAY */
+<<if $Time.ToD == "Morning">>
+	You peek out and are thankful that the streets are still mainly empty this early in the morning. Though you do hear the distant sound of talking and wonder if someone had spotted you from down the street. You turn towards your front door. 
+<<elseif $Time.ToD == "Day" or $Time.ToD == "Afternoon">>
+	You peek your head out right as a jogger passes by, giving you a coy smile and laughing as they continue down the road. They definitely saw you! You completely hide yourself as you hear more cars and people pass by, hopefully unaware of your humiliating presence and glance nervously towards your front door.
+	
+<<elseif $Time.ToD == "Night">>
+	You peek out, but don’t see anyone in the darkness. Despite this, you still worry because the street light in front of your house would have illuminated you to anyone watching from the darkness. You gulp at the thought of the hidden dangers and look nervously towards your front door. 
+<</if>><br>
+<br>
+You could attempt to sprint to your front door, some people may still see you, but if you’re quick enough you could get inside with minimal humiliation. But if the door is locked, you’ll be left helpless and exposed on the front porch without any cover! By that point anyone who wasn’t already looking would be. You could also try to climb over the fence into your backyard, you’d be safer there and it’d be your only option if the door is locked anyways. But you wouldn’t be able to cover yourself while you climbed, 
+<<if $Player.Exposed == "Naked">>
+giving anyone looking an unobstructed view of your privates! <br>
+<<elseif $Player.Exposed == "Undies" or $Player.Exposed == "Diaper">>
+giving anyone looking an unobstructed view of your $PlayerUndies.Name! <br>
+<</if>>
+/* 
+<<if $LearnedExhibition != 1>>
+	<br>
+	<<include"Exhibition Skill Level Up">>
+	<br>
+<</if>>
+*/
+<br>
+[[Sprint to door|Sprint to door]]<br>
+[[Climb over fence|Climb Fence]]<br>
+<br>
+
+
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Big Room Marker.png" 
+style="position: absolute; left: 166px; top: 4px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>

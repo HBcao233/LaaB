@@ -1,0 +1,72 @@
+:: OC Micah Lunch Library [nobr]
+
+/* Intro */
+You are browsing the shelves in the library, not really looking for anything in particular or even for something to read. More so looking at the covers and titles of the books and letting your mind run wild with whatever it makes you think about. You have just come across a curious book that claims to compile the history of a country whose name you can’t believe is real, as it is obviously some middle-school-level attempt at a joke, when you catch something a bit more curious in your eyeline.
+
+    <<set _ad to [
+        {
+            Name: "OC Micah",
+            State: {
+                Outfit: "Uniform",
+                Mouth: "Happy",
+                Eyes: "Tired",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:DarkTurquoise">Micah</span>, the paranoid, shop-running boy, is sitting at a table with half a dozen books all open to various pages. The books are an odd mix as well; some about aliens and the theories of their existence, a handful about the founding and structure of the government, and, most curious of all, a biology book on lizards. <span style="color:DarkTurquoise">Micah</span> is reading them all with great interest, as if it were an exciting best-selling novel, and jotting down notes like his life depends on it. You’d wager he fully believes that it does. <br>
+<br>
+Unable to hold back your curiosity, you walk over to the table and ask the boy what on earth he is doing. <span style="color:LightSteelBlue">“That’s the thing! They weren’t on earth, at least not originally – no, instead I believe they came from mars during the early to late roman period and took over! Ruling from the shadows, shedding their skin as needed to fool the sheep of this world! And don’t be fooled, to them, we are sheep! Nothing but cattle!”</span> That explains nothing, and you tell <span style="color:DarkTurquoise">Micah</span> as such. He blushes and chuckles slightly, realizing he was rambling, what to you is nonsense. <span style="color:LightSteelBlue">“Sorry, I could explain my theories, but it’s hard to do so without taking a bunch of your time.”</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Ask him to explain (0:20)<br>">>
+    <<replace"#choice">>
+        You sigh, figuring you have nothing else to do so may as well hear him out. You ask him to explain this theory of his and the boy lights up. <span style="color:LightSteelBlue">“Really? I mean- of course. Now, it all starts back on their home planet…”</span> This leads to a long, rather interesting story about a war on mars that led some of its people, some green-scaled, shapeshifting lizards, to relocate to Earth. They began ruling this land from the shadows and use their advanced Martian technology to keep themselves in power and silence anyone who gets too close to the truth. <br>
+        <br>
+        <span style="color:LightGreen">You actually find yourself on the edge of your seat, as his story is told like some dramatic script to a sci-fi movie or some 90s television show with okay effects, but great storytelling!</span> When he finishes, you actually find yourself asking what happens next. <span style="color:LightSteelBlue">“Well, nothing. Today happens. They are still ruling from the shadows and trying to heat up the planet for their own gain.”</span> He shrugs. You had forgotten that he actually believes this stuff. You tell <span style="color:DarkTurquoise">Micah</span> that he should really turn this theory of his into a book or something, he has a gift for storytelling. <span style="color:DarkTurquoise">Micah</span> instantly blushes at this. 
+
+        <<set _ad to [
+            {
+                Name: "OC Micah",
+                State: {
+                    Outfit: "Uniform",
+                    Mouth: "Frown",
+                    Blush: 2,
+                },
+            },
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Smirk",
+                },
+            },
+        ]>>
+        <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Wha-!? N- no! It’s nothing, I’m just relaying facts! I’m terrible at making up stories - awful even! I almost failed my writing class last year!”</span> He is as red as a tomato, seemingly unable to take the compliment, <span style="color:LightSteelBlue">“Trust me, it only sounds good because it’s the truth. I’m nowhere near that creative.”</span> You can’t help but laugh at the boy and enjoy the rest of your time asking him various questions about this ‘truth’. <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 10>>
+        <<socialChange "Micah" 5 1>>
+        <br>
+        [[Continue|School Library]]
+    <</replace>>
+    <</link>>
+    <<link "Sit with him and chat about something else (0:10)<br>">>
+    <<replace"#choice">>
+        You ask <span style="color:DarkTurquoise">Micah</span> if his theories and research could wait a minute, taking a seat next to him to chat. <span style="color:DarkTurquoise">Micah</span> smiles and nods, closing the books, making sure to save his place with a handful of bookmarks, and turns to you. The two of you share a nice conversation that is, for <span style="color:DarkTurquoise">Micah</span>, mostly normal. He only brings up probing a few times. <span style="color:LightGreen">The boy sure is passionate about his theories, but when you can get him to shut up about that, you find that he has a lot in common with you and any other boy your age. You enjoy your time with him.</span> <br>
+        <<addMoodlet "Stress" 0>>
+        <<needChange "Fun" 10>>
+        <<socialChange "Micah" 3 1>>
+        <br>
+        [[Continue|School Library]]
+    <</replace>>
+    <</link>>
+</div>

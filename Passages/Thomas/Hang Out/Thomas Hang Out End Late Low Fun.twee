@@ -1,0 +1,28 @@
+:: Thomas Hang Out End Late Low Fun [nobr]
+
+/* Intro */
+As you are walking around trying to figure out what to do next, you spy that <span style="color:DarkTurquoise">Thomas</span> is following you with a low energy posture, even more so than usual, and a very unamused expression. <span style="color:LightCoral">It is pretty clear he hasn’t enjoyed himself.</span> As you stop to try and think of what to do next, <span style="color:DarkTurquoise">Thomas</span> interrupts you.<br>
+
+    <<set _ad to [
+        {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Blush: 1,
+            },
+        },
+        {
+        Name: "Thomas",
+        State: {
+            Outfit: $HangOutClothes,
+            Mouth: "Frown",
+            Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Look, this has been… a time. But I gotta get going. Some of us don’t have all the free time in the world and have jobs to get to. So, you can keep doing… whatever, but I’m heading off.”</span> <span style="color:LightCoral"> <span style="color:DarkTurquoise">Thomas</span> turns without even giving you a chance to respond, not even saying goodbye when you try to say farewell. Seems the boy is a bit upset you wasted his time.</span> <br>
+<<socialChange "Thomas" -3>>
+<br>
+[[Continue|Park]]

@@ -1,0 +1,101 @@
+:: Farm Explore Donkey [nobr]
+
+/* Intro */
+<<set $Minutes += 30>>
+You begin to wander and explore the farm area, not really looking for anything in particular besides something to catch your interest. It is as you are walking along the border of one of the grazing fields, holding a stick to bang lightly against each fence post, that you see a donkey standing near the edge that seems thoroughly bored. <span style="color:Yellow">You look curiously at the donkey, which stands unmoving with its head over the fence. Strange.</span> <br>
+<br>
+
+<div id="choice">
+	<<link "Poke the Donkey with the stick<br>">>
+	<<replace "#choice">>
+        A bit of brattiness or curiosity getting the better of you, you carefully walk up to the donkey and poke it with the stick you are holding. It doesn’t react. Feeling a bit braver, you move closer and poke it again. It moves its eyes in your direction but otherwise doesn’t react. You smirk, asking the donkey what it’s doing as you poke it once more. <span style="color:Yellow">This time, the donkey reacts.</span> <br>
+        <br>
+        <span style="color:LightCoral">With lightning quick reflexes that you didn’t consider a donkey capable of, the donkey reaches down, bites the stick, and yanks it forward. Still holding the prodding piece of wood, you are lurched forward and sent tumbling directly into a mud puddle! The donkey makes a noise that you can only describe as laughing as you stand up, now caked in mud.</span> <br>
+        
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Eyes: "Mad",
+                    Mouth: "Frown",
+                    Blush: 1,
+                },	
+            },
+        ]>>
+        <<ad _ad>>
+
+        You glare at the donkey angrily. You swear it glares back before walking off. <br>
+        <br>
+        <span style="color:LightCoral">Donkeys suck.</span> <br>
+        <<needChange "Fun" 10>>
+        <<needChange "Hygiene" -20>>
+        <br>
+        [[Continue|Farm]]
+    <</replace>>
+    <</link>>
+	<<link "Turn around and go the other way<br>">>
+	<<replace "#choice">>
+        You have heard horror stories about what donkeys can do. <span style="color:Yellow">They are beasts that only exist to make others suffer, or, at least, that’s what you’ve heard.</span> So, you decide it is best to keep your distance and quickly turn around to walk away. You feel a little weird, being so afraid of a creature that is locked behind a fence, but as you glance back you see it staring at you menacingly. <br>
+        <br>
+        <span style="color:LightGreen">You feel you’ve made the right choice.</span> <br>
+        <<needChange "Fun" 10>>
+        <br>
+        [[Continue|Farm]]
+    <</replace>>
+    <</link>>
+	<<link "Ignore it and walk past<br>">>
+	<<replace "#choice">>
+        You decide to ignore the donkey and walk past, moving the stick to the other side of the fence to not startle it. <span style="color:Yellow">The donkey doesn’t even flinch as you walk past it.</span> Strange, must be a pretty bored or dumb creature… you wonder if it somehow heard your thoughts. <br>
+        <br>
+        As right as you turn your back to it, <span style="color:LightCoral">the donkey lunges down and, as if it were grass, bites onto a piece of your clothing and tug!</span>
+        <<if $PlayerUndies.Type != "None">>
+            <span style="color:Pink">You scream out as the donkey yanks on your underwear with all its surprising strength! You lose your footing and are lifted into the air as the donkey tries to pull your underwear, and by extension you, up and over the fence.</span> You turn around and tug at your underwear until the donkey finally releases it… <span style="color:LightCoral">causing you to fall face-first into a puddle of mud…</span> <br>
+            <br>
+
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    State: {
+                        Arms: "Hide",
+                        Mouth: "Frown",
+                        Blush: 2,
+                        Cry: 1,
+                    },	
+                },
+            ]>>
+            <<ad _ad>>
+
+        <<else>>
+            <span style="color:Pink">You scream out as the donkey yanks on your bottoms with all its surprising strength! You lose your footing and are soon lifted into the air, left dangling upside down, as the donkey tries to pull your $PlayerBottoms.Type, and by extension you, up and over the fence! You bottoms begin to slip off, exposing your penis and butt to the open air! You begin to panic, realizing that if this donkey eats or takes off with your bottoms, you are a long way from home without anything to cover up with.</span> You tug with all your mind until the donkey finally releases it… <span style="color:LightCoral">causing you to fall face-first into a puddle of mud… </span> <br>
+            
+            <<set _ad to [
+                {
+                    Name: "Player",
+                    ShowZoom: true,
+                    State: {
+                        Arms: "Hide",
+                        Mouth: "Frown",
+                        Blush: 2,
+                        Cry: 1,
+                        PantsDown: 1,
+                    },	
+                },
+            ]>>
+            <<ad _ad>>
+
+        <</if>>
+
+        The donkey hee-haws as if it is laughing at your misfortune and kicks dirt at you before walking away, <span style="color:LightCoral">leaving you facedown in the mud with your butt in the air. You stand up and try to scrape off the mud, feeling gross and wet now.</span> You then turn back to the donkey as you fix your clothing and curse at it. <br>
+        <br>
+        <span style="color:LightCoral">They truly are evil creatures.</span> <br>
+        <<needChange "Fun" 10>>
+        <<needChange "Hygiene" -20>>
+        <<addMoodlet "Wedgie" 6>>
+        <<set _arousalbs to []>>
+        <<set _arousalkink to ["Wedgiee"]>>
+        <<arousalGain 10 _arousalbs _arousalkink>>
+        <br>
+        [[Continue|Farm]]
+    <</replace>>
+    <</link>>
+</div>

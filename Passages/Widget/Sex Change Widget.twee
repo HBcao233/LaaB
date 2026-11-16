@@ -1,0 +1,47 @@
+:: Sex Change Widget [widget nobr]
+
+/* This widget is in fact NOT for changing the sex of someone, but for changing variables within the Sex and Foreplay System. 
+
+It is called like so:
+<<sexChange "PC/Partner" "Arousal" ##>>
+
+"PC/Partner": Whether or not the change is happening to the PC or the Partner. In cases of more than 1 Partner, you will add the # indicator for any after the first via how they are listed on the Arousal Bars. Aka: "Partner2".
+"Arousal": This is the value being changed. These are Arousal or Comfort. Comfort is only for Parnter at the moment.
+##: This is the value you are changing. You can do positive or negative.
+*/
+
+<<widget "sexChange">>
+    <<set _target to _args[0]>>
+    <<set _value to _args[1]>>
+    <<set _amount to _args[2]>>
+
+    <<if _target == "PC" or _target == "Player">>
+        <<if _value == "Arousal">>
+            <<if _amount > 0>>
+                <<set $Player.Arousal += _amount>>
+                <strong><span style="color:Pink">+_amount <span style="color:DarkTurquoise">$Player.Name</span> Arousal!</span></strong><br>
+            <<else>>
+                <<set $Player.Arousal += _amount>>
+                <strong><span style="color:Red">-_amount <span style="color:DarkTurquoise">$Player.Name</span> Arousal!</span></strong><br>
+            <</if>>
+        <</if>>
+    <<elseif _target == "Partner">>
+        <<if _value == "Arousal">>
+            <<if _amount > 0>>
+                <<set $Sex.PartnerArousal += _amount>>
+                <strong><span style="color:Pink">+_amount <span style="color:DarkTurquoise">$Sex.Partner</span> Arousal!</span></strong><br>
+            <<else>>
+                <<set $Sex.PartnerArousal += _amount>>
+                <strong><span style="color:Red">-_amount <span style="color:DarkTurquoise">$Sex.Partner</span> Arousal!</span></strong><br>
+            <</if>>
+        <<elseif _value == "Comfort">>
+            <<if _amount > 0>>
+                <<set $Sex.PartnerComfort += _amount>>
+                <strong><span style="color:Lightgreen">+_amount <span style="color:DarkTurquoise">$Sex.Partner</span> Comfort!</span></strong><br>
+            <<else>>
+                <<set $Sex.PartnerComfort += _amount>>
+                <strong><span style="color:Red">-_amount <span style="color:DarkTurquoise">$Sex.Partner</span> Comfort!</span></strong><br>
+            <</if>>
+        <</if>>
+    <</if>>
+<</widget>>

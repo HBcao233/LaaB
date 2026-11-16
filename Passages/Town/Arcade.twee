@@ -1,0 +1,72 @@
+:: Arcade [nobr]
+
+<<set $Location to {
+    Name: "Arcade",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Arcade",
+}>>
+
+<<if $ToggleOCJST == 1 && $InActiveQuests.includes("Jacob: Introduction") && $Money >= 10>>
+    <<include"OC Jacob Intro 1">>
+<<else>>
+    <span style="color:Azure"><big><strong>--Arcade--</strong></big></span><br>
+    You stand in the arcade of the entertainment district. The design of the room is right out of the 90s, with neon lights and a space-themed carpet full of bright colors that shine under the purple glow of the lights. There was music in the background, but it was mostly drowned out by the sounds of the arcade machines, all mixing together into a symphony of noise that somehow screams fun. <br>
+    <br>
+    The machines themselves were a mix of classics and new modern games. Foosball, basketball, claw machines, dance games, shooters, racing; There were so many you didn’t even know where to begin! And despite being full of people, there were still dozens of available games. Being in a popular tourist destination had its benefits, and a large arcade to entertain the children of said tourists was one of them. <br>
+
+                    /* NPC SEEN */
+    <<include "NPC Inspect">>
+    <br>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    <<if $ActiveQuests.includes("Chase: Birthday Party") && $Time.Day == "Saturday" && $Time.between(10, 30, 12, 0)>>
+        [[Attend the Birthday Party (~5:00)|Chase Birthday Party Intro]]<br>
+    <</if>>
+    <<if $Money >= 1>>
+    <<link"Play Any Game ($1 0:20)">>
+        <<set _Random to ["Arcade Games Racing Basic", "Arcade Games Dancing Basic", "Arcade Racing Game 1", "Arcade Racing Game 2", "Arcade Games Dancing Challenge"]>>
+        <<if $ToggleOCJQ == 1 and $InActiveQuests.includes("JQ: Introduction")>>
+            <<set _Random.push("OC JQ Intro")>>
+        <</if>>
+        <<if $ToggleOCManuel == 1 && $CompletedQuests.includes("Manuel: The Pent-Up Boy")>>
+            <<set _Random.push("OC Manuel Arcade Racing")>>
+        <</if>>
+        <<if $ToggleOCTyler == 1 && $CompletedQuests.includes("Tyler: Introduction")>>
+            <<set _Random.push("OC Tyler Arcade Confident")>>
+        <</if>>
+        <<if $ToggleOCBirdy == 1 && $CompletedQuests.includes("Birdy: Lea")>>
+            <<set _Random.push("OC Lea Arcade Shooter")>>
+        <</if>>
+        <<if $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Evelyn")>>
+            <<set _Random.push("OC Evelyn Arcade Play With")>>
+        <</if>>
+        <<if $ToggleOCKade == 1 && $CompletedQuests.includes("Kade: Introduction")>>
+            <<set _Random.push("OC Kade Arcade Hide")>>
+        <</if>>
+        <<set _event to _Random.random()>>
+
+        /* Quest-Forced Events */
+        <<if $ToggleOCJonny == 1 && $InActiveQuests.includes("Jonny: The Fret Champion")>>
+            <<set _event to "OC Jonny The Fret Champion">>
+        <</if>>
+
+        <<goto _event>>
+    <</link>><br>
+    <<link"Play a Racing Game ($1 0:20)">>
+        <<set _Random to ["Arcade Games Racing Basic", "Arcade Racing Game 1", "Arcade Racing Game 2"]>>
+        <<set _event to _Random.random()>>
+        <<goto _event>>
+    <</link>>
+    <<else>>
+        <span style="color:lightcoral">Play Any Game ($1 0:20)</span>
+        <span style="color:lightcoral">Play a Racing Game ($1 0:20)</span>
+    <</if>><br>
+
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    <img src="Images\World Map\Individual Icons\Entertainment District.png">
+        [[Entertainment District (0:01)|Entertainment District][$Minutes += 1]]<br>
+        
+<</if>>

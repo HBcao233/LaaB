@@ -1,0 +1,25 @@
+:: School Breakfast [nobr]
+
+				/* FREE */
+<<if $SchoolBreakfastLevel == 0>>
+	You enjoy the school's free breakfast. It's nothing special.<br>
+	<<needChange "Hunger" 20>>
+				/* STANDARD */
+<<elseif $SchoolBreakfastLevel == 1>>
+	<<set $Money -= 2>>
+	You enjoy the school's standard breakfast. It tastes pretty good!<br>
+	<<needChange "Hunger" 35>>
+				/* PREMIUM */
+<<elseif $SchoolBreakfastLevel == 2>> 
+	<<set $Money -= 4>>
+	<<addMoodlet "Delicious" 6>>
+	You enjoy the school's premium breakfast. It tastes delicious!<br>
+	<<needChange "Hunger" 35>>
+
+
+<</if>>
+
+<<set $Minutes += 15>>
+<br>
+<<set $SchoolBreakfast to 1>>
+[[Continue|School Cafeteria]] 

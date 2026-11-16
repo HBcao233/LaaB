@@ -1,0 +1,607 @@
+:: Character Init [nobr]
+
+<<set $Player to new Player({
+	Name: "Elliot",
+    LastName: "Warren",
+	SkinColor: "White",
+    Build: "Skinny",
+    LeftEyeColor: "Blue",
+    RightEyeColor: "Blue",
+    HairStyle: "Messy",
+    HairColor: "Brown",
+    Freckles: 0,
+    PenisSize: "Small",
+    PenisSizeErect: "Small",
+    PenisStyle: "Uncut",
+    PubicHair: "None",
+    PenisLength: 1,
+    Height: 'Average',
+    
+    Exposed: "None",
+    Balls: "Medium",
+    Butt: "Cute",
+    
+    Mood: 50,
+    CurrentMood: "Normal",
+    "_needs": {
+        Energy: 100,
+        Hunger:  60,
+        Hygiene: 60,
+        Fun: 75,
+        Bladder: 75,
+    },
+    Arousal: 0,
+    SexualFrustration: 0,
+    Kinks: {
+        Adults: 1,
+        Anal: 1,
+        Bondage: 1,
+        Butt: 1,
+        Chastity: 1,
+        Diapers: 1,
+        Edging: 1,
+        Exhibitionism: 1,
+        Feet: 1,
+        GentleSex: 1,
+        Hands: 1,
+        Humiliated: 1,
+        Humiliation: 1,
+        Incest: 1,
+        Kids: 1,
+        Mouths: 1,
+        Penis: 1,
+        Preteens: 1,
+        RoughSex: 1,
+        Somnophilia: 1,
+        Spankee: 1,
+        Spanker: 1,
+        Teens: 1,
+        Voyeurism: 1,
+        Watersports: 0,
+        Wedgiee: 1,
+        Wedgier: 1,
+        Tickling: 1,
+        Massaging: 1,
+        Noncon: 1,
+        Petplay: 1,
+        Slaveplay: 1,
+        Monsters: 0,
+        Hypnosis: 1,
+    },
+    BS: {
+        Armpits: 1,
+        Balls: 1,
+        Butt: 1,
+        Butthole: 1,
+        Feet: 1,
+        Mouth: 1,
+        Nipples: 1,
+        Shaft: 1,
+        Sides: 1,
+        Tip: 1,
+    },
+    Traits: [],
+})>>
+
+/* Kinks */
+<<set $PlayerKinkValues to [
+    { Value: -1, Text: "Turn Off" },
+    { Value: 0, Text: "Neutral" },
+    { Value: 1, Text: "Turn On" },
+]>>
+<<set $PlayerKinkOptions to [
+    { Name: "Kids", Text: "Kids (Younger than PC)" },
+    { Name: "Preteens", Text: "Preteens (Same Age as PC)" },
+    { Name: "Teens", Text: "Teens (Older than PC)" },
+    { Name: "Adults", Text: "Adults" },
+    { Name: "GentleSex", Text: "Gentle Sex" },
+    { Name: "RoughSex", Text: "Rough Sex" },
+    { Name: "Hands", Text: "Hands" },
+    { Name: "Feet", Text: "Feet" },
+    { Name: "Mouths", Text: "Mouths" },
+    { Name: "Incest", Text: "Incest" },
+    { Name: "Penis", Text: "Penis" },
+    { Name: "Butt", Text: "Butt" },
+    { Name: "Exhibitionism", Text: "Exhibitionism" },
+    { Name: "Voyeurism", Text: "Voyeurism" },
+    { Name: "Humiliated", Text: "Being Humiliated" },
+    { Name: "Humiliation", Text: "Humiliating Others" },
+    { Name: "Wedgiee", Text: "Receiving Wedgies" },
+    { Name: "Wedgier", Text: "Giving Wedgies" },
+    { Name: "Anal", Text: "Anal" },
+    { Name: "Bondage", Text: "Bondage" },
+    { Name: "Spankee", Text: "Getting Spanked" },
+    { Name: "Spanker", Text: "Spanking Others" },
+    { Name: "Chastity", Text: "Chastity" },
+    { Name: "Edging", Text: "Edging" },
+    { Name: "Diapers", Text: "Diapers" },
+    { Name: "Watersports", Text: "Watersports" },
+    { Name: "Tickling", Text: "Being Tickled" },
+    { Name: "Massaging", Text: "Being Massaged" },
+    { Name: "Somnophilia", Text: "Somnophilia" },
+    { Name: "Noncon", Text: "Non-con" },
+    { Name: "Petplay", Text: "Petplay" },
+    { Name: "Slaveplay", Text: "Slaveplay" },
+    { Name: "Monsters", Text: "Monsters" },
+    { Name: "Hypnosis", Text: "Hypnosis" },
+]>>
+
+<<set $Kinks to {
+    Adults: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Anal: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Bondage: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Butt: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Chastity: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Diapers: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Edging: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Exhibitionism: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Feet: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    GentleSex: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Hands: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Humiliated: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Humiliation: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Incest: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Kids: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Mouths: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Penis: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Preteens: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    RoughtSex: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Somnophilia: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Spankee: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Spanker: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Teens: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Voyeurism: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Watersports: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Wedgiee: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Wedgier: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Tickling: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Massaging: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Noncon: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Petplay: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Slaveplay: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Monsters: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    },
+    Hypnosis: {
+        Rank: 0,
+        KP: 0,
+        TotalKP: 0,
+        MaxKP: 50,
+    }
+}>>
+
+/* Body Sensitivity */
+<<set $PlayerBSValues to [
+    { Value: 0.5, Text: "Low" },
+    { Value: 1, Text: "Average" },
+    { Value: 2, Text: "High" },
+    { Value: 4, Text: "Extreme" },
+]>>
+<<set $PlayerBSOptions to [
+    { Name: "Armpits", Text: "Armpits" },
+    { Name: "Sides", Text: "Sides" },
+    { Name: "Butt", Text: "Butt" },
+    { Name: "Butthole", Text: "Butthole" },
+    { Name: "Feet", Text: "Feet" },
+    { Name: "Mouth", Text: "Mouth" },
+    { Name: "Nipples", Text: "Nipples" },
+    { Name: "Balls", Text: "Balls" },
+    { Name: "Shaft", Text: "Shaft" },
+    { Name: "Tip", Text: "Tip" },
+]>>
+
+<<set $HadAccident to 0>>
+
+<<set $Grower to 0>>
+
+<<set $Money to 5>>
+
+/* GRADES */
+<<set $MathGrade to 75>>
+<<set $HistoryGrade to 75>>
+<<set $ScienceGrade to 75>>
+<<set $EnglishGrade to 75>>
+/* PUNISHMENT */
+<<set $Detention to 0>>
+<<set $MissedClass to 0>>
+<<set $Punishment to 0>>
+<<set $PunishmentReason to []>>
+<<set $Notifications to []>>
+
+/* SCHOOL */
+<<set $MathClass to 0>>
+<<set $HistoryClass to 0>>
+<<set $ElectiveClass to 0>>
+<<set $LunchClass to 0>>
+<<set $ScienceClass to 0>>
+<<set $EnglishClass to 0>>
+<<set $GymClass to 0>>
+<<set $DramaClass to 0>>
+<<set $Homework to 0>>
+<<set $SchoolBreakfast to 0>>
+
+<<set $AD to {
+	SkinColor: "None",
+    Build: "None",
+    LeftEyeColor: "None",
+    RightEyeColor: "None",
+    HairStyle: "None",
+    HairColor: "None",
+    Freckles: 0,
+    PenisSize: "None",
+    PenisSizeErect: "None",
+    PenisStyle: "None",
+    PubicHair: "None",
+    Arms: "Normal",
+    Eyes: "Normal",
+    Mouth: "Happy",
+    Blush: 0,
+}>>
+
+<<set $ADHead to {
+	Type: "None",
+}>>
+
+<<set $ADFace to {
+	Type: "None",
+}>>
+
+<<set $ADMouth to {
+	Type: "None",
+}>>
+
+<<set $ADNeck to {
+	Type: "None",
+}>>
+
+<<set $ADUnder to {
+	Type: "None",
+}>>
+
+<<set $ADTop to {
+	Type: "None",
+}>>
+
+<<set $ADOver to {
+	Type: "None",
+}>>
+
+<<set $ADOverAcc to {
+	Type: "None",
+}>>
+
+
+<<set $ADOuter to {
+	Type: "None",
+}>>
+
+<<set $ADBack to {
+	Type: "None",
+}>>
+
+<<set $ADHands to {
+	Type: "None",
+}>>
+
+<<set $ADBottoms to {
+	Type: "None",
+}>>
+
+<<set $ADWaist to {
+	Type: "None",
+}>>
+
+<<set $ADUndies to {
+	Type: "None",
+}>>
+
+<<set $ADSocks to {
+	Type: "None",
+}>>
+
+<<set $ADShoes to {
+	Type: "None",
+}>>
+
+/* ATTRACTIONS */
+<<set $Attractions to {
+	Dad: 0,
+    Noah: 0,
+    Gabe: 0,
+    Lucas: 0,
+    Ben: 0,
+    Michael: 0,
+    Carter: 0,
+    Jackson: 0,
+    Xavier: 0,
+    Thomas: 0,
+    Felix: 0,
+}>>
+
+/* ATTRIBUTES */
+<<set $Adopted to 0>>
+<<set $Bedwetter to 0>>
+<<set $BedWettingPref to 1>>
+<<set $SexKnowledge to 1>>
+<<set $CanCum to 1>>
+
+<<set $FearDark to 0>>
+<<set $FearBugs to 0>>
+<<set $FearThunder to 0>>
+<<set $FearOcean to 0>>
+<<set $FearMonsters to 0>>
+<<set $FearHeights to 0>>
+<<set $FearAnimals to 0>>
+<<set $FearDoctor to 0>>
+<<set $FearDogs to 0>>
+
+<<set $ExhibitionArousal to 0>>
+<<set $VoyeurArousal to 0>>
+<<set $HumiliatedArousal to 0>>
+<<set $HumiliatingArousal to 0>>
+<<set $ReceiveWedgieArousal to 0>>
+<<set $GiveWedgieArousal to 0>>
+<<set $SpankedArousal to 0>>
+<<set $SpankingArousal to 0>>
+<<set $GentleArousal to 0>>
+<<set $RoughArousal to 0>>
+<<set $ButtArousal to 0>>
+<<set $PenisArousal to 0>>
+<<set $WettingArousal to 0>>
+
+<<set $StarterUndies to 1>>
+<<set $StarterTops to 1>>
+<<set $StarterBottoms to 1>>
+<<set $StarterOuter to 1>>
+<<set $StarterSocks to 1>>
+<<set $StarterShoes to 1>>
+
+<<set $SwimStamina to 50>>
+<<set $SwimStaminaMax to 50>>
+
+<<set $Wetness to 0>>
+
+<<set $PlayerInventoryItems to []>>
+<<set $PlayerInventoryConsumables to new ConsumableInventory()>>
+
+<<set $GameMode to 0>>
+
+<<set $CanCum to 1>>
+
+<<set $SpankMarks to 0>>
+
+/* Moles */
+<<set $PlayerMoles to {
+    CheekLeft: 0,
+    CheekRight: 0,
+    LipLeft: 0,
+    LipRight: 0,
+    PubicLeft: 0,
+    PubicRight: 0,
+}>>
+
+<<set $ADMoles to {
+    CheekLeft: 0,
+    CheekRight: 0,
+    LipLeft: 0,
+    LipRight: 0,
+    PubicLeft: 0,
+    PubicRight: 0,
+}>>
+
+<<set $PlayerNoseHeavyFreckles to 0>>
+<<set $PlayerNoseLightFreckles to 0>>
+<<set $PlayerLeftSmallFreckles to 0>>
+<<set $PlayerRightSmallFreckles to 0>>
+
+<<set $PlayerBedroom to {
+    WallColor: "blue",
+    WallStyle: "Paint",
+    FloorColor: "grey",
+    FloorStyle: "Carpet",
+    BedSpread: "blue",
+    DoorColor: "white",
+    Curtains: "None",
+    Rug: "None",
+    Shelves: [],
+    Posters: [],
+    Clean: 0,
+}>>
+
+<<set $Toybox to [
+    "Toy Cars",
+    "Playing Cards",
+    "Marbles",
+]>>
+
+<<set $Bookshelf to [
+    "Beginner's Math Textbook",
+    "Master of the Amulet: The Guildship",
+    "The Hungry Worm",
+]>>
+<<set $ComicShelf to [
+    "Owlman: Knight of Revengeance",
+    "Ultraman: Boy of Tomorrow",
+    "Arachnikid vs The Sucky Six",
+]>>
+
+<<set $PBedroom to {
+    Walls: "Blue",
+    Floor: "Grey",
+    Lights: 1,
+    Curtains: "Lime",
+    LeftWall: "Shelf",
+    LeftShelfItem: "None",
+    RightWall: "Shelf",
+    RightShelfItem: "None",
+    DeskLamp: "Green",
+    DeskChair: "Green",
+    BedsideLamp: "Lime",
+    Toybox: "Letters",
+    Bed: "Blue",
+    BedMessy: 0,
+    Messy: 0,
+}>>

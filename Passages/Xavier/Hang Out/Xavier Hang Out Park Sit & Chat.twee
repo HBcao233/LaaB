@@ -1,0 +1,112 @@
+:: Xavier Hang Out Park Sit & Chat [nobr]
+
+/* Intro */
+<<set $Minutes += 10>>
+As you pass by the bench, you ask <span style="color:DarkTurquoise">Xavier</span> if it would be alright if you both sit down for a minute. Just relax and chat for a bit. <span style="Color: LightSteelBlue">“Oh? Of course.”</span> He responds, <span style="Color: LightSteelBlue">“Anything in particular you want to talk about? I am an open book.”</span> He says with a smirk that you can’t be sure if you trust or not. <br>
+
+<<set _ad to [
+    {
+        Name: "Xavier",
+        State: {
+            Mouth: "Smirk",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+What do you want to ask him about?<br>
+<br>
+
+<div id="choice">
+	<<link "School<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+You ask how school is going and he sighs. <span style="Color: LightSteelBlue">“Rather dull topic, but I guess it is small talk. School is going wonderfully, how it is going for you?”</span> His response sounds rehearsed like he is reading from a script. He makes it clear that this is a boring topic for him, but you still try to keep the conversation going as you chat more about your classes. <br>
+            <<socialChange "Xavier" 1>>
+            <span style="color:green">+Xavier Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Xavier Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Xavier Hang Out Park]]
+        <<else>>
+You ask <span style="color:DarkTurquoise">Xavier</span> if he’s ever gotten detention and he laughs, <span style="Color: LightSteelBlue">“Very rarely, my friend. That stuff is better to avoid unless you are a fan of wasting time. Or, if you enjoy being on the receiving end of Randolph’s hand or Kohler’s humiliation.”</span> He smirks, <span style="Color: LightSteelBlue">“But if you want that, you should just ask me.”</span> <br>
+            <<socialChange "Xavier" 1>>
+            <span style="color:green">+Xavier Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Xavier Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Xavier Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+    <<if $CompletedQuests.includes("Xavier: Big Brother")>>
+        <<link "Home life<br>">>
+        <<replace"#choice">>
+            <<set _random to random(1, 2)>>
+            <<if _random == 1>>
+You ask how his younger brother is doing and he laughs. <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Levi</span>? Oh, he is doing fine. I mostly ignore the lad since I’m far to busy to deal with his nonsense. Of course, I make time when he needs discipline. Want to hear how I punished him the other day?”</span> <span style="color:DarkTurquoise">Xavier</span> says with a devious smile, <span style="Color: Pink">not at all shy about what he does to his younger brother.</span> For one reason or another, you nod. <span style="Color: LightSteelBlue">“Well, we got an email from his teacher about him misbehaving in class. Really bringing down the family name doing that, especially when he throws around said name to try and get out of trouble.”</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“So, I took away his bedroom privileges for a week. He slept, changed, and did his school work in the foyer. He also had to surrender all his clothing when he got home until he gave me his homework. I graded it myself, naturally, and didn’t accept anything under 100%.”</span> <span style="color:DarkTurquoise">Xavier</span> laughs as if this is a story of him teasing his younger brother by taking a toy away or playfully poking him,  <span style="Color: Pink">despite it probably being very embarrassing and demeaning to the young lad.</span> <span style="Color: LightSteelBlue">“The help seeing him was funny enough, since he’s such a self-conscious boy. But I had completely forgotten I was having friends over one of the days. He cried and begged to at least be given some underwear, especially once my friends started making fun of him. But it’s not their fault, it was such a funny and pathetic sight. Plus, if he just got the answers right the first time, he wouldn’t have had to suffer that.”</span> <br>
+<br>
+ <span style="Color: Pink"> <span style="color:DarkTurquoise">Xavier</span> laughs as you start to feel a little bad for his younger brother, despite how much of a brat he seemed. You also can’t tell what <span style="color:DarkTurquoise">Xavier</span> enjoys more, retelling the story of his little brother’s humiliation or watching your reaction to his story.</span> <br>
+                <<socialChange "Xavier" 1>>
+                <span style="color:green">+Xavier Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Xavier Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Xavier Hang Out Park]]
+            <<else>>
+You ask <span style="color:DarkTurquoise">Xavier</span> how things have been at home and he laughs. <span style="Color: LightSteelBlue">“Quite interesting, I’d say. <span style="color:DarkTurquoise">Levi</span> seems to love talking back, despite knowing what he’ll get in return. We also had to scold one of our cooks recently, messed up a very important meal.”</span> <span style="color:DarkTurquoise">Xavier</span> says these things so casually, despite his words causing a chill to run up your spine. He sees your reaction and laughs, <span style="Color: LightSteelBlue">“Come now, I’m not evil. It was a simple scolding, nothing more. Well, for the cook that is.”</span> <br>
+                <<socialChange "Xavier" 1>>
+                <span style="color:green">+Xavier Fun</span><br>
+                <<set $HangOutNeed.Fun += 5>>
+                <span style="color:green">+Xavier Energy</span><br>
+                <<set $HangOutNeed.Energy += 5>>
+                <<needChange "Fun" 3>>
+                <br>
+                [[Continue|Xavier Hang Out Park]]
+            <</if>>
+        <</replace>>
+        <</link>>
+    <</if>>
+	<<link "Hobbies<br>">>
+    <<replace"#choice">>
+        <<set _random to random(1, 2)>>
+        <<if _random == 1>>
+You ask <span style="color:DarkTurquoise">Xavier</span> what sorts of hobbies he’s been into recently and he ponders for a moment. <span style="Color: LightSteelBlue">“Reading, I suppose. May sound a bit boring, I know, but you’d be surprised what sort of wonders you can find between the pages. Game of Kings has been a favorite of mine. You should really read it, such an in-depth world and so much intrigue.”</span> You notice <span style="color:DarkTurquoise">Xavier</span>’s normal tone slip slightly, as if he is speaking genuinely for once, <span style="Color: LightSteelBlue">“Plus, gives me all sorts of ideas.”</span> He chuckles. <br>
+            <<socialChange "Xavier" 1>>
+            <span style="color:green">+Xavier Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Xavier Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Xavier Hang Out Park]]
+        <<else>>
+You ask <span style="color:DarkTurquoise">Xavier</span> what sorts of things he’s been doing recently. <span style="Color: LightSteelBlue">“This and that.”</span> He waves his hand about nonchalantly. <span style="Color: LightSteelBlue">“I spend most of my free time socializing, in a sense, so don’t have too much time for hobbies. Though I have been reading some fascinating stories online recently. Nothing you’d have heard about, I’m sure.”</span> <br>
+            <<socialChange "Xavier" 1>>
+            <span style="color:green">+Xavier Fun</span><br>
+            <<set $HangOutNeed.Fun += 5>>
+            <span style="color:green">+Xavier Energy</span><br>
+            <<set $HangOutNeed.Energy += 5>>
+            <<needChange "Fun" 3>>
+            <br>
+            [[Continue|Xavier Hang Out Park]]
+        <</if>>
+    <</replace>>
+    <</link>>
+</div>

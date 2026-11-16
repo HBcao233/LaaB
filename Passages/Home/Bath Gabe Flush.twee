@@ -1,0 +1,151 @@
+:: Bath Gabe Flush [nobr]
+
+/* Opening */
+You are standing in the shower, bathing and cleaning yourself as normal. You are so zoned out and distracted by the idle sound of the water hitting the tub, <span style="color:lightcoral">that you don’t hear the tiny squeak of the bathroom door opening or the near-silent tiptoes of someone sneaking over.</span> <br>
+<br>
+<span style="color:lightcoral">The sound of the flushing toilet is immediately drowned out by your own squeals as the water becomes extremely hot!</span> <span style="color:DarkTurquoise">Gabe</span>’s laughter fills the small room as you panickily leap out of the shower to avoid the burning spray of water! <br>
+
+<div id=Choice>
+<br>
+	<<link "Leap out of the shower<br>">>
+	<<replace"#Choice">>
+    <<set _random1 to random(1, 2)>>
+
+    /* No Chase */
+    <<if _random1 == 1>>
+
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Eyes: "Tired",
+				Mouth: "Smirk",
+				Outfit: "Everyday",
+				Hard: 1,
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Blush: 3,
+				Mouth: "Sad",
+				Outfit: "Naked",
+			},
+			ShowZoom: true,
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:lightcoral">You land face first on the cold floor, naked and wet, as <span style="color:DarkTurquoise">Gabe</span> stands over you laughing.</span> <span style="color:LightSteelBlue">“You sound like such a baby when you scream!”</span> <span style="color:pink">He laughs, mimicking your cries as you roll over and cover yourself with your hands.</span> <span style="color:LightSteelBlue">“It’s not even that hot, quit being such a baby.”</span> He sticks his hand in the stream and flicks some warm water in your face. <br>
+<br>
+Finally, he leaves and you are able to return to your shower in peace once the water has cooled down. Still, you keep your eyes trained on the door just in case he tries to give you another warm surprise. <br>
+	<<socialChange "Gabe" -3>>
+	<<needChange "Hygiene" 100>>
+	<<addClothing "PC" "Bottoms" "Towel" "White">>
+	<<set $Player.Exposed to "Towel">>
+    <br>
+	[[Continue|PH Bathroom]]
+    
+    /* Chase */
+    <<else>>
+        <<set _random2 to random(1, 3)>>
+
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Eyes: "Mad",
+				Mouth: "Sad",
+				Outfit: "Everyday",
+				Hard: 1,
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Blush: 3,
+				Mouth: "Sad",
+				Outfit: "Naked",
+			},
+			ShowZoom: true,
+		},
+	]>>
+	<<ad _ad>>
+
+<span style="color:lightcoral">Your wet, naked body collides with <span style="color:DarkTurquoise">Gabe</span> as you jump out of the shower, soaking his clothes.</span> <span style="color:LightSteelBlue">“You little shit!”</span> <span style="color:lightcoral">He yells out in frustration as he stands there, arms extended as he looks down at his now-soaked frontside. It would have been a funny sight, had <span style="color:DarkTurquoise">Gabe</span>’s angry expression not activated your flight response as you run out of the bathroom chased by <span style="color:DarkTurquoise">Gabe</span> who yelled that he was</span> <span style="color:LightSteelBlue">“going to make you pay for that!”</span> <br>
+<br>
+
+    /* Chase to Dad */
+    <<if _random2 != 3>>
+<span style="color:pink">Being chased through your house butt naked was embarrassing, but not as embarrassing and painful as whatever <span style="color:DarkTurquoise">Gabe</span> will do to you if he catches you. You sprint through the living room, leaping over the couch as small drips of water outline your trail. You are just barely able to avoid <span style="color:DarkTurquoise">Gabe</span>’s arms and slide between his legs as you get past him and run back into the hallway, aiming for the only place that would provide protection.</span> <br>
+<br>
+You burst into <span style="color:DarkTurquoise">Your Father</span>’s room, who gives you a very confused look as you dash behind him for protection right as <span style="color:DarkTurquoise">Gabe</span> enters the room as well, still steaming with anger. <br>
+
+<<set _ad to [
+	{
+		Name: "Player",
+		ShowZoom: true,
+		State: {
+			Mouth: "Frown",
+			Blush: 1,
+			Arms: "Hide",
+			Outfit: "Naked",
+		},
+	},
+	{
+		Name: "Dad",
+		State: {
+			Mouth: "Frown",
+			Brows: "Suspicious",
+		},
+	},
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Sad",
+			Outfit: "Everyday",
+			Hard: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Gabe</span>.”</span> <span style="color:DarkTurquoise">Your Father</span> sighs, <span style="color:LightSteelBlue">“Why are you chasing your naked brother through the house?”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“That little brat tackled me!”</span> <span style="color:DarkTurquoise">Gabe</span> motioned to his soaked clothes. You retort that <span style="color:DarkTurquoise">Gabe</span> flushed the toilet while you were in the shower and tried to burn you alive! You both begin arguing back and forth until <span style="color:DarkTurquoise">Your Father</span> yells out. <br>
+<br>
+<span style="color:LightSteelBlue">“Enough!”</span> You both fall silent. <span style="color:LightSteelBlue">“All you both are doing is getting water everywhere and giving me a headache. <span style="color:DarkTurquoise">Gabe</span>. Leave your brother alone and clean up all this water.”</span> <span style="color:lightgreen"><span style="color:DarkTurquoise">Gabe</span> tries to complain, but <span style="color:DarkTurquoise">Your Father</span> quickly shuts him up. Defeated, <span style="color:DarkTurquoise">Gabe</span> scoffs off.</span> You are sticking your tongue out at him as <span style="color:DarkTurquoise">Your Father</span> turns to you. <br>
+<br>
+<span style="color:LightSteelBlue">“And you! Go dry off and put some pants on.”</span> <span style="color:pink">You blush as you remember that you are completely naked,</span> <span style="color:LightSteelBlue">“And stop picking fights with your brother.”</span> You try to protest that he started it, but he isn’t having any of your excuses either and you run off back to the bathroom. <br>
+	<<socialChange "Gabe" -3>>
+	<<needChange "Hygiene" 100>>
+	<<addClothing "PC" "Bottoms" "Towel" "White">>
+	<<set $Player.Exposed to "Towel">>
+    <br>
+	[[Continue|PH Bathroom]]
+
+    /* Chased and Caught */
+    <<else>>
+<span style="color:pink">Being chased through your house butt naked was embarrassing, but not as embarrassing and painful as whatever <span style="color:DarkTurquoise">Gabe</span> will do to you if he catches you. You sprint through the living room, leaping over the couch as small drips of water outline your trail.</span> <span style="color:lightcoral">But now you were trapped in the living room, using one hand to cover your boy bits as the other was outstretched in an attempt to keep <span style="color:DarkTurquoise">Gabe</span> away, as if that would do anything.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“You wanna mess around in the shower and get me all wet?”</span> <span style="color:lightcoral"><span style="color:DarkTurquoise">Gabe</span> smirked, realizing he had you cornered.</span> You protest, claiming that he wouldn’t have gotten wet if he didn’t flush the toilet while you were showering. <span style="color:LightSteelBlue">“Maybe if you weren’t in there all day, other people wouldn’t have to bust in to use the bathroom.”</span> <span style="color:DarkTurquoise">Gabe</span> was making excuses, and you knew it, but you also knew that there was little chance he’d listen to reason. <br>
+<br>
+<span style="color:LightSteelBlue">“Unless you’re a little baby, like <span style="color:DarkTurquoise">Noah</span>, the bathtub isn’t for playing in.”</span> <span style="color:lightcoral"><span style="color:DarkTurquoise">Gabe</span> smirked and you felt a surge of dread as you realized he had a devious idea. Your back was to a corner with no escape as he took a step closer.</span> <span style="color:LightSteelBlue">“If you wanna play around, why don’t I put you somewhere it’s normal for little boys to play? Outside.”</span> <span style="color:lightcoral">Your eyes widen and you dash for an opening, but are grabbed by <span style="color:DarkTurquoise">Gabe</span> and lifted into the air!</span> <br>
+<br>
+<span style="color:lightcoral">You try your best to break free but are no match for his strength. You beg and plead to be released, apologizing and bending to his will in a desperate attempt to save yourself the humiliation, but <span style="color:DarkTurquoise">Gabe</span> was set on punishing you in his own embarrassing way.</span> <br>
+<br>
+<span style="color:lightcoral">Kicking open the front door, <span style="color:DarkTurquoise">Gabe</span> carried you outside naked and vulnerable as you cried and kicked in desperation. But he wasn’t satisfied with just depositing you outside, no, instead, he walked to the sidewalk, opened the garbage can, and tossed you in there headfirst leaving your bare butt dangling in clear view!</span> <br>
+<br>
+<span style="color:lightcoral">You hear <span style="color:DarkTurquoise">Gabe</span> laugh all the way back inside as you thrash about to free yourself. Eventually, you manage to tip the trashcan over, sending your naked body tumbling into a nearby bush, the only piece of good luck you had in this whole exchange. You pop your head out of the bush as you come to grips with your situation, you are now outside completely naked!</span> <br>
+	<<socialChange "Gabe" -5>>
+	<<needChange "Hygiene" 100>>
+	<<set $Player.Exposed to "Naked">>
+    <br>
+	[[Continue|PH Frontyard]]
+
+    <</if>>
+    <</if>>
+    <</replace>>
+    <</link>>
+</div>

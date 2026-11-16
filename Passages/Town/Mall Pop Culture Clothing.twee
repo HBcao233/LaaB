@@ -1,0 +1,31 @@
+:: Mall Pop Culture Clothing [nobr]
+<<set $Location to {
+    Name: "Pop Culture Clothing",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 1,
+    Environment: "Mall",
+}>>
+<span style="color:Azure"><big><strong>--Pop Culture Clothing Store--</strong></big></span><br>
+You stand in the impressive Pop Culture Clothing Store in the Mall. Despite its name, it sells more than clothing and has all sorts of things from nerd culture. Though it is laid out like a proper clothing store, with changing rooms and racks full of clothing.<br>
+<br> 
+
+				/* NPC SEEN */
+<<include "NPC Inspect">>
+<br>
+
+<span style="color:Azure"><strong>-Categories-</strong></span><br>
+[[T-Shirts|Mall Pop Culture Clothing][$ClothingStore to "T-Shirts"]]<br>
+<<if $$CostumeStore == "Contacts">>
+	<<include"Pop Culture Store T-Shirts">>
+<<else>>
+	<<include"Pop Culture Store T-Shirts">>
+<</if>>
+
+
+
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+
+<img src="Images\World Map\Individual Icons\Mall.png">
+	[[Mall (0:10)|Mall][$Minutes += 10]]<br>

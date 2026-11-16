@@ -1,0 +1,85 @@
+:: OC Kade Arcade Hide [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+You find a motorcycle racing machine in the style of those criminal, open-world vehicle stealing games. It involves an epic police chase where you slide between buildings, jump over obstacles, and have to aim a light gun at the screen in front of you in order to clear the way. It’s demo screen describes it as the <span style="Color: LightSteelBlue">“best modern criminal experience you can have without doing actual crime”</span>. <span style="Color: LightGreen">Weird tagline, but you decide to give it a shot and are met with a barrage of incredibly fun overstimulation that leaves your brain feeling like it’s coming out of your ears in the best way!</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+You have just finished a hard level when you spy a group of two men in dark suits walk in, asking the worker in a hushed tone if a middle school boy is here. <span style="Color: Yellow">You instantly start to feel a little nervous, wondering if this criminal simulation actually involved real-life crimes,</span> somehow, but realize they are talking about someone else once they start to describe him. <br>
+<br>
+<span style="Color: LightSteelBlue">“He’s about this tall, black hair, glasses.”</span> The man describes, <span style="Color: LightSteelBlue">“I believe he is wearing a blue sweatshirt or hoodie, a bit big on him. His name is <span style="color:DarkTurquoise">Kade</span>. Is he here?”</span> You pause your game as you hear the name: <span style="color:DarkTurquoise">Kade</span>, your classmate. <span style="Color: Yellow">Why on earth are these secret agent looking dudes looking for him? You hope he isn’t in some sort of trouble or danger and step off the game to listen in closer.</span> <br>
+<br>
+<span style="Color: LightSteelBlue">“I don’t know man, I’m not really supposed to say who we have. It’s kinda creepy for you to be asking.”</span> The teenage worker says, looking at the men suspiciously. <span style="Color: LightSteelBlue">“How do I know you aren’t kidnappers or something?”</span> <span style="Color: Yellow">The men begin to argue with the teenager as you spy a suspicious blur of dark blue jump behind a nearby trashcan, hiding and peeking out towards the men curiously.</span> <span style="color:DarkTurquoise">Kade</span>! <br>
+
+    <<set _ad to [
+        {
+            Name: "OC Kade",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Frown",
+                Eyes: "Mad",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Frown",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<div id="choice1">
+    <<link "Go up to him<br>">>
+    <<replace"#choice1">>
+        Quietly, as to not reveal his hiding place, you walk up to <span style="color:DarkTurquoise">Kade</span> and ask him what he’s doing. He jumps at your sudden appearance and lets out a surprised scream. The men look over, so you pretend to be throwing stuff away and give them a sly wave to not draw attention. They give you a weird look before turning to argue with the teen. <br>
+        <br>
+        <span style="Color: LightSteelBlue">“Shoot, they didn’t see me, did they?”</span> <span style="color:DarkTurquoise">Kade</span> asks as he peeks back out. You assure him they didn’t and repeat your question. Why is he hiding behind a trashcan? <span style="Color: LightSteelBlue">“Those guys are my minders. Basically, dudes my dad pays to keep an eye on me. They never let me have any fun. Supposed to take me home, but I managed to ditch them.”</span> You laugh, you had no idea <span style="color:DarkTurquoise">Kade</span> was such a little rascal… or that he needed minders? <span style="Color: LightSteelBlue">“I don’t need them. But that doesn’t stop them from trying to follow me everywhere.”</span> He sighs. <br>
+        <br>
+        The men walk over, glancing around the arcade. One looks towards you, but you expertly manage to hide <span style="color:DarkTurquoise">Kade</span> by pretending to be having a pizza and soda induced bout of sickness into the trashcan, causing the guy to look away in disgust. They are then quickly shoo’d out and called creeps for barraging into an arcade to look for a little boy. You and <span style="color:DarkTurquoise">Kade</span> can’t help but snicker as they are scolded and kicked out. Once they are gone, <span style="color:DarkTurquoise">Kade</span> comes out and once again sighs, but this time in relief. <br>
+
+            <<set _ad to [
+                {
+                    Name: "OC Kade",
+                    State: {
+                        Outfit: "Everyday",
+                        Mouth: "Happy",
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Happy",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="Color: LightSteelBlue">“Thanks for the save. I’ll probably get an ear-full for ditching them later, but until then…”</span> He gives you a smile, <span style="Color: LightSteelBlue">“Wanna play some games? On me?”</span> <span style="Color: LightGreen">You nod and join <span style="color:DarkTurquoise">Kade</span> in a large round of fun arcade games, made all the better since you don’t have to pay for any of them. <span style="color:DarkTurquoise">Kade</span> is pretty fun and a lot less shy outside of school.</span> <br>
+        <<socialChange "Kade" 3 1>>
+        <<needChange "Fun" 25>>
+        <br>
+        [[Continue|Arcade]]
+    <</replace>>
+    <</link>>
+    <<link "Leave him to hide<br>">>
+    <<replace"#choice1">>
+        Now that you know <span style="color:DarkTurquoise">Kade</span> is alright, you determine that this isn’t your place to get involved and return to your game before someone steals it and ruins your high score. The men eventually decide it isn’t worth it and return to look elsewhere for the boy, who sighs in relief once they are gone. <span style="Color: Yellow">Seems he didn’t want those guys to find him.</span> <br>
+        <<set $Money -= 1>>
+        <span style="color:Red">-$1</span><br>
+        <<needChange "Fun" 20>>
+        <br>
+        [[Continue|Arcade]]
+    <</replace>>
+    <</link>>
+</div>

@@ -1,0 +1,99 @@
+:: School Locker Room [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "School Locker Room",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 1,
+    Public: 1,
+    Environment: "School Locker Room",
+}>>
+
+
+	/* GYM TEACHER INTRO */
+<<if $GymIntro != 1 and ($Time.between(13, 50 , 14, 30))>>
+	<<include"Gym Introduction">>
+	<<set $GymIntro to 1>>
+	<<include"Attend Gym Finish">>
+<<else>>
+
+	/* TYPE OF GYM CLASS */
+<<if $Time.Day == "Tuesday" or $Time.Day == "Thursday">>
+	<<set $GymClassType to "Swimming">>
+<<else>>
+	<<set $GymClassType to "Gym">>
+<</if>>
+
+	/* LOCATION SETTING AND ROOM DESCRIPTION */
+
+<span style="color:Azure"><big><strong>--Locker Room--</strong></big></span><br>
+You stand in the school’s locker room. It is full of numerous small lockers where students keep their clothes. None of them have locks, however, since the school collects and washes all the gym clothes every few days. There is also a collection of curtained shower stalls nearby.<br>
+<br>
+	/* NPCs DO NOT SHOWER ON FIRST DAY */
+<<if $GymNoShower != 1>>
+				/* NPC SEEN */
+	<<include "NPC Inspect">>
+	<br>
+<</if>>
+<br>
+
+<br>
+<span style="color:Azure"><strong>-Changing-</strong></span><br>
+
+	/* LINKS TO CHANGING INTO GYM CLOTHES */
+<<if $Time.between(13, 50, 14, 15) and $GymClass == 0>>
+	<<if $GymClassType == "Swimming" && ($PlayerBottoms.Type != "Trunks" or $PlayerTop.Type != "None")>>
+		[[Change into Swimming Trunks|School Gym Changing]]<br>
+	<<elseif $GymClassType == "Gym" and $PlayerBottoms.Type != "Gym Shorts">>
+		[[Change into Gym Clothes|School Gym Changing]]<br>
+	<</if>>
+<</if>>
+
+
+/* SHOWERING */
+<<if $GymNoShower != 1>>
+	<<if $GymClass == 2 and $ShoweredGym != 1>>
+		[[Shower|School Gym Shower]]<br>
+	<</if>>
+<</if>>
+
+/* Failsafe to change back after Gym Class */
+<<if $GymClass == 2 && $SaveBottoms != null && $ShoweredGym == 1>>
+	<<link"Get Dressed">>
+	
+	<</link>><br>
+<</if>>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $GymIntro == 1 >>
+	<<if $Time.between(6, 45, 7, 40) or $Time.between(11, 0, 11, 40) or $Time.between(15, 0, 16, 0)>>
+		[[Ask Kohler for help with Athletics (0:15)|Kohler Tutor]] <span style="color:green">+Athletics, +Kohler</span><br>
+	<</if>>
+<</if>>
+
+<<if $GymClass == 0>>
+	<<if $GymClassType == "Swimming" && ($PlayerBottoms.Type != "Trunks" or $PlayerTop.Type != "None")>>
+		<span style="color:LightCoral">You are not dressed for Swimming Class.</span><br>
+	<<elseif $GymClassType == "Gym" and $PlayerBottoms.Type != "Gym Shorts">>
+		<span style="color:LightCoral">You are not dressed for Gym Class.</span><br>
+	<<else>>
+		/* ATTEND CLASS NORMALLY */
+		<<if $Time.between(13, 50, 14, 15)>>
+			[[Attend Class|Attend Gym]]<br>
+		/* LATE */
+		<<elseif $Time.before(14,15)>>
+			[[Attend Class Late|Attend Gym][$Late to 1]]<br>
+		<</if>>
+	<</if>>
+<</if>>
+
+<<if $PlayerGymWearing == "Gym" or $PlayerGymWearing == "Swimming">>
+	<span style="color:LightCoral">Coach won't let you leave in your Gym Clothes.</span><br>
+<<elseif $ShoweredGym != 1 and $GymClass == 2>>
+	<span style="color:LightCoral">Coach won't let you leave without showering.</span><br>
+<<else>>
+	[[Leave|School East Hallway][$Minutes += 1]]<br>
+<</if>>
+
+<</if>>

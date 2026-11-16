@@ -1,0 +1,124 @@
+:: GABE Eat With [nobr]
+
+/* BREAKFAST */
+<<if $EatWith == "Breakfast">>
+	/* If Player is Wet */
+	<<if $Bedwetter == 1 and $PlayerUndies.Tags.includes("Diaper") and $FullDiaper == 1 and $PlayerBottoms.Type == "None">>
+/* Opening */		
+
+<<set _ad to [
+	{
+		Name: "Gabe",
+		State: {
+			Eyes: "Mad",
+			Mouth: "Smirk",
+			Outfit: "Pajama",
+		},
+	},
+	{
+		Name: "Player",
+		State: {
+			Blush: 1,
+		},
+	},
+]>>
+<<ad _ad>>
+
+	You take a seat next to <span style="color:DarkTurquoise">Gabe</span> to eat breakfast with him. He looks you over casually and then resumes eating. After a few bites, he makes a comment.<br>
+<br>
+	<span style="color:LightSteelBlue">“Don't know how you can stay in those things.”</span> <span style="color:DarkTurquoise">Gabe</span> scoffs, tilting his head in the direction of your chair. <span style="color:LightSteelBlue">“Guess you're just used to it now, huh?”</span> He remarks before going back to look at his phone.<br>
+<br>
+	<span style="color:pink">Feeling a little self-conscious, you squeeze your legs together in an attempt to hide your $PlayerUndies.Name from sight.</span> A sudden kick from under the table to your shin causes you to jerk in surprise. Opening your legs again in time for the click of <span style="color:DarkTurquoise">Gabe</span>'s phone camera.<br>
+	<br>
+	<span style="color:LightSteelBlue">”Just another for the scrapbook. Someday baby will be out of diapers. Maybe... Any day now... I believe in you.”</span> <span style="color:Lightcoral"><span style="color:DarkTurquoise">Gabe</span> taunts as he shows you the picture of you scowling with your $PlayerUndies.Type on display.</span> <span style="color:LightSteelBlue">”Relax. I won't show anybody.”</span> He reassures you. <span style="color:LightSteelBlue">”Though there's plenty of freaks out there into that sort of thing.”</span> You're not sure if <span style="color:DarkTurquoise">Gabe</span> is serious about that. You study his face hoping he's just kidding. But he's too absorbed in scrolling through his phone and eating his food to answer you.<br>
+	<<socialChange "Gabe" 1>>
+	<br>
+	<<include"Breakfast">>
+
+	/* If Player is NOT Wet */
+	<<elseif $Bedwetter == 1 and $PlayerUndies.Tags.includes("Diaper") and $FullDiaper != 1 and $PlayerBottoms.Type == "None">>
+/* Opening */		
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Eyes: "Tired",
+				Mouth: "Smirk",
+				Outfit: "Pajama",
+			},
+		},
+		{
+			Name: "Player",
+			State: {
+				Blush: 1,
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	You take a seat next to <span style="color:DarkTurquoise">Gabe</span> to eat breakfast with him. He looks you over casually and then resumes eating. After a few bites, he makes a comment.<br>
+<br>
+	<span style="color:LightSteelBlue">“Dry this morning?”</span> <span style="color:DarkTurquoise">Gabe</span> comments with the slightest hint of a smile. <span style="color:LightSteelBlue">“You didn't just change into a clean one, did you?”</span> <span style="color:pink">He teases in his big brother voice before going back to his phone.</span><br>
+<br>
+	Feeling a little self-conscious you squeeze your legs together in an attempt to hide your $PlayerUndies.Name from sight. But you soon relax. <span style="color:DarkTurquoise">Gabe</span> seems uninterested in teasing you this morning.<span style="color:pink"> A hand on your shoulder shakes you back and forth, prompting you to look at your older brother. <span style="color:LightSteelBlue">”Good going, <span style="color:DarkTurquoise">$GabeNickname</span>.”</span> <span style="color:DarkTurquoise">Gabe</span> congratulates you in a rare instance of brotherly affection. You blush as he lets go. Happy now to eat breakfast with your big bro.</span><br>
+	<<socialChange "Gabe" 1>>
+	<br>
+	<<include"Breakfast">>
+
+	<<else>>
+		<<set _ad to [
+			{
+				Name: "Gabe",
+				State: {
+					Mouth: "Happy",
+					Outfit: "Pajama",
+				},
+			},
+		]>>
+		<<ad _ad>>
+
+	You take a seat next to <span style="color:DarkTurquoise">Gabe</span> and eat breakfast with him while chatting. He doesn't add much to the conversation, being very tired, but you enjoy your time together regardless.<br>
+	<<socialChange "Gabe" 1>>
+	<br>
+	<<include"Breakfast">>
+
+	<</if>>
+	
+/* LUNCH */
+<<elseif $EatWith == "Lunch">>
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Everyday",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	You take a seat next to <span style="color:DarkTurquoise">Gabe</span> and eat lunch with him. You attempt to hold a conversation, but he is so busy on his phone you don't think it gets very far.<br>
+	<<socialChange "Gabe" 1>>
+
+	<<include"Lunch">>
+	
+/* DINNER */
+<<elseif $EatWith == "Dinner">>
+	<<set _ad to [
+		{
+			Name: "Gabe",
+			State: {
+				Mouth: "Happy",
+				Outfit: "Everyday",
+			},
+		},
+	]>>
+	<<ad _ad>>
+
+	You take a seat next to <span style="color:DarkTurquoise">Gabe</span> and eat dinner with him. He spends most of his time on his phone, but does respond to the occasional comment.<br>
+	<<socialChange "Gabe" 1>>
+
+	<<include"Dinner">>
+	
+<</if>>
+

@@ -1,0 +1,52 @@
+:: Gym Underwear Sniffing [nobr]
+
+/* Intro */
+As you finish up and turn around, you can’t help but realize how quiet it is. Seems most of the other boys had changed quickly and were already gathering for class. At first, you try to hurry as well as to not be left behind, but then spot something curious. <span style="color:Pink">A nearby locker had been left open just a crack. Clearly done by mistake, you can’t help but spy part of the interior, seeing what appears to be some clothing.</span> <br>
+<br>
+You can’t make out exactly what kind of clothing it is, but some naughty thoughts enter your mind as you glance around the room. There is hardly anyone here, so it wouldn’t be too hard to wander over, acting like the locker is yours, and get a little peek inside. <span style="color:yellow">It may be a little invasion of privacy, but you can’t get the idea out of your head.</span> <br>
+<br>
+
+
+
+<div id="choice">
+/* Snoop into the locker */
+    <<link"Snoop into the locker<br>">>
+    <<replace "#choice">>
+
+        <<set _random to [
+            "Gym Underwear Sniffing Carter",
+            "Gym Underwear Sniffing Felix",
+            "Gym Underwear Sniffing Lucas",
+            "Gym Underwear Sniffing Ben",
+            "Gym Underwear Sniffing Michael",
+            "Gym Underwear Sniffing Briefs Generic",
+            "Gym Underwear Sniffing Pull-Ups Generic",
+        ]>>
+        <<if !$ThomasAbsent>>
+            <<set _random.push("Gym Underwear Sniffing Thomas")>>
+        <</if>>
+        <<set _event to _random.random()>>
+        <<include _event>>
+
+    <</replace>>
+    <</link>>
+
+    <<link "Head to class<br>">>
+    <<replace "#choice">>
+        You decide against it, quickly putting your normal clothes away as you rush out to meet with the rest of your classmates. <br>
+	/* GETTING DRESSED */
+	<<set $ClothSave to "Restore">>
+    <<if $GymClassType == "Gym">>
+		<<storeClothing "Restore" "Undies">>
+	<<else>>
+		<<storeClothing "Restore" "Naked">>
+    <</if>>
+	<<if $SaveUndies != null>>
+		<<set $PlayerUndies to $SaveUndies>>
+	<</if>>
+        <br>
+        [[Continue|School Locker Room]] 
+
+    <</replace>>
+    <</link>>
+</div>

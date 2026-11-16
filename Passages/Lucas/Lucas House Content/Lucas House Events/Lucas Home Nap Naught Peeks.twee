@@ -1,0 +1,222 @@
+:: Lucas Home Nap Naught Peeks [nobr]
+
+	<<set $Minutes += 60>>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+			},	
+		Clothes: {
+			Shoes: $None,
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+			},	
+		Clothes: {
+			Shoes: $None,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+/* Opening */
+While sitting in <span style="color:DarkTurquoise">Lucas</span>' room, you let out a loud yawn. A moment later, <span style="color:DarkTurquoise">Lucas</span> lets one out as well. <span style="color:LightSteelBlue">“Man, those really are contagious.”</span> He laughs, laying back down in his bed. <span style="color:LightSteelBlue">“I miss when schools used to have nap time, those were the glory days.”</span> You both chuckle and you lay down on a beanbag chair in <span style="color:DarkTurquoise">Lucas</span>’ room, suggesting that maybe the two of you should relive said glory days and have yourself some nap time. <br>
+<br>
+
+/* IF LUcas not tired */
+<<if $HangOutNeed.Energy > 500>>
+<span style="color:LightSteelBlue">“I’m not super tired.”</span> <span style="color:DarkTurquoise">Lucas</span> laughs, turning to you, <span style="color:LightSteelBlue">“But feel free to take one yourself. I’ll catch up on some reading.”</span> He pulls a book out from his shelf and begins to quietly read. You watch him for a while, before your eyes get heavy and you pass out in the chair. <br>
+<br>
+You are unsure how long you sleep for, but when you awaken <span style="color:DarkTurquoise">Lucas</span> is staring at you. He laughs as you rub your eyes and ask what time it is. <span style="color:LightSteelBlue">“Morning, sleepy head. You only slept for about an hour.”</span> He walks over and helps you up, <span style="color:LightSteelBlue">“I would have woken you up sooner, but you just looked so precious.”</span> He teased. You roll your eyes and stretch, ready to continue hanging out with <span style="color:DarkTurquoise">Lucas</span> with renewed energy. <br>
+    <<needChange "Energy" 25>>
+    <br>
+[[Continue|Lucas Home Bedroom]]
+
+/* IF Tired */
+<<else>>
+<span style="color:LightSteelBlue">“I second that.”</span> <span style="color:DarkTurquoise">Lucas</span> yawns again, getting comfortable in his bed. <span style="color:LightSteelBlue">“Good old glory days.”</span> You both close your eyes and a moment later drift off to sleep. While the beanbag chair isn’t the most comfortable, you still sleep well and wake up about an hour later. Glancing around in confusion to remember where you fell asleep, <span style="color:pink">you spot <span style="color:DarkTurquoise">Lucas</span> passed out on his bed.</spaN> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Eyes: "Closed"
+			},	
+		Clothes: {
+			Shoes: $None,
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Blush: 1,
+			},	
+		Clothes: {
+			Shoes: $None,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:pink">He looked so cute, with his mouth partially open and his $LucasTop.Type displaced, giving you a peek at his cute boyish belly. He looked so precious.</spaN> You call out his name, but he doesn’t respond. You then walk over and shake him gently, but still, he doesn’t stir. Seems <span style="color:DarkTurquoise">Lucas</span> was a deep sleeper. <span style="color:pink">As you stare down at his unconscious body, you get a naughty idea.</span> <br>
+<br>
+
+<div id=choice>
+/* Secretly kiss him */
+	<<link "Kiss him as he sleeps<br>">>
+	<<replace"#choice">>
+You walk over to the edge of <span style="color:DarkTurquoise">Lucas</span>’ bed, looking down at his face. <span style="color:pink">He looked so cute sleeping, so innocent. Something about sleeping could make anyone look innocent and helpless. You look down at his mouth, partially open as he breathes softly. You bite your lip as the thought enters your mind.</span> <br>
+<br>
+<span style="color:pink">You kneel down next to his bed, placing your face just a foot away from his.</span> Your mind is racing with excuses of what you’ll say if he wakes up. It was just a joke or you wanted to scare him away and see how he reacted. You lean down slowly, your eyes locked with his for any sign of him waking. <br>
+<br>
+<span style="color:pink">You press your lips against his, which naturally pucker as they feel the presense of yours. You kiss him long and deep, even allowing your tongue to enter his mouth. Your heart was racing as the kiss went longer and longer. It felt like an eternity later when you finally raised your head. You were blushing, you could feel it on your cheeks, but <span style="color:DarkTurquoise">Lucas</span> had hardly stirred.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Eyes: "Closed",
+			Blush: 2,
+			},	
+		Clothes: {
+			Shoes: $None,
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Blush: 2,
+			},	
+		Clothes: {
+			Shoes: $None,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:pink">For a brief moment you are frozen, staring down at his face, his wet lips. You think about kissing him again, but <span style="color:DarkTurquoise">Lucas</span> suddenly turns in his sleep and you jump back, afraid he is waking up, and lay back down in the beanbag.</span> Despite him not waking up just yet, you are unable to muster up the courage to do anything else. This is probably for the best, as <span style="color:DarkTurquoise">Lucas</span> begins to wake up a few minutes later. <br>
+    <<needChange "Energy" 25>>
+    <span style="color:green">+Lucas Energy</span><br>
+    <span style="color:green">+Lucas Comfort</span><br>
+    <<set $HangOutNeed.Comfort += 10>>
+    <<set $HangOutNeed.Energy += 50>>
+<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Home Bedroom]]
+
+    <</replace>>
+    <</link>>
+/* Sneak a Peek */
+	<<link "Sneak a Peek<br>">>
+	<<replace"#choice">>
+<span style="color:pink">Your eyes were locked on the front of <span style="color:DarkTurquoise">Lucas</span>’ $LucasBottoms.Type, or more accurately, the treasure they kept inside. Your mind was filled with invasive thoughts of getting a peek. A close-up peek without anything to stop you, where you could see and touch every detail of <span style="color:DarkTurquoise">Lucas</span>’ Penis. To be fair, <span style="color:DarkTurquoise">Lucas</span> didn’t even need to know. It would be your little secret. But how would he feel if he knew you were invading his privacy like this? Looking at his most private feature without his knowledge? Guilt was filling your mind, but you were already at his bedside.</span> <br>
+<br>
+<span style="color:pink">You lift his top up more to get a clear view of his belly. It was so cute, moving up and down with his breath. It looked soft too, like a big warm pillow. Moving lower you could see the waistband of his $LucasUndies.Type, peeking out just enough to drive your mind wild. Before you could even come to a decision, you noticed your arms were moving on their own and unbuttoning his $LucasBottoms.Type.</span> <br>
+<br>
+<span style="color:pink">You slide down his bottoms, giving you a full view of his cute $LucasUndies.Name, which fit him so snuggly. You could clearly make out his package now, only barely hidden by the soft fabric. With his $LucasBottoms.Type at his knees, you moved up and grabbed the sides of his underwear, taking one final deep breath before slowly pulling them down as well.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+		ShowZoom: true,
+        State: {
+			Outfit: "Everyday",
+			Eyes: "Closed",
+			Blush: 2,
+			PantsDown: true,
+			},	
+		Clothes: {
+			Shoes: $None,
+			Undies: $None,
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Blush: 2,
+			},	
+		Clothes: {
+			Shoes: $None,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<<if $LucasCut == "Uncut">>
+	<span style="color:pink">As you eyed his cute little penis and balls, your guilt was replaced with excitement. Your heart beat rapidly at your naughty actions as you lean down and inspected the sleeping boy’s privates. It was an average size and the entire head of his penis was covered by foreskin, with even a small amount of overhang at the end. Curious, you reach down and peel back some of it to reveal his bright pink tip.</span> <br>
+	<br>
+	<span style="color:pink">It looks extremely cute and even more sensitive, <span style="color:DarkTurquoise">Lucas</span>’ most vulnerable bit. You bet even the slightest touch to this sensitive area would awaken him with a shock, as shivers of sensation traveled up his spine to his brain in a panic. Your mind is filled with even more dirty thoughts, which leave you blushing and popping a slight stiffy in your own bottoms.</span> <br>
+	<br>
+
+<<elseif $LucasCut == "Cut">>
+	<span style="color:pink">As you eyed his cute little penis and balls, your guilt was replaced with excitement. Your heart beat rapidly at your naughty actions as you lean down and inspected the sleeping boy’s privates. It was an average size and it seems <span style="color:DarkTurquoise">Lucas</span>’ had been circumcised. Despite this, the tip of his penis was still bright pink and sensitive, which added to his overall cute look.</span> <br>
+	<br>
+	<span style="color:pink">You wonder just how heavy of a sleeper he was, if you could play with him as he napped without him ever realizing. Though that would be too risky and besides, he looked so cute and innocent laying here with his flaccid cock on display. Dreaming happily with no idea about what you were doing.</span> <br>
+	<br>
+<</if>>
+Beginning to worry that <span style="color:DarkTurquoise">Lucas</span> may awaken any moment, you decide to end your fun, for now. Fixing his clothes as best you can, <span style="color:pink">though leaving his bottoms unzipped to give you something cute to look at,</span> you doze off again until you hear <span style="color:DarkTurquoise">Lucas</span> stirring a short while later. <br>
+<br>
+<span style="color:LightSteelBlue">“Good morning!”</span> He yawns, rubbing his eyes, <span style="color:LightSteelBlue">“Man, naps are underrated. I feel great!”</span> <span style="color:pink">He jumps to his feet, which in turn causes his unbuttoned $LucasBottoms.Type to fall to his ankles. <span style="color:DarkTurquoise">Lucas</span> lets out a gasp of surprise and quickly fixes them. You can’t help but laugh, considering it a little bonus.</span> <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Blush: 2,
+			PantsDown: true,
+			},	
+		Clothes: {
+			Shoes: $None,
+	},
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Smirk",
+			Eyes: "Tired",
+			Blush: 1,
+			},	
+		Clothes: {
+			Shoes: $None,
+    	},	
+    },
+]>>
+    <<ad _ad>>
+	
+    <<needChange "Energy" 25>>
+    <span style="color:green">+Lucas Energy</span><br>
+    <span style="color:green">+Lucas Comfort</span><br>
+    <<set $HangOutNeed.Comfort += 10>>
+    <<set $HangOutNeed.Energy += 50>>
+<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Home Bedroom]]
+
+    <</replace>>
+    <</link>>
+/* Do nothing */
+	<<link "Do nothing<br>">>
+	<<replace"#choice">>
+Pushing whatever lewd thoughts you have from your mind, you shake <span style="color:DarkTurquoise">Lucas</span> again. This time seemed to be enough, as his eyes open and he mumbles out in confusion. You laugh, saying that he can’t sleep all day. Once <span style="color:DarkTurquoise">Lucas</span> realizes that you were watching him sleep, he gets a bit flustered and rushes to his feet. You laugh as he fixes his clothing and wipes some drool from his mouth. <br>
+    <<needChange "Energy" 25>>
+    <span style="color:green">+Lucas Energy</span><br>
+    <span style="color:green">+Lucas Comfort</span><br>
+    <<set $HangOutNeed.Comfort += 10>>
+    <<set $HangOutNeed.Energy += 50>>
+<<socialChange "Lucas" 3>>
+    <br>
+[[Continue|Lucas Home Bedroom]]
+
+    <</replace>>
+    <</link>>
+</div>
+<</if>>

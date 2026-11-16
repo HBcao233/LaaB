@@ -1,0 +1,422 @@
+:: OC Birdy Mall Hang Out Encounter [nobr]
+
+/* Intro */
+
+You are wandering around the mall, your eyes being drawn to all the expensive merchandise being showcased in the window that you either can’t afford or can’t get away with buying, when you spot a familiar pair walking out of an eyeglass store. <span style="Color: LightGreen">The twins, Birdy and Lea!</span>
+
+<<set _ad to [
+    {
+        Name: "OC Birdy",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Lea",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“You know, it may be cool to try another color of glasses one day.”</span> The sister laughs as her brother adjusts his glasses.<br>
+<br>
+<span style="Color: LightSteelBlue">“But I like red.”</span> Birdy replies matter-of-factly. <span style="Color: LightSteelBlue">“Plus, mommy says they make me look handsome.”</span><br>
+<br>
+<span style="Color: LightSteelBlue">“Can’t argue with that.”</span> His sister laughs, <span style="Color: LightSteelBlue">“Though I’d say more ‘cute’ than ‘handsome’.”</span> They both laugh and begin to walk away when Birdy suddenly spots you and waves you over.<br>
+<br>
+<span style="Color: LightSteelBlue">“Oh, hey <span style="Color: DarkTurquoise">$Player.Name</span>! What are you doing here?”</span> He asks with a smile. You explain that you were just wandering around and compliment Birdy’s glasses. <span style="Color: LightSteelBlue">“Thanks! Hehe!”</span> He blushes, <span style="Color: LightSteelBlue">“Oh hey, we were going to grab a bite to eat before we leave. Care to join us?”</span><br>
+<br>
+<div id="Choice">
+    <<link "Join Them (0:15)">>
+        <<replace "#Choice">>
+            <<if $ToggleGirlContent == 1>>
+                <<set _randomEvent to random(1, 3)>>
+                <<if _randomEvent == 3>>
+                    <<goto "OC Birdy Mall Hang Out Encounter Lea">>
+                <<else>>
+                    <<goto "OC Birdy Mall Hang Out Encounter Birdy">>
+                <</if>>   
+            <<else>>
+                <<goto "OC Birdy Mall Hang Out Encounter Birdy">>
+            <</if>>
+        <</replace>>
+    <</link>><br>
+    <<link "Refuse">>
+        <<replace "#Choice">>    
+            You refuse, apologizing and saying you have something else you need to do. <span style="Color: LightSteelBlue">“Aw, okay.”</span> Birdy sighs, <span style="Color: LightSteelBlue">“Next time then! I’ll see you later.”</span> Both siblings wave as they head off towards the food court.<br>
+            <<socialChange "Birdy" 1 1>>
+            <<socialChange "Lea" 1 1>>
+            <br>
+            [[Continue|Mall]]
+        <</replace>>
+    <</link>>
+</div>
+/* Passage 2 NOTE:
+During the movement from Passage 1 to Passage 2, check if $ToggleGirlContent == 1.
+If so, randomly select between the Birdy and Lea versions. 2/3 = Birdy, 1/3 = Lea
+If $ToggleGirlContent == 0, it should always go to Birdy's. */
+
+
+:: OC Birdy Mall Hang Out Encounter Birdy [nobr]
+
+/* Intro */
+
+Arriving at the food court, Birdy takes you all to a shop that sells a variety of foods, though insists on getting the pizza and milk shakes. <span style="Color: LightSteelBlue">“You have to try it, they are so good together!”</span> He raves. So, you do so and once collected, the three of you head over to an empty table to eat and chat away.
+
+<<set _ad to [
+    {
+        Name: "OC Birdy",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Lea",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Mr. Randolph</span> seems rough.”</span> Lea smirks after you finish a story about your overbearing math teacher. <span style="Color: LightSteelBlue">“My math teacher is pretty strict too, but she doesn’t beat kids in front of the class. Though she probably could, she looks like that old wrestler. Hart something?”</span> She shrugs, finishing her drink.<br>
+<br>
+<span style="Color: LightSteelBlue">“Here, I’ll toss your trash with mine.”</span> Birdy says, reaching for her empty cup. <span style="Color: LightCoral">But he instead bumps into it, sending falling towards his sister! Lea attempts to grab it before it falls but instead smacks it away towards her brother! It turns out the cup isn’t so empty, as a glob of milkshake lands right on Birdy’s crotch!</span> It is quite the scene. “Ah! Cold cold cold!” Birdy cries out, <span style="Color: LightCoral">his bits suddenly covered in the icey substance.</span><br>
+<br>
+<span style="Color: LightSteelBlue">“Oh, whoops! Sorry”</span> Lea jumps up and grabs a napkin, rubbing the milkshake off of her brother’s crotch. <span style="Color: Pink">You can’t help but notice Birdy blushing and feel she is going a bit rough to just be wiping it off. Then, as she finishes, you both can’t help but smirk and blush at the sight. It looks like Birdy had an accident.</span>
+
+<<set _ad to [
+    {
+        Name: "OC Birdy",
+        State: {
+            Outfit: "Everyday",
+            Blush: 2,
+            Mouth: "Sad",
+            Arms: "Hide",
+        },
+    },
+    {
+        Name: "OC Lea",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+            Eyes: "Tired",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smirk",
+        },
+    },
+]>>
+
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Do- don’t laugh!”</span> Birdy says, <span style="Color: Pink">covering his front with his hands</span>, <span style="Color: LightSteelBlue">“I- I can’t go around like this! Everyone will make fun of me.”</span><br>
+<br>
+<span style="Color: LightSteelBlue">“Don’t worry.”</span> Lea laughs, <span style="Color: LightSteelBlue">“Come on, let’s head to the bathroom and get you cleaned up. <span style="Color: DarkTurquoise">$Player.Name</span>, you mind cleaning up here then meeting us there?”</span> She asks. You nod, collecting the trash as the two of them head off towards the restrooms. Then, as you are walking to the trash can, you realize something. Lea is a girl, she can’t-. You turn around and see Lea drag Birdy straight into the boy’s bathroom. Seems she doesn’t care. <span style="Color: Pink">You spot a young kid running out looking a little embarrassed, still zipping up his jeans.</span><br>
+<br>
+<<linkreplace "Continue">>
+    Finishing the clean up, you enter the bathroom to find Birdy’s overalls sitting on the counter. There is no sign of the other two, until you hear Lea’s voice. <span style="Color: LightSteelBlue">“<span style="Color: DarkTurquoise">$Player.Name</span>? Is that you?”</span> She says, opening one of the stalls. It is then that you notice the two pairs of feet in one stall. <span style="Color: LightSteelBlue">“Do you mind drying off his overalls? Some of it got on his underwear and we’re trying to clean it off. He doesn’t want anyone else to see.”</span> She chuckles before closing the stall door again.<br>
+    <br>
+    <span style="Color: LightSteelBlue">“He- hey! Careful with that!”</span> You hear Birdy cry out followed by his sister’s laughter. Seems she isn’t being gentle. You chuckle to yourself as you walk over and grab his overalls, taking a moment to stare at the wet spot on the crotch. <span style="Color: Pink">You know it’s just milkshake and that he didn’t actually have an accident, but you still can’t help but find it sightly funny.</span><br>
+    <br>
+    You grab some paper towels and try to scrub them clean, but once you realize that doesn’t work very well you instead hold them under the hand dryer for a few minutes. As you do, you hear the occasional murmur or noise from the stall. There doesn’t appear to be a lot of movement, from what you can see of their feet, but they sure are noisy. How long does it take to clean some briefs anyway?<br>
+    <br>
+    Finally dry and with no hint of an accident, you grab the overalls and walk over to the stall. You move to knock, but hesitate. The dryer is still going, so they didn’t hear you approach, <span style="Color: Yellow">you could try to sneak a peek at them cleaning Birdy’s undies.</span> You wonder if he had to take them off and that’s why they are taking so long. <span style="Color: Pink">Maybe you’d get a peek at his teenie weenie.</span> You smile at the thought, though feel a little weird about spying. <span style="Color: Yellow">You don’t think Birdy or Lea would like that.</span><br>
+    <br>
+    <div id="choice2">
+        <<link "Peek">>
+            <<replace "#choice2">>
+                <<set _randomPassage to ["OC Birdy Mall Hang Out Encounter Peeks Tickle Butt", "OC Birdy Mall Hang Out Encounter Peeks Tickling"]>>
+                <<if $ToggleGirlContent == 1 and $Player.Kinks.Incest != -1>>
+                    <<set _randomPassage.push("OC Birdy Mall Hang Out Encounter Peeks Secret")>>
+                <</if>>
+                <<include _randomPassage.random()>>
+                /* Peeking Notes:
+                If the player selects peek, it should <<include>> one of the other passages at random. All equal chance, expect, for the "Secret" one. That one should only occur if Incest is not a Turn Off AND Girl Content is turned on. */
+            <</replace>>
+        <</link>><br>
+        <<link "Knock">>
+            <<replace "#choice2">>
+                Not wanting to invade their privacy, you instead knock on the stall door and call out that Birdy’s overalls are all dry. There is a moment of silence before you hear <span style="Color: LightSteelBlue">“Oh! Thank you, one second!”</span> Then there is some shuffling before Birdy opens the door a crack. <span style="Color: Pink">Your eyes are immediately drawn to his baby blue briefs that peek out slightly. Despite Birdy not normally being too embarrassed about being seen in his underwear, you do notice his cheeks are quite red.</span> Peeking in a little more, you see Lea standing behind him with a smirk.<br>
+                <br>
+                <span style="Color: LightSteelBlue">“Sorry, we finished drying them off a minute ago, but I was teasing Birdy. Did you know he’s super ticklish on his thighs and sides?”</span> She laughs, <span style="Color: LightSteelBlue">“I dared him to see if he could not make any noise or giggle while I did it, so he’s a little exhausted from that.”</span> She sticks her tongue out at you as Birdy continues to blush.
+
+                <<set _ad to [
+                    {
+                        Name: "OC Birdy",
+                        State: {
+                            Outfit: "Everyday",
+                            Blush: 1,
+                            Eyes: "Sad",
+                            Mouth: "Happy",
+                        },
+                    },
+                    {
+                        Name: "OC Lea",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Smirk",
+                        },
+                    },
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Happy",
+                        },
+                    },
+                ]>>
+
+                <<ad _ad>>
+
+                <span style="Color: LightSteelBlue">“We- we’ll be out in a second!”</span> He quickly closes the door, mumbling something to his sister before you watch him pull his Overalls up from underneath the door. Then, a minute later, he walks over all dressed and only slightly red. <span style="Color: LightSteelBlue">“Thanks for hanging out with us, <span style="Color: DarkTurquoise">$Player.Name</span>.”</span> Birdy stutters slightly, <span style="Color: LightSteelBlue">“We really should get going though, but I’ll see you later. Okay?”</span> Birdy hurries off, obviously flustered, as Lea follows behind him chuckling. <span style="Color: LightGreen">What a cute pair. She loves teasing Birdy as much as you do Noah.</span><br>
+                <br>
+                <<socialChange "Birdy" 3 1>>
+                <<socialChange "Lea" 3 1>>
+                <<needChange "Hunger" 25>>
+                <br>
+                [[Continue|Mall]]
+            <</replace>>
+        <</link>>
+    </div>
+<</linkreplace>>
+
+
+
+:: OC Birdy Mall Hang Out Encounter Lea [nobr]
+
+/* Intro */
+
+Arriving at the food court, Birdy takes you all to a shop that sells a variety of foods, though insists on getting pizza and milk shakes. <span style="Color: LightSteelBlue">“You have to try it, they are so good together!”</span> He raves. So, you do so and once collected, the three of you head over to an empty table to eat and chat away.
+
+<<set _ad to [
+    {
+        Name: "OC Birdy",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "OC Lea",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Happy",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">Mr. Randolph</span> seems rough.”</span> Lea smirks after you finish a story about your overbearing math teacher. <span style="Color: LightSteelBlue">“My math teacher is pretty strict too, but she doesn’t beat kids in front of the class. Though she probably could, she looks like that old wrestler. Hart something?”</span> She shrugs, finishing her drink.<br>
+<br>
+<span style="Color: LightSteelBlue">“Here, I’ll toss your trash with mine.”</span> Birdy says, reaching for her empty cup. <span style="Color: LightCoral">But he instead bumps it, sending it falling towards his sister! Lea reaches out with lightning reflexes and manages to catch it… but upside down. SPLASH! Lea instantly shoots to her feet as the remaining bits of drink and ice fall onto her lap!</span> Turns out the cup wasn’t as empty as it sounded. <span style="Color: LightSteelBlue">“Aaahhhh! I’m sorry, I’m sorry!”</span> Birdy panics, grabbing napkins and attempting to wipe up the liquid to no avail.<br>
+<br>
+<span style="Color: LightSteelBlue">“It’s fine.”</span> Lea laughs, a slight blush on her cheeks. <span style="Color: LightSteelBlue">“Hey, <span style="Color: DarkTurquoise">$Player.Name</span>, do you mind cleaning up here?”</span> You nod, collecting the trash from the table and wiping up the bit that spilt onto it as Lea grabs her brother and begins to drag him towards the restrooms.
+
+<<set _ad to [
+    {
+        Name: "OC Birdy",
+        State: {
+            Outfit: "Everyday",
+            Blush: 3,
+            Eyes: "Sad",
+            Mouth: "Sad",
+        },
+    },
+    {
+        Name: "OC Lea",
+        State: {
+            Outfit: "Everyday",
+            Eyes: "Tired",
+            Mouth: "Smirk",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+
+<<ad _ad>>
+
+<span style="Color: LightSteelBlue">“Ho- hold on! Lea! I can’t go in the girl’s bathroom! What if someone sees me!?”</span> Birdy cries out in mild embarrassment.
+<span style="Color: LightSteelBlue">“Calm down, we’re going into the boy’s. Don’t be a baby.”</span> <span style="Color: ">She chuckles as she drags her brother into the restroom. <span style="Color: Pink">You chuckle at their cute sibling dynamic</span> as you finish up cleaning the table and tossing the trash. You then sit back down at the table, patiently waiting as you drum your hands on the surface of the table. Sixty seconds pass… nothing… You don’t have the patience for this. Standing up, you walk towards the bathroom. <span style="Color: Yellow">Maybe they could use your help?</span><br>
+<br>
+<<linkreplace "Continue">>
+    <span style="Color: LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name</span>? Is that you?”</span> Lea’s voice calls out from one of the stalls as you enter the bathroom, somehow sensing your presence. You reply in the affirmative. <span style="Color: LightSteelBlue">“Great! Mind running my shorts under the hand dryer? They soaked my underwear a bit and this goober is too nervous to take both, so we’re trying to pat them dry with paper towels.”</span> The stall door opens slightly and Lea’s hand pokes out, holding her shorts. You grab them without thinking and walk over towards the hand dryer. Then you pause, <span style="Color: Pink">realizing that this means Lea is standing in there… in her underwear! You glance back at the stall and feel your face burn.</span><br>
+    <br>
+    <span style="Color: Pink">You shake your head to snap yourself out of it and begin to dry her shorts. She’s a girl, sure, but she’s also your friend’s sister. Plus, you’re way too young to be thinking stuff like that… right?</span> As the sound of the hand dryer fills the room, you tune into the noise the siblings were making from inside the stall.<br>
+    <br>
+    <span style="Color: LightSteelBlue">“Lea! I- I don’t think it’s coming out!”</span> Birdy says, <span style="Color: LightSteelBlue">“Maybe you can just wear it like this until we get home? It’s not far.”</span><br>
+    <br>
+    <span style="Color: LightSteelBlue">“I don’t want to get a rash!”</span> Lea responds, <span style="Color: LightSteelBlue">“Since you spilled it on me, maybe I should just wear your underwear until we get home and you can freeball it!”</span> You figure she is just kidding, <span style="Color: Pink">until you hear some commotion and turn around to see Birdy’s overalls fall to his ankles! The sounds of Lea’s mischievous laughter and Birdy’s cries of embarrassment fill the restroom as you can only imagine what is going on inside that stall.</span><br>
+    <br>
+    It is then that you begin to feel warmth in your hand, realizing that the shorts are as dry as they are going to get and at this point are just getting warmer, you pull away from the dryer and turn towards the stall. Then you realize something interesting… <span style="Color: Yellow">the stall isn’t closed all the way.</span> When Lea handed you her shorts, she left it open just a crack. You gulp as you take a step forward. <span style="Color: Yellow">You could easily peek inside… just a quick peek to see what’s going on. Then again, you don’t think either of them would like that.</span><br>
+    <br>
+    <div id="choice">
+        <<link "Peek">>
+            <<replace "#choice">>
+                You take a few steps forward, your heart racing. Are you really going to do this? Peek on your friend while they are exposed in a stall? <span style="Color: Yellow">No, not just your friend. A girl!?</span> You hold your breath, worried the sound of a single inhale would give you away. So many thoughts run through your head. <span style="Color: LightCoral">What would <span style="color:DarkTurquoise">Your Father</span> think? Could you be arrested for this? Would everyone know you as a pervert for the rest of your life if you are caught!?</span><br>
+                <br>
+                With shaky hands, you balance yourself on the side of the stall, careful not to make even a single, quiet sound. Closing one eye, you peek inside…
+
+                <<set _ad to [
+                    {
+                        Name: "OC Lea",
+                        ShowZoomOnlyButt: true,
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Happy",
+                            Arms: "Hide",
+                        },
+                        Clothes: {
+                            Bottoms: $None,
+                            Undies: $None,
+                        },
+                    },
+                    {
+                        Name: "OC Birdy",
+                        ShowZoomOnlyButt: true,
+                        State: {
+                            Outfit: "Everyday",
+                            Blush: 3,
+                            Mouth: "Sad",
+                            Arms: "Hide",
+                        },
+                        Clothes: {
+                            Bottoms: $None,
+                            Undies: $None,
+                        },
+                    },
+                    {
+                        Name: "Player",
+                        State: {
+                            Blush: 3,
+                            Mouth: "Sad",
+                        },
+                    },
+                ]>>
+
+                <<ad _ad>>
+
+                <span style="Color: Pink">Your heart stops. Lea stands right in front of the door, facing away… in just her shirt, its short length unable to hide the utter nudity below. Directly in your field of vision is a soft, bright pink butt! No, not just any butt, a girl’s butt!!! Something about this feels so wrong, but it somehow is also so alluring. The naughtiness of it makes your groin tingle in strange ways. You wonder if she’ll turn around, if you’ll see… the front. You’ve heard about it, but to see a girl’s nude front up close… It is sending your young boy mind into overdrive as you feel all your blood traveling to your crotch.<br>
+                <br>
+                But, alas, it is not meant to be. For if you could see past the plump rearend of Lea, you’d see her brother sitting on the lid of the toilet, shyly crossing his legs to hide his own exposed bits. Bending down slowly, Lea pulls up a pair of underwear to cover her cute rearend. A pair of briefs… her brother’s briefs! The blue rocket ships seem to compliment her buttocks even more so than her brother’s, as if they too desired to be placed on her girlish bottom.</span><br>
+                <br>
+                <span style="Color: LightSteelBlue">“There!”</span> Lea laughs, <span style="Color: LightSteelBlue">“Now I forgive you. And you can either put on my underwear until we get home, or free ball it.”</span> She chuckles as you wonder for a moment if you’ll get to see Birdy in Lea’s underwear, but alas the nervous boy instead quickly reaches for his overalls and pulls them on. <span style="Color: LightSteelBlue">“<span style="Color: DarkTurquoise">$Player.Name</span>?”</span> <span style="Color: LightCoral">Your heart stops again, this time so fast you feel you may actually die. You leap back, as quickly and quietly as you can.</span> <span style="Color: LightSteelBlue">“Are you done? We’re finished up in here.”</span>
+                You respond back, your voice somehow both high-pitched and horse. You clear your throat before replying again that you’re all finished, making an effort to stomp loudly over to the stall before gingerly holding the shorts under the stall to hand them to Lea. <span style="Color: LightSteelBlue">“Thanks! We’ll be just a second.”</span>
+
+                <<set _ad to [
+                    {
+                        Name: "OC Birdy",
+                        State: {
+                            Outfit: "Everyday",
+                            Blush: 2,
+                            Mouth: "Sad",
+                            Arms: "Hide",
+                        },
+                    },
+                    {
+                        Name: "OC Lea",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Smirk",
+                        },
+                    },
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Happy",
+                        },
+                    },
+                ]>>
+
+                <<ad _ad>>
+
+                A few seconds later, the stall door flies open and Lea walks out, now properly dressed and dry. Birdy stands behind her, his arms crossed with a flushed face. <span style="Color: Pink">Upon meeting your eyes, he gives you a smile and tries to hide his clear embarrassment behind his normal happy expression.</span> <span style="Color: Yellow">You still can’t get the image of what you saw out of your head.</span><br>
+                <br>
+                <<needChange "Hunger" 25>>
+                <<socialChange "Birdy" 3 1>>
+                <<socialChange "Lea" 3 1>>
+                <<set _arousalbs to []>>
+                /* Girls arousalkink var not working yet, should be added when it does */
+                <<set _arousalkink to []>>
+                <<arousalGain 10 _arousalbs _arousalkink>>
+                <br>
+                [[Continue|Mall]]
+            <</replace>>
+        <</link>><br>
+        <<link "Knock">>
+            <<replace "#choice">>
+                Not wanting to invade their privacy, you instead walk up to the stall loudly and knock twice. There is some more commotion and shooshing from inside, before you see Lea open the door slightly and glance over. <span style="Color: LightSteelBlue">“Oh, are they done? Thanks! We’re just about ready too.”</span> As you hand her the shorts, you very stealthfully glance down and get a peek at what she is wearing. <span style="Color: Pink">You can’t be sure, but based on the waistband you briefly see, you think Lea may actually be wearing her brother’s underwear!</span><br>
+                <br>
+                <span style="Color: LightSteelBlue">“We- we’ll be out in a second!”</span> You hear Birdy call as Lea closes the door, all the way this time. Judging by the embarrassment in his voice, <span style="Color: Pink">you figure Birdy is probably now without underwear… or maybe he’s wearing…?</span>
+                
+                <<set _ad to [
+                    {
+                        Name: "OC Birdy",
+                        State: {
+                            Outfit: "Everyday",
+                            Blush: 2,
+                            Mouth: "Sad",
+                            Arms: "Hide",
+                        },
+                    },
+                    {
+                        Name: "OC Lea",
+                        State: {
+                            Outfit: "Everyday",
+                            Mouth: "Smirk",
+                        },
+                    },
+                    {
+                        Name: "Player",
+                        State: {
+                            Mouth: "Smile",
+                        },
+                    },
+                ]>>
+
+                <<ad _ad>>
+
+                Before you can ponder that, the stall door flies open and Lea walks out, now properly dressed and dry. Birdy stands behind her, his arms crossed with a flushed face. <span style="Color: Pink">Upon meeting your eyes, he gives you a smile and tries to hide his clear embarrassment behind his normal happy expression. You can only imagine what these two get up to.</span><br>
+                <br>
+                <<socialChange "Birdy" 3 1>>
+                <<socialChange "Lea" 3 1>>
+                <br>
+                [[Continue|Mall]]
+            <</replace>>
+        <</link>>
+    </div>
+<</linkreplace>>

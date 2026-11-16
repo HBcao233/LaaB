@@ -1,0 +1,149 @@
+:: PH Hallway Naked [nobr]
+
+/* LOCATION */
+<<set $Location to {
+	Name: "Home Hallway",
+    Indoors: 1,
+    Safe: 1,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Hallway",
+}>>
+
+/* SETTING STATE */
+<<if $Time.before(22) and $Time.after(6)>>
+	<<if $HomeDayNudity == 0>>
+		<<set $StreakState to "Day_Embarrassed">>
+	<<elseif $HomeDayNudity == 1>>
+		<<set $StreakState to "Day_Shy">>
+		<<set $Location.Nudity to 1>>
+	<<elseif $HomeDayNudity == 2>>
+		<<set $StreakState to "Day_Fine">>
+		<<set $Location.Nudity to 1>>
+	<</if>>
+<<else>>
+	<<if $HomeNightNudity == 0>>
+		<<set $StreakState to "Night_Embarrassed">>
+	<<elseif $HomeNightNudity == 1>>
+		<<set $StreakState to "Night_Shy">>
+		<<set $Location.Nudity to 1>>
+	<<elseif $HomeNightNudity == 2>>
+		<<set $StreakState to "Night_Fine">>
+		<<set $Location.Nudity to 1>>
+	<</if>>
+<</if>>
+
+
+<span style="color:Azure"><big><strong>--Hallway--</strong></big></span><br>
+
+/* BASE TEXT BASED ON STATUS */
+<<if $StreakState == "Day_Embarrassed">>
+	<span style="color:pink">You stand in the middle of your hallway completely naked, covering your $Player.PenisSize Penis with your hands! Despite being in the safety of your home, standing here all exposed where your brothers can see your most sensitive bits felt extremely embarrassing. </span>
+<<elseif $StreakState == "Day_Shy">>
+	<span style="color:pink">You stand in the middle of your hallway completely naked! Despite your heart pumping and your face reddening, you make no effort to hide your $Player.PenisSize Penis from view. You feel very shy letting yourself be so exposed, but try to remain calm. </span>
+<<elseif $StreakState == "Day_Fine">>
+	You stand in the hallway of your house, surrounded by pictures of your family on the wall. You are completely naked, but don’t mind much as it’s something you are used to, and you feel safe here. 
+<<elseif $StreakState == "Night_Embarrassed">>
+	<span style="color:pink">You stand in the hallway of your house completely naked. Despite the darkness and solitude of night, you still feel extremely vulnerable and cover your $Player.PenisSize Penis with your hands in case anyone is around in the shadows. </span>
+<<elseif $StreakState == "Night_Shy">>
+	<span style="color:pink">You stand in the middle of the hallway completely naked. It is much easier to leave your bits uncovered in the darkness, as the shadows offer some little protection. Still, the eyes of the pictures that line the walls seem to all be staring at your exposed body. </span>
+<<elseif $StreakState == "Night_Fine">>
+	You walk through the hallway of your house, completely naked. 
+<</if>><br>
+<br>
+
+/* NPC INTERACTIONS */
+	/* FINE */
+	<<if $StreakState == "Day_Fine" or $StreakState == "Night_Fine">>
+					/* NPC SEEN */
+		<<include "NPC Inspect">>
+		<br>
+	/* SHY */
+	<<elseif $StreakState == "Day_Shy" or $StreakState == "Night_Shy">>
+		<<include"PH Hallway Naked NPC Shy">>
+
+<</if>>
+/* GABE */
+<<if $GabeSche.Location == "Home Hallway">>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+As you try to sprint through the hallway into cover, you are suddenly grabbed from behind by <span style="color:DarkTurquoise">Gabe</span>! <span style="color:Pink">Wrapping his arms around your waist, he holds your hands up to prevent you from covering yourself and lifts you into the air!</span> <span style="color:LightSteelBlue">“Hey, little bro! Gotta say, loving the outfit choice today.”</span> You cry out, demanding he let you go as you attempt to kick yourself free. <br>
+<br>
+<span style="color:LightSteelBlue">“That’s no way to respond to a compliment! Maybe you just need a second opinion, I’m sure everyone outside will also love your outfit.”</span><span style="color:Pink"> <span style="color:DarkTurquoise">Gabe</span> takes a single step towards the living room before you finally manage to slip free and leap to the other side of the hallway. Thankfully, <span style="color:DarkTurquoise">Gabe</span> doesn’t seem to actually want to chase you down and instead walks away laughing.</span> <br>
+<br>
+	<</if>>
+
+/* NOAH */
+<<elseif $NoahSche.Location == "Home Hallway">>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+		/* POST EVENT NOAH */
+			<<if $NoahSocialRank >= 1>>
+Before you can react, <span style="color:DarkTurquoise">Noah</span> suddenly rounds the corner and you both freeze upon seeing each other. <span style="color:Pink"><span style="color:DarkTurquoise">Noah</span>’s eyes very quickly wander downwards, seeing your hands covering your penis. Suddenly <span style="color:DarkTurquoise">Noah</span> begins to giggle. <span style="color:LightSteelBlue">“I thought you said it was fine to be naked with people you love? Or are you still shy around me?”</span> <span style="color:DarkTurquoise">Noah</span> does a cute little teasing dance as you sigh and move your hands. Since it was only <span style="color:DarkTurquoise">Noah</span>, and he has seen you in much more revealing positions, you don’t feel as embarrassed.</span> <br>
+<br>
+<span style="color:Pink">You inform <span style="color:DarkTurquoise">Noah</span> that you’d rather not be seen in your birthday suit by the rest of your family, prompting another round of teasing by him. Wanting revenge on the little twerp, you quickly grab the back of his head and push it into your exposed crotch, asking if he just really wants to suck your penis, again! <span style="color:DarkTurquoise">Noah</span> quickly pushes away from you, blushing bright red. <span style="color:LightSteelBlue">“Shhhh!”</span> He glances around, <span style="color:LightSteelBlue">“What if someone hears you?”</span> You laugh, asking <span style="color:DarkTurquoise">Noah</span> if he doesn’t want people to know he’s a little cock sucker. He tries to silence you, but eventually runs off before anyone discovers you two. You laugh at his cute reaction for a moment, before remembering that you were still naked in the hallway.</span> <br>
+<br>
+
+		/* NORMAL NOAH */
+			<<else>>
+<span style="color:Pink">Before you can react, Noah suddenly rounds the corner and you both freeze upon seeing each other. <span style="color:DarkTurquoise">Noah</span>’s eyes very quickly wander downwards and, though your $Player.PenisSize Penis is covered by your hands, you both turn a bright red. Breaking the humiliating silence, <span style="color:DarkTurquoise">Noah</span> lets out a quiet squeal and quickly covers his eyes with Bue.</span> <br>
+<br>
+<span style="color:LightSteelBlue">“I didn’t see anything!”</span> <span style="color:DarkTurquoise">Noah</span> runs past you with his eyes covered. <span style="color:Pink">You can’t tell if you were more embarrassed, or if he was.</span> <br>
+<br>
+			<</if>>
+
+	<</if>>
+
+/* DAD */
+<<elseif $DadSche.Location == "Home Hallway">>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+	<span style="color:Pink">As <span style="color:DarkTurquoise">Your Father</span> walks into the hallway, seeing you standing there red-faced and covering yourself, he can’t help but laugh. <span style="color:LightSteelBlue">“You’re naked at home <span style="color:DarkTurquoise">$DadNickname</span>, not naked at school or something. Everyone here has seen you naked plenty of times.”</span> You blush, muttering something about how it’s different now that you’re older, you're not a little kid anymore. <span style="color:DarkTurquoise">Your Father</span> sighs and shakes his head. <span style="color:LightSteelBlue">“The first night we moved here I walked in on you passed out against your bed with your cute little booty facing the door, can’t get more embarrassing than that.”</span> He laughs as he gives you a teasing head pat and continues on his way.</span> <br>
+<br>
+
+	<</if>>
+
+/* ALONE */
+<<else>>
+	/* EMBARRASSED */
+		<<if $StreakState == "Day_Embarrassed" or $StreakState == "Night_Embarrassed">>
+			Thankfully, there is currently no one here to see you in such an exposed state.
+	<</if>><br>
+	<br>
+<</if>>
+
+
+<br>
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+	[[Your Bedroom (0:01)|Player Bedroom][$Minutes += 1]] <br>
+	[[Noah's Bedroom (0:01)|PH Noah Bedroom][$Minutes += 1]] <br>
+	[[Gabe's Bedroom (0:01)|PH Gabe Bedroom][$Minutes += 1]] <br>
+	[[Your Father's Bedroom (0:01)|PH Dad Bedroom][$Minutes += 1]] <br>
+	[[Bathroom (0:01)|PH Bathroom][$Minutes += 1]] <br>
+	[[Living Room (0:01)|PH Living Room][$Minutes += 1]] <br>
+	[[Kitchen (0:01)|PH Kitchen][$Minutes += 1]] <br>
+<</if>>
+
+
+<br>
+
+<br>
+<div style="position: relative">
+	<img src="Images\Player House\Player House Map.png" 
+style="position: absolute; left: 0; top: 0"  alt="School Map" usemap="#PlayerHouse">
+	<img src="Images\Player House\Player House Hallway Marker.png" 
+style="position: absolute; left: 58px; top: 112px"  alt="School Map" usemap="#PlayerHouse">
+	<<include"NPC Tracking Home">>
+</div>
+
+<map name="PlayerHouse">
+<area shape="rect" coords="112,166,165,219" alt="Player Bedroom" onclick="$.wiki('<<goto[[Player Bedroom]]>><<set $Minutes += 1>>')" />
+
+<area shape="rect" coords="112,58,165,111" alt="Bathroom" onclick="$.wiki('<<goto[[PH Bathroom]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="58,166,111,219" alt="Noah's Room" onclick="$.wiki('<<goto[[PH Noah Bedroom]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="4,112,57,165" alt="Gabe's Room" onclick="$.wiki('<<goto[[PH Gabe Bedroom]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="58,58,111,111" alt="Dad Bedroom" onclick="$.wiki('<<goto[[PH Dad Bedroom]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="166,58,273,111" alt="Living Room" onclick="$.wiki('<<goto[[PH Living Room]]>><<set $Minutes += 1>>')" />
+<area shape="rect" coords="166,166,273,219" alt="Kitchen" onclick="$.wiki('<<goto[[PH Kitchen]]>><<set $Minutes += 1>>')" />
+</map>

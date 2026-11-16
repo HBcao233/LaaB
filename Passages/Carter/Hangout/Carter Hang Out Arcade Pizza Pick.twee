@@ -1,0 +1,106 @@
+:: Carter Hang Out Arcade Pizza Pick [nobr]
+
+<<set $Minutes += 15>>
+<<set $Money -= 4>>
+
+/* Opening */
+Feeling a bit hungry, you suggest to <span style="color:DarkTurquoise">Carter</span> that the two of you split a pizza. <span style="color:DarkTurquoise">Carter</span> is excited by this idea and the two of you head over to the counter to order. As you are waiting in line, you ask <span style="color:DarkTurquoise">Carter</span> what his favorite pizza toppings are. <br>
+
+<<set _ad to [
+    {
+        Name: "Carter",
+        State: {
+            Mouth: "Happy",
+            Outfit: $HangOutClothes,
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Happy",
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Pepperoni is honestly the best. It’s, like, THE pizza.”</span> <span style="color:DarkTurquoise">Carter</span> replies, <span style="color:LightSteelBlue">“But, I pretty much like every pizza, so get whatever you want. Hey, why don’t you order it while I find us a good table?”</span> You agree and <span style="color:DarkTurquoise">Carter</span> hands you his half of the money and runs off to find a table. When it is your turn, the cashier asks you what type of pizza you want. <br>
+<br>
+
+<div id="choice">
+/* Cheese Pizza */
+    <<link "Cheese Pizza<br>">>
+        <<replace "#choice">>
+            You order a cheese pizza then head over and find <span style="color:DarkTurquoise">Carter</span> sitting at a small table. He waves you over and you sit down across from him. You chat until your pizza arrives and is placed between you two. <br>
+            <br>
+            <span style="color:LightSteelBlue">“Haha, why’d you ask me what kind of pizza I like if you were just going to get cheese?”</span> He laughs, taking a slice. You ask him if cheese pizza is alright and he nods. <span style="color:LightSteelBlue">“Yeah! I love cheese pizza. Actually, did you know that you actually get more cheese on a cheese-only pizza? Most places will only put on a little cheese, and then cover up the holes with toppings. If I was a vigilante like Owlman, I’d go over corrupt pizzeria owners first!”</span> You laugh as the two of you enjoy a pizza together. <br>
+            <<needChange "Hunger" 30>>
+            <span style="color:green">+Carter Energy</span><br>
+            <<set $HangOutNeed.Energy += 15>>
+            <<socialChange "Carter" 3>>
+            <br>
+            [[Continue|Carter Hang Out Arcade]]
+        <</replace>>
+    <</link>>
+
+    /* Pepperoni Pizza */
+	<<link "Pepperoni Pizza<br>">>
+        <<replace "#choice">>
+            You order a pepperoni pizza then head over and find <span style="color:DarkTurquoise">Carter</span> sitting at a small table. He waves you over and you sit down across from him. You chat until your pizza arrives and is placed between you two. <br>
+            <br>
+            <span style="color:LightSteelBlue">“Pepperoni! My favorite!”</span> <span style="color:DarkTurquoise">Carter</span> laughs, taking a big slice, <span style="color:LightSteelBlue">“Oh, how did you know? I guess you just know me so well!”</span> He jokes as you roll your eyes and take a piece yourself. <span style="color:LightSteelBlue">“Hey, have you ever had those frozen pizzas with the little cubes of pepperoni? I ate those a lot when I was little, so they always remind me of elementary school.”</span> You laugh, informing <span style="color:DarkTurquoise">Carter</span> that he is still, very much, little. He responds by sticking his tongue out at you and flicking a pepperoni at your face. <br>
+            <<needChange "Hunger" 30>>
+            <span style="color:green">+Carter Energy</span><br>
+            <<set $HangOutNeed.Energy += 15>>
+            <<socialChange "Carter" 3>>
+            <br>
+            [[Continue|Carter Hang Out Arcade]]
+        <</replace>>
+    <</link>>
+
+    /* Supreme Pizza */
+	<<link "Supreme Pizza<br>">>
+        <<replace "#choice">>
+            You order a supreme pizza then head over and find <span style="color:DarkTurquoise">Carter</span> sitting at a small table. He waves you over and you sit down across from him. You chat until your pizza arrives and is placed between you two. <br>
+            <br>
+            <span style="color:DarkTurquoise">Carter</span>’s expression goes from excited to pouting as he sees the pizza. <span style="color:LightSteelBlue">“Vegetables on a pizza?”</span> <span style="color:DarkTurquoise">Carter</span> says with a look of disgust and confusion, <span style="color:LightSteelBlue">“What are you, my dad?”</span> You chuckle, asking <span style="color:DarkTurquoise">Carter</span> if he doesn’t like vegetables. <span style="color:LightSteelBlue">“I love vegetables, but when you put them on a pizza all you do is make the pizza wet. Plus, they’re not even healthy on a pizza! By combining them, you ruin both the pizza and the vegetables!”</span> <span style="color:DarkTurquoise">Carter</span> protests, but you just start eating and tell him to pick them off if he doesn’t like them. <span style="color:DarkTurquoise">Carter</span> pouts some more but eats the pizza as-is without any more fuss. <br>
+            <<needChange "Hunger" 30>>
+            <span style="color:green">+Carter Energy</span><br>
+            <<set $HangOutNeed.Energy += 15>>
+            <<socialChange "Carter" 3>>
+            <br>
+            [[Continue|Carter Hang Out Arcade]]
+        <</replace>>
+    <</link>>
+
+    /* Meat Lovers Pizza */
+	<<link "Meat Lovers Pizza<br>">>
+        <<replace "#choice">>
+            You order a meat lovers pizza then head over and find <span style="color:DarkTurquoise">Carter</span> sitting at a small table. He waves you over and you sit down across from him. You chat until your pizza arrives and is placed between you two. <br>
+            <br>
+
+            <span style="color:LightSteelBlue">“I knew you were a man of fine tastes!”</span> <span style="color:DarkTurquoise">Carter</span> smiles, taking a big slice of the pizza, <span style="color:LightSteelBlue">“I mean, how can you not love meat on pizza? Anyone who doesn’t is weird… or vegetarian. Vegetarians are pretty cool, I guess.”</span> You laugh as <span style="color:DarkTurquoise">Carter</span> thinks about the moral implications of eating meat and if he can truly be good if he does. But then he decides that it doesn’t matter, and enjoys the pizza anyway. <br>
+            <<needChange "Hunger" 30>>
+            <span style="color:green">+Carter Energy</span><br>
+            <<set $HangOutNeed.Energy += 15>>
+            <<socialChange "Carter" 3>>
+            <br>
+            [[Continue|Carter Hang Out Arcade]]
+        <</replace>>
+    <</link>>
+
+    /* Hawaiian Pizza */
+	<<link "Hawaiian Pizza<br>">>
+        <<replace "#choice">>
+            You order a Hawaiian pizza then head over and find <span style="color:DarkTurquoise">Carter</span> sitting at a small table. He waves you over and you sit down across from him. You chat until your pizza arrives and is placed between you two. <br>
+            <br>
+
+            <span style="color:DarkTurquoise">Carter</span> lets out a gasp as he sees the pizza. <span style="color:LightSteelBlue">“You monster!”</span> He stands up in his seat, unable to believe what he was seeing. <span style="color:LightSteelBlue">“You ordered pineapple on pizza? You villain!”</span> You laugh, claiming that you like it and reminding <span style="color:DarkTurquoise">Carter</span> that he said he likes every topping. <span style="color:LightSteelBlue">“I like every pizza topping, this is NOT a pizza topping! This is a crime, at best! And I thought I knew you!”</span> You laugh as you watch <span style="color:DarkTurquoise">Carter</span> pick off the pineapple, claiming he’ll just enjoy a ham pizza, like a normal person, and gives you disgusted looks of betrayal as he sees you eat the pizza. <br>
+            <<needChange "Hunger" 30>>
+            <span style="color:green">+Carter Energy</span><br>
+            <<set $HangOutNeed.Energy += 10>>
+            <<socialChange "Carter" 1>>
+            <br>
+            [[Continue|Carter Hang Out Arcade]]
+        <</replace>>
+    <</link>>
+</div>

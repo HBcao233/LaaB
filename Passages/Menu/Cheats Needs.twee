@@ -1,0 +1,336 @@
+:: Cheats Needs [nobr]
+
+/* NEEDS */
+<span style="color:Azure"><big><strong>--Needs--</strong></big></span><br>
+
+/* ALL */
+<div class="cheats-needs-item">
+	<div>
+		[[(Min)|Cheats Menu][$Player.Hunger to 0; $Player.Hygiene to 0; $Player.Energy to 0; $Player.Fun to 0; $Player.Bladder to 0]]
+		[[(--)|Cheats Menu][$Player.Hunger -= 20; $Player.Hygiene -= 20; $Player.Energy -= 20; $Player.Fun -= 20; $Player.Bladder -= 20]]
+		[[(-)|Cheats Menu][$Player.Hunger -= 5; $Player.Hygiene -= 5; $Player.Energy -= 5; $Player.Fun -= 5; $Player.Bladder -= 5]]
+	</div>
+	<span class="chats-needs-label-small">All Needs</span>
+	<div>
+		[[(+)|Cheats Menu][$Player.Hunger += 5; $Player.Hygiene += 5; $Player.Energy += 5; $Player.Fun += 5; $Player.Bladder += 5]]
+		[[(++)|Cheats Menu][$Player.Hunger += 20; $Player.Hygiene += 20; $Player.Energy += 20; $Player.Fun += 20; $Player.Bladder += 20]]
+		[[(Max)|Cheats Menu][$Player.Hunger to 100; $Player.Hygiene to 100; $Player.Energy to 100;$Player.Fun to 100;$Player.Bladder to 100]]
+	</div>
+</div>
+
+/* ENERGY */
+<div class="cheats-needs-item">
+	<div>
+		[[(Min)|Cheats Menu][$Player.Energy to 0]]
+		[[(--)|Cheats Menu][$Player.Energy -= 20]]
+		[[(-)|Cheats Menu][$Player.Energy -= 5]]
+	</div>
+	<div class="cheats-needs-label-group">
+		<span class="chats-needs-label-small">Energy:</span>
+		<span @class="`cheats-needs-number ${$CheatsEnergy > 0 ? 'frozen' : ''}`"><<=$Player.Energy.toFixed(2)>>/100</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$Player.Energy += 5]]
+		[[(++)|Cheats Menu][$Player.Energy += 20]]
+		[[(Max)|Cheats Menu][$Player.Energy to 100]]&nbsp;
+		<<if $CheatsEnergy === 0>>
+			<<link "(Freeze)">>
+				<<script>>
+					Dialog.setup("Cheats - Freeze Energy", "Needs_Dialog");
+					Dialog.wiki("[[(Freeze Almost Min)|Cheats Menu][$CheatsEnergy = 1]] [[(Freeze Mid)|Cheats Menu][$CheatsEnergy = 2]] [[(Freeze Max)|Cheats Menu][$CheatsEnergy = 3]]");
+					Dialog.open();
+				<</script>>
+			<</link>>
+		<<else>>
+			[[(Unfreeze)|Cheats Menu][$CheatsEnergy = 0]]
+		<</if>>
+	</div>
+</div>
+
+/* HUNGER */
+<div class="cheats-needs-item">
+	<div>
+		[[(Min)|Cheats Menu][$Player.Hunger to 0]]
+		[[(--)|Cheats Menu][$Player.Hunger -= 20]]
+		[[(-)|Cheats Menu][$Player.Hunger -= 5]]
+	</div>
+	<div class="cheats-needs-label-group">
+		<span class="chats-needs-label-small">Hunger:</span>
+		<span @class="`cheats-needs-number ${$CheatsHunger > 0 ? 'frozen' : ''}`"><<=$Player.Hunger.toFixed(2)>>/100</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$Player.Hunger += 5]]
+		[[(++)|Cheats Menu][$Player.Hunger += 20]]
+		[[(Max)|Cheats Menu][$Player.Hunger to 100]]&nbsp;
+		<<if $CheatsHunger === 0>>
+			<<link "(Freeze)">>
+				<<script>>
+					Dialog.setup("Cheats - Freeze Hunger", "Needs_Dialog");
+					Dialog.wiki("[[(Freeze Min)|Cheats Menu][$CheatsHunger = 1]] [[(Freeze Mid)|Cheats Menu][$CheatsHunger = 2]] [[(Freeze Max)|Cheats Menu][$CheatsHunger = 3]]");
+					Dialog.open();
+				<</script>>
+			<</link>>
+		<<else>>
+			[[(Unfreeze)|Cheats Menu][$CheatsHunger = 0]]
+		<</if>>
+	</div>
+</div>
+
+/* HYGIENE */
+<div class="cheats-needs-item">
+	<div>
+		[[(Min)|Cheats Menu][$Player.Hygiene to 0]]
+		[[(--)|Cheats Menu][$Player.Hygiene -= 20]]
+		[[(-)|Cheats Menu][$Player.Hygiene -= 5]]
+	</div>
+	<div class="cheats-needs-label-group">
+		<span class="chats-needs-label-small">Hygiene:</span>
+		<span @class="`cheats-needs-number ${$CheatsHygiene > 0 ? 'frozen' : ''}`"><<=$Player.Hygiene.toFixed(2)>>/100</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$Player.Hygiene += 5]]
+		[[(++)|Cheats Menu][$Player.Hygiene += 20]]
+		[[(Max)|Cheats Menu][$Player.Hygiene to 100]]&nbsp;
+		<<if $CheatsHygiene === 0>>
+			<<link "(Freeze)">>
+				<<script>>
+					Dialog.setup("Cheats - Freeze Hygiene", "Needs_Dialog");
+					Dialog.wiki("[[(Freeze Min)|Cheats Menu][$CheatsHygiene = 1]] [[(Freeze Mid)|Cheats Menu][$CheatsHygiene = 2]] [[(Freeze Max)|Cheats Menu][$CheatsHygiene = 3]]");
+					Dialog.open();
+				<</script>>
+			<</link>>
+		<<else>>
+			[[(Unfreeze)|Cheats Menu][$CheatsHygiene = 0]]
+		<</if>>
+	</div>
+</div>
+
+/* FUN */
+<div class="cheats-needs-item">
+	<div>
+		[[(Min)|Cheats Menu][$Player.Fun to 0]]
+		[[(--)|Cheats Menu][$Player.Fun -= 20]]
+		[[(-)|Cheats Menu][$Player.Fun -= 5]]
+	</div>
+	<div class="cheats-needs-label-group">
+		<span class="chats-needs-label-small">Fun:</span>
+		<span @class="`cheats-needs-number ${$CheatsFun > 0 ? 'frozen' : ''}`"><<=$Player.Fun.toFixed(2)>>/100</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$Player.Fun += 5]]
+		[[(++)|Cheats Menu][$Player.Fun += 20]]
+		[[(Max)|Cheats Menu][$Player.Fun to 100]]&nbsp;
+		<<if $CheatsFun === 0>>
+			<<link "(Freeze)">>
+				<<script>>
+					Dialog.setup("Cheats - Freeze Fun", "Needs_Dialog");
+					Dialog.wiki("[[(Freeze Min)|Cheats Menu][$CheatsFun = 1]] [[(Freeze Mid)|Cheats Menu][$CheatsFun = 2]] [[(Freeze Max)|Cheats Menu][$CheatsFun = 3]]");
+					Dialog.open();
+				<</script>>
+			<</link>>
+		<<else>>
+			[[(Unfreeze)|Cheats Menu][$CheatsFun = 0]]
+		<</if>>
+	</div>
+</div>
+
+/* BLADDER */
+<div class="cheats-needs-item">
+	<div>
+		[[(Min)|Cheats Menu][$Player.Bladder to 0]]
+		[[(--)|Cheats Menu][$Player.Bladder -= 20]]
+		[[(-)|Cheats Menu][$Player.Bladder -= 5]]
+	</div>
+	<div class="cheats-needs-label-group">
+		<span class="chats-needs-label-small">Bladder:</span>
+		<span @class="`cheats-needs-number ${$CheatsBladder > 0 ? 'frozen' : ''}`"><<=$Player.Bladder.toFixed(2)>>/100</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$Player.Bladder += 5]]
+		[[(++)|Cheats Menu][$Player.Bladder += 20]]
+		[[(Max)|Cheats Menu][$Player.Bladder to 100]]&nbsp;
+		<<if $CheatsBladder === 0>>
+			<<link "(Freeze)">>
+				<<script>>
+					Dialog.setup("Cheats - Freeze Bladder", "Needs_Dialog");
+					Dialog.wiki("[[(Freeze Almost Min)|Cheats Menu][$CheatsBladder = 1]] [[(Freeze Mid)|Cheats Menu][$CheatsBladder = 2]] [[(Freeze Max)|Cheats Menu][$CheatsBladder = 3]]");
+					Dialog.open();
+				<</script>>
+			<</link>>
+		<<else>>
+			[[(Unfreeze)|Cheats Menu][$CheatsBladder = 0]]
+		<</if>>
+	</div>
+</div>
+
+
+/* AROUSAL */
+<div class="cheats-needs-item">
+	<div>
+		[[(Min)|Cheats Menu][$Player.Arousal to 0]]
+		[[(--)|Cheats Menu][$Player.Arousal = $Player.Arousal - 20 < 0 ? 0 : $Player.Arousal - 20]]
+		[[(-)|Cheats Menu][$Player.Arousal = $Player.Arousal - 5 < 0 ? 0 : $Player.Arousal - 5]]
+	</div>
+	<div class="cheats-needs-label-group">
+		<span class="chats-needs-label-small">Arousal:</span>
+		<span @class="`cheats-needs-number ${$CheatsArousal > 0 ? 'frozen' : ''}`"><<=$Player.Arousal.toFixed(2)>>/130</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$Player.Arousal = $Player.Arousal + 5 > 130 ? 130 : $Player.Arousal + 5]]
+		[[(++)|Cheats Menu][$Player.Arousal = $Player.Arousal + 20 > 130 ? 130 : $Player.Arousal + 20]]
+		[[(Max)|Cheats Menu][$Player.Arousal to 130]]&nbsp;
+		<<if $CheatsArousal === 0>>
+			<<link "(Freeze)">>
+				<<script>>
+					Dialog.setup("Cheats - Freeze Arousal", "Needs_Dialog");
+					Dialog.wiki("[[(Freeze Min)|Cheats Menu][$CheatsArousal = 1]] [[(Freeze Mid)|Cheats Menu][$CheatsArousal = 2]] [[(Freeze Max)|Cheats Menu][$CheatsArousal = 3]]");
+					Dialog.open();
+				<</script>>
+			<</link>>
+		<<else>>
+			[[(Unfreeze)|Cheats Menu][$CheatsArousal = 0]]
+		<</if>>
+	</div>
+</div>
+<br>
+
+
+/* Sexual Frustration */
+<<if !$Player.SexualFrustration || isNaN($Player.SexualFrustration)>>
+	<<set $Player.SexualFrustration to 0>>
+<</if>>
+<div class="cheats-needs-item">
+	<div>
+		[[(Min)|Cheats Menu][$Player.SexualFrustration to 0]]
+		[[(--)|Cheats Menu][$Player.SexualFrustration = $Player.SexualFrustration - 20 < 0 ? 0 : $Player.SexualFrustration - 20]]
+		[[(-)|Cheats Menu][$Player.SexualFrustration = $Player.SexualFrustration - 5 < 0 ? 0 : $Player.SexualFrustration - 5]]
+	</div>
+	<div class="cheats-needs-label-group">
+		<span class="chats-needs-label-small">SexFrust:</span>
+		<span @class="`cheats-needs-number ${$CheatsArousal > 0 ? 'frozen' : ''}`"><<=$Player.SexualFrustration.toFixed(2)>>/130</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$Player.SexualFrustration = $Player.SexualFrustration + 5 > 130 ? 130 : $Player.SexualFrustration + 5]]
+		[[(++)|Cheats Menu][$Player.SexualFrustration = $Player.SexualFrustration + 20 > 130 ? 130 : $Player.SexualFrustration + 20]]
+		[[(Max)|Cheats Menu][$Player.SexualFrustration to 500]]&nbsp;
+	</div>
+</div>
+<br>
+
+/* PUNISHMENT */
+<div class="cheats-needs-item-small">
+	<div>
+		[[(--)|Cheats Menu][$Punishment = $Punishment - 20 < 0 ? 0 : $Punishment - 20]]
+		[[(-)|Cheats Menu][$Punishment = $Punishment - 5 < 0 ? 0 : $Punishment - 5]]
+	</div>
+	<div class="cheats-needs-label-group group-large">
+		<span class="chats-needs-label pink">Punishment:</span>
+		<span class="cheats-needs-number">$Punishment</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$Punishment = $Punishment + 5 > 100 ? 100 : $Punishment + 5]]
+		[[(++)|Cheats Menu][$Punishment = $Punishment + 20 > 100 ? 100 : $Punishment + 20]]
+	</div>
+</div>
+
+/* DETENTION */
+<div class="cheats-needs-item-small">
+	<div>
+		[[(--)|Cheats Menu][$Detention = $Detention - 20 < 0 ? 0 : $Detention - 20]]
+		[[(-)|Cheats Menu][$Detention = $Detention - 5 < 0 ? 0 : $Detention - 5]]
+	</div>
+	<div class="cheats-needs-label-group group-large">
+		<span class="chats-needs-label pink">Detention:</span>
+		<span class="cheats-needs-number">$Detention</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$Detention = $Detention + 5 > 100 ? 100 : $Detention + 5]]
+		[[(++)|Cheats Menu][$Detention = $Detention + 20 > 100 ? 100 : $Detention + 20]]
+	</div>
+</div>
+
+/* Spank Marks */
+<div class="cheats-needs-item-small">
+	<div>
+		[[(--)|Cheats Menu][$SpankMarks = $SpankMarks - 5 < 0 ? 0 : $SpankMarks - 5]]
+		[[(-)|Cheats Menu][$SpankMarks = $SpankMarks - 1 < 0 ? 0 : $SpankMarks - 1]]
+	</div>
+	<div class="cheats-needs-label-group group-large">
+		<span class="chats-needs-label pink">SpankMarks:</span>
+		<span class="cheats-needs-number">$SpankMarks</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$SpankMarks = $SpankMarks + 1 > 100 ? 100 : $SpankMarks + 1]]
+		[[(++)|Cheats Menu][$SpankMarks = $SpankMarks + 5 > 100 ? 100 : $SpankMarks + 5]]
+	</div>
+</div>
+
+/* SchoolRep */
+<div class="cheats-needs-item-small">
+	<div>
+		[[(--)|Cheats Menu][$SchoolRep = $SchoolRep - 20 < -200 ? -200 : $SchoolRep - 20]]
+		[[(-)|Cheats Menu][$SchoolRep = $SchoolRep - 5 < -200 ? -200 : $SchoolRep - 5]]
+	</div>
+	<div class="cheats-needs-label-group group-large">
+		<span class="chats-needs-label pink">School Rep:</span>
+		<span class="cheats-needs-number">$SchoolRep</span>
+	</div>
+	<div>
+		[[(+)|Cheats Menu][$SchoolRep = $SchoolRep + 5 > 200 ? 200 : $SchoolRep + 5]]
+		[[(++)|Cheats Menu][$SchoolRep = $SchoolRep + 20 > 200 ? 200 : $SchoolRep + 20]]
+	</div>
+</div>
+
+Stress Level: 
+<<link"(-)">>
+	<<addMoodlet "Stress" 0>>
+	<<goto "Cheats Menu">>
+<</link>>
+<<link"(+)">>
+	<<addMoodlet "Stress" 1>>
+	<<goto "Cheats Menu">>
+<</link>>
+<br>
+
+:: Cheats Needs Style [stylesheet]
+
+.cheats-needs-item {
+	display: grid;
+	grid-template-columns: 90px 160px auto;
+}
+
+.cheats-needs-item-small {
+	display: grid;
+	grid-template-columns: 50px 140px auto;
+}
+
+.cheats-needs-label-group {
+	display: grid;
+    grid-template-columns: 75px 80px;
+}
+
+.cheats-needs-label-group.group-large {
+    grid-template-columns: 105px 28px;
+}
+
+.chats-needs-label {
+	font-weight: bold;
+    display: inline-block;
+}
+
+.chats-needs-label-small {
+	font-weight: bold;
+    display: inline-block;
+}
+
+.chats-needs-label.pink {
+	color: pink;
+}
+
+.cheats-needs-number {
+	text-align: right;
+}
+
+.frozen {
+	color: cyan;
+}

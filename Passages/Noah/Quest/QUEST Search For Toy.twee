@@ -1,0 +1,27 @@
+:: QUEST Search For Toy [nobr]
+
+You stand on the deck in your backyard. It is a decent-sized backyard, with plenty of space for a little boy to lose his second favorite toy, after <span style="color:DarkTurquoise">Bue</span> of course. You don’t see anything in the grass or dirt, but if it were that easy to find you’re pretty sure <span style="color:DarkTurquoise">Noah</span> would have been able to find it.<br>
+<br>
+You narrow down a few places that <span style="color:DarkTurquoise">Noah</span> wouldn’t have checked. First would be under the deck, it's dark, dusty, and full of bugs. All of which are turn-offs for <span style="color:DarkTurquoise">Noah</span>. Second, the shed. There is no light in there and <span style="color:DarkTurquoise">Noah</span> is convinced that he saw a monster in there at one point. Lastly, would be in the tree. You have no idea how it would have gotten up there, but it's technically a possibility. Though it may help to see if you can find some clues.<br>
+<br>
+<span style="color:Azure"><strong>--Investigate--</strong></span><br>
+<<if $QuestMissingToyInvestigate != 1>>
+	[[Investigate the Deck (0:15)|Missing Toy Investigate]]<br>
+<<else>>
+	<span style="color:Gray">You've already Investigated the Deck.</span><br>
+<</if>>
+<br>
+<span style="color:Azure"><strong>--Search--</strong></span><br>
+[[Crawl under the Deck (0:15)|Missing Toy Deck]]
+<span style="color:Red">-Hygiene</span>
+<br>
+[[Climb the Tree (0:15)|Missing Toy Tree]]
+<<set $SkillCheckType to "Athletics">>
+<<set $SkillCheckDifficulty to 1>>
+<<include"Skill Level Display">>
+<br>
+[[Search the Shed (0:15)|Missing Toy Shed]]
+<span style="color:Red">+???</span>
+<br>
+<br>
+[[Search Later|PH Backyard]]

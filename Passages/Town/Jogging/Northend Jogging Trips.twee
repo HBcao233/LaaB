@@ -1,0 +1,60 @@
+:: Northend Jogging Trips [nobr]
+
+/* OPENING */
+You are keeping a constant pace, almost even enjoying yourself, as you jog down the street and round the intersection and begin to make your way back. <span style="color:yellow">It is right as your house comes back into view that your leg buckles, stumbling upon an uneven slab of sidewalk. You attempt to correct yourself but only manage to redirect your fall away from the street and towards a nearby thorny-looking bush.</span><br>
+<br> 
+
+<div id=Choice>
+	<<link "Try to save yourself">>
+	<<replace"#Choice">>
+    <<skillCheck "Athletics" 70>>
+
+/* PASS */
+    <<if _result == 1>>
+    <span style="color:lightgreen">Thinking fast, you push your weight back towards the sidewalk and stretch out your hands, managing to catch yourself in what you imagined looked like an amateur yoga pose.</span> You stand back up and, despite the stinging on your hands, are thankful you are uninjured. You laugh off the near-fall, playfully stomping and cursing at the uneven sidewalk, before continuing down and finishing your jog.<br>
+
+    /* NEED DECREASE */
+    <<if $ExerciseType == "No Sweat">>
+        <<needChange "Hygiene" -2>>
+        <<needChange "Energy" -4>>
+    <<elseif $ExerciseType == "Paced">>
+        <<needChange "Hygiene" -5>>
+        <<needChange "Energy" -2>>
+    <<else>>
+        <<needChange "Hygiene" -5>>
+        <<needChange "Energy" -4>>
+
+    <</if>>
+    <<skillPoints "Athletics" 5>>
+    <br>
+    <<set $Minutes += 30>>
+    [[Continue|Northend]]
+
+/* FAIL */
+<<else>>
+    <span style="color:lightcoral">Bracing for impact, you cover your face with your hands as you fall face-first into the thorny bush. Instantly, you feel small cuts appear on your hands and hear the slightest rip from your clothes.</span> You lay there for a minute, not daring to move and risk more unpleasant cuts, before you slowly and carefully maneuvere your way out.<br>
+    <br>
+    Inspecting your arms and clothes, you are happy to find the damage to both is minimal, <span style="color:lightcoral">though it still hurts like hell!</span> You decide it would probably be best to limp home, cursing the uneven sidewalk as you wipe the small droplets of blood from your arm.<br>
+    <<addMoodlet "Pained" 4>>
+
+    /* NEED DECREASE */
+    <<set $Minutes += 30>>
+    <<if $ExerciseType == "No Sweat">>
+        <<needChange "Hygiene" -2>>
+        <<needChange "Energy" -4>>
+    <<elseif $ExerciseType == "Paced">>
+        <<needChange "Hygiene" -5>>
+        <<needChange "Energy" -2>>
+    <<else>>
+        <<needChange "Hygiene" -5>>
+        <<needChange "Energy" -4>>
+    <</if>>
+    <<skillPoints "Athletics" 5>>
+    <br>
+    [[Continue|Northend]]
+<</if>>
+
+<</replace>>
+<</link>>
+<<skillDiff "Athletics" 70>>
+</div>

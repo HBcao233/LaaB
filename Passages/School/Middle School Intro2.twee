@@ -1,0 +1,251 @@
+:: Middle School Intro2 [nobr]
+
+<<set $MetFelix to 1>>
+<<set $MetAlistair to 1>>
+<<set $FelixSocial to 0>>
+
+You walk into the Main Office. It is filled with the same overbearing feeling of “school spirit” as the hallways; With posters, photos, and awards along every wall. It is a lot quieter though, with the <span style="color:DarkTurquoise">Vice Principal</span> and <span style="color:DarkTurquoise">School Secretary</span> sitting at the front desk.<br>
+<br>
+The <span style="color:DarkTurquoise">Secretary</span> was a well-dressed older gentleman in a dark brown suit and graying hair, while the <span style="color:DarkTurquoise">Vice Principal</span> was a woman with dark skin, strangely the only woman you’ve seen on the entire school grounds so far. Upon seeing you the <span style="color:DarkTurquoise">Vice Principal</span> stands up and walks around the desk. <span style="color:LightSteelBlue">“You’re one of the new students? <span style="color:DarkTurquoise">$Player.LastName</span>, correct?”</span> She spoke in a gruff voice, one you’d mistake for a man's had you not been looking at her. <span style="color:LightSteelBlue">“Right, just sign your name here then head around to the office in the corner. The <span style="color:DarkTurquoise">Headmaster</span> will be here shortly.”</span><br>
+<br>
+You did as you were told and headed toward the back office. It was fairly large, with an expensive-looking dark wooden desk with a fancy computer atop it. Behind the desk was a large, one-way window that looked out into the courtyard where a number of boys were playing and relaxing before classes began. Two chairs faced the desk, most likely for guests of the <span style="color:DarkTurquoise">Headmaster</span>, and towering bookcases sat along one of the walls.<br>
+<br>
+As you are taking in the room, you suddenly feel a hand grasp your shoulder. You jump at the sudden touch and let out a small scream, spinning around. <span style="color:LightSteelBlue">“Apologies.”</span> A deep voice says. Towering before you was an older gentleman in a Dark Black Suit. He has Neat Black Hair that Grayed slightly on the sides and Blue Eyes that seemed to pierce into your soul. The man looks at you with a disapproving glare that sends fearful chills down your spine and makes you feel small. <span style="color:LightSteelBlue">“What are you doing in my office?”</span><br>
+
+<<set _ad to [
+    {
+        Name: "Alistair",
+        State: {
+            Mouth: "Frown",
+            Brows: "Angry",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+
+The man spoke in a serious tone, much like a parent scolding their child for misbehaving. He continues to question your presence here and while you try to explain, his glare causes you to only make a few nondescript sounds. The man leans in closer, his expression turning towards anger, you are frozen with fear as he places his hand on your shoulder and… laughs?<br>
+
+<<set _ad to [
+    {
+        Name: "Alistair",
+        State: {
+            Mouth: "Smile",
+        },
+    },
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Frown",
+            Blush: 2,
+        },
+    },
+]>>
+<<ad _ad>>
+
+<span style="color:LightSteelBlue">“Sorry, <span style="color:DarkTurquoise">$Player.Name</span>!”</span> The man’s laughter and smile cause all the fear and intimidation to wash away, though you still nearly fall to your knees as you breathe for the first time since he appeared. <span style="color:LightSteelBlue">“Did I truly scare you so badly? I know I can be intimidating, but I didn’t mean to nearly make you pass out.”</span> The man helps you over to a chair and sits down himself, as he begins to look strangely familiar. <span style="color:LightSteelBlue">“It was <span style="color:DarkTurquoise">Your Father</span>’s idea, he wanted me to give you a small fright, though I may have taken it too far. I am <span style="color:DarkTurquoise">Headmaster Alistair Constantine</span>, do you remember me?”</span><br>
+<br>
+As he spoke his name, memories started to flow back into your head. <span style="color:DarkTurquoise">Alistair</span>, a man you heard about much growing up. Your house was filled with many pictures of him, though nearly all showed him as a child. He was <span style="color:DarkTurquoise">Your Father</span>’s best friend growing up, they went to Preston together and were inseparable until your family moved when you were a baby.<br>
+<br>
+<span style="color:LightSteelBlue">“Last time I saw you, you were still in diapers and barely able to speak. Now look at you-“</span> <span style="color:DarkTurquoise">Alistair</span> pauses, staring at you for a moment, 
+<<if $Adopted == 0>>
+    <span style="color:LightSteelBlue">“You look exactly like <span style="color:DarkTurquoise">Your Father</span>. It’s uncanny.”</span> The look of familiar joy keys you into just how close he was to <span style="color:DarkTurquoise">Your Father</span>. He turns around a picture on his desk, which show <span style="color:DarkTurqoise">Your Father</span> and him as kids about your age. It’s strange, in his Preston Uniform, he did look nearly exactly like you. Though this is something everyone had always told you growing up, so it was no surprise.<br>
+<<else>>
+    <span style="color:LightSteelBlue">“Your face, it reminds me of <span style="color:DarkTurquoise">Your Father</span>'s when he was younger. Which is quite interesting considering you're-.”</span>  The look of familiar joy keys you into just how close he was to <span style="color:DarkTurquoise">Your Father</span>. He turns around a picture on his desk, which show <span style="color:DarkTurquoise">Your Father</span> and him as kids about your age. It’s strange, in his Preston Uniform and despite not being your biological dad, his face did remind you of yours. Guess some things go beyond genetics.<br>
+<</if>>
+
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Alistair">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 1>>
+	<<set $AD.Mouth to "Happy">>
+	<<set $AD.Outfit to "Uniform">>
+	<<set $AD.Hard to 0>>
+		<<include"XAVIER Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */<<set $AD.HairColor to "Black">>
+        	<<set $ADOuter to $None>>
+            <<set $AD.LeftEyeColor to "Blue">>
+            <<set $AD.RightEyeColor to "Blue">>
+            <<set $AD.SkinColor to "White">>
+            <<addClothing "AD" "Bottoms" "Dress Shorts" "Black">>
+            <<addClothing "AD" "Top" "School Dress Shirt" "School">>
+<div style="position: relative">
+	<<include"Avatar Display">>
+/* AVATAR DISPLAY */
+	<<set $AD.Name to "Player">>
+	<<set $AD.Arms to "Normal">>
+	<<set $AD.Eyes to "Normal">>
+	<<set $AD.Cry to 0>>
+	<<set $AD.Blush to 0>>
+	<<set $AD.Mouth to "Smirk">>
+	<<set $AD.Outfit to "Uniform">>
+	<<set $AD.Hard to 0>>
+		<<include"CARTER Avatar Equipment Set">>
+/* VARIABLE OVERRIDES */
+		/* */<<set $AD.HairColor to $Dad.HairColor>>
+            <<set $AD.LeftEyeColor to "Green">>
+            <<set $AD.RightEyeColor to "Green">>
+            <<set $AD.HairStyle to "Messy">>
+			<<set $AD.SkinColor to $Dad.SkinColor>>
+            <<addClothing "AD" "Outer" "School Jacket" "Rolled">>
+            <<addClothing "AD" "Bottoms" "Dress Shorts" "Black">>
+        <<addClothing "AD" "Top" "School Dress Shirt" "Rolled">>
+		<div style="position: absolute; left: 125px; top: 0px">
+	<<include"Avatar Display">>
+</div>
+/* END LAYER */
+	<img src="Images\Avatar\Body\Empty.png" style="position: an; left: 0; top: 0">
+</div>
+
+<span style="color:LightSteelBlue">“Apologies again for the scare, <span style="color:DarkTurquoise">Your Father</span> had a hard time believing I was the ‘scary <span style="color:DarkTurquoise">Headmaster</span> of Preston’ now. I was going to try to keep the act up a little longer, but you seemed quite scared."</span> You blush and share a laugh with <span style="color:DarkTurquoise">Alistair</span>, stating that you weren’t THAT scared. It was impressive how different he looked without the anger and scowl he had earlier.<br>
+<br>
+<div id=continue>
+	<<link "Continue<br>">>
+	<<replace"#continue">>
+Before <span style="color:DarkTurquoise">Alistair</span> could go into more detail about his relationship with <span style="color:DarkTurquoise">Your Father</span>, the two of you are interrupted by a knock on the door as the <span style="color:DarkTurquoise">Vice Principal</span> pokes her head inside. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">Headmaster</span>, the other new student is here. Shall I send him in?”</span> <span style="color:DarkTurquoise">Alistair</span> nods in response, returning the picture to its spot and readjusting his tie. A moment later, a boy your age walks in. The boy had a friendly smile on his face and shook the Headmaster’s hand, before leaning in towards his cheek, though the boy stops himself and pulls back blushing.<br>
+
+    <<set _ad to [
+        {
+            Name: "Alistair",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Felix",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+				Blush: 1,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Sorry!”</span> He said flustered, <span style="color:LightSteelBlue">“I keep forgetting you do not do that here. What was it <span style="color:DarkTurquoise">Joshua</span> said you do here? Bow?”</span> The boy spoke in a thick French accent and sounded out certain words slowly, as if they were still new to him.<br>
+<br>
+<span style="color:LightSteelBlue">“There is no need to bow <span style="color:DarkTurquoise">Felix</span>,”</span> <span style="color:DarkTurquoise">Alistair</span> chuckles, <span style="color:LightSteelBlue">“And I would take anything <span style="color:DarkTurquoise">Joshua</span> says with a grain of salt. He is a bit of a jokester if I remember correctly. Though outside of that, he has a good head on his shoulders. Just pick and choose what advice you heed from your host brother.”</span> <span style="color:DarkTurquoise">Felix</span> nods, before they both turn to you. <span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$Player.Name $Player.LastName</span>, this is <span style="color:DarkTurquoise">Félix Allard</span>. He is an exchange student from France and will also be starting this year.”</span><br>
+<br>
+<span style="color:LightSteelBlue">“Enchanté-! Eh, I mean- Nice to meet you, <span style="color:DarkTurquoise">$Player.Name</span>!”</span> <span style="color:DarkTurquoise">Felix</span> shakes your hand enthusiastically. He is a well-dressed boy, with Stylish Brown Hair, Blue Eyes, and Light, though slightly tanned, Skin. He also seems fairly fit for his age and has some scrapes on his knees. Overall, outside of the funny accent, he seemed like a normal, polite kid.<br>
+<br>
+<span style="color:DarkTurquoise">Alistair</span> has you both take a seat and prints out your schedules. <span style="color:LightSteelBlue">“As you both are aware, Preston is not a normal school. I won’t bore you with the history, but its founding was based on the idea that if a single system controls the growth of children, they can more properly mold and create successful adults. With that goal in mind, the only time a student enters the Preston School System is First Grade. They generally stay in the system until they graduate High School.”</span> <span style="color:DarkTurquoise">Alistair</span> hands you both a packet containing information about the school along with its various rules and expectations.<br>
+<br>
+<span style="color:LightSteelBlue">“While it may seem excessive, the results speak for themselves. However, you two are special exceptions. The board is thinking about accepting new students up until the start of Middle School. So you two will act as a sort of trial run. <span style="color:DarkTurquoise">$Player.Name</span>’s father graduated from the school with honors and legacy families bring in a lot of good publicity.”</span> <span style="color:DarkTurquoise">Alistair</span> turns to <span style="color:DarkTurquoise">Felix</span>, <span style="color:LightSteelBlue">“Meanwhile, <span style="color:DarkTurquoise">Mr. Allard</span> here scored the highest on the entrance exam we gave to students from 15 different countries. You are clearly incredibly bright.”</span> <br>
+<br>
+<span style="color:DarkTurquoise">Felix</span> blushes at the compliment as you both finished signing the last bit of paperwork. <span style="color:LightSteelBlue">“Unfortunately, this may put a lot of pressure on you both. The other students may even feel threatened and the teachers may grade you more harshly. Your best course of action would be to take it in stride and put your best foot forward. I’ll be here if you need me, so if you have any trouble don’t hesitate to ask.”</span> <span style="color:DarkTurquoise">Alistair</span> stands up, pausing to see if either of you has any questions, before leading you back out to the hallway.<br>
+
+    <<set _ad to [
+        {
+            Name: "Felix",
+            State: {
+				Outfit: "Uniform",
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+Once the door to the office shuts, <span style="color:DarkTurquoise">Felix</span> lets out a sigh of relief. <span style="color:LightSteelBlue">“He made it sound so intense!”</span> The French boy gives you a smile as a group of students pass by and gossip loudly.<br>
+<br>
+<span style="color:LightSteelBlue">“Isn’t that the boy that tried to kiss <span style="color:DarkTurquoise">Xavier</span>?”</span> One boy laughs. <span style="color:LightSteelBlue">“What a fag!”</span><br>
+<br>
+<span style="color:DarkTurquoise">Felix</span> blushes and laughs nervously. <span style="color:LightSteelBlue">“I was a bit confused about how things are done here. A kiss near both cheeks is a French greeting of respect, but that popular boy got a bit flustered. It created a bit of a scene.”</span> <span style="color:DarkTurquoise">Felix</span> perks up, <span style="color:LightSteelBlue">“Though I am glad I am not alone in being new here! We can help each other if things get crazy?”</span> <span style="color:DarkTurquoise">Felix</span> seems nice, but he also seems to have started out with a bad reputation, being seen as weird. You wonder if befriending him would cause that reputation to rub off on you.<br>
+<br>
+<div id=choice>
+	<<link "Ask to learn the Kiss Greeting">>
+	<<replace"#choice">>
+    You smile, stating that you think the French greeting was kind of cute, and asked if he could show you. <span style="color:Pink">He seemed surprised by your response, but excited. It is, as you expected, a kiss on each cheek.</span> Though <span style="color:DarkTurquoise">Felix</span> states that a kiss in the air near the cheek is fine.<br>
+
+    <<set _ad to [
+        {
+            Name: "Felix",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Happy",
+				Blush: 2,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+A few more boys passed by as you performed the greeting, chuckling and making derogatory remarks, calling you both lovers. <span style="color:DarkTurquoise">Felix</span> just laughs at these remarks. <span style="color:LightSteelBlue">“The boys here must be very insecure about their masculinity. Friends can show love to each other without them being ‘lovers’. Though, I think you would make a good boyfriend.”</span> <span style="color:Pink"><span style="color:DarkTurquoise">Felix</span> gives you a cheeky wink before opening his schedule.</span> <span style="color:LightSteelBlue">“I am going to find my classes so I don’t get lost later, but we should hang out during lunchtime! Would love to hear about your old school!”</span><br>
+<br>
+You wave goodbye to <span style="color:DarkTurquoise">Felix</span> and take in a breath as you are about to enter the first day of your new life.<br>
+	<<socialChange "Felix" 25>>
+    <<set $Attractions.Felix to 1>>
+    <br>
+	[[Continue|School South Hallway]] 
+
+    <</replace>>
+    <</link>>
+    [<span style="color:Lightgreen">Positive Relationship</span>/<span style="color:Lightgreen">Attraction</span>]<br>
+/* */
+
+	<<link "Accept his friendship">>
+	<<replace"#choice">>
+    You smile and hold your hand out, which he happily shakes. <span style="color:DarkTurquoise">Felix</span> gives you a happy smile before opening his schedule. <span style="color:LightSteelBlue">“I am going to find my classes so I don’t get lost later, but we should hang out during lunchtime! Would love to hear about your old school!”</span><br>
+<br>
+You wave goodbye to <span style="color:DarkTurquoise">Felix</span> and take in a breath as you are about to enter the first day of your new life.<br>
+	<<socialChange "Felix" 25>>
+    <<set $Attractions.Felix to 0>>
+    <br>
+	[[Continue|School South Hallway]] 
+
+    <</replace>>
+    <</link>>
+    [<span style="color:Lightgreen">Positive Relationship</span>/<span style="color:lightcoral">No Attraction</span>]<br>
+/* */
+
+	<<link "Reject, he's cute, but too weird">>
+	<<replace"#choice">>
+    <span style="color:Pink">You smile, saying that while he may be cute,</span> he is still very weird. You just started here and don’t want to be seen as a freak like him. Maybe once he has adapted more to things around here, you can try again to be friends. But for now, you think it would be best if the two of you went your separate ways.<br>
+
+    <<set _ad to [
+        {
+            Name: "Felix",
+            State: {
+				Outfit: "Uniform",
+				Mouth: "Frown",
+				Eyes: "Sad",
+				Blush: 2,
+    		},	
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:DarkTurquoise">Felix</span> seems surprised by your response, stumbling to find the English words to respond. But you just pat him on the head, telling him to save his breath, and walk away. <span style="color:DarkTurquoise">Felix</span> turns to you as you leave, but accepts your rejection and walks away sadly. With that taken care of, it was time to start the first day of your new life.<br>
+	<<socialChange "Felix" -25>>
+    <<set $Attractions.Felix to 1>>
+    <br>
+	[[Continue|School South Hallway]] 
+
+    <</replace>>
+    <</link>>
+    [<span style="color:lightcoral">Negative Relationship</span>/<span style="color:Lightgreen">Attraction</span>]<br>
+/* */
+
+	<<link "Reject, he's too weird">>
+	<<replace"#choice">>
+    You frown at his request, stating that he is too weird for you and would be better off finding someone more like him to be friends with. <span style="color:DarkTurquoise">Felix</span> frowns, but you walk away before he can respond. With that taken care of, it was time to start the first day of your new life.<br>
+	<<socialChange "Felix" -25>>
+    <<set $Attractions.Felix to 0>>
+    <br>
+	[[Continue|School South Hallway]] 
+    
+    <</replace>>
+    <</link>>
+    [<span style="color:lightcoral">Negative Relationship</span>/<span style="color:lightcoral">No Attraction</span>]<br>
+/* */
+
+</div>
+	<</replace>>
+	<</link>>
+</div>

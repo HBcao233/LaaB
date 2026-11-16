@@ -1,0 +1,72 @@
+:: Carter House Living Room [nobr]
+
+
+<<set $Location to {
+    Name: "Carter Living Room",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Living Room",
+}>>
+<span style="color:Azure"><big><strong>--Carter's Living Room--</strong></big></span><br>
+
+<<if $Time.after(19, 0)>>
+    <<if $HangOutNeed.Fun >= 50>>
+        <<include"Carter House Leaving Late High Fun">>
+    <<else>>
+        <<include"Carter House Leaving Late Low Fun">>
+    <</if>>
+<<else>>
+
+    You stand in <span style="color:DarkTurquoise">Carter</span>’s living room next to the large blue couch that sits in front of their massive TV. You are a bit too worried to get close to it, the screen looking like it could squish you if it falls. <span style="color:DarkTurquoise">Carter</span> also seems rather hesitant to get too close. Various other shelves and decorations fill the room.<br>
+    <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Everyday",
+                Mouth: "Happy",
+            },	
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },	
+        },
+    ]>>
+    <<ad _ad>>
+
+    <strong>Carter: </strong><<include"NPC Hang Out Modifiers">><br>
+    <br>
+
+    <span style="color:Azure"><strong>-Actions-</strong></span><br>
+    [[Go somewhere with Carter (0:??)|Carter House Go Somewhere]]<br>
+    <<if $HangOutNeed.Fun >= 50>>
+        [[Leave|Carter House Leaving Early High Fun]]<br>
+    <<else>>
+        [[Leave|Carter House Leaving Early Low Fun]]<br>
+    <</if>>
+    <br>
+
+    <span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Hallway (0:01)|Carter House Hallway][$Minutes += 1]] <br>
+    [[Dining Room (0:01)|Carter House Dining Room][$Minutes += 1]] <br>
+    [[Bathroom (0:01)|Carter House Bathroom][$Minutes += 1]] <br>
+    <br>
+
+    <br>
+    <div style="position: relative">
+    <img src="Images\NPC Homes\Carter House\Carter House Map.png" alt="Carter House Base" usemap="#CarterHouse">
+        <img src="Images\NPC Homes\Carter House\Tall Room Marker.png" 
+    style="position: absolute; left: 162px; top: 54px"  alt="Carter House Map" usemap="#CarterHouse">
+    </div>
+    <map name="CarterHouse">
+        <area shape="rect" coords="162,0,215,53" alt="Bathroom" onclick="$.wiki('<<goto[[Carter House Bathroom]]>><<set $Minutes += 1>>')" />
+        <area shape="rect" coords="54,54,165,103" alt="Hallway" onclick="$.wiki('<<goto[[Carter House Hallway]]>><<set $Minutes += 1>>')" />
+        <area shape="rect" coords="108,108,161,161" alt="Dining Room" onclick="$.wiki('<<goto[[Carter House Dining Room]]>><<set $Minutes += 1>>')" />
+    </map>
+
+<</if>>

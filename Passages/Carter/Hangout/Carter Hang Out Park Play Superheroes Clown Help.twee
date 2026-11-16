@@ -1,0 +1,128 @@
+:: Carter Hang Out Park Play Superheroes Clown Help [nobr]
+
+/* Intro */
+You and <span style="color:DarkTurquoise">Carter</span> are wandering around the park doing little good deeds such as picking up litter and bandaging scraped knees, when a chorus of young laughter and gasps fill your ears. <span style="color:Yellow">You and <span style="color:DarkTurquoise">Carter</span> look at each other confused before running towards the source of the sound.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightGreen">You come across a small makeshift stage where a man dressed in a full clown outfit is performing. His rainbow hair jiggles as he balances on a small ball while also balancing a bowling pin on the tip of his finger. It is honestly pretty impressive, and you hear <span style="color:DarkTurquoise">Carter</span> chuckle cutely next to you.</span> <span style="color:LightSteelBlue">“For my next trick, I’ll need an assistant! You, young man!”</span> <span style="color:LightGreen">The clown points to <span style="color:DarkTurquoise">Carter</span>,</span> who looks a bit stunned for a moment before happily running up. <span style="color:LightSteelBlue">“What’s your name, young man?”</span> <br>
+<br>
+<span style="color:LightSteelBlue">“C- <span style="color:DarkTurquoise">Carter Kent</span>, sir clown… sir?”</span> <span style="color:DarkTurquoise">Carter</span> <span style="color:Pink">says with a hint of adorable awkwardness.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Carter",
+            State: {
+                Outfit: $HangOutClothes,
+                Mouth: "Frown",
+                Blush: 1,
+            },
+        },
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Smirk",
+                Eyes: "Tired",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Please, Sir Clown was my father.”</span> The clown says, followed by laughter from the crowd. <span style="color:LightSteelBlue">“Now, for my next trick I’m going to need to reach into your sleeve, I think I may have left something in there? Is that alright?”</span> <span style="color:DarkTurquoise">Carter</span> nods, holding up his hands as the clown reaches his hand inside the boy’s sleeve. <span style="color:DarkTurquoise">Carter</span> <span style="color:Pink">giggles a little, trying not to squirm too much.</span> <br>
+<br>
+Then, the clown finds what he is looking for and begins to pull out a long strand of colorful neckties tied together in a long rainbow pattern. He pulls out about 3 feet as the crowd gasps and applauds, though you are watching <span style="color:DarkTurquoise">Carter</span>’s face of absolute amazement, as if he really is wondering how all that got into his sleeve. <span style="color:LightGreen">However, as the clown reaches the end, something unexpected appears tied to the end of the neckties.</span> <br>
+<br>
+
+<div id="choice">
+    <<link "Carter's Underwear<br>">>
+    <<replace "#choice">>
+        As the necktie falls from <span style="color:DarkTurquoise">Carter</span>’s sleeve, there is a strange piece of fabric tied to the end. The clown looks at it confused before holding it up. <span style="color:Pink">It is a small pair of $CarterUndies.Type. The crowd breaks out laughing as the clown smirks and nudges <span style="color:DarkTurquoise">Carter</span>. <span style="color:DarkTurquoise">Carter</span> at first finds it funny as well, until there is a bit of realization on his face. <span style="color:DarkTurquoise">Carter</span> suddenly pulls open his bottoms and peeks inside. Based on his expression of shock and his face turning bright red, you get the feeling the clown isn’t just holding up a random pair of underwear, but the underwear <span style="color:DarkTurquoise">Carter</span> had been wearing!</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Carter",
+                    State: {
+                        Outfit: $HangOutClothes,
+                        Mouth: "Frown",
+                        Blush: 2,
+                        Arms: "Hide",
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Aahhh! How did you-!?”</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Carter</span> cries out, snatching the underwear back from the clown and quickly hiding them in his hands.</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“Give it up for my assistant!”</span> The clown claps as <span style="color:DarkTurquoise">Carter</span> quickly jumps off the stage. <span style="color:LightSteelBlue">“Don’t worry, no underwear was harmed in the making of that trick!”</span> He laughs, honking his nose as <span style="color:DarkTurquoise">Carter</span> hurries over to you. <br>
+        <br>
+        <span style="color:LightSteelBlue">“How did he…?”</span> <span style="color:DarkTurquoise">Carter</span> glances down at the underwear in utter confusion. <span style="color:LightSteelBlue">“I- I gotta run to the bathroom really quick. I’ll be right back!”</span> <span style="color:DarkTurquoise">Carter</span> <span style="color:Pink">runs off to put his underwear back on as you continue to chuckle at the show. You wonder if the clown will show you how to do that trick.</span> <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Carter" 3>>
+        <span style="color:green">+Carter Fun</span><br>
+        <<set $HangOutNeed.Fun += 15>>
+        <span style="color:green">+Carter Comfort</span><br>
+        <<set $HangOutNeed.Comfort += 10>>
+        <br>
+        [[Continue|Carter Hang Out Park]]
+    <</replace>>
+    <</link>>
+    <<link "A Diaper<br>">>
+    <<replace "#choice">>
+        As the necktie falls from <span style="color:DarkTurquoise">Carter</span>’s sleeve, there is a strange, puffy white fabric tied to the end of it. The clown chuckles to himself as everyone watches in confusion, wondering what the white thing is. <span style="color:Pink">The clown holds it up, stretching it out to reveal a big, puffy diaper! The crowd bursts out laughing, though <span style="color:DarkTurquoise">Carter</span> continues to look confused until the clown holds it up towards his crotch, realizing that the clown is insinuating that it is his.</span> <br>
+
+            <<set _ad to [
+                {
+                    Name: "Carter",
+                    State: {
+                        Outfit: $HangOutClothes,
+                        Mouth: "Frown",
+                        Blush: 2,
+                        Arms: "Hide",
+                    },
+                },
+                {
+                    Name: "Player",
+                    State: {
+                        Mouth: "Smirk",
+                        Eyes: "Tired",
+                    },
+                },
+            ]>>
+            <<ad _ad>>
+
+        <span style="color:LightSteelBlue">“Wha-!? No! That’s not mine!”</span> <span style="color:Pink"> <span style="color:DarkTurquoise">Carter</span> plays the part perfectly, the clown commenting that they are just his size. While <span style="color:DarkTurquoise">Carter</span> seems a little embarrassed about it, there is some funny back and forth, especially when he finally manages to convince the clown they aren’t his… only for the clown to turn the diaper around to reveal <span style="color:DarkTurquoise">Carter</span>’s full name on the butt!</span> This causes the crowd to laugh even more and <span style="color:DarkTurquoise">Carter</span> to watch in amazement, unable to figure out how the clown did that. <br>
+        <br>
+        <span style="color:LightSteelBlue">“I’m just messing with my assistant here. It’s not his diaper.”</span> The clown chuckles, honking his nose playfully. <span style="color:LightSteelBlue">“I mean, look at him. His clearly have Ultraman on them.”</span> <br>
+        <br>
+        <span style="color:LightSteelBlue">“N- no! I don’t wear-!”</span> <span style="color:DarkTurquoise">Carter</span> tries to say, but the clown gets the crowd to clap for him as he hands <span style="color:DarkTurquoise">Carter</span> the diaper with his name on it and leads him offstage. <span style="color:Pink">You can’t help but chuckle as an embarrassed yet amused <span style="color:DarkTurquoise">Carter</span> walks over with the crinkled diaper in his hand.</span> <span style="color:LightSteelBlue">“We need to find a way to burn this.”</span> He says with a nervous smile. <br>
+        <<needChange "Fun" 15>>
+        <<socialChange "Carter" 3>>
+        <span style="color:green">+Carter Fun</span><br>
+        <<set $HangOutNeed.Fun += 15>>
+        <br>
+        [[Continue|Carter Hang Out Park]]
+    <</replace>>
+    <</link>>
+</div>

@@ -1,0 +1,23 @@
+:: Home Closet2 [widget]
+<<nobr>>
+<<widget "closet2">>
+<<set _drawer to State.getVar(`$Closet${_args[0]}`)>>
+<<set _slot to `$Player${_args[0]}`>>
+<<for _i to 0; _i lt _drawer.length; _i++>>
+    <<capture _i, _drawer, _slot>>
+    <<link [img[_drawer[_i].Icon]]>>
+        <<if $ClosetMoveToInventory>>
+            <<run $PlayerInventoryClothes.push(_drawer[_i])>>
+        <<else>>
+            <<if State.getVar(_slot).Name != "None">>
+                <<run _drawer.push(State.getVar(_slot))>>
+            <</if>>
+            <<run State.setVar(_slot, _drawer[_i])>>
+        <</if>>
+        <<run _drawer.deleteAt(_i)>>
+        <<goto "Home Closet">>
+    <</link>>
+    <</capture>>
+<</for>>
+<</widget>>
+<</nobr>>

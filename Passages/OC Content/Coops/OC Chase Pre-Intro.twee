@@ -1,0 +1,64 @@
+:: OC Chase Pre-Intro [nobr]
+
+/* Intro */
+<span style="color:LightSteelBlue">“<span style="color:DarkTurquoise">$NoahNickname</span>! Look, look!”</span> Your little brother <span style="color:DarkTurquoise">Noah</span> suddenly runs up to you carrying a decorated blue piece of paper. His smile is wide and energetic. <span style="color:LightSteelBlue">“I got invited to a BIRTHDAY PARTY! It’s from this boy in my class, <span style="color:DarkTurquoise">Chase</span>, he’s SUPER cool! And it’s at the arcade and we get tokens and they have this big play area!”</span> He is practically bouncing up and down with excitement, <span style="color:pink">overjoyed that he has been so successful at making friends to have already been invited to a party.</span> <br>
+
+<<set _ad to [
+	{
+		Name: "Dad",
+		State: {
+			Mouth: "Smirk",
+			Brows: "Suspicious",
+		},
+	},
+    {
+        Name: "Player",
+        State: {
+            Mouth: "Smirk",
+        },
+    },
+    {
+        Name: "Noah",
+        State: {
+            Outfit: "Everyday",
+            Mouth: "Smile",
+            Blush: 1,
+        },
+    },
+]>>
+<<ad _ad>>
+/* PC: Smirk
+Noah: Everyday, Smile, Blush1 */
+As you are congratulating the boy and chuckling at his energy, <span style="color:DarkTurquoise">Your Father</span> speaks up from his space on the couch. <span style="color:LightSteelBlue">“I was actually going to talk to you about that, <span style="color:DarkTurquoise">$DadNickname</span>. Would you mind taking <span style="color:DarkTurquoise">Noah</span> to the party Saturday? I’m going to be a bit busy. I called the boy’s father to make sure it was okay and he said it was fine; Even said you could get some tokens and hang out yourself, as long as you don’t mind the sugar-crazed kids.”</span> He chuckles as you both look to <span style="color:DarkTurquoise">Noah</span>, who is happily bouncing up and down rereading the invitation. <br>
+<br>
+Despite phrasing it as a question, you know it isn’t something you can really say no to. You agree, figuring it may be fun to be able to hang out at the arcade with <span style="color:DarkTurquoise">Noah</span> and his friends. <span style="color:LightSteelBlue">“Yay!”</span> <span style="color:DarkTurquoise">Noah</span> yells, jumping at you and giving you a hug, though really only nearly knocks you over. <span style="color:LightSteelBlue">“With you there it’ll be the coolest! We’re going to win SOOO many tickets!”</span> <span style="color:DarkTurquoise">Noah</span>’s extreme excitement for the party is infectious as you find yourself picturing all the fun to be had alongside him. It’s frankly adorable. <br>
+<br>
+As things calm down and <span style="color:DarkTurquoise">Noah</span> places the invitation on the fridge, you take a second to read over it.<span style="color:yellow"> The birthday party is Saturday between 11 A.M. and 4 P.M. You figure it would be best to get there between 10:30 and 11:30.</span> <br>
+<<set $ActiveQuests.push("Chase: Birthday Party")>>
+<<set $InActiveQuests.delete("Chase: Birthday Party")>>
+<<set $QuestLog.push(
+	{
+		Name: "Chase: Birthday Party",
+		State: 1,
+		ID: "OCChase_M001",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Noah",
+		Tags: ["Chase", "Character", "Quest", "Arcade"],
+		Description: "Your little brother <span style=\"color:DarkTurquoise\">Noah</span> has been invited to the Birthday Party of his classmate, <span style=\"color:DarkTurquoise\">Chase</span>. You’ve been asked by <span style=\"color:DarkTurquoise\">Your Father</span> to bring him there and attend the party as his guardian. The party is <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">11AM</span> and <span style=\"color:Teal\">4PM</span> at the <span style=\"color:Teal\">Arcade</span>.",
+		Objectives: [
+			{
+				Name: "Take <span style=\"color:DarkTurquoise\">Noah</span> to the <span style=\"color:Teal\">Arcade</span> around <span style=\"color:Teal\">11AM</span>.",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Noah",
+	Description: "Your little brother <span style=\"color:DarkTurquoise\">Noah</span> has been invited to the Birthday Party of his classmate, <span style=\"color:DarkTurquoise\">Chase</span>. You’ve been asked by <span style=\"color:DarkTurquoise\">Your Father</span> to bring him there and attend the party as his guardian. The party is <span style=\"color:Teal\">Saturday</span> between <span style=\"color:Teal\">11AM</span> and <span style=\"color:Teal\">4PM</span> at the <span style=\"color:Teal\">Arcade</span>.",
+})>>
+<br>
+[[Continue|PH Living Room]]

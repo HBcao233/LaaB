@@ -1,0 +1,49 @@
+:: CARTER BUS Underwear in Shirt [nobr]
+
+As you sit down at an empty seat on the bus, you notice <span style="color:DarkTurquoise">Carter</span> at the seat across from you, leaning over the seat in front of him as he laughs with another boy. <span style="color:Pink">You clearly notice that <span style="color:DarkTurquoise">Carter</span>’s $CarterTop.Type had been mistakenly tucked into his $CarterUndies.Name, giving a comically clear view of them.</span> You don’t think anyone else has noticed yet.
+
+<<set _ad to [
+	{
+		Name: "Carter",
+		State: {
+			Mouth: "Happy",
+			Outfit: "Uniform",
+		},
+	},
+]>>
+<<ad _ad>>
+
+<div id="choice">
+	<<link "Tell Him ">>
+		<<replace "#choice">>
+			You wait for the bus to stop and quickly slide over to his seat, getting his attention. You point out his wardrobe malfunction, causing him to blush and quickly fix it.<br>
+			<br>
+			<span style="color:LightSteelBlue">“Thanks <span style="color:DarkTurquoise">$CarterNickname</span>.”</span> He laughs, slightly embarrassed, <span style="color:LightSteelBlue">“Guess I was in a hurry getting changed.”</span><br>
+			<<socialChange "Carter" 3>>
+			<br>
+			
+			/* GET OFF BUS */
+			<<if $BusRide == "Home">>
+				[[Get off bus|Northend]]
+			<<else>>
+				[[Get off bus|Middle School]]
+			<</if>>
+		<</replace>>
+	<</link>> <span style="color:Green">+Carter</span><br>
+	<<link "Don't Tell Him ">>
+		<<replace "#choice">>
+			You decide to sit back and enjoy the view, letting <span style="color:DarkTurquoise">Carter</span> deal with whatever embarrassment this causes. Sure enough, after a few minutes you hear snickering from some of the boys behind you as they point out <span style="color:DarkTurquoise">Carter</span>’s “little boy underwear” to their friends. You even hear one of them snap a picture.<br>
+			<<set _arousalbs to []>>
+			<<set _arousalkink to ["Humiliation"]>>
+			<<arousalGain 10 _arousalbs _arousalkink>>
+			<br>
+			
+			/* GET OFF BUS */
+			<<if $BusRide == "Home">>
+				[[Get off bus|Northend]]
+			<<else>>
+				[[Get off bus|Middle School]]
+			<</if>>
+		<</replace>>
+	<</link>>
+</div>

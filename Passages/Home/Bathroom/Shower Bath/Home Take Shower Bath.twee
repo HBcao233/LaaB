@@ -1,0 +1,143 @@
+:: Home Take Shower [nobr]
+
+<<storeClothing "Closet" "Naked" 1>>
+<<set $Minutes += 30>>
+
+<<set _random to {
+    "Shower Normal": 80,
+    "Shower No Towel": 10,
+    "Shower Slip & Fall": 10,
+    "Shower Unintended Cold": 10,
+}>>
+
+/* NPCs Home and Awake */
+/* In future, may add a check to see if the NPC is home rather than just setting times. */
+<<if $Time.schoolday()>>
+    <<if $Time.between(6, 0, 7, 30) or $Time.between(15, 0, 22, 0)>>
+        <<set _random["Shower Dad Enter"] = 10>>
+        <<set _random["Shower Gabe Scare"] = 10>>
+        <<set _random["Shower Gabe Toss Out"] = 10>>
+        <<set _random["Shower Gabe Walk In"] = 10>>
+        <<set _random["Shower Noah Enter"] = 10>>
+        <<if $GabeSocial < 0 && $ToggleWatersports == 1>>
+            <<set _random["Shower Gabe Piss on PC"] = 10>>
+        <</if>>
+    <</if>>
+<<elseif $Time.between (6, 0, 22, 0)>>
+    <<set _random["Shower Dad Enter"] = 10>>
+    <<set _random["Shower Gabe Scare"] = 10>>
+    <<set _random["Shower Gabe Toss Out"] = 10>>
+    <<set _random["Shower Gabe Walk In"] = 10>>
+    <<set _random["Shower Noah Enter"] = 10>>
+    <<if $GabeSocial < 0 && $ToggleWatersports == 1>>
+        <<set _random["Shower Gabe Piss on PC"] = 10>>
+    <</if>>
+<</if>>
+
+<<set _event to _random.random()>>
+<<include _event>>
+
+:: Home Take Bath [nobr]
+
+<<storeClothing "Closet" "Naked" 1>>
+<<set $Minutes += 45>>
+
+<<set _random to {
+    "Bath Normal": 80,
+    "Bath No Towel": 10,
+    "Bath Slip & Fall": 10,
+    "Bath Unintended Cold": 10,
+    "Bath Poking Out of Water": 10,
+    "Bath Submarine": 10,
+}>>
+
+/* NPCs Home and Awake */
+/* In future, may add a check to see if the NPC is home rather than just setting times. */
+<<if $Time.schoolday()>>
+    <<if $Time.between(6, 0, 7, 30) or $Time.between(15, 0, 22, 0)>>
+        <<set _random["Bath Dad Enter"] = 10>>
+        <<set _random["Bath Gabe Scare"] = 10>>
+        <<set _random["Bath Gabe Toss Out"] = 10>>
+        <<set _random["Bath Gabe Walk In"] = 10>>
+        <<set _random["Bath Noah Enter"] = 10>>
+        <<set _random["Bath Dad Tease"] = 10>>
+    <</if>>
+<<elseif $Time.between (6, 0, 22, 0)>>
+    <<set _random["Bath Dad Enter"] = 10>>
+    <<set _random["Bath Gabe Scare"] = 10>>
+    <<set _random["Bath Gabe Toss Out"] = 10>>
+    <<set _random["Bath Gabe Walk In"] = 10>>
+    <<set _random["Bath Noah Enter"] = 10>>
+    <<set _random["Bath Dad Tease"] = 10>>
+<</if>>
+
+<<set _event to _random.random()>>
+<<include _event>>
+
+:: Home Take Shower Relaxing [nobr]
+
+<<storeClothing "Closet" "Naked" 1>>
+<<set $Minutes += 40>>
+
+<<set _random to {
+    "Shower Relaxing": 100,
+}>>
+
+/* NPCs Home and Awake */
+/* In future, may add a check to see if the NPC is home rather than just setting times. */
+<<if $Time.schoolday()>>
+    <<if $Time.between(6, 0, 7, 30) or $Time.between(15, 0, 22, 0)>>
+        <<set _random["Shower Dad Enter"] = 10>>
+        <<set _random["Shower Gabe Scare"] = 10>>
+        <<set _random["Shower Gabe Toss Out"] = 10>>
+        <<set _random["Shower Gabe Walk In"] = 10>>
+        <<set _random["Shower Noah Enter"] = 10>>
+        <<if $GabeSocial < 0 && $ToggleWatersports == 1>>
+            <<set _random["Shower Gabe Piss on PC"] = 10>>
+        <</if>>
+    <</if>>
+<<elseif $Time.between (6, 0, 22, 0)>>
+    <<set _random["Shower Dad Enter"] = 10>>
+    <<set _random["Shower Gabe Scare"] = 10>>
+    <<set _random["Shower Gabe Toss Out"] = 10>>
+    <<set _random["Shower Gabe Walk In"] = 10>>
+    <<set _random["Shower Noah Enter"] = 10>>
+    <<if $GabeSocial < 0 && $ToggleWatersports == 1>>
+        <<set _random["Shower Gabe Piss on PC"] = 10>>
+    <</if>>
+<</if>>
+
+<<set _event to _random.random()>>
+<<include _event>>
+
+:: Home Take Bath Relaxing [nobr]
+
+<<storeClothing "Closet" "Naked" 1>>
+<<set $Minutes += 55>>
+
+<<set _random to {
+    "Bath Relaxing": 100,
+}>>
+
+/* NPCs Home and Awake */
+/* In future, may add a check to see if the NPC is home rather than just setting times. */
+<<if $Time.schoolday()>>
+    <<if $Time.between(6, 0, 7, 30) or $Time.between(15, 0, 22, 0)>>
+        <<set _random["Bath Dad Enter"] = 10>>
+        <<set _random["Bath Gabe Scare"] = 10>>
+        <<set _random["Bath Gabe Toss Out"] = 10>>
+        <<set _random["Bath Gabe Walk In"] = 10>>
+        <<set _random["Bath Noah Enter"] = 10>>
+        <<set _random["Bath Dad Tease"] = 10>>
+    <</if>>
+<<elseif $Time.between (6, 0, 22, 0)>>
+    <<set _random["Bath Dad Enter"] = 10>>
+    <<set _random["Bath Gabe Scare"] = 10>>
+    <<set _random["Bath Gabe Toss Out"] = 10>>
+    <<set _random["Bath Gabe Walk In"] = 10>>
+    <<set _random["Bath Noah Enter"] = 10>>
+    <<set _random["Bath Dad Tease"] = 10>>
+<</if>>
+
+<<set _event to _random.random()>>
+<<include _event>>

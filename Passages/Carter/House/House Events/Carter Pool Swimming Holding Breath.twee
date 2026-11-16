@@ -1,0 +1,56 @@
+:: Carter Pool Swimming Holding Breath [nobr]
+
+/* Intro */
+<<set $Minutes += 20>>
+<span style="Color: LightSteelBlue">“Hey! Let’s see who can hold their breath under water the longest!”</span> <span style="color:DarkTurquoise">Carter</span> suddenly suggests out of nowhere. You ask <span style="color:DarkTurquoise">Carter</span> what spurred the sudden challenge and his only response is <span style="Color: LightSteelBlue">“I’m really good at holding my breath! I can do it for like a minute! Come on, unless you’re chicken!”</span> <span style="color:LightGreen">You cannot take such an insult sitting down, so accept his challenge as you both swim to the center of the pool.</span> <br>
+
+    <<set _ad to [
+        {
+            Name: "Player",
+            State: {
+                Mouth: "Happy",
+            },
+        },
+        {
+            Name: "Carter",
+            State: {
+                Outfit: "Swim",
+                Mouth: "Happy",
+            },
+        },
+    ]>>
+    <<ad _ad>>
+
+<span style="Color: LightSteelBlue">“But be careful though. Don’t stay under longer than you can. If my dad has to jump in to rescue us, he’ll beat our butts!”</span> <span style="color:DarkTurquoise">Carter</span> warns. You laugh, though he states that he is <span style="Color: LightSteelBlue">“very serious.”</span> <br>
+<br>
+With a count of three, you both plunge under the water, kneeling down near the bottom of the pool as you hold your breath! <br>
+<br>
+
+<<set _result to random(1, 8)>>
+<<set _result += $Endurance>>
+
+<<if _result > 10>>
+    <span style="color:Yellow"> <span style="color:DarkTurquoise">Carter</span> wasn’t kidding when he said he was pretty good, as you count in your head and <span style="color:DarkTurquoise">Carter</span> doesn’t seem to start to struggle until you reach 45 seconds.</span> Though he keeps holding on past a minute and you are about to give up and accept defeat when, at 1 minute 20 seconds, <span style="color:DarkTurquoise">Carter</span> <span style="color:LightGreen">bolts to the surface with a loud gasp! He begins to cough and gag as you surface next to him, only barely able to defeat him.</span> <br>
+    <br>
+    <span style="Color: LightSteelBlue">“Dang, you’re pretty good!”</span> <span style="color:DarkTurquoise">Carter</span> says between coughs, <span style="Color: LightSteelBlue">“I need to practice more. Too bad dad won’t let me, says it’s too dangerous.”</span> He shrugs. You can’t help but agree that practicing holding your breath under water is a bit of a dangerous activity, though are happy you won. <br>
+    <span style="color:Red">-Carter Energy</span><br>
+    <<set $HangOutNeed.Energy -= 10>>
+    <span style="color:Green">+Carter Fun</span><br>
+    <<set $HangOutNeed.Fun += 10>>
+    <<needChange "Fun" 10>>
+    <<socialChange "Carter" 1>>
+    <br>
+    [[Continue|Carter House Backyard Swim]]
+<<else>>
+    <span style="color:DarkTurquoise">Carter</span> <span style="color:Yellow">wasn’t kidding when he said he was pretty good, as you count in your head and quickly struggle after about 30 seconds due to your lacking endurance.</span> <span style="color:LightCoral">You are only able to make it to around 40 before you are forced to surface, coughing and spitting up pool water as you do.</span> <span style="color:DarkTurquoise">Carter</span>, meanwhile, doesn’t seem to be struggling yet and manages to last just over a minute before having to surface! <br>
+    <br>
+    <span style="Color: LightSteelBlue">“I won!”</span> <span style="color:DarkTurquoise">Carter</span> says, coughing and gagging just as much as you due to pushing his limits in an attempt to show off. <span style="Color: LightSteelBlue">“Told you I was the champion. Bleh! Think I swallowed some pool water. I’m going to get us some juice to wash the taste out, be right back!”</span> You are thankful for the break, needing to catch your breath and get the burning sensation of chloride out of your throat and eyes. Holding your breath in a pool is truly a dangerous game. <br>
+    <span style="color:Red">-Carter Energy</span><br>
+    <<set $HangOutNeed.Energy -= 10>>
+    <span style="color:Green">+Carter Fun</span><br>
+    <<set $HangOutNeed.Fun += 10>>
+    <<needChange "Fun" 10>>
+    <<socialChange "Carter" 1>>
+    <br>
+    [[Continue|Carter House Backyard Swim]]
+<</if>>

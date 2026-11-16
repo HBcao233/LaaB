@@ -1,0 +1,57 @@
+:: Lucas Quest PG Get [nobr]
+
+Math class is going along in its normal dull fashion; Some lectures and explanations, followed by a worksheet, followed by the group grading you were now doing. You had been paired up with <span style="color:DarkTurquoise">Lucas</span> and were in the process of grading his work as he graded yours. He had done pretty well and right as you were finishing up, he nudges you with his elbow and begins to whisper. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Uniform",
+			Mouth: "Happy",
+    	},	
+    },
+	{
+        Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<span style="color:LightSteelBlue">“Hey, what are you doing this weekend?”</span> He asks, still in the process of grading your work. You tell him you weren’t sure and ask why. <span style="color:LightSteelBlue">“I have this really fun video game, its co-op mode is super hard. I was thinking we can try it out, see how good we are.”</span> You agree that it sounds pretty fun and suggest coming over after school. <br>
+<br>
+<span style="color:LightSteelBlue">“No, it has to be the weekend.”</span> He says, glancing at <span style="color:DarkTurquoise">Mr. Randolph</span> to make sure he wasn’t overhearing you guys. Confused, you ask why it has to be on the weekend. <span style="color:LightSteelBlue">“Because my mom teaches acting at the community center all morning on weekends, meaning she can’t interrupt us! Trust me.”</span> You pause, even more confused, before asking him why it matters if his mom is there. <br>
+<br>
+<span style="color:LightSteelBlue">“Just come by between 9-12 on the weekend.”</span> He winks, <span style="color:LightSteelBlue">“Trust me.”</span> The thoughts that he had something else in mind, other than a video game, are only just entering your head when <span style="color:DarkTurquoise">Mr. Randolph</span> slams a textbook on your desk, causing you both to jump. <br>
+<br>
+<span style="color:LightSteelBlue">“I don’t recall giving you boys permission to chat amongst yourselves.”</span> He glares at both of you, <span style="color:LightSteelBlue">“If you are done grading, go over your answers to figure out where you went wrong.”</span> You both quickly apologize and scramble for your papers, burying your head in them. This appeased <span style="color:DarkTurquoise">Mr. Randolph</span> enough to avoid you two getting in trouble. As he walks away, <span style="color:DarkTurquoise">Lucas</span> turns back to you and gives you another wink. Just what was he planning? <br>
+<span style="color:gold">Quest Acquired: “Lucas: The Punishment Game”!</span><br>
+<<set $ActiveQuests.push("Lucas: Punishment Game")>>
+<<set $InActiveQuests.delete("Lucas: Punishment Game")>>
+<<set $QuestLog.push(
+	{
+		Name: "Lucas: Punishment Game",
+		State: 1,
+		ID: "Lucas_M004",
+		Category: "Character",
+		Type: "Quest",
+		Icon: "Lucas",
+		Tags: ["Lucas", "Character", "Quest", "Lucas' House"],
+		Description: "Apparently, <span style=\"color:DarkTurquoise\">Lucas</span> has a “really hard video game” that he wants to play with you. He was rather secretive about it, but also seems excited to play it with you. You’re not sure what exactly he is planning, but it has grabbed your interest. He says you’ll be able to play it at his house between <span style=\"color:Teal\">9AM</span> and <span style=\"color:Teal\">Noon</span> on the weekends, since his mom won’t be there to interrupt you. How intriguing.",
+		Objectives: [
+			{
+				Name: "Ask <span style=\"color:DarkTurquoise\">Lucas</span> about this game in his <span style=\"color:Teal\">Living Room</span> between <span style=\"color:Teal\">9AM</span> and <span style=\"color:Teal\">Noon</span> on the weekend.",
+				State: 0,
+				Total: 1,
+			},
+		],
+	},
+)>>
+<<set $Notifications.push({
+	Name: "Quest Acquired!",
+	Icon: "Quests/Lucas",
+	Description: "Apparently, <span style=\"color:DarkTurquoise\">Lucas</span> has a “really hard video game” that he wants to play with you. He was rather secretive about it, but also seems excited to play it with you. You’re not sure what exactly he is planning, but it has grabbed your interest. He says you’ll be able to play it at his house between <span style=\"color:Teal\">9AM</span> and <span style=\"color:Teal\">Noon</span> on the weekends, since his mom won’t be there to interrupt you. How intriguing.",
+})>>
+<br>
+		<<include"Attend Math Finish">>

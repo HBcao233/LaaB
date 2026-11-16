@@ -1,0 +1,71 @@
+:: Bedroom Hang Out Ball Toss [nobr]
+
+/* Written by: Ron, the Ronest man alive. <3 */
+/* Intro */
+
+<<set $Minutes += 30>>
+
+Looking for something to kill some time, you look in your toy chest and notice a small rubber ball. You decide to grab it and plop yourself down onto your bed. Your eyes now facing your bedroom ceiling. <br>
+<br>
+You toss the ball into the air throwing and catching it in alternating hands, you try to add some flair to each throw by doing a variety of spins with each arm. <span style="color:LightGreen">It feels like a very relaxing activity.</span> <br>
+<br>
+
+/*-Unlucky Trait End-*/
+<<if $Player.Traits.includes("Unlucky")>>
+    You toss the ball up high and as you prepare to catch the ball, <span style="color:LightCoral">you are hit with a unfortunately timed sneeze. This forcibly causes you to close your eyes and jerk your head forward, and before you have a chance to reopen your eyes, you feel the ball hit you right in the face.</span> <br>
+
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    Eyes: "Mad",
+                    },
+                },
+            ]>>
+        <<ad _ad>>
+    You cringe from the pain of the impact, getting out of bed you toss the ball back into the chest frustrated, cursing your misfortunate. <br>
+
+    <<needChange "Fun" 20>>
+    <<addMoodlet "Pained" 2>>
+    <br>
+    [[Continue|Player Bedroom]]
+
+/*-Normal End-*/
+<<else>>
+    After a few more minutes, you sit up on your bed deciding you are now bored of this. Looking at the still opened toy chest gives you a fun idea. You throw the ball with as much force as you can trying to land it right into the toy chest. <br>
+    <br>
+
+    <<skillCheck "Athletics" 50>>
+    /*(Success)*/
+    <<if _result == 1>>   
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Happy",
+                    },
+                },
+            ]>>
+        <<ad _ad>>
+
+        <span style="color:LightGreen">It lands right in!</span> You cheer loudly getting up to do an exaggerated victory lap around your room very pleased with your throw. <br>
+
+    /*(Fail)*/
+    <<else>>
+        <<set _ad to [
+            {
+                Name: "Player",
+                State: {
+                    Mouth: "Frown",
+                    },
+                },
+            ]>>
+        <<ad _ad>>
+
+        <span style="color:LightCoral">The ball hits the rim of your toy chest and bounces back down onto the floor.</span> You let out a disappointed sigh at the sight of this before getting up, you place the ball back into the chest properly. hoping you’ll get it next time. <br>
+    <</if>>
+    <<needChange "Fun" 20>>
+    <br>
+    [[Continue|Player Bedroom]]
+<</if>>

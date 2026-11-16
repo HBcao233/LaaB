@@ -1,0 +1,65 @@
+:: Lucas Home Dining Room [nobr]
+
+    <<set $Location to {
+    Name: "Lucas Home Dining Room",
+    Indoors: 1,
+    Safe: 0,
+    Nudity: 0,
+    Public: 0,
+    Environment: "Dining Room",
+}>>
+<span style="color:Azure"><big><strong>--Dining Room--</strong></big></span><br>
+<<if $Time.after(19, 0)>>
+	<<include"Lucas Home Kick Out">>
+<<else>>
+You and <span style="color:DarkTurquoise">Lucas</span> stand in the Dining Room of his house. A large table sits in the center of the room that could easily seat 8 people, which was odd since it was just the two of them here. A smaller table with two chairs and a tea set sits in one corner near the window. <br>
+
+<<set _ad to [
+    {
+        Name: "Lucas",
+        State: {
+			Outfit: "Everyday",
+			Mouth: "Happy",
+    	},	
+    },
+	{
+      	Name: "Player",
+        State: {
+			Mouth: "Happy",
+    	},	
+    },
+]>>
+    <<ad _ad>>
+
+<strong>Lucas: </strong><<include"NPC Hang Out Modifiers">><br>
+<br>
+
+<span style="color:Azure"><strong>-Actions-</strong></span><br>
+<<if $Homework == 1>>
+<<link"Do Homework Together (0:30)">>
+	<<set _Random to ["Lucas Home Homework Basic"]>>
+	<<set _event to _Random.random()>>
+    <<if $InActiveQuests.includes("Lucas: Boning the Neighbor")>>
+        <<set _event to "Lucas Sex Quest Intro">>
+    <</if>>
+	<<goto _event>>
+<</link>><br>
+<</if>>
+
+<<if $LinkTravel == 1>>
+<span style="color:Azure"><strong>-Travel-</strong></span><br>
+    [[Hallway (0:01)|Lucas Home Hallway][$Minutes += 1]] <br>
+    [[Kitchen (0:01)|Lucas Home Kitchen][$Minutes += 1]] <br>
+
+<</if>>
+<div style="position: relative">
+    <img src="Images\NPC Homes\Lucas House\Lucas House Map.png" alt="Lucas House Base" usemap="#LucasHouse">
+	<img src="Images\Player House\Player House Big Room Marker.png" 
+style="position: absolute; left: 8px; top: 116px"  alt="School Map" usemap="#LucasHouse">
+</div>
+<map name="LucasHouse">
+    <area shape="rect" coords="117,63,170,169" alt="Hallway" onclick="$.wiki('<<goto[[Lucas Home Hallway]]>><<set $Minutes += 1>>')" />
+    <area shape="rect" coords="8,170,116,222" alt="Hallway" onclick="$.wiki('<<goto[[Lucas Home Kitchen]]>><<set $Minutes += 1>>')" />
+</map>
+
+<</if>>

@@ -1,0 +1,34 @@
+:: Home Closet Event Outfits [nobr]
+
+<span style="color:Azure"><strong><big>--Event Outfits--</big></strong></span><br>
+
+<<if def $EventOutfitFail>>
+
+<<if State.getVar(`$Player${$EventOutfitFail}`).Type == "None">>
+You have to wear something for your $EventOutfitFail!
+<<else>>
+You can't wear your <<= State.getVar(`$Player${$EventOutfitFail}`).Name>> for that outfit!
+<</if>>
+<br><br>
+<<unset $EventOutfitFail>>
+
+<</if>>
+
+<<for _name, _outfit range $EventOutfits>>
+    <<capture _name, _outfit>>
+        <<displayOutfit _outfit>>
+        <br>
+        <<link [[Wear|passage()]]>>
+            <<applyOutfit _outfit "Avatar">>
+        <</link>>
+        <strong> | </strong>
+        <<link [[Overwrite|passage()]]>>
+            <<saveEventOutfit _name>>
+        <</link>>
+        <strong> | </strong>
+        <<link [[Restore|passage()]]>>
+            <<set $EventOutfits[_name] to $DefaultEventOutfits[_name]>>
+        <</link>>
+    <</capture>>
+    <br><br>
+<</for>>
