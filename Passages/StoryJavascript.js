@@ -2,7 +2,7 @@
 Config.saves.maxAutoSaves = 1;
 
 Config.saves.descriptions = function (saveType) {
-    let text = $('#passages').text();
+    let text = $('#passages').text().trim();
 
     if (text.length > 200) {
         text = text.slice(0, 200) + '...';

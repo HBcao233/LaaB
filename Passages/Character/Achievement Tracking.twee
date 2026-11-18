@@ -1,7 +1,7 @@
 :: Achievement Tracking [nobr]
 
 /* This file is just to grant achievements when the player unlocks them. No changes required when adding new Achievments (read comments in Achievements Init.twee on how to add new achievements) */
-<<for _ach range $AchievementList>>
+<<for _ach range setup.AchievementList>>
     <<set _achievement = $Achievements.getAchievementByName(_ach.Name)>>
     <<if _achievement != null && !_achievement.isGranted() && _ach.Condition()>>
         <<run _achievement.grant()>>

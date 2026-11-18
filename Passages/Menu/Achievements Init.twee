@@ -23,7 +23,7 @@
 
 /* When adding new achievements, add a new object to this array. Remember that Condition must return a boolean (true or false, like what you put inside an <<if>> statement). Then you just set vars.DoAchievementsInit = true; in saves.js */
 /* "Granted" is not needed as it will be false by default, I only added them to the first two because those were achievements that already existed before the achievement system */
-<<set $AchievementList = [
+<<set setup.AchievementList = [
     {
         Name: 'Bestest Brother Ever!',
         Desc: 'Finish Noah\'s "Stormy Night" quest',
@@ -163,7 +163,7 @@
 <</if>>
 
 /* Add missing achievements from list */
-<<for _ach range $AchievementList>>
+<<for _ach range setup.AchievementList>>
     <<if _addAllAchievements || $Achievements.getAchievementByName(_ach.Name) == null>>
         <<run $Achievements.addAchievement(
             new Achievement(
