@@ -1,5 +1,15 @@
 /* Do an autosave for all passages tagged with "autosave". */
-Config.saves.autosave = "autosave";
+Config.saves.maxAutoSaves = 1;
+
+Config.saves.descriptions = function (saveType) {
+    let text = $('#passages').text();
+
+    if (text.length > 200) {
+        text = text.slice(0, 200) + '...';
+    }
+
+    return text || passage();
+};
 
 Config.history.maxStates = 3;
 

@@ -6,7 +6,7 @@
 
   <<include "Shopping Menu Widget Variables">>
 
-  <<if _shopName == null || !Object.keys(_shopCatalog).contains(_shopName)>>
+  <<if _shopName == null || !Object.keys(_shopCatalog).includes(_shopName)>>
     <<run throw new Error('Error in widget shoppingMenu: _shopName is invalid')>>    
   <</if>>
 
@@ -17,7 +17,7 @@
 
   <<set _categories to _shopCatalog[_shopName].reduce(
     function (acc, current)  {
-      if (!acc.contains(current.Category)) {
+      if (!acc.includes(current.Category)) {
         acc.push(current.Category);
       }
 

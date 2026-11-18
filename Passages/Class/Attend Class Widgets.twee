@@ -11,7 +11,7 @@
 }>>
 <<set _this_class to _args[0]>>
 <<set _start_hour to _start_hours[_this_class]>>
-<<set _can_wait to ["Science", "Math"].contains(_this_class)>>
+<<set _can_wait to ["Science", "Math"].includes(_this_class)>>
 <<if State.getVar(`$${_this_class}Class`) == 0>>
     <<set _attend to `Attend ${_this_class}`>>
     /* WAIT IN CLASSROOM */

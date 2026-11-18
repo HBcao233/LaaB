@@ -13,7 +13,7 @@
 /* QUEST CHECK */
 	/* LUCAS RYKER */
 	/* Quest Active and the Time is 'Day' or "Afternooon" */
-<<if $InActiveQuests.includes("Lucas: Ryker") && ["Day", "Afternoon"].contains($Time.ToD)>>
+<<if $InActiveQuests.includes("Lucas: Ryker") && ["Day", "Afternoon"].includes($Time.ToD)>>
 	<<include"LucasQuest Ryker Part 1">>
 <<elseif $ToggleOCSebastian == 1 && $CompletedQuests.includes("Nyalls: Sebastian") && $InActiveQuests.includes("Nyalls: Oliver") && $Time.Day == "Thursday" && $Time.between(15,0,19,0)>>
 	<<include"OC Oliver Meeting">>

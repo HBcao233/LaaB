@@ -344,18 +344,18 @@
         "Bottoms": _Trunks,
         "Validator": (outfit) => {
             for (const slot of $ClothingCategories) {
-                if (["Top", "Bottoms"].contains(slot)) {
+                if (["Top", "Bottoms"].includes(slot)) {
                     continue;
                 }
                 const item = outfit[slot] ?? $None;
-                if (!(item.Type == "None" || item.Tags.contains("Swimwear"))) {
+                if (!(item.Type == "None" || item.Tags.includes("Swimwear"))) {
                     return slot;
                 }
             }
-            if ((outfit["Top"] ?? $None).Tags.contains("Sleeves")) {
+            if ((outfit["Top"] ?? $None).Tags.includes("Sleeves")) {
                 return "Top";
             }
-            if (!(outfit["Bottoms"] ?? $None).Tags.contains("Swimwear")) {
+            if (!(outfit["Bottoms"] ?? $None).Tags.includes("Swimwear")) {
                 SugarCube.State.setVar("$EventOutfitFail", "Bottoms");
                 return "Bottoms";
             }

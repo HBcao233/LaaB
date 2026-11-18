@@ -319,7 +319,7 @@ LaaBTime.prototype.afternoon = function () {
 }
 
 LaaBTime.prototype.schoolday = function () {
-    return !["Saturday", "Sunday"].contains(this.get_day());
+    return !["Saturday", "Sunday"].includes(this.get_day());
 }
 
 /* Get amount of days since the start of the game (in-game days) */

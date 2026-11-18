@@ -179,7 +179,7 @@
                     <<for _stKey range Object.keys(_stateSynonyms)>> /* Loop each state (i.e. Mouth, Eyes, etc) */
                         <<if _state.hasOwnProperty(_stKey)>>
                             <<for _synKey range Object.keys(_stateSynonyms[_stKey])>> /* Loop each synonym */
-                                <<if _stateSynonyms[_stKey][_synKey].contains(_state[_stKey])>>
+                                <<if _stateSynonyms[_stKey][_synKey].includes(_state[_stKey])>>
                                     <<set _state[_stKey] to _synKey>>
                                     <<break>>
                                 <</if>>

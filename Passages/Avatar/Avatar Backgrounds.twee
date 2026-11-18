@@ -9,7 +9,7 @@
 	"Home Kitchen",
 	"Noah Bedroom",
 	"Player Bedroom",
-].contains($Location.Name)>>
+].includes($Location.Name)>>
 	<<if $Time.before(7) or $Time.after(18)>>
 		<<set _background to "Images/Backgrounds/Living Room Night.png">>
 	<<else>>
@@ -20,7 +20,7 @@
 [
 	"Gabe Bedroom",
 	"Dad Bedroom",
-].contains($Location.Name)>>
+].includes($Location.Name)>>
 		<<set _background to "Images/Backgrounds/Bedroom.png">>
 /* Bathroom */
 <<elseif
@@ -28,7 +28,7 @@
 	"Home Bathroom",
 	"Dad's Bathroom",
 	"Lucas Home Bathroom",
-].contains($Location.Name)>>
+].includes($Location.Name)>>
 		<<set _background to "Images/Backgrounds/Bathroom.png">>
 
 /* SCHOOL/PARK RESTROOM */
@@ -36,14 +36,14 @@
 [
 	"School Restroom",
 	"Park Restroom",
-].contains($Location.Name)>>
+].includes($Location.Name)>>
 		<<set _background to "Images/Backgrounds/Public Restroom.png">>
 /* SCHOOL LOCKEROOM */
 <<elseif
 [
 	"School Locker Room",
 	"Pool Locker Room",
-].contains($Location.Name)>>
+].includes($Location.Name)>>
 		<<set _background to "Images/Backgrounds/Lockers.png">>
 
 /* Playgrounds */
@@ -51,7 +51,7 @@
 	"School Courtyard",
 	"Park",
 	"Northend Playground",
-].contains($Location.Name)>>
+].includes($Location.Name)>>
  	<<if $Time.before(7) or $Time.after(18)>>
 		<<set _background to "Images/Backgrounds/School Courtyard Night.png">>
 	<<else>>
@@ -64,7 +64,7 @@
 	"Miller Backyard",
 	"Lucas Home Backyard",
 	"Carter Backyard",
-].contains($Location.Name)>>
+].includes($Location.Name)>>
  	<<if $Time.before(7) or $Time.after(18)>>
 		<<set _background to "Images/Backgrounds/Backyard Night.png">>
 	<<else>>
@@ -79,7 +79,7 @@
 <<elseif
 [
 	"Boardwalk",
-].contains($Location.Name)>>
+].includes($Location.Name)>>
 	<<if $Time.before(7) or $Time.after(18)>>
 		<<set _background to "Images/Backgrounds/Boardwalk Night.png">>
 	<<else>>
@@ -109,7 +109,7 @@
 	"Home Frontyard",
 	"Lucas Frontyard",
 
-].contains($Location.Name)>>
+].includes($Location.Name)>>
 	<<if $Time.before(7) or $Time.after(18)>>
 		<<set _background to "Images/Backgrounds/Neighborhood Night.png">>
 	<<else>>
